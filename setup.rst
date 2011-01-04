@@ -3,20 +3,26 @@
 Getting Set Up
 ==============
 
+These instructions cover how to get a source checkout and a compiled version of
+the CPython interpreter (CPython is the version of Python available from
+http://www.python.org/). It will also tell you how to set up various code
+editors. Finally, this document also gives an overview of the directory
+structure of a CPython checkout.
+
 .. contents::
 
 
 Checking out the code
 ----------------------
 
-One should always work from a checkout of the Python source code. While it may
+One should always work from a checkout of the CPython source code. While it may
 be tempting to work from the downloaded copy you already have installed on your
 machine, it is very likely that you will be working from out-of-date code as
 the Python core developers are constantly updating and fixing things in their
 :abbr:`VCS (Version Control System)`. It also means you will have better tool
 support through the VCS as it will provide a diff tool, etc.
 
-To get a read-only checkout of Python's source, you need to checkout the source
+To get a read-only checkout of CPython's source, you need to checkout the source
 code. Python development is tracked using svn_. To get a read-only checkout of
 the in-development branch of Python (core developers should read XXX for a
 read-write checkout), run::
@@ -33,11 +39,15 @@ To check out a version of Python other than 3.1, simply change the number in
 the above URL to the major/minor version (e.g., ``release27-maint`` for Python
 2.7).
 
+Do note that CPython will notice that it is being run from a source checkout.
+This means that it if you edit Python source code in your checkout the changes
+will be picked up by the interpreter for immediate testing.
+
 .. _svn: http://subversion.tigris.org/
 
 
-Compiling for debugging
-=======================
+Compiling (for debugging)
+-------------------------
 
 Python has two features to aid in developing for it. First, there is a
 ``Py_DEBUG`` compilation flag which turns on some features in the interpreter
