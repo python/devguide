@@ -79,20 +79,62 @@ will be picked up by the interpreter for immediate testing.
 Compiling (for debugging)
 -------------------------
 
-Python has two features to aid in developing for it. First, there is a
-``Py_DEBUG`` compilation flag which turns on some features in the interpreter
-which will help with debugging. While this is not the only compilation flag
-available (see ``Misc/SpecialBuilds.txt`` in a checkout for all of them), it is
-the basic one that you should always use as it tends to catch bugs more often
-than running a build of Python without the flag.
+CPython provides several compilation flags which help with debugging various
+things. While all of the known flags can be in the ``Misc/SpecialBuilds.txt``
+file, the most critical one is the ``Py_DEBUG`` flag. This flag turns on
+various extra sanity checks which help catch common issues. You should always
+develop under a pydebug build of CPython (only instance of when you shouldn't
+is if you are taking performance measurements).
 
-The other feature is support for using code directly from a checkout of Python.
-This is handy as it means you do not need to install your build of Python but
-can just use the build in-place. It also means that when you edit code in your
-checkout you get to see the results without having to install the changed files
-as well.
 
-The steps to compile a debug version of Python are specified in the `dev FAQ`_.
+UNIX
+''''
+
+The basic steps for building Python for development is to configure it and
+then compile it.
+
+Configuration is typically::
+
+  ./configure --prefix=/dev/null --with-pydebug
+
+More flags are available to ``configure``, but this is the minimum you should
+do. This will give you a debug version of Python along with the safety measure
+of preventing you from accidentally installing your development version over
+your system install.
+
+Once ``configure`` is done, you can then compile Python.::
+
+    make -s
+
+This will build Python with only warnings and errors being printed to
+stderr. If you are using a multi-core machine you can use the ``-j`` flag
+along with the number of cores your machine has
+(e.g., with two cores, you would want ``make -s -j2``)
+to speed up.
+
+Once Python is done building you will then have a working build of Python
+that can be run in-place; ``./python`` on most machines, ``./python.exe``
+on OS X.
+
+
+Windows
+'''''''
+
+For :abbr:`VC 9 (Visual C++ 9)`, the ``PCbuild`` directory contains the build
+files (for older versions of :abbr:`VC`, see the ``PC`` directory). For a free
+compiler for Windows, go to http://www.microsoft.com/express/ .
+
+To build from the GUI, load the project files and press F7. Make sure to
+choose the "Debug" build.
+
+If you want to build from the command line, run the
+``build_env.bat`` file to get a terminal with proper environment variables.
+From that terminal, run::
+
+    build.bat -c Debug
+
+Once built you will want to set Python as a startup project. F5 will
+launch the interpreter as well as double-clicking the binary.
 
 
 Editors and Tools

@@ -301,63 +301,6 @@ stored, be sure to report this to pydotorg@python.org at the same time
 that you change your keys.
 
 
-Compilation
-=====================================================================
-
-How do I create a debug build of Python?
------------------------------------------
-
-A debug build, sometimes called a "pydebug" build, has extra checks and bits of
-information to help with developing Python.
-
-UNIX
-'''''''''''''''''''''''
-
-The basic steps for building Python for development is to configure it and
-then compile it.
-
-Configuration is typically::
-
-  ./configure --prefix=/dev/null --with-pydebug
-
-More flags are available to ``configure``, but this is the minimum you should
-do. This will give you a debug version of Python along with a safety measure
-to prevent you from accidentally installing your development version over
-your system install. If you are developing on OS X for Python 2.x and will not
-be working with the OS X-specific modules from the standard library, then
-consider using the ``--without-toolbox-glue`` flag to faster compilation time.
-
-Once ``configure`` is done, you can then compile Python.::
-
-    make -s
-
-This will build Python with only warnings and errors being printed to
-stderr. If you are using a multi-core machine you can use the ``-j`` flag
-along with the number of cores your machine has
-(e.g. with two cores, you would want ``make -s -j2``)
-to compile multiple files at a time.
-
-Once Python is done building you will then have a working build of Python
-that can be run in-place; ``./python`` on most machines, ``./python.exe``
-on OS X.
-
-Windows
-'''''''''''''''''''''''''
-
-For VC 9, the ``PCbuild`` directory contains the build
-files. For older versions of VC, see the ``PC`` directory. For a free
-compiler for Windows, go to http://www.microsoft.com/express/ .
-
-To build from the GUI, load the project files and press F7. Make sure to
-choose the Debug build. If you want to build from the command line, run the
-``build_env.bat`` file to get a terminal with proper environment variables.
-From that terminal, run::
-
-    build.bat -c Debug
-
-Once built you will want to set Python as a startup project. F5 will
-launch the interpreter as well as double-clicking the binary.
-
 
 Editors and Tools
 =====================================================================
