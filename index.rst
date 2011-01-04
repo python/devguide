@@ -24,6 +24,7 @@ be done in any order.
     * `PEP 7`_
     * `PEP 8`_
 * :ref:`patch`
+* `Running the test suite <XXX>`_
 * Projects to get familiar with the development process
     * `Help increase test coverage <XXX>`_
     * `Make all unit tests discoverable by unittest <XXX>`_
