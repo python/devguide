@@ -138,11 +138,16 @@ launch the interpreter as well as double-clicking the binary.
 
 
 Editors and Tools
-==================
+-----------------
 
-Python includes within its source tree some files to help work with various
-popular editors and tools. A list of those tools and what is available for them
-can be found in the `dev FAQ`_.
+Python is used widely enough that practically all code editors have some form
+of support for writing Python code. Various coding tools also include Python
+support.
+
+For editors and tools which the core developers have felt some special comment
+is needed for coding *in* Python, see the ``Misc`` directory and the
+various ``README.*`` files. For tool/editor support geared specifically towards
+coding *for* (C)Python itself, see :ref:`resources`.
 
 
 Directory Structure

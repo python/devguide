@@ -45,6 +45,8 @@ Making changes to Python itself
 * `Changing the language <XXX>`_
 
 
+.. _resources:
+
 Resources
 ---------
 
@@ -53,9 +55,12 @@ Resources
       tracker for the issue tracker)
 * `Buildbot builders <http://python.org/dev/buildbot/>`_
 
-.. note::
-    XXX move various files out of Misc to here (e.g., README.valgrind,
+.. todo::
+    move various files out of Misc to here (e.g., README.valgrind,
     Porting, SpecialBuilds.txt, maintainers.rst, etc.)
+
+.. todo::
+    Write a README.gdb for Misc to cover both gdbinit and python-gdb.py
 
 
 .. _PEP 7: http://www.python.org/dev/peps/pep-0007
