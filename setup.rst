@@ -35,7 +35,7 @@ your OS.  It will also automatically convert line endings upon committal so
 that they are consistent across all platforms.  The ``svn:keywords`` settings
 are to automatically substitute ``$keyword$`` arguments in files that match the
 pattern.  ``*.txt`` has more options so as to cover all needed keywords for
-PEPs_.
+PEPs.
 
 The ``[miscellany]`` section and its one option make svn apply the
 various rules in the ``[auto-props]`` section automatically to all added or
@@ -138,7 +138,7 @@ launch the interpreter as well as double-clicking the binary.
 
 
 Editors and Tools
------------------
+=================
 
 Python is used widely enough that practically all code editors have some form
 of support for writing Python code. Various coding tools also include Python
@@ -153,35 +153,35 @@ coding *for* (C)Python itself, see :ref:`resources`.
 Directory Structure
 ===================
 
-There are several top-level directories in the Python source tree. Knowing what
-which one is meant to hold will help you find where a certain piece of
+There are several top-level directories in the CPython source tree. Knowing what
+each one is meant to hold will help you find where a certain piece of
 functionality is implemented. Do realize, though, there are always exceptions to
 every rule.
 
 ``Doc``
-     The official documentation. This is what http://docs.python.org/ uses. The
-     tools for building the documentation is kept in another repository. To
-     build the docs, see ``Doc/README.txt``.
+     The official documentation. This is what http://docs.python.org/ uses.
+     To build the docs, see ``Doc/README.txt``.
 
 ``Grammar``
-     Contains the EBNF grammar file for Python.
+     Contains the :abbr:`EBNF (Extended Backus–Naur Form)` grammar file for
+     Python.
 
 ``Include``
      Contains all interpreter-wide header files.
 
 ``Lib``
-     The part of the standard library implemented in pure Python is here.
+     The part of the standard library implemented in pure Python.
 
 ``Mac``
-     Mac-specific code for things such as using IDLE as an OS X application.
+     Mac-specific code (e.g., using IDLE as an OS X application).
 
 ``Misc``
      Things that do not belong elsewhere. Typically this is varying kinds of
-     documentation.
+     developer-specific documentation.
 
 ``Modules``
      The part of the standard library (plus some other code) that is implemented
-     as extension modules.
+     in C.
 
 ``Objects``
      Code for all built-in types.
@@ -198,11 +198,9 @@ every rule.
      here.
 
 ``Python``
-     The code that makes Python run. This includes the compiler, eval loop and
-     various built-in modules.
+     The code that makes up the CPython interpreter. This includes the compiler,
+     eval loop and various built-in modules.
 
 ``Tools``
      Various tools that are (or have been) used to maintain Python.
 
-
-.. _dev FAQ: XXX
