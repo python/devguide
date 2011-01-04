@@ -7,18 +7,33 @@ Getting Set Up
 
 
 Checking out the code
-=====================
+----------------------
 
-Python always has the in-development version of the current major versions
-along with the last minor release of each major version. For instance, if
-Python 2.6 was the latest release (and thus has a major version of *2* and a
-minor version of *6*), then the in-development 2.7 branch is available along
-with the maintenance branch for 2.6.
+One should always work from a checkout of the Python source code. While it may
+be tempting to work from the downloaded copy you already have installed on your
+machine, it is very likely that you will be working from out-of-date code as
+the Python core developers are constantly updating and fixing things in their
+:abbr:`VCS (Version Control System)`. It also means you will have better tool
+support through the VCS as it will provide a diff tool, etc.
 
-For each branch there is read-only access for the general public and read-write
-access for those with commit privileges (called "core developers"). The
-location of these branches and the steps to check out the code are listed in
-the `dev FAQ`_.
+To get a read-only checkout of Python's source, you need to checkout the source
+code. Python development is tracked using svn_. To get a read-only checkout of
+the in-development branch of Python (core developers should read XXX for a
+read-write checkout), run::
+
+    svn co http://svn.python.org/projects/python/branches/py3k
+
+If you want a read-only checkout of an already-released version of Python,
+i.e., a version in maintenance mode, run something like the following which
+gets you a checkout for Python 3.1::
+
+    svn co http://svn.python.org/projects/python/branches/release31-maint
+
+To check out a version of Python other than 3.1, simply change the number in
+the above URL to the major/minor version (e.g., ``release27-maint`` for Python
+2.7).
+
+.. _svn: http://subversion.tigris.org/
 
 
 Compiling for debugging
@@ -101,3 +116,6 @@ every rule.
 
 ``Tools``
      Various tools that are (or have been) used to maintain Python.
+
+
+.. _dev FAQ: XXX
