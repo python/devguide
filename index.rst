@@ -53,6 +53,10 @@ Resources
       tracker for the issue tracker)
 * `Buildbot builders <http://python.org/dev/buildbot/>`_
 
+.. note::
+    XXX move various files out of Misc to here (e.g., README.valgrind,
+    Porting, SpecialBuilds.txt, maintainers.rst, etc.)
+
 
 .. _PEP 7: http://www.python.org/dev/peps/pep-0007
 .. _PEP 8: http://www.python.org/dev/peps/pep-0008
