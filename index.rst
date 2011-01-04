@@ -1,5 +1,11 @@
-Python Language / CPython interpreter Developer's Guide
-=======================================================
+Welcome to Python Developer's Guide's documentation!
+====================================================
+
+Contents:
+
+.. toctree::
+   :maxdepth: 2
+
 
 Contributing
 ------------
@@ -48,6 +54,14 @@ Resources
 * `Buildbot builders <http://python.org/dev/buildbot/>`_
 
 
-
 .. _PEP 7: http://www.python.org/dev/peps/pep-0007
 .. _PEP 8: http://www.python.org/dev/peps/pep-0008
+
+
+Indices and tables
+==================
+
+* :ref:`genindex`
+* :ref:`modindex`
+* :ref:`search`
+
