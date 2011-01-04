@@ -305,22 +305,6 @@ that you change your keys.
 Editors and Tools
 =====================================================================
 
-What support is included in Python's source code for Vim?
----------------------------------------------------------
-
-Within the ``Misc/Vim`` directory you will find two files to help you when
-editing Python code. One is ``python.vim``, which is a generated syntax
-highlight file for Python code. This file is updated much more frequently as it
-contains syntax highlighting for keywords as they are added to the source tree.
-See the top of the file to find out how to use the file.
-
-The other file for Vim is a vimrc file that supports PEP 7 and 8 coding
-standards. All settings are specific to Python and C code and thus will not
-affect other settings. There are also some settings which are helpful but
-turned off by default at the end of the file if one cares to use non-essential
-settings. Once again, see the top of the file to learn how to take advantage of
-the file.
-
 
 What support is included in Python's source code for gdb?
 ----------------------------------------------------------
@@ -330,14 +314,6 @@ to your gdb session. You can either copy the commands into your own
 ``.gdbinit`` file or, if you don't have your own version of the file, simply
 symlink ``~/.gdbinit`` to ``Misc/gdbinit``.
 
-
-Can I run Valgrind against Python?
-----------------------------------
-
-Because of how Python uses memory, Valgrind requires setting some suppression
-rules to cut down on the false positives (which still occur, suggesting one
-typically should know how Python uses memory before running Valgrind against
-Python). See ``Misc/README.valgrind`` for more details.
 
 
 Patches
