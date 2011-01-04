@@ -1,5 +1,5 @@
-Welcome to Python Developer's Guide's documentation!
-====================================================
+Python Developer's Guide
+========================
 
 Contents:
 
