@@ -5,6 +5,7 @@ Python Developer's Guide
    :hidden:
 
    setup
+   patch
 
 
 .. todolist::
@@ -22,7 +23,7 @@ be done in any order.
 * Coding style guides
     * `PEP 7`_
     * `PEP 8`_
-* `Submitting a patch <XXX>`_
+* :ref:`patch`
 * Projects to get familiar with the development process
     * `Help increase test coverage <XXX>`_
     * `Make all unit tests discoverable by unittest <XXX>`_
@@ -34,6 +35,7 @@ be done in any order.
 * `Gaining 'Developer' privileges for the issue tracker <XXX>`_
     * `Triaging issues <XXX>`_
     * `Reviewing patches <XXX>`_
+* `Following Python's development <XXX>`_
 * `Gaining commit privileges <XXX>`_
     * `Committing patches <XXX>`_
 
@@ -64,6 +66,10 @@ Resources
 
 .. todo::
     Write a README.gdb for Misc to cover both gdbinit and python-gdb.py
+
+.. todo::
+    Move various informational PEPs out of the PEP index and over here
+    (.e.g, grammar and compiler guides)
 
 
 .. _buildbots: http://python.org/dev/buildbot/
