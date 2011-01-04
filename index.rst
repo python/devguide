@@ -1,10 +1,13 @@
 Python Developer's Guide
 ========================
 
-Contents:
-
 .. toctree::
-   :maxdepth: 2
+   :hidden:
+
+   setup
+
+
+.. todolist::
 
 
 Contributing
