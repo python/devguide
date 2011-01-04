@@ -105,13 +105,12 @@ your system install.
 
 Once ``configure`` is done, you can then compile Python.::
 
-    make -s
+    make -s -j2
 
 This will build Python with only warnings and errors being printed to
-stderr. If you are using a multi-core machine you can use the ``-j`` flag
-along with the number of cores your machine has
-(e.g., with two cores, you would want ``make -s -j2``)
-to speed up.
+stderr and utilize up to 2 CPU cores. If you are using a multi-core machine
+with more than 2 cores (or a single-core machine), you can adjust the number
+passed into the ``-j`` flag to match the number of cores you have.
 
 Once Python is done building you will then have a working build of Python
 that can be run in-place; ``./python`` on most machines, ``./python.exe``
