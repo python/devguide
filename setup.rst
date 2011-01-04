@@ -12,6 +12,38 @@ structure of a CPython checkout.
 .. contents::
 
 
+Version Control Setup
+---------------------
+
+CPython is developed using svn_. Make sure the following settings are in your
+svn config file (``~/.subversion/config`` under UNIX)::
+
+ [miscellany]
+ enable-auto-props = yes
+
+ [auto-props]
+ * = svn:eol-style=native
+ *.c = svn:keywords=Id
+ *.h = svn:keywords=Id
+ *.py = svn:keywords=Id
+ *.txt = svn:keywords=Author Date Id Revision
+
+The ``[auto-props]`` line specifies the beginning of the section in the config
+file dealing with svn properties and line endings. The ``svn:eol-style``
+setting tells Subversion to check out files using the native line endings on
+your OS.  It will also automatically convert line endings upon committal so
+that they are consistent across all platforms.  The ``svn:keywords`` settings
+are to automatically substitute ``$keyword$`` arguments in files that match the
+pattern.  ``*.txt`` has more options so as to cover all needed keywords for
+PEPs_.
+
+The ``[miscellany]`` section and its one option make svn apply the
+various rules in the ``[auto-props]`` section automatically to all added or
+imported files into the respository.
+
+.. _svn: http://subversion.tigris.org/
+
+
 Checking out the code
 ----------------------
 
@@ -19,11 +51,11 @@ One should always work from a checkout of the CPython source code. While it may
 be tempting to work from the downloaded copy you already have installed on your
 machine, it is very likely that you will be working from out-of-date code as
 the Python core developers are constantly updating and fixing things in their
-:abbr:`VCS (Version Control System)`. It also means you will have better tool
+:abbr:`VCS`. It also means you will have better tool
 support through the VCS as it will provide a diff tool, etc.
 
 To get a read-only checkout of CPython's source, you need to checkout the source
-code. Python development is tracked using svn_. To get a read-only checkout of
+code. To get a read-only checkout of
 the in-development branch of Python (core developers should read XXX for a
 read-write checkout), run::
 
@@ -42,8 +74,6 @@ the above URL to the major/minor version (e.g., ``release27-maint`` for Python
 Do note that CPython will notice that it is being run from a source checkout.
 This means that it if you edit Python source code in your checkout the changes
 will be picked up by the interpreter for immediate testing.
-
-.. _svn: http://subversion.tigris.org/
 
 
 Compiling (for debugging)
