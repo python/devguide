@@ -15,7 +15,7 @@ the Python programming language and/or the CPython interpreter. People should
 follow the top-level bullet points in order, while sub-level bullet points can
 be done in any order.
 
-* `Getting set up <XXX>`_
+* :ref:`setup`
 * Coding style guides
     * `PEP 7`_
     * `PEP 8`_
