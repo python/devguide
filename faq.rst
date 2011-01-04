@@ -163,37 +163,6 @@ If you are using a profile in PuTTY, the best way to test is to try to log in
 through Open.
 
 
-What configuration settings should I use?
--------------------------------------------------------------------------------
-
-Make sure the following settings are in your Subversion config file
-(``~/.subversion/config`` under UNIX)::
-
- [miscellany]
- enable-auto-props = yes
-
- [auto-props]
- * = svn:eol-style=native
- *.c = svn:keywords=Id
- *.h = svn:keywords=Id
- *.py = svn:keywords=Id
- *.txt = svn:keywords=Author Date Id Revision
-
-The ``[auto-props]`` line specifies the beginning of the section in the config
-file.  The ``svn:eol-style`` setting tells Subversion to check out files using
-the native line endings on your OS.  It will also automatically convert line
-endings upon committal so that they are consistent across all platforms.  The
-``svn:keywords`` settings are to automatically substitute ``$keyword$``
-arguments in files that match the pattern.  ``*.txt`` has more options so as to
-cover all needed keywords for PEPs_.
-
-The ``[miscellany]`` section and its one option make Subversion apply the
-various rules in the ``[auto-props]`` section automatically to all added or
-imported files into the respository.
-
-.. _PEPs: http://www.python.org/dev/peps/
-
-
 
 What tools do I need to merge between branches?
 -----------------------------------------------
