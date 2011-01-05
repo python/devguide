@@ -24,10 +24,11 @@ be done in any order.
     * `PEP 7`_
     * `PEP 8`_
 * :ref:`patch`
-* `Running the test suite <XXX>`_
+* :ref:`runtests`
 * Projects to get familiar with the development process
     * `Help increase test coverage <XXX>`_
     * `Make all unit tests discoverable by unittest <XXX>`_
+    * `Fix all warnings raised when running the test suite w/ -uall <XXX>`_
     * `Fixing documentation bugs <XXX>`_
 * Projects for once you are comfortable
     * `Helping triage issues <XXX>`_
