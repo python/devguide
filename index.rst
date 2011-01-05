@@ -6,6 +6,7 @@ Python Developer's Guide
 
    setup
    patch
+   runtests
 
 
 .. todolist::
