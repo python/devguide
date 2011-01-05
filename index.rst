@@ -74,6 +74,10 @@ Resources
     Move various informational PEPs out of the PEP index and over here
     (.e.g, grammar and compiler guides)
 
+.. todo::
+    See if tempfile or test.support has a context manager that creates and
+    deletes a temp file so as to move off of test.support.TESTFN.
+
 
 .. _buildbots: http://python.org/dev/buildbot/
 .. _PEP 7: http://www.python.org/dev/peps/pep-0007
