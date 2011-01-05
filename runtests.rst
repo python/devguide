@@ -46,4 +46,16 @@ failures to run again to see if it a transient failure or a consistent one.
 Writing
 -------
 
-XXX
+Writing tests for Python is much like writing tests for your own code. Tests
+need to be thorough, fast, isolated, consistently repeatable, and as simple as
+possible. Tests live in the ``Lib/test`` directory, where every file that
+includes tests has a ``test_`` prefix.
+
+One difference, though, is that you are allowed to use the ``test.support``
+module. It contains various helpers that are tailored to Python's test suite.
+Because of this it has no API or backwards-compatibility guarantees, which is
+why the general public is not supposed to use the module. But when you are
+writing tests for Python's test suite its use is encouraged.
+
+If your test must write various temporary files to a specific directory, you
+can use the ``Lib/test/data`` directory for that purpose.
