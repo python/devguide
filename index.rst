@@ -7,6 +7,7 @@ Python Developer's Guide
    setup
    patch
    runtests
+   coverage
 
 
 .. todolist::
@@ -15,10 +16,11 @@ Python Developer's Guide
 Contributing
 ------------
 
-This list is in an overall suggested order for people wanting to contribute to
-the Python programming language and/or the CPython interpreter. People should
-follow the top-level bullet points in order, while sub-level bullet points can
-be done in any order.
+People who wish to contribute to Python **must** read the following documents
+in their top-level order (sub-level documents can be read in any order). You
+can stop where you feel comfortable and being contributing without reading and
+understanding all of these documents, but please do not skip around within the
+documentation.
 
 * :ref:`setup`
 * Coding style guides
@@ -27,7 +29,7 @@ be done in any order.
 * :ref:`patch`
 * :ref:`runtests`
 * Projects to get familiar with the development process
-    * `Help increase test coverage <XXX>`_
+    * :ref:`coverage`
     * `Make all unit tests discoverable by unittest <XXX>`_
     * `Fix all warnings raised when running the test suite w/ -uall <XXX>`_
     * `Fixing documentation bugs <XXX>`_
