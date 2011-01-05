@@ -25,7 +25,8 @@ import sys, os
 
 # Add any Sphinx extension module names here, as strings. They can be extensions
 # coming with Sphinx (named 'sphinx.ext.*') or your custom ones.
-extensions = ['sphinx.ext.todo']
+extensions = ['sphinx.ext.intersphinx', 'sphinx.ext.todo']
+intersphinx_mapping = {'python': ('http://docs.python.org/py3k', None)}
 todo_include_todos = True
 
 # Add any paths that contain templates here, relative to this directory.
