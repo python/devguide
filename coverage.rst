@@ -86,9 +86,9 @@ executed::
 But one of the strengths of coverage.py is its HTML-based reports which lets
 you visually see what lines of code were not tested::
 
-    ./python -m coverage -d .coverage_html html
+    ./python -m coverage -d coverage_html html
 
-You can then open the ``.coverage_html/index.html`` file in a web browser to
+You can then open the ``coverage_html/index.html`` file in a web browser to
 view the coverage results in a nicely formatted page.
 
 
@@ -119,5 +119,15 @@ also what branch paths were not executed.
 Using test.regrtest
 -------------------
 
-XXX
+If you prefer to rely solely on the stdlib to generate coverage data, you can
+do so by passing the appropriate flags to :py:ref:`test.regrtest` (along with
+any other flags you want to)::
 
+    ./python -m test --coverage -D `pwd`/coverage_data
+
+Do note the argument to ``-D``; if you do not specify an absolute path to where
+you want the coverage data to end up it will go somewhere you don't expect.
+
+Once the tests are done you will find the directory you specified contains
+files for each executed module along with which lines were executed how many
+times.
