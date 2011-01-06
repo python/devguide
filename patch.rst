@@ -61,7 +61,8 @@ To perform a quick sanity check on your patch, you can run::
 This will make sure extraneous whitespace has been removed from your patch,
 etc.
 
-To create your patch, you should generate a unified diff::
+To create your patch, you should generate a unified diff from your checkout's
+top-level directory::
 
     svn diff > patch.diff
 
