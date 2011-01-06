@@ -80,6 +80,12 @@ Resources
     See if tempfile or test.support has a context manager that creates and
     deletes a temp file so as to move off of test.support.TESTFN.
 
+.. todo::
+    Create test.support.optional_import() for tests to use to import modules
+    that are optional on various platforms. This would allow for moving away
+    from ImportError representing a skipped test and also rip out the
+    expectations stuff from regrtest and put it with the tests instead.
+
 
 .. _buildbots: http://python.org/dev/buildbot/
 .. _PEP 7: http://www.python.org/dev/peps/pep-0007
