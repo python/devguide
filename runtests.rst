@@ -16,8 +16,11 @@ The shortest, simplest way of running the test suite is::
     ./python -m test
 
 That will run the entire standard test suite (i.e., all tests that do not
-consume a lot of resources) using the :py:mod:`test.regrtest` module (Python's
-test runner which you can execute directly if you prefer).
+consume a lot of resources) using the :py:mod:`test.regrtest` module. Python's
+test runner can also be executed directly when needed::
+
+    ./python Lib/test/regrtest.py
+
 To run **all** tests, you need to specify what
 resources you are willing to have consumed. For those flags (and others which
 can help debug various issues such as reference leaks), read the help text::
