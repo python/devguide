@@ -114,7 +114,8 @@ passed into the ``-j`` flag to match the number of cores you have.
 
 Once Python is done building you will then have a working build of Python
 that can be run in-place; ``./python`` on most machines, ``./python.exe``
-on OS X.
+on OS X (all examples throughout this documentation say ``./python`` but
+implies you choose the proper name based on your OS).
 
 
 Windows
