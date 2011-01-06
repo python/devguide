@@ -86,6 +86,11 @@ Resources
     from ImportError representing a skipped test and also rip out the
     expectations stuff from regrtest and put it with the tests instead.
 
+.. todo::
+    Think about beginner task of properly making APIs private (i.e., leading
+    underscore where needed); see http://mail.python.org/pipermail/python-dev/2010-November/105476.html
+
+
 
 .. _buildbots: http://python.org/dev/buildbot/
 .. _PEP 7: http://www.python.org/dev/peps/pep-0007
