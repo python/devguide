@@ -17,7 +17,8 @@ The shortest, simplest way of running the test suite is::
 
 That will run the entire standard test suite (i.e., all tests that do not
 consume a lot of resources) using the :py:mod:`test.regrtest` module. Python's
-test runner can also be executed directly when needed::
+test runner can also be executed directly when needed, but this should be
+avoided!::
 
     ./python Lib/test/regrtest.py
 
