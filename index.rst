@@ -18,7 +18,7 @@ Contributing
 
 People who wish to contribute to Python **must** read the following documents
 in their top-level order (sub-level documents can be read in any order). You
-can stop where you feel comfortable and being contributing without reading and
+can stop where you feel comfortable and begin contributing without reading and
 understanding all of these documents, but please do not skip around within the
 documentation.
 
