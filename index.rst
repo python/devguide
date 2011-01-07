@@ -91,6 +91,9 @@ Resources
     underscore where needed) or finally documenting them;
     see http://mail.python.org/pipermail/python-dev/2010-November/105476.html
 
+.. todo::
+    Think about suggesting going through stagnant issues (rather advanced)
+
 
 
 .. _buildbots: http://python.org/dev/buildbot/
