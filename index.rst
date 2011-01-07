@@ -88,7 +88,8 @@ Resources
 
 .. todo::
     Think about beginner task of properly making APIs private (i.e., leading
-    underscore where needed); see http://mail.python.org/pipermail/python-dev/2010-November/105476.html
+    underscore where needed) or finally documenting them;
+    see http://mail.python.org/pipermail/python-dev/2010-November/105476.html
 
 
 
