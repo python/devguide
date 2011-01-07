@@ -31,11 +31,11 @@ documentation.
 * Projects to get familiar with the development process
     * :ref:`coverage`
     * `Make all unit tests discoverable by unittest <XXX>`_
-    * `Fix all warnings raised when running the test suite w/ -uall <XXX>`_
     * `Fixing documentation bugs <XXX>`_
 * Projects for once you are comfortable
     * `Helping triage issues <XXX>`_
     * `Fixing issues considered "easy" <XXX>`_ (and beyond)
+    * `Fix all warnings raised when running the test suite w/ -uall <XXX>`_
     * Watching the buildbots_
 * `Gaining 'Developer' privileges for the issue tracker <XXX>`_
     * `Triaging issues <XXX>`_
