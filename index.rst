@@ -8,6 +8,7 @@ Python Developer's Guide
    patch
    runtests
    coverage
+   docquality
 
 
 .. todolist::
@@ -30,7 +31,7 @@ documentation.
 * :ref:`runtests`
 * Projects to get familiar with the development process
     * :ref:`coverage`
-    * `Fixing documentation bugs <XXX>`_
+    * :ref:`docquality`
 * Projects for once you are comfortable
     * `Helping triage issues <XXX>`_
     * `Fixing issues considered "easy" <XXX>`_ (and beyond)
