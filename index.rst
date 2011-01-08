@@ -9,6 +9,7 @@ Python Developer's Guide
    runtests
    coverage
    docquality
+   helptriage
 
 
 .. todolist::
@@ -33,7 +34,7 @@ documentation.
     * :ref:`coverage`
     * :ref:`docquality`
 * Projects for once you are comfortable
-    * `Helping triage issues <XXX>`_
+    * :ref:`helptriage`
     * `Fixing issues considered "easy" <XXX>`_ (and beyond)
     * `Fix all warnings raised when running the test suite w/ -uall <XXX>`_
     * Watching the buildbots_
