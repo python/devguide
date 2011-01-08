@@ -10,6 +10,7 @@ Python Developer's Guide
    coverage
    docquality
    helptriage
+   fixingissues
 
 
 .. todolist::
@@ -35,9 +36,9 @@ documentation.
     * :ref:`docquality`
 * Projects for once you are comfortable
     * :ref:`helptriage`
-    * `Fixing issues considered "easy" <XXX>`_ (and beyond)
+    * :ref:`fixingissues`
     * `Fix all warnings raised when running the test suite w/ -uall <XXX>`_
-    * Watching the buildbots_
+    * Fixing issues found by the buildbots_
 * `Gaining 'Developer' privileges for the issue tracker <XXX>`_
     * `Triaging issues <XXX>`_
     * `Reviewing patches <XXX>`_
