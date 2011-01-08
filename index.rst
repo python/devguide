@@ -37,14 +37,14 @@ documentation.
     * :ref:`docquality`
 * Intermediate tasks for once you are comfortable
     * :ref:`helptriage`
-* Advanced tasks
-    * Fixing issues found by the buildbots_
-    * :ref:`silencewarnings`
-    * :ref:`fixingissues`
 * `Gaining 'Developer' privileges for the issue tracker <XXX>`_
     * `Triaging issues <XXX>`_
     * `Reviewing patches <XXX>`_
 * `Following Python's development <XXX>`_
+* Advanced tasks
+    * Fixing issues found by the buildbots_
+    * :ref:`silencewarnings`
+    * :ref:`fixingissues`
 * `Gaining commit privileges <XXX>`_
     * `Committing patches <XXX>`_
 
