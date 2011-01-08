@@ -1,0 +1,55 @@
+.. _helptriage:
+
+Helping Triage Issues
+=====================
+
+Once you know your way a little bit around how Python's source files are
+structured and you are comfortable working with patches, a great way to
+participate is to help triage issues.
+
+On a daily basis, issues get reported on the `issue tracker`_. Each and every
+issue needs to be triaged to make sure various things are in proper order. Even
+without special privileges you can help with this process.
+
+
+Bugs
+----
+
+For bugs, an issue needs to:
+
+* Clearly explain the bug so it can be reproduced
+* All relevant platform details are included
+* What version(s) of Python are affected by the bug are fully known
+* Is there a proper unit test that can reproduce the bug?
+
+These are things anyone can help with. For instance, if a bug is not clearly
+explained enough for you to reproduce it then there is a good chance a core
+developer won't be able to either. And it is always helpful to know if a bug
+not only affects the in-development version of Python, but whether it also
+affects other versions in maintenance mode. And if the bug lacks a unit test
+that should end up in Python's test suite, having that written can be very
+helpful.
+
+This is all helpful as it allows triagers to properly classify an issue so it
+can be handled by the right people in a timely fashion.
+
+
+Patches
+-------
+
+If an issue has a patch attached that has not been reviewed, you can help by
+making sure the patch:
+
+* Follows the style guides
+* Applies cleanly to an up-to-date checkout
+* Is a good solution to the problem it is trying to solve
+* There are proper tests
+* The proper documentation changes are included
+* The person is listed in ``Misc/ACKS``, either already or the patches add them
+
+Doing all of this allows core developers and triagers to more quickly look for
+subtle issues that only people with extensive experience working on Python's
+code base will notice.
+
+
+.. _issue tracker: http://bugs.python.org
