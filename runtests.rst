@@ -11,7 +11,8 @@ Running & Writing Tests
 Running
 -------
 
-The shortest, simplest way of running the test suite is::
+The shortest, simplest way of running the test suite is the following command
+from the root directory of your checkout (after you have built Python)::
 
     ./python -m test
 
