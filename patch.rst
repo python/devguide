@@ -58,8 +58,8 @@ To perform a quick sanity check on your patch, you can run::
 
     make patchcheck
 
-This will make sure extraneous whitespace has been removed from your patch,
-etc.
+This will check and/or fix various common things people forget to do for
+patches.
 
 To create your patch, you should generate a unified diff from your checkout's
 top-level directory::
