@@ -108,7 +108,7 @@ Committing/Rejecting
 Once your patch has reached an acceptable state (and thus considered
 "accepted"), it will either be committed or rejected. If it is rejected, please
 do not take it personally! Your work is still appreciated regardless of whether
-your patch is committed. Balancing what *does* and *`does not* go into Python
+your patch is committed. Balancing what *does* and *does not* go into Python
 is tricky and we simply cannot accept everyone's contributions.
 
 But if your patch is committed it will then go into Python's VCS to be released
