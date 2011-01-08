@@ -30,7 +30,6 @@ documentation.
 * :ref:`runtests`
 * Projects to get familiar with the development process
     * :ref:`coverage`
-    * `Make all unit tests discoverable by unittest <XXX>`_
     * `Fixing documentation bugs <XXX>`_
 * Projects for once you are comfortable
     * `Helping triage issues <XXX>`_
@@ -93,6 +92,10 @@ Resources
 
 .. todo::
     Think about suggesting going through stagnant issues (rather advanced)
+
+.. todo::
+    Could have people help make tests discoverable by unittest, but it requires
+    some upfront work (e.g., how to handle ResourceDenied)
 
 
 
