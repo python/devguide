@@ -11,6 +11,7 @@ Python Developer's Guide
    docquality
    helptriage
    fixingissues
+   silencewarnings
 
 
 .. todolist::
@@ -31,14 +32,15 @@ documentation.
     * `PEP 8`_
 * :ref:`patch`
 * :ref:`runtests`
-* Projects to get familiar with the development process
+* Beginner tasks to become familiar with the development process
     * :ref:`coverage`
     * :ref:`docquality`
-* Projects for once you are comfortable
+* Intermediate tasks for once you are comfortable
     * :ref:`helptriage`
-    * :ref:`fixingissues`
-    * `Fix all warnings raised when running the test suite w/ -uall <XXX>`_
+* Advanced tasks
     * Fixing issues found by the buildbots_
+    * :ref:`silencewarnings`
+    * :ref:`fixingissues`
 * `Gaining 'Developer' privileges for the issue tracker <XXX>`_
     * `Triaging issues <XXX>`_
     * `Reviewing patches <XXX>`_
