@@ -23,12 +23,17 @@ of ways. A third-party website at http://coverage.livinglogic.de/ provides an
 overall view of how good coverage is for various modules (you will want to
 focus on those in the ``Lib`` directory as those are the pure Python modules
 from Python's stdlib, and thus easier to work with than the C extension
-modules). Another is to follow the examples below and simply see what kind of
+modules). But since this is a third-party site we cannot promise that it will
+always be accessible or have useful information (i.e., be working properly).
+
+Another is to follow the examples below and simply see what kind of
 coverage your favorite module has. This is "stabbing in the dark", though, and
-so it might take some time to find a module that needs coverage help. Finally,
-you can simply run the test suite yourself with coverage turned on and see what
-modules need help. This has the drawback as the test suite takes some time to
-complete when run under coverage measuring.
+so it might take some time to find a module that needs coverage help.
+
+Finally, you can simply run the entire test suite yourself with coverage turned
+on and see what modules need help. This has the drawback as the test suite
+takes some time to complete when run under coverage measuring, but you will
+have an accurate, up-to-date notion of what modules need the most work.
 
 
 Using coverage.py
