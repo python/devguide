@@ -110,6 +110,9 @@ Resources
     Figure out where to put instructions for triagers on filling out issue
     fields properly
 
+.. todo::
+    Make sure it is explained somwhere how to apply a patch
+
 
 
 .. _buildbots: http://python.org/dev/buildbot/
