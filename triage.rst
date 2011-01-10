@@ -21,7 +21,6 @@ For bugs, an issue needs to:
 * Clearly explain the bug so it can be reproduced
 * All relevant platform details are included
 * What version(s) of Python are affected by the bug are fully known
-* Is there a proper unit test that can reproduce the bug?
 
 These are things you can help with once you have experience developing for
 Python. For instance, if a bug is not clearly explained enough for you to
