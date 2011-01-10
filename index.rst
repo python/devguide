@@ -105,6 +105,10 @@ Resources
     Could have people help make tests discoverable by unittest, but it requires
     some upfront work (e.g., how to handle ResourceDenied)
 
+.. todo::
+    Figure out where to put instructions for triagers on filling out issue
+    fields properly
+
 
 
 .. _buildbots: http://python.org/dev/buildbot/
