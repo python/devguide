@@ -49,8 +49,8 @@ documentation.
     * `Committing patches <XXX>`_
 
 
-Making changes to Python itself
--------------------------------
+Proposing changes to Python itself
+----------------------------------
 
 * `Changing something already in the stdlib <XXX>`_
 * Adding to the stdblib
