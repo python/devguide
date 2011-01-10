@@ -68,3 +68,11 @@ Some core developers enjoy spending time on IRC discussing various issues
 regarding Python's development in the #python-dev channel. This is not a place
 to ask for help with Python, but to discuss issues related to Python's own
 development.
+
+
+Blogs
+-----
+
+Several core developers are active bloggers and discuss Python's development
+that way. You can find their blogs (and varous other developers who use Python)
+at http://planet.python.org/.
