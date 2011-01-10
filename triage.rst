@@ -1,4 +1,4 @@
-.. _helptriage:
+.. _triage:
 
 Helping Triage Issues
 =====================
@@ -31,9 +31,10 @@ in-development version of Python, but whether it also affects other versions in
 maintenance mode. And if the bug lacks a unit test that should end up in
 Python's test suite, having that written can be very helpful.
 
-This is all helpful as it allows triagers (i.e., people with Developer
-privileges on the issue tracker) to properly classify an issue so it
-can be handled by the right core developers in a timely fashion.
+This is all helpful as it allows triagers (i.e.,
+:ref:`people with the Developer role on the issue tracker <devrole>`) to
+properly classify an issue so it can be handled by the right core developers in
+a timely fashion.
 
 
 Patches
@@ -49,9 +50,9 @@ making sure the patch:
 * The proper documentation changes are included
 * The person is listed in ``Misc/ACKS``, either already or the patches add them
 
-Doing all of this allows core developers and triagers to more quickly look for
-subtle issues that only people with extensive experience working on Python's
-code base will notice.
+Doing all of this allows core developers and :ref:`triagers <devrole>` to more
+quickly look for subtle issues that only people with extensive experience
+working on Python's code base will notice.
 
 There is a complete list of `open issues with patches`_, although to make sure
 that someone has not already done the checklist above as it is possible the

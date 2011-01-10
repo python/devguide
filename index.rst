@@ -11,7 +11,8 @@ Python Developer's Guide
    docquality
    silencewarnings
    fixingissues
-   helptriage
+   triage
+   devrole
 
 
 .. todolist::
@@ -39,8 +40,8 @@ documentation.
     * Fixing issues found by the buildbots_
     * :ref:`silencewarnings`
     * :ref:`fixingissues`
-    * :ref:`helptriage`
-* `Gaining 'Developer' privileges for the issue tracker <XXX>`_
+    * :ref:`triage`
+* :ref:`devrole`
     * `Marking issues as languishing <XXX>`_
 * `Following Python's development <XXX>`_
 * `Gaining commit privileges <XXX>`_
