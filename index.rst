@@ -41,8 +41,6 @@ documentation.
     * :ref:`fixingissues`
     * :ref:`helptriage`
 * `Gaining 'Developer' privileges for the issue tracker <XXX>`_
-    * `Triaging issues <XXX>`_
-    * `Reviewing patches <XXX>`_
 * `Following Python's development <XXX>`_
 * `Gaining commit privileges <XXX>`_
     * `Committing patches <XXX>`_
