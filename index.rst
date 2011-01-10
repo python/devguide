@@ -14,6 +14,7 @@ Python Developer's Guide
    triage
    devrole
    languishing
+   communication
 
 
 .. todolist::
@@ -44,7 +45,7 @@ not skip around within the documentation.
     * :ref:`triage`
 * :ref:`devrole`
     * :ref:`languishing`
-* `Following Python's development <XXX>`_
+* :ref:`communication`
 * `Gaining commit privileges <XXX>`_
     * `Committing patches <XXX>`_
 
