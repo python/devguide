@@ -13,6 +13,7 @@ Python Developer's Guide
    fixingissues
    triage
    devrole
+   languishing
 
 
 .. todolist::
@@ -42,7 +43,7 @@ documentation.
     * :ref:`fixingissues`
     * :ref:`triage`
 * :ref:`devrole`
-    * `Marking issues as languishing <XXX>`_
+    * :ref:`languishing`
 * `Following Python's development <XXX>`_
 * `Gaining commit privileges <XXX>`_
     * `Committing patches <XXX>`_
