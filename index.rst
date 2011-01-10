@@ -23,10 +23,10 @@ Contributing
 ------------
 
 People who wish to contribute to Python **must** read the following documents
-in their top-level order (sub-level documents can be read in any order). You
-can stop where you feel comfortable and begin contributing without reading and
-understanding all of these documents, but please do not skip around within the
-documentation.
+in the order provided.
+You can stop where you feel comfortable and begin contributing immediately
+without reading and understanding these documents all at once, but please do
+not skip around within the documentation.
 
 * :ref:`setup`
 * Coding style guides
@@ -35,11 +35,11 @@ documentation.
 * :ref:`patch`
 * :ref:`runtests`
 * Beginner tasks to become familiar with the development process
-    * :ref:`coverage`
     * :ref:`docquality`
+    * :ref:`coverage`
 * Advanced tasks for once you are comfortable
-    * Fixing issues found by the buildbots_
     * :ref:`silencewarnings`
+    * Fixing issues found by the buildbots_
     * :ref:`fixingissues`
     * :ref:`triage`
 * :ref:`devrole`
