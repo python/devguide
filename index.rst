@@ -67,6 +67,9 @@ Resources
     * `Meta tracker <http://psf.upfronthosting.co.za/roundup/meta>`_ (issue
       tracker for the issue tracker)
 * Buildbots_
+* Source code
+    * `Browse online <http://svn.python.org/view/>`_
+    * `Daily snapshot <http://svn.python.org/snapshots/>`_
 
 .. todo::
     move various files out of Misc to here (e.g., README.valgrind,
