@@ -9,9 +9,9 @@ Python Developer's Guide
    runtests
    coverage
    docquality
-   helptriage
-   fixingissues
    silencewarnings
+   fixingissues
+   helptriage
 
 
 .. todolist::
