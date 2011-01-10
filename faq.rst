@@ -105,20 +105,6 @@ PEPs        http://svn.python.org/projects/peps/trunk                      svn+s
 =========== ============================================================== ==========================================================================
 
 
-
-How do I browse the source code through a web browser?
--------------------------------------------------------------------------------
-
-Visit http://svn.python.org/view/ to browse the Subversion repository.
-
-
-Where can I find a downloadable snapshot of the source code?
--------------------------------------------------------------------------------
-
-Visit http://svn.python.org/snapshots/ to download a tarball containing a daily
-snapshot of the repository.
-
-
 Who has commit privileges on the Subversion repository?
 -------------------------------------------------------------------------------
 
@@ -319,19 +305,6 @@ symlink ``~/.gdbinit`` to ``Misc/gdbinit``.
 Patches
 =====================================================================
 
-How to make a patch?
--------------------------
-
-
-If you are using subversion (anonymous or developer) you can use
-subversion to make the patches for you. Just edit your local copy and
-enter the following command::
-
-  svn diff | tee ~/name_of_the_patch.diff
-
-Else you can use the diff util which comes with most operating systems (a
-Windows version is available as part of the cygwin tools).
-
 
 How do I apply a patch?
 -------------------------
@@ -358,79 +331,3 @@ Another option is to have 'patch' create backups of all files by using the
 use.
 
 
-How to submit a patch?
----------------------------
-
-Please consult the patch submission guidelines at
-http://www.python.org/patches/ .
-
-
-How to test a patch?
-------------------------------
-
-Firstly, you'll need to get a checkout of the source tree you wish to
-test the patch against and then build python from this source tree.
-
-Once you've done that, you can use Python's extensive regression test
-suite to check that the patch hasn't broken anything.
-
-In general, for thorough testing, use::
-
-  python -m test.regrtest -uall
-
-For typical testing use::
-
-  python -m test.regrtest
-
-For running specific test modules::
-
-  python -m test.regrtest test_mod1 test_mod2
-
-NB: Enabling the relevant test resources via ``-uall`` or something more
-specific is especially important when working on things like the
-networking code or the audio support - many of the relevant tests are
-skipped by default.
-
-For more thorough documentation,
-read the documentation for the ``test`` package at
-http://docs.python.org/library/test.html.
-
-If you suspect the patch may impact other operating systems, test as
-many as you have easy access to.  You can get help on alternate
-platforms by contacting the people listed on
-http://www.python.org/moin/PythonTesters, who have
-volunteered to support a particular operating system.
-
-
-How to change the status of a patch?
------------------------------------------
-
-
-To change the status of a patch or assign it to somebody else you have to
-have the Developer role in the bug tracker. Contact one of the project
-administrators if the following does not work for you.
-
-Click on the patch itself. In the screen that comes up, there is a drop-box
-for "Assigned To:" and a drop-box for "Status:" where you can select a new
-responsible developer or a new status respectively. After selecting the
-appropriate victim and status, hit the "Submit Changes" button at the bottom
-of the page.
-
-Note: If you are sure that you have the right permissions and a drop-box
-does not appear, check that you are actually logged in to Roundup!
-
-
-Bugs
-=====================================================================
-
-Where can I submit/view bugs for Python?
----------------------------------------------
-
-
-The Python project uses Roundup for bug tracking. Go to
-http://bugs.python.org/ for all bug management needs. You will need to
-create a Roundup account for yourself before submitting the first bug
-report; anonymous reports have been disabled since it was too
-difficult to get in contact with submitters. If you previously
-had used SourceForge to report Python bugs, you can use Roundup's
-"Lost your login?" link to obtain your Roundup password.
