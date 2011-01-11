@@ -47,50 +47,6 @@ PEPs        http://svn.python.org/projects/peps/trunk                      svn+s
 =========== ============================================================== ==========================================================================
 
 
-Who has commit privileges on the Subversion repository?
--------------------------------------------------------------------------------
-
-See http://www.python.org/dev/committers for a list of committers.
-
-
-How do I verify that my commit privileges are working?
--------------------------------------------------------------------------------
-
-UNIX
-'''''''''''''''''''
-
-If you are listed as a committer at http://www.python.org/dev/committers , then
-you should be able to execute::
-
-  ssh pythondev@svn.python.org
-
-and have the following printed to your terminal::
-
-  ( success ( 2 2 ( ) ( edit-pipeline svndiff1 absent-entries
-    commit-revprops depth log-revprops partial-replay ) ) )
-
-If something else is printed, then there is a problem with your SSH 2 public
-key and you should contact pydotorg@python.org .
-
-Windows
-'''''''''''''''''''
-
-If you are using Pageant, you can verify that your SSH 2 key is set up properly
-by running::
-
-  c:\path\to\putty\plink.exe pythondev@svn.python.org
-
-Using the proper path to your PuTTY installation, you should get a response
-from the server that says::
-
-  ( success ( 1 2 ( ANONYMOUS EXTERNAL ) ( edit-pipeline ) ) )
-
-If there is a failure, run ``plink`` with ``-v`` to analyse the problem.
-
-If you are using a profile in PuTTY, the best way to test is to try to log in
-through Open.
-
-
 
 What tools do I need to merge between branches?
 -----------------------------------------------
