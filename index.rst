@@ -108,7 +108,8 @@ Resources
 
 .. todo::
     Figure out where to put instructions for triagers on filling out issue
-    fields properly
+    fields properly; change pop-up explanations in tracker to point to doc
+    appropriately
 
 .. todo::
     Make sure it is explained somwhere how to apply a patch
