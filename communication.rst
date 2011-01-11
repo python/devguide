@@ -24,7 +24,7 @@ tree is frozen for commits, etc.), it is discussed here instead of python-dev
 to keep traffic down on the latter.
 
 Python-ideas_ is a mailing list open to the public to discuss ideas on changing
-Python. If a new idea does not start here (or python-list_, discussed beloew),
+Python. If a new idea does not start here (or python-list_, discussed below),
 it will get redirected here.
 
 Python-checkins_ sends out an email for every commit to Python's various
