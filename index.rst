@@ -15,6 +15,7 @@ Python Developer's Guide
    devrole
    languishing
    communication
+   coredev
 
 
 .. todolist::
@@ -46,7 +47,7 @@ not skip around within the documentation.
 * :ref:`devrole`
     * :ref:`languishing`
 * :ref:`communication`
-* `Gaining commit privileges <XXX>`_
+* :ref:`coredev`
     * `Committing patches <XXX>`_
 
 

@@ -41,9 +41,6 @@ The repositories most people will be interested in are:
 Repository  read-only                                                      read-write
 ----------- -------------------------------------------------------------- --------------------------------------------------------------------------
 PEPs        http://svn.python.org/projects/peps/trunk                      svn+ssh://pythondev@svn.python.org/peps/trunk
-2.7         http://svn.python.org/projects/python/branches/release27-maint svn+ssh://pythondev@svn.python.org/python/branches/release27-maint
-3.1         http://svn.python.org/projects/python/branches/release31-maint svn+ssh://pythondev@svn.python.org/python/branches/release31-maint
-3.2         http://svn.python.org/projects/python/branches/py3k            svn+ssh://pythondev@svn.python.org/python/branches/py3k
 =========== ============================================================== ==========================================================================
 
 
