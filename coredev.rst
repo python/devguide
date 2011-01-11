@@ -48,7 +48,7 @@ commit privileges, please say so. This will allow issues to be assigned to you.
 
 It is expected that on the issue tracker you have a username in the form of
 "first_name.last_name". If your initial issue tracker username is not of this
-form you can change it. This is so that it is easier to assign issues to the
+form, please change it. This is so that it is easier to assign issues to the
 right person.
 
 
@@ -63,9 +63,20 @@ SSH keys have specific formatting requirements).
 Your SSH key will be set to a username in the form of "first_name.last_name".
 This should match your username on the issue tracker.
 
-XXX verifying
+You can verify your commit access by looking at
+http://www.python.org/dev/committers which lists all core developers by
+username. You can also execute the follow command and look for the word
+"success" in the output::
 
-XXX Misc/Developers.rst
+    ssh pythondev@svn.python.org
+
+For Windows users using Pageant::
+
+    c:\path\to\putty\plink.exe pythondev@svn.python.org
+
+An entry in the ``Misc/Developers.txt`` file should also be entered for you.
+Typically the person who sponsored your application to become a core developer
+makes sure an entry is created for you.
 
 
 Sign a Contributor Agreement
