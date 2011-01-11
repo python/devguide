@@ -9,21 +9,6 @@ Title: Frequently Asked Questions for Python Developers
 .. contents:: :depth: 3
 .. sectnum::
 
-General Information
-=====================================================================
-
-
-How can I become a developer?
----------------------------------------------------------------------------
-
-Contribute on a regular basis through patches and ask for commit
-privileges once you have demonstrated a track record of being good
-at fixing things.
-
-(Raymond Hettinger commented on the
-`School of Hard Knocks <http://mail.python.org/pipermail/python-dev/2002-September/028725.html>`_ required.)
-
-
 
 Version Control
 ==================================
@@ -33,49 +18,6 @@ What do I need to use Subversion?
 -------------------------------------------------------------------------------
 
 .. _download Subversion: http://subversion.apache.org/packages.html
-
-UNIX
-'''''''''''''''''''
-
-If you have checkin rights, you need OpenSSH_.  This is needed to verify
-your identity when performing commits.
-
-.. _OpenSSH: http://www.openssh.org/
-
-Windows
-'''''''''''''''''''
-
-If you have checkin rights, you will also need an SSH client.
-`Download PuTTY and friends`_ (PuTTYgen, Pageant, and Plink) for this.  All
-other questions in this FAQ will assume you are using these tools.
-
-Once you have both Subversion and PuTTY installed you must tell Subversion
-where to find an SSH client.  Do this by editing
-``%APPDATA%\Subversion\config`` to have the following
-section::
-
-  [tunnels]
-  ssh="c:/path/to/putty/plink.exe" -T
-
-Change the path to be the proper one for your system.  The ``-T``
-option prevents a pseudo-terminal from being created.
-
-You can use Pageant to prevent from having to type in your password for your
-SSH 2 key constantly.  If you prefer not to have another program running,
-you need to create a profile in PuTTY.
-
-Go to Session:Saved Sessions and create a new profile named
-``svn.python.org``.  In Session:Host Name, enter ``svn.python.org``.  In
-SSH/Auth:Private key file select your private key.  In Connection:Auto-login
-username enter ``pythondev``.
-
-With this set up, paths are slightly different than most other settings in that
-the username is not required.  Do take notice of this when choosing to check
-out a project!
-
-.. _download TortoiseSVN: http://tortoisesvn.net/downloads
-.. _PuTTY: http://www.chiark.greenend.org.uk/~sgtatham/putty/
-.. _download PuTTY and friends: http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html
 
 
 How do I get a checkout of the repository (read-only or read-write)?
