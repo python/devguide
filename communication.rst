@@ -16,7 +16,7 @@ development. Discussion is focused on issues related to Python's development,
 such as how to handle a specific issue, a PEP, etc. Ideas about new
 functionality should **not** start here and instead should be sent to
 python-ideas_. Technical support questions should also not be asked here and
-instead should go to comp.lang.python_ or python-help_.
+instead should go to python-list_ or python-help_.
 
 The python-committers_ mailing list is publicly archived but only open to core
 developers to subscribe to. If something only affect core developers (e.g., the
@@ -24,8 +24,8 @@ tree is frozen for commits, etc.), it is discussed here instead of python-dev
 to keep traffic down on the latter.
 
 Python-ideas_ is a mailing list open to the public to discuss ideas on changing
-Python. If a new idea does not start here (or comp.lang.python_), it will get
-redirected here.
+Python. If a new idea does not start here (or python-list_, discussed beloew),
+it will get redirected here.
 
 Python-checkins_ sends out an email for every commit to Python's various
 repositories (both svn.python.org and hg.python.org). All core developers
@@ -38,7 +38,13 @@ only want an email for when a new issue is open, subscribe to
 new-bugs-announce_. If you would rather receive an email for all changes made
 to any issue, subscribe to python-bugs-list_.
 
+Sometimes people post new ideas to python-list_ to gather community opinion before
+heading to python-ideas_. The list is also sometimes known as comp.lang.python,
+the name of the newsgroup is mirrors (it is also known by the abbreviation
+c.l.py).
+
 A complete list of Python mailing lists can be found at http://mail.python.org.
+Most lists are also mirrored at http://news.gmane.org/.
 
 .. _issue tracker: http://bugs.python.org
 .. _new-bugs-announce: http://mail.python.org/mailman/listinfo/new-bugs-announce
@@ -48,17 +54,7 @@ A complete list of Python mailing lists can be found at http://mail.python.org.
 .. _python-dev: http://mail.python.org/mailman/listinfo/python-dev
 .. _python-help: http://mail.python.org/mailman/listinfo/python-help
 .. _python-ideas: http://mail.python.org/mailman/listinfo/python-ideas
-
-
-Newsgroups
-----------
-
-The newsgroup most closely related to Python's development is
-comp.lang.python_ (also available as a mailing list through python-list).
-Sometimes new ideas for Python start here to gather community opinion before
-heading to python-ideas_.
-
-.. _comp.lang.python: http://mail.python.org/mailman/listinfo/python-list
+.. _python-list: http://mail.python.org/mailman/listinfo/python-list
 
 
 IRC
