@@ -74,7 +74,7 @@ For Windows users using Pageant::
 
     c:\path\to\putty\plink.exe pythondev@svn.python.org
 
-An entry in the ``Misc/Developers.txt`` file should also be entered for you.
+An entry in the ``Misc/developers.txt`` file should also be entered for you.
 Typically the person who sponsored your application to become a core developer
 makes sure an entry is created for you.
 
@@ -97,15 +97,50 @@ first commit so as to not forget.
 
 
 
-Read-write Checkout
+Read/Write Checkout
 '''''''''''''''''''
 
-XXX
+With your commit privileges working and your contributor form submitted, you
+can now get a read/write checkout of the code. URLs for read/write checkouts
+are different than those for read-only checkouts as SSH is used instead of
+HTTP.
 
+For the development branch, you can check out the development branch with::
 
+    svn co svn+ssh://pythondev@svn.python.org/python/branches/py3k
+
+Make the appropriate changes to the URL to checkout maintenance branches by
+removing ``py3k`` and replacing it with the name of the branch you want.
 
 
 Responsibilities
 ----------------
 
-XXX
+As a core developer, there are certain things that are expected of you.
+
+First and foremost, be a good person. This might sound melodramatic, but you
+are now a member of the Python project and thus represent the project and your
+fellow core developers whenever you discuss Python with anyone. We have a
+reputation for being a very nice group of people and we would like to keep it
+that way.
+
+Second, please be prompt in responding to questions. We are all volunteers so
+what little free time one can dedicate to Python should be spent being
+productive. If you have been asked to respond to an issue or answer a question
+and you put it off it ends up stalling other people's work. It is completely
+acceptable to say you are too busy, but you need to say that instead of
+stringing people along. This obviously applies to anything you do on the issue
+tracker as well.
+
+Third, please list what areas you want to be considered an expert in the
+``Misc/maintainers.rst`` file (including stdlib modules). This allows triagers
+to direct issues your way when they involve an area you are an expert in. But,
+as stated in the second point above, if you do not have the time to answer
+questions promptly then please remove yourself as needed from the file so that
+you will not be bothered in the future. Once again, we all understand how life
+gets in the way, so no one will be insulted if you remove yourself from the
+list.
+
+And finally, enjoy yourself! Contributing to open source software should be fun
+(overall). If you find yourself no longer enjoying the work then either take a
+break or figure out what you need to do to make it enjoyable again.
