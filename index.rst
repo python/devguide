@@ -113,7 +113,11 @@ Resources
     appropriately
 
 .. todo::
-    Make sure it is explained somwhere how to apply a patch
+    Make sure it is explained somewhere how to apply a patch
+
+.. todo::
+    Go through http://docs.pythonsprints.com/core_development/ to make sure
+    nothing is missing here
 
 
 
