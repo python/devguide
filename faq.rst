@@ -44,65 +44,6 @@ PEPs        http://svn.python.org/projects/peps/trunk                      svn+s
 =========== ============================================================== ==========================================================================
 
 
-How do I prepare a new branch for merging?
-------------------------------------------
-
-You need to initialize a new branch by having ``svnmerge.py`` discover the
-revision number that the branch was created with.  Do this with the command::
-
-    svnmerge.py init
-
-Then check in the change to the root of the branch.  This is a one-time
-operation (i.e. only when the branch is originally created, not when each
-developer creates a local checkout for the branch).
-
-
-How do I merge between branches?
---------------------------------
-
-In the current situation for Python there are four branches under development,
-meaning that there are three branches to merge into. Assuming a change is
-committed into ``trunk`` as revision 0001, you merge into the 2.x maintenance
-by doing::
-
-    # In the 2.x maintenance branch checkout.
-    svnmerge.py merge -r 0001
-    svn commit -F svnmerge-commit-message.txt  # r0002
-
-To pull into py3k::
-
-    # In a py3k checkout.
-    svnmerge.py merge -r 0001
-    svn commit -F svnmerge-commit-message.txt  # r0003
-
-The 3.x maintenance branch is a special case as you must pull from the py3k
-branch revision, *not* trunk::
-
-    # In a 3.x maintenance checkout.
-    svnmerge.py merge -r 0003  # Notice the rev is the one from py3k!
-    svn resolved .
-    svn commit -F svnmerge-commit-message.txt
-
-
-How do I block a specific revision from being merged into a branch?
--------------------------------------------------------------------
-
-With the revision number that you want to block handy and ``svnmerge.py``, go
-to your checkout of the branch where you want to block the revision and run::
-
-    svnmerge.py block -r <revision #>
-
-This will modify the repository's top directory (which should be your current
-directory) and create ``svnmerge-commit-message.txt`` which contains a
-generated log message.
-
-If the command says "no available revisions to block", then it means someone
-already merged the revision.
-
-To check in the new metadata, run::
-
-    svn ci -F svnmerge-commit-message.txt
-
 
 SSH
 =======
@@ -157,21 +98,6 @@ will load the key every time you log in.
 
 
 .. _Pageant: http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html
-
-Can I make check-ins from machines other than the one I generated the keys on?
-------------------------------------------------------------------------------
-
-Yes, all you need is to make sure that the machine you want to check
-in code from has both the public and private keys in the standard
-place that ssh will look for them (i.e. ~/.ssh on Unix machines).
-Please note that although the key file ending in .pub contains your
-user name and machine name in it, that information is not used by the
-verification process, therefore these key files can be moved to a
-different computer and used for verification.  Please guard your keys
-and never share your private key with anyone.  If you lose the media
-on which your keys are stored or the machine on which your keys are
-stored, be sure to report this to pydotorg@python.org at the same time
-that you change your keys.
 
 
 
