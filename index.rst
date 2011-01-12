@@ -16,6 +16,7 @@ Python Developer's Guide
    languishing
    communication
    coredev
+   committing
 
 
 .. todolist::
@@ -48,7 +49,7 @@ not skip around within the documentation.
     * :ref:`languishing`
 * :ref:`communication`
 * :ref:`coredev`
-    * `Committing patches <XXX>`_
+    * :ref:`committing`
 
 
 Proposing changes to Python itself
