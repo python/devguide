@@ -44,14 +44,6 @@ PEPs        http://svn.python.org/projects/peps/trunk                      svn+s
 =========== ============================================================== ==========================================================================
 
 
-
-What tools do I need to merge between branches?
------------------------------------------------
-
-You need `svnmerge.py
-<http://svn.apache.org/repos/asf/subversion/trunk/contrib/client-side/svnmerge/svnmerge.py>`__.
-
-
 How do I prepare a new branch for merging?
 ------------------------------------------
 

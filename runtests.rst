@@ -33,6 +33,8 @@ If you want to run a single test, simply specify the test name as an argument::
 
     ./python -m test test_abc
 
+.. _strenuous_testing:
+
 Finally, if you want to run tests under a more strenuous set of settings, you
 can run test as::
 
