@@ -29,14 +29,14 @@ your working directory to the maintenance branch and run the command::
 
     svnmerge.py merge -r 42
 
-This will try to apply the patch to the current patch and generate a commit
+This will try to apply the patch to the current branch and generate a commit
 message. You will need to revert ``Misc/NEWS`` and do a new entry (the file
 changes too much between releases to ever have a merge succeed). Once your
 checkout is ready to be committed, do::
 
     svn ci -F svnmerge-commit-message.txt
 
-This will commit the bacport along with using the commit message created by
+This will commit the backport along with using the commit message created by
 ``svnmerge.py`` for you.
 
 If it turns out you do not have the time to do a backport, then at least leave
