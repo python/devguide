@@ -79,6 +79,8 @@ Typically the person who sponsored your application to become a core developer
 makes sure an entry is created for you.
 
 
+.. _contributor_agreement:
+
 Sign a Contributor Agreement
 ''''''''''''''''''''''''''''
 
