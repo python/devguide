@@ -18,8 +18,9 @@ functionality should **not** start here and instead should be sent to
 python-ideas_. Technical support questions should also not be asked here and
 instead should go to python-list_ or python-help_.
 
-The python-committers_ mailing list is publicly archived but only open to core
-developers to subscribe to. If something only affect core developers (e.g., the
+The python-committers_ mailing list is a private mailing list for core
+developers (the archives are publicly available).
+If something only affects core developers (e.g., the
 tree is frozen for commits, etc.), it is discussed here instead of python-dev
 to keep traffic down on the latter.
 
