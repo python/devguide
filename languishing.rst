@@ -10,7 +10,7 @@ take too much effort for little gain, and so no one wants to do the work (or
 would simply break too much pre-existing code without a different solution).
 
 In these cases an issue will languish_ in the `issue tracker`_, and its
-status should should have its status set as such. This
+status should should be set as such. This
 serves the purpose of preventing people who are trying to :ref:`fix issues
 <fixingissues>` from wasting time on issues that even core developers cannot
 come up with an agreed-upon solution for.
