@@ -121,6 +121,9 @@ Resources
     Go through http://docs.pythonsprints.com/core_development/ to make sure
     nothing is missing here
 
+.. todo::
+    Talk to Collin et. al. about an unladen task.
+
 
 
 .. _buildbots: http://python.org/dev/buildbot/
