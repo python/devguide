@@ -71,5 +71,5 @@ Blogs
 -----
 
 Several core developers are active bloggers and discuss Python's development
-that way. You can find their blogs (and varous other developers who use Python)
+that way. You can find their blogs (and various other developers who use Python)
 at http://planet.python.org/.
