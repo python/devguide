@@ -19,6 +19,7 @@ Python Developer's Guide
    committing
 
    stdlibchanges
+   langchanges
 
 
 .. todolist::
@@ -58,7 +59,7 @@ Proposing changes to Python itself
 ----------------------------------
 
 * :ref:`stdlibchanges`
-* `Changing the language <XXX>`_
+* :ref:`langchanges`
 
 
 .. _resources:
