@@ -133,8 +133,11 @@ formatted.
 
 When you have listened to, responded, and integrated as appropriate the
 feedback from python-ideas into your PEP, you may send it to python-dev. You
-will once again receive a large amount of feedback and discussion. If the
-core developers end up agreeng in general to accepting your PEP then the module
+will once again receive a large amount of feedback and discussion. A PEP
+dictator will be assigned who make the final call on whether the PEP will be
+accepted or not. If the PEP dictator agrees to accept your PEP (which typically
+means that the core developers end up agreeng in general to accepting
+your PEP) then the module
 will be added to the stdlib once the creators of the module sign
 :ref:`contributor agreements <contributor_agreement>`.
 
