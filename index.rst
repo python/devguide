@@ -18,6 +18,8 @@ Python Developer's Guide
    coredev
    committing
 
+   stdlibchanges
+
 
 .. todolist::
 
@@ -55,10 +57,7 @@ not skip around within the documentation.
 Proposing changes to Python itself
 ----------------------------------
 
-* `Changing something already in the stdlib <XXX>`_
-* Adding to the stdblib
-    * `Adding to a pre-existing module <XXX>`_
-    * `Adding a new module <XXX>`_
+* :ref:`stdlibchanges`
 * `Changing the language <XXX>`_
 
 
