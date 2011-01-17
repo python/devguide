@@ -101,9 +101,6 @@ Resources
     and http://bugs.python.org/issue10894
 
 .. todo::
-    Think about suggesting going through stagnant issues (rather advanced)
-
-.. todo::
     Could have people help make tests discoverable by unittest, but it requires
     some upfront work (e.g., how to handle ResourceDenied)
 
