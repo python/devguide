@@ -21,7 +21,7 @@ If you have found that a function, method, or class is useful and you believe
 it would be useful to the general Python community, there are some steps to go
 through in order to see it added to the stdlib.
 
-First is you need to gauge the usefulness of the code. Typically this is done
+First is you should gauge the usefulness of the code. Typically this is done
 by sharing the code publicly. You have a couple of options for this. One is to
 post it online at the `Python Cookbook`_. Based on feedback or reviews of the
 recipe you can see if others find the functionality as useful as you do.
@@ -29,7 +29,8 @@ Another is to do a blog post about the code and see what kind of responses you
 receive. Posting to python-list (see :ref:`communication` for where to find the
 list and other mailing lists) to discuss your code also works. Finally, asking
 on a specific :abbr:`SIG (special interest group)` from mail.python.org or
-python-ideas is also acceptable.
+python-ideas is also acceptable. This is not a required step but it is
+suggested.
 
 If you have found general acceptance and usefulness for your code from people,
 you can open an issue on the `issue tracker`_ with the code attached as a
