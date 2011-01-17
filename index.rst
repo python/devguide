@@ -91,8 +91,7 @@ Resources
     authors on 2011-01-17
 
 .. todo::
-    See if tempfile or test.support has a context manager that creates and
-    deletes a temp file so as to move off of test.support.TESTFN.
+    move off of test.support.TESTFN to tempfile.NamedTemporaryFile
 
 .. todo::
     Create test.support.optional_import() for tests to use to import modules
@@ -123,7 +122,7 @@ Resources
     nothing is missing here
 
 .. todo::
-    Talk to Collin et. al. about an unladen task.
+    Talk to Collin et. al. about an unladen task; emailed 2011-01-17
 
 
 Indices and tables
