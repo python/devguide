@@ -15,7 +15,7 @@ programming language are difficult to make. When the language changes,
 **every** Python programmer already in existence and all Python programmers to
 come will end up eventually learning about the change you want to propose.
 Books will need updating, code will be changed, and a new way to do things will
-need to be learned. Change to the Python programing language are never taken
+need to be learned. Changes to the Python programing language are never taken
 lightly.
 
 Because of the seriousness that language changes carry, any change must be

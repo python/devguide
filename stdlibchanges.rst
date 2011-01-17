@@ -39,7 +39,7 @@ you can open an issue on the `issue tracker`_ with the code attached as a
 If a core developer decides that your code would be useful to the general
 Python community, they will then commit your code. If your code is not picked
 up by a core developer and committed then please do not take this personally.
-Through your public sharing of your code in order to gauage community support
+Through your public sharing of your code in order to gauge community support
 for it you at least can know that others will come across it who may find it
 useful.
 
@@ -81,7 +81,7 @@ it.
 Requirements
 ''''''''''''''
 In order for a module to even be considered for inclusion into the stdlib, a
-couple requirements must be met.
+couple of requirements must be met.
 
 The most basic is that the code must meet
 :ref:`standard patch requirements <patch>`. For code that has
@@ -93,7 +93,7 @@ of Python's conservative nature when it comes to backwards-compatibility, when
 a module its API becomes frozen. This means that a module should only enter the
 stdlib when it is mature and gone through its "growing pains".
 
-The module needs to be consideredbest-of-breed. When something is included in
+The module needs to be considered best-of-breed. When something is included in
 the stdlib it tends to be chosen first for products over other third-party
 solutions. By virtue of having been available to the public for at least a
 year, a module needs to have established itself as (one of) the top choices by
@@ -111,7 +111,7 @@ Someone involved with the development of the
 module must promise to help maintain the module in the stdlib for two years.
 This not only helps out other core developers by alleviating workload from bug
 reports that arrive from the first Python release containing the module, but
-also help make sure that the overall design of the module continues to be
+also helps to make sure that the overall design of the module continues to be
 uniform.
 
 
@@ -138,7 +138,7 @@ feedback from python-ideas into your PEP, you may send it to python-dev. You
 will once again receive a large amount of feedback and discussion. A PEP
 dictator will be assigned who make the final call on whether the PEP will be
 accepted or not. If the PEP dictator agrees to accept your PEP (which typically
-means that the core developers end up agreeng in general to accepting
+means that the core developers end up agreeing in general to accepting
 your PEP) then the module
 will be added to the stdlib once the creators of the module sign
 :ref:`contributor agreements <contributor_agreement>`.
