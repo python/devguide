@@ -25,6 +25,9 @@ First is you should gauge the usefulness of the code. Typically this is done
 by sharing the code publicly. You have a couple of options for this. One is to
 post it online at the `Python Cookbook`_. Based on feedback or reviews of the
 recipe you can see if others find the functionality as useful as you do.
+A search of the issue tracker for previous suggestions related to the proposed
+addition may turn up a rejected issue that explains why the suggestion will not
+be accepted.
 Another is to do a blog post about the code and see what kind of responses you
 receive. Posting to python-list (see :ref:`communication` for where to find the
 list and other mailing lists) to discuss your code also works. Finally, asking
