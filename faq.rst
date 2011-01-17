@@ -98,34 +98,3 @@ will load the key every time you log in.
 
 
 .. _Pageant: http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html
-
-
-Patches
-=====================================================================
-
-
-How do I apply a patch?
--------------------------
-
-For the general case, to apply a patch go to the directory that the patch was
-created from (usually /dist/src/) and run::
-
-  patch -p0 < name_of_the_patch.diff
-
-The ``-p`` option specifies the number of directory separators ("/" in the
-case of UNIX) to remove from the paths of the files in the patch.  ``-p0``
-leaves the paths alone.
-
-
-How do I undo an applied patch?
--------------------------------
-
-Undoing a patch differs from applying one by only a command-line option::
-
-  patch -R -p0 < name_of_the_patch.diff
-
-Another option is to have 'patch' create backups of all files by using the
-``-b`` command-line option.  See the man page for 'patch' on the details of
-use.
-
-
