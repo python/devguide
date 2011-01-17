@@ -32,7 +32,9 @@ to new semantics).
 Third, make sure you have proper tests to verify your patch works as expected.
 Patches will not be accepted without the proper tests!
 
-Fourth, if you are not already in the ``Misc/ACKS`` file then add your name. If
+Fourth, proper documentation additions/changes should be included.
+
+Fifth, if you are not already in the ``Misc/ACKS`` file then add your name. If
 you have taken the time to diagnose a problem, invent a solution, code it up,
 and submit a patch you deserve to be recognized as having contributed to
 Python. This also means you need to fill out a `contributor form`_ which

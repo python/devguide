@@ -81,8 +81,10 @@ it.
 Requirements
 ''''''''''''''
 In order for a module to even be considered for inclusion into the stdlib, a
-couple requirements must be met. The most basic is that the code must meet the
-same requirements as that of any other :ref:`patch <patch>`. For code that has
+couple requirements must be met.
+
+The most basic is that the code must meet
+:ref:`standard patch requirements <patch>`. For code that has
 been developed outside the stdlib typically this means making sure the coding
 style guides are followed and that the proper tests have been written.
 
