@@ -81,8 +81,8 @@ Resources
     2011-01-17 if there were objections to my plans
 
 .. todo::
-    Move various informational PEPs out of the PEP index and over here
-    (.e.g, grammar and compiler guides)
+    Move various PEPs 306 and 339 out of the PEP index and over here; emailed
+    authors on 2011-01-17
 
 .. todo::
     See if tempfile or test.support has a context manager that creates and
