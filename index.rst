@@ -77,7 +77,8 @@ Resources
 
 .. todo::
     move various files out of Misc to here (e.g., README.valgrind,
-    Porting, SpecialBuilds.txt, maintainers.rst, etc.)
+    Porting, SpecialBuilds.txt, maintainers.rst, etc.); asked python-dev on
+    2011-01-17 if there were objections to my plans
 
 .. todo::
     Write a README.gdb for Misc to cover both gdbinit and python-gdb.py
