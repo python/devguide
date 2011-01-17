@@ -121,6 +121,9 @@ Resources
 .. todo::
     Talk to Collin et. al. about an unladen task; emailed 2011-01-17
 
+.. todo::
+    Make dev FAQ into a tools FAQ
+
 
 Indices and tables
 ==================
