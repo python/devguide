@@ -81,9 +81,6 @@ Resources
     2011-01-17 if there were objections to my plans
 
 .. todo::
-    Write a README.gdb for Misc to cover both gdbinit and python-gdb.py
-
-.. todo::
     Move various informational PEPs out of the PEP index and over here
     (.e.g, grammar and compiler guides)
 
