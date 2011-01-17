@@ -68,6 +68,14 @@ top-level directory::
 
     svn diff > patch.diff
 
+To apply a patch generated this way, do::
+
+    patch -p0 < patch.diff
+
+To undo a patch, do::
+
+    patch -R -p0 < patch.diff
+
 
 Submitting
 ----------
