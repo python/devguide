@@ -75,6 +75,12 @@ Resources
     * `Browse online <http://svn.python.org/view/>`_
     * `Daily snapshot <http://svn.python.org/snapshots/>`_
 
+
+.. _buildbots: http://python.org/dev/buildbot/
+.. _PEP 7: http://www.python.org/dev/peps/pep-0007
+.. _PEP 8: http://www.python.org/dev/peps/pep-0008
+
+
 .. todo::
     move various files out of Misc to here (e.g., README.valgrind,
     Porting, SpecialBuilds.txt, maintainers.rst, etc.); asked python-dev on
@@ -118,12 +124,6 @@ Resources
 
 .. todo::
     Talk to Collin et. al. about an unladen task.
-
-
-
-.. _buildbots: http://python.org/dev/buildbot/
-.. _PEP 7: http://www.python.org/dev/peps/pep-0007
-.. _PEP 8: http://www.python.org/dev/peps/pep-0008
 
 
 Indices and tables
