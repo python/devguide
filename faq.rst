@@ -100,21 +100,6 @@ will load the key every time you log in.
 .. _Pageant: http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html
 
 
-
-Editors and Tools
-=====================================================================
-
-
-What support is included in Python's source code for gdb?
-----------------------------------------------------------
-
-The ``Misc/gdbinit`` file contains several helpful commands that can be added
-to your gdb session. You can either copy the commands into your own
-``.gdbinit`` file or, if you don't have your own version of the file, simply
-symlink ``~/.gdbinit`` to ``Misc/gdbinit``.
-
-
-
 Patches
 =====================================================================
 
