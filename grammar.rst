@@ -7,14 +7,12 @@ Abstract
 --------
 
 There's more to changing Python's grammar than editing
-Grammar/Grammar and Python/compile.c.  This PEP aims to be a
+Grammar/Grammar and Python/compile.c.  This document aims to be a
 checklist of places that must also be fixed.
 
-It is probably incomplete.  If you see omissions, just add them if
-you can -- you are not going to offend the author's sense of
-ownership.  Otherwise submit a bug or patch and assign it to mwh.
+It is probably incomplete.  If you see omissions,  submit a bug or patch.
 
-This PEP is not intended to be an instruction manual on Python
+This document is not intended to be an instruction manual on Python
 grammar hacking, for several reasons.
 
 
@@ -36,8 +34,7 @@ Checklist
   regenerate Include/Python-ast.h and Python/Python-ast.c.
 
 * Python/ast.c will need changes to create the AST objects involved with the
-  Grammar change.  Lib/compiler/ast.py will need matching changes to the
-  pure-python AST objects.
+  Grammar change.
 
 * Parser/pgen needs to be rerun to regenerate Include/graminit.h and
   Python/graminit.c. (make should handle this for you.)
@@ -55,10 +52,6 @@ Checklist
   bang on Modules/parsermodule.c until it passes.
 
 * Add some usage of your new syntax to test_grammar.py
-
-* The compiler package.  A good test is to compile the standard
-  library and test suite with the compiler package and then check
-  it runs.  Note that this only needs to be done in Python 2.x.
 
 * If you've gone so far as to change the token structure of
   Python, then the Lib/tokenizer.py library module will need to be changed.
