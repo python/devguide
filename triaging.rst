@@ -74,7 +74,7 @@ How important is this issue?
 
 Keywords
 ''''''''
-Essentially flags about the issue. Multiple values are possible.
+Various flags about the issue. Multiple values are possible.
 
 * after moratorium
     The issue is in regards to a language change which is not allowed during
