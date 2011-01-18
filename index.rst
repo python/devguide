@@ -11,7 +11,7 @@ Python Developer's Guide
    docquality
    silencewarnings
    fixingissues
-   triage
+   helptriage
    devrole
    languishing
    communication
@@ -47,7 +47,7 @@ not skip around within the documentation.
     * :ref:`silencewarnings`
     * Fixing issues found by the buildbots_
     * :ref:`fixingissues`
-    * :ref:`triage`
+    * :ref:`helptriage`
 * :ref:`devrole`
     * :ref:`languishing`
 * :ref:`communication`

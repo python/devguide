@@ -1,4 +1,4 @@
-.. _triage:
+.. _helptriage:
 
 Helping Triage Issues
 =====================
