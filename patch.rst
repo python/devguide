@@ -52,9 +52,10 @@ Generation
 ''''''''''
 
 Before creating your patch, you should make sure that the entire test suite
-runs without failure because of your changes. The only time a patch will be
-accepted with failing tests is because the tests fail without the patch applied
-and and the patch does not make the pre-existing failures worse.
+:ref:`runs <runtests>` without failure because of your changes.  It is not
+sufficient to only run whichever test seems impacted by your changes, because
+there might be interferences unknown to you between your changes and some
+other part of the interpreter.
 
 To perform a quick sanity check on your patch, you can run::
 
