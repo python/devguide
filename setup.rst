@@ -15,33 +15,11 @@ structure of a CPython checkout.
 Version Control Setup
 ---------------------
 
-CPython is developed using svn_. Make sure the following settings are in your
-svn config file (``~/.subversion/config`` under UNIX)::
-
- [miscellany]
- enable-auto-props = yes
-
- [auto-props]
- * = svn:eol-style=native
- *.c = svn:keywords=Id
- *.h = svn:keywords=Id
- *.py = svn:keywords=Id
- *.txt = svn:keywords=Author Date Id Revision
-
-The ``[auto-props]`` line specifies the beginning of the section in the config
-file dealing with svn properties and line endings. The ``svn:eol-style``
-setting tells Subversion to check out files using the native line endings on
-your OS.  It will also automatically convert line endings upon committal so
-that they are consistent across all platforms.  The ``svn:keywords`` settings
-are to automatically substitute ``$keyword$`` arguments in files that match the
-pattern.  ``*.txt`` has more options so as to cover all needed keywords for
-PEPs.
-
-The ``[miscellany]`` section and its one option make svn apply the
-various rules in the ``[auto-props]`` section automatically to all added or
-imported files into the respository.
-
-.. _svn: http://subversion.tigris.org/
+CPython is developed using `Subversion (commonly abbreviated SVN)
+<http://subversion.tigris.org/>`_.
+It is easily available for common Unix systems by way of the standard package
+manager; under Windows, you might want to use the `TortoiseSVN
+<http://tortoisesvn.net/>`_ graphical client.
 
 
 Checking out the code
@@ -96,7 +74,7 @@ then compile it.
 
 Configuration is typically::
 
-  ./configure --prefix=/dev/null --with-pydebug
+  ./configure --with-pydebug
 
 More flags are available to ``configure``, but this is the minimum you should
 do. This will give you a debug version of Python along with the safety measure
@@ -121,21 +99,30 @@ which is the default).
 Windows
 '''''''
 
-For :abbr:`VC 9 (Visual C++ 9)`, the ``PCbuild`` directory contains the build
-files (for older versions of :abbr:`VC`, see the ``PC`` directory). For a free
-compiler for Windows, go to http://www.microsoft.com/express/ .
+For Microsoft Visual Studio 2008 (also named Visual C++ 9), the ``PCbuild``
+directory contains the build files (for older versions of Visual Studio, see
+the ``PC`` directory).  The full version of Visual Studio is not necessary
+for common tasks; gratis versions from http://www.microsoft.com/express/ are
+sufficient.
 
-To build from the GUI, load the project files and press F7. Make sure to
-choose the "Debug" build.
+To build from the Visual Studio GUI, load the project files and press F7. Make
+sure have chosen the "Debug" build first.
 
-If you want to build from the command line, run the
-``build_env.bat`` file to get a terminal with proper environment variables.
-From that terminal, run::
+.. XXX: doesn't work
+   If you want to build from the command line, you can run the
+   ``build_env.bat`` file to get a terminal with proper environment variables.
+   From that terminal, run::
 
-    build.bat -c Debug
+       build.bat -c Debug
 
-Once built you will want to set Python as a startup project. F5 will
-launch the interpreter as well as double-clicking the binary.
+Once built you might want to set Python as a startup project. Pressing F5 in
+Visual Studio will launch the interpreter.
+
+If you want to launch the compiled interpreter from the command-line, the
+path varies according to the build.  For a 32-bit build in debug mode, you
+have to invoke ``PCBuild\python_d.exe``, for a 64-bit build in debug mode,
+``PCBuild\AMD64\python_d.exe``.  If you are compiling in release mode (which
+you shouldn't, in general), replace ``python_d.exe`` with ``python.exe``.
 
 
 Editors and Tools
