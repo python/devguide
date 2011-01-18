@@ -74,7 +74,7 @@ To apply a patch generated this way, do::
 
 To undo a patch, you can revert **all** changes made in your checkout::
 
-    svn revert -R
+    svn revert -R .
 
 
 Submitting
