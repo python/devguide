@@ -93,10 +93,9 @@ Resources
     2011-01-17 if there were objections to my plans
 
 .. todo::
-    Create test.support.optional_import() for tests to use to import modules
-    that are optional on various platforms. This would allow for moving away
-    from ImportError representing a skipped test and also rip out the
-    expectations stuff from regrtest and put it with the tests instead.
+    Figure out where to put instructions for triagers on filling out issue
+    fields properly; change pop-up explanations in tracker to point to doc
+    appropriately; http://wiki.python.org/moin/TrackerDocs/
 
 .. todo::
     Think about beginner task of properly making APIs private (i.e., leading
@@ -105,23 +104,24 @@ Resources
     and http://bugs.python.org/issue10894
 
 .. todo::
-    Could have people help make tests discoverable by unittest, but it requires
-    some upfront work (e.g., how to handle ResourceDenied)
+    Make dev FAQ into a tools FAQ
 
 .. todo::
-    Figure out where to put instructions for triagers on filling out issue
-    fields properly; change pop-up explanations in tracker to point to doc
-    appropriately; http://wiki.python.org/moin/TrackerDocs/
+    Talk to Collin et. al. about an unladen task; emailed 2011-01-17
 
 .. todo::
     Go through http://docs.pythonsprints.com/core_development/ to make sure
     nothing is missing here
 
 .. todo::
-    Talk to Collin et. al. about an unladen task; emailed 2011-01-17
+    Create test.support.optional_import() for tests to use to import modules
+    that are optional on various platforms. This would allow for moving away
+    from ImportError representing a skipped test and also rip out the
+    expectations stuff from regrtest and put it with the tests instead.
 
 .. todo::
-    Make dev FAQ into a tools FAQ
+    Could have people help make tests discoverable by unittest, but it requires
+    some upfront work (e.g., how to handle ResourceDenied)
 
 
 Indices and tables
