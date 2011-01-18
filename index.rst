@@ -91,9 +91,6 @@ Resources
     authors on 2011-01-17
 
 .. todo::
-    move off of test.support.TESTFN to tempfile.NamedTemporaryFile
-
-.. todo::
     Create test.support.optional_import() for tests to use to import modules
     that are optional on various platforms. This would allow for moving away
     from ImportError representing a skipped test and also rip out the
