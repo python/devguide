@@ -68,6 +68,12 @@ top-level directory::
 
     svn diff > patch.diff
 
+If your work needs some new files to be added to the source tree, remember
+to ``svn add`` them before generating the patch::
+
+   svn add Lib/newfile.py
+   svn diff > patch.diff
+
 To apply a patch generated this way, do::
 
     patch -p0 < patch.diff
