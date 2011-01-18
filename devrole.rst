@@ -4,7 +4,7 @@ Gaining the "Developer" Role on the Issue Tracker
 =================================================
 
 When you have consistently shown the ability to properly
-:ref:`help triage issues <triage>` without guidance, you may request that you
+:ref:`help triage issues <helptriage>` without guidance, you may request that you
 be given the "Developer" role on the `issue tracker`_. You can make the request
 of any person who already has the Developer role. If they decide you are ready
 to gain the extra privileges on the tracker they will then act as a mentor to
