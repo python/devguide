@@ -25,9 +25,6 @@ Python Developer's Guide
    compiler
 
 
-.. todolist::
-
-
 Contributing
 ------------
 
