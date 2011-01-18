@@ -22,6 +22,7 @@ Python Developer's Guide
    langchanges
 
    grammar
+   compiler
 
 
 .. todolist::
@@ -78,6 +79,7 @@ Resources
     * `Daily snapshot <http://svn.python.org/snapshots/>`_
 * Help with ...
     * :ref:`grammar`
+    * :ref:`compiler`
 
 
 .. _buildbots: http://python.org/dev/buildbot/
