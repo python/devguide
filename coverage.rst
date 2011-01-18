@@ -36,6 +36,9 @@ takes some time to complete when run under coverage measuring, but you will
 have an accurate, up-to-date notion of what modules need the most work.
 
 
+Measuring Coverage
+""""""""""""""""""
+
 Using coverage.py
 -----------------
 
@@ -136,3 +139,13 @@ you want the coverage data to end up it will go somewhere you don't expect.
 Once the tests are done you will find the directory you specified contains
 files for each executed module along with which lines were executed how many
 times.
+
+
+Filing the Issue
+""""""""""""""""
+Once you have increased coverage, you need to
+:ref:`generate the patch <patch>`, submit it to the `issue tracker`_. For the
+issue set the Components to "Test" and Versions to the version of Python you
+worked on (i.e., the in-development version).
+
+.. _issue tracker: http://bugs.python.org
