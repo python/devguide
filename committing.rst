@@ -31,8 +31,16 @@ your working directory to the maintenance branch and run the command::
 
 This will try to apply the patch to the current branch and generate a commit
 message. You will need to revert ``Misc/NEWS`` and do a new entry (the file
-changes too much between releases to ever have a merge succeed). Once your
-checkout is ready to be committed, do::
+changes too much between releases to ever have a merge succeed). To do a
+reversion, you can either undo the changes::
+
+    svn revert Misc/NEWS
+
+or you can manually fix the issue and tell svn the problem is resolved::
+
+    svn resolved Misc/NEWS
+
+Once your checkout is ready to be committed, do::
 
     svn ci -F svnmerge-commit-message.txt
 
