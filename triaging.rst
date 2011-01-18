@@ -25,8 +25,6 @@ Stage
 '''''
 What is next to advance the issue forward.
 
-* unit test needed
-    A reproducible test is needed before work can continue.
 * needs patch
     The bug lacks a patch to solve the problem.
 * patch review
