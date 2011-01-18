@@ -72,9 +72,9 @@ To apply a patch generated this way, do::
 
     patch -p0 < patch.diff
 
-To undo a patch, do::
+To undo a patch, you can revert **all** changes made in your checkout::
 
-    patch -R -p0 < patch.diff
+    svn revert -R
 
 
 Submitting
