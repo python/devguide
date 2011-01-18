@@ -13,6 +13,7 @@ Python Developer's Guide
    fixingissues
    helptriage
    devrole
+   triaging
    languishing
    communication
    coredev
@@ -49,6 +50,7 @@ not skip around within the documentation.
     * :ref:`fixingissues`
     * :ref:`helptriage`
 * :ref:`devrole`
+    * :ref:`triaging`
     * :ref:`languishing`
 * :ref:`communication`
 * :ref:`coredev`
@@ -88,11 +90,6 @@ Resources
     move various files out of Misc to here (e.g., README.valgrind,
     Porting, SpecialBuilds.txt, maintainers.rst, etc.); asked python-dev on
     2011-01-17 if there were objections to my plans
-
-.. todo::
-    Figure out where to put instructions for triagers on filling out issue
-    fields properly; change pop-up explanations in tracker to point to doc
-    appropriately; http://wiki.python.org/moin/TrackerDocs/
 
 .. todo::
     Think about beginner task of properly making APIs private (i.e., leading
