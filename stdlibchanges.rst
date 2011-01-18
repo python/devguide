@@ -94,8 +94,9 @@ style guides are followed and that the proper tests have been written.
 
 The module needs to have been out in the community for at least a year. Because
 of Python's conservative nature when it comes to backwards-compatibility, when
-a module its API becomes frozen. This means that a module should only enter the
-stdlib when it is mature and gone through its "growing pains".
+a module is added to the stdlib its API becomes frozen. This means that a module
+should only enter the stdlib when it is mature and gone through its
+"growing pains".
 
 The module needs to be considered best-of-breed. When something is included in
 the stdlib it tends to be chosen first for products over other third-party
