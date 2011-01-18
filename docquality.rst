@@ -24,12 +24,12 @@ If you look at `issues assigned to docs@python`_ on the `issue tracker`_, you
 will find various documentation problems that need work. Issues vary from
 typos, to unclear documentation, to something completely lacking documentation.
 
-If you decide to tackle a documentation issue, you simply create a patch for
-the issue and upload it. If you are worried that someone else might be working
-simultaneously on the issue, simply leave a comment on the issue saying you are
-going to try and create a patch and roughly how long you think you will take to
-do it (this allows others to take on the issue if you happen to forget or lose
-interest).
+If you decide to tackle a documentation issue, you simply :ref:`create a patch
+<patch>` for the issue and upload it. If you are worried that someone else might
+be working simultaneously on the issue, simply leave a comment on the issue
+saying you are going to try and create a patch and roughly how long you think
+you will take to do it (this allows others to take on the issue if you happen
+to forget or lose interest).
 
 .. _issue tracker: http://bugs.python.org
 .. _issues assigned to docs@python: http://bugs.python.org/issue?%40search_text=&ignore=file%3Acontent&title=&%40columns=title&id=&%40columns=id&stage=&creation=&creator=&activity=&%40columns=activity&%40sort=activity&actor=&nosy=&type=&components=&versions=&dependencies=&assignee=docs%40python&keywords=&priority=&%40group=priority&status=1&%40columns=status&resolution=&nosy_count=&message_count=&%40pagesize=50&%40startwith=0&%40action=search
