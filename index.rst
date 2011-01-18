@@ -21,6 +21,8 @@ Python Developer's Guide
    stdlibchanges
    langchanges
 
+   grammar
+
 
 .. todolist::
 
@@ -74,6 +76,8 @@ Resources
 * Source code
     * `Browse online <http://svn.python.org/view/>`_
     * `Daily snapshot <http://svn.python.org/snapshots/>`_
+* Help with ...
+    * :ref:`grammar`
 
 
 .. _buildbots: http://python.org/dev/buildbot/
