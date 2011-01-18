@@ -4,9 +4,9 @@ Running & Writing Tests
 =======================
 
 .. note::
-    This document assumes you are working with the in-development version of
-    Python. If you are not then some things presented here may not work as they
-    may depend on new features not available in released versions of Python.
+    This document assumes you are working with Python 3.2 or higher. If you
+    are not then some things presented here may not work as they may depend
+    on new features not available in earlier versions of Python.
 
 Running
 -------
@@ -16,38 +16,42 @@ from the root directory of your checkout (after you have built Python)::
 
     ./python -m test
 
-That will run the entire standard test suite (i.e., all tests that do not
-consume a lot of resources) using the :py:mod:`test.regrtest` module. Python's
-test runner can also be executed directly when needed, but this should be
-avoided!::
-
-    ./python Lib/test/regrtest.py
-
-To run **all** tests, you need to specify what
-resources you are willing to have consumed. For those flags (and others which
-can help debug various issues such as reference leaks), read the help text::
+This will run the majority of tests, but exclude a small portion of them.
+These are tests using special kinds of resources: for example, accessing the
+Internet, or trying to play a sound or to display a graphical interface on
+your desktop.  They are disabled by default so that running the test suite
+is not too intrusive.  To enable some of these additional tests (and for
+other flags which can help debug various issues such as reference leaks), read
+the help text::
 
     ./python -m test -h
 
-If you want to run a single test, simply specify the test name as an argument::
+If you want to run a single test, simply specify the test name as an argument.
+You also probably want to enable verbose mode (using ``-v``), so that individual
+failures are detailed::
 
-    ./python -m test test_abc
+    ./python -m test -v test_abc
+
+If you have a multi-core or multi-CPU machine, you can enable parallel testing
+using several Python processes so as to speed up things::
+
+   ./python -m test -j4
 
 .. _strenuous_testing:
 
 Finally, if you want to run tests under a more strenuous set of settings, you
-can run test as::
+can run ``test`` as::
 
-    ./python -bb -E -Wd -m test -j2 -r -w
+    ./python -bb -E -Wd -m test -r -w -uall
 
 The various extra flags passed to Python cause it to be much stricter about
 various things (the ``-Wd`` flag should be ``-We`` at some point, but the test
 suite has not reached a point where all warnings have been dealt with and so we
 cannot guarantee that a bug-free Python will properly complete a test run with
-``-We``). The flags to the test runner cause it to run faster but also
-more randomly which is also a stricter way to run tests thanks to possible
-assumptions in test order or state that may have been made. It also causes
-failures to run again to see if it a transient failure or a consistent one.
+``-We``). The ``-r`` flag to the test runner causes it to run more randomly
+which helps assert that the various tests don't interfere against each other.
+The ``-w`` flag causes failures to run again to see if it a transient failure
+or a consistent one.
 
 
 Writing
@@ -55,14 +59,16 @@ Writing
 
 Writing tests for Python is much like writing tests for your own code. Tests
 need to be thorough, fast, isolated, consistently repeatable, and as simple as
-possible. Tests live in the ``Lib/test`` directory, where every file that
+possible. We try to have tests both for normal behaviour and for error
+conditions.  Tests live in the ``Lib/test`` directory, where every file that
 includes tests has a ``test_`` prefix.
 
-One difference, though, is that you are allowed to use the
+One difference with ordinary testing is that you are encouraged to rely on the
 :py:mod:`test.support` module. It contains various helpers that are tailored to
-Python's test suite. Because of this it has no API or backwards-compatibility
-guarantees, which is why the general public is not supposed to use the module.
-But when you are writing tests for Python's test suite its use is encouraged.
+Python's test suite and help smooth out common problems such as platform
+differences, resource consumption and cleanup, or warnings management.
+That module is not suitable for use outside of the standard library.
 
-If your test must write various temporary files to a specific directory, you
-can use the ``Lib/test/data`` directory for that purpose.
+When you are adding tests to an existing test file, it is also recommended
+that you study the other tests in that file; it will teach you which precautions
+you have to take to make your tests robust and portable.
