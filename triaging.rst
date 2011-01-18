@@ -18,18 +18,24 @@ title is now wrong.
 
 Type
 ''''
-Self-explanatory from what is available. If something does not fit within any
-specific type then simply do not set it.
+
+Describes the type of issue.  If something does not fit within any
+specific type then simply do not set it.  *"Crash"* is for hard crashes of
+the Python interpreter - possibly with a core dump or a Windows error box -,
+not erroneous exits because of an unhandled exception (the latter fall under
+the *"behaviour"* category).
 
 Stage
 '''''
-What is next to advance the issue forward.
+What is next to advance the issue forward.  The *stage* needn't be set until
+it is clear that the issue warrants fixing.
 
 * needs patch
-    The bug lacks a patch to solve the problem.
+    The issue lacks a patch to solve the problem (i.e. fixing the bug, or
+    adding the requested improvement).
 * patch review
-    There is a patch, but it needs someone to do a review of it. This can be
-    done by any triager as well as a core developer.
+    There is a patch, but it needs reviewing or is in the process of being
+    reviewed. This can be done by any triager as well as a core developer.
 * commit review
     A triager performed a patch review and it looks good to them, but a core
     developer needs to commit the patch (and do a quick once-over to make sure
@@ -54,21 +60,27 @@ Priority
 ''''''''
 How important is this issue?
 
-* Low
-    Can be fixed at any time.
+* low
+    This is for low-impact bugs, or feature requests of little utility.
 * normal
-    Should be fixed before the final release if possible.
+    The default value for most issues, which deserve fixing but without
+    any urgency to do so.
 * high
     Make some effort to fix the issue before the next final release.
 * critical
     This issue should definitely be fixed before the next final release.
 * deferred blocker
     The issue will not hold up the next release, but will be promoted to a
-    release blocker for the next release, e.g., won't block the next release of
-    a1 but will block a2.
+    release blocker for the following release, e.g., won't block the next
+    release of a1 but will block a2.
 * release blocker
     The issue must be fixed before *any* release is made, e.g., will block the
     next release even if it is an alpha release.
+
+As a guideline, *critical* and above are usually reserved for crashes,
+serious regressions or breakage of very important APIs.  Whether a bug
+is a *release blocker* is a decision better left to the release manager so,
+in any doubt, add him or her to the *nosy list*.
 
 Keywords
 ''''''''
@@ -107,7 +119,7 @@ Dependencies
 The issue requires the listed issue(s) to be resolved first before it can move
 forward.
 
-Superceder
+Superseder
 ''''''''''
 The issue is a duplicate of the listed issue(s).
 
@@ -129,24 +141,29 @@ Status
 
 Resolution
 ''''''''''
-Why the issue was closed.
+Why the issue is in its current state (which is other than "open", usually).
 
 * accepted
-    Submitted patch was applied.
+    Submitted patch was applied, still needs verifying (for example by
+    watching the `buildbots <http://www.python.org/dev/buildbot/>`_) that
+    everything went fine.  Then the resolution will turn to *fixed*
+    and the status to *closed*.
 * duplicate
-    Duplicate of another issue; should have the Superceder field filled out.
+    Duplicate of another issue; should have the Superseder field filled out.
 * fixed
-    Someone contributed a fix for the issue.
+    A fix for the issue was committed.
 * invalid
-    For some reason the issue is invalid.
+    For some reason the issue is invalid (e.g. the perceived problem is not
+    a bug in Python).
 * later
     Issue is to be worked on at a later date.
 * out of date
-    The issue has already been fixed.
+    The issue has already been fixed, or the problem doesn't exist anymore
+    for other reasons.
 * postponed
     Issue will not be worked on at the moment.
 * rejected
-    Issue was rejected.
+    Issue was rejected (especially for feature requests).
 * remind
     The issue is acting as a reminder for someone.
 * wont fix
