@@ -111,7 +111,7 @@ Resources
 .. todo::
     Figure out where to put instructions for triagers on filling out issue
     fields properly; change pop-up explanations in tracker to point to doc
-    appropriately
+    appropriately; http://wiki.python.org/moin/TrackerDocs/
 
 .. todo::
     Go through http://docs.pythonsprints.com/core_development/ to make sure
