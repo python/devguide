@@ -83,6 +83,12 @@ To undo a patch, you can revert **all** changes made in your checkout::
 
     svn revert -R .
 
+.. note:: The ``patch`` program is not available by default under Windows.
+   You can find it `here <http://gnuwin32.sourceforge.net/packages/patch.htm>`_,
+   courtesy of the `GnuWin32 <http://gnuwin32.sourceforge.net/>`_ project.
+   Also, you may find it necessary to add the "``--binary``" option when trying
+   to apply Unix-generated patches under Windows.
+
 
 Submitting
 ----------
