@@ -118,11 +118,10 @@ not received any notice from reviewers (i.e., no comment made) then you may
 email python-dev@python.org asking for someone to take a look at your patch.
 
 When someone does manage to find the time to look at your patch they will most
-likely make a comment about how it can be improved (don't worry, even core
-developers on Python have their patches sent back to them for changes). The
-status of the issue will be made "pending" and will be automatically closed in
-two weeks if you do not address the issues raised. This is to prevent your
-patch sitting their open forever if you happen to lose interest.
+likely make comments about how it can be improved (don't worry, even core
+developers on Python have their patches sent back to them for changes).  It
+is then expected that you post a new patch addressing these comments, and the
+review process will thus iterate until a satisfactory solution has emerged.
 
 
 Committing/Rejecting
