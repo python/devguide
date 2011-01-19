@@ -13,7 +13,7 @@ Title
 '''''
 Should be properly descriptive about what the issue is about. Occasionally
 people file an issue that either has too generic of a title or end up thinking
-they filed about about X but in fact it turns out to be about Y and thus the
+they filed about X but in fact it turns out to be about Y and thus the
 title is now wrong.
 
 Type
