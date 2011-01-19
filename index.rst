@@ -5,6 +5,7 @@ Python Developer's Guide
    :hidden:
 
    setup
+   help
    patch
    runtests
    coverage
@@ -40,6 +41,7 @@ not skip around within the documentation.
     * `PEP 7`_
     * `PEP 8`_
 * :ref:`patch`
+* :ref:`help`
 * :ref:`runtests`
 * Beginner tasks to become familiar with the development process
     * :ref:`docquality`
@@ -85,8 +87,6 @@ Resources
 .. _PEP 7: http://www.python.org/dev/peps/pep-0007
 .. _PEP 8: http://www.python.org/dev/peps/pep-0008
 
-
-.. todo:: something about where people can turn to for help
 
 .. todo::
     move various files out of Misc to here (e.g., README.valgrind,
