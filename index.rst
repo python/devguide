@@ -86,6 +86,8 @@ Resources
 .. _PEP 8: http://www.python.org/dev/peps/pep-0008
 
 
+.. todo:: something about where people can turn to for help
+
 .. todo::
     move various files out of Misc to here (e.g., README.valgrind,
     Porting, SpecialBuilds.txt, maintainers.rst, etc.); asked python-dev on
