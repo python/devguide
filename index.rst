@@ -40,8 +40,8 @@ not skip around within the documentation.
 * Coding style guides
     * `PEP 7`_
     * `PEP 8`_
-* :ref:`patch`
 * :ref:`help`
+* :ref:`patch`
 * :ref:`runtests`
 * Beginner tasks to become familiar with the development process
     * :ref:`docquality`
