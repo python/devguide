@@ -9,8 +9,8 @@ If the question involves process or tool usage then please check the developer's
 guide first as is should answer your question.
 
 
-Filing a Bug
-------------
+File a Bug
+----------
 If you come across an odd error message that seems like a bug, then file a bug
 on the `issue tracker`_. In the bug you can explain that you are not sure why
 the error is coming up or that the exact nature of the problem is. Someone will
@@ -20,8 +20,8 @@ more concrete issue.
 .. _issue tracker: http://bugs.python.org
 
 
-Asking a Technical Question
----------------------------
+Ask (#)python-dev
+-----------------
 You have two avenues of communication out of the :ref:`myriad of options
 available <communication>`. If you are comfortable with IRC you can try asking
 in #python-dev. Typically there are a couple of experienced developers, ranging
