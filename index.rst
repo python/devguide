@@ -95,7 +95,8 @@ Resources
     Think about beginner task of properly making APIs private (i.e., leading
     underscore where needed) or finally documenting them;
     see http://mail.python.org/pipermail/python-dev/2010-November/105476.html
-    and http://bugs.python.org/issue10894
+    and http://bugs.python.org/issue10894; emailed Georg on 2011-01-18 to find
+    out if 'make coverage' even works for py3k
 
 .. todo::
     Make dev FAQ into a tools FAQ
