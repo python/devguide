@@ -101,10 +101,18 @@ stderr and utilize up to 2 CPU cores. If you are using a multi-core machine
 with more than 2 cores (or a single-core machine), you can adjust the number
 passed into the ``-j`` flag to match the number of cores you have.
 
+Do take note of what modules were **not** built as stated at the end of your
+build. More than likely you are missing a dependency for the module(s) that
+were not built, and so you can install the dependencies and re-run ``make``.
+Otherwise the build failed and thus should be fixed (at least with a bug being
+filed on the `issue tracker`_).
+
 Once Python is done building you will then have a working build of Python
 that can be run in-place; ``./python`` on most machines (and what is used in
 all examples), ``./python.exe`` on OS X (when on a case-insensitive filesystem,
 which is the default).
+
+.. _issue tracker: http://bugs.python.org
 
 
 Windows
