@@ -29,6 +29,7 @@ Python Developer's Guide
    gdb
    grammar
    compiler
+   faq
 
 
 Contributing
@@ -90,20 +91,21 @@ Resources
 * Tool support
     * :ref:`emacs`
     * :ref:`gdb`
+    * Various tools with configuration files as found in the `Misc directory`
 * Help with ...
     * :ref:`grammar`
     * :ref:`compiler`
+* :ref:`faq`
 
 
 .. _buildbots: http://python.org/dev/buildbot/
+.. _Misc directory: http://svn.python.org/view/python/branches/py3k/Misc/
 .. _PEP 7: http://www.python.org/dev/peps/pep-0007
 .. _PEP 8: http://www.python.org/dev/peps/pep-0008
 
 
 .. todo::
-    move various files out of Misc to here (e.g., README.valgrind,
-    Porting, SpecialBuilds.txt, maintainers.rst, etc.); asked python-dev on
-    2011-01-17 if there were objections to my plans
+    Move Misc/README.coverity to here pending an email about status
 
 .. todo::
     Think about beginner task of properly making APIs private (i.e., leading
@@ -113,17 +115,14 @@ Resources
     out if 'make coverage' even works for py3k
 
 .. todo::
-    Make dev FAQ into a tools FAQ
-
-.. todo::
     Talk to Collin et. al. about an unladen task; emailed 2011-01-17
-
-.. todo::
-    Task to make sure there are no warnings emitted during compilation
 
 .. todo::
     Go through http://docs.pythonsprints.com/core_development/ to make sure
     nothing is missing here
+
+.. todo::
+    See if there is anything useful in http://wiki.python.org/moin/DebuggingWithGdb
 
 .. todo::
     Create test.support.optional_import() for tests to use to import modules
