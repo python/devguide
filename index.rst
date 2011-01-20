@@ -82,6 +82,8 @@ Resources
 * Source code
     * `Browse online <http://svn.python.org/view/>`_
     * `Daily snapshot <http://svn.python.org/snapshots/>`_
+* Tool support
+    * :ref:`emacs`
 * Help with ...
     * :ref:`grammar`
     * :ref:`compiler`
