@@ -53,10 +53,12 @@ Doing all of this allows core developers and :ref:`triagers <devrole>` to more
 quickly look for subtle issues that only people with extensive experience
 working on Python's code base will notice.
 
-There is a complete list of `open issues with patches`_, although to make sure
+There is a complete list of `open issues with patches`_ as well as a list of
+`issues needing a review`_, although make sure
 that someone has not already done the checklist above as it is possible the
 issue is still open for reasons other than needing help being triaged.
 
 
 .. _issue tracker: http://bugs.python.org
+.. _issues needing a review: http://bugs.python.org/issue?status=1&@sort=-activity&@columns=id,activity,title,creator,status&@dispname=Show%20Needing%20Review&@startwith=0&@group=priority&@filter=&keywords=8&@action=search&@pagesize=50
 .. _open issues with patches: http://bugs.python.org/issue?status=1&@sort=-activity&@columns=id,activity,title,creator,status&@dispname=Issues%20with%20patch&@startwith=0&@group=priority&@filter=&keywords=2&@action=search&@pagesize=50

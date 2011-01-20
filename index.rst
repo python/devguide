@@ -118,10 +118,6 @@ Resources
     Talk to Collin et. al. about an unladen task; emailed 2011-01-17
 
 .. todo::
-    Go through http://docs.pythonsprints.com/core_development/ to make sure
-    nothing is missing here
-
-.. todo::
     See if there is anything useful in http://wiki.python.org/moin/DebuggingWithGdb
 
 .. todo::

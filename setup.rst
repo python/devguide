@@ -69,12 +69,17 @@ is if you are taking performance measurements).
 Build dependencies
 ''''''''''''''''''
 
-The core CPython interpreter only needs a C compiler to build itself.
+The core CPython interpreter only needs a C compiler to build itself (both
+clang and gcc_ are known to work).
 However, some of the extension modules will need development headers
 for additional libraries (such as the ``zlib`` library for compression).
 Depending on what you intend to work on, you might need to install these
 additional requirements so that the compiled interpreter supports the
 desired features.
+
+
+.. _clang: http://clang.llvm.org/
+.. _gcc: http://gcc.gnu.org/
 
 
 UNIX
