@@ -110,10 +110,6 @@ Resources
 .. todo::
     Talk to Collin et. al. about an unladen task; emailed 2011-01-17
 
-.. todo::
-    Could have people help make tests discoverable by unittest, but it requires
-    some upfront work (e.g., how to handle ResourceDenied)
-
 
 Indices and tables
 ==================
