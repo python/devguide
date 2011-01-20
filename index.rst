@@ -116,9 +116,6 @@ Resources
     Talk to Collin et. al. about an unladen task; emailed 2011-01-17
 
 .. todo::
-    Task to make sure there are no warnings emitted during compilation
-
-.. todo::
     Go through http://docs.pythonsprints.com/core_development/ to make sure
     nothing is missing here
 
