@@ -105,7 +105,8 @@ Nosy List
 '''''''''
 A list of people who may be interested in an issue. It is acceptable to add
 someone to the nosy list if you think the issue should be brought to their
-attention.
+attention. Use the :ref:`experts` to know who wants to be added to the nosy
+list for issues targeting specific areas.
 
 Assigned To
 '''''''''''
