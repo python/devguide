@@ -13,6 +13,7 @@ or what type or value has a given Python object represented by a standard
 ``PyObject *`` pointer.  We hereafter present two ways to overcome this
 limitation.
 
+
 gdb 7 and later
 ---------------
 
@@ -108,6 +109,7 @@ Here's how to see the implementation details of a ``str`` instance (for Python
 
 
 .. note: This is only available for Python 2.7, 3.2 and higher.
+
 
 gdb 6 and earlier
 -----------------
