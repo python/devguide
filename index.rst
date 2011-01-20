@@ -111,12 +111,6 @@ Resources
     Talk to Collin et. al. about an unladen task; emailed 2011-01-17
 
 .. todo::
-    Create test.support.optional_import() for tests to use to import modules
-    that are optional on various platforms. This would allow for moving away
-    from ImportError representing a skipped test and also rip out the
-    expectations stuff from regrtest and put it with the tests instead.
-
-.. todo::
     Could have people help make tests discoverable by unittest, but it requires
     some upfront work (e.g., how to handle ResourceDenied)
 
