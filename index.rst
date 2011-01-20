@@ -100,9 +100,7 @@ Resources
 
 
 .. todo::
-    move various files out of Misc to here (e.g., README.valgrind,
-    Porting, SpecialBuilds.txt, maintainers.rst, etc.); asked python-dev on
-    2011-01-17 if there were objections to my plans
+    Move Misc/README.coverity to here pending an email about status
 
 .. todo::
     Think about beginner task of properly making APIs private (i.e., leading
