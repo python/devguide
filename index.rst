@@ -23,6 +23,7 @@ Python Developer's Guide
    stdlibchanges
    langchanges
 
+   experts
    grammar
    compiler
 
@@ -74,6 +75,7 @@ Resources
 * `Issue tracker <http://bugs.python.org/>`_
     * `Meta tracker <http://psf.upfronthosting.co.za/roundup/meta>`_ (issue
       tracker for the issue tracker)
+    * :ref:`experts`
 * Buildbots_
 * Source code
     * `Browse online <http://svn.python.org/view/>`_
