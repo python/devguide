@@ -1,7 +1,7 @@
 .. _gdb:
 
-gdb Support for Python
-======================
+gdb Support
+===========
 
 gdb 7 and later
 ---------------
