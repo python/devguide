@@ -29,6 +29,7 @@ Python Developer's Guide
    gdb
    grammar
    compiler
+   faq
 
 
 Contributing
@@ -89,12 +90,15 @@ Resources
 * Tool support
     * :ref:`emacs`
     * :ref:`gdb`
+    * Various tools with configuration files as found in the `Misc directory`
 * Help with ...
     * :ref:`grammar`
     * :ref:`compiler`
+* :ref:`faq`
 
 
 .. _buildbots: http://python.org/dev/buildbot/
+.. _Misc directory: http://svn.python.org/view/python/branches/py3k/Misc/
 .. _PEP 7: http://www.python.org/dev/peps/pep-0007
 .. _PEP 8: http://www.python.org/dev/peps/pep-0008
 
@@ -108,9 +112,6 @@ Resources
     see http://mail.python.org/pipermail/python-dev/2010-November/105476.html
     and http://bugs.python.org/issue10894; emailed Georg on 2011-01-18 to find
     out if 'make coverage' even works for py3k
-
-.. todo::
-    Make dev FAQ into a tools FAQ
 
 .. todo::
     Talk to Collin et. al. about an unladen task; emailed 2011-01-17
