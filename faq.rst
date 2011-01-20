@@ -1,17 +1,29 @@
-Content-type: text/x-rst
-Title: Frequently Asked Questions for Python Developers
+.. _faq:
 
-:Title: Frequently Asked Questions for Python Developers
-:Date: $Date: 2010-09-15 07:35:08 -0700 (Wed, 15 Sep 2010) $
-:Version: $Revision: 10931 $
-:Web site: http://www.python.org/dev/faq/
-
-.. contents:: :depth: 3
-.. sectnum::
-
+Python Developer FAQ
+~~~~~~~~~~~~~~~~~~~~
 
 Version Control
 ==================================
+
+Where can I learn about the version control system used, Subversion (svn)?
+-------------------------------------------------------------------------------
+
+`Subversion`_'s (also known as ``svn``) official web site is at
+http://subversion.apache.org/ .  A book on Subversion published by
+`O'Reilly Media`_, `Version Control with Subversion`_, is available
+for free online.
+
+With Subversion installed, you can run the help tool that comes with
+Subversion to get help::
+
+  svn help
+
+The man page for ``svn`` is rather scant and not very helpful.
+
+.. _Subversion: http://subversion.apache.org/
+.. _O'Reilly Media: http://www.oreilly.com/
+.. _Version Control with Subversion: http://svnbook.red-bean.com/
 
 
 What do I need to use Subversion?
@@ -19,30 +31,349 @@ What do I need to use Subversion?
 
 .. _download Subversion: http://subversion.apache.org/packages.html
 
+UNIX
+'''''''''''''''''''
 
-How do I get a checkout of the repository (read-only or read-write)?
+First, you need to `download Subversion`_.  Most UNIX-based operating systems
+have binary packages available.  Also, most packaging systems also
+have Subversion available.
+
+If you have checkin rights, you need OpenSSH_.  This is needed to verify
+your identity when performing commits.
+
+.. _OpenSSH: http://www.openssh.org/
+
+Windows
+'''''''''''''''''''
+
+You have several options on Windows.  One is to `download Subversion`_ itself
+which will give you a command-line version.  Another option is to `download
+TortoiseSVN`_ which integrates with Windows Explorer.
+
+If you have checkin rights, you will also need an SSH client.
+`Download PuTTY and friends`_ (PuTTYgen, Pageant, and Plink) for this.  All
+other questions in this FAQ will assume you are using these tools.
+
+Once you have both Subversion and PuTTY installed you must tell Subversion
+where to find an SSH client.  Do this by editing
+``%APPDATA%\Subversion\config`` to have the following
+section::
+
+  [tunnels]
+  ssh="c:/path/to/putty/plink.exe" -T
+
+Change the path to be the proper one for your system.  The ``-T``
+option prevents a pseudo-terminal from being created.
+
+You can use Pageant to prevent from having to type in your password for your
+SSH 2 key constantly.  If you prefer not to have another program running,
+you need to create a profile in PuTTY.
+
+Go to Session:Saved Sessions and create a new profile named
+``svn.python.org``.  In Session:Host Name, enter ``svn.python.org``.  In
+SSH/Auth:Private key file select your private key.  In Connection:Auto-login
+username enter ``pythondev``.
+
+With this set up, paths are slightly different than most other settings in that
+the username is not required.  Do take notice of this when choosing to check
+out a project!
+
+.. _download TortoiseSVN: http://tortoisesvn.net/downloads
+.. _PuTTY: http://www.chiark.greenend.org.uk/~sgtatham/putty/
+.. _download PuTTY and friends: http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html
+
+
+How do I update my working copy to be in sync with the repository?
 -------------------------------------------------------------------------------
 
-For a read-write checkout (with a caveat for Windows users using PuTTY without
-Pageant), the format for ``<URL>`` is::
+Run::
 
- svn+ssh://pythondev@svn.python.org/<path>
+ svn update
 
-There are three critical differences between a read-only URL and a read-write
-URL.  One is the protocol being specified as ``svn+ssh`` and not ``http``.
-Next, the username ``pythondev`` is added (*note* that
-Windows users using PuTTY without Pageant should leave off ``pythondev@`` if
-PuTTY was set up following the instructions in this FAQ).  Lastly, note that
-``projects`` was removed from the path entirely for a read-write checkout.
+from the directory you wish to update.  The directory and all its
+subdirectories will be updated.
 
-The repositories most people will be interested in are:
 
-=========== ============================================================== ==========================================================================
-Repository  read-only                                                      read-write
------------ -------------------------------------------------------------- --------------------------------------------------------------------------
-PEPs        http://svn.python.org/projects/peps/trunk                      svn+ssh://pythondev@svn.python.org/peps/trunk
-=========== ============================================================== ==========================================================================
+How do I add a file or directory to the repository?
+-------------------------------------------------------------------------------
 
+Simply specify the path to the file or directory to add and run::
+
+ svn add PATH
+
+Subversion will skip any directories it already knows about.  But if
+you want new files that exist in any directories specified in ``PATH``, specify
+``--force`` and Subversion will check *all* directories for new files.
+
+You will then need to run ``svn commit`` (as discussed in
+`How do I commit a change to a file?`_) to commit the file to the repository.
+
+
+How do I commit a change to a file?
+-------------------------------------------------------------------------------
+
+To have any changes to a file (which include adding a new file or deleting an
+existing one), you use the command::
+
+ svn commit [PATH]
+
+Although ``[PATH]`` is optional, if PATH is omitted all changes
+in your local copy will be committed to the repository.
+**DO NOT USE THIS!!!**  You should specify the specific files
+to be committed unless you are *absolutely* positive that
+*all outstanding modifications* are meant to go in this commit.
+
+To abort a commit that you are in the middle of, leave the message
+empty (i.e., close the text editor without adding any text for the
+message).  Subversion will confirm if you want to abort the commit.
+
+If you do not like the default text editor Subversion uses for
+entering commmit messages, you may specify a different editor
+in your Subversion config file with the
+``editor-cmd`` option in the ``[helpers]`` section.
+
+
+How do I delete a file or directory in the repository?
+-------------------------------------------------------------------------------
+
+Specify the path to be removed with::
+
+ svn delete PATH
+
+Any modified files or files that are not checked in will not be deleted
+in the working copy on your machine.
+
+
+What files are modified locally in my working copy?
+-------------------------------------------------------------------------------
+
+Running::
+
+ svn status [PATH]
+
+will list any differences between your working copy and the repository.  Some
+key indicators that can appear in the first column of output are:
+
+=  ===========================
+A  Scheduled to be added
+
+D  Scheduled to be deleted
+
+M  Modified locally
+
+?  Not under version control
+=  ===========================
+
+
+How do I find out what Subversion properties are set for a file or directory?
+-------------------------------------------------------------------------------
+
+::
+
+ svn proplist PATH
+
+
+How do I revert a file I have modified back to the version in the respository?
+-------------------------------------------------------------------------------
+
+Running::
+
+ svn revert PATH
+
+will change ``PATH`` to match the version in the repository, throwing away any
+changes you made locally.  If you run::
+
+ svn revert -R .
+
+from the root of your local repository it will recursively restore everything
+to match up with the main server.
+
+
+How do I find out who edited or what revision changed a line last?
+-------------------------------------------------------------------------------
+
+You want::
+
+ svn blame PATH
+
+This will output to stdout every line of the file along with what revision
+number last touched that line and who committed that revision.  Since it is
+printed to stdout, you probably want to pipe the output to a pager::
+
+ svn blame PATH | less
+
+
+How can I see a list of log messages for a file or specific revision?
+---------------------------------------------------------------------
+
+To see the log messages for a specific file, run::
+
+ svn log PATH
+
+That will list all messages that pertain to the file specified in ``PATH``.
+
+If you want to view the log message for a specific revision, run::
+
+ svn log --verbose -r REV
+
+With ``REV`` substituted with the revision number.  The ``--verbose`` flag
+should be used to get a listing of all files modified in that revision.
+
+
+How can I edit the log message of a committed revision?
+-------------------------------------------------------------------------------
+
+Use::
+
+ svn propedit -r <revision> --revprop svn:log
+
+Replace ``<revision>`` with the revision number of the commit whose log message
+you wish to change.
+
+
+How do I get a diff between the repository and my working copy for a file?
+-------------------------------------------------------------------------------
+
+The diff between your working copy and what is in the repository can be had
+with::
+
+ svn diff PATH
+
+This will work off the current revision in the repository.  To diff your
+working copy with a specific revision, do::
+
+ svn diff -r REV PATH
+
+Finally, to generate a diff between two specific revisions, use::
+
+ svn diff -r REV1:REV2 PATH
+
+Notice the ``:`` between ``REV1`` and ``REV2``.
+
+
+How do I undo the changes made in a recent committal?
+-------------------------------------------------------------------------------
+
+Assuming your bad revision is ``NEW`` and ``OLD`` is the equivalent of ``NEW
+- 1``, then run::
+
+ svn merge -r NEW:OLD PATH
+
+This will revert *all* files back to their state in revision ``OLD``.
+The reason that ``OLD`` is just ``NEW - 1`` is you do not want files to be
+accidentally reverted to a state older than your changes, just to the point
+prior.
+
+Note:  PATH here refers to the top of the checked out repository,
+not the full pathname to a file.  PATH can refer to a different
+branch when merging from the head, but it must still be the top
+and not an individual file or subdirectory.
+
+
+How do I update to a specific release tag?
+-------------------------------------------------------------------------------
+
+Run::
+
+    svn list svn+ssh://pythondev@svn.python.org/python/tags
+
+or visit::
+
+    http://svn.python.org/view/python/tags/
+
+to get a list of tags.  To switch your current sandbox to a specific tag,
+run::
+
+    svn switch svn+ssh://pythondev@svn.python.org/python/tags/r242
+
+To just update to the revision corresponding to that tag without changing
+the metadata for the repository, note the revision number corresponding to
+the tag of interest and update to it, e.g.::
+
+    svn update -r 39619
+
+
+Why should I use ``svn switch``?
+-------------------------------------------------------------------------------
+
+If you picture each file/directory in Subversion as uniquely identified
+by a 2-space coordinate system [URL, revision] (given a checkout, you can
+use "svn info" to get its coordinates), then we can say that "svn up -r N"
+(for some revision number N) keeps the url unchanged and changes the
+revision to whatever number you specified.  In other words, you get the
+state of the working copy URL at the time revision N was created.  For
+instance, if you execute it with revision 39619 within the trunk working
+copy, you will get the trunk at the moment 2.4.2 was released.
+
+On the other hand, "svn switch" moves the URL: it basically "moves" your
+checkout from [old_URL, revision] to [new_URL, HEAD], downloading the
+minimal set of diffs to do so.  If the new_URL is a tag URL
+(e.g. .../tags/r242), it means any revision is good, since nobody is going
+to commit into that directory (it will stay unchanged forever).  So
+[/tags/r242, HEAD] is the same as any other [/tags/r242, revision] (assuming
+of course that /tags/r242 was already created at the time the revision was
+created).
+
+If you want to create a sandbox corresponding to a particular release tag,
+use svn switch to switch to [/tags/some_tag, HEAD] if you don't plan on
+doing modifications.  On the other hand if you want to make modifications to
+a particular release branch, use svn switch to change to
+[/branches/some_branch, HEAD].
+
+(Written by Giovanni Bajo on python-dev.)
+
+
+How do I create a branch?
+-------------------------
+
+The best way is to do a server-side copy by specifying the URL for the source
+of the branch, and the eventual destination URL for the new branch::
+
+    svn copy SRC_URL DEST_URL
+
+You can then checkout your branch as normal.  You will want to prepare your
+branch for future merging from the source branch so as to keep them in sync
+using svnmerge.py.
+
+
+How do I include an external svn repository (external definition) in the repository?
+------------------------------------------------------------------------------------
+
+Before attempting to include an external svn repository into Python's
+repository, it is important to realize that you can only include directories,
+not individual files.
+
+To include a directory of an external definition (external svn repository) as a
+directory you need to edit the ``svn:externals`` property on the root of the
+repository you are working with using the format of::
+
+  local_directory remote_repositories_http_address
+
+For instance, to include Python's sandbox repository in the 'sandbox' directory
+of your repository, run ``svn propedit svn:externals .`` while in the root of
+your repository and enter::
+
+  sandbox http://svn.python.org/projects/sandbox/trunk/
+
+in your text editor.  The next time you run ``svn update`` it will pull in the
+external definition.
+
+
+How can I create a directory in the sandbox?
+------------------------------------------------------------------------------
+
+Assuming you have commit privileges and you do not already have a complete
+checkout of the sandbox itself, the easiest way is to use svn's ``mkdir``
+command::
+
+  svn mkdir svn+ssh://pythondev@svn.python.org/sandbox/trunk/<directory>
+
+That command will create the new directory on the server.  To gain access to
+the new directory you then checkout it out (substitute ``mkdir`` in the command
+above with ``checkout``).
+
+If you already have a complete checkout of the sandbox then you can just use
+``svn mkdir`` on a local directory name and check in the new directory itself.
 
 
 SSH
@@ -98,3 +429,18 @@ will load the key every time you log in.
 
 
 .. _Pageant: http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html
+
+Can I make check-ins from machines other than the one I generated the keys on?
+------------------------------------------------------------------------------
+
+Yes, all you need is to make sure that the machine you want to check
+in code from has both the public and private keys in the standard
+place that ssh will look for them (i.e. ~/.ssh on Unix machines).
+Please note that although the key file ending in .pub contains your
+user name and machine name in it, that information is not used by the
+verification process, therefore these key files can be moved to a
+different computer and used for verification.  Please guard your keys
+and never share your private key with anyone.  If you lose the media
+on which your keys are stored or the machine on which your keys are
+stored, be sure to report this to pydotorg@python.org at the same time
+that you change your keys.
