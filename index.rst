@@ -18,6 +18,7 @@ Python Developer's Guide
    languishing
    communication
    coredev
+   developers
    committing
 
    stdlibchanges
@@ -59,6 +60,7 @@ not skip around within the documentation.
     * :ref:`languishing`
 * :ref:`communication`
 * :ref:`coredev`
+    * :ref:`developers`
     * :ref:`committing`
 
 
