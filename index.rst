@@ -123,6 +123,9 @@ Resources
     nothing is missing here
 
 .. todo::
+    See if there is anything useful in http://wiki.python.org/moin/DebuggingWithGdb
+
+.. todo::
     Create test.support.optional_import() for tests to use to import modules
     that are optional on various platforms. This would allow for moving away
     from ImportError representing a skipped test and also rip out the
