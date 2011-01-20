@@ -76,8 +76,9 @@ Proposing changes to Python itself
 Resources
 ---------
 
-* Core developers can checkout and edit this devguide at
-  ssh://hg@hg.python.org/devguide
+* Anyone can checkout this guide from http://hg.python.org/devguide/.
+  Core developers should use ssh://hg@hg.python.org/devguide instead, so
+  that they can push back their edits to the server.
 * `Issue tracker <http://bugs.python.org/>`_
     * `Meta tracker <http://psf.upfronthosting.co.za/roundup/meta>`_ (issue
       tracker for the issue tracker)
