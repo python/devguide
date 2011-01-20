@@ -44,6 +44,68 @@ enabled::
 (notice how the dictionary argument to ``PyDict_GetItemString`` is displayed
 as its ``repr()``, rather than an opaque ``PyObject *`` pointer)
 
+The extension works by supplying a custom printing routine for values of type
+``PyObject *``.  If you need to access lower-level details of an object, then
+cast the value to a pointer of the appropriate type.  For example::
+
+    (gdb) p globals
+    $1 = {'__builtins__': <module at remote 0x7ffff7fb1868>, '__name__':
+    '__main__', 'ctypes': <module at remote 0x7ffff7f14360>, '__doc__': None,
+    '__package__': None}
+
+    (gdb) p *(PyDictObject*)globals
+    $2 = {ob_refcnt = 3, ob_type = 0x3dbdf85820, ma_fill = 5, ma_used = 5,
+    ma_mask = 7, ma_table = 0x63d0f8, ma_lookup = 0x3dbdc7ea70
+    <lookdict_string>, ma_smalltable = {{me_hash = 7065186196740147912,
+    me_key = '__builtins__', me_value = <module at remote 0x7ffff7fb1868>},
+    {me_hash = -368181376027291943, me_key = '__name__',
+    me_value ='__main__'}, {me_hash = 0, me_key = 0x0, me_value = 0x0},
+    {me_hash = 0, me_key = 0x0, me_value = 0x0},
+    {me_hash = -9177857982131165996, me_key = 'ctypes',
+    me_value = <module at remote 0x7ffff7f14360>},
+    {me_hash = -8518757509529533123, me_key = '__doc__', me_value = None},
+    {me_hash = 0, me_key = 0x0, me_value = 0x0}, {
+      me_hash = 6614918939584953775, me_key = '__package__', me_value = None}}}
+
+The pretty-printers try to closely match the ``repr()`` implementation of the
+underlying implementation of Python, and thus vary somewhat between Python 2
+and Python 3.
+
+An area that can be confusing is that the custom printer for some types look a
+lot like gdb's built-in printer for standard types.  For example, the
+pretty-printer for a Python 3 ``int`` gives a ``repr()`` that is not
+distinguishable from a printing of a regular machine-level integer::
+
+    (gdb) p some_machine_integer
+    $3 = 42
+
+    (gdb) p some_python_integer
+    $4 = 42
+
+    (gdb) p *(PyLongObject*)some_python_integer
+    $5 = {ob_base = {ob_base = {ob_refcnt = 8, ob_type = 0x3dad39f5e0}, ob_size = 1},
+    ob_digit = {42}}
+
+A similar confusion can arise with the ``str`` type, where the output looks a
+lot like gdb's built-in printer for ``char *``::
+
+    (gdb) p ptr_to_python_str
+    $6 = '__builtins__'
+
+The pretty-printer for ``str`` instances defaults to using single-quotes (as
+does Python's ``repr`` for strings) whereas the standard printer for ``char *``
+values uses double-quotes and contains a hexadecimal address::
+
+    (gdb) p ptr_to_char_star
+    $7 = 0x6d72c0 "hello world"
+
+Here's how to see the implementation details of a ``str`` instance (for Python
+3, where a ``str`` is a ``PyUnicodeObject *``)::
+
+    (gdb) p *(PyUnicodeObject*)$6
+    $8 = {ob_base = {ob_refcnt = 33, ob_type = 0x3dad3a95a0}, length = 12,
+    str = 0x7ffff2128500, hash = 7065186196740147912, state = 1, defenc = 0x0}
+
 
 .. note: This is only available for Python 2.7, 3.2 and higher.
 
