@@ -24,6 +24,8 @@ Python Developer's Guide
    langchanges
 
    experts
+   emacs
+   gdb
    grammar
    compiler
 
@@ -84,6 +86,7 @@ Resources
     * `Daily snapshot <http://svn.python.org/snapshots/>`_
 * Tool support
     * :ref:`emacs`
+    * :ref:`gdb`
 * Help with ...
     * :ref:`grammar`
     * :ref:`compiler`
