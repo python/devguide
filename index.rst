@@ -108,13 +108,6 @@ Resources
     Move Misc/README.coverity to here pending an email about status
 
 .. todo::
-    Think about beginner task of properly making APIs private (i.e., leading
-    underscore where needed) or finally documenting them;
-    see http://mail.python.org/pipermail/python-dev/2010-November/105476.html
-    and http://bugs.python.org/issue10894; emailed Georg on 2011-01-18 to find
-    out if 'make coverage' even works for py3k
-
-.. todo::
     Talk to Collin et. al. about an unladen task; emailed 2011-01-17
 
 .. todo::
