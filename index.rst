@@ -111,13 +111,6 @@ Resources
 .. _python.org maintenance: http://python.org/dev/pydotorg/
 
 
-.. todo::
-    Move Misc/README.coverity to here pending an email about status
-
-.. todo::
-    Talk to Collin et. al. about an unladen task; emailed 2011-01-17
-
-
 Indices and tables
 ==================
 
