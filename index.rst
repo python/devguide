@@ -84,10 +84,12 @@ Resources
     * `Meta tracker <http://psf.upfronthosting.co.za/roundup/meta>`_ (issue
       tracker for the issue tracker)
     * :ref:`experts`
+    * `Firefox search engine plug-in`_
 * Buildbots_
 * Source code
     * `Browse online <http://svn.python.org/view/>`_
     * `Daily snapshot <http://svn.python.org/snapshots/>`_
+    * `Daily OS X installer <http://python.org/dev/daily-dmg/>`_
 * Tool support
     * :ref:`emacs`
     * :ref:`gdb`
@@ -96,12 +98,17 @@ Resources
     * :ref:`grammar`
     * :ref:`compiler`
 * :ref:`faq`
+* PEPs_ (Python Enhancement Proposals)
+* `python.org maintenance`_
 
 
 .. _buildbots: http://python.org/dev/buildbot/
+.. _Firefox search engine: http://www.python.org/dev/searchplugin/
 .. _Misc directory: http://svn.python.org/view/python/branches/py3k/Misc/
+.. _PEPs: http://www.python.org/dev/peps
 .. _PEP 7: http://www.python.org/dev/peps/pep-0007
 .. _PEP 8: http://www.python.org/dev/peps/pep-0008
+.. _python.org maintenance: http://python.org/dev/pydotorg/
 
 
 .. todo::
