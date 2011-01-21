@@ -135,7 +135,7 @@ stringing people along. This obviously applies to anything you do on the issue
 tracker as well.
 
 Third, please list what areas you want to be considered an expert in the
-``Misc/maintainers.rst`` file (including stdlib modules). This allows triagers
+``experts.rst`` file (including stdlib modules). This allows triagers
 to direct issues your way when they involve an area you are an expert in. But,
 as stated in the second point above, if you do not have the time to answer
 questions promptly then please remove yourself as needed from the file so that
