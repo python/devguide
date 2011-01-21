@@ -103,7 +103,7 @@ Resources
 
 
 .. _buildbots: http://python.org/dev/buildbot/
-.. _Firefox search engine: http://www.python.org/dev/searchplugin/
+.. _Firefox search engine plug-in: http://www.python.org/dev/searchplugin/
 .. _Misc directory: http://svn.python.org/view/python/branches/py3k/Misc/
 .. _PEPs: http://www.python.org/dev/peps
 .. _PEP 7: http://www.python.org/dev/peps/pep-0007
