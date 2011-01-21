@@ -107,6 +107,175 @@ Here's how to see the implementation details of a ``str`` instance (for Python
     $8 = {ob_base = {ob_refcnt = 33, ob_type = 0x3dad3a95a0}, length = 12,
     str = 0x7ffff2128500, hash = 7065186196740147912, state = 1, defenc = 0x0}
 
+As well as adding pretty-printing support for ``PyObject *``, the extension adds a number of commands to gdb
+
+``py-list``
+    List the Python source code (if any) for the current frame in the selected
+    thread.  The current line is marked with a ">"::
+
+        (gdb) py-list
+         901        if options.profile:
+         902            options.profile = False
+         903            profile_me()
+         904            return
+         905    
+        >906        u = UI()
+         907        if not u.quit:
+         908            try:
+         909                gtk.main()
+         910            except KeyboardInterrupt:
+         911                # properly quit on a keyboard interrupt...
+
+    Use ``py-list START`` to list at a different line number within the python
+    source, and ``py-list START,END`` to list a specific range of lines within
+    the python source.
+
+``py-up`` and ``py-down``
+  The ``py-up`` and ``py-down`` commands are analagous to gdb's regular ``up``
+  and ``down`` commands, but try to move at the level of CPython frames, rather
+  than C frames.
+
+  gdb is not always able to read the relevant frame information, depending on
+  the optimization level with which CPython was compiled. Internally, the
+  commands look for C frames that are executing ``PyEval_EvalFrameEx`` (which
+  implements the core bytecode interpreter loop within CPython) and look up
+  the value of the related ``PyFrameObject *``.
+
+  They emit the frame number (at the C level) within the thread.
+
+  For example::
+
+        (gdb) py-up
+        #37 Frame 0x9420b04, for file /usr/lib/python2.6/site-packages/
+        gnome_sudoku/main.py, line 906, in start_game ()
+            u = UI()
+        (gdb) py-up
+        #40 Frame 0x948e82c, for file /usr/lib/python2.6/site-packages/
+        gnome_sudoku/gnome_sudoku.py, line 22, in start_game(main=<module at remote 0xb771b7f4>)
+            main.start_game()
+        (gdb) py-up
+        Unable to find an older python frame
+
+  so we're at the top of the python stack.  Going back down::
+
+        (gdb) py-down
+        #37 Frame 0x9420b04, for file /usr/lib/python2.6/site-packages/gnome_sudoku/main.py, line 906, in start_game ()
+            u = UI()
+        (gdb) py-down
+        #34 (unable to read python frame information)
+        (gdb) py-down
+        #23 (unable to read python frame information)
+        (gdb) py-down
+        #19 (unable to read python frame information)
+        (gdb) py-down
+        #14 Frame 0x99262ac, for file /usr/lib/python2.6/site-packages/gnome_sudoku/game_selector.py, line 201, in run_swallowed_dialog (self=<NewOrSavedGameSelector(new_game_model=<gtk.ListStore at remote 0x98fab44>, puzzle=None, saved_games=[{'gsd.auto_fills': 0, 'tracking': {}, 'trackers': {}, 'notes': [], 'saved_at': 1270084485, 'game': '7 8 0 0 0 0 0 5 6 0 0 9 0 8 0 1 0 0 0 4 6 0 0 0 0 7 0 6 5 0 0 0 4 7 9 2 0 0 0 9 0 1 0 0 0 3 9 7 6 0 0 0 1 8 0 6 0 0 0 0 2 8 0 0 0 5 0 4 0 6 0 0 2 1 0 0 0 0 0 4 5\n7 8 0 0 0 0 0 5 6 0 0 9 0 8 0 1 0 0 0 4 6 0 0 0 0 7 0 6 5 1 8 3 4 7 9 2 0 0 0 9 0 1 0 0 0 3 9 7 6 0 0 0 1 8 0 6 0 0 0 0 2 8 0 0 0 5 0 4 0 6 0 0 2 1 0 0 0 0 0 4 5', 'gsd.impossible_hints': 0, 'timer.__absolute_start_time__': <float at remote 0x984b474>, 'gsd.hints': 0, 'timer.active_time': <float at remote 0x984b494>, 'timer.total_time': <float at remote 0x984b464>}], dialog=<gtk.Dialog at remote 0x98faaa4>, saved_game_model=<gtk.ListStore at remote 0x98fad24>, sudoku_maker=<SudokuMaker(terminated=False, played=[], batch_siz...(truncated)
+                    swallower.run_dialog(self.dialog)
+        (gdb) py-down
+        #11 Frame 0x9aead74, for file /usr/lib/python2.6/site-packages/gnome_sudoku/dialog_swallower.py, line 48, in run_dialog (self=<SwappableArea(running=<gtk.Dialog at remote 0x98faaa4>, main_page=0) at remote 0x98fa6e4>, d=<gtk.Dialog at remote 0x98faaa4>)
+                    gtk.main()
+        (gdb) py-down
+        #8 (unable to read python frame information)
+        (gdb) py-down
+        Unable to find a newer python frame
+
+  and we're at the bottom of the python stack.
+
+``py-bt``
+  The ``py-bt`` command attempts to display a Python-level backtrace of the
+  current thread.
+
+  For example::
+
+        (gdb) py-bt
+        #8 (unable to read python frame information)
+        #11 Frame 0x9aead74, for file /usr/lib/python2.6/site-packages/gnome_sudoku/dialog_swallower.py, line 48, in run_dialog (self=<SwappableArea(running=<gtk.Dialog at remote 0x98faaa4>, main_page=0) at remote 0x98fa6e4>, d=<gtk.Dialog at remote 0x98faaa4>)
+                    gtk.main()
+        #14 Frame 0x99262ac, for file /usr/lib/python2.6/site-packages/gnome_sudoku/game_selector.py, line 201, in run_swallowed_dialog (self=<NewOrSavedGameSelector(new_game_model=<gtk.ListStore at remote 0x98fab44>, puzzle=None, saved_games=[{'gsd.auto_fills': 0, 'tracking': {}, 'trackers': {}, 'notes': [], 'saved_at': 1270084485, 'game': '7 8 0 0 0 0 0 5 6 0 0 9 0 8 0 1 0 0 0 4 6 0 0 0 0 7 0 6 5 0 0 0 4 7 9 2 0 0 0 9 0 1 0 0 0 3 9 7 6 0 0 0 1 8 0 6 0 0 0 0 2 8 0 0 0 5 0 4 0 6 0 0 2 1 0 0 0 0 0 4 5\n7 8 0 0 0 0 0 5 6 0 0 9 0 8 0 1 0 0 0 4 6 0 0 0 0 7 0 6 5 1 8 3 4 7 9 2 0 0 0 9 0 1 0 0 0 3 9 7 6 0 0 0 1 8 0 6 0 0 0 0 2 8 0 0 0 5 0 4 0 6 0 0 2 1 0 0 0 0 0 4 5', 'gsd.impossible_hints': 0, 'timer.__absolute_start_time__': <float at remote 0x984b474>, 'gsd.hints': 0, 'timer.active_time': <float at remote 0x984b494>, 'timer.total_time': <float at remote 0x984b464>}], dialog=<gtk.Dialog at remote 0x98faaa4>, saved_game_model=<gtk.ListStore at remote 0x98fad24>, sudoku_maker=<SudokuMaker(terminated=False, played=[], batch_siz...(truncated)
+                    swallower.run_dialog(self.dialog)
+        #19 (unable to read python frame information)
+        #23 (unable to read python frame information)
+        #34 (unable to read python frame information)
+        #37 Frame 0x9420b04, for file /usr/lib/python2.6/site-packages/gnome_sudoku/main.py, line 906, in start_game ()
+            u = UI()
+        #40 Frame 0x948e82c, for file /usr/lib/python2.6/site-packages/gnome_sudoku/gnome_sudoku.py, line 22, in start_game (main=<module at remote 0xb771b7f4>)
+            main.start_game()
+
+  The frame numbers correspond to those displayed by gdb's standard ``backtrace`` command.
+
+``py-print``
+  The ``py-print`` command looks up a Python name and tries to print it.  It looks in locals within the current thread, then globals, then finally builtins::
+
+        (gdb) py-print self
+        local 'self' = <SwappableArea(running=<gtk.Dialog at remote 0x98faaa4>,
+        main_page=0) at remote 0x98fa6e4>
+        (gdb) py-print __name__
+        global '__name__' = 'gnome_sudoku.dialog_swallower'
+        (gdb) py-print len
+        builtin 'len' = <built-in function len>
+        (gdb) py-print scarlet_pimpernel
+        'scarlet_pimpernel' not found
+        
+``py-locals``
+  The ``py-locals`` command looks up all Python locals within the current Python frame in the selected thread, and prints their representations::
+
+        (gdb) py-locals
+        self = <SwappableArea(running=<gtk.Dialog at remote 0x98faaa4>,
+        main_page=0) at remote 0x98fa6e4>
+        d = <gtk.Dialog at remote 0x98faaa4>
+
+You can of course use other gdb commands.  For example, the ``frame`` command takes you directly to a particular frame within the selected thread.  We can use it to go a specific frame shown by ``py-bt`` like this::
+
+        (gdb) py-bt
+        (output snipped)
+        #68 Frame 0xaa4560, for file Lib/test/regrtest.py, line 1548, in <module> ()
+                main()
+        (gdb) frame 68
+        #68 0x00000000004cd1e6 in PyEval_EvalFrameEx (f=Frame 0xaa4560, for file Lib/test/regrtest.py, line 1548, in <module> (), throwflag=0) at Python/ceval.c:2665
+        2665				x = call_function(&sp, oparg);
+        (gdb) py-list
+        1543        # Run the tests in a context manager that temporary changes the CWD to a
+        1544        # temporary and writable directory. If it's not possible to create or
+        1545        # change the CWD, the original CWD will be used. The original CWD is
+        1546        # available from test_support.SAVEDCWD.
+        1547        with test_support.temp_cwd(TESTCWD, quiet=True):
+        >1548            main()
+
+The ``info threads`` command will give you a list of the threads within the process, and you can use the ``thread`` command to select a different one::
+
+        (gdb) info threads
+          105 Thread 0x7fffefa18710 (LWP 10260)  sem_wait () at ../nptl/sysdeps/unix/sysv/linux/x86_64/sem_wait.S:86
+          104 Thread 0x7fffdf5fe710 (LWP 10259)  sem_wait () at ../nptl/sysdeps/unix/sysv/linux/x86_64/sem_wait.S:86
+        * 1 Thread 0x7ffff7fe2700 (LWP 10145)  0x00000038e46d73e3 in select () at ../sysdeps/unix/syscall-template.S:82
+
+You can use ``thread apply all COMMAND`` or (``t a a COMMAND`` for short) to run a command on all threads.  You can use this with ``py-bt`` to see what every thread is doing at the Python level::
+
+        (gdb) t a a py-bt
+
+        Thread 105 (Thread 0x7fffefa18710 (LWP 10260)):
+        #5 Frame 0x7fffd00019d0, for file /home/david/coding/python-svn/Lib/threading.py, line 155, in _acquire_restore (self=<_RLock(_Verbose__verbose=False, _RLock__owner=140737354016512, _RLock__block=<thread.lock at remote 0x858770>, _RLock__count=1) at remote 0xd7ff40>, count_owner=(1, 140737213728528), count=1, owner=140737213728528)
+                self.__block.acquire()
+        #8 Frame 0x7fffac001640, for file /home/david/coding/python-svn/Lib/threading.py, line 269, in wait (self=<_Condition(_Condition__lock=<_RLock(_Verbose__verbose=False, _RLock__owner=140737354016512, _RLock__block=<thread.lock at remote 0x858770>, _RLock__count=1) at remote 0xd7ff40>, acquire=<instancemethod at remote 0xd80260>, _is_owned=<instancemethod at remote 0xd80160>, _release_save=<instancemethod at remote 0xd803e0>, release=<instancemethod at remote 0xd802e0>, _acquire_restore=<instancemethod at remote 0xd7ee60>, _Verbose__verbose=False, _Condition__waiters=[]) at remote 0xd7fd10>, timeout=None, waiter=<thread.lock at remote 0x858a90>, saved_state=(1, 140737213728528))
+                    self._acquire_restore(saved_state)
+        #12 Frame 0x7fffb8001a10, for file /home/david/coding/python-svn/Lib/test/lock_tests.py, line 348, in f ()
+                    cond.wait()
+        #16 Frame 0x7fffb8001c40, for file /home/david/coding/python-svn/Lib/test/lock_tests.py, line 37, in task (tid=140737213728528)
+                        f()
+
+        Thread 104 (Thread 0x7fffdf5fe710 (LWP 10259)):
+        #5 Frame 0x7fffe4001580, for file /home/david/coding/python-svn/Lib/threading.py, line 155, in _acquire_restore (self=<_RLock(_Verbose__verbose=False, _RLock__owner=140737354016512, _RLock__block=<thread.lock at remote 0x858770>, _RLock__count=1) at remote 0xd7ff40>, count_owner=(1, 140736940992272), count=1, owner=140736940992272)
+                self.__block.acquire()
+        #8 Frame 0x7fffc8002090, for file /home/david/coding/python-svn/Lib/threading.py, line 269, in wait (self=<_Condition(_Condition__lock=<_RLock(_Verbose__verbose=False, _RLock__owner=140737354016512, _RLock__block=<thread.lock at remote 0x858770>, _RLock__count=1) at remote 0xd7ff40>, acquire=<instancemethod at remote 0xd80260>, _is_owned=<instancemethod at remote 0xd80160>, _release_save=<instancemethod at remote 0xd803e0>, release=<instancemethod at remote 0xd802e0>, _acquire_restore=<instancemethod at remote 0xd7ee60>, _Verbose__verbose=False, _Condition__waiters=[]) at remote 0xd7fd10>, timeout=None, waiter=<thread.lock at remote 0x858860>, saved_state=(1, 140736940992272))
+                    self._acquire_restore(saved_state)
+        #12 Frame 0x7fffac001c90, for file /home/david/coding/python-svn/Lib/test/lock_tests.py, line 348, in f ()
+                    cond.wait()
+        #16 Frame 0x7fffac0011c0, for file /home/david/coding/python-svn/Lib/test/lock_tests.py, line 37, in task (tid=140736940992272)
+                        f()
+
+        Thread 1 (Thread 0x7ffff7fe2700 (LWP 10145)):
+        #5 Frame 0xcb5380, for file /home/david/coding/python-svn/Lib/test/lock_tests.py, line 16, in _wait ()
+            time.sleep(0.01)
+        #8 Frame 0x7fffd00024a0, for file /home/david/coding/python-svn/Lib/test/lock_tests.py, line 378, in _check_notify (self=<ConditionTests(_testMethodName='test_notify', _resultForDoCleanups=<TestResult(_original_stdout=<cStringIO.StringO at remote 0xc191e0>, skipped=[], _mirrorOutput=False, testsRun=39, buffer=False, _original_stderr=<file at remote 0x7ffff7fc6340>, _stdout_buffer=<cStringIO.StringO at remote 0xc9c7f8>, _stderr_buffer=<cStringIO.StringO at remote 0xc9c790>, _moduleSetUpFailed=False, expectedFailures=[], errors=[], _previousTestClass=<type at remote 0x928310>, unexpectedSuccesses=[], failures=[], shouldStop=False, failfast=False) at remote 0xc185a0>, _threads=(0,), _cleanups=[], _type_equality_funcs={<type at remote 0x7eba00>: <instancemethod at remote 0xd750e0>, <type at remote 0x7e7820>: <instancemethod at remote 0xd75160>, <type at remote 0x7e30e0>: <instancemethod at remote 0xd75060>, <type at remote 0x7e7d20>: <instancemethod at remote 0xd751e0>, <type at remote 0x7f19e0...(truncated)
+                _wait()
 
 .. note: This is only available for Python 2.7, 3.2 and higher.
 
