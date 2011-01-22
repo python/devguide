@@ -5,8 +5,7 @@ Getting Set Up
 
 These instructions cover how to get a source checkout and a compiled version of
 the CPython interpreter (CPython is the version of Python available from
-http://www.python.org/). It will also tell you how to set up various code
-editors. Finally, this document also gives an overview of the directory
+http://www.python.org/). It also gives an overview of the directory
 structure of a CPython checkout.
 
 .. contents::
@@ -34,8 +33,7 @@ support through the VCS as it will provide a diff tool, etc.
 
 To get a read-only checkout of CPython's source, you need to checkout the source
 code. To get a read-only checkout of
-the in-development branch of Python (core developers should read XXX for a
-read-write checkout), run::
+the in-development branch of Python, run::
 
     svn co http://svn.python.org/projects/python/branches/py3k
 
@@ -58,19 +56,20 @@ Compiling (for debugging)
 -------------------------
 
 CPython provides several compilation flags which help with debugging various
-things. While all of the known flags can be in the ``Misc/SpecialBuilds.txt``
+things. While all of the known flags can be found in the
+``Misc/SpecialBuilds.txt``
 file, the most critical one is the ``Py_DEBUG`` flag which creates what is
 known as a "pydebug" build. This flag turns on
 various extra sanity checks which help catch common issues. You should always
-develop under a pydebug build of CPython (only instance of when you shouldn't
-is if you are taking performance measurements).
+develop under a pydebug build of CPython (the only instance of when you
+shouldn't is if you are taking performance measurements).
 
 
 Build dependencies
 ''''''''''''''''''
 
 The core CPython interpreter only needs a C compiler to build itself (both
-clang and gcc_ are known to work).
+clang_ and gcc_ are known to work).
 However, some of the extension modules will need development headers
 for additional libraries (such as the ``zlib`` library for compression).
 Depending on what you intend to work on, you might need to install these
@@ -93,26 +92,25 @@ Configuration is typically::
   ./configure --with-pydebug
 
 More flags are available to ``configure``, but this is the minimum you should
-do. This will give you a debug version of Python along with the safety measure
-of preventing you from accidentally installing your development version over
-your system install.
+do to get a pydebug build of CPython.
 
-Once ``configure`` is done, you can then compile Python.::
+Once ``configure`` is done, you can then compile CPython.::
 
     make -s -j2
 
-This will build Python with only warnings and errors being printed to
+This will build CPython with only warnings and errors being printed to
 stderr and utilize up to 2 CPU cores. If you are using a multi-core machine
 with more than 2 cores (or a single-core machine), you can adjust the number
 passed into the ``-j`` flag to match the number of cores you have.
 
 Do take note of what modules were **not** built as stated at the end of your
 build. More than likely you are missing a dependency for the module(s) that
-were not built, and so you can install the dependencies and re-run ``make``.
+were not built, and so you can install the dependencies and re-run ``make``
+(if available for your OS).
 Otherwise the build failed and thus should be fixed (at least with a bug being
 filed on the `issue tracker`_).
 
-Once Python is done building you will then have a working build of Python
+Once CPython is done building you will then have a working build
 that can be run in-place; ``./python`` on most machines (and what is used in
 all examples), ``./python.exe`` on OS X (when on a case-insensitive filesystem,
 which is the default).
@@ -132,13 +130,6 @@ sufficient.
 To build from the Visual Studio GUI, load the project files and press F7. Make
 sure have chosen the "Debug" build first.
 
-.. XXX: doesn't work
-   If you want to build from the command line, you can run the
-   ``build_env.bat`` file to get a terminal with proper environment variables.
-   From that terminal, run::
-
-       build.bat -c Debug
-
 Once built you might want to set Python as a startup project. Pressing F5 in
 Visual Studio will launch the interpreter.
 
@@ -157,9 +148,7 @@ of support for writing Python code. Various coding tools also include Python
 support.
 
 For editors and tools which the core developers have felt some special comment
-is needed for coding *in* Python, see the ``Misc`` directory and the
-various ``README.*`` files. For tool/editor support geared specifically towards
-coding *for* (C)Python itself, see :ref:`resources`.
+is needed for coding *in* Python, see :ref:`resources`.
 
 
 Directory Structure
