@@ -112,14 +112,15 @@ Reviewing
 
 To begin with, please be patient! There are many more people submitting patches
 than there are people capable of reviewing your patch. To get your patch
-reviewed it also requires a reviewer to have the spare time and motivation to
+reviewed it requires a reviewer to have the spare time and motivation to
 look at your patch (we cannot force anyone to review patches). If your patch has
-not received any notice from reviewers (i.e., no comment made) then you may
+not received any notice from reviewers (i.e., no comment made) after a
+substantial amount of time then you may
 email python-dev@python.org asking for someone to take a look at your patch.
 
 When someone does manage to find the time to look at your patch they will most
 likely make comments about how it can be improved (don't worry, even core
-developers on Python have their patches sent back to them for changes).  It
+developers of Python have their patches sent back to them for changes).  It
 is then expected that you post a new patch addressing these comments, and the
 review process will thus iterate until a satisfactory solution has emerged.
 
