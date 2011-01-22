@@ -86,7 +86,7 @@ contextlib            ncoghlan
 copy                  alexandre.vassalotti
 copyreg               alexandre.vassalotti
 cProfile
-crypt
+crypt                 jafo*
 csv                   skip.montanaro
 ctypes                theller
 curses
@@ -209,7 +209,7 @@ symbol
 symtable              benjamin.peterson
 sys
 sysconfig             tarek
-syslog                jafo
+syslog                jafo*
 tabnanny              tim_one (inactive)
 tarfile               lars.gustaebel
 telnetlib
