@@ -8,7 +8,7 @@ someone else. When doing so you will want to make sure of some things.
 
 First, make sure the patch in a good state. Both :ref:`patch` and
 :ref:`helptriage`
-explain what is to be expected of a patch. Typically patches that get passed by
+explain what is to be expected of a patch. Typically patches that get cleared by
 triagers are good to go except maybe lacking ``Misc/ACKS`` and ``Misc/NEWS``
 entries.
 

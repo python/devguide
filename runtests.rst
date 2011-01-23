@@ -4,7 +4,7 @@ Running & Writing Tests
 =======================
 
 .. note::
-    This document assumes you are working with Python 3.2 or higher. If you
+    This document assumes you are working from a checkout of Python. If you
     are not then some things presented here may not work as they may depend
     on new features not available in earlier versions of Python.
 
@@ -16,8 +16,8 @@ from the root directory of your checkout (after you have built Python)::
 
     ./python -m test
 
-This will run the majority of tests, but exclude a small portion of them.
-These are tests using special kinds of resources: for example, accessing the
+This will run the majority of tests, but exclude a small portion of them; these
+excluded tests use special kinds of resources: for example, accessing the
 Internet, or trying to play a sound or to display a graphical interface on
 your desktop.  They are disabled by default so that running the test suite
 is not too intrusive.  To enable some of these additional tests (and for
@@ -35,7 +35,7 @@ failures are detailed::
 If you have a multi-core or multi-CPU machine, you can enable parallel testing
 using several Python processes so as to speed up things::
 
-   ./python -m test -j4
+   ./python -m test -j2
 
 .. _strenuous_testing:
 
@@ -45,13 +45,15 @@ can run ``test`` as::
     ./python -bb -E -Wd -m test -r -w -uall
 
 The various extra flags passed to Python cause it to be much stricter about
-various things (the ``-Wd`` flag should be ``-We`` at some point, but the test
+various things (the ``-Wd`` flag should be ``-W error`` at some point, but the
+test
 suite has not reached a point where all warnings have been dealt with and so we
 cannot guarantee that a bug-free Python will properly complete a test run with
-``-We``). The ``-r`` flag to the test runner causes it to run more randomly
+``-W error``). The ``-r`` flag to the test runner causes it to run more randomly
 which helps assert that the various tests don't interfere against each other.
 The ``-w`` flag causes failures to run again to see if it a transient failure
-or a consistent one.
+or a consistent one. The ``-uall`` flag allows the user of all available
+resources so as to not skip tests requiring, e.g., Internet access.
 
 
 Writing
