@@ -100,9 +100,9 @@ html_theme = 'default'
 # documentation.
 html_theme_options = {
  'headtextcolor':    '#a37e00',
- 'linkcolor':        '#054f9c',
- 'visitedlinkcolor': '#666677',
- 'sidebarlinkcolor': '#f39e00',
+ 'linkcolor':        '#008000',
+ 'visitedlinkcolor': '#205020',
+ 'sidebarlinkcolor': '#ec9400',
  'sidebartextcolor': 'white',
  'relbarlinkcolor':  'white',
  'textcolor':        'white',
