@@ -21,8 +21,8 @@ Type
 
 Describes the type of issue.  If something does not fit within any
 specific type then simply do not set it.  *"Crash"* is for hard crashes of
-the Python interpreter - possibly with a core dump or a Windows error box -,
-not erroneous exits because of an unhandled exception (the latter fall under
+the Python interpreter -- possibly with a core dump or a Windows error box --
+and not erroneous exits because of an unhandled exception (the latter fall under
 the *"behaviour"* category).
 
 Stage
@@ -46,8 +46,7 @@ it is clear that the issue warrants fixing.
 Components
 ''''''''''
 What part of Python is affected by the issue. This is a multi-select field.
-Setting this properly is somewhat important as certain components lead to an
-auto-assignment of the issue to the proper people.
+Be aware what component is chosen may cause the issue to be auto-assigned.
 
 Versions
 ''''''''
@@ -113,7 +112,8 @@ Assigned To
 Who is expected to take the next step in resolving the issue. It is acceptable
 to assign an issue to someone if the issue cannot move forward without their
 help, e.g., they need to make a technical decision to allow the issue to move
-forward.
+forward. Also consult the :ref:`experts` as certain stdlib modules should
+always be assigned to a specific person.
 
 Dependencies
 ''''''''''''
@@ -142,7 +142,7 @@ Status
 
 Resolution
 ''''''''''
-Why the issue is in its current state (which is other than "open", usually).
+Why the issue is in its current state (not usually used for "open").
 
 * accepted
     Submitted patch was applied, still needs verifying (for example by

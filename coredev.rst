@@ -23,7 +23,9 @@ request is turned down. Do not take this personally! It simply means that other
 core developers think you need more time contributing patches before you are
 able to commit them without supervision.
 
-XXX list of people
+A complete list of core developer usernames can be found at
+http://www.python.org/dev/committers. :ref:`developers` lists when and why
+someone received commit privileges.
 
 
 Gaining Commit Privileges
@@ -58,7 +60,8 @@ SSH
 You need to generate an SSH 2 RSA key to be able to commit code. You may have
 multiple keys if you wish (e.g., for work and home). Send your key as an
 attachment in an email to python-committers (do not paste it in the email as
-SSH keys have specific formatting requirements).
+SSH keys have specific formatting requirements). Help in generating an SSH key
+can be found in the :ref:`faq`.
 
 Your SSH key will be set to a username in the form of "first_name.last_name".
 This should match your username on the issue tracker.
@@ -135,7 +138,7 @@ stringing people along. This obviously applies to anything you do on the issue
 tracker as well.
 
 Third, please list what areas you want to be considered an expert in the
-``experts.rst`` file (including stdlib modules). This allows triagers
+:ref:`experts`. This allows triagers
 to direct issues your way when they involve an area you are an expert in. But,
 as stated in the second point above, if you do not have the time to answer
 questions promptly then please remove yourself as needed from the file so that
