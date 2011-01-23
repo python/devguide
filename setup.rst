@@ -123,6 +123,19 @@ which is the default).
 .. _issue tracker: http://bugs.python.org
 
 
+Clang
+"""""
+
+If you are using clang_ to build CPython, some flags you might want to set to
+quiet some standard warnings which are specifically superfluous to CPython are
+``-Wno-unused-value -Wno-empty-body -Qunused-arguments``. You can set your
+``CFLAGS`` environment variable to these flags when running ``configure``.
+
+If you are using LLVM 2.8, also use the ``-no-integrated-as`` flag in order to
+build the :py:mod:`ctypes` module (without the flag the rest of CPython will
+still build properly).
+
+
 Windows
 '''''''
 
