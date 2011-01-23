@@ -60,9 +60,14 @@ things. While all of the known flags can be found in the
 ``Misc/SpecialBuilds.txt``
 file, the most critical one is the ``Py_DEBUG`` flag which creates what is
 known as a "pydebug" build. This flag turns on
-various extra sanity checks which help catch common issues. You should always
+various extra sanity checks which help catch common issues. The use of the flag
+is so common that turning on the flag is a basic compile option.
+
+You should always
 develop under a pydebug build of CPython (the only instance of when you
-shouldn't is if you are taking performance measurements).
+shouldn't is if you are taking performance measurements). Even when working
+only on pure Python code the pydebug build provides several useful checks that
+one should not skip.
 
 
 Build dependencies
