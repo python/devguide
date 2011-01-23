@@ -26,26 +26,36 @@ from Python's stdlib, and thus easier to work with than the C extension
 modules). But since this is a third-party site we cannot promise that it will
 always be accessible or have useful information (i.e., be working properly).
 
-Another is to follow the examples below and simply see what kind of
+Another is to follow the examples below and simply see what
 coverage your favorite module has. This is "stabbing in the dark", though, and
 so it might take some time to find a module that needs coverage help.
 
 Finally, you can simply run the entire test suite yourself with coverage turned
-on and see what modules need help. This has the drawback as the test suite
-takes some time to complete when run under coverage measuring, but you will
+on and see what modules need help. This has the drawback of running the entire
+test suite under coverage measuring which
+takes some time to complete, but you will
 have an accurate, up-to-date notion of what modules need the most work.
 
 
 Measuring Coverage
 """"""""""""""""""
 
+.. warning::
+    Running the entire test suite under coverage (using either technique listed
+    below) will fail as a test (most likely test_trace) is resetting the trace
+    function; see http://bugs.python.org/issue10541
+
 Using coverage.py
 -----------------
+
+.. warning::
+    Using coverage.py on test_sys triggers a fatal recursion error; see
+    http://bugs.python.org/issue10985
 
 One of the most popular third-party coverage tools is `coverage.py`_ which
 provides very nice HTML output along with advanced features such as
 :ref:`branch coverage <branch_coverage>`. If you prefer to stay with tools only
-provided by the stdlib then that is possible to :ref:`using test.regrtest
+provided by the stdlib then you can by :ref:`using test.regrtest
 <coverage_by_regrtest>`.
 
 Because the in-development version of Python is bleeding-edge, it is possible
@@ -53,7 +63,7 @@ that the latest release version of coverage.py will not work. In that case you
 should try using the in-development of coverage.py to see if it has been
 updated as needed. To do this you should check out the development version of
 coverage.py into your checkout of Python and make a symlink (or simply copy if
-you prefer) the ``coverage`` subdirectory::
+you prefer) of its ``coverage`` subdirectory::
 
     hg clone https://bitbucket.org/ned/coveragepy
     ln -s coveragepy/coverage
@@ -107,13 +117,13 @@ Branch Coverage
 
 For the truly daring, you can use another powerful feature of coverage.py:
 branch coverage. Testing every possible branch path through code, while a great
-goal to strive for, is not as important of a goal as it is to get 100% line
+goal to strive for, is a secondary goal to getting 100% line
 coverage for the entire stdlib (for now).
 
 If you decide to want to try to improve branch coverage, simply add the
 ``--branch`` flag to your coverage run::
 
-    ./python -m coverage run --pylib --branch
+    ./python -m coverage run --pylib --branch <arguments to run test(s)>
 
 This will lead to the report stating not only what lines were not covered, but
 also what branch paths were not executed.
@@ -144,8 +154,8 @@ times.
 Filing the Issue
 """"""""""""""""
 Once you have increased coverage, you need to
-:ref:`generate the patch <patch>`, submit it to the `issue tracker`_. For the
-issue set the Components to "Test" and Versions to the version of Python you
+:ref:`generate the patch <patch>` and submit it to the `issue tracker`_. On the
+issue set the "Components" to "Test" and "Versions" to the version of Python you
 worked on (i.e., the in-development version).
 
 .. _issue tracker: http://bugs.python.org
