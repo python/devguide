@@ -42,15 +42,14 @@ Measuring Coverage
 
 .. warning::
     Running the entire test suite under coverage (using either technique listed
-    below) will fail as a test (most likely test_trace) is resetting the trace
-    function; see http://bugs.python.org/issue10541
+    below) currently fails as some tests are resetting the trace function;
+    see http://bugs.python.org/issue10990
+
+    There are also various tests that simply fail as they have not been made
+    robust in the face of coverage measuring/having a trace function set.
 
 Using coverage.py
 -----------------
-
-.. warning::
-    Using coverage.py on test_sys triggers a fatal recursion error; see
-    http://bugs.python.org/issue10985
 
 One of the most popular third-party coverage tools is `coverage.py`_ which
 provides very nice HTML output along with advanced features such as
@@ -141,10 +140,17 @@ If you prefer to rely solely on the stdlib to generate coverage data, you can
 do so by passing the appropriate flags to :py:mod:`test.regrtest` (along with
 any other flags you want to)::
 
-    ./python -m test --coverage -D `pwd`/coverage_data
+    ./python -m test --coverage -D `pwd`/coverage_data <test arguments>
 
 Do note the argument to ``-D``; if you do not specify an absolute path to where
 you want the coverage data to end up it will go somewhere you don't expect.
+
+
+.. note::
+    If you are running coverage over the entire test suite, make sure to
+    add ``-x test_importlib test_runpy test_trace`` to exclude those tests as
+    they trigger exceptions during coverage; see
+    http://bugs.python.org/issue10541 and http://bugs.python.org/issue10991
 
 Once the tests are done you will find the directory you specified contains
 files for each executed module along with which lines were executed how many
