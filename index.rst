@@ -39,7 +39,8 @@ People who wish to contribute to Python **must** read the following documents
 in the order provided.
 You can stop where you feel comfortable and begin contributing immediately
 without reading and understanding these documents all at once, but please do
-not skip around within the documentation.
+not skip around within the documentation as everything is written assuming
+preceding documentation has been read.
 
 * :ref:`setup`
 * Coding style guides
