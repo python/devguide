@@ -82,8 +82,12 @@ Depending on what you intend to work on, you might need to install these
 additional requirements so that the compiled interpreter supports the
 desired features.
 
-
 .. _clang: http://clang.llvm.org/
+
+.. note:: While you need a C compiler to build CPython, you don't need any
+   knowledge of the C language to contribute!  Vast areas of CPython are
+   written completely in Python: as of this writing, CPython contains slightly
+   more Python code than C.
 
 
 UNIX
