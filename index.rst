@@ -35,12 +35,12 @@ Python Developer's Guide
 Contributing
 ------------
 
-People who wish to contribute to Python **must** read the following documents
-in the order provided.
-You can stop where you feel comfortable and begin contributing immediately
-without reading and understanding these documents all at once, but please do
-not skip around within the documentation as everything is written assuming
-preceding documentation has been read.
+We encourage everyone to contribute to Python and that's why we have put up
+this developer's guide.  You **should** read the following documents in
+the order provided.  You can stop where you feel comfortable and begin
+contributing immediately without reading and understanding these documents all
+at once, but please do not skip around within the documentation as everything
+is written assuming preceding documentation has been read.
 
 * :ref:`setup`
 * Coding style guides
