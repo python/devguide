@@ -32,7 +32,9 @@ you will take to do it (this allows others to take on the issue if you happen
 to forget or lose interest).
 
 .. _issue tracker: http://bugs.python.org
-.. _issues assigned to docs@python: http://bugs.python.org/issue?%40search_text=&ignore=file%3Acontent&title=&%40columns=title&id=&%40columns=id&stage=&creation=&creator=&activity=&%40columns=activity&%40sort=activity&actor=&nosy=&type=&components=&versions=&dependencies=&assignee=docs%40python&keywords=&priority=&%40group=priority&status=1&%40columns=status&resolution=&nosy_count=&message_count=&%40pagesize=50&%40startwith=0&%40action=search
+.. _issues assigned to docs@python: http://bugs.python.org/issue?%40sort0=activity&%40sortdir0=on&%40sort1=creation&%40sortdir1=on&%40group0=priority&%40group1=&%40columns=title%2Cid%2Cactivity%2Cstatus&%40filter=assignee%2Cstatus&status=1&assignee=12260&%40pagesize=50&%40startwith=0
+
+
 
 
 Proofreading
