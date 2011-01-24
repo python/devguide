@@ -73,8 +73,9 @@ one should not skip.
 Build dependencies
 ''''''''''''''''''
 
-The core CPython interpreter only needs a C compiler to build itself (both
-clang_ and gcc_ are known to work).
+The core CPython interpreter only needs a C compiler to build itself; if
+you get compile errors with a C89 or C99-compliant compiler, please `open a
+bug report <http://bugs.python.org>`_.
 However, some of the extension modules will need development headers
 for additional libraries (such as the ``zlib`` library for compression).
 Depending on what you intend to work on, you might need to install these
@@ -83,7 +84,6 @@ desired features.
 
 
 .. _clang: http://clang.llvm.org/
-.. _gcc: http://gcc.gnu.org/
 
 
 UNIX
