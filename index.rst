@@ -115,7 +115,9 @@ Resources
 Indices and tables
 ==================
 
-* :ref:`genindex`
-* :ref:`modindex`
+.. XXX commented until non-empty
+   * :ref:`genindex`
+   * :ref:`modindex`
+
 * :ref:`search`
 
