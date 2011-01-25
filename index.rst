@@ -44,8 +44,8 @@ is written assuming preceding documentation has been read.
 
 * :ref:`setup`
 * Coding style guides
-    * `PEP 7`_
-    * `PEP 8`_
+    * `PEP 7`_ (Style Guide for C Code)
+    * `PEP 8`_ (Style Guide for Python Code)
 * :ref:`help`
 * :ref:`patch`
 * :ref:`runtests`
