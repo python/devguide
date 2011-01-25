@@ -23,10 +23,13 @@ more concrete issue.
 
 Ask (#)python-dev
 -----------------
+
 You have two avenues of communication out of the :ref:`myriad of options
 available <communication>`. If you are comfortable with IRC you can try asking
-in #python-dev. Typically there are a couple of experienced developers, ranging
-from triagers to core developers, who can answer questions about developing for
-Python. If you prefer email you can email python-dev for help with your
+on ``#python-dev`` (on the `freenode <http://freenode.net/>`_ network).
+Typically there are a couple of experienced developers, ranging from
+triagers to core developers, who can answer questions about developing for
+Python. If you prefer email you can ask the `python-dev mailing-list
+<http://mail.python.org/mailman/listinfo/python-dev>`_ for help with your
 question. Just remember that both avenues are for questions involving the
 development *of* Python, **not** for development *with* Python.
