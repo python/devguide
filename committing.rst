@@ -5,37 +5,32 @@ Committing Patches
 
 Commit Messages
 ---------------
+
 Every commit has a commit message to document why a change was made and to
 communicate that reason to other core developers. Python core developers have
 developed a standard way of formatting commit messages that everyone is
 expected to follow.
 
-Here is an example commit message::
+Our usual convention mimicks that used in the ``Misc/NEWS`` file.  Actually,
+it is common to simply paste the NEWS entry into the commit message.  Here
+is an example::
 
-    Fixed the spam module to be more spammy.
+   Issue #42: the spam module is now more spammy.
+   The spam module sporadically came up short on spam. This change
+   raises the amount of spam in the module by making it more spammy.
+   Thanks to Monty Python for the patch.
 
-    The spam module sporadically came up short on spam. This change raises the
-    amount of spam in the module by making it more spammy.
-
-    Fixes issue #42. Thanks to Monty Python for the patch.
-
-The first line is meant to be a dense, to-the-point explanation of what the
-purpose of the commit is. If this is not enough detail for a commit, a new
-paragraph(s) can be added to explain in proper depth what has happened (detail
-should be good enough that a core developer reading the commit message
-understands the justification for the change).
-
-Finally, a separate line is
-provided if the commit is related to an issue (e.g., fixes a bug or applies a
-patch) and/or someone did a review of the code. If the issue is closing a bug,
-then typically "Fixes issue #NNNN" is typically used. If a patch from an issue
-is applied, then "Closes issue #NNNN" is typically used along with a "thank
-you" note to the patch creator. If someone did a patch review they also get
-thanked.
+The first line or sentence is meant to be a dense, to-the-point explanation
+of what the purpose of the commit is.  If this is not enough detail for a commit,
+a new paragraph(s) can be added to explain in proper depth what has happened
+(detail should be good enough that a core developer reading the commit message
+understands the justification for the change).  Also, if a non-core developer
+contributed to the resolution, it is good practice to credit them.
 
 
 Handling Other's Code
 ---------------------
+
 As a core developer you will occasionally want to commit a patch created by
 someone else. When doing so you will want to make sure of some things.
 
