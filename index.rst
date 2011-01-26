@@ -20,6 +20,7 @@ Python Developer's Guide
    coredev
    developers
    committing
+   devcycle
 
    stdlibchanges
    langchanges
@@ -64,6 +65,7 @@ is written assuming preceding documentation has been read.
 * :ref:`coredev`
     * :ref:`developers`
     * :ref:`committing`
+    * :ref:`devcycle`
 
 
 Proposing changes to Python itself
