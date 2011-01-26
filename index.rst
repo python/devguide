@@ -94,7 +94,7 @@ Resources
 * Tool support
     * :ref:`emacs`
     * :ref:`gdb`
-    * Various tools with configuration files as found in the `Misc directory`
+    * Various tools with configuration files as found in the `Misc directory`_
 * Help with ...
     * :ref:`grammar`
     * :ref:`compiler`
