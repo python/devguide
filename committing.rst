@@ -3,6 +3,9 @@
 Committing Patches
 ==================
 
+
+Handling Other's Code
+---------------------
 As a core developer you will occasionally want to commit a patch created by
 someone else. When doing so you will want to make sure of some things.
 
@@ -19,7 +22,10 @@ be a good reason for the the breakage of code the change will cause (and it
 **will** break someone's code). If you are unsure if the breakage is worth it,
 ask on python-dev.
 
-Third, backport as necessary. If the patch is a bugfix and it does not break
+
+Backporting
+-----------
+If the patch is a bugfix and it does not break
 backwards-compatibility *at all*, then backport it to the branch(es) in
 maintenance mode. The easiest way to do this is to apply the patch in the
 development branch, commit, and then use svnmerge.py_ to backport the patch.
