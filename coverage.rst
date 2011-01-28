@@ -72,10 +72,9 @@ If you are still having issues with generating coverage, a fork of coverage.py
 can be found at https://bitbucket.org/brettsky/coverage.py which will always
 try to be patched to work against the latest in-development version of Python
 (all patches are submitted upstream so this should only be used as a temporary
-solution). Otherwise you can use the latest release of coverage.py if you
-already have it installed.
+solution).
 
-One option is to
+Another option is to
 download the source distribution of coverage.py and copy the ``coverage``
 directory into your Python checkout. The other option is to use your checkout
 copy of Python to install coverage.py (but use the ``--user`` flag to
@@ -92,7 +91,7 @@ To run the test suite under coverage.py, do the following::
 
     ./python -m coverage run --pylib Lib/test/regrtest.py
 
-If you want to run only a single test, specify the module/package being tested
+To run only a single test, specify the module/package being tested
 in the ``--source`` flag (so as to prune the coverage reporting to only the
 module/package you are interested in) and then append the name of the test you
 wish to run to the command::
@@ -111,10 +110,12 @@ executed::
 But one of the strengths of coverage.py is its HTML-based reports which lets
 you visually see what lines of code were not tested::
 
-    ./python -m coverage -d coverage_html html -i
+    ./python -m coverage -d coverage_html html -i --omit="*/test/*,*/tests/*"
 
-You can then open the ``coverage_html/index.html`` file in a web browser to
-view the coverage results in a nicely formatted page.
+This will generate an HTML report which ignores any errors that may arise and
+ignores test modules. You can then open the ``coverage_html/index.html`` file
+in a web browser to view the coverage results along with pages that visibly
+show what lines of code were not executed.
 
 
 .. _branch_coverage:
