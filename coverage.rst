@@ -43,10 +43,11 @@ Measuring Coverage
 .. warning::
     Running the entire test suite under coverage (using either technique listed
     below) currently fails as some tests are resetting the trace function;
-    see http://bugs.python.org/issue10990
+    see http://bugs.python.org/issue10990 for a patch
 
     There are also various tests that simply fail as they have not been made
-    robust in the face of coverage measuring/having a trace function set.
+    robust in the face of coverage measuring/having a trace function set;
+    see http://bugs.python.org/issue10992 for a patch
 
 Using coverage.py
 -----------------
@@ -103,7 +104,7 @@ executed::
 But one of the strengths of coverage.py is its HTML-based reports which lets
 you visually see what lines of code were not tested::
 
-    ./python -m coverage -d coverage_html html
+    ./python -m coverage -d coverage_html html -i
 
 You can then open the ``coverage_html/index.html`` file in a web browser to
 view the coverage results in a nicely formatted page.
