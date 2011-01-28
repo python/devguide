@@ -150,7 +150,7 @@ for common tasks; gratis versions from http://www.microsoft.com/express/ are
 sufficient.
 
 To build from the Visual Studio GUI, load the project files and press F7. Make
-sure have chosen the "Debug" build first.
+sure you have chosen the "Debug" build first.
 
 Once built you might want to set Python as a startup project. Pressing F5 in
 Visual Studio will launch the interpreter.
