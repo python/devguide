@@ -48,8 +48,8 @@ the above URL to the major/minor version (e.g., ``release27-maint`` for Python
 2.7).
 
 Do note that CPython will notice that it is being run from a source checkout.
-This means that it if you edit Python source code in your checkout the changes
-will be picked up by the interpreter for immediate testing.
+This means that it if you edit Python's source code in your checkout the
+changes will be picked up by the interpreter for immediate testing.
 
 
 Compiling (for debugging)
@@ -73,7 +73,7 @@ one should not skip.
 Build dependencies
 ''''''''''''''''''
 
-The core CPython interpreter only needs a C compiler to build itself; if
+The core CPython interpreter only needs a C compiler to be built; if
 you get compile errors with a C89 or C99-compliant compiler, please `open a
 bug report <http://bugs.python.org>`_.
 However, some of the extension modules will need development headers
