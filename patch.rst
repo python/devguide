@@ -79,6 +79,10 @@ To apply a patch generated this way, do::
 
     patch -p0 < patch.diff
 
+If a developer is using something other than svn to manage their code (e.g.,
+the mq extension for Mercurial), the number passed to ``-p`` may need to be
+changed to ``1``.
+
 To undo a patch, you can revert **all** changes made in your checkout::
 
     svn revert -R .
