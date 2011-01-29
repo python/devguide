@@ -36,6 +36,11 @@ test suite under coverage measuring which
 takes some time to complete, but you will
 have an accurate, up-to-date notion of what modules need the most work.
 
+Do make sure, though, that for any module you do decide to work that you run
+coverage for just that module. This wll make sure you know how good the
+explicit coverage of the module is from its own set of tests instead of from
+implicit testing by other code that happens to use the module.
+
 
 Measuring Coverage
 """"""""""""""""""
