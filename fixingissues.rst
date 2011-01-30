@@ -15,7 +15,7 @@ are not considered easy and try to fix those. It must be warned, though, that
 it is quite possible that a bug that has been left open has been left into that
 state because of the difficulty compared to the benefit of the fix. It could
 also still be open because no consensus has been reached on how to fix the
-issue (although having a patch the proposes a fix can turn the tides of the
+issue (although having a patch that proposes a fix can turn the tides of the
 discussion to help bring it to a close). Regardless of why the issue is open,
 you can also always provide useful comments if you do attempt a fix, successful
 or not.
