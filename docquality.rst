@@ -12,7 +12,7 @@ experience (with or without Python).
 It includes an explanation of the markup used (although you can figure a lot
 out simply by looking at pre-existing documentation) and how to build the
 documentation (which allows you to see how your changes will look along with
-validating your new markup is correct).
+validating that your new markup is correct).
 
 .. _Documenting Python: http://docs.python.org/py3k/documenting/index.html
 
@@ -42,7 +42,7 @@ Proofreading
 
 While an issue filed on the `issue tracker`_ means there is a known issue
 somewhere, that does not mean there are not other issues lurking about in the
-documentation. Simply proofreading parts of the documentation are enough to
+documentation. Simply proofreading parts of the documentation is enough to
 uncover problems (e.g., documentation that needs to be updated for Python 3
 from Python 2).
 

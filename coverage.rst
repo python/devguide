@@ -3,7 +3,7 @@
 Increase Test Coverage
 ======================
 
-Python development follows a practice that all semantics changes and additions
+Python development follows a practice that all semantic changes and additions
 to the language and :abbr:`stdlib (standard library)` are accompanied by
 appropriate unit tests. Unfortunately Python was in existence for a long time
 before the practice came into effect. This has left chunks of the stdlib
@@ -18,8 +18,9 @@ use your judgement as to what should and should not be covered, but being
 conservative and assuming something should be covered is generally a good rule
 to follow.
 
-Choosing what module you want to increase test coverage can be done in a couple
-of ways. A third-party website at http://coverage.livinglogic.de/ provides an
+Choosing what module you want to increase test coverage for can be done in a
+couple of ways.
+A third-party website at http://coverage.livinglogic.de/ provides an
 overall view of how good coverage is for various modules (you will want to
 focus on those in the ``Lib`` directory as those are the pure Python modules
 from Python's stdlib, and thus easier to work with than the C extension
@@ -36,7 +37,7 @@ test suite under coverage measuring which
 takes some time to complete, but you will
 have an accurate, up-to-date notion of what modules need the most work.
 
-Do make sure, though, that for any module you do decide to work that you run
+Do make sure, though, that for any module you do decide to work on that you run
 coverage for just that module. This wll make sure you know how good the
 explicit coverage of the module is from its own set of tests instead of from
 implicit testing by other code that happens to use the module.
