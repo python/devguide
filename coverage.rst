@@ -74,12 +74,6 @@ you prefer) of its ``coverage`` subdirectory::
     hg clone https://bitbucket.org/ned/coveragepy
     ln -s coveragepy/coverage
 
-If you are still having issues with generating coverage, a fork of coverage.py
-can be found at https://bitbucket.org/brettsky/coverage.py which will always
-try to be patched to work against the latest in-development version of Python
-(all patches are submitted upstream so this should only be used as a temporary
-solution).
-
 Another option is to
 download the source distribution of coverage.py and copy the ``coverage``
 directory into your Python checkout. The other option is to use your checkout
