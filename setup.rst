@@ -122,7 +122,11 @@ filed on the `issue tracker`_).
 Once CPython is done building you will then have a working build
 that can be run in-place; ``./python`` on most machines (and what is used in
 all examples), ``./python.exe`` on OS X (when on a case-insensitive filesystem,
-which is the default).
+which is the default). There is absolutely no need to install your built copy
+of Python! The interpreter will realize it is being run directly out of a
+checkout and thus use the files found in the checkout. If you are worried you
+might accidentally install your checkout build, you can add
+``--prefix=/dev/null`` to the configuration step.
 
 .. _issue tracker: http://bugs.python.org
 
