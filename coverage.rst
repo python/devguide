@@ -9,7 +9,7 @@ appropriate unit tests. Unfortunately Python was in existence for a long time
 before the practice came into effect. This has left chunks of the stdlib
 untested which is not a desirable situation to be in.
 
-A good, easy way to become acquianted with Python's code and to help out is to
+A good, easy way to become acquainted with Python's code and to help out is to
 help increase the test coverage for Python's stdlib. Ideally we would like to
 have 100% coverage, but any increase is a good one. Do realize, though, that
 getting 100% coverage is not always possible. There could be platform-specific
@@ -38,7 +38,7 @@ takes some time to complete, but you will
 have an accurate, up-to-date notion of what modules need the most work.
 
 Do make sure, though, that for any module you do decide to work on that you run
-coverage for just that module. This wll make sure you know how good the
+coverage for just that module. This will make sure you know how good the
 explicit coverage of the module is from its own set of tests instead of from
 implicit testing by other code that happens to use the module.
 
@@ -54,6 +54,16 @@ Measuring Coverage
     There are also various tests that simply fail as they have not been made
     robust in the face of coverage measuring/having a trace function set;
     see http://bugs.python.org/issue10992 for a patch
+
+It should be noted that a quirk of running coverage over Python's own stdlib is
+that certain modules are imported as part of interpreter startup. Those modules
+required by Python itself will not be viewed as executed by the coverage tools
+and thus look like they have very poor coverage (e.g., the :py:mod:`stats`
+module). In these instances the module will appear to not have any coverage of
+global statements but will have proper coverage of local statements (e.g.,
+function definitions will be not be traced, but the function bodies will).
+Calculating the coverage of modules in this situation will simply require
+manually looking at what local statements were not executed.
 
 Using coverage.py
 -----------------
