@@ -58,7 +58,7 @@ Measuring Coverage
 It should be noted that a quirk of running coverage over Python's own stdlib is
 that certain modules are imported as part of interpreter startup. Those modules
 required by Python itself will not be viewed as executed by the coverage tools
-and thus look like they have very poor coverage (e.g., the :py:mod:`stats`
+and thus look like they have very poor coverage (e.g., the :py:mod:`stat`
 module). In these instances the module will appear to not have any coverage of
 global statements but will have proper coverage of local statements (e.g.,
 function definitions will be not be traced, but the function bodies will).
