@@ -38,7 +38,7 @@ Maintenance
 The branch currently being maintained for bug fixes.
 
 The branch under maintenance is the last minor version of Python to be released
-as Final_. This means that the latest release of Python was 3.1.2, then the
+as Final_. This means if the latest release of Python was 3.1.2, then the
 branch representing Python 3.1 is in maintenance mode.
 
 The only changes allowed to occur in a maintenance branch without debate are bug
@@ -51,7 +51,7 @@ A branch stays in maintenance mode as long as a new minor release has not been
 made. For example, this means that Python 2.6 stayed in maintenance mode until
 Python 2.7.0 was released, at which point 2.7 went into maintenance mode and
 2.6 went into Security_ mode. As new minor releases occur on a (roughly) 18
-month schedule, a branch stays in mainteance mode for the same amount of time.
+month schedule, a branch stays in maintenance mode for the same amount of time.
 
 A micro release of a maintenance branch is made about every six months.
 Typically when a new minor release is made one more release of the new-old
@@ -64,9 +64,10 @@ A branch less than five years old but no longer in maintenance mode.
 
 The only changes made to a branch that is being maintained for security
 purposes are somewhat obviously those related to security, e.g., privilege
-escalation. Crashers and other behaviorial issues are **not** considered a
+escalation, and issues that lead to crashes. Other behavioral issues are
+**not** considered a
 security risk and thus not backported to a branch being maintained for
-security. Any releases made for a branch under security maintenance is
+security. Any release made from a branch under security maintenance is
 source-only and done only when actual security patches have been applied to the
 branch.
 
