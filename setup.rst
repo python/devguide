@@ -40,8 +40,8 @@ the :ref:`in-development <indevbranch>` branch of Python, run::
     svn co http://svn.python.org/projects/python/branches/py3k
 
 If you want a read-only checkout of an already-released version of Python,
-i.e., a version in maintenance mode, run something like the following which
-gets you a checkout for Python 3.1::
+i.e., a version in :ref:`maintenance mode <maintbranch>`, run something
+like the following which gets you a checkout for Python 3.1::
 
     svn co http://svn.python.org/projects/python/branches/release31-maint
 
