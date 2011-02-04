@@ -46,7 +46,7 @@ it is clear that the issue warrants fixing.
 Components
 ''''''''''
 What part of Python is affected by the issue. This is a multi-select field.
-Be aware what component is chosen may cause the issue to be auto-assigned.
+Be aware that what component is chosen may cause the issue to be auto-assigned.
 
 Versions
 ''''''''
@@ -135,7 +135,8 @@ Status
     The issue is blocked until someone (often times the
     :abbr:`OP (original poster)`) provides some critical info; the issue is
     automatically closed after a set amount of time if no reply comes in.
-    Useful for when someone reports a bug that lacks enough issue to reproduce
+    Useful for when someone reports a bug that lacks enough information to be
+    reproduced and thus should be closed if the lacking info is never provided.
     and thus the issue is worthless without the needed info being provided.
 * closed
     The issue has been resolved (somehow).
