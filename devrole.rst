@@ -18,7 +18,7 @@ tracker properly on your own.
 Gaining the Developer role will allow you to set any value on any issue in the
 tracker, releasing you from the burden of having to ask others to set values on
 an issue for you in order to properly triage something. This will not only help
-speed up and simplify your work in helping out, but also help lesson the
+speed up and simplify your work in helping out, but also help lessen the
 workload for everyone by gaining your help.
 
 .. _issue tracker: http://bugs.python.org
