@@ -63,7 +63,6 @@ is written assuming preceding documentation has been read.
     * :ref:`languishing`
 * :ref:`communication`
 * :ref:`coredev`
-    * :ref:`developers`
     * :ref:`committing`
     * :ref:`devcycle`
 
@@ -103,6 +102,7 @@ Resources
 * :ref:`faq`
 * PEPs_ (Python Enhancement Proposals)
 * `python.org maintenance`_
+* :ref:`developers`
 
 
 .. _buildbots: http://python.org/dev/buildbot/
