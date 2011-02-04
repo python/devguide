@@ -18,9 +18,14 @@ Branches
 Python has branches at the granularity of minor versions. Micro and
 release-level versions are represented using tags in the VCS.
 
+
+.. _indevbranch:
+
 In-Development
 --------------
-The current branch under active development.
+
+The current branch under active development.  It can be :ref:`checked out
+<checkout>` from http://svn.python.org/projects/python/branches/py3k.
 
 The in-development branch is where new functionality and semantic changes
 occur. Currently this branch is known as the "py3k" branch. The next minor
@@ -35,6 +40,7 @@ Typically a minor version of Python is under development for about 18 months.
 
 Maintenance
 -----------
+
 The branch currently being maintained for bug fixes.
 
 The branch under maintenance is the last minor version of Python to be released
