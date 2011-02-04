@@ -21,6 +21,8 @@ manager; under Windows, you might want to use the `TortoiseSVN
 <http://tortoisesvn.net/>`_ graphical client.
 
 
+.. _checkout:
+
 Checking out the code
 ----------------------
 
@@ -33,7 +35,7 @@ support through the VCS as it will provide a diff tool, etc.
 
 To get a read-only checkout of CPython's source, you need to checkout the source
 code. To get a read-only checkout of
-the in-development branch of Python, run::
+the :ref:`in-development <indevbranch>` branch of Python, run::
 
     svn co http://svn.python.org/projects/python/branches/py3k
 
