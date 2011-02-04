@@ -34,7 +34,7 @@ Handling Other's Code
 As a core developer you will occasionally want to commit a patch created by
 someone else. When doing so you will want to make sure of some things.
 
-First, make sure the patch in a good state. Both :ref:`patch` and
+First, make sure the patch is in a good state. Both :ref:`patch` and
 :ref:`helptriage`
 explain what is to be expected of a patch. Typically patches that get cleared by
 triagers are good to go except maybe lacking ``Misc/ACKS`` and ``Misc/NEWS``
@@ -43,7 +43,7 @@ entries.
 Second, make sure the patch does not break backwards-compatibility without a
 good reason. This means :ref:`running the test suite <runtests>` to make sure
 everything still passes. It also means that if semantics do change there must
-be a good reason for the the breakage of code the change will cause (and it
+be a good reason for the breakage of code the change will cause (and it
 **will** break someone's code). If you are unsure if the breakage is worth it,
 ask on python-dev.
 
