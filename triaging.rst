@@ -4,7 +4,7 @@ Triaging an Issue
 =================
 
 When you have the Developer role on the `issue tracker`_ you are able to triage
-issues directly without any assistence.
+issues directly without any assistance.
 
 Fields
 ------
