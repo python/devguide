@@ -89,9 +89,9 @@ Resources
     * `Firefox search engine plug-in`_
 * Buildbots_
 * Source code
-    * `Browse online <http://svn.python.org/view/>`_
-    * `Daily snapshot <http://svn.python.org/snapshots/>`_
-    * `Daily OS X installer <http://python.org/dev/daily-dmg/>`_
+    * `Browse online <http://hg.python.org/>`_
+    * `Snapshot of py3k <http://hg.python.org/cpython/archive/tip.tar.bz2>`_
+    * `XXX Daily OS X installer <http://www.python.org/dev/daily-dmg/>`_
 * Tool support
     * :ref:`emacs`
     * :ref:`gdb`
@@ -107,7 +107,7 @@ Resources
 
 .. _buildbots: http://python.org/dev/buildbot/
 .. _Firefox search engine plug-in: http://www.python.org/dev/searchplugin/
-.. _Misc directory: http://svn.python.org/view/python/branches/py3k/Misc/
+.. _Misc directory: http://hg.python.org/cpython/file/tip/Misc
 .. _PEPs: http://www.python.org/dev/peps
 .. _PEP 7: http://www.python.org/dev/peps/pep-0007
 .. _PEP 8: http://www.python.org/dev/peps/pep-0008
