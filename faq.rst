@@ -197,8 +197,8 @@ and/or removed, just run::
 **Be careful** though, as it might add some files that are not desired in
 the repository (such as build products, cache files, or other data).
 
-You will then need to run ``hg commit`` (as discussed :ref:`below <hg-commit>`)
-to commit the file(s) to your local repository.
+You will then need to run ``hg commit`` (as discussed below) to commit
+the file(s) to your local repository.
 
 
 .. _hg-commit:
@@ -206,7 +206,7 @@ to commit the file(s) to your local repository.
 How do I commit a change to a file?
 -------------------------------------------------------------------------------
 
-To have any changes to a file (which include adding a new file or deleting
+To commit any changes to a file (which includes adding a new file or deleting
 an existing one), you use the command::
 
  hg commit [PATH]
@@ -214,7 +214,7 @@ an existing one), you use the command::
 ``[PATH]`` is optional: if it is omitted, all changes in your working copy
 will be committed to the local repository.  When you commit, be sure that all
 changes are desired by :ref:`reviewing them first <hg-status>`;
-especially, when making commits that you intend to push to public repositories,
+also, when making commits that you intend to push to public repositories,
 you should **not** commit together unrelated changes.
 
 To abort a commit that you are in the middle of, leave the message
