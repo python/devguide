@@ -106,6 +106,9 @@ In ``.hg/hgrc`` file for the relevant local repository, add the following sectio
 This example is for a local repository that mirrors the ``devguide`` repository
 on ``hg.python.org``. The same approach works for other remote repositories.
 
+Anywhere that ``<remote repository>`` is used in the commands in this
+FAQ, ``hg`` will use the default remote repository if you omit the parameter.
+
 
 How do I create a shorthand alias for a remote repository?
 -------------------------------------------------------------------------------
@@ -124,25 +127,31 @@ Anywhere that ``<remote repository>`` is used in the commands in this
 FAQ, ``hg`` should accept an alias in place of a complete remote URL.
 
 
-How do I compare my working copy to a remote repository?
+How do I compare my local repository to a remote repository?
 -------------------------------------------------------------------------------
 
-First, retrieve and enable the `Rdiff extension` for Mercurial.
+To display the list of changes that are in your local repository, but not
+in the remote, use::
 
-The following command will then show the effect of updating the working copy
-to match that remote repository::
+ hg outgoing <remote repository>
 
-  hg diff <remote repository>``
+This is the list of changes that will be sent if you call
+``hg push <remote repository>``.
 
-To instead see the effects of applying the changes in the current working copy
-to that remote repository, simply reverse the diff::
+Conversely, for the list of changes that are in the remote repository but
+not in the local, use::
 
-  hg diff --reverse <remote repository>
+ hg incoming <remote repository>
 
-By executing them in a pristine working copy, these same commands work to
-diff the local repository against a remote repository.
+This is the list of changes that will be retrieved if you call
+``hg pull <remote repository>``.
 
-.. _Rdiff extension: http://mercurial.selenic.com/wiki/RdiffExtension
+.. note::
+   In most daily use, you will work against the default remote repository,
+   and therefore simply type ``hg outgoing`` and ``hg incoming``.
+
+   In this case, you can also get a synthetic summary using
+   ``hg summary --remote``.
 
 
 How do I update my local repository to be in sync with a remote repository?
@@ -160,7 +169,7 @@ subdirectories from the local repository.
 
 You can combine the two commands in one by using::
 
- hg pull -u
+ hg pull -u <remote repository>
 
 
 How do I add a file or directory to the repository?
