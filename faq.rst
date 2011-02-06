@@ -302,7 +302,7 @@ You want::
 
 This will output to stdout every line of the file along with which revision
 last modified that line.  When you have the revision number, it is then
-easy to :ref:`display it in detail <hg-log>`.
+easy to :ref:`display it in detail <hg-log-rev>`.
 
 
 .. _hg-log:
@@ -321,6 +321,8 @@ If you want to display line-by-line differences for each revision as well,
 add the ``-p`` option::
 
  hg log -vp [PATH]
+
+.. _hg-log-rev:
 
 If you want to view the differences for a specific revision, run::
 
