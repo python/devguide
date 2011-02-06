@@ -158,7 +158,7 @@ changes from the specified remote repository and merges them into the local
 repository. The second commands updates the current directory and all its
 subdirectories from the local repository.
 
-You can combine the two one commands in one by using::
+You can combine the two commands in one by using::
 
  hg pull -u
 
