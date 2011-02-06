@@ -7,6 +7,14 @@ Lifecycle of a Patch
 Creating
 --------
 
+Tool Usage
+''''''''''
+
+Because Python uses hg as its version control system, **anyone** can make
+commits locally to their repository. This means that you should make as many
+commits to your code checkout as you want in order for you to work effectively.
+
+
 Preparation
 '''''''''''
 
@@ -67,24 +75,24 @@ patches.
 To create your patch, you should generate a unified diff from your checkout's
 top-level directory::
 
-    svn diff > patch.diff
+    hg outgoing --path > patch.diff
 
 If your work needs some new files to be added to the source tree, remember
-to ``svn add`` them before generating the patch::
+to ``hg add`` them before generating the patch::
 
-   svn add Lib/newfile.py
-   svn diff > patch.diff
+   hg add Lib/newfile.py
+   hg outgoing --patch > patch.diff
 
 To apply a patch generated this way, do::
 
-    patch -p0 < patch.diff
-
-If the developer is using something other than svn to manage their code (e.g.,
-Mercurial), you might have to use ``-p1`` instead of ``-p0``.
+    patch -p1 < patch.diff
 
 To undo a patch, you can revert **all** changes made in your checkout::
 
-    svn revert -R .
+    hg revert --all
+
+This will leave backups of the files with your changes still intact. To skip
+that step, you can use the ``--no-backup`` flag.
 
 .. note:: The ``patch`` program is not available by default under Windows.
    You can find it `here <http://gnuwin32.sourceforge.net/packages/patch.htm>`_,
