@@ -260,14 +260,6 @@ M  Modified locally
 =  ===========================
 
 
-How do I find out what Subversion properties are set for a file or directory?
--------------------------------------------------------------------------------
-
-::
-
- svn proplist PATH
-
-
 How do I revert a file I have modified back to the version in the respository?
 -------------------------------------------------------------------------------
 
@@ -313,17 +305,6 @@ If you want to view the log message for a specific revision, run::
 
 With ``REV`` substituted with the revision number.  The ``--verbose`` flag
 should be used to get a listing of all files modified in that revision.
-
-
-How can I edit the log message of a committed revision?
--------------------------------------------------------------------------------
-
-Use::
-
- svn propedit -r <revision> --revprop svn:log
-
-Replace ``<revision>`` with the revision number of the commit whose log message
-you wish to change.
 
 
 How do I get a diff between the repository and my working copy for a file?
@@ -429,29 +410,6 @@ of the branch, and the eventual destination URL for the new branch::
 You can then checkout your branch as normal.  You will want to prepare your
 branch for future merging from the source branch so as to keep them in sync
 using svnmerge.py.
-
-
-How do I include an external svn repository (external definition) in the repository?
-------------------------------------------------------------------------------------
-
-Before attempting to include an external svn repository into Python's
-repository, it is important to realize that you can only include directories,
-not individual files.
-
-To include a directory of an external definition (external svn repository) as a
-directory you need to edit the ``svn:externals`` property on the root of the
-repository you are working with using the format of::
-
-  local_directory remote_repositories_http_address
-
-For instance, to include Python's sandbox repository in the 'sandbox' directory
-of your repository, run ``svn propedit svn:externals .`` while in the root of
-your repository and enter::
-
-  sandbox http://svn.python.org/projects/sandbox/trunk/
-
-in your text editor.  The next time you run ``svn update`` it will pull in the
-external definition.
 
 
 How can I create a directory in the sandbox?
