@@ -6,60 +6,71 @@ Python Developer FAQ
 Version Control
 ==================================
 
-Where can I learn about the version control system used, Subversion (svn)?
+Where can I learn about the version control system used, Mercurial (hg)?
 -------------------------------------------------------------------------------
 
-`Subversion`_'s (also known as ``svn``) official web site is at
-http://subversion.apache.org/ .  A book on Subversion published by
-`O'Reilly Media`_, `Version Control with Subversion`_, is available
+`Mercurial`_'s (also known as ``hg``) official web site is at
+http://mercurial.selenic.com/.  A book on Subversion published by
+`O'Reilly Media`_, `Mercurial: The Definitive Guide`_, is available
 for free online.
 
-With Subversion installed, you can run the help tool that comes with
-Subversion to get help::
+With Mercurial installed, you can run the help tool that comes with
+Mercurial to get help::
 
-  svn help
+  hg help
 
-The man page for ``svn`` is rather scant and not very helpful.
+The man page for ``hg`` provides a quick refresher on the details of
+various commands, but doesn't provide any guidance on overall
+workflow.
 
-.. _Subversion: http://subversion.apache.org/
+.. _Mercurial: http://mercurial.selenic.com/
 .. _O'Reilly Media: http://www.oreilly.com/
-.. _Version Control with Subversion: http://svnbook.red-bean.com/
+.. _Mercurial: The Definitive Guide: http://hgbook.red-bean.com/
 
 
-What do I need to use Subversion?
+What do I need to use Mercurial?
 -------------------------------------------------------------------------------
 
-.. _download Subversion: http://subversion.apache.org/packages.html
+.. _download Mercurial: http://mercurial.selenic.com/downloads/
 
 UNIX
 '''''''''''''''''''
 
-First, you need to `download Subversion`_.  Most UNIX-based operating systems
-have binary packages available.  Also, most packaging systems also
-have Subversion available.
+First, you need to `download Mercurial`_.  Most UNIX-based operating systems
+have binary packages available.  Most package management systems also
+have native Mercurial packages available.
 
 If you have checkin rights, you need OpenSSH_.  This is needed to verify
-your identity when performing commits.
+your identity when performing commits. As with Mercurial, binary packages
+are typically available either online or through the platform's package
+management system.
 
 .. _OpenSSH: http://www.openssh.org/
 
 Windows
 '''''''''''''''''''
 
-You have several options on Windows.  One is to `download Subversion`_ itself
+XXX: The following instructions need verification. They're based on
+the old SVN instructions plus the info at
+http://mercurial.selenic.com/wiki/AccessingSshRepositoriesFromWindows
+and https://bitbucket.org/tortoisehg/stable/wiki/ssh
+
+You have several options on Windows.  One is to `download Mercurial`_ itself
 which will give you a command-line version.  Another option is to `download
-TortoiseSVN`_ which integrates with Windows Explorer.
+TortoiseHg`_ which integrates with Windows Explorer. Note that this FAQ only
+covers the command line client in detail - refer to the TortoiseHg
+documentation for assistance with that tool.
 
 If you have checkin rights, you will also need an SSH client.
 `Download PuTTY and friends`_ (PuTTYgen, Pageant, and Plink) for this.  All
 other questions in this FAQ will assume you are using these tools.
 
-Once you have both Subversion and PuTTY installed you must tell Subversion
+Once you have both Mercurial and PuTTY installed you must tell Subversion
 where to find an SSH client.  Do this by editing
-``%APPDATA%\Subversion\config`` to have the following
-section::
+``%APPDATA%\Mercurial.ini`` to add the following entry (use the existing
+``[ui]`` section if one is already present)::
 
-  [tunnels]
+  [ui]
   ssh="c:/path/to/putty/plink.exe" -T
 
 Change the path to be the proper one for your system.  The ``-T``
@@ -70,28 +81,55 @@ SSH 2 key constantly.  If you prefer not to have another program running,
 you need to create a profile in PuTTY.
 
 Go to Session:Saved Sessions and create a new profile named
-``svn.python.org``.  In Session:Host Name, enter ``svn.python.org``.  In
+``hg.python.org``.  In Session:Host Name, enter ``hg.python.org``.  In
 SSH/Auth:Private key file select your private key.  In Connection:Auto-login
-username enter ``pythondev``.
+username enter ``hg``.
 
+XXX: Does the following comment still apply to TortoiseHg?
 With this set up, paths are slightly different than most other settings in that
 the username is not required.  Do take notice of this when choosing to check
 out a project!
 
-.. _download TortoiseSVN: http://tortoisesvn.net/downloads
+.. _download TortoiseHg: http://tortoisehg.bitbucket.org/download/index.html
 .. _PuTTY: http://www.chiark.greenend.org.uk/~sgtatham/putty/
 .. _download PuTTY and friends: http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html
 
+
+How do I link my local repository to a particular remote repository?
+-------------------------------------------------------------------------------
+
+In ``.hg/hgrc`` file for the relevant local repository, add the following section::
+
+  [paths]
+  default = ssh://hg@hg.python.org/devguide
+
+This example is for a local repository that mirrors the ``devguide`` repository
+on ``hg.python.org``. The same approach works for other remote repositories.
+
+How do I create a nickname for a remote repository?
+-------------------------------------------------------------------------------
+
+In your global ``.hgrc`` file add a section similar to the following::
+
+  [paths]
+  dg = ssh://hg@hg.python.org/devguide
+
+This example creates a ``dg`` alias for the ``devguide`` repository
+on ``hg.python.org``. This allows "dg" to be entered instead of the
+full URL for commands such as ``hg pull`.
 
 How do I update my working copy to be in sync with the repository?
 -------------------------------------------------------------------------------
 
 Run::
 
- svn update
+ hg pull <remote repository>
+ hg update
 
-from the directory you wish to update.  The directory and all its
-subdirectories will be updated.
+from the directory you wish to update.  The first command retrieves any
+changes from the specified remote repository and merges them into the local
+repository. The second commands updates the current directory and all its
+subdirectories from the local repository.
 
 
 How do I add a file or directory to the repository?
