@@ -450,11 +450,16 @@ will load the key every time you log in.
 
 .. _Pageant: http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html
 
-Can I make check-ins from machines other than the one I generated the keys on?
+
+Can I make commits from machines other than the one I generated the keys on?
 ------------------------------------------------------------------------------
 
-Yes, all you need is to make sure that the machine you want to check
-in code from has both the public and private keys in the standard
+You can :ref:`make commits <hg-commit>` from any machine, since they will be
+recorded in your *local repository*.
+
+However, to push these changes to the remote server, you will need proper
+credentials.  All you need is to make sure that the machine you want to
+push changes from has both the public and private keys in the standard
 place that ssh will look for them (i.e. ~/.ssh on Unix machines).
 Please note that although the key file ending in .pub contains your
 user name and machine name in it, that information is not used by the
