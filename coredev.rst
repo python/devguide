@@ -68,7 +68,12 @@ This should match your username on the issue tracker.
 
 You can verify your commit access by looking at
 http://www.python.org/dev/committers which lists all core developers by
-username. You can also execute the follow command and look for the word
+username.
+
+.. warning::
+   XXX the technique below does not work with hg@hg.python.org
+
+You can also execute the follow command and look for the word
 "success" in the output::
 
     ssh pythondev@svn.python.org
@@ -112,7 +117,7 @@ HTTP.
 
 For the development branch, you can check out the development branch with::
 
-    svn co svn+ssh://pythondev@svn.python.org/python/branches/py3k
+    hg clone hg@hg.python.org/cpython#py3k
 
 Make the appropriate changes to the URL to checkout maintenance branches by
 removing ``py3k`` and replacing it with the name of the branch you want.
