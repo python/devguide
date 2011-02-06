@@ -361,23 +361,6 @@ to get a list of tags.  To update your working copy to a specific tag, use::
    hg update <tag>
 
 
-How can I create a directory in the sandbox?
-------------------------------------------------------------------------------
-
-Assuming you have commit privileges and you do not already have a complete
-checkout of the sandbox itself, the easiest way is to use svn's ``mkdir``
-command::
-
-  svn mkdir svn+ssh://pythondev@svn.python.org/sandbox/trunk/<directory>
-
-That command will create the new directory on the server.  To gain access to
-the new directory you then checkout it out (substitute ``mkdir`` in the command
-above with ``checkout``).
-
-If you already have a complete checkout of the sandbox then you can just use
-``svn mkdir`` on a local directory name and check in the new directory itself.
-
-
 SSH
 =======
 
