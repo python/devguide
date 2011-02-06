@@ -25,7 +25,7 @@ workflow.
 
 .. _Mercurial: http://mercurial.selenic.com/
 .. _O'Reilly Media: http://www.oreilly.com/
-.. _Mercurial: The Definitive Guide: http://hgbook.red-bean.com/
+.. _Mercurial\: The Definitive Guide: http://hgbook.red-bean.com/
 
 
 What do I need to use Mercurial?
@@ -117,7 +117,7 @@ In your global ``.hgrc`` file add a section similar to the following::
 
 This example creates a ``dg`` alias for the ``devguide`` repository
 on ``hg.python.org``. This allows "dg" to be entered instead of the
-full URL for commands such as ``hg pull`.
+full URL for commands such as ``hg pull``.
 
 Anywhere that ``<remote repository>`` is used in the commands in this
 FAQ, ``hg`` should accept an alias in place of a complete remote URL.
