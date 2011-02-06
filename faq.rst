@@ -302,15 +302,15 @@ How do I revert a file I have modified back to the version in the respository?
 
 Running::
 
- svn revert PATH
+ hg revert PATH
 
-will change ``PATH`` to match the version in the repository, throwing away any
+will revert ``PATH`` to its version in the repository, throwing away any
 changes you made locally.  If you run::
 
- svn revert -R .
+ hg revert -a
 
-from the root of your local repository it will recursively restore everything
-to match up with the main server.
+from the root of your working copy it will recursively restore everything
+to match up with the repository.
 
 
 How do I find out who edited or what revision changed a line last?
@@ -322,26 +322,29 @@ You want::
 
 This will output to stdout every line of the file along with which revision
 last modified that line.  When you have the revision number, it is then
-easy to display it in detail using::
+easy to :ref:`display it in detail <hg-log>`.
 
- hg log -vp -r <revision number>
 
+.. _hg-log:
 
 How can I see a list of log messages for a file or specific revision?
 ---------------------------------------------------------------------
 
-To see the log messages for a specific file, run::
+To see the history of changes for a specific file, run::
 
- svn log PATH
+ hg log -v [PATH]
 
-That will list all messages that pertain to the file specified in ``PATH``.
+That will list all messages of revisions which modified the file specified
+in ``PATH``.  If ``PATH`` is omitted, all revisions are listed.
 
-If you want to view the log message for a specific revision, run::
+If you want to display line-by-line differences for each revision as well,
+add the ``-p`` option::
 
- svn log --verbose -r REV
+ hg log -vp [PATH]
 
-With ``REV`` substituted with the revision number.  The ``--verbose`` flag
-should be used to get a listing of all files modified in that revision.
+If you want to view the differences for a specific revision, run::
+
+ hg log -vp -r <revision number>
 
 
 How do I get a diff between the repository and my working copy for a file?
