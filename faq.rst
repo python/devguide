@@ -117,7 +117,8 @@ In your global ``.hgrc`` file add a section similar to the following::
 
 This example creates a ``dg`` alias for the ``devguide`` repository
 on ``hg.python.org``. This allows "dg" to be entered instead of the
-full URL for commands such as ``hg pull``.
+full URL for commands taking a repository argument (e.g. ``hg pull dg`` or
+``hg outgoing dg``).
 
 Anywhere that ``<remote repository>`` is used in the commands in this
 FAQ, ``hg`` should accept an alias in place of a complete remote URL.
