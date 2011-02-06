@@ -372,22 +372,11 @@ How do I update to a specific release tag?
 
 Run::
 
-    svn list svn+ssh://pythondev@svn.python.org/python/tags
+   hg tags
 
-or visit::
+to get a list of tags.  To update your working copy to a specific tag, use::
 
-    http://svn.python.org/view/python/tags/
-
-to get a list of tags.  To switch your current sandbox to a specific tag,
-run::
-
-    svn switch svn+ssh://pythondev@svn.python.org/python/tags/r242
-
-To just update to the revision corresponding to that tag without changing
-the metadata for the repository, note the revision number corresponding to
-the tag of interest and update to it, e.g.::
-
-    svn update -r 39619
+   hg update <tag>
 
 
 How do I create a branch?
