@@ -158,6 +158,10 @@ changes from the specified remote repository and merges them into the local
 repository. The second commands updates the current directory and all its
 subdirectories from the local repository.
 
+You can combine the two one commands in one by using::
+
+ hg pull -u
+
 
 How do I add a file or directory to the repository?
 -------------------------------------------------------------------------------
