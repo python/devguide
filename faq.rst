@@ -379,19 +379,6 @@ to get a list of tags.  To update your working copy to a specific tag, use::
    hg update <tag>
 
 
-How do I create a branch?
--------------------------
-
-The best way is to do a server-side copy by specifying the URL for the source
-of the branch, and the eventual destination URL for the new branch::
-
-    svn copy SRC_URL DEST_URL
-
-You can then checkout your branch as normal.  You will want to prepare your
-branch for future merging from the source branch so as to keep them in sync
-using svnmerge.py.
-
-
 How can I create a directory in the sandbox?
 ------------------------------------------------------------------------------
 
