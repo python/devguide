@@ -44,7 +44,7 @@ In-development (main) branch
 The branch for the next minor version; it is under active development for
 all kinds of changes: new features, semantic changes, performance improvements,
 bug fixes.  It can be :ref:`checked out <checkout>` from
-http://svn.python.org/projects/python/branches/py3k.
+http://hg.python.org/cpython#py3k.
 
 Once a :ref:`final` release is made from the in-development branch (say, 3.2), a
 new :ref:`maintenance branch <maintbranch>` (e.g. ``release32-maint``)
