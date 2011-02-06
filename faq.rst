@@ -390,36 +390,6 @@ the tag of interest and update to it, e.g.::
     svn update -r 39619
 
 
-Why should I use ``svn switch``?
--------------------------------------------------------------------------------
-
-If you picture each file/directory in Subversion as uniquely identified
-by a 2-space coordinate system [URL, revision] (given a checkout, you can
-use "svn info" to get its coordinates), then we can say that "svn up -r N"
-(for some revision number N) keeps the url unchanged and changes the
-revision to whatever number you specified.  In other words, you get the
-state of the working copy URL at the time revision N was created.  For
-instance, if you execute it with revision 39619 within the trunk working
-copy, you will get the trunk at the moment 2.4.2 was released.
-
-On the other hand, "svn switch" moves the URL: it basically "moves" your
-checkout from [old_URL, revision] to [new_URL, HEAD], downloading the
-minimal set of diffs to do so.  If the new_URL is a tag URL
-(e.g. .../tags/r242), it means any revision is good, since nobody is going
-to commit into that directory (it will stay unchanged forever).  So
-[/tags/r242, HEAD] is the same as any other [/tags/r242, revision] (assuming
-of course that /tags/r242 was already created at the time the revision was
-created).
-
-If you want to create a sandbox corresponding to a particular release tag,
-use svn switch to switch to [/tags/some_tag, HEAD] if you don't plan on
-doing modifications.  On the other hand if you want to make modifications to
-a particular release branch, use svn switch to change to
-[/branches/some_branch, HEAD].
-
-(Written by Giovanni Bajo on python-dev.)
-
-
 How do I create a branch?
 -------------------------
 
