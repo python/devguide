@@ -10,7 +10,7 @@ Where can I learn about the version control system used, Mercurial (hg)?
 -------------------------------------------------------------------------------
 
 `Mercurial`_'s (also known as ``hg``) official web site is at
-http://mercurial.selenic.com/.  A book on Subversion published by
+http://mercurial.selenic.com/.  A book on Mercurial published by
 `O'Reilly Media`_, `Mercurial: The Definitive Guide`_, is available
 for free online.
 
