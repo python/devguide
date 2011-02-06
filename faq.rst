@@ -145,7 +145,7 @@ diff the local repository against a remote repository.
 .. _Rdiff extension: http://mercurial.selenic.com/wiki/RdiffExtension
 
 
-How do I update my working copy to be in sync with a remote repository?
+How do I update my local repository to be in sync with a remote repository?
 -------------------------------------------------------------------------------
 
 Run::
