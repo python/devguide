@@ -106,7 +106,8 @@ In ``.hg/hgrc`` file for the relevant local repository, add the following sectio
 This example is for a local repository that mirrors the ``devguide`` repository
 on ``hg.python.org``. The same approach works for other remote repositories.
 
-How do I create a nickname for a remote repository?
+
+How do I create a shorthand alias for a remote repository?
 -------------------------------------------------------------------------------
 
 In your global ``.hgrc`` file add a section similar to the following::
@@ -118,7 +119,32 @@ This example creates a ``dg`` alias for the ``devguide`` repository
 on ``hg.python.org``. This allows "dg" to be entered instead of the
 full URL for commands such as ``hg pull`.
 
-How do I update my working copy to be in sync with the repository?
+Anywhere that ``<remote repository>`` is used in the commands in this
+FAQ, ``hg`` should accept an alias in place of a complete remote URL.
+
+
+How do I compare my working copy to a remote repository?
+-------------------------------------------------------------------------------
+
+First, retrieve and enable the `Rdiff extension` for Mercurial.
+
+The following command will then show the effect of updating the working copy
+to match that remote repository::
+
+  hg diff <remote repository>``
+
+To instead see the effects of applying the changes in the current working copy
+to that remote repository, simply reverse the diff::
+
+  hg diff --reverse <remote repository>
+
+By executing them in a pristine working copy, these same commands work to
+diff the local repository against a remote repository.
+
+.. _Rdiff extension: http://mercurial.selenic.com/wiki/RdiffExtension
+
+
+How do I update my working copy to be in sync with a remote repository?
 -------------------------------------------------------------------------------
 
 Run::
