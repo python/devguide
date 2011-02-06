@@ -206,9 +206,9 @@ an existing one), you use the command::
 
 ``[PATH]`` is optional: if it is omitted, all changes in your working copy
 will be committed to the local repository.  When you commit, be sure that all
-changes are desired; especially, when making commits that you intend to
-push to public repositories, you should **not** commit together unrelated
-changes.
+changes are desired by :ref:`reviewing them first <hg-status>`;
+especially, when making commits that you intend to push to public repositories,
+you should **not** commit together unrelated changes.
 
 To abort a commit that you are in the middle of, leave the message
 empty (i.e., close the text editor without adding any text for the
@@ -239,25 +239,35 @@ have to :ref:`commit your changes <hg-commit>` for the removal to be recorded
 in your local repository.
 
 
-What files are modified locally in my working copy?
+.. _hg-status:
+
+What files are modified in my working copy?
 -------------------------------------------------------------------------------
 
 Running::
 
- svn status [PATH]
+ hg status
 
-will list any differences between your working copy and the repository.  Some
+will list any pending changes in the working copy.  These changes will get
+commited to the local repository if you issue an ``hg commit`` without
+specifying any path.
+
+Some
 key indicators that can appear in the first column of output are:
 
-=  ===========================
-A  Scheduled to be added
+   =  ===========================
+   A  Scheduled to be added
 
-D  Scheduled to be deleted
+   R  Scheduled to be removed
 
-M  Modified locally
+   M  Modified locally
 
-?  Not under version control
-=  ===========================
+   ?  Not under version control
+   =  ===========================
+
+If you want a line-by-line listing of the differences, use::
+
+ hg diff
 
 
 How do I revert a file I have modified back to the version in the respository?
@@ -281,13 +291,13 @@ How do I find out who edited or what revision changed a line last?
 
 You want::
 
- svn blame PATH
+ hg annotate PATH
 
-This will output to stdout every line of the file along with what revision
-number last touched that line and who committed that revision.  Since it is
-printed to stdout, you probably want to pipe the output to a pager::
+This will output to stdout every line of the file along with which revision
+last modified that line.  When you have the revision number, it is then
+easy to display it in detail using::
 
- svn blame PATH | less
+ hg log -vp -r <revision number>
 
 
 How can I see a list of log messages for a file or specific revision?
