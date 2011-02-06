@@ -347,26 +347,6 @@ If you want to view the differences for a specific revision, run::
  hg log -vp -r <revision number>
 
 
-How do I get a diff between the repository and my working copy for a file?
--------------------------------------------------------------------------------
-
-The diff between your working copy and what is in the repository can be had
-with::
-
- svn diff PATH
-
-This will work off the current revision in the repository.  To diff your
-working copy with a specific revision, do::
-
- svn diff -r REV PATH
-
-Finally, to generate a diff between two specific revisions, use::
-
- svn diff -r REV1:REV2 PATH
-
-Notice the ``:`` between ``REV1`` and ``REV2``.
-
-
 How do I undo the changes made in a recent committal?
 -------------------------------------------------------------------------------
 
