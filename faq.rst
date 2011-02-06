@@ -347,23 +347,24 @@ If you want to view the differences for a specific revision, run::
  hg log -vp -r <revision number>
 
 
-How do I undo the changes made in a recent committal?
+How do I undo the changes made in a recent commit?
 -------------------------------------------------------------------------------
 
-Assuming your bad revision is ``NEW`` and ``OLD`` is the equivalent of ``NEW
-- 1``, then run::
+First, this should not happen if you take the habit of :ref:`reviewing changes
+<hg-status>` before committing them.
 
- svn merge -r NEW:OLD PATH
+In any case, run::
 
-This will revert *all* files back to their state in revision ``OLD``.
-The reason that ``OLD`` is just ``NEW - 1`` is you do not want files to be
-accidentally reverted to a state older than your changes, just to the point
-prior.
+ hg backout <revision number>
 
-Note:  PATH here refers to the top of the checked out repository,
-not the full pathname to a file.  PATH can refer to a different
-branch when merging from the head, but it must still be the top
-and not an individual file or subdirectory.
+This will commit a *new* revision reverting the exact changes made in
+``<revision number>``.  However, if other changes have been made since then,
+you will have to merge them with that new revision.  For that, run::
+
+ hg merge
+ hg commit
+
+.. XXX: "hg backout --merge" doesn't seem to work
 
 
 How do I update to a specific release tag?
