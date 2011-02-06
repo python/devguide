@@ -14,11 +14,11 @@ structure of a CPython checkout.
 Version Control Setup
 ---------------------
 
-CPython is developed using `Subversion (commonly abbreviated SVN)
-<http://subversion.tigris.org/>`_.
+CPython is developed using `Mercurial (commonly abbreviated 'hg')
+<http://hg-scm.org/>`_.
 It is easily available for common Unix systems by way of the standard package
-manager; under Windows, you might want to use the `TortoiseSVN
-<http://tortoisesvn.net/>`_ graphical client.
+manager; under Windows, you might want to use the `TortoiseHg
+<http://tortoisehg.org/>`_ graphical client.
 
 
 .. _checkout:
@@ -37,13 +37,18 @@ To get a read-only checkout of CPython's source, you need to checkout the source
 code. To get a read-only checkout of
 the :ref:`in-development <indevbranch>` branch of Python, run::
 
-    svn co http://svn.python.org/projects/python/branches/py3k
+    hg clone http://hg.python.org/cpython#py3k
+
+.. warning::
+   XXX assuming 'default' branch is unused. Regardless,  probably wrong URL as
+   PEP 385 suggests py3k will be its own repo compared to Python 2 which is not
+   the case as of 2011-02-05. If this is wrong, also change all other hg URLs.
 
 If you want a read-only checkout of an already-released version of Python,
 i.e., a version in :ref:`maintenance mode <maintbranch>`, run something
 like the following which gets you a checkout for Python 3.1::
 
-    svn co http://svn.python.org/projects/python/branches/release31-maint
+    hg clone http://hg.python.org/cpython#release-31maint
 
 To check out a version of Python other than 3.1, simply change the number in
 the above URL to the major/minor version (e.g., ``release27-maint`` for Python
