@@ -40,59 +40,39 @@ First, you need to `download Mercurial`_.  Most UNIX-based operating systems
 have binary packages available.  Most package management systems also
 have native Mercurial packages available.
 
-If you have checkin rights, you need OpenSSH_.  This is needed to verify
+If you have push rights, you need OpenSSH_.  This is needed to verify
 your identity when performing commits. As with Mercurial, binary packages
 are typically available either online or through the platform's package
 management system.
 
 .. _OpenSSH: http://www.openssh.org/
 
+
 Windows
 '''''''''''''''''''
 
-XXX: The following instructions need verification. They're based on
-the old SVN instructions plus the info at
-http://mercurial.selenic.com/wiki/AccessingSshRepositoriesFromWindows
-and https://bitbucket.org/tortoisehg/stable/wiki/ssh
+The recommended option on Windows is to `download TortoiseHg`_ which
+integrates with Windows Explorer and also bundles the command line client
+(meaning you can type ``hg`` in a DOS box).  Note that most
+entries in this FAQ only cover the command line client in detail - refer
+to the TortoiseHg documentation for assistance with its graphical interface.
 
-You have several options on Windows.  One is to `download Mercurial`_ itself
-which will give you a command-line version.  Another option is to `download
-TortoiseHg`_ which integrates with Windows Explorer. Note that this FAQ only
-covers the command line client in detail - refer to the TortoiseHg
-documentation for assistance with that tool.
+If you have push rights, you need to configure Mercurial to work with
+your SSH keys.  For that, open your Mercurial configuration file
+(you can do so by opening the TortoiseHg configuration dialog and then
+clicking *"Edit File"*).  In the ``[ui]`` section, add the following line::
 
-If you have checkin rights, you will also need an SSH client.
-`Download PuTTY and friends`_ (PuTTYgen, Pageant, and Plink) for this.  All
-other questions in this FAQ will assume you are using these tools.
+   ssh = TortoisePlink.exe -ssh -2 -i C:\path\to\yourkey.ppk
 
-Once you have both Mercurial and PuTTY installed you must tell Subversion
-where to find an SSH client.  Do this by editing
-``%APPDATA%\Mercurial.ini`` to add the following entry (use the existing
-``[ui]`` section if one is already present)::
+where ``C:\path\to\yourkey.ppk`` should be replaced with the actual path
+to your SSH private key.
 
-  [ui]
-  ssh="c:/path/to/putty/plink.exe" -T
+.. note::
+   If your private key is in OpenSSH format, you must first convert it to
+   PuTTY format by loading it into `PuTTYgen`_.
 
-Change the path to be the proper one for your system.  The ``-T``
-option prevents a pseudo-terminal from being created.
-
-You can use Pageant to prevent from having to type in your password for your
-SSH 2 key constantly.  If you prefer not to have another program running,
-you need to create a profile in PuTTY.
-
-Go to Session:Saved Sessions and create a new profile named
-``hg.python.org``.  In Session:Host Name, enter ``hg.python.org``.  In
-SSH/Auth:Private key file select your private key.  In Connection:Auto-login
-username enter ``hg``.
-
-XXX: Does the following comment still apply to TortoiseHg?
-With this set up, paths are slightly different than most other settings in that
-the username is not required.  Do take notice of this when choosing to check
-out a project!
 
 .. _download TortoiseHg: http://tortoisehg.bitbucket.org/download/index.html
-.. _PuTTY: http://www.chiark.greenend.org.uk/~sgtatham/putty/
-.. _download PuTTY and friends: http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html
 
 
 What's a working copy? What's a repository?
@@ -423,8 +403,8 @@ have it create an OpenSSH formatted key, choose a password, and save the private
 key to a file.  Copy the section with the public key (using Alt-P) to a file;
 that file now has your public key.
 
-
 .. _PuTTYgen: http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html
+
 
 Is there a way to prevent from having to enter my password for my SSH 2 public key constantly?
 ------------------------------------------------------------------------------------------------
@@ -439,16 +419,21 @@ once per login instead of per session.
 
 .. _KeyChain: http://www.gentoo.org/proj/en/keychain/
 
+
+.. _pageant:
+
 Windows
 '''''''''''''''''''
 
-Running Pageant_ will prevent you from having to type your password constantly.
+The Pageant program is bundled with TortoiseHg.  You can find it in its
+installation directory (usually ``C:\Program Files (x86)\TortoiseHg\``);
+you can also `download it separately
+<http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html>`_.
+
+Running Pageant will prevent you from having to type your password constantly.
 If you add a shortcut to Pageant to your Autostart group and edit the shortcut
 so that the command line includes an argument to your private key then Pageant
 will load the key every time you log in.
-
-
-.. _Pageant: http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html
 
 
 Can I make commits from machines other than the one I generated the keys on?
