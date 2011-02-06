@@ -162,7 +162,8 @@ in the remote, use::
  hg outgoing <remote repository>
 
 This is the list of changes that will be sent if you call
-``hg push <remote repository>``.
+``hg push <remote repository>``.  It does **not** include any :ref:`uncommitted
+changes <hg-status>` in your working copy!
 
 Conversely, for the list of changes that are in the remote repository but
 not in the local, use::
