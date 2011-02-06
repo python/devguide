@@ -168,38 +168,54 @@ How do I add a file or directory to the repository?
 
 Simply specify the path to the file or directory to add and run::
 
- svn add PATH
+ hg add PATH
 
-Subversion will skip any directories it already knows about.  But if
-you want new files that exist in any directories specified in ``PATH``, specify
-``--force`` and Subversion will check *all* directories for new files.
+If ``PATH`` is a directory, Mercurial will recursively add any files in that
+directory and its descendents.
 
-You will then need to run ``svn commit`` (as discussed in
-`How do I commit a change to a file?`_) to commit the file to the repository.
+If you want Mercurial to figure out by itself which files should be added
+and/or removed, just run::
 
+ hg addremove
+
+**Be careful** though, as it might add some files that are not desired in
+the repository (such as build products, cache files, or other data).
+
+You will then need to run ``hg commit`` (as discussed :ref:`below <hg-commit>`)
+to commit the file(s) to your local repository.
+
+
+.. _hg-commit:
 
 How do I commit a change to a file?
 -------------------------------------------------------------------------------
 
-To have any changes to a file (which include adding a new file or deleting an
-existing one), you use the command::
+To have any changes to a file (which include adding a new file or deleting
+an existing one), you use the command::
 
- svn commit [PATH]
+ hg commit [PATH]
 
-Although ``[PATH]`` is optional, if PATH is omitted all changes
-in your local copy will be committed to the repository.
-**DO NOT USE THIS!!!**  You should specify the specific files
-to be committed unless you are *absolutely* positive that
-*all outstanding modifications* are meant to go in this commit.
+``[PATH]`` is optional: if it is omitted, all changes in your working copy
+will be committed to the local repository.  When you commit, be sure that all
+changes are desired; especially, when making commits that you intend to
+push to public repositories, you should **not** commit together unrelated
+changes.
 
 To abort a commit that you are in the middle of, leave the message
 empty (i.e., close the text editor without adding any text for the
-message).  Subversion will confirm if you want to abort the commit.
+message).  Mercurial will then abort the commit operation so that you can
+try again later.
 
-If you do not like the default text editor Subversion uses for
-entering commmit messages, you may specify a different editor
-in your Subversion config file with the
-``editor-cmd`` option in the ``[helpers]`` section.
+Once a change is committed to your local repository, it is still only visible
+by you.  This means you are free to experiment with as many local commits
+you feel like.
+
+.. note::
+   If you do not like the default text editor Mercurial uses for
+   entering commmit messages, you may specify a different editor,
+   either by changing the ``EDITOR`` environment variable or by setting
+   a Mercurial-specific editor in your global ``.hgrc`` with the ``editor``
+   option in the ``[ui]`` section.
 
 
 How do I delete a file or directory in the repository?
@@ -207,10 +223,11 @@ How do I delete a file or directory in the repository?
 
 Specify the path to be removed with::
 
- svn delete PATH
+ hg rm PATH
 
-Any modified files or files that are not checked in will not be deleted
-in the working copy on your machine.
+This will remove the file or the directory from your working copy; you will
+have to :ref:`commit your changes <hg-commit>` for the removal to be recorded
+in your local repository.
 
 
 What files are modified locally in my working copy?
