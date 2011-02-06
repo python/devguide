@@ -95,10 +95,36 @@ out a project!
 .. _download PuTTY and friends: http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html
 
 
+What's a working copy? What's a repository?
+-------------------------------------------
+
+Mercurial is a "distributed" version control system.  This means that each
+participant, even casual contributors, download a complete copy (called a
+*clone*, since it is obtained by calling ``hg clone``) of the central
+repository which can be treated as a stand-alone repository for all purposes.
+That copy is called in the FAQ the *local repository*, to differentiate
+with any *remote repository* you might also interact with.
+
+But you don't modify files directly in the local repository; Mercurial doesn't
+allow for it.  You modify files in what's called the *working copy* associated
+with your local repository: you also run compilations and tests there.
+Once you are satisfied with your changes, you can :ref:`commit them <hg-commit>`;
+committing records the changes as a new *revision* in the *local repository*.
+
+Changes in your *local repository* don't get automatically shared with the
+rest of the world.  Mercurial ensures that you have to do so explicitly
+(this allows you to experiment quite freely with multiple branches of
+development, all on your private computer).  The main commands for doing
+so are ``hg pull`` and ``hg push``.
+
+
 How do I link my local repository to a particular remote repository?
 -------------------------------------------------------------------------------
 
-In ``.hg/hgrc`` file for the relevant local repository, add the following section::
+Your local repository is linked by default to the remote repository it
+was *cloned* from.  If you created it from scratch, however, it is not linked
+to any remote repository.  In ``.hg/hgrc`` file for the local repository, add
+or modify the following section::
 
   [paths]
   default = ssh://hg@hg.python.org/devguide
