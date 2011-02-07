@@ -66,7 +66,9 @@ IRC
 Some core developers enjoy spending time on IRC discussing various issues
 regarding Python's development in the ``#python-dev`` channel on
 ``irc.freenode.net``. This is not a place to ask for help with Python, but to
-discuss issues related to Python's own development.
+discuss issues related to Python's own development.  You can use freenode's
+`Web interface <http://webchat.freenode.net/>`_ if you don't have an IRC
+client.
 
 
 Blogs
