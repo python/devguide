@@ -53,9 +53,14 @@ to new semantics).
 Third, make sure you have proper tests to verify your patch works as expected.
 Patches will not be accepted without the proper tests!
 
-Fourth, proper documentation additions/changes should be included.
+Fourth, make sure the entire test suite :ref:`runs <runtests>` **without
+failure** because of your changes.  It is not sufficient to only run whichever
+test seems impacted by your changes, because there might be interferences
+unknown to you between your changes and some other part of the interpreter.
 
-Fifth, if you are not already in the ``Misc/ACKS`` file then add your name. If
+Fifth, proper documentation additions/changes should be included.
+
+Sixth, if you are not already in the ``Misc/ACKS`` file then add your name. If
 you have taken the time to diagnose a problem, invent a solution, code it up,
 and submit a patch you deserve to be recognized as having contributed to
 Python. This also means you need to fill out a `contributor form`_ which
@@ -71,12 +76,6 @@ Python (you retain the copyright).
 
 Generation
 ''''''''''
-
-Before creating your patch, you should make sure that the entire test suite
-:ref:`runs <runtests>` without failure because of your changes.  It is not
-sufficient to only run whichever test seems impacted by your changes, because
-there might be interferences unknown to you between your changes and some
-other part of the interpreter.
 
 To perform a quick sanity check on your patch, you can run::
 
