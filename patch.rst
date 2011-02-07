@@ -10,9 +10,22 @@ Creating
 Tool Usage
 ''''''''''
 
-Because Python uses hg as its version control system, **anyone** can make
+Because Python uses Mercurial as its version control system, **anyone** can make
 commits locally to their repository. This means that you should make as many
 commits to your code checkout as you want in order for you to work effectively.
+
+.. _named-branch-workflow:
+
+Also, Mercurial allows for various workflows according to each person's or
+project's preference.  We present here a very simple solution based on `named
+branches <http://mercurial.selenic.com/wiki/NamedBranches>`_.  Before you
+start modifying things in your working copy, type::
+
+   hg branch mywork
+
+where ``mywork`` is a descriptive name for what you are going to work on.
+Then all your local commits will be recorded on that branch, which is an
+effective way of distinguishing them from other (upstream) commits.
 
 
 Preparation
@@ -70,29 +83,27 @@ To perform a quick sanity check on your patch, you can run::
     make patchcheck
 
 This will check and/or fix various common things people forget to do for
-patches.
+patches, such as adding any new files needing for the patch to work.
 
-To create your patch, you should generate a unified diff from your checkout's
-top-level directory::
+The following instructions assume you are using the :ref:`named branch approach
+<named-branch-workflow>` suggested earlier.  To create your patch, first check
+that all your local changes have been committed, then type the following::
 
-    hg outgoing --path > patch.diff
-
-If your work needs some new files to be added to the source tree, remember
-to ``hg add`` them before generating the patch::
-
-   hg add Lib/newfile.py
-   hg outgoing --patch > patch.diff
+   hg diff -r default > mywork.patch
 
 To apply a patch generated this way, do::
 
-    patch -p1 < patch.diff
+    patch -p1 < mywork.patch
 
-To undo a patch, you can revert **all** changes made in your checkout::
+To undo a patch applied in your working copy, simply can revert **all** changes::
 
     hg revert --all
 
 This will leave backups of the files with your changes still intact. To skip
 that step, you can use the ``--no-backup`` flag.
+
+Please refer to the :ref:`FAQ <faq>` for :ref:`more information
+<hg-local-workflow>` on how to manage your local changes.
 
 .. note:: The ``patch`` program is not available by default under Windows.
    You can find it `here <http://gnuwin32.sourceforge.net/packages/patch.htm>`_,

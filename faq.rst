@@ -179,6 +179,8 @@ You can combine the two commands in one by using::
  hg pull -u <remote repository>
 
 
+.. _hg-local-workflow:
+
 How do I add a file or directory to the repository?
 -------------------------------------------------------------------------------
 
