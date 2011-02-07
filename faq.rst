@@ -339,14 +339,13 @@ In any case, run::
 
  hg backout <revision number>
 
-This will commit a *new* revision reverting the exact changes made in
-``<revision number>``.  However, if other changes have been made since then,
-you will have to merge them with that new revision.  For that, run::
+This will modify your working copy so that all changes in ``<revision number>``
+(including added or deleted files) are undone.  You then need to :ref:`commit
+<hg-commit>` these changes so that the backout gets permanently recorded.
 
- hg merge
- hg commit
-
-.. XXX: "hg backout --merge" doesn't seem to work
+.. note::
+   These instructions are for Mercurial 1.7 and higher.  ``hg backout`` has
+   a slightly different behaviour in versions before 1.7.
 
 
 How do I update to a specific release tag?
