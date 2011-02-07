@@ -150,7 +150,7 @@ msvcrt
 multiprocessing       jnoller
 netrc
 nis
-nntplib
+nntplib               pitrou
 numbers
 operator
 optparse              aronacher
