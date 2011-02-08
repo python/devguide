@@ -28,6 +28,31 @@ understands the justification for the change).  Also, if a non-core developer
 contributed to the resolution, it is good practice to credit them.
 
 
+Common Hg Workflows
+-------------------
+
+While non-committers can use named branches without issue, as a core developer
+you should limit their use to only those branches to be used to collaborate
+between other core developers. This is because named branches do persist in the
+revision history.
+
+Instead, for personal development that does not need to be shared prior to
+uploading a patch, other approaches should be considered. Two common ones are
+feature clones and :abbr:`mq (Mercurial Queues)`.
+
+Feature clones assumes you prefer to work with various directories containing
+separate clones. You can then create other local clones for each feature you
+wish to work on. From there you can push changes back through your local clones
+until they finally get pushed to the remote repository.
+
+With mq_, you work within a single clone, managing your changes with a queue of
+patches. This allows you to easily group related changes while still having
+them all applied at once.
+
+
+.. _mq: http://mercurial.selenic.com/wiki/MqExtension
+
+
 Handling Other's Code
 ---------------------
 
@@ -76,14 +101,6 @@ doing all of your work in a single clone::
 
    hg update py3k
    hg merge release-31maint
-
-If you are using feature clones, then do::
-
-   hg pull <branch name>
-   hg merge
-
-Now that the changes have been pulled into the proper branch/clone, do::
-
    # Fix any conflicts; probably Misc/NEWS at least
    hg commit
    hg push
