@@ -97,7 +97,7 @@ If you want to do the equivalent of blocking a patch in Python 3.2 that was
 applied to Python 3.1, simply pull/merge the change but revert the changes
 before committing::
 
-   hg merge release-31maint
+   # After pull/merge
    hg revert -a
    hg commit
    hg push
