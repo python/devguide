@@ -48,40 +48,63 @@ be a good reason for the breakage of code the change will cause (and it
 ask on python-dev.
 
 
-Backporting
------------
+Forward-Porting
+---------------
+
 If the patch is a bugfix and it does not break
-backwards-compatibility *at all*, then backport it to the branch(es) in
-maintenance mode. The easiest way to do this is to apply the patch in the
-development branch, commit, and then use svnmerge.py_ to backport the patch.
-
-For example, let us assume you just made commit 42 in the development branch
-and you want to backport it to the ``release31-maint`` branch. You would change
-your working directory to the maintenance branch and run the command::
-
-    svnmerge.py merge -r 42
-
-This will try to apply the patch to the current branch and generate a commit
-message. You will need to revert ``Misc/NEWS`` and do a new entry (the file
-changes too much between releases to ever have a merge succeed). To do a
-reversion, you can either undo the changes::
-
-    svn revert Misc/NEWS
-
-or you can manually fix the issue and tell svn the problem is resolved::
-
-    svn resolved Misc/NEWS
-
-Once your checkout is ready to be committed, do::
-
-    svn ci -F svnmerge-commit-message.txt
-
-This will commit the backport along with using the commit message created by
-``svnmerge.py`` for you.
-
-If it turns out you do not have the time to do a backport, then at least leave
-the proper issue open on the tracker with a note specifying that the change
-should be backported so someone else can do it.
+backwards-compatibility *at all*, then it should be applied to the oldest
+branch applicable and forward-ported until it reaches the in-development branch
+of Python. A forward-port instead of a back-port is preferred as it allows the
+:abbr:`DAG (directed acyclic graph)` used by hg to work with the movement of
+the patch through the codebase instead of against it.
 
 
-.. _svnmerge.py: http://svn.apache.org/repos/asf/subversion/trunk/contrib/client-side/svnmerge/svnmerge.py
+Porting Within a Major Version
+''''''''''''''''''''''''''''''
+Assume that Python 3.2 is the current in-development version of Python and that
+you have a patch that should also be applied to Python 3.1. To properly port
+the patch to both versions of Python, you should first apply the patch to
+Python 3.1::
+
+   hg update release-31maint
+   patch -p1 < patch.diff
+   hg commit
+
+With the patch now committed (notice that pushing to hg.python.org is not
+needed yet), you want to merge the patch up into Python 3.2::
+
+   hg update py3k
+   hg merge release-31maint
+   # Fix any conflicts; probably Misc/NEWS at least
+   hg commit
+   hg push
+
+This will get the patch working in Python 3.2 and push **both** the Python 3.1
+and Python 3.2 updates to hg.python.org. If someone has forgotten to merge
+their changes from previous patches applied to Python 3.1 then they too will be
+merged (hopefully this will not be the case).
+
+If you want to do the equivalent of blocking a patch in Python 3.2 that was
+applied to Python 3.1, simply merge the change but revert the changes before
+committing::
+
+   hg merge release-31maint
+   hg revert -a
+   hg commit
+   hg push
+
+This will cause hg's DAG to note that the changes were merged while not
+committing any change in the actual code.
+
+Porting Between Major Versions
+''''''''''''''''''''''''''''''
+To move a patch between, e.g., Python 3.2 and 2.7, use the `transplant
+extension`_. Assuming you committed in Python 2.7 first, to pull changeset
+#12345 into Python 3.2, do::
+
+   hg transplant -s <URL to 2.7 repo> -m 12345
+   # XXX any other steps required, or is it the quivalent of merged and committed?
+   hg push
+
+
+.. _transplant extension: http://mercurial.selenic.com/wiki/TransplantExtension
