@@ -71,10 +71,19 @@ Python 3.1::
    hg commit
 
 With the patch now committed (notice that pushing to hg.python.org is not
-needed yet), you want to merge the patch up into Python 3.2::
+needed yet), you want to merge the patch up into Python 3.2. Assuming you are
+doing all of your work in a single clone::
 
    hg update py3k
    hg merge release-31maint
+
+If you are using feature clones, then do::
+
+   hg pull <branch name>
+   hg merge
+
+Now that the changes have been pulled into the proper branch/clone, do::
+
    # Fix any conflicts; probably Misc/NEWS at least
    hg commit
    hg push
@@ -85,8 +94,8 @@ their changes from previous patches applied to Python 3.1 then they too will be
 merged (hopefully this will not be the case).
 
 If you want to do the equivalent of blocking a patch in Python 3.2 that was
-applied to Python 3.1, simply merge the change but revert the changes before
-committing::
+applied to Python 3.1, simply pull/merge the change but revert the changes
+before committing::
 
    hg merge release-31maint
    hg revert -a
