@@ -10,22 +10,32 @@ Creating
 Tool Usage
 ''''''''''
 
-Because Python uses Mercurial as its version control system, **anyone** can make
-commits locally to their repository. This means that you should make as many
-commits to your code checkout as you want in order for you to work effectively.
-
 .. _named-branch-workflow:
 
-Also, Mercurial allows for various workflows according to each person's or
+Mercurial allows for various workflows according to each person's or
 project's preference.  We present here a very simple solution based on `named
-branches <http://mercurial.selenic.com/wiki/NamedBranches>`_.  Before you
-start modifying things in your working copy, type::
+branches <http://mercurial.selenic.com/wiki/NamedBranches>`_ for
+non-committers.  Before you start modifying things in your working copy, type::
 
    hg branch mywork
 
 where ``mywork`` is a descriptive name for what you are going to work on.
 Then all your local commits will be recorded on that branch, which is an
 effective way of distinguishing them from other (upstream) commits.
+
+Make sure to do your branching from the ``default`` branch (type ``hg branch``
+to see which branch is active). To switch between branches, e.g., switch to the
+``default`` branch, do::
+
+   hg update default
+
+When you are done with a branch, you can mark it as closed by doing the
+following while the branch you wish to close is active::
+
+   hg commit --close-branch
+
+This deletes nothing, but it stops the branch from being listed as active in
+your checkout.
 
 
 Preparation
