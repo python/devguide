@@ -28,8 +28,8 @@ understands the justification for the change).  Also, if a non-core developer
 contributed to the resolution, it is good practice to credit them.
 
 
-Common Hg Workflows
--------------------
+Working with Hg_
+----------------
 
 While non-committers can use named branches without issue, as a committer
 you should limit your use to only those branches to be used to collaborate
@@ -49,7 +49,12 @@ With mq_, you work within a single clone, managing your changes with a queue of
 patches. This allows you to easily group related changes while still having
 them all applied at once.
 
+Regardless of which approach to use, consider using the ``hg rebase`` command
+before you push. This way you create a single commit in the history instead of
+recording, e.g., five separate commits all related to the same fix.
 
+
+.. _hg: http://www.hg-scm.org/
 .. _mq: http://mercurial.selenic.com/wiki/MqExtension
 
 
