@@ -34,8 +34,7 @@ the Python core developers are constantly updating and fixing things in their
 :abbr:`VCS`. It also means you will have better tool
 support through the VCS as it will provide a diff tool, etc.
 
-To get a read-only checkout of CPython's source, you need a working copy the
-source code. To get a read-only checkout of
+To get a read-only checkout of
 the :ref:`in-development <indevbranch>` branch of Python, run::
 
     hg clone http://hg.python.org/cpython
