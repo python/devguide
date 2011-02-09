@@ -136,13 +136,26 @@ To apply a patch generated this way, do::
 This will create a patch in your queue with a name that matches the filename.
 You can use the ``-n`` argument to specify a different name.
 
-To undo a patch imported into your working copy, simply delete the patch from
-your patch queue::
+If a patch was not created by hg (i.e., a patch created by svn and thus lacking
+any ``a``/``b`` directory prefixes in the patch), use::
 
-    hg qdelete mywork.patch
+   patch -p0 < mywork.patch
+
+To undo a patch imported into your working copy, simply delete the patch from
+your patch queue. You do need to make sure it is not applied (``hg qtop`` will
+tell you that while ``hg qpop`` will un-apply the top-most patch)::
+
+   hg qdelete mywork.patch
 
 Please refer to the :ref:`FAQ <faq>` for :ref:`more information
 <hg-local-workflow>` on how to manage your local changes.
+
+.. note:: The ``patch`` program is not available by default under Windows.
+   You can find it `here <http://gnuwin32.sourceforge.net/packages/patch.htm>`_,
+   courtesy of the `GnuWin32 <http://gnuwin32.sourceforge.net/>`_ project.
+   Also, you may find it necessary to add the "``--binary``" option when trying
+   to apply Unix-generated patches under Windows.
+
 
 
 Submitting
