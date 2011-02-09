@@ -31,7 +31,7 @@ contributed to the resolution, it is good practice to credit them.
 Working with Mercurial_
 -----------------------
 
-As a committer, the ability to push changes to the official Python
+As a core developer, the ability to push changes to the official Python
 repositories means you have to be more careful with your workflow:
 
 * You should not push new named branches to the main repository.  You can
