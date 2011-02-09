@@ -14,7 +14,11 @@ Tool Usage
 
 Mercurial allows for various workflows according to each person's or
 project's preference.  We present here a very simple solution based on mq_
-(Mercurial Queue) non-core developers.
+(Mercurial Queues) non-core developers. You are welcome to use any approach you
+like (including a svn-like approach of simply never saving any changes you make
+to your working copy and using ``hg diff`` to create a patch). Usage of mq is
+merely a suggestion; it's a balance between being able to do everything needed
+while allowing for more powerful usage if desired in the future.
 
 If you have not done so previously, make sure that the extension has been
 turned on in your ``.hgrc`` or ``Mercurial.ini`` file::
