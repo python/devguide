@@ -31,9 +31,9 @@ contributed to the resolution, it is good practice to credit them.
 Common Hg Workflows
 -------------------
 
-While non-committers can use named branches without issue, as a core developer
-you should limit their use to only those branches to be used to collaborate
-between other core developers. This is because named branches do persist in the
+While non-committers can use named branches without issue, as a committer
+you should limit your use to only those branches to be used to collaborate
+between other committers. This is because named branches do persist in the
 revision history.
 
 Instead, for personal development that does not need to be shared prior to
