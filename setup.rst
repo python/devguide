@@ -3,10 +3,10 @@
 Getting Set Up
 ==============
 
-These instructions cover how to get a source checkout and a compiled version of
-the CPython interpreter (CPython is the version of Python available from
-http://www.python.org/). It also gives an overview of the directory
-structure of a CPython checkout.
+These instructions cover how to get a working copy of the source code and a
+compiled version of the CPython interpreter (CPython is the version of Python
+available from http://www.python.org/). It also gives an overview of the
+directory structure of the CPython source code.
 
 .. contents::
 
@@ -26,37 +26,34 @@ manager; under Windows, you might want to use the `TortoiseHg
 Checking out the code
 ----------------------
 
-One should always work from a checkout of the CPython source code. While it may
+One should always work from a working copy of the CPython source code.
+While it may
 be tempting to work from the downloaded copy you already have installed on your
 machine, it is very likely that you will be working from out-of-date code as
 the Python core developers are constantly updating and fixing things in their
 :abbr:`VCS`. It also means you will have better tool
 support through the VCS as it will provide a diff tool, etc.
 
-To get a read-only checkout of CPython's source, you need to checkout the source
-code. To get a read-only checkout of
+To get a read-only checkout of CPython's source, you need a working copy the
+source code. To get a read-only checkout of
 the :ref:`in-development <indevbranch>` branch of Python, run::
 
-    hg clone http://hg.python.org/cpython#py3k
-
-.. warning::
-   XXX assuming 'default' branch is unused. Regardless,  probably wrong URL as
-   PEP 385 suggests py3k will be its own repo compared to Python 2 which is not
-   the case as of 2011-02-05. If this is wrong, also change all other hg URLs.
+    hg clone http://hg.python.org/cpython
 
 If you want a read-only checkout of an already-released version of Python,
 i.e., a version in :ref:`maintenance mode <maintbranch>`, run something
-like the following which gets you a checkout for Python 3.1::
+like the following which gets you a working copy of Python 3.1::
 
     hg clone http://hg.python.org/cpython#release-31maint
 
 To check out a version of Python other than 3.1, simply change the number in
 the above URL to the major/minor version (e.g., ``release27-maint`` for Python
-2.7).
+2.7). You may also update a working copy to other branches of CPython by using
+``hg update``.
 
-Do note that CPython will notice that it is being run from a source checkout.
-This means that it if you edit Python's source code in your checkout the
-changes will be picked up by the interpreter for immediate testing.
+Do note that CPython will notice that it is being run from a working copy.
+This means that it if you edit CPython's source code in your working copy the
+changes will be picked up by the interpreter for immediate use and testing.
 
 
 Compiling (for debugging)
@@ -130,9 +127,9 @@ Once CPython is done building you will then have a working build
 that can be run in-place; ``./python`` on most machines (and what is used in
 all examples), ``./python.exe`` on OS X (when on a case-insensitive filesystem,
 which is the default). There is absolutely no need to install your built copy
-of Python! The interpreter will realize it is being run directly out of a
-checkout and thus use the files found in the checkout. If you are worried you
-might accidentally install your checkout build, you can add
+of Python! The interpreter will realize where it is being run from
+and thus use the files found in the working copy. If you are worried
+you might accidentally install your working copy build, you can add
 ``--prefix=/dev/null`` to the configuration step.
 
 .. _issue tracker: http://bugs.python.org
