@@ -28,7 +28,7 @@ Checking out the code
 
 One should always work from a working copy of the CPython source code.
 While it may
-be tempting to work from the downloaded copy you already have installed on your
+be tempting to work from the copy of Python you already have installed on your
 machine, it is very likely that you will be working from out-of-date code as
 the Python core developers are constantly updating and fixing things in their
 :abbr:`VCS`. It also means you will have better tool
