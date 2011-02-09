@@ -43,9 +43,8 @@ repositories means you have to be more careful with your workflow:
 * You should collapse changesets of a single feature or bugfix before pushing
   the result to the main repository.  The reason is that we don't want the
   history to be full of intermediate commits recording the private history
-  of the person working on a patch.  To automate such collapsing, you can
-  enable the rebase_ extension, and use the ``--collapse`` option to
-  ``hg rebase``.
+  of the person working on a patch.  If you are using the rebase_ extension,
+  consider adding the ``--collapse`` option to ``hg rebase``.
 
 Because of these constraints, it can be practical to use other approaches
 such as mq_ (Mercurial Queues), in order to maintain patches in a single
