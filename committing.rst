@@ -28,8 +28,8 @@ understands the justification for the change).  Also, if a non-core developer
 contributed to the resolution, it is good practice to credit them.
 
 
-Working with Hg_
-----------------
+Working with Mercurial_
+-----------------------
 
 While non-committers can use named branches without issue, as a committer
 you should limit your use to only those branches to be used to collaborate
@@ -54,7 +54,7 @@ before you push. This way you create a single commit in the history instead of
 recording, e.g., five separate commits all related to the same fix.
 
 
-.. _hg: http://www.hg-scm.org/
+.. _Mercurial: http://www.hg-scm.org/
 .. _mq: http://mercurial.selenic.com/wiki/MqExtension
 
 
