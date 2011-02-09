@@ -31,31 +31,30 @@ contributed to the resolution, it is good practice to credit them.
 Working with Mercurial_
 -----------------------
 
-While non-committers can use named branches without issue, as a committer
-you should limit your use to only those branches to be used to collaborate
-between other committers. This is because named branches do persist in the
-revision history.
+As a committer, the ability to push changes to the official Python
+repositories means you have to be more careful with your workflow:
 
-Instead, for personal development that does not need to be shared prior to
-uploading a patch, other approaches should be considered. Two common ones are
-feature clones and :abbr:`mq (Mercurial Queues)`.
+* You should not push new named branches to the main repository.  You can
+  still use them in clones that you use for development of patches; you can
+  also push these branches to a **separate** public repository that will be
+  dedicated to maintenance of the work before the work gets integrated in the
+  main repository.
 
-Feature clones assumes you prefer to work with various directories containing
-separate clones. You can then create other local clones for each feature you
-wish to work on. From there you can push changes back through your local clones
-until they finally get pushed to the remote repository.
+* You should collapse changesets of a single feature or bugfix before pushing
+  the result to the main repository.  The reason is that we don't want the
+  history to be full of intermediate commits recording the private history
+  of the person working on a patch.  To automate such collapsing, you can
+  enable the rebase_ extension, and use the ``--collapse`` option to
+  ``hg rebase``.
 
-With mq_, you work within a single clone, managing your changes with a queue of
-patches. This allows you to easily group related changes while still having
-them all applied at once.
-
-Regardless of which approach to use, consider using the ``hg rebase`` command
-before you push. This way you create a single commit in the history instead of
-recording, e.g., five separate commits all related to the same fix.
+Because of these constraints, it can be practical to use other approaches
+such as mq_ (Mercurial Queues), in order to maintain patches in a single
+local repository and to push them seamlessly when they are ready.
 
 
 .. _Mercurial: http://www.hg-scm.org/
 .. _mq: http://mercurial.selenic.com/wiki/MqExtension
+.. _rebase: http://mercurial.selenic.com/wiki/RebaseExtension
 
 
 Handling Other's Code
