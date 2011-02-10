@@ -23,8 +23,8 @@ manager; under Windows, you might want to use the `TortoiseHg
 
 .. _checkout:
 
-Checking out the code
-----------------------
+Getting the Source Code
+-----------------------
 
 One should always work from a working copy of the CPython source code.
 While it may
@@ -34,21 +34,21 @@ the Python core developers are constantly updating and fixing things in their
 :abbr:`VCS`. It also means you will have better tool
 support through the VCS as it will provide a diff tool, etc.
 
-To get a read-only checkout of
-the :ref:`in-development <indevbranch>` branch of Python, run::
+To get a working copy of the :ref:`in-development <indevbranch>` branch of
+CPython (core developers use a different URL as outlined in :ref:`coredev`),
+run::
 
     hg clone http://hg.python.org/cpython
 
-If you want a read-only checkout of an already-released version of Python,
-i.e., a version in :ref:`maintenance mode <maintbranch>`, run something
-like the following which gets you a working copy of Python 3.1::
+If you want a working copy of an already-released version of Python,
+i.e., a version in :ref:`maintenance mode <maintbranch>`, you can update your
+working copy. For instance, to update your working copy to Python 3.1, do::
 
-    hg clone http://hg.python.org/cpython#release-31maint
+   hg update release-31maint
 
-To check out a version of Python other than 3.1, simply change the number in
-the above URL to the major/minor version (e.g., ``release27-maint`` for Python
-2.7). You may also update a working copy to other branches of CPython by using
-``hg update``.
+To get a version of Python other than 3.1, simply change the number in
+the above example to the major/minor version (e.g., ``release27-maint`` for
+Python 2.7). You will need to re-compile CPython when you do an update.
 
 Do note that CPython will notice that it is being run from a working copy.
 This means that it if you edit CPython's source code in your working copy the
