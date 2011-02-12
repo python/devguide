@@ -181,6 +181,39 @@ You can combine the two commands in one by using::
 
 .. _hg-local-workflow:
 
+How do I apply a patch?
+-------------------------------------------------------------------------------
+
+If you want to try out or review a patch generated using Mercurial, do::
+
+   patch -p1 < somework.patch
+
+This will apply the changes in your working copy without committing them.
+If the patch was not created by hg (i.e., a patch created by SVN and thus lacking
+any ``a``/``b`` directory prefixes in the patch), use ``-p0`` instead of ``-p1``.
+
+If you want to work on the patch using mq_ (Mercurial Queues), type instead::
+
+   hg qimport somework.patch
+
+This will create a patch in your queue with a name that matches the filename.
+You can use the ``-n`` argument to specify a different name.
+
+To undo a patch imported into your working copy, simply delete the patch from
+your patch queue. You do need to make sure it is not applied (``hg qtop`` will
+tell you that while ``hg qpop`` will un-apply the top-most patch)::
+
+   hg qdelete mywork.patch
+
+.. note:: The ``patch`` program is not available by default under Windows.
+   You can find it `here <http://gnuwin32.sourceforge.net/packages/patch.htm>`_,
+   courtesy of the `GnuWin32 <http://gnuwin32.sourceforge.net/>`_ project.
+   Also, you may find it necessary to add the "``--binary``" option when trying
+   to apply Unix-generated patches under Windows.
+
+.. _mq: http://mercurial.selenic.com/wiki/MqExtension
+
+
 How do I add a file or directory to the repository?
 -------------------------------------------------------------------------------
 
