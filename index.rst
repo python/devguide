@@ -43,6 +43,8 @@ contributing immediately without reading and understanding these documents all
 at once, but please do not skip around within the documentation as everything
 is written assuming preceding documentation has been read.
 
+You can, *however*, read the :ref:`FAQ <faq>` at any point!
+
 * :ref:`setup`
 * Coding style guides
     * `PEP 7`_ (Style Guide for C Code)
