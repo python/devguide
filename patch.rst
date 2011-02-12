@@ -115,13 +115,15 @@ Python (you retain the copyright).
 Generation
 ''''''''''
 
-To perform a quick sanity check on your patch, you can run::
+.. XXX [commented out] make patchcheck doesn't work with non-SVN workflow
 
-    make patchcheck
+   To perform a quick sanity check on your patch, you can run::
 
-This will check and/or fix various common things people forget to do for
-patches, such as adding any new files needing for the patch to work (do not
-that not all checks apply to non-core developers).
+       make patchcheck
+
+   This will check and/or fix various common things people forget to do for
+   patches, such as adding any new files needing for the patch to work (do not
+   that not all checks apply to non-core developers).
 
 The following instructions assume you are using the :ref:`mq approach
 <mq-workflow>` suggested earlier.  To create your patch, first check
