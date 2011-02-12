@@ -68,19 +68,10 @@ This should match your username on the issue tracker.
 
 You can verify your commit access by looking at
 http://www.python.org/dev/committers which lists all core developers by
-username.
+username.  If you want to practice, there is a test repository where you can
+freely commit and push any changes you like::
 
-.. warning::
-   XXX the technique below does not work with hg@hg.python.org
-
-You can also execute the follow command and look for the word
-"success" in the output::
-
-    ssh pythondev@svn.python.org
-
-For Windows users using Pageant::
-
-    c:\path\to\putty\plink.exe pythondev@svn.python.org
+   hg clone ssh://hg@hg.python.org/test/ hgtest
 
 An entry in the ``Misc/developers.txt`` file should also be entered for you.
 Typically the person who sponsored your application to become a core developer
