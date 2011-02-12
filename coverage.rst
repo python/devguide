@@ -49,11 +49,11 @@ Measuring Coverage
 .. warning::
     Running the entire test suite under coverage (using either technique listed
     below) currently fails as some tests are resetting the trace function;
-    see http://bugs.python.org/issue10990 for a patch
+    see http://bugs.python.org/issue10990 for a patch.
 
     There are also various tests that simply fail as they have not been made
     robust in the face of coverage measuring/having a trace function set;
-    see http://bugs.python.org/issue10992 for a patch
+    see http://bugs.python.org/issue10992 for a patch.
 
 It should be noted that a quirk of running coverage over Python's own stdlib is
 that certain modules are imported as part of interpreter startup. Those modules
@@ -170,7 +170,7 @@ you want the coverage data to end up it will go somewhere you don't expect.
     If you are running coverage over the entire test suite, make sure to
     add ``-x test_importlib test_runpy test_trace`` to exclude those tests as
     they trigger exceptions during coverage; see
-    http://bugs.python.org/issue10541 and http://bugs.python.org/issue10991
+    http://bugs.python.org/issue10541 and http://bugs.python.org/issue10991.
 
 Once the tests are done you will find the directory you specified contains
 files for each executed module along with which lines were executed how many
