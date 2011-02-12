@@ -14,20 +14,19 @@ Tool Usage
 
 Mercurial allows for various workflows according to each person's or
 project's preference.  We present here a very simple solution based on mq_
-(Mercurial Queues) non-core developers. You are welcome to use any approach you
-like (including a svn-like approach of simply never saving any changes you make
-to your working copy and using ``hg diff`` to create a patch). Usage of mq is
-merely a suggestion; it's a balance between being able to do everything needed
+(*Mercurial Queues*). You are welcome to use any approach you like (including
+a svn-like approach of simply never saving any changes you make to your working
+copy and using ``hg diff`` to create a patch).  Usage of mq_ is merely a
+suggestion; it's a balance between being able to do everything needed
 while allowing for more powerful usage if desired in the future.
 
-If you have not done so previously, make sure that the extension has been
-turned on in your ``.hgrc`` or ``Mercurial.ini`` file::
+First make sure that the extension has been turned on in your ``.hgrc`` or
+``Mercurial.ini`` file::
 
    [extensions]
    mq =
 
 You can verify this is working properly by running ``hg help mq``.
-
 
 Before you start modifying things in your working copy, type::
 
@@ -40,26 +39,24 @@ that you want to save what you have done, run::
    hg qrefresh
 
 This will update the patch to contain all of the changes you have made up to
-this point. If you have any you have added or removed, use ``hg add`` or ``hg
+this point. If you have added or removed any file, use ``hg add`` or ``hg
 remove``, respectively, before running ``hg qrefresh``.
 
-When you are done with your work, you can create a patch to upload to the
-`issue tracker`_ with::
+Later on, we will explain :ref:`how to generate a patch <patch-generation>`.
 
-   hg qdiff > patch.diff
+If you want to delete your changes irrevocably (either because they were
+committed, or they ended up uninteresting), use::
 
-When you are done with your changes, you can delete them with::
-
+   hg qpop mywork
    hg qdelete mywork
 
-For more advanced usage of mq, read the `mq chapter
-<http://hgbook.red-bean.com/read/managing-change-with-mercurial-queues.html>`_
-of `Mercurial: The Definitive Guide <http://hgbook.red-bean.com/>`_.
+.. seealso::
+   For more advanced usage of mq, read the `mq chapter
+   <http://hgbook.red-bean.com/read/managing-change-with-mercurial-queues.html>`_
+   of `Mercurial: The Definitive Guide <http://hgbook.red-bean.com/>`_.
 
-You can obviously use other workflows if you choose, just please make sure that
-the generated patch is *flat* instead of containing a diff for each changeset
-(e.g., if you have two or more changesets to a single file it should show up as
-a single change diff against the file instead of two separate ones).
+   Also, regardless of your workflow, refer to the :ref:`FAQ <faq>` for
+   more information on using Mercurial.
 
 .. _issue tracker: http://bugs.python.org
 .. _mq: http://mercurial.selenic.com/wiki/MqExtension
@@ -112,6 +109,8 @@ Python (you retain the copyright).
 .. _Python Software Foundation: http://www.python.org/psf/
 
 
+.. _patch-generation:
+
 Generation
 ''''''''''
 
@@ -125,15 +124,23 @@ Generation
    patches, such as adding any new files needing for the patch to work (do not
    that not all checks apply to non-core developers).
 
-The following instructions assume you are using the :ref:`mq approach
-<mq-workflow>` suggested earlier.  To create your patch, first check
-that all your local changes have been committed, then type the following::
+Assume you are using the :ref:`mq approach <mq-workflow>` suggested earlier,
+first check that all your local changes have been recorded (using
+``hg qrefresh``), then type the following::
 
    hg qdiff > mywork.patch
 
-To apply a patch generated this way, do::
+If you are using another approach, you probably need to find out the right
+invocation of ``hg diff`` for your purposes.  Just please make sure that you
+generate a **single, condensed** patch rather than a series of several changesets.
 
-    hg qimport mywork.patch
+
+Importing
+'''''''''
+
+To apply a patch generated in the way above by someone else, do::
+
+   hg qimport mywork.patch
 
 This will create a patch in your queue with a name that matches the filename.
 You can use the ``-n`` argument to specify a different name.
@@ -149,15 +156,11 @@ tell you that while ``hg qpop`` will un-apply the top-most patch)::
 
    hg qdelete mywork.patch
 
-Please refer to the :ref:`FAQ <faq>` for :ref:`more information
-<hg-local-workflow>` on how to manage your local changes.
-
 .. note:: The ``patch`` program is not available by default under Windows.
    You can find it `here <http://gnuwin32.sourceforge.net/packages/patch.htm>`_,
    courtesy of the `GnuWin32 <http://gnuwin32.sourceforge.net/>`_ project.
    Also, you may find it necessary to add the "``--binary``" option when trying
    to apply Unix-generated patches under Windows.
-
 
 
 Submitting
