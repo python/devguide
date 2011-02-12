@@ -56,7 +56,7 @@ committed, or they ended up uninteresting), use::
    of `Mercurial: The Definitive Guide <http://hgbook.red-bean.com/>`_.
 
    Also, regardless of your workflow, refer to the :ref:`FAQ <faq>` for
-   more information on using Mercurial.
+   :ref:`more information on using Mercurial <hg-local-workflow>`.
 
 .. _issue tracker: http://bugs.python.org
 .. _mq: http://mercurial.selenic.com/wiki/MqExtension
