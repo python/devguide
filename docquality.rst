@@ -14,6 +14,24 @@ out simply by looking at pre-existing documentation) and how to build the
 documentation (which allows you to see how your changes will look along with
 validating that your new markup is correct).
 
+The current in-development version of the documentation is available at
+http://docs.python.org/dev/. It is re-generated from source once a day from the
+``Doc/tools/dailybuild.py`` script as found in Python's source tree.
+
+If you would like a technical documentation style guide, the `Apple
+Publications Style Guide
+<http://developer.apple.com/mac/library/documentation/UserExperience/Conceptual/APStyleGuide/APSG_2009.pdf>`_
+is recommended.
+
+If you care to get more involved with documentation, you may also consider
+subscribing to the
+`docs@python.org mailing list <http://mail.python.org/mailman/listinfo/docs>`_.
+Documentation issues reported on the `issue tracker`_ are sent here as well as
+some bug reports being directly emailed to the mailing list. There is also the
+`docs-sig@python.org mailing list
+<http://mail.python.org/mailman/listinfo/doc-sig>`_ which discusses the
+documentation toolchain, projects, standards, etc.
+
 .. _Documenting Python: http://docs.python.org/py3k/documenting/index.html
 
 
