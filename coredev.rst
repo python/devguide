@@ -68,8 +68,9 @@ This should match your username on the issue tracker.
 
 You can verify your commit access by looking at
 http://www.python.org/dev/committers which lists all core developers by
-username.  If you want to practice, there is a test repository where you can
-freely commit and push any changes you like::
+username.  If you want to practice, there is a `test repository
+<http://hg.python.org/test/>`_ where you can freely commit and push any
+changes you like::
 
    hg clone ssh://hg@hg.python.org/test/ hgtest
 
