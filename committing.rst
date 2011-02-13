@@ -143,9 +143,9 @@ Porting Between Major Versions
 ''''''''''''''''''''''''''''''
 
 .. warning:: XXX transplant always commits automatically. This breaks the
-   "run the test suite before committing" rule. We could advocate
-   "hg transplant --mq" but combining transplant and mq is another level
-   of complexity.
+   "run the test suite before committing" rule. We could advocate using
+   "hg qimport -r tip -P" afterwards but that would add another level of
+   complexity.
 
 To move a patch between, e.g., Python 3.1 and 2.7, use the `transplant
 extension`_. Assuming you committed in Python 2.7 first, to pull changeset
