@@ -86,6 +86,9 @@ of Python. A forward-port instead of a back-port is preferred as it allows the
 :abbr:`DAG (directed acyclic graph)` used by hg to work with the movement of
 the patch through the codebase instead of against it.
 
+Even when porting an already committed patch, you should **still** check the
+test suite runs successfully before committing the patch to another branch.
+
 
 Porting Within a Major Version
 ''''''''''''''''''''''''''''''
@@ -101,37 +104,44 @@ Python 3.1::
 
    hg update release-31maint
    patch -p1 < patch.diff
+   # Compile; run the test suite
    hg commit
 
-With the patch now committed (notice that pushing to hg.python.org is not
-needed yet), you want to merge the patch up into Python 3.2. Assuming you are
-doing all of your work in a single clone::
+With the patch now committed, you want to merge the patch up into Python 3.2.
+This should be done *before* pushing your changes to hg.python.org, so that
+the branches are in sync on the public repository.  Assuming you are doing
+all of your work in a single clone, do::
 
    hg update py3k
    hg merge release-31maint
-   # Fix any conflicts; probably Misc/NEWS at least
+   # Fix any conflicts; compile; run the test suite
    hg commit
+
+.. note::
+   *If the patch shouldn't be ported* from Python 3.1 to Python 3.2, you must
+   also make it explicit: merge the changes but revert them before committing::
+
+      hg update py3k
+      hg merge release-31maint
+      hg revert -a
+      hg commit
+
+   This is necessary so that the merge gets recorded; otherwise, somebody
+   else will have to make a decision about your patch when they try to merge.
+
+When you have finished your porting work (you can port several patches one
+after another in your local repository), you can push **all** outstanding
+changesets to hg.python.org::
+
    hg push
 
-This will get the patch working in Python 3.2 and push **both** the Python 3.1
-and Python 3.2 updates to hg.python.org. If someone has forgotten to merge
-their changes from previous patches applied to Python 3.1 then they too will be
-merged (hopefully this will not be the case).
+This will push changes in both the Python 3.1 and Python 3.2 branches to
+hg.python.org.
 
-If you want to do the equivalent of blocking a patch in Python 3.2 that was
-applied to Python 3.1, simply pull/merge the change but revert the changes
-before committing::
-
-   # After pull/merge
-   hg revert -a
-   hg commit
-   hg push
-
-This will cause hg's DAG to note that the changes were merged while not
-committing any change in the actual code.
 
 Porting Between Major Versions
 ''''''''''''''''''''''''''''''
+
 To move a patch between, e.g., Python 3.2 and 2.7, use the `transplant
 extension`_. Assuming you committed in Python 2.7 first, to pull changeset
 #12345 into Python 3.2, do::
@@ -141,4 +151,31 @@ extension`_. Assuming you committed in Python 2.7 first, to pull changeset
    hg push
 
 
+Differences with ``svnmerge``
+'''''''''''''''''''''''''''''
+
+If you are coming from SVN, you might be surprised by how Mercurial works.
+Despite its name, ``svnmerge`` is different from ``hg merge``: while ``svnmerge``
+allows to cherrypick individual revisions, ``hg merge`` can only merge whole
+lines of development in the repository's :abbr:`DAG (directed acyclic graph)`.
+Therefore, ``hg merge`` might force you to review outstanding changesets that
+haven't been merged by someone else yet.
+
+The way to avoid such situations is for everyone to make sure that they have
+merged their commits to the ``default`` branch.  Just type::
+
+   $ hg branches
+   default                      3051:a7df1a869e4a
+   release31-maint              3012:b560997b365d (inactive)
+
+and check that all branches except ``default`` are marked *inactive*.  This
+means there is no pending changeset to merge from these branches.
+
+
 .. _transplant extension: http://mercurial.selenic.com/wiki/TransplantExtension
+
+
+.. seealso::
+   `Merging work
+   <http://hgbook.red-bean.com/read/a-tour-of-mercurial-merging-work.html>`_,
+   in `Mercurial: The Definitive Guide <http://hgbook.red-bean.com/>`_.
