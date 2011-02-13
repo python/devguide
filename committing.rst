@@ -142,12 +142,17 @@ hg.python.org.
 Porting Between Major Versions
 ''''''''''''''''''''''''''''''
 
-To move a patch between, e.g., Python 3.2 and 2.7, use the `transplant
-extension`_. Assuming you committed in Python 2.7 first, to pull changeset
-#12345 into Python 3.2, do::
+.. warning:: XXX transplant always commits automatically. This breaks the
+   "run the test suite before committing" rule. We could advocate
+   "hg transplant --mq" but combining transplant and mq is another level
+   of complexity.
 
-   hg transplant -s <URL to 2.7 repo> -m 12345
-   # XXX any other steps required, or is it the quivalent of merged and committed?
+To move a patch between, e.g., Python 3.1 and 2.7, use the `transplant
+extension`_. Assuming you committed in Python 2.7 first, to pull changeset
+``a7df1a869e4a`` into Python 3.1, do::
+
+   hg transplant -s <URL to 2.7 repo> a7df1a869e4a
+   # Compile; run the test suite
    hg push
 
 
