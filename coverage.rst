@@ -46,15 +46,6 @@ implicit testing by other code that happens to use the module.
 Measuring Coverage
 """"""""""""""""""
 
-.. warning::
-    Running the entire test suite under coverage (using either technique listed
-    below) currently fails as some tests are resetting the trace function;
-    see http://bugs.python.org/issue10990 for a patch.
-
-    There are also various tests that simply fail as they have not been made
-    robust in the face of coverage measuring/having a trace function set;
-    see http://bugs.python.org/issue10992 for a patch.
-
 It should be noted that a quirk of running coverage over Python's own stdlib is
 that certain modules are imported as part of interpreter startup. Those modules
 required by Python itself will not be viewed as executed by the coverage tools
