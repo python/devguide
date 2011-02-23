@@ -33,6 +33,19 @@ Python Developer's Guide
    faq
 
 
+
+Quick Links
+-----------
+
+Here are some links that you may find you refererence frequently while
+contributing to Python.
+
+* `Issue tracker <http://bugs.python.org/>`_
+* Buildbots_
+* :ref:`faq`
+* PEPs_ (Python Enhancement Proposals)
+
+
 Contributing
 ------------
 
@@ -75,6 +88,7 @@ Proposing changes to Python itself
 
 
 .. _resources:
+
 
 Resources
 ---------
