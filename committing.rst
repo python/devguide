@@ -97,32 +97,32 @@ Porting Within a Major Version
    XXX Update to using hg qimport if that ends up being the way non-core
    developers are told to go.
 
-Assume that Python 3.2 is the current in-development version of Python and that
-you have a patch that should also be applied to Python 3.1. To properly port
+Assume that Python 3.3 is the current in-development version of Python and that
+you have a patch that should also be applied to Python 3.2. To properly port
 the patch to both versions of Python, you should first apply the patch to
-Python 3.1::
+Python 3.2::
 
-   hg update release-31maint
+   hg update 3.2
    patch -p1 < patch.diff
    # Compile; run the test suite
    hg commit
 
-With the patch now committed, you want to merge the patch up into Python 3.2.
+With the patch now committed, you want to merge the patch up into Python 3.3.
 This should be done *before* pushing your changes to hg.python.org, so that
 the branches are in sync on the public repository.  Assuming you are doing
 all of your work in a single clone, do::
 
-   hg update py3k
-   hg merge release-31maint
+   hg update default
+   hg merge 3.2
    # Fix any conflicts; compile; run the test suite
    hg commit
 
 .. note::
-   *If the patch shouldn't be ported* from Python 3.1 to Python 3.2, you must
+   *If the patch shouldn't be ported* from Python 3.2 to Python 3.3, you must
    also make it explicit: merge the changes but revert them before committing::
 
-      hg update py3k
-      hg merge release-31maint
+      hg update default
+      hg merge 3.2
       hg revert -a
       hg commit
 
@@ -135,7 +135,7 @@ changesets to hg.python.org::
 
    hg push
 
-This will push changes in both the Python 3.1 and Python 3.2 branches to
+This will push changes in both the Python 3.2 and Python 3.3 branches to
 hg.python.org.
 
 
@@ -147,9 +147,9 @@ Porting Between Major Versions
    "hg qimport -r tip -P" afterwards but that would add another level of
    complexity.
 
-To move a patch between, e.g., Python 3.1 and 2.7, use the `transplant
+To move a patch between, e.g., Python 3.2 and 2.7, use the `transplant
 extension`_. Assuming you committed in Python 2.7 first, to pull changeset
-``a7df1a869e4a`` into Python 3.1, do::
+``a7df1a869e4a`` into Python 3.2, do::
 
    hg transplant -s <URL to 2.7 repo> a7df1a869e4a
    # Compile; run the test suite

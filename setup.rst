@@ -44,11 +44,9 @@ If you want a working copy of an already-released version of Python,
 i.e., a version in :ref:`maintenance mode <maintbranch>`, you can update your
 working copy. For instance, to update your working copy to Python 3.1, do::
 
-   hg update release-31maint
+   hg update 3.1
 
-To get a version of Python other than 3.1, simply change the number in
-the above example to the major/minor version (e.g., ``release27-maint`` for
-Python 2.7). You will need to re-compile CPython when you do an update.
+You will need to re-compile CPython when you do such an update.
 
 Do note that CPython will notice that it is being run from a working copy.
 This means that it if you edit CPython's source code in your working copy the
