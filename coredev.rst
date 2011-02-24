@@ -107,12 +107,15 @@ can now get a read/write checkout of the code. URLs for read/write checkouts
 are different than those for read-only checkouts as SSH is used instead of
 HTTP.
 
-For the development branch, you can check out the development branch with::
+You can clone the repository (which contains all active branches) with::
 
-    hg clone hg@hg.python.org/cpython#py3k
+   hg clone ssh://hg@hg.python.org/cpython
 
-Make the appropriate changes to the URL to checkout maintenance branches by
-removing ``py3k`` and replacing it with the name of the branch you want.
+The default branch in that repository is the current development branch.
+You can of course switch your working copy to one of the maintenance branches,
+for example::
+
+   hg update 2.7
 
 
 Responsibilities

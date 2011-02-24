@@ -47,9 +47,8 @@ bug fixes.  It can be :ref:`checked out <checkout>` from
 http://hg.python.org/cpython#py3k.
 
 Once a :ref:`final` release is made from the in-development branch (say, 3.2), a
-new :ref:`maintenance branch <maintbranch>` (e.g. ``release32-maint``)
-is created to host all bug fixing activity for further micro versions
-(3.2.1, 3.2.2, etc.).
+new :ref:`maintenance branch <maintbranch>` is created to host all bug fixing
+activity for further micro versions (3.2.1, 3.2.2, etc.).
 
 
 .. _maintbranch:
