@@ -33,7 +33,6 @@ Python Developer's Guide
    faq
 
 
-
 Quick Links
 -----------
 
