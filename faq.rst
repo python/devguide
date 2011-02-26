@@ -263,18 +263,15 @@ How do I apply a patch?
 
 If you want to try out or review a patch generated using Mercurial, do::
 
-   patch -p1 < somework.patch
+   hg import --no-commit somework.patch
 
 This will apply the changes in your working copy without committing them.
-If the patch was not created by hg (i.e., a patch created by SVN and thus lacking
-any ``a``/``b`` directory prefixes in the patch), use ``-p0`` instead of ``-p1``.
+If the patch was not created by Mercurial (for example, a patch created by
+Subversion and thus lacking any ``a``/``b`` directory prefixes in the patch),
+add ``-p0`` to the above command.
 
-.. note:: The ``patch`` program is not available by default under Windows.
-   You can find it `here <http://gnuwin32.sourceforge.net/packages/patch.htm>`_,
-   courtesy of the `GnuWin32 <http://gnuwin32.sourceforge.net/>`_ project.
-   Also, you may find it necessary to add the "``--binary``" option when trying
-   to apply Unix-generated patches under Windows.
-
+You can also use the ``patch`` program, but be aware that it does not
+understand the `extended diff format`_ used by Mercurial.
 
 If you want to work on the patch using mq_ (Mercurial Queues), type instead::
 
@@ -291,6 +288,7 @@ then do::
 
    hg qdelete somework.patch
 
+.. _extended diff format: http://www.selenic.com/mercurial/hg.1.html#diffs
 .. _mq: http://mercurial.selenic.com/wiki/MqExtension
 
 
