@@ -129,7 +129,8 @@ first check that all your local changes have been recorded (using
    hg qdiff > mywork.patch
 
 If you are using another approach, you probably need to find out the right
-invocation of ``hg diff`` for your purposes.  Just please make sure that you
+invocation of ``hg diff`` for your purposes; see ``hg help diff`` and ``hg
+help revisions``. Just please make sure that you
 generate a **single, condensed** patch rather than a series of several changesets.
 
 

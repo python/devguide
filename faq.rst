@@ -352,7 +352,7 @@ How do I delete a file or directory in the repository?
 
 Specify the path to be removed with::
 
- hg rm PATH
+ hg remove PATH
 
 This will remove the file or the directory from your working copy; you will
 have to :ref:`commit your changes <hg-commit>` for the removal to be recorded
