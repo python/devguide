@@ -21,6 +21,28 @@ manager; under Windows, you might want to use the `TortoiseHg
 <http://tortoisehg.org/>`_ graphical client.
 
 
+Minimal Configuration
+'''''''''''''''''''''
+
+To use ``hg`` on the command line, you should set up some basic options in
+your `configuration file`_ (``~/.hgrc`` on POSIX,
+``%USERPROFILE%\Mercurial.ini`` on Windows). ::
+
+   [ui]
+   username = Your Name <email@example.org>
+
+   [diff]
+   git = on
+
+The first setting defines the name that will be used when you :ref:`commit
+<hg-commit>` changes. The second setting enables an `extended diff format`_
+which is more useful than the standard unified diff format.
+
+Note that TortoiseHg has a graphical settings dialog.
+
+.. _configuration file: http://www.selenic.com/mercurial/hgrc.5.html#files
+.. _extended diff format: http://www.selenic.com/mercurial/hg.1.html#diffs
+
 .. _checkout:
 
 Getting the Source Code
