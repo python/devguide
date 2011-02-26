@@ -110,13 +110,6 @@ Typing ``hg branches`` displays the open branches in your local repository::
    3.1                        67955:5be8b695ea86
    2.6                        67287:5e26a860eded
    2.5                        65464:e4ecac76e499
-   trunk                      62750:800f6c92c3ed
-   3.0                        60075:1d05144224fe
-   2.4                        58552:df72cac1899e
-   2.3                        45731:a3d9a9730743
-   2.2                        40444:d55ddc8c8501
-   2.1                        30171:06fcccf6eca8
-   2.0                        18214:dc0dfc9565cd
 
 
 Why are some branches marked "inactive"?
