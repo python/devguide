@@ -171,7 +171,7 @@ merged their commits to the ``default`` branch.  Just type::
 
    $ hg branches
    default                      3051:a7df1a869e4a
-   release31-maint              3012:b560997b365d (inactive)
+   3.1                          3012:b560997b365d (inactive)
 
 and check that all branches except ``default`` are marked *inactive*.  This
 means there is no pending changeset to merge from these branches.
