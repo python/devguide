@@ -44,7 +44,8 @@ repositories means you have to be more careful with your workflow:
   the result to the main repository.  The reason is that we don't want the
   history to be full of intermediate commits recording the private history
   of the person working on a patch.  If you are using the rebase_ extension,
-  consider adding the ``--collapse`` option to ``hg rebase``.
+  consider adding the ``--collapse`` option to ``hg rebase``.  The collapse_
+  extension is another choice.
 
 Because of these constraints, it can be practical to use other approaches
 such as mq_ (Mercurial Queues), in order to maintain patches in a single
@@ -54,6 +55,7 @@ local repository and to push them seamlessly when they are ready.
 .. _Mercurial: http://www.hg-scm.org/
 .. _mq: http://mercurial.selenic.com/wiki/MqExtension
 .. _rebase: http://mercurial.selenic.com/wiki/RebaseExtension
+.. _collapse: http://mercurial.selenic.com/wiki/CollapseExtension
 
 
 Handling Other's Code
