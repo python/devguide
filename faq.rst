@@ -119,6 +119,19 @@ Typing ``hg branches`` displays the open branches in your local repository::
    2.0                        18214:dc0dfc9565cd
 
 
+Why are some branches marked "inactive"?
+----------------------------------------
+
+Assuming you get the following output::
+
+   $ hg branches
+   default                    68042:8ff33af017ef
+   3.2                        68039:c17d7772c638 (inactive)
+
+This means all changesets in the "3.2" branch have been merged into the
+"default" branch (or any other branch, if such exists).
+
+
 Which branch is currently checked out in my working copy?
 ---------------------------------------------------------
 
