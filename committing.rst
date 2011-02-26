@@ -103,7 +103,7 @@ the patch to both versions of Python, you should first apply the patch to
 Python 3.2::
 
    hg update 3.2
-   patch -p1 < patch.diff
+   hg import --no-commit patch.diff
    # Compile; run the test suite
    hg commit
 
