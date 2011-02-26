@@ -9,7 +9,7 @@ Version Control
 Where can I learn about the version control system used, Mercurial (hg)?
 -------------------------------------------------------------------------------
 
-`Mercurial`_'s (also known as ``hg``) official web site is at
+Mercurial_'s (also known as ``hg``) official web site is at
 http://mercurial.selenic.com/.  A book on Mercurial published by
 `O'Reilly Media`_, `Mercurial: The Definitive Guide`_, is available
 for free online.
@@ -19,13 +19,14 @@ Mercurial to get help::
 
   hg help
 
-The man page for ``hg`` provides a quick refresher on the details of
+The `man page`_ for ``hg`` provides a quick refresher on the details of
 various commands, but doesn't provide any guidance on overall
 workflow.
 
 .. _Mercurial: http://mercurial.selenic.com/
 .. _O'Reilly Media: http://www.oreilly.com/
 .. _Mercurial\: The Definitive Guide: http://hgbook.red-bean.com/
+.. _man page: http://www.selenic.com/mercurial/hg.1.html
 
 
 What do I need to use Mercurial?
@@ -483,13 +484,14 @@ extensions, such as ``color``, can prettify output; others, such as ``fetch``
 or ``transplant``, add new Mercurial commands.
 
 There are also many `configuration options`_ to tweak various aspects of the
-command line and other Mercurial behaviour; typing ``man hgrc`` displays
+command line and other Mercurial behaviour; typing `man hgrc`_ displays
 their documentation inside your terminal.
 
 In the end, please refer to the Mercurial `wiki`_, especially the pages about
 `extensions`_ (including third-party ones) and the `tips and tricks`_.
 
 
+.. _man hgrc: http://www.selenic.com/mercurial/hgrc.5.html
 .. _wiki: http://mercurial.selenic.com/wiki/
 .. _extensions: http://mercurial.selenic.com/wiki/UsingExtensions
 .. _tips and tricks: http://mercurial.selenic.com/wiki/TipsAndTricks
