@@ -142,6 +142,8 @@ Or to get more information::
    update: (current)
 
 
+.. _hg-switch-branches:
+
 How do I switch between branches inside my working copy?
 --------------------------------------------------------
 
