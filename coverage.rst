@@ -33,14 +33,31 @@ so it might take some time to find a module that needs coverage help.
 
 Finally, you can simply run the entire test suite yourself with coverage turned
 on and see what modules need help. This has the drawback of running the entire
-test suite under coverage measuring which
-takes some time to complete, but you will
-have an accurate, up-to-date notion of what modules need the most work.
+test suite under coverage measuring which takes some time to complete, but you
+will have an accurate, up-to-date notion of what modules need the most work.
 
 Do make sure, though, that for any module you do decide to work on that you run
 coverage for just that module. This will make sure you know how good the
 explicit coverage of the module is from its own set of tests instead of from
 implicit testing by other code that happens to use the module.
+
+
+Common Gotchas
+""""""""""""""
+
+Please realize that coverage reports on modules already imported before coverage
+data starts to be recorded will be wrong. Typically you can tell a module falls
+into this category by the coverage report saying that global statements that
+would obviously be executed upon import have gone unexecuted while local
+statements have been covered. In these instances you can ignore the global
+statement coverage and simply focus on the local statement coverage.
+
+When writing new tests to increase coverage, do take note of the style of tests
+already provided for a module (e.g., whitebox, blackbox, etc.). As
+some modules are primarily maintained by a single core developer they may have
+a specific preference as to what kind of test is used (e.g., whitebox) and
+prefer that other types of tests not be used (e.g., blackbox). When in doubt,
+stick with whitebox testing in order to properly exercise the code.
 
 
 Measuring Coverage
@@ -130,7 +147,7 @@ branch coverage. Testing every possible branch path through code, while a great
 goal to strive for, is a secondary goal to getting 100% line
 coverage for the entire stdlib (for now).
 
-If you decide to want to try to improve branch coverage, simply add the
+If you decide you want to try to improve branch coverage, simply add the
 ``--branch`` flag to your coverage run::
 
     ./python -m coverage run --pylib --branch <arguments to run test(s)>
