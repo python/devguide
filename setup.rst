@@ -14,8 +14,8 @@ structure of a CPython checkout.
 Version Control Setup
 ---------------------
 
-CPython is developed using `Subversion (commonly abbreviated SVN)
-<http://subversion.tigris.org/>`_.
+CPython is developed using `Subversion <http://subversion.tigris.org/>`_
+(commonly abbreviated svn, after the program name).
 It is easily available for common Unix systems by way of the standard package
 manager; under Windows, you might want to use the `TortoiseSVN
 <http://tortoisesvn.net/>`_ graphical client.
