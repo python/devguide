@@ -74,7 +74,7 @@ changes you like::
 
    hg clone ssh://hg@hg.python.org/test/ hgtest
 
-An entry in the ``Misc/developers.txt`` file should also be entered for you.
+An entry in the :ref:`developers` should also be entered for you.
 Typically the person who sponsored your application to become a core developer
 makes sure an entry is created for you.
 
