@@ -77,7 +77,7 @@ code
 codecs                lemburg, doerwalter
 codeop
 collections           rhettinger
-collections._abcoll   rhettinger, stutzbach
+collections.abc       rhettinger, stutzbach
 colorsys
 compileall
 concurrent.futures    brian.quinlan
