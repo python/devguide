@@ -124,6 +124,8 @@ This means all changesets in the "3.2" branch have been merged into the
 "default" branch (or any other branch, if such exists).
 
 
+.. _hg-current-branch:
+
 Which branch is currently checked out in my working copy?
 ---------------------------------------------------------
 
@@ -243,17 +245,32 @@ How do I update my local repository to be in sync with a remote repository?
 
 Run::
 
- hg pull <remote repository>
- hg update
+   hg pull <remote repository>
 
-from the directory you wish to update.  The first command retrieves any
-changes from the specified remote repository and merges them into the local
-repository. The second commands updates the current directory and all its
-subdirectories from the local repository.
+from the repository you wish to pull the latest changes into.  Most of the
+time, that repository is a clone of the repository you want to pull from,
+so you can simply type::
 
-You can combine the two commands in one by using::
+   hg pull
 
- hg pull -u <remote repository>
+This doesn't update your working copy, though.  See below:
+
+
+How do I update my working copy with the latest changes?
+--------------------------------------------------------
+
+Do::
+
+   hg update
+
+This will update your working copy with the latest changes on the
+:ref:`current branch <hg-current-branch>`.  If you had :ref:`uncommitted
+changes <hg-status>` in your working copy, they will be merged in.
+
+If you find yourself typing often ``hg pull`` followed by ``hg update``,
+be aware that you can combine them in a single command::
+
+   hg pull -u
 
 
 .. _hg-local-workflow:
