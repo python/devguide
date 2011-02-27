@@ -58,6 +58,44 @@ local repository and to push them seamlessly when they are ready.
 .. _collapse: http://mercurial.selenic.com/wiki/CollapseExtension
 
 
+Minimal Configuration
+---------------------
+
+To use Mercurial as a committer (both of your and others' patches), you should
+set up some basic options in your `configuration file`_.  Under Windows,
+TortoiseHg has a graphical settings dialog for most options, meaning you
+don't need to edit the file directly (it is still available in
+``%USERPROFILE%\Mercurial.ini``).  Under other platforms, you must edit
+``~/.hgrc``.
+
+Here are the minimal options you need to activate:
+
+* your *username*: this setting defines the name that will be used when you
+  :ref:`commit <hg-commit>` changes.  The usual convention is to also include
+  an e-mail contact address in there::
+
+   [ui]
+   username = Your Name <email@example.org>
+
+* *extended diffing*: this setting enables an `extended diff format`_
+  which is more useful than the standard unified diff format as it includes
+  metadata about file copies and permission bits::
+
+   [diff]
+   git = on
+
+Under Windows, you should also enable the `eol extension`_, which will
+fix any Windows-specific line endings your text editor might insert when you
+create or modify versioned files.  The public repository has a hook which
+will reject all changesets having the wrong line endings, so enabling this
+extension on your local computer is in your best interest.
+
+
+.. _configuration file: http://www.selenic.com/mercurial/hgrc.5.html#files
+.. _extended diff format: http://www.selenic.com/mercurial/hg.1.html#diffs
+.. _eol extension: http://mercurial.selenic.com/wiki/EolExtension
+
+
 Handling Other's Code
 ---------------------
 
