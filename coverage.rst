@@ -147,7 +147,7 @@ branch coverage. Testing every possible branch path through code, while a great
 goal to strive for, is a secondary goal to getting 100% line
 coverage for the entire stdlib (for now).
 
-If you decide to want to try to improve branch coverage, simply add the
+If you decide you want to try to improve branch coverage, simply add the
 ``--branch`` flag to your coverage run::
 
     ./python -m coverage run --pylib --branch <arguments to run test(s)>
