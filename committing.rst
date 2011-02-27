@@ -184,11 +184,12 @@ Porting Between Major Versions
    "hg qimport -r tip -P" afterwards but that would add another level of
    complexity.
 
-To move a patch between, e.g., Python 3.2 and 2.7, use the `transplant
-extension`_. Assuming you committed in Python 2.7 first, to pull changeset
-``a7df1a869e4a`` into Python 3.2, do::
+To port a patch from, e.g., Python 3.2 to 2.7, you can use the `transplant
+extension`_. Assuming you first committed your changes as changeset
+``a7df1a869e4a`` in the 3.2 branch and have now :ref:`updated
+<hg-switch-branches>` your working copy to the 2.7 branch, do::
 
-   hg transplant -s <URL to 2.7 repo> a7df1a869e4a
+   hg transplant a7df1a869e4a
    # Compile; run the test suite
    hg push
 
