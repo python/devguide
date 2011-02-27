@@ -58,6 +58,44 @@ local repository and to push them seamlessly when they are ready.
 .. _collapse: http://mercurial.selenic.com/wiki/CollapseExtension
 
 
+Minimal Configuration
+---------------------
+
+To use Mercurial as a committer (both of your and others' patches), you should
+set up some basic options in your `configuration file`_.  Under Windows,
+TortoiseHg has a graphical settings dialog for most options, meaning you
+don't need to edit the file directly (it is still available in
+``%USERPROFILE%\Mercurial.ini``).  Under other platforms, you must edit
+``~/.hgrc``.
+
+Here are the minimal options you need to activate:
+
+* your *username*: this setting defines the name that will be used when you
+  :ref:`commit <hg-commit>` changes.  The usual convention is to also include
+  an e-mail contact address in there::
+
+   [ui]
+   username = Your Name <email@example.org>
+
+* *extended diffing*: this setting enables an `extended diff format`_
+  which is more useful than the standard unified diff format as it includes
+  metadata about file copies and permission bits::
+
+   [diff]
+   git = on
+
+Under Windows, you should also enable the `eol extension`_, which will
+fix any Windows-specific line endings your text editor might insert when you
+create or modify versioned files.  The public repository has a hook which
+will reject all changesets having the wrong line endings, so enabling this
+extension on your local computer is in your best interest.
+
+
+.. _configuration file: http://www.selenic.com/mercurial/hgrc.5.html#files
+.. _extended diff format: http://www.selenic.com/mercurial/hg.1.html#diffs
+.. _eol extension: http://mercurial.selenic.com/wiki/EolExtension
+
+
 Handling Other's Code
 ---------------------
 
@@ -94,10 +132,6 @@ test suite runs successfully before committing the patch to another branch.
 
 Porting Within a Major Version
 ''''''''''''''''''''''''''''''
-
-.. note::
-   XXX Update to using hg qimport if that ends up being the way non-core
-   developers are told to go.
 
 Assume that Python 3.3 is the current in-development version of Python and that
 you have a patch that should also be applied to Python 3.2. To properly port
@@ -150,11 +184,12 @@ Porting Between Major Versions
    "hg qimport -r tip -P" afterwards but that would add another level of
    complexity.
 
-To move a patch between, e.g., Python 3.2 and 2.7, use the `transplant
-extension`_. Assuming you committed in Python 2.7 first, to pull changeset
-``a7df1a869e4a`` into Python 3.2, do::
+To port a patch from, e.g., Python 3.2 to 2.7, you can use the `transplant
+extension`_. Assuming you first committed your changes as changeset
+``a7df1a869e4a`` in the 3.2 branch and have now :ref:`updated
+<hg-switch-branches>` your working copy to the 2.7 branch, do::
 
-   hg transplant -s <URL to 2.7 repo> a7df1a869e4a
+   hg transplant a7df1a869e4a
    # Compile; run the test suite
    hg push
 
