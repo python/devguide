@@ -117,7 +117,7 @@ existing one), you use the command::
 
  svn commit [PATH]
 
-Although ``[PATH]`` is optional, if PATH is omitted all changes
+Although ``PATH`` is optional, if PATH is omitted all changes
 in your local copy will be committed to the repository.
 **DO NOT USE THIS!!!**  You should specify the specific files
 to be committed unless you are *absolutely* positive that
@@ -392,7 +392,7 @@ Run::
 
   ssh-keygen -t rsa
 
-This will generate a two files; your public key and your private key.  Your
+This will generate two files; your public key and your private key.  Your
 public key is the file ending in ``.pub``.
 
 Windows

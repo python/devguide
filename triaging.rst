@@ -20,10 +20,10 @@ Type
 ''''
 
 Describes the type of issue.  If something does not fit within any
-specific type then simply do not set it.  *"Crash"* is for hard crashes of
+specific type then simply do not set it.  *"crash"* is for hard crashes of
 the Python interpreter -- possibly with a core dump or a Windows error box --
 and not erroneous exits because of an unhandled exception (the latter fall under
-the *"behaviour"* category).
+the *"behavior"* category).
 
 Stage
 '''''
@@ -188,7 +188,7 @@ properly.
 * ``#<number>``, ``issue<number>``, ``issue <number>`` links to the
   tracker issue ``<number>``.
 * ``msg<number>`` links to the tracker message ``<number>``.
-* ``r<number>``, ``rev<number>``, ``revision <number>`` links to the VCS
+* ``r<number>``, ``rev<number>``, ``revision <number>`` links to the Subversion
   revision ``<number>``.
 
 
