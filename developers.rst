@@ -259,8 +259,7 @@ Permissions History
 - George Yoshida (SF name "quiver") added to the SourceForge Python
   project 14 Apr 2006, by Tim Peters, as a tracker admin.  See
   contemporaneous python-checkins thread with the unlikely Subject:
-
-      r45329 - python/trunk/Doc/whatsnew/whatsnew25.tex
+  r45329 - python/trunk/Doc/whatsnew/whatsnew25.tex
 
 - Ronald Oussoren was given SVN access on 3 Mar 2006 by NCN, for Mac
   related work.
@@ -297,8 +296,7 @@ Permissions History
 
 - Eric S. Raymond was made a developer on 2 Jul 2000 by TGP, for general
   library work.  His request is archived here:
-
-      http://mail.python.org/pipermail/python-dev/2000-July/005314.html
+  http://mail.python.org/pipermail/python-dev/2000-July/005314.html
 
 
 Permissions Dropped on Request

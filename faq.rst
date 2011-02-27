@@ -156,11 +156,8 @@ key indicators that can appear in the first column of output are:
 
 =  ===========================
 A  Scheduled to be added
-
 D  Scheduled to be deleted
-
 M  Modified locally
-
 ?  Not under version control
 =  ===========================
 
