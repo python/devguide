@@ -14,8 +14,8 @@ directory structure of the CPython source code.
 Version Control Setup
 ---------------------
 
-CPython is developed using `Mercurial (commonly abbreviated 'hg')
-<http://hg-scm.org/>`_.
+CPython is developed using `Mercurial <http://hg-scm.org/>`_
+(commonly abbreviated hg, after the program name).
 It is easily available for common Unix systems by way of the standard package
 manager; under Windows, you might want to use the `TortoiseHg
 <http://tortoisehg.org/>`_ graphical client.

@@ -326,7 +326,7 @@ an existing one), you use the command::
 
  hg commit [PATH]
 
-``[PATH]`` is optional: if it is omitted, all changes in your working copy
+``PATH`` is optional: if it is omitted, all changes in your working copy
 will be committed to the local repository.  When you commit, be sure that all
 changes are desired by :ref:`reviewing them first <hg-status>`;
 also, when making commits that you intend to push to public repositories,
@@ -379,11 +379,8 @@ key indicators that can appear in the first column of output are:
 
    =  ===========================
    A  Scheduled to be added
-
    R  Scheduled to be removed
-
    M  Modified locally
-
    ?  Not under version control
    =  ===========================
 
@@ -392,7 +389,7 @@ If you want a line-by-line listing of the differences, use::
  hg diff
 
 
-How do I revert a file I have modified back to the version in the respository?
+How do I revert a file I have modified back to the version in the repository?
 -------------------------------------------------------------------------------
 
 Running::
@@ -514,7 +511,7 @@ Run::
 
   ssh-keygen -t rsa
 
-This will generate a two files; your public key and your private key.  Your
+This will generate two files; your public key and your private key.  Your
 public key is the file ending in ``.pub``.
 
 Windows

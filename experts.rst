@@ -35,11 +35,8 @@ The existence of this list is not meant to indicate that these people
 by non-committers to find responsible parties, and by committers who do
 not feel qualified to make a decision in a particular context.
 
-See also `PEP 291`_ and `PEP 360`_ for information about certain modules
+See also :PEP:`291` and :PEP:`360` for information about certain modules
 with special rules.
-
-.. _`PEP 291`: http://www.python.org/dev/peps/pep-0291/
-.. _`PEP 360`: http://www.python.org/dev/peps/pep-0360/
 
 
 Stdlib
@@ -77,7 +74,7 @@ code
 codecs                lemburg, doerwalter
 codeop
 collections           rhettinger
-collections._abcoll   rhettinger, stutzbach
+collections.abc       rhettinger, stutzbach
 colorsys
 compileall
 concurrent.futures    brian.quinlan
