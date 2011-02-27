@@ -133,10 +133,6 @@ test suite runs successfully before committing the patch to another branch.
 Porting Within a Major Version
 ''''''''''''''''''''''''''''''
 
-.. note::
-   XXX Update to using hg qimport if that ends up being the way non-core
-   developers are told to go.
-
 Assume that Python 3.3 is the current in-development version of Python and that
 you have a patch that should also be applied to Python 3.2. To properly port
 the patch to both versions of Python, you should first apply the patch to
