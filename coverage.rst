@@ -42,6 +42,24 @@ explicit coverage of the module is from its own set of tests instead of from
 implicit testing by other code that happens to use the module.
 
 
+Common Gotchas
+""""""""""""""
+
+Please realize that coverage reports on modules already imported before coverage
+data starts to be recorded will be wrong. Typically you can tell a module falls
+into this category by the coverage report saying that global statements that
+would obviously be executed upon import have gone unexecuted while local
+statements have been covered. In these instances you can ignore the global
+statement coverage and simply focus on the local statement coverage.
+
+When writing new tests to increase coverage, do take note of the style of tests
+already provided for a module (e.g., whitebox, blackbox, etc.). As
+some modules are primarily maintained by a single core developer they may have
+a specific preference as to what kind of test is used (e.g., whitebox) and
+prefer that other types of tests not be used (e.g., blackbox). When in doubt,
+stick with whitebox testing in order to properly exercise the code.
+
+
 Measuring Coverage
 """"""""""""""""""
 
