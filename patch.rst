@@ -119,7 +119,7 @@ To perform a quick sanity check on your patch, you can run::
    make patchcheck
 
 This will check and/or fix various common things people forget to do for
-patches, such as adding any new files needing for the patch to work (do not
+patches, such as adding any new files needing for the patch to work (note
 that not all checks apply to non-core developers).
 
 Assume you are using the :ref:`mq approach <mq-workflow>` suggested earlier,
