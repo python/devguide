@@ -32,8 +32,6 @@ workflow.
 What do I need to use Mercurial?
 -------------------------------------------------------------------------------
 
-.. _download Mercurial: http://mercurial.selenic.com/downloads/
-
 UNIX
 '''''''''''''''''''
 
@@ -46,6 +44,7 @@ your identity when performing commits. As with Mercurial, binary packages
 are typically available either online or through the platform's package
 management system.
 
+.. _download Mercurial: http://mercurial.selenic.com/downloads/
 .. _OpenSSH: http://www.openssh.org/
 
 
@@ -71,7 +70,6 @@ to your SSH private key.
 .. note::
    If your private key is in OpenSSH format, you must first convert it to
    PuTTY format by loading it into `PuTTYgen`_.
-
 
 .. _download TortoiseHg: http://tortoisehg.bitbucket.org/download/index.html
 
