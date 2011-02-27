@@ -30,6 +30,9 @@ Stage
 What is next to advance the issue forward.  The *stage* needn't be set until
 it is clear that the issue warrants fixing.
 
+* test needed
+    The bug reporter should post a script or instructions to let a triager or
+    developper reproduce the issue.
 * needs patch
     The issue lacks a patch to solve the problem (i.e. fixing the bug, or
     adding the requested improvement).
@@ -99,6 +102,8 @@ Various flags about the issue. Multiple values are possible.
     The patch attached to the issue is in need of a review.
 * patch
     There is a patch attached to the issue.
+* 3.2regression
+    The issue is a regression in 3.2.
 
 Nosy List
 '''''''''
