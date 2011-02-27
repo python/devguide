@@ -144,7 +144,8 @@ hg.python.org.
 Porting Between Major Versions
 ''''''''''''''''''''''''''''''
 
-.. warning:: XXX transplant always commits automatically. This breaks the
+.. warning::
+   transplant always commits automatically. This breaks the
    "run the test suite before committing" rule. We could advocate using
    "hg qimport -r tip -P" afterwards but that would add another level of
    complexity.
@@ -161,7 +162,7 @@ extension`_. Assuming you committed in Python 2.7 first, to pull changeset
 Differences with ``svnmerge``
 '''''''''''''''''''''''''''''
 
-If you are coming from SVN, you might be surprised by how Mercurial works.
+If you are coming from Subversion, you might be surprised by how Mercurial works.
 Despite its name, ``svnmerge`` is different from ``hg merge``: while ``svnmerge``
 allows to cherrypick individual revisions, ``hg merge`` can only merge whole
 lines of development in the repository's :abbr:`DAG (directed acyclic graph)`.
