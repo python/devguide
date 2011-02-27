@@ -32,7 +32,7 @@ some bug reports being directly emailed to the mailing list. There is also the
 <http://mail.python.org/mailman/listinfo/doc-sig>`_ which discusses the
 documentation toolchain, projects, standards, etc.
 
-.. _Documenting Python: http://docs.python.org/py3k/documenting/index.html
+.. _Documenting Python: http://docs.python.org/dev/documenting/
 
 
 Helping with issues filed on the issue tracker
