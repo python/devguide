@@ -217,8 +217,72 @@ means there is no pending changeset to merge from these branches.
 
 .. _transplant extension: http://mercurial.selenic.com/wiki/TransplantExtension
 
-
 .. seealso::
    `Merging work
    <http://hgbook.red-bean.com/read/a-tour-of-mercurial-merging-work.html>`_,
    in `Mercurial: The Definitive Guide <http://hgbook.red-bean.com/>`_.
+
+
+Long-term development of features
+---------------------------------
+
+If you want to work on a feature long-term (perhaps you're implementing a
+PEP, or even removing the GIL), you will want to publish your work somewhere.
+We then recommend that you maintain it in a dedicated repository.
+
+First create a public (empty) repository on hg.python.org::
+
+   $ hg init ssh://hg@hg.python.org/features/mywork
+
+And do a local clone of that repository on your disk::
+
+   $ hg clone ssh://hg@hg.python.org/features/mywork
+   $ cd mywork
+
+There, pull all the contents from the main repository, either from a local
+clone::
+
+   $ hg pull ../cpython
+   $ hg update
+
+or directly from the network (which is of course slower)::
+
+   $ hg pull http://hg.python.org/cpython
+   $ hg update
+
+It is recommended that you create a new named branch for your work, so as
+to easily track changes.  That named branch will exist in your feature
+repository, but not in the main repository::
+
+   $ hg branch mywork
+   $ hg commit -m "Creating branch mywork"
+
+You can now work on your feature, commit changes as you will, and push them
+when desired::
+
+   $ hg push
+
+When you push them, they will land in the public repository at
+``ssh://hg@hg.python.org/features/mywork`` (or
+``http://hg.python.org/features/mywork`` for the read-only URL).
+
+When you want to synchronize your changes, you can pull from the main
+repository::
+
+   $ hg pull ../cpython
+
+or from the network::
+
+   $ hg pull http://hg.python.org/cpython
+
+and merge all new changes from branch ``default`` to branch ``mywork``::
+
+   $ hg branch
+   mywork
+   $ hg merge default
+
+
+.. XXX: since the initial "hg push" can be quite long on asymmetric
+   connections, we could offer a way for people to make a remote-to-remote
+   clone (like SVN allows creating branches by remote copying).
+   hg currently doesn't support that.
