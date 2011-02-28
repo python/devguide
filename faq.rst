@@ -456,6 +456,22 @@ If you want to view the differences for a specific revision, run::
  hg log -vp -r <revision number>
 
 
+How can I see the changeset graph in my repository?
+---------------------------------------------------
+
+In Mercurial repositories, changesets don't form a simple list, but rather
+a graph: every changeset has one or two parents (it's called a merge changeset
+in the latter case), and can have any number of children.
+
+The graphlog_ extension is very useful for examining the structure of the
+changeset graph.  It is bundled with Mercurial.
+
+Graphical tools, such as TortoiseHG, will display the changeset graph
+by default.
+
+.. _graphlog: http://mercurial.selenic.com/wiki/GraphlogExtension
+
+
 How do I undo the changes made in a recent commit?
 -------------------------------------------------------------------------------
 
