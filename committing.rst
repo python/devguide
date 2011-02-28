@@ -286,3 +286,21 @@ and merge all new changes from branch ``default`` to branch ``mywork``::
    connections, we could offer a way for people to make a remote-to-remote
    clone (like SVN allows creating branches by remote copying).
    hg currently doesn't support that.
+
+
+Uploading a patch for review
+''''''''''''''''''''''''''''
+
+In this scheme, your work will probably consist of many commits (some of
+them merges).  If you want to upload a patch for review somewhere, you need
+a single agregate patch.  This is where having a dedicated named branch
+``mywork`` gets handy.
+
+First ensure that you have pulled *and merged* all changes from the main
+repository, as explained above.  Then, assuming your :ref:`currently checked
+out branch <hg-current-branch>` is still ``mywork``, simply do::
+
+   $ hg diff -r default > mywork.patch
+
+This will write to ``mywork.patch`` all the changes between ``default`` and
+``mywork``.
