@@ -41,7 +41,7 @@ contributing to Python.
 
 * `Issue tracker <http://bugs.python.org/>`_
 * Buildbots_
-* :ref:`faq`
+* :doc:`faq`
 * PEPs_ (Python Enhancement Proposals)
 
 
@@ -55,7 +55,7 @@ contributing immediately without reading and understanding these documents all
 at once, but please do not skip around within the documentation as everything
 is written assuming preceding documentation has been read.
 
-You can, *however*, read the :ref:`FAQ <faq>` at any point!
+You can, *however*, read the :doc:`FAQ <faq>` at any point!
 
 * :doc:`setup`
 * Coding style guides
@@ -100,7 +100,7 @@ Resources
 * `Issue tracker <http://bugs.python.org/>`_
     * `Meta tracker <http://psf.upfronthosting.co.za/roundup/meta>`_ (issue
       tracker for the issue tracker)
-    * :ref:`experts`
+    * :doc:`experts`
     * `Firefox search engine plug-in`_
 * Buildbots_
 * Source code
@@ -108,16 +108,16 @@ Resources
     * `Snapshot of py3k <http://hg.python.org/cpython/archive/tip.tar.bz2>`_
     * `XXX Daily OS X installer <http://www.python.org/dev/daily-dmg/>`_
 * Tool support
-    * :ref:`emacs`
-    * :ref:`gdb`
+    * :doc:`emacs`
+    * :doc:`gdb`
     * Various tools with configuration files as found in the `Misc directory`_
 * Help with ...
-    * :ref:`grammar`
-    * :ref:`compiler`
-* :ref:`faq`
+    * :doc:`grammar`
+    * :doc:`compiler`
+* :doc:`faq`
 * PEPs_ (Python Enhancement Proposals)
 * `python.org maintenance`_
-* :ref:`developers`
+* :doc:`developers`
 
 
 .. _buildbots: http://python.org/dev/buildbot/
