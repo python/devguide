@@ -227,28 +227,44 @@ Long-term development of features
 ---------------------------------
 
 If you want to work on a feature long-term (perhaps you're implementing a
-PEP, or even removing the GIL), you will want to publish your work somewhere.
-We then recommend that you maintain it in a dedicated repository.
+PEP), you will probably want to publish your work in a dedicated repository.
+The following instructions will help you do so on `hg.python.org
+<http://hg.python.org>`_'s infrastructure without requiring a lot of upstream
+bandwidth.
 
-First create a public (empty) repository on hg.python.org::
+Go to the main repository's Web page (http://hg.python.org/cpython/); there
+you find a box labelled "server-side clone".  Enter the relative path of the
+repository you want to create on the server, for example ``features/mywork``;
+and press the button.  A new repository gets created on the server with all
+the changesets of the original repository (it will seem very fast; this is
+normal).
 
-   $ hg init ssh://hg@hg.python.org/features/mywork
-
-And do a local clone of that repository on your disk::
+You can now do a local clone of this repository on your disk::
 
    $ hg clone ssh://hg@hg.python.org/features/mywork
    $ cd mywork
 
-There, pull all the contents from the main repository, either from a local
-clone::
+.. commented out: old instructions (without server-side cloning)
 
-   $ hg pull ../cpython
-   $ hg update
+   First create a public (empty) repository on hg.python.org::
 
-or directly from the network (which is of course slower)::
+      $ hg init ssh://hg@hg.python.org/features/mywork
 
-   $ hg pull http://hg.python.org/cpython
-   $ hg update
+   And do a local clone of that repository on your disk::
+
+      $ hg clone ssh://hg@hg.python.org/features/mywork
+      $ cd mywork
+
+   There, pull all the contents from the main repository, either from a local
+   clone::
+
+      $ hg pull ../cpython
+      $ hg update
+
+   or directly from the network (which is of course slower)::
+
+      $ hg pull http://hg.python.org/cpython
+      $ hg update
 
 It is recommended that you create a new named branch for your work, so as
 to easily track changes.  That named branch will exist in your feature
@@ -267,13 +283,14 @@ When you push them, they will land in the public repository at
 ``http://hg.python.org/features/mywork`` for the read-only URL).
 
 When you want to synchronize your changes, you can pull from the main
-repository::
-
-   $ hg pull ../cpython
-
-or from the network::
+repository, either from its remote URL::
 
    $ hg pull http://hg.python.org/cpython
+
+or from a local clone that you may have on your disk (which is of course
+faster)::
+
+   $ hg pull ../cpython
 
 and merge all new changes from branch ``default`` to branch ``mywork``::
 
