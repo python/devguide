@@ -56,7 +56,7 @@ contributing immediately without reading and understanding these documents all
 at once, but please do not skip around within the documentation as everything
 is written assuming preceding documentation has been read.
 
-* :doc::`setup`
+* :doc:`setup`
 * Coding style guides
     * `PEP 7`_ (Style Guide for C Code)
     * `PEP 8`_ (Style Guide for Python Code)
