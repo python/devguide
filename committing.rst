@@ -1,7 +1,7 @@
 .. _committing:
 
-Committing Patches
-==================
+Committing and Pushing Changes
+==============================
 
 Commit Messages
 ---------------
