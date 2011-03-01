@@ -56,35 +56,35 @@ contributing immediately without reading and understanding these documents all
 at once, but please do not skip around within the documentation as everything
 is written assuming preceding documentation has been read.
 
-* :ref:`setup`
+* :doc::`setup`
 * Coding style guides
     * `PEP 7`_ (Style Guide for C Code)
     * `PEP 8`_ (Style Guide for Python Code)
-* :ref:`help`
-* :ref:`patch`
-* :ref:`runtests`
+* :doc:`help`
+* :doc:`patch`
+* :doc:`runtests`
 * Beginner tasks to become familiar with the development process
-    * :ref:`docquality`
-    * :ref:`coverage`
+    * :doc:`docquality`
+    * :doc:`coverage`
 * Advanced tasks for once you are comfortable
-    * :ref:`silencewarnings`
+    * :doc:`silencewarnings`
     * Fixing issues found by the buildbots_
-    * :ref:`fixingissues`
-    * :ref:`helptriage`
-* :ref:`devrole`
-    * :ref:`triaging`
-    * :ref:`languishing`
-* :ref:`communication`
-* :ref:`coredev`
-    * :ref:`committing`
-    * :ref:`devcycle`
+    * :doc:`fixingissues`
+    * :doc:`helptriage`
+* :doc:`devrole`
+    * :doc:`triaging`
+    * :doc:`languishing`
+* :doc:`communication`
+* :doc:`coredev`
+    * :doc:`committing`
+    * :doc:`devcycle`
 
 
 Proposing changes to Python itself
 ----------------------------------
 
-* :ref:`stdlibchanges`
-* :ref:`langchanges`
+* :doc:`stdlibchanges`
+* :doc:`langchanges`
 
 
 .. _resources:
