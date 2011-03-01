@@ -42,7 +42,7 @@ contributing to Python.
 
 * `Issue tracker <http://bugs.python.org/>`_
 * Buildbots_
-* :ref:`faq`
+* :doc:`faq`
 * PEPs_ (Python Enhancement Proposals)
 
 
@@ -99,7 +99,7 @@ Resources
 * `Issue tracker <http://bugs.python.org/>`_
     * `Meta tracker <http://psf.upfronthosting.co.za/roundup/meta>`_ (issue
       tracker for the issue tracker)
-    * :ref:`experts`
+    * :doc:`experts`
     * `Firefox search engine plug-in`_
 * Buildbots_
 * Source code
@@ -107,16 +107,16 @@ Resources
     * `Daily snapshot <http://svn.python.org/snapshots/>`_
     * `Daily OS X installer <http://python.org/dev/daily-dmg/>`_
 * Tool support
-    * :ref:`emacs`
-    * :ref:`gdb`
+    * :doc:`emacs`
+    * :doc:`gdb`
     * Various tools with configuration files as found in the `Misc directory`_
 * Help with ...
-    * :ref:`grammar`
-    * :ref:`compiler`
-* :ref:`faq`
+    * :doc:`grammar`
+    * :doc:`compiler`
+* :doc:`faq`
 * PEPs_ (Python Enhancement Proposals)
 * `python.org maintenance`_
-* :ref:`developers`
+* :doc:`developers`
 
 
 .. _buildbots: http://python.org/dev/buildbot/
