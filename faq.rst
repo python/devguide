@@ -423,11 +423,15 @@ to match up with the repository.
 How do I find out which revisions need merging?
 -----------------------------------------------
 
-Running::
+In unambiguous cases, Mercurial will find out for you if you simply try::
+
+   hg merge
+
+If that fails and Mercurial asks for explicit revisions, running::
 
    hg heads
 
-Gives you the list of branch heads in your local repository.  If you are
+will give you the list of branch heads in your local repository.  If you are
 working only in a particular named branch, for example ``default``, do::
 
    hg heads default
