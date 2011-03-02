@@ -62,7 +62,7 @@ your SSH keys.  For that, open your Mercurial configuration file
 (you can do so by opening the TortoiseHg configuration dialog and then
 clicking *"Edit File"*).  In the ``[ui]`` section, add the following line::
 
-   ssh = TortoisePlink.exe -ssh -2 -i C:\path\to\yourkey.ppk
+   ssh = TortoisePlink.exe -ssh -2 -C -i C:\path\to\yourkey.ppk
 
 where ``C:\path\to\yourkey.ppk`` should be replaced with the actual path
 to your SSH private key.
