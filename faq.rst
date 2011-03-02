@@ -420,6 +420,43 @@ from the root of your working copy it will recursively restore everything
 to match up with the repository.
 
 
+How do I find out which revisions need merging?
+-----------------------------------------------
+
+Running::
+
+   hg heads
+
+Gives you the list of branch heads in your local repository.  If you are
+working only in a particular named branch, for example ``default``, do::
+
+   hg heads default
+
+to display the heads on that branch.
+
+
+How do I list the files in conflict after a merge?
+--------------------------------------------------
+
+Use::
+
+   hg resolve --list
+
+(abbreviated ``hg resolve -l``)
+
+
+How I mark a file resolved after I have resolved merge conflicts?
+-----------------------------------------------------------------
+
+Type::
+
+   hg resolve --mark <file path>
+
+(abbreviated ``hg resolve -m <file path>``)
+
+If you are sure you have resolved all conflicts, use ``hg resolve -am``.
+
+
 How do I find out who edited or what revision changed a line last?
 -------------------------------------------------------------------------------
 
