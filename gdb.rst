@@ -118,7 +118,7 @@ As well as adding pretty-printing support for ``PyObject *``, the extension adds
          902            options.profile = False
          903            profile_me()
          904            return
-         905    
+         905
         >906        u = UI()
          907        if not u.quit:
          908            try:
@@ -214,7 +214,7 @@ As well as adding pretty-printing support for ``PyObject *``, the extension adds
         builtin 'len' = <built-in function len>
         (gdb) py-print scarlet_pimpernel
         'scarlet_pimpernel' not found
-        
+
 ``py-locals``
   The ``py-locals`` command looks up all Python locals within the current Python frame in the selected thread, and prints their representations::
 
