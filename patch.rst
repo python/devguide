@@ -7,6 +7,61 @@ Lifecycle of a Patch
 Creating
 --------
 
+Tool Usage
+''''''''''
+
+.. _mq-workflow:
+
+Mercurial allows for various workflows according to each person's or
+project's preference.  We present here a very simple solution based on mq_
+(*Mercurial Queues*). You are welcome to use any approach you like (including
+a svn-like approach of simply never saving any changes you make to your working
+copy and using ``hg diff`` to create a patch).  Usage of mq_ is merely a
+suggestion; it's a balance between being able to do everything needed
+while allowing for more powerful usage if desired in the future.
+
+First make sure that the extension has been turned on in your ``.hgrc`` or
+``Mercurial.ini`` file::
+
+   [extensions]
+   mq =
+
+You can verify this is working properly by running ``hg help mq``.
+
+Before you start modifying things in your working copy, type::
+
+   hg qnew mywork
+
+where ``mywork`` is a descriptive name for what you are going to work on.
+This will create a patch in your patch queue. Whenever you have reached a point
+that you want to save what you have done, run::
+
+   hg qrefresh
+
+This will update the patch to contain all of the changes you have made up to
+this point. If you have added or removed any file, use ``hg add`` or ``hg
+remove``, respectively, before running ``hg qrefresh``.
+
+Later on, we will explain :ref:`how to generate a patch <patch-generation>`.
+
+If you want to delete your changes irrevocably (either because they were
+committed, or they ended up uninteresting), use::
+
+   hg qpop mywork
+   hg qdelete mywork
+
+.. seealso::
+   For more advanced usage of mq, read the `mq chapter
+   <http://hgbook.red-bean.com/read/managing-change-with-mercurial-queues.html>`_
+   of `Mercurial: The Definitive Guide <http://hgbook.red-bean.com/>`_.
+
+   Also, regardless of your workflow, refer to the :ref:`FAQ <faq>` for
+   :ref:`more information on using Mercurial <hg-local-workflow>`.
+
+.. _issue tracker: http://bugs.python.org
+.. _mq: http://mercurial.selenic.com/wiki/MqExtension
+
+
 Preparation
 '''''''''''
 
@@ -54,43 +109,29 @@ Python (you retain the copyright).
 .. _Python Software Foundation: http://www.python.org/psf/
 
 
+.. _patch-generation:
+
 Generation
 ''''''''''
 
 To perform a quick sanity check on your patch, you can run::
 
-    make patchcheck
+   make patchcheck
 
 This will check and/or fix various common things people forget to do for
-patches.
+patches, such as adding any new files needed for the patch to work (note
+that not all checks apply to non-core developers).
 
-To create your patch, you should generate a unified diff from your checkout's
-top-level directory::
+Assume you are using the :ref:`mq approach <mq-workflow>` suggested earlier,
+first check that all your local changes have been recorded (using
+``hg qrefresh``), then type the following::
 
-    svn diff > patch.diff
+   hg qdiff > mywork.patch
 
-If your work needs some new files to be added to the source tree, remember
-to ``svn add`` them before generating the patch::
-
-   svn add Lib/newfile.py
-   svn diff > patch.diff
-
-To apply a patch generated this way, do::
-
-    patch -p0 < patch.diff
-
-If the developer is using something other than svn to manage their code (e.g.,
-Mercurial), you might have to use ``-p1`` instead of ``-p0``.
-
-To undo a patch, you can revert **all** changes made in your checkout::
-
-    svn revert -R .
-
-.. note:: The ``patch`` program is not available by default under Windows.
-   You can find it `here <http://gnuwin32.sourceforge.net/packages/patch.htm>`_,
-   courtesy of the `GnuWin32 <http://gnuwin32.sourceforge.net/>`_ project.
-   Also, you may find it necessary to add the "``--binary``" option when trying
-   to apply Unix-generated patches under Windows.
+If you are using another approach, you probably need to find out the right
+invocation of ``hg diff`` for your purposes; see ``hg help diff`` and ``hg
+help revisions``. Just please make sure that you
+generate a **single, condensed** patch rather than a series of several changesets.
 
 
 Submitting

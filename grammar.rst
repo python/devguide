@@ -62,6 +62,6 @@ Checklist
 
 * After everything's been checked in, you're likely to see a new
   change to Python/Python-ast.c.  This is because this
-  (generated) file contains the svn version of the source from
+  (generated) file contains the hg version of the source from
   which it was generated.  There's no way to avoid this; you just
   have to submit this file separately.
