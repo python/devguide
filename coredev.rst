@@ -68,14 +68,11 @@ This should match your username on the issue tracker.
 
 You can verify your commit access by looking at
 http://www.python.org/dev/committers which lists all core developers by
-username. You can also execute the follow command and look for the word
-"success" in the output::
+username.  If you want to practice, there is a `test repository
+<http://hg.python.org/test/>`_ where you can freely commit and push any
+changes you like::
 
-    ssh pythondev@svn.python.org
-
-For Windows users using Pageant::
-
-    c:\path\to\putty\plink.exe pythondev@svn.python.org
+   hg clone ssh://hg@hg.python.org/test/ hgtest
 
 An entry in the :ref:`developers` should also be entered for you.
 Typically the person who sponsored your application to become a core developer
@@ -110,12 +107,15 @@ can now get a read/write checkout of the code. URLs for read/write checkouts
 are different than those for read-only checkouts as SSH is used instead of
 HTTP.
 
-For the development branch, you can check out the development branch with::
+You can clone the repository (which contains all active branches) with::
 
-    svn co svn+ssh://pythondev@svn.python.org/python/branches/py3k
+   hg clone ssh://hg@hg.python.org/cpython
 
-Make the appropriate changes to the URL to checkout maintenance branches by
-removing ``py3k`` and replacing it with the name of the branch you want.
+The default branch in that repository is the current development branch.
+You can of course switch your working copy to one of the maintenance branches,
+for example::
+
+   hg update 2.7
 
 
 Responsibilities

@@ -190,6 +190,10 @@ properly.
 * ``r<number>``, ``rev<number>``, ``revision <number>`` links to the Subversion
   revision ``<number>``.
 
+.. TODO update that last item to the format choosed for Mercurial: [CSET]
+   - check that [CSET] works
+   - check that rNUMBER links to the hglookup application
+
 
 Reporting Issues About the Tracker
 ----------------------------------
