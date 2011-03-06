@@ -44,6 +44,12 @@ your identity when performing commits. As with Mercurial, binary packages
 are typically available either online or through the platform's package
 management system.
 
+It is recommended that you enable SSH compression.  In your ``.ssh/config``
+file, add the following lines::
+
+   Host *
+   Compression yes
+
 .. _download Mercurial: http://mercurial.selenic.com/downloads/
 .. _OpenSSH: http://www.openssh.org/
 
