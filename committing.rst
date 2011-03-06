@@ -205,22 +205,13 @@ You can also use the `transplant extension`_::
 Differences with ``svnmerge``
 '''''''''''''''''''''''''''''
 
-If you are coming from Subversion, you might be surprised by how Mercurial works.
+If you are coming from Subversion, you might be surprised by Mercurial
+:ref:`merges <hg-merge>`.
 Despite its name, ``svnmerge`` is different from ``hg merge``: while ``svnmerge``
 allows to cherrypick individual revisions, ``hg merge`` can only merge whole
 lines of development in the repository's :abbr:`DAG (directed acyclic graph)`.
-Therefore, ``hg merge`` might force you to review outstanding changesets that
-haven't been merged by someone else yet.
-
-The way to avoid such situations is for everyone to make sure that they have
-merged their commits to the ``default`` branch.  Just type::
-
-   $ hg branches
-   default                      3051:a7df1a869e4a
-   3.1                          3012:b560997b365d (inactive)
-
-and check that all branches except ``default`` are marked *inactive*.  This
-means there is no pending changeset to merge from these branches.
+Therefore, ``hg merge`` might force you to review outstanding changesets by
+someone else that haven't been merged yet.
 
 
 .. _transplant extension: http://mercurial.selenic.com/wiki/TransplantExtension
