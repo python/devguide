@@ -201,6 +201,48 @@ You can also use the `transplant extension`_::
    complexity.
 
 
+Using several working copies
+''''''''''''''''''''''''''''
+
+If you often work on bug fixes, you may want to avoid switching branches
+in your local repository.  The reason is that rebuilding takes time
+when many files are updated.  Instead, it is desirable to use a separate
+working copy for each maintenance branch.
+
+There are various ways to achieve this, but here is a possible scenario:
+
+* First do a clone of the public repository, whose working copy be updated
+  to the ``default`` branch::
+
+   $ hg clone ssh://hg@hg.python.org/cpython default
+
+* Then clone it to create another local repository which is then used to
+  checkout branch 3.2::
+
+   $ hg clone default 3.2
+   $ cd 3.2
+   $ hg update 3.2
+
+* If you also need the 3.1 branch, you can similarly clone it, either from
+  the ``3.2`` or the ``default`` repository.
+
+* You can also clone a 2.7-dedicated repository from the ``default`` branch::
+
+   $ hg clone default 2.7
+   $ cd 2.7
+   $ hg update 2.7
+
+Given this arrangement of local repositories, pushing from the ``3.1``
+repository will update the ``3.2`` repository, where you can then merge your
+3.1 changes into the 3.2 branch.  In turn, pushing changes from the ``3.2``
+repository will update the ``default`` repository.  Finally, once you have
+merged (and tested!) your ``3.2`` changes into the ``default`` branch, pushing
+from the ``default`` repository will publish your changes in the public
+repository.
+
+If you want, you can later :ref:`change the flow of changes <hg-paths>` implied
+by the cloning of repositories.
+
 
 Differences with ``svnmerge``
 '''''''''''''''''''''''''''''
