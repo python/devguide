@@ -3,6 +3,9 @@
 Committing and Pushing Changes
 ==============================
 
+.. TODO: include a checklist of items to be included in a commit?
+   e.g updated Misc/NEWS entry, tests, doc
+
 Commit Messages
 ---------------
 
@@ -11,7 +14,7 @@ communicate that reason to other core developers. Python core developers have
 developed a standard way of formatting commit messages that everyone is
 expected to follow.
 
-Our usual convention mimicks that used in the ``Misc/NEWS`` file.  Actually,
+Our usual convention mimics that used in the ``Misc/NEWS`` file.  Actually,
 it is common to simply paste the NEWS entry into the commit message.  Here
 is an example::
 
