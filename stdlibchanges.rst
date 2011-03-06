@@ -122,7 +122,7 @@ uniform.
 
 Proposal Process
 ''''''''''''''''
-If the module you want to proposing adding to the stdlib meets the proper
+If the module you want to propose adding to the stdlib meets the proper
 requirements, you may propose its inclusion. To start, you should email
 python-list or python-ideas to make sure the community in general would support
 the inclusion of the module (see :ref:`communication`).
@@ -141,7 +141,7 @@ formatted.
 When you have listened to, responded, and integrated as appropriate the
 feedback from python-ideas into your PEP, you may send it to python-dev. You
 will once again receive a large amount of feedback and discussion. A PEP
-dictator will be assigned who make the final call on whether the PEP will be
+dictator will be assigned who makes the final call on whether the PEP will be
 accepted or not. If the PEP dictator agrees to accept your PEP (which typically
 means that the core developers end up agreeing in general to accepting
 your PEP) then the module

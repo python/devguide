@@ -609,8 +609,8 @@ that file now has your public key.
 .. _PuTTYgen: http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html
 
 
-Is there a way to prevent from having to enter my password for my SSH 2 public key constantly?
-------------------------------------------------------------------------------------------------
+Is there a way to avoid having to constantly enter my password for my SSH 2 public key?
+---------------------------------------------------------------------------------------
 
 UNIX
 '''''''''''''''''''

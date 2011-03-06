@@ -6,8 +6,9 @@ How to Become a Core Developer
 What it Takes
 -------------
 
-When you have consistently contributed patches which have met quality standards
-to be committed without requiring extensive rewrites, you may qualify for
+When you have consistently contributed patches which meet quality standards
+without requiring extensive rewrites prior to being committed,
+you may qualify for
 commit privileges and become a core developer of Python. You must also work
 well with other core developers (and people in general) as you become an
 ambassador for the Python project.
@@ -138,8 +139,8 @@ stringing people along. This obviously applies to anything you do on the issue
 tracker as well.
 
 Third, please list what areas you want to be considered an expert in the
-:ref:`experts`. This allows triagers
-to direct issues your way when they involve an area you are an expert in. But,
+:ref:`experts`. This allows triagers to direct issues to you which involve
+an area you are an expert in. But,
 as stated in the second point above, if you do not have the time to answer
 questions promptly then please remove yourself as needed from the file so that
 you will not be bothered in the future. Once again, we all understand how life

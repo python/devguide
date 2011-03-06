@@ -47,7 +47,9 @@ the name of the newsgroup is mirrors (it is also known by the abbreviation
 c.l.py).
 
 A complete list of Python mailing lists can be found at http://mail.python.org.
-Most lists are also mirrored at http://news.gmane.org/.
+Most lists are also mirrored at http://news.gmane.org/ and can be read and
+posted to in various ways, including via web browers, NNTP newsreaders, and
+RSS feed readers. 
 
 .. _issue tracker: http://bugs.python.org
 .. _new-bugs-announce: http://mail.python.org/mailman/listinfo/new-bugs-announce
