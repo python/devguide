@@ -428,6 +428,8 @@ from the root of your working copy it will recursively restore everything
 to match up with the repository.
 
 
+.. _hg-merge:
+
 How do I find out which revisions need merging?
 -----------------------------------------------
 
