@@ -190,7 +190,7 @@ in the 3.2 branch and now want to port it to 2.7.  This is simple.  First
 update your working copy to the 2.7 branch, then import the patch::
 
    hg update 2.7
-   hg export a7df1a869e4a | hg import -
+   hg export a7df1a869e4a | hg import --no-commit -
    # Compile; run the test suite
    hg commit
 
