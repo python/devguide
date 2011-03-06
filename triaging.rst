@@ -11,7 +11,7 @@ Fields
 
 Title
 '''''
-Should be properly descriptive about what the issue is about. Occasionally
+Should be properly descriptive of what the issue is about. Occasionally
 people file an issue that either has too generic of a title or end up thinking
 they filed about X but in fact it turns out to be about Y and thus the
 title is now wrong.
@@ -26,12 +26,12 @@ the *"behavior"* category).
 
 Stage
 '''''
-What is next to advance the issue forward.  The *stage* needn't be set until
+What is needed next to advance the issue.  The *stage* needn't be set until
 it is clear that the issue warrants fixing.
 
 test needed
     The bug reporter should post a script or instructions to let a triager or
-    developper reproduce the issue.
+    developer reproduce the issue.
 needs patch
     The issue lacks a patch to solve the problem (i.e. fixing the bug, or
     adding the requested improvement).
@@ -48,7 +48,9 @@ committed/rejected
 Components
 ''''''''''
 What part of Python is affected by the issue. This is a multi-select field.
-Be aware that what component is chosen may cause the issue to be auto-assigned.
+Be aware that what component is chosen may cause the issue to be auto-assigned,
+i.e. the issue tracker may automatically fill in the `Assigned To`_ field
+after you press ``Submit changes``.
 
 Versions
 ''''''''
@@ -88,15 +90,15 @@ Keywords
 Various flags about the issue. Multiple values are possible.
 
 after moratorium
-    The issue is in regards to a language change which is not allowed during
-    the `language moratorium`_.
+    The issue is in regards to a language change which was not allowed during
+    the `language moratorium`_ in effect during the 3.2 development cycle.
 buildbot
     A buildbot triggered the issue being reported.
 easy
     Fixing the issue should not take longer than a day for someone new to
     contributing to Python to solve.
 gsoc
-    The issue would fit as, or is related to, GSoC_.
+    The issue would fit as, or is related to, a GSoC_ project.
 needs review
     The patch attached to the issue is in need of a review.
 patch
@@ -136,12 +138,13 @@ languishing
     The issue has no clear solution , e.g., no agreement on a technical
     solution or if it is even a problem worth fixing.
 pending
-    The issue is blocked until someone (often times the
-    :abbr:`OP (original poster)`) provides some critical info; the issue is
-    automatically closed after a set amount of time if no reply comes in.
-    Useful for when someone reports a bug that lacks enough information to be
-    reproduced and thus should be closed if the lacking info is never provided.
-    and thus the issue is worthless without the needed info being provided.
+    The issue is blocked until someone (often the
+    :abbr:`OP (original poster)`) provides some critical information;
+    the issue will be closed after a set amount of time if no reply comes in.
+    Useful when someone opens an issue that lacks enough information to
+    reproduce the bug reported.  Requesting additional information and setting
+    status to *pending* indicates that the issue should be closed if the
+    necessary information is never provided.
 closed
     The issue has been resolved (somehow).
 
@@ -152,8 +155,8 @@ Why the issue is in its current state (not usually used for "open").
 accepted
     Submitted patch was applied, still needs verifying (for example by
     watching the `buildbots <http://www.python.org/dev/buildbot/>`_) that
-    everything went fine.  Then the resolution will turn to *fixed*
-    and the status to *closed*.
+    everything went fine.  At that point the resolution should be set to
+    *fixed* and the status changed to *closed*.
 duplicate
     Duplicate of another issue; should have the Superseder field filled out.
 fixed
@@ -181,18 +184,22 @@ works for me
 
 Generating Special Links in a Comment
 -------------------------------------
-Comments can automatically generate a link to various things if formatted
+Comments can automatically generate a link to various web pages if formatted
 properly.
 
-* ``#<number>``, ``issue<number>``, ``issue <number>`` links to the
+* ``#<number>``, ``issue<number>``, or ``issue <number>`` links to the
   tracker issue ``<number>``.
 * ``msg<number>`` links to the tracker message ``<number>``.
-* ``r<number>``, ``rev<number>``, ``revision <number>`` links to the Subversion
-  revision ``<number>``.
-
-.. TODO update that last item to the format choosed for Mercurial: [CSET]
-   - check that [CSET] works
-   - check that rNUMBER links to the hglookup application
+* a 12-digit or 40-digit hex ``<number>`` is assumed to be a Mercurial
+  changeset identifier and generates a link to changeset ``<number>``
+  in the official Python source code repositories.
+* ``r<number>``, ``rev<number>``, or ``revision <number>`` is assumed to be
+  a legacy Subversion revision number, a reference to a changeset that was
+  checked in prior to 2011-03-05 when the official Python source code
+  repositories were migrated from the :abbr:`svn (Subversion)`
+  :abbr:`VCS (version control system)` to Mercurial.
+  The issue tracker automatically translates the legacy svn revision
+  ``<number>`` to its corresponding Mercurial changeset identifier.
 
 
 Reporting Issues About the Tracker
