@@ -44,11 +44,13 @@ your identity when performing commits. As with Mercurial, binary packages
 are typically available either online or through the platform's package
 management system.
 
-It is recommended that you enable SSH compression.  In your ``.ssh/config``
-file, add the following lines::
+Mercurial does not use its own compression via SSH
+because it is better to enable compression at the SSH level.  Enabling
+SSH compression can make cloning a remote repository much faster.
+You can configure it in your ``~/.ssh/config`` file; for example::
 
-   Host *
-   Compression yes
+   Host hg.python.org
+     Compression yes
 
 .. _download Mercurial: http://mercurial.selenic.com/downloads/
 .. _OpenSSH: http://www.openssh.org/

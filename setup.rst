@@ -31,7 +31,7 @@ While it may
 be tempting to work from the copy of Python you already have installed on your
 machine, it is very likely that you will be working from out-of-date code as
 the Python core developers are constantly updating and fixing things in their
-:abbr:`VCS`. It also means you will have better tool
+:abbr:`VCS (version control system)`. It also means you will have better tool
 support through the VCS as it will provide a diff tool, etc.
 
 To get a working copy of the :ref:`in-development <indevbranch>` branch of
@@ -49,8 +49,10 @@ working copy. For instance, to update your working copy to Python 3.1, do::
 You will need to re-compile CPython when you do such an update.
 
 Do note that CPython will notice that it is being run from a working copy.
-This means that it if you edit CPython's source code in your working copy the
-changes will be picked up by the interpreter for immediate use and testing.
+This means that it if you edit CPython's source code in your working copy,
+changes to Python code will be picked up by the interpreter for immediate
+use and testing.  (If you change C code, you will need to recompile the
+affected files as described below.)
 
 
 Compiling (for debugging)
@@ -123,7 +125,7 @@ filed on the `issue tracker`_).
 Once CPython is done building you will then have a working build
 that can be run in-place; ``./python`` on most machines (and what is used in
 all examples), ``./python.exe`` on OS X (when on a case-insensitive filesystem,
-which is the default). There is absolutely no need to install your built copy
+which is the default). There is normally no need to install your built copy
 of Python! The interpreter will realize where it is being run from
 and thus use the files found in the working copy. If you are worried
 you might accidentally install your working copy build, you can add
