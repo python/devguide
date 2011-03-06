@@ -6,9 +6,10 @@ Helping Triage Issues
 Once you know your way around how Python's source files are
 structured and you are comfortable working with patches, a great way to
 participate is to help triage issues. Do realize, though, that experience
-working on Python is needed in order to affectively help triage.
+working on Python is needed in order to effectively help triage.
 
-On a daily basis, issues get reported on the `issue tracker`_. Each and every
+Around the clock, new issues are being opened on the `issue tracker`_ and
+existing issues are being updated. Every
 issue needs to be triaged to make sure various things are in proper order. Even
 without special privileges you can help with this process.
 
@@ -18,9 +19,9 @@ Bugs
 
 For bugs, an issue needs to:
 
-* Clearly explain the bug so it can be reproduced
-* All relevant platform details are included
-* What version(s) of Python are affected by the bug are fully known
+* clearly explain the bug so it can be reproduced
+* include all relevant platform details
+* state what version(s) of Python are affected by the bug.
 
 These are things you can help with once you have experience developing for
 Python. For instance, if a bug is not clearly explained enough for you to
@@ -42,12 +43,12 @@ Patches
 If an issue has a patch attached that has not been reviewed, you can help by
 making sure the patch:
 
-* Follows the style guides
-* Applies cleanly to an up-to-date checkout
-* Is a good solution to the problem it is trying to solve
-* There are proper tests
-* The proper documentation changes are included
-* The person is listed in ``Misc/ACKS``, either already or the patches add them
+* follows the style guides
+* applies cleanly to an up-to-date checkout
+* is a good solution to the problem it is trying to solve
+* includes proper tests
+* includes proper documentation changes
+* submitter is listed in ``Misc/ACKS``, either already or the patch adds them
 
 Doing all of this allows core developers and :ref:`triagers <devrole>` to more
 quickly look for subtle issues that only people with extensive experience
