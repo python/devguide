@@ -185,6 +185,8 @@ The current branch in a working copy is "sticky": if you pull in some new
 changes, ``hg update`` will update to the head of the *current branch*.
 
 
+.. _hg-paths:
+
 How do I link my local repository to a particular remote repository?
 -------------------------------------------------------------------------------
 
