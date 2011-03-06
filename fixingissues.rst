@@ -21,3 +21,5 @@ you can also always provide useful comments if you do attempt a fix, successful
 or not.
 
 .. _"easy" issues: http://bugs.python.org/issue?status=1&@sort=-activity&@dispname=Easy%20issues&@startwith=0&@filter=&@group=priority&@columns=id,activity,title,creator,status&keywords=6&@action=search&@pagesize=50
+
+.. TODO: add something about no active core developer for the area?
