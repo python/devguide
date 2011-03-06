@@ -122,12 +122,16 @@ Forward-Porting
 If the patch is a bugfix and it does not break
 backwards-compatibility *at all*, then it should be applied to the oldest
 branch applicable and forward-ported until it reaches the in-development branch
-of Python. A forward-port instead of a back-port is preferred as it allows the
-:abbr:`DAG (directed acyclic graph)` used by hg to work with the movement of
+of Python (for example, first in ``3.1``, then in ``3.2`` and finally in
+``default``). A forward-port instead of a back-port is preferred as it allows
+the :abbr:`DAG (directed acyclic graph)` used by hg to work with the movement of
 the patch through the codebase instead of against it.
 
-Even when porting an already committed patch, you should **still** check the
-test suite runs successfully before committing the patch to another branch.
+.. warning::
+   Even when porting an already committed patch, you should **still** check the
+   test suite runs successfully before committing the patch to another branch.
+   Subtle differences between two branches sometimes make a patch bogus if
+   ported straightly.
 
 
 Porting Within a Major Version
