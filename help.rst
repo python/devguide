@@ -4,8 +4,8 @@ Where to Get Help
 =================
 
 If you are working on Python it is very possible you will come across an issue
-where you need some assistance in solving (this happens to core developers all
-the time). Below are some options on getting help.
+where you need some assistance to solve it (this happens to core developers
+all the time). Below are some options on getting help.
 
 If the question involves process or tool usage then please check other parts of
 this guide first as it should answer your question.

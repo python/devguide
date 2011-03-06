@@ -138,7 +138,9 @@ Submitting
 ----------
 
 If this is a patch in response to a pre-existing issue on the `issue tracker`_,
-attach the patch to the issue. Please provide any details about your patch that
+attach the patch to the issue; use the ``Choose File`` button on the tracker
+web page for the issue to upload your patch file. Please provide any details
+about your patch that
 would be relevant to the discussion of the issue or your patch.
 
 If this is a patch for an unreported issue (assuming you already performed a
@@ -155,8 +157,8 @@ Reviewing
 ---------
 
 To begin with, please be patient! There are many more people submitting patches
-than there are people capable of reviewing your patch. To get your patch
-reviewed it requires a reviewer to have the spare time and motivation to
+than there are people capable of reviewing your patch. Getting your patch
+reviewed requires a reviewer to have the spare time and motivation to
 look at your patch (we cannot force anyone to review patches). If your patch has
 not received any notice from reviewers (i.e., no comment made) after a
 substantial amount of time then you may
@@ -178,7 +180,8 @@ do not take it personally! Your work is still appreciated regardless of whether
 your patch is committed. Balancing what *does* and *does not* go into Python
 is tricky and we simply cannot accept everyone's contributions.
 
-But if your patch is committed it will then go into Python's VCS to be released
+But if your patch is committed it will then go into Python's
+:abbr:`VCS (version control system)` to be released
 with the next major release of Python. It may also be backported to older
 versions of Python as a bugfix if the core developer doing the commit believes
 it is warranted.

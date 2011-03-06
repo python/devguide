@@ -4,7 +4,8 @@ Running & Writing Tests
 =======================
 
 .. note::
-    This document assumes you are working from a checkout of Python. If you
+    This document assumes you are working from an
+    :ref:`in-development <indevbranch>` checkout of Python. If you
     are not then some things presented here may not work as they may depend
     on new features not available in earlier versions of Python.
 
@@ -49,10 +50,11 @@ various things (the ``-Wd`` flag should be ``-W error`` at some point, but the
 test
 suite has not reached a point where all warnings have been dealt with and so we
 cannot guarantee that a bug-free Python will properly complete a test run with
-``-W error``). The ``-r`` flag to the test runner causes it to run more randomly
-which helps assert that the various tests don't interfere against each other.
-The ``-w`` flag causes failures to run again to see if it a transient failure
-or a consistent one. The ``-uall`` flag allows the user of all available
+``-W error``). The ``-r`` flag to the test runner causes it to run tests in a
+more random order which helps to check that the various tests do not interfere
+with each other.  The ``-w`` flag causes failing tests to be run again to see
+if the failures are transient or consistent.
+The ``-uall`` flag allows the use of all available
 resources so as to not skip tests requiring, e.g., Internet access.
 
 
