@@ -178,20 +178,28 @@ hg.python.org.
 Porting Between Major Versions
 ''''''''''''''''''''''''''''''
 
+Let's say you have committed your changes as changeset ``a7df1a869e4a``
+in the 3.2 branch and now want to port it to 2.7.  This is simple.  First
+update your working copy to the 2.7 branch, then import the patch::
+
+   hg update 2.7
+   hg export a7df1a869e4a | hg import -
+   # Compile; run the test suite
+   hg commit
+
+You can also use the `transplant extension`_::
+
+   hg update 2.7
+   hg transplant a7df1a869e4a
+   # Compile; run the test suite
+
+
 .. warning::
    transplant always commits automatically. This breaks the
    "run the test suite before committing" rule. We could advocate using
    "hg qimport -r tip -P" afterwards but that would add another level of
    complexity.
 
-To port a patch from, e.g., Python 3.2 to 2.7, you can use the `transplant
-extension`_. Assuming you first committed your changes as changeset
-``a7df1a869e4a`` in the 3.2 branch and have now :ref:`updated
-<hg-switch-branches>` your working copy to the 2.7 branch, do::
-
-   hg transplant a7df1a869e4a
-   # Compile; run the test suite
-   hg push
 
 
 Differences with ``svnmerge``
