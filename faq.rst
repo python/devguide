@@ -12,7 +12,8 @@ Where can I learn about the version control system used, Mercurial (hg)?
 Mercurial_'s (also known as ``hg``) official web site is at
 http://mercurial.selenic.com/.  A book on Mercurial published by
 `O'Reilly Media`_, `Mercurial: The Definitive Guide`_, is available
-for free online.
+for free online.  Another resource is `Hg Init: a Mercurial tutorial`_
+by Joel Spolsky.
 
 With Mercurial installed, you can run the help tool that comes with
 Mercurial to get help::
@@ -27,6 +28,7 @@ workflow.
 .. _O'Reilly Media: http://www.oreilly.com/
 .. _Mercurial\: The Definitive Guide: http://hgbook.red-bean.com/
 .. _man page: http://www.selenic.com/mercurial/hg.1.html
+.. _Hg Init\: a Mercurial tutorial: http://hginit.com/
 
 
 What do I need to use Mercurial?
