@@ -281,11 +281,11 @@ The following instructions will help you do so on `hg.python.org
 bandwidth.
 
 Go to the main repository's Web page (http://hg.python.org/cpython/); there
-you find a box labelled "server-side clone".  Enter the relative path of the
-repository you want to create on the server, for example ``features/mywork``;
-and press the button.  A new repository gets created on the server with all
-the changesets of the original repository (it will seem very fast; this is
-normal).
+you find a button labelled "server-side clone", which you can click on to
+display a Web form.  Enter the relative path of the repository you want to
+create on the server, for example ``features/mywork``; and press the button.
+A new repository gets created on the server with all the changesets of the
+original repository (it will seem very fast; this is normal).
 
 You can now do a local clone of this repository on your disk::
 
