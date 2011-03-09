@@ -562,22 +562,30 @@ How do I find which changeset introduced a bug or regression?
 -------------------------------------------------------------
 
 ``hg bisect``, as the name indicates, helps you do a bisection of a range of
-changesets.  Type::
+changesets.
+
+You need two changesets to start the search: one that is "good"
+(doesn't have the bug), and one that is "bad" (has the bug).  Usually, you
+have just noticed the bug in your working copy, so you can start with::
 
    hg bisect --bad
 
-when the current changeset has the bug.  Conversely, type::
+Then you must find a changeset that doesn't have the bug.  You can conveniently
+choose a faraway changeset (for example a former release), and check that it
+is indeed "good".  Then type::
 
    hg bisect --good
 
-when the current changeset doesn't have the bug (note: you can conveniently start
-out with a faraway "good" changeset).  Mercurial will automatically
-bisect so as to narrow the range of possible culprits, until a single
-changeset is isolated.  Each time Mercurial presents you with a new changeset,
-re-compile Python and run the offending test, for example::
+Mercurial will automatically bisect so as to narrow the range of possible
+culprits, until a single changeset is isolated.  Each time Mercurial presents
+you with a new changeset, re-compile Python and run the offending test, for
+example::
 
    make -j2
    ./python -m test -uall test_sometest
+
+Then, type either ``hg bisect --good`` or ``hg bisect --bad`` depending on
+whether the test succeeded or failed.
 
 
 How come feature XYZ isn't available in Mercurial?
