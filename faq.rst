@@ -558,6 +558,28 @@ to get a list of tags.  To update your working copy to a specific tag, use::
    hg update <tag>
 
 
+How do I find which changeset introduced a bug or regression?
+-------------------------------------------------------------
+
+``hg bisect``, as the name indicates, helps you do a bisection of a range of
+changesets.  Type::
+
+   hg bisect --bad
+
+when the current changeset has the bug.  Conversely, type::
+
+   hg bisect --good
+
+when the current changeset doesn't have the bug (note: you can conveniently start
+out with a faraway "good" changeset).  Mercurial will automatically
+bisect so as to narrow the range of possible culprits, until a single
+changeset is isolated.  Each time Mercurial presents you with a new changeset,
+re-compile Python and run the offending test, for example::
+
+   make -j2
+   ./python -m test -uall test_sometest
+
+
 How come feature XYZ isn't available in Mercurial?
 --------------------------------------------------
 
