@@ -106,7 +106,7 @@ Resources
 * Source code
     * `Browse online <http://hg.python.org/>`_
     * `Snapshot of py3k <http://hg.python.org/cpython/archive/tip.tar.bz2>`_
-    * `XXX Daily OS X installer <http://www.python.org/dev/daily-dmg/>`_
+    * `Daily OS X installer <http://www.python.org/dev/daily-dmg/>`_
 * Tool support
     * :doc:`emacs`
     * :doc:`gdb`
