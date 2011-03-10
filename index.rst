@@ -104,7 +104,7 @@ Resources
     * `Firefox search engine plug-in`_
 * Buildbots_
 * Source code
-    * `Browse online <http://hg.python.org/>`_
+    * `Browse online <http://hg.python.org/cpython/>`_
     * `Snapshot of py3k <http://hg.python.org/cpython/archive/tip.tar.bz2>`_
     * `Daily OS X installer <http://www.python.org/dev/daily-dmg/>`_
 * Tool support
