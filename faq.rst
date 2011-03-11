@@ -292,15 +292,17 @@ How do I apply a patch?
 
 If you want to try out or review a patch generated using Mercurial, do::
 
-   hg import --no-commit somework.patch
+   patch -p1 < somework.patch
 
 This will apply the changes in your working copy without committing them.
 If the patch was not created by Mercurial (for example, a patch created by
 Subversion and thus lacking any ``a``/``b`` directory prefixes in the patch),
-add ``-p0`` to the above command.
+replace ``-p0`` with ``-p1``.
 
-You can also use the ``patch`` program, but be aware that it does not
-understand the `extended diff format`_ used by Mercurial.
+If the patch contains renames, deletions or copies, and you intend committing
+it after your review, you might prefer using::
+
+   hg import --no-commit somework.patch
 
 If you want to work on the patch using mq_ (Mercurial Queues), type instead::
 
@@ -319,6 +321,29 @@ then do::
 
 .. _extended diff format: http://www.selenic.com/mercurial/hg.1.html#diffs
 .. _mq: http://mercurial.selenic.com/wiki/MqExtension
+
+
+.. _merge-patch:
+
+How do I solve conflicts when applying a patch fails?
+-----------------------------------------------------
+
+The standard ``patch`` command, as well as ``hg import``, will produce
+unhelpful ``*.rej`` files when it fails applying parts of a patch.
+We suggest you try the mpatch_ utility, which can help resolve a number of
+common causes of patch rejects.
+
+To make use of ``mpatch`` transparent, you can define a shell alias in one
+of your startup files.  For example, if you want it to open the ``kdiff3``
+merge program to fix failing patch hunks::
+
+   alias patch='mpatch --merge=kdiff3'
+
+or if you want it to automatically solve conflicts by using heuristics::
+
+   alias patch='mpatch --auto --no-merge'
+
+.. _mpatch: http://oss.oracle.com/~mason/mpatch/
 
 
 How do I add a file or directory to the repository?
