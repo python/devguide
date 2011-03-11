@@ -297,7 +297,7 @@ If you want to try out or review a patch generated using Mercurial, do::
 This will apply the changes in your working copy without committing them.
 If the patch was not created by Mercurial (for example, a patch created by
 Subversion and thus lacking any ``a``/``b`` directory prefixes in the patch),
-replace ``-p0`` with ``-p1``.
+replace ``-p1`` with ``-p0``.
 
 If the patch contains renames, deletions or copies, and you intend committing
 it after your review, you might prefer using::
