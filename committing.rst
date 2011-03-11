@@ -200,6 +200,9 @@ You can also use the `transplant extension`_::
    hg transplant a7df1a869e4a
    # Compile; run the test suite
 
+If you often get failures porting patches this way, you should consider
+using the :ref:`mpatch <merge-patch>` utility.
+
 
 .. warning::
    transplant always commits automatically. This breaks the
