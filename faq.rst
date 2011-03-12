@@ -187,6 +187,17 @@ The current branch in a working copy is "sticky": if you pull in some new
 changes, ``hg update`` will update to the head of the *current branch*.
 
 
+How do I avoid repeated pulls and pushes between my local repositories?
+-----------------------------------------------------------------------
+
+The "`share extension`_" allows you to share a single local repository
+between several working copies: each commit you make in a working copy will
+be immediately available in other working copies, even though they might
+be checked out on different branches.
+
+.. _share extension: http://mercurial.selenic.com/wiki/ShareExtension
+
+
 .. _hg-paths:
 
 How do I link my local repository to a particular remote repository?
