@@ -166,7 +166,7 @@ all of your work in a single clone, do::
 
       hg update default
       hg merge 3.2
-      hg revert -a
+      hg revert -ar default
       hg commit
 
    This is necessary so that the merge gets recorded; otherwise, somebody
