@@ -24,6 +24,9 @@ transliteration too.
 Permissions History
 -------------------
 
+- Alex Gaynor and Maciej Fijalkowski were given push privileges on Mar 13 2011
+  by BAC, for stdlib compatibility work for PyPy.
+
 - Ross Lagerwall was given push privileges on Mar 13 2011 by GFB,
   on recommendation by Antoine Pitrou and Ned Deily.
 
