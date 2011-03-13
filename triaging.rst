@@ -181,6 +181,12 @@ wont fix
 works for me
     Bug cannot be reproduced.
 
+Mercurial Repository
+''''''''''''''''''''
+HTTP link to a Mercurial repository that contains a patch for the issue.
+The patch should be in the default branch of that repository. The
+`Create Patch` button will then compute a diff for the head revision
+of the remote branch, and attach the diff to the issue.
 
 Generating Special Links in a Comment
 -------------------------------------
