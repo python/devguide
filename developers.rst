@@ -24,6 +24,9 @@ transliteration too.
 Permissions History
 -------------------
 
+- Ross Lagerwall was given push privileges on Mar 13 2011 by GFB,
+  on recommendation by Antoine Pitrou and Ned Deily.
+
 - Eli Bendersky was given commit access on Jan 11 2011 by BAC,
   on recommendation by Terry Reedy and Nick Coghlan.
 
