@@ -24,6 +24,9 @@ transliteration too.
 Permissions History
 -------------------
 
+- Jeff Hardy was given push privileges on Mar 14 2011 by BAC, for stdlib
+  compatibility work for IronPython.
+
 - Alex Gaynor and Maciej Fijalkowski were given push privileges on Mar 13 2011
   by BAC, for stdlib compatibility work for PyPy.
 
