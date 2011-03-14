@@ -221,33 +221,35 @@ working copy for each maintenance branch.
 
 There are various ways to achieve this, but here is a possible scenario:
 
-* First do a clone of the public repository, whose working copy be updated
+* First do a clone of the public repository, whose working copy will be updated
   to the ``default`` branch::
 
-   $ hg clone ssh://hg@hg.python.org/cpython default
+   $ hg clone ssh://hg@hg.python.org/cpython py3k
 
 * Then clone it to create another local repository which is then used to
   checkout branch 3.2::
 
-   $ hg clone default 3.2
-   $ cd 3.2
+   $ hg clone py3k py3.2
+   $ cd py3.2
    $ hg update 3.2
 
 * If you also need the 3.1 branch, you can similarly clone it, either from
-  the ``3.2`` or the ``default`` repository.
+  the ``py3.2`` or the ``py3k`` repository. It is suggested, though, that you
+  clone from ``py3.2`` as that it will force you to push changes back up your
+  clone chain so that you make sure to port changes to all proper versions.
 
-* You can also clone a 2.7-dedicated repository from the ``default`` branch::
+* You can also clone a 2.7-dedicated repository from the ``py3k`` branch::
 
-   $ hg clone default 2.7
-   $ cd 2.7
+   $ hg clone py3k py2.7
+   $ cd py2.7
    $ hg update 2.7
 
-Given this arrangement of local repositories, pushing from the ``3.1``
-repository will update the ``3.2`` repository, where you can then merge your
-3.1 changes into the 3.2 branch.  In turn, pushing changes from the ``3.2``
-repository will update the ``default`` repository.  Finally, once you have
+Given this arrangement of local repositories, pushing from the ``py3.1``
+repository will update the ``py3.2`` repository, where you can then merge your
+3.1 changes into the 3.2 branch.  In turn, pushing changes from the ``py3.2``
+repository will update the ``py3k`` repository.  Finally, once you have
 merged (and tested!) your ``3.2`` changes into the ``default`` branch, pushing
-from the ``default`` repository will publish your changes in the public
+from the ``py3k`` repository will publish your changes in the public
 repository.
 
 If you want, you can later :ref:`change the flow of changes <hg-paths>` implied
