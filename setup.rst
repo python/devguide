@@ -117,8 +117,8 @@ passed into the ``-j`` flag to match the number of cores you have.
 
 Do take note of what modules were **not** built as stated at the end of your
 build. More than likely you are missing a dependency for the module(s) that
-were not built, and so you can install the dependencies and re-run ``make``
-(if available for your OS).
+were not built, and so you can install the dependencies and re-run both
+``configure`` and ``make`` (if available for your OS).
 Otherwise the build failed and thus should be fixed (at least with a bug being
 filed on the `issue tracker`_).
 
