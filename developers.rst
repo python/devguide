@@ -24,6 +24,10 @@ transliteration too.
 Permissions History
 -------------------
 
+- Alexis Métaireau, Elson Rodriguez, Kelsey Hightower, Michael Mulich and
+  Walker Hale were given push privileges on Mar 16 2011 by GFB, for
+  contributions to the packaging module.
+
 - Jeff Hardy was given push privileges on Mar 14 2011 by BAC, for stdlib
   compatibility work for IronPython.
 
