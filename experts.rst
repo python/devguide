@@ -265,9 +265,9 @@ pybench             lemburg
 
 Platforms
 ---------
-==================    ===========
+===================   ===========
 Platform              Maintainers
-==================    ===========
+===================   ===========
 AIX
 Cygwin                jlt63, stutzbach
 FreeBSD
@@ -278,7 +278,7 @@ NetBSD1
 OS2/EMX               aimacintyre
 Solaris/OpenIndiana   jcea
 Windows               tim.golden, brian.curtin
-==================    ===========
+===================   ===========
 
 
 Miscellaneous
