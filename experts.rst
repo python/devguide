@@ -85,7 +85,7 @@ copyreg               alexandre.vassalotti
 cProfile
 crypt                 jafo*
 csv                   skip.montanaro
-ctypes                theller
+ctypes                theller,belopolsky
 curses
 datetime              belopolsky
 dbm
