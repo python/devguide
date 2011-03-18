@@ -276,7 +276,7 @@ Linux
 Mac OS X            ronaldoussoren, ned.deily
 NetBSD1
 OS2/EMX             aimacintyre
-Solaris
+Solaris/OpenIndiana jcea
 Windows             tim.golden, brian.curtin
 ==================  ===========
 
