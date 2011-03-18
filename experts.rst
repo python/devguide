@@ -265,20 +265,20 @@ pybench             lemburg
 
 Platforms
 ---------
-==================  ===========
-Platform            Maintainers
-==================  ===========
+==================    ===========
+Platform              Maintainers
+==================    ===========
 AIX
-Cygwin              jlt63, stutzbach
+Cygwin                jlt63, stutzbach
 FreeBSD
 HP-UX
 Linux
-Mac OS X            ronaldoussoren, ned.deily
+Mac OS X              ronaldoussoren, ned.deily
 NetBSD1
-OS2/EMX             aimacintyre
-Solaris
-Windows             tim.golden, brian.curtin
-==================  ===========
+OS2/EMX               aimacintyre
+Solaris/OpenIndiana   jcea
+Windows               tim.golden, brian.curtin
+==================    ===========
 
 
 Miscellaneous
