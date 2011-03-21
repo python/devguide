@@ -24,6 +24,9 @@ transliteration too.
 Permissions History
 -------------------
 
+- Carl Friedrich Bolz was given push privileges on Mar 21 2011 by BAC, for
+  stdlib compatibility work for PyPy.
+
 - Alexis Métaireau, Elson Rodriguez, Kelsey Hightower, Michael Mulich and
   Walker Hale were given push privileges on Mar 16 2011 by GFB, for
   contributions to the packaging module.
