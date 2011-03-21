@@ -82,7 +82,8 @@ Here are the minimal options you need to activate:
 
 * *extended diffing*: this setting enables an `extended diff format`_
   which is more useful than the standard unified diff format as it includes
-  metadata about file copies and permission bits::
+  metadata about file copies, permission bits, and is able to represent
+  binary files::
 
    [diff]
    git = on
