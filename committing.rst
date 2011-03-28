@@ -326,6 +326,7 @@ repository, but not in the main repository::
 
    $ hg branch mywork
    $ hg commit -m "Creating branch mywork"
+   $ hg push --new-branch
 
 You can now work on your feature, commit changes as you will, and push them
 when desired::
