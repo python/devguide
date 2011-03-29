@@ -382,6 +382,24 @@ You will then need to run ``hg commit`` (as discussed below) to commit
 the file(s) to your local repository.
 
 
+What's the best way to split a file into several files?
+-------------------------------------------------------------------------------
+
+To split a file into several files (e.g. a module converted to a package or a
+long doc file divided in two separate documents) use ``hg copy``::
+
+    hg copy module.rst module2.rst
+
+and then remove the parts that are not necessary from ``module.rst`` and
+``module2.rst``.  This allows Mercurial to know that the content of
+``module2.rst`` used to be in ``module.rst``, and will make subsequent merges
+easier.  If necessary, you can also use ``hg copy`` several times.
+
+If you simply create ``module2.rst``, add it with ``hg add``, and copy part of
+the content from ``module.rst``, Mercurial won't know that the two file are
+related.
+
+
 .. _hg-commit:
 
 How do I commit a change to a file?
