@@ -3,6 +3,9 @@
 Python Developer FAQ
 ~~~~~~~~~~~~~~~~~~~~
 
+.. contents::
+   :local:
+
 Version Control
 ==================================
 
