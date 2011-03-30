@@ -21,6 +21,7 @@ Python Developer's Guide
    developers
    committing
    devcycle
+   buildbots
 
    stdlibchanges
    langchanges
@@ -40,7 +41,7 @@ Here are some links that you may find you refererence frequently while
 contributing to Python.
 
 * `Issue tracker <http://bugs.python.org/>`_
-* Buildbots_
+* `Buildbot status`_
 * :doc:`faq`
 * PEPs_ (Python Enhancement Proposals)
 
@@ -69,7 +70,7 @@ You can, *however*, read the :doc:`FAQ <faq>` at any point!
     * :doc:`coverage`
 * Advanced tasks for once you are comfortable
     * :doc:`silencewarnings`
-    * Fixing issues found by the buildbots_
+    * Fixing issues found by the :doc:`buildbots <buildbots>`
     * :doc:`fixingissues`
     * :doc:`helptriage`
 * :doc:`devrole`
@@ -79,6 +80,7 @@ You can, *however*, read the :doc:`FAQ <faq>` at any point!
 * :doc:`coredev`
     * :doc:`committing`
     * :doc:`devcycle`
+    * :doc:`buildbots`
 
 
 Proposing changes to Python itself
@@ -102,7 +104,7 @@ Resources
       tracker for the issue tracker)
     * :doc:`experts`
     * `Firefox search engine plug-in`_
-* Buildbots_
+* `Buildbot status`_
 * Source code
     * `Browse online <http://hg.python.org/cpython/>`_
     * `Snapshot of py3k <http://hg.python.org/cpython/archive/tip.tar.bz2>`_
@@ -120,7 +122,7 @@ Resources
 * :doc:`developers`
 
 
-.. _buildbots: http://python.org/dev/buildbot/
+.. _Buildbot status: http://python.org/dev/buildbot/
 .. _Firefox search engine plug-in: http://www.python.org/dev/searchplugin/
 .. _Misc directory: http://hg.python.org/cpython/file/tip/Misc
 .. _PEPs: http://www.python.org/dev/peps
