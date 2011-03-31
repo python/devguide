@@ -77,7 +77,7 @@ collections           rhettinger
 collections.abc       rhettinger, stutzbach
 colorsys
 compileall
-concurrent.futures    brian.quinlan
+concurrent.futures    bquinlan
 configparser          lukasz.langa
 contextlib            ncoghlan
 copy                  alexandre.vassalotti
