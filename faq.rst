@@ -676,8 +676,8 @@ SSH
 How do I generate an SSH 2 public key?
 -------------------------------------------------------------------------------
 
-All generated SSH keys should be sent to pydotorg for adding to the list of
-keys.
+All generated SSH keys should be sent to python-committers@python.org for
+adding to the list of keys.
 
 UNIX
 '''''''''''''''''''
