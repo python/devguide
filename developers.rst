@@ -24,6 +24,9 @@ transliteration too.
 Permissions History
 -------------------
 
+- Nadeem Vawda was given push privileges on Apr 10 2011 by GFB, for
+  general contributions, on recommendation by Antoine Pitrou.
+
 - Carl Friedrich Bolz was given push privileges on Mar 21 2011 by BAC, for
   stdlib compatibility work for PyPy.
 
