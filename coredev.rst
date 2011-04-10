@@ -60,7 +60,7 @@ SSH
 
 You need to generate an SSH 2 RSA key to be able to commit code. You may have
 multiple keys if you wish (e.g., for work and home). Send your key as an
-attachment in an email to python-committers@python.org (do not paste it in
+attachment in an email to hgaccounts@python.org (do not paste it in
 the email as SSH keys have specific formatting requirements). Help in
 generating an SSH key can be found in the :ref:`faq`.
 
