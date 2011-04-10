@@ -63,7 +63,7 @@ binascii
 binhex
 bisect                rhettinger
 builtins
-bz2
+bz2                   nadeem.vawda
 calendar              rhettinger
 cgi
 cgitb
