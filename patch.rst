@@ -15,8 +15,8 @@ Tool Usage
 Mercurial allows for various workflows according to each person's or
 project's preference.  We present here a very simple solution based on mq_
 (*Mercurial Queues*). You are welcome to use any approach you like (including
-a svn-like approach of simply never saving any changes you make to your working
-copy and using ``hg diff`` to create a patch).  Usage of mq_ is merely a
+a svn-like approach of simply using ``hg diff`` to create a patch based on
+uncommitted changes in your working copy).  Usage of mq_ is merely a
 suggestion; it's a balance between being able to do everything needed
 while allowing for more powerful usage if desired in the future.
 
