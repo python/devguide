@@ -45,7 +45,7 @@ Stdlib
 Module                Maintainers
 ====================  =============================================
 __future__
-__main__              gvanrossum
+__main__              gvanrossum,ncoghlan
 _dummy_thread         brett.cannon
 _thread               pitrou
 abc
@@ -85,7 +85,7 @@ copyreg               alexandre.vassalotti
 cProfile
 crypt                 jafo*
 csv                   skip.montanaro
-ctypes                theller, belopolsky, amaury.forgeotdarc
+ctypes                theller (inactive), belopolsky, amaury.forgeotdarc
 curses
 datetime              belopolsky
 dbm
@@ -141,7 +141,7 @@ marshal
 math                  mark.dickinson, rhettinger, stutzbach
 mimetypes
 mmap
-modulefinder          theller, jvr
+modulefinder          theller (inactive), jvr
 msilib                loewis
 msvcrt
 multiprocessing       jnoller
@@ -210,7 +210,7 @@ syslog                jafo*
 tabnanny              tim_one (inactive)
 tarfile               lars.gustaebel
 telnetlib
-tempfile              georg.brandl
+tempfile              georg.brandl, ncoghlan
 termios
 test
 textwrap              georg.brandl
@@ -293,6 +293,7 @@ bsd
 bug tracker         ezio.melotti
 buildbots
 bytecode            pitrou
+context managers    ncoghlan
 data formats        mark.dickinson, georg.brandl
 database            lemburg
 documentation       georg.brandl, ezio.melotti
@@ -310,6 +311,7 @@ release management  tarek, lemburg, benjamin.peterson, barry, loewis,
                     gvanrossum, anthonybaxter
 str.format          eric.smith
 testing             michael.foord, pitrou, giampaolo.rodola, ezio.melotti
+test coverage       ncoghlan
 threads             pitrou
 time and dates      lemburg, belopolsky
 unicode             lemburg, ezio.melotti, haypo
