@@ -304,7 +304,7 @@ locale              lemburg, loewis
 mathematics         mark.dickinson, eric.smith, lemburg, stutzbach
 memory management   tim_one, lemburg
 networking          giampaolo.rodola
-packaging           tarek, lemburg
+packaging           tarek, lemburg, alexis
 py3 transition      benjamin.peterson
 release management  tarek, lemburg, benjamin.peterson, barry, loewis,
                     gvanrossum, anthonybaxter
