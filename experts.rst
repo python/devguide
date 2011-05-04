@@ -310,8 +310,8 @@ py3 transition      benjamin.peterson
 release management  tarek, lemburg, benjamin.peterson, barry, loewis,
                     gvanrossum, anthonybaxter
 str.format          eric.smith
-testing             michael.foord, pitrou, giampaolo.rodola, ezio.melotti
-test coverage       ncoghlan
+testing             michael.foord, pitrou, ezio.melotti
+test coverage       ncoghlan, giampaolo.rodola
 threads             pitrou
 time and dates      lemburg, belopolsky
 unicode             lemburg, ezio.melotti, haypo
