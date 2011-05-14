@@ -45,7 +45,7 @@ Stdlib
 Module                Maintainers
 ====================  =============================================
 __future__
-__main__              gvanrossum,ncoghlan
+__main__              gvanrossum, ncoghlan
 _dummy_thread         brett.cannon
 _thread               pitrou
 abc
@@ -128,7 +128,7 @@ importlib             brett.cannon
 inspect
 io                    pitrou, benjamin.peterson, stutzbach
 itertools             rhettinger
-json                  bob.ippolito (inactive), rhettinger
+json                  bob.ippolito (inactive), ezio.melotti, rhettinger
 keyword
 lib2to3               benjamin.peterson
 linecache
