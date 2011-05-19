@@ -24,7 +24,7 @@ transliteration too.
 Permissions History
 -------------------
 
-- Charles-François Natali was given push privileges on May 17 2011 by Antoine
+- Charles-François Natali was given push privileges on May 19 2011 by Antoine
   Pitrou, for general contributions, on recommandation by Victor Stinner,
   Brian Curtin and others.
 
