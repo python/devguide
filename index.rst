@@ -37,7 +37,7 @@ Python Developer's Guide
 Quick Links
 -----------
 
-Here are some links that you may find you refererence frequently while
+Here are some links that you may find you reference frequently while
 contributing to Python.
 
 * `Issue tracker <http://bugs.python.org/>`_
