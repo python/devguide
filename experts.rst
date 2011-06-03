@@ -17,6 +17,8 @@ Unless a name is followed by a '*', you should never assign an issue to
 that person, only make them nosy.  Names followed by a '*' may be assigned
 issues involving the module or topic.
 
+.. TODO document automatic assignment/nosy: people need not add them manually
+
 The Platform and Interest Area tables list broader fields in which various
 people have expertise.  These people can also be contacted for help,
 opinions, and decisions when issues involve their areas.
@@ -153,6 +155,7 @@ operator
 optparse              aronacher
 os                    loewis
 ossaudiodev
+packaging             tarek*, eric.araujo*, alexis
 parser
 pdb                   georg.brandl*
 pickle                alexandre.vassalotti, pitrou
