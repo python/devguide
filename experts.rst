@@ -299,24 +299,24 @@ bytecode            pitrou
 context managers    ncoghlan
 data formats        mark.dickinson, georg.brandl
 database            lemburg
-documentation       georg.brandl, ezio.melotti
+documentation       georg.brandl, ezio.melotti, eric.araujo
 GUI
-i18n                lemburg
+i18n                lemburg, eric.araujo
 import machinery    brett.cannon, ncoghlan
 io                  pitrou, benjamin.peterson, stutzbach
 locale              lemburg, loewis
 mathematics         mark.dickinson, eric.smith, lemburg, stutzbach
 memory management   tim_one, lemburg
 networking          giampaolo.rodola
-packaging           tarek, lemburg, alexis
+packaging           tarek, lemburg, alexis, eric.araujo
 py3 transition      benjamin.peterson
 release management  tarek, lemburg, benjamin.peterson, barry, loewis,
-                    gvanrossum, anthonybaxter
+                    gvanrossum, anthonybaxter, eric.araujo
 str.format          eric.smith
 testing             michael.foord, pitrou, ezio.melotti
 test coverage       ncoghlan, giampaolo.rodola
 threads             pitrou
 time and dates      lemburg, belopolsky
 unicode             lemburg, ezio.melotti, haypo
-version control
+version control     eric.araujo
 ==================  ===========
