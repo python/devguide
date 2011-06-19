@@ -66,3 +66,13 @@ If you decide to proofread, then read a section of the documentation from start
 to finish, filing issues in the issue tracker for each problem you find. Don't
 file a single issue for an entire section containing multiple problems as that
 makes it harder to break the work up for multiple people to help with.
+
+
+Helping with the Developer's Guide
+----------------------------------
+
+This developer guide lives in a `separate source code repository`_, but is
+otherwise managed using the same process as is used for the main Python
+documentation.
+
+.. _separate source code repository: http://hg.python.org/devguide
