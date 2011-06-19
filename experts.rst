@@ -17,6 +17,8 @@ Unless a name is followed by a '*', you should never assign an issue to
 that person, only make them nosy.  Names followed by a '*' may be assigned
 issues involving the module or topic.
 
+.. TODO document automatic assignment/nosy: people need not add them manually
+
 The Platform and Interest Area tables list broader fields in which various
 people have expertise.  These people can also be contacted for help,
 opinions, and decisions when issues involve their areas.
@@ -45,7 +47,7 @@ Stdlib
 Module                Maintainers
 ====================  =============================================
 __future__
-__main__              gvanrossum,ncoghlan
+__main__              gvanrossum, ncoghlan
 _dummy_thread         brett.cannon
 _thread               pitrou
 abc
@@ -128,7 +130,7 @@ importlib             brett.cannon
 inspect
 io                    pitrou, benjamin.peterson, stutzbach
 itertools             rhettinger
-json                  bob.ippolito (inactive), rhettinger
+json                  bob.ippolito (inactive), ezio.melotti, rhettinger
 keyword
 lib2to3               benjamin.peterson
 linecache
@@ -153,6 +155,7 @@ operator
 optparse              aronacher
 os                    loewis
 ossaudiodev
+packaging             tarek*, eric.araujo*, alexis
 parser
 pdb                   georg.brandl*
 pickle                alexandre.vassalotti, pitrou
@@ -296,25 +299,25 @@ bytecode            pitrou
 context managers    ncoghlan
 data formats        mark.dickinson, georg.brandl
 database            lemburg
-devguide            ncoghlan,eric.araujo
-documentation       georg.brandl, ezio.melotti
+devguide            ncoghlan, eric.araujo
+documentation       georg.brandl, ezio.melotti, eric.araujo
 GUI
-i18n                lemburg
+i18n                lemburg, eric.araujo
 import machinery    brett.cannon, ncoghlan
 io                  pitrou, benjamin.peterson, stutzbach
 locale              lemburg, loewis
 mathematics         mark.dickinson, eric.smith, lemburg, stutzbach
 memory management   tim_one, lemburg
 networking          giampaolo.rodola
-packaging           tarek, lemburg, alexis
+packaging           tarek, lemburg, alexis, eric.araujo
 py3 transition      benjamin.peterson
 release management  tarek, lemburg, benjamin.peterson, barry, loewis,
-                    gvanrossum, anthonybaxter
+                    gvanrossum, anthonybaxter, eric.araujo
 str.format          eric.smith
-testing             michael.foord, pitrou, giampaolo.rodola, ezio.melotti
-test coverage       ncoghlan
+testing             michael.foord, pitrou, ezio.melotti
+test coverage       ncoghlan, giampaolo.rodola
 threads             pitrou
 time and dates      lemburg, belopolsky
 unicode             lemburg, ezio.melotti, haypo
-version control
+version control     eric.araujo
 ==================  ===========
