@@ -17,7 +17,7 @@ Ask (#)python-dev
 You have two avenues of communication out of the :ref:`myriad of options
 available <communication>`. If you are comfortable with IRC you can try asking
 on ``#python-dev`` (on the `freenode <http://freenode.net/>`_ network).
-Typically there are a couple of experienced developers, ranging from
+Typically there are a variety of experienced developers, ranging from
 triagers to core developers, who can answer questions about developing for
 Python. If you prefer email you can ask the `python-dev mailing-list
 <http://mail.python.org/mailman/listinfo/python-dev>`_ for help with your
@@ -37,3 +37,15 @@ encountered.
 
 .. _issue tracker: http://bugs.python.org
 
+
+Core Mentorship
+---------------
+
+If you are interested in improving Python and contributing to its development,
+but don't yet feel entirely comfortable with the public channels mentioned
+above `Python Mentors`_ are here to help you.  Python is fortunate to have a
+community of volunteer developers willing to mentor anyone wishing to
+contribute code, work on bug fixes or improve documentation.  Everyone is
+welcomed and encouraged to contribute.
+
+.. _Python Mentors: http://pythonmentors.com
