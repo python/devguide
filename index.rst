@@ -55,6 +55,8 @@ material in this guide, then the `Python Mentors`_ group is available to help
 guide new contributors through the process. The :doc:`Developer FAQ <faq>` is
 another useful source of information.
 
+Guide for contributing to Python:
+
 * :doc:`setup`
 * :doc:`help`
 * :doc:`patch`
@@ -87,8 +89,41 @@ to backtrack to fill in missing concepts and terminology.
 Proposing changes to Python itself
 ----------------------------------
 
+Improving Python's code, documentation and tests are ongoing tasks that are
+never going to be "finished", as Python operates as part of an ever-evolving
+system of technology. An even more challenging ongoing task than these
+necessary maintenance activities is finding ways to make Python, in the form
+of the standard library and the language definition, an even better tool in a
+developer's toolkit.
+
+While these kinds of change are much rarer than those described above, they do
+happen and that process is also described as part of this guide:
+
 * :doc:`stdlibchanges`
 * :doc:`langchanges`
+
+
+Other Interpreter Implementations
+---------------------------------
+
+This guide is specifically for contributing to the Python reference
+interpreter, also known as CPython (while most of the standard library is
+written in Python, the interpreter core is written in C and integrates most
+easily with the C and C++ ecosystems).
+
+There are other Python implementations, each with a different focus.
+Like CPython, they always have more things they would like to do than they
+have developers to work on them. Some major example that may of interest are:
+
+* PyPy_: A Python interpreter focused on high speed (JIT-compiled) operation
+  on major platforms
+* Jython_: A Python interpreter focused on good integration with the Java
+  Virtual Machine (JVM) environment
+* IronPython_: A Python interpreter focused on good integration with the
+  Common Language Runtime (CLR) provided by .NET and Mono
+* Stackless_: A Python interpreter focused on providing lightweight
+  microthreads while remaining largely compatible with CPython specific
+  extension modules
 
 
 .. _resources:
@@ -134,6 +169,10 @@ Resources
 .. _PEP 8: http://www.python.org/dev/peps/pep-0008
 .. _python.org maintenance: http://python.org/dev/pydotorg/
 .. _Python Mentors: http://pythonmentors.com/
+.. _PyPy: http://www.pypy.org/
+.. _Jython: http://www.jython.org/
+.. _IronPython: http://ironpython.net/
+.. _Stackless: http://www.stackless.com/
 
 
 Indices and tables
