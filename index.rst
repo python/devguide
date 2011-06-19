@@ -136,8 +136,8 @@ Resources
   Core developers should use ssh://hg@hg.python.org/devguide instead, so
   that they can push back their edits to the server.
 * Coding style guides
-    * `PEP 7`_ (Style Guide for C Code)
-    * `PEP 8`_ (Style Guide for Python Code)
+    * :PEP:`7` (Style Guide for C Code)
+    * :PEP:`8` (Style Guide for Python Code)
 * `Issue tracker <http://bugs.python.org/>`_
     * `Meta tracker <http://psf.upfronthosting.co.za/roundup/meta>`_ (issue
       tracker for the issue tracker)
@@ -165,8 +165,6 @@ Resources
 .. _Firefox search engine plug-in: http://www.python.org/dev/searchplugin/
 .. _Misc directory: http://hg.python.org/cpython/file/tip/Misc
 .. _PEPs: http://www.python.org/dev/peps
-.. _PEP 7: http://www.python.org/dev/peps/pep-0007
-.. _PEP 8: http://www.python.org/dev/peps/pep-0008
 .. _python.org maintenance: http://python.org/dev/pydotorg/
 .. _Python Mentors: http://pythonmentors.com/
 .. _PyPy: http://www.pypy.org/
