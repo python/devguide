@@ -16,7 +16,7 @@ on a system that uses the makefile to build Python:
   (using Tools/scripts/reindent-rst.py)
 * Has the documentation been updated?
 * Has the test suite been updated?
-* Has ``Misc/ACKS`` been updated?
+* Has ``Misc/NEWS`` been updated?
 * Has ``Misc/ACKS`` been updated?
 * Has the test suite been run?
 
