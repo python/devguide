@@ -206,6 +206,11 @@ properly.
   :abbr:`VCS (version control system)` to Mercurial.
   The issue tracker automatically translates the legacy svn revision
   ``<number>`` to its corresponding Mercurial changeset identifier.
+* ``Dir/file.ext`` and ``Dir/file.ext:NNN`` generate links to files in the
+  `Python source code repositories <http://hg.python.org/cpython/file/>`_,
+  possibly linking to the line number specified after the ``:``.
+* ``PEP <number>`` and ``PEP<number>`` link to the
+  :abbr:`PEP (Python Enhancement Proposal)` ``<number>``.
 
 
 Reporting Issues About the Tracker
