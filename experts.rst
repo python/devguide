@@ -296,6 +296,7 @@ bytecode            pitrou
 context managers    ncoghlan
 data formats        mark.dickinson, georg.brandl
 database            lemburg
+devguide            ncoghlan,eric.araujo
 documentation       georg.brandl, ezio.melotti
 GUI
 i18n                lemburg
