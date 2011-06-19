@@ -50,18 +50,12 @@ Contributing
 ------------
 
 We encourage everyone to contribute to Python and that's why we have put up
-this developer's guide.  You **should** read the following documents in
-the order provided.  You can stop where you feel comfortable and begin
-contributing immediately without reading and understanding these documents all
-at once, but please do not skip around within the documentation as everything
-is written assuming preceding documentation has been read.
-
-You can, *however*, read the :doc:`FAQ <faq>` at any point!
+this developer's guide. If you still have questions after reviewing the
+material in this guide, then the `Python Mentors`_ group is available to help
+guide new contributors through the process. The :doc:`Developer FAQ <faq>` is
+another useful source of information.
 
 * :doc:`setup`
-* Coding style guides
-    * `PEP 7`_ (Style Guide for C Code)
-    * `PEP 8`_ (Style Guide for Python Code)
 * :doc:`help`
 * :doc:`patch`
 * :doc:`runtests`
@@ -82,6 +76,13 @@ You can, *however*, read the :doc:`FAQ <faq>` at any point!
     * :doc:`devcycle`
     * :doc:`buildbots`
 
+It is **recommended** that the above documents be read in the order listed.
+You can stop where you feel comfortable and begin contributing immediately
+without reading and understanding these documents all at once. If you do
+choose to skip around within the documentation, be aware that it is written
+assuming preceding documentation has been read so you may find it necessary
+to backtrack to fill in missing concepts and terminology.
+
 
 Proposing changes to Python itself
 ----------------------------------
@@ -99,6 +100,9 @@ Resources
 * Anyone can checkout this guide from http://hg.python.org/devguide/.
   Core developers should use ssh://hg@hg.python.org/devguide instead, so
   that they can push back their edits to the server.
+* Coding style guides
+    * `PEP 7`_ (Style Guide for C Code)
+    * `PEP 8`_ (Style Guide for Python Code)
 * `Issue tracker <http://bugs.python.org/>`_
     * `Meta tracker <http://psf.upfronthosting.co.za/roundup/meta>`_ (issue
       tracker for the issue tracker)
@@ -129,6 +133,7 @@ Resources
 .. _PEP 7: http://www.python.org/dev/peps/pep-0007
 .. _PEP 8: http://www.python.org/dev/peps/pep-0008
 .. _python.org maintenance: http://python.org/dev/pydotorg/
+.. _Python Mentors: http://pythonmentors.com/
 
 
 Indices and tables
