@@ -133,6 +133,9 @@ invocation of ``hg diff`` for your purposes; see ``hg help diff`` and ``hg
 help revisions``. Just please make sure that you
 generate a **single, condensed** patch rather than a series of several changesets.
 
+Also, please make sure your patch is whitespace normalized. ``make patchcheck``
+will check this for you.
+
 
 Submitting
 ----------
