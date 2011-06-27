@@ -50,18 +50,14 @@ Contributing
 ------------
 
 We encourage everyone to contribute to Python and that's why we have put up
-this developer's guide.  You **should** read the following documents in
-the order provided.  You can stop where you feel comfortable and begin
-contributing immediately without reading and understanding these documents all
-at once, but please do not skip around within the documentation as everything
-is written assuming preceding documentation has been read.
+this developer's guide. If you still have questions after reviewing the
+material in this guide, then the `Python Mentors`_ group is available to help
+guide new contributors through the process. The :doc:`Developer FAQ <faq>` is
+another useful source of information.
 
-You can, *however*, read the :doc:`FAQ <faq>` at any point!
+Guide for contributing to Python:
 
 * :doc:`setup`
-* Coding style guides
-    * `PEP 7`_ (Style Guide for C Code)
-    * `PEP 8`_ (Style Guide for Python Code)
 * :doc:`help`
 * :doc:`patch`
 * :doc:`runtests`
@@ -82,12 +78,52 @@ You can, *however*, read the :doc:`FAQ <faq>` at any point!
     * :doc:`devcycle`
     * :doc:`buildbots`
 
+It is **recommended** that the above documents be read in the order listed.
+You can stop where you feel comfortable and begin contributing immediately
+without reading and understanding these documents all at once. If you do
+choose to skip around within the documentation, be aware that it is written
+assuming preceding documentation has been read so you may find it necessary
+to backtrack to fill in missing concepts and terminology.
+
 
 Proposing changes to Python itself
 ----------------------------------
 
+Improving Python's code, documentation and tests are ongoing tasks that are
+never going to be "finished", as Python operates as part of an ever-evolving
+system of technology. An even more challenging ongoing task than these
+necessary maintenance activities is finding ways to make Python, in the form
+of the standard library and the language definition, an even better tool in a
+developer's toolkit.
+
+While these kinds of change are much rarer than those described above, they do
+happen and that process is also described as part of this guide:
+
 * :doc:`stdlibchanges`
 * :doc:`langchanges`
+
+
+Other Interpreter Implementations
+---------------------------------
+
+This guide is specifically for contributing to the Python reference
+interpreter, also known as CPython (while most of the standard library is
+written in Python, the interpreter core is written in C and integrates most
+easily with the C and C++ ecosystems).
+
+There are other Python implementations, each with a different focus.
+Like CPython, they always have more things they would like to do than they
+have developers to work on them. Some major example that may of interest are:
+
+* PyPy_: A Python interpreter focused on high speed (JIT-compiled) operation
+  on major platforms
+* Jython_: A Python interpreter focused on good integration with the Java
+  Virtual Machine (JVM) environment
+* IronPython_: A Python interpreter focused on good integration with the
+  Common Language Runtime (CLR) provided by .NET and Mono
+* Stackless_: A Python interpreter focused on providing lightweight
+  microthreads while remaining largely compatible with CPython specific
+  extension modules
 
 
 .. _resources:
@@ -99,6 +135,9 @@ Resources
 * Anyone can checkout this guide from http://hg.python.org/devguide/.
   Core developers should use ssh://hg@hg.python.org/devguide instead, so
   that they can push back their edits to the server.
+* Coding style guides
+    * :PEP:`7` (Style Guide for C Code)
+    * :PEP:`8` (Style Guide for Python Code)
 * `Issue tracker <http://bugs.python.org/>`_
     * `Meta tracker <http://psf.upfronthosting.co.za/roundup/meta>`_ (issue
       tracker for the issue tracker)
@@ -126,9 +165,12 @@ Resources
 .. _Firefox search engine plug-in: http://www.python.org/dev/searchplugin/
 .. _Misc directory: http://hg.python.org/cpython/file/tip/Misc
 .. _PEPs: http://www.python.org/dev/peps
-.. _PEP 7: http://www.python.org/dev/peps/pep-0007
-.. _PEP 8: http://www.python.org/dev/peps/pep-0008
 .. _python.org maintenance: http://python.org/dev/pydotorg/
+.. _Python Mentors: http://pythonmentors.com/
+.. _PyPy: http://www.pypy.org/
+.. _Jython: http://www.jython.org/
+.. _IronPython: http://ironpython.net/
+.. _Stackless: http://www.stackless.com/
 
 
 Indices and tables

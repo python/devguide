@@ -3,8 +3,29 @@
 Committing and Pushing Changes
 ==============================
 
-.. TODO: include a checklist of items to be included in a commit?
-   e.g updated Misc/NEWS entry, tests, doc
+Patch Checklist
+---------------
+
+Here's the simple patch checklist that ``make patchcheck`` will run through
+on a system that uses the makefile to build Python:
+
+* Are there any whitespace problems in Python files?
+  (using Tools/scripts/reindent.py)
+* Are there any whitespace problems in C files?
+* Are there any whitespace problems in the documentation?
+  (using Tools/scripts/reindent-rst.py)
+* Has the documentation been updated?
+* Has the test suite been updated?
+* Has ``Misc/NEWS`` been updated?
+* Has ``Misc/ACKS`` been updated?
+* Has the test suite been run?
+
+Note that the automated patch check can't actually *answer* all of these
+questions, and even if it could, it still wouldn't know whether or not
+those answers were appropriate. Aside from the whitespace checks, it is just
+a memory aid to help with remembering the various elements that can go into
+making a complete patch.
+
 
 Commit Messages
 ---------------
@@ -53,6 +74,10 @@ repositories means you have to be more careful with your workflow:
 Because of these constraints, it can be practical to use other approaches
 such as mq_ (Mercurial Queues), in order to maintain patches in a single
 local repository and to push them seamlessly when they are ready.
+
+It can also be useful to keep a pristine clone of the main repository around,
+as it allows simple reversion of all local changes (even "committed" ones) if
+your local clone gets into a state you aren't happy with.
 
 
 .. _Mercurial: http://www.hg-scm.org/
@@ -119,6 +144,41 @@ be a good reason for the breakage of code the change will cause (and it
 **will** break someone's code). If you are unsure if the breakage is worth it,
 ask on python-dev.
 
+Third, ensure the patch is attributed correctly by adding the contributor's
+name to ``Misc/ACKS`` if they aren't already there (and didn't add themselves
+in their patch) and by mentioning "Patch by <x>" in the ``Misc/NEWS`` entry
+and the checkin message. If the patch has been heavily modified then "Initial
+patch by <x>" is an appropriate alternate wording.
+
+If you omit correct attribution in the initial checkin, then update ``ACKS``
+and ``NEWS`` in a subsequent checkin (don't worry about trying to fix the
+original checkin message in that case).
+
+
+Contributor Licensing Agreements
+--------------------------------
+
+It's unlikely bug fixes will require a `Contributor Licensing Agreement`_
+unless they touch a *lot* of code. For new features, it is preferable to
+ask that the contributor submit a signed CLA to the PSF as the associated
+comments, docstrings and documentation are far more likely to reach a
+copyrightable standard.
+
+For Python sprints we now recommend collecting CLAs as a matter of course, as
+the folks leading the sprints can then handle the task of scanning (or otherwise
+digitising) the forms and passing them on to the PSF secretary. (Yes, we
+realise this process is quite archaic. Yes, we're in the process of fixing
+it. No, it's not fixed yet).
+
+As discussed on the PSF Contribution_ page, it is the CLA itself that gives
+the PSF the necessary relicensing rights to redistribute contributions under
+the Python license stack. This is an additional permission granted above and
+beyond the normal permissions provided by the chosen open source license.
+
+.. _Contribution: http://www.python.org/psf/contrib/
+.. _Contributor Licensing Agreement:
+   http://www.python.org/psf/contrib/contrib-form/
+
 
 Forward-Porting
 ---------------
@@ -135,7 +195,7 @@ the patch through the codebase instead of against it.
    Even when porting an already committed patch, you should **still** check the
    test suite runs successfully before committing the patch to another branch.
    Subtle differences between two branches sometimes make a patch bogus if
-   ported straightly.
+   ported without any modifications.
 
 
 Porting Within a Major Version
@@ -222,8 +282,8 @@ working copy for each maintenance branch.
 
 There are various ways to achieve this, but here is a possible scenario:
 
-* First do a clone of the public repository, whose working copy will be updated
-  to the ``default`` branch::
+* First do a clone of the public repository, whose working copy will be
+  updated to the ``default`` branch::
 
    $ hg clone ssh://hg@hg.python.org/cpython py3k
 
@@ -234,10 +294,11 @@ There are various ways to achieve this, but here is a possible scenario:
    $ cd py3.2
    $ hg update 3.2
 
-* If you also need the 3.1 branch, you can similarly clone it, either from
-  the ``py3.2`` or the ``py3k`` repository. It is suggested, though, that you
-  clone from ``py3.2`` as that it will force you to push changes back up your
-  clone chain so that you make sure to port changes to all proper versions.
+* If you also need the 3.1 branch to work on security fixes, you can similarly
+  clone it, either from the ``py3.2`` or the ``py3k`` repository. It is
+  suggested, though, that you clone from ``py3.2`` as that it will force you
+  to push changes back up your clone chain so that you make sure to port
+  changes to all proper versions.
 
 * You can also clone a 2.7-dedicated repository from the ``py3k`` branch::
 
@@ -253,8 +314,25 @@ merged (and tested!) your ``3.2`` changes into the ``default`` branch, pushing
 from the ``py3k`` repository will publish your changes in the public
 repository.
 
+When working with this kind of arrangement, it can be useful to have a simple
+script that runs the necessary commands to update all branches with upstream
+changes::
+
+  cd ~/py3k
+  hg pull -u
+  cd ~/py3.2
+  hg pull -u
+  cd ~/py2.7
+  hg pull -u
+
+Only the first of those updates will touch the network - the latter two will
+just transfer the changes locally between the relevant repositories.
+
 If you want, you can later :ref:`change the flow of changes <hg-paths>` implied
-by the cloning of repositories.
+by the cloning of repositories. For example, you may choose to add a separate
+``sandbox`` repository for experimental code (potentially published somewhere
+other than python.org) or an additional pristine repository that is
+never modified locally.
 
 
 Differences with ``svnmerge``
@@ -354,8 +432,14 @@ and merge all new changes from branch ``default`` to branch ``mywork``::
    mywork
    $ hg merge default
 
+Rather than using a clone on ``python.org`` (which isn't particularly useful
+for collaboration with folks that don't already have CPython commit rights),
+Bitbucket_ also maintain an `up to date clone`_ of the main ``cpython``
+repository that can be used as the basis for a new clone or patch queue.
 
 .. _named branch: http://mercurial.selenic.com/wiki/NamedBranches
+.. _Bitbucket: http://www.bitbucket.org
+.. _up to date clone: https://bitbucket.org/mirror/cpython/overview
 
 
 Uploading a patch for review
