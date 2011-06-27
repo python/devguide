@@ -69,7 +69,7 @@ When creating a patch for submission, there are several things that you should
 do to help ensure that your patch is accepted.
 
 First, make sure to follow Python's style guidelines. For Python code you
-should follow `PEP 8`_, and for C code you should follow `PEP 7`_. If you have
+should follow :PEP:`8`, and for C code you should follow :PEP:`7`. If you have
 one or two discrepencies those can be fixed by the core developer who commits
 your patch. But if you have systematic deviations from the style guides your
 patch will be put on hold until you fix the formatting issues.
@@ -104,8 +104,6 @@ Python (you retain the copyright).
 
 
 .. _contributor form: http://www.python.org/psf/contrib/
-.. _PEP 7: http://www.python.org/dev/peps/pep-0007
-.. _PEP 8: http://www.python.org/dev/peps/pep-0008
 .. _Python Software Foundation: http://www.python.org/psf/
 
 

@@ -8,8 +8,108 @@ Python Developer FAQ
 .. contents::
    :local:
 
+
+Communications
+==============
+
+
+Where should I ask general Python questions?
+--------------------------------------------
+
+General Python questions should still go to `python-list`_ or `python-tutor`_
+or similar resources, such as StackOverflow_ or ``#python`` on IRC.
+
+.. _python-list: http://mail.python.org/mailman/listinfo/python-list
+.. _python-tutor: http://mail.python.org/mailman/listinfo/python-tutor
+.. _StackOverflow: http://stackoverflow.com/
+
+
+Where should I suggest new features and language changes?
+---------------------------------------------------------
+
+The `python-ideas`_ mailing list is specifically intended for discussion of
+new features and language changes. Please don't be disappointed if your
+idea isn't met with universal approval: as the long list of Rejected and
+Withdrawn PEPs in the `PEP Index`_ attests, and as befits a reasonably mature
+programming language, getting significant changes into Python isn't a simple
+task.
+
+If the idea is reasonable, someone will suggest posting it as a feature
+request on the `issue tracker`_.
+
+.. _python-ideas: http://mail.python.org/mailman/listinfo/python-ideas
+.. _issue tracker: http://bugs.python.org
+.. _PEP Index: http://www.python.org/dev/peps
+
+
+Where should I ask general questions about contributing to CPython?
+-------------------------------------------------------------------
+
+The `Python Mentors`_ program is specifically about encouraging
+developers and others that would like to contribute to Python development in
+general, rather than necessarily being focused on one particular issue.
+
+.. _Python Mentors: http://pythonmentors.com
+
+
+Where should I report specific problems?
+----------------------------------------
+
+Specific problems should be posted to the `issue tracker`_.
+
+
+What if I'm not sure it is a bug?
+---------------------------------
+
+The general Python help locations listed above are the best place to start
+with that kind of question. If they agree it looks like a bug, then the
+next step is to either post it to the `issue tracker`_ or else to ask further
+on the core development mailing list, `python-dev`_.
+
+.. _python-dev: http://mail.python.org/mailman/listinfo/python-dev
+
+
+What if I disagree with an issue resolution on the tracker?
+-----------------------------------------------------------
+
+First, take some time to consider any comments made in association with the
+resolution of the tracker issue. On reflection, they may seem more reasonable
+than they first appeared.
+
+If you still feel the resolution is incorrect, then raise the question on
+`python-dev`_. If the consensus there supports the disputed resolution, please
+take any further objections to `python-ideas`_ (or some other forum). Further
+argument on `python-dev`_ after a consensus has been reached amongst the core
+developers is unlikely to win any converts.
+
+
+How do I tell who is and isn't a core developer?
+------------------------------------------------
+
+You can check their name against the `full list of developers`_ with commit
+rights to the main source control repository.
+
+On the `issue tracker`_, most core developers will have the Python logo
+appear next to their name.
+
+.. _full list of developers: http://www.python.org/dev/committers
+
+
+What standards of behaviour are expected in these communication channels?
+-------------------------------------------------------------------------
+
+We try to foster environments of mutual respect, tolerance and encouragement,
+as described in the PSF's `Diversity Statement`_. Abiding by the guidelines
+in this document and asking questions or posting suggestions in the
+appropriate channels are an excellent way to get started on the mutual respect
+part, greatly increasing the chances of receiving tolerance and encouragement
+in return.
+
+.. _Diversity Statement: http://www.python.org/psf/diversity/
+
+
 Version Control
-==================================
+===============
 
 Where can I learn about the version control system used, Mercurial (hg)?
 -------------------------------------------------------------------------------
