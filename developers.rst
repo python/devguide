@@ -24,6 +24,10 @@ transliteration too.
 Permissions History
 -------------------
 
+- Sandro Tosi was given push privileges on Aug 1 2011 by Antoine Pitrou,
+  for documentation and other contributions, on recommendation by Ezio
+  Melotti, R. David Murray and others.
+
 - Charles-François Natali was given push privileges on May 19 2011 by Antoine
   Pitrou, for general contributions, on recommandation by Victor Stinner,
   Brian Curtin and others.
