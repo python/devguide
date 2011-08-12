@@ -17,6 +17,11 @@ from the root directory of your checkout (after you have built Python)::
 
     ./python -m test
 
+If you don't have easy access to a command line, you can run the test suite from
+a Python or IDLE shell::
+
+    >>> from test import autotest
+
 This will run the majority of tests, but exclude a small portion of them; these
 excluded tests use special kinds of resources: for example, accessing the
 Internet, or trying to play a sound or to display a graphical interface on
