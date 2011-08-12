@@ -125,7 +125,7 @@ executed::
 
     ./python -m coverage report --show-missing
 
-But one of the strengths of coverage.py is its HTML-based reports which lets
+But one of the strengths of coverage.py is its HTML-based reports which let
 you visually see what lines of code were not tested::
 
     ./python -m coverage html -i --omit="*/test/*,*/tests/*"
