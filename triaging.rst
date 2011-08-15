@@ -263,6 +263,9 @@ properly.
   possibly linking to the line number specified after the ``:``.
 * ``PEP <number>`` and ``PEP<number>`` link to the
   :abbr:`PEP (Python Enhancement Proposal)` ``<number>``.
+* ``devguide`` (lowercase), ``devguide/triaging``, and
+  ``devguide/triaging#generating-special-links-in-a-comment`` generate links to
+  the Devguide, this page, and this section respectively.
 
 
 Reporting Issues About the Tracker
