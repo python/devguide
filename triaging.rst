@@ -52,6 +52,58 @@ Be aware that what component is chosen may cause the issue to be auto-assigned,
 i.e. the issue tracker may automatically fill in the `Assigned To`_ field
 after you press ``Submit changes``.
 
+The following component(s) should be selected if the issue applies to:
+
+2to3 (2.x to 3.0 conversion tool)
+    The 2to3 conversion tool in `Lib/lib2to3`_.
+Benchmarks
+    The benchmarks in the benchmarks_ repo.
+Build
+    The build process.
+ctypes
+    The ctypes package in `Lib/ctypes`_.
+Demos and Tools
+    The files in Tools_ and `Tools/demo`_.
+Devguide
+    The `Developer's guide`_.
+Distutils
+    The distutils package in `Lib/distutils`_.
+Distutils2
+    The packaging module in `Lib/packaging`_.
+Documentation
+    The documentation in Doc_ (used to build the HTML doc at http://docs.python.org/).
+Extension Modules
+    C modules in Modules_.
+IDLE
+    The `Lib/idlelib`_ package.
+Installation
+    The installation process.
+Interpreter Core
+    The interpreter core, the built-in objects in `Objects`_, the `Python`_,
+    `Grammar`_ and `Parser`_ dirs.
+IO
+    The I/O system, `Lib/io.py`_ and `Modules/_io`_.
+Library (Lib)
+    Python modules in Lib_.
+Macintosh
+    The Mac OS X operating system.
+Regular Expressions
+    The `Lib/re.py`_ and `Modules/_sre.c`_ modules.
+Tests
+    The unittest and doctest frameworks in `Lib/unittest`_ and
+    `Lib/doctest.py`_.
+
+    The CPython tests in `Lib/test`_, the test runner in `Lib/test/regrtest.py`_
+    and the `Lib/test/support.py`_ module.
+Tkinter
+    The `Lib/tkinter`_ package.
+Unicode
+    Unicode, codecs, str vs bytes, `Objects/unicodeobject.c`_.
+Windows
+    The Windows operating system.
+XML
+    The `Lib/xml`_ package.
+
 Versions
 ''''''''
 The known versions of Python that the issue affects and should be fixed for.
@@ -220,6 +272,34 @@ file issues against anything you come across when working with the issue
 tracker itself.
 
 
+.. _Doc: http://hg.python.org/cpython/file/default/Doc/
+.. _Grammar: http://hg.python.org/cpython/file/default/Grammar/
+.. _Lib: http://hg.python.org/cpython/file/default/Lib/
+.. _Lib/lib2to3: http://hg.python.org/cpython/file/default/Lib/lib2to3/
+.. _Lib/ctypes: http://hg.python.org/cpython/file/default/Lib/ctypes/
+.. _Lib/distutils: http://hg.python.org/cpython/file/default/Lib/distutils/
+.. _Lib/doctest.py: http://hg.python.org/cpython/file/default/Lib/doctest.py
+.. _Lib/idlelib: http://hg.python.org/cpython/file/default/Lib/idlelib/
+.. _Lib/io.py: http://hg.python.org/cpython/file/default/Lib/io.py
+.. _Lib/packaging: http://hg.python.org/cpython/file/default/Lib/packaging/
+.. _Lib/re.py: http://hg.python.org/cpython/file/default/Lib/re.py
+.. _Lib/test: http://hg.python.org/cpython/file/default/Lib/test/
+.. _Lib/test/regrtest.py: http://hg.python.org/cpython/file/default/Lib/test/regrtest.py
+.. _Lib/test/support.py: http://hg.python.org/cpython/file/default/Lib/test/support.py
+.. _Lib/tkinter: http://hg.python.org/cpython/file/default/Lib/tkinter/
+.. _Lib/unittest: http://hg.python.org/cpython/file/default/Lib/unittest/
+.. _Lib/xml: http://hg.python.org/cpython/file/default/Lib/xml/
+.. _Modules: http://hg.python.org/cpython/file/default/Modules/
+.. _Modules/_io: http://hg.python.org/cpython/file/default/Modules/_io/
+.. _Modules/_sre.c: http://hg.python.org/cpython/file/default/Modules/_sre.c
+.. _Objects: http://hg.python.org/cpython/file/default/Objects/
+.. _Objects/unicodeobject.c: http://hg.python.org/cpython/file/default/Objects/unicodeobject.c
+.. _Parser: http://hg.python.org/cpython/file/default/Parser/
+.. _Python: http://hg.python.org/cpython/file/default/Python/
+.. _Tools: http://hg.python.org/cpython/file/default/Tools/
+.. _Tools/demo: http://hg.python.org/cpython/file/default/Tools/demo/
+.. _benchmarks: http://hg.python.org/benchmarks/
+.. _Developer's guide: http://hg.python.org/devguide/
 .. _GSoC: http://code.google.com/soc/
 .. _issue tracker: http://bugs.python.org
 .. _language moratorium: http://www.python.org/dev/peps/pep-3003/
