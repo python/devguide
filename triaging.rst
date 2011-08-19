@@ -213,11 +213,6 @@ Resolution
 ''''''''''
 Why the issue is in its current state (not usually used for "open").
 
-accepted
-    Submitted patch was applied, still needs verifying (for example by
-    watching the `buildbots <http://www.python.org/dev/buildbot/>`_) that
-    everything went fine.  At that point the resolution should be set to
-    *fixed* and the status changed to *closed*.
 duplicate
     Duplicate of another issue; should have the Superseder field filled out.
 fixed
