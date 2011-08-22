@@ -93,7 +93,7 @@ datetime              belopolsky
 dbm
 decimal               facundobatista, rhettinger, mark.dickinson
 difflib               tim_one (inactive)
-dis
+dis                   ncoghlan
 distutils             tarek*, eric.araujo*
 doctest               tim_one (inactive)
 dummy_threading       brett.cannon
