@@ -19,10 +19,26 @@ title is now wrong.
 Type
 ''''
 Describes the type of issue.  If something does not fit within any
-specific type then simply do not set it.  *"crash"* is for hard crashes of
-the Python interpreter -- possibly with a core dump or a Windows error box --
-and not erroneous exits because of an unhandled exception (the latter fall under
-the *"behavior"* category).
+specific type then simply do not set it.
+
+behavior
+    Wrong or unexpected behavior, result, or exception.  This includes most of
+    the bugs.
+crash
+    Hard crashes of the Python interpreter -- possibly with a core
+    dump or a Windows error box.
+compile error
+    Errors reported by the compiler while compiling Python.
+resource usage
+    Situations where too many resources (e.g. memory) are used.
+security
+    Issues that might have security implications.  If you think the issue
+    should not be made public, please report it to security@python.org instead.
+performance
+    Situations where too much time is necessary to complete the task.
+feature requests
+    Issues that propose the addition of new functionality, such as new
+    functions, classes, modules, or even new arguments for existing functions.
 
 Stage
 '''''
