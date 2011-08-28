@@ -54,7 +54,7 @@ abc
 aifc                  r.david.murray
 argparse              bethard
 array
-ast
+ast                   benjamin.peterson
 asynchat              josiahcarlson, giampaolo.rodola, stutzbach
 asyncore              josiahcarlson, giampaolo.rodola, stutzbach
 atexit
@@ -156,7 +156,7 @@ optparse              aronacher
 os                    loewis
 ossaudiodev
 packaging             tarek*, eric.araujo*, alexis
-parser
+parser                benjamin.peterson
 pdb                   georg.brandl*
 pickle                alexandre.vassalotti, pitrou
 pickletools           alexandre.vassalotti
