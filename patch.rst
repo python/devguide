@@ -118,9 +118,12 @@ To perform a quick sanity check on your patch, you can run::
 
 This will check and/or fix various common things people forget to do for
 patches, such as adding any new files needed for the patch to work (note
-that not all checks apply to non-core developers).
+that not all checks apply to non-core developers).  On Windows, use this
+command::
 
-Assume you are using the :ref:`mq approach <mq-workflow>` suggested earlier,
+   ./python.exe Tools/scripts/patchcheck.py
+
+Assuming you are using the :ref:`mq approach <mq-workflow>` suggested earlier,
 first check that all your local changes have been recorded (using
 ``hg qrefresh``), then type the following::
 
@@ -131,7 +134,7 @@ invocation of ``hg diff`` for your purposes; see ``hg help diff`` and ``hg
 help revisions``. Just please make sure that you
 generate a **single, condensed** patch rather than a series of several changesets.
 
-Also, please make sure your patch is whitespace normalized. ``make patchcheck``
+Also, please make sure your patch is whitespace normalized. ``patchcheck``
 will check this for you.
 
 

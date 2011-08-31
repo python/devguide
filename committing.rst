@@ -6,7 +6,8 @@ Committing and Pushing Changes
 Patch Checklist
 ---------------
 
-Here's the simple patch checklist that ``make patchcheck`` will run through
+Here's the simple patch checklist that ``make patchcheck`` (or  ``./python.exe
+Tools/scripts/patchcheck.py`` on Windows) will run through
 on a system that uses the makefile to build Python:
 
 * Are there any whitespace problems in Python files?
