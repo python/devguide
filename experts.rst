@@ -253,7 +253,7 @@ xml.sax.xmlreader
 xmlrpc                loewis
 zipfile               alanmcintyre
 zipimport
-zlib
+zlib                  nadeem.vawda
 ====================  =============================================
 
 
