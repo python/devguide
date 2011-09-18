@@ -24,6 +24,9 @@ transliteration too.
 Permissions History
 -------------------
 
+- Meador Inge was given push privileges on Sep 19 2011 by GFB, for
+  general contributions, on recommendation by Mark Dickinson.
+
 - Sandro Tosi was given push privileges on Aug 1 2011 by Antoine Pitrou,
   for documentation and other contributions, on recommendation by Ezio
   Melotti, R. David Murray and others.
