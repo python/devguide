@@ -87,7 +87,8 @@ copyreg               alexandre.vassalotti
 cProfile
 crypt                 jafo*
 csv                   skip.montanaro
-ctypes                theller (inactive), belopolsky, amaury.forgeotdarc
+ctypes                theller (inactive), belopolsky, amaury.forgeotdarc,
+                      meador.inge
 curses
 datetime              belopolsky
 dbm
@@ -202,7 +203,7 @@ ssl                   janssen, pitrou, giampaolo.rodola
 stat
 string                georg.brandl*
 stringprep
-struct                mark.dickinson
+struct                mark.dickinson, meador.inge
 subprocess            astrand (inactive)
 sunau
 symbol
@@ -222,7 +223,7 @@ time                  belopolsky
 timeit                georg.brandl
 tkinter               gpolo
 token                 georg.brandl
-tokenize
+tokenize              meador.inge
 trace                 belopolsky
 traceback             georg.brandl*
 tty
