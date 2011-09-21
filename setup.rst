@@ -124,8 +124,9 @@ filed on the `issue tracker`_).
 
 Once CPython is done building you will then have a working build
 that can be run in-place; ``./python`` on most machines (and what is used in
-all examples), ``./python.exe`` on OS X (when on a case-insensitive filesystem,
-which is the default). There is normally no need to install your built copy
+all examples), ``./python.exe`` wherever a case-insensitive filesystem is used
+(e.g. on OS X by default), in order to avoid conflicts with the ``Python``
+directory. There is normally no need to install your built copy
 of Python! The interpreter will realize where it is being run from
 and thus use the files found in the working copy. If you are worried
 you might accidentally install your working copy build, you can add
