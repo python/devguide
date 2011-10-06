@@ -548,12 +548,12 @@ References
    213--227, 1997.
 
 .. _The Zephyr Abstract Syntax Description Language.:
-   http://www.cs.princeton.edu/~danwang/Papers/dsl97/dsl97.html
+   http://www.cs.princeton.edu/research/techreps/TR-554-97
 
 .. _SPARK: http://pages.cpsc.ucalgary.ca/~aycock/spark/
 
 .. [#skip-peephole] Skip Montanaro's Peephole Optimizer Paper
-   (http://www.foretec.com/python/workshops/1998-11/proceedings/papers/montanaro/montanaro.html)
+   (http://www.python.org/workshops/1998-11/proceedings/papers/montanaro/montanaro.html)
 
 .. [#Bytecodehacks] Bytecodehacks Project
    (http://bytecodehacks.sourceforge.net/bch-docs/bch/index.html)
