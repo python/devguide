@@ -24,6 +24,9 @@ transliteration too.
 Permissions History
 -------------------
 
+- Petri Lehtinen was given push privileges on Oct 22 2011 by GFB, for
+  general contributions, on recommendation by Antoine Pitrou.
+
 - Meador Inge was given push privileges on Sep 19 2011 by GFB, for
   general contributions, on recommendation by Mark Dickinson.
 
