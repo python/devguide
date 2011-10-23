@@ -55,6 +55,8 @@ use and testing.  (If you change C code, you will need to recompile the
 affected files as described below.)
 
 
+.. _compiling:
+
 Compiling (for debugging)
 -------------------------
 
@@ -122,6 +124,8 @@ were not built, and so you can install the dependencies and re-run both
 Otherwise the build failed and thus should be fixed (at least with a bug being
 filed on the `issue tracker`_).
 
+.. _python.exe:
+
 Once CPython is done building you will then have a working build
 that can be run in-place; ``./python`` on most machines (and what is used in
 all examples), ``./python.exe`` wherever a case-insensitive filesystem is used
@@ -147,6 +151,8 @@ If you are using LLVM 2.8, also use the ``-no-integrated-as`` flag in order to
 build the :py:mod:`ctypes` module (without the flag the rest of CPython will
 still build properly).
 
+
+.. _windows-compiling:
 
 Windows
 '''''''
