@@ -64,7 +64,7 @@ have a NEWS entry, and have not yet been included in any formal release
   change has been reverted (e.g. when a feature is released in an alpha and
   then cut prior to the first beta)
 
-* If a change is a fix or other adjustment to an earlier unreleased change
+* If a change is a fix (or other adjustment) to an earlier unreleased change
   and the original NEWS entry remains valid, then no additional entry is
   needed.
 
@@ -210,7 +210,7 @@ the patch through the codebase instead of against it.
 
 Note that this policy applies only within a major version - the ``2.7`` branch
 is an independent thread of development, and should *never* be merged to any
-of the ``3.x`` branches of ``default``. If a bug fix applies to both ``2.x``
+of the ``3.x`` branches or ``default``. If a bug fix applies to both ``2.x``
 and ``3.x``, the two additions are handled as separate commits. It doesn't
 matter which is updated first, but any associated tracker issues should be
 closed only after all affected versions have been modified in the main
