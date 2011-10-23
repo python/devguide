@@ -28,8 +28,8 @@ a memory aid to help with remembering the various elements that can go into
 making a complete patch.
 
 
-Commit Messages
----------------
+Commit Messages and NEWS Entries
+--------------------------------
 
 Every commit has a commit message to document why a change was made and to
 communicate that reason to other core developers. Python core developers have
@@ -51,6 +51,22 @@ a new paragraph(s) can be added to explain in proper depth what has happened
 (detail should be good enough that a core developer reading the commit message
 understands the justification for the change).  Also, if a non-core developer
 contributed to the resolution, it is good practice to credit them.
+
+Almost all changes made to the code base deserve an entry in ``Misc/NEWS``.
+The ``What's New in Python`` document is the place for more subjective
+judgments of the "importance" of changes. There are two notable exceptions
+to this general principle, and they both relate to changes that *already*
+have a NEWS entry, and have not yet been included in any formal release
+(including alpha and beta releases). These exceptions are:
+
+* If a change is reverted prior to release, then the corresponding entry
+  is simply removed. Otherwise, a new entry must be added noting that the
+  change has been reverted (e.g. when a feature is released in an alpha and
+  then cut prior to the first beta)
+
+* If a change is a fix or other adjustment to an earlier unreleased change
+  and the original NEWS entry remains valid, then no additional entry is
+  needed.
 
 
 Working with Mercurial_
@@ -191,6 +207,14 @@ of Python (for example, first in ``3.1``, then in ``3.2`` and finally in
 ``default``). A forward-port instead of a back-port is preferred as it allows
 the :abbr:`DAG (directed acyclic graph)` used by hg to work with the movement of
 the patch through the codebase instead of against it.
+
+Note that this policy applies only within a major version - the ``2.7`` branch
+is an independent thread of development, and should *never* be merged to any
+of the ``3.x`` branches of ``default``. If a bug fix applies to both ``2.x``
+and ``3.x``, the two additions are handled as separate commits. It doesn't
+matter which is updated first, but any associated tracker issues should be
+closed only after all affected versions have been modified in the main
+repository.
 
 .. warning::
    Even when porting an already committed patch, you should **still** check the
