@@ -34,13 +34,33 @@ Python Developer's Guide
    faq
 
 
+Quick Start
+-----------
+
+Here is a list of the basic step necessary to get set up and make a patch:
+
+1. get :ref:`a clone of CPython <setup>` with
+   ``hg clone http://hg.python.org/cpython``;
+2. On UNIX, run ``./configure --with-pydebug && make -j2`` to
+   :ref:`build Python <compiling>`.
+
+   On :ref:`Windows <windows-compiling>`, load the project file
+   :file:`PCbuild\\pcbuild.sln` in Visual Studio, select :menuselection:`Debug`,
+   and :menuselection:`Build -> Build Solution`;
+3. :doc:`run the tests <runtests>` with ``./python -m test -j3``
+   (use :file:`./python.exe` on :ref:`most <python.exe>` Mac OS X systems and
+   :file:`PCbuild\\python_d.exe` on Windows);
+4. make the :doc:`patch <patch>`;
+5. submit it to the `issue tracker`_.
+
+
 Quick Links
 -----------
 
 Here are some links that you may find you reference frequently while
 contributing to Python.
 
-* `Issue tracker <http://bugs.python.org/>`_
+* `Issue tracker`_
 * `Buildbot status`_
 * :doc:`faq`
 * PEPs_ (Python Enhancement Proposals)
@@ -138,7 +158,7 @@ Resources
 * Coding style guides
     * :PEP:`7` (Style Guide for C Code)
     * :PEP:`8` (Style Guide for Python Code)
-* `Issue tracker <http://bugs.python.org/>`_
+* `Issue tracker`_
     * `Meta tracker <http://psf.upfronthosting.co.za/roundup/meta>`_ (issue
       tracker for the issue tracker)
     * :doc:`experts`
@@ -171,6 +191,7 @@ Resources
 .. _Jython: http://www.jython.org/
 .. _IronPython: http://ironpython.net/
 .. _Stackless: http://www.stackless.com/
+.. _Issue tracker: http://bugs.python.org/
 
 
 Indices and tables
