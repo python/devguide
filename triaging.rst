@@ -256,9 +256,11 @@ works for me
 Mercurial Repository
 ''''''''''''''''''''
 HTTP link to a Mercurial repository that contains a patch for the issue.
-The patch should be in the default branch of that repository. The
-`Create Patch` button will then compute a diff for the head revision
+The `Create Patch` button will then compute a diff for the head revision
 of the remote branch, and attach the diff to the issue.
+
+If you don't indicate a remote branch, ``default`` is used. You can
+indicate a remote branch adding ``#BRANCH`` at the end of the URL.
 
 Generating Special Links in a Comment
 -------------------------------------
