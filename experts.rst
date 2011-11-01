@@ -121,7 +121,7 @@ gzip
 hashlib
 heapq                 rhettinger, stutzbach
 hmac
-html
+html                  ezio.melotti
 http
 idlelib               kbk
 imaplib
