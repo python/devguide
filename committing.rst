@@ -68,6 +68,27 @@ have a NEWS entry, and have not yet been included in any formal release
   and the original NEWS entry remains valid, then no additional entry is
   needed.
 
+Mercurial hooks
+'''''''''''''''
+
+Special hooks have been added to the Mercurial repository to enable notifying
+the issue tracker of a commit related to an issue.
+
+A commit message can mention one or several issues in one of the following
+ways::
+
+   #12345
+   issue12345
+   issue 12345
+   bug12345
+   bug 12345
+
+where 12345 is the number of the issue. The commit details (including its
+changeset, branch and commit message) will then be posted as a message to the
+issue's page in the tracker, for each mentioned issue.
+
+If "closes" (or "closed", or "closing") is prepended, the issue is
+automatically closed as "fixed".
 
 Working with Mercurial_
 -----------------------
