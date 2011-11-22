@@ -185,14 +185,14 @@ reprlib
 resource
 rlcompleter
 runpy                 ncoghlan
-sched
+sched                 giampaolo.rodola
 select
 shelve
 shlex
 shutil                tarek
 signal
 site
-smtpd
+smtpd                 giampaolo.rodola
 smtplib
 sndhdr
 socket
