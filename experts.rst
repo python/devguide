@@ -137,6 +137,7 @@ lib2to3               benjamin.peterson
 linecache
 locale                loewis, lemburg
 logging               vinay.sajip
+lzma                  nadeem.vawda
 macpath
 mailbox
 mailcap
