@@ -36,9 +36,11 @@ security
     should not be made public, please report it to security@python.org instead.
 performance
     Situations where too much time is necessary to complete the task.
-feature requests
+enhancement
     Issues that propose the addition of new functionality, such as new
     functions, classes, modules, or even new arguments for existing functions.
+    Also used for improvements in the documentation and test suite and for
+    other refactorings.
 
 Stage
 '''''
@@ -157,9 +159,6 @@ Keywords
 ''''''''
 Various flags about the issue. Multiple values are possible.
 
-after moratorium
-    The issue is in regards to a language change which was not allowed during
-    the `language moratorium`_ in effect during the 3.2 development cycle.
 buildbot
     A buildbot triggered the issue being reported.
 easy
@@ -327,5 +326,4 @@ tracker itself.
 .. _Developer's guide: http://hg.python.org/devguide/
 .. _GSoC: http://code.google.com/soc/
 .. _issue tracker: http://bugs.python.org
-.. _language moratorium: http://www.python.org/dev/peps/pep-3003/
 .. _meta tracker: http://psf.upfronthosting.co.za/roundup/meta/
