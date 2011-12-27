@@ -133,7 +133,8 @@ easily with the C and C++ ecosystems).
 
 There are other Python implementations, each with a different focus.
 Like CPython, they always have more things they would like to do than they
-have developers to work on them. Some major example that may of interest are:
+have developers to work on them. Some major example that may be of interest
+are:
 
 * PyPy_: A Python interpreter focused on high speed (JIT-compiled) operation
   on major platforms
