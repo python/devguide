@@ -49,7 +49,7 @@ working copy. For instance, to update your working copy to Python 3.1, do::
 You will need to re-compile CPython when you do such an update.
 
 Do note that CPython will notice that it is being run from a working copy.
-This means that it if you edit CPython's source code in your working copy,
+This means that if you edit CPython's source code in your working copy,
 changes to Python code will be picked up by the interpreter for immediate
 use and testing.  (If you change C code, you will need to recompile the
 affected files as described below.)
