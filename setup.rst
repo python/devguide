@@ -160,8 +160,10 @@ Windows
 For Microsoft Visual Studio 2008 (also named Visual C++ 9), the ``PCbuild``
 directory contains the build files (for older versions of Visual Studio, see
 the ``PC`` directory).  The full version of Visual Studio is not necessary
-for common tasks; gratis versions from http://www.microsoft.com/express/ are
-sufficient.
+for common tasks with 32-bit builds; the gratis C++ version from
+https://www.microsoft.com/visualstudio/en-us/products/2008-editions/express
+is sufficient. Its limitations are given at
+http://msdn.microsoft.com/en-us/library/hs24szh9%28v=VS.90%29.aspx .
 
 To build from the Visual Studio GUI, load the project files and press F7. Make
 sure you have chosen the "Debug" build first.
