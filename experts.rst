@@ -320,6 +320,6 @@ testing             michael.foord, pitrou, ezio.melotti
 test coverage       ncoghlan, giampaolo.rodola
 threads             pitrou
 time and dates      lemburg, belopolsky
-unicode             lemburg, ezio.melotti, haypo
+unicode             lemburg, ezio.melotti, haypo, benjamin.peterson
 version control     eric.araujo
 ==================  ===========
