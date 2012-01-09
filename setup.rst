@@ -165,8 +165,8 @@ https://www.microsoft.com/visualstudio/en-us/products/2008-editions/express
 is sufficient. Its limitations are given at
 http://msdn.microsoft.com/en-us/library/hs24szh9%28v=VS.90%29.aspx .
 
-To build from the Visual Studio GUI, load the project files and press F7. Make
-sure you have chosen the "Debug" build first.
+To build from the Visual Studio GUI, open pcbuild.sln to load the project
+files and press F7. Make sure you have chosen the "Debug" build first.
 
 Once built you might want to set Python as a startup project. Pressing F5 in
 Visual Studio will launch the interpreter.

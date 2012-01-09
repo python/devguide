@@ -30,10 +30,10 @@ are aimed at testing by advanced users, not production use.
 Branches
 ''''''''
 
-Different branches are used at a time to represent different *minor versions*
-in which development is made.  All development should be done **first** in the
-:ref:`in-development <indevbranch>` branch, and selectively backported
-to other branches when necessary.
+There is a branch for each *minor version*. Development is done separately
+for Python 2 and Python 3. For each *major version*, each change should be made
+**first** in the oldest branch to which it applies and forward-ported as
+appropriate.
 
 
 .. _indevbranch:

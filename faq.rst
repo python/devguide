@@ -174,8 +174,9 @@ to the TortoiseHg documentation for assistance with its graphical interface.
 
 If you have push rights, you need to configure Mercurial to work with
 your SSH keys.  For that, open your Mercurial configuration file
-(you can do so by opening the TortoiseHg configuration dialog and then
-clicking *"Edit File"*).  In the ``[ui]`` section, add the following line::
+(you can do so by opening the TortoiseHg Global Settings dialog and then
+clicking *"Edit File"*).  If there is no ``[ui]`` section, create it by
+typing just that on a line by itself. Then add the following line::
 
    ssh = TortoisePlink.exe -ssh -2 -C -i C:\path\to\yourkey.ppk
 
