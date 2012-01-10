@@ -30,10 +30,18 @@ are aimed at testing by advanced users, not production use.
 Branches
 ''''''''
 
-There is a branch for each *minor version*. Development is done separately
-for Python 2 and Python 3. For each *major version*, each change should be made
-**first** in the oldest branch to which it applies and forward-ported as
-appropriate.
+There is a branch for each *feature version*, whether released or not (e.g.
+2.7, 3.2, 3.3).  Development is handled separately for Python 2 and Python 3:
+no merging happens between 2.x and 3.x branches.
+
+In each of the 2.x and 3.x realms, the branch for a feature version is
+always a descendant of the previous feature version: for example, the ``3.2``
+branch is a descendant of the ``3.1`` branch.
+
+Therefore, each change change should be made **first** in the oldest branch
+to which it applies and forward-ported as appropriate: if a bug must be
+fixed in both Python 3.2 and 3.3, first fix it in ``3.2`` and then merge ``3.2``
+into ``default`` (which holds the future 3.3).
 
 
 .. _indevbranch:
@@ -41,12 +49,12 @@ appropriate.
 In-development (main) branch
 ----------------------------
 
-The branch for the next minor version; it is under active development for
-all kinds of changes: new features, semantic changes, performance improvements,
-bug fixes.  It can be :ref:`checked out <checkout>` from
-http://hg.python.org/cpython#py3k.
+The ``default`` branch is the branch for the next feature release; it is
+under active development for all kinds of changes: new features, semantic
+changes, performance improvements, bug fixes.  As the name indicates, it
+is the branch :ref:`checked out <checkout>` by default by Mercurial.
 
-Once a :ref:`final` release is made from the in-development branch (say, 3.2), a
+Once a :ref:`final` release (say, 3.2) is made from the in-development branch, a
 new :ref:`maintenance branch <maintbranch>` is created to host all bug fixing
 activity for further micro versions (3.2.1, 3.2.2, etc.).
 
@@ -56,10 +64,10 @@ activity for further micro versions (3.2.1, 3.2.2, etc.).
 Maintenance branches
 --------------------
 
-A branch currently being maintained for bug fixes.  There are currently
-two of them in activity: one for Python 3.x and one for Python 2.x.  At
-some point in the future, Python 2.x will be closed for bug fixes and there
-will be only one maintenance branch left.
+A branch for a previous feature release, currently being maintained for bug
+fixes.  There are currently two of them in activity: one for Python 3.x and
+one for Python 2.x.  At some point in the future, Python 2.x will be closed
+for bug fixes and there will be only one maintenance branch left.
 
 The only changes allowed to occur in a maintenance branch without debate are
 bug fixes.  Also, a general rule for maintenance branches is that compatibility
@@ -70,7 +78,6 @@ discussed first.
 When a new maintenance branch is created (after a new *minor version* is
 released), the old maintenance branch on that major version (e.g. 3.1.x
 after 3.2 gets released) goes into :ref:`security mode <secbranch>`.
-
 
 .. _secbranch:
 
@@ -85,6 +92,20 @@ issues such as denial of service attacks.  Other behavioral issues are
 **not** considered a security risk and thus not backported to a security branch.
 Any release made from a security branch is source-only and done only when
 actual security patches have been applied to the branch.
+
+
+Summary
+-------
+
+There are 5 open branches right now in the Mercurial repository:
+
+- the ``default`` branch holds the future 3.3 version and descends from ``3.2``
+- the ``3.2`` branch holds bug fixes for future 3.2.x maintenance releases
+  and descends from ``3.1``
+- the ``3.1`` branch holds security fixes for future 3.1.x security releases
+- the ``2.7`` branch holds bug fixes for future 2.7.x maintenance releases and
+  descends from ``2.6``
+- the ``2.6`` branch holds security fixes for future 2.6.x security releases
 
 
 .. _stages:
