@@ -70,7 +70,7 @@ do to help ensure that your patch is accepted.
 
 First, make sure to follow Python's style guidelines. For Python code you
 should follow :PEP:`8`, and for C code you should follow :PEP:`7`. If you have
-one or two discrepencies those can be fixed by the core developer who commits
+one or two discrepancies those can be fixed by the core developer who commits
 your patch. But if you have systematic deviations from the style guides your
 patch will be put on hold until you fix the formatting issues.
 
