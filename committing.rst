@@ -163,7 +163,7 @@ extension on your local computer is in your best interest.
 .. _eol extension: http://mercurial.selenic.com/wiki/EolExtension
 
 
-Handling Other's Code
+Handling Others' Code
 ---------------------
 
 As a core developer you will occasionally want to commit a patch created by
