@@ -3,6 +3,16 @@
 Committing and Pushing Changes
 ==============================
 
+Once a change patch is ready and tested, it can be committed to the repository.
+We usually prefer to put a whole feature or bugfix into a single commit, but no
+more.  In particular:
+
+* Do **not** fix more than one issue in the same commit (except, of course, if
+  one code change fixes all of them).
+* Do **not** do cosmetic changes to unrelated code in the same commit as some
+  feature/bugfix.
+
+
 Patch Checklist
 ---------------
 
