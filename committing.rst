@@ -12,6 +12,9 @@ more.  In particular:
 * Do **not** do cosmetic changes to unrelated code in the same commit as some
   feature/bugfix.
 
+It is of course okay to pile up several commits to one branch and merge them
+into another in one merge commit.
+
 
 Patch Checklist
 ---------------
