@@ -8,7 +8,7 @@ keeping a high level of quality takes a lot of effort. Help is always
 appreciated with the documentation, and it requires little programming
 experience (with or without Python).
 
-`Documenting Python`_ covers the details of how Python's documentation works.
+:ref:`Documenting Python <documenting>` covers the details of how Python's documentation works.
 It includes an explanation of the markup used (although you can figure a lot
 out simply by looking at pre-existing documentation) and how to build the
 documentation (which allows you to see how your changes will look along with
@@ -31,8 +31,6 @@ some bug reports being directly emailed to the mailing list. There is also the
 `docs-sig@python.org mailing list
 <http://mail.python.org/mailman/listinfo/doc-sig>`_ which discusses the
 documentation toolchain, projects, standards, etc.
-
-.. _Documenting Python: http://docs.python.org/dev/documenting/
 
 
 Helping with issues filed on the issue tracker
