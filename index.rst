@@ -10,6 +10,7 @@ Python Developer's Guide
    runtests
    coverage
    docquality
+   documenting
    silencewarnings
    fixingissues
    helptriage

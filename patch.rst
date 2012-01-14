@@ -92,7 +92,7 @@ failure** because of your changes.  It is not sufficient to only run whichever
 test seems impacted by your changes, because there might be interferences
 unknown to you between your changes and some other part of the interpreter.
 
-Fifth, proper `documentation <http://docs.python.org/dev/documenting/>`_
+Fifth, proper :ref:`documentation <documenting>`
 additions/changes should be included.
 
 Sixth, if you are not already in the ``Misc/ACKS`` file then add your name. If
