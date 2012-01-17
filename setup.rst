@@ -198,46 +198,46 @@ functionality is implemented. Do realize, though, there are always exceptions to
 every rule.
 
 ``Doc``
-     The official documentation. This is what http://docs.python.org/ uses.
+     The official documentation. This is what http://docs.python.org/ uses.
      To build the docs, see ``Doc/README.txt``.
 
 ``Grammar``
-     Contains the :abbr:`EBNF (Extended Backus–Naur Form)` grammar file for
+     Contains the :abbr:`EBNF (Extended Backus-Naur Form)` grammar file for
      Python.
 
 ``Include``
-     Contains all interpreter-wide header files.
+     Contains all interpreter-wide header files.
 
 ``Lib``
-     The part of the standard library implemented in pure Python.
+     The part of the standard library implemented in pure Python.
 
 ``Mac``
-     Mac-specific code (e.g., using IDLE as an OS X application).
+     Mac-specific code (e.g., using IDLE as an OS X application).
 
 ``Misc``
-     Things that do not belong elsewhere. Typically this is varying kinds of
+     Things that do not belong elsewhere. Typically this is varying kinds of
      developer-specific documentation.
 
 ``Modules``
-     The part of the standard library (plus some other code) that is implemented
+     The part of the standard library (plus some other code) that is implemented
      in C.
 
 ``Objects``
-     Code for all built-in types.
+     Code for all built-in types.
 
 ``PC``
-     Windows-specific code along with build files for VC 6, 7, & 8 along with
+     Windows-specific code along with build files for VC 6, 7, & 8 along with
      OS/2.
 
 ``PCbuild``
-     Build files for VC 9 and newer.
+     Build files for VC 9 and newer.
 
 ``Parser``
-     Code related to the parser. The definition of the AST nodes is also kept
+     Code related to the parser. The definition of the AST nodes is also kept
      here.
 
 ``Python``
-     The code that makes up the CPython interpreter. This includes the compiler,
+     The code that makes up the CPython interpreter. This includes the compiler,
      eval loop and various built-in modules.
 
 ``Tools``
