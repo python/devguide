@@ -18,11 +18,12 @@ Where should I ask general Python questions?
 
 General Python questions should still go to `python-list`_ or `tutor`_
 or similar resources, such as StackOverflow_ or the ``#python`` IRC channel
-on Freenode.
+on Freenode_.
 
 .. _python-list: http://mail.python.org/mailman/listinfo/python-list
 .. _tutor: http://mail.python.org/mailman/listinfo/tutor
 .. _StackOverflow: http://stackoverflow.com/
+.. _Freenode: http://freenode.net/
 
 
 Where should I suggest new features and language changes?
@@ -49,6 +50,8 @@ Where should I ask general questions about contributing to CPython?
 The `Python Mentors`_ program is specifically about encouraging
 developers and others that would like to contribute to Python development in
 general, rather than necessarily being focused on one particular issue.
+Some core developers are also available on the ``#python-dev`` IRC channel on
+Freenode_.
 
 .. _Python Mentors: http://pythonmentors.com
 
