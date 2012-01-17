@@ -16,11 +16,12 @@ Communications
 Where should I ask general Python questions?
 --------------------------------------------
 
-General Python questions should still go to `python-list`_ or `python-tutor`_
-or similar resources, such as StackOverflow_ or ``#python`` on IRC.
+General Python questions should still go to `python-list`_ or `tutor`_
+or similar resources, such as StackOverflow_ or the ``#python`` IRC channel
+on Freenode.
 
 .. _python-list: http://mail.python.org/mailman/listinfo/python-list
-.. _python-tutor: http://mail.python.org/mailman/listinfo/python-tutor
+.. _tutor: http://mail.python.org/mailman/listinfo/tutor
 .. _StackOverflow: http://stackoverflow.com/
 
 
