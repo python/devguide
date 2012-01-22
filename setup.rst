@@ -133,9 +133,8 @@ all examples), ``./python.exe`` wherever a case-insensitive filesystem is used
 directory. There is normally no need to install your built copy
 of Python! The interpreter will realize where it is being run from
 and thus use the files found in the working copy.  If you are worried
-you might accidentally install your working copy build, you should probably
-use an account for developing that doesn't have write permissions on
-``/usr/local`` anyway.
+you might accidentally install your working copy build, you can add
+``--prefix=/tmp/python`` to the configuration step.
 
 .. _issue tracker: http://bugs.python.org
 
