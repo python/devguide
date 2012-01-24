@@ -41,7 +41,7 @@ failures are detailed::
 If you have a multi-core or multi-CPU machine, you can enable parallel testing
 using several Python processes so as to speed up things::
 
-   ./python -m test -j2
+   ./python -m test -j0
 
 .. _strenuous_testing:
 
