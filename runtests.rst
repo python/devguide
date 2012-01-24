@@ -52,15 +52,19 @@ can run ``test`` as::
 
 The various extra flags passed to Python cause it to be much stricter about
 various things (the ``-Wd`` flag should be ``-W error`` at some point, but the
-test
-suite has not reached a point where all warnings have been dealt with and so we
-cannot guarantee that a bug-free Python will properly complete a test run with
-``-W error``). The ``-r`` flag to the test runner causes it to run tests in a
-more random order which helps to check that the various tests do not interfere
+test suite has not reached a point where all warnings have been dealt with and
+so we cannot guarantee that a bug-free Python will properly complete a test run
+with ``-W error``). The ``-r`` flag to the test runner causes it to run tests in
+a more random order which helps to check that the various tests do not interfere
 with each other.  The ``-w`` flag causes failing tests to be run again to see
 if the failures are transient or consistent.
 The ``-uall`` flag allows the use of all available
 resources so as to not skip tests requiring, e.g., Internet access.
+
+You can also execute the ``Tools/scripts/run_tests.py`` script as  found in a
+CPython checkout. The script tries to balance speed with thoroughness. But if
+you want the most thorough tests you should use the stenuous approach shown
+above.
 
 
 Writing
