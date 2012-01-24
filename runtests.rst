@@ -43,6 +43,9 @@ using several Python processes so as to speed up things::
 
    ./python -m test -j0
 
+If you are running a version of Python prior to 3.3 you must specify the number
+of processes to run simultaneously (e.g. ``-j2``).
+
 .. _strenuous_testing:
 
 Finally, if you want to run tests under a more strenuous set of settings, you
