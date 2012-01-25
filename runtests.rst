@@ -66,7 +66,7 @@ resources so as to not skip tests requiring, e.g., Internet access.
 
 You can also execute the ``Tools/scripts/run_tests.py`` script as  found in a
 CPython checkout. The script tries to balance speed with thoroughness. But if
-you want the most thorough tests you should use the stenuous approach shown
+you want the most thorough tests you should use the strenuous approach shown
 above.
 
 
