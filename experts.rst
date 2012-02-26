@@ -246,7 +246,7 @@ xdrlib
 xml.dom
 xml.dom.minidom
 xml.dom.pulldom
-xml.etree             effbot (inactive)
+xml.etree             effbot (inactive), eli.bendersky
 xml.parsers.expat
 xml.sax
 xml.sax.handler
