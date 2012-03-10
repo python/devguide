@@ -80,7 +80,7 @@ collections.abc       rhettinger, stutzbach
 colorsys
 compileall
 concurrent.futures    bquinlan
-configparser          lukasz.langa
+configparser          lukasz.langa*
 contextlib            ncoghlan
 copy                  alexandre.vassalotti
 copyreg               alexandre.vassalotti
