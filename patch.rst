@@ -137,6 +137,62 @@ generate a **single, condensed** patch rather than a series of several changeset
 Also, please make sure your patch is whitespace normalized. ``patchcheck``
 will check this for you.
 
+Autoconf
+''''''''
+
+If a change is made to Python which relies on some POSIX system-specific
+functionality (such as using a new system call), it is necessary to update the
+``configure`` script to test for availability of the functionality.
+
+Python's ``configure`` script is generated from ``configure.in`` using Autoconf.
+Instead of editing ``configure``, edit ``configure.in`` and then run
+``autoreconf`` to regenerate ``configure`` and a number of other files (such as
+``pyconfig.h``.
+
+When submitting a patch with changes made to ``configure.in``, it is preferred
+to leave out the generated files as differences between Autoconf versions
+frequently results in many spurious changes cluttering the patch. Instead,
+remind any potential reviewers on the tracker to run ``autoreconf``.
+
+Note that running ``autoreconf`` is not the same as running ``autoconf``. For
+example, ``autoconf`` by itself will not regenerate ``pyconfig.h.in``.
+``autoreconf`` runs ``autoconf`` and a number of other tools repeatedly as is
+appropriate.
+
+Python's ``configure.in`` script typically requires a specific version of
+Autoconf.  At the moment, this reads: ``version_required(2.65)``
+
+If the system copy of Autoconf does not match this version, you will need to
+install your own copy of Autoconf:
+
+1. Go to http://ftp.gnu.org/gnu/autoconf/ and download the version of Autoconf
+   matching the one in ``configure.in``::
+
+      wget http://ftp.gnu.org/gnu/autoconf/autoconf-2.65.tar.bz2
+
+2. Unpack the tarball::
+
+      tar -jxf autoconf-2.65.tar.bz2 
+
+3. Build the specified version of Autoconf and install it to a writable location
+   (e.g. within your home directory)::
+
+      pushd autoconf-2.65.tar.bz2
+      ./configure --prefix=$HOME/autoconf-2.65
+      make
+      make install
+
+   This installs a copy of the appropriate version of Autoconf into
+   ~/autoconf-2.65.
+
+4. Go back to the Python source and rerun ``autoreconf``, pointing ``PATH`` at
+   the newly installed copy of Autoconf::
+
+      popd
+      PATH=~/autoconf-2.65/bin:$PATH autoreconf
+
+5. Autoconf should now have updated your local copy of ``configure`` to reflect
+   your changes.
 
 Submitting
 ----------
