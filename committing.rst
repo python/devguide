@@ -32,6 +32,8 @@ on a system that uses the makefile to build Python:
 * Has the test suite been updated?
 * Has ``Misc/NEWS`` been updated?
 * Has ``Misc/ACKS`` been updated?
+* Has ``configure`` been regenerated, if necessary?
+* Has ``pyconfig.h.in`` been regenerated, if necessary?
 * Has the test suite been run?
 
 Note that the automated patch check can't actually *answer* all of these
