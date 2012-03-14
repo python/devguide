@@ -24,6 +24,9 @@ transliteration too.
 Permissions History
 -------------------
 
+- Andrew Svetlov was given push privileges on Mar 13 2012 by MvL at
+  the PyCon sprint.
+
 - Petri Lehtinen was given push privileges on Oct 22 2011 by GFB, for
   general contributions, on recommendation by Antoine Pitrou.
 
