@@ -144,12 +144,12 @@ If a change is made to Python which relies on some POSIX system-specific
 functionality (such as using a new system call), it is necessary to update the
 ``configure`` script to test for availability of the functionality.
 
-Python's ``configure`` script is generated from ``configure.in`` using Autoconf.
-Instead of editing ``configure``, edit ``configure.in`` and then run
+Python's ``configure`` script is generated from ``configure.ac`` using Autoconf.
+Instead of editing ``configure``, edit ``configure.ac`` and then run
 ``autoreconf`` to regenerate ``configure`` and a number of other files (such as
 ``pyconfig.h``.
 
-When submitting a patch with changes made to ``configure.in``, it is preferred
+When submitting a patch with changes made to ``configure.ac``, it is preferred
 to leave out the generated files as differences between Autoconf versions
 frequently results in many spurious changes cluttering the patch. Instead,
 remind any potential reviewers on the tracker to run ``autoreconf``.
@@ -159,14 +159,14 @@ example, ``autoconf`` by itself will not regenerate ``pyconfig.h.in``.
 ``autoreconf`` runs ``autoconf`` and a number of other tools repeatedly as is
 appropriate.
 
-Python's ``configure.in`` script typically requires a specific version of
+Python's ``configure.ac`` script typically requires a specific version of
 Autoconf.  At the moment, this reads: ``version_required(2.65)``
 
 If the system copy of Autoconf does not match this version, you will need to
 install your own copy of Autoconf:
 
 1. Go to http://ftp.gnu.org/gnu/autoconf/ and download the version of Autoconf
-   matching the one in ``configure.in``::
+   matching the one in ``configure.ac``::
 
       wget http://ftp.gnu.org/gnu/autoconf/autoconf-2.65.tar.bz2
 
