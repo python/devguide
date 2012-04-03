@@ -6,7 +6,7 @@ Documenting Python
 The Python language has a substantial body of documentation, much of it
 contributed by various authors. The markup used for the Python documentation is
 `reStructuredText`_, developed by the `docutils`_ project, amended by custom
-directives and using a toolset named `Sphinx`_ to postprocess the HTML output.
+directives and using a toolset named `Sphinx`_ to post-process the HTML output.
 
 This document describes the style guide for our documentation as well as the
 custom reStructuredText markup introduced by Sphinx to support Python
@@ -108,7 +108,7 @@ Capitalization
 
 Apple style guide recommends the use of title case in section titles.
 However, rules for which words should be capitalized in title case
-vary greaty between publications.
+vary greatly between publications.
 
 In Python documentation, use of sentence case in section titles is
 preferable, but consistency within a unit is more important than
@@ -327,7 +327,7 @@ Lists and Quotes
 
 List markup is natural: just place an asterisk at the start of a paragraph and
 indent properly.  The same goes for numbered lists; they can also be
-autonumbered using a ``#`` sign::
+automatically numbered using a ``#`` sign::
 
    * This is a bulleted list.
    * It has two items, the second

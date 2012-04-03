@@ -156,7 +156,7 @@ Transient failures
 ------------------
 
 While we try to make the test suite as reliable as possible, some tests do
-not reach a perfect level of reproduceability.  Some of them will sometimes
+not reach a perfect level of reproducibility.  Some of them will sometimes
 display spurious failures, depending on various conditions.  Here are common
 offenders:
 

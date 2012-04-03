@@ -180,7 +180,7 @@ someone to the nosy list if you think the issue should be brought to their
 attention. Use the :ref:`experts` to know who wants to be added to the nosy
 list for issues targeting specific areas.
 
-If you have Javascript enabled and permission to edit the nosy list, you can
+If you have JavaScript enabled and permission to edit the nosy list, you can
 use the ``[+]`` button to add yourself to the nosy (remember to click on
 "Submit Changes" afterwards).  Note that you are added to the nosy
 automatically when you submit a message.

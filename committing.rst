@@ -399,7 +399,7 @@ Differences with ``svnmerge``
 If you are coming from Subversion, you might be surprised by Mercurial
 :ref:`merges <hg-merge>`.
 Despite its name, ``svnmerge`` is different from ``hg merge``: while ``svnmerge``
-allows to cherrypick individual revisions, ``hg merge`` can only merge whole
+allows to cherry-pick individual revisions, ``hg merge`` can only merge whole
 lines of development in the repository's :abbr:`DAG (directed acyclic graph)`.
 Therefore, ``hg merge`` might force you to review outstanding changesets by
 someone else that haven't been merged yet.
@@ -503,7 +503,7 @@ Uploading a patch for review
 
 In this scheme, your work will probably consist of many commits (some of
 them merges).  If you want to upload a patch for review somewhere, you need
-a single agregate patch.  This is where having a dedicated named branch
+a single aggregate patch.  This is where having a dedicated named branch
 ``mywork`` gets handy.
 
 First ensure that you have pulled *and merged* all changes from the main

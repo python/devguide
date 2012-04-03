@@ -186,7 +186,7 @@ The only exception comes about when managing a PyObject.  Since the rest
 of Python uses reference counting, there is extra support added
 to the arena to cleanup each PyObject that was allocated.  These cases
 are very rare.  However, if you've allocated a PyObject, you must tell
-the arena about it by calling PyArena_AddPyObject().
+the arena about it by calling ``PyArena_AddPyObject()``.
 
 
 Parse Tree to AST
