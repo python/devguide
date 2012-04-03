@@ -758,7 +758,7 @@ How come feature XYZ isn't available in Mercurial?
 Mercurial comes with many bundled extensions which can be explicitly enabled.
 You can get a list of them by typing ``hg help extensions``.  Some of these
 extensions, such as ``color``, can prettify output; others, such as ``fetch``
-or ``transplant``, add new Mercurial commands.
+or ``graphlog``, add new Mercurial commands.
 
 There are also many `configuration options`_ to tweak various aspects of the
 command line and other Mercurial behaviour; typing `man hgrc`_ displays
