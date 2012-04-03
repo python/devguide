@@ -10,56 +10,35 @@ Creating
 Tool Usage
 ''''''''''
 
-.. _mq-workflow:
+.. _workflow:
 
 Mercurial allows for various workflows according to each person's or
-project's preference.  We present here a very simple solution based on mq_
-(*Mercurial Queues*). You are welcome to use any approach you like (including
-a svn-like approach of simply using ``hg diff`` to create a patch based on
-uncommitted changes in your working copy).  Usage of mq_ is merely a
-suggestion; it's a balance between being able to do everything needed
-while allowing for more powerful usage if desired in the future.
+project's preference.  It is out of this guide's scope to present them all,
+so we will stick to a basic workflow where you work on a patch in your
+working copy without ever making any local commits.
 
-First make sure that the extension has been turned on in your ``.hgrc`` or
-``Mercurial.ini`` file::
+If you use this workflow, and your work adds or removes files to the
+source tree, you will have to temporarily ``hg add`` or ``hg remove`` them,
+respectively, before generating a patch.
 
-   [extensions]
-   mq =
+To generate a patch, just invoke ``hg diff`` which will print out a
+patch of the working copy's changes against the current revision::
 
-You can verify this is working properly by running ``hg help mq``.
+   hg diff > mywork.patch
 
-Before you start modifying things in your working copy, type::
+If you want to undo your changes, you can revert them from the working copy::
 
-   hg qnew mywork
+   hg revert -a
 
-where ``mywork`` is a descriptive name for what you are going to work on.
-This will create a patch in your patch queue. Whenever you have reached a point
-that you want to save what you have done, run::
+You can later re-apply the changes if you want to continue working on the
+patch::
 
-   hg qrefresh
+   hg import --no-commit mywork.patch
 
-This will update the patch to contain all of the changes you have made up to
-this point. If you have added or removed any file, use ``hg add`` or ``hg
-remove``, respectively, before running ``hg qrefresh``.
-
-Later on, we will explain :ref:`how to generate a patch <patch-generation>`.
-
-If you want to delete your changes irrevocably (either because they were
-committed, or they ended up uninteresting), use::
-
-   hg qpop mywork
-   hg qdelete mywork
 
 .. seealso::
-   For more advanced usage of mq, read the `mq chapter
-   <http://hgbook.red-bean.com/read/managing-change-with-mercurial-queues.html>`_
-   of `Mercurial: The Definitive Guide <http://hgbook.red-bean.com/>`_.
-
-   Also, regardless of your workflow, refer to the :ref:`FAQ <faq>` for
+   Refer to the :ref:`FAQ <faq>` for
    :ref:`more information on using Mercurial <hg-local-workflow>`.
-
-.. _issue tracker: http://bugs.python.org
-.. _mq: http://mercurial.selenic.com/wiki/MqExtension
 
 
 Preparation
@@ -123,19 +102,15 @@ command::
 
    ./python.exe Tools/scripts/patchcheck.py
 
-Assuming you are using the :ref:`mq approach <mq-workflow>` suggested earlier,
-first check that all your local changes have been recorded (using
-``hg qrefresh``), then type the following::
+Assuming you are using the :ref:`basic approach <workflow>` suggested earlier,
+just type the following::
 
-   hg qdiff > mywork.patch
+   hg diff > mywork.patch
 
 If you are using another approach, you probably need to find out the right
 invocation of ``hg diff`` for your purposes; see ``hg help diff`` and ``hg
-help revisions``. Just please make sure that you
-generate a **single, condensed** patch rather than a series of several changesets.
-
-Also, please make sure your patch is whitespace normalized. ``patchcheck``
-will check this for you.
+help revisions``. Just please make sure that you generate a
+**single, condensed** patch rather than a series of several changesets.
 
 
 Submitting
