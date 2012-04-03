@@ -131,7 +131,7 @@ As well as adding pretty-printing support for ``PyObject *``, the extension adds
     the python source.
 
 ``py-up`` and ``py-down``
-  The ``py-up`` and ``py-down`` commands are analagous to gdb's regular ``up``
+  The ``py-up`` and ``py-down`` commands are analogous to gdb's regular ``up``
   and ``down`` commands, but try to move at the level of CPython frames, rather
   than C frames.
 

@@ -475,7 +475,7 @@ Simply specify the path to the file or directory to add and run::
  hg add PATH
 
 If ``PATH`` is a directory, Mercurial will recursively add any files in that
-directory and its descendents.
+directory and its descendants.
 
 If you want Mercurial to figure out by itself which files should be added
 and/or removed, just run::
@@ -534,7 +534,7 @@ you feel like.
 
 .. note::
    If you do not like the default text editor Mercurial uses for
-   entering commmit messages, you may specify a different editor,
+   entering commit messages, you may specify a different editor,
    either by changing the ``EDITOR`` environment variable or by setting
    a Mercurial-specific editor in your global ``.hgrc`` with the ``editor``
    option in the ``[ui]`` section.
@@ -562,7 +562,7 @@ Running::
  hg status
 
 will list any pending changes in the working copy.  These changes will get
-commited to the local repository if you issue an ``hg commit`` without
+committed to the local repository if you issue an ``hg commit`` without
 specifying any path.
 
 Some

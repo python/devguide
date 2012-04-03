@@ -39,7 +39,7 @@ Checklist
 * Parser/pgen needs to be rerun to regenerate Include/graminit.h and
   Python/graminit.c. (make should handle this for you.)
 
-* Python/symbtable.c: This handles the symbol collection pass
+* Python/symtable.c: This handles the symbol collection pass
   that happens immediately before the compilation pass.
 
 * Python/compile.c: You will need to create or modify the
@@ -60,7 +60,7 @@ Checklist
 
 * Documentation must be written!
 
-* After everything's been checked in, you're likely to see a new
+* After everything has been checked in, you're likely to see a new
   change to Python/Python-ast.c.  This is because this
   (generated) file contains the hg version of the source from
   which it was generated.  There's no way to avoid this; you just
