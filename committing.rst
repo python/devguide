@@ -308,29 +308,26 @@ Porting Between Major Versions
 ''''''''''''''''''''''''''''''
 
 Let's say you have committed your changes as changeset ``a7df1a869e4a``
-in the 3.2 branch and now want to port it to 2.7.  This is simple.  First
-update your working copy to the 2.7 branch, then import the patch::
+in the 3.2 branch and now want to port it to 2.7.  This is simple using
+the "graft" command, which uses Mercurial's merge functionality to
+cherry-pick::
+
+   hg update 2.7
+   hg graft a7df1a869e4a
+   # Compile; run the test suite
+
+Graft always commits automatically, except in case of conflicts, when you
+have to resolve them and run ``hg graft --continue`` afterwards.
+
+Another method is using "export" and "import": this has the advantage that
+you can run the test suite before committing, but the disadvantage that
+in case of conflicts, you will only get ``.rej`` files, not inline merge
+markers. ::
 
    hg update 2.7
    hg export a7df1a869e4a | hg import --no-commit -
    # Compile; run the test suite
    hg commit
-
-You can also use the `transplant extension`_::
-
-   hg update 2.7
-   hg transplant a7df1a869e4a
-   # Compile; run the test suite
-
-If you often get failures porting patches this way, you should consider
-using the :ref:`mpatch <merge-patch>` utility.
-
-
-.. warning::
-   transplant always commits automatically. This breaks the
-   "run the test suite before committing" rule. We could advocate using
-   "hg qimport -r tip -P" afterwards but that would add another level of
-   complexity.
 
 
 Using several working copies
@@ -407,8 +404,6 @@ lines of development in the repository's :abbr:`DAG (directed acyclic graph)`.
 Therefore, ``hg merge`` might force you to review outstanding changesets by
 someone else that haven't been merged yet.
 
-
-.. _transplant extension: http://mercurial.selenic.com/wiki/TransplantExtension
 
 .. seealso::
    `Merging work
