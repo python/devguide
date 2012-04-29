@@ -289,13 +289,6 @@ properly.
   the Devguide, this page, and this section respectively.
 
 
-Reporting Issues About the Tracker
-----------------------------------
-The `meta tracker`_ is the tracker about the issue tracker. It is where you
-file issues against anything you come across when working with the issue
-tracker itself.
-
-
 .. _Doc: http://hg.python.org/cpython/file/default/Doc/
 .. _Grammar: http://hg.python.org/cpython/file/default/Grammar/
 .. _Lib: http://hg.python.org/cpython/file/default/Lib/
@@ -326,4 +319,3 @@ tracker itself.
 .. _Developer's guide: http://hg.python.org/devguide/
 .. _GSoC: http://code.google.com/soc/
 .. _issue tracker: http://bugs.python.org
-.. _meta tracker: http://psf.upfronthosting.co.za/roundup/meta/
