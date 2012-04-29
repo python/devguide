@@ -13,10 +13,8 @@ Python Developer's Guide
    documenting
    silencewarnings
    fixingissues
-   helptriage
-   devrole
+   tracker
    triaging
-   languishing
    communication
    coredev
    developers
@@ -89,10 +87,8 @@ Guide for contributing to Python:
     * :doc:`silencewarnings`
     * Fixing issues found by the :doc:`buildbots <buildbots>`
     * :doc:`fixingissues`
-    * :doc:`helptriage`
-* :doc:`devrole`
+* :ref:`tracker` and :ref:`helptriage`
     * :doc:`triaging`
-    * :doc:`languishing`
 * :doc:`communication`
 * :doc:`coredev`
     * :doc:`committing`
