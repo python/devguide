@@ -26,17 +26,17 @@ is for questions concerning development *with* Python.
 .. _freenode: http://freenode.net/
 
 
-File a Bug
-----------
+Core Mentorship
+---------------
 
-If you strongly suspect you have stumbled on a bug (be it in the build
-process, in the test suite, or in other areas), then open an issue on the
-`issue tracker`_.  As with every bug report it is strongly advised that
-you detail which conditions triggered it (including the OS name and version,
-and what you were trying to do), as well as the exact error message you
-encountered.
+If you are interested in improving Python and contributing to its development,
+but don’t yet feel entirely comfortable with the public channels mentioned
+above, `Python Mentors`_ are here to help you.  Python is fortunate to have a
+community of volunteer core developers willing to mentor anyone wishing to
+contribute code, work on bug fixes or improve documentation.  Everyone is
+welcomed and encouraged to contribute.
 
-.. _issue tracker: http://bugs.python.org
+.. _Python Mentors: http://pythonmentors.com
 
 
 Mailing Lists
@@ -56,14 +56,14 @@ questions involving the development *of* Python, **not** for development
 .. _python-dev: http://mail.python.org/mailman/listinfo/python-dev
 
 
-Core Mentorship
----------------
+File a Bug
+----------
 
-If you are interested in improving Python and contributing to its development,
-but don’t yet feel entirely comfortable with the public channels mentioned
-above, `Python Mentors`_ are here to help you.  Python is fortunate to have a
-community of volunteer core developers willing to mentor anyone wishing to
-contribute code, work on bug fixes or improve documentation.  Everyone is
-welcomed and encouraged to contribute.
+If you strongly suspect you have stumbled on a bug (be it in the build
+process, in the test suite, or in other areas), then open an issue on the
+`issue tracker`_.  As with every bug report it is strongly advised that
+you detail which conditions triggered it (including the OS name and version,
+and what you were trying to do), as well as the exact error message you
+encountered.
 
-.. _Python Mentors: http://pythonmentors.com
+.. _issue tracker: http://bugs.python.org
