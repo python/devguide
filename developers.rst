@@ -24,6 +24,11 @@ transliteration too.
 Permissions History
 -------------------
 
+- Richard Oudkerk was given push privileges on Apr 29 2012 by Antoine Pitrou
+  on recommendation by Charles-François Natali and Jesse Noller, for various
+  contributions to multiprocessing (and original authorship of
+  multiprocessing's predecessor, the processing package).
+
 - Andrew Svetlov was given push privileges on Mar 13 2012 by MvL at
   the PyCon sprint.
 
