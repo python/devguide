@@ -135,7 +135,7 @@ issues with a patch.
 .. _devrole:
 
 Gaining the "Developer" Role on the Issue Tracker
--------------------------------------------------
+=================================================
 
 When you have consistently shown the ability to properly
 help triage issues without guidance, you may request that you
