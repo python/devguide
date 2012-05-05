@@ -4,6 +4,7 @@ Running & Writing Tests
 =======================
 
 .. note::
+
     This document assumes you are working from an
     :ref:`in-development <indevbranch>` checkout of Python. If you
     are not then some things presented here may not work as they may depend
