@@ -86,7 +86,7 @@ copy                  alexandre.vassalotti
 copyreg               alexandre.vassalotti
 cProfile
 crypt                 jafo*
-csv                   skip.montanaro
+csv                   skip.montanaro (inactive)
 ctypes                theller (inactive), belopolsky, amaury.forgeotdarc,
                       meador.inge
 curses
