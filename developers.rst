@@ -24,6 +24,9 @@ transliteration too.
 Permissions History
 -------------------
 
+- Hynek Schlawack was given push privileges on May 14 2012 by Antoine Pitrou
+  for general contributions.
+
 - Richard Oudkerk was given push privileges on Apr 29 2012 by Antoine Pitrou
   on recommendation by Charles-François Natali and Jesse Noller, for various
   contributions to multiprocessing (and original authorship of
