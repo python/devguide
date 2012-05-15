@@ -157,24 +157,32 @@ still build properly).
 Windows
 '''''''
 
-For Microsoft Visual Studio 2008 (also named Visual C++ 9), the ``PCbuild``
-directory contains the build files (for older versions of Visual Studio, see
-the ``PC`` directory).  The full version of Visual Studio is not necessary
-for common tasks with 32-bit builds; the gratis C++ version from
-https://www.microsoft.com/visualstudio/en-us/products/2008-editions/express
-is sufficient. Its limitations are given at
+**Python 3.3** uses Microsoft Visual Studio 2010, which is available at
+http://www.microsoft.com/visualstudio/en-us/products/2010-editions/visual-cpp-express.
+
+All versions previous to 3.3 use Microsoft Visual Studio 2008, available at
+https://www.microsoft.com/visualstudio/en-us/products/2008-editions/express.
+
+Regardless of Visual Studio version, the ``PCbuild`` directory of a source
+checkout contains the build files for the Python version you are building.
+The full version of Visual Studio is not necessary for common tasks with
+32-bit builds; the gratis C++ Express versions linked above are sufficient. 
+The limitations of the Express versions are given at
 http://msdn.microsoft.com/en-us/library/hs24szh9%28v=VS.90%29.aspx .
 
 To build from the Visual Studio GUI, open pcbuild.sln to load the project
-files and press F7. Make sure you have chosen the "Debug" build first.
+files and choose the Build Solution option from the Build menu, often
+associated with the F7 key. Make sure you have chosen the "Debug" option from
+the build configuration drop-down first.
 
 Once built you might want to set Python as a startup project. Pressing F5 in
-Visual Studio will launch the interpreter.
+Visual Studio, or choosing Start Debugging from the Debug menu, will launch
+the interpreter.
 
 If you want to launch the compiled interpreter from the command-line, the
 path varies according to the build.  For a 32-bit build in debug mode, you
 have to invoke ``PCBuild\python_d.exe``, for a 64-bit build in debug mode,
-``PCBuild\AMD64\python_d.exe``.  If you are compiling in release mode (which
+``PCBuild\amd64\python_d.exe``.  If you are compiling in release mode (which
 you shouldn't, in general), replace ``python_d.exe`` with ``python.exe``.
 
 
