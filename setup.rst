@@ -160,7 +160,7 @@ Windows
 **Python 3.3** uses Microsoft Visual Studio 2010, which is available at
 http://www.microsoft.com/visualstudio/en-us/products/2010-editions/visual-cpp-express.
 
-All versions previous to 3.3 use Microsoft Visual Studio 2008, available at
+Most versions previous to 3.3 use Microsoft Visual Studio 2008, available at
 https://www.microsoft.com/visualstudio/en-us/products/2008-editions/express.
 
 Regardless of Visual Studio version, the ``PCbuild`` directory of a source
