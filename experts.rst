@@ -315,7 +315,7 @@ networking          giampaolo.rodola
 packaging           tarek, lemburg, alexis, eric.araujo
 py3 transition      benjamin.peterson
 release management  tarek, lemburg, benjamin.peterson, barry, loewis,
-                    gvanrossum, anthonybaxter, eric.araujo
+                    gvanrossum, anthonybaxter, eric.araujo, ned.deily
 str.format          eric.smith
 testing             michael.foord, pitrou, ezio.melotti
 test coverage       ncoghlan, giampaolo.rodola
