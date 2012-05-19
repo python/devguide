@@ -48,7 +48,8 @@ Here is a list of the basic steps necessary to get set up and make a patch:
    and :menuselection:`Build --> Build Solution`.
 3. :doc:`Run the tests <runtests>` with ``./python -m test -j3`` (use
    :file:`./python.exe` on :ref:`most <python.exe>` Mac OS X systems and
-   :file:`PCbuild\\python_d.exe` on Windows).
+   :file:`PCbuild\\python_d.exe` on Windows; replace ``test`` with
+   ``test.regrtest`` for 2.7).
 4. Make the :doc:`patch <patch>`.
 5. Submit it to the `issue tracker`_.
 
