@@ -130,6 +130,7 @@ imp
 importlib             brett.cannon
 inspect
 io                    pitrou, benjamin.peterson, stutzbach
+ipaddress             pmoody, ncoghlan
 itertools             rhettinger
 json                  bob.ippolito (inactive), ezio.melotti, rhettinger
 keyword
