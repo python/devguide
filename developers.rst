@@ -24,6 +24,10 @@ transliteration too.
 Permissions History
 -------------------
 
+- Peter Moody was given push privileges on May 20 2012 by Antoine Pitrou
+  for authorship and maintenance of the ipaddress module (accepted in PEP
+  3144 by Nick Coghlan).
+
 - Hynek Schlawack was given push privileges on May 14 2012 by Antoine Pitrou
   for general contributions.
 
