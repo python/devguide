@@ -218,7 +218,7 @@ tarfile               lars.gustaebel
 telnetlib
 tempfile              georg.brandl, ncoghlan
 termios
-test
+test                  ezio.melotti
 textwrap              georg.brandl
 threading             pitrou
 time                  belopolsky
@@ -303,7 +303,7 @@ bytecode            pitrou, georg.brandl
 context managers    ncoghlan
 data formats        mark.dickinson, georg.brandl
 database            lemburg
-devguide            ncoghlan, eric.araujo
+devguide            ncoghlan, eric.araujo, ezio.melotti
 documentation       georg.brandl, ezio.melotti, eric.araujo
 GUI
 i18n                lemburg, eric.araujo
@@ -324,5 +324,5 @@ test coverage       ncoghlan, giampaolo.rodola
 threads             pitrou
 time and dates      lemburg, belopolsky
 unicode             lemburg, ezio.melotti, haypo, benjamin.peterson
-version control     eric.araujo, georg.brandl
+version control     eric.araujo, georg.brandl, ezio.melotti
 ==================  ===========
