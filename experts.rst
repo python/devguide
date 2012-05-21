@@ -299,7 +299,7 @@ autoconf/makefiles
 bsd
 bug tracker         ezio.melotti
 buildbots
-bytecode            pitrou
+bytecode            pitrou, georg.brandl
 context managers    ncoghlan
 data formats        mark.dickinson, georg.brandl
 database            lemburg
@@ -316,12 +316,13 @@ networking          giampaolo.rodola
 packaging           tarek, lemburg, alexis, eric.araujo
 py3 transition      benjamin.peterson
 release management  tarek, lemburg, benjamin.peterson, barry, loewis,
-                    gvanrossum, anthonybaxter, eric.araujo, ned.deily
+                    gvanrossum, anthonybaxter, eric.araujo, ned.deily,
+                    georg.brandl
 str.format          eric.smith
 testing             michael.foord, pitrou, ezio.melotti
 test coverage       ncoghlan, giampaolo.rodola
 threads             pitrou
 time and dates      lemburg, belopolsky
 unicode             lemburg, ezio.melotti, haypo, benjamin.peterson
-version control     eric.araujo
+version control     eric.araujo, georg.brandl
 ==================  ===========
