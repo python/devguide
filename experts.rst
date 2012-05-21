@@ -191,7 +191,7 @@ sched                 giampaolo.rodola
 select
 shelve
 shlex
-shutil                tarek
+shutil                tarek, hynek
 signal
 site
 smtpd                 giampaolo.rodola
