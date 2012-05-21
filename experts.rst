@@ -132,7 +132,7 @@ inspect
 io                    pitrou, benjamin.peterson, stutzbach
 ipaddress             pmoody, ncoghlan
 itertools             rhettinger
-json                  bob.ippolito (inactive), ezio.melotti, rhettinger
+json                  bob.ippolito (inactive), ezio.melotti, rhettinger, pitrou
 keyword
 lib2to3               benjamin.peterson
 linecache
@@ -197,7 +197,7 @@ site
 smtpd                 giampaolo.rodola
 smtplib
 sndhdr
-socket
+socket                pitrou
 socketserver
 spwd
 sqlite3               ghaering
@@ -298,7 +298,7 @@ ast/compiler        ncoghlan, benjamin.peterson, brett.cannon, georg.brandl
 autoconf/makefiles
 bsd
 bug tracker         ezio.melotti
-buildbots
+buildbots           pitrou
 bytecode            pitrou, georg.brandl
 context managers    ncoghlan
 data formats        mark.dickinson, georg.brandl
@@ -312,7 +312,7 @@ io                  pitrou, benjamin.peterson, stutzbach
 locale              lemburg, loewis
 mathematics         mark.dickinson, eric.smith, lemburg, stutzbach
 memory management   tim_one, lemburg
-networking          giampaolo.rodola
+networking          giampaolo.rodola, pitrou
 packaging           tarek, lemburg, alexis, eric.araujo
 py3 transition      benjamin.peterson
 release management  tarek, lemburg, benjamin.peterson, barry, loewis,
@@ -323,6 +323,6 @@ testing             michael.foord, pitrou, ezio.melotti
 test coverage       ncoghlan, giampaolo.rodola
 threads             pitrou
 time and dates      lemburg, belopolsky
-unicode             lemburg, ezio.melotti, haypo, benjamin.peterson
+unicode             lemburg, ezio.melotti, haypo, benjamin.peterson, pitrou
 version control     eric.araujo, georg.brandl, ezio.melotti
 ==================  ===========
