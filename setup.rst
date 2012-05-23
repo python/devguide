@@ -171,9 +171,10 @@ The limitations of the Express versions are given at
 http://msdn.microsoft.com/en-us/library/hs24szh9%28v=VS.90%29.aspx .
 
 To build from the Visual Studio GUI, open pcbuild.sln to load the project
-files and choose the Build Solution option from the Build menu, often
+files and choose the Build Solution option from either the Build or Debug menu
+(depending on your Visual Studio version), which is often
 associated with the F7 key. Make sure you have chosen the "Debug" option from
-the build configuration drop-down first.
+the "Solution Configurations" drop-down on the toolbar first.
 
 Once built you might want to set Python as a startup project. Pressing F5 in
 Visual Studio, or choosing Start Debugging from the Debug menu, will launch
