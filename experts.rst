@@ -280,7 +280,7 @@ Cygwin                jlt63, stutzbach
 FreeBSD
 HP-UX
 Linux
-Mac OS X              ronaldoussoren, ned.deily
+Mac OS X              ronaldoussoren, ned.deily, hynek
 NetBSD1
 OS2/EMX               aimacintyre
 Solaris/OpenIndiana   jcea
@@ -308,7 +308,7 @@ documentation       georg.brandl, ezio.melotti, eric.araujo
 GUI
 i18n                lemburg, eric.araujo
 import machinery    brett.cannon, ncoghlan
-io                  pitrou, benjamin.peterson, stutzbach
+io                  pitrou, benjamin.peterson, stutzbach, hynek
 locale              lemburg, loewis
 mathematics         mark.dickinson, eric.smith, lemburg, stutzbach
 memory management   tim_one, lemburg
