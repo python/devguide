@@ -180,12 +180,13 @@ someone to the nosy list if you think the issue should be brought to their
 attention. Use the :ref:`experts` to know who wants to be added to the nosy
 list for issues targeting specific areas.
 
-If you have JavaScript enabled and permission to edit the nosy list, you can
-use the ``[+]`` button to add yourself to the nosy (remember to click on
+
+If you are logged in and have JavaScript enabled, you can use the ``[+]``
+button to add yourself to the nosy list (remember to click on
 "Submit Changes" afterwards).  Note that you are added to the nosy
 automatically when you submit a message.
-The nosy list also has an autocomplete that lets you search from the list of
-developers and from the :ref:`experts`.  The search is case-insensitive and
+The nosy list also has an autocomplete that lets you search from the lists of
+developers and :ref:`experts`.  The search is case-insensitive and
 works for real names, modules, interest areas, etc., and only adds the
 username(s) to the nosy once an entry is selected.
 
