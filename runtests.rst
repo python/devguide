@@ -72,7 +72,7 @@ above.
 
 
 Unexpected Skips
-----------------
+^^^^^^^^^^^^^^^^
 
 Sometimes when running the test suite, you will see "unexpected skips"
 reported. These represent cases where an entire test module has been
