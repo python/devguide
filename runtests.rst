@@ -71,6 +71,24 @@ you want the most thorough tests you should use the strenuous approach shown
 above.
 
 
+Unexpected Skips
+----------------
+
+Sometimes when running the test suite, you will see "unexpected skips"
+reported. These represent cases where an entire test module has been
+skipped, but the test suite normally expects the tests in that module to
+be executed on that platform.
+
+Often, the cause is that an optional module hasn't been built due to missing
+build dependencies. In these cases, the missing module reported when the test
+is skipped should match one of the modules reported as failing to build when
+:ref:`compiling`.
+
+In other cases, the skip message should provide enough detail to help figure
+out and resolve the cause of the problem (for example, the default security
+settings on some platforms will disallow some tests)
+
+
 Writing
 -------
 
