@@ -885,3 +885,14 @@ Autoconf.  At the moment, this reads: ``version_required(2.65)``
 
 If the system copy of Autoconf does not match this version, you will need to
 install your own copy of Autoconf.
+
+
+How do I update my auto-load-safe-path to allow test_gdb to run?
+----------------------------------------------------------------
+
+If ``test_gdb`` is being skipped with an "auto-loading has been declined"
+message, then it is necessary to identify any Python build directories as
+auto-load safe. One way to achieve this is to add a line like the following
+to ``~/.gdbinit`` (edit the specific list of paths as appropriate)::
+    
+    add-auto-load-safe-path ~/devel/py3k:~/devel/py32:~/devel/py27
