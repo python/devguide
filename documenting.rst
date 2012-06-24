@@ -1181,11 +1181,13 @@ units as well as normal text:
 .. describe:: versionadded
 
    This directive documents the version of Python which added the described
-   feature to the library or C API. When this applies to an entire module, it
-   should be placed at the top of the module section before any prose.
+   feature, or a part of it, to the library or C API.  When this applies to an
+   entire module, it should be placed at the top of the module section before
+   any prose.
 
-   The first argument must be given and is the version in question; you can add
-   a second argument consisting of a *brief* explanation of the change.
+   The first argument must be given and is the version in question; if the
+   addition is only part of the described API element, you should add a second
+   argument consisting of a *brief* explanation of the change.
 
    Example::
 
@@ -1198,7 +1200,7 @@ units as well as normal text:
 .. describe:: versionchanged
 
    Similar to ``versionadded``, but describes when and what changed in the named
-   feature in some way (new parameters, changed side effects, etc.).
+   feature in some way (changed side effects, platform support, etc.).
 
 --------------
 
