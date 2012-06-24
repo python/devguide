@@ -1200,7 +1200,8 @@ units as well as normal text:
 .. describe:: versionchanged
 
    Similar to ``versionadded``, but describes when and what changed in the named
-   feature in some way (changed side effects, platform support, etc.).
+   feature in some way (changed side effects, platform support, etc.).  This one
+   *must* have the second argument (explanation of the change).
 
 --------------
 
