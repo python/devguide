@@ -43,8 +43,38 @@ a memory aid to help with remembering the various elements that can go into
 making a complete patch.
 
 
-Commit Messages and NEWS Entries
---------------------------------
+NEWS Entries
+------------
+
+Almost all changes made to the code base deserve an entry in ``Misc/NEWS``.
+The ``What's New in Python`` document is the place for more subjective
+judgments of the "importance" of changes. There are two notable exceptions
+to this general principle, and they both relate to changes that *already*
+have a NEWS entry, and have not yet been included in any formal release
+(including alpha and beta releases). These exceptions are:
+
+* If a change is reverted prior to release, then the corresponding entry
+  is simply removed. Otherwise, a new entry must be added noting that the
+  change has been reverted (e.g. when a feature is released in an alpha and
+  then cut prior to the first beta)
+
+* If a change is a fix (or other adjustment) to an earlier unreleased change
+  and the original NEWS entry remains valid, then no additional entry is
+  needed.
+
+New NEWS entries are customarily added at or near the top of their
+respective sections, so that entries within a section appear in approximate
+order from newest to oldest.  However, this is customary and not a
+requirement.
+
+A nice trick to make Mercurial’s automatic file merge work more smoothly
+is to put a new entry after the first or first two entries rather than
+at the very top.  This way if you commit, pull new changesets and merge,
+the merge will succeed automatically.
+
+
+Commit Messages
+---------------
 
 Every commit has a commit message to document why a change was made and to
 communicate that reason to other core developers. Python core developers have
@@ -66,22 +96,6 @@ a new paragraph(s) can be added to explain in proper depth what has happened
 (detail should be good enough that a core developer reading the commit message
 understands the justification for the change).  Also, if a non-core developer
 contributed to the resolution, it is good practice to credit them.
-
-Almost all changes made to the code base deserve an entry in ``Misc/NEWS``.
-The ``What's New in Python`` document is the place for more subjective
-judgments of the "importance" of changes. There are two notable exceptions
-to this general principle, and they both relate to changes that *already*
-have a NEWS entry, and have not yet been included in any formal release
-(including alpha and beta releases). These exceptions are:
-
-* If a change is reverted prior to release, then the corresponding entry
-  is simply removed. Otherwise, a new entry must be added noting that the
-  change has been reverted (e.g. when a feature is released in an alpha and
-  then cut prior to the first beta)
-
-* If a change is a fix (or other adjustment) to an earlier unreleased change
-  and the original NEWS entry remains valid, then no additional entry is
-  needed.
 
 Mercurial hooks
 '''''''''''''''
