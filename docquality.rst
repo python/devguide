@@ -15,8 +15,8 @@ documentation (which allows you to see how your changes will look along with
 validating that your new markup is correct).
 
 The current in-development version of the documentation can be viewed at
-http://docs.python.org/dev/. This version is regenerated from source
-once a day.
+http://docs.python.org/dev/. This version is regenerated from source once
+a day.
 
 If you would like a technical documentation style guide, the `Apple
 Publications Style Guide
