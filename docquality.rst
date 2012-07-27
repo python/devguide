@@ -69,8 +69,14 @@ makes it harder to break the work up for multiple people to help with.
 Helping with the Developer's Guide
 ----------------------------------
 
-This developer guide lives in a `separate source code repository`_, but is
-otherwise managed using the same process as is used for the main Python
-documentation.
+The Developer's Guide uses the same process as the main Python
+documentation, except for some small differences.
+The source lives in a `separate repository`_. To build and view the
+documentation, install `Sphinx`_ and issue the following command: ::
 
-.. _separate source code repository: http://hg.python.org/devguide
+   make html
+
+Changes to the documentation are published immediately using an update hook.
+
+.. _separate repository: http://hg.python.org/devguide
+.. _Sphinx: http://sphinx.pocoo.org/
