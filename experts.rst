@@ -149,7 +149,7 @@ mmap
 modulefinder          theller (inactive), jvr
 msilib                loewis
 msvcrt
-multiprocessing       jnoller
+multiprocessing       jnoller, sbt*
 netrc
 nis
 nntplib               pitrou
