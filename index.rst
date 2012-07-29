@@ -163,7 +163,7 @@ Resources
     * `Firefox search engine plug-in`_
 * `Buildbot status`_
 * Source code
-    * `Browse online <http://hg.python.org/cpython/>`_
+    * `Browse online <http://hg.python.org/cpython/file/default/>`_
     * `Snapshot of py3k <http://hg.python.org/cpython/archive/tip.tar.bz2>`_
     * `Daily OS X installer <http://www.python.org/dev/daily-dmg/>`_
 * Tool support
