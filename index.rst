@@ -165,7 +165,7 @@ Resources
 * Source code
     * `Browse online <http://hg.python.org/cpython/file/default/>`_
     * `Snapshot of py3k <http://hg.python.org/cpython/archive/default.tar.bz2>`_
-    * `Daily OS X installer <http://www.python.org/dev/daily-dmg/>`_
+    * `Daily OS X installer <http://buildbot.python.org/daily-dmg/>`_
 * Tool support
     * :doc:`emacs`
     * :doc:`gdb`
