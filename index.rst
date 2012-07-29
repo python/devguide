@@ -164,7 +164,7 @@ Resources
 * `Buildbot status`_
 * Source code
     * `Browse online <http://hg.python.org/cpython/file/default/>`_
-    * `Snapshot of py3k <http://hg.python.org/cpython/archive/tip.tar.bz2>`_
+    * `Snapshot of py3k <http://hg.python.org/cpython/archive/default.tar.bz2>`_
     * `Daily OS X installer <http://www.python.org/dev/daily-dmg/>`_
 * Tool support
     * :doc:`emacs`
@@ -182,7 +182,7 @@ Resources
 
 .. _Buildbot status: http://python.org/dev/buildbot/
 .. _Firefox search engine plug-in: http://www.python.org/dev/searchplugin/
-.. _Misc directory: http://hg.python.org/cpython/file/tip/Misc
+.. _Misc directory: http://hg.python.org/cpython/file/default/Misc
 .. _PEPs: http://www.python.org/dev/peps
 .. _python.org maintenance: http://python.org/dev/pydotorg/
 .. _Python Mentors: http://pythonmentors.com/
