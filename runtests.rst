@@ -18,6 +18,11 @@ from the root directory of your checkout (after you have built Python)::
 
     ./python -m test
 
+If you are using Python 2.7, then use the following instead as the basis
+for the commands in this section::
+
+    ./python -m test.regrtest
+
 If you don't have easy access to a command line, you can run the test suite from
 a Python or IDLE shell::
 
