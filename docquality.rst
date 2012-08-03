@@ -76,7 +76,8 @@ documentation, install `Sphinx`_ and issue the following command: ::
 
    make html
 
-Changes to the documentation are published immediately using an update hook.
+Changes to the documentation are normally published within a day on a
+schedule that may be different from the main documentation.
 
 .. _separate repository: http://hg.python.org/devguide
 .. _Sphinx: http://sphinx.pocoo.org/
