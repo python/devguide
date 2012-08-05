@@ -87,6 +87,33 @@ Depending on what you intend to work on, you might need to install these
 additional requirements so that the compiled interpreter supports the
 desired features.
 
+For Windows systems, all the necessary components should be included in the
+CPython checkout.
+
+For UNIX based systems, we try to use system libraries whenever available.
+This means optional components will only build if the relevant system headers
+are available. The best way to obtain the appropriate headers will vary by
+distribution, but the appropriate commands for some popular distributions
+are below.
+
+Fedora, Red Hat Enterprise Linux and other ``yum`` based systems::
+
+   $ sudo yum install yum-utils
+   $ sudo yum-builddep python3
+
+Debian, Ubuntu and other ``apt`` based systems::
+
+   $ sudo apt-get build-dep python3
+
+There will sometimes be optional modules added for a new release which
+won't yet be identified in the OS level build dependencies. In those cases,
+just ask for assistance on the core-mentorship list. If working on bug
+fixes for Python 2.7, use ``python`` in place of ``python3`` in the above
+commands.
+
+Explaining how to build optional dependencies on a UNIX based system without
+root access is beyond the scope of this guide.
+
 .. _clang: http://clang.llvm.org/
 
 .. note:: While you need a C compiler to build CPython, you don't need any
