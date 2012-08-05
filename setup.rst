@@ -87,9 +87,6 @@ Depending on what you intend to work on, you might need to install these
 additional requirements so that the compiled interpreter supports the
 desired features.
 
-For Windows systems, all the necessary components should be included in the
-CPython checkout.
-
 For UNIX based systems, we try to use system libraries whenever available.
 This means optional components will only build if the relevant system headers
 are available. The best way to obtain the appropriate headers will vary by
