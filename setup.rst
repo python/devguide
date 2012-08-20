@@ -54,6 +54,8 @@ changes to Python code will be picked up by the interpreter for immediate
 use and testing.  (If you change C code, you will need to recompile the
 affected files as described below.)
 
+Patches for the documentation can be made from the same repository; see
+:ref:`documenting`.
 
 .. _compiling:
 
@@ -232,7 +234,7 @@ every rule.
 
 ``Doc``
      The official documentation. This is what http://docs.python.org/ uses.
-     To build the docs, see ``Doc/README.txt``.
+     See also :ref:`building-doc`.
 
 ``Grammar``
      Contains the :abbr:`EBNF (Extended Backus-Naur Form)` grammar file for
