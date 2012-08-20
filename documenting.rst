@@ -12,6 +12,10 @@ This document describes the style guide for our documentation as well as the
 custom reStructuredText markup introduced by Sphinx to support Python
 documentation and how it should be used.
 
+The documentation in HTML, PDF or EPUB format is generated from text files
+written using the :ref:`reStructuredText format <markup>` and contained in the
+:ref:`CPython Mercurial repository <setup>`.
+
 .. _reStructuredText: http://docutils.sf.net/rst.html
 .. _docutils: http://docutils.sf.net/
 .. _Sphinx: http://sphinx.pocoo.org/
@@ -1623,6 +1627,7 @@ directories renamed as follows:
 
 .. XXX more (index-generating, production lists, ...)
 
+.. _building-doc:
 
 Building the documentation
 ==========================
@@ -1638,7 +1643,8 @@ Using make
 ----------
 
 Luckily, a Makefile has been prepared so that on Unix, provided you have
-installed Python and Subversion, you can just run ::
+installed Python and Subversion, you can just go to your :ref:`clone of the
+CPython Mercurial repository <setup>` and run ::
 
    cd Doc
    make html
@@ -1679,7 +1685,8 @@ Available make targets are:
    :file:`tools/sphinxext/pyspecific.py` -- pydoc needs these to show topic and
    keyword help.
 
-A "make update" updates the Subversion checkouts in :file:`tools/`.
+A "make update" updates the Subversion checkouts in :file:`tools/`.  (These
+Subversion checkouts are ignored by the main Mercurial repository.)
 
 
 Without make
@@ -1687,7 +1694,7 @@ Without make
 
 You'll need to install the Sphinx package, either by checking it out via ::
 
-   svn co http://svn.python.org/projects/external/Sphinx-0.6.5/sphinx tools/sphinx
+   svn co http://svn.python.org/projects/external/Sphinx-1.0.7/sphinx tools/sphinx
 
 or by installing it from PyPI.
 
