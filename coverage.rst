@@ -128,7 +128,7 @@ executed::
 But one of the strengths of coverage.py is its HTML-based reports which let
 you visually see what lines of code were not tested::
 
-    ./python -m coverage html -i --omit="*/test/*,*/tests/*"
+    ./python -m coverage html -i --omit="*/test/*,*/tests/*,*/Tools/*"
 
 This will generate an HTML report in a directory named ``htmlcov`` which
 ignores any errors that may arise and
