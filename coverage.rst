@@ -128,13 +128,13 @@ executed::
 But one of the strengths of coverage.py is its HTML-based reports which let
 you visually see what lines of code were not tested::
 
-    ./python -m coverage html -i --omit="*/test/*,*/tests/*,*/Tools/*"
+    ./python -m coverage html -i --omit="*/test/*,*/tests/*,Tools/*"
 
 This will generate an HTML report in a directory named ``htmlcov`` which
-ignores any errors that may arise and
-ignores test modules. You can then open the ``htmlcov/index.html`` file
-in a web browser to view the coverage results along with pages that visibly
-show what lines of code were or were not executed.
+ignores any errors that may arise and ignores modules for which test coverage is
+unimportant (e.g. tests). You can then open the ``htmlcov/index.html`` file in a
+web browser to view the coverage results along with pages that visibly show what
+lines of code were or were not executed.
 
 
 .. _branch_coverage:
