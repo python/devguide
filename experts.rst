@@ -301,6 +301,7 @@ bug tracker         ezio.melotti
 buildbots           pitrou
 bytecode            pitrou, georg.brandl
 context managers    ncoghlan
+coverity scan       christian.heimes, brett.cannon
 data formats        mark.dickinson, georg.brandl
 database            lemburg
 devguide            ncoghlan, eric.araujo, ezio.melotti
