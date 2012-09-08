@@ -150,9 +150,8 @@ developers to work on them.  Some major example that may be of interest are:
 Resources
 ---------
 
-* Anyone can clone this guide from http://hg.python.org/devguide/.  Core
-  developers should use ssh://hg@hg.python.org/devguide instead, so that they
-  can push back their edits to the server.
+* Anyone can clone the sources for this guide.  See
+  :ref:`helping-with-the-developers-guide`.
 * Coding style guides
     * :PEP:`7` (Style Guide for C Code)
     * :PEP:`8` (Style Guide for Python Code)
