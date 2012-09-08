@@ -140,6 +140,30 @@ workflow.
 .. _Hg Init\: a Mercurial tutorial: http://hginit.com/
 
 
+I already know how to use Git, can I use that instead?
+------------------------------------------------------
+
+While the main workflow for core developers requires Mercurial, if
+you just want to generate patches with ``git diff`` and post them to the
+`issue tracker`_, Petri Lehtinen maintains a `git mirror`_ of the main
+`CPython repository`_. To create a local clone based on this mirror rather
+than the main repository::
+
+    git clone git://github.com/akheron/cpython
+
+The mirror's master branch tracks the main repository's default branch,
+while the maintenance branch names (``2.7``, ``3.2``, etc) are mapped
+directly.
+
+.. _git mirror: http://github.com/akheron/cpython
+.. _CPython repository: http://hg.python.org/cpython
+
+Please only use this approach if you're already an experienced Git user and
+don't require assistance with the specifics of version control commands. All
+other parts of this developer's guide assume the use of Mercurial for local
+version control.
+
+
 What do I need to use Mercurial?
 -------------------------------------------------------------------------------
 
