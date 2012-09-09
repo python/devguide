@@ -96,7 +96,7 @@ rights to the main source control repository.
 On the `issue tracker`_, most core developers will have the Python logo
 appear next to their name.
 
-.. _full list of developers: http://www.python.org/dev/committers
+.. _full list of developers: http://hg.python.org/committers.txt
 
 
 What standards of behaviour are expected in these communication channels?
