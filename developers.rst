@@ -24,6 +24,8 @@ transliteration too.
 Permissions History
 -------------------
 
+- Daniel Holth was given push privileges on Sep 9 2012 by GFB, for PEP editing.
+
 - Peter Moody was given push privileges on May 20 2012 by Antoine Pitrou
   for authorship and maintenance of the ipaddress module (accepted in PEP
   3144 by Nick Coghlan).
