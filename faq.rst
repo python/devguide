@@ -304,6 +304,12 @@ Simply use ``hg update`` to checkout another branch in the current directory::
 
 Adding the ``-v`` option to ``hg update`` will list all updated files.
 
+Note that, due to some previously built executables being used as a part of
+the build process, you may sometimes run into issues when attempting to
+switch between Python 2.x and Python 3.x branches. In these cases, it is
+best to run a ``make distclean``to ensure that all previously built files
+are removed.
+
 
 I want to keep a separate working copy per development branch, is it possible?
 ------------------------------------------------------------------------------
