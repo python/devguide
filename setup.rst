@@ -192,15 +192,22 @@ https://www.microsoft.com/visualstudio/en-us/products/2008-editions/express.
 Regardless of Visual Studio version, the ``PCbuild`` directory of a source
 checkout contains the build files for the Python version you are building.
 The full version of Visual Studio is not necessary for common tasks with
-32-bit builds; the gratis C++ Express versions linked above are sufficient. 
+32-bit builds; the gratis C++ Express versions linked above are sufficient.
 The limitations of the Express versions are given at
 http://msdn.microsoft.com/en-us/library/hs24szh9%28v=VS.90%29.aspx .
 
-To build from the Visual Studio GUI, open pcbuild.sln to load the project
-files and choose the Build Solution option from either the Build or Debug menu
-(depending on your Visual Studio version), which is often
-associated with the F7 key. Make sure you have chosen the "Debug" option from
-the "Solution Configurations" drop-down on the toolbar first.
+To build from the Visual Studio GUI, open the ``pcbuild.sln`` solution file
+with Visual Studio.  Choose the :menuselection:`Build Solution` option
+under the :menuselection:`Build` or :menuselection:`Debug` menu
+(depending on your version of Visual Studio).  Be sure that "Debug" was
+chosen as the active solution configuration (e.g. under
+:menuselection:`Build --> Configuration Manager...`).
+
+When building you may see a number of build errors related to missing
+files or directories.  These do not necessarily mean that Python failed
+to build.  If you prefer, you can exclude the offending projects from
+the build process by unchecking them inside the
+:menuselection:`Build --> Configuration Manager...` settings.
 
 Once built you might want to set Python as a startup project. Pressing F5 in
 Visual Studio, or choosing Start Debugging from the Debug menu, will launch
