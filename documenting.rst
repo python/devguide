@@ -203,12 +203,6 @@ to understanding and can result in even more ways to misread or misinterpret the
 text.  Long descriptions full of corner cases and caveats can create the
 impression that a function is more complex or harder to use than it actually is.
 
-The documentation for :func:`super` is an example of where a good deal of
-information was condensed into a few short paragraphs.  Discussion of
-:func:`super` could have filled a chapter in a book, but it is often easier to
-grasp a terse description than a lengthy narrative.
-
-
 Code Examples
 -------------
 
