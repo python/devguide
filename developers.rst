@@ -24,6 +24,9 @@ transliteration too.
 Permissions History
 -------------------
 
+- Chris Jerdonek was given push privileges on Sep 24 2012 by GFB, for general
+  contributions, on recommendation by Ezio Melotti.
+
 - Daniel Holth was given push privileges on Sep 9 2012 by GFB, for PEP editing.
 
 - Eric Snow was given push privileges on Sep 5 2012 by Antoine Pitrou for
