@@ -48,6 +48,8 @@ Issue Tracker
 
 If you did not gain the Developer role in the `issue tracker`_ before gaining
 commit privileges, please say so. This will allow issues to be assigned to you.
+A tracker admin should also flip your "is committer" bit in the tracker's
+account screen.
 
 It is expected that on the issue tracker you have a username in the form of
 "first_name.last_name". If your initial issue tracker username is not of this
@@ -60,9 +62,8 @@ SSH
 
 You need to generate an SSH 2 RSA key to be able to commit code. You may have
 multiple keys if you wish (e.g., for work and home). Send your key as an
-attachment in an email to hgaccounts@python.org (do not paste it in
-the email as SSH keys have specific formatting requirements). Help in
-generating an SSH key can be found in the :ref:`faq`.
+attachment in an email to hgaccounts@python.org. Help in generating an SSH key
+can be found in the :ref:`faq`.
 
 Your SSH key will be set to a username in the form of "first_name.last_name".
 This should match your username on the issue tracker.
