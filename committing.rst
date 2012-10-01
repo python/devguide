@@ -56,7 +56,7 @@ have a NEWS entry, and have not yet been included in any formal release
 * If a change is reverted prior to release, then the corresponding entry
   is simply removed. Otherwise, a new entry must be added noting that the
   change has been reverted (e.g. when a feature is released in an alpha and
-  then cut prior to the first beta)
+  then cut prior to the first beta).
 
 * If a change is a fix (or other adjustment) to an earlier unreleased change
   and the original NEWS entry remains valid, then no additional entry is
@@ -67,10 +67,20 @@ respective sections, so that entries within a section appear in approximate
 order from newest to oldest.  However, this is customary and not a
 requirement.
 
-A nice trick to make Mercurial’s automatic file merge work more smoothly
-is to put a new entry after the first or first two entries rather than
-at the very top.  This way if you commit, pull new changesets and merge,
-the merge will succeed automatically.
+The NEWS file is now read by Sphinx to produce the "Changelog" page; accordingly
+it should be valid reStructuredText.  The "default role" (single backticks) can
+be used to refer to objects in the documentation.  Example NEWS entry::
+
+   - Issue #15304: Fix warning message when `os.chdir()` fails inside
+     `test.support.temp_cwd()`.  Patch by Chris Jerdonek.
+
+(In all other ``.rst`` files, the single backticks should not be used.  They are
+allowed here because NEWS is meant to be as readable as possible unprocessed.)
+
+A nice trick to make Mercurial’s automatic file merge work more smoothly is to
+put a new entry after the first or first two entries rather than at the very
+top.  This way if you commit, pull new changesets and merge, the merge will
+succeed automatically.
 
 
 Commit Messages
