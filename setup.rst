@@ -183,11 +183,14 @@ still build properly).
 Windows
 '''''''
 
-**Python 3.3** uses Microsoft Visual Studio 2010, which is available at
-http://www.microsoft.com/visualstudio/en-us/products/2010-editions/visual-cpp-express.
+**Python 3.3** and later use Microsoft Visual Studio 2010.  You can
+download Microsoft Visual C++ 2010 Express `here
+<http://www.microsoft.com/visualstudio/en-us/products/2010-editions/visual-cpp-express>`_.
 
-Most versions previous to 3.3 use Microsoft Visual Studio 2008, available at
-https://www.microsoft.com/visualstudio/en-us/products/2008-editions/express.
+Most Python versions prior to 3.3 use Microsoft Visual Studio 2008.  You can
+download Microsoft Visual C++ 2008 Express Edition with SP1
+`here <http://www.microsoft.com/en-us/download/details.aspx?id=14597>`_.
+You may need to select the file named ``vcsetup.exe``.
 
 Regardless of Visual Studio version, the ``PCbuild`` directory of a source
 checkout contains the build files for the Python version you are building.
