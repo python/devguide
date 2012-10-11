@@ -4,7 +4,7 @@ Adding to the Stdlib
 ====================
 
 While the stdlib contains a great amount of useful code, sometimes you want
-more than is provided. This document it meant to explain how you can get either
+more than is provided. This document is meant to explain how you can get either
 a new addition to a pre-existing module in the stdlib or add an entirely new
 module.
 
