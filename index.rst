@@ -120,6 +120,7 @@ happen and that process is also described as part of this guide:
 * :doc:`stdlibchanges`
 * :doc:`langchanges`
 
+Also refer to :ref:`suggesting-changes` in the FAQ.
 
 Other Interpreter Implementations
 ---------------------------------
@@ -146,12 +147,9 @@ developers to work on them.  Some major example that may be of interest are:
 
 .. _resources:
 
+Key Resources
+-------------
 
-Resources
----------
-
-* Anyone can clone the sources for this guide.  See
-  :ref:`helping-with-the-developers-guide`.
 * Coding style guides
     * :PEP:`7` (Style Guide for C Code)
     * :PEP:`8` (Style Guide for Python Code)
@@ -165,17 +163,23 @@ Resources
     * `Browse online <http://hg.python.org/cpython/file/default/>`_
     * `Snapshot of py3k <http://hg.python.org/cpython/archive/default.tar.bz2>`_
     * `Daily OS X installer <http://buildbot.python.org/daily-dmg/>`_
+* PEPs_ (Python Enhancement Proposals)
+* :doc:`faq`
+* :doc:`developers`
+
+Additional Resources
+--------------------
+
+* Anyone can clone the sources for this guide.  See
+  :ref:`helping-with-the-developers-guide`.
+* Help with ...
+    * :doc:`grammar`
+    * :doc:`compiler`
 * Tool support
     * :doc:`emacs`
     * :doc:`gdb`
     * Various tools with configuration files as found in the `Misc directory`_
-* Help with ...
-    * :doc:`grammar`
-    * :doc:`compiler`
-* :doc:`faq`
-* PEPs_ (Python Enhancement Proposals)
 * `python.org maintenance`_
-* :doc:`developers`
 
 * :ref:`Search this guide <search>`
 
@@ -190,3 +194,4 @@ Resources
 .. _IronPython: http://ironpython.net/
 .. _Stackless: http://www.stackless.com/
 .. _Issue tracker: http://bugs.python.org/
+
