@@ -40,8 +40,8 @@ descendant of the ``3.1`` branch.
 
 Therefore, each change should be made **first** in the oldest branch to which it
 applies and forward-ported as appropriate: if a bug must be fixed in both Python
-3.2 and 3.3, first fix it in ``3.2`` and then merge ``3.2`` into ``default``
-(which holds the future 3.3).
+3.3 and 3.4, first fix it in ``3.3`` and then merge ``3.3`` into ``default``
+(which holds the future 3.4).
 
 
 .. _indevbranch:
@@ -54,9 +54,9 @@ under active development for all kinds of changes: new features, semantic
 changes, performance improvements, bug fixes.  As the name indicates, it
 is the branch :ref:`checked out <checkout>` by default by Mercurial.
 
-Once a :ref:`final` release (say, 3.2) is made from the in-development branch, a
+Once a :ref:`final` release (say, 3.3) is made from the in-development branch, a
 new :ref:`maintenance branch <maintbranch>` is created to host all bug fixing
-activity for further micro versions (3.2.1, 3.2.2, etc.).
+activity for further micro versions (3.3.1, 3.3.2, etc.).
 
 
 .. _maintbranch:
@@ -71,13 +71,15 @@ for bug fixes and there will be only one maintenance branch left.
 
 The only changes allowed to occur in a maintenance branch without debate are
 bug fixes.  Also, a general rule for maintenance branches is that compatibility
-must not be broken at any point between sibling minor releases (3.1.1, 3.1.2,
+must not be broken at any point between sibling minor releases (3.3.1, 3.3.2,
 etc.).  For both rules, only rare exceptions are accepted and **must** be
 discussed first.
 
 When a new maintenance branch is created (after a new *minor version* is
-released), the old maintenance branch on that major version (e.g. 3.1.x
-after 3.2 gets released) goes into :ref:`security mode <secbranch>`.
+released), the old maintenance branch on that major version (e.g. 3.2.x
+after 3.3 gets released) will go into :ref:`security mode <secbranch>`,
+usually after one last maintenance release at the discretion of the
+release manager.
 
 .. _secbranch:
 
@@ -97,11 +99,13 @@ actual security patches have been applied to the branch.
 Summary
 -------
 
-There are 5 open branches right now in the Mercurial repository:
+There are 6 open branches right now in the Mercurial repository:
 
-- the ``default`` branch holds the future 3.3 version and descends from ``3.2``
-- the ``3.2`` branch holds bug fixes for future 3.2.x maintenance releases
-  and descends from ``3.1``
+- the ``default`` branch holds the future 3.4 version and descends from ``3.3``
+- the ``3.3`` branch holds bug fixes for future 3.3.x maintenance releases
+  and descends from ``3.2``
+- the ``3.2`` branch holds bug fixes for an upcoming final 3.2.4 maintenance
+  release and then for future 3.2.x security releases
 - the ``3.1`` branch holds security fixes for future 3.1.x security releases
 - the ``2.7`` branch holds bug fixes for future 2.7.x maintenance releases and
   descends from ``2.6``

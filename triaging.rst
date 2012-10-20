@@ -125,9 +125,9 @@ XML
 Versions
 ''''''''
 The known versions of Python that the issue affects and should be fixed for.
-Thus if an issue for a new feature is assigned for e.g., Python 3.2 but is not
-applied before Python 3.2.0 is released, this field should be updated to say
-Python 3.3 as the version and drop Python 3.2.
+Thus if an issue for a new feature is assigned for e.g., Python 3.3 but is not
+applied before Python 3.3.0 is released, this field should be updated to say
+Python 3.4 as the version and drop Python 3.3.
 
 Priority
 ''''''''
@@ -170,8 +170,8 @@ needs review
     The patch attached to the issue is in need of a review.
 patch
     There is a patch attached to the issue.
-3.2regression
-    The issue is a regression in 3.2.
+3.3regression
+    The issue is a regression in 3.3.
 
 Nosy List
 '''''''''

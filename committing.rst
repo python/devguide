@@ -263,7 +263,7 @@ Forward-Porting
 If the patch is a bugfix and it does not break
 backwards-compatibility *at all*, then it should be applied to the oldest
 branch applicable and forward-ported until it reaches the in-development branch
-of Python (for example, first in ``3.1``, then in ``3.2`` and finally in
+of Python (for example, first in ``3.2``, then in ``3.3`` and finally in
 ``default``). A forward-port instead of a back-port is preferred as it allows
 the :abbr:`DAG (directed acyclic graph)` used by hg to work with the movement of
 the patch through the codebase instead of against it.
@@ -286,32 +286,32 @@ repository.
 Porting Within a Major Version
 ''''''''''''''''''''''''''''''
 
-Assume that Python 3.3 is the current in-development version of Python and that
-you have a patch that should also be applied to Python 3.2. To properly port
+Assume that Python 3.4 is the current in-development version of Python and that
+you have a patch that should also be applied to Python 3.3. To properly port
 the patch to both versions of Python, you should first apply the patch to
-Python 3.2::
+Python 3.3::
 
-   hg update 3.2
+   hg update 3.3
    hg import --no-commit patch.diff
    # Compile; run the test suite
    hg commit
 
-With the patch now committed, you want to merge the patch up into Python 3.3.
+With the patch now committed, you want to merge the patch up into Python 3.4.
 This should be done *before* pushing your changes to hg.python.org, so that
 the branches are in sync on the public repository.  Assuming you are doing
 all of your work in a single clone, do::
 
    hg update default
-   hg merge 3.2
+   hg merge 3.3
    # Fix any conflicts; compile; run the test suite
    hg commit
 
 .. note::
-   *If the patch shouldn't be ported* from Python 3.2 to Python 3.3, you must
+   *If the patch shouldn't be ported* from Python 3.3 to Python 3.4, you must
    also make it explicit: merge the changes but revert them before committing::
 
       hg update default
-      hg merge 3.2
+      hg merge 3.3
       hg revert -ar default
       hg commit
 
@@ -324,7 +324,7 @@ changesets to hg.python.org::
 
    hg push
 
-This will push changes in both the Python 3.2 and Python 3.3 branches to
+This will push changes in both the Python 3.3 and Python 3.4 branches to
 hg.python.org.
 
 
@@ -332,7 +332,7 @@ Porting Between Major Versions
 ''''''''''''''''''''''''''''''
 
 Let's say you have committed your changes as changeset ``a7df1a869e4a``
-in the 3.2 branch and now want to port it to 2.7.  This is simple using
+in the 3.3 branch and now want to port it to 2.7.  This is simple using
 the "graft" command, which uses Mercurial's merge functionality to
 cherry-pick::
 
@@ -370,9 +370,16 @@ There are various ways to achieve this, but here is a possible scenario:
    $ hg clone ssh://hg@hg.python.org/cpython py3k
 
 * Then clone it to create another local repository which is then used to
+  checkout branch 3.3::
+
+   $ hg clone py3k py3.3
+   $ cd py3.3
+   $ hg update 3.3
+
+* Then clone it to create another local repository which is then used to
   checkout branch 3.2::
 
-   $ hg clone py3k py3.2
+   $ hg clone py3.3 py3.2
    $ cd py3.2
    $ hg update 3.2
 
@@ -388,11 +395,11 @@ There are various ways to achieve this, but here is a possible scenario:
    $ cd py2.7
    $ hg update 2.7
 
-Given this arrangement of local repositories, pushing from the ``py3.1``
-repository will update the ``py3.2`` repository, where you can then merge your
-3.1 changes into the 3.2 branch.  In turn, pushing changes from the ``py3.2``
+Given this arrangement of local repositories, pushing from the ``py3.2``
+repository will update the ``py3.3`` repository, where you can then merge your
+3.2 changes into the 3.3 branch.  In turn, pushing changes from the ``py3.3``
 repository will update the ``py3k`` repository.  Finally, once you have
-merged (and tested!) your ``3.2`` changes into the ``default`` branch, pushing
+merged (and tested!) your ``3.3`` changes into the ``default`` branch, pushing
 from the ``py3k`` repository will publish your changes in the public
 repository.
 
@@ -401,6 +408,8 @@ script that runs the necessary commands to update all branches with upstream
 changes::
 
   cd ~/py3k
+  hg pull -u
+  cd ~/py3.3
   hg pull -u
   cd ~/py3.2
   hg pull -u
