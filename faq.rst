@@ -258,13 +258,12 @@ Which branches are in my local repository?
 Typing ``hg branches`` displays the open branches in your local repository::
 
    $ hg branches
-   default                    68026:f12ef116dd10
-   3.2                        68025:cef92ee1a323
-   2.7                        68010:8174d00d0797
-   3.1                        67955:5be8b695ea86
-   2.6                        67287:5e26a860eded
-   2.5                        65464:e4ecac76e499
-
+   default                    79844:2d53f92ed54c
+   2.7                        79839:422a0175bbf5
+   3.3                        79843:25722e983ada (inactive)
+   3.2                        79840:d459a9576d6c (inactive)
+   3.1                        76255:5a6fa1b8767f (inactive)
+   2.6                        76213:f130ce67387d (inactive)
 
 Why are some branches marked "inactive"?
 ----------------------------------------
@@ -273,9 +272,9 @@ Assuming you get the following output::
 
    $ hg branches
    default                    68042:8ff33af017ef
-   3.2                        68039:c17d7772c638 (inactive)
+   3.3                        68039:c17d7772c638 (inactive)
 
-This means all changesets in the "3.2" branch have been merged into the
+This means all changesets in the "3.3" branch have been merged into the
 "default" branch (or any other branch, if such exists).
 
 
@@ -308,10 +307,10 @@ Simply use ``hg update`` to checkout another branch in the current directory::
 
    $ hg branch
    default
-   $ hg update 3.2
+   $ hg update 3.3
    86 files updated, 0 files merged, 11 files removed, 0 files unresolved
    $ hg branch
-   3.2
+   3.3
 
 Adding the ``-v`` option to ``hg update`` will list all updated files.
 
@@ -327,11 +326,11 @@ I want to keep a separate working copy per development branch, is it possible?
 
 Just clone your local repository and update each clone to a different branch::
 
-   $ hg clone cpython py32
+   $ hg clone cpython py33
    updating to branch default
    3434 files updated, 0 files merged, 0 files removed, 0 files unresolved
-   $ cd py32
-   $ hg update 3.2
+   $ cd py33
+   $ hg update 3.3
    86 files updated, 0 files merged, 11 files removed, 0 files unresolved
 
 The current branch in a working copy is "sticky": if you pull in some new
@@ -935,5 +934,5 @@ If ``test_gdb`` is being skipped with an "auto-loading has been declined"
 message, then it is necessary to identify any Python build directories as
 auto-load safe. One way to achieve this is to add a line like the following
 to ``~/.gdbinit`` (edit the specific list of paths as appropriate)::
-    
+
     add-auto-load-safe-path ~/devel/py3k:~/devel/py32:~/devel/py27
