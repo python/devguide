@@ -1339,8 +1339,10 @@ triple
    index entries, which are ``module; search path``, ``search; path, module`` and
    ``path; module search``.
 module, keyword, operator, object, exception, statement, builtin
-   These all create two index entries.  For example, ``module: hashlib`` creates
-   the entries ``module; hashlib`` and ``hashlib; module``.
+   These all create two index entries.  For example, ``module: hashlib``
+   creates the entries ``module; hashlib`` and ``hashlib; module``.  The
+   builtin entry type is slightly different in that "built-in function" is used
+   in place of "builtin" when creating the two entries.
 
 For index directives containing only "single" entries, there is a shorthand
 notation::
