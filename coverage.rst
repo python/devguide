@@ -85,56 +85,61 @@ provided by the stdlib then you can by :ref:`using test.regrtest
 Because the in-development version of Python is bleeding-edge, it is possible
 that the latest release version of coverage.py will not work. In that case you
 should try using the in-development of coverage.py to see if it has been
-updated as needed. To do this you should check out the development version of
-coverage.py into your checkout of Python and make a symlink (or simply copy if
-you prefer) of its ``coverage`` subdirectory::
+updated as needed. To do this you should clone/check out the development version
+of coverage.py::
 
     hg clone https://bitbucket.org/ned/coveragepy
-    ln -s coveragepy/coverage
 
-Another option is to
-download the source distribution of coverage.py and copy the ``coverage``
-directory into your Python checkout. The other option is to use your checkout
-copy of Python to install coverage.py (but use the ``--user`` flag to
-Distutils!).
+Another option is to use an installed copy of coverage.py if you already an
+installed copy. But if you do not already have it installed then it is preferred
+you use a clone of coverage.py for gathering coverage results.
 
-Regardless of how you installed coverage.py, the following should work::
+If you are using a clone of coverage.py, the following should work (substitute
+``COVERAGEDIR`` with the directory where your clone exists, e.g.
+``../coveragepy``)::
+
+    ./python COVERAGEDIR
+
+Coverage.py will print out a little bit of helper text verifying that
+everything is working. If you are using an installed copy, you can do the
+following instead::
 
     ./python -m coverage
 
-Coverage.py will print out a little bit of helper text verifying that
-everything is working.
+The rest of the examples on how to use coverage.py will assume you are using a
+cloned copy, but you can substitute the above and all instructions should still
+be valid.
 
 To run the test suite under coverage.py, do the following::
 
-    ./python -m coverage run --pylib Lib/test/regrtest.py
+    ./python COVERAGEDIR run --pylib Lib/test/regrtest.py
 
 To run only a single test, specify the module/package being tested
 in the ``--source`` flag (so as to prune the coverage reporting to only the
 module/package you are interested in) and then append the name of the test you
 wish to run to the command::
 
-    ./python -m coverage run --pylib --source=abc Lib/test/regrtest.py test_abc
+    ./python COVERAGEDIR run --pylib --source=abc Lib/test/regrtest.py test_abc
 
 To see the results of the coverage run, you can view a text-based report with::
 
-    ./python -m coverage report
+    ./python COVERAGEDIR report
 
 You can use the ``--show-missing`` flag to get a list of lines that were not
 executed::
 
-    ./python -m coverage report --show-missing
+    ./python COVERAGEDIR report --show-missing
 
 But one of the strengths of coverage.py is its HTML-based reports which let
 you visually see what lines of code were not tested::
 
-    ./python -m coverage html -i --omit="*/test/*,*/tests/*,Tools/*"
+    ./python COVERAGDIR html -i --include="Lib/*" --omit="*/test/*,*/tests/*,Tools/*"
 
 This will generate an HTML report in a directory named ``htmlcov`` which
 ignores any errors that may arise and ignores modules for which test coverage is
-unimportant (e.g. tests). You can then open the ``htmlcov/index.html`` file in a
-web browser to view the coverage results along with pages that visibly show what
-lines of code were or were not executed.
+unimportant (e.g. tests, temp files, etc.). You can then open the
+``htmlcov/index.html`` file in a web browser to view the coverage results along
+with pages that visibly show what lines of code were or were not executed.
 
 
 .. _branch_coverage:
@@ -150,7 +155,7 @@ coverage for the entire stdlib (for now).
 If you decide you want to try to improve branch coverage, simply add the
 ``--branch`` flag to your coverage run::
 
-    ./python -m coverage run --pylib --branch <arguments to run test(s)>
+    ./python COVERAGEDIR run --pylib --branch <arguments to run test(s)>
 
 This will lead to the report stating not only what lines were not covered, but
 also what branch paths were not executed.
