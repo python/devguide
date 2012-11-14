@@ -161,6 +161,35 @@ This will lead to the report stating not only what lines were not covered, but
 also what branch paths were not executed.
 
 
+Coverage Results For Modules Imported Early On
+''''''''''''''''''''''''''''''''''''''''''''''
+
+For the *truly truly* daring, you can use a hack to get coverage.py to include
+coverage for modules that are imported early on during CPython's startup (e.g.
+the encodings module). Do not worry if you can't get this to work or it doesn't
+make any sense; it's entirely optional and only important for a small number of
+modules.
+
+If you still choose to try this, the first step is to build coverage.py's C
+extension code. Assuming that coverage.py's clone is at ``COVERAGEDIR`` and
+your clone of CPython is at ``CPYTHONDIR``, you execute the following in your
+coverage.py clone::
+
+  CPPFLAGS="-I CPYTHONDIR -I CPYTHONDIR/Include" CPYTHONDIR/python setup.py build_ext --inplace
+
+This will build coverage.py's C extension code in-place, allowing the previous
+instructions on how to gather coverage to continue to work.
+
+To get coverage.py to be able to gather the most accurate coverage data on as
+many modules as possible
+**with a HORRIBLE HACK that you should NEVER use in your own code**, run the
+following from your CPython clone::
+
+  PYTHONPATH=COVERAGEDIR/coverage/fullcoverage ./python COVERAGEDIR run --pylib Lib/test/regrtest.py
+
+This will give you the most complete coverage possible for CPython's standard
+library.
+
 .. _coverage.py: http://nedbatchelder.com/code/coverage/
 
 
