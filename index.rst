@@ -36,10 +36,13 @@ Python Developer's Guide
 Quick Start
 -----------
 
-Here is a list of the basic steps necessary to get set up and make a patch:
+Here is a list of the basic steps needed to get :ref:`set up <setup>` with
+`CPython <http://www.python.org/>`__ and make a patch:
 
-1. Get :ref:`a clone of CPython <setup>` with ``hg clone
-   http://hg.python.org/cpython``.
+1. :ref:`Get the source code <checkout>`::
+
+      hg clone http://hg.python.org/cpython
+
 2. On UNIX, run ``./configure --with-pydebug && make -j2`` to
    :ref:`build Python <compiling>`.
 
