@@ -46,10 +46,14 @@ Here is a list of the basic steps necessary to get set up and make a patch:
    On :ref:`Windows <windows-compiling>`, load the project file
    :file:`PCbuild\\pcbuild.sln` in Visual Studio, select :menuselection:`Debug`,
    and :menuselection:`Build --> Build Solution`.
-3. :doc:`Run the tests <runtests>` with ``./python -m test -j3`` (use
-   :file:`./python.exe` on :ref:`most <python.exe>` Mac OS X systems and
-   :file:`PCbuild\\python_d.exe` on Windows; replace ``test`` with
-   ``test.regrtest`` for 2.7).
+3. :doc:`Run the tests <runtests>`::
+
+   ./python -m test -j3
+
+   On :ref:`most <mac-python.exe>` Mac OS X systems, replace :file:`./python`
+   with :file:`./python.exe`.  On Windows, use :file:`PCbuild\\python_d.exe` or
+   check the :ref:`Windows instructions <win-python.exe>`.  With Python 2.7,
+   replace ``test`` with ``test.regrtest``.
 4. Make the :doc:`patch <patch>`.
 5. Submit it to the `issue tracker`_.
 
