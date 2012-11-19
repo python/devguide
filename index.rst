@@ -1,37 +1,6 @@
+========================
 Python Developer's Guide
 ========================
-
-.. toctree::
-   :hidden:
-
-   setup
-   help
-   patch
-   runtests
-   coverage
-   docquality
-   documenting
-   silencewarnings
-   fixingissues
-   tracker
-   triaging
-   communication
-   coredev
-   developers
-   committing
-   devcycle
-   buildbots
-
-   stdlibchanges
-   langchanges
-
-   experts
-   emacs
-   gdb
-   grammar
-   compiler
-   faq
-
 
 This guide is a comprehensive resource for :ref:`contributing <contributing>`
 to Python_ -- for both new and experienced contributors.  It is
@@ -196,6 +165,40 @@ Additional Resources
 * `python.org maintenance`_
 
 * :ref:`Search this guide <search>`
+
+.. _contents:
+
+Full Table of Contents
+----------------------
+
+.. toctree::
+   :numbered:
+
+   setup
+   help
+   patch
+   runtests
+   coverage
+   docquality
+   documenting
+   silencewarnings
+   fixingissues
+   tracker
+   triaging
+   communication
+   coredev
+   developers
+   committing
+   devcycle
+   buildbots
+   stdlibchanges
+   langchanges
+   experts
+   emacs
+   gdb
+   grammar
+   compiler
+   faq
 
 .. _Buildbot status: http://python.org/dev/buildbot/
 .. _Firefox search engine plug-in: http://www.python.org/dev/searchplugin/

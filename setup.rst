@@ -1,15 +1,16 @@
-.. _setup:
-
-Getting Set Up
-==============
+===============
+Getting Started
+===============
 
 These instructions cover how to get a working copy of the source code and a
 compiled version of the CPython interpreter (CPython is the version of Python
 available from http://www.python.org/). It also gives an overview of the
 directory structure of the CPython source code.
 
-.. contents::
+.. _setup:
 
+Getting Set Up
+==============
 
 Version Control Setup
 ---------------------
