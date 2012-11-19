@@ -33,11 +33,16 @@ Python Developer's Guide
    faq
 
 
+This guide is a comprehensive resource for :ref:`contributing <contributing>`
+to Python_ -- for both new and experienced contributors.  It is
+:ref:`maintained <helping-with-the-developers-guide>` by the same community
+that maintains Python.  We welcome your contributions to Python!
+
 Quick Start
 -----------
 
-Here is a list of the basic steps needed to get :ref:`set up <setup>` with
-`CPython <http://www.python.org/>`__ and make a patch:
+Here are the basic steps needed to get :ref:`set up <setup>` and contribute a
+patch:
 
 1. :ref:`Get the source code <checkout>`::
 
@@ -72,6 +77,8 @@ contributing to Python.
 * :doc:`faq`
 * PEPs_ (Python Enhancement Proposals)
 
+
+.. _contributing:
 
 Contributing
 ------------
@@ -195,6 +202,7 @@ Additional Resources
 .. _Misc directory: http://hg.python.org/cpython/file/default/Misc
 .. _PEPs: http://www.python.org/dev/peps
 .. _python.org maintenance: http://python.org/dev/pydotorg/
+.. _Python: http://www.python.org/
 .. _Python Mentors: http://pythonmentors.com/
 .. _PyPy: http://www.pypy.org/
 .. _Jython: http://www.jython.org/
