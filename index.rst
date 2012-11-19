@@ -7,6 +7,7 @@ to Python_ -- for both new and experienced contributors.  It is
 :ref:`maintained <helping-with-the-developers-guide>` by the same community
 that maintains Python.  We welcome your contributions to Python!
 
+
 Quick Start
 -----------
 
@@ -105,6 +106,7 @@ happen and that process is also described as part of this guide:
 
 Also refer to :ref:`suggesting-changes` in the FAQ.
 
+
 Other Interpreter Implementations
 ---------------------------------
 
@@ -150,6 +152,7 @@ Key Resources
 * :doc:`faq`
 * :doc:`developers`
 
+
 Additional Resources
 --------------------
 
@@ -165,6 +168,7 @@ Additional Resources
 * `python.org maintenance`_
 
 * :ref:`Search this guide <search>`
+
 
 .. _contents:
 
@@ -200,6 +204,7 @@ Full Table of Contents
    compiler
    faq
 
+
 .. _Buildbot status: http://python.org/dev/buildbot/
 .. _Firefox search engine plug-in: http://www.python.org/dev/searchplugin/
 .. _Misc directory: http://hg.python.org/cpython/file/default/Misc
@@ -212,4 +217,3 @@ Full Table of Contents
 .. _IronPython: http://ironpython.net/
 .. _Stackless: http://www.stackless.com/
 .. _Issue tracker: http://bugs.python.org/
-
