@@ -1,3 +1,7 @@
+==============
+Issue Tracking
+==============
+
 .. _tracker:
 
 Using the Issue Tracker

@@ -1,5 +1,6 @@
 .. _documenting:
 
+==================
 Documenting Python
 ==================
 
