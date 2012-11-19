@@ -73,7 +73,7 @@ Helping with the Developer's Guide
 
 The Developer's Guide uses the same process as the main Python documentation,
 except for some small differences.  The source lives in a `separate
-repository`_.  Bug reports and and patches should be submitted to the `python
+repository`_.  Bug reports and patches should be submitted to the `python
 bug tracker`_ using the ``devguide`` component.  Changes to the devguide
 are normally published within a day, on a schedule that may be different from
 the main documentation.
