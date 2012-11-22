@@ -306,17 +306,24 @@ all of your work in a single clone, do::
    # Fix any conflicts; compile; run the test suite
    hg commit
 
+.. index:: null merging
+
 .. note::
-   *If the patch shouldn't be ported* from Python 3.3 to Python 3.4, you must
-   also make it explicit: merge the changes but revert them before committing::
+   If the patch should *not* be ported from Python 3.3 to Python 3.4, you must
+   also make this explicit by doing a *null merge*: merge the changes but
+   revert them before committing::
 
       hg update default
       hg merge 3.3
       hg revert -ar default
+      hg resolve -am  # needed only if the merge created conflicts
       hg commit
 
    This is necessary so that the merge gets recorded; otherwise, somebody
    else will have to make a decision about your patch when they try to merge.
+   (Using a three-way merge tool generally makes the ``hg resolve`` step
+   in the above unnecessary; also see `this bug report
+   <http://bz.selenic.com/show_bug.cgi?id=2706>`__.)
 
 When you have finished your porting work (you can port several patches one
 after another in your local repository), you can push **all** outstanding
