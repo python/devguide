@@ -10,13 +10,14 @@ experience (with or without Python).
 
 :ref:`Documenting Python <documenting>` covers the details of how Python's documentation works.
 It includes an explanation of the markup used (although you can figure a lot
-out simply by looking at pre-existing documentation) and how to build the
-documentation (which allows you to see how your changes will look along with
-validating that your new markup is correct).
+out simply by looking at pre-existing documentation) and :ref:`how to build
+<building-doc>` the documentation (which allows you to see how your changes
+will look along with validating that your new markup is correct).
 
-The current in-development version of the documentation can be viewed at
-http://docs.python.org/dev/. This version is regenerated from source once
-a day.
+The documentation built from the :ref:`in-development <indevbranch>` and
+:ref:`maintenance <maintbranch>` branches can be viewed from
+http://docs.python.org/dev/.  The in-development and most recent 2.x and 3.x
+maintenance :ref:`branches <listbranch>` are rebuilt once per day.
 
 If you would like a technical documentation style guide, the `Apple
 Publications Style Guide
