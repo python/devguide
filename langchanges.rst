@@ -41,7 +41,7 @@ PEP Process
 Once you are certain you have a language change proposal which will appeal to
 the general Python community, you can begin the process of officially proposing
 the change. This process is the Python Enhancement Proposal (PEP) process.
-`PEP 1`_ describes it in detail.
+:PEP:`1` describes it in detail.
 
 You will first need a PEP that you will present to python-ideas. You may be a
 little hazy on the technical details as various core developers can help with
@@ -61,5 +61,3 @@ most core developers support the PEP). If that occurs then your proposed
 language change will be introduced in the next release of Python. Otherwise
 your PEP will be recorded as rejected along with an explanation as to why so
 that others do not propose the same language change in the future.
-
-.. _PEP 1: http://www.python.org/dev/peps/pep-0001/
