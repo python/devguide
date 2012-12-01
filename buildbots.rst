@@ -54,7 +54,7 @@ Stability
 ---------
 
 A subset of the buildbots are marked "stable".  They are taken into account
-when making a new release.  The rule is that no stable buildbot must witness
+when making a new release.  The rule is that all builders must be free of
 persistent failures when the release is cut.  It is absolutely **vital**
 that core developers fix any issue they introduce on the stable buildbots,
 as soon as possible.
