@@ -50,7 +50,7 @@ in the :ref:`triaging` page.  This is a short summary:
 * if you have JavaScript enabled, you can use the **Nosy List** field to search
   developers that can help with the issue by entering the name of the affected
   module, operating system, or interest area.
-* least but not last, you have to describe the problem in detail, including
+* last but not least, you have to describe the problem in detail, including
   what you expected to happen and what did happen, in the **Comment** field.
   Be sure to include whether any extension modules were involved, and what
   hardware and software platform you were using (including version information
