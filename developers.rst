@@ -24,6 +24,9 @@ transliteration too.
 Permissions History
 -------------------
 
+- Serhiy Storchaka was given push privileges on Dec 26 2012 by GFB, for general
+  contributions, on recommendation by Trent Nelson.
+
 - Chris Jerdonek was given push privileges on Sep 24 2012 by GFB, for general
   contributions, on recommendation by Ezio Melotti.
 
