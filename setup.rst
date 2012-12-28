@@ -122,6 +122,8 @@ root access is beyond the scope of this guide.
    more Python code than C.
 
 
+.. _unix-compiling:
+
 UNIX
 ''''
 

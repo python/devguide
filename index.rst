@@ -18,10 +18,11 @@ patch:
 
       hg clone http://hg.python.org/cpython
 
-2. On UNIX, run ``./configure --with-pydebug && make -j2`` to
-   :ref:`build Python <compiling>`.
+2. :ref:`Build Python <compiling>`.  On :ref:`UNIX <unix-compiling>`::
 
-   On :ref:`Windows <windows-compiling>`, load the project file
+      ./configure --with-pydebug && make -j2
+
+   On :ref:`Windows <windows-compiling>`, open the solution file
    :file:`PCbuild\\pcbuild.sln` in Visual Studio, select :menuselection:`Debug`,
    and :menuselection:`Build --> Build Solution`.
 3. :doc:`Run the tests <runtests>`::
