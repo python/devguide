@@ -1646,9 +1646,10 @@ CPython Mercurial repository <setup>` and run ::
    cd Doc
    make html
 
-to check out the necessary toolset in the :file:`tools/` subdirectory and build
-the HTML output files.  To view the generated HTML, point your favorite browser
-at the top-level index :file:`build/html/index.html` after running "make".
+to check out the necessary toolset in the :file:`Doc/tools/` subdirectory and
+build the HTML output files.  To view the generated HTML, point your favorite
+browser at the top-level index :file:`Doc/build/html/index.html` after running
+:command:`make`.
 
 Available make targets are:
 
