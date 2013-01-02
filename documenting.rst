@@ -19,7 +19,7 @@ written using the :ref:`reStructuredText format <markup>` and contained in the
 
 .. _reStructuredText: http://docutils.sf.net/rst.html
 .. _docutils: http://docutils.sf.net/
-.. _Sphinx: http://sphinx.pocoo.org/
+.. _Sphinx: http://sphinx-doc.org/
 
 .. note::
 
