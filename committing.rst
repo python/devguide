@@ -19,15 +19,15 @@ into another in one merge commit.
 Patch Checklist
 ---------------
 
-Here's the simple patch checklist that ``make patchcheck`` (or  ``./python.exe
+Here's the simple patch checklist that ``make patchcheck`` (or ``./python.exe
 Tools/scripts/patchcheck.py`` on Windows) will run through
 on a system that uses the makefile to build Python:
 
 * Are there any whitespace problems in Python files?
-  (using Tools/scripts/reindent.py)
+  (using ``Tools/scripts/reindent.py``)
 * Are there any whitespace problems in C files?
 * Are there any whitespace problems in the documentation?
-  (using Tools/scripts/reindent-rst.py)
+  (using ``Tools/scripts/reindent-rst.py``)
 * Has the documentation been updated?
 * Has the test suite been updated?
 * Has ``Misc/NEWS`` been updated?
