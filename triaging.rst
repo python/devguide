@@ -256,11 +256,12 @@ works for me
 Mercurial Repository
 ''''''''''''''''''''
 HTTP link to a Mercurial repository that contains a patch for the issue.
-The `Create Patch` button will then compute a diff for the head revision
-of the remote branch, and attach the diff to the issue.
+A :guilabel:`Create Patch` button will appear that computes a diff for the
+head revision of the remote branch and attaches it to the issue.  The button
+supports only CPython_ patches.
 
-If you don't indicate a remote branch, ``default`` is used. You can
-indicate a remote branch adding ``#BRANCH`` at the end of the URL.
+If you don't indicate a remote branch, ``default`` is used.  You can
+indicate a remote branch by adding ``#BRANCH`` to the end of the URL.
 
 Generating Special Links in a Comment
 -------------------------------------
@@ -290,6 +291,7 @@ properly.
   the Devguide, this page, and this section respectively.
 
 
+.. _CPython: http://hg.python.org/cpython/file/default/
 .. _Doc: http://hg.python.org/cpython/file/default/Doc/
 .. _Grammar: http://hg.python.org/cpython/file/default/Grammar/
 .. _Lib: http://hg.python.org/cpython/file/default/Lib/
