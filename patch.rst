@@ -139,9 +139,11 @@ To begin with, please be patient! There are many more people submitting patches
 than there are people capable of reviewing your patch. Getting your patch
 reviewed requires a reviewer to have the spare time and motivation to
 look at your patch (we cannot force anyone to review patches). If your patch has
-not received any notice from reviewers (i.e., no comment made) after a
-substantial amount of time then you may
-email python-dev@python.org asking for someone to take a look at your patch.
+not received any notice from reviewers (i.e., no comment made) after one
+month, first "ping" the issue on the `issue tracker`_ to remind the nosy list
+that the patch needs a review.  If you don't get a response within a few days
+after pinging the issue, then you can try emailing python-dev@python.org asking
+for someone to review your patch.
 
 When someone does manage to find the time to look at your patch they will most
 likely make comments about how it can be improved (don't worry, even core
