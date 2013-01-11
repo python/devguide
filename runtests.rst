@@ -71,6 +71,11 @@ if the failures are transient or consistent.
 The ``-uall`` flag allows the use of all available
 resources so as to not skip tests requiring, e.g., Internet access.
 
+To check for reference leaks (only needed if you modified C code), use the
+``-R`` flag.  For example, ``-R 3:2`` will first run the test 3 times to settle
+down the reference count, and then run it 2 more times to verify if there are
+any leaks.
+
 You can also execute the ``Tools/scripts/run_tests.py`` script as  found in a
 CPython checkout. The script tries to balance speed with thoroughness. But if
 you want the most thorough tests you should use the strenuous approach shown
