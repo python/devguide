@@ -1647,8 +1647,8 @@ your :ref:`repository clone <checkout>`::
    cd Doc
    make html
 
-This checks out the needed toolset in the :file:`Doc/tools/` directory and
-builds the output as HTML.
+or alternatively ``make -C Doc html``.  This checks out the needed toolset
+in the :file:`Doc/tools/` directory and builds the output as HTML.
 
 Available :command:`make` targets are:
 
