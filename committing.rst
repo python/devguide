@@ -35,6 +35,7 @@ on a system that uses the makefile to build Python:
 * Has ``configure`` been regenerated, if necessary?
 * Has ``pyconfig.h.in`` been regenerated, if necessary?
 * Has the test suite been run?
+* Are there any reference leaks?
 
 Note that the automated patch check can't actually *answer* all of these
 questions, and even if it could, it still wouldn't know whether or not
