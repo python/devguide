@@ -825,6 +825,17 @@ Syntax highlighting is handled in a smart way:
   This language is used until the next ``highlightlang`` directive is
   encountered.
 
+* The ``code-block`` directive can be used to specify the highlight language
+  of a single code block, e.g.::
+
+     .. code-block:: c
+
+        #include <stdio.h>
+
+        void main() {
+            printf("Hello world!\n");
+        }
+
 * The values normally used for the highlighting language are:
 
   * ``python`` (the default)
