@@ -167,7 +167,7 @@ pipes
 pkgutil
 platform              lemburg
 plistlib
-poplib
+poplib                giampaolo.rodola
 posix
 pprint                fdrake
 profile               georg.brandl
