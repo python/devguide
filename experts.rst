@@ -140,7 +140,7 @@ locale                loewis, lemburg
 logging               vinay.sajip
 lzma                  nadeem.vawda
 macpath
-mailbox
+mailbox               petri.lehtinen
 mailcap
 marshal
 math                  mark.dickinson, rhettinger, stutzbach
@@ -167,7 +167,7 @@ pipes
 pkgutil
 platform              lemburg
 plistlib
-poplib
+poplib                giampaolo.rodola
 posix
 pprint                fdrake
 profile               georg.brandl

@@ -65,7 +65,8 @@ Maintenance branches
 --------------------
 
 A branch for a previous feature release, currently being maintained for bug
-fixes.  There are currently two of them in activity: one for Python 3.x and
+fixes.  There are usually two maintenance branches at any given time: one for
+Python 3.x and
 one for Python 2.x.  At some point in the future, Python 2.x will be closed
 for bug fixes and there will be only one maintenance branch left.
 
@@ -75,8 +76,8 @@ must not be broken at any point between sibling minor releases (3.3.1, 3.3.2,
 etc.).  For both rules, only rare exceptions are accepted and **must** be
 discussed first.
 
-When a new maintenance branch is created (after a new *minor version* is
-released), the old maintenance branch on that major version (e.g. 3.2.x
+Sometime after a new maintenance branch is created (after a new *minor version*
+is released), the old maintenance branch on that major version (e.g. 3.2.x
 after 3.3 gets released) will go into :ref:`security mode <secbranch>`,
 usually after one last maintenance release at the discretion of the
 release manager.
@@ -95,6 +96,8 @@ issues such as denial of service attacks.  Other behavioral issues are
 Any release made from a security branch is source-only and done only when
 actual security patches have been applied to the branch.
 
+
+.. _listbranch:
 
 Summary
 -------

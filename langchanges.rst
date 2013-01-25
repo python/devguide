@@ -25,7 +25,7 @@ way to see if your idea would work for a large portion of the Python community
 is to ask on :ref:`python-list or python-ideas <communication>`. You can also
 go through Python's stdlib and find examples of code which would benefit from
 your proposed change (which helps communicate the usefulness of your change to
-others).
+others). For further guidance, see :ref:`suggesting-changes` in the FAQ.
 
 Your proposed change also needs to be *Pythonic*. While Guido is the only
 person who can truly classify something as Pythonic, you can read the `Zen of
@@ -34,11 +34,14 @@ Python`_ for guidance.
 .. _Zen of Python: http://www.python.org/dev/peps/pep-0020/
 
 
-Process
--------
+.. index:: PEP process
+
+PEP Process
+-----------
 Once you are certain you have a language change proposal which will appeal to
-the general Python community, you can being the process of officially proposing
-the change.
+the general Python community, you can begin the process of officially proposing
+the change. This process is the Python Enhancement Proposal (PEP) process.
+:PEP:`1` describes it in detail.
 
 You will first need a PEP that you will present to python-ideas. You may be a
 little hazy on the technical details as various core developers can help with

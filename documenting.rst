@@ -1,5 +1,6 @@
 .. _documenting:
 
+==================
 Documenting Python
 ==================
 
@@ -17,8 +18,6 @@ written using the :ref:`reStructuredText format <markup>` and contained in the
 :ref:`CPython Mercurial repository <setup>`.
 
 .. _reStructuredText: http://docutils.sf.net/rst.html
-.. _docutils: http://docutils.sf.net/
-.. _Sphinx: http://sphinx.pocoo.org/
 
 .. note::
 
@@ -826,6 +825,17 @@ Syntax highlighting is handled in a smart way:
   This language is used until the next ``highlightlang`` directive is
   encountered.
 
+* The ``code-block`` directive can be used to specify the highlight language
+  of a single code block, e.g.::
+
+     .. code-block:: c
+
+        #include <stdio.h>
+
+        void main() {
+            printf("Hello world!\n");
+        }
+
 * The values normally used for the highlighting language are:
 
   * ``python`` (the default)
@@ -1628,28 +1638,30 @@ directories renamed as follows:
 Building the documentation
 ==========================
 
-You need to have Python 2.4 or higher installed; the toolset used to build the
-docs is written in Python.  It is called *Sphinx*, it is not included in this
-tree, but maintained separately.  Also needed are the docutils, supplying the
-base markup that Sphinx uses, Jinja, a templating engine, and optionally
-Pygments, a code highlighter.
+You need to have Python 2.4 or higher installed.  The toolset used to build
+the docs is written in Python and is called Sphinx_.  Sphinx is maintained
+separately and is not included in this tree.  Also needed are docutils_,
+supplying the base markup that Sphinx uses; Jinja_, a templating engine; and
+optionally Pygments_, a code highlighter.
+
+To build the documentation, follow the instructions from one of the sections
+below.  You can view the documentation after building the HTML by pointing
+a browser at the file :file:`Doc/build/html/index.html`.
 
 
 Using make
 ----------
 
-Luckily, a Makefile has been prepared so that on Unix, provided you have
-installed Python and Subversion, you can just go to your :ref:`clone of the
-CPython Mercurial repository <setup>` and run ::
+On Unix, if you have Subversion installed, run the following from the root of
+your :ref:`repository clone <checkout>`::
 
    cd Doc
    make html
 
-to check out the necessary toolset in the :file:`tools/` subdirectory and build
-the HTML output files.  To view the generated HTML, point your favorite browser
-at the top-level index :file:`build/html/index.html` after running "make".
+or alternatively ``make -C Doc html``.  This checks out the needed toolset
+in the :file:`Doc/tools/` directory and builds the output as HTML.
 
-Available make targets are:
+Available :command:`make` targets are:
 
  * "html", which builds standalone HTML files for offline viewing.
 
@@ -1719,3 +1731,8 @@ Then, make an output directory, e.g. under `build/`, and run ::
 
 where `<builder>` is one of html, text, latex, or htmlhelp (for explanations see
 the make targets above).
+
+.. _docutils: http://docutils.sourceforge.net/
+.. _Jinja: http://jinja.pocoo.org/
+.. _Pygments: http://pygments.org/
+.. _Sphinx: http://sphinx-doc.org/

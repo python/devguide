@@ -25,6 +25,10 @@ on Freenode_.
 .. _StackOverflow: http://stackoverflow.com/
 .. _Freenode: http://freenode.net/
 
+
+.. index::
+   single: PEP process; in FAQ
+
 .. _suggesting-changes:
 
 Where should I suggest new features and language changes?
@@ -47,6 +51,8 @@ unconvinced. When there isn't an obvious victor then the
 
 For some examples on language changes that were accepted please read
 `Justifying Python Language Changes`_.
+
+See also the :ref:`langchanges` section of this guide.
 
 .. _python-ideas: http://mail.python.org/mailman/listinfo/python-ideas
 .. _issue tracker: http://bugs.python.org

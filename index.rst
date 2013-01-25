@@ -1,55 +1,38 @@
+========================
 Python Developer's Guide
 ========================
 
-.. toctree::
-   :hidden:
-
-   setup
-   help
-   patch
-   runtests
-   coverage
-   docquality
-   documenting
-   silencewarnings
-   fixingissues
-   tracker
-   triaging
-   communication
-   coredev
-   developers
-   committing
-   devcycle
-   buildbots
-
-   stdlibchanges
-   langchanges
-
-   experts
-   emacs
-   gdb
-   grammar
-   compiler
-   faq
+This guide is a comprehensive resource for :ref:`contributing <contributing>`
+to Python_ -- for both new and experienced contributors.  It is
+:ref:`maintained <helping-with-the-developers-guide>` by the same community
+that maintains Python.  We welcome your contributions to Python!
 
 
 Quick Start
 -----------
 
-Here is a list of the basic steps necessary to get set up and make a patch:
+Here are the basic steps needed to get :ref:`set up <setup>` and contribute a
+patch:
 
-1. Get :ref:`a clone of CPython <setup>` with ``hg clone
-   http://hg.python.org/cpython``.
-2. On UNIX, run ``./configure --with-pydebug && make -j2`` to
-   :ref:`build Python <compiling>`.
+1. :ref:`Get the source code <checkout>`::
 
-   On :ref:`Windows <windows-compiling>`, load the project file
+      hg clone http://hg.python.org/cpython
+
+2. :ref:`Build Python <compiling>`.  On :ref:`UNIX <unix-compiling>`::
+
+      ./configure --with-pydebug && make -j2
+
+   On :ref:`Windows <windows-compiling>`, open the solution file
    :file:`PCbuild\\pcbuild.sln` in Visual Studio, select :menuselection:`Debug`,
    and :menuselection:`Build --> Build Solution`.
-3. :doc:`Run the tests <runtests>` with ``./python -m test -j3`` (use
-   :file:`./python.exe` on :ref:`most <python.exe>` Mac OS X systems and
-   :file:`PCbuild\\python_d.exe` on Windows; replace ``test`` with
-   ``test.regrtest`` for 2.7).
+3. :doc:`Run the tests <runtests>`::
+
+   ./python -m test -j3
+
+   On :ref:`most <mac-python.exe>` Mac OS X systems, replace :file:`./python`
+   with :file:`./python.exe`.  On Windows, use :file:`PCbuild\\python_d.exe` or
+   check the :ref:`Windows instructions <win-python.exe>`.  With Python 2.7,
+   replace ``test`` with ``test.regrtest``.
 4. Make the :doc:`patch <patch>`.
 5. Submit it to the `issue tracker`_.
 
@@ -65,6 +48,8 @@ contributing to Python.
 * :doc:`faq`
 * PEPs_ (Python Enhancement Proposals)
 
+
+.. _contributing:
 
 Contributing
 ------------
@@ -122,6 +107,7 @@ happen and that process is also described as part of this guide:
 
 Also refer to :ref:`suggesting-changes` in the FAQ.
 
+
 Other Interpreter Implementations
 ---------------------------------
 
@@ -167,6 +153,7 @@ Key Resources
 * :doc:`faq`
 * :doc:`developers`
 
+
 Additional Resources
 --------------------
 
@@ -183,15 +170,51 @@ Additional Resources
 
 * :ref:`Search this guide <search>`
 
+
+.. _contents:
+
+Full Table of Contents
+----------------------
+
+.. toctree::
+   :numbered:
+
+   setup
+   help
+   patch
+   runtests
+   coverage
+   docquality
+   documenting
+   silencewarnings
+   fixingissues
+   tracker
+   triaging
+   communication
+   coredev
+   developers
+   committing
+   devcycle
+   buildbots
+   stdlibchanges
+   langchanges
+   experts
+   emacs
+   gdb
+   grammar
+   compiler
+   faq
+
+
 .. _Buildbot status: http://python.org/dev/buildbot/
 .. _Firefox search engine plug-in: http://www.python.org/dev/searchplugin/
 .. _Misc directory: http://hg.python.org/cpython/file/default/Misc
 .. _PEPs: http://www.python.org/dev/peps
 .. _python.org maintenance: http://python.org/dev/pydotorg/
+.. _Python: http://www.python.org/
 .. _Python Mentors: http://pythonmentors.com/
 .. _PyPy: http://www.pypy.org/
 .. _Jython: http://www.jython.org/
 .. _IronPython: http://ironpython.net/
 .. _Stackless: http://www.stackless.com/
 .. _Issue tracker: http://bugs.python.org/
-
