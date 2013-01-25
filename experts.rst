@@ -237,7 +237,7 @@ unittest.mock         michael.foord*
 urllib                orsenthil
 uu
 uuid
-warnings              brett.cannon
+warnings
 wave
 weakref               fdrake, pitrou
 webbrowser            georg.brandl
