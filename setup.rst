@@ -1,15 +1,16 @@
-.. _setup:
-
-Getting Set Up
-==============
+===============
+Getting Started
+===============
 
 These instructions cover how to get a working copy of the source code and a
 compiled version of the CPython interpreter (CPython is the version of Python
 available from http://www.python.org/). It also gives an overview of the
 directory structure of the CPython source code.
 
-.. contents::
+.. _setup:
 
+Getting Set Up
+==============
 
 Version Control Setup
 ---------------------
@@ -121,6 +122,8 @@ root access is beyond the scope of this guide.
    more Python code than C.
 
 
+.. _unix-compiling:
+
 UNIX
 ''''
 
@@ -150,7 +153,7 @@ were not built, and so you can install the dependencies and re-run both
 Otherwise the build failed and thus should be fixed (at least with a bug being
 filed on the `issue tracker`_).
 
-.. _python.exe:
+.. _mac-python.exe:
 
 Once CPython is done building you will then have a working build
 that can be run in-place; ``./python`` on most machines (and what is used in
@@ -215,6 +218,8 @@ the build process by unchecking them inside the
 Once built you might want to set Python as a startup project. Pressing F5 in
 Visual Studio, or choosing Start Debugging from the Debug menu, will launch
 the interpreter.
+
+.. _win-python.exe:
 
 If you want to launch the compiled interpreter from the command-line, the
 path varies according to the build.  For a 32-bit build in debug mode, you

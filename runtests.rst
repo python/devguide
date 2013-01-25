@@ -18,10 +18,11 @@ from the root directory of your checkout (after you have built Python)::
 
     ./python -m test
 
-If you are using Python 2.7, then use the following instead as the basis
-for the commands in this section::
-
-    ./python -m test.regrtest
+You may need to change this command as follows throughout this section.
+On :ref:`most <mac-python.exe>` Mac OS X systems, replace :file:`./python`
+with :file:`./python.exe`.  On Windows, use :file:`PCbuild\\python_d.exe` or
+check the detailed :ref:`Windows instructions <win-python.exe>`.  If using
+Python 2.7, replace ``test`` with ``test.regrtest``.
 
 If you don't have easy access to a command line, you can run the test suite from
 a Python or IDLE shell::
@@ -69,6 +70,11 @@ with each other.  The ``-w`` flag causes failing tests to be run again to see
 if the failures are transient or consistent.
 The ``-uall`` flag allows the use of all available
 resources so as to not skip tests requiring, e.g., Internet access.
+
+To check for reference leaks (only needed if you modified C code), use the
+``-R`` flag.  For example, ``-R 3:2`` will first run the test 3 times to settle
+down the reference count, and then run it 2 more times to verify if there are
+any leaks.
 
 You can also execute the ``Tools/scripts/run_tests.py`` script as  found in a
 CPython checkout. The script tries to balance speed with thoroughness. But if
