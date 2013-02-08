@@ -285,6 +285,7 @@ NetBSD1
 OS2/EMX               aimacintyre
 Solaris/OpenIndiana   jcea
 Windows               tim.golden, brian.curtin
+JVM/Java              frank.wierzbicki
 ===================   ===========
 
 
