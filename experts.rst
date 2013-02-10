@@ -180,7 +180,7 @@ pyclbr
 pydoc
 queue                 rhettinger
 quopri
-random                rhettinger
+random                rhettinger, mark.dickinson
 re                    effbot (inactive), pitrou, ezio.melotti
 readline
 reprlib
