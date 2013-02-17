@@ -309,7 +309,7 @@ devguide            ncoghlan, eric.araujo, ezio.melotti
 documentation       georg.brandl, ezio.melotti, eric.araujo
 GUI
 i18n                lemburg, eric.araujo
-import machinery    brett.cannon, ncoghlan
+import machinery    brett.cannon, ncoghlan, eric.snow
 io                  pitrou, benjamin.peterson, stutzbach, hynek
 locale              lemburg, loewis
 mathematics         mark.dickinson, eric.smith, lemburg, stutzbach
