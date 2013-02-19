@@ -72,30 +72,32 @@ makes it harder to break the work up for multiple people to help with.
 Helping with the Developer's Guide
 ----------------------------------
 
+.. highlight:: bash
+
 The Developer's Guide uses the same process as the main Python documentation,
 except for some small differences.  The source lives in a `separate
-repository`_.  Bug reports and patches should be submitted to the `python
+repository`_.  Bug reports and patches should be submitted to the `Python
 bug tracker`_ using the ``devguide`` component.  Changes to the devguide
 are normally published within a day, on a schedule that may be different from
 the main documentation.
 
 .. _separate repository: http://hg.python.org/devguide
-.. _python bug tracker: http://bugs.python.org
+.. _Python bug tracker: http://bugs.python.org
 
-To clone the Developer's Guide:
+To clone the Developer's Guide::
 
-``hg clone http://hg.python.org/devguide``
+    $ hg clone http://hg.python.org/devguide
 
-Core developers should use:
+Core developers should use::
 
-``hg clone ssh://hg@hg.python.org/devguide``
+    $ hg clone ssh://hg@hg.python.org/devguide
 
 instead so that they can push back their edits to the server.
 
-To build the devguide, you must have `Sphinx`_ installed.  The devguide html
-can be built by running:
+To build the devguide, you must have `Sphinx`_ installed.  The devguide HTML
+can be built by running::
 
-    make html
+    $ make html
 
 in the checkout directory, which will write the files to the ``_build/html``
 directory.
