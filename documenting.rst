@@ -419,7 +419,7 @@ section title with a punctuation character, at least as long as the text::
 
 Normally, there are no heading levels assigned to certain characters as the
 structure is determined from the succession of headings.  However, for the
-Python documentation, we use this convention:
+Python documentation, here is a suggested convention:
 
 * ``#`` with overline, for parts
 * ``*`` with overline, for chapters
