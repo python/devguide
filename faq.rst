@@ -132,8 +132,13 @@ in return.
 Version Control
 ===============
 
+For everyone
+------------
+
+The following FAQs are intended for both core developers and contributors.
+
 Where can I learn about the version control system used, Mercurial (hg)?
--------------------------------------------------------------------------------
+''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 
 Mercurial_'s (also known as ``hg``) official web site is at
 http://mercurial.selenic.com/.  A book on Mercurial published by
@@ -158,7 +163,7 @@ workflow.
 
 
 I already know how to use Git, can I use that instead?
-------------------------------------------------------
+''''''''''''''''''''''''''''''''''''''''''''''''''''''
 
 While the main workflow for core developers requires Mercurial, if
 you just want to generate patches with ``git diff`` and post them to the
@@ -182,10 +187,10 @@ version control.
 
 
 What do I need to use Mercurial?
--------------------------------------------------------------------------------
+''''''''''''''''''''''''''''''''
 
 UNIX
-'''''''''''''''''''
+^^^^
 
 First, you need to `download Mercurial`_.  Most UNIX-based operating systems
 have binary packages available.  Most package management systems also
@@ -209,7 +214,7 @@ You can configure it in your ``~/.ssh/config`` file; for example::
 
 
 Windows
-'''''''''''''''''''
+^^^^^^^
 
 The recommended option on Windows is to `download TortoiseHg`_ which
 integrates with Windows Explorer and also bundles the command line client
@@ -236,7 +241,7 @@ to your SSH private key.
 
 
 What's a working copy? What's a repository?
--------------------------------------------
+'''''''''''''''''''''''''''''''''''''''''''
 
 Mercurial is a "distributed" version control system.  This means that each
 participant, even casual contributors, download a complete copy (called a
@@ -259,7 +264,7 @@ so are ``hg pull`` and ``hg push``.
 
 
 Which branches are in my local repository?
-------------------------------------------
+''''''''''''''''''''''''''''''''''''''''''
 
 Typing ``hg branches`` displays the open branches in your local repository::
 
@@ -272,7 +277,7 @@ Typing ``hg branches`` displays the open branches in your local repository::
    2.6                        76213:f130ce67387d (inactive)
 
 Why are some branches marked "inactive"?
-----------------------------------------
+''''''''''''''''''''''''''''''''''''''''
 
 Assuming you get the following output::
 
@@ -287,7 +292,7 @@ This means all changesets in the "3.3" branch have been merged into the
 .. _hg-current-branch:
 
 Which branch is currently checked out in my working copy?
----------------------------------------------------------
+'''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 
 Use::
 
@@ -307,7 +312,7 @@ Or to get more information::
 .. _hg-switch-branches:
 
 How do I switch between branches inside my working copy?
---------------------------------------------------------
+''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 
 Simply use ``hg update`` to checkout another branch in the current directory::
 
@@ -328,7 +333,7 @@ are removed.
 
 
 I want to keep a separate working copy per development branch, is it possible?
-------------------------------------------------------------------------------
+''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 
 Just clone your local repository and update each clone to a different branch::
 
@@ -343,21 +348,10 @@ The current branch in a working copy is "sticky": if you pull in some new
 changes, ``hg update`` will update to the head of the *current branch*.
 
 
-How do I avoid repeated pulls and pushes between my local repositories?
------------------------------------------------------------------------
-
-The "`share extension`_" allows you to share a single local repository
-between several working copies: each commit you make in a working copy will
-be immediately available in other working copies, even though they might
-be checked out on different branches.
-
-.. _share extension: http://mercurial.selenic.com/wiki/ShareExtension
-
-
 .. _hg-paths:
 
 How do I link my local repository to a particular remote repository?
--------------------------------------------------------------------------------
+''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 
 Your local repository is linked by default to the remote repository it
 was *cloned* from.  If you created it from scratch, however, it is not linked
@@ -375,7 +369,7 @@ FAQ, ``hg`` will use the default remote repository if you omit the parameter.
 
 
 How do I create a shorthand alias for a remote repository?
--------------------------------------------------------------------------------
+''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 
 In your global ``.hgrc`` file add a section similar to the following::
 
@@ -392,7 +386,7 @@ FAQ, ``hg`` should accept an alias in place of a complete remote URL.
 
 
 How do I compare my local repository to a remote repository?
--------------------------------------------------------------------------------
+''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 
 To display the list of changes that are in your local repository, but not
 in the remote, use::
@@ -420,7 +414,7 @@ This is the list of changes that will be retrieved if you call
 
 
 How do I update my local repository to be in sync with a remote repository?
--------------------------------------------------------------------------------
+'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 
 Run::
 
@@ -436,7 +430,7 @@ This doesn't update your working copy, though.  See below:
 
 
 How do I update my working copy with the latest changes?
---------------------------------------------------------
+''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 
 Do::
 
@@ -455,7 +449,7 @@ be aware that you can combine them in a single command::
 .. _hg-local-workflow:
 
 How do I apply a patch?
--------------------------------------------------------------------------------
+'''''''''''''''''''''''
 
 If you want to try out or review a patch generated using Mercurial, do::
 
@@ -493,7 +487,7 @@ then do::
 .. _merge-patch:
 
 How do I solve conflicts when applying a patch fails?
------------------------------------------------------
+'''''''''''''''''''''''''''''''''''''''''''''''''''''
 
 The standard ``patch`` command, as well as ``hg import``, will produce
 unhelpful ``*.rej`` files when it fails applying parts of a patch.
@@ -514,7 +508,7 @@ or if you want it to automatically solve conflicts by using heuristics::
 
 
 How do I add a file or directory to the repository?
--------------------------------------------------------------------------------
+'''''''''''''''''''''''''''''''''''''''''''''''''''
 
 Simply specify the path to the file or directory to add and run::
 
@@ -536,7 +530,7 @@ the file(s) to your local repository.
 
 
 What's the best way to split a file into several files?
--------------------------------------------------------------------------------
+'''''''''''''''''''''''''''''''''''''''''''''''''''''''
 
 To split a file into several files (e.g. a module converted to a package or a
 long doc file divided in two separate documents) use ``hg copy``::
@@ -553,41 +547,8 @@ the content from ``module.rst``, Mercurial won't know that the two file are
 related.
 
 
-.. _hg-commit:
-
-How do I commit a change to a file?
--------------------------------------------------------------------------------
-
-To commit any changes to a file (which includes adding a new file or deleting
-an existing one), you use the command::
-
- hg commit [PATH]
-
-``PATH`` is optional: if it is omitted, all changes in your working copy
-will be committed to the local repository.  When you commit, be sure that all
-changes are desired by :ref:`reviewing them first <hg-status>`;
-also, when making commits that you intend to push to public repositories,
-you should **not** commit together unrelated changes.
-
-To abort a commit that you are in the middle of, leave the message
-empty (i.e., close the text editor without adding any text for the
-message).  Mercurial will then abort the commit operation so that you can
-try again later.
-
-Once a change is committed to your local repository, it is still only visible
-by you.  This means you are free to experiment with as many local commits
-you feel like.
-
-.. note::
-   If you do not like the default text editor Mercurial uses for
-   entering commit messages, you may specify a different editor,
-   either by changing the ``EDITOR`` environment variable or by setting
-   a Mercurial-specific editor in your global ``.hgrc`` with the ``editor``
-   option in the ``[ui]`` section.
-
-
 How do I delete a file or directory in the repository?
--------------------------------------------------------------------------------
+''''''''''''''''''''''''''''''''''''''''''''''''''''''
 
 Specify the path to be removed with::
 
@@ -601,7 +562,7 @@ in your local repository.
 .. _hg-status:
 
 What files are modified in my working copy?
--------------------------------------------------------------------------------
+'''''''''''''''''''''''''''''''''''''''''''
 
 Running::
 
@@ -627,7 +588,7 @@ If you want a line-by-line listing of the differences, use::
 
 
 How do I revert a file I have modified back to the version in the repository?
--------------------------------------------------------------------------------
+'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 
 Running::
 
@@ -642,51 +603,8 @@ from the root of your working copy it will recursively restore everything
 to match up with the repository.
 
 
-.. _hg-merge:
-
-How do I find out which revisions need merging?
------------------------------------------------
-
-In unambiguous cases, Mercurial will find out for you if you simply try::
-
-   hg merge
-
-If that fails and Mercurial asks for explicit revisions, running::
-
-   hg heads
-
-will give you the list of branch heads in your local repository.  If you are
-working only in a particular named branch, for example ``default``, do::
-
-   hg heads default
-
-to display the heads on that branch.
-
-
-How do I list the files in conflict after a merge?
---------------------------------------------------
-
-Use::
-
-   hg resolve --list
-
-(abbreviated ``hg resolve -l``)
-
-
-How I mark a file resolved after I have resolved merge conflicts?
------------------------------------------------------------------
-
-Type::
-
-   hg resolve --mark <file path>
-
-(abbreviated ``hg resolve -m <file path>``)
-
-If you are sure you have resolved all conflicts, use ``hg resolve -am``.
-
-
 How do I find out who edited or what revision changed a line last?
--------------------------------------------------------------------------------
+''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 
 You want::
 
@@ -700,7 +618,7 @@ easy to :ref:`display it in detail <hg-log-rev>`.
 .. _hg-log:
 
 How can I see a list of log messages for a file or specific revision?
----------------------------------------------------------------------
+'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 
 To see the history of changes for a specific file, run::
 
@@ -722,7 +640,7 @@ If you want to view the differences for a specific revision, run::
 
 
 How can I see the changeset graph in my repository?
----------------------------------------------------
+'''''''''''''''''''''''''''''''''''''''''''''''''''
 
 In Mercurial repositories, changesets don't form a simple list, but rather
 a graph: every changeset has one or two parents (it's called a merge changeset
@@ -737,27 +655,8 @@ by default.
 .. _graphlog: http://mercurial.selenic.com/wiki/GraphlogExtension
 
 
-How do I undo the changes made in a recent commit?
--------------------------------------------------------------------------------
-
-First, this should not happen if you take the habit of :ref:`reviewing changes
-<hg-status>` before committing them.
-
-In any case, run::
-
- hg backout <revision number>
-
-This will modify your working copy so that all changes in ``<revision number>``
-(including added or deleted files) are undone.  You then need to :ref:`commit
-<hg-commit>` these changes so that the backout gets permanently recorded.
-
-.. note::
-   These instructions are for Mercurial 1.7 and higher.  ``hg backout`` has
-   a slightly different behaviour in versions before 1.7.
-
-
 How do I update to a specific release tag?
--------------------------------------------------------------------------------
+''''''''''''''''''''''''''''''''''''''''''
 
 Run::
 
@@ -769,7 +668,7 @@ to get a list of tags.  To update your working copy to a specific tag, use::
 
 
 How do I find which changeset introduced a bug or regression?
--------------------------------------------------------------
+'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 
 ``hg bisect``, as the name indicates, helps you do a bisection of a range of
 changesets.
@@ -799,7 +698,7 @@ whether the test succeeded or failed.
 
 
 How come feature XYZ isn't available in Mercurial?
---------------------------------------------------
+''''''''''''''''''''''''''''''''''''''''''''''''''
 
 Mercurial comes with many bundled extensions which can be explicitly enabled.
 You can get a list of them by typing ``hg help extensions``.  Some of these
@@ -821,6 +720,118 @@ In the end, please refer to the Mercurial `wiki`_, especially the pages about
 .. _configuration options: http://www.selenic.com/mercurial/hgrc.5.html
 
 
+For core developers
+-------------------
+
+These FAQs are intended mainly for core developers.
+
+
+How do I avoid repeated pulls and pushes between my local repositories?
+'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+
+The "`share extension`_" allows you to share a single local repository
+between several working copies: each commit you make in a working copy will
+be immediately available in other working copies, even though they might
+be checked out on different branches.
+
+.. _share extension: http://mercurial.selenic.com/wiki/ShareExtension
+
+
+.. _hg-commit:
+
+How do I commit a change to a file?
+'''''''''''''''''''''''''''''''''''
+
+To commit any changes to a file (which includes adding a new file or deleting
+an existing one), you use the command::
+
+ hg commit [PATH]
+
+``PATH`` is optional: if it is omitted, all changes in your working copy
+will be committed to the local repository.  When you commit, be sure that all
+changes are desired by :ref:`reviewing them first <hg-status>`;
+also, when making commits that you intend to push to public repositories,
+you should **not** commit together unrelated changes.
+
+To abort a commit that you are in the middle of, leave the message
+empty (i.e., close the text editor without adding any text for the
+message).  Mercurial will then abort the commit operation so that you can
+try again later.
+
+Once a change is committed to your local repository, it is still only visible
+by you.  This means you are free to experiment with as many local commits
+you feel like.
+
+.. note::
+   If you do not like the default text editor Mercurial uses for
+   entering commit messages, you may specify a different editor,
+   either by changing the ``EDITOR`` environment variable or by setting
+   a Mercurial-specific editor in your global ``.hgrc`` with the ``editor``
+   option in the ``[ui]`` section.
+
+
+.. _hg-merge:
+
+How do I find out which revisions need merging?
+'''''''''''''''''''''''''''''''''''''''''''''''
+
+In unambiguous cases, Mercurial will find out for you if you simply try::
+
+   hg merge
+
+If that fails and Mercurial asks for explicit revisions, running::
+
+   hg heads
+
+will give you the list of branch heads in your local repository.  If you are
+working only in a particular named branch, for example ``default``, do::
+
+   hg heads default
+
+to display the heads on that branch.
+
+
+How do I list the files in conflict after a merge?
+''''''''''''''''''''''''''''''''''''''''''''''''''
+
+Use::
+
+   hg resolve --list
+
+(abbreviated ``hg resolve -l``)
+
+
+How I mark a file resolved after I have resolved merge conflicts?
+'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+
+Type::
+
+   hg resolve --mark <file path>
+
+(abbreviated ``hg resolve -m <file path>``)
+
+If you are sure you have resolved all conflicts, use ``hg resolve -am``.
+
+
+How do I undo the changes made in a recent commit?
+''''''''''''''''''''''''''''''''''''''''''''''''''
+
+First, this should not happen if you take the habit of :ref:`reviewing changes
+<hg-status>` before committing them.
+
+In any case, run::
+
+ hg backout <revision number>
+
+This will modify your working copy so that all changes in ``<revision number>``
+(including added or deleted files) are undone.  You then need to :ref:`commit
+<hg-commit>` these changes so that the backout gets permanently recorded.
+
+.. note::
+   These instructions are for Mercurial 1.7 and higher.  ``hg backout`` has
+   a slightly different behaviour in versions before 1.7.
+
+
 SSH
 =======
 
@@ -831,7 +842,7 @@ All generated SSH keys should be sent to hgaccounts@python.org for
 adding to the list of keys.
 
 UNIX
-'''''''''''''''''''
+''''
 
 Run::
 
@@ -841,7 +852,7 @@ This will generate two files; your public key and your private key.  Your
 public key is the file ending in ``.pub``.
 
 Windows
-'''''''''''''''''''
+'''''''
 
 Use PuTTYgen_ to generate your public key.  Choose the "SSH2 DSA" radio button,
 have it create an OpenSSH formatted key, choose a password, and save the private
@@ -855,7 +866,7 @@ Is there a way to avoid having to constantly enter my password for my SSH 2 publ
 ---------------------------------------------------------------------------------------
 
 UNIX
-'''''''''''''''''''
+''''
 
 Use ``ssh-agent`` and ``ssh-add`` to register your private key with SSH for
 your current session.  The simplest solution, though, is to use KeyChain_,
@@ -868,7 +879,7 @@ once per login instead of per session.
 .. _pageant:
 
 Windows
-'''''''''''''''''''
+'''''''
 
 The Pageant program is bundled with TortoiseHg.  You can find it in its
 installation directory (usually ``C:\Program Files (x86)\TortoiseHg\``);
