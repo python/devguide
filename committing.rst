@@ -42,6 +42,61 @@ a memory aid to help with remembering the various elements that can go into
 making a complete patch.
 
 
+Handling Others' Code
+---------------------
+
+As a core developer you will occasionally want to commit a patch created by
+someone else. When doing so you will want to make sure of some things.
+
+First, make sure the patch is in a good state. Both :ref:`patch` and
+:ref:`helptriage`
+explain what is to be expected of a patch. Typically patches that get cleared by
+triagers are good to go except maybe lacking ``Misc/ACKS`` and ``Misc/NEWS``
+entries.
+
+Second, make sure the patch does not break backwards-compatibility without a
+good reason. This means :ref:`running the test suite <runtests>` to make sure
+everything still passes. It also means that if semantics do change there must
+be a good reason for the breakage of code the change will cause (and it
+**will** break someone's code). If you are unsure if the breakage is worth it,
+ask on python-dev.
+
+Third, ensure the patch is attributed correctly by adding the contributor's
+name to ``Misc/ACKS`` if they aren't already there (and didn't add themselves
+in their patch) and by mentioning "Patch by <x>" in the ``Misc/NEWS`` entry
+and the checkin message. If the patch has been heavily modified then "Initial
+patch by <x>" is an appropriate alternate wording.
+
+If you omit correct attribution in the initial checkin, then update ``ACKS``
+and ``NEWS`` in a subsequent checkin (don't worry about trying to fix the
+original checkin message in that case).
+
+
+Contributor Licensing Agreements
+--------------------------------
+
+It's unlikely bug fixes will require a `Contributor Licensing Agreement`_
+unless they touch a *lot* of code. For new features, it is preferable to
+ask that the contributor submit a signed CLA to the PSF as the associated
+comments, docstrings and documentation are far more likely to reach a
+copyrightable standard.
+
+For Python sprints we now recommend collecting CLAs as a matter of course, as
+the folks leading the sprints can then handle the task of scanning (or otherwise
+digitising) the forms and passing them on to the PSF secretary. (Yes, we
+realise this process is quite archaic. Yes, we're in the process of fixing
+it. No, it's not fixed yet).
+
+As discussed on the PSF Contribution_ page, it is the CLA itself that gives
+the PSF the necessary relicensing rights to redistribute contributions under
+the Python license stack. This is an additional permission granted above and
+beyond the normal permissions provided by the chosen open source license.
+
+.. _Contribution: http://www.python.org/psf/contrib/
+.. _Contributor Licensing Agreement:
+   http://www.python.org/psf/contrib/contrib-form/
+
+
 NEWS Entries
 ------------
 
@@ -129,7 +184,7 @@ If "closes" (or "closed", or "closing") is prepended, the issue is
 automatically closed as "fixed".
 
 Working with Mercurial_
------------------------
+=======================
 
 As a core developer, the ability to push changes to the official Python
 repositories means you have to be more careful with your workflow:
@@ -201,253 +256,171 @@ extension on your local computer is in your best interest.
 .. _eol extension: http://mercurial.selenic.com/wiki/EolExtension
 
 
-Handling Others' Code
----------------------
+Clones Setup
+------------
 
-As a core developer you will occasionally want to commit a patch created by
-someone else. When doing so you will want to make sure of some things.
+There are several possible ways to set up your Mercurial clone(s).  If you are
+a core developer, you often need to work on the different branches, so the best
+approach is to have a separate clone/directory for each active branch.  If you
+are a contributor, having a single clone might be enough.
 
-First, make sure the patch is in a good state. Both :ref:`patch` and
-:ref:`helptriage`
-explain what is to be expected of a patch. Typically patches that get cleared by
-triagers are good to go except maybe lacking ``Misc/ACKS`` and ``Misc/NEWS``
-entries.
+Single Clone Approach
+'''''''''''''''''''''
 
-Second, make sure the patch does not break backwards-compatibility without a
-good reason. This means :ref:`running the test suite <runtests>` to make sure
-everything still passes. It also means that if semantics do change there must
-be a good reason for the breakage of code the change will cause (and it
-**will** break someone's code). If you are unsure if the breakage is worth it,
-ask on python-dev.
+This approach has the advantage of being simpler because it requires a single
+clone/directory, but, on the other hand, it requires you to recompile Python
+every time you need to switch branch.  For this reason, this approach is not
+suggested to core developers, but it's usually suitable for contributors.
 
-Third, ensure the patch is attributed correctly by adding the contributor's
-name to ``Misc/ACKS`` if they aren't already there (and didn't add themselves
-in their patch) and by mentioning "Patch by <x>" in the ``Misc/NEWS`` entry
-and the checkin message. If the patch has been heavily modified then "Initial
-patch by <x>" is an appropriate alternate wording.
+See :ref:`checkout` to find information about cloning and switching branches.
 
-If you omit correct attribution in the initial checkin, then update ``ACKS``
-and ``NEWS`` in a subsequent checkin (don't worry about trying to fix the
-original checkin message in that case).
+Multiple Clones Approach
+''''''''''''''''''''''''
+
+This approach requires you to keep a separate clone/directory for each active
+branch, but, on the other hand, it doesn't require you to switch branches and
+recompile Python, so it saves times while merging and testing a patch on the
+different branches.  For this reason, this approach is suggested to core
+developers.
+
+The easiest way to do this is by using the `share extension`_, that can be
+enabled by adding the following lines to your ``~/.hgrc``::
+
+   [extensions]
+   share =
+
+Once you have :ref:`cloned the hg.python.org/cpython repository <checkout>`
+you can create the other shared clones using::
+
+   $ hg share cpython 2.7  # create a new shared clone
+   $ cd 2.7                # enter the directory
+   $ hg up 2.7             # switch to the 2.7 branch
+
+You can then repeat the same operation for the other active branches.
+This will create different clones/directories that share the same history.
+This means that once you commit or pull new changesets in one of the clones,
+they will be immediately available in all the other clones (note however that
+while you only need to use ``hg pull`` once, you still need to use ``hg up``
+in each clone to update its working copy).
+
+In order to apply a patch, commit, and merge it on all the branches, you can do
+as follow::
+
+   $ cd 2.7
+   $ hg pull ssh://hg@hg.python.org/cpython
+   $ hg up
+   $ hg import --no-c http://bugs.python.org/url/to/the/patch.diff
+   $ # review, run tests, run `make patchcheck`
+   $ hg ci -m '#12345: fix some issue.'
+   $ # switch to 3.2 and port the changeset using `hg graft`
+   $ cd ../3.2
+   $ hg up
+   $ hg graft 2.7
+   $ # switch to 3.3, merge, and commit
+   $ cd ../3.3
+   $ hg up
+   $ hg merge 3.2
+   $ hg ci -m '#12345: merge with 3.2.'
+   $ # switch to 3.x, merge, commit, and push everything
+   $ cd ../3.x
+   $ hg up
+   $ hg merge 3.3
+   $ hg ci -m '#12345: merge with 3.3.'
+   $ hg push ssh://hg@hg.python.org/cpython
+
+If you don't want to specify ssh://hg@hg.python.org/cpython every time, you
+should add to the ``.hg/hgrc`` files of the clones::
+
+   [paths]
+   default = ssh://hg@hg.python.org/cpython
+
+Unless noted otherwise, the rest of the page will assume you are using the
+multiple clone approach, and explain in more detail these basic steps.
+
+.. _share extension: http://mercurial.selenic.com/wiki/ShareExtension
 
 
-Contributor Licensing Agreements
---------------------------------
-
-It's unlikely bug fixes will require a `Contributor Licensing Agreement`_
-unless they touch a *lot* of code. For new features, it is preferable to
-ask that the contributor submit a signed CLA to the PSF as the associated
-comments, docstrings and documentation are far more likely to reach a
-copyrightable standard.
-
-For Python sprints we now recommend collecting CLAs as a matter of course, as
-the folks leading the sprints can then handle the task of scanning (or otherwise
-digitising) the forms and passing them on to the PSF secretary. (Yes, we
-realise this process is quite archaic. Yes, we're in the process of fixing
-it. No, it's not fixed yet).
-
-As discussed on the PSF Contribution_ page, it is the CLA itself that gives
-the PSF the necessary relicensing rights to redistribute contributions under
-the Python license stack. This is an additional permission granted above and
-beyond the normal permissions provided by the chosen open source license.
-
-.. _Contribution: http://www.python.org/psf/contrib/
-.. _Contributor Licensing Agreement:
-   http://www.python.org/psf/contrib/contrib-form/
-
-
-Forward-Porting
+Active branches
 ---------------
 
-If the patch is a bugfix and it does not break
-backwards-compatibility *at all*, then it should be applied to the oldest
-branch applicable and forward-ported until it reaches the in-development branch
-of Python (for example, first in ``3.2``, then in ``3.3`` and finally in
-``default``). A forward-port instead of a back-port is preferred as it allows
-the :abbr:`DAG (directed acyclic graph)` used by hg to work with the movement of
-the patch through the codebase instead of against it.
+If you do ``hg branches`` you will see a list of branches.  ``default`` is the
+in-development branch, and is the only branch that receives new features.  The
+other branches only receive bug fixes (``2.7``, ``3.2``, ``3.3``), or security
+fixes (``2.6``, ``3.1``).  Depending on what you are committing (feature, bug
+fix, or security fix), you should commit to the oldest branch applicable, and
+then forward-port until the in-development branch.
 
-Note that this policy applies only within a major version - the ``2.7`` branch
-is an independent thread of development, and should *never* be merged to any
-of the ``3.x`` branches or ``default``. If a bug fix applies to both ``2.x``
-and ``3.x``, the two additions are handled as separate commits. It doesn't
-matter which is updated first, but any associated tracker issues should be
-closed only after all affected versions have been modified in the main
-repository.
 
-.. warning::
-   Even when porting an already committed patch, you should **still** check the
+Merging order
+-------------
+
+There are two separate lines of development: one for Python 2 (the ``2.x``
+branches) and one for Python 3 (the ``3.x`` branches and ``default``).
+You should *never* merge between the two major versions (2.x and 3.x) ---
+only between minor versions (e.g. 3.x->3.y).  The merge always happens from
+the oldest applicable branch to the newest branch within the same major
+Python version.
+
+
+Merging between different branches (within the same major version)
+------------------------------------------------------------------
+
+Assume that Python 3.4 is the current in-development version of Python and that
+you have a patch that should also be applied to Python 3.3.  To properly port
+the patch to both versions of Python, you should first apply the patch to
+Python 3.3::
+
+   cd 3.3
+   hg import --no-commit patch.diff
+   # Compile; run the test suite
+   hg ci -m '#12345: fix some issue.'
+
+Then you can switch to the ``3.x`` clone, merge, run the tests and commit::
+
+   cd ../3.x
+   hg merge 3.3
+   # Fix any conflicts; compile; run the test suite
+   hg ci -m '#12345: merge with 3.3.'
+
+If you are not using the share extension, you will need to use
+``hg pull ../3.3`` before being able to merge.
+
+.. note::
+   Even when porting an already committed patch, you should *still* check the
    test suite runs successfully before committing the patch to another branch.
    Subtle differences between two branches sometimes make a patch bogus if
    ported without any modifications.
 
 
-Porting Within a Major Version
-''''''''''''''''''''''''''''''
+Porting changesets between the two major Python versions (2.x and 3.x)
+----------------------------------------------------------------------
 
-Assume that Python 3.4 is the current in-development version of Python and that
-you have a patch that should also be applied to Python 3.3. To properly port
-the patch to both versions of Python, you should first apply the patch to
-Python 3.3::
+Assume you just committed something on ``2.7``, and want to port it to ``3.2``.
+You can use ``hg graft`` as follow::
 
-   hg update 3.3
-   hg import --no-commit patch.diff
-   # Compile; run the test suite
-   hg commit
+   cd ../3.2
+   hg graft 2.7
 
-With the patch now committed, you want to merge the patch up into Python 3.4.
-This should be done *before* pushing your changes to hg.python.org, so that
-the branches are in sync on the public repository.  Assuming you are doing
-all of your work in a single clone, do::
+This will port the latest changeset committed in the 2.7 clone to the 3.2 clone.
+``hg graft`` always commits automatically, except in case of conflicts, when
+you have to resolve them and run ``hg graft --continue`` afterwards.
+Instead of the branch name you can also specify a changeset id, and you can
+also graft changesets from 3.x to 2.7.
 
-   hg update default
-   hg merge 3.3
-   # Fix any conflicts; compile; run the test suite
-   hg commit
+On older version of Mercurial where ``hg graft`` is not available, you can use::
 
-.. index:: null merging
+    cd ../3.2
+    hg export 2.7 | hg import -
 
-.. note::
-   If the patch should *not* be ported from Python 3.3 to Python 3.4, you must
-   also make this explicit by doing a *null merge*: merge the changes but
-   revert them before committing::
+The result will be the same, but in case of conflict this will create ``.rej``
+files rather than using Mercurial merge capabilities.
 
-      hg update default
-      hg merge 3.3
-      hg revert -ar default
-      hg resolve -am  # needed only if the merge created conflicts
-      hg commit
+A third option is to apply manually the patch on ``3.2``.  This is convenient
+when there are too many differences with ``2.7`` or when there is already a
+specific patch for ``3.2``.
 
-   This is necessary so that the merge gets recorded; otherwise, somebody
-   else will have to make a decision about your patch when they try to merge.
-   (Using a three-way merge tool generally makes the ``hg resolve`` step
-   in the above unnecessary; also see `this bug report
-   <http://bz.selenic.com/show_bug.cgi?id=2706>`__.)
-
-When you have finished your porting work (you can port several patches one
-after another in your local repository), you can push **all** outstanding
-changesets to hg.python.org::
-
-   hg push
-
-This will push changes in both the Python 3.3 and Python 3.4 branches to
-hg.python.org.
-
-
-Porting Between Major Versions
-''''''''''''''''''''''''''''''
-
-Let's say you have committed your changes as changeset ``a7df1a869e4a``
-in the 3.3 branch and now want to port it to 2.7.  This is simple using
-the "graft" command, which uses Mercurial's merge functionality to
-cherry-pick::
-
-   hg update 2.7
-   hg graft a7df1a869e4a
-   # Compile; run the test suite
-
-Graft always commits automatically, except in case of conflicts, when you
-have to resolve them and run ``hg graft --continue`` afterwards.
-
-Another method is using "export" and "import": this has the advantage that
-you can run the test suite before committing, but the disadvantage that
-in case of conflicts, you will only get ``.rej`` files, not inline merge
-markers. ::
-
-   hg update 2.7
-   hg export a7df1a869e4a | hg import --no-commit -
-   # Compile; run the test suite
-   hg commit
-
-
-Using several working copies
-''''''''''''''''''''''''''''
-
-If you often work on bug fixes, you may want to avoid switching branches
-in your local repository.  The reason is that rebuilding takes time
-when many files are updated.  Instead, it is desirable to use a separate
-working copy for each maintenance branch.
-
-There are various ways to achieve this, but here is a possible scenario:
-
-* First do a clone of the public repository, whose working copy will be
-  updated to the ``default`` branch::
-
-   $ hg clone ssh://hg@hg.python.org/cpython py3k
-
-* Then clone it to create another local repository which is then used to
-  checkout branch 3.3::
-
-   $ hg clone py3k py3.3
-   $ cd py3.3
-   $ hg update 3.3
-
-* Then clone it to create another local repository which is then used to
-  checkout branch 3.2::
-
-   $ hg clone py3.3 py3.2
-   $ cd py3.2
-   $ hg update 3.2
-
-* If you also need the 3.1 branch to work on security fixes, you can similarly
-  clone it, either from the ``py3.2`` or the ``py3k`` repository. It is
-  suggested, though, that you clone from ``py3.2`` as that it will force you
-  to push changes back up your clone chain so that you make sure to port
-  changes to all proper versions.
-
-* You can also clone a 2.7-dedicated repository from the ``py3k`` branch::
-
-   $ hg clone py3k py2.7
-   $ cd py2.7
-   $ hg update 2.7
-
-Given this arrangement of local repositories, pushing from the ``py3.2``
-repository will update the ``py3.3`` repository, where you can then merge your
-3.2 changes into the 3.3 branch.  In turn, pushing changes from the ``py3.3``
-repository will update the ``py3k`` repository.  Finally, once you have
-merged (and tested!) your ``3.3`` changes into the ``default`` branch, pushing
-from the ``py3k`` repository will publish your changes in the public
-repository.
-
-When working with this kind of arrangement, it can be useful to have a simple
-script that runs the necessary commands to update all branches with upstream
-changes::
-
-  cd ~/py3k
-  hg pull -u
-  cd ~/py3.3
-  hg pull -u
-  cd ~/py3.2
-  hg pull -u
-  cd ~/py2.7
-  hg pull -u
-
-Only the first of those updates will touch the network - the latter two will
-just transfer the changes locally between the relevant repositories.
-
-If you want, you can later :ref:`change the flow of changes <hg-paths>` implied
-by the cloning of repositories. For example, you may choose to add a separate
-``sandbox`` repository for experimental code (potentially published somewhere
-other than python.org) or an additional pristine repository that is
-never modified locally.
-
-
-Differences with ``svnmerge``
-'''''''''''''''''''''''''''''
-
-If you are coming from Subversion, you might be surprised by Mercurial
-:ref:`merges <hg-merge>`.
-Despite its name, ``svnmerge`` is different from ``hg merge``: while ``svnmerge``
-allows to cherry-pick individual revisions, ``hg merge`` can only merge whole
-lines of development in the repository's :abbr:`DAG (directed acyclic graph)`.
-Therefore, ``hg merge`` might force you to review outstanding changesets by
-someone else that haven't been merged yet.
-
-
-.. seealso::
-   `Merging work
-   <http://hgbook.red-bean.com/read/a-tour-of-mercurial-merging-work.html>`_,
-   in `Mercurial: The Definitive Guide <http://hgbook.red-bean.com/>`_.
+.. warning::
+    Never use ``hg merge`` to port changes between 2.x and 3.x (or vice versa).
 
 
 Long-term development of features
