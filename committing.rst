@@ -274,6 +274,8 @@ suggested to core developers, but it's usually suitable for contributors.
 
 See :ref:`checkout` to find information about cloning and switching branches.
 
+.. _multiple-clones:
+
 Multiple Clones Approach
 ''''''''''''''''''''''''
 
