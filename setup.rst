@@ -188,7 +188,7 @@ Windows
 
 **Python 3.3** and later use Microsoft Visual Studio 2010.  You can
 download Microsoft Visual C++ 2010 Express `from Microsoft's site
-<http://www.microsoft.com/visualstudio/en-us/products/2010-editions/visual-cpp-express>`_.
+<https://www.microsoft.com/visualstudio/eng/downloads#d-2010-express>`_.
 
 Most Python versions prior to 3.3 use Microsoft Visual Studio 2008.  You can
 download Microsoft Visual C++ 2008 Express Edition with SP1
