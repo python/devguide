@@ -199,8 +199,10 @@ Regardless of Visual Studio version, the ``PCbuild`` directory of a source
 checkout contains the build files for the Python version you are building.
 The full version of Visual Studio is not necessary for common tasks with
 32-bit builds; the gratis C++ Express versions linked above are sufficient.
-The limitations of the Express versions are given at
-http://msdn.microsoft.com/en-us/library/hs24szh9%28v=VS.90%29.aspx .
+Their limitations are given `here (2008)
+<http://msdn.microsoft.com/en-us/library/hs24szh9%28v=VS.90%29.aspx>`_
+and `here (2010)
+<http://msdn.microsoft.com/en-us/library/hs24szh9%28v=vs.100%29.aspx>`_.
 
 To build from the Visual Studio GUI, open the ``pcbuild.sln`` solution file
 with Visual Studio.  Choose the :menuselection:`Build Solution` option
