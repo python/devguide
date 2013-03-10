@@ -137,7 +137,7 @@ Configuration is typically::
 More flags are available to ``configure``, but this is the minimum you should
 do to get a pydebug build of CPython.
 
-Once ``configure`` is done, you can then compile CPython.::
+Once ``configure`` is done, you can then compile CPython with::
 
     make -s -j2
 
