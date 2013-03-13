@@ -305,11 +305,17 @@ they will be immediately available in all the other clones (note however that
 while you only need to use ``hg pull`` once, you still need to use ``hg up``
 in each clone to update its working copy).
 
+If you don't want to specify ssh://hg@hg.python.org/cpython every time you pull
+or push, you should add to the ``.hg/hgrc`` files of the clones::
+
+   [paths]
+   default = ssh://hg@hg.python.org/cpython
+
 In order to apply a patch, commit, and merge it on all the branches, you can do
 as follow::
 
    $ cd 2.7
-   $ hg pull ssh://hg@hg.python.org/cpython
+   $ hg pull
    $ hg up
    $ hg import --no-c http://bugs.python.org/url/to/the/patch.diff
    $ # review, run tests, run `make patchcheck`
@@ -328,13 +334,7 @@ as follow::
    $ hg up
    $ hg merge 3.3
    $ hg ci -m '#12345: merge with 3.3.'
-   $ hg push ssh://hg@hg.python.org/cpython
-
-If you don't want to specify ssh://hg@hg.python.org/cpython every time, you
-should add to the ``.hg/hgrc`` files of the clones::
-
-   [paths]
-   default = ssh://hg@hg.python.org/cpython
+   $ hg push
 
 Unless noted otherwise, the rest of the page will assume you are using the
 multiple clone approach, and explain in more detail these basic steps.
@@ -345,12 +345,12 @@ multiple clone approach, and explain in more detail these basic steps.
 Active branches
 ---------------
 
-If you do ``hg branches`` you will see a list of branches.  ``default`` is the
-in-development branch, and is the only branch that receives new features.  The
-other branches only receive bug fixes (``2.7``, ``3.2``, ``3.3``), or security
-fixes (``2.6``, ``3.1``).  Depending on what you are committing (feature, bug
-fix, or security fix), you should commit to the oldest branch applicable, and
-then forward-port until the in-development branch.
+If you do ``hg branches`` you will see a :ref:`list of branches <listbranch>`.
+``default`` is the in-development branch, and is the only branch that receives
+new features.  The other branches only receive bug fixes or security fixes.
+Depending on what you are committing (feature, bug fix, or security fix), you
+should commit to the oldest branch applicable, and then forward-port until the
+in-development branch.
 
 
 Merging order
@@ -377,9 +377,9 @@ Python 3.3::
    # Compile; run the test suite
    hg ci -m '#12345: fix some issue.'
 
-Then you can switch to the ``3.x`` clone, merge, run the tests and commit::
+Then you can switch to the ``3.4`` clone, merge, run the tests and commit::
 
-   cd ../3.x
+   cd ../3.4
    hg merge 3.3
    # Fix any conflicts; compile; run the test suite
    hg ci -m '#12345: merge with 3.3.'
