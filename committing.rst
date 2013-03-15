@@ -339,6 +339,11 @@ as follow::
 Unless noted otherwise, the rest of the page will assume you are using the
 multiple clone approach, and explain in more detail these basic steps.
 
+For more advanced explanations about :ref:`null merges <hg-null-merge>`,
+:ref:`heads merges <hg-heads-merge>`, :ref:`merge conflicts
+<hg-merge-conflicts>`, etc., see the :ref:`FAQs for core developers
+<core-devs-faqs>`.
+
 .. _share extension: http://mercurial.selenic.com/wiki/ShareExtension
 
 
@@ -363,6 +368,8 @@ only between minor versions (e.g. 3.x->3.y).  The merge always happens from
 the oldest applicable branch to the newest branch within the same major
 Python version.
 
+
+.. _branch-merge:
 
 Merging between different branches (within the same major version)
 ------------------------------------------------------------------
