@@ -728,6 +728,8 @@ In the end, please refer to the Mercurial `wiki`_, especially the pages about
 .. _configuration options: http://www.selenic.com/mercurial/hgrc.5.html
 
 
+.. _core-devs-faqs:
+
 For core developers
 -------------------
 
@@ -767,47 +769,86 @@ you feel like.
    option in the ``[ui]`` section.
 
 
-.. _hg-merge:
+.. _hg-merge-conflicts:
 
-How do I find out which revisions need merging?
-'''''''''''''''''''''''''''''''''''''''''''''''
+How do I solve merge conflicts?
+'''''''''''''''''''''''''''''''
 
-In unambiguous cases, Mercurial will find out for you if you simply try::
+The easiest way is to install KDiff3 --- Mercurial will open it automatically
+in case of conflicts, and you can then use it to solve the conflicts and
+save the resulting file(s).  KDiff3 will also take care of marking the
+conflicts as resolved.
 
+If you don't use a merge tool, you can use ``hg resolve --list`` to list the
+conflicting files, resolve the conflicts manually, and the use
+``hg resolve --mark <file path>`` to mark these conflicts as resolved.
+You can also use ``hg resolve -am`` to mark all the conflicts as resolved.
+
+.. note::
+   Mercurial will use KDiff3 automatically if it's installed and it can find
+   it --- you don't need to change any settings.  KDiff3 is also already
+   included in the installer of TortoiseHg.  For more information, see
+   http://mercurial.selenic.com/wiki/KDiff3.
+
+
+.. _hg-null-merge:
+
+How do I make a null merge?
+'''''''''''''''''''''''''''
+
+If you committed something (e.g. on 3.2) that shouldn't be ported on newer
+branches (e.g. on 3.3), you have to do a *null merge*::
+
+   cd 3.3
+   hg merge 3.2
+   hg revert -ar 3.3
+   hg resolve -am  # needed only if the merge created conflicts
+   hg ci -m '#12345: null merge with 3.2.'
+
+Before committing, ``hg status`` should list all the merged files as ``M``,
+but ``hg diff`` should produce no output.  This will record the merge without
+actually changing the content of the files.
+
+
+.. _hg-heads-merge:
+
+I got "abort: push creates new remote heads!" while pushing, what do I do?
+''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+
+If you see this message while pushing, it means that you committed something
+on a clone that was not up to date, thus creating a new head.
+This usually happens for two reasons:
+
+1. You forgot to run ``hg pull`` and/or ``hg up`` before committing;
+2. Someone else pushed on the main repo just before you, causing a push race;
+
+First of all you should pull the new changesets using ``hg pull``.  Then you can
+use ``hg heads`` to see which branches have multiple heads.
+
+If only one branch has multiple heads, you can do::
+
+   cd default
+   hg heads .
+   hg up csid-of-the-other-head
    hg merge
+   hg ci -m 'Merge heads.'
 
-If that fails and Mercurial asks for explicit revisions, running::
+``hg heads .``  will show you the two heads of the current branch: the one you
+pulled and the one you created with your commit (you can also specify a branch
+with ``hg heads <branch>``).  While not strictly necessary, it is highly
+recommended to switch to the other head before merging.  This way you will be
+merging only your changeset with the rest, and in case of conflicts it will be
+a lot easier.
 
-   hg heads
+If more than one branch has multiple heads, you have to repeat these steps for
+each branch.  Since this creates new changesets, you will also have to
+:ref:`merge them between branches <branch-merge>`.  For example, if both ``3.3``
+and ``default`` have multiple heads, you should first merge heads in ``3.3``,
+then merge heads in ``default``, and finally merge ``3.3`` with ``default``
+using ``hg merge 3.3`` as usual.
 
-will give you the list of branch heads in your local repository.  If you are
-working only in a particular named branch, for example ``default``, do::
-
-   hg heads default
-
-to display the heads on that branch.
-
-
-How do I list the files in conflict after a merge?
-''''''''''''''''''''''''''''''''''''''''''''''''''
-
-Use::
-
-   hg resolve --list
-
-(abbreviated ``hg resolve -l``)
-
-
-How I mark a file resolved after I have resolved merge conflicts?
-'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
-
-Type::
-
-   hg resolve --mark <file path>
-
-(abbreviated ``hg resolve -m <file path>``)
-
-If you are sure you have resolved all conflicts, use ``hg resolve -am``.
+In order to avoid this, you should *always remember to pull and update before
+committing*.
 
 
 How do I undo the changes made in a recent commit?
