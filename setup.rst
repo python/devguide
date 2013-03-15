@@ -189,11 +189,12 @@ Windows
 **Python 3.3** and later use Microsoft Visual Studio 2010.  You can
 download Microsoft Visual C++ 2010 Express `from Microsoft's site
 <https://www.microsoft.com/visualstudio/eng/downloads#d-2010-express>`_.
+To use it for more than 28 days, one must register through a
+Windows Live account.
 
 Most Python versions prior to 3.3 use Microsoft Visual Studio 2008.  You can
 download Microsoft Visual C++ 2008 Express Edition with SP1
-`here <http://www.microsoft.com/en-us/download/details.aspx?id=14597>`_.
-You may need to select the file named ``vcsetup.exe``.
+from a new location yet to be determined.
 
 Regardless of Visual Studio version, the ``PCbuild`` directory of a source
 checkout contains the build files for the Python version you are building.
