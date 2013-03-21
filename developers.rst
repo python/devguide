@@ -24,6 +24,9 @@ transliteration too.
 Permissions History
 -------------------
 
+- Roger Serwy was given push privileges on Mar 21 2013 by GFB, for IDLE
+  contributions, on recommendation by Ned Deily.
+
 - Serhiy Storchaka was given push privileges on Dec 26 2012 by GFB, for general
   contributions, on recommendation by Trent Nelson.
 
