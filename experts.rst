@@ -123,7 +123,7 @@ heapq                 rhettinger, stutzbach
 hmac
 html                  ezio.melotti
 http
-idlelib               kbk, terry.reedy
+idlelib               kbk, terry.reedy, roger.serwy
 imaplib
 imghdr
 imp
