@@ -174,7 +174,7 @@ than the main repository::
     git clone git://github.com/akheron/cpython
 
 The mirror's master branch tracks the main repository's default branch,
-while the maintenance branch names (``2.7``, ``3.2``, etc) are mapped
+while the maintenance branch names (``2.7``, ``3.3``, etc) are mapped
 directly.
 
 .. _git mirror: http://github.com/akheron/cpython
@@ -796,14 +796,14 @@ You can also use ``hg resolve -am`` to mark all the conflicts as resolved.
 How do I make a null merge?
 '''''''''''''''''''''''''''
 
-If you committed something (e.g. on 3.2) that shouldn't be ported on newer
-branches (e.g. on 3.3), you have to do a *null merge*::
+If you committed something (e.g. on 3.3) that shouldn't be ported on newer
+branches (e.g. on default), you have to do a *null merge*::
 
-   cd 3.3
-   hg merge 3.2
-   hg revert -ar 3.3
+   cd 3.x
+   hg merge 3.3
+   hg revert -ar default
    hg resolve -am  # needed only if the merge created conflicts
-   hg ci -m '#12345: null merge with 3.2.'
+   hg ci -m '#12345: null merge with 3.3.'
 
 Before committing, ``hg status`` should list all the merged files as ``M``,
 but ``hg diff`` should produce no output.  This will record the merge without
