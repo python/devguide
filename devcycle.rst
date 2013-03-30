@@ -31,12 +31,12 @@ Branches
 ''''''''
 
 There is a branch for each *feature version*, whether released or not (e.g.
-2.7, 3.2, 3.3).  Development is handled separately for Python 2 and Python 3:
+2.7, 3.3).  Development is handled separately for Python 2 and Python 3:
 no merging happens between 2.x and 3.x branches.
 
 In each of the 2.x and 3.x realms, the branch for a feature version is always a
-descendant of the previous feature version: for example, the ``3.2`` branch is a
-descendant of the ``3.1`` branch.
+descendant of the previous feature version: for example, the ``3.3`` branch is a
+descendant of the ``3.2`` branch.
 
 Therefore, each change should be made **first** in the oldest branch to which it
 applies and forward-ported as appropriate: if a bug must be fixed in both Python
@@ -77,10 +77,12 @@ etc.).  For both rules, only rare exceptions are accepted and **must** be
 discussed first.
 
 Sometime after a new maintenance branch is created (after a new *minor version*
-is released), the old maintenance branch on that major version (e.g. 3.2.x
-after 3.3 gets released) will go into :ref:`security mode <secbranch>`,
+is released), the old maintenance branch on that major version will go into
+:ref:`security mode <secbranch>`,
 usually after one last maintenance release at the discretion of the
-release manager.
+release manager.  For example, the 3.2 maintenance branch was put into
+:ref:`security mode <secbranch>` after the 3.2.4 final maintenance release
+following the release of 3.3.0.
 
 .. _secbranch:
 
@@ -107,8 +109,7 @@ There are 6 open branches right now in the Mercurial repository:
 - the ``default`` branch holds the future 3.4 version and descends from ``3.3``
 - the ``3.3`` branch holds bug fixes for future 3.3.x maintenance releases
   and descends from ``3.2``
-- the ``3.2`` branch holds bug fixes for an upcoming final 3.2.4 maintenance
-  release and then for future 3.2.x security releases
+- the ``3.2`` branch holds security fixes for future 3.2.x security releases
 - the ``3.1`` branch holds security fixes for future 3.1.x security releases
 - the ``2.7`` branch holds bug fixes for future 2.7.x maintenance releases and
   descends from ``2.6``
