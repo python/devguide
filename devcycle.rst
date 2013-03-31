@@ -93,10 +93,13 @@ A branch less than 5 years old but no longer in maintenance mode.
 
 The only changes made to a security branch are those fixing issues exploitable
 by attackers such as crashes, privilege escalation and, optionally, other
-issues such as denial of service attacks.  Other behavioral issues are
+issues such as denial of service attacks.  Any other changes are
 **not** considered a security risk and thus not backported to a security branch.
-Any release made from a security branch is source-only and done only when
-actual security patches have been applied to the branch.
+
+Commits to security branches are to be coordinated with the release manager
+for the corresponding feature version, as listed below in the Summary_.
+Any release made from a security branch is source-only and done only when actual
+security patches have been applied to the branch.
 
 
 .. _listbranch:
@@ -104,16 +107,20 @@ actual security patches have been applied to the branch.
 Summary
 -------
 
-There are 6 open branches right now in the Mercurial repository:
+There are 6 active branches right now in the Mercurial repository:
 
 - the ``default`` branch holds the future 3.4 version and descends from ``3.3``
+  (future RM: Larry Hastings)
 - the ``3.3`` branch holds bug fixes for future 3.3.x maintenance releases
-  and descends from ``3.2``
+  and descends from ``3.2`` (RM: Georg Brandl)
 - the ``3.2`` branch holds security fixes for future 3.2.x security releases
+  (RM: Georg Brandl)
 - the ``3.1`` branch holds security fixes for future 3.1.x security releases
+  (RM: Benjamin Peterson)
 - the ``2.7`` branch holds bug fixes for future 2.7.x maintenance releases and
-  descends from ``2.6``
+  descends from ``2.6`` (RM: Benjamin Peterson)
 - the ``2.6`` branch holds security fixes for future 2.6.x security releases
+  (RM: Barry Warsaw)
 
 
 .. _stages:
