@@ -101,11 +101,13 @@ NEWS Entries
 ------------
 
 Almost all changes made to the code base deserve an entry in ``Misc/NEWS``.
-The ``What's New in Python`` document is the place for more subjective
-judgments of the "importance" of changes. There are two notable exceptions
-to this general principle, and they both relate to changes that *already*
-have a NEWS entry, and have not yet been included in any formal release
-(including alpha and beta releases). These exceptions are:
+If the change is particularly interesting for end users (e.g. new features,
+significant improvements, or backwards-incompatible changes), an entry in
+the ``What's New in Python`` document (in ``Doc/whatsnew/``) should be added
+as well.  There are two notable exceptions to this general principle, and they
+both relate to changes that *already* have a NEWS entry, and have not yet
+been included in any formal release (including alpha and beta releases).
+These exceptions are:
 
 * If a change is reverted prior to release, then the corresponding entry
   is simply removed. Otherwise, a new entry must be added noting that the
