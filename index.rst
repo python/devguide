@@ -131,8 +131,6 @@ developers to work on them.  Some major example that may be of interest are:
   extension modules
 
 
-.. _resources:
-
 Key Resources
 -------------
 
@@ -153,6 +151,8 @@ Key Resources
 * :doc:`faq`
 * :doc:`developers`
 
+
+.. _resources:
 
 Additional Resources
 --------------------
