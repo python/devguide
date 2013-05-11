@@ -24,6 +24,9 @@ transliteration too.
 Permissions History
 -------------------
 
+- Ethan Furman was given prush privileges on May 11 2013 by BAC, for PEP 435
+  work, on the recommendation of Eli Bendersky.
+
 - Roger Serwy was given push privileges on Mar 21 2013 by GFB, for IDLE
   contributions, on recommendation by Ned Deily.
 
