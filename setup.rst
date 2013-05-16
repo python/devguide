@@ -163,7 +163,11 @@ directory. There is normally no need to install your built copy
 of Python! The interpreter will realize where it is being run from
 and thus use the files found in the working copy.  If you are worried
 you might accidentally install your working copy build, you can add
-``--prefix=/tmp/python`` to the configuration step.
+``--prefix=/tmp/python`` to the configuration step.  When running from your
+working directory, it is best to avoid using the ``--enable-shared`` flag
+to ``configure``; unless you are very careful, you may accidentally run
+with code from an older, installed shared Python library rather than from
+the interpreter you just built.
 
 .. _issue tracker: http://bugs.python.org
 
