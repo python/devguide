@@ -74,17 +74,6 @@ unknown to you between your changes and some other part of the interpreter.
 Fifth, proper :ref:`documentation <documenting>`
 additions/changes should be included.
 
-Sixth, if you are not already in the ``Misc/ACKS`` file then add your name. If
-you have taken the time to diagnose a problem, invent a solution, code it up,
-and submit a patch you deserve to be recognized as having contributed to
-Python. This also means you need to fill out a `contributor form`_ which
-allows the `Python Software Foundation`_ to license your code for use with
-Python (you retain the copyright).
-
-
-.. _contributor form: http://www.python.org/psf/contrib/
-.. _Python Software Foundation: http://www.python.org/psf/
-
 
 .. _patch-generation:
 
@@ -111,6 +100,24 @@ If you are using another approach, you probably need to find out the right
 invocation of ``hg diff`` for your purposes; see ``hg help diff`` and ``hg
 help revisions``. Just please make sure that you generate a
 **single, condensed** patch rather than a series of several changesets.
+
+
+Licensing
+---------
+
+For non-trivial changes, we must have your formal approval for distributing
+your work under the `PSF license`_.  Therefore, you need to fill out a
+`contributor form`_ which allows the `Python Software Foundation`_ to
+license your code for use with Python (you retain the copyright).
+
+.. note::
+   You only have to sign this document once, it will then apply to all
+   your further contributions to Python.
+
+
+.. _PSF license: http://docs.python.org/3.4/license.html#terms-and-conditions-for-accessing-or-otherwise-using-python
+.. _contributor form: http://www.python.org/psf/contrib/
+.. _Python Software Foundation: http://www.python.org/psf/
 
 
 Submitting
@@ -166,3 +173,12 @@ But if your patch is committed it will then go into Python's
 with the next major release of Python. It may also be backported to older
 versions of Python as a bugfix if the core developer doing the commit believes
 it is warranted.
+
+
+Crediting
+---------
+
+Non-trivial contributions are credited in the ``Misc/ACKS`` file (and, most
+often, in a contribution's ``Misc/NEWS`` entry as well).  This is something
+the core developer will do when committing your patch, you don't have to
+propose the addition by yourself.
