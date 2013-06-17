@@ -118,9 +118,9 @@ gettext               loewis
 glob
 grp
 gzip
-hashlib
+hashlib               christian.heimes, gregory.p.smith
 heapq                 rhettinger, stutzbach
-hmac
+hmac                  christian.heimes, gregory.p.smith
 html                  ezio.melotti
 http
 idlelib               kbk, terry.reedy, roger.serwy
@@ -201,8 +201,8 @@ socket                pitrou
 socketserver
 spwd
 sqlite3               ghaering
-ssl                   janssen, pitrou, giampaolo.rodola
-stat
+ssl                   janssen, pitrou, giampaolo.rodola, christian.heimes
+stat                  christian.heimes
 string                georg.brandl*
 stringprep
 struct                mark.dickinson, meador.inge
@@ -249,8 +249,8 @@ xml.dom
 xml.dom.minidom
 xml.dom.pulldom
 xml.etree             effbot (inactive), eli.bendersky
-xml.parsers.expat
-xml.sax
+xml.parsers.expat     christian.heimes
+xml.sax               christian.heimes
 xml.sax.handler
 xml.sax.saxutils
 xml.sax.xmlreader
@@ -303,6 +303,7 @@ buildbots           pitrou
 bytecode            pitrou, georg.brandl
 context managers    ncoghlan
 coverity scan       christian.heimes, brett.cannon
+cryptography        christian.heimes, gregory.p.smith
 data formats        mark.dickinson, georg.brandl
 database            lemburg
 devguide            ncoghlan, eric.araujo, ezio.melotti
