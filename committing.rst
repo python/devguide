@@ -385,7 +385,7 @@ Then you can switch to the ``3.4`` clone, merge, run the tests and commit::
 
    cd ../3.4
    hg merge 3.3
-   # Fix any conflicts; compile; run the test suite
+   # Fix any conflicts (e.g. ``hg revert -r default Misc/NEWS``); compile; run the test suite
    hg ci -m '#12345: merge with 3.3.'
 
 If you are not using the share extension, you will need to use
