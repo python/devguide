@@ -19,11 +19,6 @@ The documentation built from the :ref:`in-development <indevbranch>` and
 http://docs.python.org/dev/.  The in-development and most recent 2.x and 3.x
 maintenance :ref:`branches <listbranch>` are rebuilt once per day.
 
-If you would like a technical documentation style guide, the `Apple
-Publications Style Guide
-<http://developer.apple.com/mac/library/documentation/UserExperience/Conceptual/APStyleGuide/APSG_2009.pdf>`_
-is recommended.
-
 If you care to get more involved with documentation, you may also consider
 subscribing to the
 `docs@python.org mailing list <http://mail.python.org/mailman/listinfo/docs>`_.
