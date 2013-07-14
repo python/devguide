@@ -67,7 +67,7 @@ Permissions History
   Melotti, R. David Murray and others.
 
 - Charles-François Natali was given push privileges on May 19 2011 by Antoine
-  Pitrou, for general contributions, on recommandation by Victor Stinner,
+  Pitrou, for general contributions, on recommendation by Victor Stinner,
   Brian Curtin and others.
 
 - Nadeem Vawda was given push privileges on Apr 10 2011 by GFB, for
@@ -231,7 +231,7 @@ Permissions History
   for general contributions to Python.
 
 - Mark Dickinson was given SVN access on 6 January 2008 by Facundo
-  Batista for his work on mathemathics and number related issues.
+  Batista for his work on mathematics and number related issues.
 
 - Amaury Forgeot d'Arc was given SVN access on 9 November 2007 by MvL,
   for general contributions to Python.
