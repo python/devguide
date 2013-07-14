@@ -61,14 +61,6 @@ and your desire to help out!
 Style guide
 ===========
 
-The Python documentation should follow the `Apple Publications Style Guide`_
-wherever possible. This particular style guide was selected mostly because it
-seems reasonable and is easy to get online.
-
-Topics which are either not covered in Apple's style guide or treated
-differently in Python documentation will be discussed in this
-document.
-
 Use of whitespace
 -----------------
 
@@ -264,9 +256,6 @@ errors ("I made a mistake, therefore the docs must be wrong ...").  Typically,
 the documentation wasn't consulted until after the error was made.  It is
 unfortunate, but typically no documentation edit would have saved the user from
 making false assumptions about the language ("I was surprised by ...").
-
-
-.. _Apple Publications Style Guide: http://developer.apple.com/mac/library/documentation/UserExperience/Conceptual/APStyleGuide/APSG_2009.pdf
 
 
 reStructuredText Primer
