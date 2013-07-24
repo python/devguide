@@ -69,6 +69,12 @@ False positives
   overflow if data is written to a fixed size buffer although
   ``length <= sizeof(buffer)``.  CID 486613
 
+``path_converter()`` dereferencing after null check
+  The ``path_converter()`` function in ``posixmodule.c`` makes sure that
+  either ``path_t.narrow`` or ``path_t.wide`` is filled unless
+  ``path_t.nullable`` is explicitly enabled. CID 719648
+
+
 Intentionally
 -------------
 
