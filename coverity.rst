@@ -57,10 +57,14 @@ False positives
   without touching its reference count. On this ground the analyzer detects
   a resource leak. CID 719685
 
-``PyLong_FromLong(-1)``
+``PyLong_FromLong()`` for negative values
   Coverity claims that ``PyLong_FromLong()`` and other ``PyLong_From*()``
   functions cannot handle a negative value because the value might be used as
   an array index in ``get_small_int()``. CID 486783
+
+``PyLong_FromLong()`` for n in [-5 ... +255]
+  For integers in the range of Python's small int cache the ``PyLong_From*()``
+  function can never fail and never returns NULL. CID 1058291
 
 ``PyArg_ParseTupleAndKeywords(args, kwargs, "s#", &data, &length)``
   Some functions use the format char combination such as ``s#``, ``u#`` or
