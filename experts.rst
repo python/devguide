@@ -324,7 +324,7 @@ release management  tarek, lemburg, benjamin.peterson, barry, loewis,
                     georg.brandl
 str.format          eric.smith
 testing             michael.foord, pitrou, ezio.melotti
-test coverage       ncoghlan, giampaolo.rodola
+test coverage       ncoghlan, giampaolo.rodola, christian.heimes
 threads             pitrou
 time and dates      lemburg, belopolsky
 unicode             lemburg, ezio.melotti, haypo, benjamin.peterson, pitrou

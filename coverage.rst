@@ -227,3 +227,34 @@ issue set the "Components" to "Test" and "Versions" to the version of Python you
 worked on (i.e., the in-development version).
 
 .. _issue tracker: http://bugs.python.org
+
+
+Measuring coverage of C code with gcov and lcov
+"""""""""""""""""""""""""""""""""""""""""""""""
+
+It's also possible to measure the function, line and branch coverage of
+Python's C code. Right now only GCC with `gcov`_ is supported. In order to
+create an instrumented build of Python with gcov, run::
+
+    make coverage
+
+Then run some code and gather coverage data with the ``gcov`` command. In
+order to create a HTML report you can install `lcov`_. The command::
+
+    make coverage-lcov
+
+assembles coverage data, removes 3rd party and system libaries and finally
+creates a report. You can skip both steps and just run::
+
+    make coverage-report
+
+if you like to generate a coverage report for Python's stdlib tests. It takes
+about 20 to 30 minutes on a modern computer.
+
+.. note::
+
+    Multiple test jobs may not work properly. C coverage reporting has only
+    been tested with a single test process.
+
+.. _gcov: http://gcc.gnu.org/onlinedocs/gcc/Gcov.html
+.. _lcov: http://ltp.sourceforge.net/coverage/lcov.php
