@@ -100,7 +100,7 @@ doctest               tim_one (inactive)
 dummy_threading       brett.cannon
 email                 barry, r.david.murray*
 encodings             lemburg, loewis
-enum                  eli.bendersky, barry, ethan.furman* 
+enum                  eli.bendersky*, barry, ethan.furman* 
 errno
 exceptions
 fcntl
@@ -249,7 +249,7 @@ xdrlib
 xml.dom
 xml.dom.minidom
 xml.dom.pulldom
-xml.etree             effbot (inactive), eli.bendersky
+xml.etree             effbot (inactive), eli.bendersky*
 xml.parsers.expat     christian.heimes
 xml.sax               christian.heimes
 xml.sax.handler
