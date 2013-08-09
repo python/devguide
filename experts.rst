@@ -249,7 +249,7 @@ xdrlib
 xml.dom
 xml.dom.minidom
 xml.dom.pulldom
-xml.etree             effbot (inactive), eli.bendersky*
+xml.etree             effbot (inactive), eli.bendersky*, scoder
 xml.parsers.expat     christian.heimes
 xml.sax               christian.heimes
 xml.sax.handler
