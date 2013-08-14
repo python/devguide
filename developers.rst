@@ -24,6 +24,9 @@ transliteration too.
 Permissions History
 -------------------
 
+- Donald Stufft was given push privileges on Aug 14 2013 by BAC, for PEP
+  editing, on the recommendation of Nick Coghlan.
+
 - Ethan Furman was given push privileges on May 11 2013 by BAC, for PEP 435
   work, on the recommendation of Eli Bendersky.
 
