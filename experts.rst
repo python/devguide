@@ -93,10 +93,10 @@ curses
 datetime              belopolsky
 dbm
 decimal               facundobatista, rhettinger, mark.dickinson
-difflib               tim_one (inactive)
+difflib               tim.peters (inactive)
 dis                   ncoghlan
 distutils             tarek*, eric.araujo*
-doctest               tim_one (inactive)
+doctest               tim.peters (inactive)
 dummy_threading       brett.cannon
 email                 barry, r.david.murray*
 encodings             lemburg, loewis
@@ -214,7 +214,7 @@ symtable              benjamin.peterson
 sys
 sysconfig             tarek
 syslog                jafo*
-tabnanny              tim_one (inactive)
+tabnanny              tim.peters (inactive)
 tarfile               lars.gustaebel
 telnetlib
 tempfile              georg.brandl, ncoghlan
@@ -315,7 +315,7 @@ import machinery    brett.cannon, ncoghlan, eric.snow
 io                  pitrou, benjamin.peterson, stutzbach, hynek
 locale              lemburg, loewis
 mathematics         mark.dickinson, eric.smith, lemburg, stutzbach
-memory management   tim_one, lemburg
+memory management   tim.peters, lemburg
 networking          giampaolo.rodola, pitrou
 packaging           tarek, lemburg, alexis, eric.araujo
 py3 transition      benjamin.peterson
