@@ -3,25 +3,42 @@
 Committing and Pushing Changes
 ==============================
 
-Once a change patch is ready and tested, it can be committed to the repository.
-We usually prefer to put a whole feature or bugfix into a single commit, but no
-more.  In particular:
+Is the change ready for committing?
+-----------------------------------
 
-* Do **not** fix more than one issue in the same commit (except, of course, if
-  one code change fixes all of them).
-* Do **not** do cosmetic changes to unrelated code in the same commit as some
-  feature/bugfix.
+Before a change is committed, you must make sure it is ready to enter the
+public source tree.  Draft commits are prohibited.  Therefore, you must
+ensure your changes fulfill several mandatory criteria.
 
-It is of course okay to pile up several commits to one branch and merge them
-into another in one merge commit.
+.. note::
+   If you want to share your work-in-progress code on a feature or bugfix,
+   either publish patches or create a public fork of the repository.
 
 
-Patch Checklist
----------------
+Does the test suite still pass?
+'''''''''''''''''''''''''''''''
 
-Here's the simple patch checklist that ``make patchcheck`` (or ``./python.exe
-Tools/scripts/patchcheck.py`` on Windows) will run through
-on a system that uses the makefile to build Python:
+You must :ref:`run the whole test suite <runtests>` to ensure that it
+passes before pushing any code changes.
+
+.. note::
+   You really need to run the **entire** test suite.  Running a single test
+   is not enough as your changes may have unforeseen effects on other tests
+   or library modules.
+
+   Running the entire test suite doesn't guarantee that your changes
+   will pass the :ref:`continuous integration <buildbots>` tests, as those
+   will exercise more possibilities still (such as different platforms or
+   build options).  But it will at least catch non-build specific,
+   non-platform specific errors, therefore minimizing the chance for
+   breakage.
+
+Patch checklist
+'''''''''''''''
+
+Apart from running the tests, there's a simple patch checklist that
+``make patchcheck`` (or ``./python.exe Tools/scripts/patchcheck.py`` on
+Windows) will run through:
 
 * Are there any whitespace problems in Python files?
   (using ``Tools/scripts/reindent.py``)
@@ -42,6 +59,22 @@ a memory aid to help with remembering the various elements that can go into
 making a complete patch.
 
 
+Commit Style
+------------
+
+Once a change patch is ready and tested, it can be committed to the repository.
+We usually prefer to put a whole feature or bugfix into a single commit, but no
+more.  In particular:
+
+* Do **not** fix more than one issue in the same commit (except, of course, if
+  one code change fixes all of them).
+* Do **not** do cosmetic changes to unrelated code in the same commit as some
+  feature/bugfix.
+
+It is of course okay to pile up several commits to one branch and merge them
+into another in one merge commit.
+
+
 Handling Others' Code
 ---------------------
 
@@ -55,11 +88,11 @@ triagers are good to go except maybe lacking ``Misc/ACKS`` and ``Misc/NEWS``
 entries.
 
 Second, make sure the patch does not break backwards-compatibility without a
-good reason. This means :ref:`running the test suite <runtests>` to make sure
-everything still passes. It also means that if semantics do change there must
-be a good reason for the breakage of code the change will cause (and it
-**will** break someone's code). If you are unsure if the breakage is worth it,
-ask on python-dev.
+good reason. This means :ref:`running the entire test suite <runtests>` to
+make sure everything still passes. It also means that if semantics do change
+there must be a good reason for the breakage of code the change will cause
+(and it **will** break someone's code). If you are unsure if the breakage
+is worth it, ask on python-dev.
 
 Third, ensure the patch is attributed correctly by adding the contributor's
 name to ``Misc/ACKS`` if they aren't already there (and didn't add themselves
