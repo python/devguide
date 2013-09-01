@@ -299,6 +299,7 @@ algorithms
 ast/compiler        ncoghlan, benjamin.peterson, brett.cannon, georg.brandl
 autoconf/makefiles
 bsd
+benchmarks          pitrou, brett.cannon
 bug tracker         ezio.melotti
 buildbots           pitrou
 bytecode            pitrou, georg.brandl
