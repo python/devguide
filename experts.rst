@@ -276,7 +276,7 @@ Platforms
 ===================   ===========
 Platform              Maintainers
 ===================   ===========
-AIX
+AIX                   David.Edelsohn
 Cygwin                jlt63, stutzbach
 FreeBSD
 HP-UX
