@@ -234,6 +234,35 @@ have to invoke ``PCBuild\python_d.exe``, for a 64-bit build in debug mode,
 ``PCBuild\amd64\python_d.exe``.  If you are compiling in release mode (which
 you shouldn't, in general), replace ``python_d.exe`` with ``python.exe``.
 
+.. _build_troubleshooting:
+
+Troubleshooting the build
+-------------------------
+
+This section lists some of the common problems that may arise during the
+compilation of Python, with proposed solutions.
+
+Avoiding re-creating auto-generated files
+'''''''''''''''''''''''''''''''''''''''''
+
+Under some circumstances you may encounter Python errors in scripts like
+``Parser/asdl_c.py`` or ``Python/makeopcodetargets.py`` while running ``make``.
+Python auto-generates some of its own code, and a full build from scratch needs
+to run the auto-generation scripts. However, this makes the Python build require
+an already installed Python interpreter; this can also cause version mismatches
+when trying to build an old (2.x) Python with a new (3.x) Python installed, or
+vice versa.
+
+To overcome this problem, auto-generated files are also checked into the
+Mercurial repository. So if you don't touch the auto-generation scripts, there's
+no real need to auto-generate anything. However, as Mercurial doesn't preserve
+timestamps well, a special build target ``touch`` was added. Run::
+
+    make touch
+
+Before running the compilation ``make``. This will tweak the timestamps of the
+auto-generated files in a way that makes it unnecessary to create them anew and
+henceforth the compilation should not require an installed Python interpreter.
 
 Editors and Tools
 =================
