@@ -101,19 +101,14 @@ Capitalization
    sentences: the first word is always capitalized and other words are
    only capitalized if there is a specific rule requiring it.
 
-Apple style guide recommends the use of title case in section titles.
-However, rules for which words should be capitalized in title case
-vary greatly between publications.
-
-In Python documentation, use of sentence case in section titles is
+In the Python documentation, the use of sentence case in section titles is
 preferable, but consistency within a unit is more important than
-following this rule.  If you add a section to the chapter where most
-sections are in title case you can either convert all titles to
+following this rule.  If you add a section to a chapter where most
+sections are in title case, you can either convert all titles to
 sentence case or use the dominant style in the new section title.
 
 Sentences that start with a word for which specific rules require
-starting it with a lower case letter should be avoided in titles and
-elsewhere.
+starting it with a lower case letter should be avoided.
 
 .. note::
 
