@@ -90,7 +90,7 @@ of coverage.py::
 
     hg clone https://bitbucket.org/ned/coveragepy
 
-Another option is to use an installed copy of coverage.py if you already an
+Another option is to use an installed copy of coverage.py if you already have an
 installed copy. But if you do not already have it installed then it is preferred
 you use a clone of coverage.py for gathering coverage results.
 
