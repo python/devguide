@@ -104,6 +104,13 @@ If you omit correct attribution in the initial checkin, then update ``ACKS``
 and ``NEWS`` in a subsequent checkin (don't worry about trying to fix the
 original checkin message in that case).
 
+Finally, especially for larger patches, check if the submitter of the
+patch has a CLA in place (indicated by an asterisk following their username
+in the issue tracker). If the asterisk is missing and the patch is
+non-trivial, direct them to the electronic `Contributor Licensing Agreement`_
+to ensure the PSF has the appropriate authorizations in place to relicense
+and redistribute their code.
+
 
 Contributor Licensing Agreements
 --------------------------------
@@ -114,16 +121,19 @@ ask that the contributor submit a signed CLA to the PSF as the associated
 comments, docstrings and documentation are far more likely to reach a
 copyrightable standard.
 
-For Python sprints we now recommend collecting CLAs as a matter of course, as
-the folks leading the sprints can then handle the task of scanning (or otherwise
-digitising) the forms and passing them on to the PSF secretary. (Yes, we
-realise this process is quite archaic. Yes, we're in the process of fixing
-it. No, it's not fixed yet).
+These days, the CLA can be signed electronically through the form linked
+above, and this process is strongly preferred to the old mechanism that
+involved sending a scanned copy of the signed paper form.
 
 As discussed on the PSF Contribution_ page, it is the CLA itself that gives
 the PSF the necessary relicensing rights to redistribute contributions under
 the Python license stack. This is an additional permission granted above and
 beyond the normal permissions provided by the chosen open source license.
+
+Some developers may object to the relicensing permissions granted to the PSF
+by the CLA. They're entirely within their rights to refuse to sign the CLA
+on that basis, but that refusal *does* mean we can't accept their patches
+for inclusion.
 
 .. _Contribution: http://www.python.org/psf/contrib/
 .. _Contributor Licensing Agreement:
