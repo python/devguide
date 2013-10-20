@@ -687,9 +687,9 @@ have just noticed the bug in your working copy, so you can start with::
 
    hg bisect --bad
 
-Then you must find a changeset that doesn't have the bug.  You can conveniently
-choose a faraway changeset (for example a former release), and check that it
-is indeed "good".  Then type::
+Then you must ``update`` to a previous changeset that doesn't have the bug.
+You can conveniently choose a faraway changeset (for example a former release),
+and check that it is indeed "good".  Then type::
 
    hg bisect --good
 
