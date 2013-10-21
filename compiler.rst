@@ -24,7 +24,7 @@ steps for compilation are:
 Starting with Python 2.5, the above steps are now used.  This change
 was done to simplify compilation by breaking it into three steps.
 The purpose of this document is to outline how the latter three steps
-of the process works.
+of the process work.
 
 This document does not touch on how parsing works beyond what is needed
 to explain what is needed for compilation.  It is also not exhaustive
@@ -45,7 +45,7 @@ numbers, etc.) are kept in Include/token.h).  The parse tree made up of
 ``node *`` structs (as defined in Include/node.h).
 
 Querying data from the node structs can be done with the following
-macros (which are all defined in Include/token.h):
+macros (which are all defined in Include/node.h):
 
 ``CHILD(node *, int)``
         Returns the nth child of the node using zero-offset indexing
