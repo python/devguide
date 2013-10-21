@@ -189,6 +189,27 @@ to understanding and can result in even more ways to misread or misinterpret the
 text.  Long descriptions full of corner cases and caveats can create the
 impression that a function is more complex or harder to use than it actually is.
 
+Security Considerations (and Other Concerns)
+--------------------------------------------
+
+Some modules provided with Python are inherently exposed to security issues
+(e.g. shell injection vulnerabilities) due to the purpose of the module
+(e.g. :mod:`ssl`).  Littering the documentation of these modules with red
+warning boxes for problems that are due to the task at hand, rather than
+specifically to Python's support for that task, doesn't make for a good
+reading experience.
+
+Instead, these security concerns should be gathered into a dedicated
+"Security Considerations" section within the module's documentation, and
+cross-referenced from the documentation of affected interfaces with a note
+similar to ``"Please refer to the :ref:`security-considerations` section
+for important information on how to avoid common mistakes."``.
+
+Similarly, if there is a common error that affects many interfaces in a
+module (e.g. OS level pipe buffers filling up and stalling child processes),
+these can be documented in a "Common Errors" section and cross-referenced
+rather than repeated for every affected interface.
+
 Code Examples
 -------------
 
