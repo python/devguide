@@ -56,6 +56,7 @@ argparse              bethard
 array
 ast                   benjamin.peterson
 asynchat              josiahcarlson, giampaolo.rodola, stutzbach
+asyncio
 asyncore              josiahcarlson, giampaolo.rodola, stutzbach
 atexit
 audioop
@@ -190,6 +191,7 @@ rlcompleter
 runpy                 ncoghlan
 sched                 giampaolo.rodola
 select
+selectors
 shelve
 shlex
 shutil                tarek, hynek
@@ -204,6 +206,7 @@ spwd
 sqlite3               ghaering
 ssl                   janssen, pitrou, giampaolo.rodola, christian.heimes
 stat                  christian.heimes
+statistics
 string                georg.brandl*
 stringprep
 struct                mark.dickinson, meador.inge
