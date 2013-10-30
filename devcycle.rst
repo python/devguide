@@ -107,7 +107,7 @@ security patches have been applied to the branch.
 Summary
 -------
 
-There are 6 active branches right now in the Mercurial repository:
+There are 5 open branches right now in the Mercurial repository:
 
 - the ``default`` branch holds the future 3.4 version and descends from ``3.3``
   (future RM: Larry Hastings)
@@ -119,8 +119,6 @@ There are 6 active branches right now in the Mercurial repository:
   (RM: Benjamin Peterson)
 - the ``2.7`` branch holds bug fixes for future 2.7.x maintenance releases and
   descends from ``2.6`` (RM: Benjamin Peterson)
-- the ``2.6`` branch holds security fixes for future 2.6.x security releases
-  (RM: Barry Warsaw)
 
 
 .. _stages:

@@ -269,12 +269,11 @@ Which branches are in my local repository?
 Typing ``hg branches`` displays the open branches in your local repository::
 
    $ hg branches
-   default                    79844:2d53f92ed54c
-   2.7                        79839:422a0175bbf5
-   3.3                        79843:25722e983ada (inactive)
-   3.2                        79840:d459a9576d6c (inactive)
-   3.1                        76255:5a6fa1b8767f (inactive)
-   2.6                        76213:f130ce67387d (inactive)
+   default                    86781:52ec6a3eeda5
+   2.7                        86776:dd12639b82bf
+   3.3                        86779:544b654d000c (inactive)
+   3.2                        86778:dda1a32748e0 (inactive)
+   3.1                        86777:b1ddcb220a7f (inactive)
 
 Why are some branches marked "inactive"?
 ''''''''''''''''''''''''''''''''''''''''
