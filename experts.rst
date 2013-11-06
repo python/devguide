@@ -82,7 +82,7 @@ colorsys
 compileall
 concurrent.futures    bquinlan
 configparser          lukasz.langa*
-contextlib            ncoghlan
+contextlib            ncoghlan*
 copy                  alexandre.vassalotti
 copyreg               alexandre.vassalotti
 cProfile
@@ -95,7 +95,7 @@ datetime              belopolsky
 dbm
 decimal               facundobatista, rhettinger, mark.dickinson
 difflib               tim.peters (inactive)
-dis                   ncoghlan
+dis                   ncoghlan*
 distutils             tarek*, eric.araujo*
 doctest               tim.peters (inactive)
 dummy_threading       brett.cannon
@@ -241,6 +241,7 @@ unittest.mock         michael.foord*
 urllib                orsenthil
 uu
 uuid
+venv                  vinay.sajip
 warnings
 wave
 weakref               fdrake, pitrou
