@@ -37,11 +37,12 @@ mature code. We don't want to disclose issues prematurely.
 Building and uploading analysis
 ===============================
 
-The process is automated. Twice a day a script runs ``hg pull``, ``hg update``
-``cov-build`` and uploads the latest analysis to Coverity. The build runs on a
-dedicated virtual machine on PSF's infrastructure at OSU Open Source Labs. The
-process is maintained by Christian Heimes (see `Contact`_). At present only
-the tip is analyzed with the 64bit Linux tools.
+The process is automated. A script runs ``hg pull``, ``hg update``,
+``cov-build`` and uploads the latest analysis to Coverity. Since Coverity has
+limited the maximum number of builds per week Python is analyzed every second
+day. The build runs on a dedicated virtual machine on PSF's infrastructure at
+OSU Open Source Labs. The process is maintained by Christian Heimes (see
+`Contact`_). At present only the tip is analyzed with the 64bit Linux tools.
 
 
 Known limitations
