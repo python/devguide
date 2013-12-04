@@ -162,6 +162,7 @@ os                    loewis
 ossaudiodev
 packaging             tarek*, eric.araujo*, alexis
 parser                benjamin.peterson
+pathlib               pitrou*
 pdb                   georg.brandl*
 pickle                alexandre.vassalotti, pitrou
 pickletools           alexandre.vassalotti
