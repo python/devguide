@@ -220,7 +220,10 @@ When building you may see a number of build errors related to missing
 files or directories.  These do not necessarily mean that Python failed
 to build.  If you prefer, you can exclude the offending projects from
 the build process by unchecking them inside the
-:menuselection:`Build --> Configuration Manager...` settings.
+:menuselection:`Build --> Configuration Manager...` settings. You can
+also use the script :file:`Tools\buildbot\external.bat` or
+:file:`Tools\buildbot\external-amd64.bat` (as applicable) to download and
+compile missing dependencies.
 
 Once built you might want to set Python as a startup project. Pressing F5 in
 Visual Studio, or choosing Start Debugging from the Debug menu, will launch

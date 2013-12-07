@@ -24,7 +24,11 @@ patch:
 
    On :ref:`Windows <windows-compiling>`, open the solution file
    :file:`PCbuild\\pcbuild.sln` in Visual Studio, select :menuselection:`Debug`,
-   and :menuselection:`Build --> Build Solution`.
+   and :menuselection:`Build --> Build Solution`. Run
+   :file:`Tools\buildbot\external.bat` or
+   :file:`Tools\buildbot\external-amd64.bat` to download and compile 3rd
+   party libraries.
+
 3. :doc:`Run the tests <runtests>`::
 
    ./python -m test -j3
