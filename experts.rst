@@ -96,7 +96,7 @@ dbm
 decimal               facundobatista, rhettinger, mark.dickinson
 difflib               tim.peters (inactive)
 dis                   ncoghlan*
-distutils             tarek*, eric.araujo*
+distutils             tarek, eric.araujo
 doctest               tim.peters (inactive)
 dummy_threading       brett.cannon
 email                 barry, r.david.murray*
