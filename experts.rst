@@ -130,7 +130,7 @@ imaplib
 imghdr
 imp
 importlib             brett.cannon
-inspect
+inspect               yselivanov
 io                    pitrou, benjamin.peterson, stutzbach
 ipaddress             pmoody, ncoghlan
 itertools             rhettinger
