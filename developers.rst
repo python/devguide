@@ -13,9 +13,10 @@ Misc/NEWS, newer entries should be added to the top.
 Entries should include the initials of the
 project admin who made the change or granted access.
 
-Note, when giving new commit permissions, be sure to get a contributor
-agreement from the committer.  See http://www.python.org/psf/contrib/
-for details.  When the agreement is signed, please note it in this log.
+Note, when giving new commit permissions, be sure to get a contributor agreement
+from the committer.  See http://www.python.org/psf/contrib/ for details.  When
+the agreement is signed, please note it in this log.  SSH keys of the committer
+should be sent to hgaccounts@python.org.
 
 This file is encoded in UTF-8.  If the usual form for a name is not in
 a Latin or extended Latin alphabet, make sure to include an ASCII
