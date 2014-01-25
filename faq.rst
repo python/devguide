@@ -58,8 +58,8 @@ See also the :ref:`langchanges` section of this guide.
 .. _issue tracker: http://bugs.python.org
 .. _PEP Index: http://www.python.org/dev/peps
 .. _draft PEP: http://www.python.org/dev/peps/pep-0001/
-.. _Status Quo Wins a Stalemate: http://www.boredomandlaziness.org/2011/02/status-quo-wins-stalemate.html
-.. _Justifying Python Language Changes: http://www.boredomandlaziness.org/2011/02/justifying-python-language-changes.html
+.. _Status Quo Wins a Stalemate: http://www.curiousefficiency.org/posts/2011/02/status-quo-wins-stalemate.html
+.. _Justifying Python Language Changes: http://www.curiousefficiency.org/posts/2011/02/justifying-python-language-changes.html
 
 Where should I ask general questions about contributing to CPython?
 -------------------------------------------------------------------
