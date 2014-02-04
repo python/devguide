@@ -315,11 +315,12 @@ every rule.
      Code for all built-in types.
 
 ``PC``
-     Windows-specific code along with build files for VC 6, 7, & 8 along with
-     OS/2.
+     Windows-specific code along with legacy build files for previously used
+     versions of MSVC.
 
 ``PCbuild``
-     Build files for VC 9 and newer.
+     Build files for the version of MSVC currently used for the Windows
+     installers provided on python.org.
 
 ``Parser``
      Code related to the parser. The definition of the AST nodes is also kept
