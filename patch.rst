@@ -55,13 +55,16 @@ patch will be put on hold until you fix the formatting issues.
 
 Second, be aware of backwards-compatibility considerations. While the core
 developer who eventually handles your patch will make the final call on whether
-something is acceptable, having you think about backwards-compatibility early
-will help prevent having your patch rejected on these grounds. Basically just
-put yourself in the shoes of someone whose code will be broken by a change to
-pre-existing semantics. It is guaranteed that any change made **will** break
+something is acceptable, thinking about backwards-compatibility early
+will help prevent having your patch rejected on these grounds. Put yourself in
+the shoes of someone whose code will be broken by the change(s) introduced by
+the patch. It is quite likely that any change made will break
 someone's code, so you need to have a good reason to make a change as you will
-be forcing someone somewhere to update their code (this obviously does not apply
-to new semantics).
+be forcing someone to update their code. (This obviously does not apply to new
+classes or functions; new arguments should be optional and have default values
+which maintain the existing behavior.) If in doubt, have a look at
+:PEP:`387` or :ref:`discuss <communication>` the issue with experienced
+developers.
 
 Third, make sure you have proper tests to verify your patch works as expected.
 Patches will not be accepted without the proper tests!
