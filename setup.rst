@@ -105,6 +105,27 @@ Debian, Ubuntu and other ``apt`` based systems::
 
    $ sudo apt-get build-dep python3
 
+For Mac OS X systems, it is generally easiest to use the C compiler and other
+development utilities provided by Apple's Xcode Developer Tools.  There are
+specific versions supported by Apple for each major release of OS X.  For
+current releases, Xcode is available as a no-cost download from Apple's App
+Store.  Xcode versions for older releases are available through
+`the Apple Developer web site <https://developer.apple.com/>`_.
+Note that while the Xcode IDE application itself is not needed to build Python,
+the development components packaged inside it may be.  You should also install
+the Xcode Command Line Tools component to ensure build tools and system header
+files are installed in their conventional locations (``/usr/bin`` and
+``/usr/include``).  How the command line tools are installed varies by OS X
+and Xcode release.  In earlier releases, there may be a separate installer
+download.  For OS X 10.7 and 10.8, there is an option in the Xcode app
+Preferences menu.  For OS X 10.9 (Mavericks), run the following::
+
+    $ xcode-select --install
+
+Also note that OS X does not include several libraries used by the Python
+standard library, including ``libzma``, so expect to see some extension module
+build failures unless you install local copies of them.
+
 There will sometimes be optional modules added for a new release which
 won't yet be identified in the OS level build dependencies. In those cases,
 just ask for assistance on the core-mentorship list. If working on bug
