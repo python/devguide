@@ -307,7 +307,7 @@ bsd
 benchmarks          pitrou, brett.cannon
 bug tracker         ezio.melotti
 buildbots           pitrou
-bytecode            pitrou, georg.brandl
+bytecode            benjamin.peterson, pitrou, georg.brandl
 context managers    ncoghlan
 coverity scan       christian.heimes, brett.cannon
 cryptography        christian.heimes, gregory.p.smith
