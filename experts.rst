@@ -323,6 +323,7 @@ locale              lemburg, loewis
 mathematics         mark.dickinson, eric.smith, lemburg, stutzbach
 memory management   tim.peters, lemburg
 networking          giampaolo.rodola, pitrou
+object model        benjamin.peterson
 packaging           tarek, lemburg, alexis, eric.araujo
 py3 transition      benjamin.peterson
 release management  tarek, lemburg, benjamin.peterson, barry, loewis,
