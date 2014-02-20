@@ -56,7 +56,7 @@ argparse              bethard
 array
 ast                   benjamin.peterson
 asynchat              josiahcarlson, giampaolo.rodola, stutzbach
-asyncio               gvanrossum, haypo, pitrou
+asyncio               gvanrossum, haypo, pitrou, yselivanov
 asyncore              josiahcarlson, giampaolo.rodola, stutzbach
 atexit
 audioop
