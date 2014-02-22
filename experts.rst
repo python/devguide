@@ -247,7 +247,7 @@ warnings
 wave
 weakref               fdrake, pitrou
 webbrowser            georg.brandl
-winreg                brian.curtin*, stutzbach
+winreg                stutzbach
 winsound              effbot (inactive)
 wsgiref               pje
 xdrlib
@@ -290,7 +290,7 @@ Mac OS X              ronaldoussoren, ned.deily, hynek
 NetBSD1
 OS2/EMX               aimacintyre
 Solaris/OpenIndiana   jcea
-Windows               tim.golden, brian.curtin
+Windows               tim.golden
 JVM/Java              frank.wierzbicki
 ===================   ===========
 
