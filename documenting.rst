@@ -1442,28 +1442,37 @@ They are set in the build configuration file :file:`conf.py`.
 Building the documentation
 ==========================
 
-You need to have Python 2.4 or higher installed.  The toolset used to build
-the docs is written in Python and is called Sphinx_.  Sphinx is maintained
-separately and is not included in this tree.  Also needed are docutils_,
-supplying the base markup that Sphinx uses; Jinja_, a templating engine; and
-optionally Pygments_, a code highlighter.
+The toolset used to build the docs is written in Python and is called Sphinx_.
+Sphinx is maintained separately and is not included in this tree.  Also needed
+are docutils_, supplying the base markup that Sphinx uses; Jinja_, a templating
+engine; and optionally Pygments_, a code highlighter.
 
 To build the documentation, follow the instructions from one of the sections
 below.  You can view the documentation after building the HTML by pointing
 a browser at the file :file:`Doc/build/html/index.html`.
 
+In the Python 2.7 and 3.3 branches, the Sphinx toolchain will be checked out
+using Subversion from ``svn.python.org`` by the Makefile.  This toolchain will
+need an installed Python 2 to run.
 
-Using make
-----------
+In the Python 3.4 and later branches, you are expected to have installed a
+recent version of Sphinx on your system, so that the Makefile can find the
+``sphinx-build`` command.
 
-On Unix, if you have Subversion installed, run the following from the root of
-your :ref:`repository clone <checkout>`::
+
+Using make / make.bat
+---------------------
+
+On Unix, run the following from the root of your :ref:`repository clone
+<checkout>`::
 
    cd Doc
    make html
 
-or alternatively ``make -C Doc html``.  This checks out the needed toolset
-in the :file:`Doc/tools/` directory and builds the output as HTML.
+or alternatively ``make -C Doc html``.  This builds the output as HTML.
+
+For Windows users there is a :file:`make.bat` batchfile that tries to work like
+``make`` does.
 
 Available :command:`make` targets are:
 
@@ -1494,47 +1503,24 @@ Available :command:`make` targets are:
 
  * "pydoc-topics", which builds a Python module containing a dictionary with
    plain text documentation for the labels defined in
-   :file:`tools/sphinxext/pyspecific.py` -- pydoc needs these to show topic and
-   keyword help.
+   :file:`Doc/tools/sphinxext/pyspecific.py` -- pydoc needs these to show topic
+   and keyword help.
 
-A "make update" updates the Subversion checkouts in :file:`tools/`.  (These
-Subversion checkouts are ignored by the main Mercurial repository.)
+ * "suspicious", which checks the parsed markup for text that looks like
+   malformed and thus unconverted reST.
 
 
 Without make
 ------------
 
-You'll need to install the Sphinx package, either by checking it out via ::
+Install the Sphinx package and its dependencies from PyPI.
 
-   svn co http://svn.python.org/projects/external/Sphinx-1.0.7/sphinx tools/sphinx
+Then, from the ``Docs`` directory, run ::
 
-or by installing it from PyPI.
+   sphinx-build -b<builder> . build/<builder>
 
-Then, you need to install Docutils, either by checking it out via ::
-
-   svn co http://svn.python.org/projects/external/docutils-0.6/docutils tools/docutils
-
-or by installing it from http://docutils.sf.net/.
-
-You also need Jinja2, either by checking it out via ::
-
-   svn co http://svn.python.org/projects/external/Jinja-2.3.1/jinja2 tools/jinja2
-
-or by installing it from PyPI.
-
-You can optionally also install Pygments, either as a checkout via ::
-
-   svn co http://svn.python.org/projects/external/Pygments-1.3.1/pygments tools/pygments
-
-or from PyPI at http://pypi.python.org/pypi/Pygments.
-
-
-Then, make an output directory, e.g. under `build/`, and run ::
-
-   python tools/sphinx-build.py -b<builder> . build/<outputdirectory>
-
-where `<builder>` is one of html, text, latex, or htmlhelp (for explanations see
-the make targets above).
+where ``<builder>`` is one of html, text, latex, or htmlhelp (for explanations
+see the make targets above).
 
 .. _docutils: http://docutils.sourceforge.net/
 .. _Jinja: http://jinja.pocoo.org/
