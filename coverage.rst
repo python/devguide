@@ -133,7 +133,7 @@ executed::
 But one of the strengths of coverage.py is its HTML-based reports which let
 you visually see what lines of code were not tested::
 
-    ./python COVERAGDIR html -i --include=`pwd`/Lib/* --omit="Lib/test/*,Lib/*/tests/*"
+    ./python COVERAGEDIR html -i --include=`pwd`/Lib/* --omit="Lib/test/*,Lib/*/tests/*"
 
 This will generate an HTML report in a directory named ``htmlcov`` which
 ignores any errors that may arise and ignores modules for which test coverage is
