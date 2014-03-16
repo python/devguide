@@ -27,7 +27,8 @@ patch:
    and :menuselection:`Build --> Build Solution`. Run
    :file:`Tools\\buildbot\\external.bat` or
    :file:`Tools\\buildbot\\external-amd64.bat` to download and compile 3rd
-   party libraries.
+   party libraries.  Note: Visual Studio may throw errors, but Python will
+   be built.
 
 3. :doc:`Run the tests <runtests>`::
 
