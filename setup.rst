@@ -217,6 +217,9 @@ still build properly).
 Windows
 '''''''
 
+The readme included in the solution has more details, especially on the 
+software needed to resolve the below mentioned build errors.
+
 **Python 3.3** and later use Microsoft Visual Studio 2010.  You can
 download Microsoft Visual C++ 2010 Express `from Microsoft's site
 <https://www.microsoft.com/visualstudio/eng/downloads#d-2010-express>`_.
