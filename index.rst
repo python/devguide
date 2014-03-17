@@ -171,6 +171,7 @@ Additional Resources
 * Tool support
     * :doc:`emacs`
     * :doc:`gdb`
+    * :doc:`clang`
     * Various tools with configuration files as found in the `Misc directory`_
 * `python.org maintenance`_
 
@@ -210,6 +211,7 @@ Full Table of Contents
    grammar
    compiler
    coverity
+   clang
    faq
 
 
