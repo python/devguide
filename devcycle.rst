@@ -31,7 +31,7 @@ Branches
 ''''''''
 
 There is a branch for each *feature version*, whether released or not (e.g.
-2.7, 3.3).  Development is handled separately for Python 2 and Python 3:
+2.7, 3.5).  Development is handled separately for Python 2 and Python 3:
 no merging happens between 2.x and 3.x branches.
 
 In each of the 2.x and 3.x realms, the branch for a feature version is always a
@@ -40,8 +40,8 @@ descendant of the ``3.2`` branch.
 
 Therefore, each change should be made **first** in the oldest branch to which it
 applies and forward-ported as appropriate: if a bug must be fixed in both Python
-3.3 and 3.4, first fix it in ``3.3`` and then merge ``3.3`` into ``default``
-(which holds the future 3.4).
+3.4 and 3.5, first fix it in ``3.4`` and then merge ``3.4`` into ``default``
+(which holds the future 3.5).
 
 
 .. _indevbranch:
@@ -109,9 +109,11 @@ Summary
 
 There are 5 open branches right now in the Mercurial repository:
 
-- the ``default`` branch holds the future 3.4 version and descends from ``3.3``
+- the ``default`` branch holds the future 3.5 version and descends from ``3.4``
   (future RM: Larry Hastings)
-- the ``3.3`` branch holds bug fixes for future 3.3.x maintenance releases
+- the ``3.4`` branch holds bug fixes for future 3.4.x maintenance releases
+  and descends from ``3.3`` (RM: Larry Hastings)
+- the ``3.3`` branch holds security fixes for future 3.3.x maintenance releases
   and descends from ``3.2`` (RM: Georg Brandl)
 - the ``3.2`` branch holds security fixes for future 3.2.x security releases
   (RM: Georg Brandl)
