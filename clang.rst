@@ -33,7 +33,7 @@ regular basis are the Address Sanitizer (or ASan) and the Undefined Behavior
 Sanitizer (or UBSan). ASan is invoked with the compiler option
 ``-fsanitize=address``, and UBSan is invoked with ``-fsanitize=undefined``.  The
 flags are passed through ``CFLAGS`` and ``CXXFLAGS``, and sometimes through
-``CC`` and ``CXX` (in addition to the compiler).
+``CC`` and ``CXX`` (in addition to the compiler).
 
 A complete list of sanitizers can be found at `Controlling Code Generation
 <http://clang.llvm.org/docs/UsersManual.html#controlling-code-generation>`_.
