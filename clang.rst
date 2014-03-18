@@ -307,7 +307,7 @@ will ignore a bug in ``libc++``'s ``ios`` formatting functions: ::
 
     fun:_Ios_Fmtflags
 
-As an example with Pyhton 3.4.0, ``audioop.c`` will produce a number of
+As an example with Python 3.4.0, ``audioop.c`` will produce a number of
 findings: ::
 
     ./Modules/audioop.c:422:11: runtime error: left shift of negative value -1
