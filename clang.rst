@@ -7,11 +7,19 @@ libraries. In addition to performing the analysis, the document will cover
 downloading, building and installing the the latest Clang/LLVM combination
 (which is currently 3.4).
 
+This document does not cover interpreting the findings. For a discussion of
+interpreting results, see Marshall Clow's `Testing libc++ with
+-fsanitize=undefined <http://cplusplusmusings.wordpress.com/tag/clang/>`_.  The
+blog posting is a detailed examinations of issues uncovered by Clang in
+``libc++``.
+
 What is Clang?
 ==============
 
 Clang is the C, C++ and Objective C front-end for the LLVM compiler.  The
-front-end provides access to LLVM's optimizer and code generator.
+front-end provides access to LLVM's optimizer and code generator. The
+sanitizers - or checkers - are hooks into the code generation phase to
+instrument compiled code so suspicious behavior is flagged.
 
 What are Sanitizers?
 ====================
@@ -21,12 +29,24 @@ behavior. The checking occurs at runtime with actual runtime parameters so false
 positives are kept to a minimum.
 
 There are a number of sanitizers available, but two that should be used on a
-regular basis are the Address Sanitizer (or Asan) and the Undefined Behavior
-Sanitizer (or UBsan). Asan is invoked with the compiler option
-``-fsanitize=address``, and UBsan is invoked with ``-fsanitize=undefined``.
+regular basis are the Address Sanitizer (or ASan) and the Undefined Behavior
+Sanitizer (or UBSan). ASan is invoked with the compiler option
+``-fsanitize=address``, and UBSan is invoked with ``-fsanitize=undefined``.  The
+flags are passed through ``CFLAGS`` and ``CXXFLAGS``, and sometimes through
+``CC`` and ``CXX` (in addition to the compiler).
 
 A complete list of sanitizers can be found at `Controlling Code Generation
 <http://clang.llvm.org/docs/UsersManual.html#controlling-code-generation>`_.
+
+.. note::
+
+    Because sanitizers operate at runtime on real program parameters, its
+    important to provide a complete set of positive and negative self tests.
+
+Clang and its sanitizers have strengths (and weaknesses). Its just one tool in
+the war chest to uncovering bugs and improving code quality. Clang should be
+used to compliment other methods, including Code Reviews, Valgrind, Coverity,
+etc.
 
 Clang/LLVM Setup
 ================
@@ -71,12 +91,10 @@ Perform the following to download, build and install the Clang/LLVM 3.4. ::
 
     If you receive an error ``'LibraryDependencies.inc' file not found``, then
     ensure you are utilizing Python 2 and not Python 3. If you encounter the
-    error after switching to Python 2, then delete everything and start over. If
-    the issue still persists, then see
-    http://llvm.org/bugs/show_bug.cgi?id=19158.
+    error after switching to Python 2, then delete everything and start over.
 
 After ``make install`` executes, the compilers will be installed in
-``/usr/local/bin`` and the various librarioes will be installed in
+``/usr/local/bin`` and the various libraries will be installed in
 ``/usr/local/lib/clang/3.4/lib/linux/``: ::
 
     $ ls /usr/local/lib/clang/3.4/lib/linux/
@@ -86,8 +104,25 @@ After ``make install`` executes, the compilers will be installed in
     libclang_rt.lsan-x86_64.a   libclang_rt.ubsan_cxx-x86_64.a
     libclang_rt.msan-x86_64.a   libclang_rt.ubsan-x86_64.a
 
-You should never have to add the libraries to a project. Clang should handle it
-for you.
+On Mac OS X, the libraries are installed in
+``/usr/local/lib/clang/3.3/lib/darwin/``: ::
+
+    $ ls /usr/local/lib/clang/3.3/lib/darwin/
+    libclang_rt.10.4.a                    libclang_rt.ios.a
+    libclang_rt.asan_osx.a                libclang_rt.osx.a
+    libclang_rt.asan_osx_dynamic.dylib    libclang_rt.profile_ios.a
+    libclang_rt.cc_kext.a                 libclang_rt.profile_osx.a
+    libclang_rt.cc_kext_ios5.a            libclang_rt.ubsan_osx.a
+    libclang_rt.eprintf.a
+
+.. note::
+
+    You should never have to add the libraries to a project. Clang will handle
+    it for you. If you find you cannot pass the ``-fsanitize=XXX`` flag through
+    ``make``'s implicit variables (``CFLAGS``, ``CXXFLAGS``, ``CC``,
+    ``CXXFLAGS``, ``LDFLAGS``) during ``configure``, then you should modify the
+    makefile after configuring to ensure the flag is passed through the
+    compiler.
 
 The installer does not install all the components needed on occasion. For
 example, you might want to run a ``scan-build`` or examine the results with
@@ -110,7 +145,7 @@ Python Build Setup
 
 This portion of the document covers invoking Clang and LLVM with the options
 required so the sanitizers analyze Python with under its test suite. Two
-checkers are used - Asan and UBsan.
+checkers are used - ASan and UBSan.
 
 Because the sanitizers are runtime checkers, its best to have as many positive
 and negative self tests as possible. You can never have enough self tests.
@@ -119,10 +154,10 @@ The general idea is to compile and link with the sanitizer flags. At link time,
 Clang will include the needed runtime libraries. However, you can't use
 ``CFLAGS`` and ``CXXFLAGS`` to pass the options through the compiler to the
 linker because the makefile rules for ``BUILDPYTHON``, ``_testembed`` and
-``_freeze_importlib`` don't use the flags.
+``_freeze_importlib`` don't use the implicit variables.
 
 As a workaround to the absence of flags to the linker, you can pass the
-sanitizer options by way of the compilers - ``CC`` and ``CXX`.  Passing the
+sanitizer options by way of the compilers - ``CC`` and ``CXX``.  Passing the
 flags though the compiler is used below, but passing them through ``LDFLAGS`` is
 also reported to work.
 
@@ -132,31 +167,19 @@ Building Python
 To begin, export the variables of interest with the desired sanitizers. Its OK
 to specify both sanitizers: ::
 
-    # Asan
+    # ASan
     export CC="/usr/local/bin/clang -fsanitize=address"
     export CXX="/usr/local/bin/clang++ -fsanitize=address -fno-sanitize=vptr"
 
-Or:
+Or: ::
 
-    # UBsan
+    # UBSan
     export CC="/usr/local/bin/clang -fsanitize=undefined"
     export CXX="/usr/local/bin/clang++ -fsanitize=undefined -fno-sanitize=vptr"
 
-The ``-fno-sanitize=vptr`` removes vtable checks that are part of UBsan from C++
-projects due to noise.
-
-Clang also accepts a blacklist of functions to ignore. There is no documentation
-on the blacklist, but the check-in is available at
-http://thread.gmane.org/gmane.comp.compilers.clang.scm/62388. You specify the
-blacklist with ``-fsanitize-blacklist=XXX``. For example: ::
-
-    -fsanitize-blacklist=my_blacklist.txt
-
-``my_blacklist.txt`` would then contain entries such as: ::
-
-    fun:_Ios_Fmtflags
-
-Unfortunately, you won't know what to blacklist until you run the sanitizer.
+The ``-fno-sanitize=vptr`` removes vtable checks that are part of UBSan from C++
+projects due to noise. Its not needed with Python, but you will likely need it
+for other C++ projects.
 
 After exporting ``CC`` and ``CXX``, ``configure`` as normal: ::
 
@@ -200,7 +223,10 @@ If you are using the address sanitizer, its important to pipe the output through
 ``asan_symbolize.py`` to get a good trace. For example, from Issue 20953 during
 compile (formatting added for clarity): ::
 
-    $ /usr/local/bin/clang -fsanitize=address -Xlinker -export-dynamic
+    $ make test 2>&1 | asan_symbolize.py
+    ...
+
+    /usr/local/bin/clang -fsanitize=address -Xlinker -export-dynamic
         -o python Modules/python.o libpython3.3m.a -ldl -lutil
         /usr/local/ssl/lib/libssl.a /usr/local/ssl/lib/libcrypto.a -lm  
     ./python -E -S -m sysconfig --generate-posix-vars
@@ -258,3 +284,55 @@ compile (formatting added for clarity): ::
     ==24064==ABORTING
     make: *** [pybuilddir.txt] Error 1
 
+.. note::
+
+    ``asan_symbolize.py`` is supposed to be installed during ``make install``.
+    If its not installed, then look in the Clang/LLVM build directory for it and
+    copy it to ``/usr/local/bin``.
+
+Blacklisting (Ignoring) Findings
+--------------------------------
+
+Clang allows you to alter the behavior of sanitizer tools for certain
+source-level by providing a special blacklist file at compile-time. The
+blacklist is needed because it reports every instance of an issue, even if the
+issue is reported 10's of thousands of time in un-managed library code.
+
+You specify the blacklist with ``-fsanitize-blacklist=XXX``. For example: ::
+
+    -fsanitize-blacklist=my_blacklist.txt
+
+``my_blacklist.txt`` would then contain entries such as the following. The entry
+will ignore a bug in ``libc++``'s ``ios`` formatting functions: ::
+
+    fun:_Ios_Fmtflags
+
+As an example with Pyhton 3.4.0, ``audioop.c`` will produce a number of
+findings: ::
+
+    ./Modules/audioop.c:422:11: runtime error: left shift of negative value -1
+    ./Modules/audioop.c:446:19: runtime error: left shift of negative value -1
+    ./Modules/audioop.c:476:19: runtime error: left shift of negative value -1
+    ./Modules/audioop.c:504:16: runtime error: left shift of negative value -1
+    ./Modules/audioop.c:533:22: runtime error: left shift of negative value -128
+    ./Modules/audioop.c:775:19: runtime error: left shift of negative value -70
+    ./Modules/audioop.c:831:19: runtime error: left shift of negative value -70
+    ./Modules/audioop.c:881:19: runtime error: left shift of negative value -1
+    ./Modules/audioop.c:920:22: runtime error: left shift of negative value -70
+    ./Modules/audioop.c:967:23: runtime error: left shift of negative value -70
+    ./Modules/audioop.c:968:23: runtime error: left shift of negative value -70
+    ...
+
+One of the function of interest is ``audioop_getsample_impl`` (flagged at line
+422), and the blacklist entry would include: ::
+
+    fun:audioop_getsample_imp
+
+Or, you could ignore the entire file with: ::
+
+    src:Modules/audioop.c
+
+Unfortunately, you won't know what to blacklist until you run the sanitizer.
+
+The documentation is available at `Sanitizer special case list
+<http://clang.llvm.org/docs/SanitizerSpecialCaseList.html>`_.
