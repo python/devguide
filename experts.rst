@@ -96,12 +96,12 @@ dbm
 decimal               facundobatista, rhettinger, mark.dickinson
 difflib               tim.peters (inactive)
 dis                   ncoghlan*
-distutils             eric.araujo
+distutils             eric.araujo, dstufft
 doctest               tim.peters (inactive)
 dummy_threading       brett.cannon
 email                 barry, r.david.murray*
 encodings             lemburg, loewis
-enum                  eli.bendersky*, barry, ethan.furman* 
+enum                  eli.bendersky*, barry, ethan.furman*
 errno
 exceptions
 fcntl
@@ -204,7 +204,7 @@ socket                pitrou
 socketserver
 spwd
 sqlite3               ghaering
-ssl                   janssen, pitrou, giampaolo.rodola, christian.heimes
+ssl                   janssen, pitrou, giampaolo.rodola, christian.heimes, dstufft
 stat                  christian.heimes
 statistics
 string                georg.brandl*
@@ -309,7 +309,7 @@ buildbots           pitrou
 bytecode            benjamin.peterson, pitrou, georg.brandl
 context managers    ncoghlan
 coverity scan       christian.heimes, brett.cannon
-cryptography        christian.heimes, gregory.p.smith
+cryptography        christian.heimes, gregory.p.smith, dstufft
 data formats        mark.dickinson, georg.brandl
 database            lemburg
 devguide            ncoghlan, eric.araujo, ezio.melotti
@@ -323,7 +323,7 @@ mathematics         mark.dickinson, eric.smith, lemburg, stutzbach
 memory management   tim.peters, lemburg
 networking          giampaolo.rodola, pitrou
 object model        benjamin.peterson
-packaging           tarek, lemburg, alexis, eric.araujo
+packaging           tarek, lemburg, alexis, eric.araujo, dstufft
 py3 transition      benjamin.peterson
 release management  tarek, lemburg, benjamin.peterson, barry, loewis,
                     gvanrossum, anthonybaxter, eric.araujo, ned.deily,
