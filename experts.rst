@@ -55,9 +55,9 @@ aifc                  r.david.murray
 argparse              bethard
 array
 ast                   benjamin.peterson
-asynchat              josiahcarlson, giampaolo.rodola, stutzbach
-asyncio               gvanrossum, haypo, pitrou, yselivanov
-asyncore              josiahcarlson, giampaolo.rodola, stutzbach
+asynchat              josiahcarlson, giampaolo.rodola*, stutzbach
+asyncio               gvanrossum, haypo, pitrou, yselivanov, giampaolo.rodola
+asyncore              josiahcarlson, giampaolo.rodola*, stutzbach
 atexit
 audioop
 base64
@@ -111,7 +111,7 @@ fnmatch
 formatter
 fpectl
 fractions             mark.dickinson, rhettinger
-ftplib                giampaolo.rodola
+ftplib                giampaolo.rodola*
 functools             ncoghlan, rhettinger
 gc                    pitrou
 getopt
@@ -191,7 +191,7 @@ rlcompleter
 runpy                 ncoghlan
 sched                 giampaolo.rodola
 select
-selectors
+selectors             neologix, giampaolo.rodola
 shelve
 shlex
 shutil                tarek, hynek
