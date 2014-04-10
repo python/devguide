@@ -25,6 +25,9 @@ transliteration too.
 Permissions History
 -------------------
 
+- Steven d'Aprano was given push privileges on Feb 08 2014 by BAC, for the
+  statistics module, on recommendation by Nick Coghlan.
+
 - Yury Selivanov was given push privileges on Jan 23 2014 by GFB, for "inspect"
   module and general contributions, on recommendation by Nick Coghlan.
 
