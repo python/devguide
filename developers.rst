@@ -25,6 +25,9 @@ transliteration too.
 Permissions History
 -------------------
 
+- Kushal Das was given push privileges on Apr 14, 2014 by BAC, for
+  general patches, on recommendation by Michael Foord.
+
 - Steven d'Aprano was given push privileges on Feb 08 2014 by BAC, for the
   statistics module, on recommendation by Nick Coghlan.
 
