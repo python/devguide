@@ -107,9 +107,13 @@ Fedora, Red Hat Enterprise Linux and other ``yum`` based systems::
    $ sudo yum install yum-utils
    $ sudo yum-builddep python3
 
-Debian, Ubuntu and other ``apt`` based systems::
+Debian, Ubuntu and other ``apt`` based systems, try to get the dependencies for
+the Python version that you're working on e.g.::
 
-   $ sudo apt-get build-dep python3
+   $ sudo apt-get build-dep python3.4
+
+If that package is not available for your system, try reducing the minor
+version until you find a package that is available.
 
 For Mac OS X systems, it is generally easiest to use the C compiler and other
 development utilities provided by Apple's Xcode Developer Tools.  There are
@@ -217,7 +221,7 @@ still build properly).
 Windows
 '''''''
 
-The readme included in the solution has more details, especially on the 
+The readme included in the solution has more details, especially on the
 software needed to resolve the below mentioned build errors.
 
 **Python 3.3** and later use Microsoft Visual Studio 2010.  You can
