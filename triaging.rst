@@ -60,7 +60,7 @@ commit review
     A triager performed a patch review and it looks good to them, but a core
     developer needs to commit the patch (and do a quick once-over to make sure
     nothing was overlooked).
-committed/rejected
+resolved
     The issue is considered closed and dealt with.
 
 Components
@@ -235,11 +235,11 @@ duplicate
     Duplicate of another issue; should have the Superseder field filled out.
 fixed
     A fix for the issue was committed.
-invalid
-    For some reason the issue is invalid (e.g. the perceived problem is not
-    a bug in Python).
 later
     Issue is to be worked on at a later date.
+not a bug
+    For some reason the issue is invalid (e.g. the perceived problem is not
+    a bug in Python).
 out of date
     The issue has already been fixed, or the problem doesn't exist anymore
     for other reasons.
