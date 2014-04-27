@@ -39,11 +39,16 @@ the help text::
 
     ./python -m test -h
 
-If you want to run a single test, simply specify the test name as an argument.
-You also probably want to enable verbose mode (using ``-v``), so that individual
-failures are detailed::
+If you want to run a single test file, simply specify the test file name
+(without the extension) as an argument.  You also probably want to enable
+verbose mode (using ``-v``), so that individual failures are detailed::
 
     ./python -m test -v test_abc
+
+To run a single test case, use the ``unittest`` module, providing the import
+path to the test case::
+
+   ./python -m unittest -v test.test_abc.TestABC
 
 If you have a multi-core or multi-CPU machine, you can enable parallel testing
 using several Python processes so as to speed up things::
