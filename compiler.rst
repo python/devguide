@@ -553,10 +553,10 @@ References
 .. _SPARK: http://pages.cpsc.ucalgary.ca/~aycock/spark/
 
 .. [#skip-peephole] Skip Montanaro's Peephole Optimizer Paper
-   (http://www.python.org/workshops/1998-11/proceedings/papers/montanaro/montanaro.html)
+   (http://www.smontanaro.net/python/spam7/optimizer.html)
 
 .. [#Bytecodehacks] Bytecodehacks Project
    (http://bytecodehacks.sourceforge.net/bch-docs/bch/index.html)
 
 .. [#CALL_ATTR] CALL_ATTR opcode
-   (http://www.python.org/sf/709744)
+   (http://bugs.python.org/issue709744)
