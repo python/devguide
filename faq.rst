@@ -56,7 +56,7 @@ See also the :ref:`langchanges` section of this guide.
 
 .. _python-ideas: http://mail.python.org/mailman/listinfo/python-ideas
 .. _issue tracker: http://bugs.python.org
-.. _PEP Index: http://www.python.org/dev/peps
+.. _PEP Index: http://www.python.org/dev/peps/
 .. _draft PEP: http://www.python.org/dev/peps/pep-0001/
 .. _Status Quo Wins a Stalemate: http://www.curiousefficiency.org/posts/2011/02/status-quo-wins-stalemate.html
 .. _Justifying Python Language Changes: http://www.curiousefficiency.org/posts/2011/02/justifying-python-language-changes.html
@@ -209,7 +209,7 @@ You can configure it in your ``~/.ssh/config`` file; for example::
    Host hg.python.org
      Compression yes
 
-.. _download Mercurial: http://mercurial.selenic.com/downloads/
+.. _download Mercurial: http://mercurial.selenic.com/downloads
 .. _OpenSSH: http://www.openssh.org/
 
 
