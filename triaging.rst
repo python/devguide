@@ -86,8 +86,6 @@ Devguide
     The `Developer's guide`_.
 Distutils
     The distutils package in `Lib/distutils`_.
-Distutils2
-    The packaging module in `Lib/packaging`_.
 Documentation
     The documentation in Doc_ (used to build the HTML doc at http://docs.python.org/).
 email
@@ -114,7 +112,7 @@ Tests
     `Lib/doctest.py`_.
 
     The CPython tests in `Lib/test`_, the test runner in `Lib/test/regrtest.py`_
-    and the `Lib/test/support.py`_ module.
+    and the `Lib/test/support`_ package.
 Tkinter
     The `Lib/tkinter`_ package.
 Unicode
@@ -303,11 +301,10 @@ properly.
 .. _Lib/doctest.py: http://hg.python.org/cpython/file/default/Lib/doctest.py
 .. _Lib/idlelib: http://hg.python.org/cpython/file/default/Lib/idlelib/
 .. _Lib/io.py: http://hg.python.org/cpython/file/default/Lib/io.py
-.. _Lib/packaging: http://hg.python.org/cpython/file/default/Lib/packaging/
 .. _Lib/re.py: http://hg.python.org/cpython/file/default/Lib/re.py
 .. _Lib/test: http://hg.python.org/cpython/file/default/Lib/test/
 .. _Lib/test/regrtest.py: http://hg.python.org/cpython/file/default/Lib/test/regrtest.py
-.. _Lib/test/support.py: http://hg.python.org/cpython/file/default/Lib/test/support.py
+.. _Lib/test/support: http://hg.python.org/cpython/file/default/Lib/test/support/
 .. _Lib/tkinter: http://hg.python.org/cpython/file/default/Lib/tkinter/
 .. _Lib/unittest: http://hg.python.org/cpython/file/default/Lib/unittest/
 .. _Lib/xml: http://hg.python.org/cpython/file/default/Lib/xml/
