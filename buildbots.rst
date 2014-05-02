@@ -184,7 +184,7 @@ enables issue-specific debugging, you will probably want to test your
 work on one or several buildbots.  Since your work is hosted in a distinct
 repository, you can't trigger builds on the regular builders.  Instead,
 you have to use one of the `custom builders
-<http://www.python.org/dev/buildbot/all/waterfall?category=custom.stable&category=custom.unstable>`_.
+<http://buildbot.python.org/all/waterfall?category=custom.stable&category=custom.unstable>`_.
 
 When creating ("forcing") a build on a custom builder, you have to provide
 at least two parameters:
