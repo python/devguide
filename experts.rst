@@ -289,7 +289,7 @@ Mac OS X              ronaldoussoren, ned.deily, hynek
 NetBSD1
 OS2/EMX               aimacintyre
 Solaris/OpenIndiana   jcea
-Windows               tim.golden
+Windows               tim.golden, zach.ware
 JVM/Java              frank.wierzbicki
 ===================   ===========
 
