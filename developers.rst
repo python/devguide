@@ -34,6 +34,9 @@ Permissions History
 - Yury Selivanov was given push privileges on Jan 23 2014 by GFB, for "inspect"
   module and general contributions, on recommendation by Nick Coghlan.
 
+- Zachary Ware was given push privileges on Nov 02 2013 by BAC, on the
+  recommendation of Brian Curtin.
+
 - Donald Stufft was given push privileges on Aug 14 2013 by BAC, for PEP
   editing, on the recommendation of Nick Coghlan.
 
