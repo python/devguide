@@ -25,6 +25,9 @@ transliteration too.
 Permissions History
 -------------------
 
+- Steve Dower was given push privileges on May 10, 2014 by Antoine Pitrou, on
+  recommendation by Martin v. Loewis.
+
 - Kushal Das was given push privileges on Apr 14, 2014 by BAC, for
   general patches, on recommendation by Michael Foord.
 
