@@ -230,6 +230,12 @@ download Microsoft Visual C++ 2010 Express `from Microsoft's site
 To use it for more than 28 days, one must register through a
 Windows Live account.
 
+You'll also need to install the Visual Studio `Service Pack 1 (SP1)
+<http://www.microsoft.com/en-us/download/details.aspx?id=23691>`_. If you
+don't install this service pack, you may receive errors like the following
+during linking: ``LINK : fatal error LNK1123: failure during conversion to
+COFF: file invalid or corrupt``.
+
 Most Python versions prior to 3.3 use Microsoft Visual Studio 2008.  You can
 download Microsoft Visual C++ 2008 Express Edition with SP1
 from a new location yet to be determined.
