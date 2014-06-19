@@ -101,6 +101,7 @@ doctest               tim.peters (inactive)
 dummy_threading       brett.cannon
 email                 barry, r.david.murray*
 encodings             lemburg, loewis
+ensurepip             ncoghlan, dstufft
 enum                  eli.bendersky*, barry, ethan.furman*
 errno
 exceptions
@@ -324,6 +325,7 @@ memory management   tim.peters, lemburg
 networking          giampaolo.rodola, pitrou
 object model        benjamin.peterson
 packaging           tarek, lemburg, alexis, eric.araujo, dstufft
+pip                 ncoghlan, dstufft, pmoore, Marcus.Smith
 py3 transition      benjamin.peterson
 release management  tarek, lemburg, benjamin.peterson, barry, loewis,
                     gvanrossum, anthonybaxter, eric.araujo, ned.deily,
