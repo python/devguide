@@ -169,10 +169,11 @@ Additional Resources
     * :doc:`grammar`
     * :doc:`compiler`
 * Tool support
-    * :doc:`emacs`
     * :doc:`gdb`
     * :doc:`clang`
     * Various tools with configuration files as found in the `Misc directory`_
+    * Information about editors and their configurations can be found in the
+      `wiki <https://wiki.python.org/moin/PythonEditors>`_
 * `python.org maintenance`_
 
 * :ref:`Search this guide <search>`
@@ -206,7 +207,6 @@ Full Table of Contents
    stdlibchanges
    langchanges
    experts
-   emacs
    gdb
    grammar
    compiler
