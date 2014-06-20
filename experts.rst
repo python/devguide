@@ -105,6 +105,7 @@ ensurepip             ncoghlan, dstufft
 enum                  eli.bendersky*, barry, ethan.furman*
 errno
 exceptions
+faulthandler          haypo
 fcntl
 filecmp
 fileinput
@@ -207,7 +208,7 @@ spwd
 sqlite3               ghaering
 ssl                   janssen, pitrou, giampaolo.rodola, christian.heimes, dstufft
 stat                  christian.heimes
-statistics
+statistics            steven.daprano
 string                georg.brandl*
 stringprep
 struct                mark.dickinson, meador.inge
@@ -233,6 +234,7 @@ token                 georg.brandl
 tokenize              meador.inge
 trace                 belopolsky
 traceback             georg.brandl*
+tracemalloc           haypo
 tty
 turtle                gregorlingl
 types
