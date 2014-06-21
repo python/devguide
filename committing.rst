@@ -140,14 +140,16 @@ for inclusion.
    http://www.python.org/psf/contrib/contrib-form/
 
 
-NEWS Entries
-------------
+What's New and NEWS Entries
+---------------------------
 
 Almost all changes made to the code base deserve an entry in ``Misc/NEWS``.
 If the change is particularly interesting for end users (e.g. new features,
 significant improvements, or backwards-incompatible changes), an entry in
 the ``What's New in Python`` document (in ``Doc/whatsnew/``) should be added
-as well.  There are two notable exceptions to this general principle, and they
+as well.
+
+There are two notable exceptions to this general principle, and they
 both relate to changes that *already* have a NEWS entry, and have not yet
 been included in any formal release (including alpha and beta releases).
 These exceptions are:
@@ -160,6 +162,13 @@ These exceptions are:
 * If a change is a fix (or other adjustment) to an earlier unreleased change
   and the original NEWS entry remains valid, then no additional entry is
   needed.
+
+Needing a What's New entry almost always means that a change is *not*
+suitable for inclusion in a maintenance release. A small number of
+exceptions have been made for Python 2.7 due to the long support period -
+when implemented, these changes *must* be noted in the "New Additions in
+Python 2.7 Maintenance Releases" section of the Python 2.7 What's New
+document.
 
 New NEWS entries are customarily added at or near the top of their
 respective sections, so that entries within a section appear in approximate
