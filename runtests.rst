@@ -124,3 +124,13 @@ That module is not suitable for use outside of the standard library.
 When you are adding tests to an existing test file, it is also recommended
 that you study the other tests in that file; it will teach you which precautions
 you have to take to make your tests robust and portable.
+
+
+Benchmarks
+----------
+Benchmarking is useful to test that a change does not degrade performance.
+
+`The Grand Unified Python Benchmark Suite <http://hg.python.org/benchmarks/>`_
+has a collection of benchmarks for all Python implementations. Documentation
+about running the benchmarks is in the `README.txt
+<http://hg.python.org/benchmarks/file/tip/README.txt>`_ of the benchmarks repo.
