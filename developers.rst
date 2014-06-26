@@ -25,6 +25,9 @@ transliteration too.
 Permissions History
 -------------------
 
+- Berker Peksağ was given push privileges on June 26, 2014 by Benjamin Peterson,
+  on the recommendation of R. David Murray.
+
 - Steve Dower was given push privileges on May 10, 2014 by Antoine Pitrou, on
   recommendation by Martin v. Loewis.
 
