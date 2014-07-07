@@ -25,7 +25,8 @@ CPython is developed using `Mercurial <http://hg-scm.org/>`_. The Mercurial
 command line program is named ``hg``; this is also used to refer to Mercurial
 itself. Mercurial is easily available for common Unix systems by way of the
 standard package manager; under Windows, you might want to use the
-`TortoiseHg <http://tortoisehg.org/>`_ graphical client.
+`TortoiseHg <http://tortoisehg.org/>`_ graphical client, but the build system
+still prefers :file:`hg.exe` to be on your PATH.
 
 
 .. _checkout:
@@ -221,8 +222,9 @@ still build properly).
 Windows
 '''''''
 
-The readme included in the solution has more details, especially on the
-software needed to resolve the below mentioned build errors.
+The `readme <http://hg.python.org/cpython/file/default/PCbuild/readme.txt>`_
+included in the solution has more details, especially on what additional
+software is required to build which parts of Python.
 
 **Python 3.3** and later use Microsoft Visual Studio 2010.  You can
 download Microsoft Visual C++ 2010 Express `from Microsoft's site
@@ -261,9 +263,8 @@ files or directories.  These do not necessarily mean that Python failed
 to build.  If you prefer, you can exclude the offending projects from
 the build process by unchecking them inside the
 :menuselection:`Build --> Configuration Manager...` settings. You can
-also use the script :file:`Tools\\buildbot\\external.bat` or
-:file:`Tools\\buildbot\\external-amd64.bat` (as applicable) to download and
-compile missing dependencies.
+also use the script :file:`PCbuild\\get_externals.bat` to download missing
+dependencies.
 
 Once built you might want to set Python as a startup project. Pressing F5 in
 Visual Studio, or choosing Start Debugging from the Debug menu, will launch
@@ -276,6 +277,8 @@ path varies according to the build.  For a 32-bit build in debug mode, you
 have to invoke ``PCBuild\python_d.exe``, for a 64-bit build in debug mode,
 ``PCBuild\amd64\python_d.exe``.  If you are compiling in release mode (which
 you shouldn't, in general), replace ``python_d.exe`` with ``python.exe``.
+You can also invoke the most recently built interpreter using ``python.bat``
+in the root of the source tree.
 
 .. _build_troubleshooting:
 

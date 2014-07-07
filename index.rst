@@ -18,17 +18,14 @@ patch:
 
       hg clone http://hg.python.org/cpython
 
-2. :ref:`Build Python <compiling>`.  On :ref:`UNIX <unix-compiling>`::
+2. :ref:`Build Python <compiling>`.  On all platforms, install build
+   dependencies (such as compilers), then on :ref:`UNIX <unix-compiling>`::
 
       ./configure --with-pydebug && make -j2
 
-   On :ref:`Windows <windows-compiling>`, open the solution file
-   :file:`PCbuild\\pcbuild.sln` in Visual Studio, select :menuselection:`Debug`,
-   and :menuselection:`Build --> Build Solution`. Run
-   :file:`Tools\\buildbot\\external.bat` or
-   :file:`Tools\\buildbot\\external-amd64.bat` to download and compile 3rd
-   party libraries.  Note: Visual Studio may throw errors, but Python will
-   be built.
+   On :ref:`Windows <windows-compiling>`::
+
+      PCbuild\build.bat -e -d
 
 3. :doc:`Run the tests <runtests>`::
 
