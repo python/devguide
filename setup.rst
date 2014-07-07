@@ -250,6 +250,10 @@ Their limitations are given `here (2008)
 <http://msdn.microsoft.com/en-us/library/hs24szh9%28v=VS.90%29.aspx>`_
 and `here (2010)
 <http://msdn.microsoft.com/en-us/library/hs24szh9%28v=vs.100%29.aspx>`_.
+Because the Python solution file uses Solution Folders, VS Express will warn
+you about using solution folders every time you open the ``pcbuild.sln`` file.
+You can safely dismiss the warning with no impact on your ability to build
+Python.
 
 To build from the Visual Studio GUI, open the ``pcbuild.sln`` solution file
 with Visual Studio.  Choose the :menuselection:`Build Solution` option
