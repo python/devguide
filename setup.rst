@@ -373,9 +373,14 @@ every rule.
      Code related to the parser. The definition of the AST nodes is also kept
      here.
 
+``Programs``
+     Source code for C executables, including the main function for the
+     CPython interpreter (in versions prior to Python 3.5, these files are
+     in the Modules directory).
+
 ``Python``
-     The code that makes up the CPython interpreter. This includes the compiler,
-     eval loop and various built-in modules.
+     The code that makes up the core CPython runtime. This includes the
+     compiler, eval loop and various built-in modules.
 
 ``Tools``
      Various tools that are (or have been) used to maintain Python.
