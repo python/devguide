@@ -25,6 +25,9 @@ transliteration too.
 Permissions History
 -------------------
 
+- Darjus Loktevic was given push privileges on July 26, 2014 by Brett Cannon,
+  on the recommendation of Jim Baker for Jython development.
+
 - Berker Peksağ was given push privileges on June 26, 2014 by Benjamin Peterson,
   on the recommendation of R. David Murray.
 
