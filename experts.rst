@@ -206,7 +206,7 @@ socket                pitrou
 socketserver
 spwd
 sqlite3               ghaering
-ssl                   janssen, pitrou, giampaolo.rodola, christian.heimes, dstufft
+ssl                   janssen, pitrou, giampaolo.rodola, christian.heimes, dstufft, alex
 stat                  christian.heimes
 statistics            steven.daprano
 string                georg.brandl*
