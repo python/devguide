@@ -1451,13 +1451,8 @@ To build the documentation, follow the instructions from one of the sections
 below.  You can view the documentation after building the HTML by pointing
 a browser at the file :file:`Doc/build/html/index.html`.
 
-In the Python 2.7 and 3.3 branches, the Sphinx toolchain will be checked out
-using Subversion from ``svn.python.org`` by the Makefile.  This toolchain will
-need an installed Python 2 to run.
-
-In the Python 3.4 and later branches, you are expected to have installed a
-recent version of Sphinx on your system, so that the Makefile can find the
-``sphinx-build`` command.
+You are expected to have installed a recent version of Sphinx on your system or
+in a virtualenv_, so that the Makefile can find the ``sphinx-build`` command.
 
 
 Using make / make.bat
@@ -1469,7 +1464,9 @@ On Unix, run the following from the root of your :ref:`repository clone
    cd Doc
    make html
 
-or alternatively ``make -C Doc html``.  This builds the output as HTML.
+or alternatively ``make -C Doc html``.  This builds the output as HTML.  You can
+specify the location of the ``sphinx-build`` command with the ``SPHINXBUILD``
+make variable.
 
 For Windows users there is a :file:`make.bat` batchfile that tries to work like
 ``make`` does.
@@ -1477,6 +1474,9 @@ For Windows users there is a :file:`make.bat` batchfile that tries to work like
 Available :command:`make` targets are:
 
  * "html", which builds standalone HTML files for offline viewing.
+
+ * "htmlview", which builds the standalone HTML files and then opens a web
+   browser to display them.
 
  * "htmlhelp", which builds HTML files and a HTML Help project file usable to
    convert them into a single Compiled HTML (.chm) file -- these are popular
@@ -1526,3 +1526,4 @@ see the make targets above).
 .. _Jinja: http://jinja.pocoo.org/
 .. _Pygments: http://pygments.org/
 .. _Sphinx: http://sphinx-doc.org/
+.. _virtualenv: https://virtualenv.pypa.io/
