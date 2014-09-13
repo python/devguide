@@ -46,7 +46,7 @@ To get a working copy of the :ref:`in-development <indevbranch>` branch of
 CPython (core developers use a different URL as outlined in :ref:`coredev`),
 run::
 
-    hg clone http://hg.python.org/cpython
+    hg clone https://hg.python.org/cpython
 
 If you want a working copy of an already-released version of Python,
 i.e., a version in :ref:`maintenance mode <maintbranch>`, you can update your
