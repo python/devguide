@@ -282,7 +282,7 @@ properly.
   The issue tracker automatically translates the legacy svn revision
   ``<number>`` to its corresponding Mercurial changeset identifier.
 * ``Dir/file.ext`` and ``Dir/file.ext:NNN`` generate links to files in the
-  `Python source code repositories <http://hg.python.org/cpython/file/>`_,
+  `Python source code repositories <https://hg.python.org/cpython/file/>`_,
   possibly linking to the line number specified after the ``:``.
 * ``PEP <number>`` and ``PEP<number>`` link to the
   :abbr:`PEP (Python Enhancement Proposal)` ``<number>``.
@@ -291,33 +291,33 @@ properly.
   the Devguide, this page, and this section respectively.
 
 
-.. _CPython: http://hg.python.org/cpython/file/default/
-.. _Doc: http://hg.python.org/cpython/file/default/Doc/
-.. _Grammar: http://hg.python.org/cpython/file/default/Grammar/
-.. _Lib: http://hg.python.org/cpython/file/default/Lib/
-.. _Lib/lib2to3: http://hg.python.org/cpython/file/default/Lib/lib2to3/
-.. _Lib/ctypes: http://hg.python.org/cpython/file/default/Lib/ctypes/
-.. _Lib/distutils: http://hg.python.org/cpython/file/default/Lib/distutils/
-.. _Lib/doctest.py: http://hg.python.org/cpython/file/default/Lib/doctest.py
-.. _Lib/idlelib: http://hg.python.org/cpython/file/default/Lib/idlelib/
-.. _Lib/io.py: http://hg.python.org/cpython/file/default/Lib/io.py
-.. _Lib/re.py: http://hg.python.org/cpython/file/default/Lib/re.py
-.. _Lib/test: http://hg.python.org/cpython/file/default/Lib/test/
-.. _Lib/test/regrtest.py: http://hg.python.org/cpython/file/default/Lib/test/regrtest.py
-.. _Lib/test/support: http://hg.python.org/cpython/file/default/Lib/test/support/
-.. _Lib/tkinter: http://hg.python.org/cpython/file/default/Lib/tkinter/
-.. _Lib/unittest: http://hg.python.org/cpython/file/default/Lib/unittest/
-.. _Lib/xml: http://hg.python.org/cpython/file/default/Lib/xml/
-.. _Modules: http://hg.python.org/cpython/file/default/Modules/
-.. _Modules/_io: http://hg.python.org/cpython/file/default/Modules/_io/
-.. _Modules/_sre.c: http://hg.python.org/cpython/file/default/Modules/_sre.c
-.. _Objects: http://hg.python.org/cpython/file/default/Objects/
-.. _Objects/unicodeobject.c: http://hg.python.org/cpython/file/default/Objects/unicodeobject.c
-.. _Parser: http://hg.python.org/cpython/file/default/Parser/
-.. _Python: http://hg.python.org/cpython/file/default/Python/
-.. _Tools: http://hg.python.org/cpython/file/default/Tools/
-.. _Tools/demo: http://hg.python.org/cpython/file/default/Tools/demo/
-.. _benchmarks: http://hg.python.org/benchmarks/
-.. _Developer's guide: http://hg.python.org/devguide/
+.. _CPython: https://hg.python.org/cpython/file/default/
+.. _Doc: https://hg.python.org/cpython/file/default/Doc/
+.. _Grammar: https://hg.python.org/cpython/file/default/Grammar/
+.. _Lib: https://hg.python.org/cpython/file/default/Lib/
+.. _Lib/lib2to3: https://hg.python.org/cpython/file/default/Lib/lib2to3/
+.. _Lib/ctypes: https://hg.python.org/cpython/file/default/Lib/ctypes/
+.. _Lib/distutils: https://hg.python.org/cpython/file/default/Lib/distutils/
+.. _Lib/doctest.py: https://hg.python.org/cpython/file/default/Lib/doctest.py
+.. _Lib/idlelib: https://hg.python.org/cpython/file/default/Lib/idlelib/
+.. _Lib/io.py: https://hg.python.org/cpython/file/default/Lib/io.py
+.. _Lib/re.py: https://hg.python.org/cpython/file/default/Lib/re.py
+.. _Lib/test: https://hg.python.org/cpython/file/default/Lib/test/
+.. _Lib/test/regrtest.py: https://hg.python.org/cpython/file/default/Lib/test/regrtest.py
+.. _Lib/test/support: https://hg.python.org/cpython/file/default/Lib/test/support/
+.. _Lib/tkinter: https://hg.python.org/cpython/file/default/Lib/tkinter/
+.. _Lib/unittest: https://hg.python.org/cpython/file/default/Lib/unittest/
+.. _Lib/xml: https://hg.python.org/cpython/file/default/Lib/xml/
+.. _Modules: https://hg.python.org/cpython/file/default/Modules/
+.. _Modules/_io: https://hg.python.org/cpython/file/default/Modules/_io/
+.. _Modules/_sre.c: https://hg.python.org/cpython/file/default/Modules/_sre.c
+.. _Objects: https://hg.python.org/cpython/file/default/Objects/
+.. _Objects/unicodeobject.c: https://hg.python.org/cpython/file/default/Objects/unicodeobject.c
+.. _Parser: https://hg.python.org/cpython/file/default/Parser/
+.. _Python: https://hg.python.org/cpython/file/default/Python/
+.. _Tools: https://hg.python.org/cpython/file/default/Tools/
+.. _Tools/demo: https://hg.python.org/cpython/file/default/Tools/demo/
+.. _benchmarks: https://hg.python.org/benchmarks/
+.. _Developer's guide: https://hg.python.org/devguide/
 .. _GSoC: http://code.google.com/soc/
 .. _issue tracker: http://bugs.python.org

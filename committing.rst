@@ -487,10 +487,10 @@ Long-term development of features
 If you want to work on a feature long-term (perhaps you're implementing a
 PEP), you will probably want to publish your work in a dedicated repository.
 The following instructions will help you do so on `hg.python.org
-<http://hg.python.org>`_'s infrastructure without requiring a lot of upload
+<https://hg.python.org>`_'s infrastructure without requiring a lot of upload
 bandwidth.
 
-Go to the main repository's Web page (http://hg.python.org/cpython/); there
+Go to the main repository's Web page (https://hg.python.org/cpython/); there
 you find a button labelled "server-side clone", which you can click on to
 display a Web form.  Enter the relative path of the repository you want to
 create on the server, for example ``features/mywork``; and press the button.
@@ -539,13 +539,13 @@ when desired::
 
 When you push them, they will land in the public repository at
 ``ssh://hg@hg.python.org/features/mywork`` (or
-``http://hg.python.org/features/mywork`` for the read-only URL).  Other
+``https://hg.python.org/features/mywork`` for the read-only URL).  Other
 people can clone the public repository and work on the code too.
 
 When you want to synchronize with CPython's upstream changes, you can pull
 from the main repository, either from its remote URL::
 
-   $ hg pull http://hg.python.org/cpython
+   $ hg pull https://hg.python.org/cpython
 
 or from a local clone that you may have on your disk (which is of course
 faster)::

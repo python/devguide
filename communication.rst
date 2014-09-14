@@ -31,7 +31,7 @@ Python. If a new idea does not start here (or python-list_, discussed below),
 it will get redirected here.
 
 Python-checkins_ sends out an email for every commit to Python's various
-repositories from http://hg.python.org. All core developers
+repositories from https://hg.python.org. All core developers
 subscribe to this list and are known to reply to these emails to make comments
 about various issues they catch in the commit. Replies get redirected to
 python-dev.

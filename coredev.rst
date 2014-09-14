@@ -25,7 +25,7 @@ core developers think you need more time contributing patches before you are
 able to commit them without supervision.
 
 A complete list of core developer usernames can be found at
-http://hg.python.org/committers.txt. :ref:`developers` lists when and why
+https://hg.python.org/committers.txt. :ref:`developers` lists when and why
 someone received commit privileges.
 
 
@@ -69,9 +69,9 @@ Your SSH key will be set to a username in the form of "first_name.last_name".
 This should match your username on the issue tracker.
 
 You can verify your commit access by looking at
-http://hg.python.org/committers.txt which lists all core developers by
+https://hg.python.org/committers.txt which lists all core developers by
 username.  If you want to practice, there is a `test repository
-<http://hg.python.org/test/>`_ where you can freely commit and push any
+<https://hg.python.org/test/>`_ where you can freely commit and push any
 changes you like::
 
    hg clone ssh://hg@hg.python.org/test/ hgtest
