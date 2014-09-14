@@ -222,7 +222,7 @@ still build properly).
 Windows
 '''''''
 
-The `readme <http://hg.python.org/cpython/file/default/PCbuild/readme.txt>`_
+The `readme <https://hg.python.org/cpython/file/default/PCbuild/readme.txt>`_
 included in the solution has more details, especially on what additional
 software is required to build which parts of Python.
 

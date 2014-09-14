@@ -189,8 +189,8 @@ you have to use one of the `custom builders
 When creating ("forcing") a build on a custom builder, you have to provide
 at least two parameters:
 
-* The repository path, relative to http://hg.python.org. For example,
-  ``sandbox/myfixes`` if ``http://hg.python.org/sandbox/myfixes`` is the
+* The repository path, relative to https://hg.python.org. For example,
+  ``sandbox/myfixes`` if ``https://hg.python.org/sandbox/myfixes`` is the
   full path to the repository.
 
 * The Mercurial id of the changeset you want to build.  To make things less

@@ -76,12 +76,12 @@ bug tracker`_ using the ``devguide`` component.  Changes to the devguide
 are normally published within a day, on a schedule that may be different from
 the main documentation.
 
-.. _separate repository: http://hg.python.org/devguide
+.. _separate repository: https://hg.python.org/devguide
 .. _Python bug tracker: http://bugs.python.org
 
 To clone the Developer's Guide::
 
-    $ hg clone http://hg.python.org/devguide
+    $ hg clone https://hg.python.org/devguide
 
 Core developers should use::
 

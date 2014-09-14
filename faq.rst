@@ -113,7 +113,7 @@ rights to the main source control repository.
 On the `issue tracker`_, most core developers will have the Python logo
 appear next to their name.
 
-.. _full list of developers: http://hg.python.org/committers.txt
+.. _full list of developers: https://hg.python.org/committers.txt
 
 
 What standards of behaviour are expected in these communication channels?
@@ -177,8 +177,8 @@ The mirror's master branch tracks the main repository's default branch,
 while the maintenance branch names (``2.7``, ``3.3``, etc) are mapped
 directly.
 
-.. _git mirror: http://github.com/akheron/cpython
-.. _CPython repository: http://hg.python.org/cpython
+.. _git mirror: https://github.com/akheron/cpython
+.. _CPython repository: https://hg.python.org/cpython
 
 Please only use this approach if you're already an experienced Git user and
 don't require assistance with the specifics of version control commands. All

@@ -16,7 +16,7 @@ patch:
 
 1. :ref:`Get the source code <checkout>`::
 
-      hg clone http://hg.python.org/cpython
+      hg clone https://hg.python.org/cpython
 
 2. :ref:`Build Python <compiling>`.  On all platforms, install build
    dependencies (such as compilers), then on :ref:`UNIX <unix-compiling>`::
@@ -147,8 +147,8 @@ Key Resources
     * `Firefox search engine plug-in`_
 * `Buildbot status`_
 * Source code
-    * `Browse online <http://hg.python.org/cpython/file/default/>`_
-    * `Snapshot of py3k <http://hg.python.org/cpython/archive/default.tar.bz2>`_
+    * `Browse online <https://hg.python.org/cpython/file/default/>`_
+    * `Snapshot of py3k <https://hg.python.org/cpython/archive/default.tar.bz2>`_
     * `Daily OS X installer <http://buildbot.python.org/daily-dmg/>`_
 * PEPs_ (Python Enhancement Proposals)
 * :doc:`faq`
@@ -214,7 +214,7 @@ Full Table of Contents
 
 .. _Buildbot status: http://python.org/dev/buildbot/
 .. _Firefox search engine plug-in: http://www.python.org/dev/searchplugin/
-.. _Misc directory: http://hg.python.org/cpython/file/default/Misc
+.. _Misc directory: https://hg.python.org/cpython/file/default/Misc
 .. _PEPs: http://www.python.org/dev/peps/
 .. _python.org maintenance: http://python.org/dev/pydotorg/
 .. _Python: http://www.python.org/
