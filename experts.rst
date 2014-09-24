@@ -59,7 +59,7 @@ asynchat              josiahcarlson, giampaolo.rodola*, stutzbach
 asyncio               gvanrossum, haypo, pitrou, yselivanov, giampaolo.rodola
 asyncore              josiahcarlson, giampaolo.rodola*, stutzbach
 atexit
-audioop
+audioop               serhiy.storchaka
 base64
 bdb
 binascii
@@ -161,6 +161,7 @@ numbers
 operator
 optparse              aronacher
 os                    loewis
+os.path               serhiy.storchaka
 ossaudiodev
 parser                benjamin.peterson
 pathlib               pitrou*
@@ -185,7 +186,7 @@ pydoc
 queue                 rhettinger
 quopri
 random                rhettinger, mark.dickinson
-re                    effbot (inactive), pitrou, ezio.melotti
+re                    effbot (inactive), pitrou, ezio.melotti, serhiy.storchaka
 readline
 reprlib
 resource
@@ -229,7 +230,7 @@ textwrap              georg.brandl
 threading             pitrou
 time                  belopolsky
 timeit                georg.brandl
-tkinter               gpolo
+tkinter               gpolo, serhiy.storchaka
 token                 georg.brandl
 tokenize              meador.inge
 trace                 belopolsky
@@ -263,7 +264,7 @@ xml.sax.handler
 xml.sax.saxutils
 xml.sax.xmlreader
 xmlrpc                loewis
-zipfile               alanmcintyre
+zipfile               alanmcintyre, serhiy.storchaka
 zipimport
 zlib                  nadeem.vawda
 ====================  =============================================
