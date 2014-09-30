@@ -1503,7 +1503,7 @@ Available :command:`make` targets are:
 
  * "pydoc-topics", which builds a Python module containing a dictionary with
    plain text documentation for the labels defined in
-   :file:`Doc/tools/sphinxext/pyspecific.py` -- pydoc needs these to show topic
+   :file:`Doc/tools/pyspecific.py` -- pydoc needs these to show topic
    and keyword help.
 
  * "suspicious", which checks the parsed markup for text that looks like
