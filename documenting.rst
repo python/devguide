@@ -946,6 +946,8 @@ while ``:func:`.open``` refers to :func:`codecs.open`.
 A similar heuristic is used to determine whether the name is an attribute of
 the currently documented class.
 
+---------
+
 The following roles create cross-references to C-language constructs if they
 are defined in the API documentation:
 
@@ -969,15 +971,34 @@ are defined in the API documentation:
 
    The name of a C type member, as defined above.
 
+---------
 
-The following role does possibly create a cross-reference, but does not refer
-to objects:
+The following roles do not refer to objects, but can create cross-references or
+internal links:
+
+.. describe:: envvar
+
+   An environment variable.  Index entries are generated.
+
+.. describe:: keyword
+
+   The name of a Python keyword.  Using this role will generate a link to the
+   documentation of the keyword.  ``True``, ``False`` and ``None`` do not use
+   this role, but simple code markup (````True````), given that they're
+   fundamental to the language and should be known to any programmer.
+
+.. describe:: option
+
+   A command-line option of Python.  The leading hyphen(s) must be included.
+   If a matching ``cmdoption`` directive exists, it is linked to.  For options
+   of other programs or scripts, use simple ````code```` markup.
 
 .. describe:: token
 
    The name of a grammar token (used in the reference manual to create links
    between production displays).
 
+---------
 
 The following role creates a cross-reference to the term in the glossary:
 
@@ -1005,10 +1026,6 @@ in a different style:
 
    Mark the defining instance of a term in the text.  (No index entries are
    generated.)
-
-.. describe:: envvar
-
-   An environment variable.  Index entries are generated.
 
 .. describe:: file
 
@@ -1038,13 +1055,6 @@ in a different style:
    *xemacs* key sequence may be marked like ``:kbd:`C-x C-f```, but without
    reference to a specific application or platform, the same sequence should be
    marked as ``:kbd:`Control-x Control-f```.
-
-.. describe:: keyword
-
-   The name of a Python keyword.  Using this role will generate a link to the
-   documentation of the keyword.  ``True``, ``False`` and ``None`` do not use
-   this role, but simple code markup (````True````), given that they're
-   fundamental to the language and should be known to any programmer.
 
 .. describe:: mailheader
 
@@ -1089,12 +1099,6 @@ in a different style:
 .. describe:: newsgroup
 
    The name of a Usenet newsgroup.
-
-.. describe:: option
-
-   A command-line option of Python.  The leading hyphen(s) must be included.
-   If a matching ``cmdoption`` directive exists, it is linked to.  For options
-   of other programs or scripts, use simple ````code```` markup.
 
 .. describe:: program
 
