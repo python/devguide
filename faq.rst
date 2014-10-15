@@ -174,7 +174,7 @@ than the main repository::
     git clone git://github.com/akheron/cpython
 
 The mirror's master branch tracks the main repository's default branch,
-while the maintenance branch names (``2.7``, ``3.3``, etc) are mapped
+while the maintenance branch names (``2.7``, ``3.4``, etc) are mapped
 directly.
 
 .. _git mirror: https://github.com/akheron/cpython
@@ -269,11 +269,11 @@ Which branches are in my local repository?
 Typing ``hg branches`` displays the open branches in your local repository::
 
    $ hg branches
-   default                    86781:52ec6a3eeda5
-   2.7                        86776:dd12639b82bf
-   3.3                        86779:544b654d000c (inactive)
-   3.2                        86778:dda1a32748e0 (inactive)
-   3.1                        86777:b1ddcb220a7f (inactive)
+   default                    93085:030fda7b1de8
+   2.7                        93060:7ba47bbfe38d
+   3.4                        93082:5fd481150b35 (inactive)
+   3.3                        93079:cda907a02a80 (inactive)
+   3.2                        92975:eac54f7a8018 (inactive)
 
 Why are some branches marked "inactive"?
 ''''''''''''''''''''''''''''''''''''''''
@@ -281,10 +281,10 @@ Why are some branches marked "inactive"?
 Assuming you get the following output::
 
    $ hg branches
-   default                    68042:8ff33af017ef
-   3.3                        68039:c17d7772c638 (inactive)
+   default                    93085:030fda7b1de8
+   3.4                        93082:5fd481150b35 (inactive)
 
-This means all changesets in the "3.3" branch have been merged into the
+This means all changesets in the "3.4" branch have been merged into the
 "default" branch (or any other branch, if such exists).
 
 
@@ -317,10 +317,10 @@ Simply use ``hg update`` to checkout another branch in the current directory::
 
    $ hg branch
    default
-   $ hg update 3.3
+   $ hg update 3.4
    86 files updated, 0 files merged, 11 files removed, 0 files unresolved
    $ hg branch
-   3.3
+   3.4
 
 Adding the ``-v`` option to ``hg update`` will list all updated files.
 
@@ -342,11 +342,11 @@ There are two ways:
 
 If you want to use the second way, you can do::
 
-   $ hg clone cpython py33
+   $ hg clone cpython py34
    updating to branch default
    3434 files updated, 0 files merged, 0 files removed, 0 files unresolved
-   $ cd py33
-   $ hg update 3.3
+   $ cd py34
+   $ hg update 3.4
    86 files updated, 0 files merged, 11 files removed, 0 files unresolved
 
 The current branch in a working copy is "sticky": if you pull in some new
@@ -795,14 +795,14 @@ You can also use ``hg resolve -am`` to mark all the conflicts as resolved.
 How do I make a null merge?
 '''''''''''''''''''''''''''
 
-If you committed something (e.g. on 3.3) that shouldn't be ported on newer
+If you committed something (e.g. on 3.4) that shouldn't be ported on newer
 branches (e.g. on default), you have to do a *null merge*::
 
    cd 3.x
-   hg merge 3.3
+   hg merge 3.4
    hg revert -ar default
    hg resolve -am  # needed only if the merge created conflicts
-   hg ci -m '#12345: null merge with 3.3.'
+   hg ci -m '#12345: null merge with 3.4.'
 
 Before committing, ``hg status`` should list all the merged files as ``M``,
 but ``hg diff`` should produce no output.  This will record the merge without
@@ -841,10 +841,10 @@ a lot easier.
 
 If more than one branch has multiple heads, you have to repeat these steps for
 each branch.  Since this creates new changesets, you will also have to
-:ref:`merge them between branches <branch-merge>`.  For example, if both ``3.3``
-and ``default`` have multiple heads, you should first merge heads in ``3.3``,
-then merge heads in ``default``, and finally merge ``3.3`` with ``default``
-using ``hg merge 3.3`` as usual.
+:ref:`merge them between branches <branch-merge>`.  For example, if both ``3.4``
+and ``default`` have multiple heads, you should first merge heads in ``3.4``,
+then merge heads in ``default``, and finally merge ``3.4`` with ``default``
+using ``hg merge 3.4`` as usual.
 
 In order to avoid this, you should *always remember to pull and update before
 committing*.
