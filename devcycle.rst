@@ -72,7 +72,7 @@ for bug fixes and there will be only one maintenance branch left.
 
 The only changes allowed to occur in a maintenance branch without debate are
 bug fixes.  Also, a general rule for maintenance branches is that compatibility
-must not be broken at any point between sibling minor releases (3.3.1, 3.3.2,
+must not be broken at any point between sibling minor releases (3.4.1, 3.4.2,
 etc.).  For both rules, only rare exceptions are accepted and **must** be
 discussed first.
 
@@ -113,12 +113,10 @@ There are 5 open branches right now in the Mercurial repository:
   (future RM: Larry Hastings)
 - the ``3.4`` branch holds bug fixes for future 3.4.x maintenance releases
   and descends from ``3.3`` (RM: Larry Hastings)
-- the ``3.3`` branch holds security fixes for future 3.3.x maintenance releases
+- the ``3.3`` branch holds security fixes for future 3.3.x security releases
   and descends from ``3.2`` (RM: Georg Brandl)
 - the ``3.2`` branch holds security fixes for future 3.2.x security releases
   (RM: Georg Brandl)
-- the ``3.1`` branch holds security fixes for future 3.1.x security releases
-  (RM: Benjamin Peterson)
 - the ``2.7`` branch holds bug fixes for future 2.7.x maintenance releases and
   descends from ``2.6`` (RM: Benjamin Peterson)
 
