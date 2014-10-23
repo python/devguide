@@ -240,7 +240,7 @@ tty
 turtle                gregorlingl
 types
 unicodedata           loewis, lemburg, ezio.melotti
-unittest              michael.foord*, ezio.melotti
+unittest              michael.foord*, ezio.melotti, rbcollins
 unittest.mock         michael.foord*
 urllib                orsenthil
 uu
