@@ -25,6 +25,9 @@ transliteration too.
 Permissions History
 -------------------
 
+- Stefan Richthofer was given push privileges on October 27, 2014 by GFB,
+  at the request of Frank Wierzbicki, for Jython development.
+
 - Robert Collins was given push privileges on October 16, 2014 by Brett Cannon,
   on the recommendation of Michael Foord, for work on unittest.
 
