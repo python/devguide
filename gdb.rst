@@ -23,6 +23,13 @@ added. When CPython is built you will notice a ``python-gdb.py`` file in the
 root directory of your checkout. Read the module docstring for details on how
 to use the file to enhance gdb for easier debugging of a CPython process.
 
+To activate support, you must add the directory containing ``python-gdb.py``
+to GDB's "auto-load-safe-path".  Put this in your ``~/.gdbinit`` file::
+
+   add-auto-load-safe-path /path/to/checkout
+
+You can also add multiple paths, separated by ``:``.
+
 This is what a backtrace looks like (truncated) when this extension is
 enabled::
 
