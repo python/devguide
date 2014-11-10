@@ -54,7 +54,7 @@ abc
 aifc                  r.david.murray
 argparse              bethard
 array
-ast                   benjamin.peterson
+ast                   benjamin.peterson, georg.brandl
 asynchat              josiahcarlson, giampaolo.rodola*, stutzbach
 asyncio               gvanrossum, haypo, pitrou, yselivanov, giampaolo.rodola
 asyncore              josiahcarlson, giampaolo.rodola*, stutzbach
@@ -165,7 +165,7 @@ os.path               serhiy.storchaka
 ossaudiodev
 parser                benjamin.peterson
 pathlib               pitrou*
-pdb                   georg.brandl*
+pdb                   georg.brandl
 pickle                alexandre.vassalotti, pitrou
 pickletools           alexandre.vassalotti
 pipes
@@ -210,7 +210,7 @@ sqlite3               ghaering
 ssl                   janssen, pitrou, giampaolo.rodola, christian.heimes, dstufft, alex
 stat                  christian.heimes
 statistics            steven.daprano
-string                georg.brandl*
+string                georg.brandl
 stringprep
 struct                mark.dickinson, meador.inge
 subprocess            astrand (inactive)
@@ -229,7 +229,7 @@ test                  ezio.melotti
 textwrap              georg.brandl
 threading             pitrou
 time                  belopolsky
-timeit                georg.brandl
+timeit
 tkinter               gpolo, serhiy.storchaka
 token                 georg.brandl
 tokenize              meador.inge
@@ -249,7 +249,7 @@ venv                  vinay.sajip
 warnings
 wave
 weakref               fdrake, pitrou
-webbrowser            georg.brandl
+webbrowser
 winreg                stutzbach
 winsound              effbot (inactive)
 wsgiref               pje
