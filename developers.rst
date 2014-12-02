@@ -25,6 +25,9 @@ transliteration too.
 Permissions History
 -------------------
 
+- Chris Angelico was given push privileges on December 1, 2014 by GFB,
+  as a new PEP editor.
+
 - Santoso Wijaya was given push privileges on October 29, 2014 by GFB,
   at the request of Frank Wierzbicki, for Jython development.
 
