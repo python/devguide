@@ -49,6 +49,7 @@ contributing to Python.
 * `Buildbot status`_
 * :doc:`faq`
 * PEPs_ (Python Enhancement Proposals)
+* :doc:`gitdevs`
 
 
 .. _contributing:
@@ -83,6 +84,7 @@ Guide for contributing to Python:
     * :doc:`devcycle`
     * :doc:`buildbots`
     * :doc:`coverity`
+* :doc:`gitdevs`
 
 It is **recommended** that the above documents be read in the order listed.  You
 can stop where you feel comfortable and begin contributing immediately without
@@ -209,6 +211,7 @@ Full Table of Contents
    compiler
    coverity
    clang
+   gitdevs
    faq
 
 
