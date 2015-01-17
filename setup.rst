@@ -226,12 +226,17 @@ The `readme <https://hg.python.org/cpython/file/default/PCbuild/readme.txt>`_
 included in the solution has more details, especially on what additional
 software is required to build which parts of Python.
 
-**Python 3.3** and later use Microsoft Visual Studio 2010.  You can
-download Microsoft Visual C++ 2010 Express `from Microsoft's site
+**Python 3.5** and later use Microsoft Visual Studio 2015.  You can download
+`Microsoft Visual Studio 2015 Ultimate Preview
+<http://www.visualstudio.com/en-au/news/vs2015-preview-vs>`_, or you can
+continue to use Visual Studio 2010 SP1 until Microsoft releases the final
+version of Visual Studio 2015.
+
+Python 3.3 and 3.4 use Microsoft Visual Studio 2010.  You can download
+Microsoft Visual C++ 2010 Express `from Microsoft's site
 <https://www.microsoft.com/visualstudio/eng/downloads#d-2010-express>`_.
 To use it for more than 28 days, one must register through a
-Windows Live account.
-
+Microsoft account (formerly known as a Windows Live or Hotmail account).
 You'll also need to install the Visual Studio `Service Pack 1 (SP1)
 <http://www.microsoft.com/en-us/download/details.aspx?id=23691>`_. If you
 don't install this service pack, you may receive errors like the following
@@ -244,22 +249,18 @@ from a new location yet to be determined.
 
 Regardless of Visual Studio version, the ``PCbuild`` directory of a source
 checkout contains the build files for the Python version you are building.
-The full version of Visual Studio is not necessary for common tasks with
-32-bit builds; the gratis C++ Express versions linked above are sufficient.
-Their limitations are given `here (2008)
-<http://msdn.microsoft.com/en-us/library/hs24szh9%28v=VS.90%29.aspx>`_
-and `here (2010)
-<http://msdn.microsoft.com/en-us/library/hs24szh9%28v=vs.100%29.aspx>`_.
-Because the Python solution file uses Solution Folders, VS Express will warn
-you about using solution folders every time you open the ``pcbuild.sln`` file.
-You can safely dismiss the warning with no impact on your ability to build
-Python.
+
+To build from the command line, execute :file:`PCBuild\\build.bat`.  If you
+have not previously done so, you can pass the ``-e`` option to download
+external dependencies or invoke :file:`PCBuild\\get_externals.bat` directly. By
+default, :file:`PCBuild\\build.bat` will produce a 32-bit release build. Pass
+the ``-p x64`` option to produce a 64-bit build, and/or the ``-d`` option to
+produce a debug build.
 
 To build from the Visual Studio GUI, open the ``pcbuild.sln`` solution file
 with Visual Studio.  Choose the :menuselection:`Build Solution` option
-under the :menuselection:`Build` or :menuselection:`Debug` menu
-(depending on your version of Visual Studio).  Be sure that "Debug" was
-chosen as the active solution configuration (e.g. under
+under the :menuselection:`Build` menu.  Be sure that "Debug" was chosen
+as the active solution configuration (e.g. under
 :menuselection:`Build --> Configuration Manager...`).
 
 When building you may see a number of build errors related to missing
@@ -271,18 +272,18 @@ also use the script :file:`PCbuild\\get_externals.bat` to download missing
 dependencies.
 
 Once built you might want to set Python as a startup project. Pressing F5 in
-Visual Studio, or choosing Start Debugging from the Debug menu, will launch
-the interpreter.
+Visual Studio, or choosing :menuselection:`Start Debugging` from the 
+:menuselection:`Debug` menu, will launch the interpreter.
 
 .. _win-python.exe:
 
 If you want to launch the compiled interpreter from the command-line, the
 path varies according to the build.  For a 32-bit build in debug mode, you
-have to invoke ``PCBuild\python_d.exe``, for a 64-bit build in debug mode,
-``PCBuild\amd64\python_d.exe``.  If you are compiling in release mode (which
-you shouldn't, in general), replace ``python_d.exe`` with ``python.exe``.
-You can also invoke the most recently built interpreter using ``python.bat``
-in the root of the source tree.
+have to invoke ``PCBuild\win32\python_d.exe``, for a 64-bit build in debug
+mode, ``PCBuild\amd64\python_d.exe``.  If you are compiling in release mode
+(which you shouldn't, in general), replace ``python_d.exe`` with
+``python.exe``.  You can also invoke the most recently built interpreter using
+``python.bat`` in the root of the source tree.
 
 .. _build_troubleshooting:
 
@@ -362,8 +363,7 @@ every rule.
      Code for all built-in types.
 
 ``PC``
-     Windows-specific code along with legacy build files for previously used
-     versions of MSVC.
+     Windows-specific code.
 
 ``PCbuild``
      Build files for the version of MSVC currently used for the Windows
