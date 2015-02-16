@@ -167,17 +167,17 @@ I already know how to use Git, can I use that instead?
 
 While the main workflow for core developers requires Mercurial, if
 you just want to generate patches with ``git diff`` and post them to the
-`issue tracker`_, Petri Lehtinen maintains a `git mirror`_ of the main
+`issue tracker`_, there is a semi-offical read-only `git mirror`_ of the main
 `CPython repository`_. To create a local clone based on this mirror rather
 than the main repository::
 
-    git clone git://github.com/akheron/cpython
+    git clone git://github.com/python/cpython
 
 The mirror's master branch tracks the main repository's default branch,
 while the maintenance branch names (``2.7``, ``3.4``, etc) are mapped
 directly.
 
-.. _git mirror: https://github.com/akheron/cpython
+.. _git mirror: https://github.com/python/cpython
 .. _CPython repository: https://hg.python.org/cpython
 
 Please only use this approach if you're already an experienced Git user and
