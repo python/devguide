@@ -304,6 +304,7 @@ Miscellaneous
 Interest Area       Maintainers
 ==================  ===========
 algorithms
+argument clinic     larry
 ast/compiler        ncoghlan, benjamin.peterson, brett.cannon, georg.brandl
 autoconf/makefiles
 bsd
