@@ -197,7 +197,7 @@ select
 selectors             neologix, giampaolo.rodola
 shelve
 shlex
-shutil                tarek, hynek
+shutil                tarek
 signal
 site
 smtpd                 giampaolo.rodola
@@ -289,7 +289,7 @@ Cygwin                jlt63, stutzbach
 FreeBSD
 HP-UX
 Linux
-Mac OS X              ronaldoussoren, ned.deily, hynek
+Mac OS X              ronaldoussoren, ned.deily
 NetBSD1
 OS2/EMX               aimacintyre
 Solaris/OpenIndiana   jcea
@@ -322,7 +322,7 @@ documentation       georg.brandl, ezio.melotti, eric.araujo
 GUI
 i18n                lemburg, eric.araujo
 import machinery    brett.cannon, ncoghlan, eric.snow
-io                  pitrou, benjamin.peterson, stutzbach, hynek
+io                  pitrou, benjamin.peterson, stutzbach
 locale              lemburg, loewis
 mathematics         mark.dickinson, eric.smith, lemburg, stutzbach
 memory management   tim.peters, lemburg
