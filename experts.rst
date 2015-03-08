@@ -50,6 +50,7 @@ __future__
 __main__              gvanrossum, ncoghlan
 _dummy_thread         brett.cannon
 _thread               pitrou
+_testbuffer           skrah
 abc
 aifc                  r.david.murray
 argparse              bethard
@@ -93,7 +94,7 @@ ctypes                theller (inactive), belopolsky, amaury.forgeotdarc,
 curses
 datetime              belopolsky
 dbm
-decimal               facundobatista, rhettinger, mark.dickinson
+decimal               facundobatista, rhettinger, mark.dickinson, skrah
 difflib               tim.peters (inactive)
 dis                   ncoghlan*
 distutils             eric.araujo, dstufft
@@ -139,6 +140,7 @@ itertools             rhettinger
 json                  bob.ippolito (inactive), ezio.melotti, rhettinger, pitrou
 keyword
 lib2to3               benjamin.peterson
+libmpdec              skrah
 linecache
 locale                loewis, lemburg
 logging               vinay.sajip
@@ -148,6 +150,7 @@ mailbox               petri.lehtinen
 mailcap
 marshal
 math                  mark.dickinson, rhettinger, stutzbach
+memoryview            skrah
 mimetypes
 mmap
 modulefinder          theller (inactive), jvr
