@@ -872,8 +872,8 @@ This will modify your working copy so that all changes in ``<revision number>``
 SSH
 =======
 
-How do I generate an SSH 2 public key?
--------------------------------------------------------------------------------
+How do I generate an SSH-2 public key?
+--------------------------------------
 
 All generated SSH keys should be sent to hgaccounts@python.org for
 adding to the list of keys.
@@ -883,10 +883,10 @@ UNIX
 
 Run::
 
-  ssh-keygen -t rsa
+  ssh-keygen -t ed25519
 
-This will generate two files; your public key and your private key.  Your
-public key is the file ending in ``.pub``.
+This will generate two files; your public key and your private key.  The public
+key is in file ending in ``.pub``.
 
 Windows
 '''''''
