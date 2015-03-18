@@ -25,6 +25,9 @@ transliteration too.
 Permissions History
 -------------------
 
+- Paul Moore was given push privileges on March 18, 2015 by Brett Cannon,
+  on his own recommendation.
+
 - Chris Angelico was given push privileges on December 1, 2014 by GFB,
   as a new PEP editor.
 
