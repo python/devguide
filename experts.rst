@@ -296,7 +296,7 @@ Mac OS X              ronaldoussoren, ned.deily
 NetBSD1
 OS2/EMX               aimacintyre
 Solaris/OpenIndiana   jcea
-Windows               tim.golden, zach.ware, steve.dower
+Windows               tim.golden, zach.ware, steve.dower, paul.moore
 JVM/Java              frank.wierzbicki
 ===================   ===========
 
@@ -331,8 +331,8 @@ mathematics         mark.dickinson, eric.smith, lemburg, stutzbach
 memory management   tim.peters, lemburg
 networking          giampaolo.rodola, pitrou
 object model        benjamin.peterson
-packaging           tarek, lemburg, alexis, eric.araujo, dstufft
-pip                 ncoghlan, dstufft, pmoore, Marcus.Smith
+packaging           tarek, lemburg, alexis, eric.araujo, dstufft, paul.moore
+pip                 ncoghlan, dstufft, paul.moore, Marcus.Smith
 py3 transition      benjamin.peterson
 release management  tarek, lemburg, benjamin.peterson, barry, loewis,
                     gvanrossum, anthonybaxter, eric.araujo, ned.deily,
