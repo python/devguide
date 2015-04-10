@@ -227,10 +227,10 @@ included in the solution has more details, especially on what additional
 software is required to build which parts of Python.
 
 **Python 3.5** and later use Microsoft Visual Studio 2015.  You can download
-`Microsoft Visual Studio 2015 Ultimate Preview
-<http://www.visualstudio.com/en-au/news/vs2015-preview-vs>`_, or you can
-continue to use Visual Studio 2010 SP1 until Microsoft releases the final
-version of Visual Studio 2015.
+`Microsoft Visual Studio 2015 CTP 6 or newer
+<https://www.visualstudio.com/en-us/downloads/visual-studio-2015-ctp-vs>`_,
+or you can continue to use Visual Studio 2010 SP1 until Microsoft releases
+the final version of Visual Studio 2015.
 
 Python 3.3 and 3.4 use Microsoft Visual Studio 2010.  You can download
 Microsoft Visual C++ 2010 Express `from Microsoft's site
