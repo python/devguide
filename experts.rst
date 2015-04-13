@@ -91,7 +91,7 @@ crypt                 jafo*
 csv                   skip.montanaro (inactive)
 ctypes                theller (inactive), belopolsky, amaury.forgeotdarc,
                       meador.inge
-curses
+curses                twouters
 datetime              belopolsky
 dbm
 decimal               facundobatista, rhettinger, mark.dickinson, skrah
@@ -104,15 +104,15 @@ email                 barry, r.david.murray*
 encodings             lemburg, loewis
 ensurepip             ncoghlan, dstufft
 enum                  eli.bendersky*, barry, ethan.furman*
-errno
+errno                 twouters
 exceptions
 faulthandler          haypo
-fcntl
+fcntl                 twouters
 filecmp
 fileinput
 fnmatch
 formatter
-fpectl
+fpectl                twouters
 fractions             mark.dickinson, rhettinger
 ftplib                giampaolo.rodola*
 functools             ncoghlan, rhettinger
@@ -152,7 +152,7 @@ marshal
 math                  mark.dickinson, rhettinger, stutzbach
 memoryview            skrah
 mimetypes
-mmap
+mmap                  twouters
 modulefinder          theller (inactive), jvr
 msilib                loewis
 msvcrt
@@ -180,7 +180,7 @@ posix                 larry
 pprint                fdrake
 profile               georg.brandl
 pstats                georg.brandl
-pty
+pty                   twouters*
 pwd
 py_compile
 pybench               lemburg, pitrou
@@ -190,9 +190,9 @@ queue                 rhettinger
 quopri
 random                rhettinger, mark.dickinson
 re                    effbot (inactive), pitrou, ezio.melotti, serhiy.storchaka
-readline
+readline              twouters
 reprlib
-resource
+resource              twouters
 rlcompleter
 runpy                 ncoghlan
 sched                 giampaolo.rodola
@@ -227,7 +227,7 @@ tabnanny              tim.peters (inactive)
 tarfile               lars.gustaebel
 telnetlib
 tempfile              georg.brandl, ncoghlan
-termios
+termios               twouters
 test                  ezio.melotti
 textwrap              georg.brandl
 threading             pitrou
@@ -239,7 +239,7 @@ tokenize              meador.inge
 trace                 belopolsky
 traceback             georg.brandl*
 tracemalloc           haypo
-tty
+tty                   twouters*
 turtle                gregorlingl
 types
 unicodedata           loewis, lemburg, ezio.melotti
@@ -267,9 +267,9 @@ xml.sax.handler
 xml.sax.saxutils
 xml.sax.xmlreader
 xmlrpc                loewis
-zipfile               alanmcintyre, serhiy.storchaka
-zipimport
-zlib                  nadeem.vawda
+zipfile               alanmcintyre, serhiy.storchaka, twouters
+zipimport             twouters*
+zlib                  nadeem.vawda, twouters
 ====================  =============================================
 
 
@@ -310,14 +310,14 @@ Interest Area       Maintainers
 algorithms
 argument clinic     larry
 ast/compiler        ncoghlan, benjamin.peterson, brett.cannon, georg.brandl
-autoconf/makefiles
+autoconf/makefiles  twouters*
 bsd
 benchmarks          pitrou, brett.cannon
 bug tracker         ezio.melotti
 buildbots           pitrou
 bytecode            benjamin.peterson, pitrou, georg.brandl
 context managers    ncoghlan
-coverity scan       christian.heimes, brett.cannon
+coverity scan       christian.heimes, brett.cannon, twouters
 cryptography        christian.heimes, gregory.p.smith, dstufft
 data formats        mark.dickinson, georg.brandl
 database            lemburg
@@ -329,9 +329,9 @@ import machinery    brett.cannon, ncoghlan, eric.snow
 io                  pitrou, benjamin.peterson, stutzbach
 locale              lemburg, loewis
 mathematics         mark.dickinson, eric.smith, lemburg, stutzbach
-memory management   tim.peters, lemburg
+memory management   tim.peters, lemburg, twouters
 networking          giampaolo.rodola, pitrou
-object model        benjamin.peterson
+object model        benjamin.peterson, twouters
 packaging           tarek, lemburg, alexis, eric.araujo, dstufft, paul.moore
 pip                 ncoghlan, dstufft, paul.moore, Marcus.Smith
 py3 transition      benjamin.peterson
