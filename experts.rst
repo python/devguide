@@ -320,7 +320,7 @@ coverity scan       christian.heimes, brett.cannon
 cryptography        christian.heimes, gregory.p.smith, dstufft
 data formats        mark.dickinson, georg.brandl
 database            lemburg
-devguide            ncoghlan, eric.araujo, ezio.melotti
+devguide            ncoghlan, eric.araujo, ezio.melotti, willingc
 documentation       georg.brandl, ezio.melotti, eric.araujo
 GUI
 i18n                lemburg, eric.araujo
