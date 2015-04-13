@@ -176,7 +176,7 @@ pkgutil
 platform              lemburg
 plistlib
 poplib                giampaolo.rodola
-posix
+posix                 larry
 pprint                fdrake
 profile               georg.brandl
 pstats                georg.brandl
@@ -278,6 +278,7 @@ Tools
 ==================  ===========
 Tool                Maintainers
 ==================  ===========
+Argument Clinic     larry
 pybench             lemburg
 ==================  ===========
 
