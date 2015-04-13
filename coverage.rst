@@ -20,21 +20,14 @@ to follow.
 
 Choosing what module you want to increase test coverage for can be done in a
 couple of ways.
-A third-party website at http://coverage.livinglogic.de/ provides an
-overall view of how good coverage is for various modules (you will want to
-focus on those in the ``Lib`` directory as those are the pure Python modules
-from Python's stdlib, and thus easier to work with than the C extension
-modules). But since this is a third-party site we cannot promise that it will
-always be accessible or have useful information (i.e., be working properly).
+You can simply run the entire test suite yourself with coverage turned
+on and see what modules need help. This has the drawback of running the entire
+test suite under coverage measuring which takes some time to complete, but you
+will have an accurate, up-to-date notion of what modules need the most work.
 
 Another is to follow the examples below and simply see what
 coverage your favorite module has. This is "stabbing in the dark", though, and
 so it might take some time to find a module that needs coverage help.
-
-Finally, you can simply run the entire test suite yourself with coverage turned
-on and see what modules need help. This has the drawback of running the entire
-test suite under coverage measuring which takes some time to complete, but you
-will have an accurate, up-to-date notion of what modules need the most work.
 
 Do make sure, though, that for any module you do decide to work on that you run
 coverage for just that module. This will make sure you know how good the
