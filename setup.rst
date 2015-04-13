@@ -85,6 +85,8 @@ only on pure Python code the pydebug build provides several useful checks that
 one should not skip.
 
 
+.. _build-dependencies:
+
 Build dependencies
 ''''''''''''''''''
 
@@ -272,7 +274,7 @@ also use the script :file:`PCbuild\\get_externals.bat` to download missing
 dependencies.
 
 Once built you might want to set Python as a startup project. Pressing F5 in
-Visual Studio, or choosing :menuselection:`Start Debugging` from the 
+Visual Studio, or choosing :menuselection:`Start Debugging` from the
 :menuselection:`Debug` menu, will launch the interpreter.
 
 .. _win-python.exe:
