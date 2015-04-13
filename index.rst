@@ -19,13 +19,18 @@ patch:
       hg clone https://hg.python.org/cpython
 
 2. :ref:`Build Python <compiling>`.  On all platforms, install build
-   dependencies (such as compilers), then on :ref:`UNIX <unix-compiling>`::
+   dependencies (such as compilers). On :ref:`UNIX <unix-compiling>`
+   (including Mac OS X)::
 
       ./configure --with-pydebug && make -j2
 
    On :ref:`Windows <windows-compiling>`::
 
       PCbuild\build.bat -e -d
+
+   If the build outputs warnings or errors, :ref:`build-dependencies` provides
+   detail on standard library extensions that depend on installing third-party
+   libraries for some operating systems.
 
 3. :doc:`Run the tests <runtests>`::
 
