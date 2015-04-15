@@ -304,10 +304,33 @@ create or modify versioned files.  The public repository has a hook which
 will reject all changesets having the wrong line endings, so enabling this
 extension on your local computer is in your best interest.
 
+As a core developer, it can be very helpful to set up the same commit checks
+locally that the main repo enforces for incoming patch sets. This can save a
+great deal of frustration with the server rejecting ``hg push`` for changes
+(which can be especially time consuming if you have already merged changes
+across branches).
+
+Configuring and using the whitespace checking hook found in the `hooks
+repository`_ will help check incoming patch sets. To configure a hook,
+add configuration settings to ``~/.hgrc`` for the relevant repo(s) (remember
+to adjust the path appropriately for the checked out location of the
+`hooks repository`_). To configure a "pretxncommit" hook that will check
+whitespace before the changeset is committed and can thus abort the commit
+if whitespace is found, add::
+
+   [hooks]
+   pretxncommit.whitespace = python:~/path/to/checkwhitespace.py:check_whitespace_single
+
+Another option is to configure it as a "commit" hook; if used, a warning
+will still be issued but the changeset will be applied anyway::
+
+   [hooks]
+   commit = python:~/path/to/checkwhitespace.py:check_whitespace_single
 
 .. _configuration file: http://www.selenic.com/mercurial/hgrc.5.html#files
 .. _extended diff format: http://www.selenic.com/mercurial/hg.1.html#diffs
 .. _eol extension: http://mercurial.selenic.com/wiki/EolExtension
+.. _hooks repository: https://hg.python.org/hooks
 
 
 Clones Setup
