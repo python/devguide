@@ -407,6 +407,9 @@ Permissions History
 Permissions Dropped on Request
 ------------------------------
 
+- Skip Montanaro's permissions were removed on 21 April 2015 by BCP per `his
+  request <https://bugs.python.org/msg241740>`_.
+
 - Roy Smith, Matt Fleming and Richard Emslie sent drop requests.
   4 Aug 2008 GFB
 
