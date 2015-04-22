@@ -1125,7 +1125,9 @@ The following roles generate external links:
 
    A reference to a Python Enhancement Proposal.  This generates appropriate
    index entries. The text "PEP *number*\ " is generated; in the HTML output,
-   this text is a hyperlink to an online copy of the specified PEP.
+   this text is a hyperlink to an online copy of the specified PEP. Such
+   hyperlinks should not be a substitute for properly documenting the
+   language in the manuals.
 
 .. describe:: rfc
 
