@@ -54,10 +54,18 @@ under active development for all kinds of changes: new features, semantic
 changes, performance improvements, bug fixes.  As the name indicates, it
 is the branch :ref:`checked out <checkout>` by default by Mercurial.
 
-Once a :ref:`final` release (say, 3.3) is made from the in-development branch, a
+At some point during the life-cycle of a release, a
 new :ref:`maintenance branch <maintbranch>` is created to host all bug fixing
 activity for further micro versions (3.3.1, 3.3.2, etc.).
 
+For versions 3.4 and before, this was conventionally done when the final
+release was cut (for example, 3.4.0 final).
+
+.. note::
+  For the 3.5 release we're trying something new. We're creating the 3.5
+  maintenance branch at the time we enter beta (3.5.0 beta 1).  This will
+  allow feature development for 3.6 to occur alongside the beta and release
+  candidate stabilization periods for 3.5.
 
 .. _maintbranch:
 
@@ -110,7 +118,7 @@ Summary
 There are 5 open branches right now in the Mercurial repository:
 
 - the ``default`` branch holds the future 3.5 version and descends from ``3.4``
-  (future RM: Larry Hastings)
+  (RM: Larry Hastings)
 - the ``3.4`` branch holds bug fixes for future 3.4.x maintenance releases
   and descends from ``3.3`` (RM: Larry Hastings)
 - the ``3.3`` branch holds security fixes for future 3.3.x security releases
@@ -162,6 +170,10 @@ downloaded the alpha and beta releases.
 Being in beta can be viewed much like being in RC_ but without the extra overhead
 of needing commit reviews.
 
+Please see the note in the `In-development (main) branch`_ section above
+for new information about the creation of the 3.5 maintenance branch during beta.
+
+
 .. _rc:
 
 Release Candidate (RC)
@@ -176,6 +188,17 @@ is the strongest concern at this point.
 You **cannot** skip the peer review during an RC, no matter how small! Even if
 it is a simple copy-and-paste change, **everything** requires peer review from
 a core developer.
+
+.. note::
+  For the 3.5 release we're trying something new.  At the point that we reach 3.5.0
+  release candidate 1, the official release branch will no longer be hosted at
+  ``hg.python.org``.  Instead, 3.5.0 rc 1 through final will be hosted
+  by the 3.5 release manager on bitbucket.
+
+  Bugfixes for 3.5 should still be checked in to the 3.5 branch.  However, if the
+  core developer responsible for the bugfix feels it should be merged into 3.5.0, they
+  will need to create a bitbucket "pull request" for this change.  Any bugfixes not
+  merged into 3.5.0 in this way will be automatically shipped with 3.5.1.
 
 .. _final:
 
