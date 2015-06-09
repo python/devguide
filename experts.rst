@@ -314,7 +314,7 @@ autoconf/makefiles  twouters*
 bsd
 benchmarks          pitrou, brett.cannon
 bug tracker         ezio.melotti
-buildbots           pitrou
+buildbots           pitrou, zach.ware
 bytecode            benjamin.peterson, pitrou, georg.brandl
 context managers    ncoghlan
 coverity scan       christian.heimes, brett.cannon, twouters
