@@ -26,12 +26,13 @@ and how various kinds of failures can be explained and diagnosed.
 Checking results of automatic builds
 ------------------------------------
 
-There are two ways of visualizing recent build results:
+There are three ways of visualizing recent build results:
 
 * The Web interface for each branch at http://python.org/dev/buildbot/,
   where the so-called "waterfall" view presents a vertical rundown of recent
   builds for each builder.  When interested in one build, you'll have to
-  click on it to know which changesets it corresponds to.
+  click on it to know which changesets it corresponds to.  Note that
+  the buildbot web pages are often slow to load, be patient.
 
 * The command-line ``bbreport.py`` client, which you can get from
   http://code.google.com/p/bbreport/. Installing it is trivial: just add
@@ -41,6 +42,22 @@ There are two ways of visualizing recent build results:
   type::
 
       bbreport.py -q 3.x
+
+* The buildbot "console" interface at http://buildbot.python.org/all/console
+  This works best on a wide, high resolution
+  monitor.  You can enter your mercurial username ("your name
+  <your@email>") in the 'personalized for' box in the upper right corner to see
+  the results just for changesets submitted by you.  Clicking on the colored
+  circles will allow you to open a new page containing whatever information
+  about that particular build is of interest to you.  You can also access
+  builder information by clicking on the builder status bubbles in the top
+  line.
+
+If you like IRC, having an IRC client open to the #python-dev channel on
+irc.freenode.net is useful.  Any time a builder changes state (last build
+passed and this one didn't, or vice versa), a message is posted to the channel.
+Keeping an eye on the channel after pushing a changeset is a simple way to get
+notified that there is something you should look in to.
 
 Some buildbots are much faster than others.  Over time, you will learn which
 ones produce the quickest results after a build, and which ones take the
@@ -83,7 +100,7 @@ the failing build's tests.  For example::
 Ordering-dependent failures
 ---------------------------
 
-Sometimes even the failure is subtler, as it relies on the order in which
+Sometimes the failure is even subtler, as it relies on the order in which
 the tests are run.  The buildbots *randomize* test order (by using the ``-r``
 option to the test runner) to maximize the probability that potential
 interferences between library modules are exercised; the downside is that it
