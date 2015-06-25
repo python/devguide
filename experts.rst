@@ -241,7 +241,7 @@ traceback             georg.brandl*
 tracemalloc           haypo
 tty                   twouters*
 turtle                gregorlingl
-types
+types                 yselivanov
 unicodedata           loewis, lemburg, ezio.melotti
 unittest              michael.foord*, ezio.melotti, rbcollins
 unittest.mock         michael.foord*
