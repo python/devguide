@@ -1,4 +1,4 @@
-.. _experts:
+    .. _experts:
 
 Experts Index
 =================
@@ -83,7 +83,7 @@ colorsys
 compileall
 concurrent.futures    bquinlan
 configparser          lukasz.langa*
-contextlib            ncoghlan*, yselivanov
+contextlib            ncoghlan, yselivanov
 copy                  alexandre.vassalotti
 copyreg               alexandre.vassalotti
 cProfile
@@ -96,7 +96,7 @@ datetime              belopolsky
 dbm
 decimal               facundobatista, rhettinger, mark.dickinson, skrah
 difflib               tim.peters (inactive)
-dis                   ncoghlan*, yselivanov
+dis                   ncoghlan, yselivanov
 distutils             eric.araujo, dstufft
 doctest               tim.peters (inactive)
 dummy_threading       brett.cannon
