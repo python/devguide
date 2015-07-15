@@ -242,6 +242,7 @@ tracemalloc           haypo
 tty                   twouters*
 turtle                gregorlingl
 types                 yselivanov
+typing
 unicodedata           loewis, lemburg, ezio.melotti
 unittest              michael.foord*, ezio.melotti, rbcollins
 unittest.mock         michael.foord*
