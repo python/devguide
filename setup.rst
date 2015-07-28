@@ -18,6 +18,9 @@ completely new to contributing to open source.
 Getting Set Up
 ==============
 
+
+.. _vcsetup:
+
 Version Control Setup
 ---------------------
 

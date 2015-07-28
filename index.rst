@@ -18,6 +18,8 @@ patch:
 
       hg clone https://hg.python.org/cpython
 
+   See :ref:`version control setup <vcsetup>` for installing Mercurial.
+
 2. :ref:`Build Python <compiling>`.  On all platforms, install build
    dependencies (such as compilers). On :ref:`UNIX <unix-compiling>`
    (including Mac OS X)::
