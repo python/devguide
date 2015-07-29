@@ -308,7 +308,8 @@ vice versa.
 To overcome this problem, auto-generated files are also checked into the
 Mercurial repository. So if you don't touch the auto-generation scripts, there's
 no real need to auto-generate anything. However, as Mercurial doesn't preserve
-timestamps well, a special build target ``touch`` was added. Run::
+timestamps well, a special build target ``touch`` was added (the ``touch``
+build target is not designed for git clones and does not support them). Run::
 
     make touch
 
