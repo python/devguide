@@ -241,7 +241,7 @@ Permissions History
 - Heiko Weinen was given SVN access on 29 April 2008 by MvL,
   for GSoC contributions.
 
-- Jesus Cea was given SVN access on 24 April 2008 by MvL,
+- Jesús Cea was given SVN access on 24 April 2008 by MvL,
   for maintenance of bsddb.
 
 - Guilherme Polo was given SVN access on 24 April 2008 by MvL,
