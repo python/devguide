@@ -8,10 +8,10 @@ This file is a running log of developers given commit privileges for Python.
 The purpose is to provide some institutional memory of who was given access
 and why.
 
-The first entry starts in April 2005.  In keeping with the style of
-Misc/NEWS, newer entries should be added to the top.
-Entries should include the initials of the
-project admin who made the change or granted access.
+The first entry starts in April 2005.  In keeping with the style of Misc/NEWS,
+newer entries should be added to the top.  Entries should include the initials
+of the project admin who made the change or granted access.  The procedure for
+adding or removing users is described in :ref:`altering-access`.
 
 Note, when giving new commit permissions, be sure to get a contributor agreement
 from the committer.  See http://www.python.org/psf/contrib/ for details.  When
@@ -457,3 +457,21 @@ Initials of Project Admins
 * MvL:  Martin v. Loewis
 * GvR:  Guido van Rossum
 * RDH:  Raymond Hettinger
+
+
+.. _altering-access:
+
+Procedure for Granting or Dropping Access
+-----------------------------------------
+
+Obtain a checkout of the keys repo::
+
+     hg clone ssh://hgaccounts@hg.python.org/repo
+
+The key files are stored in the form ``first.last``. Simply create or remove the
+appropriate file, commit the change, and push. A hook on the server should
+automatically regenerate the ``authorized_keys`` file for the ``hg`` user. Make
+sure to update the developer log above.
+
+To add or remove hg account admins, submit pull requests to the `psf-salt repo
+<https://github.com/python/psf-salt/blob/master/salt/hg/config/hg-account-admins>`_.
