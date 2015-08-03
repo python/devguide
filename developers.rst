@@ -464,7 +464,13 @@ Initials of Project Admins
 Procedure for Granting or Dropping Access
 -----------------------------------------
 
-Obtain a checkout of the keys repo::
+To be granted the ability to manage SSH keys for committers, you must first
+submit a pull request to the `psf-salt repo
+<https://github.com/python/psf-salt/blob/master/salt/hg/config/hg-account-admins>`_
+to add your own SSH key to the hgaccounts account.
+
+Once you have been added to the hgaccounts accout, obtain a checkout of the keys
+repo::
 
      hg clone ssh://hgaccounts@hg.python.org/repo
 
@@ -473,5 +479,3 @@ appropriate file, commit the change, and push. A hook on the server should
 automatically regenerate the ``authorized_keys`` file for the ``hg`` user. Make
 sure to update the developer log above.
 
-To add or remove hg account admins, submit pull requests to the `psf-salt repo
-<https://github.com/python/psf-salt/blob/master/salt/hg/config/hg-account-admins>`_.
