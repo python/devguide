@@ -25,6 +25,9 @@ transliteration too.
 Permissions History
 -------------------
 
+- Martin Panter was given push privileges on August 10, 2015 by GFB,
+  on the recommendation of R. David Murray.
+
 - Paul Moore was given push privileges on March 18, 2015 by Brett Cannon,
   on his own recommendation.
 
