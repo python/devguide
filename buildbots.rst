@@ -223,3 +223,6 @@ scripts.
 .. note::
    For security reasons, it is impossible to build repositories from outside
    the http://hg.python.org realm.
+
+.. seealso::
+   :ref:`buildslave`
