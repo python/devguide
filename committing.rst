@@ -36,9 +36,19 @@ passes before pushing any code changes.
 Patch checklist
 '''''''''''''''
 
-Apart from running the tests, there's a simple patch checklist that
-``make patchcheck`` (or ``./python.exe Tools/scripts/patchcheck.py`` on
-Windows) will run through:
+Along with running the tests, a simple automated patch checklist, `patchcheck`,
+guides a developer through the common patch generation checks. To run
+`patchcheck`:
+
+   On *UNIX* (including Mac OS X)::
+
+      make patchcheck
+
+   On *Windows* (after any successful build)::
+
+      python.bat Tools/scripts/patchcheck.py
+
+The automated patch checklist runs through:
 
 * Are there any whitespace problems in Python files?
   (using ``Tools/scripts/reindent.py``)
@@ -52,10 +62,9 @@ Windows) will run through:
 * Has ``configure`` been regenerated, if necessary?
 * Has ``pyconfig.h.in`` been regenerated, if necessary?
 
-Note that the automated patch check can't actually *answer* all of these
-questions, and even if it could, it still wouldn't know whether or not
-those answers were appropriate. Aside from the whitespace checks, it is just
-a memory aid to help with remembering the various elements that can go into
+The automated patch check doesn't actually *answer* all of these
+questions. Aside from the whitespace checks, the tool is
+a memory aid for the various elements that can go into
 making a complete patch.
 
 
@@ -274,12 +283,14 @@ your local clone gets into a state you aren't happy with.
 Minimal Configuration
 ---------------------
 
-To use Mercurial as a committer (both of your and others' patches), you should
-set up some basic options in your `configuration file`_.  Under Windows,
-TortoiseHg has a graphical settings dialog for most options, meaning you
-don't need to edit the file directly (it is still available in
-``%USERPROFILE%\Mercurial.ini``).  Under other platforms, you must edit
-``~/.hgrc``.
+If you use Mercurial as a committer of patches (your own or others), you should
+set up some basic options in your `configuration file`_.
+
+* On *UNIX* (including Mac OS X), you must edit ``~/.hgrc``.
+* Under *Windows*, use TortoiseHg's graphical settings dialog to make changes
+  to ``mercurial.ini``. Alternatively, you may edit the file directly at
+  ``%USERPROFILE%\mercurial.ini``.
+
 
 Here are the minimal options you need to activate:
 
@@ -298,11 +309,11 @@ Here are the minimal options you need to activate:
    [diff]
    git = on
 
-Under Windows, you should also enable the `eol extension`_, which will
-fix any Windows-specific line endings your text editor might insert when you
-create or modify versioned files.  The public repository has a hook which
-will reject all changesets having the wrong line endings, so enabling this
-extension on your local computer is in your best interest.
+* *Under Windows*, you should also enable the `eol extension`_, which will
+  fix any Windows-specific line endings your text editor might insert when you
+  create or modify versioned files.  The public repository has a hook which
+  will reject all changesets having the wrong line endings, so enabling this
+  extension on your local computer is in your best interest.
 
 As a core developer, it can be very helpful to set up the same commit checks
 locally that the main repo enforces for incoming patch sets. This can save a
@@ -312,7 +323,7 @@ across branches).
 
 Configuring and using the whitespace checking hook found in the `hooks
 repository`_ will help check incoming patch sets. To configure a hook,
-add configuration settings to ``~/.hgrc`` for the relevant repo(s) (remember
+add configuration settings to ``.hg/hgrc`` for the relevant repo(s) (remember
 to adjust the path appropriately for the checked out location of the
 `hooks repository`_). To configure a "pretxncommit" hook that will check
 whitespace before the changeset is committed and can thus abort the commit
@@ -363,7 +374,8 @@ different branches.  For this reason, this approach is suggested to core
 developers.
 
 The easiest way to do this is by using the `share extension`_, that can be
-enabled by adding the following lines to your ``~/.hgrc``::
+enabled by adding the following lines to your ``~/.hgrc`` (``mercurial.ini``
+on Windows)::
 
    [extensions]
    share =
