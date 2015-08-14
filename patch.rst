@@ -90,9 +90,9 @@ To perform a quick sanity check on your patch, you can run::
 This will check and/or fix various common things people forget to do for
 patches, such as adding any new files needed for the patch to work (note
 that not all checks apply to non-core developers).  On Windows, use this
-command::
+command (after any successful build of Python)::
 
-   ./python.exe Tools/scripts/patchcheck.py
+   python.bat Tools/scripts/patchcheck.py
 
 Assuming you are using the :ref:`basic approach <workflow>` suggested earlier,
 just type the following::
