@@ -85,6 +85,7 @@ Guide for contributing to Python:
     * :doc:`fixingissues`
 * :ref:`tracker` and :ref:`helptriage`
     * :doc:`triaging`
+    * :doc:`experts`
 * :doc:`communication`
 * :doc:`coredev`
     * :doc:`committing`
