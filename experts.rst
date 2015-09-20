@@ -1,7 +1,7 @@
 .. _experts:
 
 Experts Index
-=================
+=============
 
 This document has tables that list Python Modules, Tools, Platforms and
 Interest Areas and names for each item that indicate a maintainer or an
