@@ -1,4 +1,4 @@
-    .. _experts:
+.. _experts:
 
 Experts Index
 =================
