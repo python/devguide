@@ -891,10 +891,10 @@ key is in file ending in ``.pub``.
 Windows
 '''''''
 
-Use PuTTYgen_ to generate your public key.  Choose the "SSH2 DSA" radio button,
-have it create an OpenSSH formatted key, choose a password, and save the private
-key to a file.  Copy the section with the public key (using Alt-P) to a file;
-that file now has your public key.
+Use PuTTYgen_ to generate your public key.  Choose the "SSH-2 RSA" radio button,
+set 4096 as the key size, choose a password, and save the private key to a file.
+Copy the section with the public key (using Alt-P) to a file; that file now has
+your public key.
 
 .. _PuTTYgen: http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html
 
