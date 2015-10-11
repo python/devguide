@@ -222,6 +222,7 @@ Full Table of Contents
    buildslave
    gitdevs
    faq
+   motivations
 
 
 .. _Buildbot status: http://python.org/dev/buildbot/
