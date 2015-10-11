@@ -132,13 +132,13 @@ fellow core developers whenever you discuss Python with anyone. We have a
 reputation for being a very nice group of people and we would like to keep it
 that way.
 
-Second, please be prompt in responding to questions. We are all volunteers so
-what little free time one can dedicate to Python should be spent being
-productive. If you have been asked to respond to an issue or answer a question
-and you put it off it ends up stalling other people's work. It is completely
-acceptable to say you are too busy, but you need to say that instead of
-stringing people along. This obviously applies to anything you do on the issue
-tracker as well.
+Second, please be prompt in responding to questions. Many contributors to Python
+are volunteers so what little free time they can dedicate to Python should be
+spent being productive. If you have been asked to respond to an issue or answer
+a question and you put it off it ends up stalling other people's work. It is
+completely acceptable to say you are too busy, but you need to say that instead
+of leaving people waiting for an answer. This also applies to anything you
+do on the issue tracker.
 
 Third, please list what areas you want to be considered an expert in the
 :ref:`experts`. This allows triagers to direct issues to you which involve
@@ -148,6 +148,14 @@ questions promptly then please remove yourself as needed from the file so that
 you will not be bothered in the future. Once again, we all understand how life
 gets in the way, so no one will be insulted if you remove yourself from the
 list.
+
+Fourth, please consider whether or not you wish to add your name to the
+:ref:`motivations` list. Core contributor participation in the list helps the
+wider Python community to better appreciate the perspectives currently
+represented amongst the core development team, the Python Software Foundation
+to better assess the sustainability of current contributions to CPython core
+development, and also serves as a referral list for organisations seeking
+commercial Python support from the core development community.
 
 And finally, enjoy yourself! Contributing to open source software should be fun
 (overall). If you find yourself no longer enjoying the work then either take a
