@@ -81,13 +81,22 @@ For Mac:
 
 For Windows:
 
-    * TBD
+    * Create a buildbot user as a "standard" user.
+    * Install the latest version of Python 2.7 from python.org.
+    * Open a Command Prompt.
+    * Execute ``python -m pip install pypiwin32 buildbot-slave`` (note that
+      :executable:`python.exe` is not added to :envvar:`PATH` by default,
+      making the ``python`` command accessible is left as an exercise for the
+      user).
 
 In a terminal window for the buildbot user, issue the following commands (you
 can put the ``buildarea`` wherever you want to)::
 
     mkdir buildarea
     buildslave create-slave buildarea buildbot.python.org:9020 slavename slavepasswd
+
+(Note that on Windows, the ``buildslave`` command will be in the
+:file:`Scripts` directory of your Python installation.)
 
 Once this initial slave setup completes, you should edit the files
 ``buildarea/info/admin`` and ``buildarea/info/host`` to provide your contact
@@ -156,11 +165,19 @@ For OSX:
 
 For Windows:
 
-    * TBD
+    * Add a Scheduled Task to run ``buildslave start buildarea`` as the
+      buildbot user "when the computer starts up".  It is best to provide
+      absolute paths to the ``buildslave`` command and the :file:`buildarea`
+      directory.  It is also recommended to set the task to run in the
+      directory that contains the :file:`buildarea` directory.
+
+    * Alternatively (note: don't do both!), set up the buildslave
+      service as described in the `buildbot documentation
+      <http://trac.buildbot.net/wiki/RunningBuildbotOnWindows#Service>`_.
 
 To start the buildslave running for your initial testing, you can do::
 
-    buildslave start ~/buildarea
+    buildslave start buildarea
 
 Then you can either wait for someone to make a commit, or you can pick a
 builder associated with your buildslave from the `list of builders
