@@ -53,6 +53,9 @@ the "buildslave" step below.
 Setting up the buildslave
 -------------------------
 
+Conventional always-on machines
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
 You need a recent version of the `buildbot <http://buildbot.net/>`_ software,
 and you will probably want a separate 'buildbot' user to run the buildbot
 software.  You may also want to set the buildbot up using a virtual
@@ -187,6 +190,37 @@ the tests are passing and to resolve any platform issues that may be revealed
 by tests that fail.  Unfortunately we do not currently have a way to notify you
 only of failures on your builders, so doing periodic spot checks is also a good
 idea.
+
+
+Latent slaves
+^^^^^^^^^^^^^
+
+We also support running `latent buildslaves
+<http://docs.buildbot.net/current/manual/cfg-buildslaves.html#latent-buildslaves>`_
+on the AWS EC2 service.  To set up such a slave:
+
+    * Start an instance of your chosen base AMI and set it up as a
+      conventional slave.
+    * After the instance is fully set up as a conventional slave (including
+      slave name and password, and admin and host information), create an AMI
+      from the instance and stop the instance.
+    * Contact the buildmaster administrator who gave you your slave
+      name and password and give them the following information:
+
+      * Instance size (such as ``m4.large``)
+      * Full region specification (such as ``us-west-2``)
+      * AMI ID (such as ``ami-1234beef``)
+      * An Access Key ID and Access Key.  It is recommended to set up
+        a separate IAM user full access to EC2 and provide the access key
+        information for that user rather than for your main account.
+
+The buildmaster cannot guarantee that it will always shut down your
+instance(s), so it is recommended to periodically check and make sure
+there are no "zombie" instances running on your account, created by the
+buildbot master.  Also, if you notice that your slave seems to have been
+down for an unexpectedly long time, please ping the `python-buildbots
+<https://mail.python.org/mailman/listinfo/python-buildbots>`_ list to
+request that the master be restarted.
 
 
 Buildslave operation
