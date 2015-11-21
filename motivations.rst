@@ -4,7 +4,7 @@ Core Developer Motivations and Affiliations
 ===========================================
 
 CPython core developers participate in the core development process for a
-variety of reasons. Being accepted as a core reviewer indicates that
+variety of reasons. Being accepted as a core developer indicates that
 an individual is interested in acquiring those responsibilities, has the
 ability to collaborate effectively with existing core developers, and has had
 the time available to demonstrate both that interest and that ability.
@@ -29,7 +29,7 @@ Goals of this page
 
 The `issue metrics`_ automatically collected by the CPython issue tracker
 strongly suggest that the current core development process is bottlenecked on
-core reviewer time - this is most clearly indicated in the first metrics graph,
+core developer time - this is most clearly indicated in the first metrics graph,
 which shows both the number of open issues and the number of patches awaiting
 review growing steadily over time, despite CPython being one of the most
 active open source projects in the world. This bottleneck then impacts not only
