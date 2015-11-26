@@ -166,22 +166,22 @@ process:
 
 .. topic:: Nick Coghlan (Australia)
 
-  * Personal site: `Curious Efficiency <http://www.curiousefficiency.org/>`_
-  * `Extended bio <http://www.curiousefficiency.org/pages/about>`__
-  * Red Hat (Software Engineer, Developer Experience)
-  * Python Software Foundation (Board of Directors)
+   * Personal site: `Curious Efficiency <http://www.curiousefficiency.org/>`_
+   * `Extended bio <http://www.curiousefficiency.org/pages/about>`__
+   * Red Hat (Software Engineer, Developer Experience)
+   * Python Software Foundation (Board of Directors)
 
-  Nick originally began participating in CPython core development as an
-  interesting and enlightening hobby activity while working for Boeing Defence
-  Australia. After commencing work for Red Hat, he also became involved in a
-  range of topics related directly to improving the experience of Python
-  developers on the Fedora Linux distribution and derived platforms, and now
-  works for Red Hat's Developer Experience team.
+   Nick originally began participating in CPython core development as an
+   interesting and enlightening hobby activity while working for Boeing Defence
+   Australia. After commencing work for Red Hat, he also became involved in a
+   range of topics related directly to improving the experience of Python
+   developers on the Fedora Linux distribution and derived platforms, and now
+   works for Red Hat's Developer Experience team.
 
-  In addition to his personal and professional interest in ensuring Python
-  remains an excellent choice for Linux-based network service and system
-  utility development, he is also interested in helping to ensure its
-  continued suitability for educational and data analysis use cases.
+   In addition to his personal and professional interest in ensuring Python
+   remains an excellent choice for Linux-based network service and system
+   utility development, he is also interested in helping to ensure its
+   continued suitability for educational and data analysis use cases.
 
 .. topic:: R. David Murray (United States)
 
