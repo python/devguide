@@ -182,3 +182,31 @@ process:
   remains an excellent choice for Linux-based network service and system
   utility development, he is also interested in helping to ensure its
   continued suitability for educational and data analysis use cases.
+
+.. topic:: R. David Murray (United States)
+
+   * Personal site: `bitdance.com <http://www.bitdance.com>`_
+   * Available for `Python and Internet Services Consulting
+     and Python contract programming <http://www.murrayandwalker.com/>`_
+
+   David has been involved in the Internet since the days when the old IBM
+   BITNET and the ARPANet got cross connected, and in Python programming since
+   he first discovered it around the days of Python 1.4.  After transitioning
+   from being Director of Operations for dialup Internet providers (when that
+   business started declining) to being a full time independent consultant,
+   David started contributing directly to CPython development.  He became a
+   committer in 2009.  He subsequently took over primary maintenance of the
+   email package from Barry Warsaw, and contributed the unicode oriented API.
+   David is also active in mentoring new contributors and, when time is
+   available, working on the infrastructure that supports CPython development,
+   specifically the Roundup-based bug tracker and the buildbot system.
+
+   David currently does both proprietary and open source developement work,
+   primarily in Python, through the company in which he is a partner, `Murray &
+   Walker, Inc <http://www.murrayandwalker.com>`_.  He has done contract work
+   focused specifically on CPython development both through the PSF (the
+   kickstart of the email unicode API development) and directly funded by
+   interested corporations (additional development work on email fundeded by
+   QNX, and work on CPython ICC support funded by Intel).  He would like to
+   spend more of his (and his company's) time on open source work, and so is
+   actively seeking additional such contract opportunities.
