@@ -310,13 +310,13 @@ Interest Area       Maintainers
 ==================  ===========
 algorithms
 argument clinic     larry
-ast/compiler        ncoghlan, benjamin.peterson, brett.cannon, georg.brandl
+ast/compiler        ncoghlan, benjamin.peterson, brett.cannon, georg.brandl, yselivanov
 autoconf/makefiles  twouters*
 bsd
 benchmarks          pitrou, brett.cannon
 bug tracker         ezio.melotti
 buildbots           pitrou, zach.ware
-bytecode            benjamin.peterson, pitrou, georg.brandl
+bytecode            benjamin.peterson, pitrou, georg.brandl, yselivanov
 context managers    ncoghlan
 coverity scan       christian.heimes, brett.cannon, twouters
 cryptography        christian.heimes, gregory.p.smith, dstufft
