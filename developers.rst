@@ -410,6 +410,9 @@ Permissions History
 Permissions Dropped on Request
 ------------------------------
 
+- Andrew MacIntyre's privileges were dropped on 2 January 2016 by BCP per his
+  request.
+
 - Skip Montanaro's permissions were removed on 21 April 2015 by BCP per `his
   request <https://bugs.python.org/msg241740>`_.
 
