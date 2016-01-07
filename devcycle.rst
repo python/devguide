@@ -103,6 +103,8 @@ The only changes made to a security branch are those fixing issues exploitable
 by attackers such as crashes, privilege escalation and, optionally, other
 issues such as denial of service attacks.  Any other changes are
 **not** considered a security risk and thus not backported to a security branch.
+You should also consider fixing hard-failing tests in open security branches
+since it is important to be able to run the tests successfully before releasing.
 
 Commits to security branches are to be coordinated with the release manager
 for the corresponding feature version, as listed below in the Summary_.
