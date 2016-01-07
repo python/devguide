@@ -35,13 +35,13 @@ There is a branch for each *feature version*, whether released or not (e.g.
 no merging happens between 2.x and 3.x branches.
 
 In each of the 2.x and 3.x realms, the branch for a feature version is always a
-descendant of the previous feature version: for example, the ``3.3`` branch is a
-descendant of the ``3.2`` branch.
+descendant of the previous feature version: for example, the ``3.5`` branch is a
+descendant of the ``3.4`` branch.
 
 Therefore, each change should be made **first** in the oldest branch to which it
 applies and forward-ported as appropriate: if a bug must be fixed in both Python
-3.4 and 3.5, first fix it in ``3.4`` and then merge ``3.4`` into ``default``
-(which holds the future 3.5).
+3.5 and 3.6, first fix it in ``3.5`` and then merge ``3.5`` into ``default``
+(which holds the future 3.6).
 
 
 .. _indevbranch:
@@ -80,7 +80,7 @@ for bug fixes and there will be only one maintenance branch left.
 
 The only changes allowed to occur in a maintenance branch without debate are
 bug fixes.  Also, a general rule for maintenance branches is that compatibility
-must not be broken at any point between sibling minor releases (3.4.1, 3.4.2,
+must not be broken at any point between sibling minor releases (3.5.1, 3.5.2,
 etc.).  For both rules, only rare exceptions are accepted and **must** be
 discussed first.
 
@@ -88,9 +88,9 @@ Sometime after a new maintenance branch is created (after a new *minor version*
 is released), the old maintenance branch on that major version will go into
 :ref:`security mode <secbranch>`,
 usually after one last maintenance release at the discretion of the
-release manager.  For example, the 3.2 maintenance branch was put into
-:ref:`security mode <secbranch>` after the 3.2.4 final maintenance release
-following the release of 3.3.0.
+release manager.  For example, the 3.4 maintenance branch was put into
+:ref:`security mode <secbranch>` after the 3.4.4 final maintenance release
+following the release of 3.5.1.
 
 .. _secbranch:
 
@@ -115,16 +115,18 @@ security patches have been applied to the branch.
 Summary
 -------
 
-There are 5 open branches right now in the Mercurial repository:
+There are 6 open branches right now in the Mercurial repository:
 
-- the ``default`` branch holds the future 3.5 version and descends from ``3.4``
-  (RM: Larry Hastings)
-- the ``3.4`` branch holds bug fixes for future 3.4.x maintenance releases
+- the ``default`` branch holds the future 3.6 version and descends from ``3.5``
+  (RM: Ned Deily)
+- the ``3.5`` branch holds bug fixes for future 3.5.x maintenance releases
+  and descends from ``3.4`` (RM: Larry Hastings)
+- the ``3.4`` branch holds security fixes for future 3.4.x security releases
   and descends from ``3.3`` (RM: Larry Hastings)
 - the ``3.3`` branch holds security fixes for future 3.3.x security releases
-  and descends from ``3.2`` (RM: Georg Brandl)
+  until September 2017 and descends from ``3.2`` (RM: Georg Brandl)
 - the ``3.2`` branch holds security fixes for future 3.2.x security releases
-  (RM: Georg Brandl)
+  until February 2016 (RM: Georg Brandl)
 - the ``2.7`` branch holds bug fixes for future 2.7.x maintenance releases and
   descends from ``2.6`` (RM: Benjamin Peterson)
 
