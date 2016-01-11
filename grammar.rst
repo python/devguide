@@ -58,6 +58,8 @@ Checklist
 
 * Certain changes may require tweaks to the library module pyclbr.
 
+* Lib/lib2to3/Grammar.txt may need changes to match the Grammar.
+
 * Documentation must be written!
 
 * After everything has been checked in, you're likely to see a new
