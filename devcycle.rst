@@ -132,6 +132,8 @@ There are 6 open branches right now in the Mercurial repository:
 - the ``2.7`` branch holds bug fixes for future 2.7.x maintenance releases and
   descends from ``2.6`` (RM: Benjamin Peterson)
 
+See also the :ref:`Status of Python branches <branchstatus>`.
+
 
 .. _stages:
 
