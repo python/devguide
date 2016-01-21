@@ -53,9 +53,9 @@ run::
 
 If you want a working copy of an already-released version of Python,
 i.e., a version in :ref:`maintenance mode <maintbranch>`, you can update your
-working copy. For instance, to update your working copy to Python 3.4, do::
+working copy. For instance, to update your working copy to Python 3.5, do::
 
-   hg update 3.4
+   hg update 3.5
 
 You will need to re-compile CPython when you do such an update.
 

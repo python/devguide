@@ -118,7 +118,7 @@ license your code for use with Python (you retain the copyright).
    your further contributions to Python.
 
 
-.. _PSF license: http://docs.python.org/3.4/license.html#terms-and-conditions-for-accessing-or-otherwise-using-python
+.. _PSF license: http://docs.python.org/dev/license.html#terms-and-conditions-for-accessing-or-otherwise-using-python
 .. _contributor form: http://www.python.org/psf/contrib/
 .. _Python Software Foundation: http://www.python.org/psf/
 
