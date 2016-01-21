@@ -271,6 +271,7 @@ Typing ``hg branches`` displays the open branches in your local repository::
    $ hg branches
    default                    93085:030fda7b1de8
    2.7                        93060:7ba47bbfe38d
+   3.5                        99283:4d5417444961 (inactive)
    3.4                        93082:5fd481150b35 (inactive)
    3.3                        93079:cda907a02a80 (inactive)
    3.2                        92975:eac54f7a8018 (inactive)
@@ -282,9 +283,9 @@ Assuming you get the following output::
 
    $ hg branches
    default                    93085:030fda7b1de8
-   3.4                        93082:5fd481150b35 (inactive)
+   3.5                        99283:4d5417444961 (inactive)
 
-This means all changesets in the "3.4" branch have been merged into the
+This means all changesets in the "3.5" branch have been merged into the
 "default" branch (or any other branch, if such exists).
 
 
@@ -317,10 +318,10 @@ Simply use ``hg update`` to checkout another branch in the current directory::
 
    $ hg branch
    default
-   $ hg update 3.4
+   $ hg update 3.5
    86 files updated, 0 files merged, 11 files removed, 0 files unresolved
    $ hg branch
-   3.4
+   3.5
 
 Adding the ``-v`` option to ``hg update`` will list all updated files.
 
@@ -342,11 +343,11 @@ There are two ways:
 
 If you want to use the second way, you can do::
 
-   $ hg clone cpython py34
+   $ hg clone cpython py35
    updating to branch default
    3434 files updated, 0 files merged, 0 files removed, 0 files unresolved
-   $ cd py34
-   $ hg update 3.4
+   $ cd py35
+   $ hg update 3.5
    86 files updated, 0 files merged, 11 files removed, 0 files unresolved
 
 The current branch in a working copy is "sticky": if you pull in some new
@@ -795,14 +796,14 @@ You can also use ``hg resolve -am`` to mark all the conflicts as resolved.
 How do I make a null merge?
 '''''''''''''''''''''''''''
 
-If you committed something (e.g. on 3.4) that shouldn't be ported on newer
+If you committed something (e.g. on 3.5) that shouldn't be ported on newer
 branches (e.g. on default), you have to do a *null merge*::
 
    cd 3.x
-   hg merge 3.4
+   hg merge 3.5
    hg revert -ar default
    hg resolve -am  # needed only if the merge created conflicts
-   hg ci -m '#12345: null merge with 3.4.'
+   hg ci -m '#12345: null merge with 3.5.'
 
 Before committing, ``hg status`` should list all the merged files as ``M``,
 but ``hg diff`` should produce no output.  This will record the merge without
@@ -841,10 +842,10 @@ a lot easier.
 
 If more than one branch has multiple heads, you have to repeat these steps for
 each branch.  Since this creates new changesets, you will also have to
-:ref:`merge them between branches <branch-merge>`.  For example, if both ``3.4``
-and ``default`` have multiple heads, you should first merge heads in ``3.4``,
-then merge heads in ``default``, and finally merge ``3.4`` with ``default``
-using ``hg merge 3.4`` as usual.
+:ref:`merge them between branches <branch-merge>`.  For example, if both ``3.5``
+and ``default`` have multiple heads, you should first merge heads in ``3.5``,
+then merge heads in ``default``, and finally merge ``3.5`` with ``default``
+using ``hg merge 3.5`` as usual.
 
 In order to avoid this, you should *always remember to pull and update before
 committing*.
@@ -870,7 +871,7 @@ This will modify your working copy so that all changes in ``<revision number>``
 
 
 SSH
-=======
+===
 
 How do I generate an SSH-2 public key?
 --------------------------------------
@@ -930,7 +931,7 @@ will load the key every time you log in.
 
 
 Can I make commits from machines other than the one I generated the keys on?
-------------------------------------------------------------------------------
+----------------------------------------------------------------------------
 
 You can :ref:`make commits <hg-commit>` from any machine, since they will be
 recorded in your *local repository*.
