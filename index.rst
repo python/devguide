@@ -99,8 +99,8 @@ Status:
     released.
 :security: only security fixes are accepted and no more binaries are released,
     but new source-only versions can be released
-:end-of-life: branch no more maintained, no more change must be pushed to these
-    branches.
+:end-of-life: branch no longer maintained; no more changes can be pushed to
+    this branch.
 
 Dates in *italic* are scheduled and can be adjusted.
 
