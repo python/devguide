@@ -70,7 +70,7 @@ Status of Python branches
 +------------------+--------------+-------------+----------------+----------------+----------------------------------------------------------------------------+
 | 3.5              | :pep:`478`   | bugfix      | 2015-09-13     | *2020-09-13*   |                                                                            |
 +------------------+--------------+-------------+----------------+----------------+----------------------------------------------------------------------------+
-| 2.7              | :pep:`373`   | bugfix      | 2010-07-03     | *2020-01-01*   | The support was extended to 2020.                                          |
+| 2.7              | :pep:`373`   | bugfix      | 2010-07-03     | *2020-01-01*   | The support has been extended to 2020.                                     |
 +------------------+--------------+-------------+----------------+----------------+----------------------------------------------------------------------------+
 | 3.4              | :pep:`429`   | security    | 2014-03-16     | *2019-03-16*   | `Last binary release: Python 3.4.4                                         |
 |                  |              |             |                |                | <https://www.python.org/download/releases/3.4.4/>`_                        |
@@ -106,7 +106,7 @@ Dates in *italic* are scheduled and can be adjusted.
 
 By default, the end-of-life is scheduled 5 years after the first release.  It
 can be adjusted by the release manager of each branch. Versions older than 2.6
-reached their end-of-life.
+have reached end-of-life.
 
 See also :ref:`Security branches <secbranch>`.
 
