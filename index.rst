@@ -99,14 +99,14 @@ Status:
     released.
 :security: only security fixes are accepted and no more binaries are released,
     but new source-only versions can be released
-:end-of-line: branch no more maintained, no more change must be pushed to these
+:end-of-life: branch no more maintained, no more change must be pushed to these
     branches.
 
 Dates in *italic* are scheduled and can be adjusted.
 
 By default, the end-of-life is scheduled 5 years after the first release.  It
 can be adjusted by the release manager of each branch. Versions older than 2.6
-reached their end-of-line.
+reached their end-of-life.
 
 See also :ref:`Security branches <secbranch>`.
 
