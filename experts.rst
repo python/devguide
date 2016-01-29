@@ -135,7 +135,7 @@ imp
 importlib             brett.cannon
 inspect               yselivanov
 io                    pitrou, benjamin.peterson, stutzbach
-ipaddress             pmoody, ncoghlan
+ipaddress             pmoody
 itertools             rhettinger
 json                  bob.ippolito (inactive), ezio.melotti, rhettinger, pitrou
 keyword
@@ -226,7 +226,7 @@ syslog                jafo*
 tabnanny              tim.peters (inactive)
 tarfile               lars.gustaebel
 telnetlib
-tempfile              georg.brandl, ncoghlan
+tempfile              georg.brandl
 termios               twouters
 test                  ezio.melotti
 textwrap              georg.brandl
@@ -341,7 +341,7 @@ release management  tarek, lemburg, benjamin.peterson, barry, loewis,
                     georg.brandl
 str.format          eric.smith
 testing             michael.foord, pitrou, ezio.melotti
-test coverage       ncoghlan, giampaolo.rodola, christian.heimes
+test coverage       giampaolo.rodola, christian.heimes
 threads             pitrou
 time and dates      lemburg, belopolsky
 unicode             lemburg, ezio.melotti, haypo, benjamin.peterson, pitrou
