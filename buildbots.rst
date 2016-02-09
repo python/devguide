@@ -219,9 +219,22 @@ recommend you change (temporarily, of course) the contents of the
 ``buildbottest`` clause in ``Makefile.pre.in``; or, for Windows builders,
 the ``Tools/buildbot/test.bat`` script.
 
+It is also possible to run a build on all of the custom builders at the same
+time.  Navigate to the bottom of the
+`builders page <http://buildbot.python.org/all/builders>`_, then find[#]_
+and fill out the set of fields that includes a *Repo path:* field.  Click the
+associated *Force Build* button to start the build on all available custom
+builders.
+
 .. note::
    For security reasons, it is impossible to build repositories from outside
    the http://hg.python.org realm.
 
 .. seealso::
    :ref:`buildslave`
+
+.. rubric:: Footnotes
+
+.. [#] Yes, find.  Unfortunately, it moves around every time the buildbot
+   master is restarted; this ought to be fixed some day.
+
