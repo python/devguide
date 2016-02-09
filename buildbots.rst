@@ -217,8 +217,7 @@ at least two parameters:
 If you are interested in the results of a specific test file only, we
 recommend you change (temporarily, of course) the contents of the
 ``buildbottest`` clause in ``Makefile.pre.in``; or, for Windows builders,
-the ``Tools/buildbot/test.bat`` and ``Tools/buildbot/test-amd64.bat``
-scripts.
+the ``Tools/buildbot/test.bat`` script.
 
 .. note::
    For security reasons, it is impossible to build repositories from outside
