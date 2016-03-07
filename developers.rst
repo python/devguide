@@ -25,6 +25,9 @@ transliteration too.
 Permissions History
 -------------------
 
+- Davin Potts was given push privileges on March 6, 2016 by Brett Cannon,
+  on the recommendation of Raymond Hettinger.
+
 - Martin Panter was given push privileges on August 10, 2015 by GFB,
   on the recommendation of R. David Murray.
 
