@@ -233,7 +233,8 @@ software is required to build which parts of Python.
 
 **Python 3.5** and later use Microsoft Visual Studio 2015.  You can download
 and use any of the free or paid versions of `Visual Studio 2015
-<https://www.visualstudio.com/>`_.
+<https://www.visualstudio.com/>`_. Installing the latest updates is also
+recommended.
 
 Python 3.3 and 3.4 use Microsoft Visual Studio 2010.  You can download
 Microsoft Visual Studio 2010 Express with an `MSDN subscription
