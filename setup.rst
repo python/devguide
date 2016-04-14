@@ -113,6 +113,11 @@ Fedora, Red Hat Enterprise Linux and other ``yum`` based systems::
    $ sudo yum install yum-utils
    $ sudo yum-builddep python3
 
+Fedora and other ``DNF`` based systems::
+
+   $ sudo dnf install dnf-plugins-core  # install this to use 'dnf builddep'
+   $ sudo dnf builddep python3
+
 Debian, Ubuntu and other ``apt`` based systems, try to get the dependencies for
 the Python version that you're working on e.g.::
 
