@@ -1204,23 +1204,26 @@ units as well as normal text:
    entire module, it should be placed at the top of the module section before
    any prose.
 
-   The first argument must be given and is the version in question; if the
-   addition is only part of the described API element, you should add a second
-   argument consisting of a *brief* explanation of the change.
+   The first argument must be given and is the version in question.  The second
+   argument is optional and can be used to describe the details of the feature.
 
    Example::
 
-      .. versionadded:: 3.1
-         The *spam* parameter.
-
-   Note that there must be no blank line between the directive head and the
-   explanation; this is to make these blocks visually continuous in the markup.
+      .. versionadded:: 3.5
 
 .. describe:: versionchanged
 
    Similar to ``versionadded``, but describes when and what changed in the named
-   feature in some way (changed side effects, platform support, etc.).  This one
-   *must* have the second argument (explanation of the change).
+   feature in some way (new parameters, changed side effects, platform support,
+   etc.).  This one *must* have the second argument (explanation of the change).
+
+   Example::
+
+      .. versionchanged:: 3.1
+         The *spam* parameter was added.
+
+   Note that there must be no blank line between the directive head and the
+   explanation; this is to make these blocks visually continuous in the markup.
 
 --------------
 
