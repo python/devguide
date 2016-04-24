@@ -216,3 +216,12 @@ participating in the CPython core development process:
    QNX, and work on CPython ICC support funded by Intel).  He would like to
    spend more of his (and his company's) time on open source work, and so is
    actively seeking additional such contract opportunities.
+
+.. topic:: Victor Stinner (France)
+
+   * `Personal website <https://haypo-notes.readthedocs.org/>`_
+   * Red Hat (Senior Software Engineer)
+
+   Victor is hacking the development version of CPython to make Python better
+   than ever.
+
