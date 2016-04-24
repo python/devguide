@@ -11,9 +11,8 @@ the time available to demonstrate both that interest and that ability.
 
 This page allows core developers that choose to do so to provide more
 information to the rest of the Python community regarding their personal
-motivations for participating in the core review process, as well as any
-personal and professional affiliations which they consider particularly
-relevant.
+situation (such as their general location and professional affiliations), as
+well as any personal motivations that they consider particularly relevant.
 
 Core developers that wish to provide this additional information add a new
 entry to the :ref:`published-motivations` section below. Guidelines relating
@@ -21,7 +20,7 @@ to content and layout are included as comments in the source code for this page.
 
 Core developers that are available for training, consulting or contract work,
 or are seeking crowdfunding support for their community contributions, may also
-choose to disclose that information here (including linking out to commercial
+choose to provide that information here (including linking out to commercial
 sites with the relevant details).
 
 Goals of this page
@@ -43,15 +42,15 @@ people's ability to spend time on reviewing proposed changes, or mentoring new
 contributors.
 
 This page aims to provide at least some of that missing data by encouraging
-core developers to disclose commercial affiliations in the following two cases
-(even if not currently paid for time spent participating in the core
+core developers to highlight professional affiliations in the following two
+cases (even if not currently paid for time spent participating in the core
 development process):
 
 * developers working for vendors that distribute a commercially supported
   Python runtime
 * developers working for Sponsor Members of the Python Software Foundation
 
-These are cases where disclosure of commercial interests helps to improve the
+These are cases where documenting our affiliations helps to improve the
 overall transparency of the core development process, as well as making it
 easier for staff at these organisations to locate colleagues that can help
 them to participate in and contribute effectively to supporting the core
@@ -89,10 +88,10 @@ Limitations on scope
 * Specific technical areas of interest for core developers should be captured in
   the :ref:`Experts Index <experts>`.
 
-* This specific listing is limited to CPython core developers, but if this
-  experiment proves successful, it may make sense to create a more expansive
-  listing on the Python wiki that also covers issue triagers, and folks seeking
-  to become core developers.
+* This specific listing is limited to CPython core developers (since it's
+  focused on the specific constraint that is core developer time), but it
+  would be possible to create a more expansive listing on the Python wiki that
+  also covers issue triagers, and folks seeking to become core developers.
 
 * Changes to the software and documentation maintained by core developers,
   together with related design discussions, all take place in public venues, and
@@ -111,28 +110,35 @@ Published entries
 -----------------
 
 The following core developers have chosen to provide additional details
-regarding their reasons for participating in the CPython core development
-process:
+regarding their professional affiliations and (optionally) other reasons for
+participating in the CPython core development process:
 
 .. Entry guidelines:
 
    We use the "topic" directive rather than normal section headings in order to
    avoid creating entries in the main table of contents.
 
-   Topic headings should be in the form of "Name (Country)" to help give some
-   indication as to the geographic dispersal of core developers.
+   Topic headings should be in the form of "Name (Country)" or
+   "Name (Continent)" to help give some indication as to the geographic
+   distribution of core developers.
 
    NOTE: The rest of these guidelines are highly provisional - we can evolve
-   them as people add entries, and we decide on the style we like. I (Nick)
-   made a best guess based on what I wanted to include, but it's hard to
-   really tell how it looks with only one entry.
+   them as people add entries, and we decide on the style we like. The
+   current iteration is based on feedback that the first version (which
+   *required* coming up with a personal bio) was a bit excessive.
 
-   Entries should be written as short third person biographies, rather than
-   being written in first person.
+   Minimal entries just include relevant professional affiliations, as follows:
 
-   Entries should be maintained in alphabetical order by last name, or by first
-   name (relative to other last names) if "last name" isn't a meaningful term
-   for your name.
+   .. topic:: <name> (<country/continent>)
+
+      * <company> (<role>)
+
+   Longer entries should be written as short third person biographies, rather
+   than being written in first person (See existing entries for examples).
+
+   Entries should be maintained in alphabetical order by last name, or by
+   name-as-written (relative to other last names) if "last name" isn't a
+   meaningful term for your name.
 
    Include a "Personal site" bullet point with a link if you'd like to highlight
    a personal blog or other site.
