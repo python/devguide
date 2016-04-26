@@ -170,6 +170,14 @@ participating in the CPython core development process:
    questions or suggestions relating to this page.
 
 
+.. topic:: Brett Cannon (Canada)
+
+   * Personal site: `snarky.ca <http://snarky.ca>`_
+   * `Extended bio <http://stackoverflow.com/cv/DrBrettCannon>`__
+   * Microsoft (Software Developer)
+   * Python Software Foundation (Fellow)
+
+
 .. topic:: Nick Coghlan (Australia)
 
    * Personal site: `Curious Efficiency <http://www.curiousefficiency.org/>`_
