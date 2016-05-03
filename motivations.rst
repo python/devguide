@@ -233,3 +233,8 @@ participating in the CPython core development process:
    Victor is hacking the development version of CPython to make Python better
    than ever.
 
+.. topic:: Kushal Das (India)
+
+   * `Personal website <https://kushaldas.in>`_
+   * Red Hat (Fedora Cloud Engineer)
+   * Python Software Foundation (Fellow)
