@@ -150,10 +150,11 @@ participating in the CPython core development process:
 
    Include an "Available for <activity>" (or activities) bullet point with a
    link if you'd like to be contacted for professional training, consulting or
-   contract work. A link to a page with additional details is preferred to a
-   direct email address or contact phone number, as this is a global site, and
-   folks may not be familiar with the relevant practical details that apply to
-   this kind of work in a contributor's country of residence.
+   contract work, or other employment opportunities. A link to a page with
+   additional details is preferred to a direct email address or contact phone
+   number, as this is a global site, and folks may not be familiar with the
+   relevant practical details that apply to this kind of work in a contributor's
+   country of residence.
 
    Include a "Crowdfunding" bullet point with a link if you'd like to highlight
    crowdfunding services (e.g. Patreon) that folks can use to support your core
