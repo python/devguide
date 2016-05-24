@@ -211,7 +211,7 @@ on the AWS EC2 service.  To set up such a slave:
       * Full region specification (such as ``us-west-2``)
       * AMI ID (such as ``ami-1234beef``)
       * An Access Key ID and Access Key.  It is recommended to set up
-        a separate IAM user full access to EC2 and provide the access key
+        a separate IAM user with full access to EC2 and provide the access key
         information for that user rather than for your main account.
 
 The buildmaster cannot guarantee that it will always shut down your
