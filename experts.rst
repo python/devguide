@@ -156,7 +156,7 @@ mmap                  twouters
 modulefinder          theller (inactive), jvr
 msilib                loewis
 msvcrt
-multiprocessing       jnoller, sbt*
+multiprocessing       davin*, jnoller (inactive), sbt (inactive)
 netrc
 nis
 nntplib               pitrou
