@@ -18,10 +18,150 @@ Core developers that wish to provide this additional information add a new
 entry to the :ref:`published-motivations` section below. Guidelines relating
 to content and layout are included as comments in the source code for this page.
 
-Core developers that are available for training, consulting or contract work,
-or are seeking crowdfunding support for their community contributions, may also
-choose to provide that information here (including linking out to commercial
-sites with the relevant details).
+Core developers that are available for training, consulting, contract, or
+full-time work, or are seeking crowdfunding support for their community
+contributions, may also choose to provide that information here (including
+linking out to commercial sites with the relevant details).
+
+For more information on the origins and purpose of this page, see
+:ref:`goals-of-the-motivations-page`.
+
+.. _published-motivations:
+
+Published entries
+-----------------
+
+The following core developers have chosen to provide additional details
+regarding their professional affiliations and (optionally) other reasons for
+participating in the CPython core development process:
+
+.. Entry guidelines:
+
+   We use the "topic" directive rather than normal section headings in order to
+   avoid creating entries in the main table of contents.
+
+   Topic headings should be in the form of "Name (Country)" or
+   "Name (Continent)" to help give some indication as to the geographic
+   distribution of core developers.
+
+   NOTE: The rest of these guidelines are highly provisional - we can evolve
+   them as people add entries, and we decide on the style we like. The
+   current iteration is based on feedback that the first version (which
+   *required* coming up with a personal bio) was a bit excessive.
+
+   Minimal entries just include relevant professional affiliations, as follows:
+
+   .. topic:: <name> (<country/continent>)
+
+      * <company> (<role>)
+
+   Longer entries should be written as short third person biographies, rather
+   than being written in first person (See existing entries for examples).
+
+   Entries should be maintained in alphabetical order by last name, or by
+   name-as-written (relative to other last names) if "last name" isn't a
+   meaningful term for your name.
+
+   Include a "Personal site" bullet point with a link if you'd like to highlight
+   a personal blog or other site.
+
+   Include an "Extended bio" bullet point with a link if you'd like to provide
+   more than a couple of paragraphs of biographical information. (Use a
+   double-trailing underscore on these links to avoid "Duplicate explicit
+   target name" warnings from Sphinx/docutils)
+
+   Include an "Available for <activity>" (or activities) bullet point with a
+   link if you'd like to be contacted for professional training, consulting or
+   contract work, or other employment opportunities. A link to a page with
+   additional details is preferred to a direct email address or contact phone
+   number, as this is a global site, and folks may not be familiar with the
+   relevant practical details that apply to this kind of work in a contributor's
+   country of residence.
+
+   Include a "Crowdfunding" bullet point with a link if you'd like to highlight
+   crowdfunding services (e.g. Patreon) that folks can use to support your core
+   development work.
+
+   Include additional bullet points (without links) for any other affiliations
+   you would like to mention.
+
+   If there's a kind of link you'd like to include in your entry that isn't
+   already covered by the categories mentioned above, please start a discussion
+   about that on the python-committers mailing list.
+
+   python-committers is also the appropriate point of contact for any other
+   questions or suggestions relating to this page.
+
+.. topic:: Brett Cannon (Canada)
+
+   * Personal site: `snarky.ca <http://snarky.ca>`_
+   * `Extended bio <http://stackoverflow.com/cv/DrBrettCannon>`__
+   * Microsoft (Software Developer)
+   * Python Software Foundation (Fellow)
+
+.. topic:: Nick Coghlan (Australia)
+
+   * Personal site: `Curious Efficiency <http://www.curiousefficiency.org/>`_
+   * `Extended bio <http://www.curiousefficiency.org/pages/about>`__
+   * Red Hat (Software Engineer, Developer Experience)
+   * Python Software Foundation (Board of Directors)
+
+   Nick originally began participating in CPython core development as an
+   interesting and enlightening hobby activity while working for Boeing Defence
+   Australia. After commencing work for Red Hat, he also became involved in a
+   range of topics related directly to improving the experience of Python
+   developers on the Fedora Linux distribution and derived platforms, and now
+   works for Red Hat's Developer Experience team.
+
+   In addition to his personal and professional interest in ensuring Python
+   remains an excellent choice for Linux-based network service and system
+   utility development, he is also interested in helping to ensure its
+   continued suitability for educational and data analysis use cases.
+
+.. topic:: R. David Murray (United States)
+
+   * Personal site: `bitdance.com <http://www.bitdance.com>`_
+   * Available for `Python and Internet Services Consulting
+     and Python contract programming <http://www.murrayandwalker.com/>`_
+
+   David has been involved in the Internet since the days when the old IBM
+   BITNET and the ARPANet got cross connected, and in Python programming since
+   he first discovered it around the days of Python 1.4.  After transitioning
+   from being Director of Operations for dialup Internet providers (when that
+   business started declining) to being a full time independent consultant,
+   David started contributing directly to CPython development.  He became a
+   committer in 2009.  He subsequently took over primary maintenance of the
+   email package from Barry Warsaw, and contributed the unicode oriented API.
+   David is also active in mentoring new contributors and, when time is
+   available, working on the infrastructure that supports CPython development,
+   specifically the Roundup-based bug tracker and the buildbot system.
+
+   David currently does both proprietary and open source developement work,
+   primarily in Python, through the company in which he is a partner, `Murray &
+   Walker, Inc <http://www.murrayandwalker.com>`_.  He has done contract work
+   focused specifically on CPython development both through the PSF (the
+   kickstart of the email unicode API development) and directly funded by
+   interested corporations (additional development work on email fundeded by
+   QNX, and work on CPython ICC support funded by Intel).  He would like to
+   spend more of his (and his company's) time on open source work, and so is
+   actively seeking additional such contract opportunities.
+
+.. topic:: Victor Stinner (France)
+
+   * `Personal website <https://haypo-notes.readthedocs.org/>`__
+   * Red Hat (Senior Software Engineer)
+
+   Victor is hacking the development version of CPython to make Python better
+   than ever.
+
+.. topic:: Kushal Das (India)
+
+   * `Personal website <https://kushaldas.in>`__
+   * Red Hat (Fedora Cloud Engineer)
+   * Python Software Foundation (Fellow)
+
+
+.. _goals-of-the-motivations-page:
 
 Goals of this page
 ------------------
@@ -103,139 +243,3 @@ Limitations on scope
   Software Foundation, rather than publicly.
 
 .. _Contributor Licensing Agreement: https://www.python.org/psf/contrib/contrib-form/
-
-.. _published-motivations:
-
-Published entries
------------------
-
-The following core developers have chosen to provide additional details
-regarding their professional affiliations and (optionally) other reasons for
-participating in the CPython core development process:
-
-.. Entry guidelines:
-
-   We use the "topic" directive rather than normal section headings in order to
-   avoid creating entries in the main table of contents.
-
-   Topic headings should be in the form of "Name (Country)" or
-   "Name (Continent)" to help give some indication as to the geographic
-   distribution of core developers.
-
-   NOTE: The rest of these guidelines are highly provisional - we can evolve
-   them as people add entries, and we decide on the style we like. The
-   current iteration is based on feedback that the first version (which
-   *required* coming up with a personal bio) was a bit excessive.
-
-   Minimal entries just include relevant professional affiliations, as follows:
-
-   .. topic:: <name> (<country/continent>)
-
-      * <company> (<role>)
-
-   Longer entries should be written as short third person biographies, rather
-   than being written in first person (See existing entries for examples).
-
-   Entries should be maintained in alphabetical order by last name, or by
-   name-as-written (relative to other last names) if "last name" isn't a
-   meaningful term for your name.
-
-   Include a "Personal site" bullet point with a link if you'd like to highlight
-   a personal blog or other site.
-
-   Include an "Extended bio" bullet point with a link if you'd like to provide
-   more than a couple of paragraphs of biographical information. (Use a
-   double-trailing underscore on these links to avoid "Duplicate explicit
-   target name" warnings from Sphinx/docutils)
-
-   Include an "Available for <activity>" (or activities) bullet point with a
-   link if you'd like to be contacted for professional training, consulting or
-   contract work, or other employment opportunities. A link to a page with
-   additional details is preferred to a direct email address or contact phone
-   number, as this is a global site, and folks may not be familiar with the
-   relevant practical details that apply to this kind of work in a contributor's
-   country of residence.
-
-   Include a "Crowdfunding" bullet point with a link if you'd like to highlight
-   crowdfunding services (e.g. Patreon) that folks can use to support your core
-   development work.
-
-   Include additional bullet points (without links) for any other affiliations
-   you would like to mention.
-
-   If there's a kind of link you'd like to include in your entry that isn't
-   already covered by the categories mentioned above, please start a discussion
-   about that on the python-committers mailing list.
-
-   python-committers is also the appropriate point of contact for any other
-   questions or suggestions relating to this page.
-
-
-.. topic:: Brett Cannon (Canada)
-
-   * Personal site: `snarky.ca <http://snarky.ca>`_
-   * `Extended bio <http://stackoverflow.com/cv/DrBrettCannon>`__
-   * Microsoft (Software Developer)
-   * Python Software Foundation (Fellow)
-
-
-.. topic:: Nick Coghlan (Australia)
-
-   * Personal site: `Curious Efficiency <http://www.curiousefficiency.org/>`_
-   * `Extended bio <http://www.curiousefficiency.org/pages/about>`__
-   * Red Hat (Software Engineer, Developer Experience)
-   * Python Software Foundation (Board of Directors)
-
-   Nick originally began participating in CPython core development as an
-   interesting and enlightening hobby activity while working for Boeing Defence
-   Australia. After commencing work for Red Hat, he also became involved in a
-   range of topics related directly to improving the experience of Python
-   developers on the Fedora Linux distribution and derived platforms, and now
-   works for Red Hat's Developer Experience team.
-
-   In addition to his personal and professional interest in ensuring Python
-   remains an excellent choice for Linux-based network service and system
-   utility development, he is also interested in helping to ensure its
-   continued suitability for educational and data analysis use cases.
-
-.. topic:: R. David Murray (United States)
-
-   * Personal site: `bitdance.com <http://www.bitdance.com>`_
-   * Available for `Python and Internet Services Consulting
-     and Python contract programming <http://www.murrayandwalker.com/>`_
-
-   David has been involved in the Internet since the days when the old IBM
-   BITNET and the ARPANet got cross connected, and in Python programming since
-   he first discovered it around the days of Python 1.4.  After transitioning
-   from being Director of Operations for dialup Internet providers (when that
-   business started declining) to being a full time independent consultant,
-   David started contributing directly to CPython development.  He became a
-   committer in 2009.  He subsequently took over primary maintenance of the
-   email package from Barry Warsaw, and contributed the unicode oriented API.
-   David is also active in mentoring new contributors and, when time is
-   available, working on the infrastructure that supports CPython development,
-   specifically the Roundup-based bug tracker and the buildbot system.
-
-   David currently does both proprietary and open source developement work,
-   primarily in Python, through the company in which he is a partner, `Murray &
-   Walker, Inc <http://www.murrayandwalker.com>`_.  He has done contract work
-   focused specifically on CPython development both through the PSF (the
-   kickstart of the email unicode API development) and directly funded by
-   interested corporations (additional development work on email fundeded by
-   QNX, and work on CPython ICC support funded by Intel).  He would like to
-   spend more of his (and his company's) time on open source work, and so is
-   actively seeking additional such contract opportunities.
-
-.. topic:: Victor Stinner (France)
-
-   * `Personal website <https://haypo-notes.readthedocs.org/>`_
-   * Red Hat (Senior Software Engineer)
-
-   Victor is hacking the development version of CPython to make Python better
-   than ever.
-
-.. topic:: Kushal Das (India)
-
-   * `Personal website <https://kushaldas.in>`_
-   * Red Hat (Fedora Cloud Engineer)
-   * Python Software Foundation (Fellow)
