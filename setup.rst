@@ -108,44 +108,69 @@ are available. The best way to obtain the appropriate headers will vary by
 distribution, but the appropriate commands for some popular distributions
 are below.
 
-Fedora, Red Hat Enterprise Linux and other ``yum`` based systems::
+On **Fedora**, **Red Hat Enterprise Linux** and other ``yum`` based systems::
 
    $ sudo yum install yum-utils
    $ sudo yum-builddep python3
 
-Fedora and other ``DNF`` based systems::
+On **Fedora** and other ``DNF`` based systems::
 
    $ sudo dnf install dnf-plugins-core  # install this to use 'dnf builddep'
    $ sudo dnf builddep python3
 
-Debian, Ubuntu and other ``apt`` based systems, try to get the dependencies for
-the Python version that you're working on e.g.::
+On **Debian**, **Ubuntu**, and other ``apt`` based systems, try to get the
+dependencies for the Python version that you're working on e.g.::
 
-   $ sudo apt-get build-dep python3.4
+   $ sudo apt-get build-dep python3.5
 
 If that package is not available for your system, try reducing the minor
 version until you find a package that is available.
 
-For Mac OS X systems, it is generally easiest to use the C compiler and other
-development utilities provided by Apple's Xcode Developer Tools.  There are
-specific versions supported by Apple for each major release of OS X.  For
-current releases, Xcode is available as a no-cost download from Apple's App
-Store.  Xcode versions for older releases are available through
-`the Apple Developer web site <https://developer.apple.com/>`_.
-Note that while the Xcode IDE application itself is not needed to build Python,
-the development components packaged inside it may be.  You should also install
-the Xcode Command Line Tools component to ensure build tools and system header
-files are installed in their conventional locations (``/usr/bin`` and
-``/usr/include``).  How the command line tools are installed varies by OS X
-and Xcode release.  In earlier releases, there may be a separate installer
-download.  For OS X 10.7 and 10.8, there is an option in the Xcode app
-Preferences menu.  For OS X 10.9 (Mavericks), run the following::
+On **Mac OS X systems**, use the C compiler and other
+development utilities provided by Apple's Xcode Developer Tools.
+The Developer Tools are not shipped with OS X.
+
+For **OS X 10.9 and later**,
+the Developer Tools can be downloaded and installed automatically;
+you do not need to download the complete Xcode application.
+If necessary, run the following::
 
     $ xcode-select --install
 
+This will also ensure that the system header files are installed into ``/usr/include``.
+
+For **older releases of OS X**, you will need to download either the correct
+version of the Command Line Tools, if available, or install them from the
+full Xcode app or package for that OS X release.  Older versions may be
+available either as a no-cost download through Apple's App Store or from
+`the Apple Developer web site <https://developer.apple.com/>`_.
+
+.. _Homebrew: http://brew.sh
+
+.. _MacPorts: https://www.macports.org
+
 Also note that OS X does not include several libraries used by the Python
 standard library, including ``libzma``, so expect to see some extension module
-build failures unless you install local copies of them.
+build failures unless you install local copies of them.  As of OS X 10.11,
+Apple no longer provides header files for the deprecated system version of
+OpenSSL which means that you will not be able to build the ``_ssl`` extension.
+One solution is to install these libraries from a third-party package
+manager, like Homebrew_ or MacPorts_, and then add the appropriate paths
+for the header and library files to your ``configure`` command.  For example,
+with Homebrew::
+
+    $ brew install openssl xz
+    $ CPPFLAGS="-I$(brew --prefix openssl)/include" \
+      LDFLAGS="-L$(brew --prefix openssl)/lib" \
+      ./configure --with-pydebug
+
+or MacPorts:: 
+
+    $ sudo port install openssl xz
+    $ CPPFLAGS="-I/opt/local/include" \
+      LDFLAGS="-L/opt/local/lib" \
+      ./configure --with-pydebug
+
 
 There will sometimes be optional modules added for a new release which
 won't yet be identified in the OS level build dependencies. In those cases,
