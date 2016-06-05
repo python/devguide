@@ -161,6 +161,46 @@ developers of Python have their patches sent back to them for changes).  It
 is then expected that you post a new patch addressing these comments, and the
 review process will thus iterate until a satisfactory solution has emerged.
 
+How to Review a Patch
+'''''''''''''''''''''
+
+One of the bottlenecks in the Python development
+process is the lack of patch reviews.
+If you browse the bug tracker, you will see that numerous issues
+have a patch, but cannot be commited to the main source code repository,
+because no one has reviewed the proposed patch.
+Reviewing a patch can be just as informative as providing a patch and it will allow
+you to give constructive comments on another developer's work.
+This guide provides a checklist for submitting a patch review.
+It is a common misconception that in order to be useful, a patch review has to
+be perfect. This is not the case at all! It is helpful to just test the patch and/or
+play around with the code and leave comments in the bug tracker.
+
+1. If you have not already done so, get a copy of the CPython repository
+   by following the :ref:`setup guide <setup>`, build it and run the tests.
+
+2. Check the bug tracker to see what steps are necessary to reproduce
+   the issue and confirm that you can reproduce the issue in your version
+   of the Python REPL (the interactive shell prompt), which you can launch
+   by executing ./python inside the repository.
+
+3. Apply the patch you saved from the bug tracker. If you are not sure how
+   to apply a patch, please check the :ref:`Lifecycle of a Patch <patch>` documentation.
+
+4. If the patch affects any C file, run the build again.
+
+5. Launch the Python REPL (the interactive shell prompt) and check if
+   you can reproduce the issue. Now that the patch has been applied, the issue
+   should be fixed (in theory, but mistakes do happen! A good review aims to
+   catch these before the code is committed to the Python repository). You should
+   also try to see if there are any corner cases in this or related issue that the author
+   of the patch may have missed.
+
+6. If you have time, run the entire test suite. If you are pressed for time,
+   run the tests for the module(s) where changes were applied.
+   However, please be aware that if you are recommending a patch as 'commit-ready',
+   you should always make sure the entire test suite passes.
+
 
 Committing/Rejecting
 --------------------
