@@ -118,6 +118,11 @@ participating in the CPython core development process:
    utility development, he is also interested in helping to ensure its
    continued suitability for educational and data analysis use cases.
 
+.. topic:: Christian Heimes (Germany)
+
+   * Red Hat (Software Developer, Security Engineering / Identity Management)
+   * Python Software Foundation (Fellow)
+
 .. topic:: R. David Murray (United States)
 
    * Personal site: `bitdance.com <http://www.bitdance.com>`_
