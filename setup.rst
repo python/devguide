@@ -182,6 +182,7 @@ Explaining how to build optional dependencies on a UNIX based system without
 root access is beyond the scope of this guide.
 
 .. _clang: http://clang.llvm.org/
+.. _ccache: https://ccache.samba.org/
 
 .. note:: While you need a C compiler to build CPython, you don't need any
    knowledge of the C language to contribute!  Vast areas of CPython are
@@ -246,6 +247,12 @@ If you are using clang_ to build CPython, some flags you might want to set to
 quiet some standard warnings which are specifically superfluous to CPython are
 ``-Wno-unused-value -Wno-empty-body -Qunused-arguments``. You can set your
 ``CFLAGS`` environment variable to these flags when running ``configure``.
+
+If you are using clang_ with ccache_, turn off the noisy
+``parentheses-equality`` warnings with the ``-Wno-parentheses-equality`` flag.
+These warnings are caused by clang not  having enough information to detect
+that extraneous parentheses in expanded macros are valid, because the
+preprocessing is done separately by ccache.
 
 If you are using LLVM 2.8, also use the ``-no-integrated-as`` flag in order to
 build the :py:mod:`ctypes` module (without the flag the rest of CPython will
