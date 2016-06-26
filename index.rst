@@ -281,7 +281,7 @@ Full Table of Contents
 .. _Firefox search engine plug-in: http://www.python.org/dev/searchplugin/
 .. _Misc directory: https://hg.python.org/cpython/file/default/Misc
 .. _PEPs: http://www.python.org/dev/peps/
-.. _python.org maintenance: http://python.org/dev/pydotorg/
+.. _python.org maintenance: https://pythondotorg.readthedocs.io/
 .. _Python: http://www.python.org/
 .. _Python Mentors: http://pythonmentors.com/
 .. _PyPy: http://www.pypy.org/
