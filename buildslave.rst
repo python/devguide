@@ -222,6 +222,22 @@ down for an unexpectedly long time, please ping the `python-buildbots
 <https://mail.python.org/mailman/listinfo/python-buildbots>`_ list to
 request that the master be restarted.
 
+Latent slaves should also be updated periodically to include operating system
+or other software updates, but when do do such maintenance is largely up to you
+as the slave owner.  There are a couple different options for doing such
+updates:
+
+    * Start an instance from your existing AMI, do updates on that instance,
+      and save a new AMI from the updated instance.  Note that (especially for
+      Windows slaves) you should do at least one restart of the instance after
+      doing updates to be sure that any post-reboot update work is done before
+      creating the new AMI.
+    * Create an entirely new setup from a newer base AMI using your existing
+      slave name and password.
+
+Whichever way you choose to update your AMI, you'll need to provide the
+buildmaster administrators with the new AMI ID.
+
 
 Buildslave operation
 --------------------
