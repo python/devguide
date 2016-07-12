@@ -877,7 +877,9 @@ How do I generate an SSH-2 public key?
 --------------------------------------
 
 All generated SSH keys should be sent to hgaccounts@python.org for adding to the
-list of keys. DSA keys are unacceptable.
+list of keys. DSA keys are unacceptable.  To avoid a spam classification,
+give a non-empty subject and body.  A reply will be sent, usually within a day
+or two, when the key can be used.
 
 UNIX
 ''''
