@@ -262,8 +262,8 @@ xml.dom
 xml.dom.minidom
 xml.dom.pulldom
 xml.etree             effbot (inactive), eli.bendersky*, scoder
-xml.parsers.expat     christian.heimes
-xml.sax               christian.heimes
+xml.parsers.expat
+xml.sax
 xml.sax.handler
 xml.sax.saxutils
 xml.sax.xmlreader
@@ -319,7 +319,7 @@ buildbots           pitrou, zach.ware
 bytecode            benjamin.peterson, pitrou, georg.brandl, yselivanov
 context managers    ncoghlan
 coverity scan       christian.heimes, brett.cannon, twouters
-cryptography        christian.heimes, gregory.p.smith, dstufft
+cryptography        gregory.p.smith, dstufft
 data formats        mark.dickinson, georg.brandl
 database            lemburg
 devguide            ncoghlan, eric.araujo, ezio.melotti, willingc
@@ -341,7 +341,7 @@ release management  tarek, lemburg, benjamin.peterson, barry, loewis,
                     georg.brandl
 str.format          eric.smith
 testing             michael.foord, pitrou, ezio.melotti
-test coverage       giampaolo.rodola, christian.heimes
+test coverage       giampaolo.rodola
 threads             pitrou
 time and dates      lemburg, belopolsky
 unicode             lemburg, ezio.melotti, haypo, benjamin.peterson, pitrou
