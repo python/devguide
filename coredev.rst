@@ -131,7 +131,8 @@ First and foremost, be a good person. This might sound melodramatic, but you
 are now a member of the Python project and thus represent the project and your
 fellow core developers whenever you discuss Python with anyone. We have a
 reputation for being a very nice group of people and we would like to keep it
-that way.
+that way.  Core developers responsibilities include following the `PSF Code of
+Conduct`_.
 
 Second, please be prompt in responding to questions. Many contributors to Python
 are volunteers so what little free time they can dedicate to Python should be
@@ -161,3 +162,6 @@ commercial Python support from the core development community.
 And finally, enjoy yourself! Contributing to open source software should be fun
 (overall). If you find yourself no longer enjoying the work then either take a
 break or figure out what you need to do to make it enjoyable again.
+
+
+.. _PSF Code of Conduct: https://www.python.org/psf/codeofconduct/
