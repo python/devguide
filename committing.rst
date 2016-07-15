@@ -275,9 +275,9 @@ your local clone gets into a state you aren't happy with.
 
 
 .. _Mercurial: http://www.hg-scm.org/
-.. _mq: http://mercurial.selenic.com/wiki/MqExtension
-.. _rebase: http://mercurial.selenic.com/wiki/RebaseExtension
-.. _collapse: http://mercurial.selenic.com/wiki/CollapseExtension
+.. _mq: https://www.mercurial-scm.org/wiki/MqExtension
+.. _rebase: https://www.mercurial-scm.org/wiki/RebaseExtension
+.. _collapse: https://www.mercurial-scm.org/wiki/CollapseExtension
 
 
 Minimal Configuration
@@ -340,7 +340,7 @@ will still be issued but the changeset will be applied anyway::
 
 .. _configuration file: http://www.selenic.com/mercurial/hgrc.5.html#files
 .. _extended diff format: http://www.selenic.com/mercurial/hg.1.html#diffs
-.. _eol extension: http://mercurial.selenic.com/wiki/EolExtension
+.. _eol extension: https://www.mercurial-scm.org/wiki/EolExtension
 .. _hooks repository: https://hg.python.org/hooks
 
 
@@ -428,7 +428,7 @@ For more advanced explanations about :ref:`null merges <hg-null-merge>`,
 <hg-merge-conflicts>`, etc., see the :ref:`FAQs for core developers
 <core-devs-faqs>`.
 
-.. _share extension: http://mercurial.selenic.com/wiki/ShareExtension
+.. _share extension: https://www.mercurial-scm.org/wiki/ShareExtension
 
 
 Active branches
@@ -598,7 +598,7 @@ for collaboration with folks that don't already have CPython commit rights),
 Bitbucket_ also maintain an `up to date clone`_ of the main ``cpython``
 repository that can be used as the basis for a new clone or patch queue.
 
-.. _named branch: http://mercurial.selenic.com/wiki/NamedBranches
+.. _named branch: https://www.mercurial-scm.org/wiki/NamedBranches
 .. _Bitbucket: http://www.bitbucket.org
 .. _up to date clone: https://bitbucket.org/mirror/cpython/overview
 

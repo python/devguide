@@ -101,7 +101,7 @@ This means that if you create a named branch, it is intended to be long-lived:
     rather longer lived concepts like "release branches" (rel-1, rel-2, etc)
     and rather not for short lived work of single developers.
 
-    -- http://mercurial.selenic.com/wiki/Branch#Named_branches
+    -- https://www.mercurial-scm.org/wiki/Branch#Named_branches
 
 
 If you routinely create short-lived branches for development work and then
@@ -189,10 +189,10 @@ development and can be deleted with ease, whereas branches cannot.
 Note that deleting a bookmark does not mean that the releated changesets
 are also deleted. You must use the `strip extension`_ to do that. Bookmarks can
 be published to a remote repo to be shared, but must explicitly be pushed (see
-http://mercurial.selenic.com/wiki/Bookmarks#Working_with_remote_repositories
+https://www.mercurial-scm.org/wiki/Bookmarks#Working_with_remote_repositories
 for details).
 
-.. _`strip extension`: http://mercurial.selenic.com/wiki/StripExtension
+.. _`strip extension`: https://www.mercurial-scm.org/wiki/StripExtension
 
 
 
@@ -506,4 +506,4 @@ equivalent in its entirety looks like this::
     hg update issueB
 
 
-.. _NamedBranches: http://mercurial.selenic.com/wiki/NamedBranches
+.. _NamedBranches: https://www.mercurial-scm.org/wiki/NamedBranches

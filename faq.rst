@@ -141,7 +141,7 @@ Where can I learn about the version control system used, Mercurial (hg)?
 ''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 
 Mercurial_'s (also known as ``hg``) official web site is at
-http://mercurial.selenic.com/.  A book on Mercurial published by
+https://www.mercurial-scm.org/.  A book on Mercurial published by
 `O'Reilly Media`_, `Mercurial: The Definitive Guide`_, is available
 for free online.  Another resource is `Hg Init: a Mercurial tutorial`_
 by Joel Spolsky.
@@ -155,7 +155,7 @@ The `man page`_ for ``hg`` provides a quick refresher on the details of
 various commands, but doesn't provide any guidance on overall
 workflow.
 
-.. _Mercurial: http://mercurial.selenic.com/
+.. _Mercurial: https://www.mercurial-scm.org/
 .. _O'Reilly Media: http://www.oreilly.com/
 .. _Mercurial\: The Definitive Guide: http://hgbook.red-bean.com/
 .. _man page: http://www.selenic.com/mercurial/hg.1.html
@@ -209,7 +209,7 @@ You can configure it in your ``~/.ssh/config`` file; for example::
    Host hg.python.org
      Compression yes
 
-.. _download Mercurial: http://mercurial.selenic.com/downloads
+.. _download Mercurial: https://www.mercurial-scm.org/downloads
 .. _OpenSSH: http://www.openssh.org/
 
 
@@ -353,7 +353,7 @@ If you want to use the second way, you can do::
 The current branch in a working copy is "sticky": if you pull in some new
 changes, ``hg update`` will update to the head of the *current branch*.
 
-.. _share extension: http://mercurial.selenic.com/wiki/ShareExtension
+.. _share extension: https://www.mercurial-scm.org/wiki/ShareExtension
 
 
 .. _hg-paths:
@@ -489,7 +489,7 @@ then do::
    hg qdelete somework.patch
 
 .. _extended diff format: http://www.selenic.com/mercurial/hg.1.html#diffs
-.. _mq: http://mercurial.selenic.com/wiki/MqExtension
+.. _mq: https://www.mercurial-scm.org/wiki/MqExtension
 
 
 .. _merge-patch:
@@ -660,7 +660,7 @@ changeset graph.  It is bundled with Mercurial.
 Graphical tools, such as TortoiseHG, will display the changeset graph
 by default.
 
-.. _graphlog: http://mercurial.selenic.com/wiki/GraphlogExtension
+.. _graphlog: https://www.mercurial-scm.org/wiki/GraphlogExtension
 
 
 How do I update to a specific release tag?
@@ -722,9 +722,9 @@ In the end, please refer to the Mercurial `wiki`_, especially the pages about
 
 
 .. _man hgrc: http://www.selenic.com/mercurial/hgrc.5.html
-.. _wiki: http://mercurial.selenic.com/wiki/
-.. _extensions: http://mercurial.selenic.com/wiki/UsingExtensions
-.. _tips and tricks: http://mercurial.selenic.com/wiki/TipsAndTricks
+.. _wiki: https://www.mercurial-scm.org/wiki/
+.. _extensions: https://www.mercurial-scm.org/wiki/UsingExtensions
+.. _tips and tricks: https://www.mercurial-scm.org/wiki/TipsAndTricks
 .. _configuration options: http://www.selenic.com/mercurial/hgrc.5.html
 
 
@@ -788,7 +788,7 @@ You can also use ``hg resolve -am`` to mark all the conflicts as resolved.
    Mercurial will use KDiff3 automatically if it's installed and it can find
    it --- you don't need to change any settings.  KDiff3 is also already
    included in the installer of TortoiseHg.  For more information, see
-   http://mercurial.selenic.com/wiki/KDiff3.
+   https://www.mercurial-scm.org/wiki/KDiff3.
 
 
 .. _hg-null-merge:
