@@ -1,0 +1,875 @@
+diff -r 128b45caba5b Makefile
+--- a/Makefile	Sun Jun 26 09:01:18 2016 +0300
++++ b/Makefile	Tue Jul 19 22:05:55 2016 -0700
+@@ -32,6 +32,7 @@
+ 	@echo "  changes    to make an overview of all changed/added/deprecated items"
+ 	@echo "  linkcheck  to check all external links for integrity"
+ 	@echo "  doctest    to run all doctests embedded in the documentation (if enabled)"
++	@echo "  check      to run a check for frequent markup errors"
+ 
+ clean:
+ 	-rm -rf $(BUILDDIR)/*
+@@ -128,3 +129,6 @@
+ 	$(SPHINXBUILD) -b doctest $(ALLSPHINXOPTS) $(BUILDDIR)/doctest
+ 	@echo "Testing of doctests in the sources finished, look at the " \
+ 	      "results in $(BUILDDIR)/doctest/output.txt."
++
++check:
++	$(PYTHON) tools/rstlint.py -i tools -i venv
+diff -r 128b45caba5b conf.py
+--- a/conf.py	Sun Jun 26 09:01:18 2016 +0300
++++ b/conf.py	Tue Jul 19 22:05:55 2016 -0700
+@@ -20,6 +20,8 @@
+ # documentation root, use os.path.abspath to make it absolute, like shown here.
+ #sys.path.insert(0, os.path.abspath('.'))
+ 
++sys.path.append(os.path.abspath('tools'))
++
+ # -- General configuration -----------------------------------------------------
+ 
+ # If your documentation needs a minimal Sphinx version, state it here.
+@@ -93,22 +95,28 @@
+ 
+ # -- Options for HTML output ---------------------------------------------------
+ 
+-# The theme to use for HTML and HTML Help pages.  See the documentation for
+-# a list of builtin themes.
+-html_theme = 'nature'
++# Use our custom theme. Previously used builtin 'nature' theme.
++#html_theme = 'nature'
++html_theme = 'pydoctheme'
++html_theme_path = ['tools']
++html_theme_options = {'collapsiblesidebar': True}
+ 
+-# Theme options are theme-specific and customize the look and feel of a theme
+-# further.  For a list of options available for each theme, see the
+-# documentation.
+-#html_theme_options = {}
+-
+-# Add any paths that contain custom themes here, relative to this directory.
+-#html_theme_path = []
+ 
+ # The name for this set of Sphinx documents.  If None, it defaults to
+ # "<project> v<release> documentation".
+ html_title = "%s %s" % (project, release)
+ 
++# Path to find HTML templates.
++templates_path = ['tools/templates']
++
++# Custom sidebar templates, filenames relative to this file.
++#html_sidebars = {
++#    'index': 'indexsidebar.html',
++#}
++
++# Additional static files.
++html_static_path = ['tools/static']
++
+ # A shorter title for the navigation bar.  Default is the same as html_title.
+ #html_short_title = None
+ 
+diff -r 128b45caba5b make.bat
+--- a/make.bat	Sun Jun 26 09:01:18 2016 +0300
++++ b/make.bat	Tue Jul 19 22:05:55 2016 -0700
+@@ -12,6 +12,7 @@
+ )
+ 
+ if "%1" == "" goto help
++if "%1" == "check" goto check
+ 
+ if "%1" == "help" (
+ 	:help
+@@ -31,6 +32,7 @@
+ 	echo.  changes    to make an overview over all changed/added/deprecated items
+ 	echo.  linkcheck  to check all external links for integrity
+ 	echo.  doctest    to run all doctests embedded in the documentation if enabled
++	echo.  check      
+ 	goto end
+ )
+ 
+@@ -167,4 +169,17 @@
+ 	goto end
+ )
+ 
++if "%1" == "rstlint" (
++	%SPHINXBUILD% -b rstlint %ALLSPHINXOPTS% %BUILDDIR%/rstlint
++	if errorlevel 1 exit /b 1
++	echo.
++	echo.Testing of rst and py files in the documentation finished, look at the ^
++results in %BUILDDIR%/rstlint/output.txt.
++	goto end
++)
++
++:check
++cmd /C %PYTHON% tools\rstlint.py -i tools
++goto end
++
+ :end
+diff -r 128b45caba5b tools/pydoctheme/static/pydoctheme.css
+--- /dev/null	Thu Jan 01 00:00:00 1970 +0000
++++ b/tools/pydoctheme/static/pydoctheme.css	Tue Jul 19 22:05:55 2016 -0700
+@@ -0,0 +1,189 @@
++@import url("default.css");
++
++body {
++    background-color: white;
++    margin-left: 16px;
++    margin-right: 16px;
++}
++
++div.related {
++    margin-bottom: 1.2em;
++    line-height: 32px;
++    color: #fff;
++    text-shadow: 0px 1px 0 #444;
++    font-size: 0.9em;
++    background-color: #6BA81E;
++}
++
++div.related a {
++    color: #fff;
++}
++
++div.related a:hover {
++    color: #0095C4;
++}
++
++div.related:first-child {
++    border-top: 0;
++    border-bottom: 1px solid #ccc;
++}
++
++div.sphinxsidebar {
++    background-color: #eeeeee;
++    border-radius: 5px;
++    line-height: 130%;
++    font-size: smaller;
++}
++
++div.sphinxsidebar h3, div.sphinxsidebar h4 {
++    margin-top: 1.5em;
++}
++
++div.sphinxsidebarwrapper > h3:first-child {
++    margin-top: 0.2em;
++}
++
++div.sphinxsidebarwrapper > ul > li > ul > li {
++    margin-bottom: 0.4em;
++}
++
++div.sphinxsidebar a:hover {
++    color: #0095C4;
++}
++
++div.sphinxsidebar input {
++    font-family: 'Lucida Grande',Arial,sans-serif;
++    border: 1px solid #999999;
++    font-size: smaller;
++    border-radius: 3px;
++}
++
++div.sphinxsidebar input[type=text] {
++    max-width: 150px;
++}
++
++div.body {
++    padding: 0 0 0 1.2em;
++}
++
++div.body p {
++    line-height: 140%;
++}
++
++div.body h1, div.body h2, div.body h3, div.body h4, div.body h5, div.body h6 {
++    margin: 0;
++    border: 0;
++    padding: 0.3em 0;
++}
++
++div.body hr {
++    border: 0;
++    background-color: #ccc;
++    height: 1px;
++}
++
++div.body pre {
++    border-radius: 3px;
++    border: 1px solid #ac9;
++}
++
++div.body div.admonition, div.body div.impl-detail {
++    border-radius: 3px;
++}
++
++div.body div.impl-detail > p {
++    margin: 0;
++}
++
++div.body div.seealso {
++    border: 1px solid #dddd66;
++}
++
++div.body a {
++    color: #0072aa;
++}
++
++div.body a:visited {
++    color: #6363bb;
++}
++
++div.body a:hover {
++    color: #00B0E4;
++}
++
++tt, code, pre {
++    font-family: monospace, sans-serif;
++    font-size: 96.5%;
++}
++
++div.body tt, div.body code {
++    border-radius: 3px;
++}
++
++div.body tt.descname, div.body code.descname {
++    font-size: 120%;
++}
++
++div.body tt.xref, div.body a tt, div.body code.xref, div.body a code {
++    font-weight: normal;
++}
++
++.deprecated {
++    border-radius: 3px;
++}
++
++table.docutils {
++    border: 1px solid #ddd;
++    min-width: 20%;
++    border-radius: 3px;
++    margin-top: 10px;
++    margin-bottom: 10px;
++}
++
++table.docutils td, table.docutils th {
++    border: 1px solid #ddd !important;
++    border-radius: 3px;
++}
++
++table p, table li {
++    text-align: left !important;
++}
++
++table.docutils th {
++    background-color: #eee;
++    padding: 0.3em 0.5em;
++}
++
++table.docutils td {
++    background-color: white;
++    padding: 0.3em 0.5em;
++}
++
++table.footnote, table.footnote td {
++    border: 0 !important;
++}
++
++div.footer {
++    line-height: 150%;
++    margin-top: -2em;
++    text-align: right;
++    width: auto;
++    margin-right: 10px;
++}
++
++div.footer a:hover {
++    color: #0095C4;
++}
++
++.refcount {
++    color: #060;
++}
++
++.stableabi {
++    color: #229;
++}
++
++.highlight {
++    background: none !important;
++}
++
+diff -r 128b45caba5b tools/pydoctheme/theme.conf
+--- /dev/null	Thu Jan 01 00:00:00 1970 +0000
++++ b/tools/pydoctheme/theme.conf	Tue Jul 19 22:05:55 2016 -0700
+@@ -0,0 +1,23 @@
++[theme]
++inherit = default
++stylesheet = pydoctheme.css
++pygments_style = sphinx
++
++[options]
++bodyfont = 'Lucida Grande', Arial, sans-serif
++headfont = 'Lucida Grande', Arial, sans-serif
++footerbgcolor = white
++footertextcolor = #555555
++relbarbgcolor = white
++relbartextcolor = #666666
++relbarlinkcolor = #444444
++sidebarbgcolor = white
++sidebartextcolor = #444444
++sidebarlinkcolor = #444444
++bgcolor = white
++textcolor = #222222
++linkcolor = #0090c0
++visitedlinkcolor = #00608f
++headtextcolor = #1a1a1a
++headbgcolor = white
++headlinkcolor = #aaaaaa
+diff -r 128b45caba5b tools/rstlint.py
+--- /dev/null	Thu Jan 01 00:00:00 1970 +0000
++++ b/tools/rstlint.py	Tue Jul 19 22:05:55 2016 -0700
+@@ -0,0 +1,230 @@
++#!/usr/bin/env python3
++# -*- coding: utf-8 -*-
++
++# Check for stylistic and formal issues in .rst and .py
++# files included in the documentation.
++#
++# 01/2009, Georg Brandl
++
++# TODO: - wrong versions in versionadded/changed
++#       - wrong markup after versionchanged directive
++
++from __future__ import with_statement
++
++import os
++import re
++import sys
++import getopt
++from os.path import join, splitext, abspath, exists
++from collections import defaultdict
++
++directives = [
++    # standard docutils ones
++    'admonition', 'attention', 'caution', 'class', 'compound', 'container',
++    'contents', 'csv-table', 'danger', 'date', 'default-role', 'epigraph',
++    'error', 'figure', 'footer', 'header', 'highlights', 'hint', 'image',
++    'important', 'include', 'line-block', 'list-table', 'meta', 'note',
++    'parsed-literal', 'pull-quote', 'raw', 'replace',
++    'restructuredtext-test-directive', 'role', 'rubric', 'sectnum', 'sidebar',
++    'table', 'target-notes', 'tip', 'title', 'topic', 'unicode', 'warning',
++    # Sphinx and Python docs custom ones
++    'acks', 'attribute', 'autoattribute', 'autoclass', 'autodata',
++    'autoexception', 'autofunction', 'automethod', 'automodule', 'centered',
++    'cfunction', 'class', 'classmethod', 'cmacro', 'cmdoption', 'cmember',
++    'code-block', 'confval', 'cssclass', 'ctype', 'currentmodule', 'cvar',
++    'data', 'decorator', 'decoratormethod', 'deprecated-removed',
++    'deprecated(?!-removed)', 'describe', 'directive', 'doctest', 'envvar',
++    'event', 'exception', 'function', 'glossary', 'highlight', 'highlightlang',
++    'impl-detail', 'index', 'literalinclude', 'method', 'miscnews', 'module',
++    'moduleauthor', 'opcode', 'pdbcommand', 'productionlist',
++    'program', 'role', 'sectionauthor', 'seealso', 'sourcecode', 'staticmethod',
++    'tabularcolumns', 'testcode', 'testoutput', 'testsetup', 'toctree', 'todo',
++    'todolist', 'versionadded', 'versionchanged'
++]
++
++all_directives = '(' + '|'.join(directives) + ')'
++seems_directive_re = re.compile(r'(?<!\.)\.\. %s([^a-z:]|:(?!:))' % all_directives)
++default_role_re = re.compile(r'(^| )`\w([^`]*?\w)?`($| )')
++leaked_markup_re = re.compile(r'[a-z]::\s|`|\.\.\s*\w+:')
++
++
++checkers = {}
++
++checker_props = {'severity': 1, 'falsepositives': False}
++
++
++def checker(*suffixes, **kwds):
++    """Decorator to register a function as a checker."""
++    def deco(func):
++        for suffix in suffixes:
++            checkers.setdefault(suffix, []).append(func)
++        for prop in checker_props:
++            setattr(func, prop, kwds.get(prop, checker_props[prop]))
++        return func
++    return deco
++
++
++@checker('.py', severity=4)
++def check_syntax(fn, lines):
++    """Check Python examples for valid syntax."""
++    code = ''.join(lines)
++    if '\r' in code:
++        if os.name != 'nt':
++            yield 0, '\\r in code file'
++        code = code.replace('\r', '')
++    try:
++        compile(code, fn, 'exec')
++    except SyntaxError as err:
++        yield err.lineno, 'not compilable: %s' % err
++
++
++@checker('.rst', severity=2)
++def check_suspicious_constructs(fn, lines):
++    """Check for suspicious reST constructs."""
++    inprod = False
++    for lno, line in enumerate(lines):
++        if seems_directive_re.search(line):
++            yield lno+1, 'comment seems to be intended as a directive'
++        if '.. productionlist::' in line:
++            inprod = True
++        elif not inprod and default_role_re.search(line):
++            yield lno+1, 'default role used'
++        elif inprod and not line.strip():
++            inprod = False
++
++
++@checker('.py', '.rst')
++def check_whitespace(fn, lines):
++    """Check for whitespace and line length issues."""
++    for lno, line in enumerate(lines):
++        if '\r' in line:
++            yield lno+1, '\\r in line'
++        if '\t' in line:
++            yield lno+1, 'OMG TABS!!!1'
++        if line[:-1].rstrip(' \t') != line[:-1]:
++            yield lno+1, 'trailing whitespace'
++
++
++@checker('.rst', severity=0)
++def check_line_length(fn, lines):
++    """Check for line length; this checker is not run by default."""
++    for lno, line in enumerate(lines):
++        if len(line) > 81:
++            # don't complain about tables, links and function signatures
++            if line.lstrip()[0] not in '+|' and \
++               'http://' not in line and \
++               not line.lstrip().startswith(('.. function',
++                                             '.. method',
++                                             '.. cfunction')):
++                yield lno+1, "line too long"
++
++
++@checker('.html', severity=2, falsepositives=True)
++def check_leaked_markup(fn, lines):
++    """Check HTML files for leaked reST markup; this only works if
++    the HTML files have been built.
++    """
++    for lno, line in enumerate(lines):
++        if leaked_markup_re.search(line):
++            yield lno+1, 'possibly leaked markup: %r' % line
++
++
++def main(argv):
++    usage = '''\
++Usage: %s [-v] [-f] [-s sev] [-i path]* [path]
++
++Options:  -v       verbose (print all checked file names)
++          -f       enable checkers that yield many false positives
++          -s sev   only show problems with severity >= sev
++          -i path  ignore subdir or file path
++'''% argv[0]
++    try:
++        gopts, args = getopt.getopt(argv[1:], 'vfs:i:')
++    except getopt.GetoptError:
++        print(usage)
++        return 2
++
++    verbose = False
++    severity = 1
++    ignore = []
++    falsepos = False
++    for opt, val in gopts:
++        if opt == '-v':
++            verbose = True
++        elif opt == '-f':
++            falsepos = True
++        elif opt == '-s':
++            severity = int(val)
++        elif opt == '-i':
++            ignore.append(abspath(val))
++
++    if len(args) == 0:
++        path = '.'
++    elif len(args) == 1:
++        path = args[0]
++    else:
++        print(usage)
++        return 2
++
++    if not exists(path):
++        print('Error: path %s does not exist' % path)
++        return 2
++
++    count = defaultdict(int)
++
++    for root, dirs, files in os.walk(path):
++        # ignore subdirs in ignore list
++        if abspath(root) in ignore:
++            del dirs[:]
++            continue
++
++        for fn in files:
++            fn = join(root, fn)
++            if fn[:2] == './':
++                fn = fn[2:]
++
++            # ignore files in ignore list
++            if abspath(fn) in ignore:
++                continue
++
++            ext = splitext(fn)[1]
++            checkerlist = checkers.get(ext, None)
++            if not checkerlist:
++                continue
++
++            if verbose:
++                print('Checking %s...' % fn)
++
++            try:
++                with open(fn, 'r', encoding='utf-8') as f:
++                    lines = list(f)
++            except (IOError, OSError) as err:
++                print('%s: cannot open: %s' % (fn, err))
++                count[4] += 1
++                continue
++
++            for checker in checkerlist:
++                if checker.falsepositives and not falsepos:
++                    continue
++                csev = checker.severity
++                if csev >= severity:
++                    for lno, msg in checker(fn, lines):
++                        print('[%d] %s:%d: %s' % (csev, fn, lno, msg))
++                        count[csev] += 1
++    if verbose:
++        print()
++    if not count:
++        if severity > 1:
++            print('No problems with severity >= %d found.' % severity)
++        else:
++            print('No problems found.')
++    else:
++        for severity in sorted(count):
++            number = count[severity]
++            print('%d problem%s with severity %d found.' %
++                  (number, number > 1 and 's' or '', severity))
++    return int(bool(count))
++
++
++if __name__ == '__main__':
++    sys.exit(main(sys.argv))
+diff -r 128b45caba5b tools/static/copybutton.js
+--- /dev/null	Thu Jan 01 00:00:00 1970 +0000
++++ b/tools/static/copybutton.js	Tue Jul 19 22:05:55 2016 -0700
+@@ -0,0 +1,62 @@
++$(document).ready(function() {
++    /* Add a [>>>] button on the top-right corner of code samples to hide
++     * the >>> and ... prompts and the output and thus make the code
++     * copyable. */
++    var div = $('.highlight-python .highlight,' +
++                '.highlight-python3 .highlight')
++    var pre = div.find('pre');
++
++    // get the styles from the current theme
++    pre.parent().parent().css('position', 'relative');
++    var hide_text = 'Hide the prompts and output';
++    var show_text = 'Show the prompts and output';
++    var border_width = pre.css('border-top-width');
++    var border_style = pre.css('border-top-style');
++    var border_color = pre.css('border-top-color');
++    var button_styles = {
++        'cursor':'pointer', 'position': 'absolute', 'top': '0', 'right': '0',
++        'border-color': border_color, 'border-style': border_style,
++        'border-width': border_width, 'color': border_color, 'text-size': '75%',
++        'font-family': 'monospace', 'padding-left': '0.2em', 'padding-right': '0.2em',
++        'border-radius': '0 3px 0 0'
++    }
++
++    // create and add the button to all the code blocks that contain >>>
++    div.each(function(index) {
++        var jthis = $(this);
++        if (jthis.find('.gp').length > 0) {
++            var button = $('<span class="copybutton">&gt;&gt;&gt;</span>');
++            button.css(button_styles)
++            button.attr('title', hide_text);
++            button.data('hidden', 'false');
++            jthis.prepend(button);
++        }
++        // tracebacks (.gt) contain bare text elements that need to be
++        // wrapped in a span to work with .nextUntil() (see later)
++        jthis.find('pre:has(.gt)').contents().filter(function() {
++            return ((this.nodeType == 3) && (this.data.trim().length > 0));
++        }).wrap('<span>');
++    });
++
++    // define the behavior of the button when it's clicked
++    $('.copybutton').click(function(e){
++        e.preventDefault();
++        var button = $(this);
++        if (button.data('hidden') === 'false') {
++            // hide the code output
++            button.parent().find('.go, .gp, .gt').hide();
++            button.next('pre').find('.gt').nextUntil('.gp, .go').css('visibility', 'hidden');
++            button.css('text-decoration', 'line-through');
++            button.attr('title', show_text);
++            button.data('hidden', 'true');
++        } else {
++            // show the code output
++            button.parent().find('.go, .gp, .gt').show();
++            button.next('pre').find('.gt').nextUntil('.gp, .go').css('visibility', 'visible');
++            button.css('text-decoration', 'none');
++            button.attr('title', hide_text);
++            button.data('hidden', 'false');
++        }
++    });
++});
++
+diff -r 128b45caba5b tools/static/py.png
+Binary file tools/static/py.png has changed
+diff -r 128b45caba5b tools/static/sidebar.js
+--- /dev/null	Thu Jan 01 00:00:00 1970 +0000
++++ b/tools/static/sidebar.js	Tue Jul 19 22:05:55 2016 -0700
+@@ -0,0 +1,193 @@
++/*
++ * sidebar.js
++ * ~~~~~~~~~~
++ *
++ * This script makes the Sphinx sidebar collapsible and implements intelligent
++ * scrolling.
++ *
++ * .sphinxsidebar contains .sphinxsidebarwrapper.  This script adds in
++ * .sphixsidebar, after .sphinxsidebarwrapper, the #sidebarbutton used to
++ * collapse and expand the sidebar.
++ *
++ * When the sidebar is collapsed the .sphinxsidebarwrapper is hidden and the
++ * width of the sidebar and the margin-left of the document are decreased.
++ * When the sidebar is expanded the opposite happens.  This script saves a
++ * per-browser/per-session cookie used to remember the position of the sidebar
++ * among the pages.  Once the browser is closed the cookie is deleted and the
++ * position reset to the default (expanded).
++ *
++ * :copyright: Copyright 2007-2011 by the Sphinx team, see AUTHORS.
++ * :license: BSD, see LICENSE for details.
++ *
++ */
++
++$(function() {
++  // global elements used by the functions.
++  // the 'sidebarbutton' element is defined as global after its
++  // creation, in the add_sidebar_button function
++  var jwindow = $(window);
++  var jdocument = $(document);
++  var bodywrapper = $('.bodywrapper');
++  var sidebar = $('.sphinxsidebar');
++  var sidebarwrapper = $('.sphinxsidebarwrapper');
++
++  // original margin-left of the bodywrapper and width of the sidebar
++  // with the sidebar expanded
++  var bw_margin_expanded = bodywrapper.css('margin-left');
++  var ssb_width_expanded = sidebar.width();
++
++  // margin-left of the bodywrapper and width of the sidebar
++  // with the sidebar collapsed
++  var bw_margin_collapsed = '.8em';
++  var ssb_width_collapsed = '.8em';
++
++  // colors used by the current theme
++  var dark_color = '#AAAAAA';
++  var light_color = '#CCCCCC';
++
++  function get_viewport_height() {
++    if (window.innerHeight)
++      return window.innerHeight;
++    else
++      return jwindow.height();
++  }
++
++  function sidebar_is_collapsed() {
++    return sidebarwrapper.is(':not(:visible)');
++  }
++
++  function toggle_sidebar() {
++    if (sidebar_is_collapsed())
++      expand_sidebar();
++    else
++      collapse_sidebar();
++    // adjust the scrolling of the sidebar
++    scroll_sidebar();
++  }
++
++  function collapse_sidebar() {
++    sidebarwrapper.hide();
++    sidebar.css('width', ssb_width_collapsed);
++    bodywrapper.css('margin-left', bw_margin_collapsed);
++    sidebarbutton.css({
++        'margin-left': '0',
++        'height': bodywrapper.height(),
++        'border-radius': '5px'
++    });
++    sidebarbutton.find('span').text('»');
++    sidebarbutton.attr('title', _('Expand sidebar'));
++    document.cookie = 'sidebar=collapsed';
++  }
++
++  function expand_sidebar() {
++    bodywrapper.css('margin-left', bw_margin_expanded);
++    sidebar.css('width', ssb_width_expanded);
++    sidebarwrapper.show();
++    sidebarbutton.css({
++        'margin-left': ssb_width_expanded-12,
++        'height': bodywrapper.height(),
++        'border-radius': '0 5px 5px 0'
++    });
++    sidebarbutton.find('span').text('«');
++    sidebarbutton.attr('title', _('Collapse sidebar'));
++    //sidebarwrapper.css({'padding-top':
++    //  Math.max(window.pageYOffset - sidebarwrapper.offset().top, 10)});
++    document.cookie = 'sidebar=expanded';
++  }
++
++  function add_sidebar_button() {
++    sidebarwrapper.css({
++        'float': 'left',
++        'margin-right': '0',
++        'width': ssb_width_expanded - 28
++    });
++    // create the button
++    sidebar.append(
++      '<div id="sidebarbutton"><span>&laquo;</span></div>'
++    );
++    var sidebarbutton = $('#sidebarbutton');
++    // find the height of the viewport to center the '<<' in the page
++    var viewport_height = get_viewport_height();
++    var sidebar_offset = sidebar.offset().top;
++    var sidebar_height = Math.max(bodywrapper.height(), sidebar.height());
++    sidebarbutton.find('span').css({
++        'display': 'block',
++        'position': 'fixed',
++        'top': Math.min(viewport_height/2, sidebar_height/2 + sidebar_offset) - 10
++    });
++
++    sidebarbutton.click(toggle_sidebar);
++    sidebarbutton.attr('title', _('Collapse sidebar'));
++    sidebarbutton.css({
++        'border-radius': '0 5px 5px 0',
++        'color': '#444444',
++        'background-color': '#CCCCCC',
++        'font-size': '1.2em',
++        'cursor': 'pointer',
++        'height': sidebar_height,
++        'padding-top': '1px',
++        'padding-left': '1px',
++        'margin-left': ssb_width_expanded - 12
++    });
++
++    sidebarbutton.hover(
++      function () {
++          $(this).css('background-color', dark_color);
++      },
++      function () {
++          $(this).css('background-color', light_color);
++      }
++    );
++  }
++
++  function set_position_from_cookie() {
++    if (!document.cookie)
++      return;
++    var items = document.cookie.split(';');
++    for(var k=0; k<items.length; k++) {
++      var key_val = items[k].split('=');
++      var key = key_val[0];
++      if (key == 'sidebar') {
++        var value = key_val[1];
++        if ((value == 'collapsed') && (!sidebar_is_collapsed()))
++          collapse_sidebar();
++        else if ((value == 'expanded') && (sidebar_is_collapsed()))
++          expand_sidebar();
++      }
++    }
++  }
++
++  add_sidebar_button();
++  var sidebarbutton = $('#sidebarbutton');
++  set_position_from_cookie();
++
++
++  /* intelligent scrolling */
++  function scroll_sidebar() {
++    var sidebar_height = sidebarwrapper.height();
++    var viewport_height = get_viewport_height();
++    var offset = sidebar.position()['top'];
++    var wintop = jwindow.scrollTop();
++    var winbot = wintop + viewport_height;
++    var curtop = sidebarwrapper.position()['top'];
++    var curbot = curtop + sidebar_height;
++    // does sidebar fit in window?
++    if (sidebar_height < viewport_height) {
++      // yes: easy case -- always keep at the top
++      sidebarwrapper.css('top', $u.min([$u.max([0, wintop - offset - 10]),
++                            jdocument.height() - sidebar_height - 200]));
++    }
++    else {
++      // no: only scroll if top/bottom edge of sidebar is at
++      // top/bottom edge of window
++      if (curtop > wintop && curbot > winbot) {
++        sidebarwrapper.css('top', $u.max([wintop - offset - 10, 0]));
++      }
++      else if (curtop < wintop && curbot < winbot) {
++        sidebarwrapper.css('top', $u.min([winbot - sidebar_height - offset - 20,
++                              jdocument.height() - sidebar_height - 200]));
++      }
++    }
++  }
++  jwindow.scroll(scroll_sidebar);
++});
+diff -r 128b45caba5b tools/templates/layout.html
+--- /dev/null	Thu Jan 01 00:00:00 1970 +0000
++++ b/tools/templates/layout.html	Tue Jul 19 22:05:55 2016 -0700
+@@ -0,0 +1,38 @@
++{% extends "!layout.html" %}
++{% block rootrellink %}
++        <li><img src="{{ pathto('_static/py.png', 1) }}" alt=""
++                 style="vertical-align: middle; margin-top: -1px"/></li>
++        <li><a href="https://www.python.org/">Python</a>{{ reldelim1 }}</li>
++        <li>
++          <a href="{{ pathto('index') }}">{{ shorttitle }}</a>{{ reldelim1 }}
++        </li>
++{% endblock %}
++{% block relbar1 %} {% if builder != 'qthelp' %} {{ relbar() }} {% endif %} {% endblock %}
++{% block relbar2 %} {% if builder != 'qthelp' %} {{ relbar() }} {% endif %} {% endblock %}
++{% block extrahead %}
++    <link rel="shortcut icon" type="image/png" href="{{ pathto('_static/py.png', 1) }}" />
++    {% if not embedded %}<script type="text/javascript" src="{{ pathto('_static/copybutton.js', 1) }}"></script>{% endif %}
++  
++{{ super() }}
++{% endblock %}
++{% block footer %}
++    <div class="footer">
++    &copy; <a href="{{ pathto('copyright') }}">{% trans %}Copyright{% endtrans %}</a> {{ copyright|e }}.
++    <br />
++    {% trans %}The Python Software Foundation is a non-profit corporation.{% endtrans %}
++    <a href="https://www.python.org/psf/donations/">{% trans %}Please donate.{% endtrans %}</a>
++    <br />
++    {% trans last_updated=last_updated|e %}Last updated on {{ last_updated }}.{% endtrans %}
++    <br />
++    {% trans sphinx_version=sphinx_version|e %}Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> {{ sphinx_version }}.{% endtrans %}
++    </div>
++{% endblock %}
++{% block sidebarsourcelink %}
++{%- if show_source and has_source and sourcename %}
++<h3>{{ _('This Page') }}</h3>
++<ul class="this-page-menu">
++  <li><a href="{{ pathto('_sources/' + sourcename, true)|e }}"
++         rel="nofollow">{% trans %}Show Source{% endtrans %}</a></li>
++</ul>
++{%- endif %}
++{% endblock %}
+diff -r 128b45caba5b tools/templates/opensearch.xml
+--- /dev/null	Thu Jan 01 00:00:00 1970 +0000
++++ b/tools/templates/opensearch.xml	Tue Jul 19 22:05:55 2016 -0700
+@@ -0,0 +1,4 @@
++{% extends "!opensearch.xml" %}
++{% block extra -%}
++<Image height="16" width="16" type="image/x-icon">https://www.python.org/images/favicon16x16.ico</Image>
++{%- endblock %}
