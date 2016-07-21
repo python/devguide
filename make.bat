@@ -2,6 +2,9 @@
 
 REM Command file for Sphinx documentation
 
+if "%PYTHON%" == "" (
+	set PYTHON=py -3
+)
 if "%SPHINXBUILD%" == "" (
 	set SPHINXBUILD=sphinx-build
 )
@@ -169,17 +172,8 @@ results in %BUILDDIR%/doctest/output.txt.
 	goto end
 )
 
-if "%1" == "rstlint" (
-	%SPHINXBUILD% -b rstlint %ALLSPHINXOPTS% %BUILDDIR%/rstlint
-	if errorlevel 1 exit /b 1
-	echo.
-	echo.Testing of rst and py files in the documentation finished, look at the ^
-results in %BUILDDIR%/rstlint/output.txt.
-	goto end
-)
-
 :check
-cmd /C %PYTHON% tools\rstlint.py -i tools
+cmd /C %PYTHON% tools\rstlint.py -i tools -i venv
 goto end
 
 :end
