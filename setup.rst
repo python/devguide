@@ -164,7 +164,7 @@ with Homebrew::
       LDFLAGS="-L$(brew --prefix openssl)/lib" \
       ./configure --with-pydebug
 
-or MacPorts:: 
+or MacPorts::
 
     $ sudo port install openssl xz
     $ CPPFLAGS="-I/opt/local/include" \

@@ -407,9 +407,9 @@ as follow::
    $ hg pull
    $ hg up
    $ hg import --no-c http://bugs.python.org/url/to/the/patch.diff
-   $ # review, run tests, run `make patchcheck`
+   $ # review, run tests, run 'make patchcheck'
    $ hg ci -m '#12345: fix some issue.'
-   $ # switch to 3.5 and port the changeset using `hg graft`
+   $ # switch to 3.5 and port the changeset using 'hg graft'
    $ cd ../3.5
    $ hg up
    $ hg graft 2.7
