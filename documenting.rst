@@ -1442,7 +1442,7 @@ They are set in the build configuration file :file:`conf.py`.
 
 .. rubric:: Footnotes
 
-.. [1] There is a standard ``.. include`` directive, but it raises errors if the
+.. [1] There is a standard ``include`` directive, but it raises errors if the
        file is not found.  This one only emits a warning.
 
 

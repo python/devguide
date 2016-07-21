@@ -67,7 +67,7 @@ Perform the following to download, build and install the Clang/LLVM 3.4. ::
     wget http://llvm.org/releases/3.4/llvm-3.4.src.tar.gz
     wget http://llvm.org/releases/3.4/clang-3.4.src.tar.gz
     wget http://llvm.org/releases/3.4/compiler-rt-3.4.src.tar.gz
-  
+
     # LLVM
     tar xvf llvm-3.4.src.tar.gz
     cd llvm-3.4/tools
@@ -216,7 +216,7 @@ Finally is ``make test`` (formatting added for clarity): ::
         'union _gc_head'), which requires 16 byte alignment
         0x2b76be018078: note: pointer points here
         00 00 00 00  40 53 5a b6 76 2b 00 00  60 52 5a b6 ...
-                     ^ 
+                     ^
     ...
 
 If you are using the address sanitizer, its important to pipe the output through
@@ -228,7 +228,7 @@ compile (formatting added for clarity): ::
 
     /usr/local/bin/clang -fsanitize=address -Xlinker -export-dynamic
         -o python Modules/python.o libpython3.3m.a -ldl -lutil
-        /usr/local/ssl/lib/libssl.a /usr/local/ssl/lib/libcrypto.a -lm  
+        /usr/local/ssl/lib/libssl.a /usr/local/ssl/lib/libcrypto.a -lm
     ./python -E -S -m sysconfig --generate-posix-vars
     =================================================================
     ==24064==ERROR: AddressSanitizer: heap-buffer-overflow on address
@@ -267,7 +267,7 @@ compile (formatting added for clarity): ::
       0x0c327fff8850: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
     Shadow byte legend (one shadow byte represents 8 application bytes):
       Addressable:           00
-      Partially addressable: 01 02 03 04 05 06 07 
+      Partially addressable: 01 02 03 04 05 06 07
       Heap left redzone:     fa
       Heap right redzone:    fb
       Freed heap region:     fd

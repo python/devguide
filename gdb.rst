@@ -238,7 +238,7 @@ You can of course use other gdb commands.  For example, the ``frame`` command ta
                 main()
         (gdb) frame 68
         #68 0x00000000004cd1e6 in PyEval_EvalFrameEx (f=Frame 0xaa4560, for file Lib/test/regrtest.py, line 1548, in <module> (), throwflag=0) at Python/ceval.c:2665
-        2665				x = call_function(&sp, oparg);
+        2665                            x = call_function(&sp, oparg);
         (gdb) py-list
         1543        # Run the tests in a context manager that temporary changes the CWD to a
         1544        # temporary and writable directory. If it's not possible to create or
