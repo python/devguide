@@ -367,9 +367,9 @@ to any remote repository.  In ``.hg/hgrc`` file for the local repository, add
 or modify the following section::
 
   [paths]
-  default = ssh://hg@hg.python.org/devguide
+  default = ssh://hg@hg.python.org/cpython
 
-This example is for a local repository that mirrors the ``devguide`` repository
+This example is for a local repository that mirrors the ``cpython`` repository
 on ``hg.python.org``. The same approach works for other remote repositories.
 
 Anywhere that ``<remote repository>`` is used in the commands in this
@@ -382,12 +382,12 @@ How do I create a shorthand alias for a remote repository?
 In your global ``.hgrc`` file add a section similar to the following::
 
   [paths]
-  dg = ssh://hg@hg.python.org/devguide
+  c3 = ssh://hg@hg.python.org/cpython
 
-This example creates a ``dg`` alias for the ``devguide`` repository
-on ``hg.python.org``. This allows "dg" to be entered instead of the
-full URL for commands taking a repository argument (e.g. ``hg pull dg`` or
-``hg outgoing dg``).
+This example creates a ``c3`` alias for the ``cpython`` repository
+on ``hg.python.org``. This allows "c3" to be entered instead of the
+full URL for commands taking a repository argument (e.g. ``hg pull c3`` or
+``hg outgoing c3``).
 
 Anywhere that ``<remote repository>`` is used in the commands in this
 FAQ, ``hg`` should accept an alias in place of a complete remote URL.
