@@ -137,193 +137,112 @@ For everyone
 
 The following FAQs are intended for both core developers and contributors.
 
-Where can I learn about the version control system used, Mercurial (hg)?
+Where can I learn about the version control system used, Git?
 ''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 
-Mercurial_'s (also known as ``hg``) official web site is at
-https://www.mercurial-scm.org/.  A book on Mercurial published by
-`O'Reilly Media`_, `Mercurial: The Definitive Guide`_, is available
-for free online.  Another resource is `Hg Init: a Mercurial tutorial`_
-by Joel Spolsky.
+Git_'s official web site is at https://git-scm.com/.  A book on Git published
+by Apress, `Pro Git`_, is available for free online.
 
-With Mercurial installed, you can run the help tool that comes with
-Mercurial to get help::
+With Git installed, you can run the help tool that comes with
+Git to get help::
 
-  hg help
+  git help
 
-The `man page`_ for ``hg`` provides a quick refresher on the details of
-various commands, but doesn't provide any guidance on overall
-workflow.
+The `man page`_ for ``git`` provides a quick refresher on the various commands,
+but doesn't provide any guidance on overall workflow. Each sub-command has a
+more detailed manpage. You can view these by running a command such as::
 
-.. _Mercurial: https://www.mercurial-scm.org/
-.. _O'Reilly Media: http://www.oreilly.com/
-.. _Mercurial\: The Definitive Guide: http://hgbook.red-bean.com/
-.. _man page: http://www.selenic.com/mercurial/hg.1.html
-.. _Hg Init\: a Mercurial tutorial: http://hginit.com/
+    $ man git-pull
 
+or following the links from the main `man page`_.
 
-I already know how to use Git, can I use that instead?
-''''''''''''''''''''''''''''''''''''''''''''''''''''''
-
-While the main workflow for core developers requires Mercurial, if
-you just want to generate patches with ``git diff`` and post them to the
-`issue tracker`_, there is a semi-offical read-only `git mirror`_ of the main
-`CPython repository`_. To create a local clone based on this mirror rather
-than the main repository::
-
-    git clone git://github.com/python/cpython
-
-The mirror's master branch tracks the main repository's default branch,
-while the maintenance branch names (``2.7``, ``3.4``, etc) are mapped
-directly.
-
-.. _git mirror: https://github.com/python/cpython
-.. _CPython repository: https://hg.python.org/cpython
-
-Please only use this approach if you're already an experienced Git user and
-don't require assistance with the specifics of version control commands. All
-other parts of this developer's guide assume the use of Mercurial for local
-version control.
+.. _Git: https://git-scm.com/
+.. _Pro Git: https://git-scm.com/book/en/v2
+.. _man page: https://www.kernel.org/pub/software/scm/git/docs/
 
 
-What do I need to use Mercurial?
+What do I need to use Git?
 ''''''''''''''''''''''''''''''''
 
-UNIX
-^^^^
-
-First, you need to `download Mercurial`_.  Most UNIX-based operating systems
+First, you need to `download Git`_.  Most UNIX-based operating systems
 have binary packages available.  Most package management systems also
-have native Mercurial packages available.
+have native Git packages available.
 
 If you have push rights, you need OpenSSH_.  This is needed to verify
-your identity when performing commits. As with Mercurial, binary packages
+your identity when performing commits. As with Git, binary packages
 are typically available either online or through the platform's package
 management system.
 
-Mercurial does not use its own compression via SSH
-because it is better to enable compression at the SSH level.  Enabling
-SSH compression can make cloning a remote repository much faster.
-You can configure it in your ``~/.ssh/config`` file; for example::
-
-   Host hg.python.org
-     Compression yes
-
-.. _download Mercurial: https://www.mercurial-scm.org/downloads
+.. _download Git: https://git-scm.com/downloads
 .. _OpenSSH: http://www.openssh.org/
-
-
-Windows
-^^^^^^^
-
-The recommended option on Windows is to `download TortoiseHg`_ which
-integrates with Windows Explorer and also bundles the command line client
-(meaning you can type ``hg`` in a DOS box).  Note that most
-entries in this FAQ only cover the command line client in detail - refer
-to the TortoiseHg documentation for assistance with its graphical interface.
-
-If you have push rights, you need to configure Mercurial to work with
-your SSH keys.  For that, open your Mercurial configuration file
-(you can do so by opening the TortoiseHg Global Settings dialog and then
-clicking *"Edit File"*).  If there is no ``[ui]`` section, create it by
-typing just that on a line by itself. Then add the following line::
-
-   ssh = TortoisePlink.exe -ssh -2 -C -i C:\path\to\yourkey.ppk
-
-where ``C:\path\to\yourkey.ppk`` should be replaced with the actual path
-to your SSH private key.
-
-.. note::
-   If your private key is in OpenSSH format, you must first convert it to
-   PuTTY format by loading it into `PuTTYgen`_.
-
-.. _download TortoiseHg: http://tortoisehg.bitbucket.org/download/index.html
 
 
 What's a working copy? What's a repository?
 '''''''''''''''''''''''''''''''''''''''''''
 
-Mercurial is a "distributed" version control system.  This means that each
+Git is a "distributed" version control system.  This means that each
 participant, even casual contributors, download a complete copy (called a
-*clone*, since it is obtained by calling ``hg clone``) of the central
+*clone*, since it is obtained by calling ``git clone``) of the central
 repository which can be treated as a stand-alone repository for all purposes.
 That copy is called in the FAQ the *local repository*, to differentiate
 with any *remote repository* you might also interact with.
 
-But you don't modify files directly in the local repository; Mercurial doesn't
-allow for it.  You modify files in what's called the *working copy* associated
-with your local repository: you also run compilations and tests there.
-Once you are satisfied with your changes, you can :ref:`commit them <hg-commit>`;
-committing records the changes as a new *revision* in the *local repository*.
-
 Changes in your *local repository* don't get automatically shared with the
-rest of the world.  Mercurial ensures that you have to do so explicitly
+rest of the world.  Git ensures that you have to do so explicitly
 (this allows you to experiment quite freely with multiple branches of
 development, all on your private computer).  The main commands for doing
-so are ``hg pull`` and ``hg push``.
+so are ``git pull`` and ``git push``.
 
 
 Which branches are in my local repository?
 ''''''''''''''''''''''''''''''''''''''''''
 
-Typing ``hg branches`` displays the open branches in your local repository::
+Typing ``git branch`` displays the open branches in your local repository::
 
-   $ hg branches
-   default                    93085:030fda7b1de8
-   2.7                        93060:7ba47bbfe38d
-   3.5                        99283:4d5417444961 (inactive)
-   3.4                        93082:5fd481150b35 (inactive)
-   3.3                        93079:cda907a02a80 (inactive)
-   3.2                        92975:eac54f7a8018 (inactive)
+    $ git branch
+    * master
+      2.7
+      3.5
+      3.4
+      3.3
+      3.2
 
-Why are some branches marked "inactive"?
-''''''''''''''''''''''''''''''''''''''''
-
-Assuming you get the following output::
-
-   $ hg branches
-   default                    93085:030fda7b1de8
-   3.5                        99283:4d5417444961 (inactive)
-
-This means all changesets in the "3.5" branch have been merged into the
-"default" branch (or any other branch, if such exists).
-
-
-.. _hg-current-branch:
+.. _git-current-branch:
 
 Which branch is currently checked out in my working copy?
 '''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 
 Use::
 
-   $ hg branch
-   default
+   $ git branch
+   * master
 
-Or to get more information::
+The asterisk (\*) next to the branch name denotes the current branch.
 
-   $ hg summary
-   parent: 68026:f12ef116dd10 tip
-    In FTP.close() method, make sure to also close the socket object, not only the file.
-   branch: default
-   commit: (clean)
-   update: (current)
+For more details about the current state of the repository, use::
+
+    $ git status
+    On branch master
+    Your branch is up-to-date with 'origin/master'.
+    nothing to commit, working directory clean
 
 
-.. _hg-switch-branches:
+.. _git-switch-branches:
 
 How do I switch between branches inside my working copy?
 ''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 
-Simply use ``hg update`` to checkout another branch in the current directory::
+Simply use ``git checkout`` to checkout another branch in the current directory::
 
-   $ hg branch
-   default
-   $ hg update 3.5
-   86 files updated, 0 files merged, 11 files removed, 0 files unresolved
-   $ hg branch
-   3.5
-
-Adding the ``-v`` option to ``hg update`` will list all updated files.
+   $ git branch
+   * master
+     3.5
+   $ git checkout 3.5
+   Switched to branch '3.5'
+   Your branch is up-to-date with 'origin/3.5'.
+   $ git branch
+     master
+   * 3.5
 
 Note that, due to some previously built executables being used as a part of
 the build process, you may sometimes run into issues when attempting to
@@ -334,63 +253,35 @@ are removed.
 
 I want to keep a separate working copy per development branch, is it possible?
 ''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+Create several clones of your local repository::
 
-There are two ways:
-
-1) Use the "`share extension`_" as described in the :ref:`multiple-clones`
-   section;
-2) Create several clones of your local repository;
-
-If you want to use the second way, you can do::
-
-   $ hg clone cpython py35
-   updating to branch default
-   3434 files updated, 0 files merged, 0 files removed, 0 files unresolved
+   $ git clone cpython py35
+   Cloning into 'py35'...
+   remote: Counting objects: 629890, done.
+   remote: Total 629890 (delta 0), reused 0 (delta 0), pack-reused 629889
+   Receiving objects: 100% (629890/629890), 216.81 MiB | 3.58 MiB/s, done.
+   Resolving deltas: 100% (503219/503219), done.
+   Checking connectivity... done.
    $ cd py35
-   $ hg update 3.5
-   86 files updated, 0 files merged, 11 files removed, 0 files unresolved
-
-The current branch in a working copy is "sticky": if you pull in some new
-changes, ``hg update`` will update to the head of the *current branch*.
-
-.. _share extension: https://www.mercurial-scm.org/wiki/ShareExtension
+   $ git checkout 3.5
+   Switched to branch '3.5'
+   Your branch is up-to-date with 'origin/3.5'.
 
 
-.. _hg-paths:
+.. _git-paths:
 
 How do I link my local repository to a particular remote repository?
 ''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 
 Your local repository is linked by default to the remote repository it
-was *cloned* from.  If you created it from scratch, however, it is not linked
-to any remote repository.  In ``.hg/hgrc`` file for the local repository, add
-or modify the following section::
+was *cloned* from. If you would like to link to a different remote, first add
+the remote::
 
-  [paths]
-  default = ssh://hg@hg.python.org/cpython
+    $ git remote add myremote <remote url>
 
-This example is for a local repository that mirrors the ``cpython`` repository
-on ``hg.python.org``. The same approach works for other remote repositories.
+Then set it as the upstream::
 
-Anywhere that ``<remote repository>`` is used in the commands in this
-FAQ, ``hg`` will use the default remote repository if you omit the parameter.
-
-
-How do I create a shorthand alias for a remote repository?
-''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
-
-In your global ``.hgrc`` file add a section similar to the following::
-
-  [paths]
-  c3 = ssh://hg@hg.python.org/cpython
-
-This example creates a ``c3`` alias for the ``cpython`` repository
-on ``hg.python.org``. This allows "c3" to be entered instead of the
-full URL for commands taking a repository argument (e.g. ``hg pull c3`` or
-``hg outgoing c3``).
-
-Anywhere that ``<remote repository>`` is used in the commands in this
-FAQ, ``hg`` should accept an alias in place of a complete remote URL.
+    $ git branch --set-upstream-to myremote/<branch name>
 
 
 How do I compare my local repository to a remote repository?
@@ -399,26 +290,26 @@ How do I compare my local repository to a remote repository?
 To display the list of changes that are in your local repository, but not
 in the remote, use::
 
- hg outgoing <remote repository>
+    $ git log origin/master..
 
 This is the list of changes that will be sent if you call
-``hg push <remote repository>``.  It does **not** include any :ref:`uncommitted
+``git push``.  It does **not** include any :ref:`uncommitted
 changes <hg-status>` in your working copy!
 
 Conversely, for the list of changes that are in the remote repository but
 not in the local, use::
 
- hg incoming <remote repository>
+    $ git log ..origin/master
 
 This is the list of changes that will be retrieved if you call
-``hg pull <remote repository>``.
+``git pull``.
 
-.. note::
-   In most daily use, you will work against the default remote repository,
-   and therefore simply type ``hg outgoing`` and ``hg incoming``.
+Note that these commands will not query the latest state of the remote
+repository, but instead the state the repository was in the last time you ran a
+command such as ``git fetch`` or ``git pull``. To update the state of remote
+branches, run::
 
-   In this case, you can also get a synthetic summary using
-   ``hg summary --remote``.
+    $ git remote update
 
 
 How do I update my local repository to be in sync with a remote repository?
@@ -426,35 +317,18 @@ How do I update my local repository to be in sync with a remote repository?
 
 Run::
 
-   hg pull <remote repository>
+    $ git pull --ff-only <remote> <branch name>
+
+For example::
+
+    $ git pull --ff-only origin master
 
 from the repository you wish to pull the latest changes into.  Most of the
 time, that repository is a clone of the repository you want to pull from,
 so you can simply type::
 
-   hg pull
+   $ git pull --ff-only
 
-This doesn't update your working copy, though.  See below:
-
-
-How do I update my working copy with the latest changes?
-''''''''''''''''''''''''''''''''''''''''''''''''''''''''
-
-Do::
-
-   hg update
-
-This will update your working copy with the latest changes on the
-:ref:`current branch <hg-current-branch>`.  If you had :ref:`uncommitted
-changes <hg-status>` in your working copy, they will be merged in.
-
-If you find yourself typing often ``hg pull`` followed by ``hg update``,
-be aware that you can combine them in a single command::
-
-   hg pull -u
-
-
-.. _hg-local-workflow:
 
 How do I apply a patch?
 '''''''''''''''''''''''
