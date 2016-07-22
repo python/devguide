@@ -104,7 +104,7 @@ participating in the CPython core development process:
    * Personal site: `Curious Efficiency <http://www.curiousefficiency.org/>`_
    * `Extended bio <http://www.curiousefficiency.org/pages/about>`__
    * Red Hat (Software Engineer, Developer Experience)
-   * Python Software Foundation (Board of Directors)
+   * Python Software Foundation (Fellow, Packaging Working Group)
 
    Nick originally began participating in CPython core development as an
    interesting and enlightening hobby activity while working for Boeing Defence
