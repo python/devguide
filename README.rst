@@ -16,6 +16,6 @@ GitHub work
 
 If you wish to contribute to updating the devguide then please submit
 PRs to the
-[`github` branch](https://github.com/python/devguide/tree/github).
+`github branch <https://github.com/python/devguide/tree/github>`_.
 You can view the rendered version of this branch at
 http://cpython-devguide.readthedocs.io/en/github/.
