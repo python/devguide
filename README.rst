@@ -1,6 +1,15 @@
 The CPython Developer's Guide
 =============================
 
+.. image:: http://readthedocs.org/projects/cpython-devguide/badge/?version=latest
+   :target: http://cpython-devguide.readthedocs.io/en/latest/?badge=latest
+   :alt: Documentation Status latest
+
+.. image:: http://readthedocs.org/projects/cpython-devguide/badge/?version=github
+   :target: http://cpython-devguide.readthedocs.io/en/github/?badge=github
+   :alt: Documentation Status github
+
+
 This guide covers how to contribute to CPython. It is known by the
 nickname of "the devguide" by the Python core developers.
 
