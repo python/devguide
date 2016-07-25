@@ -268,7 +268,7 @@ Create several clones of your local repository::
    Switched to branch '3.5'
    Your branch is up-to-date with 'origin/3.5'.
 
-Alternatively, if you have a new enough version of git an don't mind using
+Alternatively, if you have a new enough version of git and don't mind using
 a somewhat-experimental feature, you can use `git worktree
 <https://git-scm.com/docs/git-worktree>`_ to manage multiple working
 directories using a single clone.
