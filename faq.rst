@@ -138,7 +138,7 @@ For everyone
 The following FAQs are intended for both core developers and contributors.
 
 Where can I learn about the version control system used, Git?
-''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 
 Git_'s official web site is at https://git-scm.com/.  A book on Git published
 by Apress, `Pro Git`_, is available for free online.
@@ -243,6 +243,7 @@ Simply use ``git checkout`` to checkout another branch in the current directory:
    $ git branch
      master
    * 3.5
+   $ make
 
 Note that, due to some previously built executables being used as a part of
 the build process, you may sometimes run into issues when attempting to
@@ -267,6 +268,11 @@ Create several clones of your local repository::
    Switched to branch '3.5'
    Your branch is up-to-date with 'origin/3.5'.
 
+Alternatively, if you have a new enough version of git an don't mind using
+a somewhat-experimental feature, you can use `git worktree
+<https://git-scm.com/docs/git-worktree>`_ to manage multiple working
+directories using a single clone.
+
 
 .. _git-paths:
 
@@ -287,29 +293,49 @@ Then set it as the upstream::
 How do I compare my local repository to a remote repository?
 ''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 
-To display the list of changes that are in your local repository, but not
-in the remote, use::
+You have in your clone a copy of the state of the branches in the remote
+repository.  This state is updated any time you do a ``git pull`` or
+``git fetch``.  You can find out if your local copy is up to date with
+its origin by running::
+
+    $ git remote show origin
+
+If there are commits in any of the remote branches that you haven't
+merged into your local copies of the branches, this command will tell
+you so, and also tell you whether or not you can do a fast-forward merge
+(a ``git pull`` without having to make a separate merge commit).
+
+You can do::
+
+    $ git fetch
+
+to make sure your copies of the remote branches are up to date.
+
+Once you have updated your clone from the origin, you can display the list of
+changes to your local master branch that are not in your copy of the remote
+master branch with::
 
     $ git log origin/master..
 
-This is the list of changes that will be sent if you call
-``git push``.  It does **not** include any :ref:`uncommitted
+This is the list of changes that will be sent if you call ``git push`` with the
+master branch checked out.  It does **not** include any :ref:`uncommitted
 changes <hg-status>` in your working copy!
 
-Conversely, for the list of changes that are in the remote repository but
-not in the local, use::
+Conversely, for the list of changes that are in your copy of the remote
+master branch but not in your version of that branch, use::
 
     $ git log ..origin/master
 
-This is the list of changes that will be retrieved if you call
-``git pull``.
+This is a list of changes that will be merged into your local copy of the
+master branch if you call ``git pull`` with the master branch checked out.
+(Additional changes may also be merged, if there have been additional
+commits to the remote since the last time you did a ``git fetch`` or
+``git pull``)
 
-Note that these commands will not query the latest state of the remote
-repository, but instead the state the repository was in the last time you ran a
-command such as ``git fetch`` or ``git pull``. To update the state of remote
-branches, run::
-
-    $ git remote update
+Note that these log commands do *not* query the latest state of the remote
+repository, but instead are comparing your branch to the state the repository
+branch was in the last time you ran a command such as ``git fetch`` or ``git
+pull``.
 
 
 How do I update my local repository to be in sync with a remote repository?
