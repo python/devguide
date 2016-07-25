@@ -309,7 +309,10 @@ You can do::
 
     $ git fetch
 
-to make sure your copies of the remote branches are up to date.
+to make sure your copies of the remote branches are up to date.  This does
+*not* update your local versions of those branches, just your copies of
+the state of the remote branches, and thus is always "safe" no matter
+what checkins you have or haven't made to your local branches.
 
 Once you have updated your clone from the origin, you can display the list of
 changes to your local master branch that are not in your copy of the remote
