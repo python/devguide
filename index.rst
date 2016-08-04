@@ -15,8 +15,8 @@ Here are the basic steps needed to get :ref:`set up <setup>` and contribute a
 patch:
 
 1. :ref:`Get the source code <checkout>`::
-
-      hg clone https://hg.python.org/cpython
+     
+      git clone https://github.com/python/cython.git
 
    See :ref:`version control setup <vcsetup>` for installing Mercurial.
 
