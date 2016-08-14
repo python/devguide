@@ -116,7 +116,7 @@ fpectl                twouters
 fractions             mark.dickinson, rhettinger
 ftplib                giampaolo.rodola*
 functools             ncoghlan, rhettinger
-gc                    u
+gc                    
 getopt
 getpass
 gettext               loewis
@@ -167,7 +167,7 @@ os                    loewis
 os.path               serhiy.storchaka
 ossaudiodev
 parser                benjamin.peterson
-pathlib               *
+pathlib               
 pdb                   georg.brandl
 pickle                alexandre.vassalotti, 
 pickletools           alexandre.vassalotti
@@ -313,7 +313,7 @@ argument clinic     larry
 ast/compiler        ncoghlan, benjamin.peterson, brett.cannon, georg.brandl, yselivanov
 autoconf/makefiles  twouters*
 bsd
-benchmarks          *, brett.cannon
+benchmarks          brett.cannon
 bug tracker         ezio.melotti
 buildbots           zach.ware
 bytecode            benjamin.peterson, georg.brandl, yselivanov
