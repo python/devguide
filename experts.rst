@@ -49,7 +49,7 @@ Module                Maintainers
 __future__
 __main__              gvanrossum, ncoghlan
 _dummy_thread         brett.cannon
-_thread               pitrou
+_thread              
 _testbuffer           skrah
 abc
 aifc                  r.david.murray
@@ -57,7 +57,7 @@ argparse              bethard
 array
 ast                   benjamin.peterson, georg.brandl
 asynchat              josiahcarlson, giampaolo.rodola*, stutzbach
-asyncio               gvanrossum, haypo, pitrou, yselivanov, giampaolo.rodola
+asyncio               gvanrossum, haypo, yselivanov, giampaolo.rodola
 asyncore              josiahcarlson, giampaolo.rodola*, stutzbach
 atexit
 audioop               serhiy.storchaka
@@ -116,7 +116,7 @@ fpectl                twouters
 fractions             mark.dickinson, rhettinger
 ftplib                giampaolo.rodola*
 functools             ncoghlan, rhettinger
-gc                    pitrou
+gc                    u
 getopt
 getpass
 gettext               loewis
@@ -134,10 +134,10 @@ imghdr
 imp
 importlib             brett.cannon
 inspect               yselivanov
-io                    pitrou, benjamin.peterson, stutzbach
+io                    benjamin.peterson, stutzbach
 ipaddress             pmoody
 itertools             rhettinger
-json                  bob.ippolito (inactive), ezio.melotti, rhettinger, pitrou
+json                  bob.ippolito (inactive), ezio.melotti, rhettinger
 keyword
 lib2to3               benjamin.peterson
 libmpdec              skrah
@@ -159,7 +159,7 @@ msvcrt
 multiprocessing       davin*, jnoller (inactive), sbt (inactive)
 netrc
 nis
-nntplib               pitrou
+nntplib               
 numbers
 operator
 optparse              aronacher
@@ -167,9 +167,9 @@ os                    loewis
 os.path               serhiy.storchaka
 ossaudiodev
 parser                benjamin.peterson
-pathlib               pitrou*
+pathlib               *
 pdb                   georg.brandl
-pickle                alexandre.vassalotti, pitrou
+pickle                alexandre.vassalotti, 
 pickletools           alexandre.vassalotti
 pipes
 pkgutil
@@ -183,13 +183,13 @@ pstats                georg.brandl
 pty                   twouters*
 pwd
 py_compile
-pybench               lemburg, pitrou
+pybench               lemburg, 
 pyclbr
 pydoc
 queue                 rhettinger
 quopri
 random                rhettinger, mark.dickinson
-re                    effbot (inactive), pitrou, ezio.melotti, serhiy.storchaka
+re                    effbot (inactive), ezio.melotti, serhiy.storchaka
 readline              twouters
 reprlib
 resource              twouters
@@ -206,11 +206,11 @@ site
 smtpd                 giampaolo.rodola
 smtplib
 sndhdr
-socket                pitrou
+socket                
 socketserver
 spwd
 sqlite3               ghaering
-ssl                   janssen, pitrou, giampaolo.rodola, christian.heimes, dstufft, alex
+ssl                   janssen, giampaolo.rodola, christian.heimes, dstufft, alex
 stat                  christian.heimes
 statistics            steven.daprano
 string                georg.brandl
@@ -230,7 +230,7 @@ tempfile              georg.brandl
 termios               twouters
 test                  ezio.melotti
 textwrap              georg.brandl
-threading             pitrou
+threading             
 time                  belopolsky
 timeit
 tkinter               gpolo, serhiy.storchaka
@@ -252,7 +252,7 @@ uuid
 venv                  vinay.sajip
 warnings
 wave
-weakref               fdrake, pitrou
+weakref               fdrake, 
 webbrowser
 winreg                stutzbach
 winsound              effbot (inactive)
@@ -313,10 +313,10 @@ argument clinic     larry
 ast/compiler        ncoghlan, benjamin.peterson, brett.cannon, georg.brandl, yselivanov
 autoconf/makefiles  twouters*
 bsd
-benchmarks          pitrou, brett.cannon
+benchmarks          *, brett.cannon
 bug tracker         ezio.melotti
-buildbots           pitrou, zach.ware
-bytecode            benjamin.peterson, pitrou, georg.brandl, yselivanov
+buildbots           zach.ware
+bytecode            benjamin.peterson, georg.brandl, yselivanov
 context managers    ncoghlan
 coverity scan       christian.heimes, brett.cannon, twouters
 cryptography        gregory.p.smith, dstufft
@@ -327,11 +327,11 @@ documentation       georg.brandl, ezio.melotti, eric.araujo
 GUI
 i18n                lemburg, eric.araujo
 import machinery    brett.cannon, ncoghlan, eric.snow
-io                  pitrou, benjamin.peterson, stutzbach
+io                  benjamin.peterson, stutzbach
 locale              lemburg, loewis
 mathematics         mark.dickinson, eric.smith, lemburg, stutzbach
 memory management   tim.peters, lemburg, twouters
-networking          giampaolo.rodola, pitrou
+networking          giampaolo.rodola, 
 object model        benjamin.peterson, twouters
 packaging           tarek, lemburg, alexis, eric.araujo, dstufft, paul.moore
 pip                 ncoghlan, dstufft, paul.moore, Marcus.Smith
@@ -340,10 +340,10 @@ release management  tarek, lemburg, benjamin.peterson, barry, loewis,
                     gvanrossum, anthonybaxter, eric.araujo, ned.deily,
                     georg.brandl
 str.format          eric.smith
-testing             michael.foord, pitrou, ezio.melotti
+testing             michael.foord, ezio.melotti
 test coverage       giampaolo.rodola
-threads             pitrou
+threads             
 time and dates      lemburg, belopolsky
-unicode             lemburg, ezio.melotti, haypo, benjamin.peterson, pitrou
+unicode             lemburg, ezio.melotti, haypo, benjamin.peterson, 
 version control     eric.araujo, georg.brandl, ezio.melotti
 ==================  ===========
