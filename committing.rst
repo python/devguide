@@ -430,8 +430,8 @@ multiple clone approach, and explain in more detail these basic steps.
 
 For more advanced explanations about :ref:`null merges <hg-null-merge>`,
 :ref:`heads merges <hg-heads-merge>`, :ref:`merge conflicts
-<hg-merge-conflicts>`, etc., see the :ref:`FAQs for core developers
-<core-devs-faqs>`.
+<hg-merge-conflicts>`, etc., see the :ref:`version control for core developers
+<version-core-devs>`.
 
 .. _share extension: https://www.mercurial-scm.org/wiki/ShareExtension
 

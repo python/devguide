@@ -137,8 +137,7 @@ Contributing
 We encourage everyone to contribute to Python and that's why we have put up this
 developer's guide.  If you still have questions after reviewing the material in
 this guide, then the `Python Mentors`_ group is available to help guide new
-contributors through the process.  The :doc:`Developer FAQ <faq>` is another
-useful source of information.
+contributors through the process.
 
 Guide for contributing to Python:
 
@@ -187,8 +186,6 @@ happen and that process is also described as part of this guide:
 
 * :doc:`stdlibchanges`
 * :doc:`langchanges`
-
-Also refer to :ref:`suggesting-changes` in the FAQ.
 
 
 Other Interpreter Implementations
