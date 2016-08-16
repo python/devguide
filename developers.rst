@@ -25,6 +25,9 @@ transliteration too.
 Permissions History
 -------------------
 
+- Xavier de Gaye was given push privileges on June 3, 2016 by Brett Cannon,
+  on the recommendation of Victor Stinner.
+
 - Davin Potts was given push privileges on March 6, 2016 by Brett Cannon,
   on the recommendation of Raymond Hettinger.
 
