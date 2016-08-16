@@ -81,7 +81,7 @@ the main documentation.
 
 To clone the Developer's Guide::
 
-    $ git clone https://github.com/python/devguide
+    $ git clone https://github.com/python/devguide.git
 
 To build the devguide, you must have `Sphinx`_ installed.  The devguide HTML
 can be built by running::
