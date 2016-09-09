@@ -288,4 +288,4 @@ Full Table of Contents
 .. _Jython: http://www.jython.org/
 .. _IronPython: http://ironpython.net/
 .. _Stackless: http://www.stackless.com/
-.. _Issue tracker: http://bugs.python.org/
+.. _Issue tracker: https://bugs.python.org/
