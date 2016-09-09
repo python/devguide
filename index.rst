@@ -277,12 +277,12 @@ Full Table of Contents
    motivations
 
 
-.. _Buildbot status: http://python.org/dev/buildbot/
-.. _Firefox search engine plug-in: http://www.python.org/dev/searchplugin/
+.. _Buildbot status: https://www.python.org/dev/buildbot/
+.. _Firefox search engine plug-in: https://www.python.org/dev/searchplugin/
 .. _Misc directory: https://hg.python.org/cpython/file/default/Misc
-.. _PEPs: http://www.python.org/dev/peps/
+.. _PEPs: https://www.python.org/dev/peps/
 .. _python.org maintenance: https://pythondotorg.readthedocs.io/
-.. _Python: http://www.python.org/
+.. _Python: https://www.python.org/
 .. _Python Mentors: http://pythonmentors.com/
 .. _PyPy: http://www.pypy.org/
 .. _Jython: http://www.jython.org/
