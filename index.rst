@@ -50,7 +50,7 @@ Quick Links
 -----------
 
 Here are some links that you probably will reference frequently while
-contributing to Python.
+contributing to Python:
 
 * `Issue tracker`_
 * `Buildbot status`_
