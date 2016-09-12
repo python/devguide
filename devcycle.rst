@@ -31,17 +31,17 @@ Branches
 ''''''''
 
 There is a branch for each *feature version*, whether released or not (e.g.
-2.7, 3.5).  Development is handled separately for Python 2 and Python 3:
+2.7, 3.6).  Development is handled separately for Python 2 and Python 3:
 no merging happens between 2.x and 3.x branches.
 
 In each of the 2.x and 3.x realms, the branch for a feature version is always a
-descendant of the previous feature version: for example, the ``3.5`` branch is a
-descendant of the ``3.4`` branch.
+descendant of the previous feature version: for example, the ``3.6`` branch is a
+descendant of the ``3.5`` branch.
 
 Therefore, each change should be made **first** in the oldest branch to which it
 applies and forward-ported as appropriate: if a bug must be fixed in both Python
-3.5 and 3.6, first fix it in ``3.5`` and then merge ``3.5`` into ``default``
-(which holds the future 3.6).
+3.6 and 3.7, first fix it in ``3.6`` and then merge ``3.6`` into ``default``
+(which holds the future 3.7).
 
 
 .. _indevbranch:
@@ -61,11 +61,11 @@ activity for further micro versions (3.3.1, 3.3.2, etc.).
 For versions 3.4 and before, this was conventionally done when the final
 release was cut (for example, 3.4.0 final).
 
-.. note::
-  For the 3.5 release we're trying something new. We're creating the 3.5
-  maintenance branch at the time we enter beta (3.5.0 beta 1).  This will
-  allow feature development for 3.6 to occur alongside the beta and release
-  candidate stabilization periods for 3.5.
+Starting with the 3.5 release, we create the release maintenance branch
+(e.g. 3.5) at the time we enter beta (3.5.0 beta 1).  This allows
+feature development for the release 3.n+1 to occur within the default
+branch alongside the beta and release candidate stabilization periods
+for release 3.n.
 
 .. _maintbranch:
 
@@ -117,10 +117,12 @@ security patches have been applied to the branch.
 Summary
 -------
 
-There are 6 open branches right now in the Mercurial repository:
+There are 7 open branches right now in the Mercurial repository:
 
-- the ``default`` branch holds the future 3.6 version and descends from ``3.5``
+- the ``default`` branch holds the future 3.7 version and descends from ``3.6``
   (RM: Ned Deily)
+- the ``3.6`` branch holds bug fixes for 3.6.0 and future 3.6.x maintenance releases
+  and descends from ``3.5`` (RM: Ned Deily)
 - the ``3.5`` branch holds bug fixes for future 3.5.x maintenance releases
   and descends from ``3.4`` (RM: Larry Hastings)
 - the ``3.4`` branch holds security fixes for future 3.4.x security releases
@@ -194,17 +196,6 @@ is the strongest concern at this point.
 You **cannot** skip the peer review during an RC, no matter how small! Even if
 it is a simple copy-and-paste change, **everything** requires peer review from
 a core developer.
-
-.. note::
-  For the 3.5 release we're trying something new.  At the point that we reach 3.5.0
-  release candidate 1, the official release branch will no longer be hosted at
-  ``hg.python.org``.  Instead, 3.5.0 rc 1 through final will be hosted
-  by the 3.5 release manager on bitbucket.
-
-  Bugfixes for 3.5 should still be checked in to the 3.5 branch.  However, if the
-  core developer responsible for the bugfix feels it should be merged into 3.5.0, they
-  will need to create a bitbucket "pull request" for this change.  Any bugfixes not
-  merged into 3.5.0 in this way will be automatically shipped with 3.5.1.
 
 .. _final:
 

@@ -318,10 +318,10 @@ Simply use ``hg update`` to checkout another branch in the current directory::
 
    $ hg branch
    default
-   $ hg update 3.5
+   $ hg update 3.6
    86 files updated, 0 files merged, 11 files removed, 0 files unresolved
    $ hg branch
-   3.5
+   3.6
 
 Adding the ``-v`` option to ``hg update`` will list all updated files.
 
@@ -343,11 +343,11 @@ There are two ways:
 
 If you want to use the second way, you can do::
 
-   $ hg clone cpython py35
+   $ hg clone cpython py36
    updating to branch default
    3434 files updated, 0 files merged, 0 files removed, 0 files unresolved
    $ cd py35
-   $ hg update 3.5
+   $ hg update 3.6
    86 files updated, 0 files merged, 11 files removed, 0 files unresolved
 
 The current branch in a working copy is "sticky": if you pull in some new
@@ -796,14 +796,14 @@ You can also use ``hg resolve -am`` to mark all the conflicts as resolved.
 How do I make a null merge?
 '''''''''''''''''''''''''''
 
-If you committed something (e.g. on 3.5) that shouldn't be ported on newer
+If you committed something (e.g. on 3.6) that shouldn't be ported on newer
 branches (e.g. on default), you have to do a *null merge*::
 
    cd 3.x
-   hg merge 3.5
+   hg merge 3.6
    hg revert -ar default
    hg resolve -am  # needed only if the merge created conflicts
-   hg ci -m '#12345: null merge with 3.5.'
+   hg ci -m '#12345: null merge with 3.6.'
 
 Before committing, ``hg status`` should list all the merged files as ``M``,
 but ``hg diff`` should produce no output.  This will record the merge without
@@ -842,10 +842,10 @@ a lot easier.
 
 If more than one branch has multiple heads, you have to repeat these steps for
 each branch.  Since this creates new changesets, you will also have to
-:ref:`merge them between branches <branch-merge>`.  For example, if both ``3.5``
-and ``default`` have multiple heads, you should first merge heads in ``3.5``,
-then merge heads in ``default``, and finally merge ``3.5`` with ``default``
-using ``hg merge 3.5`` as usual.
+:ref:`merge them between branches <branch-merge>`.  For example, if both ``3.6``
+and ``default`` have multiple heads, you should first merge heads in ``3.6``,
+then merge heads in ``default``, and finally merge ``3.6`` with ``default``
+using ``hg merge 3.6`` as usual.
 
 In order to avoid this, you should *always remember to pull and update before
 committing*.
