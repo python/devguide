@@ -1225,8 +1225,6 @@ units as well as normal text:
    Note that there must be no blank line between the directive head and the
    explanation; this is to make these blocks visually continuous in the markup.
 
---------------
-
 .. describe:: impl-detail
 
    This directive is used to mark CPython-specific information.  Use either with
