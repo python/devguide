@@ -169,7 +169,7 @@ ossaudiodev
 parser                benjamin.peterson
 pathlib
 pdb                   georg.brandl
-pickle                alexandre.vassalotti,
+pickle                alexandre.vassalotti
 pickletools           alexandre.vassalotti
 pipes
 pkgutil
@@ -183,7 +183,7 @@ pstats                georg.brandl
 pty                   twouters*
 pwd
 py_compile
-pybench               lemburg,
+pybench               lemburg
 pyclbr
 pydoc
 queue                 rhettinger
@@ -252,7 +252,7 @@ uuid
 venv                  vinay.sajip
 warnings
 wave
-weakref               fdrake,
+weakref               fdrake
 webbrowser
 winreg                stutzbach
 winsound              effbot (inactive)
