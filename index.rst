@@ -25,7 +25,6 @@ patch:
 
       hg clone https://hg.python.org/cpython
 
-
 3. Build Python.
 
    Detailed information can be found :ref:`here <compiling>`.
@@ -37,13 +36,13 @@ patch:
       ./configure
       make -j2
 
-   On some Mac OS:::
+   On some Mac OS::
 
       CPPFLAGS="-I$(brew --prefix openssl)/include" \
       LDFLAGS="-L$(brew --prefix openssl)/lib" \
       ./configure --with-pydebug
 
-   On Windows:::
+   On Windows::
 
       PCbuild\build.bat -e -d
 
