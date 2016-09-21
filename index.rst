@@ -14,19 +14,36 @@ Quick Start
 Here are the basic steps needed to get :ref:`set up <setup>` and contribute a
 patch:
 
-1. :ref:`Get the source code <checkout>`::
+1. Set up and install dependencies.
+
+   Install :ref:`Mercurial <vcsetup>` and other dependencies.
+
+   The dependencies needed will depend on the platform you're on.
+   Go to :ref:`Get Setup <setup>` page for detailed information.
+
+2. :ref:`Get the source code <checkout>`::
 
       hg clone https://hg.python.org/cpython
 
-   See :ref:`version control setup <vcsetup>` for installing Mercurial.
 
-2. :ref:`Build Python <compiling>`.  On all platforms, install build
-   dependencies (such as compilers). On :ref:`UNIX <unix-compiling>`
-   (including Mac OS X)::
+3. Build Python.
 
-      ./configure --with-pydebug && make -j2
+   Detailed information can be found :ref:`here <compiling>`.
+   There are different instructions for :ref:`UNIX <unix-compiling>`,
+   :ref:`Mac OS <MacOS>`, and :ref:`Windows <windows-compiling>`.
 
-   On :ref:`Windows <windows-compiling>`::
+   The command to compile on UNIX is::
+
+      ./configure
+      make -j2
+
+   On some Mac OS:::
+
+      CPPFLAGS="-I$(brew --prefix openssl)/include" \
+      LDFLAGS="-L$(brew --prefix openssl)/lib" \
+      ./configure --with-pydebug
+
+   On Windows:::
 
       PCbuild\build.bat -e -d
 
@@ -34,16 +51,16 @@ patch:
    detail on standard library extensions that depend on installing third-party
    libraries for some operating systems.
 
-3. :doc:`Run the tests <runtests>`::
+4. :doc:`Run the tests <runtests>`::
 
-   ./python -m test -j3
+      ./python -m test -j3
 
    On :ref:`most <mac-python.exe>` Mac OS X systems, replace :file:`./python`
    with :file:`./python.exe`.  On Windows, use :file:`python.bat` or
    check the :ref:`Windows instructions <win-python.exe>`.  With Python 2.7,
    replace ``test`` with ``test.regrtest``.
-4. Make the :doc:`patch <patch>`.
-5. Submit it to the `issue tracker`_.
+5. Make the :doc:`patch <patch>`.
+6. Submit it to the `issue tracker`_.
 
 
 Quick Links
