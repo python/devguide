@@ -45,13 +45,10 @@ There are three ways of visualizing recent build results:
 
 * The buildbot "console" interface at http://buildbot.python.org/all/console
   This works best on a wide, high resolution
-  monitor.  You can enter your mercurial username ("your name
-  <your@email>") in the 'personalized for' box in the upper right corner to see
-  the results just for changesets submitted by you.  Clicking on the colored
-  circles will allow you to open a new page containing whatever information
-  about that particular build is of interest to you.  You can also access
-  builder information by clicking on the builder status bubbles in the top
-  line.
+  monitor.  Clicking on the colored circles will allow you to open a new page
+  containing whatever information about that particular build is of interest to
+  you.  You can also access builder information by clicking on the builder
+  status bubbles in the top line.
 
 If you like IRC, having an IRC client open to the #python-dev channel on
 irc.freenode.net is useful.  Any time a builder changes state (last build
