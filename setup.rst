@@ -126,6 +126,8 @@ dependencies for the Python version that you're working on e.g.::
 If that package is not available for your system, try reducing the minor
 version until you find a package that is available.
 
+.. _MacOS:
+
 On **Mac OS X systems**, use the C compiler and other
 development utilities provided by Apple's Xcode Developer Tools.
 The Developer Tools are not shipped with OS X.

@@ -253,6 +253,7 @@ are removed.
 
 I want to keep a separate working copy per development branch, is it possible?
 ''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+
 Create several clones of your local repository::
 
    $ git clone cpython py35
@@ -266,7 +267,6 @@ Create several clones of your local repository::
    $ git checkout 3.5
    Switched to branch '3.5'
    Your branch is up-to-date with 'origin/3.5'.
-
 
 .. _git-paths:
 
@@ -670,14 +670,14 @@ You can also use ``hg resolve -am`` to mark all the conflicts as resolved.
 How do I make a null merge?
 '''''''''''''''''''''''''''
 
-If you committed something (e.g. on 3.5) that shouldn't be ported on newer
+If you committed something (e.g. on 3.6) that shouldn't be ported on newer
 branches (e.g. on default), you have to do a *null merge*::
 
    cd 3.x
-   hg merge 3.5
+   hg merge 3.6
    hg revert -ar default
    hg resolve -am  # needed only if the merge created conflicts
-   hg ci -m '#12345: null merge with 3.5.'
+   hg ci -m '#12345: null merge with 3.6.'
 
 Before committing, ``hg status`` should list all the merged files as ``M``,
 but ``hg diff`` should produce no output.  This will record the merge without
@@ -716,10 +716,10 @@ a lot easier.
 
 If more than one branch has multiple heads, you have to repeat these steps for
 each branch.  Since this creates new changesets, you will also have to
-:ref:`merge them between branches <branch-merge>`.  For example, if both ``3.5``
-and ``default`` have multiple heads, you should first merge heads in ``3.5``,
-then merge heads in ``default``, and finally merge ``3.5`` with ``default``
-using ``hg merge 3.5`` as usual.
+:ref:`merge them between branches <branch-merge>`.  For example, if both ``3.6``
+and ``default`` have multiple heads, you should first merge heads in ``3.6``,
+then merge heads in ``default``, and finally merge ``3.6`` with ``default``
+using ``hg merge 3.6`` as usual.
 
 In order to avoid this, you should *always remember to pull and update before
 committing*.
