@@ -37,7 +37,7 @@ mature code. We don't want to disclose issues prematurely.
 Building and uploading analysis
 ===============================
 
-The process is automated. A script runs ``hg pull``, ``hg update``,
+The process is automated. A script checks out the code, runs
 ``cov-build`` and uploads the latest analysis to Coverity. Since Coverity has
 limited the maximum number of builds per week Python is analyzed every second
 day. The build runs on a dedicated virtual machine on PSF's infrastructure at
