@@ -110,9 +110,11 @@ html_title = "%s %s" % (project, release)
 templates_path = ['tools/templates']
 
 # Custom sidebar templates, filenames relative to this file.
-#html_sidebars = {
-#    'index': 'indexsidebar.html',
-#}
+html_sidebars = {
+    # Defaults taken from http://www.sphinx-doc.org/en/stable/config.html#confval-html_sidebars
+    # Removes the quick search block
+    '**': ['localtoc.html', 'relations.html', 'sourcelink.html']
+}
 
 # Additional static files.
 html_static_path = ['tools/static']

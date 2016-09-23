@@ -49,7 +49,7 @@ Module                Maintainers
 __future__
 __main__              gvanrossum, ncoghlan
 _dummy_thread         brett.cannon
-_thread              
+_thread
 _testbuffer           skrah
 abc
 aifc                  r.david.murray
@@ -116,7 +116,7 @@ fpectl                twouters
 fractions             mark.dickinson, rhettinger
 ftplib                giampaolo.rodola*
 functools             ncoghlan, rhettinger
-gc                    
+gc
 getopt
 getpass
 gettext               loewis
@@ -159,7 +159,7 @@ msvcrt
 multiprocessing       davin*, jnoller (inactive), sbt (inactive)
 netrc
 nis
-nntplib               
+nntplib
 numbers
 operator
 optparse              aronacher
@@ -167,9 +167,9 @@ os                    loewis
 os.path               serhiy.storchaka
 ossaudiodev
 parser                benjamin.peterson
-pathlib               
+pathlib
 pdb                   georg.brandl
-pickle                alexandre.vassalotti, 
+pickle                alexandre.vassalotti
 pickletools           alexandre.vassalotti
 pipes
 pkgutil
@@ -183,7 +183,7 @@ pstats                georg.brandl
 pty                   twouters*
 pwd
 py_compile
-pybench               lemburg, 
+pybench               lemburg
 pyclbr
 pydoc
 queue                 rhettinger
@@ -206,11 +206,11 @@ site
 smtpd                 giampaolo.rodola
 smtplib
 sndhdr
-socket                
+socket
 socketserver
 spwd
 sqlite3               ghaering
-ssl                   janssen, giampaolo.rodola, christian.heimes, dstufft, alex
+ssl                   janssen, christian.heimes, dstufft, alex
 stat                  christian.heimes
 statistics            steven.daprano
 string                georg.brandl
@@ -230,7 +230,7 @@ tempfile              georg.brandl
 termios               twouters
 test                  ezio.melotti
 textwrap              georg.brandl
-threading             
+threading
 time                  belopolsky
 timeit
 tkinter               gpolo, serhiy.storchaka
@@ -252,7 +252,7 @@ uuid
 venv                  vinay.sajip
 warnings
 wave
-weakref               fdrake, 
+weakref               fdrake
 webbrowser
 winreg                stutzbach
 winsound              effbot (inactive)
@@ -331,7 +331,7 @@ io                  benjamin.peterson, stutzbach
 locale              lemburg, loewis
 mathematics         mark.dickinson, eric.smith, lemburg, stutzbach
 memory management   tim.peters, lemburg, twouters
-networking          giampaolo.rodola, 
+networking          giampaolo.rodola,
 object model        benjamin.peterson, twouters
 packaging           tarek, lemburg, alexis, eric.araujo, dstufft, paul.moore
 pip                 ncoghlan, dstufft, paul.moore, Marcus.Smith
@@ -342,8 +342,8 @@ release management  tarek, lemburg, benjamin.peterson, barry, loewis,
 str.format          eric.smith
 testing             michael.foord, ezio.melotti
 test coverage       giampaolo.rodola
-threads             
+threads
 time and dates      lemburg, belopolsky
-unicode             lemburg, ezio.melotti, haypo, benjamin.peterson, 
+unicode             lemburg, ezio.melotti, haypo, benjamin.peterson,
 version control     eric.araujo, georg.brandl, ezio.melotti
 ==================  ===========

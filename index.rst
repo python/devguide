@@ -14,19 +14,35 @@ Quick Start
 Here are the basic steps needed to get :ref:`set up <setup>` and contribute a
 patch:
 
-1. :ref:`Get the source code <checkout>`::
+1. Set up and install dependencies.
+
+   Install :ref:`Mercurial <vcsetup>` and other dependencies.
+
+   The dependencies needed will depend on the platform you're on.
+   Go to :ref:`Get Setup <setup>` page for detailed information.
+
+2. :ref:`Get the source code <checkout>`::
 
       hg clone https://hg.python.org/cpython
 
-   See :ref:`version control setup <vcsetup>` for installing Mercurial.
+3. Build Python.
 
-2. :ref:`Build Python <compiling>`.  On all platforms, install build
-   dependencies (such as compilers). On :ref:`UNIX <unix-compiling>`
-   (including Mac OS X)::
+   Detailed information can be found :ref:`here <compiling>`.
+   There are different instructions for :ref:`UNIX <unix-compiling>`,
+   :ref:`Mac OS <MacOS>`, and :ref:`Windows <windows-compiling>`.
 
-      ./configure --with-pydebug && make -j2
+   The command to compile on UNIX is::
 
-   On :ref:`Windows <windows-compiling>`::
+      ./configure
+      make -j2
+
+   On some Mac OS::
+
+      CPPFLAGS="-I$(brew --prefix openssl)/include" \
+      LDFLAGS="-L$(brew --prefix openssl)/lib" \
+      ./configure --with-pydebug
+
+   On Windows::
 
       PCbuild\build.bat -e -d
 
@@ -34,23 +50,23 @@ patch:
    detail on standard library extensions that depend on installing third-party
    libraries for some operating systems.
 
-3. :doc:`Run the tests <runtests>`::
+4. :doc:`Run the tests <runtests>`::
 
-   ./python -m test -j3
+      ./python -m test -j3
 
    On :ref:`most <mac-python.exe>` Mac OS X systems, replace :file:`./python`
    with :file:`./python.exe`.  On Windows, use :file:`python.bat` or
    check the :ref:`Windows instructions <win-python.exe>`.  With Python 2.7,
    replace ``test`` with ``test.regrtest``.
-4. Make the :doc:`patch <patch>`.
-5. Submit it to the `issue tracker`_.
+5. Make the :doc:`patch <patch>`.
+6. Submit it to the `issue tracker`_.
 
 
 Quick Links
 -----------
 
 Here are some links that you probably will reference frequently while
-contributing to Python.
+contributing to Python:
 
 * `Issue tracker`_
 * `Buildbot status`_
@@ -66,7 +82,9 @@ Status of Python branches
 +------------------+--------------+-------------+----------------+----------------+----------------------------------------------------------------------------+
 | Branch           | Schedule     | Status      | First release  | End-of-life    | Comment                                                                    |
 +==================+==============+=============+================+================+============================================================================+
-| default          | :pep:`494`   | features    | *2016-12-16*   | *2021-12-16*   | The default branch is currently the future version Python 3.6.             |
+| default          | *TBD*        | features    | *TBD*          | *TBD*          | The default branch is currently the future version Python 3.7.             |
++------------------+--------------+-------------+----------------+----------------+----------------------------------------------------------------------------+
+| 3.6              | :pep:`494`   | bugfix      | *2016-12-16*   | *2021-12-16*   | For the beta and rc phases of the future 3.6.0, then maintenance for 3.6.x |
 +------------------+--------------+-------------+----------------+----------------+----------------------------------------------------------------------------+
 | 3.5              | :pep:`478`   | bugfix      | 2015-09-13     | *2020-09-13*   |                                                                            |
 +------------------+--------------+-------------+----------------+----------------+----------------------------------------------------------------------------+
@@ -277,15 +295,15 @@ Full Table of Contents
    motivations
 
 
-.. _Buildbot status: http://python.org/dev/buildbot/
-.. _Firefox search engine plug-in: http://www.python.org/dev/searchplugin/
+.. _Buildbot status: https://www.python.org/dev/buildbot/
+.. _Firefox search engine plug-in: https://www.python.org/dev/searchplugin/
 .. _Misc directory: https://hg.python.org/cpython/file/default/Misc
-.. _PEPs: http://www.python.org/dev/peps/
+.. _PEPs: https://www.python.org/dev/peps/
 .. _python.org maintenance: https://pythondotorg.readthedocs.io/
-.. _Python: http://www.python.org/
+.. _Python: https://www.python.org/
 .. _Python Mentors: http://pythonmentors.com/
 .. _PyPy: http://www.pypy.org/
 .. _Jython: http://www.jython.org/
 .. _IronPython: http://ironpython.net/
 .. _Stackless: http://www.stackless.com/
-.. _Issue tracker: http://bugs.python.org/
+.. _Issue tracker: https://bugs.python.org/
