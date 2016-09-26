@@ -12,67 +12,6 @@ Python Developer FAQ
 Communications
 ==============
 
-
-Where should I ask general Python questions?
---------------------------------------------
-
-General Python questions should still go to `python-list`_ or `tutor`_
-or similar resources, such as StackOverflow_ or the ``#python`` IRC channel
-on Freenode_.
-
-.. _python-list: http://mail.python.org/mailman/listinfo/python-list
-.. _tutor: http://mail.python.org/mailman/listinfo/tutor
-.. _StackOverflow: http://stackoverflow.com/
-.. _Freenode: http://freenode.net/
-
-
-.. index::
-   single: PEP process; in FAQ
-
-.. _suggesting-changes:
-
-Where should I suggest new features and language changes?
----------------------------------------------------------
-
-The `python-ideas`_ mailing list is specifically intended for discussion of
-new features and language changes. Please don't be disappointed if your
-idea isn't met with universal approval: as the long list of Rejected and
-Withdrawn PEPs in the `PEP Index`_ attests, and as befits a reasonably mature
-programming language, getting significant changes into Python isn't a simple
-task.
-
-If the idea is reasonable, someone will suggest posting it as a feature
-request on the `issue tracker`_, or, for larger changes, writing it up as
-a `draft PEP`_.
-
-Sometimes core developers will differ in opinion, or merely be collectively
-unconvinced. When there isn't an obvious victor then the
-`Status Quo Wins a Stalemate`_ as outlined in the linked post.
-
-For some examples on language changes that were accepted please read
-`Justifying Python Language Changes`_.
-
-See also the :ref:`langchanges` section of this guide.
-
-.. _python-ideas: http://mail.python.org/mailman/listinfo/python-ideas
-.. _issue tracker: http://bugs.python.org
-.. _PEP Index: http://www.python.org/dev/peps/
-.. _draft PEP: http://www.python.org/dev/peps/pep-0001/
-.. _Status Quo Wins a Stalemate: http://www.curiousefficiency.org/posts/2011/02/status-quo-wins-stalemate.html
-.. _Justifying Python Language Changes: http://www.curiousefficiency.org/posts/2011/02/justifying-python-language-changes.html
-
-Where should I ask general questions about contributing to CPython?
--------------------------------------------------------------------
-
-The `Python Mentors`_ program is specifically about encouraging
-developers and others that would like to contribute to Python development in
-general, rather than necessarily being focused on one particular issue.
-Some core developers are also available on the ``#python-dev`` IRC channel on
-Freenode_.
-
-.. _Python Mentors: http://pythonmentors.com
-
-
 Where should I report specific problems?
 ----------------------------------------
 
@@ -116,19 +55,6 @@ appear next to their name.
 .. _full list of developers: https://hg.python.org/committers.txt
 
 
-What standards of behaviour are expected in these communication channels?
--------------------------------------------------------------------------
-
-We try to foster environments of mutual respect, tolerance and encouragement,
-as described in the PSF's `Diversity Statement`_. Abiding by the guidelines
-in this document and asking questions or posting suggestions in the
-appropriate channels are an excellent way to get started on the mutual respect
-part, greatly increasing the chances of receiving tolerance and encouragement
-in return.
-
-.. _Diversity Statement: http://www.python.org/psf/diversity/
-
-
 Version Control
 ===============
 
@@ -138,7 +64,7 @@ For everyone
 The following FAQs are intended for both core developers and contributors.
 
 Where can I learn about the version control system used, Git?
-''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 
 Git_'s official web site is at https://git-scm.com/.  A book on Git published
 by Apress, `Pro Git`_, is available for free online.
@@ -162,7 +88,7 @@ or following the links from the main `man page`_.
 
 
 What do I need to use Git?
-''''''''''''''''''''''''''''''''
+''''''''''''''''''''''''''
 
 First, you need to `download Git`_.  Most UNIX-based operating systems
 have binary packages available.  Most package management systems also
@@ -744,90 +670,9 @@ This will modify your working copy so that all changes in ``<revision number>``
    a slightly different behaviour in versions before 1.7.
 
 
-SSH
-===
-
-How do I generate an SSH-2 public key?
---------------------------------------
-
-All generated SSH keys should be sent to hgaccounts@python.org for adding to the
-list of keys. DSA keys are unacceptable.  To avoid a spam classification,
-give a non-empty subject and body.  A reply will be sent, usually within a day
-or two, when the key can be used.
-
-UNIX
-''''
-
-Run::
-
-  ssh-keygen -t ed25519
-
-This will generate two files; your public key and your private key.  The public
-key is in file ending in ``.pub``.
-
-Windows
-'''''''
-
-Use PuTTYgen_ to generate your public key.  Choose the "SSH-2 RSA" radio button,
-set 4096 as the key size, choose a password, and save the private key to a file.
-Copy the section with the public key (using Alt-P) to a file; that file now has
-your public key.
-
-.. _PuTTYgen: http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html
-
-
-Is there a way to avoid having to constantly enter my password for my SSH 2 public key?
----------------------------------------------------------------------------------------
-
-UNIX
-''''
-
-Use ``ssh-agent`` and ``ssh-add`` to register your private key with SSH for
-your current session.  The simplest solution, though, is to use KeyChain_,
-which is a shell script that will handle ``ssh-agent`` and ``ssh-add`` for you
-once per login instead of per session.
-
-.. _KeyChain: http://www.gentoo.org/proj/en/keychain/
-
-
-.. _pageant:
-
-Windows
-'''''''
-
-The Pageant program is bundled with TortoiseHg.  You can find it in its
-installation directory (usually ``C:\Program Files (x86)\TortoiseHg\``);
-you can also `download it separately
-<http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html>`_.
-
-Running Pageant will prevent you from having to type your password constantly.
-If you add a shortcut to Pageant to your Autostart group and edit the shortcut
-so that the command line includes an argument to your private key then Pageant
-will load the key every time you log in.
-
-
-Can I make commits from machines other than the one I generated the keys on?
-----------------------------------------------------------------------------
-
-You can :ref:`make commits <hg-commit>` from any machine, since they will be
-recorded in your *local repository*.
-
-However, to push these changes to the remote server, you will need proper
-credentials.  All you need is to make sure that the machine you want to
-push changes from has both the public and private keys in the standard
-place that ssh will look for them (i.e. ~/.ssh on Unix machines).
-Please note that although the key file ending in .pub contains your
-user name and machine name in it, that information is not used by the
-verification process, therefore these key files can be moved to a
-different computer and used for verification.  Please guard your keys
-and never share your private key with anyone.  If you lose the media
-on which your keys are stored or the machine on which your keys are
-stored, be sure to report this to pydotorg@python.org at the same time
-that you change your keys.
-
-
 General
 =======
+
 
 How do I regenerate configure?
 ------------------------------
@@ -856,21 +701,6 @@ Autoconf.  At the moment, this reads: ``version_required(2.65)``
 
 If the system copy of Autoconf does not match this version, you will need to
 install your own copy of Autoconf.
-
-
-How do I update my auto-load-safe-path to allow test_gdb to run?
-----------------------------------------------------------------
-
-``test_gdb`` attempts to automatically load additional Python specific
-hooks into gdb in order to test them. Unfortunately, the command line
-options it uses to do this aren't always supported correctly.
-
-If ``test_gdb`` is being skipped with an "auto-loading has been declined"
-message, then it is necessary to identify any Python build directories as
-auto-load safe. One way to achieve this is to add a line like the following
-to ``~/.gdbinit`` (edit the specific list of paths as appropriate)::
-
-    add-auto-load-safe-path ~/devel/py3k:~/devel/py32:~/devel/py27
 
 
 How do I port Python to a new platform?

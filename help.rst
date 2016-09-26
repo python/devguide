@@ -9,8 +9,8 @@ all the time).
 
 Should you require help, there are a :ref:`variety of options available
 <communication>` to seek assistance. If the question involves process or tool
-usage then please check the rest of this guide first (especially the
-:ref:`FAQ`) as it should answer your question.
+usage then please check the rest of this guide first as it should answer your
+question.
 
 
 Ask #python-dev

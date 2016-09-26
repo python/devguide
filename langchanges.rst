@@ -25,7 +25,7 @@ way to see if your idea would work for a large portion of the Python community
 is to ask on :ref:`python-list or python-ideas <communication>`. You can also
 go through Python's stdlib and find examples of code which would benefit from
 your proposed change (which helps communicate the usefulness of your change to
-others). For further guidance, see :ref:`suggesting-changes` in the FAQ.
+others). For further guidance, see :ref:`suggesting-changes`.
 
 Your proposed change also needs to be *Pythonic*. While Guido is the only
 person who can truly classify something as Pythonic, you can read the `Zen of
@@ -61,3 +61,37 @@ most core developers support the PEP). If that occurs then your proposed
 language change will be introduced in the next release of Python. Otherwise
 your PEP will be recorded as rejected along with an explanation as to why so
 that others do not propose the same language change in the future.
+
+
+.. index::
+   single: PEP process
+
+.. _suggesting-changes:
+
+Suggesting new features and language changes
+--------------------------------------------
+
+The `python-ideas`_ mailing list is specifically intended for discussion of
+new features and language changes. Please don't be disappointed if your
+idea isn't met with universal approval: as the long list of Rejected and
+Withdrawn PEPs in the `PEP Index`_ attests, and as befits a reasonably mature
+programming language, getting significant changes into Python isn't a simple
+task.
+
+If the idea is reasonable, someone will suggest posting it as a feature
+request on the `issue tracker`_, or, for larger changes, writing it up as
+a `draft PEP`_.
+
+Sometimes core developers will differ in opinion, or merely be collectively
+unconvinced. When there isn't an obvious victor then the
+`Status Quo Wins a Stalemate`_ as outlined in the linked post.
+
+For some examples on language changes that were accepted please read
+`Justifying Python Language Changes`_.
+
+.. _python-ideas: http://mail.python.org/mailman/listinfo/python-ideas
+.. _issue tracker: http://bugs.python.org
+.. _PEP Index: http://www.python.org/dev/peps/
+.. _draft PEP: http://www.python.org/dev/peps/pep-0001/
+.. _Status Quo Wins a Stalemate: http://www.curiousefficiency.org/posts/2011/02/status-quo-wins-stalemate.html
+.. _Justifying Python Language Changes: http://www.curiousefficiency.org/posts/2011/02/justifying-python-language-changes.html
