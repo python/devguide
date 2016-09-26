@@ -36,11 +36,6 @@ patch::
    hg import --no-commit mywork.patch
 
 
-.. seealso::
-   Refer to the :ref:`FAQ <faq>` for
-   :ref:`more information on using Mercurial <hg-local-workflow>`.
-
-
 Preparation
 '''''''''''
 
