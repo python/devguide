@@ -25,6 +25,9 @@ transliteration too.
 Permissions History
 -------------------
 
+- INADA Naoki was given push privileges on September 26, 2016 by Brett Cannon,
+  on the recommendation of Yury Selivanov.
+
 - Xavier de Gaye was given push privileges on June 3, 2016 by Brett Cannon,
   on the recommendation of Victor Stinner.
 
