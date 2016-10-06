@@ -31,16 +31,10 @@ patch:
    There are different instructions for :ref:`UNIX <unix-compiling>`,
    :ref:`Mac OS <MacOS>`, and :ref:`Windows <windows-compiling>`.
 
-   The command to compile on UNIX is::
+   The command to compile on UNIX and Mac OS is::
 
-      ./configure
-      make -j2
-
-   On some Mac OS::
-
-      CPPFLAGS="-I$(brew --prefix openssl)/include" \
-      LDFLAGS="-L$(brew --prefix openssl)/lib" \
       ./configure --with-pydebug
+      make -j
 
    On Windows::
 
