@@ -130,7 +130,7 @@ Benchmarks
 ----------
 Benchmarking is useful to test that a change does not degrade performance.
 
-`The Grand Unified Python Benchmark Suite <https://hg.python.org/benchmarks/>`_
+`The Python Benchmark Suite <https://github.com/python/performance>`_
 has a collection of benchmarks for all Python implementations. Documentation
 about running the benchmarks is in the `README.txt
-<https://hg.python.org/benchmarks/file/tip/README.txt>`_ of the benchmarks repo.
+<https://github.com/python/performance/blob/master/README.rst>`_ of the repo.
