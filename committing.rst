@@ -469,21 +469,21 @@ to master branch::
 
    git checkout master
    git apply --reject patch.diff
-   # Fix any conflicts (e.g. look for *.rej files); compile; run the test suite
+   # Fix any conflicts (e.g. look for *.rej files); compile; run the test suite.
    git add -A
    git commit -m '#12345: fix some issue.'
-   # Note the commit SHA (e.g. git log or git rev-parse --short HEAD)
+   # Note the commit SHA (e.g. git log or git rev-parse --short HEAD).
 
 Then you can switch to the ``3.6`` branch (or appropriate older version), cherry-pick
 the commit and run the test::
 
    git checkout 3.6
    # Instead of 3.6 use an appropriate branch reflecting the Python version you
-   # are backporting your change to
+   # are backporting your change to.
    git cherry-pick -x 123abc
-   # where 123abc is the SHA of the previous commit
-   # Fix any conflicts (add changes with git add -A and git cherry-pick --continue)
-   # Compile; run the test suite
+   # 123abc is the SHA of the previous commit.
+   # Fix any conflicts (add changes with git add -A and git cherry-pick --continue).
+   # Compile; run the test suite.
 
 .. note::
    Even when porting an already committed patch, you should *still* check the
