@@ -484,7 +484,7 @@ submit a pull request to the `psf-salt repo
 <https://github.com/python/psf-salt/blob/master/salt/hg/config/hg-account-admins>`_
 to add your own SSH key to the hgaccounts account.
 
-Once you have been added to the hgaccounts accout, obtain a checkout of the keys
+Once you have been added to the hgaccounts account, obtain a checkout of the keys
 repo::
 
      hg clone ssh://hgaccounts@hg.python.org/repo

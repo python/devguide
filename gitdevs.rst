@@ -186,7 +186,7 @@ Bookmarks are local
 
 Mercurial bookmarks are intended for local
 development and can be deleted with ease, whereas branches cannot.
-Note that deleting a bookmark does not mean that the releated changesets
+Note that deleting a bookmark does not mean that the related changesets
 are also deleted. You must use the `strip extension`_ to do that. Bookmarks can
 be published to a remote repo to be shared, but must explicitly be pushed (see
 https://www.mercurial-scm.org/wiki/Bookmarks#Working_with_remote_repositories
