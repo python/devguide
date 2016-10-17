@@ -460,62 +460,33 @@ Python version.
 
 .. _branch-merge:
 
-Merging between different branches (within the same major version)
-------------------------------------------------------------------
+Backporting changes to Python 3.6 (or older version)
+-----------------------------------------------------
 
-Assume that Python 3.7 is the current in-development version of Python and that
-you have a patch that should also be applied to Python 3.6.  To properly port
-the patch to both versions of Python, you should first apply the patch to
-Python 3.6::
+The current in-development version of Python is in master branch.  To properly
+port the patch to Python 3.6 (or older version), you should first apply the patch
+to master branch::
 
-   cd 3.6
-   hg import --no-commit patch.diff
-   # Compile; run the test suite
-   hg ci -m '#12345: fix some issue.'
+   git checkout master
+   git apply --reject patch.diff
+   # Fix any conflicts (e.g. look for *.rej files); compile; run the test suite.
+   git add -A
+   git commit -m '#12345: fix some issue.'
+   # Note the commit SHA (e.g. git log or git rev-parse --short HEAD).
 
-Then you can switch to the ``3.7`` clone, merge, run the tests and commit::
+Then you can switch to the ``3.6`` branch (or appropriate older version), cherry-pick
+the commit and run the test::
 
-   cd ../3.7
-   hg merge 3.6
-   # Fix any conflicts (e.g. ``hg revert -r default Misc/NEWS``); compile; run the test suite
-   hg ci -m '#12345: merge with 3.6.'
-
-If you are not using the share extension, you will need to use
-``hg pull ../3.6`` before being able to merge.
+   git checkout 3.6
+   # Instead of 3.6 use an appropriate branch reflecting the Python version you
+   # are backporting your change to.
+   git cherry-pick -x 123abc
+   # 123abc is the SHA of the previous commit.
+   # Fix any conflicts (add changes with git add -A and git cherry-pick --continue).
+   # Compile; run the test suite.
 
 .. note::
    Even when porting an already committed patch, you should *still* check the
    test suite runs successfully before committing the patch to another branch.
    Subtle differences between two branches sometimes make a patch bogus if
    ported without any modifications.
-
-
-Porting changesets between the two major Python versions (2.x and 3.x)
-----------------------------------------------------------------------
-
-Assume you just committed something on ``2.7``, and want to port it to ``3.6``.
-You can use ``hg graft`` as follow::
-
-   cd ../3.6
-   hg graft 2.7
-
-This will port the latest changeset committed in the 2.7 clone to the 3.6 clone.
-``hg graft`` always commits automatically, except in case of conflicts, when
-you have to resolve them and run ``hg graft --continue`` afterwards.
-Instead of the branch name you can also specify a changeset id, and you can
-also graft changesets from 3.x to 2.7.
-
-On older version of Mercurial where ``hg graft`` is not available, you can use::
-
-    cd ../3.6
-    hg export 2.7 | hg import -
-
-The result will be the same, but in case of conflict this will create ``.rej``
-files rather than using Mercurial merge capabilities.
-
-A third option is to apply manually the patch on ``3.6``.  This is convenient
-when there are too many differences with ``2.7`` or when there is already a
-specific patch for ``3.6``.
-
-.. warning::
-   Never use ``hg merge`` to port changes between 2.x and 3.x (or vice versa).
