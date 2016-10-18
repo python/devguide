@@ -74,8 +74,6 @@ The following component(s) should be selected if the issue applies to:
 
 2to3 (2.x to 3.0 conversion tool)
     The 2to3 conversion tool in `Lib/lib2to3`_.
-Benchmarks
-    The benchmarks in the benchmarks_ repo.
 Build
     The build process.
 ctypes
@@ -282,7 +280,7 @@ properly.
   The issue tracker automatically translates the legacy svn revision
   ``<number>`` to its corresponding Mercurial changeset identifier.
 * ``Dir/file.ext`` and ``Dir/file.ext:NNN`` generate links to files in the
-  `Python source code repositories <https://hg.python.org/cpython/file/>`_,
+  `Python source code repositories <https://github.com/python/cpython/>`_,
   possibly linking to the line number specified after the ``:``.
 * ``PEP <number>`` and ``PEP<number>`` link to the
   :abbr:`PEP (Python Enhancement Proposal)` ``<number>``.
@@ -291,33 +289,32 @@ properly.
   the Devguide, this page, and this section respectively.
 
 
-.. _CPython: https://hg.python.org/cpython/file/default/
-.. _Doc: https://hg.python.org/cpython/file/default/Doc/
-.. _Grammar: https://hg.python.org/cpython/file/default/Grammar/
-.. _Lib: https://hg.python.org/cpython/file/default/Lib/
-.. _Lib/lib2to3: https://hg.python.org/cpython/file/default/Lib/lib2to3/
-.. _Lib/ctypes: https://hg.python.org/cpython/file/default/Lib/ctypes/
-.. _Lib/distutils: https://hg.python.org/cpython/file/default/Lib/distutils/
-.. _Lib/doctest.py: https://hg.python.org/cpython/file/default/Lib/doctest.py
-.. _Lib/idlelib: https://hg.python.org/cpython/file/default/Lib/idlelib/
-.. _Lib/io.py: https://hg.python.org/cpython/file/default/Lib/io.py
-.. _Lib/re.py: https://hg.python.org/cpython/file/default/Lib/re.py
-.. _Lib/test: https://hg.python.org/cpython/file/default/Lib/test/
-.. _Lib/test/regrtest.py: https://hg.python.org/cpython/file/default/Lib/test/regrtest.py
-.. _Lib/test/support: https://hg.python.org/cpython/file/default/Lib/test/support/
-.. _Lib/tkinter: https://hg.python.org/cpython/file/default/Lib/tkinter/
-.. _Lib/unittest: https://hg.python.org/cpython/file/default/Lib/unittest/
-.. _Lib/xml: https://hg.python.org/cpython/file/default/Lib/xml/
-.. _Modules: https://hg.python.org/cpython/file/default/Modules/
-.. _Modules/_io: https://hg.python.org/cpython/file/default/Modules/_io/
-.. _Modules/_sre.c: https://hg.python.org/cpython/file/default/Modules/_sre.c
-.. _Objects: https://hg.python.org/cpython/file/default/Objects/
-.. _Objects/unicodeobject.c: https://hg.python.org/cpython/file/default/Objects/unicodeobject.c
-.. _Parser: https://hg.python.org/cpython/file/default/Parser/
-.. _Python: https://hg.python.org/cpython/file/default/Python/
-.. _Tools: https://hg.python.org/cpython/file/default/Tools/
-.. _Tools/demo: https://hg.python.org/cpython/file/default/Tools/demo/
-.. _benchmarks: https://hg.python.org/benchmarks/
-.. _Developer's guide: https://hg.python.org/devguide/
+.. _CPython: https://github.com/python/cpython/
+.. _Doc: https://github.com/python/cpython/tree/master/Doc/
+.. _Grammar: https://github.com/python/cpython/tree/master/Grammar/
+.. _Lib: https://github.com/python/cpython/tree/master/Lib/
+.. _Lib/lib2to3: https://github.com/python/cpython/tree/master/Lib/lib2to3/
+.. _Lib/ctypes: https://github.com/python/cpython/tree/master/Lib/ctypes/
+.. _Lib/distutils: https://github.com/python/cpython/tree/master/Lib/distutils/
+.. _Lib/doctest.py: https://github.com/python/cpython/tree/master/Lib/doctest.py
+.. _Lib/idlelib: https://github.com/python/cpython/tree/master/Lib/idlelib/
+.. _Lib/io.py: https://github.com/python/cpython/tree/master/Lib/io.py
+.. _Lib/re.py: https://github.com/python/cpython/tree/master/Lib/re.py
+.. _Lib/test: https://github.com/python/cpython/tree/master/Lib/test/
+.. _Lib/test/regrtest.py: https://github.com/python/cpython/tree/master/Lib/test/regrtest.py
+.. _Lib/test/support: https://github.com/python/cpython/tree/master/Lib/test/support/
+.. _Lib/tkinter: https://github.com/python/cpython/tree/master/Lib/tkinter/
+.. _Lib/unittest: https://github.com/python/cpython/tree/master/Lib/unittest/
+.. _Lib/xml: https://github.com/python/cpython/tree/master/Lib/xml/
+.. _Modules: https://github.com/python/cpython/tree/master/Modules/
+.. _Modules/_io: https://github.com/python/cpython/tree/master/Modules/_io/
+.. _Modules/_sre.c: https://github.com/python/cpython/tree/master/Modules/_sre.c
+.. _Objects: https://github.com/python/cpython/tree/master/Objects/
+.. _Objects/unicodeobject.c: https://github.com/python/cpython/tree/master/Objects/unicodeobject.c
+.. _Parser: https://github.com/python/cpython/tree/master/Parser/
+.. _Python: https://github.com/python/cpython/tree/master/Python/
+.. _Tools: https://github.com/python/cpython/tree/master/Tools/
+.. _Tools/demo: https://github.com/python/cpython/tree/master/Tools/demo/
+.. _Developer's guide: https://github.com/python/devguide/
 .. _GSoC: http://code.google.com/soc/
-.. _issue tracker: http://bugs.python.org
+.. _issue tracker: https://bugs.python.org
