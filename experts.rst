@@ -305,15 +305,14 @@ JVM/Java              frank.wierzbicki
 
 Miscellaneous
 -------------
-==================  ===========
+==================  ==========================================================
 Interest Area       Maintainers
-==================  ===========
+==================  ==========================================================
 algorithms
 argument clinic     larry
 ast/compiler        ncoghlan, benjamin.peterson, brett.cannon, georg.brandl, yselivanov
 autoconf/makefiles  twouters*
 bsd
-benchmarks          brett.cannon
 bug tracker         ezio.melotti
 buildbots           zach.ware
 bytecode            benjamin.peterson, georg.brandl, yselivanov
@@ -334,6 +333,7 @@ memory management   tim.peters, lemburg, twouters
 networking          giampaolo.rodola,
 object model        benjamin.peterson, twouters
 packaging           tarek, lemburg, alexis, eric.araujo, dstufft, paul.moore
+performance         brett.cannon, haypo, serhiy.storchaka, yselivanov
 pip                 ncoghlan, dstufft, paul.moore, Marcus.Smith
 py3 transition      benjamin.peterson
 release management  tarek, lemburg, benjamin.peterson, barry, loewis,
@@ -346,4 +346,4 @@ threads
 time and dates      lemburg, belopolsky
 unicode             lemburg, ezio.melotti, haypo, benjamin.peterson,
 version control     eric.araujo, georg.brandl, ezio.melotti
-==================  ===========
+==================  ==========================================================
