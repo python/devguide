@@ -74,8 +74,6 @@ The following component(s) should be selected if the issue applies to:
 
 2to3 (2.x to 3.0 conversion tool)
     The 2to3 conversion tool in `Lib/lib2to3`_.
-Benchmarks
-    The benchmarks in the benchmarks_ repo.
 Build
     The build process.
 ctypes
@@ -317,7 +315,6 @@ properly.
 .. _Python: https://github.com/python/cpython/tree/master/Python/
 .. _Tools: https://github.com/python/cpython/tree/master/Tools/
 .. _Tools/demo: https://github.com/python/cpython/tree/master/Tools/demo/
-.. _benchmarks: https://github.com/python/performance/
 .. _Developer's guide: https://github.com/python/devguide/
 .. _GSoC: http://code.google.com/soc/
 .. _issue tracker: https://bugs.python.org
