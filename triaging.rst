@@ -317,7 +317,7 @@ properly.
 .. _Python: https://github.com/python/cpython/tree/master/Python/
 .. _Tools: https://github.com/python/cpython/tree/master/Tools/
 .. _Tools/demo: https://github.com/python/cpython/tree/master/Tools/demo/
-.. _benchmarks: https://hg.python.org/benchmarks/
+.. _benchmarks: https://github.com/python/performance/
 .. _Developer's guide: https://github.com/python/devguide/
 .. _GSoC: http://code.google.com/soc/
 .. _issue tracker: https://bugs.python.org
