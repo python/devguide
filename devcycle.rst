@@ -40,7 +40,7 @@ descendant of the ``3.5`` branch.
 
 Therefore, each change should be made **first** in the oldest branch to which it
 applies and forward-ported as appropriate: if a bug must be fixed in both Python
-3.6 and 3.7, first fix it in ``3.6`` and then merge ``3.6`` into ``default``
+3.6 and 3.7, first fix it in ``3.6`` and then merge ``3.6`` into ``master``
 (which holds the future 3.7).
 
 
@@ -49,10 +49,10 @@ applies and forward-ported as appropriate: if a bug must be fixed in both Python
 In-development (main) branch
 ----------------------------
 
-The ``default`` branch is the branch for the next feature release; it is
+The ``master`` branch is the branch for the next feature release; it is
 under active development for all kinds of changes: new features, semantic
 changes, performance improvements, bug fixes.  As the name indicates, it
-is the branch :ref:`checked out <checkout>` by default by Mercurial.
+is the branch :ref:`checked out <checkout>` by default by Git.
 
 At some point during the life-cycle of a release, a
 new :ref:`maintenance branch <maintbranch>` is created to host all bug fixing
@@ -117,9 +117,9 @@ security patches have been applied to the branch.
 Summary
 -------
 
-There are 7 open branches right now in the Mercurial repository:
+There are 7 open branches right now in the Git repository:
 
-- the ``default`` branch holds the future 3.7 version and descends from ``3.6``
+- the ``master`` branch holds the future 3.7 version and descends from ``3.6``
   (RM: Ned Deily)
 - the ``3.6`` branch holds bug fixes for 3.6.0 and future 3.6.x maintenance releases
   and descends from ``3.5`` (RM: Ned Deily)

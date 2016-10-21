@@ -24,12 +24,12 @@ Getting Set Up
 Version Control Setup
 ---------------------
 
-CPython is developed using `Mercurial <http://hg-scm.org/>`_. The Mercurial
-command line program is named ``hg``; this is also used to refer to Mercurial
-itself. Mercurial is easily available for common Unix systems by way of the
-standard package manager; under Windows, you might want to use the
-`TortoiseHg <http://tortoisehg.org/>`_ graphical client, but the build system
-still prefers :file:`hg.exe` to be on your PATH.
+CPython is developed using `Git <https://git-scm.com/>`_. The Git command line
+program is named ``git``; this is also used to refer to Git itself. Git is
+easily available for common Unix systems by way of the standard package manager;
+under Windows, you might want to use the `TortoiseGit <http://tortoisegit.org/>`_
+graphical client, but the build system still prefers :file:`git.exe` to be on
+your PATH.
 
 
 .. _checkout:
@@ -49,13 +49,13 @@ To get a working copy of the :ref:`in-development <indevbranch>` branch of
 CPython (core developers use a different URL as outlined in :ref:`coredev`),
 run::
 
-    hg clone https://hg.python.org/cpython
+    git clone https://github.com/python/cpython
 
 If you want a working copy of an already-released version of Python,
 i.e., a version in :ref:`maintenance mode <maintbranch>`, you can update your
 working copy. For instance, to update your working copy to Python 3.5, do::
 
-   hg update 3.5
+   git checkout 3.5
 
 You will need to re-compile CPython when you do such an update.
 
@@ -75,17 +75,15 @@ Compiling (for debugging)
 
 CPython provides several compilation flags which help with debugging various
 things. While all of the known flags can be found in the
-``Misc/SpecialBuilds.txt``
-file, the most critical one is the ``Py_DEBUG`` flag which creates what is
-known as a "pydebug" build. This flag turns on
-various extra sanity checks which help catch common issues. The use of the flag
-is so common that turning on the flag is a basic compile option.
+``Misc/SpecialBuilds.txt`` file, the most critical one is the ``Py_DEBUG`` flag
+which creates what is known as a "pydebug" build. This flag turns on various
+extra sanity checks which help catch common issues. The use of the flag is so
+common that turning on the flag is a basic compile option.
 
-You should always
-develop under a pydebug build of CPython (the only instance of when you
-shouldn't is if you are taking performance measurements). Even when working
-only on pure Python code the pydebug build provides several useful checks that
-one should not skip.
+You should always develop under a pydebug build of CPython (the only instance of
+when you shouldn't is if you are taking performance measurements). Even when
+working only on pure Python code the pydebug build provides several useful
+checks that one should not skip.
 
 
 .. _build-dependencies:
@@ -266,7 +264,7 @@ still build properly).
 Windows
 '''''''
 
-The `readme <https://hg.python.org/cpython/file/default/PCbuild/readme.txt>`_
+The `readme <https://github.com/python/cpython/blob/master/PCbuild/readme.txt>`_
 included in the solution has more details, especially on what additional
 software is required to build which parts of Python.
 
@@ -346,16 +344,8 @@ when trying to build an old (2.x) Python with a new (3.x) Python installed, or
 vice versa.
 
 To overcome this problem, auto-generated files are also checked into the
-Mercurial repository. So if you don't touch the auto-generation scripts, there's
-no real need to auto-generate anything. However, as Mercurial doesn't preserve
-timestamps well, a special build target ``touch`` was added (the ``touch``
-build target is not designed for git clones and does not support them). Run::
-
-    make touch
-
-Before running the compilation ``make``. This will tweak the timestamps of the
-auto-generated files in a way that makes it unnecessary to create them anew and
-henceforth the compilation should not require an installed Python interpreter.
+Git repository. So if you don't touch the auto-generation scripts, there's
+no real need to auto-generate anything.
 
 Editors and Tools
 =================

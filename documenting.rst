@@ -15,7 +15,7 @@ documentation and how it should be used.
 
 The documentation in HTML, PDF or EPUB format is generated from text files
 written using the :ref:`reStructuredText format <markup>` and contained in the
-:ref:`CPython Mercurial repository <setup>`.
+:ref:`CPython Git repository <setup>`.
 
 .. _reStructuredText: http://docutils.sf.net/rst.html
 
