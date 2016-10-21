@@ -222,7 +222,7 @@ Key Resources
 * `Buildbot status`_
 * Source code
     * `Browse online <https://github.com/python/cpython/>`_
-    * `Snapshot of the ``master`` branch <https://github.com/python/cpython/archive/master.zip>`_
+    * `Snapshot of the *master* branch <https://github.com/python/cpython/archive/master.zip>`_
     * `Daily OS X installer <http://buildbot.python.org/daily-dmg/>`_
 * PEPs_ (Python Enhancement Proposals)
 * :doc:`faq`
