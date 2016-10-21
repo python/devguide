@@ -192,7 +192,7 @@ Using test.regrtest
 -------------------
 
 If you prefer to rely solely on the stdlib to generate coverage data, you can
-do so by passing the appropriate flags to :py:mod:`test.regrtest` (along with
+do so by passing the appropriate flags to :py:mod:`test` (along with
 any other flags you want to)::
 
     ./python -m test --coverage -D `pwd`/coverage_data <test arguments>
