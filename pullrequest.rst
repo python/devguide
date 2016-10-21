@@ -1,7 +1,7 @@
 .. _patch:
 
-Lifecycle of a Patch
-====================
+Lifecycle of a Pull Request
+===========================
 
 
 Creating
