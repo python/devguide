@@ -1,0 +1,9 @@
+language: python
+python: 3.5
+cache: pip
+
+install: python3 -m pip install sphinx
+
+script:
+    # TODO: add -b linkcheck
+    - sphinx-build -n -W -q -b html -d _build/doctrees . _build/html

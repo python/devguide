@@ -17,6 +17,8 @@ Where should I report specific problems?
 
 Specific problems should be posted to the `issue tracker`_.
 
+.. _issue tracker: https://bugs.python.org
+
 
 What if I'm not sure it is a bug?
 ---------------------------------
@@ -41,6 +43,8 @@ If you still feel the resolution is incorrect, then raise the question on
 take any further objections to `python-ideas`_ (or some other forum). Further
 argument on `python-dev`_ after a consensus has been reached amongst the core
 developers is unlikely to win any converts.
+
+.. _python-ideas: https://mail.python.org/mailman/listinfo/python-ideas
 
 
 How do I tell who is and isn't a core developer?
@@ -536,8 +540,6 @@ For core developers
 These FAQs are intended mainly for core developers.
 
 
-.. _hg-commit:
-
 How do I commit a change to a file?
 '''''''''''''''''''''''''''''''''''
 
@@ -569,8 +571,6 @@ you feel like.
    option in the ``[ui]`` section.
 
 
-.. _hg-merge-conflicts:
-
 How do I solve merge conflicts?
 '''''''''''''''''''''''''''''''
 
@@ -591,8 +591,6 @@ You can also use ``hg resolve -am`` to mark all the conflicts as resolved.
    https://www.mercurial-scm.org/wiki/KDiff3.
 
 
-.. _hg-null-merge:
-
 How do I make a null merge?
 '''''''''''''''''''''''''''
 
@@ -609,8 +607,6 @@ Before committing, ``hg status`` should list all the merged files as ``M``,
 but ``hg diff`` should produce no output.  This will record the merge without
 actually changing the content of the files.
 
-
-.. _hg-heads-merge:
 
 I got "abort: push creates new remote heads!" while pushing, what do I do?
 ''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
