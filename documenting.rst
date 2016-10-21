@@ -218,11 +218,11 @@ grasp a simple example more quickly than they can digest a formal description in
 prose.
 
 People learn faster with concrete, motivating examples that match the context of
-a typical use case.  For instance, the :func:`str.rpartition` method is better
+a typical use case.  For instance, the ``str.rpartition`` method is better
 demonstrated with an example splitting the domain from a URL than it would be
 with an example of removing the last word from a line of Monty Python dialog.
 
-The ellipsis for the :attr:`sys.ps2` secondary interpreter prompt should only be
+The ellipsis for the ``sys.ps2`` secondary interpreter prompt should only be
 used sparingly, where it is necessary to clearly differentiate between input
 lines and output lines.  Besides contributing visual clutter, it makes it
 difficult for readers to cut-and-paste examples so they can experiment with
