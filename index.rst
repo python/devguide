@@ -52,8 +52,8 @@ patch:
    with :file:`./python.exe`.  On Windows, use :file:`python.bat` or
    check the :ref:`Windows instructions <win-python.exe>`.  With Python 2.7,
    replace ``test`` with ``test.regrtest``.
-5. Make the :doc:`patch <patch>`.
-6. Submit it to the `issue tracker`_.
+5. Make a :doc:`pull request <pullrequest>`.
+6. Create an issue on the `issue tracker`_ if one does not already exist.
 
 
 Quick Links
@@ -137,7 +137,7 @@ Guide for contributing to Python:
 
 * :doc:`setup`
 * :doc:`help`
-* :doc:`patch`
+* :doc:`pullrequest`
 * :doc:`runtests`
 * Beginner tasks to become familiar with the development process
     * :doc:`docquality`
@@ -257,7 +257,7 @@ Full Table of Contents
 
    setup
    help
-   patch
+   pullrequest
    runtests
    coverage
    docquality

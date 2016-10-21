@@ -1,39 +1,42 @@
 .. _patch:
 
-Lifecycle of a Patch
-====================
+Lifecycle of a Pull Request
+===========================
 
 
 Creating
 --------
 
-Tool Usage
+CPython uses a workflow based on pull requests. What this means is
+that you create a branch in Git, make your changes, push those changes
+to GitHub, and than create a pull request.
+`GitHub's help pages <https://help.github.com/>`_ are good and there
+are tons of pages out there for help with Git.  As such, this
+document does not go into any great detail as the assumption is there
+is a resource out there which will explain things in a way that makes
+sense for you personally when it comes to general Git and GitHub
+details.
+
+
+Tool Setup
 ''''''''''
 
 .. _workflow:
 
-Mercurial allows for various workflows according to each person's or
-project's preference.  It is out of this guide's scope to present them all,
-so we will stick to a basic workflow where you work on a patch in your
-working copy without ever making any local commits.
+If you have not already done so, you will want to fork the
+`CPython repository`_. You can read GitHub's documentation on how to
+`fork a repository <https://help.github.com/articles/fork-a-repo/>`_
+if you are not already familiar with how to do this. This will make
+sure that you have a clone of your fork of CPython on your computer
+and the appropriate remote repositories.
 
-If you use this workflow, and your work adds or removes files to the
-source tree, you will have to temporarily ``hg add`` or ``hg remove`` them,
-respectively, before generating a patch.
+You will then want to create a branch to contain your work. GitHub has
+instructions on how to
+`create a branch <https://help.github.com/articles/creating-and-deleting-branches-within-your-repository/>`_
+within your fork through their website.
 
-To generate a patch, just invoke ``hg diff`` which will print out a
-patch of the working copy's changes against the current revision::
 
-   hg diff > mywork.patch
-
-If you want to undo your changes, you can revert them from the working copy::
-
-   hg revert -a
-
-You can later re-apply the changes if you want to continue working on the
-patch::
-
-   hg import --no-commit mywork.patch
+.. _CPython repository: https://github.com/python/cpython
 
 
 Preparation
@@ -89,16 +92,6 @@ command (after any successful build of Python)::
 
    python.bat Tools/scripts/patchcheck.py
 
-Assuming you are using the :ref:`basic approach <workflow>` suggested earlier,
-just type the following::
-
-   hg diff > mywork.patch
-
-If you are using another approach, you probably need to find out the right
-invocation of ``hg diff`` for your purposes; see ``hg help diff`` and ``hg
-help revisions``. Just please make sure that you generate a
-**single, condensed** patch rather than a series of several changesets.
-
 
 Licensing
 ---------
@@ -112,6 +105,10 @@ license your code for use with Python (you retain the copyright).
    You only have to sign this document once, it will then apply to all
    your further contributions to Python.
 
+You will also need to specify you GitHub username on the
+`issue tracker`_ on the *Your Details* link found on the
+homepage.
+
 
 .. _PSF license: http://docs.python.org/dev/license.html#terms-and-conditions-for-accessing-or-otherwise-using-python
 .. _contributor form: http://www.python.org/psf/contrib/
@@ -121,17 +118,29 @@ license your code for use with Python (you retain the copyright).
 Submitting
 ----------
 
-If this is a patch in response to a pre-existing issue on the `issue tracker`_,
-attach the patch to the issue; use the ``Choose File`` button on the tracker
-web page for the issue to upload your patch file. Please provide any details
-about your patch that
-would be relevant to the discussion of the issue or your patch.
+Once you are satisfied with your work you will want to commit your
+changes to your branch. In general you can run ``git commit -a`` and
+that will commit everything. You can always run ``git status`` to see
+what changes are outstanding.
+
+When all of your changes are committed (i.e. ``git status`` doesn't
+list anything), you will want to push your branch to your fork::
+
+  git push origin <branch name>
+
+This will get your changes up to GitHub.
+
+Now you want to
+`create a pull request from your fork <https://help.github.com/articles/creating-a-pull-request-from-a-fork/>`_.
+If this is pull request in response to a pre-existing issue on the
+`issue tracker`_, please make sure to reference the issue number in
+your pull request message.
 
 If this is a patch for an unreported issue (assuming you already performed a
 search on the issue tracker for a pre-existing issue), create a new issue and
-attach your patch. Please fill in as much relevant detail as possible to
-prevent patch reviewers from having to delay reviewing your patch because of
-lack of information.
+reference it in the pull request. Please fill in as much relevant detail
+as possible to prevent patch reviewers from having to delay reviewing your
+patch because of lack of information.
 
 
 .. _issue tracker: http://bugs.python.org
@@ -140,36 +149,40 @@ lack of information.
 Reviewing
 ---------
 
-To begin with, please be patient! There are many more people submitting patches
-than there are people capable of reviewing your patch. Getting your patch
-reviewed requires a reviewer to have the spare time and motivation to
-look at your patch (we cannot force anyone to review patches). If your patch has
-not received any notice from reviewers (i.e., no comment made) after one
-month, first "ping" the issue on the `issue tracker`_ to remind the nosy list
-that the patch needs a review.  If you don't get a response within a few days
-after pinging the issue, then you can try emailing python-dev@python.org asking
-for someone to review your patch.
+To begin with, please be patient! There are many more people
+submitting pull requests than there are people capable of reviewing
+your pull request. Getting your pull request reviewed requires a
+reviewer to have the spare time and motivation to look at your pull
+request (we cannot force anyone to review pull requests and no one is
+employed to look at pull requests). If your pull request has not
+received any notice from reviewers (i.e., no comment made) after one
+month, first "ping" the issue on the `issue tracker`_ to remind the
+nosy list that the patch needs a review.  If you don't get a response
+within a week after pinging the issue, then you can try emailing
+python-dev@python.org to ask for someone to review your patch.
 
-When someone does manage to find the time to look at your patch they will most
-likely make comments about how it can be improved (don't worry, even core
-developers of Python have their patches sent back to them for changes).  It
-is then expected that you post a new patch addressing these comments, and the
-review process will thus iterate until a satisfactory solution has emerged.
+When someone does manage to find the time to look at your pull request
+they will most likely make comments about how it can be improved
+(don't worry, even core developers of Python have their patches sent
+back to them for changes).  It is then expected that you update your
+pull request to address these comments, and the review process will
+thus iterate until a satisfactory solution has emerged.
 
-How to Review a Patch
-'''''''''''''''''''''
+How to Review a Pull Request
+''''''''''''''''''''''''''''
 
 One of the bottlenecks in the Python development
-process is the lack of patch reviews.
+process is the lack of code reviews.
 If you browse the bug tracker, you will see that numerous issues
-have a patch, but cannot be commited to the main source code repository,
-because no one has reviewed the proposed patch.
-Reviewing a patch can be just as informative as providing a patch and it will allow
-you to give constructive comments on another developer's work.
-This guide provides a checklist for submitting a patch review.
-It is a common misconception that in order to be useful, a patch review has to
-be perfect. This is not the case at all! It is helpful to just test the patch and/or
-play around with the code and leave comments in the bug tracker.
+have a fix, but cannot be commited to the main source code repository,
+because no one has reviewed the proposed solution.
+Reviewing a pull request can be just as informative as providing a
+pull request and it will allow you to give constructive comments on
+another developer's work. This guide provides a checklist for
+submitting a code review. It is a common misconception that in order
+to be useful, a code review has to be perfect. This is not the case at
+all! It is helpful to just test the patch and/or play around with the
+code and leave comments in the pull request or issue tracker.
 
 1. If you have not already done so, get a copy of the CPython repository
    by following the :ref:`setup guide <setup>`, build it and run the tests.
@@ -179,8 +192,8 @@ play around with the code and leave comments in the bug tracker.
    of the Python REPL (the interactive shell prompt), which you can launch
    by executing ./python inside the repository.
 
-3. Apply the patch you saved from the bug tracker. If you are not sure how
-   to apply a patch, please check the :ref:`Lifecycle of a Patch <patch>` documentation.
+3. Apply the pull request (GitHub has instructions with each pull
+   request on how to do this).
 
 4. If the patch affects any C file, run the build again.
 
@@ -189,7 +202,7 @@ play around with the code and leave comments in the bug tracker.
    should be fixed (in theory, but mistakes do happen! A good review aims to
    catch these before the code is committed to the Python repository). You should
    also try to see if there are any corner cases in this or related issue that the author
-   of the patch may have missed.
+   of the fix may have missed.
 
 6. If you have time, run the entire test suite. If you are pressed for time,
    run the tests for the module(s) where changes were applied.
@@ -206,7 +219,7 @@ do not take it personally! Your work is still appreciated regardless of whether
 your patch is committed. Balancing what *does* and *does not* go into Python
 is tricky and we simply cannot accept everyone's contributions.
 
-But if your patch is committed it will then go into Python's
+But if your pull request is committed it will then go into Python's
 :abbr:`VCS (version control system)` to be released
 with the next major release of Python. It may also be backported to older
 versions of Python as a bugfix if the core developer doing the commit believes
@@ -217,6 +230,6 @@ Crediting
 ---------
 
 Non-trivial contributions are credited in the ``Misc/ACKS`` file (and, most
-often, in a contribution's ``Misc/NEWS`` entry as well).  This is something
-the core developer will do when committing your patch, you don't have to
-propose the addition by yourself.
+often, in a contribution's ``Misc/NEWS`` entry as well).  You may be
+asked to make these edits on the behalf of the core developer you
+accepts your pull request.
