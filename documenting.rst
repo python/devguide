@@ -222,7 +222,7 @@ a typical use case.  For instance, the :meth:`str.rpartition` method is better
 demonstrated with an example splitting the domain from a URL than it would be
 with an example of removing the last word from a line of Monty Python dialog.
 
-The ellipsis for the :attr:`sys.ps2` secondary interpreter prompt should only be
+The ellipsis for the :py:data:`sys.ps2` secondary interpreter prompt should only be
 used sparingly, where it is necessary to clearly differentiate between input
 lines and output lines.  Besides contributing visual clutter, it makes it
 difficult for readers to cut-and-paste examples so they can experiment with
