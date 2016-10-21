@@ -88,7 +88,7 @@ For Windows:
     * Install the latest version of Python 2.7 from python.org.
     * Open a Command Prompt.
     * Execute ``python -m pip install pypiwin32 buildbot-slave`` (note that
-      ``python.exe`` is not added to ``PATH`` by default, making the
+      ``python.exe`` is not added to :envvar:`PATH` by default, making the
       ``python`` command accessible is left as an exercise for the user).
 
 In a terminal window for the buildbot user, issue the following commands (you
