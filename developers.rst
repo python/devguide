@@ -9,14 +9,14 @@ The purpose is to provide some institutional memory of who was given access
 and why.
 
 The first entry starts in April 2005.  In keeping with the style of Misc/NEWS,
-newer entries should be added to the top.  Entries should include the initials
-of the project admin who made the change or granted access.  The procedure for
-adding or removing users is described in :ref:`altering-access`.
+newer entries should be added to the top.  Entries should include the name
+or initials of the project admin who made the change or granted access.  The
+procedure for adding or removing users is described in :ref:`altering-access`.
 
 Note, when giving new commit permissions, be sure to get a contributor agreement
-from the committer.  See http://www.python.org/psf/contrib/ for details.  When
-the agreement is signed, please note it in this log.  SSH keys of the committer
-should be sent to hgaccounts@python.org.
+from the committer.  See http://www.python.org/psf/contrib/ for details.  Commit
+privileges should not be given until the contributor agreement has been signed
+and received.
 
 This file is encoded in UTF-8.  If the usual form for a name is not in
 a Latin or extended Latin alphabet, make sure to include an ASCII
@@ -479,18 +479,11 @@ Initials of Project Admins
 Procedure for Granting or Dropping Access
 -----------------------------------------
 
-To be granted the ability to manage SSH keys for committers, you must first
-submit a pull request to the `psf-salt repo
-<https://github.com/python/psf-salt/blob/master/salt/hg/config/hg-account-admins>`_
-to add your own SSH key to the hgaccounts account.
+To be granted the ability to manage who is a committer, you must be a
+team maintainer of the `Python core team`_ on GitHub. Once you have
+that privilege you can add people to the team. They will be asked to
+accept the membership which they can do by visiting
+https://github.com/python and clicking on the appropriate button that
+will be displayed to them in the upper part of the page.
 
-Once you have been added to the hgaccounts accout, obtain a checkout of the keys
-repo::
-
-     hg clone ssh://hgaccounts@hg.python.org/repo
-
-The key files are stored in the form ``first.last``. Simply create or remove the
-appropriate file, commit the change, and push. A hook on the server should
-automatically regenerate the ``authorized_keys`` file for the ``hg`` user. Make
-sure to update the developer log above.
-
+.. _Python core team: https://github.com/orgs/python/teams/python-core
