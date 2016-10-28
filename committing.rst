@@ -248,6 +248,9 @@ issue's page in the tracker, for each mentioned issue.
 If "closes" (or "closed", or "closing") is prepended, the issue is
 automatically closed as "fixed".
 
+.. _issue tracker: https://bugs.python.org
+
+
 Working with Git_
 =======================
 
@@ -280,7 +283,7 @@ If you use Git as a committer of patches (your own or others), you should
 set up some basic options.  Here are the minimal options you need to activate:
 
 * Your *name* and *email*: these settings defines what will be used when you
-  :ref:`commit <git-commit>` changes::
+  commit changes::
 
    git config --global user.name "Your Name"
    git config --global user.email email@example.org
