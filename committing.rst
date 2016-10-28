@@ -304,6 +304,9 @@ want to set it at a project level use ``--local``, instead.
 Remotes Setup
 -------------
 
+
+.. _remote-configuration:
+
 Configuration
 '''''''''''''
 

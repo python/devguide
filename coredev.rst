@@ -8,10 +8,9 @@ What it Takes
 
 When you have consistently contributed patches which meet quality standards
 without requiring extensive rewrites prior to being committed,
-you may qualify for
-commit privileges and become a core developer of Python. You must also work
-well with other core developers (and people in general) as you become an
-ambassador for the Python project.
+you may qualify for commit privileges and become a core developer of Python.
+You must also work well with other core developers (and people in general)
+as you become an ambassador for the Python project.
 
 Typically a core developer will offer you the chance to gain commit privilege.
 The person making the offer will become your mentor and watch your commits for
@@ -23,10 +22,6 @@ You may request commit privileges yourself, but do not be surprised if your
 request is turned down. Do not take this personally! It simply means that other
 core developers think you need more time contributing patches before you are
 able to commit them without supervision.
-
-A complete list of core developer usernames can be found at
-https://hg.python.org/committers.txt. :ref:`developers` lists when and why
-someone received commit privileges.
 
 
 Gaining Commit Privileges
@@ -57,29 +52,21 @@ form, please change it. This is so that it is easier to assign issues to the
 right person.
 
 
-SSH
-'''
+GitHub
+''''''
 
-You need to provide an SSH-2 key to be able to commit code. You may have
-multiple keys if you wish (e.g., for work and home). Using Ed25519 keys is
-encouraged. Send your key as an attachment in an email to
-hgaccounts@python.org along with your GitHub username so you can be added to
-the "Python core" team at https://github.com/python.
-
-Your SSH key will be set to a username in the form of "first_name.last_name".
-This should match your username on the issue tracker.
-
-You can verify your commit access by looking at
-https://hg.python.org/committers.txt which lists all core developers by
-username.  If you want to practice, there is a `test repository
-<https://hg.python.org/test/>`_ where you can freely commit and push any
-changes you like::
-
-   hg clone ssh://hg@hg.python.org/test/ hgtest
+You will be added to the `Python core team`_ on GitHub. This will give you
+rights to commit to various repositories under the `Python organization`_
+on GitHub. When you are initially added you will be emailed by GitHub with
+an invitation to join the team. Please accept the invite in the email or
+go to https://github.com/python and accept the invite there.
 
 An entry in the :ref:`developers` should also be entered for you.
 Typically the person who sponsored your application to become a core developer
 makes sure an entry is created for you.
+
+.. _Python core team: https://github.com/orgs/python/teams/python-core
+.. _Python organization: https://github.com/python
 
 
 .. _contributor_agreement:
@@ -95,30 +82,22 @@ it can be legally distributed with Python.
 This is a very important step! Hopefully you have already submitted a
 contributor agreement if you have been submitting patches. But if you have not
 done this yet, it is best to do this ASAP, probably before you even do your
-first commit so as to not forget.
+first commit so as to not forget. Also do not forget to enter your GitHub
+username into your details on the issue tracker.
 
 
 .. _contributor form for Python: http://www.python.org/psf/contrib/
 
 
 
-Read/Write Checkout
-'''''''''''''''''''
+Pull Request merging
+''''''''''''''''''''
 
-With your commit privileges working and your contributor form submitted, you
-can now get a read/write checkout of the code. URLs for read/write checkouts
-are different than those for read-only checkouts as SSH is used instead of
-HTTP.
-
-You can clone the repository (which contains all active branches) with::
-
-   hg clone ssh://hg@hg.python.org/cpython
-
-The default branch in that repository is the current development branch.
-You can of course switch your working copy to one of the maintenance branches,
-for example::
-
-   hg update 2.7
+Once you have your commit privileges on GitHub you will be able to accept
+pull requests on GitHub. You should plan to continue to submit your own
+changes through pull requests as if you weren't a core developer to benefit
+from various things such as automatic integration testing, but you
+can accept your own pull requests if you feel comfortable doing so.
 
 
 Responsibilities
@@ -143,12 +122,11 @@ do on the issue tracker.
 
 Third, please list what areas you want to be considered an expert in the
 :ref:`experts`. This allows triagers to direct issues to you which involve
-an area you are an expert in. But,
-as stated in the second point above, if you do not have the time to answer
-questions promptly then please remove yourself as needed from the file so that
-you will not be bothered in the future. Once again, we all understand how life
-gets in the way, so no one will be insulted if you remove yourself from the
-list.
+an area you are an expert in. But, as stated in the second point above, if you
+do not have the time to answer questions promptly then please remove yourself as
+needed from the file so that you will not be bothered in the future. Once again,
+we all understand how life gets in the way, so no one will be insulted if you
+remove yourself from the list.
 
 Fourth, please consider whether or not you wish to add your name to the
 :ref:`motivations` list. Core contributor participation in the list helps the
@@ -164,138 +142,3 @@ break or figure out what you need to do to make it enjoyable again.
 
 
 .. _PSF Code of Conduct: https://www.python.org/psf/codeofconduct/
-
-
-.. _version-core-devs:
-
-Version control for core developers
------------------------------------
-
-.. _hg-commit:
-
-How do I commit a change to a file?
-'''''''''''''''''''''''''''''''''''
-
-To commit any changes to a file (which includes adding a new file or deleting
-an existing one), you use the command::
-
- hg commit [PATH]
-
-``PATH`` is optional: if it is omitted, all changes in your working copy
-will be committed to the local repository.  When you commit, be sure that all
-changes are desired by reviewing them first; also, when making commits that you
-intend to push to public repositories, you should **not** commit together
-unrelated changes.
-
-To abort a commit that you are in the middle of, leave the message
-empty (i.e., close the text editor without adding any text for the
-message).  Mercurial will then abort the commit operation so that you can
-try again later.
-
-Once a change is committed to your local repository, it is still only visible
-by you.  This means you are free to experiment with as many local commits
-you feel like.
-
-.. note::
-   If you do not like the default text editor Mercurial uses for
-   entering commit messages, you may specify a different editor,
-   either by changing the ``EDITOR`` environment variable or by setting
-   a Mercurial-specific editor in your global ``.hgrc`` with the ``editor``
-   option in the ``[ui]`` section.
-
-
-.. _hg-merge-conflicts:
-
-How do I solve merge conflicts?
-'''''''''''''''''''''''''''''''
-
-The easiest way is to install KDiff3 --- Mercurial will open it automatically
-in case of conflicts, and you can then use it to solve the conflicts and
-save the resulting file(s).  KDiff3 will also take care of marking the
-conflicts as resolved.
-
-If you don't use a merge tool, you can use ``hg resolve --list`` to list the
-conflicting files, resolve the conflicts manually, and the use
-``hg resolve --mark <file path>`` to mark these conflicts as resolved.
-You can also use ``hg resolve -am`` to mark all the conflicts as resolved.
-
-.. note::
-   Mercurial will use KDiff3 automatically if it's installed and it can find
-   it --- you don't need to change any settings.  KDiff3 is also already
-   included in the installer of TortoiseHg.  For more information, see
-   https://www.mercurial-scm.org/wiki/KDiff3.
-
-
-.. _hg-null-merge:
-
-How do I make a null merge?
-'''''''''''''''''''''''''''
-
-If you committed something (e.g. on 3.5) that shouldn't be ported on newer
-branches (e.g. on default), you have to do a *null merge*::
-
-   cd 3.x
-   hg merge 3.5
-   hg revert -ar default
-   hg resolve -am  # needed only if the merge created conflicts
-   hg ci -m '#12345: null merge with 3.5.'
-
-Before committing, ``hg status`` should list all the merged files as ``M``,
-but ``hg diff`` should produce no output.  This will record the merge without
-actually changing the content of the files.
-
-
-.. _hg-heads-merge:
-
-I got "abort: push creates new remote heads!" while pushing, what do I do?
-''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
-
-If you see this message while pushing, it means that you committed something
-on a clone that was not up to date, thus creating a new head.
-This usually happens for two reasons:
-
-1. You forgot to run ``hg pull`` and/or ``hg up`` before committing;
-2. Someone else pushed on the main repo just before you, causing a push race;
-
-First of all you should pull the new changesets using ``hg pull``.  Then you can
-use ``hg heads`` to see which branches have multiple heads.
-
-If only one branch has multiple heads, you can do::
-
-   cd default
-   hg heads .
-   hg up csid-of-the-other-head
-   hg merge
-   hg ci -m 'Merge heads.'
-
-``hg heads .``  will show you the two heads of the current branch: the one you
-pulled and the one you created with your commit (you can also specify a branch
-with ``hg heads <branch>``).  While not strictly necessary, it is highly
-recommended to switch to the other head before merging.  This way you will be
-merging only your changeset with the rest, and in case of conflicts it will be
-a lot easier.
-
-If more than one branch has multiple heads, you have to repeat these steps for
-each branch.  Since this creates new changesets, you will also have to
-:ref:`merge them between branches <branch-merge>`.  For example, if both ``3.5``
-and ``default`` have multiple heads, you should first merge heads in ``3.5``,
-then merge heads in ``default``, and finally merge ``3.5`` with ``default``
-using ``hg merge 3.5`` as usual.
-
-In order to avoid this, you should *always remember to pull and update before
-committing*.
-
-
-How do I undo the changes made in a recent commit?
-''''''''''''''''''''''''''''''''''''''''''''''''''
-
-First, this should not happen if you take the habit of reviewing changes before
-committing them.
-
-In any case, run::
-
- git revert <revision number>
-
-This will modify your working copy so that all changes in ``<revision number>``
-(including added or deleted files) are undone.  You then need to commit
-these changes so that the backout gets permanently recorded.
