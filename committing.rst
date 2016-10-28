@@ -38,9 +38,9 @@ passes before pushing any code changes.
 Patch checklist
 '''''''''''''''
 
-Along with running the tests, a simple automated patch checklist, `patchcheck`,
+Along with running the tests, a simple automated patch checklist, ``patchcheck``,
 guides a developer through the common patch generation checks. To run
-`patchcheck`:
+``patchcheck``:
 
    On *UNIX* (including Mac OS X)::
 
@@ -143,7 +143,7 @@ beyond the normal permissions provided by the chosen open source license.
 
 Some developers may object to the relicensing permissions granted to the PSF
 by the CLA. They're entirely within their rights to refuse to sign the CLA
-on that basis, but that refusal *does* mean we can't accept their patches
+on that basis, but that refusal *does* mean we **can't accept their patches**
 for inclusion.
 
 .. _Contribution: http://www.python.org/psf/contrib/
@@ -288,16 +288,17 @@ set up some basic options.  Here are the minimal options you need to activate:
    git config --global user.name "Your Name"
    git config --global user.email email@example.org
 
-`--global` flag sets configuration options at a global level, if instead you
-want to set it at a project level use `--local`, instead.
+``--global`` flag sets configuration options at a global level, if instead you
+want to set it at a project level use ``--local``, instead.
 
 * *Under Windows*, you should also enable the *autocrlf* option, which will
   fix any Windows-specific line endings your text editor might insert when you
   create or modify versioned files.  The public repository has a hook which
   will reject all changesets having the wrong line endings, so enabling this
   extension on your local computer is in your best interest.
+  ::
 
-   git config --global core.autocrlf input
+     git config --global core.autocrlf input
 
 
 Remotes Setup
@@ -311,21 +312,21 @@ discusses the simplest approach of having a single directory with two remotes,
 one pointing to private fork, the other one being the official repository.
 
 Assuming you have :ref:`cloned the official repository <checkout>` here is how
-your current setup should look like:
+your current setup should look like::
 
    $ git remote -v    # show remotes
    origin  https://github.com/python/cpython (fetch)
    origin  https://github.com/python/cpython (push)
 
 You can have multiple remotes defined for a single repository, the usual approach
-is to have `origin` pointing to your :ref:`private fork <forking>`, and `upstream`
+is to have ``origin`` pointing to your :ref:`private fork <forking>`, and ``upstream``
 pointing to the official repository. To do so, here are the steps needed to have
-that setup:
+that setup::
 
    git remote set-url origin https://github.com/<your-username>/cpython
    git remote add upstrem https://github.com/python/cpython
 
-After that, your remotes configuration should look like this:
+After that, your remotes configuration should look like this::
 
    $ git remote -v    # show remotes
    origin  https://github.com/<your-username>/cpython (fetch)
@@ -341,21 +342,17 @@ Pushing changes
 
 You have two remotes configured (see previous section for setup). Publishing
 your changes to any of them is as simple as specifying the name of the remote
-upon your push. Assuming I am working on a local branch `bug1234` and I want to
-push it to my private branch I do:
+upon your push. Assuming I am working on a local branch ``bug1234`` and I want to
+push it to my private branch I do::
 
    git push origin bug1234
-
-If instead I want to push my changes to the official repository, I do:
-
-   git push upstream bug1234
 
 
 Synchronizing remotes
 '''''''''''''''''''''
 
 To synchronize your fork, from the official repository you need to execute following
-commands:
+commands::
 
    git fetch upstream         # fetch remote changes
    git checkout master        # checkout your current master branch
@@ -393,7 +390,7 @@ Python version.
 Backporting changes to Python 3.6 (or older version)
 -----------------------------------------------------
 
-The current in-development version of Python is in master branch.  To properly
+The current in-development version of Python is in the ``master`` branch.  To properly
 port the patch to Python 3.6 (or older version), you should first apply the patch
 to master branch::
 
@@ -430,7 +427,7 @@ Squashing commits
 All the changes pushed to the main repository should be squashed into a single
 commit.  The following steps take you through the process of squashing several
 commits into a single one.  Assuming I want to squash my last 4 commits into
-a single one (check `git log` to get the number) here are the necessary steps:
+a single one (check `git log` to get the number) here are the necessary steps::
 
    git rebase -i HEAD~4
    # I'll be modifying history starting from current branch and 4 commits back
@@ -439,13 +436,13 @@ a single one (check `git log` to get the number) here are the necessary steps:
 You should be presented with an editor showing you 4 lines of commits.  Each line,
 representing one commit will contain an action, commit SHA and its message.  Below
 you should see a descriptive information about possible commands you can execute.
-Since we are interested in squashing commits into a single one we leave the `pick`
-option next to the first line and change all the following to `squash`.  Once that
+Since we are interested in squashing commits into a single one we leave the ``pick``
+option next to the first line and change all the following to ``squash``.  Once that
 is done we can save the changes.  Upon doing so you should be presented with a new
 editor this time containing just the commit messages of all the commits you are
 squashing.  Tweak the comments appropriately and write the changes once again.
 Once that is done your initial 4 commits should turn into a single one, you should
-be able to check it using `git log`.
+be able to check it using ``git log``.
 
 
 .. _forking:
