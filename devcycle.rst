@@ -34,36 +34,26 @@ There is a branch for each *feature version*, whether released or not (e.g.
 2.7, 3.6).  Development is handled separately for Python 2 and Python 3:
 no merging happens between 2.x and 3.x branches.
 
-In each of the 2.x and 3.x realms, the branch for a feature version is always a
-descendant of the previous feature version: for example, the ``3.6`` branch is a
-descendant of the ``3.5`` branch.
-
-Therefore, each change should be made **first** in the oldest branch to which it
-applies and forward-ported as appropriate: if a bug must be fixed in both Python
-3.6 and 3.7, first fix it in ``3.6`` and then merge ``3.6`` into ``default``
-(which holds the future 3.7).
-
 
 .. _indevbranch:
 
 In-development (main) branch
 ----------------------------
 
-The ``default`` branch is the branch for the next feature release; it is
+The ``master`` branch is the branch for the next feature release; it is
 under active development for all kinds of changes: new features, semantic
-changes, performance improvements, bug fixes.  As the name indicates, it
-is the branch :ref:`checked out <checkout>` by default by Mercurial.
+changes, performance improvements, bug fixes.
 
 At some point during the life-cycle of a release, a
 new :ref:`maintenance branch <maintbranch>` is created to host all bug fixing
-activity for further micro versions (3.3.1, 3.3.2, etc.).
+activity for further micro versions in a feature version (3.3.1, 3.3.2, etc.).
 
 For versions 3.4 and before, this was conventionally done when the final
 release was cut (for example, 3.4.0 final).
 
 Starting with the 3.5 release, we create the release maintenance branch
 (e.g. 3.5) at the time we enter beta (3.5.0 beta 1).  This allows
-feature development for the release 3.n+1 to occur within the default
+feature development for the release 3.n+1 to occur within the master
 branch alongside the beta and release candidate stabilization periods
 for release 3.n.
 
@@ -74,9 +64,11 @@ Maintenance branches
 
 A branch for a previous feature release, currently being maintained for bug
 fixes.  There are usually two maintenance branches at any given time: one for
-Python 3.x and
-one for Python 2.x.  At some point in the future, Python 2.x will be closed
-for bug fixes and there will be only one maintenance branch left.
+Python 3.x and one for Python 2.x. Only during the beta/rc phase of a new
+minor/feature release will there be three active maintenance branches, e.g.
+during the beta phase for Python 3.6 there were master, 3.6, 3.5, and 2.7
+branches open. At some point in the future, Python 2.x will be closed for bug
+fixes and there will be only one maintenance branch left.
 
 The only changes allowed to occur in a maintenance branch without debate are
 bug fixes.  Also, a general rule for maintenance branches is that compatibility
@@ -97,7 +89,8 @@ following the release of 3.5.1.
 Security branches
 -----------------
 
-A branch less than 5 years old but no longer in maintenance mode.
+A branch less than 5 years old but no longer in maintenance mode is a security
+branch.
 
 The only changes made to a security branch are those fixing issues exploitable
 by attackers such as crashes, privilege escalation and, optionally, other
@@ -117,9 +110,9 @@ security patches have been applied to the branch.
 Summary
 -------
 
-There are 7 open branches right now in the Mercurial repository:
+There are 7 open branches right now in the Git repository:
 
-- the ``default`` branch holds the future 3.7 version and descends from ``3.6``
+- the ``master`` branch holds the future 3.7 version and descends from ``3.6``
   (RM: Ned Deily)
 - the ``3.6`` branch holds bug fixes for 3.6.0 and future 3.6.x maintenance releases
   and descends from ``3.5`` (RM: Ned Deily)
