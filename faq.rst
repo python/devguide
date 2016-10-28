@@ -183,8 +183,8 @@ best to run a ``make distclean`` to ensure that all previously built files
 are removed.
 
 
-I want to keep a separate working copy per development branch, is it's possible?
-'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+I want to keep a separate working copy per development branch, is it possible?
+''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 
 Create several clones of your local repository::
 
