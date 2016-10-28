@@ -30,12 +30,16 @@ itself. git is easily available for all common operating systems. As the
 CPython repo is hosted on GitHub, please refer to either the
 `GitHub setup instructions <https://help.github.com/articles/set-up-git/>`_
 or the `git project instructions <https://git-scm.com>`_ for step-by-step
-installation directions.
+installation directions. You may also want to consider a graphical client
+such as `TortoiseGit <http://tortoisegit.org/>`_ or
+`GitHub Desktop <https://desktop.github.com/>`_.
 
-You may also wish to set up an SSH key as
-described in the GitHub instructions as this will allow you to interact with
-GitHub without typing a username and password each time you execute a
-command, such as `git pull`, `git push`, or `git fetch`.
+You may also wish to
+`set up an SSH key <https://help.github.com/articles/adding-a-new-ssh-key-to-your-github-account/>`_
+as this will allow you to interact with GitHub without typing a username
+and password each time you execute a command, such as ``git pull``,
+``git push``, or ``git fetch``.
+
 
 .. _checkout:
 
@@ -80,17 +84,15 @@ Compiling (for debugging)
 
 CPython provides several compilation flags which help with debugging various
 things. While all of the known flags can be found in the
-``Misc/SpecialBuilds.txt``
-file, the most critical one is the ``Py_DEBUG`` flag which creates what is
-known as a "pydebug" build. This flag turns on
-various extra sanity checks which help catch common issues. The use of the flag
-is so common that turning on the flag is a basic compile option.
+``Misc/SpecialBuilds.txt`` file, the most critical one is the ``Py_DEBUG`` flag
+which creates what is known as a "pydebug" build. This flag turns on various
+extra sanity checks which help catch common issues. The use of the flag is so
+common that turning on the flag is a basic compile option.
 
-You should always
-develop under a pydebug build of CPython (the only instance of when you
-shouldn't is if you are taking performance measurements). Even when working
-only on pure Python code the pydebug build provides several useful checks that
-one should not skip.
+You should always develop under a pydebug build of CPython (the only instance of
+when you shouldn't is if you are taking performance measurements). Even when
+working only on pure Python code the pydebug build provides several useful
+checks that one should not skip.
 
 
 .. _build-dependencies:
@@ -271,7 +273,7 @@ still build properly).
 Windows
 '''''''
 
-The `readme <https://hg.python.org/cpython/file/default/PCbuild/readme.txt>`_
+The `readme <https://github.com/python/cpython/blob/master/PCbuild/readme.txt>`_
 included in the solution has more details, especially on what additional
 software is required to build which parts of Python.
 
@@ -351,15 +353,8 @@ when trying to build an old (2.x) Python with a new (3.x) Python installed, or
 vice versa.
 
 To overcome this problem, auto-generated files are also checked into the
-git repository. So if you don't touch the auto-generation scripts, there's
-no real need to auto-generate anything. A special build target ``touch`` was added (the ``touch``
-build target is not designed for git clones and does not support them). Run::
-
-    make touch
-
-Before running the compilation ``make``. This will tweak the timestamps of the
-auto-generated files in a way that makes it unnecessary to create them anew and
-henceforth the compilation should not require an installed Python interpreter.
+Git repository. So if you don't touch the auto-generation scripts, there's
+no real need to auto-generate anything.
 
 Editors and Tools
 =================

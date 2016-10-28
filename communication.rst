@@ -38,7 +38,7 @@ tree is frozen for commits, etc.), it is discussed here instead of python-dev
 to keep traffic down on the latter.
 
 Python-checkins_ sends out an email for every commit to Python's various
-repositories from https://hg.python.org. All core developers
+repositories from https://github.com/python/cpython. All core developers
 subscribe to this list and are known to reply to these emails to make comments
 about various issues they catch in the commit. Replies get redirected to
 python-dev.
