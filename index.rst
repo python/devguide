@@ -16,14 +16,14 @@ patch:
 
 1. Set up and install dependencies.
 
-   Install :ref:`Mercurial <vcsetup>` and other dependencies.
+   Install :ref:`Git <vcsetup>` and other dependencies.
 
    The dependencies needed will depend on the platform you're on.
    Go to :ref:`Get Setup <setup>` page for detailed information.
 
 2. :ref:`Get the source code <checkout>`::
 
-      hg clone https://hg.python.org/cpython
+      git clone https://github.com/python/cpython
 
 3. Build Python.
 
@@ -218,8 +218,8 @@ Key Resources
     * `Firefox search engine plug-in`_
 * `Buildbot status`_
 * Source code
-    * `Browse online <https://hg.python.org/cpython/file/default/>`_
-    * `Snapshot of py3k <https://hg.python.org/cpython/archive/default.tar.bz2>`_
+    * `Browse online <https://github.com/python/cpython/>`_
+    * `Snapshot of the *master* branch <https://github.com/python/cpython/archive/master.zip>`_
     * `Daily OS X installer <http://buildbot.python.org/daily-dmg/>`_
 * PEPs_ (Python Enhancement Proposals)
 * :doc:`faq`
@@ -288,7 +288,7 @@ Full Table of Contents
 
 .. _Buildbot status: https://www.python.org/dev/buildbot/
 .. _Firefox search engine plug-in: https://www.python.org/dev/searchplugin/
-.. _Misc directory: https://hg.python.org/cpython/file/default/Misc
+.. _Misc directory: https://github.com/python/cpython/tree/master/Misc
 .. _PEPs: https://www.python.org/dev/peps/
 .. _python.org maintenance: https://pythondotorg.readthedocs.io/
 .. _Python: https://www.python.org/
