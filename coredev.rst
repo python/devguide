@@ -183,9 +183,9 @@ an existing one), you use the command::
 
 ``PATH`` is optional: if it is omitted, all changes in your working copy
 will be committed to the local repository.  When you commit, be sure that all
-changes are desired by :ref:`reviewing them first <hg-status>`;
-also, when making commits that you intend to push to public repositories,
-you should **not** commit together unrelated changes.
+changes are desired by reviewing them first; also, when making commits that you
+intend to push to public repositories, you should **not** commit together
+unrelated changes.
 
 To abort a commit that you are in the middle of, leave the message
 empty (i.e., close the text editor without adding any text for the
@@ -289,17 +289,13 @@ committing*.
 How do I undo the changes made in a recent commit?
 ''''''''''''''''''''''''''''''''''''''''''''''''''
 
-First, this should not happen if you take the habit of :ref:`reviewing changes
-<hg-status>` before committing them.
+First, this should not happen if you take the habit of reviewing changes before
+committing them.
 
 In any case, run::
 
- hg backout <revision number>
+ git revert <revision number>
 
 This will modify your working copy so that all changes in ``<revision number>``
-(including added or deleted files) are undone.  You then need to :ref:`commit
-<hg-commit>` these changes so that the backout gets permanently recorded.
-
-.. note::
-   These instructions are for Mercurial 1.7 and higher.  ``hg backout`` has
-   a slightly different behaviour in versions before 1.7.
+(including added or deleted files) are undone.  You then need to commit
+these changes so that the backout gets permanently recorded.
