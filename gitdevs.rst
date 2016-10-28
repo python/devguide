@@ -13,18 +13,14 @@ Mercurial for git developers
 Overview
 ========
 
-This guide is geared towards prospective contributors who are accustomed to
-git-based development. The intention of this guide is to lower the initial
-barrier of entry for prospective contributors in learning a new source control
-tool. While there are projects that focus on automating this to allow seamless
-bridges between the two systems, this guide focusses solely on native Mercurial
-functionality. As with most tools, this is not the only method of achieving
-git-like workflows with Mercurial. It is intended solely to provide one
-potential path.
-
-Note that this geared towards prospective contributors and the patch workflow.
-Core developers will have a similar workflow, but it will differ in the later
-stages (merge vs patch generation).
+This document is meant to help familiarize developers who are used to
+a Git-based workflow with Mercurial. While most of the work for Python
+is now done in Git, there are a couple ancillary repositories that
+still use Mercurial, and thus this document exists those who wish to
+help with those ancillary repositories. This does mean, though, that
+the examples using the ``cpython`` repositories are purely for
+illustrative purposes and people should not use the Mercurial
+repository referenced in this document!
 
 The workflow that will be used as the case study for this guide is as follows:
 
