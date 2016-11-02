@@ -1,6 +1,6 @@
 {% extends "!layout.html" %}
 {% block rootrellink %}
-        <li><img src="{{ pathto('_static/py.png', 1) }}" alt=""
+        <li><img src="{{ pathto('https://docs.python.org/3/_static/py.png', 1) }}" alt=""
                  style="vertical-align: middle; margin-top: -1px"/></li>
         <li><a href="https://www.python.org/">Python</a>{{ reldelim1 }}</li>
         <li>
@@ -30,8 +30,8 @@
     {%- endif %}
 {% endblock %}
 {% block extrahead %}
-    <link rel="shortcut icon" type="image/png" href="{{ pathto('_static/py.png', 1) }}" />
-    {% if not embedded %}<script type="text/javascript" src="{{ pathto('_static/copybutton.js', 1) }}"></script>{% endif %}
+    <link rel="shortcut icon" type="image/png" href="{{ pathto('https://docs.python.org/3/_static/py.png', 1) }}" />
+    {% if not embedded %}<script type="text/javascript" src="{{ pathto('https://docs.python.org/3/_static/copybutton.js', 1) }}"></script>{% endif %}
 
 {{ super() }}
 {% endblock %}

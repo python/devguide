@@ -218,7 +218,7 @@ the ``Tools/buildbot/test.bat`` script.
 
 It is also possible to run a build on all of the custom builders at the same
 time.  Navigate to the bottom of the
-`builders page <http://buildbot.python.org/all/builders>`_, then find[#]_
+`builders page <http://buildbot.python.org/all/builders>`_, then find [#]_
 and fill out the set of fields that includes a *Repo path:* field.  Click the
 associated *Force Build* button to start the build on all available custom
 builders.

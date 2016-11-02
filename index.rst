@@ -117,7 +117,7 @@ Status:
 Dates in *italic* are scheduled and can be adjusted.
 
 By default, the end-of-life is scheduled 5 years after the first release.  It
-can be adjusted by the release manager of each branch. Versions older than 2.6
+can be adjusted by the release manager of each branch. Versions older than 2.7
 have reached end-of-life.
 
 See also :ref:`Security branches <secbranch>`.
