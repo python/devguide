@@ -141,12 +141,12 @@ participating in the CPython core development process:
    available, working on the infrastructure that supports CPython development,
    specifically the Roundup-based bug tracker and the buildbot system.
 
-   David currently does both proprietary and open source developement work,
+   David currently does both proprietary and open source development work,
    primarily in Python, through the company in which he is a partner, `Murray &
    Walker, Inc <http://www.murrayandwalker.com>`_.  He has done contract work
    focused specifically on CPython development both through the PSF (the
    kickstart of the email unicode API development) and directly funded by
-   interested corporations (additional development work on email fundeded by
+   interested corporations (additional development work on email funded by
    QNX, and work on CPython ICC support funded by Intel).  He would like to
    spend more of his (and his company's) time on open source work, and so is
    actively seeking additional such contract opportunities.
