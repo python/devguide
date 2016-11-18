@@ -263,8 +263,7 @@ Now, the history graph should look like this::
     | |  date:        Fri Nov 28 14:52:14 2014 -0800
     | |  summary:     Minor code cleanup.
 
-Notice that the only difference between this and the previous one is that
-changeset 91935 now also has the bookmark "issueA". Bookmarks are advanced
+Notice that the only difference between this and the previous history graph is that changeset 93654 now also has the bookmark "issueA". Bookmarks are advanced
 automatically with each subsequent commit.
 
 Once work has been completed on issueA, commit and prepare a patch for
