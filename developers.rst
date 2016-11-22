@@ -25,6 +25,9 @@ transliteration too.
 Permissions History
 -------------------
 
+- Xiang Zhang was given push privileges on November 22, 2016 by Brett Cannon
+  for general contributions, on the recommendation of Victor Stinner.
+
 - INADA Naoki was given push privileges on September 26, 2016 by Brett Cannon,
   on the recommendation of Yury Selivanov.
 
