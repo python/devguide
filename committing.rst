@@ -33,6 +33,8 @@ later in this document):
    If you want to share your work-in-progress code on a feature or bugfix,
    either open a ``WIP``-prefixed PR, publish patches on the
    `issue tracker`_ or create a public fork of the repository.
+   
+.. _issue tracker: https://bugs.python.org
 
 
 Does the test suite still pass?
