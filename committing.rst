@@ -10,10 +10,31 @@ Before a change is committed, you must make sure it is ready to enter the
 public source tree.  Draft commits are prohibited.  Therefore, you must
 ensure your changes fulfill several mandatory criteria.
 
+When working a pull request on GitHub, use the following as a checklist of
+what to check for before merging (details of various steps can be found
+later in this document):
+
+#. Has the submitter signed the CLA?
+   (delineated by a label on the pull request)
+#. Did the test suite pass? (delineated by a pull request check)
+#. Did code coverage increase or stay the same?
+   (delineated by a comment on the pull request)
+#. Are the changes acceptable?
+#. Was ``configure`` regenerated (if necessary)?
+#. Was ``pyconfig.h.in`` regenerated (if necessary)?
+#. Was the submitter added to ``Misc/ACKS`` (as appropriate)?
+#. Was ``Misc/NEWS`` updated (as appropriate)?
+#. Was "What's New" updated
+   (or the pull request labeled as needing a "What's New" entry)?
+#. Were appropriate labels added to signify necessary backporting of the
+   pull request?
+
 .. note::
    If you want to share your work-in-progress code on a feature or bugfix,
-   either open a WIP-prefixed PR, publish patches on the `issue tracker`_ or
-   create a public fork of the repository.
+   either open a ``WIP``-prefixed PR, publish patches on the
+   `issue tracker`_ or create a public fork of the repository.
+   
+.. _issue tracker: https://bugs.python.org
 
 
 Does the test suite still pass?
@@ -83,7 +104,7 @@ more.  In particular:
   feature/bugfix.
 
 It is of course okay to pile up several commits to one branch and merge them
-into another in one merge commit.
+into another in one commit.
 
 
 Handling Others' Code
@@ -96,7 +117,7 @@ First, make sure the patch is in a good state. Both :ref:`patch` and
 :ref:`helptriage`
 explain what is to be expected of a patch. Typically patches that get cleared by
 triagers are good to go except maybe lacking ``Misc/ACKS`` and ``Misc/NEWS``
-entries.
+entries (which a core developer should make sure are updated appropriately).
 
 Second, make sure the patch does not break backwards-compatibility without a
 good reason. This means :ref:`running the entire test suite <runtests>` to
@@ -105,8 +126,8 @@ there must be a good reason for the breakage of code the change will cause
 (and it **will** break someone's code). If you are unsure if the breakage
 is worth it, ask on python-dev.
 
-Third, ensure the patch is attributed correctly by adding the contributor's
-name to ``Misc/ACKS`` if they aren't already there (and didn't add themselves
+Third, ensure the patch is attributed correctly with the contributor's
+name in ``Misc/ACKS`` if they aren't already there (and didn't add themselves
 in their patch) and by mentioning "Patch by <x>" in the ``Misc/NEWS`` entry
 and the checkin message. If the patch has been heavily modified then "Initial
 patch by <x>" is an appropriate alternate wording.
@@ -115,10 +136,11 @@ If you omit correct attribution in the initial checkin, then update ``ACKS``
 and ``NEWS`` in a subsequent checkin (don't worry about trying to fix the
 original checkin message in that case).
 
-Finally, especially for larger patches, check if the submitter of the
+Finally, make sure that the submitter of the
 patch has a CLA in place (indicated by an asterisk following their username
-in the `issue tracker`_). If the asterisk is missing and the patch is
-non-trivial, direct them to the electronic `Contributor Licensing Agreement`_
+in the `issue tracker`_ or by the "CLA Signed" label on the pull request).
+If the submitter lacks a signed CLA and the patch is non-trivial, direct them
+to the electronic `Contributor Licensing Agreement`_
 to ensure the PSF has the appropriate authorizations in place to relicense
 and redistribute their code.
 
@@ -196,7 +218,7 @@ be used to refer to objects in the documentation.  Example NEWS entry::
 (In all other ``.rst`` files, the single backticks should not be used.  They are
 allowed here because NEWS is meant to be as readable as possible unprocessed.)
 
-A nice trick to make Mercurial’s automatic file merge work more smoothly is to
+A nice trick to make merging across branches work more smoothly is to
 put a new entry after the first or first two entries rather than at the very
 top.  This way if you commit, pull new changesets and merge, the merge will
 succeed automatically.
@@ -215,8 +237,10 @@ it is common to simply paste the NEWS entry into the commit message.  Here
 is an example::
 
    Issue #42: the spam module is now more spammy.
+   
    The spam module sporadically came up short on spam. This change
    raises the amount of spam in the module by making it more spammy.
+   
    Thanks to Monty Python for the patch.
 
 The first line or sentence is meant to be a dense, to-the-point explanation
@@ -225,30 +249,6 @@ a new paragraph(s) can be added to explain in proper depth what has happened
 (detail should be good enough that a core developer reading the commit message
 understands the justification for the change).  Also, if a non-core developer
 contributed to the resolution, it is good practice to credit them.
-
-Hooks
-'''''''''''''''
-
-Special hooks have been added to the repository to enable notifying the `issue tracker`_
-of a commit related to an issue.
-
-A commit message can mention one or several issues in one of the following
-ways::
-
-   #12345
-   issue12345
-   issue 12345
-   bug12345
-   bug 12345
-
-where 12345 is the number of the issue. The commit details (including its
-changeset, branch and commit message) will then be posted as a message to the
-issue's page in the tracker, for each mentioned issue.
-
-If "closes" (or "closed", or "closing") is prepended, the issue is
-automatically closed as "fixed".
-
-.. _issue tracker: https://bugs.python.org
 
 
 Working with Git_
