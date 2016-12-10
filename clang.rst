@@ -126,7 +126,7 @@ On Mac OS X, the libraries are installed in
 
 The installer does not install all the components needed on occasion. For
 example, you might want to run a ``scan-build`` or examine the results with
-``scan-veiw``. You can copy the components by hand with: ::
+``scan-view``. You can copy the components by hand with: ::
 
     sudo mkdir /usr/local/bin/scan-build
     sudo cp -r llvm-3.4/tools/clang/tools/scan-build /usr/local/bin
