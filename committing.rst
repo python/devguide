@@ -327,7 +327,7 @@ pointing to the official repository. To do so, here are the steps needed to have
 that setup::
 
    git remote set-url origin https://github.com/<your-username>/cpython
-   git remote add upstrem https://github.com/python/cpython
+   git remote add upstream https://github.com/python/cpython
 
 After that, your remotes configuration should look like this::
 

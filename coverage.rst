@@ -236,7 +236,7 @@ order to create a HTML report you can install `lcov`_. The command::
 
     make coverage-lcov
 
-assembles coverage data, removes 3rd party and system libaries and finally
+assembles coverage data, removes 3rd party and system libraries and finally
 creates a report. You can skip both steps and just run::
 
     make coverage-report

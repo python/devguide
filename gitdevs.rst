@@ -268,7 +268,7 @@ that changeset 93654 now also has the bookmark "issueA". Bookmarks are advanced
 automatically with each subsequent commit.
 
 Once work has been completed on issueA, commit and prepare a patch for
-submission to the issue tracker. Note that Mercurial doesn't have git's concept
+submission to the issue tracker. Note that Mercurial doesn't have Git's concept
 of staging, so all changes will be committed::
 
     hg commit -m 'fix for issueA'
