@@ -457,18 +457,20 @@ Forking a repository on GitHub is as simple as clicking Fork button in the right
 upper corner at https://github.com/python/cpython.
 
 
-Maintaining repository
-----------------------
+Maintaining a repository
+-------------------------
 
-Git object database and other files/directories under ``.git`` require
-periodic maintenance and cleanup. For example, commit editing left
+The Git object database and other files/directories under ``.git`` require
+periodic maintenance and cleanup. For example, commit editing leaves
 unreferenced objects (dangling objects, in git terminology) and these
 objects should be pruned to avoid collecting cruft in the DB. The
 command ``git gc`` is used for maintenance. Git automatically runs
 ``git gc --auto`` as a part of some commands to do quick maintenance.
 Users are recommended to run ``git gc --aggressive`` from time to
 time; ``git help gc`` recommends to run it  every few hundred
-changesets; for CPython it should be something like once a week.
+changesets; for CPython it should be something like once a week
+(GitHub itself runs the command weekly, so new checkouts do not need to
+perform this step).
 
 ``git gc --aggressive`` not only removes dangling objects, it also
 repacks object database into indexed and better optimized pack(s); it
