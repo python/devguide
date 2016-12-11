@@ -503,3 +503,11 @@ equivalent in its entirety looks like this::
 
 
 .. _NamedBranches: https://www.mercurial-scm.org/wiki/NamedBranches
+
+
+Using git for Mercurial repositories
+====================================
+
+If you prefer to use git for Mercurial repositories use the tools like
+`git-hg <http://offbytwo.com/git-hg/>`_ or `git-remote-hg
+<https://github.com/felipec/git-remote-hg>`_.
