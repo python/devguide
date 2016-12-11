@@ -350,6 +350,15 @@ push it to my private branch I do::
 
    git push origin bug1234
 
+Option ``-u|--set-upstream`` creates a remote-tracking branch that tracks what
+have been pushed to ``origin``::
+
+   git push -u origin bug1234
+
+That allows to avoid rebasing beyond already pushed commits.
+``git status --branch`` and ``git branch --verbose`` remind that the branch(es)
+have not pushed commits.
+
 
 Synchronizing remotes
 '''''''''''''''''''''
