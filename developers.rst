@@ -25,6 +25,9 @@ transliteration too.
 Permissions History
 -------------------
 
+- Maciej Szulik was given push privileges on December 23, 2016 by Brett Cannon,
+  on his own recommendation to work on the bugs.python.org issue tracker.
+
 - Xiang Zhang was given push privileges on November 21, 2016 by Brett Cannon,
   on the recommendation of Victor Stinner.
 
