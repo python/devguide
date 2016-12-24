@@ -59,6 +59,8 @@ using several Python processes so as to speed up things::
 If you are running a version of Python prior to 3.3 you must specify the number
 of processes to run simultaneously (e.g. ``-j2``).
 
+Keep in mind that the test results are not stored anywhere. If you want to keep the results for later reference, you'll have to redirect the output from the tests on your own.
+
 .. _strenuous_testing:
 
 Finally, if you want to run tests under a more strenuous set of settings, you
@@ -106,8 +108,8 @@ out and resolve the cause of the problem (for example, the default security
 settings on some platforms will disallow some tests)
 
 
-Writing
--------
+Writing Tests
+-------------
 
 Writing tests for Python is much like writing tests for your own code. Tests
 need to be thorough, fast, isolated, consistently repeatable, and as simple as
