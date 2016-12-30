@@ -19,11 +19,6 @@ a while to make sure you understand the development process. If other core
 developers agree that you should gain commit privileges you are then extended
 an official offer.
 
-You may request commit privileges yourself, but do not be surprised if your
-request is turned down. Do not take this personally! It simply means that other
-core developers think you need more time contributing patches before you are
-able to commit them without supervision.
-
 A complete list of core developer usernames can be found at
 https://hg.python.org/committers.txt. :ref:`developers` lists when and why
 someone received commit privileges.
