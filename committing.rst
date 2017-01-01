@@ -295,7 +295,7 @@ set up some basic options in your `configuration file`_.
 Here are the minimal options you need to activate:
 
 * your *username*: this setting defines the name that will be used when you
-  :ref:`commit <hg-commit>` changes.  The usual convention is to also include
+  commit changes.  The usual convention is to also include
   an e-mail contact address in there::
 
    [ui]
@@ -428,10 +428,6 @@ as follow::
 Unless noted otherwise, the rest of the page will assume you are using the
 multiple clone approach, and explain in more detail these basic steps.
 
-For more advanced explanations about :ref:`null merges <hg-null-merge>`,
-:ref:`heads merges <hg-heads-merge>`, :ref:`merge conflicts
-<hg-merge-conflicts>`, etc., see the :ref:`FAQs for core developers
-<core-devs-faqs>`.
 
 .. _share extension: https://www.mercurial-scm.org/wiki/ShareExtension
 
@@ -617,8 +613,8 @@ a single aggregate patch.  This is where having a dedicated named branch
 ``mywork`` gets handy.
 
 First ensure that you have pulled *and merged* all changes from the main
-repository, as explained above.  Then, assuming your :ref:`currently checked
-out branch <hg-current-branch>` is still ``mywork``, simply do::
+repository, as explained above.  Then, assuming your currently checked
+out branch is still ``mywork``, simply do::
 
    $ hg diff -r default > mywork.patch
 

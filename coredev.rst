@@ -59,8 +59,7 @@ You need to provide an SSH-2 key to be able to commit code. You may have
 multiple keys if you wish (e.g., for work and home). Using Ed25519 keys is
 encouraged. Send your key as an attachment in an email to
 hgaccounts@python.org along with your GitHub username so you can be added to
-the "Python core" team at https://github.com/python. Help in generating an SSH
-key can be found in the :ref:`faq`.
+the "Python core" team at https://github.com/python.
 
 Your SSH key will be set to a username in the form of "first_name.last_name".
 This should match your username on the issue tracker.

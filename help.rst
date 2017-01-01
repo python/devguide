@@ -3,18 +3,34 @@
 Where to Get Help
 =================
 
-If you are working on Python it is very possible you will come across an issue
-where you need some assistance to solve it (this happens to core developers
-all the time).
+When working on Python, it is possible that you will come across an issue
+where you need some assistance to solve it.  This happens to core developers
+all the time.
 
-Should you require help, there are a :ref:`variety of options available
-<communication>` to seek assistance. If the question involves process or tool
-usage then please check the rest of this guide first (especially the
-:ref:`FAQ`) as it should answer your question.
+We try to foster environments of mutual respect, tolerance, and encouragement,
+as described in the PSF's `Diversity Statement`_.  Abiding by the guidelines
+in this document when asking questions or posting suggestions in the
+appropriate channels are an excellent way to get started on the mutual respect
+part, greatly increasing the chances of receiving tolerance and encouragement
+in return.
+
+.. _Diversity Statement: http://www.python.org/psf/diversity/
+
+
+General Python questions
+------------------------
+
+General questions about Python can be asked in `python-list`_ or `tutor`_
+mailing lists. You may also want to post your question in StackOverflow_ or
+the ``#python`` IRC channel on freenode_.
+
+.. _python-list: http://mail.python.org/mailman/listinfo/python-list
+.. _tutor: http://mail.python.org/mailman/listinfo/tutor
+.. _StackOverflow: http://stackoverflow.com/
 
 
 Ask #python-dev
------------------
+---------------
 
 If you are comfortable with IRC you can try asking on ``#python-dev`` (on
 the `freenode`_ network). Typically there are a number of experienced
@@ -67,3 +83,4 @@ and what you were trying to do), as well as the exact error message you
 encountered.
 
 .. _issue tracker: http://bugs.python.org
+
