@@ -266,65 +266,24 @@ still build properly).
 Windows
 '''''''
 
-The `readme <https://hg.python.org/cpython/file/default/PCbuild/readme.txt>`_
-included in the solution has more details, especially on what additional
-software is required to build which parts of Python.
-
 **Python 3.5** and later use Microsoft Visual Studio 2015.  You can download
-and use any of the free or paid versions of `Visual Studio 2015
-<https://www.visualstudio.com/>`_. Installing the latest updates is also
-recommended.
+and use any of the free or paid versions of `Visual Studio 2015`_. Installing
+the latest updates is also recommended.  See the readme_ for
+more details on what other software is necessary and how to build.
 
-Python 3.3 and 3.4 use Microsoft Visual Studio 2010.  You can download
-Microsoft Visual Studio 2010 Express with an `MSDN subscription
-<https://msdn.microsoft.com/subscriptions/downloads>`_.
-You'll also need to install the Visual Studio `Service Pack 1 (SP1)
-<http://www.microsoft.com/en-us/download/details.aspx?id=23691>`_. If you
-don't install this service pack, you may receive errors like the following
-during linking: ``LINK : fatal error LNK1123: failure during conversion to
-COFF: file invalid or corrupt``.
+**Python 2.7** uses Microsoft Visual Studio 2008, which is most easily obtained
+through an MSDN subscription.  To use the build files in the `PCbuild
+directory`_ you will also need Visual Studio 2010, see the `2.7 readme`_ for
+more details.  If you have VS 2008 but not 2010 you can use the build files in
+the `PC/VS9.0 directory`_, see the `VS9 readme`_ for details.
 
-Most Python versions prior to 3.3 use Microsoft Visual Studio 2008.  You can
-download Microsoft Visual C++ 2008 Express Edition with SP1
-from a new location yet to be determined.
+.. _Visual Studio 2015: https://www.visualstudio.com/
+.. _readme: https://hg.python.org/cpython/file/default/PCbuild/readme.txt
+.. _PCbuild directory: https://hg.python.org/cpython/file/2.7/PCbuild/
+.. _2.7 readme: https://hg.python.org/cpython/file/2.7/PCbuild/readme.txt
+.. _PC/VS9.0 directory: https://hg.python.org/cpython/file/2.7/PC/VS9.0/
+.. _VS9 readme: https://hg.python.org/cpython/file/2.7/PC/VS9.0/readme.txt
 
-Regardless of Visual Studio version, the ``PCbuild`` directory of a source
-checkout contains the build files for the Python version you are building.
-
-To build from the command line, execute :file:`PCBuild\\build.bat`.  If you
-have not previously done so, you can pass the ``-e`` option to download
-external dependencies or invoke :file:`PCBuild\\get_externals.bat` directly. By
-default, :file:`PCBuild\\build.bat` will produce a 32-bit release build. Pass
-the ``-p x64`` option to produce a 64-bit build, and/or the ``-d`` option to
-produce a debug build.
-
-To build from the Visual Studio GUI, open the ``pcbuild.sln`` solution file
-with Visual Studio.  Choose the :menuselection:`Build Solution` option
-under the :menuselection:`Build` menu.  Be sure that "Debug" was chosen
-as the active solution configuration (e.g. under
-:menuselection:`Build --> Configuration Manager...`).
-
-When building you may see a number of build errors related to missing
-files or directories.  These do not necessarily mean that Python failed
-to build.  If you prefer, you can exclude the offending projects from
-the build process by unchecking them inside the
-:menuselection:`Build --> Configuration Manager...` settings. You can
-also use the script :file:`PCbuild\\get_externals.bat` to download missing
-dependencies.
-
-Once built you might want to set Python as a startup project. Pressing F5 in
-Visual Studio, or choosing :menuselection:`Start Debugging` from the
-:menuselection:`Debug` menu, will launch the interpreter.
-
-.. _win-python.exe:
-
-If you want to launch the compiled interpreter from the command-line, the
-path varies according to the build.  For a 32-bit build in debug mode, you
-have to invoke ``PCBuild\win32\python_d.exe``, for a 64-bit build in debug
-mode, ``PCBuild\amd64\python_d.exe``.  If you are compiling in release mode
-(which you shouldn't, in general), replace ``python_d.exe`` with
-``python.exe``.  You can also invoke the most recently built interpreter using
-``python.bat`` in the root of the source tree.
 
 .. _build_troubleshooting:
 

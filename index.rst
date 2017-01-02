@@ -49,9 +49,8 @@ patch:
       ./python -m test -j3
 
    On :ref:`most <mac-python.exe>` Mac OS X systems, replace :file:`./python`
-   with :file:`./python.exe`.  On Windows, use :file:`python.bat` or
-   check the :ref:`Windows instructions <win-python.exe>`.  With Python 2.7,
-   replace ``test`` with ``test.regrtest``.
+   with :file:`./python.exe`.  On Windows, use :file:`python.bat`.  With Python
+   2.7, replace ``test`` with ``test.regrtest``.
 5. Make the :doc:`patch <patch>`.
 6. Submit it to the `issue tracker`_.
 
