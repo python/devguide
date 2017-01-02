@@ -296,3 +296,18 @@ permanently, either copy the commands to your personal gdb configuration file
 or symlink ``~/.gdbinit`` to ``Misc/gdbinit``.  To use these commands from
 a single gdb session without registering them, type ``source Misc/gdbinit``
 from your gdb session.
+
+
+Updating auto-load-safe-path to allow test_gdb to run
+-----------------------------------------------------
+
+``test_gdb`` attempts to automatically load additional Python specific
+hooks into gdb in order to test them. Unfortunately, the command line
+options it uses to do this aren't always supported correctly.
+
+If ``test_gdb`` is being skipped with an "auto-loading has been declined"
+message, then it is necessary to identify any Python build directories as
+auto-load safe. One way to achieve this is to add a line like the following
+to ``~/.gdbinit`` (edit the specific list of paths as appropriate)::
+
+    add-auto-load-safe-path ~/devel/py3k:~/devel/py32:~/devel/py27

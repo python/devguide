@@ -63,7 +63,7 @@ contributing to Python:
 
 * `Issue tracker`_
 * `Buildbot status`_
-* :doc:`faq`
+* :doc:`help`
 * PEPs_ (Python Enhancement Proposals)
 * :doc:`gitdevs`
 
@@ -130,7 +130,7 @@ Contributing
 We encourage everyone to contribute to Python and that's why we have put up this
 developer's guide.  If you still have questions after reviewing the material in
 this guide, then the `Python Mentors`_ group is available to help guide new
-contributors through the process.  The :doc:`Developer FAQ <faq>` is another
+contributors through the process.  The :doc:`Help <help>` section is another
 useful source of information.
 
 Guide for contributing to Python:
@@ -181,7 +181,7 @@ happen and that process is also described as part of this guide:
 * :doc:`stdlibchanges`
 * :doc:`langchanges`
 
-Also refer to :ref:`suggesting-changes` in the FAQ.
+Also refer to :ref:`suggesting-changes` section.
 
 
 Other Interpreter Implementations
@@ -224,7 +224,7 @@ Key Resources
     * `Snapshot of py3k <https://hg.python.org/cpython/archive/default.tar.bz2>`_
     * `Daily OS X installer <http://buildbot.python.org/daily-dmg/>`_
 * PEPs_ (Python Enhancement Proposals)
-* :doc:`faq`
+* :doc:`help`
 * :doc:`developers`
 
 
@@ -269,6 +269,8 @@ Full Table of Contents
    tracker
    triaging
    communication
+   suggestingchanges
+   porting
    coredev
    developers
    committing
@@ -284,7 +286,6 @@ Full Table of Contents
    clang
    buildslave
    gitdevs
-   faq
    motivations
 
 
