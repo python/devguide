@@ -1,6 +1,6 @@
-**********************************
-  Dynamic Analysis with Clang
-**********************************
+***************************
+Dynamic Analysis with Clang
+***************************
 
 This document describes how to use Clang to perform analysis on Python and its
 libraries. In addition to performing the analysis, the document will cover

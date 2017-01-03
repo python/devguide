@@ -298,8 +298,8 @@ a single gdb session without registering them, type ``source Misc/gdbinit``
 from your gdb session.
 
 
-How do I update my auto-load-safe-path to allow test_gdb to run?
-----------------------------------------------------------------
+Updating auto-load-safe-path to allow test_gdb to run
+-----------------------------------------------------
 
 ``test_gdb`` attempts to automatically load additional Python specific
 hooks into gdb in order to test them. Unfortunately, the command line
