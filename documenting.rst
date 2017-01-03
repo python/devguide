@@ -1458,8 +1458,9 @@ To build the documentation, follow the instructions from one of the sections
 below.  You can view the documentation after building the HTML by pointing
 a browser at the file :file:`Doc/build/html/index.html`.
 
-You are expected to have installed a recent version of Sphinx on your system or
-in a virtualenv_, so that the Makefile can find the ``sphinx-build`` command.
+You are expected to have installed the latest stable version of Sphinx_ on
+your system or in a virtualenv_, so that the Makefile can find the
+``sphinx-build`` command.
 
 
 Using make / make.bat
