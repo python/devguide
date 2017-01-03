@@ -21,8 +21,7 @@ from the root directory of your checkout (after you have
 
 You may need to change this command as follows throughout this section.
 On :ref:`most <mac-python.exe>` Mac OS X systems, replace :file:`./python`
-with :file:`./python.exe`.  On Windows, use :file:`PCbuild\\python_d.exe` or
-check the detailed :ref:`Windows instructions <win-python.exe>`.  If using
+with :file:`./python.exe`.  On Windows, use :file:`python.bat`.  If using
 Python 2.7, replace ``test`` with ``test.regrtest``.
 
 If you don't have easy access to a command line, you can run the test suite from

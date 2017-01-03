@@ -49,9 +49,8 @@ patch:
       ./python -m test -j3
 
    On :ref:`most <mac-python.exe>` Mac OS X systems, replace :file:`./python`
-   with :file:`./python.exe`.  On Windows, use :file:`python.bat` or
-   check the :ref:`Windows instructions <win-python.exe>`.  With Python 2.7,
-   replace ``test`` with ``test.regrtest``.
+   with :file:`./python.exe`.  On Windows, use :file:`python.bat`.  With Python
+   2.7, replace ``test`` with ``test.regrtest``.
 5. Make a :doc:`pull request <pullrequest>`.
 6. Create an issue on the `issue tracker`_ if one does not already exist.
 
@@ -76,9 +75,9 @@ Status of Python branches
 +------------------+--------------+-------------+----------------+----------------+----------------------------------------------------------------------------+
 | Branch           | Schedule     | Status      | First release  | End-of-life    | Comment                                                                    |
 +==================+==============+=============+================+================+============================================================================+
-| default          | *TBD*        | features    | *TBD*          | *TBD*          | The default branch is currently the future version Python 3.7.             |
+| default          | :pep:`537`   | features    | *2018-06-15*   | *2023-06-15*   | The default branch is currently the future version Python 3.7.             |
 +------------------+--------------+-------------+----------------+----------------+----------------------------------------------------------------------------+
-| 3.6              | :pep:`494`   | bugfix      | *2016-12-16*   | *2021-12-16*   | For the beta and rc phases of the future 3.6.0, then maintenance for 3.6.x |
+| 3.6              | :pep:`494`   | bugfix      | 2016-12-23     | *2021-12-23*   |                                                                            |
 +------------------+--------------+-------------+----------------+----------------+----------------------------------------------------------------------------+
 | 3.5              | :pep:`478`   | bugfix      | 2015-09-13     | *2020-09-13*   |                                                                            |
 +------------------+--------------+-------------+----------------+----------------+----------------------------------------------------------------------------+
