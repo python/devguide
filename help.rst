@@ -14,7 +14,7 @@ question.
 
 
 Ask #python-dev
------------------
+---------------
 
 If you are comfortable with IRC you can try asking on ``#python-dev`` (on
 the `freenode`_ network). Typically there are a number of experienced

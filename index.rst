@@ -63,7 +63,7 @@ contributing to Python:
 
 * `Issue tracker`_
 * `Buildbot status`_
-* :doc:`faq`
+* :doc:`help`
 * PEPs_ (Python Enhancement Proposals)
 * :doc:`gitdevs`
 
@@ -221,7 +221,7 @@ Key Resources
     * `Snapshot of the *master* branch <https://github.com/python/cpython/archive/master.zip>`_
     * `Daily OS X installer <http://buildbot.python.org/daily-dmg/>`_
 * PEPs_ (Python Enhancement Proposals)
-* :doc:`faq`
+* :doc:`help`
 * :doc:`developers`
 
 
@@ -266,6 +266,7 @@ Full Table of Contents
    tracker
    triaging
    communication
+   porting
    coredev
    developers
    committing
@@ -281,7 +282,6 @@ Full Table of Contents
    clang
    buildslave
    gitdevs
-   faq
    motivations
 
 

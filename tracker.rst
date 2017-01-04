@@ -136,6 +136,23 @@ In the sidebar you can also find links to summaries for easy issues and
 issues with a patch.
 
 
+Disagreement With a Resolution on the Issue Tracker
+===================================================
+
+First, take some time to consider any comments made in association with the
+resolution of the tracker issue. On reflection, they may seem more reasonable
+than they first appeared.
+
+If you still feel the resolution is incorrect, then raise the question on
+`python-dev`_. Further argument on `python-dev`_ after a consensus has been
+reached amongst the core developers is unlikely to win any converts.
+
+Issues closed by a core developer have already been carefully considered.
+Please do not reopen a closed issue.
+
+.. _python-dev: http://mail.python.org/mailman/listinfo/python-dev
+
+
 .. _devrole:
 
 Gaining the "Developer" Role on the Issue Tracker

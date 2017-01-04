@@ -292,6 +292,36 @@ the `PC/VS9.0 directory`_, see the `VS9 readme`_ for details.
 .. _VS9 readme: https://github.com/python/cpython/blob/2.7/PC/VS9.0/readme.txt
 
 
+.. _regenerate_configure:
+
+Regenerate configure
+--------------------
+
+If a change is made to Python which relies on some POSIX system-specific
+functionality (such as using a new system call), it is necessary to update the
+``configure`` script to test for availability of the functionality.
+
+Python's ``configure`` script is generated from ``configure.ac`` using Autoconf.
+Instead of editing ``configure``, edit ``configure.ac`` and then run
+``autoreconf`` to regenerate ``configure`` and a number of other files (such as
+``pyconfig.h``.
+
+When submitting a patch with changes made to ``configure.ac``, it is preferred
+to leave out the generated files as differences between Autoconf versions
+frequently results in many spurious changes cluttering the patch. Instead,
+remind any potential reviewers on the tracker to run ``autoreconf``.
+
+Note that running ``autoreconf`` is not the same as running ``autoconf``. For
+example, ``autoconf`` by itself will not regenerate ``pyconfig.h.in``.
+``autoreconf`` runs ``autoconf`` and a number of other tools repeatedly as is
+appropriate.
+
+Python's ``configure.ac`` script typically requires a specific version of
+Autoconf.  At the moment, this reads: ``version_required(2.65)``
+
+If the system copy of Autoconf does not match this version, you will need to
+install your own copy of Autoconf.
+
 .. _build_troubleshooting:
 
 Troubleshooting the build
