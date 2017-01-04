@@ -147,7 +147,8 @@ If you still feel the resolution is incorrect, then raise the question on
 `python-dev`_. Further argument on `python-dev`_ after a consensus has been
 reached amongst the core developers is unlikely to win any converts.
 
-You should not reopen issues that have been closed by a core developer.
+Issues closed by a core developer have already been carefully considered.
+Please do not reopen a closed issue.
 
 .. _python-dev: http://mail.python.org/mailman/listinfo/python-dev
 
