@@ -144,12 +144,11 @@ resolution of the tracker issue. On reflection, they may seem more reasonable
 than they first appeared.
 
 If you still feel the resolution is incorrect, then raise the question on
-`python-dev`_. If the consensus there supports the disputed resolution, please
-take any further objections to `python-ideas`_ (or some other forum). Further
-argument on `python-dev`_ after a consensus has been reached amongst the core
-developers is unlikely to win any converts.
+`python-dev`_. Further argument on `python-dev`_ after a consensus has been
+reached amongst the core developers is unlikely to win any converts.
 
-.. _python-ideas: https://mail.python.org/mailman/listinfo/python-ideas
+You should not reopen issues that have been closed by a core developer.
+
 .. _python-dev: http://mail.python.org/mailman/listinfo/python-dev
 
 
