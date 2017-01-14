@@ -18,6 +18,44 @@ a while to make sure you understand the development process. If other core
 developers agree that you should gain commit privileges you are then extended
 an official offer.
 
+What it Means
+-------------
+
+As contributors to the CPython project, our shared responsibility is to
+collaborate constructively with other contributors, including core developers.
+This responsibility covers all forms of contribution, whether that's submitting
+patches to the implementation or documentation, reviewing other peoples
+patches, triaging issues on the issue tracker, or discussing design and
+development ideas on the core mailing lists.
+
+Core developers accept key additional responsibilities around the ongoing
+management of the project:
+
+* core developers bear the additional responsibility of handling the
+  consequences of accepting a change into the code base or documentation.
+  That includes reverting or fixing it if it causes problems in the
+  Buildbot fleet or someone spots a problem in post-commit review, as well
+  as helping out the release manager in resolving any problems found during
+  the pre-release testing cycle. While all contributors are free to help out
+  with this part of the process, and it is most welcome when they do, the
+  actual responsibility rests with the core developer that merged the change
+* core developers also bear the primary responsibility for deciding when
+  changes proposed on the issue tracker should be escalated to python-ideas
+  or python-dev for wider discussion, as well as suggesting the use of the
+  Python Enhancement Proposal process to manage the design and justifcation
+  of complex changes, or changes with a potentially significant impact on
+  end users
+
+As a result of the additional responsibilities they accept, core developers
+gain the privilege of being able to approve proposed changes, as well as being
+able to reject them as inappropriate. Core developers are also able to request
+that even already merged changes be escalated to python-dev for further
+discussion, and potentially even reverted prior to release.
+
+Becoming a core developer isn't a binary "all-or-nothing" status - CPython
+is a large project, and different core developers accept responsibility for
+making design and development decisions in different areas (as documented
+in the :ref:`experts` and :ref:`developers`).
 
 Gaining Commit Privileges
 -------------------------
