@@ -24,7 +24,7 @@ What it Means
 As contributors to the CPython project, our shared responsibility is to
 collaborate constructively with other contributors, including core developers.
 This responsibility covers all forms of contribution, whether that's submitting
-patches to the implementation or documentation, reviewing other peoples
+patches to the implementation or documentation, reviewing other peoples'
 patches, triaging issues on the issue tracker, or discussing design and
 development ideas on the core mailing lists.
 
