@@ -146,7 +146,7 @@ locale                loewis, lemburg
 logging               vinay.sajip
 lzma                  nadeem.vawda
 macpath
-mailbox               petri.lehtinen
+mailbox
 mailcap
 marshal
 math                  mark.dickinson, rhettinger, stutzbach
