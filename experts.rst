@@ -55,7 +55,7 @@ abc
 aifc                  r.david.murray
 argparse              bethard
 array
-ast                   benjamin.peterson, georg.brandl
+ast                   benjamin.peterson
 asynchat              josiahcarlson, giampaolo.rodola*, stutzbach
 asyncio               gvanrossum, haypo, yselivanov, giampaolo.rodola
 asyncore              josiahcarlson, giampaolo.rodola*, stutzbach
@@ -168,7 +168,7 @@ os.path               serhiy.storchaka
 ossaudiodev
 parser                benjamin.peterson
 pathlib
-pdb                   georg.brandl
+pdb
 pickle                alexandre.vassalotti
 pickletools           alexandre.vassalotti
 pipes
@@ -178,8 +178,8 @@ plistlib
 poplib                giampaolo.rodola
 posix                 larry
 pprint                fdrake
-profile               georg.brandl
-pstats                georg.brandl
+profile
+pstats
 pty                   twouters*
 pwd
 py_compile
@@ -213,7 +213,7 @@ sqlite3               ghaering
 ssl                   janssen, christian.heimes, dstufft, alex
 stat                  christian.heimes
 statistics            steven.daprano
-string                georg.brandl
+string
 stringprep
 struct                mark.dickinson, meador.inge
 subprocess            astrand (inactive)
@@ -226,18 +226,18 @@ syslog                jafo*
 tabnanny              tim.peters (inactive)
 tarfile               lars.gustaebel
 telnetlib
-tempfile              georg.brandl
+tempfile
 termios               twouters
 test                  ezio.melotti
-textwrap              georg.brandl
+textwrap
 threading
 time                  belopolsky
 timeit
 tkinter               gpolo, serhiy.storchaka
-token                 georg.brandl
+token
 tokenize              meador.inge
 trace                 belopolsky
-traceback             georg.brandl*
+traceback
 tracemalloc           haypo
 tty                   twouters*
 turtle                gregorlingl
@@ -310,19 +310,19 @@ Interest Area       Maintainers
 ==================  ==========================================================
 algorithms
 argument clinic     larry
-ast/compiler        ncoghlan, benjamin.peterson, brett.cannon, georg.brandl, yselivanov
+ast/compiler        ncoghlan, benjamin.peterson, brett.cannon, yselivanov
 autoconf/makefiles  twouters*
 bsd
 bug tracker         ezio.melotti
 buildbots           zach.ware
-bytecode            benjamin.peterson, georg.brandl, yselivanov
+bytecode            benjamin.peterson, yselivanov
 context managers    ncoghlan
 coverity scan       christian.heimes, brett.cannon, twouters
 cryptography        gregory.p.smith, dstufft
-data formats        mark.dickinson, georg.brandl
+data formats        mark.dickinson
 database            lemburg
 devguide            ncoghlan, eric.araujo, ezio.melotti, willingc
-documentation       georg.brandl, ezio.melotti, eric.araujo
+documentation       ezio.melotti, eric.araujo
 GUI
 i18n                lemburg, eric.araujo
 import machinery    brett.cannon, ncoghlan, eric.snow
@@ -345,5 +345,5 @@ test coverage       giampaolo.rodola
 threads
 time and dates      lemburg, belopolsky
 unicode             lemburg, ezio.melotti, haypo, benjamin.peterson,
-version control     eric.araujo, georg.brandl, ezio.melotti
+version control     eric.araujo, ezio.melotti
 ==================  ==========================================================
