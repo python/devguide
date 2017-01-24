@@ -105,6 +105,8 @@ help revisions``. Just please make sure that you generate a
 **single, condensed** patch rather than a series of several changesets.
 
 
+.. _cla:
+
 Licensing
 ---------
 
