@@ -69,15 +69,12 @@ Helping with the Developer's Guide
 
 .. highlight:: bash
 
-The Developer's Guide uses the same process as the main Python documentation,
-except for some small differences.  The source lives in a `separate
-repository`_.  Bug reports and patches should be submitted to the `Python
-bug tracker`_ using the ``devguide`` component.  Changes to the devguide
+The Developer's Guide has already migrated to GitHub, where the source lives in a `separate
+repository`_.  Bug reports and patches should be submitted there as well.  Changes to the devguide
 are normally published within a day, on a schedule that may be different from
 the main documentation.
 
 .. _separate repository: https://github.com/python/devguide
-.. _Python bug tracker: http://bugs.python.org
 
 To clone the Developer's Guide::
 
@@ -92,3 +89,7 @@ in the checkout directory, which will write the files to the ``_build/html``
 directory.
 
 .. _Sphinx: http://sphinx.pocoo.org/
+
+You still need an account in the `Python bug tracker`_ to :ref:`sign the CLA <cla>`, fill in the field ``GitHub Name`` in your user details to connect the two accounts.
+
+.. _Python bug tracker: http://bugs.python.org
