@@ -25,6 +25,9 @@ transliteration too.
 Permissions History
 -------------------
 
+- Mariatta Wijaya was given push privileges on January 27, 2017 by Brett Cannon,
+  on the recommendation of Raymond Hettinger.
+
 - Maciej Szulik was given push privileges on December 23, 2016 by Brett Cannon,
   on his own recommendation to work on the bugs.python.org issue tracker.
 
