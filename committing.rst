@@ -236,7 +236,7 @@ Our usual convention mimics that used in the ``Misc/NEWS`` file.  Actually,
 it is common to simply paste the NEWS entry into the commit message.  Here
 is an example::
 
-   42: the spam module is now more spammy.
+   bpo-42: the spam module is now more spammy.
    
    The spam module sporadically came up short on spam. This change
    raises the amount of spam in the module by making it more spammy.
