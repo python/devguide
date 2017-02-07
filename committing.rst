@@ -212,7 +212,7 @@ The NEWS file is now read by Sphinx to produce the "Changelog" page; accordingly
 it should be valid reStructuredText.  The "default role" (single backticks) can
 be used to refer to objects in the documentation.  Example NEWS entry::
 
-   - Issue #15304: Fix warning message when `os.chdir()` fails inside
+   - bpo-15304: Fix warning message when `os.chdir()` fails inside
      `test.support.temp_cwd()`.  Patch by Chris Jerdonek.
 
 (In all other ``.rst`` files, the single backticks should not be used.  They are
@@ -236,7 +236,7 @@ Our usual convention mimics that used in the ``Misc/NEWS`` file.  Actually,
 it is common to simply paste the NEWS entry into the commit message.  Here
 is an example::
 
-   Issue #42: the spam module is now more spammy.
+   bpo-42: the spam module is now more spammy.
    
    The spam module sporadically came up short on spam. This change
    raises the amount of spam in the module by making it more spammy.
