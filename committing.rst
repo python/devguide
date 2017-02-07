@@ -410,7 +410,7 @@ to master branch::
    git apply --reject patch.diff
    # Fix any conflicts (e.g. look for *.rej files); compile; run the test suite.
    git add -A
-   git commit -m '#12345: fix some issue.'
+   git commit -m 'bpo-12345: fix some issue.'
    # Note the commit SHA (e.g. git log or git rev-parse --short HEAD).
 
 Then you can switch to the ``3.6`` branch (or appropriate older version), cherry-pick
