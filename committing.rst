@@ -381,20 +381,6 @@ Active branches
 If you do ``git branch`` you will see a :ref:`list of branches <listbranch>`.
 ``master`` is the in-development branch, and is the only branch that receives
 new features.  The other branches only receive bug fixes or security fixes.
-Depending on what you are committing (feature, bug fix, or security fix), you
-should commit to the oldest branch applicable, and then forward-port until the
-in-development branch.
-
-
-Merging order
--------------
-
-There are two separate lines of development: one for Python 2 (the ``2.x``
-branches) and one for Python 3 (the ``3.x`` branches and ``master``).
-You should *never* merge between the two major versions (2.x and 3.x) ---
-only between minor versions (e.g. 3.x->3.y).  The merge always happens from
-the oldest applicable branch to the newest branch within the same major
-Python version.
 
 
 .. _branch-merge:
