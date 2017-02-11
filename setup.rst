@@ -55,8 +55,7 @@ the Python core developers are constantly updating and fixing things in their
 support through the VCS as it will provide a diff tool, etc.
 
 To get a working copy of the :ref:`in-development <indevbranch>` branch of
-CPython (core developers use a different URL as outlined in :ref:`coredev`),
-run::
+CPython, run::
 
     git clone https://github.com/python/cpython
 
