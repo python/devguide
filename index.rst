@@ -51,8 +51,16 @@ patch:
    On :ref:`most <mac-python.exe>` Mac OS X systems, replace :file:`./python`
    with :file:`./python.exe`.  On Windows, use :file:`python.bat`.  With Python
    2.7, replace ``test`` with ``test.regrtest``.
-5. Make a :doc:`pull request <pullrequest>`.
-6. Create an issue on the `issue tracker`_ if one does not already exist.
+
+5. Work on an issue from the `issue tracker`_.  If an issue does not already
+   exist, please create it.  Trivial issues, like small typo fixes, do not
+   require any issue to be created.
+
+6. Make a :doc:`pull request <pullrequest>`.
+   Include ``bpo-NNNN`` in the pull request description, where ``NNNN`` is the
+   issue number from the `issue tracker`_.  For example::
+
+      bpo-12345: Fix some bug in spam module
 
 
 Quick Links
