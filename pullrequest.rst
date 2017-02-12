@@ -174,7 +174,7 @@ How to Review a Pull Request
 One of the bottlenecks in the Python development
 process is the lack of code reviews.
 If you browse the bug tracker, you will see that numerous issues
-have a fix, but cannot be commited to the main source code repository,
+have a fix, but cannot be committed to the main source code repository,
 because no one has reviewed the proposed solution.
 Reviewing a pull request can be just as informative as providing a
 pull request and it will allow you to give constructive comments on
