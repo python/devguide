@@ -42,7 +42,7 @@ management of the project:
 * core developers also bear the primary responsibility for deciding when
   changes proposed on the issue tracker should be escalated to python-ideas
   or python-dev for wider discussion, as well as suggesting the use of the
-  Python Enhancement Proposal process to manage the design and justifcation
+  Python Enhancement Proposal process to manage the design and justification
   of complex changes, or changes with a potentially significant impact on
   end users
 
