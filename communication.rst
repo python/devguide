@@ -15,12 +15,12 @@ python-dev_ is the primary mailing list for discussions about Python's
 development. The list is open to the public and is subscribed to by all core
 developers plus many people simply interested in following Python's
 development. Discussion is focused on issues related to Python's development,
-such as how to handle a specific issue, a PEP, etc.::
+such as how to handle a specific issue, a PEP, etc.
 
-   - Ideas about new functionality should **not** start here and instead
-     should be sent to python-ideas_.
-   - Technical support questions should also not be asked here and instead
-     should go to python-list_ or python-help_.
+- Ideas about new functionality should **not** start here and instead
+  should be sent to python-ideas_.
+- Technical support questions should also not be asked here and instead
+  should go to python-list_ or python-help_.
 
 Python-ideas_ is a mailing list open to the public to discuss ideas on changing
 Python. If a new idea does not start here (or python-list_, discussed below),
