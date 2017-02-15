@@ -14,35 +14,26 @@ Quick Start
 Here are the basic steps needed to get :ref:`set up <setup>` and contribute a
 patch:
 
-1. Set up and install dependencies.
+1. Install and set up :ref:`Git <vcsetup>` and other dependencies
+   (see the :ref:`Get Setup <setup>` page for detailed information).
 
-   Install :ref:`Git <vcsetup>` and other dependencies.
+2. Fork `the CPython repository <https://github.com/python/cpython>`_
+   to your GitHub account and :ref:`get the source code <checkout>` using::
 
-   The dependencies needed will depend on the platform you're on.
-   Go to :ref:`Get Setup <setup>` page for detailed information.
+      git clone https://github.com/<your_username>/cpython
 
-2. :ref:`Get the source code <checkout>`::
+3. Build Python, on UNIX and Mac OS use::
 
-      git clone https://github.com/python/cpython
+      ./configure --with-pydebug && make -j
 
-3. Build Python.
-
-   Detailed information can be found :ref:`here <compiling>`.
-   There are different instructions for :ref:`UNIX <unix-compiling>`,
-   :ref:`Mac OS <MacOS>`, and :ref:`Windows <windows-compiling>`.
-
-   The command to compile on UNIX and Mac OS is::
-
-      ./configure --with-pydebug
-      make -j
-
-   On Windows::
+   and on Windows use::
 
       PCbuild\build.bat -e -d
 
-   If the build outputs warnings or errors, :ref:`build-dependencies` provides
-   detail on standard library extensions that depend on installing third-party
-   libraries for some operating systems.
+   See also :ref:`more detailed instructions <compiling>`,
+   :ref:`how to build dependencies <build-dependencies>`, and the
+   plaform-specific pages for :ref:`UNIX <unix-compiling>`,
+   :ref:`Mac OS <MacOS>`, and :ref:`Windows <windows-compiling>`.
 
 4. :doc:`Run the tests <runtests>`::
 
@@ -52,13 +43,20 @@ patch:
    with :file:`./python.exe`.  On Windows, use :file:`python.bat`.  With Python
    2.7, replace ``test`` with ``test.regrtest``.
 
-5. Work on an issue from the `issue tracker`_.  If an issue does not already
-   exist, please create it.  Trivial issues, like small typo fixes, do not
+5. Create a new branch where your work for the issue will go, e.g.::
+
+      git checkout -b fix-issue-12345 master
+
+   If an issue does not already exist, please `create it
+   <https://bugs.python.org/>`_.  Trivial issues (e.g. typo fixes) do not
    require any issue to be created.
 
-6. Make a :doc:`pull request <pullrequest>`.
-   Include ``bpo-NNNN`` in the pull request description, where ``NNNN`` is the
-   issue number from the `issue tracker`_.  For example::
+6. Once you fixed the issue, run the tests, run ``make patchcheck``, and if
+   everything is ok, commit.
+
+7. Push the branch on your fork on GitHub and :doc:`create a pull request
+   <pullrequest>`.  Include the issue number using ``bpo-NNNN`` in the
+   pull request description.  For example::
 
       bpo-12345: Fix some bug in spam module
 
