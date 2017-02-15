@@ -17,8 +17,8 @@ patch:
 1. Install and set up :ref:`Git <vcsetup>` and other dependencies
    (see the :ref:`Get Setup <setup>` page for detailed information).
 
-2. Fork `the CPython repository on GitHub <cpython github>`_ and
-   :ref:`get the source code <checkout>` using::
+2. Fork `the CPython repository <https://github.com/python/cpython>`_
+   to your GitHub account and :ref:`get the source code <checkout>` using::
 
       git clone https://github.com/<your_username>/cpython
 
@@ -43,19 +43,20 @@ patch:
    with :file:`./python.exe`.  On Windows, use :file:`python.bat`.  With Python
    2.7, replace ``test`` with ``test.regrtest``.
 
-5. Create a new branch where to work on an issue with::
+5. Create a new branch where your work for the issue will go, e.g.::
 
-      git checkout -b new_branch_name master
+      git checkout -b fix-issue-12345 master
 
-   If an issue does not already exist, please `create it <issue tracker>`_.
-   Trivial issues (e.g. typo fixes) do not require any issue to be created.
+   If an issue does not already exist, please `create it
+   <https://bugs.python.org/>`_.  Trivial issues (e.g. typo fixes) do not
+   require any issue to be created.
 
 6. Once you fixed the issue, run the tests, run ``make patchcheck``, and if
    everything is ok, commit.
 
-7. Push the branch on your fork and :doc:`create a pull request <pullrequest>`.
-   Include the issue number using ``bpo-NNNN`` in the pull request description.
-   For example::
+7. Push the branch on your fork on GitHub and :doc:`create a pull request
+   <pullrequest>`.  Include the issue number using ``bpo-NNNN`` in the
+   pull request description.  For example::
 
       bpo-12345: Fix some bug in spam module
 
@@ -302,7 +303,6 @@ Full Table of Contents
 
 .. _Buildbot status: https://www.python.org/dev/buildbot/
 .. _Firefox search engine plug-in: https://www.python.org/dev/searchplugin/
-.. _cpython github: https://github.com/python/cpython
 .. _Misc directory: https://github.com/python/cpython/tree/master/Misc
 .. _PEPs: https://www.python.org/dev/peps/
 .. _python.org maintenance: https://pythondotorg.readthedocs.io/
