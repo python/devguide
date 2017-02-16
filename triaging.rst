@@ -80,8 +80,6 @@ ctypes
     The ctypes package in `Lib/ctypes`_.
 Demos and Tools
     The files in Tools_ and `Tools/demo`_.
-Devguide
-    The `Developer's guide`_.
 Distutils
     The distutils package in `Lib/distutils`_.
 Documentation
