@@ -92,6 +92,7 @@ command (after any successful build of Python)::
 
    python.bat Tools/scripts/patchcheck.py
 
+.. _cla:
 
 Licensing
 ---------

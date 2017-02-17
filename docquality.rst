@@ -71,17 +71,15 @@ Helping with the Developer's Guide
 
 The Developer's Guide uses the same process as the main Python documentation,
 except for some small differences.  The source lives in a `separate
-repository`_.  Bug reports and patches should be submitted to the `Python
-bug tracker`_ using the ``devguide`` component.  Changes to the devguide
-are normally published within a day, on a schedule that may be different from
-the main documentation.
+repository`_ and bug reports should be submitted to the `the GitHub tracker`_.
 
-.. _separate repository: https://github.com/python/devguide
-.. _Python bug tracker: http://bugs.python.org
+To submit a :doc:`pull request <pullrequest>` you can fork the
+`devguide repo`_ to your GitHub account and clone it using::
 
-To clone the Developer's Guide::
+    $ git clone https://github.com/<your_username>/devguide
 
-    $ git clone https://github.com/python/devguide.git
+In order for your PR to be accepted, you will also need to sign the
+:ref:`contributor agreement <cla>`.
 
 To build the devguide, you must have the latest stable version of `Sphinx`_
 installed.  The devguide HTML can be built by running::
@@ -91,4 +89,10 @@ installed.  The devguide HTML can be built by running::
 in the checkout directory, which will write the files to the ``_build/html``
 directory.
 
+Changes to the devguide are normally published within a day, on a schedule
+that may be different from the main documentation.
+
+.. _separate repository:
+.. _devguide repo: https://github.com/python/devguide
+.. _the GitHub tracker: https://github.com/python/devguide/issues
 .. _Sphinx: http://sphinx.pocoo.org/
