@@ -78,6 +78,9 @@ To submit a :doc:`pull request <pullrequest>` you can fork the
 
     $ git clone https://github.com/<your_username>/devguide
 
+In order for your PR to be accepted, you will also need to sign the
+:ref:`contributor agreement <cla>`.
+
 To build the devguide, you must have the latest stable version of `Sphinx`_
 installed.  The devguide HTML can be built by running::
 
