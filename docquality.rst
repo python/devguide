@@ -92,7 +92,7 @@ directory.
 Changes to the devguide are normally published within a day, on a schedule
 that may be different from the main documentation.
 
-.. _separate repository: https://github.com/python/devguide
+.. _separate repository:
 .. _devguide repo: https://github.com/python/devguide
 .. _the GitHub tracker: https://github.com/python/devguide/issues
 .. _Sphinx: http://sphinx.pocoo.org/
