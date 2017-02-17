@@ -133,9 +133,9 @@ This will get your changes up to GitHub.
 
 Now you want to
 `create a pull request from your fork <https://help.github.com/articles/creating-a-pull-request-from-a-fork/>`_.
-If this is pull request in response to a pre-existing issue on the
-`issue tracker`_, please make sure to reference the issue number in
-your pull request message.
+If this is a pull request in response to a pre-existing issue on the
+`issue tracker`_, please make sure to reference the issue number using bpo-NNNN in
+the pull request title or message.
 
 If this is a patch for an unreported issue (assuming you already performed a
 search on the issue tracker for a pre-existing issue), create a new issue and
