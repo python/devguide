@@ -214,8 +214,8 @@ times.
 
 Filing the Issue
 """"""""""""""""
-Once you have increased coverage, you need to
-:ref:`generate the patch <patch>` and submit it to the `issue tracker`_. On the
+Once you have increased coverage, you need to create an issue on the 
+`issue tracker`_ and submit a :doc:`pull request <pullrequest>`. On the
 issue set the "Components" to "Test" and "Versions" to the version of Python you
 worked on (i.e., the in-development version).
 
