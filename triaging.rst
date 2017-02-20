@@ -267,9 +267,12 @@ properly.
 * ``#<number>``, ``issue<number>``, or ``issue <number>`` links to the
   tracker issue ``<number>``.
 * ``msg<number>`` links to the tracker message ``<number>``.
-* a 12-digit or 40-digit hex ``<number>`` is assumed to be a Mercurial
-  changeset identifier and generates a link to changeset ``<number>``
-  in the official Python source code repositories.
+* ``PR <number>``, ``PR<number>``, and ``pull request <number>`` can be used
+  to link to `GitHub pull requests <https://github.com/python/cpython/pulls>`_.
+* a 10-, 11-, 12-, or 40-digit hex ``<number>`` is assumed to be a Git or
+  Mercurial changeset identifier and generates a link to changeset ``<number>``
+  on GitHub or https://hg.python.org/.  The ``git`` and ``hg`` prefixes can
+  also be used to disambiguate, and must precede the number without spaces.
 * ``r<number>``, ``rev<number>``, or ``revision <number>`` is assumed to be
   a legacy Subversion revision number, a reference to a changeset that was
   checked in prior to 2011-03-05 when the official Python source code
@@ -280,6 +283,7 @@ properly.
 * ``Dir/file.ext`` and ``Dir/file.ext:NNN`` generate links to files in the
   `Python source code repositories <https://github.com/python/cpython/>`_,
   possibly linking to the line number specified after the ``:``.
+  ``3.6/Dir/file.ext`` will generate a link with ``3.6`` as branch.
 * ``PEP <number>`` and ``PEP<number>`` link to the
   :abbr:`PEP (Python Enhancement Proposal)` ``<number>``.
 * ``devguide`` (lowercase), ``devguide/triaging``, and
