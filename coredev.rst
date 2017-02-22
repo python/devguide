@@ -88,7 +88,7 @@ right person.
 GitHub
 ''''''
 
-You will be added to the `Python core team`_ on GitHub. This will give you
+You will be added to the ``Python core team`` on GitHub. This will give you
 rights to commit to various repositories under the `Python organization`_
 on GitHub. When you are initially added you will be emailed by GitHub with
 an invitation to join the team. Please accept the invite in the email or
@@ -98,7 +98,6 @@ An entry in the :ref:`developers` should also be entered for you.
 Typically the person who sponsored your application to become a core developer
 makes sure an entry is created for you.
 
-.. _Python core team: https://github.com/orgs/python/teams/python-core
 .. _Python organization: https://github.com/python
 
 
