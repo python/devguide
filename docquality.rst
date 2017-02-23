@@ -36,8 +36,8 @@ If you look at `documentation issues`_ on the `issue tracker`_, you
 will find various documentation problems that need work. Issues vary from
 typos, to unclear documentation, to something completely lacking documentation.
 
-If you decide to tackle a documentation issue, you can simply submit a 
-:doc:`pull request <pullrequest>` for the issue. If you are worried that someone 
+If you decide to tackle a documentation issue, you can simply submit a
+:doc:`pull request <pullrequest>` for the issue. If you are worried that someone
 else might be working simultaneously on the issue, simply leave a comment on the issue
 saying you are going to try and create a pull request and roughly how long you think
 you will take to do it (this allows others to take on the issue if you happen
@@ -57,7 +57,7 @@ uncover problems (e.g., documentation that needs to be updated for Python 3
 from Python 2).
 
 If you decide to proofread, then read a section of the documentation from start
-to finish, filing issues in the issue tracker for each problem you find. Simple 
+to finish, filing issues in the issue tracker for each problem you find. Simple
 typos don't require an issue of their own, instead submit a pull request directly.
 Don't file a single issue for an entire section containing multiple problems as that
 makes it harder to break the work up for multiple people to help with.
@@ -88,7 +88,9 @@ installed.  The devguide HTML can be built by running::
     $ make html
 
 in the checkout directory, which will write the files to the ``_build/html``
-directory.
+directory.  Note that ``make check`` is automatically run when
+you submit a :doc:`pull request <pullrequest>`, so you should make
+sure that it runs without errors.
 
 Changes to the devguide are normally published within a day, on a schedule
 that may be different from the main documentation.
