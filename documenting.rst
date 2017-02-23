@@ -1460,62 +1460,30 @@ a browser at the file :file:`Doc/build/html/index.html`.
 
 You are expected to have installed the latest stable version of Sphinx_ on
 your system or in a virtualenv_, so that the Makefile can find the
-``sphinx-build`` command.
+``sphinx-build`` command.  You can also specify the location of
+``sphinx-build`` with the ``SPHINXBUILD`` :command:`make` variable.
 
 
 Using make / make.bat
 ---------------------
 
-On Unix, run the following from the root of your :ref:`repository clone
-<checkout>`::
+**On Unix**, run the following from the root of your :ref:`repository clone
+<checkout>` to build the output as HTML::
 
    cd Doc
    make html
 
-or alternatively ``make -C Doc html``.  This builds the output as HTML.  You can
-specify the location of the ``sphinx-build`` command with the ``SPHINXBUILD``
-make variable.
+or alternatively ``make -C Doc html``.
 
-For Windows users there is a :file:`make.bat` batchfile that tries to work like
-``make`` does.
+You can also use ``make help`` to see a list of targets supported by
+:command:`make`.  Note that ``make check`` is automatically run when
+you submit a :doc:`pull request <pullrequest>`, so you should make
+sure that it runs without errors.
 
-Available :command:`make` targets are:
+**On Windows**, there is a :file:`make.bat` batchfile that tries to
+emulate :command:`make` as closely as possible.
 
- * "html", which builds standalone HTML files for offline viewing.
-
- * "htmlview", which builds the standalone HTML files and then opens a web
-   browser to display them.
-
- * "htmlhelp", which builds HTML files and a HTML Help project file usable to
-   convert them into a single Compiled HTML (.chm) file -- these are popular
-   under Microsoft Windows, but very handy on every platform.
-
-   To create the CHM file, you need to run the Microsoft HTML Help Workshop
-   over the generated project (.hhp) file.
-
- * "latex", which builds LaTeX source files as input to "pdflatex" to produce
-   PDF documents.
-
- * "text", which builds a plain text file for each source file.
-
- * "linkcheck", which checks all external references to see whether they are
-   broken, redirected or malformed, and outputs this information to stdout
-   as well as a plain-text (.txt) file.
-
- * "changes", which builds an overview over all versionadded/versionchanged/
-   deprecated items in the current version. This is meant as a help for the
-   writer of the "What's New" document.
-
- * "coverage", which builds a coverage overview for standard library modules
-   and C API.
-
- * "pydoc-topics", which builds a Python module containing a dictionary with
-   plain text documentation for the labels defined in
-   :file:`Doc/tools/pyspecific.py` -- pydoc needs these to show topic
-   and keyword help.
-
- * "suspicious", which checks the parsed markup for text that looks like
-   malformed and thus unconverted reST.
+See also :file:`Doc/README.rst` for more information.
 
 
 Without make
