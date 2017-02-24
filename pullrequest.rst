@@ -137,17 +137,77 @@ changes to your PR.
 Submitting
 ----------
 
-Once you are satisfied with your work you will want to commit your
-changes to your branch. In general you can run ``git commit -a`` and
-that will commit everything. You can always run ``git status`` to see
-what changes are outstanding.
+Once you are satisfied with your work, you will need to commit your
+changes to your branch. Assume you want to add a file which you have changed,
+you will need to enter this command::
+
+   git add <file>
+
+After adding all the files that you changed, you can commit them with::
+
+   git commit -m
+
+The commit message's title should start with
+``bpo-NNNNN`` and the major change of this commit, for example::
+
+   bpo-29624: Adds purge step and layout test after uploading files.
+
+Combine with `git commit -m`, it should be::
+
+   git commit -m "bpo-29624: Adds purge step and layout test after uploading files."
+
+Two commands, ``git status`` and ``git diff``, provide helpful information
+and details about commits and changes.::
+
+   git status
+
+   On branch pr_133
+   Your branch and 'origin/pr_133' have diverged,
+   and have 14 and 2 different commits each, respectively.
+     (use "git pull" to merge the remote branch into yours)
+   Changes not staged for commit:
+     (use "git add <file>..." to update what will be committed)
+     (use "git checkout -- <file>..." to discard changes in working directory)
+
+           modified:   pullrequest.rst
+
+   no changes added to commit (use "git add" and/or "git commit -a")
+
+   git diff
+
+   diff --git a/pullrequest.rst b/pullrequest.rst
+   index daa419c..cb32aad 100644
+   --- a/pullrequest.rst
+   +++ b/pullrequest.rst
+   @@ -143,27 +143,44 @@ you will need to enter this command::
+
+       git add <file>
+
+   -After adding all files of changed, you can commit your changes::
+   +After adding all the files that you changed, you can commit them with::
+
+
+.. note::
+
+   You will see the references PR number at the end of the title in `git log`,
+   e.g.
+   「bpo-29624: Adds purge step and layout test after uploading files.
+   **(#258)**」, you won't need to add this into your commit title, it will
+   be automatically added when making a pull request on GitHub website.
 
 When all of your changes are committed (i.e. ``git status`` doesn't
-list anything), you will want to push your branch to your fork::
+list anything), you will need to push your branch to your fork::
 
   git push origin <branch name>
 
 This will get your changes up to GitHub.
+
+.. seealso::
+
+   For more information about Git commands, please refer to:
+
+   * `Git Cheat Sheet <https://services.github.com/on-demand/downloads/github-git-cheat-sheet.pdf>`_
+   * `ProGit <https://git-scm.com/book/en/v2>`_
 
 Now you want to
 `create a pull request from your fork <https://help.github.com/articles/creating-a-pull-request-from-a-fork/>`_.
