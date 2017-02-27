@@ -1,8 +1,8 @@
 The CPython Developer's Guide
 =============================
 
-.. image:: http://readthedocs.org/projects/cpython-devguide/badge/?version=latest
-   :target: http://cpython-devguide.readthedocs.io/en/latest/?badge=latest
+.. image:: https://readthedocs.org/projects/cpython-devguide/badge/?version=latest
+   :target: https://cpython-devguide.readthedocs.io/?badge=latest
    :alt: Documentation Status latest
 
 
