@@ -1,9 +1,9 @@
 The CPython Developer's Guide
 =============================
 
-.. image:: https://readthedocs.org/projects/cpython-devguide/badge/?version=latest
-   :target: https://cpython-devguide.readthedocs.io/?badge=latest
-   :alt: Documentation Status latest
+.. image:: https://readthedocs.org/projects/cpython-devguide/badge/
+   :target: https://cpython-devguide.readthedocs.io/
+   :alt: Documentation Status
 
 
 This guide covers how to contribute to CPython. It is known by the
