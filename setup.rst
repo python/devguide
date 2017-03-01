@@ -305,10 +305,8 @@ Instead of editing ``configure``, edit ``configure.ac`` and then run
 ``autoreconf`` to regenerate ``configure`` and a number of other files (such as
 ``pyconfig.h``).
 
-When submitting a patch with changes made to ``configure.ac``, it is preferred
-to leave out the generated files as differences between Autoconf versions
-frequently results in many spurious changes cluttering the patch. Instead,
-remind any potential reviewers on the tracker to run ``autoreconf``.
+When submitting a patch with changes made to ``configure.ac``, you should also
+include the generated files.
 
 Note that running ``autoreconf`` is not the same as running ``autoconf``. For
 example, ``autoconf`` by itself will not regenerate ``pyconfig.h.in``.
