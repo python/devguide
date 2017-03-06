@@ -42,30 +42,30 @@ within your fork through their website.
 Preparation
 '''''''''''
 
-When creating a patch for submission, there are several things that you should
-do to help ensure that your patch is accepted.
+When creating a pull request for submission, there are several things that you
+should do to help ensure that your pull request is accepted.
 
 First, make sure to follow Python's style guidelines. For Python code you
 should follow :PEP:`8`, and for C code you should follow :PEP:`7`. If you have
-one or two discrepancies those can be fixed by the core developer who commits
-your patch. But if you have systematic deviations from the style guides your
-patch will be put on hold until you fix the formatting issues.
+one or two discrepancies those can be fixed by the core developer who merges
+your pull request. But if you have systematic deviations from the style guides
+your pull request will be put on hold until you fix the formatting issues.
 
 Second, be aware of backwards-compatibility considerations. While the core
-developer who eventually handles your patch will make the final call on whether
-something is acceptable, thinking about backwards-compatibility early
-will help prevent having your patch rejected on these grounds. Put yourself in
-the shoes of someone whose code will be broken by the change(s) introduced by
-the patch. It is quite likely that any change made will break
-someone's code, so you need to have a good reason to make a change as you will
-be forcing someone to update their code. (This obviously does not apply to new
-classes or functions; new arguments should be optional and have default values
-which maintain the existing behavior.) If in doubt, have a look at
-:PEP:`387` or :ref:`discuss <communication>` the issue with experienced
+developer who eventually handles your pull request will make the final call on
+whether something is acceptable, thinking about backwards-compatibility early
+will help prevent having your pull request rejected on these grounds. Put
+yourself in the shoes of someone whose code will be broken by the change(s)
+introduced by the pull request. It is quite likely that any change made will
+break someone's code, so you need to have a good reason to make a change as
+you will be forcing someone to update their code. (This obviously does not
+apply to new classes or functions; new arguments should be optional and have
+default values which maintain the existing behavior.) If in doubt, have a look
+at :PEP:`387` or :ref:`discuss <communication>` the issue with experienced
 developers.
 
-Third, make sure you have proper tests to verify your patch works as expected.
-Patches will not be accepted without the proper tests!
+Third, make sure you have proper tests to verify your pull request works as
+expected. Pull requests will not be accepted without the proper tests!
 
 Fourth, make sure the entire test suite :ref:`runs <runtests>` **without
 failure** because of your changes.  It is not sufficient to only run whichever
@@ -81,13 +81,13 @@ additions/changes should be included.
 Generation
 ''''''''''
 
-To perform a quick sanity check on your patch, you can run::
+To perform a quick sanity check on your changes, you can run::
 
    make patchcheck
 
 This will check and/or fix various common things people forget to do for
-patches, such as adding any new files needed for the patch to work (note
-that not all checks apply to non-core developers).  On Windows, use this
+pull requests, such as adding any new files needed for the pull request to work
+(note that not all checks apply to non-core developers).  On Windows, use this
 command (after any successful build of Python)::
 
    python.bat Tools/scripts/patchcheck.py
@@ -137,11 +137,11 @@ If this is a pull request in response to a pre-existing issue on the
 `issue tracker`_, please make sure to reference the issue number using bpo-NNNN in
 the pull request title or message.
 
-If this is a patch for an unreported issue (assuming you already performed a
-search on the issue tracker for a pre-existing issue), create a new issue and
-reference it in the pull request. Please fill in as much relevant detail
-as possible to prevent patch reviewers from having to delay reviewing your
-patch because of lack of information.
+If this is a pull request for an unreported issue (assuming you already
+performed a search on the issue tracker for a pre-existing issue), create a
+new issue and reference it in the pull request. Please fill in as much
+relevant detail as possible to prevent reviewers from having to delay
+reviewing your pull request because of lack of information.
 
 
 .. _issue tracker: http://bugs.python.org
@@ -158,13 +158,13 @@ request (we cannot force anyone to review pull requests and no one is
 employed to look at pull requests). If your pull request has not
 received any notice from reviewers (i.e., no comment made) after one
 month, first "ping" the issue on the `issue tracker`_ to remind the
-nosy list that the patch needs a review.  If you don't get a response
+nosy list that the pull request needs a review.  If you don't get a response
 within a week after pinging the issue, then you can try emailing
-python-dev@python.org to ask for someone to review your patch.
+python-dev@python.org to ask for someone to review your pull request.
 
 When someone does manage to find the time to look at your pull request
 they will most likely make comments about how it can be improved
-(don't worry, even core developers of Python have their patches sent
+(don't worry, even core developers of Python have their pull requests sent
 back to them for changes).  It is then expected that you update your
 pull request to address these comments, and the review process will
 thus iterate until a satisfactory solution has emerged.
@@ -175,14 +175,14 @@ How to Review a Pull Request
 One of the bottlenecks in the Python development
 process is the lack of code reviews.
 If you browse the bug tracker, you will see that numerous issues
-have a fix, but cannot be committed to the main source code repository,
+have a fix, but cannot be merged into the main source code repository,
 because no one has reviewed the proposed solution.
 Reviewing a pull request can be just as informative as providing a
 pull request and it will allow you to give constructive comments on
 another developer's work. This guide provides a checklist for
 submitting a code review. It is a common misconception that in order
 to be useful, a code review has to be perfect. This is not the case at
-all! It is helpful to just test the patch and/or play around with the
+all! It is helpful to just test the pull request and/or play around with the
 code and leave comments in the pull request or issue tracker.
 
 1. If you have not already done so, get a copy of the CPython repository
@@ -196,34 +196,34 @@ code and leave comments in the pull request or issue tracker.
 3. Apply the pull request (GitHub has instructions with each pull
    request on how to do this).
 
-4. If the patch affects any C file, run the build again.
+4. If the changes affect any C file, run the build again.
 
 5. Launch the Python REPL (the interactive shell prompt) and check if
-   you can reproduce the issue. Now that the patch has been applied, the issue
-   should be fixed (in theory, but mistakes do happen! A good review aims to
-   catch these before the code is committed to the Python repository). You should
-   also try to see if there are any corner cases in this or related issue that the author
-   of the fix may have missed.
+   you can reproduce the issue. Now that the pull request has been applied,
+   the issue should be fixed (in theory, but mistakes do happen! A good review
+   aims to catch these before the code is merged into the Python repository).
+   You should also try to see if there are any corner cases in this or related
+   issues that the author of the fix may have missed.
 
 6. If you have time, run the entire test suite. If you are pressed for time,
    run the tests for the module(s) where changes were applied.
-   However, please be aware that if you are recommending a patch as 'commit-ready',
-   you should always make sure the entire test suite passes.
+   However, please be aware that if you are recommending a pull request as
+   'merge-ready', you should always make sure the entire test suite passes.
 
 
 Committing/Rejecting
 --------------------
 
-Once your patch has reached an acceptable state (and thus considered
-"accepted"), it will either be committed or rejected. If it is rejected, please
+Once your pull request has reached an acceptable state (and thus considered
+"accepted"), it will either be merged or rejected. If it is rejected, please
 do not take it personally! Your work is still appreciated regardless of whether
-your patch is committed. Balancing what *does* and *does not* go into Python
-is tricky and we simply cannot accept everyone's contributions.
+your pull request is merged. Balancing what *does* and *does not* go into
+Python is tricky and we simply cannot accept everyone's contributions.
 
-But if your pull request is committed it will then go into Python's
+But if your pull request is merged it will then go into Python's
 :abbr:`VCS (version control system)` to be released
 with the next major release of Python. It may also be backported to older
-versions of Python as a bugfix if the core developer doing the commit believes
+versions of Python as a bugfix if the core developer doing the merge believes
 it is warranted.
 
 
