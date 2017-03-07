@@ -321,7 +321,7 @@ coverity scan       christian.heimes, brett.cannon, twouters
 cryptography        gregory.p.smith, dstufft
 data formats        mark.dickinson
 database            lemburg
-devguide            ncoghlan, eric.araujo, ezio.melotti, willingc
+devguide            ncoghlan, eric.araujo, ezio.melotti
 documentation       ezio.melotti, eric.araujo
 GUI
 i18n                lemburg, eric.araujo
