@@ -105,7 +105,7 @@ Here is a quick overview of you can contribute to CPython on GitHub:
 
 2.  `Get started`_ and set up your system
 
-3.  Fork `CPython on GitHub`_ (using the Fork button in the upper-right on GitHub)
+3.  Fork `CPython`_ on GitHub (using the Fork button in the upper-right on GitHub)
 
 4.  `Compile Python`_ on your system
 
@@ -121,7 +121,7 @@ Here is a quick overview of you can contribute to CPython on GitHub:
 
 10. `Push commits`_ to your GitHub repo
 
-11. `Create Pull Request`_ in GitHub to merge a branch from your Fork
+11. `Create Pull Request`_ in GitHub to request your changes to be merged into `CPython`_
 
 12. Celebrate! You just contributed to Python. :)
 
@@ -129,7 +129,7 @@ Here is a quick overview of you can contribute to CPython on GitHub:
 .. _Open Source: https://opensource.guide/
 .. _create an Issue: https://bugs.python.org/
 .. _Get started: https://cpython-devguide.readthedocs.io/setup.html#getting-started
-.. _CPython on GitHub: https://github.com/python/cpython
+.. _CPython: https://github.com/python/cpython
 .. _Compile Python: https://cpython-devguide.readthedocs.io/setup.html#compiling-for-debugging
 .. _Run tests: https://cpython-devguide.readthedocs.io/runtests.html#running-writing-tests
 .. _Add an "upstream" Git remote: https://cpython-devguide.readthedocs.io/committing.html#remotes-setup
