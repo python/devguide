@@ -99,13 +99,13 @@ Quick Guide
 `Clear communication`_ is key to contributing to any project, especially an
 `Open Source`_ project like Python.
 
-Here is a quick overview of you can contribute to CPython on Github:
+Here is a quick overview of you can contribute to CPython on GitHub:
 
 1.  `Create an Issue`_ that describes your change, if it doesn't exist and you're explicitly working on something
 
 2.  `Get started`_ and set up your system
 
-3.  Fork `CPython on Github`_ (using the Fork button in the upper-right on Github)
+3.  Fork `CPython on GitHub`_ (using the Fork button in the upper-right on GitHub)
 
 4.  `Compile Python`_ on your system
 
@@ -119,9 +119,9 @@ Here is a quick overview of you can contribute to CPython on Github:
 
 9.  `Run tests`_ again
 
-10. `Push commits`_ to your Github repo
+10. `Push commits`_ to your GitHub repo
 
-11. `Create Pull Request`_ in Github to merge a branch from your Fork
+11. `Create Pull Request`_ in GitHub to merge a branch from your Fork
 
 12. Celebrate! You just contributed to Python. :)
 
@@ -129,7 +129,7 @@ Here is a quick overview of you can contribute to CPython on Github:
 .. _Open Source: https://opensource.guide/
 .. _Create an Issue: https://bugs.python.org/
 .. _Get started: https://cpython-devguide.readthedocs.io/setup.html#getting-started
-.. _CPython on Github: https://github.com/python/cpython
+.. _CPython on GitHub: https://github.com/python/cpython
 .. _Compile Python: https://cpython-devguide.readthedocs.io/setup.html#compiling-for-debugging
 .. _Run tests: https://cpython-devguide.readthedocs.io/runtests.html#running-writing-tests
 .. _Add an "upstream" Remote in Git: https://cpython-devguide.readthedocs.io/committing.html#remotes-setup
@@ -147,7 +147,7 @@ Set up your system::
 
   git clone git@github.com:YOUR_GITHUB_ID/cpython.git
 
-Replace **YOUR_GITHUB_ID** with your Github account name above, then add upstream::
+Replace **YOUR_GITHUB_ID** with your GitHub account name above, then add upstream::
 
   git remote add upstream git://github.com/python/cpython.git
 
@@ -167,13 +167,13 @@ Use rebase -i to verify what you commit and squish small commits::
 
   git rebase -i upstream/master
   
-Then push your work to your clone on Github::
+Then push your work to your clone on GitHub::
 
   git push origin MY_NEW_FEATURE
 
-When you're ready, make a Pull Request on Github and refer to your branch named **MY_NEW_FEATURE**.
+When you're ready, make a Pull Request on GitHub and refer to your branch named **MY_NEW_FEATURE**.
 
-*Though submitting a Pull Request on Github is the preferred method of contribution, you can alternatively upload a patch to bugs.python.org*
+*Though submitting a Pull Request on GitHub is the preferred method of contribution, you can alternatively upload a patch to bugs.python.org*
 
 
 Licensing
