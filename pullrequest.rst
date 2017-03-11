@@ -111,7 +111,7 @@ Here is a quick overview of you can contribute to CPython on GitHub:
 
 5.  `Run tests`_ after you have built Python
 
-6.  `Add an "upstream" Remote in Git`_ on your system 
+6.  `Add an "upstream" Git remote`_ on your system 
 
 7.  `Create a Branch in Git`_ where you can work on changes
 
@@ -132,7 +132,7 @@ Here is a quick overview of you can contribute to CPython on GitHub:
 .. _CPython on GitHub: https://github.com/python/cpython
 .. _Compile Python: https://cpython-devguide.readthedocs.io/setup.html#compiling-for-debugging
 .. _Run tests: https://cpython-devguide.readthedocs.io/runtests.html#running-writing-tests
-.. _Add an "upstream" Remote in Git: https://cpython-devguide.readthedocs.io/committing.html#remotes-setup
+.. _Add an "upstream" Git remote: https://cpython-devguide.readthedocs.io/committing.html#remotes-setup
 .. _Create a Branch in Git: https://cpython-devguide.readthedocs.io/committing.html#active-branches
 .. _resolve conflicts in Git: https://cpython-devguide.readthedocs.io/committing.html#squashing-commits
 .. _Run tests: https://cpython-devguide.readthedocs.io/runtests.html#running-writing-tests
