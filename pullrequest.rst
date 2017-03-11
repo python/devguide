@@ -101,7 +101,7 @@ Quick Guide
 
 Here is a quick overview of you can contribute to CPython on GitHub:
 
-1.  If an issue doesn't already exist, `create an Issue`_ that describes your change
+1.  If an Issue doesn't exist, `create an Issue`_ that describes your change
 
 2.  `Get started`_ and set up your system
 
