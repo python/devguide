@@ -115,9 +115,9 @@ Here is a quick overview of you can contribute to CPython on GitHub:
 
 7.  `Create a Branch in Git`_ where you can work on changes
 
-8.  Commit changes and `resolve conflicts in Git`_
+8.  `Run tests`_ again
 
-9.  `Run tests`_ again
+9.  Commit changes and `resolve conflicts in Git`_
 
 10. `Push commits`_ to your GitHub repo
 
