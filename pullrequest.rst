@@ -121,7 +121,7 @@ Here is a quick overview of you can contribute to CPython on GitHub:
 
 10. `Push commits`_ to your GitHub repo
 
-11. `Create Pull Request`_ in GitHub to request your changes to be merged into `CPython`_
+11. `Create Pull Request`_ for your changes to be reviewed then merged into `CPython`_
 
 12. Celebrate! You just contributed to Python. :)
 
