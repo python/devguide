@@ -123,7 +123,9 @@ Here is a quick overview of you can contribute to CPython on GitHub:
 
 11. `Create Pull Request`_ for your changes to be reviewed then merged into `CPython`_
 
-12. Celebrate! You just contributed to Python. :)
+12. Review and address `comments on your Pull Request`_
+
+13. When your changes are merged, celebrate contributing to Python! :)
 
 .. _Clear communication: https://opensource.guide/how-to-contribute/#how-to-submit-a-contribution
 .. _Open Source: https://opensource.guide/
@@ -139,6 +141,7 @@ Here is a quick overview of you can contribute to CPython on GitHub:
 .. _Run tests: https://cpython-devguide.readthedocs.io/runtests.html#running-writing-tests
 .. _Push commits: https://cpython-devguide.readthedocs.io/committing.html#pushing-changes
 .. _Create Pull Request: https://help.github.com/articles/creating-a-pull-request/
+.. _comments on your Pull Request: https://help.github.com/articles/commenting-on-a-pull-request/
 
 
 Quick Guide Step-by-step
