@@ -165,9 +165,11 @@ Then push your work to your clone on GitHub::
 
   git push origin MY_BRANCH_NAME
 
-When you're ready, make a Pull Request on GitHub from your changes in **MY_BRANCH_NAME**.
+Make a Pull Request on GitHub from your changes in **MY_BRANCH_NAME**.
 
-*Though submitting a Pull Request on GitHub is the preferred method of contribution, you can alternatively upload a patch to bugs.python.org*
+.. note::
+   You can upload a patch to https://bugs.python.org/, but Pull Requests 
+   on GitHub are preferred.
 
 
 Licensing
