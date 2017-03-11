@@ -153,7 +153,7 @@ Work on new features or fixes::
 
   git checkout -b MY_BRANCH_NAME upstream/master
   
-As you work, please create a separate commit for each bug fix or feature change::
+As you work, commit changes::
 
   git commit
 
@@ -161,15 +161,11 @@ Then fetch upstream to see if anything conflicts with your changes::
 
   git fetch upstream
   
-Use rebase -i to verify what you commit and squish small commits::
-
-  git rebase -i upstream/master
-  
 Then push your work to your clone on GitHub::
 
   git push origin MY_BRANCH_NAME
 
-When you're ready, make a Pull Request on GitHub and refer to your branch named **MY_BRANCH_NAME**.
+When you're ready, make a Pull Request on GitHub from your changes in **MY_BRANCH_NAME**.
 
 *Though submitting a Pull Request on GitHub is the preferred method of contribution, you can alternatively upload a patch to bugs.python.org*
 
