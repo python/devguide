@@ -141,7 +141,7 @@ Here is a quick overview of you can contribute to CPython on GitHub:
 Quick Guide Step-by-step
 ''''''''''''''''''''''''
 
-Set up your system::
+Set up your system (using SSH, or you can `use HTTPS`_)::
 
   git clone git@github.com:YOUR_GITHUB_ID/cpython.git
 
