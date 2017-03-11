@@ -93,6 +93,8 @@ command (after any successful build of Python)::
    python.bat Tools/scripts/patchcheck.py
 
 
+.. _pullrequest-quickguide:
+
 Quick Guide
 '''''''''''
 
@@ -103,46 +105,38 @@ Here is a quick overview of you can contribute to CPython on GitHub:
 
 1.  If an Issue doesn't exist, `create an Issue`_ that describes your change
 
-2.  `Get started`_ and set up your system
+2.  Prepare your system by :ref:`setup`
 
 3.  Fork `CPython`_ on GitHub (using the Fork button in the upper-right on GitHub)
 
-4.  `Compile Python`_ on your system
+4.  Start :ref:`compiling` to build Python
 
-5.  `Run tests`_ after you have built Python
+5.  Begin :ref:`runtests` after you have built Python
 
-6.  `Add an "upstream" Git remote`_ on your system (for SSH, or you can `use HTTPS`_)
+6.  Set your Git :ref:`remote-configuration` to add an "upstream" remote (using SSH, or you can `use HTTPS`_)
 
-7.  `Create a Branch in Git`_ where you can work on changes
+7.  Create :ref:`committing-active-branches` in Git where you can work on changes
 
-8.  `Run tests`_ again
+8.  Continue :ref:`runtests`
 
-9.  Commit changes and `resolve conflicts in Git`_
+9. Prepare for :ref:`committing-push-changes` to your GitHub repo
 
-10. `Push commits`_ to your GitHub repo
+10. `Create Pull Request`_ for your changes to be reviewed then merged into `CPython`_
 
-11. `Create Pull Request`_ for your changes to be reviewed then merged into `CPython`_
+11. Review and address `comments on your Pull Request`_
 
-12. Review and address `comments on your Pull Request`_
-
-13. When your changes are merged, celebrate contributing to Python! :)
+12. When your changes are merged, celebrate contributing to Python! :)
 
 .. _Clear communication: https://opensource.guide/how-to-contribute/#how-to-submit-a-contribution
 .. _Open Source: https://opensource.guide/
 .. _create an Issue: https://bugs.python.org/
-.. _Get started: https://cpython-devguide.readthedocs.io/setup.html#getting-started
 .. _CPython: https://github.com/python/cpython
-.. _Compile Python: https://cpython-devguide.readthedocs.io/setup.html#compiling-for-debugging
-.. _Run tests: https://cpython-devguide.readthedocs.io/runtests.html#running-writing-tests
-.. _Add an "upstream" Git remote: https://cpython-devguide.readthedocs.io/committing.html#remotes-setup
 .. _use HTTPS: https://help.github.com/articles/which-remote-url-should-i-use/
-.. _Create a Branch in Git: https://cpython-devguide.readthedocs.io/committing.html#active-branches
-.. _resolve conflicts in Git: https://cpython-devguide.readthedocs.io/committing.html#squashing-commits
-.. _Run tests: https://cpython-devguide.readthedocs.io/runtests.html#running-writing-tests
-.. _Push commits: https://cpython-devguide.readthedocs.io/committing.html#pushing-changes
 .. _Create Pull Request: https://help.github.com/articles/creating-a-pull-request/
 .. _comments on your Pull Request: https://help.github.com/articles/commenting-on-a-pull-request/
 
+
+.. _pullrequest-steps:
 
 Quick Guide Step-by-step
 ''''''''''''''''''''''''
@@ -151,7 +145,7 @@ Set up your system::
 
   git clone git@github.com:YOUR_GITHUB_ID/cpython.git
 
-Replace **YOUR_GITHUB_ID** with your GitHub account name above, then add upstream::
+Replace **YOUR_GITHUB_ID** with your GitHub account name above, then add upstream (using SSH, or you can `use HTTPS`_)::
 
   git remote add upstream git://github.com/python/cpython.git
 
