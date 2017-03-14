@@ -83,7 +83,7 @@ Demos and Tools
 Distutils
     The distutils package in `Lib/distutils`_.
 Documentation
-    The documentation in Doc_ (used to build the HTML doc at http://docs.python.org/).
+    The documentation in Doc_ (used to build the HTML doc at https://docs.python.org/).
 email
     The email package and related modules.
 Extension Modules
@@ -318,5 +318,5 @@ properly.
 .. _Tools: https://github.com/python/cpython/tree/master/Tools/
 .. _Tools/demo: https://github.com/python/cpython/tree/master/Tools/demo/
 .. _Developer's guide: https://github.com/python/devguide/
-.. _GSoC: http://code.google.com/soc/
+.. _GSoC: https://developers.google.com/open-source/gsoc/
 .. _issue tracker: https://bugs.python.org
