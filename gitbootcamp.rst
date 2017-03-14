@@ -20,7 +20,7 @@ You'll only need to do this once.
 
 3. When asked where to fork the repository, choose to fork it to your username.
 
-4. A fork will be created at https://github.com/UserName/cpython.
+4. A fork will be created at https://github.com/<username>/cpython.
 
 
 Cloning The Forked CPython Repository
@@ -28,7 +28,7 @@ Cloning The Forked CPython Repository
 
 From your command line::
 
-   $ git clone git@github.com:UserName/cpython.git
+   $ git clone git@github.com:<username>/cpython.git
    $ cd cpython
    $ git remote add upstream git@github.com:python/cpython.git
 
@@ -45,7 +45,7 @@ Creating and Switching Branches
 -------------------------------
 
 .. note::
-   Never commit directly to the `master` branch.
+   Never commit directly to the ``master`` branch.
 
 Create a new branch::
 
@@ -53,7 +53,7 @@ Create a new branch::
 
 which is equal to::
 
-   $ git branch some-branch # create 'some-branch', without checking it out
+   $ git branch some-branch master # create 'some-branch' off 'master, without checking it out
    $ git checkout some-branch # check out 'some-branch'
 
 To find out which branch you are in now::
@@ -142,7 +142,7 @@ Creating a Pull Request
 
 3. Select the base fork: ``python/cpython`` and base branch: ``master``
 
-4. Select the head fork: ``UserName/cpython`` and base branch: the branch
+4. Select the head fork: ``<username>/cpython`` and base branch: the branch
    containing your changes.
 
 5. Press ``Create Pull Request`` button.
@@ -238,8 +238,8 @@ For example, to fetch and checkout pull request #777::
    $ git pr 777
 
 
-Accepting and Merging Pull Request
-----------------------------------
+Accepting and Merging A Pull Request
+------------------------------------
 
 Pull requests can be accepted and merged by a Python Core Developer.
 
