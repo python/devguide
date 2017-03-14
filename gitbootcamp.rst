@@ -53,7 +53,7 @@ Create a new branch::
 
 which is equal to::
 
-   $ git branch some-branch master # create 'some-branch' off 'master, without checking it out
+   $ git branch some-branch master # create 'some-branch' off 'master', without checking it out
    $ git checkout some-branch # check out 'some-branch'
 
 To find out which branch you are in now::
