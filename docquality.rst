@@ -16,16 +16,16 @@ will look along with validating that your new markup is correct).
 
 The documentation built from the :ref:`in-development <indevbranch>` and
 :ref:`maintenance <maintbranch>` branches can be viewed from
-http://docs.python.org/dev/.  The in-development and most recent 2.x and 3.x
+https://docs.python.org/dev/.  The in-development and most recent 2.x and 3.x
 maintenance :ref:`branches <listbranch>` are rebuilt once per day.
 
 If you care to get more involved with documentation, you may also consider
 subscribing to the
-`docs@python.org mailing list <http://mail.python.org/mailman/listinfo/docs>`_.
+`docs@python.org mailing list <https://mail.python.org/mailman/listinfo/docs>`_.
 Documentation issues reported on the `issue tracker`_ are sent here as well as
 some bug reports being directly emailed to the mailing list. There is also the
 `docs-sig@python.org mailing list
-<http://mail.python.org/mailman/listinfo/doc-sig>`_ which discusses the
+<https://mail.python.org/mailman/listinfo/doc-sig>`_ which discusses the
 documentation toolchain, projects, standards, etc.
 
 
@@ -43,8 +43,8 @@ saying you are going to try and create a pull request and roughly how long you t
 you will take to do it (this allows others to take on the issue if you happen
 to forget or lose interest).
 
-.. _issue tracker: http://bugs.python.org
-.. _documentation issues: http://bugs.python.org/issue?%40search_text=&ignore=file%3Acontent&title=&%40columns=title&id=&%40columns=id&stage=&creation=&creator=&activity=&%40columns=activity&%40sort=activity&actor=&nosy=&type=&components=4&versions=&dependencies=&assignee=&keywords=&priority=&%40group=priority&status=1&%40columns=status&resolution=&nosy_count=&message_count=&%40pagesize=50&%40startwith=0&%40queryname=&%40old-queryname=&%40action=search
+.. _issue tracker: https://bugs.python.org
+.. _documentation issues: https://bugs.python.org/issue?%40search_text=&ignore=file%3Acontent&title=&%40columns=title&id=&%40columns=id&stage=&creation=&creator=&activity=&%40columns=activity&%40sort=activity&actor=&nosy=&type=&components=4&versions=&dependencies=&assignee=&keywords=&priority=&%40group=priority&status=1&%40columns=status&resolution=&nosy_count=&message_count=&%40pagesize=50&%40startwith=0&%40queryname=&%40old-queryname=&%40action=search
 
 
 Proofreading
@@ -98,4 +98,4 @@ that may be different from the main documentation.
 .. _separate repository:
 .. _devguide repo: https://github.com/python/devguide
 .. _the GitHub tracker: https://github.com/python/devguide/issues
-.. _Sphinx: http://sphinx.pocoo.org/
+.. _Sphinx: http://www.sphinx-doc.org/

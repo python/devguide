@@ -111,9 +111,9 @@ You will also need to specify you GitHub username on the
 homepage.
 
 
-.. _PSF license: http://docs.python.org/dev/license.html#terms-and-conditions-for-accessing-or-otherwise-using-python
-.. _contributor form: http://www.python.org/psf/contrib/
-.. _Python Software Foundation: http://www.python.org/psf/
+.. _PSF license: https://docs.python.org/dev/license.html#terms-and-conditions-for-accessing-or-otherwise-using-python
+.. _contributor form: https://www.python.org/psf/contrib/
+.. _Python Software Foundation: https://www.python.org/psf/
 
 
 Submitting
@@ -144,7 +144,7 @@ relevant detail as possible to prevent reviewers from having to delay
 reviewing your pull request because of lack of information.
 
 
-.. _issue tracker: http://bugs.python.org
+.. _issue tracker: https://bugs.python.org
 
 
 Reviewing
