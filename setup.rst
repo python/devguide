@@ -4,7 +4,7 @@ Getting Started
 
 These instructions cover how to get a working copy of the source code and a
 compiled version of the CPython interpreter (CPython is the version of Python
-available from http://www.python.org/). It also gives an overview of the
+available from https://www.python.org/). It also gives an overview of the
 directory structure of the CPython source code.
 
 OpenHatch also has a great `setup guide`_ for Python for people who are
@@ -31,7 +31,7 @@ CPython repo is hosted on GitHub, please refer to either the
 `GitHub setup instructions <https://help.github.com/articles/set-up-git/>`_
 or the `git project instructions <https://git-scm.com>`_ for step-by-step
 installation directions. You may also want to consider a graphical client
-such as `TortoiseGit <http://tortoisegit.org/>`_ or
+such as `TortoiseGit <https://tortoisegit.org/>`_ or
 `GitHub Desktop <https://desktop.github.com/>`_.
 
 You may also wish to
@@ -101,7 +101,7 @@ Build dependencies
 
 The core CPython interpreter only needs a C compiler to be built; if
 you get compile errors with a C89 or C99-compliant compiler, please `open a
-bug report <http://bugs.python.org>`_.
+bug report <https://bugs.python.org>`_.
 However, some of the extension modules will need development headers
 for additional libraries (such as the ``zlib`` library for compression).
 Depending on what you intend to work on, you might need to install these
@@ -153,7 +153,7 @@ full Xcode app or package for that OS X release.  Older versions may be
 available either as a no-cost download through Apple's App Store or from
 `the Apple Developer web site <https://developer.apple.com/>`_.
 
-.. _Homebrew: http://brew.sh
+.. _Homebrew: https://brew.sh
 
 .. _MacPorts: https://www.macports.org
 
@@ -189,7 +189,7 @@ commands.
 Explaining how to build optional dependencies on a UNIX based system without
 root access is beyond the scope of this guide.
 
-.. _clang: http://clang.llvm.org/
+.. _clang: https://clang.llvm.org/
 .. _ccache: https://ccache.samba.org/
 
 .. note:: While you need a C compiler to build CPython, you don't need any
@@ -245,7 +245,7 @@ to ``configure``; unless you are very careful, you may accidentally run
 with code from an older, installed shared Python library rather than from
 the interpreter you just built.
 
-.. _issue tracker: http://bugs.python.org
+.. _issue tracker: https://bugs.python.org
 
 
 Clang
@@ -362,7 +362,7 @@ functionality is implemented. Do realize, though, there are always exceptions to
 every rule.
 
 ``Doc``
-     The official documentation. This is what http://docs.python.org/ uses.
+     The official documentation. This is what https://docs.python.org/ uses.
      See also :ref:`building-doc`.
 
 ``Grammar``
