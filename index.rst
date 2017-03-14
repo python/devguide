@@ -138,6 +138,14 @@ developer's guide.  If you still have questions after reviewing the material in
 this guide, then the `Python Mentors`_ group is available to help guide new
 contributors through the process.
 
+A number of individuals from the Python community have contributed to a series
+of excellent guides at `Open Source Guides <https://opensource.guide/>`_.
+
+Core developers and contributors alike will find the following guides useful:
+
+* `How to Contribute to Open Source <https://opensource.guide/how-to-contribute/>`_
+* `Building Welcoming Communities <https://opensource.guide/building-community/>`_
+
 Guide for contributing to Python:
 
 * :doc:`setup`
