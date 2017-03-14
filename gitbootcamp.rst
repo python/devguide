@@ -197,7 +197,7 @@ First, obtain the commit sha1 from the merged pull request:
 
 2. Scroll down and find the activity that says something like::
 
-     SomeUser merged commit <hash> into python:master ...
+     CoreDeveloper merged commit <hash> into python:master ...
 
 3. Follow the link to <hash>.
 
