@@ -421,15 +421,13 @@ Important Files
         ASDL syntax file
 
     asdl.py
-        "An implementation of the Zephyr Abstract Syntax Definition
-        Language."  Uses SPARK_ to parse the ASDL files.
+        Parser for ASDL definition files. Reads in an ASDL 
+	description and parses it into an AST that describes it.
 
     asdl_c.py
         "Generate C code from an ASDL description."  Generates
         Python/Python-ast.c and Include/Python-ast.h .
 
-    spark.py
-        SPARK_ parser generator
 
 + Python/
 
@@ -539,8 +537,6 @@ References
 
 .. _The Zephyr Abstract Syntax Description Language.:
    http://www.cs.princeton.edu/research/techreps/TR-554-97
-
-.. _SPARK: http://pages.cpsc.ucalgary.ca/~aycock/spark/
 
 .. [#skip-peephole] Skip Montanaro's Peephole Optimizer Paper
    (http://www.smontanaro.net/python/spam7/optimizer.html)
