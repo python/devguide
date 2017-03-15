@@ -538,8 +538,6 @@ References
 .. _The Zephyr Abstract Syntax Description Language.:
    http://www.cs.princeton.edu/research/techreps/TR-554-97
 
-.. _SPARK: http://pages.cpsc.ucalgary.ca/~aycock/spark/
-
 .. [#skip-peephole] Skip Montanaro's Peephole Optimizer Paper
    (http://www.smontanaro.net/python/spam7/optimizer.html)
 
