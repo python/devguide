@@ -1,9 +1,11 @@
+.. highlight:: console
+
 .. _gitbootcamp:
 
 Git Bootcamp and Cheat Sheet
 ============================
 
-In this section, we'll go over some commonly used git commands that are
+In this section, we'll go over some commonly used Git commands that are
 relevant to CPython's workflow.
 
 .. contents::
@@ -16,17 +18,17 @@ You'll only need to do this once.
 
 1. Go to https://github.com/python/cpython.
 
-2. Press ``Fork``.
+2. Press ``Fork`` on the top right.
 
 3. When asked where to fork the repository, choose to fork it to your username.
 
-4. A fork will be created at https://github.com/<username>/cpython.
+4. Your fork will be created at https://github.com/<username>/cpython.
 
 
 Cloning The Forked CPython Repository
 -------------------------------------
 
-From your command line::
+You'll only need to do this once.  From your command line::
 
    $ git clone git@github.com:<username>/cpython.git
    $ cd cpython
@@ -36,7 +38,7 @@ From your command line::
 Listing the Remote Repositories
 -------------------------------
 
-::
+To list the remote repositories that are configured, along with their urls::
 
    $ git remote -v
 
@@ -47,14 +49,17 @@ Creating and Switching Branches
 .. note::
    Never commit directly to the ``master`` branch.
 
-Create a new branch::
+Create a new branch and switch to it::
 
-   $ git checkout -b some-branch master # creates a new branch off master
+   # creates a new branch off master and switch to it
+   $ git checkout -b <branch-name> master
 
-which is equal to::
+This is equivalent to::
 
-   $ git branch some-branch master # create 'some-branch' off 'master', without checking it out
-   $ git checkout some-branch # check out 'some-branch'
+   # create a new branch off 'master', without checking it out
+   $ git branch <branch-name> master
+   # check out the branch
+   $ git checkout <branch-name>
 
 To find out which branch you are in now::
 
@@ -69,7 +74,7 @@ To list all the branches, including the remote branches::
 
 To switch to a different branch::
 
-   $ git checkout another-branch-name
+   $ git checkout <another-branch-name>
 
 
 Delete Local Branch
@@ -77,7 +82,7 @@ Delete Local Branch
 
 To delete branch that you no longer need::
 
-   $ git branch -D branch-to-delete
+   $ git branch -D <branch-name>
 
 
 Staging and Committing Files
@@ -89,11 +94,11 @@ Staging and Committing Files
 
 2. To stage the files to be included in your commit::
 
-      $ git add /path/to/file1 path/to/file2 path/to/file3
+      $ git add path/to/file1 path/to/file2 path/to/file3
 
 3. To commit the files that have been staged (done in step 2)::
 
-      $ git commit -m "This is the commit message. Prefix it with bpo-XXXX."
+      $ git commit -m "bpo-XXXX: This is the commit message."
 
 
 Reverting Changes
@@ -101,7 +106,7 @@ Reverting Changes
 
 To revert changes to a file that has not been committed yet::
 
-    $ git checkout path/to/file
+   $ git checkout path/to/file
 
 If the change has been committed, and now you want to reset it to whatever
 the origin is at::
@@ -129,8 +134,8 @@ them to the remote repository.
 
 ::
 
-   $ git checkout some-branch
-   $ git push origin some-branch
+   $ git checkout <branch-name>
+   $ git push origin <branch-name>
 
 
 Creating a Pull Request
@@ -140,7 +145,7 @@ Creating a Pull Request
 
 2. Click ``compare across forks`` link.
 
-3. Select the base fork: ``python/cpython`` and base branch: ``master``
+3. Select the base fork: ``python/cpython`` and base branch: ``master``.
 
 4. Select the head fork: ``<username>/cpython`` and base branch: the branch
    containing your changes.
@@ -153,11 +158,11 @@ Syncing With Upstream
 
 Scenario:
 
-- You forked cpython repository some time ago.
+- You forked the CPython repository some time ago.
 - Time passes.
-- There have been new commits made in upstream cpython repository.
-- Your forked cpython repository is no longer up to date.
-- You now want to update your forked cpython repository to be the same as
+- There have been new commits made in upstream CPython repository.
+- Your forked CPython repository is no longer up to date.
+- You now want to update your forked CPython repository to be the same as
   upstream.
 
 Solution::
@@ -173,7 +178,7 @@ Another scenario:
 - You created ``some-branch`` some time ago.
 - Time passes.
 - You made some commits to ``some-branch``.
-- Meanwhile, there are recent changes from upstream cpython repository.
+- Meanwhile, there are recent changes from upstream CPython repository.
 - You want to incorporate the recent changes from upstream into ``some-branch``.
 
 Solution::
@@ -186,34 +191,15 @@ Solution::
 Backporting Merged Changes
 --------------------------
 
-When a pull request has been merged to master, and it needs to be backported
-into one of the maintenance branches.
+A pull request may need to be backported into one of the maintenance branches
+after it has been accepted and merged into ``master``.  It is usually indicated
+by the label ``needs backport to X.Y`` on the pull request itself.
 
-First, obtain the commit sha1 from the merged pull request:
+Use the utility script `cherry_picker.py <https://github.com/python/core-workflow/tree/master/cherry_picker>`_
+from the `core-workflow  <https://github.com/python/core-workflow>`_
+repository to backport the commit .
 
-1. Go to the merged pull request page, for example::
-
-     https://github.com/python/cpython/pull/PR-ID
-
-2. Scroll down and find the activity that says something like::
-
-     CoreDeveloper merged commit <hash> into python:master ...
-
-3. Follow the link to <hash>.
-
-4. Copy the complete hash value.
-
-The commit hash will be used below.
-
-To backport the commit to 3.6::
-
-   $ git fetch upstream
-   $ git checkout -b backport-someissue-3.6 upstream/3.6
-   $ git cherry-pick -x hashvalue
-   $ git push origin backport-someissue-3.6
-
-Go to https://github.com/python/cpython to create the pull request.  Select
-``3.6`` as the base branch, and ``backport-someissue-3.6`` as the head branch.
+The core developer who merged the pull request is expected to do the backport.
 
 
 Downloading Other's Patches
@@ -221,7 +207,7 @@ Downloading Other's Patches
 
 Scenario:
 
-- A contributor made a pull request to cpython.
+- A contributor made a pull request to CPython.
 - Before merging it, you want to be able to test their changes locally.
 
 Set up the following git alias::
@@ -232,10 +218,6 @@ The alias only needs to be done once.  After the alias is set up, you can get a
 local copy of a pull request as follows::
 
    $ git pr <pr_number>
-
-For example, to fetch and checkout pull request #777::
-
-   $ git pr 777
 
 
 Accepting and Merging A Pull Request
