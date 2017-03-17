@@ -406,8 +406,7 @@ to master branch::
    git commit -m 'bpo-12345: fix some issue.'
    # Note the commit SHA (e.g. git log or git rev-parse --short HEAD).
 
-Then can use cherry_picker.py_
-to backport the commit.
+Then use cherry_picker.py_ to backport the commit.
 
 .. note::
    Even when porting an already committed patch, you should *still* check the
