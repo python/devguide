@@ -255,7 +255,7 @@ Working with Git_
 =================
 
 .. seealso::
-	:ref:`gitbootcamp`
+   :ref:`gitbootcamp`
    
 As a core developer, the ability to push changes to the official Python
 repositories means you have to be more careful with your workflow:
