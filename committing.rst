@@ -417,7 +417,7 @@ Then use cherry_picker.py_ to backport the commit.
 Backport and Cherry-Pick Labels
 -------------------------------
 
-Only Core Developers an apply labels to GitHub pull requests.  When it was determined
+Only Core Developers can apply labels to GitHub pull requests.  When it was determined
 that a pull request needs to be backported into one or more of the maintenance branches,
 a core developer can apply the labels ``needs backport to X.Y`` to the pull request.
 
