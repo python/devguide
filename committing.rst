@@ -252,8 +252,11 @@ contributed to the resolution, it is good practice to credit them.
 
 
 Working with Git_
-=======================
+=================
 
+.. seealso::
+	:ref:`gitbootcamp`
+   
 As a core developer, the ability to push changes to the official Python
 repositories means you have to be more careful with your workflow:
 
@@ -268,6 +271,10 @@ repositories means you have to be more careful with your workflow:
   want the history to be full of intermediate commits recording the private history
   of the person working on a patch.
 
+* You should not commit directly into the ``master`` branch, or any of the 
+  maintenance branches (``2.7``, ``3.5``, or ``3.6``).  You should commit against
+  your own feature branch, and create a pull request.
+  
 It recommended to keep a fork of the main repository around, as it allows simple
 reversion of all local changes (even "committed" ones) if your local clone gets
 into a state you aren't happy with.
@@ -399,22 +406,33 @@ to master branch::
    git commit -m 'bpo-12345: fix some issue.'
    # Note the commit SHA (e.g. git log or git rev-parse --short HEAD).
 
-Then you can switch to the ``3.6`` branch (or appropriate older version), cherry-pick
-the commit and run the test::
-
-   git checkout 3.6
-   # Instead of 3.6 use an appropriate branch reflecting the Python version you
-   # are backporting your change to.
-   git cherry-pick -x 123abc
-   # 123abc is the SHA of the previous commit.
-   # Fix any conflicts (add changes with git add -A and git cherry-pick --continue).
-   # Compile; run the test suite.
+Then can use cherry_picker.py_
+to backport the commit.
 
 .. note::
    Even when porting an already committed patch, you should *still* check the
    test suite runs successfully before committing the patch to another branch.
    Subtle differences between two branches sometimes make a patch bogus if
    ported without any modifications.
+
+Backport and Cherry-Pick Labels
+-------------------------------
+
+Only Core Developers an apply labels to GitHub pull requests.  When it was determined
+that a pull request needs to be backported into one or more of the maintenance branches,
+a core developer can apply the labels ``needs backport to X.Y`` to the pull request.
+
+After the pull request has been merged, it can be backported using cherry_picker.py_.
+
+Prefix the backport pull request with the branch, for example::
+
+   [3.6] bpo-12345: Fix the Spam Module
+   
+Apply the label ``cherry-pick or X.Y`` to the backport pull request.  Once the backport
+pull request has been created, remove the ``needs backport to X.Y`` label from the
+original pull request on ``master``.
+
+.. _cherry_picker.py: https://github.com/python/core-workflow/tree/master/cherry_picker
 
 
 .. _squash-commits:
