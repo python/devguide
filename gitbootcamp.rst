@@ -248,3 +248,51 @@ Pull requests can be accepted and merged by a Python Core Developer.
       * rebased
 
 3. Press the ``Confirm squash and merge`` button.
+
+
+Editing a Pull Request Prior to Merging
+---------------------------------------
+
+When a pull request submitter has enabled the `"Allow edits from maintainers"``
+option, Python Core Developers may decide to make any remaining edits needed
+prior to merging themselves, rather than asking the submitter to do them. This
+can be particularly appropriate when the remaining changes are bookkeeping
+items like updating ``Misc/ACKS`` and ``Misc/NEWS``.
+
+.. _"Allow edits from maintainers": https://help.github.com/articles/allowing-changes-to-a-pull-request-branch-created-from-a-fork/
+
+To edit an open pull request that targets ``master``:
+
+1. At the bottom of the pull request page, click the "command line instructions"
+   link (next to the more prominent ``Squash and merge`` button).
+
+2. The given instructions are *not* the right instructions for CPython (as they
+   assume you will be pushing directly to the CPython repository, rather than
+   pushing back to the contributor's PR branch), but they include the relevant
+   repository and branch names::
+
+   git checkout -b <contributor>-<branch_name>
+   git pull https://github.com/<contributor>/cpython.git <branch_name>
+
+3. Set up a new SSH git remote for the contributor's fork::
+
+   git remote add <contributor> git@github.com:<contributor>/cpython.git
+   git fetch <contributor>
+
+4. Check out the contributor's PR branch::
+
+   git checkout -b <branch_name> --track <contributor>/<branch_name>
+
+5. Make your changes on the branch. For example, merge in changes made to
+   ``master`` since the PR was submitted (any merge commits will be
+   removed by the ``Squash and Merge`` when accepting the change::
+
+   git merge origin/master
+
+6. Push the changes back to the contributor's PR branch::
+
+   git push <contributor>
+
+7. (Optional) Delete the remote definition for the contributor's fork::
+
+   git remote remove <contributor>
