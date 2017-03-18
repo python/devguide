@@ -253,13 +253,13 @@ Pull requests can be accepted and merged by a Python Core Developer.
 Editing a Pull Request Prior to Merging
 ---------------------------------------
 
-When a pull request submitter has enabled the ``Allow edits from maintainers``
+When a pull request submitter has enabled the `Allow edits from maintainers`_
 option, Python Core Developers may decide to make any remaining edits needed
 prior to merging themselves, rather than asking the submitter to do them. This
 can be particularly appropriate when the remaining changes are bookkeeping
 items like updating ``Misc/ACKS`` and ``Misc/NEWS``.
 
-.. _"Allow edits from maintainers": https://help.github.com/articles/allowing-changes-to-a-pull-request-branch-created-from-a-fork/
+.. _Allow edits from maintainers: https://help.github.com/articles/allowing-changes-to-a-pull-request-branch-created-from-a-fork/
 
 To edit an open pull request that targets ``master``:
 
