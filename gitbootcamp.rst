@@ -271,28 +271,28 @@ To edit an open pull request that targets ``master``:
    pushing back to the contributor's PR branch), but they include the relevant
    repository and branch names::
 
-   git checkout -b <contributor>-<branch_name>
-   git pull https://github.com/<contributor>/cpython.git <branch_name>
+      git checkout -b <contributor>-<branch_name>
+      git pull https://github.com/<contributor>/cpython.git <branch_name>
 
 3. Using those details, set up a new SSH git remote for the contributor's fork::
 
-   git remote add <contributor> git@github.com:<contributor>/cpython.git
-   git fetch <contributor>
+      git remote add <contributor> git@github.com:<contributor>/cpython.git
+      git fetch <contributor>
 
 4. And check out the contributor's PR branch::
 
-   git checkout -b <branch_name> --track <contributor>/<branch_name>
+      git checkout -b <branch_name> --track <contributor>/<branch_name>
 
 5. Make your changes on the branch. For example, merge in changes made to
    ``master`` since the PR was submitted (any merge commits will be
    removed by the later ``Squash and Merge`` when accepting the change)::
 
-   git merge origin/master
+      git merge origin/master
 
 6. Push the changes back to the contributor's PR branch::
 
-   git push <contributor>
+      git push <contributor>
 
 7. (Optional) Delete the remote definition for the contributor's fork::
 
-   git remote remove <contributor>
+      git remote remove <contributor>
