@@ -116,7 +116,7 @@ Here are the steps needed in order to sign the CLA:
    `"Your Details" <https://cloud.githubusercontent.com/assets/2680980/23276970/d14a380c-f9d1-11e6-883d-e13b6b211239.png>`_
    section at b.p.o.
 
-3. Sign the PSF `contributor form`_. The "bugs.python.org username"
+3. Fill out and sign the PSF `contributor form`_. The "bugs.python.org username"
    requested by the form is the "Login name" field under "Your Details".
 
 After signing the CLA, please **wait at least one US business day** and
