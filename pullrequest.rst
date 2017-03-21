@@ -109,7 +109,7 @@ license your code for use with Python (you retain the copyright).
 Here are the steps needed in order to sign the CLA:
 
 1. If you don't have an account on `bugs.python.org <issue tracker>`_
-   (a.k.a b.p.o), please `register <http://bugs.python.org/user?@template=register>`_
+   (aka b.p.o), please `register <http://bugs.python.org/user?@template=register>`_
    to create one.
 
 2. Make sure your GitHub username is listed in the
