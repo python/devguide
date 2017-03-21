@@ -108,8 +108,8 @@ license your code for use with Python (you retain the copyright).
 
 Here are the steps needed in order to sign the CLA:
 
-1. If you don't have an account on `bugs.python.org <issue tracker>`_,
-   please `register <http://bugs.python.org/user?@template=register>`_
+1. If you don't have an account on `bugs.python.org <issue tracker>`_
+   (a.k.a b.p.o), please `register <http://bugs.python.org/user?@template=register>`_
    to create one.
 
 2. Make sure your GitHub username is listed in the
@@ -123,6 +123,12 @@ After signing the CLA, please **wait at least one US business day** and
 then check "Your Details" on `b.p.o <issue tracker>`_ to see if your account has
 been marked as having signed the CLA (the delay is due to a person having
 to manually check your signed CLA).
+
+If after submitting a PR the "CLA not signed" label is added, you will 
+need to verify that your signing of the CLA has been noted on your b.p.o 
+account. Once that is verified, you can either ask for the CLA check to 
+be run again or wait for it to be run automatically when you push 
+changes to your PR.  
 
 
 .. _PSF license: https://docs.python.org/dev/license.html#terms-and-conditions-for-accessing-or-otherwise-using-python
