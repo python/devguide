@@ -60,6 +60,11 @@ patch:
 
       bpo-12345: Fix some bug in spam module
 
+.. note::
+
+   First time contributors will need to sign the Contributor Licensing
+   Agreement (CLA) as described in the :ref:`Licensing <cla>` section of
+   this guide.
 
 Quick Links
 -----------

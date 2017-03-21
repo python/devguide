@@ -98,21 +98,39 @@ Licensing
 ---------
 
 For non-trivial changes, we must have your formal approval for distributing
-your work under the `PSF license`_.  Therefore, you need to fill out a
-`contributor form`_ which allows the `Python Software Foundation`_ to
+your work under the `PSF license`_.  Therefore, you need to sign a
+`contributor agreement`_ which allows the `Python Software Foundation`_ to
 license your code for use with Python (you retain the copyright).
 
 .. note::
    You only have to sign this document once, it will then apply to all
    your further contributions to Python.
 
-You will also need to specify you GitHub username on the
-`issue tracker`_ on the *Your Details* link found on the
-homepage.
+Here are the steps needed in order to sign the CLA:
+
+1. If you don't have an account on `bugs.python.org <issue tracker>`_
+   (aka b.p.o), please `register <http://bugs.python.org/user?@template=register>`_
+   to create one.
+
+2. Make sure your GitHub username is listed in the
+   `"Your Details" <https://cloud.githubusercontent.com/assets/2680980/23276970/d14a380c-f9d1-11e6-883d-e13b6b211239.png>`_
+   section at b.p.o.
+
+3. Fill out and sign the PSF `contributor form`_. The "bugs.python.org username"
+   requested by the form is the "Login name" field under "Your Details".
+
+After signing the CLA, please **wait at least one US business day** and
+then check "Your Details" on `b.p.o <issue tracker>`_ to see if your account has
+been marked as having signed the CLA (the delay is due to a person having
+to manually check your signed CLA). Once you have verified that your b.p.o
+account reflects your signing of the CLA, you can either ask for the CLA check
+to be run again or wait for it to be run automatically the next time you push
+changes to your PR.
 
 
 .. _PSF license: https://docs.python.org/dev/license.html#terms-and-conditions-for-accessing-or-otherwise-using-python
-.. _contributor form: https://www.python.org/psf/contrib/
+.. _contributor agreement: https://www.python.org/psf/contrib/
+.. _contributor form: https://www.python.org/psf/contrib/contrib-form/
 .. _Python Software Foundation: https://www.python.org/psf/
 
 
