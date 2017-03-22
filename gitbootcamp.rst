@@ -202,6 +202,8 @@ repository to backport the commit .
 The core developer who merged the pull request is expected to do the backport.
 
 
+.. _git_pr:
+
 Downloading Other's Patches
 ---------------------------
 
@@ -248,3 +250,45 @@ Pull requests can be accepted and merged by a Python Core Developer.
       * rebased
 
 3. Press the ``Confirm squash and merge`` button.
+
+
+Editing a Pull Request Prior to Merging
+---------------------------------------
+
+When a pull request submitter has enabled the `Allow edits from maintainers`_
+option, Python Core Developers may decide to make any remaining edits needed
+prior to merging themselves, rather than asking the submitter to do them. This
+can be particularly appropriate when the remaining changes are bookkeeping
+items like updating ``Misc/ACKS`` and ``Misc/NEWS``.
+
+.. _Allow edits from maintainers: https://help.github.com/articles/allowing-changes-to-a-pull-request-branch-created-from-a-fork/
+
+To edit an open pull request that targets ``master``:
+
+1. In the pull request page, under the description, there is some information
+   about the contributor's fork and branch name that will be useful later::
+
+      <contributor> wants to merge 1 commit into python:master from <contributor>:<branch_name>
+
+2. Fetch the pull request, using the :ref:`git pr <git_pr>` alias::
+
+      $ git pr <pr_number>
+
+   This will checkout the contributor's branch at ``pr_XXX``.
+
+3. Make and commit your changes on the branch.  For example, merge in changes
+   made to ``master`` since the PR was submitted (any merge commits will be
+   removed by the later ``Squash and Merge`` when accepting the change)::
+
+      $ git merge origin/master
+      $ git add <filename>
+      $ git commit -m "<commit message>"
+
+4. Push the changes back to the contributor's PR branch::
+
+      $ git push git@github.com:<contributor>/cpython <pr_XXX>:<branch_name>
+
+5. Optionally, delete the local PR branch::
+
+      $ git checkout master
+      $ git branch -D <pr_XXX>
