@@ -266,15 +266,15 @@ items like updating ``Misc/ACKS`` and ``Misc/NEWS``.
 To edit an open pull request that targets ``master``:
 
 1. In the pull request page, under the description, there is some information
-   about the contributor's fork and branch name that will be useful::
+   about the contributor's fork and branch name that will be useful later::
 
-      <contributor> wants to merge 1 commit into ``python:master`` from ``<contributor>:<branch_name>``
+      <contributor> wants to merge 1 commit into python:master from <contributor>:<branch_name>
 
 2. Fetch the said pr, using the :ref:`git pr <git_pr>` alias::
 
       $ git pr <pr_number>
 
-   This will checkout the contributor's branch at ``pr_XXX``
+   This will checkout the contributor's branch at ``pr_XXX``.
 
 3. Make and commit your changes on the branch.  For example, merge in changes
    made to ``master`` since the PR was submitted (any merge commits will be
@@ -282,11 +282,11 @@ To edit an open pull request that targets ``master``:
 
       $ git merge origin/master
 
-6. Push the changes back to the contributor's PR branch::
+4. Push the changes back to the contributor's PR branch::
 
       $ git push git@github.com:<contributor>/cpython <pr_XXX>:<branch_name>
 
+5. Optional, delete the contributor's branch::
 
-7. Optional, delete the contributor's branch::
-
+      $ git checkout master
       $ git branch -D <pr_XXX>
