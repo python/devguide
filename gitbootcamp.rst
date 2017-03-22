@@ -288,7 +288,7 @@ To edit an open pull request that targets ``master``:
 
       $ git push git@github.com:<contributor>/cpython <pr_XXX>:<branch_name>
 
-5. Optional, delete the contributor's branch::
+5. Optionally, delete the local PR branch::
 
       $ git checkout master
       $ git branch -D <pr_XXX>
