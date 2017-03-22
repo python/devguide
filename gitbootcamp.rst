@@ -281,6 +281,8 @@ To edit an open pull request that targets ``master``:
    removed by the later ``Squash and Merge`` when accepting the change)::
 
       $ git merge origin/master
+      $ git add <filename>
+      $ git commit -m "<commit message>"
 
 4. Push the changes back to the contributor's PR branch::
 
