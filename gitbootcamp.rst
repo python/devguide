@@ -270,7 +270,7 @@ To edit an open pull request that targets ``master``:
 
       <contributor> wants to merge 1 commit into python:master from <contributor>:<branch_name>
 
-2. Fetch the said pr, using the :ref:`git pr <git_pr>` alias::
+2. Fetch the pull request, using the :ref:`git pr <git_pr>` alias::
 
       $ git pr <pr_number>
 
