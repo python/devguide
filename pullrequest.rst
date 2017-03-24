@@ -105,21 +105,21 @@ Here is a quick overview of you can contribute to CPython on GitHub:
 
 1.  If an Issue doesn't exist, `create an Issue`_ that describes your change
 
-2.  :ref:`Get started <setup>`_ and set up your system
+2.  :ref:`Get started <setup>` and set up your system
 
 3.  Fork `CPython`_ on GitHub (using the Fork button in the upper-right on GitHub)
 
-4.  :ref:`Build Python <compiling>`_ on your system
+4.  :ref:`Build Python <compiling>` on your system
 
-5.  :ref:`Run tests <runtests>`_ after you have built Python
+5.  :ref:`Run tests <runtests>` after you have built Python
 
-6.  :ref:`Add an "upstream" Remote in Git <remote-configuration>`_ (using SSH, or you can `use HTTPS`_)
+6.  :ref:`Add an "upstream" Remote in Git <remote-configuration>` (using SSH, or you can `use HTTPS`_)
 
-7.  :ref:`Create a Branch in Git <committing-active-branches>`_ `Create a Branch in Git`_ where you can work on changes
+7.  :ref:`Create a Branch in Git <pullrequest-steps>` where you can work on changes
 
-8.  :ref:`Run tests <runtests>`_ again
+8.  :ref:`Run tests <runtests>` again
 
-9.  :ref:`Push commits <committing-push-changes>`_ to your Github repo
+9.  :ref:`Push commits <committing-push-changes>` to your Github repo
 
 10. `Create Pull Request`_ in Github to merge a branch from your Fork
 
