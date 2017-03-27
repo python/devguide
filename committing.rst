@@ -148,11 +148,10 @@ and redistribute their code.
 Contributor Licensing Agreements
 --------------------------------
 
-It's unlikely bug fixes will require a `Contributor Licensing Agreement`_
-unless they touch a *lot* of code. For new features, it is preferable to
-ask that the contributor submit a signed CLA to the PSF as the associated
-comments, docstrings and documentation are far more likely to reach a
-copyrightable standard.
+Always get a `Contributor Licensing Agreement`_ (CLA) signed unless the
+change has no possible intellectual property associated with it (e.g. fixing
+a spelling mistake in documentation). Otherwise it is simply safer from a
+legal standpoint to require the contributor to sign the CLA.
 
 These days, the CLA can be signed electronically through the form linked
 above, and this process is strongly preferred to the old mechanism that
