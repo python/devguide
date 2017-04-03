@@ -127,6 +127,12 @@ Status:
 
 Dates in *italic* are scheduled and can be adjusted.
 
+The exact date of Python 2.7 end of life is not defined yet: this decision
+will be made by Benjamin Peterson, Python 2.7 release manager.
+See `[Python-Dev] Exact date of Python 2 EOL?
+<https://mail.python.org/pipermail/python-dev/2017-March/147655.html>`_
+discussion (March, 2017).
+
 By default, the end-of-life is scheduled 5 years after the first release.  It
 can be adjusted by the release manager of each branch. Versions older than 2.7
 have reached end-of-life.
