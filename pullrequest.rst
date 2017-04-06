@@ -108,7 +108,7 @@ license your code for use with Python (you retain the copyright).
 
 Here are the steps needed in order to sign the CLA:
 
-1. If you don't have an account on `bugs.python.org <issue tracker>`_
+1. If you don't have an account on `bugs.python.org <https://bugs.python.org>`_
    (aka b.p.o), please `register <http://bugs.python.org/user?@template=register>`_
    to create one.
 
@@ -120,7 +120,7 @@ Here are the steps needed in order to sign the CLA:
    requested by the form is the "Login name" field under "Your Details".
 
 After signing the CLA, please **wait at least one US business day** and
-then check "Your Details" on `b.p.o <issue tracker>`_ to see if your account has
+then check "Your Details" on `b.p.o <http://bugs.python.org>`_ to see if your account has
 been marked as having signed the CLA (the delay is due to a person having
 to manually check your signed CLA). Once you have verified that your b.p.o
 account reflects your signing of the CLA, you can either ask for the CLA check
