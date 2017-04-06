@@ -1,6 +1,6 @@
 .. _exploring:
 
-Exploring the CPython's Internals
+Exploring CPython's Internals
 =================================
 
 This is a quick guide for who want to know about CPython's internals,
