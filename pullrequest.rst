@@ -161,6 +161,11 @@ new issue and reference it in the pull request. Please fill in as much
 relevant detail as possible to prevent reviewers from having to delay
 reviewing your pull request because of lack of information.
 
+If this issue is so simple that there's no need for an issue to track
+any discussion of what the pull request is trying to solve (e.g. fixing a
+spelling mistake), then the pull request needs to have the "trivial" label
+added to it.
+
 
 .. _issue tracker: https://bugs.python.org
 
