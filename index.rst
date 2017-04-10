@@ -254,6 +254,7 @@ Additional Resources
 * Anyone can clone the sources for this guide.  See
   :ref:`helping-with-the-developers-guide`.
 * Help with ...
+    * :doc:`exploring`
     * :doc:`grammar`
     * :doc:`compiler`
 * Tool support
@@ -307,6 +308,7 @@ Full Table of Contents
    langchanges
    experts
    gdb
+   exploring
    grammar
    compiler
    coverity
