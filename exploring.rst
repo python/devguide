@@ -3,7 +3,7 @@
 Exploring CPython's Internals
 =============================
 
-This is a quick guide for people who interested in learning more about
+This is a quick guide for people interested in learning more about
 CPython's internals. It provides a summary of the source code structure
 and contains references to resources providing a more in-depth view.
 
@@ -54,7 +54,7 @@ building your understanding of both the 2.x and 3.x versions of CPython:
    :header: "Title", "Brief", "Author", "Version"
    :widths: 40, 50, 10, 10
 
-    `Internals of CPython 3.7`_ (using gdb), "A guide from AST to Objects, using GDB to observed", Louie Lu, 3.7.a0
+    `A guide from parser to objects, observed using GDB`_, "Code walk from Parser, AST, Sym Table and Objects", Louie Lu, 3.7.a0
     `Yet another guided tour of CPython`_, A guide for how CPython REPL works, Guido van Rossum, 3.5
     `Python Asynchronous I/O Walkthrough`_, "How CPython async I/O, generator and coroutine works", Philip Guo, 3.5
 
@@ -64,21 +64,20 @@ building your understanding of both the 2.x and 3.x versions of CPython:
 
     `Python's Innards Series`_, "ceval, objects, pystate and miscellaneous topics", Yaniv Aknin, 3.1
     `Eli Bendersky's Python Internals`_, "Objects, Symbol tables and miscellaneous topics", Eli Bendersky, 3.x
-    `Internals of CPython 2.7`_ (using Eclipse), "A guide from AST to Objects, using Eclipse to observed", Prashanth Raghu, 2.7.12
+    `A guide from parser to objects, observed using Eclipse`_, "Code walk from Parser, AST, Sym Table and Objects", Prashanth Raghu, 2.7.12
     `CPython internals: A ten-hour codewalk through the Python interpreter source code`_, Code walk from source code to generators, Philip Guo, 2.7.8
 
 
+.. _A guide from parser to objects, observed using GDB: https://hackmd.io/s/ByMHBMjFe
+
 .. _Yet another guided tour of CPython: https://paper.dropbox.com/doc/Yet-another-guided-tour-of-CPython-XY7KgFGn88zMNivGJ4Jzv
-
-.. _Python's Innards Series: https://tech.blog.aknin.name/category/my-projects/pythons-innards/
-
-.. _Internals of CPython 2.7: https://docs.google.com/document/d/1nzNN1jeNCC_bg1LADCvtTuGKvcyMskV1w8Ad2iLlwoI/
-
-.. _Eli Bendersky's Python Internals: http://eli.thegreenplace.net/tag/python-internals
-
-.. _CPython internals\: A ten-hour codewalk through the Python interpreter source code: http://pgbovine.net/cpython-internals.htm
-
-.. _Internals of CPython 3.7: https://hackmd.io/s/ByMHBMjFe
 
 .. _Python Asynchronous I/O Walkthrough: http://pgbovine.net/python-async-io-walkthrough.htm
 
+.. _Python's Innards Series: https://tech.blog.aknin.name/category/my-projects/pythons-innards/
+
+.. _Eli Bendersky's Python Internals: http://eli.thegreenplace.net/tag/python-internals
+
+.. _A guide from parser to objects, observed using Eclipse: https://docs.google.com/document/d/1nzNN1jeNCC_bg1LADCvtTuGKvcyMskV1w8Ad2iLlwoI/
+
+.. _CPython internals\: A ten-hour codewalk through the Python interpreter source code: http://pgbovine.net/cpython-internals.htm
