@@ -3,8 +3,9 @@
 Exploring CPython's Internals
 =============================
 
-This is a quick guide for who want to know about CPython's internals,
-and provide a summary about the source code structure and references.
+This is a quick guide for people who interested in learning more about
+CPython's internals. It provides a summary of the source code structure
+and contains references to resources providing a more in-depth view.
 
 
 CPython Source Code Layout
@@ -49,20 +50,22 @@ Here's a sample of resources about the architecture of CPython aimed at
 building your understanding of both the 2.x and 3.x versions of CPython:
 
 
-===================================================================================== ================== =========
-               Title                                                                        Author        Version
-===================================================================================== ================== =========
-`Internals of CPython 3.7`_ (using gdb)                                               Louie Lu            3.7.a0
+.. csv-table:: **Current references**
+   :header: "Title", "Brief", "Author", "Version"
+   :widths: 40, 50, 10, 10
 
-`Yet another guided tour of CPython`_                                                 Guido van Rossum    3.5
+    `Internals of CPython 3.7`_ (using gdb), "A guide from AST to Objects, using GDB to observed", Louie Lu, 3.7.a0
+    `Yet another guided tour of CPython`_, A guide for how CPython REPL works, Guido van Rossum, 3.5
+    `Python Asynchronous I/O Walkthrough`_, "How CPython async I/O, generator and coroutine works", Philip Guo, 3.5
 
-`Python's Innards Series`_                                                            Yaniv Aknin         3.1
+.. csv-table:: **Historical references**
+   :header: "Title", "Brief", "Author", "Version"
+   :widths: 40, 50, 10, 10
 
-`Internals of CPython 2.7`_ (using Eclipse)                                           Prashanth Raghu     2.7.12
-
-`CPython internals: A ten-hour codewalk through the Python interpreter source code`_  Philip Guo          2.7.8
-
-===================================================================================== ================== =========
+    `Python's Innards Series`_, "ceval, objects, pystate and miscellaneous topics", Yaniv Aknin, 3.1
+    `Eli Bendersky's Python Internals`_, "Objects, Symbol tables and miscellaneous topics", Eli Bendersky, 3.x
+    `Internals of CPython 2.7`_ (using Eclipse), "A guide from AST to Objects, using Eclipse to observed", Prashanth Raghu, 2.7.12
+    `CPython internals: A ten-hour codewalk through the Python interpreter source code`_, Code walk from source code to generators, Philip Guo, 2.7.8
 
 
 .. _Yet another guided tour of CPython: https://paper.dropbox.com/doc/Yet-another-guided-tour-of-CPython-XY7KgFGn88zMNivGJ4Jzv
@@ -71,6 +74,11 @@ building your understanding of both the 2.x and 3.x versions of CPython:
 
 .. _Internals of CPython 2.7: https://docs.google.com/document/d/1nzNN1jeNCC_bg1LADCvtTuGKvcyMskV1w8Ad2iLlwoI/
 
+.. _Eli Bendersky's Python Internals: http://eli.thegreenplace.net/tag/python-internals
+
 .. _CPython internals\: A ten-hour codewalk through the Python interpreter source code: http://pgbovine.net/cpython-internals.htm
 
 .. _Internals of CPython 3.7: https://hackmd.io/s/ByMHBMjFe
+
+.. _Python Asynchronous I/O Walkthrough: http://pgbovine.net/python-async-io-walkthrough.htm
+
