@@ -52,7 +52,7 @@ building your understanding of both the 2.x and 3.x versions of CPython:
 
 .. csv-table:: **Current references**
    :header: "Title", "Brief", "Author", "Version"
-   :widths: 40, 50, 10, 10
+   :widths: 50, 50, 20, 5
 
     "`A guide from parser to objects, observed using GDB`_", "Code walk from Parser, AST, Sym Table and Objects", Louie Lu, 3.7.a0
     "`Yet another guided tour of CPython`_", "A guide for how CPython REPL works", Guido van Rossum, 3.5
@@ -60,7 +60,7 @@ building your understanding of both the 2.x and 3.x versions of CPython:
 
 .. csv-table:: **Historical references**
    :header: "Title", "Brief", "Author", "Version"
-   :widths: 40, 50, 10, 10
+   :widths: 50, 50, 20, 5
 
     "`Python's Innards Series`_", "ceval, objects, pystate and miscellaneous topics", Yaniv Aknin, 3.1
     "`Eli Bendersky's Python Internals`_", "Objects, Symbol tables and miscellaneous topics", Eli Bendersky, 3.x
