@@ -3,7 +3,7 @@
 Exploring CPython's Internals
 =============================
 
-This is a quick guide for people interested in learning more about
+This is a quick guide for people who are interested in learning more about
 CPython's internals. It provides a summary of the source code structure
 and contains references to resources providing a more in-depth view.
 
@@ -43,7 +43,7 @@ Some Exceptions:
 * builtin type ``str`` is at ``Objects/unicodeobject.c``
 
 Additional References
----------------------------
+---------------------
 
 For over 20 years the CPython code base has been changing and evolving.
 Here's a sample of resources about the architecture of CPython aimed at
@@ -54,18 +54,18 @@ building your understanding of both the 2.x and 3.x versions of CPython:
    :header: "Title", "Brief", "Author", "Version"
    :widths: 40, 50, 10, 10
 
-    `A guide from parser to objects, observed using GDB`_, "Code walk from Parser, AST, Sym Table and Objects", Louie Lu, 3.7.a0
-    `Yet another guided tour of CPython`_, A guide for how CPython REPL works, Guido van Rossum, 3.5
-    `Python Asynchronous I/O Walkthrough`_, "How CPython async I/O, generator and coroutine works", Philip Guo, 3.5
+    "`A guide from parser to objects, observed using GDB`_", "Code walk from Parser, AST, Sym Table and Objects", Louie Lu, 3.7.a0
+    "`Yet another guided tour of CPython`_", "A guide for how CPython REPL works", Guido van Rossum, 3.5
+    "`Python Asynchronous I/O Walkthrough`_", "How CPython async I/O, generator and coroutine works", Philip Guo, 3.5
 
 .. csv-table:: **Historical references**
    :header: "Title", "Brief", "Author", "Version"
    :widths: 40, 50, 10, 10
 
-    `Python's Innards Series`_, "ceval, objects, pystate and miscellaneous topics", Yaniv Aknin, 3.1
-    `Eli Bendersky's Python Internals`_, "Objects, Symbol tables and miscellaneous topics", Eli Bendersky, 3.x
-    `A guide from parser to objects, observed using Eclipse`_, "Code walk from Parser, AST, Sym Table and Objects", Prashanth Raghu, 2.7.12
-    `CPython internals: A ten-hour codewalk through the Python interpreter source code`_, Code walk from source code to generators, Philip Guo, 2.7.8
+    "`Python's Innards Series`_", "ceval, objects, pystate and miscellaneous topics", Yaniv Aknin, 3.1
+    "`Eli Bendersky's Python Internals`_", "Objects, Symbol tables and miscellaneous topics", Eli Bendersky, 3.x
+    "`A guide from parser to objects, observed using Eclipse`_", "Code walk from Parser, AST, Sym Table and Objects", Prashanth Raghu, 2.7.12
+    "`CPython internals: A ten-hour codewalk through the Python interpreter source code`_", "Code walk from source code to generators", Philip Guo, 2.7.8
 
 
 .. _A guide from parser to objects, observed using GDB: https://hackmd.io/s/ByMHBMjFe
