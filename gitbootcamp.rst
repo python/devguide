@@ -171,7 +171,8 @@ Solution::
    $ git pull --rebase upstream master
    $ git push origin master
 
-The `--rebase` is only needed if you have local changes to the branch.
+The ``--rebase`` option is only needed if you have local changes to the
+branch.
 
 Another scenario:
 
