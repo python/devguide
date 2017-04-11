@@ -166,10 +166,11 @@ any discussion of what the pull request is trying to solve (e.g. fixing a
 spelling mistake), then the pull request needs to have the "trivial" label
 added to it.
 
-If your pull request involves several commits, as a result of addressing code
+If your pull request involves several commits as a result of addressing code
 review comments, please do not squash them.  When you squash your commits,
-reviewers lose the ability to view the diff of one commit to the next,
-and therefore unable to easily verify whether their comments have been addressed.
+reviewers lose the ability to view the diff of one commit to the next
+and are therefore unable to easily verify whether their comments have been
+addressed.
 
 .. _issue tracker: https://bugs.python.org
 
