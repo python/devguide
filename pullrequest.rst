@@ -101,7 +101,7 @@ Quick Guide
 `Clear communication`_ is key to contributing to any project, especially an
 `Open Source`_ project like Python.
 
-Here is a quick overview of you can contribute to CPython on GitHub:
+Here is a quick overview of how you can contribute to CPython on GitHub:
 
 1.  If an Issue doesn't exist, `create an Issue`_ that describes your change
 
