@@ -169,9 +169,9 @@ added to it.
 Your pull request may involve several commits as a result of addressing code
 review comments.  Please keep the commit history in the pull request intact by
 not squashing, amending, or anything that would require a force push to GitHub.
-This allows reviewers to view the diff of one commit to another so they can
-easily verify whether their comments have been addressed.  The commits will be
-squashed when the pull request is merged.
+A detailed commit history allows reviewers to view the diff of one commit to
+another so they can easily verify whether their comments have been addressed.
+The commits will be squashed when the pull request is merged.
 
 
 .. _issue tracker: https://bugs.python.org
