@@ -346,6 +346,8 @@ After that, your remotes configuration should look like this::
 At any point in time you can use SSH-based URL instead of HTTPS-based ones.
 
 
+.. _committing-push-changes:
+
 Pushing changes
 '''''''''''''''
 
@@ -380,6 +382,8 @@ commands::
 The above steps can be executed against any branch you wish to, just replace master
 with an appropriate branch name.
 
+
+.. _committing-active-branches:
 
 Active branches
 ---------------

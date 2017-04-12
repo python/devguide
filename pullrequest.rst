@@ -94,6 +94,85 @@ command (after any successful build of Python)::
 
 .. _cla:
 
+.. _pullrequest-quickguide:
+
+Quick Guide
+'''''''''''
+
+`Clear communication`_ is key to contributing to any project, especially an
+`Open Source`_ project like Python.
+
+Here is a quick overview of how you can contribute to CPython on GitHub:
+
+1.  If an Issue doesn't exist, `create an Issue`_ that describes your change
+
+2.  :ref:`Get started <setup>` and set up your system
+
+3.  Fork `CPython`_ on GitHub (using the Fork button in the upper-right on GitHub)
+
+4.  :ref:`Build Python <compiling>` on your system
+
+5.  :ref:`Run tests <runtests>` after you have built Python
+
+6.  :ref:`Add an "upstream" Remote in Git <remote-configuration>` (using SSH, or you can `use HTTPS`_)
+
+7.  :ref:`Create a Branch in Git <pullrequest-steps>` where you can work on changes
+
+8.  :ref:`Run tests <runtests>` again
+
+9.  :ref:`Push commits <committing-push-changes>` to your Github repo
+
+10. `Create Pull Request`_ in Github to merge a branch from your Fork
+
+11. Review and address `comments on your Pull Request`_
+
+12. When your changes are merged, celebrate contributing to Python! :)
+
+.. _Clear communication: https://opensource.guide/how-to-contribute/#how-to-submit-a-contribution
+.. _Open Source: https://opensource.guide/
+.. _create an Issue: https://bugs.python.org/
+.. _CPython: https://github.com/python/cpython
+.. _use HTTPS: https://help.github.com/articles/which-remote-url-should-i-use/
+.. _Create Pull Request: https://help.github.com/articles/creating-a-pull-request/
+.. _comments on your Pull Request: https://help.github.com/articles/commenting-on-a-pull-request/
+
+
+.. _pullrequest-steps:
+
+Quick Guide Step-by-step
+''''''''''''''''''''''''
+
+Set up your system (using SSH, or you can `use HTTPS`_)::
+
+  git clone git@github.com:YOUR_GITHUB_ID/cpython.git
+
+Replace **YOUR_GITHUB_ID** with your GitHub account name above, then add upstream (using SSH, or you can `use HTTPS`_)::
+
+  git remote add upstream git://github.com/python/cpython.git
+
+Work on new features or fixes::
+
+  git checkout -b MY_BRANCH_NAME upstream/master
+  
+As you work, commit changes::
+
+  git commit
+
+Then fetch upstream to see if anything conflicts with your changes::
+
+  git fetch upstream
+  
+Then push your work to your clone on GitHub::
+
+  git push origin MY_BRANCH_NAME
+
+Make a Pull Request on GitHub from your changes in **MY_BRANCH_NAME**.
+
+.. note::
+   You can upload a patch to https://bugs.python.org/, but Pull Requests 
+   on GitHub are preferred.
+
+
 Licensing
 ---------
 
