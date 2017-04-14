@@ -265,11 +265,6 @@ repositories means you have to be more careful with your workflow:
   dedicated to maintenance of the work before the work gets integrated in the
   main repository.
 
-* You should :ref:`squash commits <squash-commits>` of a single feature or bugfix
-  before pushing the result to the main repository.  The reason is that we don't
-  want the history to be full of intermediate commits recording the private history
-  of the person working on a patch.
-
 * You should not commit directly into the ``master`` branch, or any of the 
   maintenance branches (``2.7``, ``3.5``, or ``3.6``).  You should commit against
   your own feature branch, and create a pull request.
@@ -396,7 +391,7 @@ new features.  The other branches only receive bug fixes or security fixes.
 .. _branch-merge:
 
 Backporting changes to Python 3.6 (or older version)
------------------------------------------------------
+----------------------------------------------------
 
 The current in-development version of Python is in the ``master`` branch.  To properly
 port the patch to Python 3.6 (or older version), you should first apply the patch
@@ -438,32 +433,6 @@ original pull request on ``master``.
 .. _cherry_picker.py: https://github.com/python/core-workflow/tree/master/cherry_picker
 
 
-.. _squash-commits:
-
-Squashing commits
------------------
-
-All the changes pushed to the main repository should be squashed into a single
-commit.  The following steps take you through the process of squashing several
-commits into a single one.  Assuming I want to squash my last 4 commits into
-a single one (check `git log` to get the number) here are the necessary steps::
-
-   git rebase -i HEAD~4
-   # I'll be modifying history starting from current branch and 4 commits back
-   # Alternatively, you can specify commit SHA after which the squash should happen.
-
-You should be presented with an editor showing you 4 lines of commits.  Each line,
-representing one commit will contain an action, commit SHA and its message.  Below
-you should see a descriptive information about possible commands you can execute.
-Since we are interested in squashing commits into a single one we leave the ``pick``
-option next to the first line and change all the following to ``squash``.  Once that
-is done we can save the changes.  Upon doing so you should be presented with a new
-editor this time containing just the commit messages of all the commits you are
-squashing.  Tweak the comments appropriately and write the changes once again.
-Once that is done your initial 4 commits should turn into a single one, you should
-be able to check it using ``git log``.
-
-
 .. _forking:
 
 Forking repository
@@ -474,7 +443,7 @@ upper corner at https://github.com/python/cpython.
 
 
 Maintaining a repository
--------------------------
+------------------------
 
 The Git object database and other files/directories under ``.git`` require
 periodic maintenance and cleanup. For example, commit editing leaves
