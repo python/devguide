@@ -258,8 +258,8 @@ the pull request.  It will bring up the page to create a new pull request where
 the commit can be reverted.
 
 Always include the reason for reverting the commit to help others understand
-why it was done.  The reason should be included as part of the commit message
-with the heading: ``Reason: ``.  For example::
+why it was done.  The reason should be included as part of the commit message,
+for example::
 
    Revert bpo-NNNN: Fix Spam Module (GH-111)
 
