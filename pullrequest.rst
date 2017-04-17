@@ -306,8 +306,7 @@ code and leave comments in the pull request or issue tracker.
    of the Python REPL (the interactive shell prompt), which you can launch
    by executing ./python inside the repository.
 
-3. Apply the pull request (GitHub has instructions with each pull
-   request on how to do this).
+3. Checkout and apply the pull request (Please refer to the instruction :ref:`git_pr`)
 
 4. If the changes affect any C file, run the build again.
 
