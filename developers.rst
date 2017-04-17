@@ -476,6 +476,7 @@ Initials of Project Admins
 * TGP:  Tim Peters
 * GFB:  Georg Brandl
 * BAC:  Brett Cannon
+* BCP:  Benjamin Peterson
 * NCN:  Neal Norwitz
 * DJG:  David Goodger
 * MvL:  Martin v. Loewis
