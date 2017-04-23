@@ -9,7 +9,7 @@ Creating
 
 CPython uses a workflow based on pull requests. What this means is
 that you create a branch in Git, make your changes, push those changes
-to GitHub, and than create a pull request.
+to GitHub, and then create a pull request.
 `GitHub's help pages <https://help.github.com/>`_ are good and there
 are tons of pages out there for help with Git.  As such, this
 document does not go into any great detail as the assumption is there
@@ -271,7 +271,7 @@ request (we cannot force anyone to review pull requests and no one is
 employed to look at pull requests). If your pull request has not
 received any notice from reviewers (i.e., no comment made) after one
 month, first "ping" the issue on the `issue tracker`_ to remind the
-nosy list that the pull request needs a review.  If you don't get a response
+noisy list that the pull request needs a review.  If you don't get a response
 within a week after pinging the issue, then you can try emailing
 python-dev@python.org to ask for someone to review your pull request.
 
