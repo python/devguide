@@ -271,7 +271,7 @@ request (we cannot force anyone to review pull requests and no one is
 employed to look at pull requests). If your pull request has not
 received any notice from reviewers (i.e., no comment made) after one
 month, first "ping" the issue on the `issue tracker`_ to remind the
-noisy list that the pull request needs a review.  If you don't get a response
+nosy list that the pull request needs a review.  If you don't get a response
 within a week after pinging the issue, then you can try emailing
 python-dev@python.org to ask for someone to review your pull request.
 
