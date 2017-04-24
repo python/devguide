@@ -323,6 +323,15 @@ code and leave comments in the pull request or issue tracker.
    'merge-ready', you should always make sure the entire test suite passes.
 
 
+Dismissing Review from Another Core Developer
+---------------------------------------------
+
+A core developer can dismiss another core developer's review if they confirmed
+that the requested changes have been made.  When a core developer has assigned
+the PR to themselves, then it is a sign that they are actively looking after
+the PR, and their review should not be dismissed.
+
+
 Committing/Rejecting
 --------------------
 
