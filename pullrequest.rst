@@ -9,7 +9,7 @@ Creating
 
 CPython uses a workflow based on pull requests. What this means is
 that you create a branch in Git, make your changes, push those changes
-to GitHub, and than create a pull request.
+to GitHub, and then create a pull request.
 `GitHub's help pages <https://help.github.com/>`_ are good and there
 are tons of pages out there for help with Git.  As such, this
 document does not go into any great detail as the assumption is there
