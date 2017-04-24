@@ -193,45 +193,31 @@ or by making its parameters - such as a timeout - more robust.
 Custom builders
 ---------------
 
-When working on a long-lived feature branch, or on a bugfix branch which
-enables issue-specific debugging, you will probably want to test your
-work on one or several buildbots.  Since your work is hosted in a distinct
-repository, you can't trigger builds on the regular builders.  Instead,
-you have to use one of the `custom builders
+When working on a platform-specific issue, you may want to test your changes on
+the buildbot fleet rather than just on Travis and AppVeyor.  To do so, you can
+make use of the `custom builders
 <http://buildbot.python.org/all/waterfall?category=custom.stable&category=custom.unstable>`_.
+These builders track the ``buildbot-custom`` short-lived branch of the
+``python/cpython`` repository, which is only accessible to core developers.
 
-When creating ("forcing") a build on a custom builder, you have to provide
-at least two parameters:
+To start a build on the custom builders, push the commit you want to test to
+the ``buildbot-custom`` branch::
 
-* The repository path, relative to https://hg.python.org. For example,
-  ``sandbox/myfixes`` if ``https://hg.python.org/sandbox/myfixes`` is the
-  full path to the repository.
+   $ git push upstream <local_branch_name>:buildbot-custom
 
-* The Mercurial id of the changeset you want to build.  To make things less
-  tedious, we suggest you do your changes in a separate named branch: you can
-  then supply the branch name instead of a specific changeset id.
+You may run into conflicts if another developer is currently using the custom
+builders or forgot to delete the branch when they finished.  In that case, make
+sure the other developer is finished and either delete the branch or force-push
+(add the ``-f`` option) over it.
+
+When you have gotten the results of your tests, delete the branch::
+
+   $ git push upstream :buildbot-custom     # or use the GitHub UI
 
 If you are interested in the results of a specific test file only, we
 recommend you change (temporarily, of course) the contents of the
 ``buildbottest`` clause in ``Makefile.pre.in``; or, for Windows builders,
 the ``Tools/buildbot/test.bat`` script.
 
-It is also possible to run a build on all of the custom builders at the same
-time.  Navigate to the bottom of the
-`builders page <http://buildbot.python.org/all/builders>`_, then find [#]_
-and fill out the set of fields that includes a *Repo path:* field.  Click the
-associated *Force Build* button to start the build on all available custom
-builders.
-
-.. note::
-   For security reasons, it is impossible to build repositories from outside
-   the http://hg.python.org realm.
-
 .. seealso::
    :ref:`buildslave`
-
-.. rubric:: Footnotes
-
-.. [#] Yes, find.  Unfortunately, it moves around every time the buildbot
-   master is restarted; this ought to be fixed some day.
-
