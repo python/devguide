@@ -408,8 +408,8 @@ new features.  The other branches only receive bug fixes or security fixes.
 
 .. _branch-merge:
 
-Backporting Changes to Older Version
-------------------------------------
+Backporting Changes to an Older Version
+---------------------------------------
 
 When it is determined that a pull request needs to be backported into one or more of 
 the maintenance branches, a core developer can apply the labels ``needs backport to X.Y``
