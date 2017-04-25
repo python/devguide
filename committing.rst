@@ -408,45 +408,25 @@ new features.  The other branches only receive bug fixes or security fixes.
 
 .. _branch-merge:
 
-Backporting changes to Python 3.6 (or older version)
-----------------------------------------------------
+Backporting Changes to an Older Version
+---------------------------------------
 
-The current in-development version of Python is in the ``master`` branch.  To properly
-port the patch to Python 3.6 (or older version), you should first apply the patch
-to master branch::
-
-   git checkout master
-   git apply --reject patch.diff
-   # Fix any conflicts (e.g. look for *.rej files); compile; run the test suite.
-   git add -A
-   git commit -m 'bpo-12345: fix some issue.'
-   # Note the commit SHA (e.g. git log or git rev-parse --short HEAD).
-
-Then use cherry_picker.py_ to backport the commit.
-
-.. note::
-   Even when porting an already committed patch, you should *still* check the
-   test suite runs successfully before committing the patch to another branch.
-   Subtle differences between two branches sometimes make a patch bogus if
-   ported without any modifications.
-
-
-Backport and Cherry-Pick Labels
--------------------------------
-
-Only Core Developers can apply labels to GitHub pull requests.  When it is determined
-that a pull request needs to be backported into one or more of the maintenance branches,
-a core developer can apply the labels ``needs backport to X.Y`` to the pull request.
+When it is determined that a pull request needs to be backported into one or more of 
+the maintenance branches, a core developer can apply the labels ``needs backport to X.Y``
+to the pull request.
 
 After the pull request has been merged, it can be backported using cherry_picker.py_.
 
-Prefix the backport pull request with the branch, for example::
+The commit hash can be obtained from the original pull request, or by using `git log`
+on the ``master`` branch.  To display the 10 most recent commit hashes and their first
+line of the commit message::
 
-   [3.6] bpo-12345: Fix the Spam Module
+   git log -10 --oneline
    
 Apply the label ``cherry-pick or X.Y`` to the backport pull request.  Once the backport
 pull request has been created, remove the ``needs backport to X.Y`` label from the
-original pull request on ``master``.
+original pull request on ``master``.  Only Core Developers can apply labels to GitHub
+pull requests.  
 
 .. _cherry_picker.py: https://github.com/python/core-workflow/tree/master/cherry_picker
 
