@@ -125,7 +125,22 @@ On **Fedora** and other ``DNF`` based systems::
    $ sudo dnf builddep python3
 
 On **Debian**, **Ubuntu**, and other ``apt`` based systems, try to get the
-dependencies for the Python version that you're working on e.g.::
+dependencies for the Python using the ``apt``.
+
+First please make sure you have enabled the source packages in source list.
+You can do this by adding the following line to ``/etc/apt/sources.list``.
+Take Ubuntu Xenial for example::
+
+   deb-src http://archive.ubuntu.com/ubuntu/ xenail main
+
+Other systems like Debian should change this to the corresponding URL and
+distribution name.
+
+Then you should update the packages index::
+
+   $ sudo apt-get update
+
+Now you can install the dependencies via ``apt``::
 
    $ sudo apt-get build-dep python3.5
 
