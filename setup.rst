@@ -125,9 +125,9 @@ On **Fedora** and other ``DNF`` based systems::
    $ sudo dnf builddep python3
 
 On **Debian**, **Ubuntu**, and other ``apt`` based systems, try to get the
-dependencies for the Python using the ``apt``.
+dependencies for the Python you're working on by using the ``apt`` command.
 
-First please make sure you have enabled the source packages in source list.
+First, make sure you have enabled the source packages in the sources list.
 You can do this by adding the location of the source packages, including
 URL, distribution name and component name, to ``/etc/apt/sources.list``.
 Take Ubuntu Xenial for example::
