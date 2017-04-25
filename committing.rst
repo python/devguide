@@ -423,6 +423,12 @@ line of the commit message::
 
    git log -10 --oneline
    
+Prefix the backport pull request with the branch, for example::
+
+   [3.6] bpo-12345: Fix the Spam Module
+   
+Note that cherry_picker.py_ adds the branch prefix automatically.
+   
 Apply the label ``cherry-pick or X.Y`` to the backport pull request.  Once the backport
 pull request has been created, remove the ``needs backport to X.Y`` label from the
 original pull request on ``master``.  Only Core Developers can apply labels to GitHub
