@@ -131,7 +131,7 @@ First please make sure you have enabled the source packages in source list.
 You can do this by adding the following line to ``/etc/apt/sources.list``.
 Take Ubuntu Xenial for example::
 
-   deb-src http://archive.ubuntu.com/ubuntu/ xenail main
+   deb-src http://archive.ubuntu.com/ubuntu/ xenial main
 
 Other systems like Debian should change this to the corresponding URL and
 distribution name.
