@@ -69,7 +69,7 @@ maximum line length is 80 characters for normal text, but tables, deeply
 indented code samples and long links may extend beyond that.  Code example
 bodies should use normal Python 4-space indentation.
 
-Make generous use of blank lines where applicable; they help grouping things
+Make generous use of blank lines where applicable; they help group things
 together.
 
 A sentence-ending period may be followed by one or two spaces; while reST
@@ -160,7 +160,7 @@ Affirmative Tone
 The documentation focuses on affirmatively stating what the language does and
 how to use it effectively.
 
-Except for certain security risks or segfault risks, the docs should avoid
+Except for certain security or segfault risks, the docs should avoid
 wording along the lines of "feature x is dangerous" or "experts only".  These
 kinds of value judgments belong in external blogs and wikis, not in the core
 documentation.
@@ -742,7 +742,7 @@ The directives are:
 
             Description of the class.
 
-            .. data:: ham
+            .. attribute:: ham
 
                Description of the attribute.
 
@@ -751,7 +751,7 @@ The directives are:
    split in multiple sections.  The class name should then be included
    explicitly::
 
-      .. data:: Spam.eggs
+      .. attribute:: Spam.eggs
 
 .. describe:: method
 
