@@ -84,7 +84,7 @@ To delete a branch that you no longer need::
 
    $ git branch -D <branch-name>
 
-You may specify more than one branches for deletion.
+You may specify more than one branch for deletion.
 
 
 Staging and Committing Files
