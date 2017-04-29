@@ -61,12 +61,12 @@ This is equivalent to::
    # check out the branch
    $ git checkout <branch-name>
 
-To find out which branch you are in now::
+To find the branch you are currently on::
 
    $ git branch
 
 The current branch will have an asterisk next to the branch name.  Note, this
-will list all of your local branches.
+will only list all of your local branches.
 
 To list all the branches, including the remote branches::
 
@@ -77,12 +77,14 @@ To switch to a different branch::
    $ git checkout <another-branch-name>
 
 
-Delete Local Branch
--------------------
+Deleting Local Branches
+-----------------------
 
-To delete branch that you no longer need::
+To delete a branch that you no longer need::
 
    $ git branch -D <branch-name>
+
+You may specify more than one branches for deletion.
 
 
 Staging and Committing Files
@@ -121,7 +123,7 @@ To stash away changes that are not ready to be committed yet::
 
    $ git stash
 
-To re-apply last stashed change::
+To re-apply the last stashed change::
 
    $ git stash pop
 
@@ -198,7 +200,7 @@ by the label ``needs backport to X.Y`` on the pull request itself.
 
 Use the utility script `cherry_picker.py <https://github.com/python/core-workflow/tree/master/cherry_picker>`_
 from the `core-workflow  <https://github.com/python/core-workflow>`_
-repository to backport the commit .
+repository to backport the commit.
 
 The core developer who merged the pull request is expected to do the backport.
 
