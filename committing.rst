@@ -24,8 +24,7 @@ later in this document):
 #. Was ``pyconfig.h.in`` regenerated (if necessary)?
 #. Was the submitter added to ``Misc/ACKS`` (as appropriate)?
 #. Was ``Misc/NEWS`` updated (as appropriate)?
-#. Was "What's New" updated
-   (or the pull request labeled as needing a "What's New" entry)?
+#. Was "What's New" updated (as appropriate)?
 #. Were appropriate labels added to signify necessary backporting of the
    pull request?
 
