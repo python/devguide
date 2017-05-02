@@ -114,7 +114,7 @@ Status of Python branches
 |                  |              |             |                |                | <https://www.python.org/download/releases/2.6.9/>`_                        |
 +------------------+--------------+-------------+----------------+----------------+----------------------------------------------------------------------------+
 
-(1) The exact date of Python 2.7 end-of-life has not been decided yet. I will
+(1) The exact date of Python 2.7 end-of-life has not been decided yet. It will
 be decided by Python 2.7 release manager, Benjamin Peterson, who will update
 the :pep:`373`. Read also the `[Python-Dev] Exact date of Python 2 EOL?
 <https://mail.python.org/pipermail/python-dev/2017-March/147655.html>`_ thread
