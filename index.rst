@@ -93,7 +93,7 @@ Status of Python branches
 +------------------+--------------+-------------+----------------+----------------+----------------------------------------------------------------------------+
 | 3.5              | :pep:`478`   | bugfix      | 2015-09-13     | *2020-09-13*   |                                                                            |
 +------------------+--------------+-------------+----------------+----------------+----------------------------------------------------------------------------+
-| 2.7              | :pep:`373`   | bugfix      | 2010-07-03     | *2020-01-01*   | The support has been extended to 2020.                                     |
+| 2.7              | :pep:`373`   | bugfix      | 2010-07-03     | *2020-01-01*   | The support has been extended to 2020 (1).                                 |
 +------------------+--------------+-------------+----------------+----------------+----------------------------------------------------------------------------+
 | 3.4              | :pep:`429`   | security    | 2014-03-16     | *2019-03-16*   | `Last binary release: Python 3.4.4                                         |
 |                  |              |             |                |                | <https://www.python.org/download/releases/3.4.4/>`_                        |
@@ -113,6 +113,12 @@ Status of Python branches
 | 2.6              | :pep:`361`   | end-of-life | 2008-10-01     | 2013-10-29     | `Last release: Python 2.6.9                                                |
 |                  |              |             |                |                | <https://www.python.org/download/releases/2.6.9/>`_                        |
 +------------------+--------------+-------------+----------------+----------------+----------------------------------------------------------------------------+
+
+(1) The exact date of Python 2.7 end-of-life has not been decided yet. It will
+be decided by Python 2.7 release manager, Benjamin Peterson, who will update
+the :pep:`373`. Read also the `[Python-Dev] Exact date of Python 2 EOL?
+<https://mail.python.org/pipermail/python-dev/2017-March/147655.html>`_ thread
+on python-dev (March 2017).
 
 Status:
 
