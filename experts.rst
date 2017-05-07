@@ -67,7 +67,7 @@ binascii
 binhex
 bisect                rhettinger
 builtins
-bz2                   nadeem.vawda
+bz2                   
 calendar              rhettinger
 cgi
 cgitb
@@ -144,7 +144,7 @@ libmpdec              skrah
 linecache
 locale                loewis, lemburg
 logging               vinay.sajip
-lzma                  nadeem.vawda
+lzma                  
 macpath
 mailbox
 mailcap
@@ -270,7 +270,7 @@ xml.sax.xmlreader
 xmlrpc                loewis
 zipfile               alanmcintyre, serhiy.storchaka, twouters
 zipimport             twouters*
-zlib                  nadeem.vawda, twouters
+zlib                  twouters
 ====================  =============================================
 
 
