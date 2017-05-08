@@ -7,23 +7,14 @@ Design of CPython's Compiler
 Abstract
 --------
 
-Historically (through 2.4), compilation from source code to bytecode
-involved two steps:
-
-1. Parse the source code into a parse tree (:file:`Parser/pgen.c`)
-2. Emit bytecode based on the parse tree (:file:`Python/compile.c`)
-
-Historically, this is not how a standard compiler works.  The usual
-steps for compilation are:
+In CPython, the compilation from source code to bytecode involves three steps:
 
 1. Parse source code into a parse tree (:file:`Parser/pgen.c`)
 2. Transform parse tree into an Abstract Syntax Tree (:file:`Python/ast.c`)
 3. Transform AST into a Control Flow Graph (:file:`Python/compile.c`)
 4. Emit bytecode based on the Control Flow Graph (:file:`Python/compile.c`)
 
-Starting with Python 2.5, the above steps are now used.  This change
-was done to simplify compilation by breaking it into three steps.
-The purpose of this document is to outline how the latter three steps
+The purpose of this document is to outline how these three steps
 of the process work.
 
 This document does not touch on how parsing works beyond what is needed
