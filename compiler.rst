@@ -7,15 +7,14 @@ Design of CPython's Compiler
 Abstract
 --------
 
-In CPython, the compilation from source code to bytecode involves three steps:
+In CPython, the compilation from source code to bytecode involves several steps:
 
 1. Parse source code into a parse tree (:file:`Parser/pgen.c`)
 2. Transform parse tree into an Abstract Syntax Tree (:file:`Python/ast.c`)
 3. Transform AST into a Control Flow Graph (:file:`Python/compile.c`)
 4. Emit bytecode based on the Control Flow Graph (:file:`Python/compile.c`)
 
-The purpose of this document is to outline how these three steps
-of the process work.
+The purpose of this document is to outline how these steps of the process work.
 
 This document does not touch on how parsing works beyond what is needed
 to explain what is needed for compilation.  It is also not exhaustive
