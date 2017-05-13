@@ -174,7 +174,7 @@ Make a pull request on GitHub from your changes in ``MY_BRANCH_NAME``.
 
 .. note::
    You can still upload a patch to bugs.python.org_, but the new pull request
-   workflow is preferred.
+   workflow is **strongly** preferred.
 
 
 Licensing
