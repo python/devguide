@@ -429,8 +429,8 @@ Prefix the backport pull request with the branch, for example::
 Note that cherry_picker.py_ adds the branch prefix automatically.
    
 Once the backport pull request has been created, remove the
-``needs backport to X.Y`` label from the original pull request on ``master``.
-Only Core Developers can apply labels to GitHub pull requests.
+``needs backport to X.Y`` label from the original pull request.  (Only Core
+Developers can apply labels to GitHub pull requests).
 
 .. _cherry_picker.py: https://github.com/python/core-workflow/tree/master/cherry_picker
 
