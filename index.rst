@@ -1,3 +1,5 @@
+.. _index:
+
 ========================
 Python Developer's Guide
 ========================
@@ -78,6 +80,7 @@ contributing to Python:
 * PEPs_ (Python Enhancement Proposals)
 * :doc:`gitdevs`
 * :doc:`gitbootcamp`
+* :doc:`sprintguide`
 
 .. _branchstatus:
 
@@ -182,6 +185,7 @@ Guide for contributing to Python:
     * :doc:`coverity`
 * :doc:`gitdevs`
 * :doc:`gitbootcamp`
+* :doc:`sprintguide`
 
 It is **recommended** that the above documents be read in the order listed.  You
 can stop where you feel comfortable and begin contributing immediately without
@@ -323,6 +327,7 @@ Full Table of Contents
    gitdevs
    motivations
    gitbootcamp
+   sprintguide
 
 
 .. _Buildbot status: https://www.python.org/dev/buildbot/
