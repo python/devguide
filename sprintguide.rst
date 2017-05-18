@@ -83,6 +83,8 @@ Dev Guide Issues
 
 #. Improve commit message `python/devguide#199 <https://github.com/python/devguide/issues/199>`_.
 
+#. Mention the core-workflow mailing list / repo `python/devguide#202 <https://github.com/python/devguide/issues/202>`_.
+
 
 Easy B.P.O Issues
 -----------------
