@@ -83,18 +83,12 @@ In order for your PR to be accepted, you will also need to sign the
 :ref:`contributor agreement <cla>`.
 
 To build the devguide, some additional dependencies are required (most importantly,
-`Sphinx`_). The standard way to install dependencies in Python projects is to use
-a virtualenv. Also, a ``requirements.txt`` file has been provided with all the
-dependencies. Here is an example of creating a virtualenv and installing the
-deps::
+`Sphinx`_), and the standard way to install dependencies in Python projects is to create
+a virtualenv, and then install dependencies from a ``requirements.txt`` file. For your
+convenience, this is all *automated for you* and all you have to do to build the devguide
+is run::
 
-    $ python3 -m venv env
-    $ source env/bin/activate
-    (env) $ pip install -r requirements.txt
-
-The devguide HTML can then be built by running::
-
-    (env) $ make html
+    $ make html
 
 in the checkout directory, which will write the files to the ``_build/html``
 directory.  Note that ``make check`` is automatically run when
