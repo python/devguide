@@ -82,11 +82,11 @@ To submit a :doc:`pull request <pullrequest>` you can fork the
 In order for your PR to be accepted, you will also need to sign the
 :ref:`contributor agreement <cla>`.
 
-To build the devguide, some additional dependencies are required (most importantly,
-`Sphinx`_), and the standard way to install dependencies in Python projects is to create
-a virtualenv, and then install dependencies from a ``requirements.txt`` file. For your
-convenience, this is all *automated for you* and all you have to do to build the devguide
-is run::
+To build the devguide, some additional dependencies are required (most
+importantly, `Sphinx`_), and the standard way to install dependencies in
+Python projects is to create a virtualenv, and then install dependencies from
+a ``requirements.txt`` file. For your convenience, this is all *automated for
+you* and all you have to do to build the devguide is run::
 
     $ make html
 
