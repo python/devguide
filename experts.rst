@@ -347,3 +347,12 @@ time and dates      lemburg, belopolsky
 unicode             lemburg, ezio.melotti, haypo, benjamin.peterson,
 version control     eric.araujo, ezio.melotti
 ==================  ==========================================================
+
+
+Documentation Translations
+--------------------------
+===========  ===========
+Translation  Coordinator
+===========  ===========
+French       mdk
+===========  ===========
