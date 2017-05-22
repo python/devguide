@@ -75,6 +75,12 @@ provides very nice HTML output along with advanced features such as
 provided by the stdlib then you can :ref:`use test.regrtest
 <coverage_by_regrtest>`.
 
+
+.. _install_coverage:
+
+Install Coverage
+''''''''''''''''
+
 By default, pip will not install into the in-development version of Python you 
 just built, and this built version of Python will not see packages installed 
 into your default version of Python. One option is to use a virtual environment
@@ -84,7 +90,9 @@ to install coverage::
     source ../cpython-venv/bin/activate
     pip install coverage
 
-
+You can now use python without the ./ for the rest of these instructions, as long as
+your venv is activated. For more info on venv see https://docs.python.org/3/tutorial/venv.html.
+ 
 If this does not work for you for some reason, you should try using the in-development 
 of coverage.py to see if it has been updated as needed. To do this you should 
 clone/check out the development version of coverage.py:
@@ -95,6 +103,11 @@ You will need to use the full path to the installation.
 
 Another option is to use an installed copy of coverage.py, if you already have an
 installed copy. For this also, you will also need to use the full path to that installation. 
+
+.. _coverage_usage:
+
+Basic Usage
+'''''''''''
 
 The following command will tell you if your copy of coverage works (substitute
 ``COVERAGEDIR`` with the directory where your clone exists, e.g.
