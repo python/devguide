@@ -8,11 +8,12 @@ to Python_ -- for both new and experienced contributors.  It is
 that maintains Python.  We welcome your contributions to Python!
 
 
-Quick Start
+Quick Reference
 -----------
 
 Here are the basic steps needed to get :ref:`set up <setup>` and contribute a
-patch. Please not you may have to :ref:`install dependencies <build-dependencies>` first:
+patch. This as meant as a checklist, once you know the basics. For complete instructions
+plaese see the `setup guide <setup>`.
 
 1. Install and set up :ref:`Git <vcsetup>` and other dependencies
    (see the :ref:`Get Setup <setup>` page for detailed information).
