@@ -181,19 +181,34 @@ OpenSSL which means that you will not be able to build the ``_ssl`` extension.
 One solution is to install these libraries from a third-party package
 manager, like Homebrew_ or MacPorts_, and then add the appropriate paths
 for the header and library files to your ``configure`` command.  For example,
-with Homebrew::
+
+with **Homebrew**::
 
     $ brew install openssl xz
+
+and configure::
+
     $ CPPFLAGS="-I$(brew --prefix openssl)/include" \
       LDFLAGS="-L$(brew --prefix openssl)/lib" \
       ./configure --with-pydebug
 
-or MacPorts::
+and make::
+
+    $ make -s -j2
+
+or **MacPorts**::
 
     $ sudo port install openssl xz
+
+and configure::
+
     $ CPPFLAGS="-I/opt/local/include" \
       LDFLAGS="-L/opt/local/lib" \
       ./configure --with-pydebug
+
+and make::
+
+    $ make -s -j2
 
 
 There will sometimes be optional modules added for a new release which
