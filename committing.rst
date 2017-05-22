@@ -286,7 +286,7 @@ repositories means you have to be more careful with your workflow:
   maintenance branches (``2.7``, ``3.5``, or ``3.6``).  You should commit against
   your own feature branch, and create a pull request.
   
-It recommended to keep a fork of the main repository around, as it allows simple
+It is recommended to keep a fork of the main repository around, as it allows simple
 reversion of all local changes (even "committed" ones) if your local clone gets
 into a state you aren't happy with.
 
