@@ -82,10 +82,19 @@ To submit a :doc:`pull request <pullrequest>` you can fork the
 In order for your PR to be accepted, you will also need to sign the
 :ref:`contributor agreement <cla>`.
 
-To build the devguide, you must have the latest stable version of `Sphinx`_
-installed.  The devguide HTML can be built by running::
+To build the devguide, some additional dependencies are required (most importantly,
+`Sphinx`_). The standard way to install dependencies in Python projects is to use
+a virtualenv. Also, a ``requirements.txt`` file has been provided with all the
+dependencies. Here is an example of creating a virtualenv and installing the
+deps::
 
-    $ make html
+    $ python3 -m venv env
+    $ source env/bin/activate
+    (env) $ pip install -r requirements.txt
+
+The devguide HTML can then be built by running::
+
+    (env) $ make html
 
 in the checkout directory, which will write the files to the ``_build/html``
 directory.  Note that ``make check`` is automatically run when
