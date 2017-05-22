@@ -12,7 +12,7 @@ Quick Start
 -----------
 
 Here are the basic steps needed to get :ref:`set up <setup>` and contribute a
-patch:
+patch. Please not you may have to :ref:`install dependencies <build-dependencies>` first:
 
 1. Install and set up :ref:`Git <vcsetup>` and other dependencies
    (see the :ref:`Get Setup <setup>` page for detailed information).
