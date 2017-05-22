@@ -75,16 +75,23 @@ provides very nice HTML output along with advanced features such as
 provided by the stdlib then you can by :ref:`using test.regrtest
 <coverage_by_regrtest>`.
 
-Because the in-development version of Python is bleeding-edge, it is possible
-that the latest release version of coverage.py will not work. In that case you
-should try using the in-development of coverage.py to see if it has been
-updated as needed. To do this you should clone/check out the development version
-of coverage.py::
+By default, pip will not install into the in-development version of Python you 
+just built, and this built version of Python will not see packages installed 
+into your default version of Python. This means that the most straightforward
+way to run coverage may be to install coverage from source.
+
+Another reason you may want to do this is because the in-development version of 
+Python is bleeding-edge, and it is possible that the latest release version of 
+coverage.py will not work. 
+
+For both of these use cases you should try using the in-development of coverage.py. 
+To do this you should clone/check out the development version of coverage.py::
 
     hg clone https://bitbucket.org/ned/coveragepy
 
 Another option is to use an installed copy of coverage.py if you already have an
-installed copy. But if you do not already have it installed then it is preferred
+installed copy. For this, you will need to use the full path to that installation. 
+But if you do not already have it installed then it is preferred
 you use a clone of coverage.py for gathering coverage results.
 
 If you are using a clone of coverage.py, the following should work (substitute
@@ -95,7 +102,8 @@ If you are using a clone of coverage.py, the following should work (substitute
 
 Coverage.py will print out a little bit of helper text verifying that
 everything is working. If you are using an installed copy, you can do the
-following instead::
+following instead (note this must be installed into the built copy of python,
+and pip will not install there by default)::
 
     ./python -m coverage
 
