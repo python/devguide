@@ -90,19 +90,20 @@ to install coverage::
     source ../cpython-venv/bin/activate
     pip install coverage
 
-You can now use python without the ./ for the rest of these instructions, as long as
-your venv is activated. For more info on venv see https://docs.python.org/3/tutorial/venv.html.
+You can now use python without the ./ for the rest of these instructions, as 
+long as your venv is activated. For more info on venv see `Virtual Envrionment
+<https://docs.python.org/3/tutorial/venv.html>`_ documentation.
  
-If this does not work for you for some reason, you should try using the in-development 
-of coverage.py to see if it has been updated as needed. To do this you should 
-clone/check out the development version of coverage.py:
+If this does not work for you for some reason, you should try using the 
+in-development version of coverage.py to see if it has been updated as needed. 
+To do this you should clone/check out the development version of coverage.py:
 
     hg clone https://bitbucket.org/ned/coveragepy
 
 You will need to use the full path to the installation.
 
-Another option is to use an installed copy of coverage.py, if you already have an
-installed copy. For this also, you will also need to use the full path to that installation. 
+Another option is to use an installed copy of coverage.py, if you already have 
+it. For this, you will again need to use the full path to that installation. 
 
 .. _coverage_usage:
 
@@ -117,7 +118,7 @@ The following command will tell you if your copy of coverage works (substitute
 
 Coverage.py will print out a little bit of helper text verifying that
 everything is working. If you are using an installed copy, you can do the
-following instead (note this must be installed using the built copy of python,
+following instead (note this must be installed using the built copy of Python,
 such as by venv)::
 
     ./python -m coverage
