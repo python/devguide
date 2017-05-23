@@ -211,6 +211,19 @@ and make::
     $ make -s -j2
 
 
+This will build CPython with only warnings and errors being printed to
+stderr and utilize up to 2 CPU cores. If you are using a multi-core machine
+with more than 2 cores (or a single-core machine), you can adjust the number
+passed into the ``-j`` flag to match the number of cores you have.
+
+Do take note of what modules were **not** built as stated at the end of your
+build. More than likely you are missing a dependency for the module(s) that
+were not built, and so you can install the dependencies and re-run both
+``configure`` and ``make`` (if available for your OS).
+Otherwise the build failed and thus should be fixed (at least with a bug being
+filed on the `issue tracker`_).
+
+
 There will sometimes be optional modules added for a new release which
 won't yet be identified in the OS level build dependencies. In those cases,
 just ask for assistance on the core-mentorship list. If working on bug
