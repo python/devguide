@@ -202,8 +202,6 @@ Use the utility script `cherry_picker.py <https://github.com/python/core-workflo
 from the `core-workflow  <https://github.com/python/core-workflow>`_
 repository to backport the commit.
 
-The core developer who merged the pull request is expected to do the backport.
-
 
 .. _git_pr:
 
