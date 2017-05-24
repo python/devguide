@@ -25,6 +25,9 @@ transliteration too.
 Permissions History
 -------------------
 
+- Carol Willing was given push privileges on May 24, 2017 by Brett Cannon,
+  on his own recommendation.
+  
 - Mariatta Wijaya was given push privileges on January 27, 2017 by Brett Cannon,
   on the recommendation of Raymond Hettinger.
 
