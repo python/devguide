@@ -181,19 +181,47 @@ OpenSSL which means that you will not be able to build the ``_ssl`` extension.
 One solution is to install these libraries from a third-party package
 manager, like Homebrew_ or MacPorts_, and then add the appropriate paths
 for the header and library files to your ``configure`` command.  For example,
-with Homebrew::
+
+with **Homebrew**::
 
     $ brew install openssl xz
+
+and configure::
+
     $ CPPFLAGS="-I$(brew --prefix openssl)/include" \
       LDFLAGS="-L$(brew --prefix openssl)/lib" \
       ./configure --with-pydebug
 
-or MacPorts::
+and make::
+
+    $ make -s -j2
+
+or **MacPorts**::
 
     $ sudo port install openssl xz
+
+and configure::
+
     $ CPPFLAGS="-I/opt/local/include" \
       LDFLAGS="-L/opt/local/lib" \
       ./configure --with-pydebug
+
+and make::
+
+    $ make -s -j2
+
+
+This will build CPython with only warnings and errors being printed to
+stderr and utilize up to 2 CPU cores. If you are using a multi-core machine
+with more than 2 cores (or a single-core machine), you can adjust the number
+passed into the ``-j`` flag to match the number of cores you have.
+
+Do take note of what modules were **not** built as stated at the end of your
+build. More than likely you are missing a dependency for the module(s) that
+were not built, and so you can install the dependencies and re-run both
+``configure`` and ``make`` (if available for your OS).
+Otherwise the build failed and thus should be fixed (at least with a bug being
+filed on the `issue tracker`_).
 
 
 There will sometimes be optional modules added for a new release which
