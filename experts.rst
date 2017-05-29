@@ -355,4 +355,5 @@ Documentation Translations
 Translation  Coordinator
 ===========  ===========
 French       mdk
+Japanese     inada.naoki
 ===========  ===========
