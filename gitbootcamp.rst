@@ -189,6 +189,7 @@ Solution::
    $ git checkout some-branch
    $ git fetch upstream
    $ git rebase upstream/master
+   $ git push --force origin some-branch
 
 
 Backporting Merged Changes
