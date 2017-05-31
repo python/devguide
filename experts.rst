@@ -3,11 +3,11 @@
 Experts Index
 =============
 
-This document has tables that list Python Modules, Tools, Platforms and
-Interest Areas and names for each item that indicate a maintainer or an
+This document has tables that lists Python Modules, Tools, Platforms and
+Interest Areas and names for each item that indicates a maintainer or an
 expert in the field.  This list is intended to be used by issue submitters,
 issue triage people, and other issue participants to find people to add to
-the nosy list or to contact directly by email for help and decisions on
+the nosy list or to contact them directly by email for help and decisions on
 feature requests and bug fixes.  People on this list may be asked to render
 final judgement on a feature or bug.  If no active maintainer is listed for
 a given module, then questionable changes should go to python-dev, while
