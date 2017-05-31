@@ -322,6 +322,9 @@ code and leave comments in the pull request or issue tracker.
    However, please be aware that if you are recommending a pull request as
    'merge-ready', you should always make sure the entire test suite passes.
 
+7. You may also review and comment the pull requests on GitHub, for how to
+   do that, see `About pull request reviews <https://help.github.com/articles/about-pull-request-reviews/>`_
+
 
 Dismissing Review from Another Core Developer
 ---------------------------------------------
