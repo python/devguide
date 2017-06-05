@@ -35,6 +35,7 @@ help:
 	@echo "  linkcheck  to check all external links for integrity"
 	@echo "  doctest    to run all doctests embedded in the documentation (if enabled)"
 	@echo "  check      to run a check for frequent markup errors"
+	@echo "  serve      to serve devguide on the localhost (8000)"
 
 clean:
 	-rm -rf $(BUILDDIR)/*
@@ -138,3 +139,6 @@ doctest: venv
 
 check:
 	$(PYTHON) tools/rstlint.py -i tools -i venv
+
+serve: html
+	tools/serve.py _build/html
