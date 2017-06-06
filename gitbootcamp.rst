@@ -203,6 +203,33 @@ from the `core-workflow  <https://github.com/python/core-workflow>`_
 repository to backport the commit.
 
 
+.. _git_from_mercurial:
+
+Applying a Patch from Mercurial to Git
+--------------------------------------
+
+Scenario:
+
+- A Mercurial patch exists but there is no pull request for it.
+
+Solution:
+
+1. Download the patch locally.
+
+2. Create a new branch and switch to it.
+
+3. For Mac and Unix::
+
+   $ patch -p1 < /path/to/issueNNNN.patch
+
+   For Windows::
+
+   $ git apply /path/to/issueNNNN-git.patch
+
+4. Commit, push, and open the pull request.
+
+
+
 .. _git_pr:
 
 Downloading Other's Patches
