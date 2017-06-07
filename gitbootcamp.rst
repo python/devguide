@@ -216,6 +216,10 @@ Scenario:
 Set up the following git alias::
 
    $ git config --global alias.pr '!sh -c "git fetch upstream pull/${1}/head:pr_${1} && git checkout pr_${1}" -'
+   
+On Windows, reverse the single (`'`) and double (`"`) quotes::
+
+   git config --global alias.pr "!sh -c 'git fetch upstream pull/${1}/head:pr_${1} && git checkout pr_${1}' -"
 
 The alias only needs to be done once.  After the alias is set up, you can get a
 local copy of a pull request as follows::
