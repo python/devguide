@@ -213,7 +213,7 @@ Scenario:
 - A contributor made a pull request to CPython.
 - Before merging it, you want to be able to test their changes locally.
 
-Set up the following git alias::
+On Unix and MacOS, set up the following git alias::
 
    $ git config --global alias.pr '!sh -c "git fetch upstream pull/${1}/head:pr_${1} && git checkout pr_${1}" -'
    
