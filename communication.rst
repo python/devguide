@@ -100,3 +100,14 @@ part, greatly increasing the chances of receiving tolerance and encouragement
 in return.
 
 .. _Diversity Statement: http://www.python.org/psf/diversity/
+
+Additional Repositories
+-----------------------
+
+Because Python is not a simple project, we have repositories for several topics,
+
+* the `core-workflow`_ process if you want to contribute and use our tools.
+* the Python `Performance Benchmark`_ suite if you are interested by the performance of Python.
+
+.. _core-workflow: https://github.com/python/core-workflow
+.. _Performance Benchmark: https://github.com/python/performance
