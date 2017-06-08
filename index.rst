@@ -332,7 +332,7 @@ Full Table of Contents
 .. _PEPs: https://www.python.org/dev/peps/
 .. _python.org maintenance: https://pythondotorg.readthedocs.io/
 .. _Python: https://www.python.org/
-.. _Python Mentors: http://pythonmentors.com/
+.. _Python Mentors: https://www.python.org/dev/core-mentorship/
 .. _PyPy: http://www.pypy.org/
 .. _Jython: http://www.jython.org/
 .. _IronPython: http://ironpython.net/

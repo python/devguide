@@ -31,7 +31,7 @@ Your proposed change also needs to be *Pythonic*. While Guido is the only
 person who can truly classify something as Pythonic, you can read the `Zen of
 Python`_ for guidance.
 
-.. _Zen of Python: http://www.python.org/dev/peps/pep-0020/
+.. _Zen of Python: https://www.python.org/dev/peps/pep-0020/
 
 
 .. index:: PEP process
@@ -89,9 +89,9 @@ unconvinced. When there isn't an obvious victor then the
 For some examples on language changes that were accepted please read
 `Justifying Python Language Changes`_.
 
-.. _python-ideas: http://mail.python.org/mailman/listinfo/python-ideas
+.. _python-ideas: https://mail.python.org/mailman/listinfo/python-ideas
 .. _issue tracker: http://bugs.python.org
-.. _PEP Index: http://www.python.org/dev/peps/
-.. _draft PEP: http://www.python.org/dev/peps/pep-0001/
+.. _PEP Index: https://www.python.org/dev/peps/
+.. _draft PEP: https://www.python.org/dev/peps/pep-0001/
 .. _Status Quo Wins a Stalemate: http://www.curiousefficiency.org/posts/2011/02/status-quo-wins-stalemate.html
 .. _Justifying Python Language Changes: http://www.curiousefficiency.org/posts/2011/02/justifying-python-language-changes.html
