@@ -196,7 +196,7 @@ Latent slaves
 ^^^^^^^^^^^^^
 
 We also support running `latent buildslaves
-<http://docs.buildbot.net/current/manual/cfg-buildslaves.html#latent-buildslaves>`_
+<http://docs.buildbot.net/0.8.14/manual/cfg-buildslaves.html#latent-buildslaves>`_
 on the AWS EC2 service.  To set up such a slave:
 
     * Start an instance of your chosen base AMI and set it up as a
