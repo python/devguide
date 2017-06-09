@@ -53,9 +53,8 @@ or similar resources, such as StackOverflow_ or the ``#python`` IRC channel
 on Freenode_.
 
 A complete list of Python mailing lists can be found at http://mail.python.org.
-Most lists are also mirrored at http://news.gmane.org/ and can be read and
-posted to in various ways, including via web browsers, NNTP newsreaders, and
-RSS feed readers.
+Most lists are also mirrored at nntp://news.gmane.org and can be read with
+NTTP newsreaders.
 
 .. _issue tracker: http://bugs.python.org
 .. _new-bugs-announce: http://mail.python.org/mailman/listinfo/new-bugs-announce
