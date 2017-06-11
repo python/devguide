@@ -351,10 +351,11 @@ version control     eric.araujo, ezio.melotti
 
 Documentation Translations
 --------------------------
-=============  ===========
+=============  ============
 Translation    Coordinator
-=============  ===========
+=============  ============
 French         mdk
 Japanese       inada.naoki
 Bengali India  kushal.das
-=============  ===========
+Hungarian      gbtami
+=============  ============
