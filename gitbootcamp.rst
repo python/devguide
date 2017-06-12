@@ -285,7 +285,8 @@ To edit an open pull request that targets ``master``:
    made to ``master`` since the PR was submitted (any merge commits will be
    removed by the later ``Squash and Merge`` when accepting the change)::
 
-      $ git merge origin/master
+      $ git fetch upstream
+      $ git merge upstream/master
       $ git add <filename>
       $ git commit -m "<commit message>"
 
