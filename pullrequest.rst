@@ -92,8 +92,6 @@ command (after any successful build of Python)::
 
    python.bat Tools/scripts/patchcheck.py
 
-.. _cla:
-
 .. _pullrequest-quickguide:
 
 Quick Guide
@@ -176,6 +174,8 @@ Make a pull request on GitHub from your changes in ``MY_BRANCH_NAME``.
    You can still upload a patch to bugs.python.org_, but the GitHub pull request
    workflow is **strongly** preferred.
 
+
+.. _cla:
 
 Licensing
 ---------
