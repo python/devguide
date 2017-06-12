@@ -94,8 +94,8 @@ participating in the CPython core development process:
 
 .. topic:: Brett Cannon (Canada)
 
-   * Personal site: `snarky.ca <http://snarky.ca>`_
-   * `Extended bio <http://stackoverflow.com/cv/DrBrettCannon>`__
+   * Personal site: `snarky.ca <https://snarky.ca/>`_
+   * `Extended bio <https://stackoverflow.com/cv/DrBrettCannon>`__
    * Microsoft (Software Developer)
    * Python Software Foundation (Fellow)
 
@@ -153,7 +153,7 @@ participating in the CPython core development process:
 
 .. topic:: Victor Stinner (France)
 
-   * `Personal website <https://haypo-notes.readthedocs.org/>`__
+   * `Personal website <https://haypo-notes.readthedocs.io/>`__
    * Red Hat (Senior Software Engineer)
 
    Victor is hacking the development version of CPython to make Python better
@@ -222,7 +222,7 @@ time contributing to CPython development.
 
 .. _issue metrics: http://bugs.python.org/issue?@template=stats
 .. _OpenHub: https://www.openhub.net/p/python/contributors
-.. _core mentorship program: http://pythonmentors.com/
+.. _core mentorship program: https://www.python.org/dev/core-mentorship/
 .. _internships: https://www.gnome.org/outreachy/
 .. _Summer of Code: https://wiki.python.org/moin/SummerOfCode/2016
 

@@ -36,7 +36,7 @@ community of volunteer core developers willing to mentor anyone wishing to
 contribute code, work on bug fixes or improve documentation.  Everyone is
 welcomed and encouraged to contribute.
 
-.. _Python Mentors: http://pythonmentors.com
+.. _Python Mentors: https://www.python.org/dev/core-mentorship/
 
 
 Mailing Lists
@@ -52,8 +52,8 @@ existing releases.  As with ``#python-dev``, these mailing lists are for
 questions involving the development *of* Python, **not** for development
 *with* Python.
 
-.. _python-ideas: http://mail.python.org/mailman/listinfo/python-ideas
-.. _python-dev: http://mail.python.org/mailman/listinfo/python-dev
+.. _python-ideas: https://mail.python.org/mailman/listinfo/python-ideas
+.. _python-dev: https://mail.python.org/mailman/listinfo/python-dev
 
 
 File a Bug
