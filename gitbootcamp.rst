@@ -216,17 +216,30 @@ Solution:
 
 1. Download the patch locally.
 
-2. Create a new branch and switch to it.
+2. Apply the patch::
 
-3. For Mac and Unix::
+       $ git apply /path/to/issueNNNN-git.patch
+       
+   If there are errors, update to a revision from when the patch was
+   created and then try the ``git apply`` again::
 
-   $ patch -p1 < /path/to/issueNNNN.patch
+       $ git checkout `git rev-list -n 1 --before="yyyy-mm-dd hh:mm:ss" master`
+       $ git apply /path/to/issueNNNN-git.patch
+       
+   If the patch still won't apply, then a patch tool will not be able to
+   apply the patch and it will need to be re-implemented manually.
+       
+3. If the apply was successful, create a new branch and switch to it.
 
-   For Windows::
+4. Stage and commit the changes.
 
-   $ git apply /path/to/issueNNNN-git.patch
+5. If the patch was applied to an old revision, it needs to be updated and
+   merge conflicts need to be resolved::
 
-4. Commit, push, and open the pull request.
+       $ git rebase master
+       $ git mergetool
+
+6. Push the changes and open a pull request.
 
 
 
