@@ -17,7 +17,7 @@ The documentation in HTML, PDF or EPUB format is generated from text files
 written using the :ref:`reStructuredText format <markup>` and contained in the
 :ref:`CPython Git repository <setup>`.
 
-.. _reStructuredText: http://docutils.sf.net/rst.html
+.. _reStructuredText: http://docutils.sourceforge.net/rst.html
 
 .. note::
 

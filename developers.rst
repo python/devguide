@@ -14,7 +14,7 @@ or initials of the project admin who made the change or granted access.  The
 procedure for adding or removing users is described in :ref:`altering-access`.
 
 Note, when giving new commit permissions, be sure to get a contributor agreement
-from the committer.  See http://www.python.org/psf/contrib/ for details.  Commit
+from the committer.  See https://www.python.org/psf/contrib/ for details.  Commit
 privileges should not be given until the contributor agreement has been signed
 and received.
 
@@ -425,7 +425,7 @@ Permissions History
 
 - Eric S. Raymond was made a developer on 2 Jul 2000 by TGP, for general
   library work.  His request is archived here:
-  http://mail.python.org/pipermail/python-dev/2000-July/005314.html
+  https://mail.python.org/pipermail/python-dev/2000-July/005314.html
 
 
 Permissions Dropped on Request

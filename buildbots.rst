@@ -28,14 +28,14 @@ Checking results of automatic builds
 
 There are three ways of visualizing recent build results:
 
-* The Web interface for each branch at http://python.org/dev/buildbot/,
+* The Web interface for each branch at https://www.python.org/dev/buildbot/,
   where the so-called "waterfall" view presents a vertical rundown of recent
   builds for each builder.  When interested in one build, you'll have to
   click on it to know which changesets it corresponds to.  Note that
   the buildbot web pages are often slow to load, be patient.
 
 * The command-line ``bbreport.py`` client, which you can get from
-  http://code.google.com/p/bbreport/. Installing it is trivial: just add
+  https://code.google.com/archive/p/bbreport. Installing it is trivial: just add
   the directory containing ``bbreport.py`` to your system path so that
   you can run it from any filesystem location.  For example, if you want
   to display the latest build results on the development ("default") branch,
