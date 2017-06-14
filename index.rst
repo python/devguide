@@ -13,7 +13,7 @@ Quick Reference
 
 Here are the basic steps needed to get :ref:`set up <setup>` and contribute a
 patch. This is meant as a checklist, once you know the basics. For complete 
-instructions please see the `setup guide <setup>`.
+instructions please see the :ref:`setup guide <setup>`.
 
 1. Install and set up :ref:`Git <vcsetup>` and other dependencies
    (see the :ref:`Get Setup <setup>` page for detailed information).
