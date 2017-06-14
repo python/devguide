@@ -12,8 +12,8 @@ Quick Reference
 ---------------
 
 Here are the basic steps needed to get :ref:`set up <setup>` and contribute a
-patch. This is meant as a checklist, once you know the basics. For complete
-instructions please see the `setup guide <setup>`.
+patch. This is meant as a checklist, once you know the basics. For complete 
+instructions please see the :ref:`setup guide <setup>`.
 
 1. Install and set up :ref:`Git <vcsetup>` and other dependencies
    (see the :ref:`Get Setup <setup>` page for detailed information).
@@ -336,7 +336,7 @@ Full Table of Contents
 .. _PEPs: https://www.python.org/dev/peps/
 .. _python.org maintenance: https://pythondotorg.readthedocs.io/
 .. _Python: https://www.python.org/
-.. _Python Mentors: http://pythonmentors.com/
+.. _Python Mentors: https://www.python.org/dev/core-mentorship/
 .. _PyPy: http://www.pypy.org/
 .. _Jython: http://www.jython.org/
 .. _IronPython: http://ironpython.net/

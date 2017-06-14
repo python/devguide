@@ -9,7 +9,7 @@ downloading, building and installing the the latest Clang/LLVM combination
 
 This document does not cover interpreting the findings. For a discussion of
 interpreting results, see Marshall Clow's `Testing libc++ with
--fsanitize=undefined <http://cplusplusmusings.wordpress.com/tag/clang/>`_.  The
+-fsanitize=undefined <https://cplusplusmusings.wordpress.com/tag/clang/>`_.  The
 blog posting is a detailed examinations of issues uncovered by Clang in
 ``libc++``.
 

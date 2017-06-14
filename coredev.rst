@@ -118,7 +118,7 @@ first commit so as to not forget. Also do not forget to enter your GitHub
 username into your details on the issue tracker.
 
 
-.. _contributor form for Python: http://www.python.org/psf/contrib/
+.. _contributor form for Python: https://www.python.org/psf/contrib/
 
 
 

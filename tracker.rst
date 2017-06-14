@@ -150,7 +150,7 @@ reached amongst the core developers is unlikely to win any converts.
 Issues closed by a core developer have already been carefully considered.
 Please do not reopen a closed issue.
 
-.. _python-dev: http://mail.python.org/mailman/listinfo/python-dev
+.. _python-dev: https://mail.python.org/mailman/listinfo/python-dev
 
 
 .. _devrole:
@@ -196,23 +196,23 @@ instructions on the `Tracker Development`_ page.
    `The Python issue tracker <http://bugs.python.org/>`_
       Where to report issues about Python.
 
-   `The New-bugs-announce mailing list <http://mail.python.org/mailman/listinfo/new-bugs-announce>`_
+   `The New-bugs-announce mailing list <https://mail.python.org/mailman/listinfo/new-bugs-announce>`_
       Where all the new issues created on the tracker are reported.
 
-   `The Python-bugs-list mailing list <http://mail.python.org/mailman/listinfo/python-bugs-list>`_
+   `The Python-bugs-list mailing list <https://mail.python.org/mailman/listinfo/python-bugs-list>`_
       Where all the changes to issues are reported.
 
    `The meta tracker <http://psf.upfronthosting.co.za/roundup/meta/>`_
       Where to report issues about the tracker itself.
 
-   `The Tracker development wiki page <http://wiki.python.org/moin/TrackerDevelopment>`_
+   `The Tracker development wiki page <https://wiki.python.org/moin/TrackerDevelopment>`_
       Instructions about setting up a local instance of the bug tracker.
 
-   `The Tracker-discuss mailing list <http://mail.python.org/mailman/listinfo/tracker-discuss>`_
+   `The Tracker-discuss mailing list <https://mail.python.org/mailman/listinfo/tracker-discuss>`_
       Discussions about the bug tracker.
 
 
 .. _issue tracker: http://bugs.python.org/
 .. _meta tracker: http://psf.upfronthosting.co.za/roundup/meta/
 .. _advanced search: http://bugs.python.org/issue?@template=search
-.. _Tracker Development: http://wiki.python.org/moin/TrackerDevelopment
+.. _Tracker Development: https://wiki.python.org/moin/TrackerDevelopment

@@ -210,7 +210,7 @@ following from your CPython clone::
 This will give you the most complete coverage possible for CPython's standard
 library.
 
-.. _coverage.py: http://nedbatchelder.com/code/coverage/
+.. _coverage.py: http://coverage.readthedocs.io/en/latest/
 
 
 .. _coverage_by_regrtest:

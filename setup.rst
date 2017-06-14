@@ -10,7 +10,7 @@ directory structure of the CPython source code.
 OpenHatch also has a great `setup guide`_ for Python for people who are
 completely new to contributing to open source.
 
-.. _setup guide: https://openhatch.org/wiki/Contributing_to_Python
+.. _setup guide: http://wiki.openhatch.org/Contributing_to_Python
 
 
 .. _setup:

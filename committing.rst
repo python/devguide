@@ -166,9 +166,9 @@ by the CLA. They're entirely within their rights to refuse to sign the CLA
 on that basis, but that refusal *does* mean we **can't accept their patches**
 for inclusion.
 
-.. _Contribution: http://www.python.org/psf/contrib/
+.. _Contribution: https://www.python.org/psf/contrib/
 .. _Contributor Licensing Agreement:
-   http://www.python.org/psf/contrib/contrib-form/
+   https://www.python.org/psf/contrib/contrib-form/
 
 
 What's New and NEWS Entries
