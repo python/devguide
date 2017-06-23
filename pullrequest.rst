@@ -352,6 +352,6 @@ Crediting
 ---------
 
 Non-trivial contributions are credited in the ``Misc/ACKS`` file (and, most
-often, in a contribution's ``Misc/NEWS`` entry as well).  You may be
+often, in a contribution's news entry as well).  You may be
 asked to make these edits on the behalf of the core developer who
 accepts your pull request.
