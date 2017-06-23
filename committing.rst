@@ -230,13 +230,9 @@ the issue number as it's part of the file name itself. Example news entry::
   Fix warning message when `os.chdir()` fails inside
   `test.support.temp_cwd()`.  Patch by Chris Jerdonek.
 
-(In all other ``.rst`` files, the single backticks should not be used.  They are
-allowed here because NEWS is meant to be as readable as possible unprocessed.)
-
-**No editing should be  done to ``Misc/NEWS``**. While this was the traditional
-way of adding news entries, it is now no longer necessary thanks to ``blurb``
-and the use of individual files for each news entry. Only release managers
-should ever edit ``Misc/NEWS``.
+(In other ``.rst`` files the single backticks should not be used.  They are
+allowed here because news entries are meant to be as readable as possible
+unprocessed.)
 
 
 Commit Messages
@@ -247,9 +243,10 @@ communicate that reason to other core developers. Python core developers have
 developed a standard way of formatting commit messages that everyone is
 expected to follow.
 
-Our usual convention mimics that used in the ``Misc/NEWS`` file.  Actually,
-it is common to simply paste the NEWS entry into the commit message.  Here
-is an example::
+Our usual convention mimics that used in news entries (it is actually common to
+start by pasting the news entry into the commit message). The only key
+difference when compared to a news entry is the inclusion of the issue number
+as the beginning of the commit message. Here is an example::
 
    bpo-42: the spam module is now more spammy.
 
