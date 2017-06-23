@@ -23,7 +23,7 @@ later in this document):
 #. Was ``configure`` regenerated (if necessary)?
 #. Was ``pyconfig.h.in`` regenerated (if necessary)?
 #. Was the submitter added to ``Misc/ACKS`` (as appropriate)?
-#. Was an entry added to ``Misc/NEWS.d`` (as appropriate)?
+#. Was an entry added under ``Misc/NEWS.d/next`` (as appropriate)?
 #. Was "What's New" updated (as appropriate)?
 #. Were appropriate labels added to signify necessary backporting of the
    pull request?
@@ -79,7 +79,7 @@ The automated patch checklist runs through:
   (using ``Tools/scripts/reindent-rst.py``)
 * Has the documentation been updated?
 * Has the test suite been updated?
-* Has an entry in ``Misc/NEWS.d`` been added?
+* Has an entry under ``Misc/NEWS.d/next`` been added?
 * Has ``Misc/ACKS`` been updated?
 * Has ``configure`` been regenerated, if necessary?
 * Has ``pyconfig.h.in`` been regenerated, if necessary?
