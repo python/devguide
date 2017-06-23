@@ -210,10 +210,11 @@ The ``Misc/NEWS.d`` directory contains a sub-directory named ``next`` which
 itself contains various sub-directories representing classifications for what
 was affected (e.g. ``Misc/NEWS.d/next/Library`` for changes relating to the
 standard library). The file name itself should be of the format
-``<date>.<issue-number>.<nonce>.rst``:
+``<date>.bpo-<issue-number>.<nonce>.rst``:
 
 * ``<date>`` is today's date in ``YYYY-MM-DD`` format, e.g. ``2017-05-27``
-* ``<issue-number>`` is the issue number the change is for, e.g. ``bpo-12345``
+* ``<issue-number>`` is the issue number the change is for, e.g. ``12345``
+  for ``bpo-12345``
 * ``<nonce>`` is a unique, six-character string to guarantee the file name is
   unique across branches, e.g. ``Yl4gI2``
 
