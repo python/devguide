@@ -148,4 +148,4 @@ your PEP) then the module
 will be added to the stdlib once the creators of the module sign
 :ref:`contributor agreements <contributor_agreement>`.
 
-.. _PEP index: http://www.python.org/dev/peps/
+.. _PEP index: https://www.python.org/dev/peps/

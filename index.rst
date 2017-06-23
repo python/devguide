@@ -13,7 +13,7 @@ Quick Reference
 
 Here are the basic steps needed to get :ref:`set up <setup>` and contribute a
 patch. This is meant as a checklist, once you know the basics. For complete 
-instructions please see the `setup guide <setup>`.
+instructions please see the :ref:`setup guide <setup>`.
 
 1. Install and set up :ref:`Git <vcsetup>` and other dependencies
    (see the :ref:`Get Setup <setup>` page for detailed information).
@@ -90,23 +90,27 @@ Status of Python branches
 +==================+==============+=============+================+================+============================================================================+
 | default          | :pep:`537`   | features    | *2018-06-15*   | *2023-06-15*   | The default branch is currently the future version Python 3.7.             |
 +------------------+--------------+-------------+----------------+----------------+----------------------------------------------------------------------------+
-| 3.6              | :pep:`494`   | bugfix      | 2016-12-23     | *2021-12-23*   |                                                                            |
+| 3.6              | :pep:`494`   | bugfix      | 2016-12-23     | *2021-12-23*   | `Last binary release: Python 3.6.1                                         |
+|                  |              |             |                |                | <https://www.python.org/downloads/release/python-361/>`_                   |
 +------------------+--------------+-------------+----------------+----------------+----------------------------------------------------------------------------+
-| 3.5              | :pep:`478`   | bugfix      | 2015-09-13     | *2020-09-13*   |                                                                            |
+| 3.5              | :pep:`478`   | bugfix      | 2015-09-13     | *2020-09-13*   | `Last binary release: Python 3.5.3                                         |
+|                  |              |             |                |                | <https://www.python.org/downloads/release/python-353/>`_                   |
 +------------------+--------------+-------------+----------------+----------------+----------------------------------------------------------------------------+
 | 2.7              | :pep:`373`   | bugfix      | 2010-07-03     | *2020-01-01*   | The support has been extended to 2020 (1).                                 |
+|                  |              |             |                |                | `Last binary release: Python 2.7.13                                        |
+|                  |              |             |                |                | <https://www.python.org/downloads/release/python-2713/>`_                  |
 +------------------+--------------+-------------+----------------+----------------+----------------------------------------------------------------------------+
-| 3.4              | :pep:`429`   | security    | 2014-03-16     | *2019-03-16*   | `Last binary release: Python 3.4.4                                         |
-|                  |              |             |                |                | <https://www.python.org/download/releases/3.4.4/>`_                        |
+| 3.4              | :pep:`429`   | security    | 2014-03-16     | *2019-03-16*   | `Last binary release: Python 3.4.6                                         |
+|                  |              |             |                |                | <https://www.python.org/downloads/release/python-346/>`_                   |
 +------------------+--------------+-------------+----------------+----------------+----------------------------------------------------------------------------+
-| 3.3              | :pep:`398`   | security    | 2012-09-29     | *2017-09-29*   | `Last binary release: Python 3.3.5                                         |
-|                  |              |             |                |                | <https://www.python.org/download/releases/3.3.5/>`_                        |
+| 3.3              | :pep:`398`   | security    | 2012-09-29     | *2017-09-29*   | `Last binary release: Python 3.3.6                                         |
+|                  |              |             |                |                | <https://www.python.org/downloads/release/python-336/>`_                   |
 +------------------+--------------+-------------+----------------+----------------+----------------------------------------------------------------------------+
-| 3.2              | :pep:`392`   | end-of-life | 2011-02-20     | 2016-02-20     | `Last binary release: Python 3.2.5                                         |
-|                  |              |             |                |                | <https://www.python.org/download/releases/3.2.5/>`_                        |
+| 3.2              | :pep:`392`   | end-of-life | 2011-02-20     | 2016-02-20     | `Last binary release: Python 3.2.6                                         |
+|                  |              |             |                |                | <https://www.python.org/downloads/release/python-326/>`_                   |
 +------------------+--------------+-------------+----------------+----------------+----------------------------------------------------------------------------+
 | 3.1              | :pep:`375`   | end-of-life | 2009-06-27     | 2012-04-11     | `Last release: Python 3.1.5                                                |
-|                  |              |             |                |                | <https://www.python.org/download/releases/3.1.5/>`_                        |
+|                  |              |             |                |                | <https://www.python.org/downloads/release/python-315/>`_                   |
 +------------------+--------------+-------------+----------------+----------------+----------------------------------------------------------------------------+
 | 3.0              | :pep:`361`   | end-of-life | 2008-12-03     | 2009-01-13     | `Last release: Python 3.0.1                                                |
 |                  |              |             |                |                | <https://www.python.org/download/releases/3.0.1/>`_                        |
@@ -332,7 +336,7 @@ Full Table of Contents
 .. _PEPs: https://www.python.org/dev/peps/
 .. _python.org maintenance: https://pythondotorg.readthedocs.io/
 .. _Python: https://www.python.org/
-.. _Python Mentors: http://pythonmentors.com/
+.. _Python Mentors: https://www.python.org/dev/core-mentorship/
 .. _PyPy: http://www.pypy.org/
 .. _Jython: http://www.jython.org/
 .. _IronPython: http://ironpython.net/

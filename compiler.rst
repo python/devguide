@@ -528,7 +528,7 @@ References
 
 .. [Aho86] Alfred V. Aho, Ravi Sethi, Jeffrey D. Ullman.
    `Compilers: Principles, Techniques, and Tools`,
-   http://www.amazon.com/exec/obidos/tg/detail/-/0201100886/104-0162389-6419108
+   https://www.amazon.com/exec/obidos/tg/detail/-/0201100886/104-0162389-6419108
 
 .. [Wang97]  Daniel C. Wang, Andrew W. Appel, Jeff L. Korn, and Chris
    S. Serra.  `The Zephyr Abstract Syntax Description Language.`_
