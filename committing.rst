@@ -221,10 +221,11 @@ standard library). The file name itself should be of the format
 So a file name may be
 ``Misc/NEWS.d/next/Library/2017-05-27.bpo-12345.Yl4gI2.rst``.
 
-A news file contents should be valid reStructuredText. An 80 character column
-width should be used. The "default role"
+The contents of a news file should be valid reStructuredText. The "default role"
 (single backticks) in reST can be used to refer to objects in the documentation.
-Example news entry::
+An 80 character column width should be used. There is no indentation or leading
+marker in the file (e.g. ``-``). There is also no need to start the entry with
+the issue number as it's part of the file name itself. Example news entry::
 
   Fix warning message when `os.chdir()` fails inside
   `test.support.temp_cwd()`.  Patch by Chris Jerdonek.
