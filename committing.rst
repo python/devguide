@@ -128,12 +128,12 @@ is worth it, ask on python-dev.
 Third, ensure the patch is attributed correctly with the contributor's
 name in ``Misc/ACKS`` if they aren't already there (and didn't add themselves
 in their patch) and by mentioning "Patch by <x>" in the ``Misc/NEWS.d`` entry
-and the checkin message. If the patch has been heavily modified then "Initial
+and the check-in message. If the patch has been heavily modified then "Initial
 patch by <x>" is an appropriate alternate wording.
 
-If you omit correct attribution in the initial checkin, then update ``ACKS``
-and ``NEWS.d`` in a subsequent checkin (don't worry about trying to fix the
-original checkin message in that case).
+If you omit correct attribution in the initial check-in, then update ``ACKS``
+and ``NEWS.d`` in a subsequent check-in (don't worry about trying to fix the
+original check-in message in that case).
 
 Finally, make sure that the submitter of the
 patch has a CLA in place (indicated by an asterisk following their username
