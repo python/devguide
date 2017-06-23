@@ -215,7 +215,7 @@ standard library). The file name itself should be of the format
 * ``<date>`` is today's date in ``YYYY-MM-DD`` format, e.g. ``2017-05-27``
 * ``<issue-number>`` is the issue number the change is for, e.g. ``bpo-12345``
 * ``<nonce>`` is a unique, six-character string to guarantee the file name is
-unique across branches, e.g. ``Yl4gI2``
+  unique across branches, e.g. ``Yl4gI2``
 
 So a file name may be
 ``Misc/NEWS.d/next/Library/2017-05-27.bpo-12345.Yl4gI2.rst``.
