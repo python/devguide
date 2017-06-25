@@ -539,7 +539,7 @@ References
    http://www.cs.princeton.edu/research/techreps/TR-554-97
 
 .. [#skip-peephole] Skip Montanaro's Peephole Optimizer Paper
-   (http://www.smontanaro.net/python/spam7/optimizer.html)
+   (http://legacy.python.org/workshops/1998-11/proceedings/papers/montanaro/montanaro.html)
 
 .. [#Bytecodehacks] Bytecodehacks Project
    (http://bytecodehacks.sourceforge.net/bch-docs/bch/index.html)
