@@ -92,8 +92,6 @@ command (after any successful build of Python)::
 
    python.bat Tools/scripts/patchcheck.py
 
-.. _cla:
-
 .. _pullrequest-quickguide:
 
 Quick Guide
@@ -173,9 +171,11 @@ Then push your work to your clone on GitHub::
 Make a pull request on GitHub from your changes in ``MY_BRANCH_NAME``.
 
 .. note::
-   You can still upload a patch to bugs.python.org_, but the new pull request
-   workflow is preferred.
+   You can still upload a patch to bugs.python.org_, but the GitHub pull request
+   workflow is **strongly** preferred.
 
+
+.. _cla:
 
 Licensing
 ---------
@@ -259,6 +259,19 @@ The commits will be squashed when the pull request is merged.
 
 .. _issue tracker: https://bugs.python.org
 
+Converting an Existing Patch from the b.p.o to GitHub
+-----------------------------------------------------
+
+When a patch exists in the `issue tracker`_ that should be converted into a
+GitHub pull request, please first ask the original patch author to prepare
+their own pull request. If the author does not respond after a week, it is
+acceptable for another contributor to prepare the pull request based on the
+existing patch. In this case, both parties should sign the :ref:`CLA <cla>`.
+When creating a pull request based on another person's patch, provide
+attribution to the original patch author by adding "Original patch by
+<author name>." to the pull request description and commit message.
+
+See also :ref:`Applying a Patch from Mercurial to Git <git_from_mercurial>`.
 
 Reviewing
 ---------
@@ -352,6 +365,6 @@ Crediting
 ---------
 
 Non-trivial contributions are credited in the ``Misc/ACKS`` file (and, most
-often, in a contribution's ``Misc/NEWS`` entry as well).  You may be
+often, in a contribution's news entry as well).  You may be
 asked to make these edits on the behalf of the core developer who
 accepts your pull request.

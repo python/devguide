@@ -72,22 +72,48 @@ Using coverage.py
 One of the most popular third-party coverage tools is `coverage.py`_ which
 provides very nice HTML output along with advanced features such as
 :ref:`branch coverage <branch_coverage>`. If you prefer to stay with tools only
-provided by the stdlib then you can by :ref:`using test.regrtest
+provided by the stdlib then you can :ref:`use test.regrtest
 <coverage_by_regrtest>`.
 
-Because the in-development version of Python is bleeding-edge, it is possible
-that the latest release version of coverage.py will not work. In that case you
-should try using the in-development of coverage.py to see if it has been
-updated as needed. To do this you should clone/check out the development version
-of coverage.py::
+
+.. _install_coverage:
+
+Install Coverage
+''''''''''''''''
+
+By default, pip will not install into the in-development version of Python you 
+just built, and this built version of Python will not see packages installed 
+into your default version of Python. One option is to use a virtual environment
+to install coverage::
+
+    ./python -m venv ../cpython-venv
+    source ../cpython-venv/bin/activate
+    pip install coverage
+
+On :ref:`most <mac-python.exe>` Mac OS X systems, replace :file:`./python`
+with :file:`./python.exe`.  On Windows, use :file:`python.bat`.  
+
+You can now use python without the ./ for the rest of these instructions, as 
+long as your venv is activated. For more info on venv see `Virtual Envrionment
+<https://docs.python.org/3/tutorial/venv.html>`_ documentation.
+ 
+If this does not work for you for some reason, you should try using the 
+in-development version of coverage.py to see if it has been updated as needed. 
+To do this you should clone/check out the development version of coverage.py:
 
     hg clone https://bitbucket.org/ned/coveragepy
 
-Another option is to use an installed copy of coverage.py if you already have an
-installed copy. But if you do not already have it installed then it is preferred
-you use a clone of coverage.py for gathering coverage results.
+You will need to use the full path to the installation.
 
-If you are using a clone of coverage.py, the following should work (substitute
+Another option is to use an installed copy of coverage.py, if you already have 
+it. For this, you will again need to use the full path to that installation. 
+
+.. _coverage_usage:
+
+Basic Usage
+'''''''''''
+
+The following command will tell you if your copy of coverage works (substitute
 ``COVERAGEDIR`` with the directory where your clone exists, e.g.
 ``../coveragepy``)::
 
@@ -95,7 +121,8 @@ If you are using a clone of coverage.py, the following should work (substitute
 
 Coverage.py will print out a little bit of helper text verifying that
 everything is working. If you are using an installed copy, you can do the
-following instead::
+following instead (note this must be installed using the built copy of Python,
+such as by venv)::
 
     ./python -m coverage
 
@@ -183,7 +210,7 @@ following from your CPython clone::
 This will give you the most complete coverage possible for CPython's standard
 library.
 
-.. _coverage.py: http://nedbatchelder.com/code/coverage/
+.. _coverage.py: http://coverage.readthedocs.io/en/latest/
 
 
 .. _coverage_by_regrtest:

@@ -8,13 +8,13 @@ This file is a running log of developers given commit privileges for Python.
 The purpose is to provide some institutional memory of who was given access
 and why.
 
-The first entry starts in April 2005.  In keeping with the style of Misc/NEWS,
-newer entries should be added to the top.  Entries should include the name
-or initials of the project admin who made the change or granted access.  The
-procedure for adding or removing users is described in :ref:`altering-access`.
+The first entry starts in April 2005.  Newer entries should be added to the top.
+Entries should include the name or initials of the project admin who made the
+change or granted access.  The procedure for adding or removing users is
+described in :ref:`altering-access`.
 
 Note, when giving new commit permissions, be sure to get a contributor agreement
-from the committer.  See http://www.python.org/psf/contrib/ for details.  Commit
+from the committer.  See https://www.python.org/psf/contrib/ for details.  Commit
 privileges should not be given until the contributor agreement has been signed
 and received.
 
@@ -24,6 +24,9 @@ transliteration too.
 
 Permissions History
 -------------------
+
+- Carol Willing was given push privileges on May 24, 2017 by Brett Cannon,
+  on his own recommendation.
 
 - Mariatta Wijaya was given push privileges on January 27, 2017 by Brett Cannon,
   on the recommendation of Raymond Hettinger.
@@ -422,7 +425,7 @@ Permissions History
 
 - Eric S. Raymond was made a developer on 2 Jul 2000 by TGP, for general
   library work.  His request is archived here:
-  http://mail.python.org/pipermail/python-dev/2000-July/005314.html
+  https://mail.python.org/pipermail/python-dev/2000-July/005314.html
 
 
 Permissions Dropped on Request

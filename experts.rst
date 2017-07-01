@@ -67,7 +67,7 @@ binascii
 binhex
 bisect                rhettinger
 builtins
-bz2                   nadeem.vawda
+bz2
 calendar              rhettinger
 cgi
 cgitb
@@ -144,7 +144,7 @@ libmpdec              skrah
 linecache
 locale                loewis, lemburg
 logging               vinay.sajip
-lzma                  nadeem.vawda
+lzma
 macpath
 mailbox
 mailcap
@@ -240,7 +240,7 @@ trace                 belopolsky
 traceback
 tracemalloc           haypo
 tty                   twouters*
-turtle                gregorlingl
+turtle                gregorlingl, willingc
 types                 yselivanov
 typing
 unicodedata           loewis, lemburg, ezio.melotti
@@ -270,7 +270,7 @@ xml.sax.xmlreader
 xmlrpc                loewis
 zipfile               alanmcintyre, serhiy.storchaka, twouters
 zipimport             twouters*
-zlib                  nadeem.vawda, twouters
+zlib                  twouters
 ====================  =============================================
 
 
@@ -321,8 +321,8 @@ coverity scan       christian.heimes, brett.cannon, twouters
 cryptography        gregory.p.smith, dstufft
 data formats        mark.dickinson
 database            lemburg
-devguide            ncoghlan, eric.araujo, ezio.melotti
-documentation       ezio.melotti, eric.araujo
+devguide            ncoghlan, eric.araujo, ezio.melotti, willingc
+documentation       ezio.melotti, eric.araujo, willingc
 GUI
 i18n                lemburg, eric.araujo
 import machinery    brett.cannon, ncoghlan, eric.snow
@@ -347,3 +347,16 @@ time and dates      lemburg, belopolsky
 unicode             lemburg, ezio.melotti, haypo, benjamin.peterson,
 version control     eric.araujo, ezio.melotti
 ==================  ==========================================================
+
+
+Documentation Translations
+--------------------------
+=============  ============
+Translation    Coordinator
+=============  ============
+French         mdk
+Japanese       inada.naoki
+Bengali India  kushal.das
+Hungarian      gbtami
+Portuguese     rougeth
+=============  ============

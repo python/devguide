@@ -23,9 +23,8 @@ later in this document):
 #. Was ``configure`` regenerated (if necessary)?
 #. Was ``pyconfig.h.in`` regenerated (if necessary)?
 #. Was the submitter added to ``Misc/ACKS`` (as appropriate)?
-#. Was ``Misc/NEWS`` updated (as appropriate)?
-#. Was "What's New" updated
-   (or the pull request labeled as needing a "What's New" entry)?
+#. Was an entry added under ``Misc/NEWS.d/next`` (as appropriate)?
+#. Was "What's New" updated (as appropriate)?
 #. Were appropriate labels added to signify necessary backporting of the
    pull request?
 
@@ -33,7 +32,7 @@ later in this document):
    If you want to share your work-in-progress code on a feature or bugfix,
    either open a ``WIP``-prefixed PR, publish patches on the
    `issue tracker`_ or create a public fork of the repository.
-   
+
 .. _issue tracker: https://bugs.python.org
 
 
@@ -80,7 +79,7 @@ The automated patch checklist runs through:
   (using ``Tools/scripts/reindent-rst.py``)
 * Has the documentation been updated?
 * Has the test suite been updated?
-* Has ``Misc/NEWS`` been updated?
+* Has an entry under ``Misc/NEWS.d/next`` been added?
 * Has ``Misc/ACKS`` been updated?
 * Has ``configure`` been regenerated, if necessary?
 * Has ``pyconfig.h.in`` been regenerated, if necessary?
@@ -116,7 +115,7 @@ someone else. When doing so you will want to make sure of some things.
 First, make sure the patch is in a good state. Both :ref:`patch` and
 :ref:`helptriage`
 explain what is to be expected of a patch. Typically patches that get cleared by
-triagers are good to go except maybe lacking ``Misc/ACKS`` and ``Misc/NEWS``
+triagers are good to go except maybe lacking ``Misc/ACKS`` and ``Misc/NEWS.d``
 entries (which a core developer should make sure are updated appropriately).
 
 Second, make sure the patch does not break backwards-compatibility without a
@@ -128,13 +127,13 @@ is worth it, ask on python-dev.
 
 Third, ensure the patch is attributed correctly with the contributor's
 name in ``Misc/ACKS`` if they aren't already there (and didn't add themselves
-in their patch) and by mentioning "Patch by <x>" in the ``Misc/NEWS`` entry
-and the checkin message. If the patch has been heavily modified then "Initial
+in their patch) and by mentioning "Patch by <x>" in the ``Misc/NEWS.d`` entry
+and the check-in message. If the patch has been heavily modified then "Initial
 patch by <x>" is an appropriate alternate wording.
 
-If you omit correct attribution in the initial checkin, then update ``ACKS``
-and ``NEWS`` in a subsequent checkin (don't worry about trying to fix the
-original checkin message in that case).
+If you omit correct attribution in the initial check-in, then update ``ACKS``
+and ``NEWS.d`` in a subsequent check-in (don't worry about trying to fix the
+original check-in message in that case).
 
 Finally, make sure that the submitter of the
 patch has a CLA in place (indicated by an asterisk following their username
@@ -167,22 +166,22 @@ by the CLA. They're entirely within their rights to refuse to sign the CLA
 on that basis, but that refusal *does* mean we **can't accept their patches**
 for inclusion.
 
-.. _Contribution: http://www.python.org/psf/contrib/
+.. _Contribution: https://www.python.org/psf/contrib/
 .. _Contributor Licensing Agreement:
-   http://www.python.org/psf/contrib/contrib-form/
+   https://www.python.org/psf/contrib/contrib-form/
 
 
-What's New and NEWS Entries
+What's New and News Entries
 ---------------------------
 
-Almost all changes made to the code base deserve an entry in ``Misc/NEWS``.
+Almost all changes made to the code base deserve an entry in ``Misc/NEWS.d``.
 If the change is particularly interesting for end users (e.g. new features,
 significant improvements, or backwards-incompatible changes), an entry in
 the ``What's New in Python`` document (in ``Doc/whatsnew/``) should be added
 as well.
 
 There are two notable exceptions to this general principle, and they
-both relate to changes that *already* have a NEWS entry, and have not yet
+both relate to changes that *already* have a news entry, and have not yet
 been included in any formal release (including alpha and beta releases).
 These exceptions are:
 
@@ -192,7 +191,7 @@ These exceptions are:
   then cut prior to the first beta).
 
 * If a change is a fix (or other adjustment) to an earlier unreleased change
-  and the original NEWS entry remains valid, then no additional entry is
+  and the original news entry remains valid, then no additional entry is
   needed.
 
 Needing a What's New entry almost always means that a change is *not*
@@ -202,25 +201,40 @@ when implemented, these changes *must* be noted in the "New Additions in
 Python 2.7 Maintenance Releases" section of the Python 2.7 What's New
 document.
 
-New NEWS entries are customarily added at or near the top of their
-respective sections, so that entries within a section appear in approximate
-order from newest to oldest.  However, this is customary and not a
-requirement.
+News entries go into the ``Misc/NEWS.d`` directory as individual files. The
+easiest way to create a news entry is to use the
+`blurb <https://pypi.org/project/blurb/>`_ tool and its ``blurb add`` command.
 
-The NEWS file is now read by Sphinx to produce the "Changelog" page; accordingly
-it should be valid reStructuredText.  The "default role" (single backticks) can
-be used to refer to objects in the documentation.  Example NEWS entry::
+If you are unable to use the tool you can create the news entry file manually.
+The ``Misc/NEWS.d`` directory contains a sub-directory named ``next`` which
+itself contains various sub-directories representing classifications for what
+was affected (e.g. ``Misc/NEWS.d/next/Library`` for changes relating to the
+standard library). The file name itself should be of the format
+``<date>.bpo-<issue-number>.<nonce>.rst``:
 
-   - bpo-15304: Fix warning message when `os.chdir()` fails inside
-     `test.support.temp_cwd()`.  Patch by Chris Jerdonek.
+* ``<date>`` is today's date in ``YYYY-MM-DD`` format, e.g. ``2017-05-27``
+* ``<issue-number>`` is the issue number the change is for, e.g. ``12345``
+  for ``bpo-12345``
+* ``<nonce>`` is some "unique" string to guarantee the file name is
+  unique across branches, e.g. ``Yl4gI2`` (typically six characters, but it can
+  be any length of letters and numbers, and its uniqueness can be satisfied by
+  typing random characters on your keyboard)
 
-(In all other ``.rst`` files, the single backticks should not be used.  They are
-allowed here because NEWS is meant to be as readable as possible unprocessed.)
+So a file name may be
+``Misc/NEWS.d/next/Library/2017-05-27.bpo-12345.Yl4gI2.rst``.
 
-A nice trick to make merging across branches work more smoothly is to
-put a new entry after the first or first two entries rather than at the very
-top.  This way if you commit, pull new changesets and merge, the merge will
-succeed automatically.
+The contents of a news file should be valid reStructuredText. The "default role"
+(single backticks) in reST can be used to refer to objects in the documentation.
+An 80 character column width should be used. There is no indentation or leading
+marker in the file (e.g. ``-``). There is also no need to start the entry with
+the issue number as it's part of the file name itself. Example news entry::
+
+  Fix warning message when `os.chdir()` fails inside
+  `test.support.temp_cwd()`.  Patch by Chris Jerdonek.
+
+(In other ``.rst`` files the single backticks should not be used.  They are
+allowed here because news entries are meant to be as readable as possible
+unprocessed.)
 
 
 Commit Messages
@@ -231,15 +245,16 @@ communicate that reason to other core developers. Python core developers have
 developed a standard way of formatting commit messages that everyone is
 expected to follow.
 
-Our usual convention mimics that used in the ``Misc/NEWS`` file.  Actually,
-it is common to simply paste the NEWS entry into the commit message.  Here
-is an example::
+Our usual convention mimics that used in news entries (it is actually common to
+start by pasting the news entry into the commit message). The only key
+difference when compared to a news entry is the inclusion of the issue number
+as the beginning of the commit message. Here is an example::
 
    bpo-42: the spam module is now more spammy.
-   
+
    The spam module sporadically came up short on spam. This change
    raises the amount of spam in the module by making it more spammy.
-   
+
    Thanks to Monty Python for the patch.
 
 The first line or sentence is meant to be a dense, to-the-point explanation
@@ -273,7 +288,7 @@ Working with Git_
 
 .. seealso::
    :ref:`gitbootcamp`
-   
+
 As a core developer, the ability to push changes to the official Python
 repositories means you have to be more careful with your workflow:
 
@@ -283,11 +298,11 @@ repositories means you have to be more careful with your workflow:
   dedicated to maintenance of the work before the work gets integrated in the
   main repository.
 
-* You should not commit directly into the ``master`` branch, or any of the 
+* You should not commit directly into the ``master`` branch, or any of the
   maintenance branches (``2.7``, ``3.5``, or ``3.6``).  You should commit against
   your own feature branch, and create a pull request.
-  
-It recommended to keep a fork of the main repository around, as it allows simple
+
+It is recommended to keep a fork of the main repository around, as it allows simple
 reversion of all local changes (even "committed" ones) if your local clone gets
 into a state you aren't happy with.
 
@@ -411,7 +426,7 @@ new features.  The other branches only receive bug fixes or security fixes.
 Backporting Changes to an Older Version
 ---------------------------------------
 
-When it is determined that a pull request needs to be backported into one or more of 
+When it is determined that a pull request needs to be backported into one or more of
 the maintenance branches, a core developer can apply the labels ``needs backport to X.Y``
 to the pull request.
 
@@ -422,17 +437,16 @@ on the ``master`` branch.  To display the 10 most recent commit hashes and their
 line of the commit message::
 
    git log -10 --oneline
-   
+
 Prefix the backport pull request with the branch, for example::
 
    [3.6] bpo-12345: Fix the Spam Module
-   
+
 Note that cherry_picker.py_ adds the branch prefix automatically.
-   
-Apply the label ``cherry-pick or X.Y`` to the backport pull request.  Once the backport
-pull request has been created, remove the ``needs backport to X.Y`` label from the
-original pull request on ``master``.  Only Core Developers can apply labels to GitHub
-pull requests.  
+
+Once the backport pull request has been created, remove the
+``needs backport to X.Y`` label from the original pull request.  (Only Core
+Developers can apply labels to GitHub pull requests).
 
 .. _cherry_picker.py: https://github.com/python/core-workflow/tree/master/cherry_picker
 

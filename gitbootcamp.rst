@@ -61,12 +61,12 @@ This is equivalent to::
    # check out the branch
    $ git checkout <branch-name>
 
-To find out which branch you are in now::
+To find the branch you are currently on::
 
    $ git branch
 
 The current branch will have an asterisk next to the branch name.  Note, this
-will list all of your local branches.
+will only list all of your local branches.
 
 To list all the branches, including the remote branches::
 
@@ -77,12 +77,14 @@ To switch to a different branch::
    $ git checkout <another-branch-name>
 
 
-Delete Local Branch
--------------------
+Deleting Local Branches
+-----------------------
 
-To delete branch that you no longer need::
+To delete a branch that you no longer need::
 
    $ git branch -D <branch-name>
+
+You may specify more than one branch for deletion.
 
 
 Staging and Committing Files
@@ -121,7 +123,7 @@ To stash away changes that are not ready to be committed yet::
 
    $ git stash
 
-To re-apply last stashed change::
+To re-apply the last stashed change::
 
    $ git stash pop
 
@@ -198,9 +200,47 @@ by the label ``needs backport to X.Y`` on the pull request itself.
 
 Use the utility script `cherry_picker.py <https://github.com/python/core-workflow/tree/master/cherry_picker>`_
 from the `core-workflow  <https://github.com/python/core-workflow>`_
-repository to backport the commit .
+repository to backport the commit.
 
-The core developer who merged the pull request is expected to do the backport.
+
+.. _git_from_mercurial:
+
+Applying a Patch from Mercurial to Git
+--------------------------------------
+
+Scenario:
+
+- A Mercurial patch exists but there is no pull request for it.
+
+Solution:
+
+1. Download the patch locally.
+
+2. Apply the patch::
+
+       $ git apply /path/to/issueNNNN-git.patch
+       
+   If there are errors, update to a revision from when the patch was
+   created and then try the ``git apply`` again::
+
+       $ git checkout `git rev-list -n 1 --before="yyyy-mm-dd hh:mm:ss" master`
+       $ git apply /path/to/issueNNNN-git.patch
+       
+   If the patch still won't apply, then a patch tool will not be able to
+   apply the patch and it will need to be re-implemented manually.
+       
+3. If the apply was successful, create a new branch and switch to it.
+
+4. Stage and commit the changes.
+
+5. If the patch was applied to an old revision, it needs to be updated and
+   merge conflicts need to be resolved::
+
+       $ git rebase master
+       $ git mergetool
+
+6. Push the changes and open a pull request.
+
 
 
 .. _git_pr:
@@ -213,9 +253,13 @@ Scenario:
 - A contributor made a pull request to CPython.
 - Before merging it, you want to be able to test their changes locally.
 
-Set up the following git alias::
+On Unix and MacOS, set up the following git alias::
 
    $ git config --global alias.pr '!sh -c "git fetch upstream pull/${1}/head:pr_${1} && git checkout pr_${1}" -'
+   
+On Windows, reverse the single (`'`) and double (`"`) quotes::
+
+   git config --global alias.pr "!sh -c 'git fetch upstream pull/${1}/head:pr_${1} && git checkout pr_${1}' -"
 
 The alias only needs to be done once.  After the alias is set up, you can get a
 local copy of a pull request as follows::
@@ -260,7 +304,7 @@ When a pull request submitter has enabled the `Allow edits from maintainers`_
 option, Python Core Developers may decide to make any remaining edits needed
 prior to merging themselves, rather than asking the submitter to do them. This
 can be particularly appropriate when the remaining changes are bookkeeping
-items like updating ``Misc/ACKS`` and ``Misc/NEWS``.
+items like updating ``Misc/ACKS``.
 
 .. _Allow edits from maintainers: https://help.github.com/articles/allowing-changes-to-a-pull-request-branch-created-from-a-fork/
 
@@ -281,7 +325,8 @@ To edit an open pull request that targets ``master``:
    made to ``master`` since the PR was submitted (any merge commits will be
    removed by the later ``Squash and Merge`` when accepting the change)::
 
-      $ git merge origin/master
+      $ git fetch upstream
+      $ git merge upstream/master
       $ git add <filename>
       $ git commit -m "<commit message>"
 

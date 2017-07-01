@@ -519,7 +519,7 @@ References
 
 .. [Aho86] Alfred V. Aho, Ravi Sethi, Jeffrey D. Ullman.
    `Compilers: Principles, Techniques, and Tools`,
-   http://www.amazon.com/exec/obidos/tg/detail/-/0201100886/104-0162389-6419108
+   https://www.amazon.com/exec/obidos/tg/detail/-/0201100886/104-0162389-6419108
 
 .. [Wang97]  Daniel C. Wang, Andrew W. Appel, Jeff L. Korn, and Chris
    S. Serra.  `The Zephyr Abstract Syntax Description Language.`_
@@ -530,7 +530,7 @@ References
    http://www.cs.princeton.edu/research/techreps/TR-554-97
 
 .. [#skip-peephole] Skip Montanaro's Peephole Optimizer Paper
-   (http://www.smontanaro.net/python/spam7/optimizer.html)
+   (https://drive.google.com/open?id=0B2InO7qBBGRXQXlDM3FVdWZxQWc)
 
 .. [#Bytecodehacks] Bytecodehacks Project
    (http://bytecodehacks.sourceforge.net/bch-docs/bch/index.html)
