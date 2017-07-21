@@ -419,6 +419,8 @@ Permissions History
   patches.  The added permissions give him greater flexibility in
   working with the tracker.
 
+- Armin Rigo was given push privileges on 2003.
+
 - Eric Price was made a developer on 2 May 2003 by TGP.  This was
   specifically to work on the new ``decimal`` package, which lived in
   ``nondist/sandbox/decimal/`` at the time.
@@ -436,6 +438,8 @@ Permissions Dropped on Request
 
 - Skip Montanaro's permissions were removed on 21 April 2015 by BCP per `his
   request <https://bugs.python.org/msg241740>`_.
+
+- Armin Rigo permissions were removed on 2012.
 
 - Roy Smith, Matt Fleming and Richard Emslie sent drop requests.
   4 Aug 2008 GFB
