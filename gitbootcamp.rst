@@ -145,14 +145,16 @@ Creating a Pull Request
 
 1. Go to https://github.com/python/cpython.
 
-2. Click ``compare across forks`` link.
+2. Press ``New pull request`` button.
 
-3. Select the base fork: ``python/cpython`` and base branch: ``master``.
+3. Click ``compare across forks`` link.
 
-4. Select the head fork: ``<username>/cpython`` and base branch: the branch
+4. Select the base fork: ``python/cpython`` and base branch: ``master``.
+
+5. Select the head fork: ``<username>/cpython`` and base branch: the branch
    containing your changes.
 
-5. Press ``Create Pull Request`` button.
+6. Press ``Create Pull Request`` button.
 
 
 Syncing With Upstream
