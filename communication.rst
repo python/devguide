@@ -52,22 +52,22 @@ General Python questions should go to `python-list`_ or `tutor`_
 or similar resources, such as StackOverflow_ or the ``#python`` IRC channel
 on Freenode_.
 
-A complete list of Python mailing lists can be found at http://mail.python.org.
+A complete list of Python mailing lists can be found at https://mail.python.org.
 Most lists are also mirrored at http://news.gmane.org/ and can be read and
 posted to in various ways, including via web browsers, NNTP newsreaders, and
 RSS feed readers.
 
 .. _issue tracker: http://bugs.python.org
-.. _new-bugs-announce: http://mail.python.org/mailman/listinfo/new-bugs-announce
-.. _python-bugs-list: http://mail.python.org/mailman/listinfo/python-bugs-list
-.. _python-checkins: http://mail.python.org/mailman/listinfo/python-checkins
-.. _python-committers: http://mail.python.org/mailman/listinfo/python-committers
-.. _python-dev: http://mail.python.org/mailman/listinfo/python-dev
-.. _python-help: http://mail.python.org/mailman/listinfo/python-help
-.. _python-ideas: http://mail.python.org/mailman/listinfo/python-ideas
-.. _python-list: http://mail.python.org/mailman/listinfo/python-list
-.. _tutor: http://mail.python.org/mailman/listinfo/tutor
-.. _StackOverflow: http://stackoverflow.com/
+.. _new-bugs-announce: https://mail.python.org/mailman/listinfo/new-bugs-announce
+.. _python-bugs-list: https://mail.python.org/mailman/listinfo/python-bugs-list
+.. _python-checkins: https://mail.python.org/mailman/listinfo/python-checkins
+.. _python-committers: https://mail.python.org/mailman/listinfo/python-committers
+.. _python-dev: https://mail.python.org/mailman/listinfo/python-dev
+.. _python-help: https://mail.python.org/mailman/listinfo/python-help
+.. _python-ideas: https://mail.python.org/mailman/listinfo/python-ideas
+.. _python-list: https://mail.python.org/mailman/listinfo/python-list
+.. _tutor: https://mail.python.org/mailman/listinfo/tutor
+.. _StackOverflow: https://stackoverflow.com/
 .. _Freenode: http://freenode.net/
 
 
@@ -87,7 +87,7 @@ Blogs
 
 Several core developers are active bloggers and discuss Python's development
 that way. You can find their blogs (and various other developers who use Python)
-at http://planet.python.org/.
+at http://planetpython.org/.
 
 
 Standards of behaviour in these communication channels
@@ -99,7 +99,7 @@ appropriate channels are an excellent way to get started on the mutual respect
 part, greatly increasing the chances of receiving tolerance and encouragement
 in return.
 
-.. _Diversity Statement: http://www.python.org/psf/diversity/
+.. _Diversity Statement: https://www.python.org/psf/diversity/
 
 Additional Repositories
 -----------------------

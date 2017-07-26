@@ -92,8 +92,6 @@ command (after any successful build of Python)::
 
    python.bat Tools/scripts/patchcheck.py
 
-.. _cla:
-
 .. _pullrequest-quickguide:
 
 Quick Guide
@@ -177,6 +175,8 @@ Make a pull request on GitHub from your changes in ``MY_BRANCH_NAME``.
    workflow is **strongly** preferred.
 
 
+.. _cla:
+
 Licensing
 ---------
 
@@ -246,7 +246,7 @@ reviewing your pull request because of lack of information.
 
 If this issue is so simple that there's no need for an issue to track
 any discussion of what the pull request is trying to solve (e.g. fixing a
-spelling mistake), then the pull request needs to have the "trivial" label
+spelling mistake), then the pull request needs to have the "skip issue" label
 added to it.
 
 Your pull request may involve several commits as a result of addressing code
@@ -259,6 +259,19 @@ The commits will be squashed when the pull request is merged.
 
 .. _issue tracker: https://bugs.python.org
 
+Converting an Existing Patch from the b.p.o to GitHub
+-----------------------------------------------------
+
+When a patch exists in the `issue tracker`_ that should be converted into a
+GitHub pull request, please first ask the original patch author to prepare
+their own pull request. If the author does not respond after a week, it is
+acceptable for another contributor to prepare the pull request based on the
+existing patch. In this case, both parties should sign the :ref:`CLA <cla>`.
+When creating a pull request based on another person's patch, provide
+attribution to the original patch author by adding "Original patch by
+<author name>." to the pull request description and commit message.
+
+See also :ref:`Applying a Patch from Mercurial to Git <git_from_mercurial>`.
 
 Reviewing
 ---------
@@ -352,6 +365,6 @@ Crediting
 ---------
 
 Non-trivial contributions are credited in the ``Misc/ACKS`` file (and, most
-often, in a contribution's ``Misc/NEWS`` entry as well).  You may be
+often, in a contribution's news entry as well).  You may be
 asked to make these edits on the behalf of the core developer who
 accepts your pull request.

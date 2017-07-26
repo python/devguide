@@ -8,13 +8,13 @@ This file is a running log of developers given commit privileges for Python.
 The purpose is to provide some institutional memory of who was given access
 and why.
 
-The first entry starts in April 2005.  In keeping with the style of Misc/NEWS,
-newer entries should be added to the top.  Entries should include the name
-or initials of the project admin who made the change or granted access.  The
-procedure for adding or removing users is described in :ref:`altering-access`.
+The first entry starts in April 2005.  Newer entries should be added to the top.
+Entries should include the name or initials of the project admin who made the
+change or granted access.  The procedure for adding or removing users is
+described in :ref:`altering-access`.
 
 Note, when giving new commit permissions, be sure to get a contributor agreement
-from the committer.  See http://www.python.org/psf/contrib/ for details.  Commit
+from the committer.  See https://www.python.org/psf/contrib/ for details.  Commit
 privileges should not be given until the contributor agreement has been signed
 and received.
 
@@ -27,7 +27,7 @@ Permissions History
 
 - Carol Willing was given push privileges on May 24, 2017 by Brett Cannon,
   on his own recommendation.
-  
+
 - Mariatta Wijaya was given push privileges on January 27, 2017 by Brett Cannon,
   on the recommendation of Raymond Hettinger.
 
@@ -419,13 +419,15 @@ Permissions History
   patches.  The added permissions give him greater flexibility in
   working with the tracker.
 
+- Armin Rigo was given push privileges on 2003.
+
 - Eric Price was made a developer on 2 May 2003 by TGP.  This was
   specifically to work on the new ``decimal`` package, which lived in
   ``nondist/sandbox/decimal/`` at the time.
 
 - Eric S. Raymond was made a developer on 2 Jul 2000 by TGP, for general
   library work.  His request is archived here:
-  http://mail.python.org/pipermail/python-dev/2000-July/005314.html
+  https://mail.python.org/pipermail/python-dev/2000-July/005314.html
 
 
 Permissions Dropped on Request
@@ -436,6 +438,8 @@ Permissions Dropped on Request
 
 - Skip Montanaro's permissions were removed on 21 April 2015 by BCP per `his
   request <https://bugs.python.org/msg241740>`_.
+
+- Armin Rigo permissions were removed on 2012.
 
 - Roy Smith, Matt Fleming and Richard Emslie sent drop requests.
   4 Aug 2008 GFB

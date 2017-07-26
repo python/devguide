@@ -145,14 +145,16 @@ Creating a Pull Request
 
 1. Go to https://github.com/python/cpython.
 
-2. Click ``compare across forks`` link.
+2. Press ``New pull request`` button.
 
-3. Select the base fork: ``python/cpython`` and base branch: ``master``.
+3. Click ``compare across forks`` link.
 
-4. Select the head fork: ``<username>/cpython`` and base branch: the branch
+4. Select the base fork: ``python/cpython`` and base branch: ``master``.
+
+5. Select the head fork: ``<username>/cpython`` and base branch: the branch
    containing your changes.
 
-5. Press ``Create Pull Request`` button.
+6. Press ``Create Pull Request`` button.
 
 
 Syncing With Upstream
@@ -189,6 +191,7 @@ Solution::
    $ git checkout some-branch
    $ git fetch upstream
    $ git rebase upstream/master
+   $ git push --force origin some-branch
 
 
 Backporting Merged Changes
@@ -201,6 +204,46 @@ by the label ``needs backport to X.Y`` on the pull request itself.
 Use the utility script `cherry_picker.py <https://github.com/python/core-workflow/tree/master/cherry_picker>`_
 from the `core-workflow  <https://github.com/python/core-workflow>`_
 repository to backport the commit.
+
+
+.. _git_from_mercurial:
+
+Applying a Patch from Mercurial to Git
+--------------------------------------
+
+Scenario:
+
+- A Mercurial patch exists but there is no pull request for it.
+
+Solution:
+
+1. Download the patch locally.
+
+2. Apply the patch::
+
+       $ git apply /path/to/issueNNNN-git.patch
+       
+   If there are errors, update to a revision from when the patch was
+   created and then try the ``git apply`` again::
+
+       $ git checkout `git rev-list -n 1 --before="yyyy-mm-dd hh:mm:ss" master`
+       $ git apply /path/to/issueNNNN-git.patch
+       
+   If the patch still won't apply, then a patch tool will not be able to
+   apply the patch and it will need to be re-implemented manually.
+       
+3. If the apply was successful, create a new branch and switch to it.
+
+4. Stage and commit the changes.
+
+5. If the patch was applied to an old revision, it needs to be updated and
+   merge conflicts need to be resolved::
+
+       $ git rebase master
+       $ git mergetool
+
+6. Push the changes and open a pull request.
+
 
 
 .. _git_pr:
@@ -264,7 +307,7 @@ When a pull request submitter has enabled the `Allow edits from maintainers`_
 option, Python Core Developers may decide to make any remaining edits needed
 prior to merging themselves, rather than asking the submitter to do them. This
 can be particularly appropriate when the remaining changes are bookkeeping
-items like updating ``Misc/ACKS`` and ``Misc/NEWS``.
+items like updating ``Misc/ACKS``.
 
 .. _Allow edits from maintainers: https://help.github.com/articles/allowing-changes-to-a-pull-request-branch-created-from-a-fork/
 
@@ -285,7 +328,8 @@ To edit an open pull request that targets ``master``:
    made to ``master`` since the PR was submitted (any merge commits will be
    removed by the later ``Squash and Merge`` when accepting the change)::
 
-      $ git merge origin/master
+      $ git fetch upstream
+      $ git merge upstream/master
       $ git add <filename>
       $ git commit -m "<commit message>"
 

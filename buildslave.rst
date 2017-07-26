@@ -304,7 +304,7 @@ Required Resources
 ------------------
 
 Based on the last time we did a `survey
-<http://mail.python.org/pipermail/python-dev/2012-March/117978.html>`_ on
+<https://mail.python.org/pipermail/python-dev/2012-March/117978.html>`_ on
 buildbot requirements, the recommended resource allocations for a python
 buildbot are at least:
 
@@ -341,7 +341,7 @@ VM setup.  But if you are confident in your setup, we'd love to have a buildbot
 that runs python as root.
 
 Note that the above is a summary of a `discussion
-<http://mail.python.org/pipermail/python-dev/2011-October/113935.html>`_ on
+<https://mail.python.org/pipermail/python-dev/2011-October/113935.html>`_ on
 python-dev about buildbot security that includes examples of the tests for
 which privilege matters.  There was no final consensus, but the information is
 useful as a point of reference.

@@ -110,22 +110,20 @@ security patches have been applied to the branch.
 Summary
 -------
 
-There are 7 open branches right now in the Git repository:
+There are 6 open branches right now in the Git repository:
 
-- the ``master`` branch holds the future 3.7 version and descends from ``3.6``
+- the ``master`` branch accepts features and bugs fixes for the future
+  3.7.0 feature release (RM: Ned Deily)
+- the ``3.6`` branch accepts bug fixes for future 3.6.x maintenance releases
   (RM: Ned Deily)
-- the ``3.6`` branch holds bug fixes for 3.6.0 and future 3.6.x maintenance releases
-  and descends from ``3.5`` (RM: Ned Deily)
-- the ``3.5`` branch holds bug fixes for future 3.5.x maintenance releases
-  and descends from ``3.4`` (RM: Larry Hastings)
-- the ``3.4`` branch holds security fixes for future 3.4.x security releases
-  and descends from ``3.3`` (RM: Larry Hastings)
-- the ``3.3`` branch holds security fixes for future 3.3.x security releases
-  until September 2017 and descends from ``3.2`` (RM: Georg Brandl)
-- the ``3.2`` branch holds security fixes for future 3.2.x security releases
-  until February 2016 (RM: Georg Brandl)
-- the ``2.7`` branch holds bug fixes for future 2.7.x maintenance releases and
-  descends from ``2.6`` (RM: Benjamin Peterson)
+- the ``3.5`` branch accepts bug fixes for future 3.5.x maintenance releases
+  (RM: Larry Hastings)
+- the ``3.4`` branch accepts security fixes for future 3.4.x security releases
+  (RM: Larry Hastings)
+- the ``3.3`` branch accepts security fixes for future 3.3.x security releases
+  (RM: Georg Brandl) [end-of-life for 3.3 is 2017-09-29]
+- the ``2.7`` branch accepts bug fixes for future 2.7.x maintenance releases
+  (RM: Benjamin Peterson)
 
 See also the :ref:`Status of Python branches <branchstatus>`.
 

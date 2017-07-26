@@ -16,6 +16,7 @@ if NOT "%PAPER%" == "" (
 
 if "%1" == "" goto help
 if "%1" == "check" goto check
+if "%1" == "serve" goto serve
 
 if "%1" == "help" (
 	:help
@@ -35,7 +36,8 @@ if "%1" == "help" (
 	echo.  changes    to make an overview over all changed/added/deprecated items
 	echo.  linkcheck  to check all external links for integrity
 	echo.  doctest    to run all doctests embedded in the documentation if enabled
-	echo.  check      
+	echo.  check
+	echo.  serve      to serve devguide on the localhost (8000)
 	goto end
 )
 
@@ -174,6 +176,10 @@ results in %BUILDDIR%/doctest/output.txt.
 
 :check
 cmd /C %PYTHON% tools\rstlint.py -i tools -i venv
+goto end
+
+:serve
+cmd /C %PYTHON% tools\serve.py %BUILDDIR%\html
 goto end
 
 :end

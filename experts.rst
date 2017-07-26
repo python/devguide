@@ -156,7 +156,7 @@ mmap                  twouters
 modulefinder          theller (inactive), jvr
 msilib                loewis
 msvcrt
-multiprocessing       davin*, jnoller (inactive), sbt (inactive)
+multiprocessing       davin*, pitrou, jnoller (inactive), sbt (inactive)
 netrc
 nis
 nntplib
@@ -351,9 +351,12 @@ version control     eric.araujo, ezio.melotti
 
 Documentation Translations
 --------------------------
-===========  ===========
-Translation  Coordinator
-===========  ===========
-French       mdk
-Japanese     inada.naoki
-===========  ===========
+=============  ============
+Translation    Coordinator
+=============  ============
+French         mdk
+Japanese       inada.naoki
+Bengali India  kushal.das
+Hungarian      gbtami
+Portuguese     rougeth
+=============  ============
