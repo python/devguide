@@ -232,7 +232,7 @@ you want the coverage data to end up it will go somewhere you don't expect.
     If you are running coverage over the entire test suite, make sure to
     add ``-x test_importlib test_runpy test_trace`` to exclude those tests as
     they trigger exceptions during coverage; see
-    http://bugs.python.org/issue10541 and http://bugs.python.org/issue10991.
+    https://bugs.python.org/issue10541 and https://bugs.python.org/issue10991.
 
 Once the tests are done you will find the directory you specified contains
 files for each executed module along with which lines were executed how many
@@ -246,7 +246,7 @@ Once you have increased coverage, you need to create an issue on the
 issue set the "Components" to "Test" and "Versions" to the version of Python you
 worked on (i.e., the in-development version).
 
-.. _issue tracker: http://bugs.python.org
+.. _issue tracker: https://bugs.python.org
 
 
 Measuring coverage of C code with gcov and lcov
