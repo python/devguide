@@ -11,7 +11,7 @@ module.
 Changes to pre-existing code is not covered as that is considered a bugfix and
 thus is treated as a bug that should be filed on the `issue tracker`_.
 
-.. _issue tracker: http://bugs.python.org/
+.. _issue tracker: https://bugs.python.org/
 
 
 Adding to a pre-existing module

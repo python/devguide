@@ -535,4 +535,4 @@ References
    (http://bytecodehacks.sourceforge.net/bch-docs/bch/index.html)
 
 .. [#CALL_ATTR] CALL_ATTR opcode
-   (http://bugs.python.org/issue709744)
+   (https://bugs.python.org/issue709744)

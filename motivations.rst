@@ -220,7 +220,7 @@ their contributions to be funded directly by the community, rather than relying
 on institutional sponsors allowing them to spend some or all of their work
 time contributing to CPython development.
 
-.. _issue metrics: http://bugs.python.org/issue?@template=stats
+.. _issue metrics: https://bugs.python.org/issue?@template=stats
 .. _OpenHub: https://www.openhub.net/p/python/contributors
 .. _core mentorship program: https://www.python.org/dev/core-mentorship/
 .. _internships: https://www.gnome.org/outreachy/
