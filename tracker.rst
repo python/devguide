@@ -193,7 +193,7 @@ instructions on the `Tracker Development`_ page.
 
 .. seealso::
 
-   `The Python issue tracker <http://bugs.python.org/>`_
+   `The Python issue tracker <https://bugs.python.org/>`_
       Where to report issues about Python.
 
    `The New-bugs-announce mailing list <https://mail.python.org/mailman/listinfo/new-bugs-announce>`_
@@ -212,7 +212,7 @@ instructions on the `Tracker Development`_ page.
       Discussions about the bug tracker.
 
 
-.. _issue tracker: http://bugs.python.org/
+.. _issue tracker: https://bugs.python.org/
 .. _meta tracker: http://psf.upfronthosting.co.za/roundup/meta/
-.. _advanced search: http://bugs.python.org/issue?@template=search
+.. _advanced search: https://bugs.python.org/issue?@template=search
 .. _Tracker Development: https://wiki.python.org/moin/TrackerDevelopment

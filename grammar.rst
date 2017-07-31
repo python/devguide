@@ -20,7 +20,7 @@ Rationale
 ---------
 
 People are getting this wrong all the time; it took well over a
-year before someone `noticed <http://bugs.python.org/issue676521>`_
+year before someone `noticed <https://bugs.python.org/issue676521>`_
 that adding the floor division
 operator (//) broke the parser module.
 
