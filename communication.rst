@@ -52,6 +52,10 @@ General Python questions should go to `python-list`_ or `tutor`_
 or similar resources, such as StackOverflow_ or the ``#python`` IRC channel
 on Freenode_.
 
+`Core-Workflow <https://mail.python.org/mailman/listinfo/core-workflow>`_
+mailing list is the place to discuss and work on improvements to the CPython
+core development workflow.
+
 A complete list of Python mailing lists can be found at https://mail.python.org.
 Most lists are also mirrored at http://news.gmane.org/ and can be read and
 posted to in various ways, including via web browsers, NNTP newsreaders, and
@@ -100,3 +104,18 @@ part, greatly increasing the chances of receiving tolerance and encouragement
 in return.
 
 .. _Diversity Statement: https://www.python.org/psf/diversity/
+
+
+Additional Repositories
+-----------------------
+
+`Python Core Workflow`_ hosts the codebase for tools such as `cherry_picker`_
+and `blurb`_.
+
+Python `Performance Benchmark`_ project is intended to be an authoritative
+source of benchmarks for all Python implementations.
+
+.. _Python Core Workflow: https://github.com/python/core-workflow
+.. _cherry_picker: https://pypi.org/project/cherry_picker
+.. _blurb: https://pypi.org/project/blurb
+.. _Performance Benchmark: https://github.com/python/performance
