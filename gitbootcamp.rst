@@ -76,6 +76,11 @@ To switch to a different branch::
 
    $ git checkout <another-branch-name>
 
+Other releases are just branches in the repository.  For example, to work
+on the 2.7 release::
+
+   $ git checkout -b 2.7 origin/2.7
+
 
 Deleting Local Branches
 -----------------------
@@ -222,16 +227,16 @@ Solution:
 2. Apply the patch::
 
        $ git apply /path/to/issueNNNN-git.patch
-       
+
    If there are errors, update to a revision from when the patch was
    created and then try the ``git apply`` again::
 
        $ git checkout `git rev-list -n 1 --before="yyyy-mm-dd hh:mm:ss" master`
        $ git apply /path/to/issueNNNN-git.patch
-       
+
    If the patch still won't apply, then a patch tool will not be able to
    apply the patch and it will need to be re-implemented manually.
-       
+
 3. If the apply was successful, create a new branch and switch to it.
 
 4. Stage and commit the changes.
@@ -259,7 +264,7 @@ Scenario:
 On Unix and MacOS, set up the following git alias::
 
    $ git config --global alias.pr '!sh -c "git fetch upstream pull/${1}/head:pr_${1} && git checkout pr_${1}" -'
-   
+
 On Windows, reverse the single (`'`) and double (`"`) quotes::
 
    git config --global alias.pr "!sh -c 'git fetch upstream pull/${1}/head:pr_${1} && git checkout pr_${1}' -"
