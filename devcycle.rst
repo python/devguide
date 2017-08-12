@@ -116,7 +116,7 @@ There are 6 open branches right now in the Git repository:
   3.7.0 feature release (RM: Ned Deily)
 - the ``3.6`` branch accepts bug fixes for future 3.6.x maintenance releases
   (RM: Ned Deily)
-- the ``3.5`` branch accepts bug fixes for future 3.5.x maintenance releases
+- the ``3.5`` branch accepts security fixes for future 3.5.x security releases
   (RM: Larry Hastings)
 - the ``3.4`` branch accepts security fixes for future 3.4.x security releases
   (RM: Larry Hastings)
