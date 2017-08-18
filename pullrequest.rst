@@ -180,7 +180,7 @@ Make a pull request on GitHub from your changes in ``MY_BRANCH_NAME``.
 Licensing
 ---------
 
-For non-trivial changes, we must have your formal approval for distributing
+To accept your change we must have your formal approval for distributing
 your work under the `PSF license`_.  Therefore, you need to sign a
 `contributor agreement`_ which allows the `Python Software Foundation`_ to
 license your code for use with Python (you retain the copyright).
