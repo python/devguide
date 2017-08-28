@@ -199,18 +199,6 @@ Solution::
    $ git push --force origin some-branch
 
 
-Backporting Merged Changes
---------------------------
-
-A pull request may need to be backported into one of the maintenance branches
-after it has been accepted and merged into ``master``.  It is usually indicated
-by the label ``needs backport to X.Y`` on the pull request itself.
-
-Use the utility script `cherry_picker.py <https://github.com/python/core-workflow/tree/master/cherry_picker>`_
-from the `core-workflow  <https://github.com/python/core-workflow>`_
-repository to backport the commit.
-
-
 .. _git_from_mercurial:
 
 Applying a Patch from Mercurial to Git
@@ -303,6 +291,26 @@ Pull requests can be accepted and merged by a Python Core Developer.
       * rebased
 
 3. Press the ``Confirm squash and merge`` button.
+
+
+Backporting Merged Changes
+--------------------------
+
+A pull request may need to be backported into one of the maintenance branches
+after it has been accepted and merged into ``master``.  It is usually indicated
+by the label ``needs backport to X.Y`` on the pull request itself.
+
+Use the utility script `cherry_picker.py <https://github.com/python/core-workflow/tree/master/cherry_picker>`_
+from the `core-workflow  <https://github.com/python/core-workflow>`_
+repository to backport the commit.
+
+The commit hash for backporting is the squashed commit that was merged to
+the ``master`` branch.  On the merged pull request, scroll to the bottom of the
+page.  Find the event that says something like::
+
+   <coredeveloper> merged commit <commit_sha1> into python:master <sometime> ago.
+
+By following the link to ``<commit_sha1>``, you will get the full commit hash.
 
 
 Editing a Pull Request Prior to Merging
