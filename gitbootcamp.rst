@@ -312,6 +312,14 @@ page.  Find the event that says something like::
 
 By following the link to ``<commit_sha1>``, you will get the full commit hash.
 
+Alternatively, the commit hash can also be obtained by the following git commands::
+
+   $ git fetch upstream
+   $ git rev-parse ":/bpo-12345"
+
+The above commands will print out the hash of the commit containing ``"bpo-12345"``
+as part of the commit message.
+
 
 Editing a Pull Request Prior to Merging
 ---------------------------------------
