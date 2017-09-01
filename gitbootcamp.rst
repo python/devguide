@@ -283,8 +283,9 @@ Pull requests can be accepted and merged by a Python Core Developer.
 1. At the bottom of the pull request page, click the ``Squash and merge``
    button.
 
-2. Adjust and clean up the commit message.  Replace the reference
-   to GitHub PR #XXX into GH-XXX.
+2. Replace the reference to GitHub PR #XXX into GH-XXX.
+
+3. Adjust and clean up the commit message.
 
    Example of good commit message::
 
