@@ -82,12 +82,19 @@ on the 2.7 release::
    $ git checkout -b 2.7 origin/2.7
 
 
-Deleting Local Branches
------------------------
+.. _deleting_branches:
 
-To delete a branch that you no longer need::
+Deleting Branches
+-----------------
 
+To delete a **local** branch that you no longer need::
+
+   $ git checkout master
    $ git branch -D <branch-name>
+
+To delete a **remote** branch::
+
+   $ git push origin -d <branch-name>
 
 You may specify more than one branch for deletion.
 
@@ -343,7 +350,4 @@ To edit an open pull request that targets ``master``:
 
       $ git push git@github.com:<contributor>/cpython <pr_XXX>:<branch_name>
 
-5. Optionally, delete the local PR branch::
-
-      $ git checkout master
-      $ git branch -D <pr_XXX>
+5. Optionally, :ref:`delete the PR branch <deleting_branches>`.
