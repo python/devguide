@@ -127,7 +127,7 @@ Here is a quick overview of how you can contribute to CPython on GitHub:
 
 #. Review and address `comments on your Pull Request`_
 
-#. When your changes are merged, you can delete the branch
+#. When your changes are merged, you can :ref:`delete the PR branch <deleting_branches>`
 
 #. Celebrate contributing to CPython! :)
 
@@ -174,7 +174,7 @@ Make a pull request on GitHub from your changes in ``MY_BRANCH_NAME``.
 
 After your PR has been accepted and merged, you can :ref:`delete the branch <deleting_branches>`::
 
-   git branch -d MY_BRANCH_NAME  # delete local branch
+   git branch -D MY_BRANCH_NAME  # delete local branch
    git push origin -d MY_BRANCH_NAME  # delete remote branch
 
 .. note::

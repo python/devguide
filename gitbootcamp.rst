@@ -90,7 +90,7 @@ Deleting Branches
 To delete a **local** branch that you no longer need::
 
    $ git checkout master
-   $ git branch -d <branch-name>
+   $ git branch -D <branch-name>
 
 To delete a **remote** branch::
 
