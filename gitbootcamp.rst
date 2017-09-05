@@ -42,6 +42,29 @@ To list the remote repositories that are configured, along with their urls::
 
    $ git remote -v
 
+.. _set-up-name-email:
+
+Setting Up Your Name and Email Address
+--------------------------------------
+::
+
+   $ git config --global user.name "Your Name"
+   $ git config --global user.email email@example.org
+
+The ``--global`` flag sets these globally,
+``--local`` sets them only for the current project.
+
+.. _autocrlf:
+
+Enabling ``autocrlf`` on Windows
+--------------------------------
+
+The *autocrlf* option will fix automatically any Windows-specific line endings.
+This should be enabled on Windows, since the public repository has a hook which
+will reject all changesets having the wrong line endings.
+::
+
+    $ git config --global core.autocrlf input
 
 Creating and Switching Branches
 -------------------------------

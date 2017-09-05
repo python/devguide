@@ -34,12 +34,12 @@ installation directions. You may also want to consider a graphical client
 such as `TortoiseGit <https://tortoisegit.org/>`_ or
 `GitHub Desktop <https://desktop.github.com/>`_.
 
-You may also wish to
-`set up an SSH key <https://help.github.com/articles/adding-a-new-ssh-key-to-your-github-account/>`_
+You may also wish to :ref:`set up your name and email <set-up-name-email>` and
+`an SSH key <https://help.github.com/articles/adding-a-new-ssh-key-to-your-github-account/>`_
 as this will allow you to interact with GitHub without typing a username
 and password each time you execute a command, such as ``git pull``,
-``git push``, or ``git fetch``.
-
+``git push``, or ``git fetch``.  On Windows, you should also
+:ref:`enable autocrlf on Windows <autocrlf>`.
 
 .. _checkout:
 

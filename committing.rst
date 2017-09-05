@@ -313,30 +313,6 @@ into a state you aren't happy with.
 .. _Git: https://git-scm.com/
 
 
-Minimal Configuration
----------------------
-
-If you use Git as a committer of patches (your own or others), you should
-set up some basic options.  Here are the minimal options you need to activate:
-
-* Your *name* and *email*: these settings defines what will be used when you
-  commit changes::
-
-   git config --global user.name "Your Name"
-   git config --global user.email email@example.org
-
-``--global`` flag sets configuration options at a global level, if instead you
-want to set it at a project level use ``--local``, instead.
-
-* *Under Windows*, you should also enable the *autocrlf* option, which will
-  fix any Windows-specific line endings your text editor might insert when you
-  create or modify versioned files.  The public repository has a hook which
-  will reject all changesets having the wrong line endings, so enabling this
-  extension on your local computer is in your best interest.
-  ::
-
-     git config --global core.autocrlf input
-
 
 Remotes Setup
 -------------
