@@ -3,7 +3,7 @@
 Accepting Pull Requests
 =======================
 
-This page is aimed to core developers, and cover the steps required to
+This page is aimed to core developers, and covers the steps required to
 accept, merge, and possibly backport a pull request on the main repository.
 
 Is the PR ready to be accepted?
