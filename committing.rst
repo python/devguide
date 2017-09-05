@@ -382,7 +382,7 @@ Pushing changes
 You have two remotes configured (see previous section for setup). Publishing
 your changes to any of them is as simple as specifying the name of the remote
 upon your push. Assuming I am working on a local branch ``bug1234`` and I want to
-push it to my private branch I do::
+push it to my private fork I do::
 
    git push origin bug1234
 
