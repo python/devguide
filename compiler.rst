@@ -68,6 +68,12 @@ what should be the first ``:`` and require it be an actual ``:`` token.
 Abstract Syntax Trees (AST)
 ---------------------------
 
+
+.. sidebar:: Green Tree Snakes
+
+   See also `Green Tree Snakes - the missing Python AST docs
+   <https://greentreesnakes.readthedocs.io/en/latest/>`_ by Thomas Kluyver.
+
 The abstract syntax tree (AST) is a high-level representation of the
 program structure without the necessity of containing the source code;
 it can be thought of as an abstract representation of the source code.  The
