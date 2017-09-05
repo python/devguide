@@ -1,18 +1,17 @@
 .. _committing:
 
-Committing and Pushing Changes
-==============================
+Accepting Pull Requests
+=======================
 
-Is the change ready for committing?
------------------------------------
+This page is aimed to core developers, and cover the steps required to
+accept, merge, and possibly backport a pull request on the main repository.
 
-Before a change is committed, you must make sure it is ready to enter the
-public source tree.  Draft commits are prohibited.  Therefore, you must
-ensure your changes fulfill several mandatory criteria.
+Is the PR ready to be accepted?
+-------------------------------
 
-When working a pull request on GitHub, use the following as a checklist of
-what to check for before merging (details of various steps can be found
-later in this document):
+Before a PR is accepted, you must make sure it is ready to enter the public
+source tree.  Use the following as a checklist of what to check for before
+merging (details of various steps can be found later in this document):
 
 #. Has the submitter signed the CLA?
    (delineated by a label on the pull request)
@@ -40,14 +39,14 @@ Does the test suite still pass?
 '''''''''''''''''''''''''''''''
 
 You must :ref:`run the whole test suite <runtests>` to ensure that it
-passes before pushing any code changes.
+passes before merging any code changes.
 
 .. note::
    You really need to run the **entire** test suite.  Running a single test
-   is not enough as your changes may have unforeseen effects on other tests
+   is not enough as the changes may have unforeseen effects on other tests
    or library modules.
 
-   Running the entire test suite doesn't guarantee that your changes
+   Running the entire test suite doesn't guarantee that the changes
    will pass the :ref:`continuous integration <buildbots>` tests, as those
    will exercise more possibilities still (such as different platforms or
    build options).  But it will at least catch non-build specific,
@@ -92,6 +91,8 @@ making a complete patch.
 
 Commit Style
 ------------
+
+.. move this to pullrequest
 
 Once a change patch is ready and tested, it can be committed to the repository.
 We usually prefer to put a whole feature or bugfix into a single commit, but no
@@ -239,6 +240,8 @@ unprocessed.)
 
 Commit Messages
 ---------------
+
+.. move to pullrequest
 
 Every commit has a commit message to document why a change was made and to
 communicate that reason to other core developers. Python core developers have
