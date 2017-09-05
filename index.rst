@@ -77,7 +77,6 @@ contributing to Python:
 * `Buildbot status`_
 * :doc:`help`
 * PEPs_ (Python Enhancement Proposals)
-* :doc:`gitdevs`
 * :doc:`gitbootcamp`
 
 .. _branchstatus:
@@ -185,7 +184,6 @@ Guide for contributing to Python:
     * :doc:`devcycle`
     * :doc:`buildbots`
     * :doc:`coverity`
-* :doc:`gitdevs`
 * :doc:`gitbootcamp`
 
 It is **recommended** that the above documents be read in the order listed.  You
@@ -325,7 +323,6 @@ Full Table of Contents
    coverity
    clang
    buildslave
-   gitdevs
    motivations
    gitbootcamp
 
