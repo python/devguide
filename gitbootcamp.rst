@@ -10,6 +10,7 @@ relevant to CPython's workflow.
 
 .. contents::
 
+.. _fork-cpython:
 
 Forking CPython GitHub Repository
 ---------------------------------
@@ -24,6 +25,7 @@ You'll only need to do this once.
 
 4. Your fork will be created at https://github.com/<username>/cpython.
 
+.. _clone-your-fork:
 
 Cloning The Forked CPython Repository
 -------------------------------------
@@ -31,16 +33,29 @@ Cloning The Forked CPython Repository
 You'll only need to do this once.  From your command line::
 
    $ git clone git@github.com:<username>/cpython.git
+
+It is also recommended to configure an `upstream` remote::
+
    $ cd cpython
    $ git remote add upstream git@github.com:python/cpython.git
 
+You can also use SSH-based or HTTPS-based URLs.
 
 Listing the Remote Repositories
 -------------------------------
 
-To list the remote repositories that are configured, along with their urls::
+To list the remote repositories that are configured, along with their URLs::
 
    $ git remote -v
+
+You should have two remotes: ``origin`` pointing to your fork,
+and ``upstream`` pointing to the official CPython repository::
+
+   origin  git@github.com:<your-username>/devguide.git (fetch)
+   origin  git@github.com:<your-username>/devguide.git (push)
+   upstream        git@github.com:python/devguide.git (fetch)
+   upstream        git@github.com:python/devguide.git (push)
+
 
 .. _set-up-name-email:
 

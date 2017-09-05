@@ -318,41 +318,6 @@ Remotes Setup
 -------------
 
 
-.. _remote-configuration:
-
-Configuration
-'''''''''''''
-
-There are several possible ways how to set up your git repository. This section
-discusses the simplest approach of having a single directory with two remotes,
-one pointing to private fork, the other one being the official repository.
-
-Assuming you have :ref:`cloned the official repository <checkout>` here is how
-your current setup should look like::
-
-   $ git remote -v    # show remotes
-   origin  https://github.com/python/cpython (fetch)
-   origin  https://github.com/python/cpython (push)
-
-You can have multiple remotes defined for a single repository, the usual approach
-is to have ``origin`` pointing to your :ref:`private fork <forking>`, and ``upstream``
-pointing to the official repository. To do so, here are the steps needed to have
-that setup::
-
-   git remote set-url origin https://github.com/<your-username>/cpython
-   git remote add upstream https://github.com/python/cpython
-
-After that, your remotes configuration should look like this::
-
-   $ git remote -v    # show remotes
-   origin  https://github.com/<your-username>/cpython (fetch)
-   origin  https://github.com/<your-username>/cpython (push)
-   upstream  https://github.com/python/cpython (fetch)
-   upstream  https://github.com/python/cpython (push)
-
-At any point in time you can use SSH-based URL instead of HTTPS-based ones.
-
-
 .. _committing-push-changes:
 
 Pushing changes
