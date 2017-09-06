@@ -268,23 +268,6 @@ understands the justification for the change).  Also, if a non-core developer
 contributed to the resolution, it is good practice to credit them.
 
 
-Reverting a Commit
-------------------
-
-To revert a merged pull request, press the ``Revert`` button at the bottom of
-the pull request.  It will bring up the page to create a new pull request where
-the commit can be reverted.  It also creates a new branch on the main CPython
-repository.  Delete the branch once the pull request has been merged.
-
-Always include the reason for reverting the commit to help others understand
-why it was done.  The reason should be included as part of the commit message,
-for example::
-
-   Revert bpo-NNNN: Fix Spam Module (GH-111)
-
-   Reverts python/cpython#111.
-   Reason: This commit broke the buildbot.
-
 
 Working with Git_
 =================
@@ -351,3 +334,21 @@ Once the backport pull request has been created, remove the
 Developers can apply labels to GitHub pull requests).
 
 .. _cherry_picker.py: https://github.com/python/core-workflow/tree/master/cherry_picker
+
+
+Reverting a Merged Pull Request
+-------------------------------
+
+To revert a merged pull request, press the ``Revert`` button at the bottom of
+the pull request.  It will bring up the page to create a new pull request where
+the commit can be reverted.  It also creates a new branch on the main CPython
+repository.  Delete the branch once the pull request has been merged.
+
+Always include the reason for reverting the commit to help others understand
+why it was done.  The reason should be included as part of the commit message,
+for example::
+
+   Revert bpo-NNNN: Fix Spam Module (GH-111)
+
+   Reverts python/cpython#111.
+   Reason: This commit broke the buildbot.
