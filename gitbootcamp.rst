@@ -177,6 +177,21 @@ To re-apply the last stashed change::
 
    $ git stash pop
 
+.. _commit-changes:
+
+Committing Changes
+------------------
+
+Add the files you want to commit::
+
+   $ git add <filename>
+
+Commit the files::
+
+   $ git commit -m '<message>'
+
+
+.. _push-changes:
 
 Pushing Changes
 ---------------

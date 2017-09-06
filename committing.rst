@@ -318,43 +318,6 @@ Remotes Setup
 -------------
 
 
-.. _committing-push-changes:
-
-Pushing changes
-'''''''''''''''
-
-You have two remotes configured (see previous section for setup). Publishing
-your changes to any of them is as simple as specifying the name of the remote
-upon your push. Assuming I am working on a local branch ``bug1234`` and I want to
-push it to my private fork I do::
-
-   git push origin bug1234
-
-Option ``-u|--set-upstream`` creates a remote-tracking branch that tracks what
-have been pushed to ``origin``::
-
-   git push -u origin bug1234
-
-That allows to avoid rebasing beyond already pushed commits.
-``git status --branch`` and ``git branch --verbose`` remind that the branch(es)
-have not pushed commits.
-
-
-Synchronizing remotes
-'''''''''''''''''''''
-
-To synchronize your fork, from the official repository you need to execute following
-commands::
-
-   git fetch upstream         # fetch remote changes
-   git checkout master        # checkout your current master branch
-   git merge upstream/master  # merge remote changes into your local master branch
-   git push origin master     # publish changes to your private fork
-
-The above steps can be executed against any branch you wish to, just replace master
-with an appropriate branch name.
-
-
 .. _committing-active-branches:
 
 Active branches
