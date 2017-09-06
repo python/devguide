@@ -266,8 +266,8 @@ The commits will be squashed when the pull request is merged.
 
 .. _issue tracker: https://bugs.python.org
 
-Converting an Existing Patch from the b.p.o to GitHub
------------------------------------------------------
+Converting an Existing Patch from b.p.o to GitHub
+-------------------------------------------------
 
 When a patch exists in the `issue tracker`_ that should be converted into a
 GitHub pull request, please first ask the original patch author to prepare
