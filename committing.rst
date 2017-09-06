@@ -313,11 +313,6 @@ into a state you aren't happy with.
 .. _Git: https://git-scm.com/
 
 
-
-Remotes Setup
--------------
-
-
 .. _committing-active-branches:
 
 Active branches
@@ -356,15 +351,6 @@ Once the backport pull request has been created, remove the
 Developers can apply labels to GitHub pull requests).
 
 .. _cherry_picker.py: https://github.com/python/core-workflow/tree/master/cherry_picker
-
-
-.. _forking:
-
-Forking repository
-------------------
-
-Forking a repository on GitHub is as simple as clicking Fork button in the right
-upper corner at https://github.com/python/cpython.
 
 
 Maintaining a repository
