@@ -34,22 +34,58 @@ installation directions. You may also want to consider a graphical client
 such as `TortoiseGit <https://tortoisegit.org/>`_ or
 `GitHub Desktop <https://desktop.github.com/>`_.
 
-You may also wish to set up :ref:`your name and email <set-up-name-email>`
-and `an SSH key
+Once you installed Git, you should set up
+:ref:`your name and email <set-up-name-email>` and `an SSH key
 <https://help.github.com/articles/adding-a-new-ssh-key-to-your-github-account/>`_
 as this will allow you to interact with GitHub without typing a username
 and password each time you execute a command, such as ``git pull``,
 ``git push``, or ``git fetch``.  On Windows, you should also
 :ref:`enable autocrlf <autocrlf>`.
 
+
 .. _checkout:
 
 Getting the Source Code
 -----------------------
 
-In order to get a copy of the source code you should first :ref:`fork the
-Python repository on GitHub <fork-cpython>` and then :ref:`create a local
-clone of your private fork and configure the remotes <clone-your-fork>`.
+In order to get a copy of the source code you should :ref:`fork the
+Python repository on GitHub <fork-cpython>`, :ref:`create a local
+clone of your private fork, and configure the remotes <clone-your-fork>`.
+
+You will only need to execute these steps once:
+
+1. Go to https://github.com/python/cpython.
+
+2. Press ``Fork`` on the top right.
+
+3. When asked where to fork the repository, choose to fork it to your username.
+
+4. Your fork will be created at :samp:`https://github.com/{<username>}/cpython`.
+
+5. Clone your GitHub fork (replace ``<username>`` with your username)::
+
+      $ git clone git@github.com:<username>/cpython.git
+
+   (You can use both SSH-based or HTTPS-based URLs.)
+
+6. Configure an ``upstream`` remote::
+
+      $ cd cpython
+      $ git remote add upstream git@github.com:python/cpython.git
+
+7. Verify that your setup is correct::
+
+      $ git remote -v
+      origin  git@github.com:<your-username>/devguide.git (fetch)
+      origin  git@github.com:<your-username>/devguide.git (push)
+      upstream        git@github.com:python/devguide.git (fetch)
+      upstream        git@github.com:python/devguide.git (push)
+
+If you did everything correctly, you should now have a copy of the code
+in the ``cpython`` dir and two remotes that refer to your own GitHub fork
+(``origin``) and the official CPython repository (``upstream``).
+
+.. XXX move the text below in pullrequest
 
 If you want a working copy of an already-released version of Python,
 i.e., a version in :ref:`maintenance mode <maintbranch>`, you can checkout

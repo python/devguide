@@ -100,24 +100,13 @@ Quick Guide
 `Clear communication`_ is key to contributing to any project, especially an
 `Open Source`_ project like CPython.
 
-Here is a quick overview of how you can contribute to CPython on GitHub:
+Here is a quick overview of how you can contribute to CPython:
 
-#. If an issue doesn't exist, `create an Issue`_ that describes your change.
-   Trivial issues (e.g. typo fixes) do not require any issue to be created.
+#. `Create an issue`_ that describes your change [*]_
 
-#. :ref:`Get started <setup>` and set up your system
+#. :ref:`Create a new branch in Git <pullrequest-steps>`
 
-#. :ref:`Fork CPython <fork-cpython>` (using the Fork button in the
-   upper-right on GitHub)
-
-#. :ref:`Clone your GitHub fork and add an "upstream" remote <clone-your-fork>`
-
-#. :ref:`Build Python <compiling>` on your system
-
-#. :ref:`Run tests <runtests>` after you have built Python
-
-#. :ref:`Create a Branch in Git <pullrequest-steps>` where you can work on
-   changes
+#. Work on changes (e.g. fix a bug or add a new feature)
 
 #. :ref:`Run tests <runtests>` again
 
@@ -132,9 +121,12 @@ Here is a quick overview of how you can contribute to CPython on GitHub:
 
 #. Celebrate contributing to CPython! :)
 
+.. [*] If an issue is trivial (e.g. typo fixes), or if an issue already exists,
+       you can skip this step.
+
 .. _Clear communication: https://opensource.guide/how-to-contribute/#how-to-submit-a-contribution
 .. _Open Source: https://opensource.guide/
-.. _create an Issue: https://bugs.python.org/
+.. _create an issue: https://bugs.python.org/
 .. _CPython: https://github.com/python/cpython
 .. _use HTTPS: https://help.github.com/articles/which-remote-url-should-i-use/
 .. _Create Pull Request: https://help.github.com/articles/creating-a-pull-request/
@@ -143,40 +135,55 @@ Here is a quick overview of how you can contribute to CPython on GitHub:
 
 .. _pullrequest-steps:
 
-Quick Guide Step-by-step
-''''''''''''''''''''''''
+Step-by-step Guide
+''''''''''''''''''
 
-Set up your system (using SSH, or you can `use HTTPS`_)::
+You should have already :ref:`set up your system <setup>`,
+:ref:`got the source code <checkout>`, and :ref:`built Python <compiling>`.
 
-    git clone git@github.com:YOUR_GITHUB_ID/cpython.git
+Create a new branch in your local clone::
 
-Replace ``YOUR_GITHUB_ID`` with your GitHub account name above, then add
-main CPython repository as upstream::
+   git checkout -b <branch-name> upstream/master
 
-    git remote add upstream git://github.com/python/cpython.git
+Make changes to the code, and use ``git status`` and ``git diff`` to see them.
 
-Work on new features or fixes::
+Make sure the changes you made don't cause any test failure::
 
-    git checkout -b MY_BRANCH_NAME upstream/master
+   ./python -m test
 
-As you work, commit changes::
+Once you are satisfied with the changes, add the files and commit them::
 
-    git commit
+   git add <filenames>
+   git commit -m '<message>'
 
-Then fetch upstream to see if anything conflicts with your changes::
+Then push your work to your GitHub fork::
 
-    git fetch upstream
+   git push origin <branch-name>
 
-Then push your work to your clone on GitHub::
+If someone else added new changesets and you get an error::
 
-    git push origin MY_BRANCH_NAME
+   git fetch upstream
+   git rebase upstream/master
+   git push --force origin <branch-name>
 
-Make a pull request on GitHub from your changes in ``MY_BRANCH_NAME``.
+Finally go on :samp:`https://github.com/{<your-username>}/cpython`: you will
+see a box with the branch you just pushed and a green button that allows
+you to create a pull request against the official CPython repository.
+
+When people start adding review comments, you can address them by switching
+to your branch, making more changes, committing them, and pushing them to
+automatically update your PR::
+
+   git checkout <branch-name>
+   # make changes and run tests
+   git add <filenames>
+   git commit -m '<message>'
+   git push origin <branch-name>
 
 After your PR has been accepted and merged, you can :ref:`delete the branch <deleting_branches>`::
 
-   git branch -D MY_BRANCH_NAME  # delete local branch
-   git push origin -d MY_BRANCH_NAME  # delete remote branch
+   git branch -D <branch-name>  # delete local branch
+   git push origin -d <branch-name>  # delete remote branch
 
 .. note::
    You can still upload a patch to bugs.python.org_, but the GitHub pull request
