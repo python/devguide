@@ -34,7 +34,7 @@ You'll only need to do this once.  From your command line::
 
    $ git clone git@github.com:<username>/cpython.git
 
-It is also recommended to configure an `upstream` remote::
+It is also recommended to configure an ``upstream`` remote::
 
    $ cd cpython
    $ git remote add upstream git@github.com:python/cpython.git
