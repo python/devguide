@@ -50,13 +50,13 @@ Getting the Source Code
 
 In order to get a copy of the source code you should :ref:`fork the
 Python repository on GitHub <fork-cpython>`, :ref:`create a local
-clone of your private fork, and configure the remotes <clone-your-fork>`.
+clone of your personal fork, and configure the remotes <clone-your-fork>`.
 
 You will only need to execute these steps once:
 
 1. Go to https://github.com/python/cpython.
 
-2. Press ``Fork`` on the top right.
+2. Press :guilabel:`Fork` on the top right.
 
 3. When asked where to fork the repository, choose to fork it to your username.
 
