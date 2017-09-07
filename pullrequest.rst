@@ -82,6 +82,8 @@ Once you are satisfied with the changes, add the files and commit them::
    git add <filenames>
    git commit -m '<message>'
 
+(Learn more about :ref:`good-commits`)
+
 Then push your work to your GitHub fork::
 
    git push origin <branch-name>
@@ -189,6 +191,33 @@ The automated patch check doesn't actually *answer* all of these
 questions. Aside from the whitespace checks, the tool is
 a memory aid for the various elements that can go into
 making a complete patch.
+
+
+.. _good-commits:
+
+Making Good Commits
+-------------------
+
+Each feature or bugfix should be addressed by a single pull request,
+and for each pull request there may be several commits.  In particular:
+
+* Do **not** fix more than one issue in the same commit (except,
+  of course, if one code change fixes all of them).
+* Do **not** do cosmetic changes to unrelated code in the same
+  commit as some feature/bugfix.
+
+Commit messages should follow the following structure::
+
+   bpo-42: the spam module is now more spammy.
+
+   The spam module sporadically came up short on spam. This change
+   raises the amount of spam in the module by making it more spammy.
+
+The first line or sentence is meant to be a dense, to-the-point explanation
+of what the purpose of the commit is.  If this is not enough detail for a
+commit, a new paragraph(s) can be added to explain in proper depth what has
+happened (detail should be good enough that a core developer reading the
+commit message understands the justification for the change).
 
 
 .. _cla:

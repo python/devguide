@@ -60,23 +60,6 @@ Patch checklist
 You should also :ref:`run patchcheck <patchcheck>` to perform a quick
 sanity check on the changes.
 
-Commit Style
-------------
-
-.. move this to pullrequest
-
-Once a change patch is ready and tested, it can be committed to the repository.
-We usually prefer to put a whole feature or bugfix into a single commit, but no
-more.  In particular:
-
-* Do **not** fix more than one issue in the same commit (except, of course, if
-  one code change fixes all of them).
-* Do **not** do cosmetic changes to unrelated code in the same commit as some
-  feature/bugfix.
-
-It is of course okay to pile up several commits to one branch and merge them
-into another in one commit.
-
 
 Handling Others' Code
 ---------------------
@@ -207,37 +190,6 @@ the issue number as it's part of the file name itself. Example news entry::
 (In other ``.rst`` files the single backticks should not be used.  They are
 allowed here because news entries are meant to be as readable as possible
 unprocessed.)
-
-
-Commit Messages
----------------
-
-.. move to pullrequest
-
-Every commit has a commit message to document why a change was made and to
-communicate that reason to other core developers. Python core developers have
-developed a standard way of formatting commit messages that everyone is
-expected to follow.
-
-Our usual convention mimics that used in news entries (it is actually common to
-start by pasting the news entry into the commit message). The only key
-difference when compared to a news entry is the inclusion of the issue number
-as the beginning of the commit message. Here is an example::
-
-   bpo-42: the spam module is now more spammy.
-
-   The spam module sporadically came up short on spam. This change
-   raises the amount of spam in the module by making it more spammy.
-
-   Thanks to Monty Python for the patch.
-
-The first line or sentence is meant to be a dense, to-the-point explanation
-of what the purpose of the commit is.  If this is not enough detail for a commit,
-a new paragraph(s) can be added to explain in proper depth what has happened
-(detail should be good enough that a core developer reading the commit message
-understands the justification for the change).  Also, if a non-core developer
-contributed to the resolution, it is good practice to credit them.
-
 
 
 Working with Git_
