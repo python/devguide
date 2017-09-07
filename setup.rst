@@ -316,7 +316,7 @@ still build properly).
 Windows
 '''''''
 
-**Python 3.5** and later can use Microsoft Visual Studio 2017.  You can download
+**Python 3.6** and later can use Microsoft Visual Studio 2017.  You can download
 and use any of the free or paid versions of `Visual Studio 2017`_.
 
 When installing Visual Studio 2017, select the **Python workload** and the
@@ -332,8 +332,8 @@ are downloaded::
 After this build succeeds, you can open the ``PCBuild\pcbuild.sln`` solution in
 Visual Studio to continue development.
 
-See the readme_ for more details on what other software is necessary and how to
-build.
+See the `readme`_ for more details on what other software is necessary and how
+to build.
 
 .. note:: **Python 2.7** uses Microsoft Visual Studio 2008, which is most easily
    obtained through an MSDN subscription.  To use the build files in the
