@@ -50,21 +50,6 @@ Fifth, proper :ref:`documentation <documenting>`
 additions/changes should be included.
 
 
-.. _patch-generation:
-
-Generation
-''''''''''
-
-To perform a quick sanity check on your changes, you can run::
-
-   make patchcheck
-
-This will check and/or fix various common things people forget to do for
-pull requests, such as adding any new files needed for the pull request to work
-(note that not all checks apply to non-core developers).  On Windows, use this
-command (after any successful build of Python)::
-
-   python.bat Tools/scripts/patchcheck.py
 
 .. _pullrequest-quickguide:
 
@@ -82,7 +67,7 @@ Here is a quick overview of how you can contribute to CPython:
 
 #. Work on changes (e.g. fix a bug or add a new feature)
 
-#. :ref:`Run tests <runtests>` again
+#. :ref:`Run tests <runtests>` and ``make patchcheck``
 
 #. :ref:`Commit <commit-changes>` and :ref:`push <push-changes>`
    changes to your GitHub fork
@@ -121,9 +106,12 @@ Create a new branch in your local clone::
 
 Make changes to the code, and use ``git status`` and ``git diff`` to see them.
 
-Make sure the changes you made don't cause any test failure::
+Make sure the changes are fine and don't cause any test failure::
 
+   make patchcheck
    ./python -m test
+
+(Learn more about :ref:`patchcheck` and about :doc:`runtests`)
 
 Once you are satisfied with the changes, add the files and commit them::
 
@@ -162,6 +150,42 @@ After your PR has been accepted and merged, you can :ref:`delete the branch <del
 .. note::
    You can still upload a patch to bugs.python.org_, but the GitHub pull request
    workflow is **strongly** preferred.
+
+
+.. _patchcheck:
+
+``patchcheck``
+''''''''''''''
+
+``patchcheck`` is a simple automated patch checklist that guides a developer
+through the common patch generation checks. To run ``patchcheck``:
+
+   On *UNIX* (including Mac OS X)::
+
+      make patchcheck
+
+   On *Windows* (after any successful build)::
+
+      python.bat Tools/scripts/patchcheck.py
+
+The automated patch checklist runs through:
+
+* Are there any whitespace problems in Python files?
+  (using ``Tools/scripts/reindent.py``)
+* Are there any whitespace problems in C files?
+* Are there any whitespace problems in the documentation?
+  (using ``Tools/scripts/reindent-rst.py``)
+* Has the documentation been updated?
+* Has the test suite been updated?
+* Has an entry under ``Misc/NEWS.d/next`` been added?
+* Has ``Misc/ACKS`` been updated?
+* Has ``configure`` been regenerated, if necessary?
+* Has ``pyconfig.h.in`` been regenerated, if necessary?
+
+The automated patch check doesn't actually *answer* all of these
+questions. Aside from the whitespace checks, the tool is
+a memory aid for the various elements that can go into
+making a complete patch.
 
 
 .. _cla:

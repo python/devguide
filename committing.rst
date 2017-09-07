@@ -57,37 +57,8 @@ passes before merging any code changes.
 Patch checklist
 '''''''''''''''
 
-Along with running the tests, a simple automated patch checklist, ``patchcheck``,
-guides a developer through the common patch generation checks. To run
-``patchcheck``:
-
-   On *UNIX* (including Mac OS X)::
-
-      make patchcheck
-
-   On *Windows* (after any successful build)::
-
-      python.bat Tools/scripts/patchcheck.py
-
-The automated patch checklist runs through:
-
-* Are there any whitespace problems in Python files?
-  (using ``Tools/scripts/reindent.py``)
-* Are there any whitespace problems in C files?
-* Are there any whitespace problems in the documentation?
-  (using ``Tools/scripts/reindent-rst.py``)
-* Has the documentation been updated?
-* Has the test suite been updated?
-* Has an entry under ``Misc/NEWS.d/next`` been added?
-* Has ``Misc/ACKS`` been updated?
-* Has ``configure`` been regenerated, if necessary?
-* Has ``pyconfig.h.in`` been regenerated, if necessary?
-
-The automated patch check doesn't actually *answer* all of these
-questions. Aside from the whitespace checks, the tool is
-a memory aid for the various elements that can go into
-making a complete patch.
-
+You should also :ref:`run patchcheck <patchcheck>` to perform a quick
+sanity check on the changes.
 
 Commit Style
 ------------
