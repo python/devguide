@@ -18,27 +18,6 @@ sense for you personally when it comes to general Git and GitHub
 details.
 
 
-Tool Setup
-''''''''''
-
-.. _workflow:
-
-If you have not already done so, you will want to fork the
-`CPython repository`_. You can read GitHub's documentation on how to
-`fork a repository <https://help.github.com/articles/fork-a-repo/>`_
-if you are not already familiar with how to do this. This will make
-sure that you have a clone of your fork of CPython on your computer
-and the appropriate remote repositories.
-
-You will then want to create a branch to contain your work. GitHub has
-instructions on how to
-`create a branch <https://help.github.com/articles/creating-and-deleting-branches-within-your-repository/>`_
-within your fork through their website.
-
-
-.. _CPython repository: https://github.com/python/cpython
-
-
 Preparation
 '''''''''''
 
