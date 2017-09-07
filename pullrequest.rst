@@ -16,7 +16,9 @@ the official CPython repository (``upstream``).
 .. _pullrequest-quickguide:
 
 Quick Guide
-'''''''''''
+-----------
+
+.. XXX fix headers
 
 `Clear communication`_ is key to contributing to any project, especially an
 `Open Source`_ project like CPython.
@@ -57,7 +59,7 @@ Here is a quick overview of how you can contribute to CPython:
 .. _pullrequest-steps:
 
 Step-by-step Guide
-''''''''''''''''''
+------------------
 
 You should have already :ref:`set up your system <setup>`,
 :ref:`got the source code <checkout>`, and :ref:`built Python <compiling>`.
@@ -119,7 +121,7 @@ After your PR has been accepted and merged, you can :ref:`delete the branch <del
 .. _good-prs:
 
 Making good PRs
-'''''''''''''''
+---------------
 
 When creating a pull request for submission, there are several things that you
 should do to help ensure that your pull request is accepted.
@@ -158,7 +160,7 @@ additions/changes should be included.
 .. _patchcheck:
 
 ``patchcheck``
-''''''''''''''
+--------------
 
 ``patchcheck`` is a simple automated patch checklist that guides a developer
 through the common patch generation checks. To run ``patchcheck``:
