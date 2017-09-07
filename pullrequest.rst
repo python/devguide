@@ -4,18 +4,13 @@ Lifecycle of a Pull Request
 ===========================
 
 
-Creating
---------
+Introduction
+------------
 
 CPython uses a workflow based on pull requests. What this means is
 that you create a branch in Git, make your changes, push those changes
-to GitHub, and then create a pull request.
-`GitHub's help pages <https://help.github.com/>`_ are good and there
-are tons of pages out there for help with Git.  As such, this
-document does not go into any great detail as the assumption is there
-is a resource out there which will explain things in a way that makes
-sense for you personally when it comes to general Git and GitHub
-details.
+to your fork on GitHub (``origin``), and then create a pull request against
+the official CPython repository (``upstream``).
 
 
 Preparation
