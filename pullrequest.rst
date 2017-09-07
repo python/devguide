@@ -18,8 +18,6 @@ the official CPython repository (``upstream``).
 Quick Guide
 -----------
 
-.. XXX fix headers
-
 `Clear communication`_ is key to contributing to any project, especially an
 `Open Source`_ project like CPython.
 
