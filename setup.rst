@@ -316,18 +316,32 @@ still build properly).
 Windows
 '''''''
 
-**Python 3.5** and later use Microsoft Visual Studio 2015.  You can download
-and use any of the free or paid versions of `Visual Studio 2015`_. Installing
-the latest updates is also recommended.  See the readme_ for
-more details on what other software is necessary and how to build.
+**Python 3.5** and later can use Microsoft Visual Studio 2017.  You can download
+and use any of the free or paid versions of `Visual Studio 2017`_.
 
-**Python 2.7** uses Microsoft Visual Studio 2008, which is most easily obtained
-through an MSDN subscription.  To use the build files in the `PCbuild
-directory`_ you will also need Visual Studio 2010, see the `2.7 readme`_ for
-more details.  If you have VS 2008 but not 2010 you can use the build files in
-the `PC/VS9.0 directory`_, see the `VS9 readme`_ for details.
+When installing Visual Studio 2017, select the **Python workload** and the
+optional **Python native development** component to obtain all of the necessary
+build tools. If you do not already have git installed, you can find git for
+Windows on the **Individual components** tab of the installer.
 
-.. _Visual Studio 2015: https://www.visualstudio.com/
+Your first build should use the command line to ensure any external dependencies
+are downloaded::
+
+    PCBuild\build.bat
+
+After this build succeeds, you can open the ``PCBuild\pcbuild.sln`` solution in
+Visual Studio to continue development.
+
+See the readme_ for more details on what other software is necessary and how to
+build.
+
+.. note:: **Python 2.7** uses Microsoft Visual Studio 2008, which is most easily
+   obtained through an MSDN subscription.  To use the build files in the
+   `PCbuild directory`_ you will also need Visual Studio 2010, see the `2.7
+   readme`_ for more details.  If you have VS 2008 but not 2010 you can use the
+   build files in the `PC/VS9.0 directory`_, see the `VS9 readme`_ for details.
+
+.. _Visual Studio 2017: https://www.visualstudio.com/
 .. _readme: https://github.com/python/cpython/blob/master/PCbuild/readme.txt
 .. _PCbuild directory: https://github.com/python/cpython/tree/2.7/PCbuild/
 .. _2.7 readme: https://github.com/python/cpython/blob/2.7/PCbuild/readme.txt
