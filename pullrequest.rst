@@ -38,7 +38,8 @@ Here is a quick overview of how you can contribute to CPython:
 
 #. Review and address `comments on your Pull Request`_
 
-#. When your changes are merged, you can :ref:`delete the PR branch <deleting_branches>`
+#. When your changes are merged, you can :ref:`delete the PR branch
+   <deleting_branches>`
 
 #. Celebrate contributing to CPython! :)
 
@@ -68,7 +69,7 @@ Create a new branch in your local clone::
 
 Make changes to the code, and use ``git status`` and ``git diff`` to see them.
 
-(Learn more about :ref:`making good PRs <good-prs>`)
+(Learn more about :ref:`good-prs`)
 
 Make sure the changes are fine and don't cause any test failure::
 
@@ -108,7 +109,8 @@ automatically update your PR::
    git commit -m '<message>'
    git push origin <branch-name>
 
-After your PR has been accepted and merged, you can :ref:`delete the branch <deleting_branches>`::
+After your PR has been accepted and merged, you can :ref:`delete the branch
+<deleting_branches>`::
 
    git branch -D <branch-name>  # delete local branch
    git push origin -d <branch-name>  # delete remote branch
@@ -120,7 +122,7 @@ After your PR has been accepted and merged, you can :ref:`delete the branch <del
 
 .. _good-prs:
 
-Making good PRs
+Making Good PRs
 ---------------
 
 When creating a pull request for submission, there are several things that you
