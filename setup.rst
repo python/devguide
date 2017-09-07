@@ -34,36 +34,27 @@ installation directions. You may also want to consider a graphical client
 such as `TortoiseGit <https://tortoisegit.org/>`_ or
 `GitHub Desktop <https://desktop.github.com/>`_.
 
-You may also wish to
-`set up an SSH key <https://help.github.com/articles/adding-a-new-ssh-key-to-your-github-account/>`_
+You may also wish to set up :ref:`your name and email <set-up-name-email>`
+and `an SSH key
+<https://help.github.com/articles/adding-a-new-ssh-key-to-your-github-account/>`_
 as this will allow you to interact with GitHub without typing a username
 and password each time you execute a command, such as ``git pull``,
-``git push``, or ``git fetch``.
-
+``git push``, or ``git fetch``.  On Windows, you should also
+:ref:`enable autocrlf <autocrlf>`.
 
 .. _checkout:
 
 Getting the Source Code
 -----------------------
 
-One should always work from a working copy of the CPython source code.
-While it may
-be tempting to work from the copy of Python you already have installed on your
-machine, it is very likely that you will be working from out-of-date code as
-the Python core developers are constantly updating and fixing things in their
-:abbr:`VCS (version control system)`. It also means you will have better tool
-support through the VCS as it will provide a diff tool, etc.
-
-To get a working copy of the :ref:`in-development <indevbranch>` branch of
-CPython, run::
-
-    git clone https://github.com/python/cpython
+In order to get a copy of the source code you should first :ref:`fork the
+Python repository on GitHub <fork-cpython>` and then :ref:`create a local
+clone of your private fork and configure the remotes <clone-your-fork>`.
 
 If you want a working copy of an already-released version of Python,
 i.e., a version in :ref:`maintenance mode <maintbranch>`, you can checkout
-a release branch. For instance, to checkout a working copy of Python 3.5, do::
-
-   git checkout 3.5
+a release branch. For instance, to checkout a working copy of Python 3.5,
+do ``git checkout 3.5``.
 
 You will need to re-compile CPython when you do such an update.
 

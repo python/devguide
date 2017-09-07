@@ -268,23 +268,6 @@ understands the justification for the change).  Also, if a non-core developer
 contributed to the resolution, it is good practice to credit them.
 
 
-Reverting a Commit
-------------------
-
-To revert a merged pull request, press the ``Revert`` button at the bottom of
-the pull request.  It will bring up the page to create a new pull request where
-the commit can be reverted.  It also creates a new branch on the main CPython
-repository.  Delete the branch once the pull request has been merged.
-
-Always include the reason for reverting the commit to help others understand
-why it was done.  The reason should be included as part of the commit message,
-for example::
-
-   Revert bpo-NNNN: Fix Spam Module (GH-111)
-
-   Reverts python/cpython#111.
-   Reason: This commit broke the buildbot.
-
 
 Working with Git_
 =================
@@ -311,107 +294,6 @@ into a state you aren't happy with.
 
 
 .. _Git: https://git-scm.com/
-
-
-Minimal Configuration
----------------------
-
-If you use Git as a committer of patches (your own or others), you should
-set up some basic options.  Here are the minimal options you need to activate:
-
-* Your *name* and *email*: these settings defines what will be used when you
-  commit changes::
-
-   git config --global user.name "Your Name"
-   git config --global user.email email@example.org
-
-``--global`` flag sets configuration options at a global level, if instead you
-want to set it at a project level use ``--local``, instead.
-
-* *Under Windows*, you should also enable the *autocrlf* option, which will
-  fix any Windows-specific line endings your text editor might insert when you
-  create or modify versioned files.  The public repository has a hook which
-  will reject all changesets having the wrong line endings, so enabling this
-  extension on your local computer is in your best interest.
-  ::
-
-     git config --global core.autocrlf input
-
-
-Remotes Setup
--------------
-
-
-.. _remote-configuration:
-
-Configuration
-'''''''''''''
-
-There are several possible ways how to set up your git repository. This section
-discusses the simplest approach of having a single directory with two remotes,
-one pointing to private fork, the other one being the official repository.
-
-Assuming you have :ref:`cloned the official repository <checkout>` here is how
-your current setup should look like::
-
-   $ git remote -v    # show remotes
-   origin  https://github.com/python/cpython (fetch)
-   origin  https://github.com/python/cpython (push)
-
-You can have multiple remotes defined for a single repository, the usual approach
-is to have ``origin`` pointing to your :ref:`private fork <forking>`, and ``upstream``
-pointing to the official repository. To do so, here are the steps needed to have
-that setup::
-
-   git remote set-url origin https://github.com/<your-username>/cpython
-   git remote add upstream https://github.com/python/cpython
-
-After that, your remotes configuration should look like this::
-
-   $ git remote -v    # show remotes
-   origin  https://github.com/<your-username>/cpython (fetch)
-   origin  https://github.com/<your-username>/cpython (push)
-   upstream  https://github.com/python/cpython (fetch)
-   upstream  https://github.com/python/cpython (push)
-
-At any point in time you can use SSH-based URL instead of HTTPS-based ones.
-
-
-.. _committing-push-changes:
-
-Pushing changes
-'''''''''''''''
-
-You have two remotes configured (see previous section for setup). Publishing
-your changes to any of them is as simple as specifying the name of the remote
-upon your push. Assuming I am working on a local branch ``bug1234`` and I want to
-push it to my private fork I do::
-
-   git push origin bug1234
-
-Option ``-u|--set-upstream`` creates a remote-tracking branch that tracks what
-have been pushed to ``origin``::
-
-   git push -u origin bug1234
-
-That allows to avoid rebasing beyond already pushed commits.
-``git status --branch`` and ``git branch --verbose`` remind that the branch(es)
-have not pushed commits.
-
-
-Synchronizing remotes
-'''''''''''''''''''''
-
-To synchronize your fork, from the official repository you need to execute following
-commands::
-
-   git fetch upstream         # fetch remote changes
-   git checkout master        # checkout your current master branch
-   git merge upstream/master  # merge remote changes into your local master branch
-   git push origin master     # publish changes to your private fork
-
-The above steps can be executed against any branch you wish to, just replace master
-with an appropriate branch name.
 
 
 .. _committing-active-branches:
@@ -454,34 +336,19 @@ Developers can apply labels to GitHub pull requests).
 .. _cherry_picker.py: https://github.com/python/core-workflow/tree/master/cherry_picker
 
 
-.. _forking:
+Reverting a Merged Pull Request
+-------------------------------
 
-Forking repository
-------------------
+To revert a merged pull request, press the ``Revert`` button at the bottom of
+the pull request.  It will bring up the page to create a new pull request where
+the commit can be reverted.  It also creates a new branch on the main CPython
+repository.  Delete the branch once the pull request has been merged.
 
-Forking a repository on GitHub is as simple as clicking Fork button in the right
-upper corner at https://github.com/python/cpython.
+Always include the reason for reverting the commit to help others understand
+why it was done.  The reason should be included as part of the commit message,
+for example::
 
+   Revert bpo-NNNN: Fix Spam Module (GH-111)
 
-Maintaining a repository
-------------------------
-
-The Git object database and other files/directories under ``.git`` require
-periodic maintenance and cleanup. For example, commit editing leaves
-unreferenced objects (dangling objects, in git terminology) and these
-objects should be pruned to avoid collecting cruft in the DB. The
-command ``git gc`` is used for maintenance. Git automatically runs
-``git gc --auto`` as a part of some commands to do quick maintenance.
-Users are recommended to run ``git gc --aggressive`` from time to
-time; ``git help gc`` recommends to run it  every few hundred
-changesets; for CPython it should be something like once a week
-(GitHub itself runs the command weekly, so new checkouts do not need to
-perform this step).
-
-``git gc --aggressive`` not only removes dangling objects, it also
-repacks object database into indexed and better optimized pack(s); it
-also packs symbolic references (branches and tags).
-
-From time to time run ``git fsck --strict`` to verify integrity of
-the database. ``git fsck`` may produce a list of dangling objects;
-that's not an error, just a reminder to perform regular maintenance.
+   Reverts python/cpython#111.
+   Reason: This commit broke the buildbot.
