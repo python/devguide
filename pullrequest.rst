@@ -13,44 +13,6 @@ to your fork on GitHub (``origin``), and then create a pull request against
 the official CPython repository (``upstream``).
 
 
-Preparation
-'''''''''''
-
-When creating a pull request for submission, there are several things that you
-should do to help ensure that your pull request is accepted.
-
-First, make sure to follow Python's style guidelines. For Python code you
-should follow :PEP:`8`, and for C code you should follow :PEP:`7`. If you have
-one or two discrepancies those can be fixed by the core developer who merges
-your pull request. But if you have systematic deviations from the style guides
-your pull request will be put on hold until you fix the formatting issues.
-
-Second, be aware of backwards-compatibility considerations. While the core
-developer who eventually handles your pull request will make the final call on
-whether something is acceptable, thinking about backwards-compatibility early
-will help prevent having your pull request rejected on these grounds. Put
-yourself in the shoes of someone whose code will be broken by the change(s)
-introduced by the pull request. It is quite likely that any change made will
-break someone's code, so you need to have a good reason to make a change as
-you will be forcing someone to update their code. (This obviously does not
-apply to new classes or functions; new arguments should be optional and have
-default values which maintain the existing behavior.) If in doubt, have a look
-at :PEP:`387` or :ref:`discuss <communication>` the issue with experienced
-developers.
-
-Third, make sure you have proper tests to verify your pull request works as
-expected. Pull requests will not be accepted without the proper tests!
-
-Fourth, make sure the entire test suite :ref:`runs <runtests>` **without
-failure** because of your changes.  It is not sufficient to only run whichever
-test seems impacted by your changes, because there might be interferences
-unknown to you between your changes and some other part of the interpreter.
-
-Fifth, proper :ref:`documentation <documenting>`
-additions/changes should be included.
-
-
-
 .. _pullrequest-quickguide:
 
 Quick Guide
@@ -106,6 +68,8 @@ Create a new branch in your local clone::
 
 Make changes to the code, and use ``git status`` and ``git diff`` to see them.
 
+(Learn more about :ref:`making good PRs <good-prs>`)
+
 Make sure the changes are fine and don't cause any test failure::
 
    make patchcheck
@@ -150,6 +114,45 @@ After your PR has been accepted and merged, you can :ref:`delete the branch <del
 .. note::
    You can still upload a patch to bugs.python.org_, but the GitHub pull request
    workflow is **strongly** preferred.
+
+
+.. _good-prs:
+
+Making good PRs
+'''''''''''''''
+
+When creating a pull request for submission, there are several things that you
+should do to help ensure that your pull request is accepted.
+
+First, make sure to follow Python's style guidelines. For Python code you
+should follow :PEP:`8`, and for C code you should follow :PEP:`7`. If you have
+one or two discrepancies those can be fixed by the core developer who merges
+your pull request. But if you have systematic deviations from the style guides
+your pull request will be put on hold until you fix the formatting issues.
+
+Second, be aware of backwards-compatibility considerations. While the core
+developer who eventually handles your pull request will make the final call on
+whether something is acceptable, thinking about backwards-compatibility early
+will help prevent having your pull request rejected on these grounds. Put
+yourself in the shoes of someone whose code will be broken by the change(s)
+introduced by the pull request. It is quite likely that any change made will
+break someone's code, so you need to have a good reason to make a change as
+you will be forcing someone to update their code. (This obviously does not
+apply to new classes or functions; new arguments should be optional and have
+default values which maintain the existing behavior.) If in doubt, have a look
+at :PEP:`387` or :ref:`discuss <communication>` the issue with experienced
+developers.
+
+Third, make sure you have proper tests to verify your pull request works as
+expected. Pull requests will not be accepted without the proper tests!
+
+Fourth, make sure the entire test suite :ref:`runs <runtests>` **without
+failure** because of your changes.  It is not sufficient to only run whichever
+test seems impacted by your changes, because there might be interferences
+unknown to you between your changes and some other part of the interpreter.
+
+Fifth, proper :ref:`documentation <documenting>`
+additions/changes should be included.
 
 
 .. _patchcheck:
