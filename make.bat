@@ -4,6 +4,8 @@ REM Command file for Sphinx documentation
 
 setlocal
 
+pushd %~dp0
+
 if "%PYTHON%" == "" (
 	set PYTHON=py -3
 )
@@ -198,4 +200,5 @@ cmd /C %PYTHON% tools\serve.py %BUILDDIR%\html
 goto end
 
 :end
+popd
 endlocal
