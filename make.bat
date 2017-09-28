@@ -2,12 +2,12 @@
 
 REM Command file for Sphinx documentation
 
+setlocal
+
 if "%PYTHON%" == "" (
 	set PYTHON=py -3
 )
-if "%SPHINXBUILD%" == "" (
-	set SPHINXBUILD=sphinx-build
-)
+
 set BUILDDIR=_build
 set ALLSPHINXOPTS=-d %BUILDDIR%/doctrees %SPHINXOPTS% .
 if NOT "%PAPER%" == "" (
@@ -18,7 +18,7 @@ if "%1" == "" goto help
 if "%1" == "check" goto check
 if "%1" == "serve" goto serve
 
-if "%1" == "help" (
+if NOT "%1" == "help" goto help0
 	:help
 	echo.Please use `make ^<target^>` where ^<target^> is one of
 	echo.  html       to make standalone HTML files
@@ -39,12 +39,25 @@ if "%1" == "help" (
 	echo.  check
 	echo.  serve      to serve devguide on the localhost (8000)
 	goto end
-)
+:help0
 
 if "%1" == "clean" (
 	for /d %%i in (%BUILDDIR%\*) do rmdir /q /s %%i
 	del /q /s %BUILDDIR%\*
 	goto end
+)
+
+rem If we get this far, we're going to use the SPHINXBUILD command
+if not defined SPHINXBUILD (
+	rem If it is not defined, we build in a virtual environment
+	if not exist venv (
+		echo.    Setting up the virtual environment
+		%PYTHON% -m venv venv
+		echo.    Installing requirements
+		venv\Scripts\python -m pip install -r requirements.txt
+	)
+	set PYTHON=venv\Scripts\python
+	set SPHINXBUILD=venv\Scripts\sphinx-build
 )
 
 if "%1" == "html" (
@@ -183,3 +196,4 @@ cmd /C %PYTHON% tools\serve.py %BUILDDIR%\html
 goto end
 
 :end
+endlocal

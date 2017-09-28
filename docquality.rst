@@ -86,12 +86,31 @@ To build the devguide, some additional dependencies are required (most
 importantly, `Sphinx`_), and the standard way to install dependencies in
 Python projects is to create a virtualenv, and then install dependencies from
 a ``requirements.txt`` file. For your convenience, this is all *automated for
-you* and all you have to do to build the devguide is run::
+you*.
+
+On a Unix-like system all you have to do to build the devguide is run::
 
     $ make html
 
 in the checkout directory, which will write the files to the ``_build/html``
-directory.  Note that ``make check`` is automatically run when
+directory.
+
+On Windows the command is:
+
+..  code-block:: doscon
+
+    > .\make html
+
+in the checkout directory, and again this will write the files to the
+``_build\html`` directory.
+If you are running PowerShell, you may have to enable unsigned local scripts to
+run, with the command (used once only):
+
+..  code-block:: ps1con
+
+    PS> Set-ExecutionPolicy -Scope CurrentUser RemoteSigned
+
+Note that ``make check`` is automatically run when
 you submit a :doc:`pull request <pullrequest>`, so you should make
 sure that it runs without errors.
 
