@@ -4,43 +4,126 @@ Lifecycle of a Pull Request
 ===========================
 
 
-Creating
---------
+Introduction
+------------
 
 CPython uses a workflow based on pull requests. What this means is
 that you create a branch in Git, make your changes, push those changes
-to GitHub, and then create a pull request.
-`GitHub's help pages <https://help.github.com/>`_ are good and there
-are tons of pages out there for help with Git.  As such, this
-document does not go into any great detail as the assumption is there
-is a resource out there which will explain things in a way that makes
-sense for you personally when it comes to general Git and GitHub
-details.
+to your fork on GitHub (``origin``), and then create a pull request against
+the official CPython repository (``upstream``).
 
 
-Tool Setup
-''''''''''
+.. _pullrequest-quickguide:
 
-.. _workflow:
+Quick Guide
+-----------
 
-If you have not already done so, you will want to fork the
-`CPython repository`_. You can read GitHub's documentation on how to
-`fork a repository <https://help.github.com/articles/fork-a-repo/>`_
-if you are not already familiar with how to do this. This will make
-sure that you have a clone of your fork of CPython on your computer
-and the appropriate remote repositories.
+`Clear communication`_ is key to contributing to any project, especially an
+`Open Source`_ project like CPython.
 
-You will then want to create a branch to contain your work. GitHub has
-instructions on how to
-`create a branch <https://help.github.com/articles/creating-and-deleting-branches-within-your-repository/>`_
-within your fork through their website.
+Here is a quick overview of how you can contribute to CPython:
+
+#. `Create an issue`_ that describes your change [*]_
+
+#. :ref:`Create a new branch in Git <pullrequest-steps>`
+
+#. Work on changes (e.g. fix a bug or add a new feature)
+
+#. :ref:`Run tests <runtests>` and ``make patchcheck``
+
+#. :ref:`Commit <commit-changes>` and :ref:`push <push-changes>`
+   changes to your GitHub fork
+
+#. `Create Pull Request`_ on GitHub to merge a branch from your fork
+
+#. Review and address `comments on your Pull Request`_
+
+#. When your changes are merged, you can :ref:`delete the PR branch
+   <deleting_branches>`
+
+#. Celebrate contributing to CPython! :)
+
+.. [*] If an issue is trivial (e.g. typo fixes), or if an issue already exists,
+       you can skip this step.
+
+.. _Clear communication: https://opensource.guide/how-to-contribute/#how-to-submit-a-contribution
+.. _Open Source: https://opensource.guide/
+.. _create an issue: https://bugs.python.org/
+.. _CPython: https://github.com/python/cpython
+.. _use HTTPS: https://help.github.com/articles/which-remote-url-should-i-use/
+.. _Create Pull Request: https://help.github.com/articles/creating-a-pull-request/
+.. _comments on your Pull Request: https://help.github.com/articles/commenting-on-a-pull-request/
 
 
-.. _CPython repository: https://github.com/python/cpython
+.. _pullrequest-steps:
+
+Step-by-step Guide
+------------------
+
+You should have already :ref:`set up your system <setup>`,
+:ref:`got the source code <checkout>`, and :ref:`built Python <compiling>`.
+
+* Create a new branch in your local clone::
+
+     git checkout -b <branch-name> upstream/master
+
+* Make changes to the code, and use ``git status`` and ``git diff`` to see them.
+
+  (Learn more about :ref:`good-prs`)
+
+* Make sure the changes are fine and don't cause any test failure::
+
+     make patchcheck
+     ./python -m test
+
+  (Learn more about :ref:`patchcheck` and about :doc:`runtests`)
+
+* Once you are satisfied with the changes, add the files and commit them::
+
+     git add <filenames>
+     git commit -m '<message>'
+
+  (Learn more about :ref:`good-commits`)
+
+* Then push your work to your GitHub fork::
+
+     git push origin <branch-name>
+
+* If someone else added new changesets and you get an error::
+
+     git fetch upstream
+     git rebase upstream/master
+     git push --force origin <branch-name>
+
+* Finally go on :samp:`https://github.com/{<your-username>}/cpython`: you will
+  see a box with the branch you just pushed and a green button that allows
+  you to create a pull request against the official CPython repository.
+
+* When people start adding review comments, you can address them by switching
+  to your branch, making more changes, committing them, and pushing them to
+  automatically update your PR::
+
+   git checkout <branch-name>
+   # make changes and run tests
+   git add <filenames>
+   git commit -m '<message>'
+   git push origin <branch-name>
+
+* After your PR has been accepted and merged, you can :ref:`delete the branch
+  <deleting_branches>`::
+
+     git branch -D <branch-name>  # delete local branch
+     git push origin -d <branch-name>  # delete remote branch
+
+.. note::
+   You can still upload a patch to bugs.python.org_, but the GitHub pull request
+   workflow is **strongly** preferred.
 
 
-Preparation
-'''''''''''
+.. _good-prs:
+
+Making Good PRs
+---------------
 
 When creating a pull request for submission, there are several things that you
 should do to help ensure that your pull request is accepted.
@@ -76,111 +159,67 @@ Fifth, proper :ref:`documentation <documenting>`
 additions/changes should be included.
 
 
-.. _patch-generation:
+.. _patchcheck:
 
-Generation
-''''''''''
+``patchcheck``
+--------------
 
-To perform a quick sanity check on your changes, you can run::
+``patchcheck`` is a simple automated patch checklist that guides a developer
+through the common patch generation checks. To run ``patchcheck``:
 
-   make patchcheck
+   On *UNIX* (including Mac OS X)::
 
-This will check and/or fix various common things people forget to do for
-pull requests, such as adding any new files needed for the pull request to work
-(note that not all checks apply to non-core developers).  On Windows, use this
-command (after any successful build of Python)::
+      make patchcheck
 
-   python.bat Tools/scripts/patchcheck.py
+   On *Windows* (after any successful build)::
 
-.. _pullrequest-quickguide:
+      python.bat Tools/scripts/patchcheck.py
 
-Quick Guide
-'''''''''''
+The automated patch checklist runs through:
 
-`Clear communication`_ is key to contributing to any project, especially an
-`Open Source`_ project like CPython.
+* Are there any whitespace problems in Python files?
+  (using ``Tools/scripts/reindent.py``)
+* Are there any whitespace problems in C files?
+* Are there any whitespace problems in the documentation?
+  (using ``Tools/scripts/reindent-rst.py``)
+* Has the documentation been updated?
+* Has the test suite been updated?
+* Has an entry under ``Misc/NEWS.d/next`` been added?
+* Has ``Misc/ACKS`` been updated?
+* Has ``configure`` been regenerated, if necessary?
+* Has ``pyconfig.h.in`` been regenerated, if necessary?
 
-Here is a quick overview of how you can contribute to CPython on GitHub:
-
-#. If an issue doesn't exist, `create an Issue`_ that describes your change.
-   Trivial issues (e.g. typo fixes) do not require any issue to be created.
-
-#. :ref:`Get started <setup>` and set up your system
-
-#. :ref:`Fork CPython <fork-cpython>` (using the Fork button in the
-   upper-right on GitHub)
-
-#. :ref:`Clone your GitHub fork and add an "upstream" remote <clone-your-fork>`
-
-#. :ref:`Build Python <compiling>` on your system
-
-#. :ref:`Run tests <runtests>` after you have built Python
-
-#. :ref:`Create a Branch in Git <pullrequest-steps>` where you can work on
-   changes
-
-#. :ref:`Run tests <runtests>` again
-
-#. :ref:`Commit <commit-changes>` and :ref:`push <push-changes>`
-   changes to your GitHub fork
-
-#. `Create Pull Request`_ on GitHub to merge a branch from your fork
-
-#. Review and address `comments on your Pull Request`_
-
-#. When your changes are merged, you can :ref:`delete the PR branch <deleting_branches>`
-
-#. Celebrate contributing to CPython! :)
-
-.. _Clear communication: https://opensource.guide/how-to-contribute/#how-to-submit-a-contribution
-.. _Open Source: https://opensource.guide/
-.. _create an Issue: https://bugs.python.org/
-.. _CPython: https://github.com/python/cpython
-.. _use HTTPS: https://help.github.com/articles/which-remote-url-should-i-use/
-.. _Create Pull Request: https://help.github.com/articles/creating-a-pull-request/
-.. _comments on your Pull Request: https://help.github.com/articles/commenting-on-a-pull-request/
+The automated patch check doesn't actually *answer* all of these
+questions. Aside from the whitespace checks, the tool is
+a memory aid for the various elements that can go into
+making a complete patch.
 
 
-.. _pullrequest-steps:
+.. _good-commits:
 
-Quick Guide Step-by-step
-''''''''''''''''''''''''
+Making Good Commits
+-------------------
 
-Set up your system (using SSH, or you can `use HTTPS`_)::
+Each feature or bugfix should be addressed by a single pull request,
+and for each pull request there may be several commits.  In particular:
 
-    git clone git@github.com:YOUR_GITHUB_ID/cpython.git
+* Do **not** fix more than one issue in the same commit (except,
+  of course, if one code change fixes all of them).
+* Do **not** do cosmetic changes to unrelated code in the same
+  commit as some feature/bugfix.
 
-Replace ``YOUR_GITHUB_ID`` with your GitHub account name above, then add
-main CPython repository as upstream::
+Commit messages should follow the following structure::
 
-    git remote add upstream git://github.com/python/cpython.git
+   bpo-42: the spam module is now more spammy.
 
-Work on new features or fixes::
+   The spam module sporadically came up short on spam. This change
+   raises the amount of spam in the module by making it more spammy.
 
-    git checkout -b MY_BRANCH_NAME upstream/master
-
-As you work, commit changes::
-
-    git commit
-
-Then fetch upstream to see if anything conflicts with your changes::
-
-    git fetch upstream
-
-Then push your work to your clone on GitHub::
-
-    git push origin MY_BRANCH_NAME
-
-Make a pull request on GitHub from your changes in ``MY_BRANCH_NAME``.
-
-After your PR has been accepted and merged, you can :ref:`delete the branch <deleting_branches>`::
-
-   git branch -D MY_BRANCH_NAME  # delete local branch
-   git push origin -d MY_BRANCH_NAME  # delete remote branch
-
-.. note::
-   You can still upload a patch to bugs.python.org_, but the GitHub pull request
-   workflow is **strongly** preferred.
+The first line or sentence is meant to be a dense, to-the-point explanation
+of what the purpose of the commit is.  If this is not enough detail for a
+commit, a new paragraph(s) can be added to explain in proper depth what has
+happened (detail should be good enough that a core developer reading the
+commit message understands the justification for the change).
 
 
 .. _cla:
