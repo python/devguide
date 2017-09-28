@@ -47,7 +47,9 @@ if "%1" == "clean" (
 	goto end
 )
 
-rem If we get this far, we're going to use the SPHINXBUILD command
+rem Targets other than "clean", "check", "serve", "help", or "" need the
+rem Sphinx build command, which the user may define via SPHINXBUILD.
+
 if not defined SPHINXBUILD (
 	rem If it is not defined, we build in a virtual environment
 	if not exist venv (
