@@ -240,7 +240,7 @@ to the pull request.
 
 After the pull request has been merged, it can be backported using cherry_picker.py_.
 
-The commit hash can be obtained from the original pull request, or by using `git log`
+The commit hash can be obtained from the original pull request, or by using ``git log``
 on the ``master`` branch.  To display the 10 most recent commit hashes and their first
 line of the commit message::
 
