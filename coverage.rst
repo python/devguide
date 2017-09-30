@@ -81,8 +81,8 @@ provided by the stdlib then you can :ref:`use test.regrtest
 Install Coverage
 ''''''''''''''''
 
-By default, pip will not install into the in-development version of Python you 
-just built, and this built version of Python will not see packages installed 
+By default, pip will not install into the in-development version of Python you
+just built, and this built version of Python will not see packages installed
 into your default version of Python. One option is to use a virtual environment
 to install coverage::
 
@@ -91,22 +91,22 @@ to install coverage::
     pip install coverage
 
 On :ref:`most <mac-python.exe>` Mac OS X systems, replace :file:`./python`
-with :file:`./python.exe`.  On Windows, use :file:`python.bat`.  
+with :file:`./python.exe`.  On Windows, use :file:`python.bat`.
 
-You can now use python without the ./ for the rest of these instructions, as 
+You can now use python without the ./ for the rest of these instructions, as
 long as your venv is activated. For more info on venv see `Virtual Envrionment
 <https://docs.python.org/3/tutorial/venv.html>`_ documentation.
- 
-If this does not work for you for some reason, you should try using the 
-in-development version of coverage.py to see if it has been updated as needed. 
+
+If this does not work for you for some reason, you should try using the
+in-development version of coverage.py to see if it has been updated as needed.
 To do this you should clone/check out the development version of coverage.py:
 
     hg clone https://bitbucket.org/ned/coveragepy
 
 You will need to use the full path to the installation.
 
-Another option is to use an installed copy of coverage.py, if you already have 
-it. For this, you will again need to use the full path to that installation. 
+Another option is to use an installed copy of coverage.py, if you already have
+it. For this, you will again need to use the full path to that installation.
 
 .. _coverage_usage:
 
@@ -241,7 +241,7 @@ times.
 
 Filing the Issue
 """"""""""""""""
-Once you have increased coverage, you need to create an issue on the 
+Once you have increased coverage, you need to create an issue on the
 `issue tracker`_ and submit a :doc:`pull request <pullrequest>`. On the
 issue set the "Components" to "Test" and "Versions" to the version of Python you
 worked on (i.e., the in-development version).
