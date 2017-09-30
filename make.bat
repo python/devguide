@@ -16,11 +16,11 @@ if NOT "%PAPER%" == "" (
 	set ALLSPHINXOPTS=-D latex_paper_size=%PAPER% %ALLSPHINXOPTS%
 )
 
-if "%1" == "" goto help
 if "%1" == "check" goto check
 if "%1" == "serve" goto serve
 
-if NOT "%1" == "help" goto help0
+if "%1" == "" goto help
+if "%1" == "help" (
 	:help
 	echo.Please use `make ^<target^>` where ^<target^> is one of
 	echo.  html       to make standalone HTML files
@@ -38,10 +38,10 @@ if NOT "%1" == "help" goto help0
 	echo.  changes    to make an overview over all changed/added/deprecated items
 	echo.  linkcheck  to check all external links for integrity
 	echo.  doctest    to run all doctests embedded in the documentation if enabled
-	echo.  check
-	echo.  serve      to serve devguide on the localhost (8000)
+	echo.  check      to check for stylistic and formal issues using rstlint
+	echo.  serve      to serve devguide on the localhost ^(8000^)
 	goto end
-:help0
+)
 
 if "%1" == "clean" (
 	for /d %%i in (%BUILDDIR%\*) do rmdir /q /s %%i
