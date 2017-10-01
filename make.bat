@@ -2,22 +2,24 @@
 
 REM Command file for Sphinx documentation
 
+setlocal
+
+pushd %~dp0
+
 if "%PYTHON%" == "" (
 	set PYTHON=py -3
 )
-if "%SPHINXBUILD%" == "" (
-	set SPHINXBUILD=sphinx-build
-)
+
 set BUILDDIR=_build
 set ALLSPHINXOPTS=-d %BUILDDIR%/doctrees %SPHINXOPTS% .
 if NOT "%PAPER%" == "" (
 	set ALLSPHINXOPTS=-D latex_paper_size=%PAPER% %ALLSPHINXOPTS%
 )
 
-if "%1" == "" goto help
 if "%1" == "check" goto check
 if "%1" == "serve" goto serve
 
+if "%1" == "" goto help
 if "%1" == "help" (
 	:help
 	echo.Please use `make ^<target^>` where ^<target^> is one of
@@ -36,8 +38,8 @@ if "%1" == "help" (
 	echo.  changes    to make an overview over all changed/added/deprecated items
 	echo.  linkcheck  to check all external links for integrity
 	echo.  doctest    to run all doctests embedded in the documentation if enabled
-	echo.  check
-	echo.  serve      to serve devguide on the localhost (8000)
+	echo.  check      to check for stylistic and formal issues using rstlint
+	echo.  serve      to serve devguide on the localhost ^(8000^)
 	goto end
 )
 
@@ -45,6 +47,21 @@ if "%1" == "clean" (
 	for /d %%i in (%BUILDDIR%\*) do rmdir /q /s %%i
 	del /q /s %BUILDDIR%\*
 	goto end
+)
+
+rem Targets other than "clean", "check", "serve", "help", or "" need the
+rem Sphinx build command, which the user may define via SPHINXBUILD.
+
+if not defined SPHINXBUILD (
+	rem If it is not defined, we build in a virtual environment
+	if not exist venv (
+		echo.    Setting up the virtual environment
+		%PYTHON% -m venv venv
+		echo.    Installing requirements
+		venv\Scripts\python -m pip install -r requirements.txt
+	)
+	set PYTHON=venv\Scripts\python
+	set SPHINXBUILD=venv\Scripts\sphinx-build
 )
 
 if "%1" == "html" (
@@ -183,3 +200,5 @@ cmd /C %PYTHON% tools\serve.py %BUILDDIR%\html
 goto end
 
 :end
+popd
+endlocal
