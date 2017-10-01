@@ -102,8 +102,8 @@ Status of Python branches
 | 3.4              | :pep:`429`   | security    | 2014-03-16     | *2019-03-16*   | `Most recent security release: Python 3.4.7                                |
 |                  |              |             |                |                | <https://www.python.org/downloads/release/python-347/>`_                   |
 +------------------+--------------+-------------+----------------+----------------+----------------------------------------------------------------------------+
-| 3.3              | :pep:`398`   | security    | 2012-09-29     | *2017-09-29*   | `Most recent security release: Python 3.3.6                                |
-|                  |              |             |                |                | <https://www.python.org/downloads/release/python-336/>`_                   |
+| 3.3              | :pep:`398`   | security    | 2012-09-29     | 2017-09-29     | `Final release: Python 3.3.7                                               |
+|                  |              |             |                |                | <https://www.python.org/downloads/release/python-337/>`_                   |
 +------------------+--------------+-------------+----------------+----------------+----------------------------------------------------------------------------+
 | 3.2              | :pep:`392`   | end-of-life | 2011-02-20     | 2016-02-20     | `Final release: Python 3.2.6                                               |
 |                  |              |             |                |                | <https://www.python.org/downloads/release/python-326/>`_                   |
