@@ -208,7 +208,7 @@ repositories means you have to be more careful with your workflow:
   main repository.
 
 * You should not commit directly into the ``master`` branch, or any of the
-  maintenance branches (``2.7``, ``3.5``, or ``3.6``).  You should commit against
+  maintenance branches (currently ``2.7`` or ``3.6``).  You should commit against
   your own feature branch, and create a pull request.
 
 It is recommended to keep a fork of the main repository around, as it allows simple
