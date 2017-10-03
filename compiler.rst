@@ -91,7 +91,7 @@ approach and syntax::
   {
         stmt = FunctionDef(identifier name, arguments args, stmt* body,
                             expr* decorators)
-              | Return(expr? value) | Yield(expr value)
+              | Return(expr? value) | Yield(expr? value)
               attributes (int lineno)
   }
 
