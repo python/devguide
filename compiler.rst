@@ -101,10 +101,10 @@ approach and syntax::
               attributes (int lineno)
   }
 
-The preceding example describes three different kinds of statements;
-function definitions, return statements, and yield statements.  All
-three kinds are considered of type ``stmt`` as shown by ``|`` separating the
-various kinds.  They all take arguments of various kinds and amounts.
+The preceding example describes two different kinds of statements and an
+expression: function definitions, return statements, and yield expressions.
+All three kinds are considered of type ``stmt`` as shown by ``|`` separating
+the various kinds.  They all take arguments of various kinds and amounts.
 
 Modifiers on the argument type specify the number of values needed; ``?``
 means it is optional, ``*`` means 0 or more, while no modifier means only one
