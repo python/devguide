@@ -102,21 +102,6 @@ Status of Python branches
 | 3.4              | :pep:`429`   | security    | 2014-03-16     | *2019-03-16*   | `Most recent security release: Python 3.4.7                                |
 |                  |              |             |                |                | <https://www.python.org/downloads/release/python-347/>`_                   |
 +------------------+--------------+-------------+----------------+----------------+----------------------------------------------------------------------------+
-| 3.3              | :pep:`398`   | end-of-life | 2012-09-29     | 2017-09-29     | `Final release: Python 3.3.7                                               |
-|                  |              |             |                |                | <https://www.python.org/downloads/release/python-337/>`_                   |
-+------------------+--------------+-------------+----------------+----------------+----------------------------------------------------------------------------+
-| 3.2              | :pep:`392`   | end-of-life | 2011-02-20     | 2016-02-20     | `Final release: Python 3.2.6                                               |
-|                  |              |             |                |                | <https://www.python.org/downloads/release/python-326/>`_                   |
-+------------------+--------------+-------------+----------------+----------------+----------------------------------------------------------------------------+
-| 3.1              | :pep:`375`   | end-of-life | 2009-06-27     | 2012-04-11     | `Final release: Python 3.1.5                                               |
-|                  |              |             |                |                | <https://www.python.org/downloads/release/python-315/>`_                   |
-+------------------+--------------+-------------+----------------+----------------+----------------------------------------------------------------------------+
-| 3.0              | :pep:`361`   | end-of-life | 2008-12-03     | 2009-01-13     | `Final release: Python 3.0.1                                               |
-|                  |              |             |                |                | <https://www.python.org/download/releases/3.0.1/>`_                        |
-+------------------+--------------+-------------+----------------+----------------+----------------------------------------------------------------------------+
-| 2.6              | :pep:`361`   | end-of-life | 2008-10-01     | 2013-10-29     | `Final release: Python 2.6.9                                               |
-|                  |              |             |                |                | <https://www.python.org/download/releases/2.6.9/>`_                        |
-+------------------+--------------+-------------+----------------+----------------+----------------------------------------------------------------------------+
 
 (1) The exact date of Python 2.7 end-of-life has not been decided yet. It will
 be decided by Python 2.7 release manager, Benjamin Peterson, who will update
@@ -132,8 +117,7 @@ Status:
     released.
 :security: only security fixes are accepted and no more binaries are released,
     but new source-only versions can be released
-:end-of-life: branch no longer maintained; no more changes can be pushed to
-    this branch.
+:end-of-life: release cycle is frozen; no further changes can be pushed to it.
 
 Dates in *italic* are scheduled and can be adjusted.
 
@@ -143,6 +127,37 @@ have reached end-of-life.
 
 See also :ref:`Security branches <secbranch>`.
 
+Each release of Python is tagged in the source repo with a tag of the form
+``vX.Y.ZTN``, where ``X`` is the major version, ``Y`` is the
+minor version, ``Z`` is the micro version, ``T`` is the release level
+(``a`` for alpha releases, ``b`` for beta, ``rc`` release candidate,
+and *null* for final releases), and ``N`` is the release serial number.
+Some examples of release tags: ``v3.7.0a1``, ``v3.6.3``, ``v2.7.14rc1``.
+
+The code base for a release cycle which has reached end-of-life status
+is frozen and no longer has a branch in the repo.  The final state of
+the end-of-lifed branch is recorded as a tag with the same name as the
+former branch, e.g. ``3.3`` or ``2.6``.  For reference, here are the
+most recently end-of-lifed release cycles:
+
++------------------+--------------+-------------+----------------+----------------+----------------------------------------------------------------------------+
+| Tag              | Schedule     | Status      | First release  | End-of-life    | Comment                                                                    |
++==================+==============+=============+================+================+============================================================================+
+| 3.3              | :pep:`398`   | end-of-life | 2012-09-29     | 2017-09-29     | `Final release: Python 3.3.7                                               |
+|                  |              |             |                |                | <https://www.python.org/downloads/release/python-337/>`_                   |
++------------------+--------------+-------------+----------------+----------------+----------------------------------------------------------------------------+
+| 3.2              | :pep:`392`   | end-of-life | 2011-02-20     | 2016-02-20     | `Final release: Python 3.2.6                                               |
+|                  |              |             |                |                | <https://www.python.org/downloads/release/python-326/>`_                   |
++------------------+--------------+-------------+----------------+----------------+----------------------------------------------------------------------------+
+| 3.1              | :pep:`375`   | end-of-life | 2009-06-27     | 2012-04-11     | `Final release: Python 3.1.5                                               |
+|                  |              |             |                |                | <https://www.python.org/downloads/release/python-315/>`_                   |
++------------------+--------------+-------------+----------------+----------------+----------------------------------------------------------------------------+
+| 3.0              | :pep:`361`   | end-of-life | 2008-12-03     | 2009-01-13     | `Final release: Python 3.0.1                                               |
+|                  |              |             |                |                | <https://www.python.org/download/releases/3.0.1/>`_                        |
++------------------+--------------+-------------+----------------+----------------+----------------------------------------------------------------------------+
+| 2.6              | :pep:`361`   | end-of-life | 2008-10-01     | 2013-10-29     | `Final release: Python 2.6.9                                               |
+|                  |              |             |                |                | <https://www.python.org/download/releases/2.6.9/>`_                        |
++------------------+--------------+-------------+----------------+----------------+----------------------------------------------------------------------------+
 
 .. _contributing:
 

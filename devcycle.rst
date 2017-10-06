@@ -46,7 +46,7 @@ changes, performance improvements, bug fixes.
 
 At some point during the life-cycle of a release, a
 new :ref:`maintenance branch <maintbranch>` is created to host all bug fixing
-activity for further micro versions in a feature version (3.3.1, 3.3.2, etc.).
+activity for further micro versions in a feature version (3.6.1, 3.6.2, etc.).
 
 For versions 3.4 and before, this was conventionally done when the final
 release was cut (for example, 3.4.0 final).
@@ -110,7 +110,7 @@ security patches have been applied to the branch.
 Summary
 -------
 
-There are 6 open branches right now in the Git repository:
+There are 5 open branches right now in the Git repository:
 
 - the ``master`` branch accepts features and bugs fixes for the future
   3.7.0 feature release (RM: Ned Deily)
@@ -120,8 +120,6 @@ There are 6 open branches right now in the Git repository:
   (RM: Larry Hastings)
 - the ``3.4`` branch accepts security fixes for future 3.4.x security releases
   (RM: Larry Hastings)
-- the ``3.3`` branch accepts security fixes for future 3.3.x security releases
-  (RM: Georg Brandl) [end-of-life for 3.3 is 2017-09-29]
 - the ``2.7`` branch accepts bug fixes for future 2.7.x maintenance releases
   (RM: Benjamin Peterson)
 
