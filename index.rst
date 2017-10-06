@@ -87,7 +87,7 @@ Status of Python branches
 +------------------+--------------+-------------+----------------+----------------+----------------------------------------------------------------------------+
 | Branch           | Schedule     | Status      | First release  | End-of-life    | Comment                                                                    |
 +==================+==============+=============+================+================+============================================================================+
-| master           | :pep:`537`   | features    | *2018-06-15*   | *2023-06-15*   | The default branch is currently the future version Python 3.7.             |
+| master           | :pep:`537`   | features    | *2018-06-15*   | *2023-06-15*   | The master branch is currently the future version Python 3.7.              |
 +------------------+--------------+-------------+----------------+----------------+----------------------------------------------------------------------------+
 | 3.6              | :pep:`494`   | bugfix      | 2016-12-23     | *2021-12-23*   | `Most recent binary release: Python 3.6.3                                  |
 |                  |              |             |                |                | <https://www.python.org/downloads/release/python-363/>`_                   |
@@ -111,7 +111,7 @@ on python-dev (March 2017).
 
 Status:
 
-:features: new features are only added to the default branch, this branch
+:features: new features are only added to the master branch, this branch
     accepts any kind of change.
 :bugfix: bugfixes and security fixes are accepted, new binaries are still
     released.
