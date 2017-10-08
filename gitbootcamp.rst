@@ -383,6 +383,16 @@ Alternatively, the commit hash can also be obtained by the following git command
 The above commands will print out the hash of the commit containing ``"bpo-12345"``
 as part of the commit message.
 
+When formatting the message for a backport commit: leave it as the the original
+one, pointing to the original pull request number as well (GH-NNN).
+
+Example of good backport commit message::
+
+    bpo-12345: Improve the spam module (GH-777)
+
+    * Add method A to the spam module
+    * Update the documentation of the spam module
+
 
 Editing a Pull Request Prior to Merging
 ---------------------------------------
