@@ -189,6 +189,8 @@ Guide for contributing to Python:
 * Advanced tasks for once you are comfortable
     * :doc:`silencewarnings`
     * Fixing issues found by the :doc:`buildbots <buildbots>`
+    * Helping out with `Open Reviews`_.
+      See :ref:`how to review a Pull Request <how-to-review-a-pull-request>`.
     * :doc:`fixingissues`
 * :ref:`tracker` and :ref:`helptriage`
     * :doc:`triaging`
@@ -354,3 +356,4 @@ Full Table of Contents
 .. _IronPython: http://ironpython.net/
 .. _Stackless: http://www.stackless.com/
 .. _Issue tracker: https://bugs.python.org/
+.. _Open Reviews: https://github.com/python/cpython/pulls?utf8=%E2%9C%93&q=is%3Apr%20is%3Aopen%20label%3A%22awaiting%20review%22
