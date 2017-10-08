@@ -323,6 +323,8 @@ local copy of a pull request as follows::
    $ git pr <pr_number>
 
 
+.. _accepting-and-merging-a-pr:
+
 Accepting and Merging A Pull Request
 ------------------------------------
 
