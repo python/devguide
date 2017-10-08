@@ -92,6 +92,9 @@ i.e., a version in :ref:`maintenance mode <maintbranch>`, you can checkout
 a release branch. For instance, to checkout a working copy of Python 3.5,
 do ``git checkout 3.5``.
 
+If you want the ability to work on multiple checkouts of Python, you can use git 
+worktrees. See :ref:`git_worktrees`.
+
 You will need to re-compile CPython when you do such an update.
 
 Do note that CPython will notice that it is being run from a working copy.
