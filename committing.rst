@@ -207,7 +207,7 @@ repositories means you have to be more careful with your workflow:
   dedicated to maintenance of the work before the work gets integrated in the
   main repository.
 
-  An exception to this rule, you can make a quick edit through the web UI of
+  An exception to this rule: you can make a quick edit through the web UI of
   GitHub, in which case the branch you create can exist for less than 24 hours.
   This exception should not be abused and be left only for very simple changes.
 
