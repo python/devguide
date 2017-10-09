@@ -221,7 +221,7 @@ commit, a new paragraph(s) can be added to explain in proper depth what has
 happened (detail should be good enough that a core developer reading the
 commit message understands the justification for the change).
 
-Check :ref:`the git bootcamp<accepting-and-merging-a-pr>` for further
+Check :ref:`the git bootcamp <accepting-and-merging-a-pr>` for further
 instructions on how the commit should look like when merging a pull request.
 
 

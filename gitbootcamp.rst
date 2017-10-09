@@ -386,7 +386,7 @@ The above commands will print out the hash of the commit containing ``"bpo-12345
 as part of the commit message.
 
 When formatting the message for a backport commit: leave it as the the original
-one, pointing to the original pull request number as well (GH-NNN).
+one, pointing to the original pull request number as well (``GH-NNNN``).
 
 Example of good backport commit message::
 
