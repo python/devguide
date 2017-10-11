@@ -334,8 +334,7 @@ Pull requests can be accepted and merged by a Python Core Developer.
    button.
 
 2. Replace the reference to GitHub PR #XXX into GH-XXX. If the title
-   too long, add the Pull request to the end of the body as:
-   Pull request: GH-NNN
+   is too long, the pull request number can be added to the body.
 
 3. Adjust and clean up the commit message.
 
