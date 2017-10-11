@@ -189,7 +189,7 @@ Guide for contributing to Python:
 * Advanced tasks for once you are comfortable
     * :doc:`silencewarnings`
     * Fixing issues found by the :doc:`buildbots <buildbots>`
-    * Helping out with `Open Reviews`_.
+    * Helping out with reviewing `open pull requests`_.
       See :ref:`how to review a Pull Request <how-to-review-a-pull-request>`.
     * :doc:`fixingissues`
 * :ref:`tracker` and :ref:`helptriage`
