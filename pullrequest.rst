@@ -210,7 +210,7 @@ and for each pull request there may be several commits.  In particular:
 
 Commit messages should follow the following structure::
 
-   bpo-42: the spam module is now more spammy.
+   bpo-42: the spam module is now more spammy. (GH-NNNN)
 
    The spam module sporadically came up short on spam. This change
    raises the amount of spam in the module by making it more spammy.
@@ -220,6 +220,9 @@ of what the purpose of the commit is.  If this is not enough detail for a
 commit, a new paragraph(s) can be added to explain in proper depth what has
 happened (detail should be good enough that a core developer reading the
 commit message understands the justification for the change).
+
+Check :ref:`the git bootcamp <accepting-and-merging-a-pr>` for further
+instructions on how the commit should look like when merging a pull request.
 
 
 .. _cla:

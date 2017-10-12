@@ -323,6 +323,8 @@ local copy of a pull request as follows::
    $ git pr <pr_number>
 
 
+.. _accepting-and-merging-a-pr:
+
 Accepting and Merging A Pull Request
 ------------------------------------
 
@@ -331,7 +333,8 @@ Pull requests can be accepted and merged by a Python Core Developer.
 1. At the bottom of the pull request page, click the ``Squash and merge``
    button.
 
-2. Replace the reference to GitHub PR #XXX into GH-XXX.
+2. Replace the reference to GitHub PR #NNNN into GH-NNNN. If the title
+   is too long, the pull request number can be added to the body.
 
 3. Adjust and clean up the commit message.
 
@@ -380,6 +383,16 @@ Alternatively, the commit hash can also be obtained by the following git command
 
 The above commands will print out the hash of the commit containing ``"bpo-12345"``
 as part of the commit message.
+
+When formatting the message for a backport commit: leave it as the the original
+one, pointing to the original pull request number as well (``GH-NNNN``).
+
+Example of good backport commit message::
+
+    bpo-12345: Improve the spam module (GH-777)
+
+    * Add method A to the spam module
+    * Update the documentation of the spam module
 
 
 Editing a Pull Request Prior to Merging
