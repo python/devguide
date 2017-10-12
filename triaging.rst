@@ -83,7 +83,8 @@ Demos and Tools
 Distutils
     The distutils package in `Lib/distutils`_.
 Documentation
-    The documentation in Doc_ (used to build the HTML doc at https://docs.python.org/).
+    The documentation in Doc_ (used to build the HTML doc at
+    https://docs.python.org/).
 email
     The email package and related modules.
 Extension Modules

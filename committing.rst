@@ -212,12 +212,12 @@ repositories means you have to be more careful with your workflow:
   This exception should not be abused and be left only for very simple changes.
 
 * You should not commit directly into the ``master`` branch, or any of the
-  maintenance branches (currently ``2.7`` or ``3.6``).  You should commit against
-  your own feature branch, and create a pull request.
+  maintenance branches (currently ``2.7`` or ``3.6``).
+  You should commit against your own feature branch, and create a pull request.
 
-It is recommended to keep a fork of the main repository around, as it allows simple
-reversion of all local changes (even "committed" ones) if your local clone gets
-into a state you aren't happy with.
+It is recommended to keep a fork of the main repository around, as it allows
+simple reversion of all local changes (even "committed" ones) if your local
+clone gets into a state you aren't happy with.
 
 
 .. _Git: https://git-scm.com/
@@ -238,15 +238,17 @@ new features.  The other branches only receive bug fixes or security fixes.
 Backporting Changes to an Older Version
 ---------------------------------------
 
-When it is determined that a pull request needs to be backported into one or more of
-the maintenance branches, a core developer can apply the labels ``needs backport to X.Y``
-to the pull request.
+When it is determined that a pull request needs to be backported into one or
+more of the maintenance branches, a core developer can apply the labels
+``needs backport to X.Y`` to the pull request.
 
-After the pull request has been merged, it can be backported using cherry_picker.py_.
+After the pull request has been merged, it can be backported using
+cherry_picker.py_.
 
-The commit hash can be obtained from the original pull request, or by using ``git log``
-on the ``master`` branch.  To display the 10 most recent commit hashes and their first
-line of the commit message::
+The commit hash can be obtained from the original pull request, or by using
+``git log`` on the ``master`` branch.
+To display the 10 most recent commit hashes and their first line of the commit
+message::
 
    git log -10 --oneline
 

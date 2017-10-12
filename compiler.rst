@@ -170,11 +170,11 @@ very beginning of the compiler or the end, you need to care about how the arena
 works.  All code relating to the arena is in either :file:`Include/pyarena.h` or
 :file:`Python/pyarena.c`.
 
-``PyArena_New()`` will create a new arena.  The returned ``PyArena`` structure will
-store pointers to all memory given to it.  This does the bookkeeping of what
-memory needs to be freed when the compiler is finished with the memory it used.
-That freeing is done with ``PyArena_Free()``.  This only needs to be called in
-strategic areas where the compiler exits.
+``PyArena_New()`` will create a new arena.  The returned ``PyArena`` structure
+will store pointers to all memory given to it.  This does the bookkeeping of
+what memory needs to be freed when the compiler is finished with the memory it
+used. That freeing is done with ``PyArena_Free()``.  This only needs to be
+called in strategic areas where the compiler exits.
 
 As stated above, in general you should not have to worry about memory
 management when working on the compiler.  The technical details have been
@@ -367,8 +367,8 @@ bytecode step of the compiler.  Several pieces of code throughout Python depend
 on having correct information about what bytecode exists.
 
 First, you must choose a name and a unique identifier number.  The official
-list of bytecode can be found in :file:`Include/opcode.h`.  If the opcode is to take
-an argument, it must be given a unique number greater than that assigned to
+list of bytecode can be found in :file:`Include/opcode.h`.  If the opcode is to
+take an argument, it must be given a unique number greater than that assigned to
 ``HAVE_ARGUMENT`` (as found in :file:`Include/opcode.h`).
 
 Once the name/number pair has been chosen and entered in Include/opcode.h,
@@ -376,14 +376,15 @@ you must also enter it into :file:`Lib/opcode.py` and
 :file:`Doc/library/dis.rst`.
 
 With a new bytecode you must also change what is called the magic number for
-.pyc files.  The variable ``MAGIC`` in :file:`Python/import.c` contains the number.
+.pyc files.  The variable ``MAGIC`` in :file:`Python/import.c` contains the
+number.
 Changing this number will lead to all .pyc files with the old ``MAGIC``
 to be recompiled by the interpreter on import.
 
 Finally, you need to introduce the use of the new bytecode.  Altering
 :file:`Python/compile.c` and :file:`Python/ceval.c` will be the primary places
-to change. But you will also need to change the 'compiler' package.  The key files
-to do that are :file:`Lib/compiler/pyassem.py` and
+to change. But you will also need to change the 'compiler' package.
+The key files to do that are :file:`Lib/compiler/pyassem.py` and
 :file:`Lib/compiler/pycodegen.py`.
 
 If you make a change here that can affect the output of bytecode that
@@ -392,10 +393,10 @@ sure to delete your old .py(c|o) files!  Even though you will end up changing
 the magic number if you change the bytecode, while you are debugging your work
 you will be changing the bytecode output without constantly bumping up the
 magic number.  This means you end up with stale .pyc files that will not be
-recreated.  Running
-``find . -name '*.py[co]' -exec rm -f {} ';'`` should delete all .pyc files you
-have, forcing new ones to be created and thus allow you test out your new
-bytecode properly.
+recreated.
+Running ``find . -name '*.py[co]' -exec rm -f {} ';'`` should delete all .pyc
+files you have, forcing new ones to be created and thus allow you test out your
+new bytecode properly.
 
 
 Code Objects
