@@ -4,8 +4,8 @@ Continuous Integration
 ======================
 
 To assert that there are no regressions in the :doc:`development and maintenance
-branches <devcycle>`, Python has a set of dedicated machines (called *buildbots* or
-*build slaves*) used for continuous integration.  They span a number of
+branches <devcycle>`, Python has a set of dedicated machines (called *buildbots*
+or *build slaves*) used for continuous integration.  They span a number of
 hardware/operating system combinations.  Furthermore, each machine hosts
 several *builders*, one per active branch: when a new change is pushed
 to this branch on the public Mercurial repository, all corresponding builders
@@ -186,8 +186,8 @@ offenders:
 When you think a failure might be transient, it is recommended you confirm by
 waiting for the next build.  Still, even if the failure does turn out sporadic
 and unpredictable, the issue should be reported on the bug tracker; even
-better if it can be diagnosed and suppressed by fixing the test's implementation,
-or by making its parameters - such as a timeout - more robust.
+better if it can be diagnosed and suppressed by fixing the test's
+implementation, or by making its parameters - such as a timeout - more robust.
 
 
 Custom builders

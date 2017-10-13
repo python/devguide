@@ -49,8 +49,8 @@ enabled::
        {'Yuck': <type at remote 0xad4730>, '__builtins__': <module at remote 0x7ffff7fd5ee8>, '__file__': 'Lib/test/crashers/nasty_eq_vs_dict.py', '__package__': None, 'y': <Yuck(i=0) at remote 0xaacd80>, 'dict': {0: 0, 1: 1, 2: 2, 3: 3}, '__cached__': None, '__name__': '__main__', 'z': <Yuck(i=0) at remote 0xaace60>, '__doc__': None}, key=
        0x5c2b8d "__lltrace__") at Objects/dictobject.c:2171
 
-(notice how the dictionary argument to ``PyDict_GetItemString`` is displayed
-as its ``repr()``, rather than an opaque ``PyObject *`` pointer)
+(Notice how the dictionary argument to ``PyDict_GetItemString`` is displayed
+as its ``repr()``, rather than an opaque ``PyObject *`` pointer.)
 
 The extension works by supplying a custom printing routine for values of type
 ``PyObject *``.  If you need to access lower-level details of an object, then
@@ -114,11 +114,12 @@ Here's how to see the implementation details of a ``str`` instance (for Python
     $8 = {ob_base = {ob_refcnt = 33, ob_type = 0x3dad3a95a0}, length = 12,
     str = 0x7ffff2128500, hash = 7065186196740147912, state = 1, defenc = 0x0}
 
-As well as adding pretty-printing support for ``PyObject *``, the extension adds a number of commands to gdb
+As well as adding pretty-printing support for ``PyObject *``,
+the extension adds a number of commands to gdb:
 
 ``py-list``
-    List the Python source code (if any) for the current frame in the selected
-    thread.  The current line is marked with a ">"::
+   List the Python source code (if any) for the current frame in the selected
+   thread.  The current line is marked with a ">"::
 
         (gdb) py-list
          901        if options.profile:
@@ -133,24 +134,24 @@ As well as adding pretty-printing support for ``PyObject *``, the extension adds
          910            except KeyboardInterrupt:
          911                # properly quit on a keyboard interrupt...
 
-    Use ``py-list START`` to list at a different line number within the python
-    source, and ``py-list START,END`` to list a specific range of lines within
-    the python source.
+   Use ``py-list START`` to list at a different line number within the python
+   source, and ``py-list START,END`` to list a specific range of lines within
+   the python source.
 
 ``py-up`` and ``py-down``
-  The ``py-up`` and ``py-down`` commands are analogous to gdb's regular ``up``
-  and ``down`` commands, but try to move at the level of CPython frames, rather
-  than C frames.
+   The ``py-up`` and ``py-down`` commands are analogous to gdb's regular ``up``
+   and ``down`` commands, but try to move at the level of CPython frames, rather
+   than C frames.
 
-  gdb is not always able to read the relevant frame information, depending on
-  the optimization level with which CPython was compiled. Internally, the
-  commands look for C frames that are executing ``PyEval_EvalFrameEx`` (which
-  implements the core bytecode interpreter loop within CPython) and look up
-  the value of the related ``PyFrameObject *``.
+   gdb is not always able to read the relevant frame information, depending on
+   the optimization level with which CPython was compiled. Internally, the
+   commands look for C frames that are executing ``PyEval_EvalFrameEx`` (which
+   implements the core bytecode interpreter loop within CPython) and look up
+   the value of the related ``PyFrameObject *``.
 
-  They emit the frame number (at the C level) within the thread.
+   They emit the frame number (at the C level) within the thread.
 
-  For example::
+   For example::
 
         (gdb) py-up
         #37 Frame 0x9420b04, for file /usr/lib/python2.6/site-packages/
@@ -163,7 +164,7 @@ As well as adding pretty-printing support for ``PyObject *``, the extension adds
         (gdb) py-up
         Unable to find an older python frame
 
-  so we're at the top of the python stack.  Going back down::
+   so we're at the top of the python stack.  Going back down::
 
         (gdb) py-down
         #37 Frame 0x9420b04, for file /usr/lib/python2.6/site-packages/gnome_sudoku/main.py, line 906, in start_game ()
@@ -185,13 +186,13 @@ As well as adding pretty-printing support for ``PyObject *``, the extension adds
         (gdb) py-down
         Unable to find a newer python frame
 
-  and we're at the bottom of the python stack.
+   and we're at the bottom of the python stack.
 
 ``py-bt``
-  The ``py-bt`` command attempts to display a Python-level backtrace of the
-  current thread.
+   The ``py-bt`` command attempts to display a Python-level backtrace of the
+   current thread.
 
-  For example::
+   For example::
 
         (gdb) py-bt
         #8 (unable to read python frame information)
@@ -207,10 +208,13 @@ As well as adding pretty-printing support for ``PyObject *``, the extension adds
         #40 Frame 0x948e82c, for file /usr/lib/python2.6/site-packages/gnome_sudoku/gnome_sudoku.py, line 22, in start_game (main=<module at remote 0xb771b7f4>)
             main.start_game()
 
-  The frame numbers correspond to those displayed by gdb's standard ``backtrace`` command.
+   The frame numbers correspond to those displayed by gdb's standard
+   ``backtrace`` command.
 
 ``py-print``
-  The ``py-print`` command looks up a Python name and tries to print it.  It looks in locals within the current thread, then globals, then finally builtins::
+   The ``py-print`` command looks up a Python name and tries to print it.
+   It looks in locals within the current thread, then globals, then finally
+   builtins::
 
         (gdb) py-print self
         local 'self' = <SwappableArea(running=<gtk.Dialog at remote 0x98faaa4>,
@@ -223,14 +227,17 @@ As well as adding pretty-printing support for ``PyObject *``, the extension adds
         'scarlet_pimpernel' not found
 
 ``py-locals``
-  The ``py-locals`` command looks up all Python locals within the current Python frame in the selected thread, and prints their representations::
+   The ``py-locals`` command looks up all Python locals within the current
+   Python frame in the selected thread, and prints their representations::
 
         (gdb) py-locals
         self = <SwappableArea(running=<gtk.Dialog at remote 0x98faaa4>,
         main_page=0) at remote 0x98fa6e4>
         d = <gtk.Dialog at remote 0x98faaa4>
 
-You can of course use other gdb commands.  For example, the ``frame`` command takes you directly to a particular frame within the selected thread.  We can use it to go a specific frame shown by ``py-bt`` like this::
+You can of course use other gdb commands.  For example, the ``frame`` command
+takes you directly to a particular frame within the selected thread.
+We can use it to go a specific frame shown by ``py-bt`` like this::
 
         (gdb) py-bt
         (output snipped)
@@ -247,14 +254,17 @@ You can of course use other gdb commands.  For example, the ``frame`` command ta
         1547        with test_support.temp_cwd(TESTCWD, quiet=True):
         >1548            main()
 
-The ``info threads`` command will give you a list of the threads within the process, and you can use the ``thread`` command to select a different one::
+The ``info threads`` command will give you a list of the threads within the
+process, and you can use the ``thread`` command to select a different one::
 
         (gdb) info threads
           105 Thread 0x7fffefa18710 (LWP 10260)  sem_wait () at ../nptl/sysdeps/unix/sysv/linux/x86_64/sem_wait.S:86
           104 Thread 0x7fffdf5fe710 (LWP 10259)  sem_wait () at ../nptl/sysdeps/unix/sysv/linux/x86_64/sem_wait.S:86
         * 1 Thread 0x7ffff7fe2700 (LWP 10145)  0x00000038e46d73e3 in select () at ../sysdeps/unix/syscall-template.S:82
 
-You can use ``thread apply all COMMAND`` or (``t a a COMMAND`` for short) to run a command on all threads.  You can use this with ``py-bt`` to see what every thread is doing at the Python level::
+You can use ``thread apply all COMMAND`` or (``t a a COMMAND`` for short) to run
+a command on all threads.  You can use this with ``py-bt`` to see what every
+thread is doing at the Python level::
 
         (gdb) t a a py-bt
 

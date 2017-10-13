@@ -171,7 +171,8 @@ Bad example (creating worry in the mind of a reader):
     excessive resource consumption.  Never rely on reference counting to
     automatically close a file.
 
-Good example (establishing confident knowledge in the effective use of the language):
+Good example (establishing confident knowledge in the effective use of the
+language):
 
     A best practice for using files is use a try/finally pair to explicitly
     close a file after it is used.  Alternatively, using a with-statement can
@@ -222,8 +223,8 @@ a typical use case.  For instance, the :meth:`str.rpartition` method is better
 demonstrated with an example splitting the domain from a URL than it would be
 with an example of removing the last word from a line of Monty Python dialog.
 
-The ellipsis for the :py:data:`sys.ps2` secondary interpreter prompt should only be
-used sparingly, where it is necessary to clearly differentiate between input
+The ellipsis for the :py:data:`sys.ps2` secondary interpreter prompt should only
+be used sparingly, where it is necessary to clearly differentiate between input
 lines and output lines.  Besides contributing visual clutter, it makes it
 difficult for readers to cut-and-paste examples so they can experiment with
 variations.
@@ -456,7 +457,9 @@ the extension mechanisms of reST, and Sphinx makes heavy use of it.
 
 Basically, a directive consists of a name, arguments, options and content. (Keep
 this terminology in mind, it is used in the next chapter describing custom
-directives.)  Looking at this example, ::
+directives.)  Looking at this example,
+
+::
 
    .. function:: foo(x)
                  foo(y, z)
@@ -853,8 +856,8 @@ Syntax highlighting is handled in a smart way:
 
 Longer displays of verbatim text may be included by storing the example text in
 an external file containing only plain text.  The file may be included using the
-``literalinclude`` directive. [1]_ For example, to include the Python source file
-:file:`example.py`, use::
+``literalinclude`` directive. [1]_ For example, to include the Python source
+file :file:`example.py`, use::
 
    .. literalinclude:: example.py
 
@@ -895,8 +898,8 @@ a matching identifier is found:
 
 .. describe:: mod
 
-   The name of a module; a dotted name may be used.  This should also be used for
-   package names.
+   The name of a module; a dotted name may be used.  This should also be used
+   for package names.
 
 .. describe:: func
 
@@ -1358,8 +1361,8 @@ pair
    namely ``loop; statement`` and ``statement; loop``.
 triple
    Likewise, ``triple: module; search; path`` is a shortcut that creates three
-   index entries, which are ``module; search path``, ``search; path, module`` and
-   ``path; module search``.
+   index entries, which are ``module; search path``, ``search; path, module``
+   and ``path; module search``.
 module, keyword, operator, object, exception, statement, builtin
    These all create two index entries.  For example, ``module: hashlib``
    creates the entries ``module; hashlib`` and ``hashlib; module``.  The
@@ -1418,8 +1421,8 @@ The following is an example taken from the Python Reference Manual::
 Substitutions
 -------------
 
-The documentation system provides three substitutions that are defined by default.
-They are set in the build configuration file :file:`conf.py`.
+The documentation system provides three substitutions that are defined by
+default. They are set in the build configuration file :file:`conf.py`.
 
 .. describe:: |release|
 
@@ -1491,7 +1494,7 @@ Without make
 
 Install the Sphinx package and its dependencies from PyPI.
 
-Then, from the ``Docs`` directory, run ::
+Then, from the ``Docs`` directory, run::
 
    sphinx-build -b<builder> . build/<builder>
 

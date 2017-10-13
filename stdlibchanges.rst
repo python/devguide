@@ -83,7 +83,7 @@ it.
 
 
 Requirements
-''''''''''''''
+''''''''''''
 In order for a module to even be considered for inclusion into the stdlib, a
 couple of requirements must be met.
 
@@ -144,8 +144,7 @@ will once again receive a large amount of feedback and discussion. A PEP
 dictator will be assigned who makes the final call on whether the PEP will be
 accepted or not. If the PEP dictator agrees to accept your PEP (which typically
 means that the core developers end up agreeing in general to accepting
-your PEP) then the module
-will be added to the stdlib once the creators of the module sign
-:ref:`contributor agreements <contributor_agreement>`.
+your PEP) then the module will be added to the stdlib once the creators of the
+module sign :ref:`contributor agreements <contributor_agreement>`.
 
 .. _PEP index: https://www.python.org/dev/peps/

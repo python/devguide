@@ -76,8 +76,7 @@ Enabling ``autocrlf`` on Windows
 
 The *autocrlf* option will fix automatically any Windows-specific line endings.
 This should be enabled on Windows, since the public repository has a hook which
-will reject all changesets having the wrong line endings.
-::
+will reject all changesets having the wrong line endings::
 
     $ git config --global core.autocrlf input
 
@@ -364,7 +363,8 @@ A pull request may need to be backported into one of the maintenance branches
 after it has been accepted and merged into ``master``.  It is usually indicated
 by the label ``needs backport to X.Y`` on the pull request itself.
 
-Use the utility script `cherry_picker.py <https://github.com/python/core-workflow/tree/master/cherry_picker>`_
+Use the utility script
+`cherry_picker.py <https://github.com/python/core-workflow/tree/master/cherry_picker>`_
 from the `core-workflow  <https://github.com/python/core-workflow>`_
 repository to backport the commit.
 
@@ -376,13 +376,14 @@ page.  Find the event that says something like::
 
 By following the link to ``<commit_sha1>``, you will get the full commit hash.
 
-Alternatively, the commit hash can also be obtained by the following git commands::
+Alternatively, the commit hash can also be obtained by the following git
+commands::
 
    $ git fetch upstream
    $ git rev-parse ":/bpo-12345"
 
-The above commands will print out the hash of the commit containing ``"bpo-12345"``
-as part of the commit message.
+The above commands will print out the hash of the commit containing
+``"bpo-12345"`` as part of the commit message.
 
 When formatting the message for a backport commit: leave it as the the original
 one, pointing to the original pull request number as well (``GH-NNNN``).

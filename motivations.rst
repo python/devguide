@@ -244,7 +244,7 @@ Limitations on scope
   developers are NOT required to publish their motivations and affiliations if
   they do not choose to do so. This helps to ensure that core contribution
   processes remain open to anyone that is in a position to sign the `Contributor
-  Licensing Agreement`_, the details of which are filed privately with the Python
-  Software Foundation, rather than publicly.
+  Licensing Agreement`_, the details of which are filed privately with the
+  Python Software Foundation, rather than publicly.
 
 .. _Contributor Licensing Agreement: https://www.python.org/psf/contrib/contrib-form/

@@ -164,11 +164,11 @@ bug fixes can now be committed.  This is when core developers should concentrate
 on the task of fixing regressions and other new issues filed by users who have
 downloaded the alpha and beta releases.
 
-Being in beta can be viewed much like being in RC_ but without the extra overhead
-of needing commit reviews.
+Being in beta can be viewed much like being in RC_ but without the extra
+overhead of needing commit reviews.
 
-Please see the note in the `In-development (main) branch`_ section above
-for new information about the creation of the 3.5 maintenance branch during beta.
+Please see the note in the `In-development (main) branch`_ section above for
+new information about the creation of the 3.5 maintenance branch during beta.
 
 
 .. _rc:
@@ -179,8 +179,8 @@ Release Candidate (RC)
 A branch preparing for an RC release can only have bugfixes applied that have
 been reviewed by other core developers.  Generally, these issues must be
 severe enough (e.g. crashes) that they deserve fixing before the final release.
-All other issues should be deferred to the next development cycle, since stability
-is the strongest concern at this point.
+All other issues should be deferred to the next development cycle, since
+stability is the strongest concern at this point.
 
 You **cannot** skip the peer review during an RC, no matter how small! Even if
 it is a simple copy-and-paste change, **everything** requires peer review from
