@@ -457,7 +457,9 @@ the extension mechanisms of reST, and Sphinx makes heavy use of it.
 
 Basically, a directive consists of a name, arguments, options and content. (Keep
 this terminology in mind, it is used in the next chapter describing custom
-directives.)  Looking at this example,::
+directives.)  Looking at this example,
+
+::
 
    .. function:: foo(x)
                  foo(y, z)
