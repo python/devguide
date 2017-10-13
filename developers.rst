@@ -14,9 +14,9 @@ change or granted access.  The procedure for adding or removing users is
 described in :ref:`altering-access`.
 
 Note, when giving new commit permissions, be sure to get a contributor agreement
-from the committer.  See https://www.python.org/psf/contrib/ for details.  Commit
-privileges should not be given until the contributor agreement has been signed
-and received.
+from the committer.  See https://www.python.org/psf/contrib/ for details.
+Commit privileges should not be given until the contributor agreement has been
+signed and received.
 
 This file is encoded in UTF-8.  If the usual form for a name is not in
 a Latin or extended Latin alphabet, make sure to include an ASCII

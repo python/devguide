@@ -188,7 +188,8 @@ If necessary, run the following::
 
     $ xcode-select --install
 
-This will also ensure that the system header files are installed into ``/usr/include``.
+This will also ensure that the system header files are installed into
+``/usr/include``.
 
 For **older releases of OS X**, you will need to download either the correct
 version of the Command Line Tools, if available, or install them from the

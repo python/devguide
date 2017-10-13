@@ -8,7 +8,8 @@ keeping a high level of quality takes a lot of effort. Help is always
 appreciated with the documentation, and it requires little programming
 experience (with or without Python).
 
-:ref:`Documenting Python <documenting>` covers the details of how Python's documentation works.
+:ref:`Documenting Python <documenting>` covers the details of how Python's
+documentation works.
 It includes an explanation of the markup used (although you can figure a lot
 out simply by looking at pre-existing documentation) and :ref:`how to build
 <building-doc>` the documentation (which allows you to see how your changes
@@ -25,8 +26,8 @@ subscribing to the
 Documentation issues reported on the `issue tracker`_ are sent here as well as
 some bug reports being directly emailed to the mailing list. There is also the
 `docs-sig@python.org mailing list
-<https://mail.python.org/mailman/listinfo/doc-sig>`_ which discusses the
-documentation toolchain, projects, standards, etc.
+<https://mail.python.org/mailman/listinfo/doc-sig>`_
+which discusses the documentation toolchain, projects, standards, etc.
 
 
 Helping with issues filed on the issue tracker
@@ -38,10 +39,10 @@ typos, to unclear documentation, to something completely lacking documentation.
 
 If you decide to tackle a documentation issue, you can simply submit a
 :doc:`pull request <pullrequest>` for the issue. If you are worried that someone
-else might be working simultaneously on the issue, simply leave a comment on the issue
-saying you are going to try and create a pull request and roughly how long you think
-you will take to do it (this allows others to take on the issue if you happen
-to forget or lose interest).
+else might be working simultaneously on the issue, simply leave a comment on the
+issue saying you are going to try and create a pull request and roughly how long
+you think you will take to do it (this allows others to take on the issue if you
+happen to forget or lose interest).
 
 .. _issue tracker: https://bugs.python.org
 .. _documentation issues: https://bugs.python.org/issue?%40search_text=&ignore=file%3Acontent&title=&%40columns=title&id=&%40columns=id&stage=&creation=&creator=&activity=&%40columns=activity&%40sort=activity&actor=&nosy=&type=&components=4&versions=&dependencies=&assignee=&keywords=&priority=&%40group=priority&status=1&%40columns=status&resolution=&nosy_count=&message_count=&%40pagesize=50&%40startwith=0&%40queryname=&%40old-queryname=&%40action=search
@@ -58,9 +59,10 @@ from Python 2).
 
 If you decide to proofread, then read a section of the documentation from start
 to finish, filing issues in the issue tracker for each problem you find. Simple
-typos don't require an issue of their own, instead submit a pull request directly.
-Don't file a single issue for an entire section containing multiple problems as that
-makes it harder to break the work up for multiple people to help with.
+typos don't require an issue of their own, instead submit a pull request
+directly.
+Don't file a single issue for an entire section containing multiple problems as
+that makes it harder to break the work up for multiple people to help with.
 
 
 .. _helping-with-the-developers-guide:

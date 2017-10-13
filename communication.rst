@@ -26,10 +26,10 @@ Python-ideas_ is a mailing list open to the public to discuss ideas on changing
 Python. If a new idea does not start here (or python-list_, discussed below),
 it will get redirected here.
 
-Sometimes people post new ideas to python-list_ to gather community opinion before
-heading to python-ideas_. The list is also sometimes known as comp.lang.python,
-the name of the newsgroup it mirrors (it is also known by the abbreviation
-c.l.py).
+Sometimes people post new ideas to python-list_ to gather community opinion
+before heading to python-ideas_. The list is also sometimes known as
+comp.lang.python, the name of the newsgroup it mirrors (it is also known by
+the abbreviation c.l.py).
 
 The python-committers_ mailing list is a private mailing list for core
 developers (the archives are publicly available).

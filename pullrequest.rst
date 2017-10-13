@@ -242,23 +242,23 @@ license your code for use with Python (you retain the copyright).
 Here are the steps needed in order to sign the CLA:
 
 1. If you don't have an account on `bugs.python.org <https://bugs.python.org>`_
-   (aka b.p.o), please `register <https://bugs.python.org/user?@template=register>`_
-   to create one.
+   (aka b.p.o), please
+   `register <https://bugs.python.org/user?@template=register>`_ to create one.
 
-2. Make sure your GitHub username is listed in the
-   `"Your Details" <https://cloud.githubusercontent.com/assets/2680980/23276970/d14a380c-f9d1-11e6-883d-e13b6b211239.png>`_
+2. Make sure your GitHub username is listed in the `"Your Details"
+   <https://cloud.githubusercontent.com/assets/2680980/23276970/d14a380c-f9d1-11e6-883d-e13b6b211239.png>`_
    section at b.p.o.
 
 3. Fill out and sign the PSF `contributor form`_. The "bugs.python.org username"
    requested by the form is the "Login name" field under "Your Details".
 
 After signing the CLA, please **wait at least one US business day** and
-then check "Your Details" on `b.p.o <https://bugs.python.org>`_ to see if your account has
-been marked as having signed the CLA (the delay is due to a person having
-to manually check your signed CLA). Once you have verified that your b.p.o
-account reflects your signing of the CLA, you can either ask for the CLA check
-to be run again or wait for it to be run automatically the next time you push
-changes to your PR.
+then check "Your Details" on `b.p.o <https://bugs.python.org>`_ to see if your
+account has been marked as having signed the CLA (the delay is due to a person
+having to manually check your signed CLA). Once you have verified that your
+b.p.o account reflects your signing of the CLA, you can either ask for the CLA
+check to be run again or wait for it to be run automatically the next time you
+push changes to your PR.
 
 
 .. _PSF license: https://docs.python.org/dev/license.html#terms-and-conditions-for-accessing-or-otherwise-using-python
@@ -283,10 +283,11 @@ list anything), you will want to push your branch to your fork::
 This will get your changes up to GitHub.
 
 Now you want to
-`create a pull request from your fork <https://help.github.com/articles/creating-a-pull-request-from-a-fork/>`_.
+`create a pull request from your fork
+<https://help.github.com/articles/creating-a-pull-request-from-a-fork/>`_.
 If this is a pull request in response to a pre-existing issue on the
-`issue tracker`_, please make sure to reference the issue number using bpo-NNNN in
-the pull request title or message.
+`issue tracker`_, please make sure to reference the issue number using
+``bpo-NNNN`` in the pull request title or message.
 
 If this is a pull request for an unreported issue (assuming you already
 performed a search on the issue tracker for a pre-existing issue), create a
@@ -372,7 +373,8 @@ code and leave comments in the pull request or issue tracker.
    of the Python REPL (the interactive shell prompt), which you can launch
    by executing ./python inside the repository.
 
-3. Checkout and apply the pull request (Please refer to the instruction :ref:`git_pr`)
+3. Checkout and apply the pull request (Please refer to the instruction
+   :ref:`git_pr`)
 
 4. If the changes affect any C file, run the build again.
 

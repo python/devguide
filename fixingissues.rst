@@ -5,9 +5,9 @@ Fixing "easy" Issues (and Beyond)
 
 When you feel comfortable enough to want to help tackle issues by trying to
 create a patch to fix an issue, you can start by looking at the `"easy"
-issues`_. These issues *should* be ones where it should take no longer than a day
-or weekend to fix. But because the "easy" classification is typically done at
-triage time it can turn out to be inaccurate, so do feel free to leave a
+issues`_. These issues *should* be ones where it should take no longer than a
+day or weekend to fix. But because the "easy" classification is typically done
+at triage time it can turn out to be inaccurate, so do feel free to leave a
 comment if you think the classification no longer applies.
 
 For the truly adventurous looking for a challenge, you can look for issues that
