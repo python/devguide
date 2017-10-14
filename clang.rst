@@ -2,6 +2,8 @@
 Dynamic Analysis with Clang
 ***************************
 
+.. highlight:: console
+
 This document describes how to use Clang to perform analysis on Python and its
 libraries. In addition to performing the analysis, the document will cover
 downloading, building and installing the the latest Clang/LLVM combination
@@ -61,7 +63,9 @@ Python 2 and not Python 3. Python 3 will cause the build to fail.
 Download, Build and Install
 ---------------------------
 
-Perform the following to download, build and install the Clang/LLVM 3.4. ::
+Perform the following to download, build and install the Clang/LLVM 3.4.
+
+.. code-block:: bash
 
     # Download
     wget http://llvm.org/releases/3.4/llvm-3.4.src.tar.gz
@@ -128,10 +132,10 @@ The installer does not install all the components needed on occasion. For
 example, you might want to run a ``scan-build`` or examine the results with
 ``scan-view``. You can copy the components by hand with: ::
 
-    sudo mkdir /usr/local/bin/scan-build
-    sudo cp -r llvm-3.4/tools/clang/tools/scan-build /usr/local/bin
-    sudo mkdir /usr/local/bin/scan-view
-    sudo cp -r llvm-3.4/tools/clang/tools/scan-view /usr/local/bin
+   $ sudo mkdir /usr/local/bin/scan-build
+   $ sudo cp -r llvm-3.4/tools/clang/tools/scan-build /usr/local/bin
+   $ sudo mkdir /usr/local/bin/scan-view
+   $ sudo cp -r llvm-3.4/tools/clang/tools/scan-view /usr/local/bin
 
 .. note::
 
@@ -165,17 +169,21 @@ Building Python
 ---------------
 
 To begin, export the variables of interest with the desired sanitizers. Its OK
-to specify both sanitizers: ::
+to specify both sanitizers:
 
-    # ASan
-    export CC="/usr/local/bin/clang -fsanitize=address"
-    export CXX="/usr/local/bin/clang++ -fsanitize=address -fno-sanitize=vptr"
+.. code-block:: bash
 
-Or: ::
+   # ASan
+   export CC="/usr/local/bin/clang -fsanitize=address"
+   export CXX="/usr/local/bin/clang++ -fsanitize=address -fno-sanitize=vptr"
 
-    # UBSan
-    export CC="/usr/local/bin/clang -fsanitize=undefined"
-    export CXX="/usr/local/bin/clang++ -fsanitize=undefined -fno-sanitize=vptr"
+Or:
+
+.. code-block:: bash
+
+   # UBSan
+   export CC="/usr/local/bin/clang -fsanitize=undefined"
+   export CXX="/usr/local/bin/clang++ -fsanitize=undefined -fno-sanitize=vptr"
 
 The ``-fno-sanitize=vptr`` removes vtable checks that are part of UBSan from C++
 projects due to noise. Its not needed with Python, but you will likely need it
@@ -221,7 +229,9 @@ Finally is ``make test`` (formatting added for clarity): ::
 
 If you are using the address sanitizer, its important to pipe the output through
 ``asan_symbolize.py`` to get a good trace. For example, from Issue 20953 during
-compile (formatting added for clarity): ::
+compile (formatting added for clarity):
+
+.. code-block:: none
 
     $ make test 2>&1 | asan_symbolize.py
     ...

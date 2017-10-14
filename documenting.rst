@@ -4,6 +4,8 @@
 Documenting Python
 ==================
 
+.. highlight::  rest
+
 The Python language has a substantial body of documentation, much of it
 contributed by various authors. The markup used for the Python documentation is
 `reStructuredText`_, developed by the `docutils`_ project, amended by custom
@@ -810,7 +812,9 @@ preceding paragraph and delimited by indentation.
 Representing an interactive session requires including the prompts and output
 along with the Python code.  No special markup is required for interactive
 sessions.  After the last line of input or output presented, there should not be
-an "unused" primary prompt; this is an example of what *not* to do::
+an "unused" primary prompt; this is an example of what *not* to do:
+
+.. code-block:: python
 
    >>> 1 + 1
    2
@@ -818,7 +822,7 @@ an "unused" primary prompt; this is an example of what *not* to do::
 
 Syntax highlighting is handled in a smart way:
 
-* There is a "highlighting language" for each source file.  Per default,
+* There is a "highlighting language" for each source file.  By default,
   this is ``'python'`` as the majority of files will have to highlight Python
   snippets.
 
@@ -1035,7 +1039,7 @@ in a different style:
    The name of a file or directory.  Within the contents, you can use curly
    braces to indicate a "variable" part, for example::
 
-      ... is installed in :file:`/usr/lib/python2.{x}/site-packages` ...
+      ``spam`` is installed in :file:`/usr/lib/python2.{x}/site-packages` ...
 
    In the built documentation, the ``x`` will be displayed differently to
    indicate that it is to be replaced by the Python minor version.
@@ -1452,6 +1456,8 @@ default. They are set in the build configuration file :file:`conf.py`.
 Building the documentation
 ==========================
 
+.. highlight:: console
+
 The toolset used to build the docs is written in Python and is called Sphinx_.
 Sphinx is maintained separately and is not included in this tree.  Also needed
 are docutils_, supplying the base markup that Sphinx uses; Jinja_, a templating
@@ -1473,8 +1479,8 @@ Using make / make.bat
 **On Unix**, run the following from the root of your :ref:`repository clone
 <checkout>` to build the output as HTML::
 
-   cd Doc
-   make html
+   $ cd Doc
+   $ make html
 
 or alternatively ``make -C Doc html``.
 
@@ -1496,7 +1502,7 @@ Install the Sphinx package and its dependencies from PyPI.
 
 Then, from the ``Docs`` directory, run::
 
-   sphinx-build -b<builder> . build/<builder>
+   $ sphinx-build -b<builder> . build/<builder>
 
 where ``<builder>`` is one of html, text, latex, or htmlhelp (for explanations
 see the make targets above).

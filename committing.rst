@@ -195,6 +195,7 @@ unprocessed.)
 Working with Git_
 =================
 
+.. highlight:: console
 .. seealso::
    :ref:`gitbootcamp`
 
@@ -250,7 +251,7 @@ The commit hash can be obtained from the original pull request, or by using
 To display the 10 most recent commit hashes and their first line of the commit
 message::
 
-   git log -10 --oneline
+   $ git log -10 --oneline
 
 Prefix the backport pull request with the branch, for example::
 

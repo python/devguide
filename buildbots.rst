@@ -3,6 +3,8 @@
 Continuous Integration
 ======================
 
+.. highlight:: console
+
 To assert that there are no regressions in the :doc:`development and maintenance
 branches <devcycle>`, Python has a set of dedicated machines (called *buildbots*
 or *build slaves*) used for continuous integration.  They span a number of
@@ -41,7 +43,7 @@ There are three ways of visualizing recent build results:
   to display the latest build results on the development ("master") branch,
   type::
 
-      bbreport.py -q 3.x
+      $ bbreport.py -q 3.x
 
 * The buildbot "console" interface at http://buildbot.python.org/all/console
   This works best on a wide, high resolution
@@ -88,7 +90,7 @@ or to Python itself.  To reproduce, make sure you use the same flags as the
 buildbots: they can be found out simply by clicking the **stdio** link for
 the failing build's tests.  For example::
 
-   ./python.exe -Wd -E -bb  ./Lib/test/regrtest.py -uall -rwW
+   $ ./python.exe -Wd -E -bb  ./Lib/test/regrtest.py -uall -rwW
 
 .. note::
    Running ``Lib/test/regrtest.py`` is exactly equivalent to running
@@ -109,7 +111,7 @@ run, and check the beginning of the test output proper.
 
 Let's assume, for the sake of example, that the output starts with::
 
-   ./python -Wd -E -bb Lib/test/regrtest.py -uall -rwW
+   $ ./python -Wd -E -bb Lib/test/regrtest.py -uall -rwW
    == CPython 3.3a0 (default:22ae2b002865, Mar 30 2011, 13:58:40) [GCC 4.4.5]
    ==   Linux-2.6.36-gentoo-r5-x86_64-AMD_Athlon-tm-_64_X2_Dual_Core_Processor_4400+-with-gentoo-1.12.14 little-endian
    ==   /home/buildbot/buildarea/3.x.ochtman-gentoo-amd64/build/build/test_python_29628
@@ -120,7 +122,7 @@ Let's assume, for the sake of example, that the output starts with::
 
 You can reproduce the exact same order using::
 
-   ./python -Wd -E -bb -m test -uall -rwW --randseed 2613169
+   $ ./python -Wd -E -bb -m test -uall -rwW --randseed 2613169
 
 It will run the following sequence (trimmed for brevity)::
 
@@ -137,7 +139,7 @@ failure.  Copy and paste the test sequence in a text file, then use the
 ``--fromfile`` (or ``-f``) option of the test runner to run the exact
 sequence recorded in that text file::
 
-   ./python -Wd -E -bb -m test -uall -rwW --fromfile mytestsequence.txt
+   $ ./python -Wd -E -bb -m test -uall -rwW --fromfile mytestsequence.txt
 
 In the example sequence above, if ``test_unicode`` had failed, you would
 first test the following sequence::

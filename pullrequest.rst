@@ -3,6 +3,7 @@
 Lifecycle of a Pull Request
 ===========================
 
+.. highlight:: console
 
 Introduction
 ------------
@@ -63,57 +64,57 @@ Step-by-step Guide
 You should have already :ref:`set up your system <setup>`,
 :ref:`got the source code <checkout>`, and :ref:`built Python <compiling>`.
 
-* Create a new branch in your local clone::
+*  Create a new branch in your local clone::
 
-     git checkout -b <branch-name> upstream/master
+      $ git checkout -b <branch-name> upstream/master
 
-* Make changes to the code, and use ``git status`` and ``git diff`` to see them.
+*  Make changes to the code, and use ``git status`` and ``git diff`` to see them.
 
-  (Learn more about :ref:`good-prs`)
+   (Learn more about :ref:`good-prs`)
 
-* Make sure the changes are fine and don't cause any test failure::
+*  Make sure the changes are fine and don't cause any test failure::
 
-     make patchcheck
-     ./python -m test
+      $ make patchcheck
+      $ ./python -m test
 
-  (Learn more about :ref:`patchcheck` and about :doc:`runtests`)
+   (Learn more about :ref:`patchcheck` and about :doc:`runtests`)
 
-* Once you are satisfied with the changes, add the files and commit them::
+*  Once you are satisfied with the changes, add the files and commit them::
 
-     git add <filenames>
-     git commit -m '<message>'
+      $ git add <filenames>
+      $ git commit -m '<message>'
 
-  (Learn more about :ref:`good-commits`)
+   (Learn more about :ref:`good-commits`)
 
-* Then push your work to your GitHub fork::
+*  Then push your work to your GitHub fork::
 
-     git push origin <branch-name>
+      $ git push origin <branch-name>
 
-* If someone else added new changesets and you get an error::
+*  If someone else added new changesets and you get an error::
 
-     git fetch upstream
-     git rebase upstream/master
-     git push --force origin <branch-name>
+      $ git fetch upstream
+      $ git rebase upstream/master
+      $ git push --force origin <branch-name>
 
-* Finally go on :samp:`https://github.com/{<your-username>}/cpython`: you will
-  see a box with the branch you just pushed and a green button that allows
-  you to create a pull request against the official CPython repository.
+*  Finally go on :samp:`https://github.com/{<your-username>}/cpython`: you will
+   see a box with the branch you just pushed and a green button that allows
+   you to create a pull request against the official CPython repository.
 
-* When people start adding review comments, you can address them by switching
-  to your branch, making more changes, committing them, and pushing them to
-  automatically update your PR::
+*  When people start adding review comments, you can address them by switching
+   to your branch, making more changes, committing them, and pushing them to
+   automatically update your PR::
 
-   git checkout <branch-name>
-   # make changes and run tests
-   git add <filenames>
-   git commit -m '<message>'
-   git push origin <branch-name>
+      $ git checkout <branch-name>
+      ... make changes and run tests ...
+      $ git add <filenames>
+      $ git commit -m '<message>'
+      $ git push origin <branch-name>
 
-* After your PR has been accepted and merged, you can :ref:`delete the branch
-  <deleting_branches>`::
+*  After your PR has been accepted and merged, you can :ref:`delete the branch
+   <deleting_branches>`::
 
-     git branch -D <branch-name>  # delete local branch
-     git push origin -d <branch-name>  # delete remote branch
+      $ git branch -D <branch-name>  # delete local branch
+      $ git push origin -d <branch-name>  # delete remote branch
 
 .. note::
    You can still upload a patch to bugs.python.org_, but the GitHub pull request
@@ -169,11 +170,11 @@ through the common patch generation checks. To run ``patchcheck``:
 
    On *UNIX* (including Mac OS X)::
 
-      make patchcheck
+      $ make patchcheck
 
    On *Windows* (after any successful build)::
 
-      python.bat Tools/scripts/patchcheck.py
+      > python.bat Tools/scripts/patchcheck.py
 
 The automated patch checklist runs through:
 
@@ -278,7 +279,7 @@ what changes are outstanding.
 When all of your changes are committed (i.e. ``git status`` doesn't
 list anything), you will want to push your branch to your fork::
 
-  git push origin <branch name>
+   $ git push origin <branch name>
 
 This will get your changes up to GitHub.
 

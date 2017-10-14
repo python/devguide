@@ -2,6 +2,8 @@
 Python Developer's Guide
 ========================
 
+.. highlight:: console
+
 This guide is a comprehensive resource for :ref:`contributing <contributing>`
 to Python_ -- for both new and experienced contributors.  It is
 :ref:`maintained <helping-with-the-developers-guide>` by the same community
@@ -21,15 +23,17 @@ instructions please see the :ref:`setup guide <setup>`.
 2. Fork `the CPython repository <https://github.com/python/cpython>`_
    to your GitHub account and :ref:`get the source code <checkout>` using::
 
-      git clone https://github.com/<your_username>/cpython
+      $ git clone https://github.com/<your_username>/cpython
 
 3. Build Python, on UNIX and Mac OS use::
 
-      ./configure --with-pydebug && make -j
+      $ ./configure --with-pydebug && make -j
 
-   and on Windows use::
+   and on Windows use:
 
-      PCbuild\build.bat -e -d
+   .. code-block:: doscon
+
+      > PCbuild\build.bat -e -d
 
    See also :ref:`more detailed instructions <compiling>`,
    :ref:`how to build dependencies <build-dependencies>`, and the
@@ -38,7 +42,7 @@ instructions please see the :ref:`setup guide <setup>`.
 
 4. :doc:`Run the tests <runtests>`::
 
-      ./python -m test -j3
+      $ ./python -m test -j3
 
    On :ref:`most <mac-python.exe>` Mac OS X systems, replace :file:`./python`
    with :file:`./python.exe`.  On Windows, use :file:`python.bat`.  With Python
@@ -46,7 +50,7 @@ instructions please see the :ref:`setup guide <setup>`.
 
 5. Create a new branch where your work for the issue will go, e.g.::
 
-      git checkout -b fix-issue-12345 master
+      $ git checkout -b fix-issue-12345 master
 
    If an issue does not already exist, please `create it
    <https://bugs.python.org/>`_.  Trivial issues (e.g. typo fixes) do not

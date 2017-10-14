@@ -70,7 +70,7 @@ that makes it harder to break the work up for multiple people to help with.
 Helping with the Developer's Guide
 ----------------------------------
 
-.. highlight:: bash
+.. highlight:: console
 
 The Developer's Guide uses the same process as the main Python documentation,
 except for some small differences.  The source lives in a `separate
@@ -90,13 +90,13 @@ Python projects is to create a virtualenv, and then install dependencies from
 a ``requirements.txt`` file. For your convenience, this is all *automated for
 you*. To build the devguide on a Unix-like system use::
 
-    $ make html
+   $ make html
 
 in the checkout directory. On Windows use:
 
-..  code-block:: doscon
+.. code-block:: doscon
 
-    > .\make html
+   > .\make html
 
 You will find the generated files in ``_build/html``.
 Note that ``make check`` is automatically run when

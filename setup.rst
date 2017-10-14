@@ -2,6 +2,8 @@
 Getting Started
 ===============
 
+.. highlight:: console
+
 These instructions cover how to get a working copy of the source code and a
 compiled version of the CPython interpreter (CPython is the version of Python
 available from https://www.python.org/). It also gives an overview of the
@@ -159,7 +161,7 @@ You can do this by adding the location of the source packages, including
 URL, distribution name and component name, to ``/etc/apt/sources.list``.
 Take Ubuntu Xenial for example::
 
-   deb-src http://archive.ubuntu.com/ubuntu/ xenial main
+   $ deb-src http://archive.ubuntu.com/ubuntu/ xenial main
 
 For other distributions, like Debian, change the URL and names to correspond
 with the specific distribution.
@@ -280,14 +282,14 @@ then compile it.
 
 Configuration is typically::
 
-  ./configure --with-pydebug
+   $ ./configure --with-pydebug
 
 More flags are available to ``configure``, but this is the minimum you should
 do to get a pydebug build of CPython.
 
 Once ``configure`` is done, you can then compile CPython with::
 
-    make -s -j2
+   $ make -s -j2
 
 This will build CPython with only warnings and errors being printed to
 stderr and utilize up to 2 CPU cores. If you are using a multi-core machine
@@ -353,9 +355,11 @@ build tools. If you do not already have git installed, you can find git for
 Windows on the **Individual components** tab of the installer.
 
 Your first build should use the command line to ensure any external dependencies
-are downloaded::
+are downloaded:
 
-    PCBuild\build.bat
+.. code-block:: doscon
+
+   > PCBuild\build.bat
 
 After this build succeeds, you can open the ``PCBuild\pcbuild.sln`` solution in
 Visual Studio to continue development.

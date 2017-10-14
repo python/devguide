@@ -4,6 +4,8 @@
 Running a buildslave
 ====================
 
+.. highlight:: console
+
 Python's :ref:`buildbots` system was discussed earlier.  We sometimes refer to
 the collection of *build slaves* as our "buildbot fleet".  The machines that
 comprise the fleet are voluntarily contributed resources.  Many are run by
@@ -94,8 +96,8 @@ For Windows:
 In a terminal window for the buildbot user, issue the following commands (you
 can put the ``buildarea`` wherever you want to)::
 
-    mkdir buildarea
-    buildslave create-slave buildarea buildbot.python.org:9020 slavename slavepasswd
+   $ mkdir buildarea
+   $ buildslave create-slave buildarea buildbot.python.org:9020 slavename slavepasswd
 
 (Note that on Windows, the ``buildslave`` command will be in the
 :file:`Scripts` directory of your Python installation.)
@@ -111,20 +113,24 @@ machine reboots:
 
 For Linux:
 
-    * Add the following line to ``/etc/crontab``::
+   *  Add the following line to ``/etc/crontab``:
 
-          @reboot buildslave restart /path/to/buildarea
+      .. code-block:: none
+
+         @reboot buildslave restart /path/to/buildarea
 
       Note that we use ``restart`` rather than ``start`` in case a crash has
       left a ``twistd.pid`` file behind.
 
 For OSX:
 
-    * Create a bin directory for your buildbot user::
+   *  Create a bin directory for your buildbot user::
 
-          mkdir bin
+          $ mkdir bin
 
-    * Place the following script, named ``run_slave.sh``, into that directory::
+   *  Place the following script, named ``run_slave.sh``, into that directory:
+
+      .. code-block:: bash
 
           #!/bin/bash
           export PATH=/usr/local/bin:/Library/Frameworks/Python.framework/Versions/2.7/bin:$PATH
@@ -135,7 +141,9 @@ For OSX:
       If you use pip with Apple's system python, add '/System' to the front of
       the path to the Python bin directory.
 
-    * Place a file with the following contents into ``/Library/LaunchDaemons``::
+   *  Place a file with the following contents into ``/Library/LaunchDaemons``:
+
+      .. code-block:: xml
 
           <?xml version="1.0" encoding="UTF-8"?>
           <!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN"
@@ -167,19 +175,19 @@ For OSX:
 
 For Windows:
 
-    * Add a Scheduled Task to run ``buildslave start buildarea`` as the
+   *  Add a Scheduled Task to run ``buildslave start buildarea`` as the
       buildbot user "when the computer starts up".  It is best to provide
       absolute paths to the ``buildslave`` command and the :file:`buildarea`
       directory.  It is also recommended to set the task to run in the
       directory that contains the :file:`buildarea` directory.
 
-    * Alternatively (note: don't do both!), set up the buildslave
+   *  Alternatively (note: don't do both!), set up the buildslave
       service as described in the `buildbot documentation
       <http://trac.buildbot.net/wiki/RunningBuildbotOnWindows#Service>`_.
 
 To start the buildslave running for your initial testing, you can do::
 
-    buildslave start buildarea
+   $ buildslave start buildarea
 
 Then you can either wait for someone to make a commit, or you can pick a
 builder associated with your buildslave from the `list of builders
