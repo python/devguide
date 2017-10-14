@@ -90,7 +90,7 @@ or to Python itself.  To reproduce, make sure you use the same flags as the
 buildbots: they can be found out simply by clicking the **stdio** link for
 the failing build's tests.  For example::
 
-   $ ./python.exe -Wd -E -bb  ./Lib/test/regrtest.py -uall -rwW
+   ./python.exe -Wd -E -bb  ./Lib/test/regrtest.py -uall -rwW
 
 .. note::
    Running ``Lib/test/regrtest.py`` is exactly equivalent to running
@@ -109,9 +109,12 @@ The ``--randseed`` option makes it easy to reproduce the exact randomization
 used in a given build.  Again, open the ``stdio`` link for the failing test
 run, and check the beginning of the test output proper.
 
-Let's assume, for the sake of example, that the output starts with::
+Let's assume, for the sake of example, that the output starts with:
 
-   $ ./python -Wd -E -bb Lib/test/regrtest.py -uall -rwW
+.. code-block:: none
+   :emphasize-lines: 6
+
+   ./python -Wd -E -bb Lib/test/regrtest.py -uall -rwW
    == CPython 3.3a0 (default:22ae2b002865, Mar 30 2011, 13:58:40) [GCC 4.4.5]
    ==   Linux-2.6.36-gentoo-r5-x86_64-AMD_Athlon-tm-_64_X2_Dual_Core_Processor_4400+-with-gentoo-1.12.14 little-endian
    ==   /home/buildbot/buildarea/3.x.ochtman-gentoo-amd64/build/build/test_python_29628
