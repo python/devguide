@@ -193,7 +193,7 @@ unprocessed.)
 
 
 Working with Git_
-=================
+-----------------
 
 .. seealso::
    :ref:`gitbootcamp`
@@ -226,7 +226,7 @@ clone gets into a state you aren't happy with.
 .. _committing-active-branches:
 
 Active branches
----------------
+'''''''''''''''
 
 If you do ``git branch`` you will see a :ref:`list of branches <listbranch>`.
 ``master`` is the in-development branch, and is the only branch that receives
@@ -236,7 +236,7 @@ new features.  The other branches only receive bug fixes or security fixes.
 .. _branch-merge:
 
 Backporting Changes to an Older Version
----------------------------------------
+'''''''''''''''''''''''''''''''''''''''
 
 When it is determined that a pull request needs to be backported into one or
 more of the maintenance branches, a core developer can apply the labels
@@ -266,7 +266,7 @@ Developers can apply labels to GitHub pull requests).
 
 
 Reverting a Merged Pull Request
--------------------------------
+'''''''''''''''''''''''''''''''
 
 To revert a merged pull request, press the ``Revert`` button at the bottom of
 the pull request.  It will bring up the page to create a new pull request where
