@@ -2,7 +2,7 @@
 Dynamic Analysis with Clang
 ***************************
 
-.. highlight:: console
+.. highlight:: bash
 
 This document describes how to use Clang to perform analysis on Python and its
 libraries. In addition to performing the analysis, the document will cover
@@ -63,9 +63,7 @@ Python 2 and not Python 3. Python 3 will cause the build to fail.
 Download, Build and Install
 ---------------------------
 
-Perform the following to download, build and install the Clang/LLVM 3.4.
-
-.. code-block:: bash
+Perform the following to download, build and install the Clang/LLVM 3.4. ::
 
     # Download
     wget http://llvm.org/releases/3.4/llvm-3.4.src.tar.gz
@@ -99,7 +97,9 @@ Perform the following to download, build and install the Clang/LLVM 3.4.
 
 After ``make install`` executes, the compilers will be installed in
 ``/usr/local/bin`` and the various libraries will be installed in
-``/usr/local/lib/clang/3.4/lib/linux/``: ::
+``/usr/local/lib/clang/3.4/lib/linux/``:
+
+.. code-block:: console
 
     $ ls /usr/local/lib/clang/3.4/lib/linux/
     libclang_rt.asan-x86_64.a   libclang_rt.profile-x86_64.a
@@ -109,7 +109,9 @@ After ``make install`` executes, the compilers will be installed in
     libclang_rt.msan-x86_64.a   libclang_rt.ubsan-x86_64.a
 
 On Mac OS X, the libraries are installed in
-``/usr/local/lib/clang/3.3/lib/darwin/``: ::
+``/usr/local/lib/clang/3.3/lib/darwin/``:
+
+.. code-block:: console
 
     $ ls /usr/local/lib/clang/3.3/lib/darwin/
     libclang_rt.10.4.a                    libclang_rt.ios.a
@@ -132,10 +134,10 @@ The installer does not install all the components needed on occasion. For
 example, you might want to run a ``scan-build`` or examine the results with
 ``scan-view``. You can copy the components by hand with: ::
 
-   $ sudo mkdir /usr/local/bin/scan-build
-   $ sudo cp -r llvm-3.4/tools/clang/tools/scan-build /usr/local/bin
-   $ sudo mkdir /usr/local/bin/scan-view
-   $ sudo cp -r llvm-3.4/tools/clang/tools/scan-view /usr/local/bin
+    sudo mkdir /usr/local/bin/scan-build
+    sudo cp -r llvm-3.4/tools/clang/tools/scan-build /usr/local/bin
+    sudo mkdir /usr/local/bin/scan-view
+    sudo cp -r llvm-3.4/tools/clang/tools/scan-view /usr/local/bin
 
 .. note::
 
@@ -169,27 +171,25 @@ Building Python
 ---------------
 
 To begin, export the variables of interest with the desired sanitizers. Its OK
-to specify both sanitizers:
+to specify both sanitizers: ::
 
-.. code-block:: bash
+    # ASan
+    export CC="/usr/local/bin/clang -fsanitize=address"
+    export CXX="/usr/local/bin/clang++ -fsanitize=address -fno-sanitize=vptr"
 
-   # ASan
-   export CC="/usr/local/bin/clang -fsanitize=address"
-   export CXX="/usr/local/bin/clang++ -fsanitize=address -fno-sanitize=vptr"
+Or: ::
 
-Or:
-
-.. code-block:: bash
-
-   # UBSan
-   export CC="/usr/local/bin/clang -fsanitize=undefined"
-   export CXX="/usr/local/bin/clang++ -fsanitize=undefined -fno-sanitize=vptr"
+    # UBSan
+    export CC="/usr/local/bin/clang -fsanitize=undefined"
+    export CXX="/usr/local/bin/clang++ -fsanitize=undefined -fno-sanitize=vptr"
 
 The ``-fno-sanitize=vptr`` removes vtable checks that are part of UBSan from C++
 projects due to noise. Its not needed with Python, but you will likely need it
 for other C++ projects.
 
-After exporting ``CC`` and ``CXX``, ``configure`` as normal: ::
+After exporting ``CC`` and ``CXX``, ``configure`` as normal:
+
+.. code-block:: console
 
     $ ./configure
     checking build system type... x86_64-unknown-linux-gnu
@@ -202,7 +202,9 @@ After exporting ``CC`` and ``CXX``, ``configure`` as normal: ::
     checking whether the C compiler works... yes
     ...
 
-Next is a standard ``make`` (formatting added for clarity): ::
+Next is a standard ``make`` (formatting added for clarity):
+
+.. code-block:: console
 
     $ make
     /usr/local/bin/clang -fsanitize=undefined -c -Wno-unused-result
@@ -215,7 +217,9 @@ Next is a standard ``make`` (formatting added for clarity): ::
         Parser/acceler.c
     ...
 
-Finally is ``make test`` (formatting added for clarity): ::
+Finally is ``make test`` (formatting added for clarity):
+
+.. code-block:: none
 
     Objects/longobject.c:39:42: runtime error: index -1 out of bounds
         for type 'PyLongObject [262]'
@@ -303,22 +307,24 @@ compile (formatting added for clarity):
 Blacklisting (Ignoring) Findings
 --------------------------------
 
+.. highlight:: none
+
 Clang allows you to alter the behavior of sanitizer tools for certain
 source-level by providing a special blacklist file at compile-time. The
 blacklist is needed because it reports every instance of an issue, even if the
 issue is reported 10's of thousands of time in un-managed library code.
 
-You specify the blacklist with ``-fsanitize-blacklist=XXX``. For example: ::
+You specify the blacklist with ``-fsanitize-blacklist=XXX``. For example::
 
     -fsanitize-blacklist=my_blacklist.txt
 
 ``my_blacklist.txt`` would then contain entries such as the following. The entry
-will ignore a bug in ``libc++``'s ``ios`` formatting functions: ::
+will ignore a bug in ``libc++``'s ``ios`` formatting functions::
 
     fun:_Ios_Fmtflags
 
 As an example with Python 3.4.0, ``audioop.c`` will produce a number of
-findings: ::
+findings::
 
     ./Modules/audioop.c:422:11: runtime error: left shift of negative value -1
     ./Modules/audioop.c:446:19: runtime error: left shift of negative value -1
@@ -334,11 +340,11 @@ findings: ::
     ...
 
 One of the function of interest is ``audioop_getsample_impl`` (flagged at line
-422), and the blacklist entry would include: ::
+422), and the blacklist entry would include::
 
     fun:audioop_getsample_imp
 
-Or, you could ignore the entire file with: ::
+Or, you could ignore the entire file with::
 
     src:Modules/audioop.c
 

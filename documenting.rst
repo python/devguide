@@ -1456,7 +1456,7 @@ default. They are set in the build configuration file :file:`conf.py`.
 Building the documentation
 ==========================
 
-.. highlight:: console
+.. highlight:: bash
 
 The toolset used to build the docs is written in Python and is called Sphinx_.
 Sphinx is maintained separately and is not included in this tree.  Also needed
@@ -1479,8 +1479,8 @@ Using make / make.bat
 **On Unix**, run the following from the root of your :ref:`repository clone
 <checkout>` to build the output as HTML::
 
-   $ cd Doc
-   $ make html
+   cd Doc
+   make html
 
 or alternatively ``make -C Doc html``.
 
@@ -1502,7 +1502,7 @@ Install the Sphinx package and its dependencies from PyPI.
 
 Then, from the ``Docs`` directory, run::
 
-   $ sphinx-build -b<builder> . build/<builder>
+   sphinx-build -b<builder> . build/<builder>
 
 where ``<builder>`` is one of html, text, latex, or htmlhelp (for explanations
 see the make targets above).

@@ -161,7 +161,7 @@ You can do this by adding the location of the source packages, including
 URL, distribution name and component name, to ``/etc/apt/sources.list``.
 Take Ubuntu Xenial for example::
 
-   $ deb-src http://archive.ubuntu.com/ubuntu/ xenial main
+   deb-src http://archive.ubuntu.com/ubuntu/ xenial main
 
 For other distributions, like Debian, change the URL and names to correspond
 with the specific distribution.
@@ -280,16 +280,20 @@ UNIX
 The basic steps for building Python for development is to configure it and
 then compile it.
 
-Configuration is typically::
+Configuration is typically:
 
-   $ ./configure --with-pydebug
+.. code-block:: bash
+
+   ./configure --with-pydebug
 
 More flags are available to ``configure``, but this is the minimum you should
 do to get a pydebug build of CPython.
 
-Once ``configure`` is done, you can then compile CPython with::
+Once ``configure`` is done, you can then compile CPython with:
 
-   $ make -s -j2
+.. code-block:: bash
+
+   make -s -j2
 
 This will build CPython with only warnings and errors being printed to
 stderr and utilize up to 2 CPU cores. If you are using a multi-core machine
@@ -357,9 +361,9 @@ Windows on the **Individual components** tab of the installer.
 Your first build should use the command line to ensure any external dependencies
 are downloaded:
 
-.. code-block:: doscon
+.. code-block:: dosbatch
 
-   > PCBuild\build.bat
+   PCBuild\build.bat
 
 After this build succeeds, you can open the ``PCBuild\pcbuild.sln`` solution in
 Visual Studio to continue development.

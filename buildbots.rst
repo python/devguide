@@ -3,7 +3,7 @@
 Continuous Integration
 ======================
 
-.. highlight:: console
+.. highlight:: bash
 
 To assert that there are no regressions in the :doc:`development and maintenance
 branches <devcycle>`, Python has a set of dedicated machines (called *buildbots*
@@ -43,7 +43,7 @@ There are three ways of visualizing recent build results:
   to display the latest build results on the development ("master") branch,
   type::
 
-      $ bbreport.py -q 3.x
+      bbreport.py -q 3.x
 
 * The buildbot "console" interface at http://buildbot.python.org/all/console
   This works best on a wide, high resolution
@@ -125,9 +125,11 @@ Let's assume, for the sake of example, that the output starts with:
 
 You can reproduce the exact same order using::
 
-   $ ./python -Wd -E -bb -m test -uall -rwW --randseed 2613169
+   ./python -Wd -E -bb -m test -uall -rwW --randseed 2613169
 
-It will run the following sequence (trimmed for brevity)::
+It will run the following sequence (trimmed for brevity):
+
+.. code-block:: none
 
    [  1/353] test_augassign
    [  2/353] test_functools
@@ -142,10 +144,12 @@ failure.  Copy and paste the test sequence in a text file, then use the
 ``--fromfile`` (or ``-f``) option of the test runner to run the exact
 sequence recorded in that text file::
 
-   $ ./python -Wd -E -bb -m test -uall -rwW --fromfile mytestsequence.txt
+   ./python -Wd -E -bb -m test -uall -rwW --fromfile mytestsequence.txt
 
 In the example sequence above, if ``test_unicode`` had failed, you would
-first test the following sequence::
+first test the following sequence:
+
+.. code-block:: none
 
    [  1/353] test_augassign
    [  2/353] test_functools
@@ -153,7 +157,9 @@ first test the following sequence::
    [  6/353] test_unicode
 
 And, if it succeeds, the following one instead (which, hopefully, shall
-fail)::
+fail):
+
+.. code-block:: none
 
    [  4/353] test_contains
    [  5/353] test_compileall
@@ -197,6 +203,8 @@ implementation, or by making its parameters - such as a timeout - more robust.
 
 Custom builders
 ---------------
+
+.. highlight:: console
 
 When working on a platform-specific issue, you may want to test your changes on
 the buildbot fleet rather than just on Travis and AppVeyor.  To do so, you can
