@@ -2,6 +2,8 @@
 Python Developer's Guide
 ========================
 
+.. highlight:: bash
+
 This guide is a comprehensive resource for :ref:`contributing <contributing>`
 to Python_ -- for both new and experienced contributors.  It is
 :ref:`maintained <helping-with-the-developers-guide>` by the same community
@@ -27,7 +29,9 @@ instructions please see the :ref:`setup guide <setup>`.
 
       ./configure --with-pydebug && make -j
 
-   and on Windows use::
+   and on Windows use:
+
+   .. code-block:: dosbatch
 
       PCbuild\build.bat -e -d
 

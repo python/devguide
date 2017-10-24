@@ -4,6 +4,8 @@
 Running a buildslave
 ====================
 
+.. highlight:: bash
+
 Python's :ref:`buildbots` system was discussed earlier.  We sometimes refer to
 the collection of *build slaves* as our "buildbot fleet".  The machines that
 comprise the fleet are voluntarily contributed resources.  Many are run by
@@ -135,7 +137,9 @@ For OSX:
       If you use pip with Apple's system python, add '/System' to the front of
       the path to the Python bin directory.
 
-    * Place a file with the following contents into ``/Library/LaunchDaemons``::
+   *  Place a file with the following contents into ``/Library/LaunchDaemons``:
+
+      .. code-block:: xml
 
           <?xml version="1.0" encoding="UTF-8"?>
           <!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN"
