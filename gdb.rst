@@ -3,6 +3,8 @@
 gdb Support
 ===========
 
+.. highlight:: none
+
 If you experience low-level problems such as crashes or deadlocks
 (e.g. when tinkering with parts of CPython which are written in C),
 it can be convenient to use a low-level debugger such as gdb in

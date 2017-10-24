@@ -3,6 +3,7 @@
 Lifecycle of a Pull Request
 ===========================
 
+.. highlight:: bash
 
 Introduction
 ------------
@@ -171,9 +172,11 @@ through the common patch generation checks. To run ``patchcheck``:
 
       make patchcheck
 
-   On *Windows* (after any successful build)::
+   On *Windows* (after any successful build):
 
-      python.bat Tools/scripts/patchcheck.py
+   .. code-block:: dosbatch
+
+      python.bat Tools\scripts\patchcheck.py
 
 The automated patch checklist runs through:
 

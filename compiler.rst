@@ -3,6 +3,7 @@
 Design of CPython's Compiler
 ============================
 
+.. highlight:: none
 
 Abstract
 --------
@@ -55,9 +56,10 @@ macros (which are all defined in :file:`Include/node.h`):
         retrieve the line number of the source code that led to the
         creation of the parse rule; defined in :file:`Python/ast.c`
 
-For example, consider the rule for 'while'::
+For example, consider the rule for 'while':
 
-  while_stmt: 'while' test ':' suite ['else' ':' suite]
+.. productionlist::
+   while_stmt: "while" `expression` ":" `suite` : ["else" ":" `suite`]
 
 The node representing this will have ``TYPE(node) == while_stmt`` and
 the number of children can be 4 or 7 depending on whether there is an
@@ -93,13 +95,13 @@ particular programming language.
 The following fragment of the Python ASDL construct demonstrates the
 approach and syntax::
 
-  module Python
-  {
-        stmt = FunctionDef(identifier name, arguments args, stmt* body,
-                            expr* decorators)
+   module Python
+   {
+       stmt = FunctionDef(identifier name, arguments args, stmt* body,
+                          expr* decorators)
               | Return(expr? value) | Yield(expr? value)
               attributes (int lineno)
-  }
+   }
 
 The preceding example describes two different kinds of statements and an
 expression: function definitions, return statements, and yield expressions.

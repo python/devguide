@@ -4,6 +4,8 @@
 Documenting Python
 ==================
 
+.. highlight::  rest
+
 The Python language has a substantial body of documentation, much of it
 contributed by various authors. The markup used for the Python documentation is
 `reStructuredText`_, developed by the `docutils`_ project, amended by custom
@@ -810,7 +812,9 @@ preceding paragraph and delimited by indentation.
 Representing an interactive session requires including the prompts and output
 along with the Python code.  No special markup is required for interactive
 sessions.  After the last line of input or output presented, there should not be
-an "unused" primary prompt; this is an example of what *not* to do::
+an "unused" primary prompt; this is an example of what *not* to do:
+
+.. code-block:: python
 
    >>> 1 + 1
    2
@@ -818,19 +822,19 @@ an "unused" primary prompt; this is an example of what *not* to do::
 
 Syntax highlighting is handled in a smart way:
 
-* There is a "highlighting language" for each source file.  Per default,
+* There is a "highlighting language" for each source file.  By default,
   this is ``'python'`` as the majority of files will have to highlight Python
   snippets.
 
 * Within Python highlighting mode, interactive sessions are recognized
   automatically and highlighted appropriately.
 
-* The highlighting language can be changed using the ``highlightlang``
+* The highlighting language can be changed using the ``highlight``
   directive, used as follows::
 
-     .. highlightlang:: c
+     .. highlight:: c
 
-  This language is used until the next ``highlightlang`` directive is
+  This language is used until the next ``highlight`` directive is
   encountered.
 
 * The ``code-block`` directive can be used to specify the highlight language
@@ -1035,7 +1039,7 @@ in a different style:
    The name of a file or directory.  Within the contents, you can use curly
    braces to indicate a "variable" part, for example::
 
-      ... is installed in :file:`/usr/lib/python2.{x}/site-packages` ...
+      ``spam`` is installed in :file:`/usr/lib/python2.{x}/site-packages` ...
 
    In the built documentation, the ``x`` will be displayed differently to
    indicate that it is to be replaced by the Python minor version.
@@ -1451,6 +1455,8 @@ default. They are set in the build configuration file :file:`conf.py`.
 
 Building the documentation
 ==========================
+
+.. highlight:: bash
 
 The toolset used to build the docs is written in Python and is called Sphinx_.
 Sphinx is maintained separately and is not included in this tree.  Also needed
