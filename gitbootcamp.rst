@@ -332,8 +332,9 @@ Pull requests can be accepted and merged by a Python Core Developer.
 1. At the bottom of the pull request page, click the ``Squash and merge``
    button.
 
-2. Replace the reference to GitHub PR #NNNN into GH-NNNN. If the title
-   is too long, the pull request number can be added to the body.
+2. Replace the reference to GitHub pull request ``#NNNN`` with ``GH-NNNN``.
+   If the title is too long, the pull request number can be added to the
+   message body.
 
 3. Adjust and clean up the commit message.
 
@@ -385,8 +386,8 @@ commands::
 The above commands will print out the hash of the commit containing
 ``"bpo-12345"`` as part of the commit message.
 
-When formatting the message for a backport commit: leave it as the the original
-one, pointing to the original pull request number as well (``GH-NNNN``).
+When formatting the commit message for a backport commit: leave the original
+one as is and delete the number of the backport pull request.
 
 Example of good backport commit message::
 
@@ -395,6 +396,14 @@ Example of good backport commit message::
     * Add method A to the spam module
     * Update the documentation of the spam module
 
+    (cherry picked from commit 62adc55)
+
+Example of bad backport commit message::
+
+    bpo-12345: Improve the spam module (GH-777) (#888)
+
+    * Add method A to the spam module
+    * Update the documentation of the spam module
 
 Editing a Pull Request Prior to Merging
 ---------------------------------------
