@@ -225,7 +225,8 @@ happened (detail should be good enough that a core developer reading the
 commit message understands the justification for the change).
 
 Check :ref:`the git bootcamp <accepting-and-merging-a-pr>` for further
-instructions on how the commit should look like when merging a pull request.
+instructions on how the commit message should look like when merging a pull
+request.
 
 
 .. _cla:
