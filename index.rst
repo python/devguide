@@ -345,7 +345,7 @@ Full Table of Contents
    compiler
    coverity
    clang
-   buildslave
+   buildworker
    motivations
    gitbootcamp
 
