@@ -326,7 +326,7 @@ Security Considerations
 -----------------------
 
 We only allow builds to be triggered against commits to the CPython repository,
-or committer-initiated branches hosted on `https://github.com/python/cpython`_.  This means that the
+or committer-initiated branches hosted on `GitHub <https://github.com/python/cpython>`_.  This means that the
 code your buildbot will run will have been vetted by a committer.  However,
 mistakes and bugs happen, as could a compromise, so keep this in mind when
 siting your buildbot on your network and establishing the security around it.
