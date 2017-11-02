@@ -237,3 +237,4 @@ linkcheck_anchors_ignore = [
     # match any anchor that starts with a '/' since this is an invalid HTML anchor
     '\/.*',
 ]
+
