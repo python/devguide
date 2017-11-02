@@ -1,0 +1,43 @@
+version: 2
+jobs:
+  build:
+    docker:
+      - image: circleci/python:3.6
+    steps:
+      - checkout
+
+      - restore_cache:
+          key: dependency-cache-{{ checksum "requirements.txt" }}
+
+      - run:
+          name: install python dependencies
+          command: |
+            python3 -m venv venv
+            . venv/bin/activate
+            pip install -r requirements.txt
+
+      - save_cache:
+          key: dependency-cache-{{ checksum "requirements.txt" }}
+
+      - run:
+          name: build sphinx
+          command: |
+            python3 -m venv venv
+            . venv/bin/activate
+            pip install -r requirements.txt
+            sphinx-build -n -W -q -b html -d _build/doctrees . _build/html
+
+      - run:
+          name: run linkcheck
+          command: |
+            python3 -m venv venv
+            . venv/bin/activate
+            pip install -r requirements.txt
+            # don't fail the build if linkcheck fails
+            make linkcheck || true
+
+            # make "broken" report
+            cat _build/linkcheck/output.txt | grep broken > _build/linkcheck/broken.txt
+
+      - store_artifacts:
+          path: _build
