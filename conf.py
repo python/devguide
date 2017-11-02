@@ -229,3 +229,11 @@ man_pages = [
     ('index', 'pythondevelopersguide', u"Python Developer's Guide Documentation",
      [u'Brett Cannon'], 1)
 ]
+
+# ignore linkcheck anchors for /#/$ANCHOR since it is used for
+# dynamic pages such as http://buildbot.python.org/all/#/console
+# http://www.sphinx-doc.org/en/stable/config.html?highlight=linkcheck#confval-linkcheck_anchors_ignore
+linkcheck_anchors_ignore = [
+    # match any anchor that starts with a '/' since this is an invalid HTML anchor
+    '\/.*',
+]
