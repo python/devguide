@@ -18,6 +18,8 @@ jobs:
 
       - save_cache:
           key: dependency-cache-{{ checksum "requirements.txt" }}
+          paths:
+            - "venv"
 
       - run:
           name: build sphinx
