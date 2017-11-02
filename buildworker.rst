@@ -1,8 +1,8 @@
 
 .. _buildworker:
 
-Running a buildworker
-=====================
+Running a buildbot worker
+=========================
 
 .. highlight:: bash
 
@@ -15,7 +15,7 @@ tend to exist because some individual championed them, made them a reality, and
 is committed to maintaining them.
 
 Anyone can contribute a buildbot to the fleet.  This chapter describes how
-to go about setting up a buildworker, getting it added, and some hints about
+to go about setting up a buildbot worker, getting it added, and some hints about
 buildbot maintenance.
 
 Anyone running a buildbot that is part of the fleet should subscribe to the
@@ -24,18 +24,18 @@ mailing list.  This mailing list is also the place to contact if you want to
 contribute a buildbot but have questions.
 
 As for what kind of buildbot to run...take a look at our `current fleet
-<http://buildbot.python.org/all/#/builders>`_.  Pretty much anything that isn't
+<http://buildbot.python.org/all/#/workers>`_.  Pretty much anything that isn't
 on that list would be interesting: different Linux/UNIX distributions,
 different versions of the various OSes, other OSes if you or someone are
 prepared to make the test suite actually pass on that new OS.  Even if you only
 want to run an OS that's already on our list there may be utility in setting it
-up. We also need to build and test python under various alternate build
-configurations. Post to the mailing list and talk about what you'd like to
+up; we also need to build and test python under various alternate build
+configurations.  Post to the mailing list and talk about what you'd like to
 contribute.
 
 
-Preparing for buildworker setup
--------------------------------
+Preparing for buildbot worker setup
+-----------------------------------
 
 Since the goal is to build Python from source, the system will need to have
 everything required to do normal python development:  a compiler, a linker, and
@@ -45,15 +45,15 @@ everything required to do normal python development:  a compiler, a linker, and
 compiled python.
 
 In order to set up the buildbot software, you will need to obtain an identifier
-and password for your buildworker so it can join the fleet.  Email
-python-buildbots@python.org to discuss adding your buildworker and to obtain the
+and password for your worker so it can join the fleet.  Email
+python-buildbots@python.org to discuss adding your worker and to obtain the
 needed workername and password.  You can do some of the steps that follow
 before having the credentials, but it is easiest to have them before
-the "buildworker" step below.
+the "buildbot worker" step below.
 
 
-Setting up the buildworker
---------------------------
+Setting up the buildbot worker
+------------------------------
 
 Conventional always-on machines
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -80,9 +80,9 @@ For Mac:
     * Create a buildbot user using the OS/X control panel user admin.  It
       should be a "standard" user.
     * Log in as the buildbot user.
-    * Install either the Python 2.7 bundle from python.org [#]_, or pip.
+    * Install either the bundle from python.org [#]_, or pip.
     * Open a terminal window.
-    * Execute ``pip install buildbot-worker``.
+    * If using pip; execute ``pip install buildbot-worker``.
 
 For Windows:
 
@@ -97,25 +97,25 @@ In a terminal window for the buildbot user, issue the following commands (you
 can put the ``buildarea`` wherever you want to)::
 
     mkdir buildarea
-    buildworker create-worker buildarea buildbot.python.org:9020 workername workerpasswd
+    buildbot-worker create-worker buildarea buildbot.python.org:9020 workername workerpasswd
 
-(Note that on Windows, the ``buildworker`` command will be in the
+(Note that on Windows, the ``buildbot-worker`` command will be in the
 :file:`Scripts` directory of your Python installation.)
 
 Once this initial worker setup completes, you should edit the files
 ``buildarea/info/admin`` and ``buildarea/info/host`` to provide your contact
 info and information on the host configuration, respectively.  This information
 will be presented in the buildbot web pages that display information about the
-builders running on your buildworker.
+builders running on your worker.
 
-You will also want to make sure that the buildworker is started when the
+You will also want to make sure that the worker is started when the
 machine reboots:
 
 For Linux:
 
     * Add the following line to ``/etc/crontab``::
 
-          @reboot buildworker restart /path/to/buildarea
+          @reboot buildbot-worker restart /path/to/buildarea
 
       Note that we use ``restart`` rather than ``start`` in case a crash has
       left a ``twistd.pid`` file behind.
@@ -171,22 +171,22 @@ For OSX:
 
 For Windows:
 
-    * Add a Scheduled Task to run ``buildworker start buildarea`` as the
+    * Add a Scheduled Task to run ``buildbot-worker start buildarea`` as the
       buildbot user "when the computer starts up".  It is best to provide
-      absolute paths to the ``buildworker`` command and the :file:`buildarea`
+      absolute paths to the ``buildbot-worker`` command and the :file:`buildarea`
       directory.  It is also recommended to set the task to run in the
       directory that contains the :file:`buildarea` directory.
 
-    * Alternatively (note: don't do both!), set up the buildworker
+    * Alternatively (note: don't do both!), set up the worker
       service as described in the `buildbot documentation
       <http://trac.buildbot.net/wiki/RunningBuildbotOnWindows#Service>`_.
 
-To start the buildworker running for your initial testing, you can do::
+To start the worker running for your initial testing, you can do::
 
-    buildworker start buildarea
+    buildbot-worker start buildarea
 
 Then you can either wait for someone to make a commit, or you can pick a
-builder associated with your buildworker from the `list of builders
+builder associated with your worker from the `list of builders
 <http://buildbot.python.org/all/#/builders>`_ and force a build.
 
 In any case you should initially monitor builds on your builders to make sure
@@ -199,7 +199,7 @@ idea.
 Latent workers
 ^^^^^^^^^^^^^^
 
-We also support running `latent buildworkers
+We also support running `latent workers
 <http://docs.buildbot.net/current/manual/cfg-workers.html#latent-workers>`_
 on the AWS EC2 service.  To set up such a worker:
 
@@ -226,8 +226,8 @@ down for an unexpectedly long time, please ping the `python-buildbots
 <https://mail.python.org/mailman/listinfo/python-buildbots>`_ list to
 request that the master be restarted.
 
-Latent worker should also be updated periodically to include operating system
-or other software updates, but when do do such maintenance is largely up to you
+Latent workers should also be updated periodically to include operating system
+or other software updates, but when to do such maintenance is largely up to you
 as the worker owner.  There are a couple different options for doing such
 updates:
 
@@ -243,10 +243,10 @@ Whichever way you choose to update your AMI, you'll need to provide the
 buildmaster administrators with the new AMI ID.
 
 
-Buildworker operation
----------------------
+Buildbot worker operation
+-------------------------
 
-Most of the time, running a buildworker is a "set and forget" operation,
+Most of the time, running a worker is a "set and forget" operation,
 depending on the level of involvement you want to have in resolving bugs
 revealed by your builders.  There are, however, times when it is helpful or
 even necessary for you to get involved.  As noted above, you should be
@@ -256,20 +256,20 @@ aware of any fleet-wide issues.
 Necessary tasks include, obviously, keeping the buildbot running.  Currently
 the system for notifying buildbot owners when their workers go offline is not
 working; this is something we hope to resolve.  So currently it is helpful if
-you periodically check the status of your buildworker.  We will also contact you
+you periodically check the status of your worker.  We will also contact you
 via your contact address in ``buildarea/info/admin`` when we notice there is a
 problem that has not been resolved for some period of time and you have
 not responded to a posting on the python-buildbots list about it.
 
-We currently do not have a minimum version requirement for the buildworker
+We currently do not have a minimum version requirement for the worker
 software.  However, this is something we will probably establish as we tune the
-fleet, so another task will be to occasionally upgrade the buildworker software.
+fleet, so another task will be to occasionally upgrade the buildbot worker software.
 Coordination for this will be done via ``python-buildbots@python.org``.
 
-The most interesting extra involvement is when your buildworker reveals a unique
+The most interesting extra involvement is when your worker reveals a unique
 or almost-unique problem:  a test that is failing on your system but not on
 other systems.  In this case you should be prepared to offer debugging help to
-the people working on the bug: running tests by hand on the buildworker machine
+the people working on the bug: running tests by hand on the worker machine
 or, if possible, providing ssh access to a committer to run experiments to try
 to resolve the issue.
 
@@ -277,7 +277,7 @@ to resolve the issue.
 Required Ports
 --------------
 
-The buildworker operates as a *client* to the *buildmaster*.  This means that
+The worker operates as a *client* to the *buildmaster*.  This means that
 all network connections are *outbound*.  This is true also for the network
 tests in the test suite.  Most consumer firewalls will allow any outbound
 traffic, so normally you do not need to worry about what ports the buildbot
