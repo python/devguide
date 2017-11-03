@@ -81,7 +81,7 @@ collections           rhettinger
 collections.abc       rhettinger, stutzbach
 colorsys
 compileall
-concurrent.futures    bquinlan
+concurrent.futures    pitrou, bquinlan
 configparser          lukasz.langa*
 contextlib            ncoghlan, yselivanov
 copy                  alexandre.vassalotti
@@ -116,7 +116,7 @@ fpectl                twouters
 fractions             mark.dickinson, rhettinger
 ftplib                giampaolo.rodola*
 functools             ncoghlan, rhettinger
-gc
+gc                    pitrou
 getopt
 getpass
 gettext               loewis
@@ -230,7 +230,7 @@ tempfile
 termios               twouters
 test                  ezio.melotti
 textwrap
-threading
+threading             pitrou
 time                  belopolsky
 timeit
 tkinter               gpolo, serhiy.storchaka
