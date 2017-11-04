@@ -61,7 +61,8 @@ and ``upstream`` pointing to the official CPython repository::
 
 Setting Up Your Name and Email Address
 --------------------------------------
-::
+
+.. code-block:: bash
 
    git config --global user.name "Your Name"
    git config --global user.email email@example.org
@@ -147,7 +148,9 @@ Staging and Committing Files
 
       git add path/to/file1 path/to/file2 path/to/file3
 
-3. To commit the files that have been staged (done in step 2)::
+3. To commit the files that have been staged (done in step 2):
+
+   .. code-block:: bash
 
       git commit -m "bpo-XXXX: This is the commit message."
 
@@ -185,7 +188,9 @@ Add the files you want to commit::
 
    git add <filename>
 
-Commit the files::
+Commit the files:
+
+.. code-block:: bash
 
    git commit -m '<message>'
 
@@ -276,7 +281,9 @@ Solution:
        git apply /path/to/issueNNNN-git.patch
 
    If there are errors, update to a revision from when the patch was
-   created and then try the ``git apply`` again::
+   created and then try the ``git apply`` again:
+
+   .. code-block:: bash
 
        git checkout `git rev-list -n 1 --before="yyyy-mm-dd hh:mm:ss" master`
        git apply /path/to/issueNNNN-git.patch
@@ -312,7 +319,9 @@ On Unix and MacOS, set up the following git alias::
 
    $ git config --global alias.pr '!sh -c "git fetch upstream pull/${1}/head:pr_${1} && git checkout pr_${1}" -'
 
-On Windows, reverse the single (`'`) and double (`"`) quotes::
+On Windows, reverse the single (`'`) and double (`"`) quotes:
+
+.. code-block:: bash
 
    git config --global alias.pr "!sh -c 'git fetch upstream pull/${1}/head:pr_${1} && git checkout pr_${1}' -"
 
@@ -377,7 +386,9 @@ page.  Find the event that says something like::
 By following the link to ``<commit_sha1>``, you will get the full commit hash.
 
 Alternatively, the commit hash can also be obtained by the following git
-commands::
+commands:
+
+.. code-block:: bash
 
    git fetch upstream
    git rev-parse ":/bpo-12345"
@@ -416,13 +427,15 @@ To edit an open pull request that targets ``master``:
 
 2. Fetch the pull request, using the :ref:`git pr <git_pr>` alias::
 
-      $ git pr <pr_number>
+      git pr <pr_number>
 
    This will checkout the contributor's branch at ``pr_XXX``.
 
 3. Make and commit your changes on the branch.  For example, merge in changes
    made to ``master`` since the PR was submitted (any merge commits will be
-   removed by the later ``Squash and Merge`` when accepting the change)::
+   removed by the later ``Squash and Merge`` when accepting the change):
+
+   .. code-block:: bash
 
       git fetch upstream
       git merge upstream/master
