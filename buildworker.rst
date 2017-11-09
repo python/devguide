@@ -85,7 +85,7 @@ For Mac:
 For Windows:
 
     * Create a buildbot user as a "standard" user.
-    * Install the latest version of Python 2.7 from python.org.
+    * Install the latest version of Python from python.org.
     * Open a Command Prompt.
     * Execute ``python -m pip install pypiwin32 buildbot-worker`` (note that
       ``python.exe`` is not added to ``PATH`` by default, making the
