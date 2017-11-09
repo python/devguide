@@ -1,13 +1,13 @@
 
-.. _buildslave:
+.. _buildworker:
 
-Running a buildslave
-====================
+Running a buildbot worker
+=========================
 
 .. highlight:: bash
 
 Python's :ref:`buildbots` system was discussed earlier.  We sometimes refer to
-the collection of *build slaves* as our "buildbot fleet".  The machines that
+the collection of *build workers* as our "buildbot fleet".  The machines that
 comprise the fleet are voluntarily contributed resources.  Many are run by
 individual volunteers out of their own pockets and time, while others are
 supported by corporations.  Even the corporate sponsored buildbots, however,
@@ -15,7 +15,7 @@ tend to exist because some individual championed them, made them a reality, and
 is committed to maintaining them.
 
 Anyone can contribute a buildbot to the fleet.  This chapter describes how
-to go about setting up a buildslave, getting it added, and some hints about
+to go about setting up a buildbot worker, getting it added, and some hints about
 buildbot maintenance.
 
 Anyone running a buildbot that is part of the fleet should subscribe to the
@@ -24,18 +24,18 @@ mailing list.  This mailing list is also the place to contact if you want to
 contribute a buildbot but have questions.
 
 As for what kind of buildbot to run...take a look at our `current fleet
-<http://buildbot.python.org/all/buildslaves>`_.  Pretty much anything that isn't
+<http://buildbot.python.org/all/#/workers>`_.  Pretty much anything that isn't
 on that list would be interesting: different Linux/UNIX distributions,
 different versions of the various OSes, other OSes if you or someone are
 prepared to make the test suite actually pass on that new OS.  Even if you only
 want to run an OS that's already on our list there may be utility in setting it
-up: we also need to build and test python under various alternate build
+up; we also need to build and test python under various alternate build
 configurations.  Post to the mailing list and talk about what you'd like to
 contribute.
 
 
-Preparing for buildslave setup
-------------------------------
+Preparing for buildbot worker setup
+-----------------------------------
 
 Since the goal is to build Python from source, the system will need to have
 everything required to do normal python development:  a compiler, a linker, and
@@ -45,15 +45,15 @@ everything required to do normal python development:  a compiler, a linker, and
 compiled python.
 
 In order to set up the buildbot software, you will need to obtain an identifier
-and password for your buildslave so it can join the fleet.  Email
-python-buildbots@python.org to discuss adding your buildslave and to obtain the
-needed slavename and password.  You can do some of the steps that follow
+and password for your worker so it can join the fleet.  Email
+python-buildbots@python.org to discuss adding your worker and to obtain the
+needed workername and password.  You can do some of the steps that follow
 before having the credentials, but it is easiest to have them before
-the "buildslave" step below.
+the "buildbot worker" step below.
 
 
-Setting up the buildslave
--------------------------
+Setting up the buildbot worker
+------------------------------
 
 Conventional always-on machines
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -61,17 +61,17 @@ Conventional always-on machines
 You need a recent version of the `buildbot <http://buildbot.net/>`_ software,
 and you will probably want a separate 'buildbot' user to run the buildbot
 software.  You may also want to set the buildbot up using a virtual
-environment, depending on you manage your system.  We won't cover how to that
+environment, depending on how you manage your system.  We won't cover how to that
 here; it doesn't differ from setting up a virtual environment for any other
 software, but you'll need to modify the sequence of steps below as appropriate
 if you choose that path.
 
 For Linux:
 
-    * If your package manager provides the buildbot slave software, that is
+    * If your package manager provides the buildbot worker software, that is
       probably the best way to install it; it may create the buildbot user for
       you, in which case you can skip that step.  Otherwise, do ``pip install
-      buildbot-slave``.
+      buildbot-worker``.
     * Create a ``buildbot`` user (using, eg: ``useradd``) if necessary.
     * Log in as the buildbot user.
 
@@ -80,16 +80,14 @@ For Mac:
     * Create a buildbot user using the OS/X control panel user admin.  It
       should be a "standard" user.
     * Log in as the buildbot user.
-    * Install either the Python 2.7 bundle from python.org [#]_, or pip.
-    * Open a terminal window.
-    * Execute ``pip install buildbot-slave``.
+    * Install the buildbot worker [#]_ by running ``pip install buildbot-worker``.
 
 For Windows:
 
     * Create a buildbot user as a "standard" user.
     * Install the latest version of Python 2.7 from python.org.
     * Open a Command Prompt.
-    * Execute ``python -m pip install pypiwin32 buildbot-slave`` (note that
+    * Execute ``python -m pip install pypiwin32 buildbot-worker`` (note that
       ``python.exe`` is not added to ``PATH`` by default, making the
       ``python`` command accessible is left as an exercise for the user).
 
@@ -97,25 +95,25 @@ In a terminal window for the buildbot user, issue the following commands (you
 can put the ``buildarea`` wherever you want to)::
 
     mkdir buildarea
-    buildslave create-slave buildarea buildbot.python.org:9020 slavename slavepasswd
+    buildbot-worker create-worker buildarea buildbot.python.org:9020 workername workerpasswd
 
-(Note that on Windows, the ``buildslave`` command will be in the
+(Note that on Windows, the ``buildbot-worker`` command will be in the
 :file:`Scripts` directory of your Python installation.)
 
-Once this initial slave setup completes, you should edit the files
+Once this initial worker setup completes, you should edit the files
 ``buildarea/info/admin`` and ``buildarea/info/host`` to provide your contact
 info and information on the host configuration, respectively.  This information
 will be presented in the buildbot web pages that display information about the
-builders running on your buildslave.
+builders running on your worker.
 
-You will also want to make sure that the buildslave is started when the
+You will also want to make sure that the worker is started when the
 machine reboots:
 
 For Linux:
 
     * Add the following line to ``/etc/crontab``::
 
-          @reboot buildslave restart /path/to/buildarea
+          @reboot buildbot-worker restart /path/to/buildarea
 
       Note that we use ``restart`` rather than ``start`` in case a crash has
       left a ``twistd.pid`` file behind.
@@ -126,13 +124,13 @@ For OSX:
 
           mkdir bin
 
-    * Place the following script, named ``run_slave.sh``, into that directory::
+    * Place the following script, named ``run_worker.sh``, into that directory::
 
           #!/bin/bash
           export PATH=/usr/local/bin:/Library/Frameworks/Python.framework/Versions/2.7/bin:$PATH
           export LC_CTYPE=en_US.utf-8
           cd /Users/buildbot/buildarea
-          twistd --nodaemon --python=buildbot.tac --logfile=buildbot.log --prefix=slave
+          twistd --nodaemon --python=buildbot.tac --logfile=buildbot.log --prefix=worker
 
       If you use pip with Apple's system python, add '/System' to the front of
       the path to the Python bin directory.
@@ -147,14 +145,14 @@ For OSX:
           <plist version="1.0">
           <dict>
                 <key>Label</key>
-                <string>net.buildbot.slave</string>
+                <string>net.buildbot.worker</string>
                 <key>UserName</key>
                 <string>buildbot</string>
                 <key>WorkingDirectory</key>
                 <string>/Users/buildbot/buildarea</string>
                 <key>ProgramArguments</key>
                 <array>
-                        <string>/Users/buildbot/bin/run_slave.sh</string>
+                        <string>/Users/buildbot/bin/run_worker.sh</string>
                 </array>
                 <key>StandardOutPath</key>
                 <string>twistd.log</string>
@@ -167,27 +165,27 @@ For OSX:
           </dict>
           </plist>
 
-      The recommended name for the file is ``net.buildbot.slave``.
+      The recommended name for the file is ``net.buildbot.worker``.
 
 For Windows:
 
-    * Add a Scheduled Task to run ``buildslave start buildarea`` as the
+    * Add a Scheduled Task to run ``buildbot-worker start buildarea`` as the
       buildbot user "when the computer starts up".  It is best to provide
-      absolute paths to the ``buildslave`` command and the :file:`buildarea`
+      absolute paths to the ``buildbot-worker`` command and the :file:`buildarea`
       directory.  It is also recommended to set the task to run in the
       directory that contains the :file:`buildarea` directory.
 
-    * Alternatively (note: don't do both!), set up the buildslave
+    * Alternatively (note: don't do both!), set up the worker
       service as described in the `buildbot documentation
       <http://trac.buildbot.net/wiki/RunningBuildbotOnWindows#Service>`_.
 
-To start the buildslave running for your initial testing, you can do::
+To start the worker running for your initial testing, you can do::
 
-    buildslave start buildarea
+    buildbot-worker start buildarea
 
 Then you can either wait for someone to make a commit, or you can pick a
-builder associated with your buildslave from the `list of builders
-<http://buildbot.python.org/all/buildslaves>`_ and force a build.
+builder associated with your worker from the `list of builders
+<http://buildbot.python.org/all/#/builders>`_ and force a build.
 
 In any case you should initially monitor builds on your builders to make sure
 the tests are passing and to resolve any platform issues that may be revealed
@@ -196,19 +194,19 @@ only of failures on your builders, so doing periodic spot checks is also a good
 idea.
 
 
-Latent slaves
-^^^^^^^^^^^^^
+Latent workers
+^^^^^^^^^^^^^^
 
-We also support running `latent buildslaves
-<http://docs.buildbot.net/current/manual/cfg-buildslaves.html#latent-buildslaves>`_
-on the AWS EC2 service.  To set up such a slave:
+We also support running `latent workers
+<http://docs.buildbot.net/current/manual/cfg-workers.html#latent-workers>`_
+on the AWS EC2 service.  To set up such a worker:
 
     * Start an instance of your chosen base AMI and set it up as a
-      conventional slave.
-    * After the instance is fully set up as a conventional slave (including
-      slave name and password, and admin and host information), create an AMI
+      conventional worker.
+    * After the instance is fully set up as a conventional worker (including
+      worker name and password, and admin and host information), create an AMI
       from the instance and stop the instance.
-    * Contact the buildmaster administrator who gave you your slave
+    * Contact the buildmaster administrator who gave you your worker
       name and password and give them the following information:
 
       * Instance size (such as ``m4.large``)
@@ -221,32 +219,32 @@ on the AWS EC2 service.  To set up such a slave:
 The buildmaster cannot guarantee that it will always shut down your
 instance(s), so it is recommended to periodically check and make sure
 there are no "zombie" instances running on your account, created by the
-buildbot master.  Also, if you notice that your slave seems to have been
+buildbot master.  Also, if you notice that your worker seems to have been
 down for an unexpectedly long time, please ping the `python-buildbots
 <https://mail.python.org/mailman/listinfo/python-buildbots>`_ list to
 request that the master be restarted.
 
-Latent slaves should also be updated periodically to include operating system
-or other software updates, but when do do such maintenance is largely up to you
-as the slave owner.  There are a couple different options for doing such
+Latent workers should also be updated periodically to include operating system
+or other software updates, but when to do such maintenance is largely up to you
+as the worker owner.  There are a couple different options for doing such
 updates:
 
     * Start an instance from your existing AMI, do updates on that instance,
       and save a new AMI from the updated instance.  Note that (especially for
-      Windows slaves) you should do at least one restart of the instance after
+      Windows workers) you should do at least one restart of the instance after
       doing updates to be sure that any post-reboot update work is done before
       creating the new AMI.
     * Create an entirely new setup from a newer base AMI using your existing
-      slave name and password.
+      worker name and password.
 
 Whichever way you choose to update your AMI, you'll need to provide the
 buildmaster administrators with the new AMI ID.
 
 
-Buildslave operation
---------------------
+Buildbot worker operation
+-------------------------
 
-Most of the time, running a buildslave is a "set and forget" operation,
+Most of the time, running a worker is a "set and forget" operation,
 depending on the level of involvement you want to have in resolving bugs
 revealed by your builders.  There are, however, times when it is helpful or
 even necessary for you to get involved.  As noted above, you should be
@@ -254,22 +252,22 @@ subscribed to ``python-buildbots@python.org`` so that you will be made
 aware of any fleet-wide issues.
 
 Necessary tasks include, obviously, keeping the buildbot running.  Currently
-the system for notifying buildbot owners when their slaves go offline is not
+the system for notifying buildbot owners when their workers go offline is not
 working; this is something we hope to resolve.  So currently it is helpful if
-you periodically check the status of your buildslave.  We will also contact you
+you periodically check the status of your worker.  We will also contact you
 via your contact address in ``buildarea/info/admin`` when we notice there is a
 problem that has not been resolved for some period of time and you have
 not responded to a posting on the python-buildbots list about it.
 
-We currently do not have a minimum version requirement for the buildslave
+We currently do not have a minimum version requirement for the worker
 software.  However, this is something we will probably establish as we tune the
-fleet, so another task will be to occasionally upgrade the buildslave software.
+fleet, so another task will be to occasionally upgrade the buildbot worker software.
 Coordination for this will be done via ``python-buildbots@python.org``.
 
-The most interesting extra involvement is when your buildslave reveals a unique
+The most interesting extra involvement is when your worker reveals a unique
 or almost-unique problem:  a test that is failing on your system but not on
 other systems.  In this case you should be prepared to offer debugging help to
-the people working on the bug:  running tests by hand on the buildslave machine
+the people working on the bug: running tests by hand on the worker machine
 or, if possible, providing ssh access to a committer to run experiments to try
 to resolve the issue.
 
@@ -277,7 +275,7 @@ to resolve the issue.
 Required Ports
 --------------
 
-The buildslave operates as a *client* to the *buildmaster*.  This means that
+The worker operates as a *client* to the *buildmaster*.  This means that
 all network connections are *outbound*.  This is true also for the network
 tests in the test suite.  Most consumer firewalls will allow any outbound
 traffic, so normally you do not need to worry about what ports the buildbot
@@ -325,10 +323,10 @@ suite.
 Security Considerations
 -----------------------
 
-We only allow builds to be triggered against commits to the CPython repository,
-or committer-initiated branches hosted on hg.python.org.  This means that the
-code your buildbot will run will have been vetted by a committer.  However,
-mistakes and bugs happen, as could a compromise, so keep this in mind when
+We only allow builds to be triggered against commits to the
+`CPython repository on GitHub <https://github.com/python/cpython>`_.
+This means that the code your buildbot will run will have been vetted by a committer.
+However, mistakes and bugs happen, as could a compromise, so keep this in mind when
 siting your buildbot on your network and establishing the security around it.
 Treat the buildbot like you would any resource that is public facing and might
 get hacked (use a VM and/or jail/chroot/solaris zone, put it in a DMZ, etc).
