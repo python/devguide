@@ -80,7 +80,7 @@ For Mac:
     * Create a buildbot user using the OS/X control panel user admin.  It
       should be a "standard" user.
     * Log in as the buildbot user.
-    * Install the buildbot worker, either from python.org [#]_ or by running ``pip install buildbot-worker``.
+    * Install the buildbot worker [#]_ by running ``pip install buildbot-worker``.
 
 For Windows:
 
