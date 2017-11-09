@@ -101,7 +101,7 @@ distutils             eric.araujo, dstufft
 doctest               tim.peters (inactive)
 dummy_threading       brett.cannon
 email                 barry, r.david.murray*
-encodings             lemburg, loewis
+encodings             lemburg
 ensurepip             ncoghlan, dstufft
 enum                  eli.bendersky*, barry, ethan.furman*
 errno                 twouters
@@ -119,7 +119,7 @@ functools             ncoghlan, rhettinger
 gc                    pitrou
 getopt
 getpass
-gettext               loewis
+gettext
 glob
 grp
 gzip
@@ -142,7 +142,7 @@ keyword
 lib2to3               benjamin.peterson
 libmpdec              skrah
 linecache
-locale                loewis, lemburg
+locale                lemburg
 logging               vinay.sajip
 lzma
 macpath
@@ -154,7 +154,7 @@ memoryview            skrah
 mimetypes
 mmap                  twouters
 modulefinder          theller (inactive), jvr
-msilib                loewis
+msilib
 msvcrt
 multiprocessing       davin*, pitrou, jnoller (inactive), sbt (inactive)
 netrc
@@ -163,7 +163,7 @@ nntplib
 numbers
 operator
 optparse              aronacher
-os                    loewis
+os
 os.path               serhiy.storchaka
 ossaudiodev
 parser                benjamin.peterson
@@ -243,7 +243,7 @@ tty                   twouters*
 turtle                gregorlingl, willingc
 types                 yselivanov
 typing
-unicodedata           loewis, lemburg, ezio.melotti
+unicodedata           lemburg, ezio.melotti
 unittest              michael.foord*, ezio.melotti, rbcollins
 unittest.mock         michael.foord*
 urllib                orsenthil
@@ -267,7 +267,7 @@ xml.sax
 xml.sax.handler
 xml.sax.saxutils
 xml.sax.xmlreader
-xmlrpc                loewis
+xmlrpc
 zipfile               alanmcintyre, serhiy.storchaka, twouters
 zipimport             twouters*
 zlib                  twouters
@@ -327,7 +327,7 @@ GUI
 i18n                lemburg, eric.araujo
 import machinery    brett.cannon, ncoghlan, eric.snow
 io                  benjamin.peterson, stutzbach
-locale              lemburg, loewis
+locale              lemburg
 mathematics         mark.dickinson, eric.smith, lemburg, stutzbach
 memory management   tim.peters, lemburg, twouters
 networking          giampaolo.rodola,
@@ -336,7 +336,7 @@ packaging           tarek, lemburg, alexis, eric.araujo, dstufft, paul.moore
 performance         brett.cannon, haypo, serhiy.storchaka, yselivanov
 pip                 ncoghlan, dstufft, paul.moore, Marcus.Smith
 py3 transition      benjamin.peterson
-release management  tarek, lemburg, benjamin.peterson, barry, loewis,
+release management  tarek, lemburg, benjamin.peterson, barry
                     gvanrossum, anthonybaxter, eric.araujo, ned.deily,
                     georg.brandl
 str.format          eric.smith
