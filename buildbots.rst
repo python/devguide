@@ -7,7 +7,7 @@ Continuous Integration
 
 To assert that there are no regressions in the :doc:`development and maintenance
 branches <devcycle>`, Python has a set of dedicated machines (called *buildbots*
-or *build slaves*) used for continuous integration.  They span a number of
+or *build workers*) used for continuous integration.  They span a number of
 hardware/operating system combinations.  Furthermore, each machine hosts
 several *builders*, one per active branch: when a new change is pushed
 to this branch on the public Mercurial repository, all corresponding builders
@@ -209,7 +209,7 @@ Custom builders
 When working on a platform-specific issue, you may want to test your changes on
 the buildbot fleet rather than just on Travis and AppVeyor.  To do so, you can
 make use of the `custom builders
-<http://buildbot.python.org/all/waterfall?category=custom.stable&category=custom.unstable>`_.
+<http://buildbot.python.org/all/#/builders?tags=custom.unstable&tags=custom.stable>`_.
 These builders track the ``buildbot-custom`` short-lived branch of the
 ``python/cpython`` repository, which is only accessible to core developers.
 
@@ -233,4 +233,4 @@ recommend you change (temporarily, of course) the contents of the
 the ``Tools/buildbot/test.bat`` script.
 
 .. seealso::
-   :ref:`buildslave`
+   :ref:`buildworker`
