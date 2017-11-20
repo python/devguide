@@ -106,7 +106,7 @@ ensurepip             ncoghlan, dstufft
 enum                  eli.bendersky*, barry, ethan.furman*
 errno                 twouters
 exceptions
-faulthandler          haypo
+faulthandler          vstinner
 fcntl                 twouters
 filecmp
 fileinput
@@ -238,7 +238,7 @@ token
 tokenize              meador.inge
 trace                 belopolsky
 traceback
-tracemalloc           haypo
+tracemalloc           vstinner
 tty                   twouters*
 turtle                gregorlingl, willingc
 types                 yselivanov
@@ -333,7 +333,7 @@ memory management   tim.peters, lemburg, twouters
 networking          giampaolo.rodola,
 object model        benjamin.peterson, twouters
 packaging           tarek, lemburg, alexis, eric.araujo, dstufft, paul.moore
-performance         brett.cannon, haypo, serhiy.storchaka, yselivanov
+performance         brett.cannon, vstinner, serhiy.storchaka, yselivanov
 pip                 ncoghlan, dstufft, paul.moore, Marcus.Smith
 py3 transition      benjamin.peterson
 release management  tarek, lemburg, benjamin.peterson, barry
@@ -344,7 +344,7 @@ testing             michael.foord, ezio.melotti
 test coverage       giampaolo.rodola
 threads
 time and dates      lemburg, belopolsky
-unicode             lemburg, ezio.melotti, haypo, benjamin.peterson,
+unicode             lemburg, ezio.melotti, vstinner, benjamin.peterson,
 version control     eric.araujo, ezio.melotti
 ==================  ==========================================================
 
