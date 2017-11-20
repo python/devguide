@@ -153,7 +153,7 @@ participating in the CPython core development process:
 
 .. topic:: Victor Stinner (France)
 
-   * `Personal website <https://haypo-notes.readthedocs.io/>`__
+   * `Personal website <https://vstinner.readthedocs.io/>`__
    * Red Hat (Senior Software Engineer)
 
    Victor is hacking the development version of CPython to make Python better
