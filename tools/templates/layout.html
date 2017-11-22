@@ -37,7 +37,7 @@
 {% endblock %}
 {% block footer %}
     <div class="footer">
-    &copy; <a href="{{ pathto('copyright') }}">{% trans %}Copyright{% endtrans %}</a> {{ copyright|e }}.
+    &copy; {% trans %}Copyright{% endtrans %} {{ copyright|e }}.
     <br />
     {% trans %}The Python Software Foundation is a non-profit corporation.{% endtrans %}
     <a href="https://www.python.org/psf/donations/">{% trans %}Please donate.{% endtrans %}</a>
