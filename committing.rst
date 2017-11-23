@@ -28,6 +28,7 @@ merging (details of various steps can be found later in this document):
 #. Was "What's New" updated (as appropriate)?
 #. Were appropriate labels added to signify necessary backporting of the
    pull request?
+#. Was the pull request first made against the ``master`` branch?
 
 .. note::
    If you want to share your work-in-progress code on a feature or bugfix,
