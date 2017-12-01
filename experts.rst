@@ -324,11 +324,12 @@ database            lemburg
 devguide            ncoghlan, eric.araujo, ezio.melotti, willingc
 documentation       ezio.melotti, eric.araujo, willingc
 GUI
+f-strings           eric.smith*
 i18n                lemburg, eric.araujo
 import machinery    brett.cannon, ncoghlan, eric.snow
 io                  benjamin.peterson, stutzbach
 locale              lemburg
-mathematics         mark.dickinson, eric.smith, lemburg, stutzbach
+mathematics         mark.dickinson, lemburg, stutzbach
 memory management   tim.peters, lemburg, twouters
 networking          giampaolo.rodola,
 object model        benjamin.peterson, twouters
@@ -339,7 +340,7 @@ py3 transition      benjamin.peterson
 release management  tarek, lemburg, benjamin.peterson, barry
                     gvanrossum, anthonybaxter, eric.araujo, ned.deily,
                     georg.brandl
-str.format          eric.smith
+str.format          eric.smith*
 testing             michael.foord, ezio.melotti
 test coverage       giampaolo.rodola
 threads
