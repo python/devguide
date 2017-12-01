@@ -123,6 +123,19 @@ participating in the CPython core development process:
    * Red Hat (Software Developer, Security Engineering / Identity Management)
    * Python Software Foundation (Fellow)
 
+.. topic:: Mariatta (Canada)
+
+   * Personal site: `mariatta.ca <http://mariatta.ca>`_
+   * Works as a `Software Engineer <https://www.linkedin.com/in/mariatta/>`_
+     in Vancouver, helps organize `Vancouver PyLadies
+     <https://www.meetup.com/PyLadies-Vancouver/>`_ meetup on the side, and
+     sometimes `speaks <http://mariatta.ca/pages/talk-chronology.html#talk-chronology>`_
+     at conferences.
+   * Email address: mariatta@python.org
+   
+   Support Mariatta by sending her a `happiness packet <https://www.happinesspackets.io/send/>`_,
+   or `paypal <https://www.paypal.me/mariatta>`_.
+   
 .. topic:: R. David Murray (United States)
 
    * Personal site: `bitdance.com <http://www.bitdance.com>`_
