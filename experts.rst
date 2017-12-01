@@ -323,8 +323,8 @@ data formats        mark.dickinson
 database            lemburg
 devguide            ncoghlan, eric.araujo, ezio.melotti, willingc
 documentation       ezio.melotti, eric.araujo, willingc
-GUI
 f-strings           eric.smith*
+GUI
 i18n                lemburg, eric.araujo
 import machinery    brett.cannon, ncoghlan, eric.snow
 io                  benjamin.peterson, stutzbach
