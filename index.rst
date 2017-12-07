@@ -265,7 +265,7 @@ Key Resources
     * `Meta tracker <http://psf.upfronthosting.co.za/roundup/meta>`_ (issue
       tracker for the issue tracker)
     * :doc:`experts`
-    * `Firefox search engine plug-in`_
+    * Firefox search engine plug-in
 * `Buildbot status`_
 * Source code
     * `Browse online <https://github.com/python/cpython/>`_
@@ -351,7 +351,6 @@ Full Table of Contents
 
 
 .. _Buildbot status: https://www.python.org/dev/buildbot/
-.. _Firefox search engine plug-in: https://www.python.org/dev/searchplugin/
 .. _Misc directory: https://github.com/python/cpython/tree/master/Misc
 .. _PEPs: https://www.python.org/dev/peps/
 .. _python.org maintenance: https://pythondotorg.readthedocs.io/
