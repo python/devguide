@@ -265,7 +265,6 @@ Key Resources
     * `Meta tracker <http://psf.upfronthosting.co.za/roundup/meta>`_ (issue
       tracker for the issue tracker)
     * :doc:`experts`
-    * Firefox search engine plug-in
 * `Buildbot status`_
 * Source code
     * `Browse online <https://github.com/python/cpython/>`_
