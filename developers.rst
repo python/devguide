@@ -25,6 +25,12 @@ transliteration too.
 Permissions History
 -------------------
 
+- Julien Palard was given push privileges on December 8, 2017 by Victor Stinner,
+  on his own recommendation.
+
+- Ivan Levkivskyi was given push privileges on December 6, 2017 by Guido van Rossum,
+  on his own recommendation.
+
 - Carol Willing was given push privileges on May 24, 2017 by Brett Cannon,
   on his own recommendation.
 
