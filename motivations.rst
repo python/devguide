@@ -173,7 +173,7 @@ participating in the CPython core development process:
 .. topic:: Kushal Das (India)
 
    * `Personal website <https://kushaldas.in>`__
-   * Red Hat (Fedora Cloud Engineer)
+   * `Freedom of the Press Foundation <https://freedom.press>`__ (Staff)
    * Python Software Foundation (Fellow)
 
 
