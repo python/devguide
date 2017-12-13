@@ -168,9 +168,10 @@ The ``Misc/NEWS.d`` directory contains a sub-directory named ``next`` which
 itself contains various sub-directories representing classifications for what
 was affected (e.g. ``Misc/NEWS.d/next/Library`` for changes relating to the
 standard library). The file name itself should be of the format
-``<date>.bpo-<issue-number>.<nonce>.rst``:
+``<datetime>.bpo-<issue-number>.<nonce>.rst``:
 
-* ``<date>`` is today's date in ``YYYY-MM-DD`` format, e.g. ``2017-05-27``
+* ``<datetime>`` is today's date joined with a ``-`` to the current
+  time, in ``YYYY-MM-DD-hh-mm-ss`` format, e.g. ``2017-05-27-16-46-23``
 * ``<issue-number>`` is the issue number the change is for, e.g. ``12345``
   for ``bpo-12345``
 * ``<nonce>`` is some "unique" string to guarantee the file name is
@@ -179,7 +180,7 @@ standard library). The file name itself should be of the format
   typing random characters on your keyboard)
 
 So a file name may be
-``Misc/NEWS.d/next/Library/2017-05-27.bpo-12345.Yl4gI2.rst``.
+``Misc/NEWS.d/next/Library/2017-05-27-16-46-23.bpo-12345.Yl4gI2.rst``.
 
 The contents of a news file should be valid reStructuredText. An 80 character
 column width should be used. There is no indentation or leading marker in the
