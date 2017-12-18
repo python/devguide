@@ -242,7 +242,7 @@ tracemalloc           vstinner
 tty                   twouters*
 turtle                gregorlingl, willingc
 types                 yselivanov
-typing
+typing                gvanrossum, levkivskyi*
 unicodedata           lemburg, ezio.melotti
 unittest              michael.foord*, ezio.melotti, rbcollins
 unittest.mock         michael.foord*
