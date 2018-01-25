@@ -25,6 +25,9 @@ transliteration too.
 Permissions History
 -------------------
 
+- Nathaniel J. Smith was given push privileges on January 25, 2018
+  by Yury Selivanov, on his own recommendation.
+
 - Julien Palard was given push privileges on December 8, 2017 by Victor Stinner,
   on his own recommendation.
 
