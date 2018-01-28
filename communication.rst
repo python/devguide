@@ -105,6 +105,13 @@ in return.
 
 .. _Diversity Statement: https://www.python.org/psf/diversity/
 
+Setting Expectations for Open Source Participation
+--------------------------------------------------
+
+Burn-out is common in open source due to a misunderstanding of what users, contributors,
+and maintainers should expect from each other. Brett Cannon gave a `talk <https://youtu.be/HiWfqMbJ3_8?t=7m47s>`_
+about this topic that sets out to help everyone set reasonable expectations of each other in
+order to make open source pleasant for everyone involved.
 
 Additional Repositories
 -----------------------
