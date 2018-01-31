@@ -445,7 +445,7 @@ Permissions History
 Permissions Dropped on Request
 ------------------------------
 
-- Xavier de Gaye's privileges were dropped on 25 January 2017 by Brett Cannon
+- Xavier de Gaye's privileges were dropped on 25 January 2018 by Brett Cannon
   per his `request <https://mail.python.org/pipermail/python-committers/2018-January/005163.html>`_.
 
 - Andrew MacIntyre's privileges were dropped on 2 January 2016 by BCP per his
