@@ -110,9 +110,11 @@ security patches have been applied to the branch.
 Summary
 -------
 
-There are 5 open branches right now in the Git repository:
+There are 6 open branches right now in the Git repository:
 
 - the ``master`` branch accepts features and bugs fixes for the future
+  3.8.0 feature release (RM: Łukasz Langa)
+- the ``3.7`` branch accepts bug, regression, and doc fixes for the upcoming
   3.7.0 feature release (RM: Ned Deily)
 - the ``3.6`` branch accepts bug fixes for future 3.6.x maintenance releases
   (RM: Ned Deily)
