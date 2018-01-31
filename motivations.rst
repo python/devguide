@@ -130,6 +130,7 @@ participating in the CPython core development process:
      sometimes `speaks <http://mariatta.ca/pages/talk-chronology.html#talk-chronology>`_
      at conferences.
    * Email address: mariatta@python.org
+   * `Patreon <https://www.patreon.com/Mariatta>`_
    
    Support Mariatta by sending her a `happiness packet <https://www.happinesspackets.io/send/>`_,
    or `paypal <https://www.paypal.me/mariatta>`_.
