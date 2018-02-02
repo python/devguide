@@ -34,18 +34,22 @@ Helping with issues filed on the issue tracker
 ----------------------------------------------
 
 If you look at `documentation issues`_ on the `issue tracker`_, you
-will find various documentation problems that need work. Issues vary from
+will find various documentation problems that may need work. Issues vary from
 typos, to unclear documentation, to something completely lacking documentation.
 
 If you decide to tackle a documentation issue, you can simply submit a
 :doc:`pull request <pullrequest>` for the issue. If you are worried that someone
-else might be working simultaneously on the issue, simply leave a comment on the
-issue saying you are going to try and create a pull request and roughly how long
-you think you will take to do it (this allows others to take on the issue if you
-happen to forget or lose interest).
+else might be working simultaneously on the issue, first check to see if there
+is a paperclip or `octocat`_ icon at the end of the title column.  If there
+is, then someone has already attached a patch or created a pull request for the
+issue.  If there aren't any icons, then simply leave a comment on the issue
+saying you are going to try and create a pull request and roughly how long
+you think you will take to do it (this allows others to take on the issue if
+you happen to forget or lose interest).
 
 .. _issue tracker: https://bugs.python.org
-.. _documentation issues: https://bugs.python.org/issue?%40search_text=&ignore=file%3Acontent&title=&%40columns=title&id=&%40columns=id&stage=&creation=&creator=&activity=&%40columns=activity&%40sort=activity&actor=&nosy=&type=&components=4&versions=&dependencies=&assignee=&keywords=&priority=&%40group=priority&status=1&%40columns=status&resolution=&nosy_count=&message_count=&%40pagesize=50&%40startwith=0&%40queryname=&%40old-queryname=&%40action=search
+.. _documentation issues: https://bugs.python.org/issue?%40search_text=&ignore=file%3Acontent&title=&%40columns=title&id=&%40columns=id&stage=&creation=&creator=&activity=&%40columns=activity&%40sort=activity&actor=&nosy=&type=&components=4&versions=&dependencies=&assignee=&keywords=6&priority=&status=1&%40columns=status&resolution=&nosy_count=&message_count=&%40group=&%40pagesize=100&%40startwith=0&%40sortdir=on&%40queryname=&%40old-queryname=&%40action=search
+.. _octocat: https://github.com/logos
 
 
 Proofreading
