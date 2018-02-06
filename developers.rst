@@ -413,7 +413,7 @@ Permissions History
 
 - Added two new developers for the Summer of Code project. 8 July 2005
   by RDH.  Andrew Kuchling will be mentoring Gregory K Johnson for a
-  project to enhance mailbox.  Brett Cannon requested access for Flovis
+  project to enhance mailbox.  Brett Cannon requested access for Floris
   Bruynooghe (sirolf) to work on pstats, profile, and hotshot.  Both users
   are expected to work primarily in nondist/sandbox and have their work
   reviewed before making updates to active code.
@@ -468,7 +468,7 @@ Permissions Dropped on Request
 
 - Johannes Gijsbers sent a drop request.  27 July 2005 RDH
 
-- Flovis Bruynooghe sent a drop request.  14 July 2005 RDH
+- Floris Bruynooghe sent a drop request.  14 July 2005 RDH
 
 - Paul Prescod sent a drop request.  30 Apr 2005 RDH
 
