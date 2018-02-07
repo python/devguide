@@ -1495,18 +1495,6 @@ emulate :command:`make` as closely as possible.
 See also :file:`Doc/README.rst` for more information.
 
 
-Without make
-------------
-
-Install the Sphinx package and its dependencies from PyPI.
-
-Then, from the ``Doc`` directory, run::
-
-   sphinx-build -b<builder> . build/<builder>
-
-where ``<builder>`` is one of html, text, latex, or htmlhelp (for explanations
-see the make targets above).
-
 .. _docutils: http://docutils.sourceforge.net/
 .. _Jinja: http://jinja.pocoo.org/
 .. _Pygments: http://pygments.org/
