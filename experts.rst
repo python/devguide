@@ -200,7 +200,7 @@ select
 selectors             neologix, giampaolo.rodola
 shelve
 shlex
-shutil                tarek
+shutil                tarek, giampaolo.rodola
 signal
 site
 smtpd                 giampaolo.rodola
@@ -216,7 +216,7 @@ statistics            steven.daprano
 string
 stringprep
 struct                mark.dickinson, meador.inge
-subprocess            astrand (inactive)
+subprocess            astrand (inactive), giampaolo.rodola
 sunau
 symbol
 symtable              benjamin.peterson
