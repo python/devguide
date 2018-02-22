@@ -1467,8 +1467,9 @@ To build the documentation, follow the instructions from one of the sections
 below.  You can view the documentation after building the HTML by pointing
 a browser at the file :file:`Doc/build/html/index.html`.
 
-You are expected to have installed the latest stable version of Sphinx_ on
-your system or in a virtualenv_, so that the Makefile can find the
+You are expected to have installed the latest stable version of
+Sphinx_ and blurb_ on your system or in a virtualenv_ (which can be
+created using ``make venv``), so that the Makefile can find the
 ``sphinx-build`` command.  You can also specify the location of
 ``sphinx-build`` with the ``SPHINXBUILD`` :command:`make` variable.
 
@@ -1480,9 +1481,10 @@ Using make / make.bat
 <checkout>` to build the output as HTML::
 
    cd Doc
+   make venv
    make html
 
-or alternatively ``make -C Doc html``.
+or alternatively ``make -C Doc/ venv html``.
 
 You can also use ``make help`` to see a list of targets supported by
 :command:`make`.  Note that ``make check`` is automatically run when
@@ -1498,7 +1500,7 @@ See also :file:`Doc/README.rst` for more information.
 Without make
 ------------
 
-Install the Sphinx package and its dependencies from PyPI.
+Install the Sphinx and blurb packages from PyPI.
 
 Then, from the ``Doc`` directory, run::
 
@@ -1512,3 +1514,4 @@ see the make targets above).
 .. _Pygments: http://pygments.org/
 .. _Sphinx: http://sphinx-doc.org/
 .. _virtualenv: https://virtualenv.pypa.io/
+.. _blurb: https://pypi.org/project/blurb/
