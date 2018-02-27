@@ -90,3 +90,6 @@ venv/
 
 # Rope project settings
 .ropeproject
+
+# Auto/Temp Generated Files by Tools
+*.swp

@@ -285,7 +285,7 @@ Solution:
 
    .. code-block:: bash
 
-       git checkout `git rev-list -n 1 --before="yyyy-mm-dd hh:mm:ss" master`
+       git checkout $(git rev-list -n 1 --before="yyyy-mm-dd hh:mm:ss" master)
        git apply /path/to/issueNNNN-git.patch
 
    If the patch still won't apply, then a patch tool will not be able to

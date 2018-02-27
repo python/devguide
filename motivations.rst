@@ -131,10 +131,10 @@ participating in the CPython core development process:
      at conferences.
    * Email address: mariatta@python.org
    * `Patreon <https://www.patreon.com/Mariatta>`_
-   
+
    Support Mariatta by sending her a `happiness packet <https://www.happinesspackets.io/send/>`_,
    or `paypal <https://www.paypal.me/mariatta>`_.
-   
+
 .. topic:: R. David Murray (United States)
 
    * Personal site: `bitdance.com <http://www.bitdance.com>`_
