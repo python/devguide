@@ -323,7 +323,7 @@ their own pull request. If the author does not respond after a week, it is
 acceptable for another contributor to prepare the pull request based on the
 existing patch. In this case, both parties should sign the :ref:`CLA <cla>`.
 When creating a pull request based on another person's patch, provide
-attribution to the original patch author by adding "Co-authored-by: 
+attribution to the original patch author by adding "Co-authored-by:
 Author Name <email_address> ." to the pull request description and commit message.
 See `the GitHub article <https://help.github.com/articles/creating-a-commit-with-multiple-authors/>`_
 on how to properly add the co-author info.
