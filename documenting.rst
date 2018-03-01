@@ -1468,7 +1468,7 @@ below.  You can view the documentation after building the HTML by pointing
 a browser at the file :file:`Doc/build/html/index.html`.
 
 You are expected to have installed the latest stable version of
-Sphinx_ and blurb_ on your system or in a virtualenv_ (which can be
+Sphinx_, blurb_, and python-docs-theme_ on your system or in a virtualenv_ (which can be
 created using ``make venv``), so that the Makefile can find the
 ``sphinx-build`` command.  You can also specify the location of
 ``sphinx-build`` with the ``SPHINXBUILD`` :command:`make` variable.
@@ -1500,7 +1500,7 @@ See also :file:`Doc/README.rst` for more information.
 Without make
 ------------
 
-Install the Sphinx and blurb packages from PyPI.
+Install the Sphinx_, blurb_, and python-docs-theme_ packages from PyPI.
 
 Then, from the ``Doc`` directory, run::
 
@@ -1515,3 +1515,4 @@ see the make targets above).
 .. _Sphinx: http://sphinx-doc.org/
 .. _virtualenv: https://virtualenv.pypa.io/
 .. _blurb: https://pypi.org/project/blurb/
+.. _python-docs-theme: https://pypi.org/project/python-docs-theme/
