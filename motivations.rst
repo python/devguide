@@ -103,18 +103,16 @@ participating in the CPython core development process:
 
    * Personal site: `Curious Efficiency <http://www.curiousefficiency.org/>`_
    * `Extended bio <http://www.curiousefficiency.org/pages/about>`__
+   * `Tritium <https://www.tritium.com.au/>`__ (Software Developer)
    * Python Software Foundation (Fellow, Packaging Working Group)
 
-   Nick originally began participating in CPython core development as an
-   interesting and enlightening hobby activity while working for Boeing Defence
-   Australia, and hence takes an active interest in open source supply chain
-   management in large organisations, and how that relates to open source
-   sustainability in general.
+   Nick began using Python as a testing and prototyping language while working
+   for Boeing Defence Australia, and continues to use it for that purpose today.
 
    As a core developer, he is primarily interested in helping to ensure Python's
-   continued suitability for educational and data analysis use cases, as well
-   as in encouraging good architectural practices when assembling Python
-   applications from open source components.
+   continued suitability for educational, testing and data analysis use cases,
+   as well as in encouraging good architectural practices when assembling Python
+   applications and test harnesses from open source components.
 
 .. topic:: Christian Heimes (Germany)
 
