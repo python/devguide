@@ -114,6 +114,22 @@ participating in the CPython core development process:
    as well as in encouraging good architectural practices when assembling Python
    applications and test harnesses from open source components.
 
+.. topic:: Steve Dower (United States/Australia)
+
+   * Microsoft (Software Developer)
+   * Personal site: `stevedower.id.au <https://stevedower.id.au/>`_
+   * Speaking: `stevedower.id.au/speaking <https://stevedower.id.au/speaking/>`_
+   * Work blog: `aka.ms/pythonblog <https://aka.ms/pythonblog>`_
+   * Email address: steve.dower@python.org
+
+   Steve started with Python while automating a test harness for medical
+   devices, and now works for Microsoft on anything that makes Python more
+   accessible to developers on any platform.
+
+   As a core developer, his focus is on maintaining the already excellent
+   Windows support and improving Python's ability to be embedded in other
+   applications.
+
 .. topic:: Christian Heimes (Germany)
 
    * Red Hat (Software Developer, Security Engineering / Identity Management)
