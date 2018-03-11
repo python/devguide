@@ -191,6 +191,27 @@ participating in the CPython core development process:
    * `Freedom of the Press Foundation <https://freedom.press>`__ (Staff)
    * Python Software Foundation (Fellow)
 
+.. topic:: Barry Warsaw (United States)
+
+   * `LinkedIn <https://www.linkedin.com/in/barry-warsaw/>`_ (Staff Software Engineer - Python Foundation)
+   * Personal site: `barry.warsaw.us <https://barry.warsaw.us/>`_
+   * Blog: `We Fear Change <https://www.wefearchange.org/>`_
+   * Email address: barry@python.org
+   * Python Software Foundation (Fellow)
+
+   Barry has been working in, with, and on Python since 1994.  He attended the
+   first Python workshop at NBS (now `NIST <https://www.nist.gov/>`_) in
+   Gaithersburg, MD in 1994, where he met Guido and several other early Python
+   adopters.  Barry subsequently worked with Guido for 8 years while at `CNRI
+   <http://cnri.reston.va.us/>`_.  From 2007 until 2017, Barry worked for
+   `Canonical <https://www.canonical.com/>`_, corporate sponsor of `Ubuntu
+   <https://www.ubuntu.com/>`_ Linux, primarily on the Python ecosystem, and
+   is both an Ubuntu and a `Debian <http://www.debian.org/>`_ uploading
+   developer.  Barry has served as Python's postmaster, webmaster, release
+   manager, Language Summit co-chair, `Jython <http://www.jython.org/>`_
+   project leader, `GNU Mailman <http://www.list.org/>`_ project leader, and
+   probably lots of other things he shouldn't admit to.
+
 
 .. _goals-of-the-motivations-page:
 
