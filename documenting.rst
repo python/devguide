@@ -60,75 +60,6 @@ Please don't let the material in this document stand between the documentation
 and your desire to help out!
 
 
-.. _building-doc:
-
-Building the documentation
-==========================
-
-.. highlight:: bash
-
-
-When you make changes to the Python documentation, you're going to want to
-view those changes locally.  To build the documentation, follow the
-instructions from one of the sections below.  You can view the documentation
-after building the HTML by pointing a browser at the file
-:file:`Doc/build/html/index.html`.
-
-The toolset used to build the docs is written in Python and is called Sphinx_.
-Sphinx is maintained separately and is not included in this tree.  Also needed
-are docutils_, supplying the base markup that Sphinx uses; Jinja_, a templating
-engine; and optionally Pygments_, a code highlighter.
-
-You are expected to have installed the latest stable version of
-Sphinx_ and blurb_ on your system or in a virtualenv_ (which can be
-created using ``make venv``), so that the Makefile can find the
-``sphinx-build`` command.  You can also specify the location of
-``sphinx-build`` with the ``SPHINXBUILD`` :command:`make` variable.
-
-
-Using make / make.bat
----------------------
-
-**On Unix**, run the following from the root of your :ref:`repository clone
-<checkout>` to build the output as HTML::
-
-   cd Doc
-   make venv
-   make html
-
-or alternatively ``make -C Doc/ venv html``.
-
-You can also use ``make help`` to see a list of targets supported by
-:command:`make`.  Note that ``make check`` is automatically run when
-you submit a :doc:`pull request <pullrequest>`, so you should make
-sure that it runs without errors.
-
-**On Windows**, there is a :file:`make.bat` batchfile that tries to
-emulate :command:`make` as closely as possible.
-
-See also :file:`Doc/README.rst` for more information.
-
-
-Without make
-------------
-
-Install the Sphinx and blurb packages from PyPI.
-
-Then, from the ``Doc`` directory, run::
-
-   sphinx-build -b<builder> . build/<builder>
-
-where ``<builder>`` is one of html, text, latex, or htmlhelp (for explanations
-see the make targets above).
-
-.. _docutils: http://docutils.sourceforge.net/
-.. _Jinja: http://jinja.pocoo.org/
-.. _Pygments: http://pygments.org/
-.. _Sphinx: http://sphinx-doc.org/
-.. _virtualenv: https://virtualenv.pypa.io/
-.. _blurb: https://pypi.org/project/blurb/
-
-
 Style guide
 ===========
 
@@ -1519,3 +1450,68 @@ default. They are set in the build configuration file :file:`conf.py`.
 .. [1] There is a standard ``include`` directive, but it raises errors if the
        file is not found.  This one only emits a warning.
 
+
+.. _building-doc:
+
+Building the documentation
+==========================
+
+.. highlight:: bash
+
+The toolset used to build the docs is written in Python and is called Sphinx_.
+Sphinx is maintained separately and is not included in this tree.  Also needed
+are docutils_, supplying the base markup that Sphinx uses; Jinja_, a templating
+engine; and optionally Pygments_, a code highlighter.
+
+To build the documentation, follow the instructions from one of the sections
+below.  You can view the documentation after building the HTML by pointing
+a browser at the file :file:`Doc/build/html/index.html`.
+
+You are expected to have installed the latest stable version of
+Sphinx_ and blurb_ on your system or in a virtualenv_ (which can be
+created using ``make venv``), so that the Makefile can find the
+``sphinx-build`` command.  You can also specify the location of
+``sphinx-build`` with the ``SPHINXBUILD`` :command:`make` variable.
+
+
+Using make / make.bat
+---------------------
+
+**On Unix**, run the following from the root of your :ref:`repository clone
+<checkout>` to build the output as HTML::
+
+   cd Doc
+   make venv
+   make html
+
+or alternatively ``make -C Doc/ venv html``.
+
+You can also use ``make help`` to see a list of targets supported by
+:command:`make`.  Note that ``make check`` is automatically run when
+you submit a :doc:`pull request <pullrequest>`, so you should make
+sure that it runs without errors.
+
+**On Windows**, there is a :file:`make.bat` batchfile that tries to
+emulate :command:`make` as closely as possible.
+
+See also :file:`Doc/README.rst` for more information.
+
+
+Without make
+------------
+
+Install the Sphinx and blurb packages from PyPI.
+
+Then, from the ``Doc`` directory, run::
+
+   sphinx-build -b<builder> . build/<builder>
+
+where ``<builder>`` is one of html, text, latex, or htmlhelp (for explanations
+see the make targets above).
+
+.. _docutils: http://docutils.sourceforge.net/
+.. _Jinja: http://jinja.pocoo.org/
+.. _Pygments: http://pygments.org/
+.. _Sphinx: http://sphinx-doc.org/
+.. _virtualenv: https://virtualenv.pypa.io/
+.. _blurb: https://pypi.org/project/blurb/
