@@ -11,66 +11,77 @@ Fields
 
 Title
 '''''
-Should be properly descriptive of what the issue is about. Occasionally
-people file an issue that either has too generic of a title or end up thinking
-they filed about X but in fact it turns out to be about Y and thus the
-title is now wrong.
+A brief description of the issue. Review whether the title is too generic or
+specifies an incorrect term or library.
 
 Type
 ''''
-Describes the type of issue.  If something does not fit within any
-specific type then simply do not set it.
+Describes the type of issue.  If an issue does not fit within any
+specific type, please do not set a type.
 
-behavior
-    Wrong or unexpected behavior, result, or exception.  This includes most of
-    the bugs.
-crash
-    Hard crashes of the Python interpreter -- possibly with a core
-    dump or a Windows error box.
-compile error
-    Errors reported by the compiler while compiling Python.
-resource usage
-    Situations where too many resources (e.g. memory) are used.
-security
-    Issues that might have security implications.  If you think the issue
-    should not be made public, please report it to security@python.org instead.
-performance
-    Situations where too much time is necessary to complete the task.
-enhancement
-    Issues that propose the addition of new functionality, such as new
-    functions, classes, modules, or even new arguments for existing functions.
-    Also used for improvements in the documentation and test suite and for
-    other refactorings.
++----------------+----------------------------------------------------------+
+| Type           | Description                                              |
++================+==========================================================+
+| behavior       | Unexpected behavior, result, or exception.  Most bugs    |
+|                | will have this type.                                     |
++----------------+----------------------------------------------------------+
+| compile error  | Errors reported by the compiler while compiling Python.  |
++----------------+----------------------------------------------------------+
+| crash          | Hard crashes of the Python interpreter -- possibly with  |
+|                | a core dump or a Windows error box.                      |
++----------------+----------------------------------------------------------+
+| enhancement    | Issues that propose the addition of new functionality,   |
+|                | such as new functions, classes, modules, or even new     |
+|                | arguments for existing functions. Also used for          |
+|                | improvements in the documentation, test suite and        |
+|                | other refactorings. A good place to discuss enhancements |
+|                | prior to filing an issue is **python-ideas** mailing     |
+|                | list.                                                    |
++----------------+----------------------------------------------------------+
+| performance    | Situations where too much time is necessary to complete  |
+|                | the task. For example, a common task now takes           |
+|                | significantly longer to complete.                        |
++----------------+----------------------------------------------------------+
+| resource usage | Situations where too many resources (e.g. memory) are    |
+|                | used.                                                    |
++----------------+----------------------------------------------------------+
+| security       | Issues that might have security implications.  Report    |
+|                | security vulnerabilities which should not be made public |
+|                | to security@python.org.                                  |
++----------------+----------------------------------------------------------+
 
 Stage
 '''''
-What is needed next to advance the issue.  The *stage* needn't be set until
-it is clear that the issue warrants fixing.
+A needed next action to advance the issue.  The *stage* needn't be set until
+it is clear that the issue has been initially triaged and determined work
+will be needed.
 
 test needed
-    The bug reporter should post a script or instructions to let a triager or
-    developer reproduce the issue.
+    The steps which are needed to reproduce the issue. The bug reporter
+    should post a script, instructions, or example to help someone test or
+    reproduce the issue.
 needs patch
-    The issue lacks a patch to solve the problem (i.e. fixing the bug, or
+    The issue needs a patch to solve the problem (i.e. fixing the bug or
     adding the requested improvement).
 patch review
-    There is a patch, but it needs reviewing or is in the process of being
+    A patch exists, but it needs reviewing or is in the process of being
     reviewed. This can be done by any triager as well as a core developer.
 commit review
-    A triager performed a patch review and it looks good to them, but a core
-    developer needs to commit the patch (and do a quick once-over to make sure
-    nothing was overlooked).
+    A triager performed a patch review and it looks good. This signals to
+    core developers the patch is ready for a quick once-over to 
+    make sure nothing was overlooked before committing the patch.
 resolved
-    The issue is considered closed and dealt with.
+    The issue is considered closed and addressed (i.e. patch committed or
+    expected behavior and not a bug).
 
 Components
 ''''''''''
-What part of Python is affected by the issue. This is a multi-select field.
-Be aware that what component is chosen may cause the issue to be auto-assigned,
+The area or Python library affected by the issue. This is a multi-select field.
+Some chosen components may cause the issue to be auto-assigned,
 i.e. the issue tracker may automatically fill in the `Assigned To`_ field
 after you press ``Submit changes``.
 
-The following component(s) should be selected if the issue applies to:
+The following component(s) may be selected for an issue:
 
 2to3 (2.x to 3.0 conversion tool)
     The 2to3 conversion tool in `Lib/lib2to3`_.
