@@ -6,8 +6,8 @@ Triaging an Issue
 When you have the Developer role on the `issue tracker`_ you are able to triage
 issues directly without any assistance.
 
-Fields
-------
+Fields in the Issue Tracker
+---------------------------
 
 Title
 '''''
@@ -82,58 +82,66 @@ will be needed.
 Components
 ''''''''''
 The area or Python library affected by the issue. This is a multi-select field.
-Some chosen components may cause the issue to be auto-assigned,
-i.e. the issue tracker may automatically fill in the `Assigned To`_ field
-after you press ``Submit changes``.
+Choosing certain components, such as `Documentation`, may cause the issue to
+be auto-assigned, i.e. the issue tracker may automatically fill in the 
+`Assigned To`_ field after you press ``Submit changes``.
 
-The following component(s) may be selected for an issue:
+One or more components may be selected for an issue:
 
-2to3 (2.x to 3.0 conversion tool)
-    The 2to3 conversion tool in `Lib/lib2to3`_.
-Build
-    The build process.
-ctypes
-    The ctypes package in `Lib/ctypes`_.
-Demos and Tools
-    The files in Tools_ and `Tools/demo`_.
-Distutils
-    The distutils package in `Lib/distutils`_.
-Documentation
-    The documentation in Doc_ (used to build the HTML doc at
-    https://docs.python.org/).
-email
-    The email package and related modules.
-Extension Modules
-    C modules in Modules_.
-IDLE
-    The `Lib/idlelib`_ package.
-Installation
-    The installation process.
-Interpreter Core
-    The interpreter core, the built-in objects in `Objects`_, the `Python`_,
-    `Grammar`_ and `Parser`_ dirs.
-IO
-    The I/O system, `Lib/io.py`_ and `Modules/_io`_.
-Library (Lib)
-    Python modules in Lib_.
-Macintosh
-    The Mac OS X operating system.
-Regular Expressions
-    The `Lib/re.py`_ and `Modules/_sre.c`_ modules.
-Tests
-    The unittest and doctest frameworks in `Lib/unittest`_ and
-    `Lib/doctest.py`_.
-
-    The CPython tests in `Lib/test`_, the test runner in `Lib/test/regrtest.py`_
-    and the `Lib/test/support`_ package.
-Tkinter
-    The `Lib/tkinter`_ package.
-Unicode
-    Unicode, codecs, str vs bytes, `Objects/unicodeobject.c`_.
-Windows
-    The Windows operating system.
-XML
-    The `Lib/xml`_ package.
++------------------+--------------------------------------------------------+
+| Component        | Description                                            |
++==================+========================================================+
+| 2to3 (*2.x to*   | The 2to3 conversion tool in `Lib/lib2to3`_.            |
+| *3 conversion*   |                                                        |
+| *tool*)          |                                                        |
++------------------+--------------------------------------------------------+
+| Build            | The build process.                                     |
++------------------+--------------------------------------------------------+
+| ctypes           | The ctypes package in `Lib/ctypes`_.                   |
++------------------+--------------------------------------------------------+
+| Demos and Tools  | The files in Tools_ and `Tools/demo`_.                 |
++------------------+--------------------------------------------------------+
+| Distutils        | The distutils package in `Lib/distutils`_.             |
++------------------+--------------------------------------------------------+
+| Documentation    | The documentation in Doc_ (source used to build HTML   |
+|                  | docs for https://docs.python.org/).                    |
++------------------+--------------------------------------------------------+
+| email            | The email package and related modules.                 |
++------------------+--------------------------------------------------------+
+| Extension Modules| C modules in Modules_.                                 |
++------------------+--------------------------------------------------------+
+| IDLE             | The `Lib/idlelib`_ package.                            |
++------------------+--------------------------------------------------------+
+| Installation     | The installation process.                              |
++------------------+--------------------------------------------------------+
+| Interpreter Core | The interpreter core.                                  |
+|                  | The built-in objects in `Objects`_, the `Python`_,     |
+|                  | `Grammar`_ and `Parser`_ dirs.                         |
++------------------+--------------------------------------------------------+
+| IO               | The I/O system, `Lib/io.py`_ and `Modules/_io`_.       |
++------------------+--------------------------------------------------------+
+| Library (Lib)    | Python modules in Lib_.                                |
++------------------+--------------------------------------------------------+
+| Macintosh        | The Mac OS X operating system.                         |
++------------------+--------------------------------------------------------+
+| Regular          | The `Lib/re.py`_ and `Modules/_sre.c`_ modules.        |
+| Expressions      |                                                        |
++------------------+--------------------------------------------------------+
+| Tests            | The unittest framework in `Lib/unittest`_              |
+|                  | The doctest framework `Lib/doctest.py`_.               |
+|                  | The CPython tests in `Lib/test`_.                      |
+|                  | The test runner in `Lib/test/regrtest.py`_.            |
+|                  | The test support utilities in `Lib/test/support`_.     |
++------------------+--------------------------------------------------------+
+| Tkinter          | The `Lib/tkinter`_ package.                            |
++------------------+--------------------------------------------------------+
+| Unicode          | Unicode, codecs, str vs bytes,                         |
+|                  | `Objects/unicodeobject.c`_.                            |
++------------------+--------------------------------------------------------+
+| Windows          | The Windows operating system.                          |
++------------------+--------------------------------------------------------+
+| XML              | The `Lib/xml`_ package.                                |
++------------------+--------------------------------------------------------+
 
 Versions
 ''''''''
@@ -144,33 +152,37 @@ Python 3.8 as the version and drop Python 3.7.
 
 Priority
 ''''''''
-How important is this issue?
+What is the severity and urgency?
 
-low
-    This is for low-impact bugs, or feature requests of little utility.
-normal
-    The default value for most issues, which deserve fixing but without
-    any urgency to do so.
-high
-    Make some effort to fix the issue before the next final release.
-critical
-    This issue should definitely be fixed before the next final release.
-deferred blocker
-    The issue will not hold up the next release, but will be promoted to a
-    release blocker for the following release, e.g., won't block the next
-    release of a1 but will block a2.
-release blocker
-    The issue must be fixed before *any* release is made, e.g., will block the
-    next release even if it is an alpha release.
++------------------+--------------------------------------------------------+
+| Priority         | Description                                            |
++==================+========================================================+
+| low              | This is for low-impact bugs.                           |
++------------------+--------------------------------------------------------+  
+| normal           | The default value for most issues filed.               |
++------------------+--------------------------------------------------------+
+| high             | Try to fix the issue before the next final release.    |
++------------------+--------------------------------------------------------+
+| critical         | Should definitely be fixed for next final release.     |
++------------------+--------------------------------------------------------+
+| deferred blocker | The issue will not hold up the next release, *n*. It   |
+|                  | will be promoted to a *release blocker* for the        |
+|                  | following release, *n+1*.                              |
++------------------+--------------------------------------------------------+
+| release blocker  | The issue **must** be fixed before *any* release is    |
+|                  | made, e.g., will block the next release even if it is  |
+|                  | an alpha release.                                      |
++------------------+--------------------------------------------------------+
 
 As a guideline, *critical* and above are usually reserved for crashes,
 serious regressions or breakage of very important APIs.  Whether a bug
-is a *release blocker* is a decision better left to the release manager so,
-in any doubt, add him or her to the *nosy list*.
+is a *release blocker* is decided by the release manager. Triagers may
+recommend this priority and should add the release manager (which may be
+found in the PEP) to the *nosy list*.
 
 Keywords
 ''''''''
-Various flags about the issue. Multiple values are possible.
+Various informational flags about the issue. Multiple values are possible.
 
 buildbot
     A buildbot triggered the issue being reported.
@@ -306,6 +318,20 @@ properly.
 * ``devguide`` (lowercase), ``devguide/triaging``, and
   ``devguide/triaging#generating-special-links-in-a-comment`` generate links to
   the Devguide, this page, and this section respectively.
+
+Checklist for Triaging
+----------------------
+
+* Read the issue comment(s).
+* Verify or set the issue tracker settings for fields.
+    - Title
+    - Type
+    - Stage
+    - Components
+    - Versions
+    - Priority
+* Leave a brief comment about the proposed next action needed.
+
 
 
 .. _CPython: https://github.com/python/cpython/
