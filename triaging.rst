@@ -56,23 +56,28 @@ A needed next action to advance the issue.  The *stage* needn't be set until
 it is clear that the issue has been initially triaged and determined work
 will be needed.
 
-test needed
-    The steps which are needed to reproduce the issue. The bug reporter
-    should post a script, instructions, or example to help someone test or
-    reproduce the issue.
-needs patch
-    The issue needs a patch to solve the problem (i.e. fixing the bug or
-    adding the requested improvement).
-patch review
-    A patch exists, but it needs reviewing or is in the process of being
-    reviewed. This can be done by any triager as well as a core developer.
-commit review
-    A triager performed a patch review and it looks good. This signals to
-    core developers the patch is ready for a quick once-over to 
-    make sure nothing was overlooked before committing the patch.
-resolved
-    The issue is considered closed and addressed (i.e. patch committed or
-    expected behavior and not a bug).
++----------------+----------------------------------------------------------+
+| Stage          | Description                                              |
++================+==========================================================+
+| test needed    | The steps which are needed to reproduce the issue. The   |
+|                | bug reporter should post a script, instructions, or      |
+|                | example to help someone test or reproduce the issue.     |
++----------------+----------------------------------------------------------+
+| needs patch    | A patch is needed to solve the problem (i.e. fixing the  |
+|                | bug or adding the requested improvement).                |
++----------------+----------------------------------------------------------+
+| patch review   | A patch exists, but it needs reviewing or is in the      |
+|                | process of being reviewed. This can be done by any       |
+|                | triager as well as a core developer.                     |
++----------------+----------------------------------------------------------+
+| commit review  | A triager performed a patch review and it looks good.    |
+|                | This signals to core developers the patch is ready for a |
+|                | quick once-over to make sure nothing was overlooked      |
+|                | before committing the patch.                             |
++----------------+----------------------------------------------------------+
+| resolved       | The issue is considered closed and addressed (i.e. patch |
+|                | committed or expected behavior and not a bug).           |
++----------------+----------------------------------------------------------+
 
 Components
 ''''''''''
