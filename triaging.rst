@@ -3,11 +3,21 @@
 Triaging an Issue
 =================
 
-When you have the Developer role on the `issue tracker`_ you are able to triage
+When you have the Developer role on the `issue tracker`_, you can triage
 issues directly without any assistance.
 
 Fields in the Issue Tracker
 ---------------------------
+
+The major elements found in an issue report include:
+* Classification (including Title) - These fields categorize the issue
+  The fields include Title, Type, Stage, Components, and Version.
+* Process - These fields indicate the state of the issue and its progress
+  toward resolution. The fields include: Status, Resolution, Dependencies,
+  Superseder, Assigned To, Nosy List, Priority, Keywords, Comment, File,
+  File Description, Remote hg repo, GitHub PR.
+* Messages
+* History
 
 Title
 '''''
@@ -361,14 +371,23 @@ Checklist for Triaging
 ----------------------
 
 * Read the issue comment(s).
-* Verify or set the issue tracker settings for fields.
-    - Title
+* Review and set classification fields
+    - Title: should be concise with specifics helpful to someone scanning a
+      list of issue titles
     - Type
     - Stage
-    - Components
-    - Versions
+    - Components: multiple items may be set
+    - Versions: set if known, leave blank if unsure. Multiple items may be set.
+* Review and set process fields
+    - Status
+    - Resolution
+    - Superseder
+    - Assigned To
+    - Nosy List
     - Priority
-* Leave a brief comment about the proposed next action needed.
+    - Keywords
+* (Optional) Leave a brief comment about the proposed next action needed. If
+  there is a long message list, a summary can be very helpful.
 
 
 
