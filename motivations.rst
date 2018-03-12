@@ -231,6 +231,11 @@ participating in the CPython core development process:
    manager, Language Summit co-chair, `Jython <http://www.jython.org/>`_
    project leader, `GNU Mailman <http://www.list.org/>`_ project leader, and
    probably lots of other things he shouldn't admit to.
+   
+.. topic:: Eric Snow (United States)
+
+   * Microsoft (Software Developer)
+   * Python Software Foundation (Fellow)
 
 
 .. _goals-of-the-motivations-page:
