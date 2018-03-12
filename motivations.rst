@@ -177,6 +177,26 @@ participating in the CPython core development process:
    spend more of his (and his company's) time on open source work, and so is
    actively seeking additional such contract opportunities.
 
+.. topic:: Antoine Pitrou (France)
+
+   * LinkedIn: `<https://www.linkedin.com/in/pitrou/>`_ (Senior Software Engineer)
+   * Independent (currently Two Sigma Investments)
+   * Python Software Foundation (Fellow)
+   * Available for open source contract work
+   * Email address: antoine@python.org
+
+   Antoine started working with Python in 2005 in order to implement a
+   decentralized virtual world protocol.  He started contributing to CPython
+   in 2007 and became a core developer in 2008.  His motivations have been
+   driven both by the abstract desire to make Python better for the whole
+   world, and by the concrete roadbloacks he was hitting in professional
+   settings.  His current focus is to improve support for system programming
+   and concurrent programming (such as ``multiprocessing``).
+
+   As a professional, Antoine has been first specializing in network
+   programming, and more lately (since 2014) in open source data science
+   infrastructure such as Dask, Numba, Apache Arrow.
+
 .. topic:: Victor Stinner (France)
 
    * `Personal website <https://vstinner.readthedocs.io/>`__
@@ -193,7 +213,7 @@ participating in the CPython core development process:
 
 .. topic:: Barry Warsaw (United States)
 
-   * `LinkedIn <https://www.linkedin.com/in/barry-warsaw/>`_ (Staff Software Engineer - Python Foundation)
+   * LinkedIn: `<https://www.linkedin.com/in/barry-warsaw/>`_ (Staff Software Engineer - Python Foundation)
    * Personal site: `barry.warsaw.us <https://barry.warsaw.us/>`_
    * Blog: `We Fear Change <https://www.wefearchange.org/>`_
    * Email address: barry@python.org
