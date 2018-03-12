@@ -333,10 +333,10 @@ Comment abbreviation can automatically generate a link to various web pages.
 |                                                             | prefixes can also be used to disambiguate, and must   |
 |                                                             | precede the number without spaces.                    |
 +-------------------------------------------------------------+-------------------------------------------------------+
-| ``r<number>``,                                              | Indicates a legacy Subversion revision number,        |                                                                                                                                                                                                                                                    |
-| ``rev<number>``, or                                         | a reference to a changeset that was checked in prior  |                                                                                                                                                                                                                                                   |
+| ``r<number>``,                                              | Indicates a legacy Subversion revision number,        |
+| ``rev<number>``, or                                         | a reference to a changeset that was checked in prior  |
 | ``revision <number>``                                       | to 2011-03-05 when the official Python source code    |
-|                                                             | repositories were migrated from the                   |                                                                                                                                                                             |
+|                                                             | repositories were migrated from the                   |
 |                                                             | :abbr:`svn (Subversion)`                              |
 |                                                             | :abbr:`VCS (version control system)` to Mercurial.    |
 |                                                             | The issue tracker automatically translates the legacy |
@@ -345,8 +345,8 @@ Comment abbreviation can automatically generate a link to various web pages.
 +-------------------------------------------------------------+-------------------------------------------------------+
 | ``Dir/file.ext`` or                                         | Links to files in the                                 |
 | ``Dir/file.ext:NNN``                                        | `Python source code repositories`_, possibly linking  |
-|                                                             | to the line number specified after the ``:``.         |                                                                                                                                                                        |
-|                                                             | ``3.6/Dir/file.ext`` will generate a link with ``3.6``|                                                                                                                                                                                       |
+|                                                             | to the line number specified after the ``:``.         |
+|                                                             | ``3.6/Dir/file.ext`` will generate a link with ``3.6``|
 |                                                             | as branch.                                            |
 +-------------------------------------------------------------+-------------------------------------------------------+
 | ``PEP <number>`` or                                         | Link to the :abbr:`PEP (Python Enhancement Proposal)` |
