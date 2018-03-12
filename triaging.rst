@@ -3,8 +3,11 @@
 Triaging an Issue
 =================
 
-When you have the Developer role on the `issue tracker`_, you can triage
-issues directly without any assistance.
+This section of the devguide documents the `issue tracker`_ for users
+and developers. 
+
+Contributors with the Developer role on the `issue tracker`_ can triage issues
+directly without any assistance.
 
 Fields in the Issue Tracker
 ---------------------------
