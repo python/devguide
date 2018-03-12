@@ -10,12 +10,13 @@ Fields in the Issue Tracker
 ---------------------------
 
 The major elements found in an issue report include:
-* Classification (including Title) - These fields categorize the issue
-  The fields include Title, Type, Stage, Components, and Version.
+
+* Classification (including *Title*) - These fields categorize the issue
+  The fields include *Title*, *Type*, *Stage*, *Components*, and *Version*.
 * Process - These fields indicate the state of the issue and its progress
-  toward resolution. The fields include: Status, Resolution, Dependencies,
-  Superseder, Assigned To, Nosy List, Priority, Keywords, Comment, File,
-  File Description, Remote hg repo, GitHub PR.
+  toward resolution. The fields are *Status*, *Resolution*, *Dependencies*,
+  *Superseder*, *Assigned To*, *Nosy List*, *Priority*, *Keywords*, *Comment*,
+  *File*, *File Description*, *Remote hg repo*, *GitHub PR*.
 * Messages
 * History
 
@@ -372,8 +373,8 @@ Checklist for Triaging
 
 * Read the issue comment(s).
 * Review and set classification fields
-    - Title: should be concise with specifics helpful to someone scanning a
-      list of issue titles
+    - Title: should be concise with specifics (such as Module name) which are
+      helpful to someone scanning a list of issue titles
     - Type
     - Stage
     - Components: multiple items may be set
