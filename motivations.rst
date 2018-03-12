@@ -237,6 +237,19 @@ participating in the CPython core development process:
    * Microsoft (Software Developer)
    * Python Software Foundation (Fellow)
 
+.. topic:: Dino Viehland (United States)
+
+   * Microsoft: `<https://notebooks.azure.com/>`_ (Software Engineer)
+   * Email address: antoine@python.org
+
+   Dino started working with Python in 2005 by working on IronPython, an 
+   implementation of Python running on .NET.  He was one of the primary
+   developers on the project for 6 years.  After that he started the Python
+   Tools for Visual Studio project focusing on providing advanced code completion
+   and debugging features for Python.  Today he works on
+   `Azure Notebooks <http://notebooks.azure.com/>`_ bringing the Python based
+   Jupyter notebook as a hosted on-line service.
+
 
 .. _goals-of-the-motivations-page:
 
