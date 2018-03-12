@@ -83,7 +83,7 @@ Helping with the Developer's Guide
 The Developer's Guide (what you're reading now) uses the same process as the
 main Python documentation, except for some small differences.  The source
 lives in a `separate repository`_ and bug reports should be submitted to
-the `its GitHub tracker`_.
+`its GitHub tracker`_.
 
 To submit a :doc:`pull request <pullrequest>` you can fork the
 `devguide repo`_ to your GitHub account and clone it using::
