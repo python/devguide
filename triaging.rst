@@ -14,7 +14,7 @@ Fields in the Issue Tracker
 
 The major elements found in an issue report include:
 
-* Classification (including *Title*) - These fields categorize the issue
+* Classification (including *Title*) - These fields categorize the issue.
   The fields include *Title*, *Type*, *Stage*, *Components*, and *Version*.
 * Process - These fields indicate the state of the issue and its progress
   toward resolution. The fields are *Status*, *Resolution*, *Dependencies*,
@@ -27,6 +27,9 @@ Title
 '''''
 A brief description of the issue. Review whether the title is too generic or
 specifies an incorrect term or library.
+
+Adding a prefix at the start of the title to indicate the module, such as 
+IDLE, DOC, or ASYNCIO, is optional, but can be helpful to others.
 
 Type
 ''''
@@ -49,7 +52,7 @@ specific type, please do not set a type.
 |                | arguments for existing functions. Also used for          |
 |                | improvements in the documentation, test suite and        |
 |                | other refactorings. A good place to discuss enhancements |
-|                | prior to filing an issue is **python-ideas** mailing     |
+|                | prior to filing an issue is `python-ideas`_ mailing      |
 |                | list.                                                    |
 +----------------+----------------------------------------------------------+
 | performance    | Situations where too much time is necessary to complete  |
@@ -60,8 +63,9 @@ specific type, please do not set a type.
 |                | used.                                                    |
 +----------------+----------------------------------------------------------+
 | security       | Issues that might have security implications. Report     |
-|                | security vulnerabilities which should not be made public |
-|                | to security@python.org.                                  |
+|                | security vulnerabilities using the procedure found in    |
+|                | the `Reporting security issues in Python`_ page on the   |
+|                | python.org website.                                      |
 +----------------+----------------------------------------------------------+
 
 Stage
@@ -342,7 +346,7 @@ Comment abbreviation can automatically generate a link to various web pages.
 | ``pull request <number>``                                   |                                                       |
 +-------------------------------------------------------------+-------------------------------------------------------+
 | a 10-, 11-, 12-, or 40-digit hex ``<number>``               | Indicates a Git or Mercurial changeset identifier and |
-|                                                             | generates a link to changeset ``<number>``on GitHub   | 
+|                                                             | generates a link to changeset ``<number>`` on GitHub  | 
 |                                                             | or https://hg.python.org/. The ``git`` and ``hg``     |
 |                                                             | prefixes can also be used to disambiguate, and must   |
 |                                                             | precede the number without spaces.                    |
@@ -376,8 +380,10 @@ Checklist for Triaging
 
 * Read the issue comment(s).
 * Review and set classification fields
-    - Title: should be concise with specifics (such as Module name) which are
-      helpful to someone scanning a list of issue titles
+    - Title: should be concise with specifics which are helpful to someone
+      scanning a list of issue titles. Adding a prefix at the start of the
+      title to indicate the module, such as IDLE, DOC, or ASYNCIO, is
+      optional, but can be helpful to others.
     - Type
     - Stage
     - Components: multiple items may be set
@@ -392,7 +398,6 @@ Checklist for Triaging
     - Keywords
 * (Optional) Leave a brief comment about the proposed next action needed. If
   there is a long message list, a summary can be very helpful.
-
 
 
 .. _CPython: https://github.com/python/cpython/
@@ -426,3 +431,5 @@ Checklist for Triaging
 .. _issue tracker: https://bugs.python.org
 .. _GitHub pull requests: https://github.com/python/cpython/pulls>
 .. _Python source code repositories: https://github.com/python/cpython/
+.. _Reporting security issues in Python: https://www.python.org/news/security/
+.. _python-ideas: https://mail.python.org/mailman/listinfo/python-ideas
