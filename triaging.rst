@@ -278,7 +278,8 @@ Status
 |               | information to reproduce the bug reported.  Requesting     |
 |               | additional information and setting status to *pending*     |
 |               | indicates that the issue should be closed if the necessary |
-|               | information in a timely manner (i.e. one month).           |
+|               | information is not provided in a timely manner (i.e. one   |
+|               | month).                                                    |
 +---------------+------------------------------------------------------------+
 | closed        | The issue has been resolved (somehow).                     |
 +---------------+------------------------------------------------------------+
@@ -298,7 +299,7 @@ with the "open" status.
 +---------------+------------------------------------------------------------+
 | fixed         | A fix for the issue was committed.                         |
 +---------------+------------------------------------------------------------+
-| later         | Issue is to be worked on at a later date.                  |
+| later         | Issue is to be worked on in a later release cycle.         |
 +---------------+------------------------------------------------------------+
 | not a bug     | For some reason the issue is invalid (e.g. the perceived   |
 |               | problem is not a bug in Python).                           |
@@ -306,7 +307,8 @@ with the "open" status.
 | out of date   | The issue has already been fixed, or the problem doesn't   |
 |               | exist anymore for other reasons.                           |
 +---------------+------------------------------------------------------------+
-| postponed     | Issue will not be worked on at the moment.                 |
+| postponed     | Issue will not be worked on at the moment but in a future  |
+|               | minor release version.                                     |
 +---------------+------------------------------------------------------------+
 | rejected      | Issue was rejected (especially for feature requests).      |
 +---------------+------------------------------------------------------------+
