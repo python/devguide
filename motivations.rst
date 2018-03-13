@@ -240,7 +240,7 @@ participating in the CPython core development process:
 .. topic:: Dino Viehland (United States)
 
    * Microsoft: `<https://notebooks.azure.com/>`_ (Software Engineer)
-   * Email address: antoine@python.org
+   * Email address: dinov@microsoft.com
 
    Dino started working with Python in 2005 by working on IronPython, an 
    implementation of Python running on .NET.  He was one of the primary
