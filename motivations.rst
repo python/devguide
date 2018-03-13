@@ -250,6 +250,17 @@ participating in the CPython core development process:
    `Azure Notebooks <http://notebooks.azure.com/>`_ bringing the Python based
    Jupyter notebook as a hosted on-line service.
 
+.. topic:: Carol Willing (United States)
+
+   * Personal site: `Willing Consulting <https://www.willingconsulting.com/>`_
+   * `Extended bio <https://www.willingconsulting.com/about/>`__
+   * Project Jupyter, Cal Poly SLO (Research Software Engineer)
+   * Python Software Foundation (Fellow)
+
+   Carol is focused on Python's usage in education and scientific research.
+   She is interested in organizational development, operational workflows,
+   and sustainability of open source projects.
+
 
 .. _goals-of-the-motivations-page:
 
