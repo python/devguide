@@ -29,7 +29,8 @@ A brief description of the issue. Review whether the title is too generic or
 specifies an incorrect term or library.
 
 Adding a prefix at the start of the title to indicate the module, such as 
-IDLE, DOC, or ASYNCIO, is optional, but can be helpful to others.
+IDLE, doc, or asycio, for example, are optional, but can be helpful to
+others.
 
 Type
 ''''
@@ -81,20 +82,20 @@ will be needed.
 |               | bug reporter should post a script, instructions, or      |
 |               | example to help someone test or reproduce the issue.     |
 +---------------+----------------------------------------------------------+
-| needs patch   | A patch is needed to solve the problem (i.e. fixing the  |
-|               | bug or adding the requested improvement).                |
+| needs patch   | A patch or pull request is needed to solve the problem   |
+|               | (i.e. fixing the bug or adding the requested             |
+|               | improvement).                                            |
 +---------------+----------------------------------------------------------+
-| patch review  | A patch exists, but it needs reviewing or is in the      |
-|               | process of being reviewed. This can be done by any       |
-|               | triager as well as a core developer.                     |
+| patch review  | A patch or pull request exists, but it needs review.     |
+|               | Any triager or core developer may do the review.         |
 +---------------+----------------------------------------------------------+
 | commit review | A triager performed a patch review and it looks good.    |
-|               | This signals to core developers the patch is ready for a |
-|               | quick once-over to make sure nothing was overlooked      |
-|               | before committing the patch.                             |
+|               | This signals to core developers the patch or pull        |
+|               | request needs a quick once-over to make sure nothing was |
+|               | overlooked before committing it.                         |
 +---------------+----------------------------------------------------------+
 | resolved      | The issue is considered closed and addressed (i.e. patch |
-|               | committed or expected behavior and not a bug).           |
+|               | or pull request committed; expected behavior).           |
 +---------------+----------------------------------------------------------+
 
 Components
@@ -214,9 +215,10 @@ Various informational flags about the issue. Multiple values are possible.
 +---------------+------------------------------------------------------------+
 | gsoc          | The issue would fit as, or is related to, a GSoC_ project. |
 +---------------+------------------------------------------------------------+
-| needs review  | The patch attached to the issue is in need of a review.    |
+| needs review  | The patch or pull request attached to the issue is in need |
+|               | of a review.                                               |
 +---------------+------------------------------------------------------------+
-| patch         | There is a patch attached to the issue.                    |
+| patch         | There is a patch or pull request attached to the issue.    |
 +---------------+------------------------------------------------------------+
 | 3.3regression | The issue is a regression in 3.3.                          |
 +---------------+------------------------------------------------------------+
