@@ -28,9 +28,8 @@ Title
 A brief description of the issue. Review whether the title is too generic or
 specifies an incorrect term or library.
 
-Adding a prefix at the start of the title to indicate the module, such as 
-IDLE, doc, or asycio, for example, are optional, but can be helpful to
-others.
+(Optional) Add a prefix at the start of the title to indicate the module, e.g.
+IDLE, doc, or asycio.
 
 Type
 ''''
@@ -385,9 +384,9 @@ Checklist for Triaging
 * Read the issue comment(s).
 * Review and set classification fields
     - Title: should be concise with specifics which are helpful to someone
-      scanning a list of issue titles. Adding a prefix at the start of the
-      title to indicate the module, such as IDLE, DOC, or ASYNCIO, is
-      optional, but can be helpful to others.
+      scanning a list of issue titles. (Optional, if possible) Add a
+      prefix at the start of the title to indicate the module, e.g. IDLE,
+      doc, or async.
     - Type
     - Stage
     - Components: multiple items may be set
