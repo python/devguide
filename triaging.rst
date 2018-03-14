@@ -93,7 +93,7 @@ will be needed.
 |               | request needs a quick once-over to make sure nothing was |
 |               | overlooked before committing it.                         |
 +---------------+----------------------------------------------------------+
-| resolved      | The issue is considered closed and addressed (i.e. patch |
+| resolved      | The issue is considered closed and addressed (e.g. patch |
 |               | or pull request committed; expected behavior).           |
 +---------------+----------------------------------------------------------+
 
@@ -196,9 +196,11 @@ What is the severity and urgency?
 
 As a guideline, *critical* and above are usually reserved for crashes,
 serious regressions or breakage of very important APIs.  Whether a bug
-is a *release blocker* is decided by the release manager. Triagers may
-recommend this priority and should add the release manager to the 
-*nosy list*.
+is a *release blocker* for the current `release schedule`_ is decided by the
+release manager. Triagers may recommend this priority and should add the
+release manager to the *nosy list*. If needed, consult the
+`release schedule`_ and the release's associated PEP for the release 
+manager's name.
 
 Keywords
 ''''''''
@@ -333,7 +335,8 @@ indicate a remote branch by adding ``#BRANCH`` to the end of the URL.
 
 Generating Special Links in a Comment
 -------------------------------------
-Comment abbreviation can automatically generate a link to various web pages.
+Using the following abbreviations in a comment will automatically generate
+a link to relevant web pages.
 
 +-------------------------------------------------------------+-------------------------------------------------------+
 | Comment abbreviation                                        | Description                                           |
@@ -436,3 +439,4 @@ Checklist for Triaging
 .. _Python source code repositories: https://github.com/python/cpython/
 .. _Reporting security issues in Python: https://www.python.org/news/security/
 .. _python-ideas: https://mail.python.org/mailman/listinfo/python-ideas
+.. _release schedule: https://devguide.python.org/#status-of-python-branches
