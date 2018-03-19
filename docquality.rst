@@ -8,6 +8,10 @@ keeping a high level of quality takes a lot of effort. Help is always
 appreciated with the documentation, and it requires little programming
 experience (with or without Python).
 
+
+Python Documentation
+--------------------
+
 :ref:`Documenting Python <documenting>` covers the details of how Python's
 documentation works.
 It includes an explanation of the markup used (although you can figure a lot
@@ -76,9 +80,10 @@ Helping with the Developer's Guide
 
 .. highlight:: console
 
-The Developer's Guide uses the same process as the main Python documentation,
-except for some small differences.  The source lives in a `separate
-repository`_ and bug reports should be submitted to the `the GitHub tracker`_.
+The Developer's Guide (what you're reading now) uses the same process as the
+main Python documentation, except for some small differences.  The source
+lives in a `separate repository`_ and bug reports should be submitted to
+`its GitHub tracker`_.
 
 To submit a :doc:`pull request <pullrequest>` you can fork the
 `devguide repo`_ to your GitHub account and clone it using::
@@ -112,5 +117,5 @@ that may be different from the main documentation.
 
 .. _separate repository:
 .. _devguide repo: https://github.com/python/devguide
-.. _the GitHub tracker: https://github.com/python/devguide/issues
+.. _its GitHub tracker: https://github.com/python/devguide/issues
 .. _Sphinx: http://www.sphinx-doc.org/
