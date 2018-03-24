@@ -11,7 +11,7 @@ If you think you have found a bug in Python, you can report it to the
 `issue tracker`_. The `issue tracker`_ is also commonly referred to as 
 `bugs.python.org` and `bpo`.  Documentation bugs can also be reported there.
 
-You can report bugs with how the issue tracker functions to the `meta tracker`_.
+You can report bugs with the issue tracker itself to the `meta tracker`_.
 
 If you would like to file an issue about this devguide, please do so at the
 `devguide repo`_.
@@ -41,7 +41,8 @@ Reporting an issue
 If the problem you're reporting is not already in the `issue tracker`_, you
 need to log in by entering your user and password in the form on the left.
 If you don't already have a tracker account, select the "Register" link or,
-if you use OpenID, one of the OpenID provider logos in the sidebar.
+if you use `OpenID <http://openid.net>`_, one of the OpenID provider logos in
+the sidebar.
 
 It is not possible to submit a bug report anonymously.
 
