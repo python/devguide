@@ -5,9 +5,27 @@ Python Developer's Guide
 .. highlight:: bash
 
 This guide is a comprehensive resource for :ref:`contributing <contributing>`
-to Python_ -- for both new and experienced contributors.  It is
-:ref:`maintained <helping-with-the-developers-guide>` by the same community
-that maintains Python.  We welcome your contributions to Python!
+to Python_ -- for both new and experienced contributors. It is 
+:ref:`maintained <helping-with-the-developers-guide>` by the same
+community that maintains Python.  We welcome your contributions to Python!
+
++------------------------+---------------------+-----------------------+---------------------+
+| New Contributors       | Documentarians      | Triagers              | Core Developers     |
++========================+=====================+=======================+=====================+
+| :doc:`setup`           | :doc:`docquality`   | :doc:`tracker`        | :doc:`coredev`      |
++------------------------+---------------------+-----------------------+---------------------+
+| :doc:`help`            | :doc:`documenting`  | :doc:`triaging`       | :doc:`developers`   |
++------------------------+---------------------+-----------------------+---------------------+
+| :doc:`pullrequest`     | :ref:`style-guide`  | :ref:`helptriage`     | :doc:`committing`   |
++------------------------+---------------------+-----------------------+---------------------+
+| :doc:`runtests`        | :ref:`rst-primer`   |                       | :doc:`devcycle`     |
++------------------------+---------------------+-----------------------+---------------------+
+| :doc:`fixingissues`    |                     |                       | :doc:`experts`      |
++------------------------+---------------------+-----------------------+---------------------+
+| :doc:`communication`   |                     |                       |                     |
++------------------------+---------------------+-----------------------+---------------------+
+| :doc:`gitbootcamp`     |                     |                       |                     |
++------------------------+---------------------+-----------------------+---------------------+
 
 
 Quick Reference
@@ -168,7 +186,7 @@ Contributing
 
 We encourage everyone to contribute to Python and that's why we have put up this
 developer's guide.  If you still have questions after reviewing the material in
-this guide, then the `Python Mentors`_ group is available to help guide new
+this guide, then the `Core Python Mentorship`_ group is available to help guide new
 contributors through the process.
 
 A number of individuals from the Python community have contributed to a series
@@ -352,7 +370,7 @@ Full Table of Contents
 .. _PEPs: https://www.python.org/dev/peps/
 .. _python.org maintenance: https://pythondotorg.readthedocs.io/
 .. _Python: https://www.python.org/
-.. _Python Mentors: https://www.python.org/dev/core-mentorship/
+.. _Core Python Mentorship: https://www.python.org/dev/core-mentorship/
 .. _PyPy: http://www.pypy.org/
 .. _Jython: http://www.jython.org/
 .. _IronPython: http://ironpython.net/
