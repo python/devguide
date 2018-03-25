@@ -18,9 +18,9 @@ community that maintains Python.  We welcome your contributions to Python!
 +------------------------+---------------------+-----------------------+---------------------+
 | :doc:`pullrequest`     | :ref:`style-guide`  | :ref:`helptriage`     | :doc:`committing`   |
 +------------------------+---------------------+-----------------------+---------------------+
-| :doc:`runtests`        | :ref:`rst-primer`   |                       | :doc:`devcycle`     |
+| :doc:`runtests`        | :ref:`rst-primer`   | :doc:`experts`        | :doc:`devcycle`     |
 +------------------------+---------------------+-----------------------+---------------------+
-| :doc:`fixingissues`    |                     |                       | :doc:`experts`      |
+| :doc:`fixingissues`    |                     |                       | :doc:`motivations`  |
 +------------------------+---------------------+-----------------------+---------------------+
 | :doc:`communication`   |                     |                       |                     |
 +------------------------+---------------------+-----------------------+---------------------+
