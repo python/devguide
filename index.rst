@@ -345,7 +345,7 @@ Full Table of Contents
    buildworker
    motivations
    gitbootcamp
-
+   appendix
 
 .. _Buildbot status: https://www.python.org/dev/buildbot/
 .. _Misc directory: https://github.com/python/cpython/tree/master/Misc
