@@ -9,24 +9,6 @@ to Python_ -- for both new and experienced contributors. It is
 :ref:`maintained <helping-with-the-developers-guide>` by the same
 community that maintains Python.  We welcome your contributions to Python!
 
-+------------------------+---------------------+-----------------------+---------------------+
-| New Contributors       | Documentarians      | Triagers              | Core Developers     |
-+========================+=====================+=======================+=====================+
-| :doc:`setup`           | :doc:`docquality`   | :doc:`tracker`        | :doc:`coredev`      |
-+------------------------+---------------------+-----------------------+---------------------+
-| :doc:`help`            | :doc:`documenting`  | :doc:`triaging`       | :doc:`developers`   |
-+------------------------+---------------------+-----------------------+---------------------+
-| :doc:`pullrequest`     | :ref:`style-guide`  | :ref:`helptriage`     | :doc:`committing`   |
-+------------------------+---------------------+-----------------------+---------------------+
-| :doc:`runtests`        | :ref:`rst-primer`   | :doc:`experts`        | :doc:`devcycle`     |
-+------------------------+---------------------+-----------------------+---------------------+
-| :doc:`fixingissues`    |                     |                       | :doc:`motivations`  |
-+------------------------+---------------------+-----------------------+---------------------+
-| :doc:`communication`   |                     |                       |                     |
-+------------------------+---------------------+-----------------------+---------------------+
-| :doc:`gitbootcamp`     |                     |                       |                     |
-+------------------------+---------------------+-----------------------+---------------------+
-
 
 Quick Reference
 ---------------
@@ -199,31 +181,36 @@ Core developers and contributors alike will find the following guides useful:
 
 Guide for contributing to Python:
 
-* :doc:`setup`
-* :doc:`help`
-* :doc:`pullrequest`
-* :doc:`runtests`
-* Beginner tasks to become familiar with the development process
-    * :doc:`docquality`
-    * :doc:`coverage`
-* Advanced tasks for once you are comfortable
-    * :doc:`silencewarnings`
-    * Fixing issues found by the :doc:`buildbots <buildbots>`
-    * Helping out with reviewing `open pull requests`_.
-      See :ref:`how to review a Pull Request <how-to-review-a-pull-request>`.
-    * :doc:`fixingissues`
-* :ref:`tracker` and :ref:`helptriage`
-    * :doc:`triaging`
-    * :doc:`experts`
-* :doc:`communication`
-* :doc:`coredev`
-    * :doc:`committing`
-    * :doc:`devcycle`
-    * :doc:`buildbots`
-    * :doc:`coverity`
-* :doc:`gitbootcamp`
++------------------------+---------------------+-----------------------+---------------------+
+| New Contributors       | Documentarians      | Triagers              | Core Developers     |
++========================+=====================+=======================+=====================+
+| :doc:`setup`           | :doc:`docquality`   | :doc:`tracker`        | :doc:`coredev`      |
++------------------------+---------------------+-----------------------+---------------------+
+| :doc:`help`            | :doc:`documenting`  | :doc:`triaging`       | :doc:`developers`   |
++------------------------+---------------------+-----------------------+---------------------+
+| :doc:`pullrequest`     | :ref:`style-guide`  | :ref:`helptriage`     | :doc:`committing`   |
++------------------------+---------------------+-----------------------+---------------------+
+| :doc:`runtests`        | :ref:`rst-primer`   | :doc:`experts`        | :doc:`devcycle`     |
++------------------------+---------------------+-----------------------+---------------------+
+| :doc:`fixingissues`    |                     |                       | :doc:`motivations`  |
++------------------------+---------------------+-----------------------+---------------------+
+| :doc:`communication`   |                     |                       |                     |
++------------------------+---------------------+-----------------------+---------------------+
+| :doc:`gitbootcamp`     |                     |                       |                     |
++------------------------+---------------------+-----------------------+---------------------+
 
-It is **recommended** that the above documents be read in the order listed.  You
+Advanced tasks and topics for once you are comfortable:
+
+* :doc:`silencewarnings`
+* Fixing issues found by the :doc:`buildbots <buildbots>`
+* :doc:`coverity`
+* Helping out with reviewing `open pull requests`_.
+  See :ref:`how to review a Pull Request <how-to-review-a-pull-request>`.
+* :doc:`fixingissues`
+
+It is **recommended** that the above documents be read as needed. New 
+contributors will build understanding of the CPython workflow by reading the
+sections mentioned in this table. You
 can stop where you feel comfortable and begin contributing immediately without
 reading and understanding these documents all at once.  If you do choose to skip
 around within the documentation, be aware that it is written assuming preceding
