@@ -59,6 +59,7 @@ gladly work with you to integrate your text, dealing with the markup for you.
 Please don't let the material in this document stand between the documentation
 and your desire to help out!
 
+.. _style-guide:
 
 Style guide
 ===========
@@ -276,6 +277,8 @@ the documentation wasn't consulted until after the error was made.  It is
 unfortunate, but typically no documentation edit would have saved the user from
 making false assumptions about the language ("I was surprised by ...").
 
+
+.. _rst-primer:
 
 reStructuredText Primer
 =======================
