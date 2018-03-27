@@ -1,18 +1,27 @@
 Appendix: Topics 
 ================
 
-Basics
-------
+Basics for contributors
+-----------------------
 
-* :doc:`setup`
+.. note:: **Recommended reading**
+
+   - :doc:`setup`
+   - :doc:`pullrequest`
+
 * :doc:`help`
 * :doc:`communication`
 
 Core developers
 ---------------
 
+.. note:: **Recommended reading**
+
+   * :doc:`setup`
+   * :doc:`pullrequest`
+   * :doc:`committing`
+
 * :doc:`coredev`
-* :doc:`committing`
 * :doc:`developers`
 * :doc:`motivations`
 * :doc:`experts`
