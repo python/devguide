@@ -95,11 +95,12 @@ pygments_style = 'sphinx'
 
 # -- Options for HTML output ---------------------------------------------------
 
-# Use our custom theme. Previously used builtin 'nature' theme.
-#html_theme = 'nature'
-html_theme = 'pydoctheme'
-html_theme_path = ['tools']
-html_theme_options = {'collapsiblesidebar': True}
+# Use the upstream python-docs-theme
+html_theme = 'python_docs_theme'
+html_theme_options = {
+  'collapsiblesidebar': True,
+  'issues_url': 'https://github.com/python/devguide/issues/new',
+}
 
 
 # The name for this set of Sphinx documents.  If None, it defaults to
@@ -113,16 +114,11 @@ templates_path = ['tools/templates']
 html_sidebars = {
     # Defaults taken from http://www.sphinx-doc.org/en/stable/config.html#confval-html_sidebars
     # Removes the quick search block
-    '**': [
-        'localtoc.html',
-        'globaltoc.html',
-        'relations.html',
-        'customsourcelink.html'
-    ]
+    '**': ['localtoc.html', 'globaltoc.html', 'relations.html', 'customsourcelink.html'],
 }
 
 # Additional static files.
-html_static_path = ['tools/static']
+#html_static_path = ['tools/static']
 
 # A shorter title for the navigation bar.  Default is the same as html_title.
 #html_short_title = None

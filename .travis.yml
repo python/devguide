@@ -2,7 +2,7 @@ language: python
 python: 3.6
 cache: pip
 
-install: python3 -m pip install sphinx
+install: python3 -m pip install -r requirements.txt
 
 script:
     # TODO: add -b linkcheck
