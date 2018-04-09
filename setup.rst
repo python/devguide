@@ -84,7 +84,7 @@ You will only need to execute these steps once:
       upstream        git@github.com:python/devguide.git (push)
 
 If you did everything correctly, you should now have a copy of the code
-in the ``cpython`` dir and two remotes that refer to your own GitHub fork
+in the ``cpython`` directory and two remotes that refer to your own GitHub fork
 (``origin``) and the official CPython repository (``upstream``).
 
 .. XXX move the text below in pullrequest
