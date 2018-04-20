@@ -302,7 +302,7 @@ reviewing your pull request because of lack of information.
 If this issue is so simple that there's no need for an issue to track
 any discussion of what the pull request is trying to solve (e.g. fixing a
 spelling mistake), then the pull request needs to have the "skip issue" label
-added to it.
+added to it by someone with commit access.
 
 Your pull request may involve several commits as a result of addressing code
 review comments.  Please keep the commit history in the pull request intact by
