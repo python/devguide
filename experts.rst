@@ -323,6 +323,7 @@ data formats        mark.dickinson
 database            lemburg
 devguide            ncoghlan, eric.araujo, ezio.melotti, willingc
 documentation       ezio.melotti, eric.araujo, willingc
+extension modules   petr.viktorin, ncoghlan
 f-strings           eric.smith*
 GUI
 i18n                lemburg, eric.araujo
