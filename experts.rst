@@ -200,7 +200,7 @@ select
 selectors             neologix, giampaolo.rodola
 shelve
 shlex
-shutil                tarek
+shutil                tarek, giampaolo.rodola
 signal
 site
 smtpd                 giampaolo.rodola
@@ -216,7 +216,7 @@ statistics            steven.daprano
 string
 stringprep
 struct                mark.dickinson, meador.inge
-subprocess            astrand (inactive)
+subprocess            astrand (inactive), giampaolo.rodola
 sunau
 symbol
 symtable              benjamin.peterson
@@ -323,6 +323,7 @@ data formats        mark.dickinson
 database            lemburg
 devguide            ncoghlan, eric.araujo, ezio.melotti, willingc
 documentation       ezio.melotti, eric.araujo, willingc
+extension modules   petr.viktorin, ncoghlan
 f-strings           eric.smith*
 GUI
 i18n                lemburg, eric.araujo

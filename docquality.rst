@@ -3,49 +3,65 @@
 Helping with Documentation
 ==========================
 
-Python is known for having good documentation. But maintaining all of it and
-keeping a high level of quality takes a lot of effort. Help is always
-appreciated with the documentation, and it requires little programming
-experience (with or without Python).
+Python is known for having well-written documentation. Maintaining the
+documentation's accuracy and keeping a high level of quality takes a lot of
+effort. Community members, like you, help with writing, editing, and updating
+content, and these contributions are appreciated and welcomed.
 
-:ref:`Documenting Python <documenting>` covers the details of how Python's
-documentation works.
-It includes an explanation of the markup used (although you can figure a lot
-out simply by looking at pre-existing documentation) and :ref:`how to build
-<building-doc>` the documentation (which allows you to see how your changes
-will look along with validating that your new markup is correct).
+This high-level **Helping with Documentation** section provides:
 
-The documentation built from the :ref:`in-development <indevbranch>` and
-:ref:`maintenance <maintbranch>` branches can be viewed from
-https://docs.python.org/dev/.  The in-development and most recent 2.x and 3.x
-maintenance :ref:`branches <listbranch>` are rebuilt once per day.
+* an overview of Python's documentation
+* how to help with documentation issues
+* information on proofreading
+* guidance on contributing to this Developer's Guide
 
-If you care to get more involved with documentation, you may also consider
-subscribing to the
-`docs@python.org mailing list <https://mail.python.org/mailman/listinfo/docs>`_.
-Documentation issues reported on the `issue tracker`_ are sent here as well as
-some bug reports being directly emailed to the mailing list. There is also the
-`docs-sig@python.org mailing list
-<https://mail.python.org/mailman/listinfo/doc-sig>`_
-which discusses the documentation toolchain, projects, standards, etc.
+The next chapter, :ref:`Documenting Python <documenting>`, gives extensive,
+detailed information on how to write documentation and submit changes.
 
 
-Helping with issues filed on the issue tracker
-----------------------------------------------
+Python Documentation
+--------------------
+
+The :ref:`Documenting Python <documenting>` section covers the details of how
+Python's documentation works. It includes information about the markup
+language used, specific formats, and style recommendations. Looking at
+pre-existing documentation source files can be very helpful when getting
+started. :ref:`How to build the documentation <building-doc>` walks you through
+the steps to create a draft build which lets you see how your changes will look
+and validates that your new markup is correct.
+
+You can view the documentation built from :ref:`in-development <indevbranch>`
+and :ref:`maintenance <maintbranch>` branches at https://docs.python.org/dev/.
+The in-development and most recent 3.x (as well as 2.x) maintenance 
+:ref:`branches <listbranch>` are rebuilt once per day.
+
+If you would like to be more involved with documentation, consider subscribing
+to the `docs@python.org <https://mail.python.org/mailman/listinfo/docs>`_
+mailing list. The `issue tracker`_ sends new documentation issues to this 
+mailing list, and, less frequently, the list receives some directly mailed bug
+reports. The `docs-sig@python.org <https://mail.python.org/mailman/listinfo/doc-sig>`_ 
+mailing list discusses the documentation toolchain, projects, and standards.
+
+
+Helping with documentation issues
+---------------------------------
 
 If you look at `documentation issues`_ on the `issue tracker`_, you
 will find various documentation problems that may need work. Issues vary from
-typos, to unclear documentation, to something completely lacking documentation.
+typos to unclear documentation and items lacking documentation.
 
-If you decide to tackle a documentation issue, you can simply submit a
-:doc:`pull request <pullrequest>` for the issue. If you are worried that someone
-else might be working simultaneously on the issue, first check to see if there
-is a paperclip or `octocat`_ icon at the end of the title column.  If there
-is, then someone has already attached a patch or created a pull request for the
-issue.  If there aren't any icons, then simply leave a comment on the issue
-saying you are going to try and create a pull request and roughly how long
-you think you will take to do it (this allows others to take on the issue if
-you happen to forget or lose interest).
+If you see a documentation issue that you would like to tackle, you can:
+
+* check to see if there is a paperclip or `octocat`_ icon at the end of the 
+  issue's title column.  If there is, then someone has already created a pull
+  request for the issue.
+* leave a comment on the issue saying you are going to try and create a pull 
+  request and roughly how long you think you will take to do so (this allows 
+  others to take on the issue if you happen to forget or lose interest).
+* submit a :doc:`pull request <pullrequest>` for the issue. 
+
+By following the steps in the :ref:`Quick Guide to Pull Requests <pullrequest-quickguide>`,
+you will learn the workflow for documentation pull requests.
 
 .. _issue tracker: https://bugs.python.org
 .. _documentation issues: https://bugs.python.org/issue?%40search_text=&ignore=file%3Acontent&title=&%40columns=title&id=&%40columns=id&stage=&creation=&creator=&activity=&%40columns=activity&%40sort=activity&actor=&nosy=&type=&components=4&versions=&dependencies=&assignee=&keywords=6&priority=&status=1&%40columns=status&resolution=&nosy_count=&message_count=&%40group=&%40pagesize=100&%40startwith=0&%40sortdir=on&%40queryname=&%40old-queryname=&%40action=search
@@ -57,16 +73,16 @@ Proofreading
 
 While an issue filed on the `issue tracker`_ means there is a known issue
 somewhere, that does not mean there are not other issues lurking about in the
-documentation. Simply proofreading parts of the documentation is enough to
-uncover problems (e.g., documentation that needs to be updated for Python 3
-from Python 2).
+documentation. Proofreading a part of the documentation, such as a "How to" or
+OS specific document, can often uncover problems (e.g., documentation that
+needs updating for Python 3).
 
-If you decide to proofread, then read a section of the documentation from start
-to finish, filing issues in the issue tracker for each problem you find. Simple
-typos don't require an issue of their own, instead submit a pull request
-directly.
-Don't file a single issue for an entire section containing multiple problems as
-that makes it harder to break the work up for multiple people to help with.
+If you decide to proofread, read a section of the documentation from start
+to finish, filing issues in the issue tracker for each major type of problem
+you find. Simple typos don't require issues of their own, but, instead, submit
+a pull request directly. It's best to avoid filing a single issue for an entire
+section containing multiple problems; instead, file several issues so that it
+is easier to break the work up for multiple people and more efficient review.
 
 
 .. _helping-with-the-developers-guide:
@@ -76,16 +92,26 @@ Helping with the Developer's Guide
 
 .. highlight:: console
 
-The Developer's Guide uses the same process as the main Python documentation,
-except for some small differences.  The source lives in a `separate
-repository`_ and bug reports should be submitted to the `the GitHub tracker`_.
+The Developer's Guide (what you're reading now) uses the same process as the
+main Python documentation, except for some small differences.  The source
+lives in a `separate repository`_ and bug reports should be submitted to the
+`devguide GitHub tracker`_.
 
-To submit a :doc:`pull request <pullrequest>` you can fork the
+Our devguide workflow uses continuous integration and deployment so changes to
+the devguide are normally published when the pull request is merged. Changes
+to CPython documentation follows the workflow of a CPython release and is
+published in the release.
+
+
+Developer's Guide workflow
+--------------------------
+
+To submit a :doc:`pull request <pullrequest>`, you can fork the
 `devguide repo`_ to your GitHub account and clone it using::
 
     $ git clone https://github.com/<your_username>/devguide
 
-In order for your PR to be accepted, you will also need to sign the
+For your PR to be accepted, you will also need to sign the
 :ref:`contributor agreement <cla>`.
 
 To build the devguide, some additional dependencies are required (most
@@ -102,15 +128,12 @@ in the checkout directory. On Windows use:
 
    > .\make html
 
-You will find the generated files in ``_build/html``.
-Note that ``make check`` is automatically run when
-you submit a :doc:`pull request <pullrequest>`, so you should make
-sure that it runs without errors.
-
-Changes to the devguide are normally published within a day, on a schedule
-that may be different from the main documentation.
+You will find the generated files in ``_build/html``. Note that ``make check``
+runs automatically when you submit a :doc:`pull request <pullrequest>`. You may
+wish to run ``make check`` and ``make linkcheck`` to make sure that it runs
+without errors.
 
 .. _separate repository:
 .. _devguide repo: https://github.com/python/devguide
-.. _the GitHub tracker: https://github.com/python/devguide/issues
+.. _devguide GitHub tracker: https://github.com/python/devguide/issues
 .. _Sphinx: http://www.sphinx-doc.org/

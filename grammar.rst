@@ -30,14 +30,14 @@ Checklist
 
 * Grammar/Grammar: OK, you'd probably worked this one out :)
 
-* Parser/Python.asdl may need changes to match the Grammar.  Run make to
-  regenerate Include/Python-ast.h and Python/Python-ast.c.
+* Parser/Python.asdl may need changes to match the Grammar.  Then run 'make
+  regen-ast' to regenerate Include/Python-ast.h and Python/Python-ast.c.
 
 * Python/ast.c will need changes to create the AST objects involved with the
   Grammar change.
 
 * Parser/pgen needs to be rerun to regenerate Include/graminit.h and
-  Python/graminit.c. (make should handle this for you.)
+  Python/graminit.c. ('make regen-grammar' should handle this for you.)
 
 * Python/symtable.c: This handles the symbol collection pass
   that happens immediately before the compilation pass.

@@ -59,6 +59,7 @@ gladly work with you to integrate your text, dealing with the markup for you.
 Please don't let the material in this document stand between the documentation
 and your desire to help out!
 
+.. _style-guide:
 
 Style guide
 ===========
@@ -276,6 +277,8 @@ the documentation wasn't consulted until after the error was made.  It is
 unfortunate, but typically no documentation edit would have saved the user from
 making false assumptions about the language ("I was surprised by ...").
 
+
+.. _rst-primer:
 
 reStructuredText Primer
 =======================
@@ -1467,8 +1470,9 @@ To build the documentation, follow the instructions from one of the sections
 below.  You can view the documentation after building the HTML by pointing
 a browser at the file :file:`Doc/build/html/index.html`.
 
-You are expected to have installed the latest stable version of Sphinx_ on
-your system or in a virtualenv_, so that the Makefile can find the
+You are expected to have installed the latest stable version of
+Sphinx_ and blurb_ on your system or in a virtualenv_ (which can be
+created using ``make venv``), so that the Makefile can find the
 ``sphinx-build`` command.  You can also specify the location of
 ``sphinx-build`` with the ``SPHINXBUILD`` :command:`make` variable.
 
@@ -1480,9 +1484,10 @@ Using make / make.bat
 <checkout>` to build the output as HTML::
 
    cd Doc
+   make venv
    make html
 
-or alternatively ``make -C Doc html``.
+or alternatively ``make -C Doc/ venv html``.
 
 You can also use ``make help`` to see a list of targets supported by
 :command:`make`.  Note that ``make check`` is automatically run when
@@ -1494,9 +1499,9 @@ emulate :command:`make` as closely as possible.
 
 See also :file:`Doc/README.rst` for more information.
 
-
 .. _docutils: http://docutils.sourceforge.net/
 .. _Jinja: http://jinja.pocoo.org/
 .. _Pygments: http://pygments.org/
 .. _Sphinx: http://sphinx-doc.org/
 .. _virtualenv: https://virtualenv.pypa.io/
+.. _blurb: https://pypi.org/project/blurb/

@@ -5,9 +5,9 @@ Python Developer's Guide
 .. highlight:: bash
 
 This guide is a comprehensive resource for :ref:`contributing <contributing>`
-to Python_ -- for both new and experienced contributors.  It is
-:ref:`maintained <helping-with-the-developers-guide>` by the same community
-that maintains Python.  We welcome your contributions to Python!
+to Python_ -- for both new and experienced contributors. It is 
+:ref:`maintained <helping-with-the-developers-guide>` by the same
+community that maintains Python.  We welcome your contributions to Python!
 
 
 Quick Reference
@@ -95,10 +95,10 @@ Status of Python branches
 +------------------+--------------+-------------+----------------+----------------+----------------------------------------------------------------------------+
 | 3.7              | :pep:`537`   | prerelease  | *2018-06-15*   | *2023-06*      | Fixes for features, bugs, and docs in the upcoming 3.7.0 release           |
 +------------------+--------------+-------------+----------------+----------------+----------------------------------------------------------------------------+
-| 3.6              | :pep:`494`   | bugfix      | 2016-12-23     | *2021-12-23*   | `Most recent binary release: Python 3.6.4                                  |
-|                  |              |             |                |                | <https://www.python.org/downloads/release/python-364/>`_                   |
+| 3.6              | :pep:`494`   | bugfix      | 2016-12-23     | *2021-12-23*   | `Most recent binary release: Python 3.6.5                                  |
+|                  |              |             |                |                | <https://www.python.org/downloads/release/python-365/>`_                   |
 +------------------+--------------+-------------+----------------+----------------+----------------------------------------------------------------------------+
-| 2.7              | :pep:`373`   | bugfix      | 2010-07-03     | *2020-01-01*   | The support has been extended to 2020 (1).                                 |
+| 2.7              | :pep:`373`   | bugfix      | 2010-07-03     | *2020-01-01*   | The support has been extended to 2020-01-01.                               |
 |                  |              |             |                |                | `Most recent binary release: Python 2.7.14                                 |
 |                  |              |             |                |                | <https://www.python.org/downloads/release/python-2714/>`_                  |
 +------------------+--------------+-------------+----------------+----------------+----------------------------------------------------------------------------+
@@ -108,12 +108,6 @@ Status of Python branches
 | 3.4              | :pep:`429`   | security    | 2014-03-16     | *2019-03-16*   | `Most recent security release: Python 3.4.7                                |
 |                  |              |             |                |                | <https://www.python.org/downloads/release/python-347/>`_                   |
 +------------------+--------------+-------------+----------------+----------------+----------------------------------------------------------------------------+
-
-(1) The exact date of Python 2.7 end-of-life has not been decided yet. It will
-be decided by Python 2.7 release manager, Benjamin Peterson, who will update
-the :pep:`373`. Read also the `[Python-Dev] Exact date of Python 2 EOL?
-<https://mail.python.org/pipermail/python-dev/2017-March/147655.html>`_ thread
-on python-dev (March 2017).
 
 Status:
 
@@ -174,7 +168,7 @@ Contributing
 
 We encourage everyone to contribute to Python and that's why we have put up this
 developer's guide.  If you still have questions after reviewing the material in
-this guide, then the `Python Mentors`_ group is available to help guide new
+this guide, then the `Core Python Mentorship`_ group is available to help guide new
 contributors through the process.
 
 A number of individuals from the Python community have contributed to a series
@@ -187,31 +181,36 @@ Core developers and contributors alike will find the following guides useful:
 
 Guide for contributing to Python:
 
-* :doc:`setup`
-* :doc:`help`
-* :doc:`pullrequest`
-* :doc:`runtests`
-* Beginner tasks to become familiar with the development process
-    * :doc:`docquality`
-    * :doc:`coverage`
-* Advanced tasks for once you are comfortable
-    * :doc:`silencewarnings`
-    * Fixing issues found by the :doc:`buildbots <buildbots>`
-    * Helping out with reviewing `open pull requests`_.
-      See :ref:`how to review a Pull Request <how-to-review-a-pull-request>`.
-    * :doc:`fixingissues`
-* :ref:`tracker` and :ref:`helptriage`
-    * :doc:`triaging`
-    * :doc:`experts`
-* :doc:`communication`
-* :doc:`coredev`
-    * :doc:`committing`
-    * :doc:`devcycle`
-    * :doc:`buildbots`
-    * :doc:`coverity`
-* :doc:`gitbootcamp`
++------------------------+---------------------+-----------------------+---------------------+
+| New Contributors       | Documentarians      | Triagers              | Core Developers     |
++========================+=====================+=======================+=====================+
+| :doc:`setup`           | :doc:`docquality`   | :doc:`tracker`        | :doc:`coredev`      |
++------------------------+---------------------+-----------------------+---------------------+
+| :doc:`help`            | :doc:`documenting`  | :doc:`triaging`       | :doc:`developers`   |
++------------------------+---------------------+-----------------------+---------------------+
+| :doc:`pullrequest`     | :ref:`style-guide`  | :ref:`helptriage`     | :doc:`committing`   |
++------------------------+---------------------+-----------------------+---------------------+
+| :doc:`runtests`        | :ref:`rst-primer`   | :doc:`experts`        | :doc:`devcycle`     |
++------------------------+---------------------+-----------------------+---------------------+
+| :doc:`fixingissues`    |                     |                       | :doc:`motivations`  |
++------------------------+---------------------+-----------------------+---------------------+
+| :doc:`communication`   |                     |                       |                     |
++------------------------+---------------------+-----------------------+---------------------+
+| :doc:`gitbootcamp`     |                     |                       |                     |
++------------------------+---------------------+-----------------------+---------------------+
 
-It is **recommended** that the above documents be read in the order listed.  You
+Advanced tasks and topics for once you are comfortable:
+
+* :doc:`silencewarnings`
+* Fixing issues found by the :doc:`buildbots <buildbots>`
+* :doc:`coverity`
+* Helping out with reviewing `open pull requests`_.
+  See :ref:`how to review a Pull Request <how-to-review-a-pull-request>`.
+* :doc:`fixingissues`
+
+It is **recommended** that the above documents be read as needed. New 
+contributors will build understanding of the CPython workflow by reading the
+sections mentioned in this table. You
 can stop where you feel comfortable and begin contributing immediately without
 reading and understanding these documents all at once.  If you do choose to skip
 around within the documentation, be aware that it is written assuming preceding
@@ -351,14 +350,14 @@ Full Table of Contents
    buildworker
    motivations
    gitbootcamp
-
+   appendix
 
 .. _Buildbot status: https://www.python.org/dev/buildbot/
 .. _Misc directory: https://github.com/python/cpython/tree/master/Misc
 .. _PEPs: https://www.python.org/dev/peps/
 .. _python.org maintenance: https://pythondotorg.readthedocs.io/
 .. _Python: https://www.python.org/
-.. _Python Mentors: https://www.python.org/dev/core-mentorship/
+.. _Core Python Mentorship: https://www.python.org/dev/core-mentorship/
 .. _PyPy: http://www.pypy.org/
 .. _Jython: http://www.jython.org/
 .. _IronPython: http://ironpython.net/

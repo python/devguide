@@ -302,7 +302,7 @@ reviewing your pull request because of lack of information.
 If this issue is so simple that there's no need for an issue to track
 any discussion of what the pull request is trying to solve (e.g. fixing a
 spelling mistake), then the pull request needs to have the "skip issue" label
-added to it.
+added to it by someone with commit access.
 
 Your pull request may involve several commits as a result of addressing code
 review comments.  Please keep the commit history in the pull request intact by
@@ -323,7 +323,7 @@ their own pull request. If the author does not respond after a week, it is
 acceptable for another contributor to prepare the pull request based on the
 existing patch. In this case, both parties should sign the :ref:`CLA <cla>`.
 When creating a pull request based on another person's patch, provide
-attribution to the original patch author by adding "Co-authored-by: 
+attribution to the original patch author by adding "Co-authored-by:
 Author Name <email_address> ." to the pull request description and commit message.
 See `the GitHub article <https://help.github.com/articles/creating-a-commit-with-multiple-authors/>`_
 on how to properly add the co-author info.

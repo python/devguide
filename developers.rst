@@ -25,6 +25,9 @@ transliteration too.
 Permissions History
 -------------------
 
+- Petr Viktorin was given push privileges on April 16, 2018 by Brett Cannon,
+  on the recommendation of Nick Coghlan.
+
 - Nathaniel J. Smith was given push privileges on January 25, 2018
   by Yury Selivanov, on his own recommendation.
 

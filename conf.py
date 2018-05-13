@@ -33,9 +33,6 @@ extensions = ['sphinx.ext.intersphinx', 'sphinx.ext.todo']
 intersphinx_mapping = {'python': ('https://docs.python.org/3', None)}
 todo_include_todos = True
 
-# Add any paths that contain templates here, relative to this directory.
-templates_path = ['_templates']
-
 # The suffix of source filenames.
 source_suffix = '.rst'
 
@@ -95,11 +92,12 @@ pygments_style = 'sphinx'
 
 # -- Options for HTML output ---------------------------------------------------
 
-# Use our custom theme. Previously used builtin 'nature' theme.
-#html_theme = 'nature'
-html_theme = 'pydoctheme'
-html_theme_path = ['tools']
-html_theme_options = {'collapsiblesidebar': True}
+# Use the upstream python-docs-theme
+html_theme = 'python_docs_theme'
+html_theme_options = {
+  'collapsiblesidebar': True,
+  'issues_url': 'https://github.com/python/devguide/issues/new',
+}
 
 
 # The name for this set of Sphinx documents.  If None, it defaults to
@@ -113,7 +111,7 @@ templates_path = ['tools/templates']
 html_sidebars = {
     # Defaults taken from http://www.sphinx-doc.org/en/stable/config.html#confval-html_sidebars
     # Removes the quick search block
-    '**': ['localtoc.html', 'relations.html', 'customsourcelink.html']
+    '**': ['localtoc.html', 'globaltoc.html', 'relations.html', 'customsourcelink.html'],
 }
 
 # Additional static files.
@@ -131,12 +129,6 @@ html_static_path = ['tools/static']
 # pixels large.
 #html_favicon = None
 
-# Add any paths that contain custom static files (such as style sheets) here,
-# relative to this directory. They are copied after the builtin static files,
-# so a file named "default.css" will overwrite the builtin "default.css".
-# Commented out as Hg doesn't track empty directories.
-#html_static_path = ['_static']
-
 # If not '', a 'Last updated on:' timestamp is inserted at every page bottom,
 # using the given strftime format.
 html_last_updated_fmt = '%b %d, %Y'
@@ -144,9 +136,6 @@ html_last_updated_fmt = '%b %d, %Y'
 # If true, SmartyPants will be used to convert quotes and dashes to
 # typographically correct entities.
 #html_use_smartypants = True
-
-# Custom sidebar templates, maps document names to template names.
-#html_sidebars = {}
 
 # Additional templates that should be rendered to pages, maps page names to
 # template names.
@@ -238,3 +227,7 @@ linkcheck_anchors_ignore = [
     '\/.*',
 ]
 
+# Use our custom CSS stylesheet to differentiate us from the official python
+# docs.
+def setup(app):
+    app.add_stylesheet('custom.css')
