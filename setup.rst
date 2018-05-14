@@ -216,12 +216,16 @@ with **Homebrew**::
 
     $ brew install openssl xz
 
-and configure::
+and configure python versions >= 3.7::
+
+    ./configure --with-pydebug --with-openssl=$(brew --prefix openssl)
+
+or configure python versions < 3.7::
 
     $ CPPFLAGS="-I$(brew --prefix openssl)/include" \
       LDFLAGS="-L$(brew --prefix openssl)/lib" \
       ./configure --with-pydebug
-
+      
 and make::
 
     $ make -s -j2
