@@ -74,6 +74,11 @@ RSS feed readers.
 .. _StackOverflow: https://stackoverflow.com/
 .. _Freenode: http://freenode.net/
 
+Zulip
+-----
+
+We have our own `zulipchat <https://python.zulipchat.com>`_ instance. This should be
+used to discuss the development of Python only.
 
 IRC
 ---
