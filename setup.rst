@@ -78,10 +78,10 @@ You will only need to execute these steps once:
 7. Verify that your setup is correct::
 
       $ git remote -v
-      origin  git@github.com:<your-username>/devguide.git (fetch)
-      origin  git@github.com:<your-username>/devguide.git (push)
-      upstream        git@github.com:python/devguide.git (fetch)
-      upstream        git@github.com:python/devguide.git (push)
+      origin  git@github.com:<your-username>/cpython.git (fetch)
+      origin  git@github.com:<your-username>/cpython.git (push)
+      upstream        git@github.com:python/cpython.git (fetch)
+      upstream        git@github.com:python/cpython.git (push)
 
 If you did everything correctly, you should now have a copy of the code
 in the ``cpython`` directory and two remotes that refer to your own GitHub fork
