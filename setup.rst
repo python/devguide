@@ -232,7 +232,7 @@ and make::
 
 or **MacPorts**::
 
-    $ sudo port install openssl xz
+    $ sudo port install pkgconfig openssl xz
 
 and configure::
 
