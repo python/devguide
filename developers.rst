@@ -25,6 +25,9 @@ transliteration too.
 Permissions History
 -------------------
 
+- Mark Shannon was given push privileges on May 15, 2018 by Brett Cannon,
+  on the recommendation of Larry Hastings.
+
 - Petr Viktorin was given push privileges on April 16, 2018 by Brett Cannon,
   on the recommendation of Nick Coghlan.
 
