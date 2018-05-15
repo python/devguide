@@ -338,7 +338,7 @@ packaging           tarek, lemburg, alexis, eric.araujo, dstufft, paul.moore
 performance         brett.cannon, vstinner, serhiy.storchaka, yselivanov
 pip                 ncoghlan, dstufft, paul.moore, Marcus.Smith
 py3 transition      benjamin.peterson
-release management  tarek, lemburg, benjamin.peterson, barry
+release management  tarek, lemburg, benjamin.peterson, barry,
                     gvanrossum, anthonybaxter, eric.araujo, ned.deily,
                     georg.brandl
 str.format          eric.smith*
