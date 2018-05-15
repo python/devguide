@@ -93,7 +93,7 @@ csv                   skip.montanaro (inactive)
 ctypes                theller (inactive), belopolsky, amaury.forgeotdarc,
                       meador.inge
 curses                twouters
-dataclasses
+dataclasses           eric.smith
 datetime              belopolsky
 dbm
 decimal               facundobatista, rhettinger, mark.dickinson, skrah
@@ -269,7 +269,7 @@ xml.sax.handler
 xml.sax.saxutils
 xml.sax.xmlreader
 xmlrpc
-zipapp
+zipapp                paul.moore
 zipfile               alanmcintyre, serhiy.storchaka, twouters
 zipimport             twouters*
 zlib                  twouters
