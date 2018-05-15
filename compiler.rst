@@ -398,7 +398,7 @@ will take effect only after running ``make regen-importlib``.
 
 Finally, you need to introduce the use of the new bytecode.  Altering
 :file:`Python/compile.c` and :file:`Python/ceval.c` will be the primary places
-to change. You must to add the case for a new opcode into the 'switch'
+to change. You must add the case for a new opcode into the 'switch'
 statement in the ``stack_effect()`` function in :file:`Python/compile.c`.
 If the new opcode has a jump target, you will need to update macros and
 'switch' statements in :file:`Python/peephole.c`.  If it affects a control
