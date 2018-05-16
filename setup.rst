@@ -452,8 +452,8 @@ To overcome this problem, auto-generated files are also checked into the
 Git repository. So if you don't touch the auto-generation scripts, there's
 no real need to auto-generate anything.
 
-Configure your editor
-=====================
+Editors and Tools
+=================
 
 Python is used widely enough that practically all code editors have some form
 of support for writing Python code. Various coding tools also include Python
@@ -463,8 +463,8 @@ For editors and tools which the core developers have felt some special comment
 is needed for coding *in* Python, see :ref:`resources`.
 
 
-Explore CPython's directory structure
-=====================================
+Directory structure
+===================
 
 There are several top-level directories in the CPython source tree. Knowing what
 each one is meant to hold will help you find where a certain piece of
