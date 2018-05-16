@@ -4,6 +4,13 @@ cache: pip
 
 install: python3 -m pip install -r requirements.txt
 
-script:
-    # TODO: add -b linkcheck
-    - sphinx-build -n -W -q -b html -d _build/doctrees . _build/html
+jobs:
+  include:
+    - stage: build-docs
+      script: sphinx-build -n -W -q -b html -d _build/doctrees . _build/html
+
+    - stage: link-check
+      script: sphinx-build -b linkcheck -d _build/doctrees . _build/linkcheck
+
+  allow_failures:
+    - stage: link-check
