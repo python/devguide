@@ -9,6 +9,7 @@ to Python_ -- for both new and experienced contributors. It is
 :ref:`maintained <helping-with-the-developers-guide>` by the same
 community that maintains Python.  We welcome your contributions to Python!
 
+.. _quick-reference:
 
 Quick Reference
 ---------------
@@ -319,6 +320,7 @@ Full Table of Contents
 
 .. toctree::
    :numbered:
+   :maxdepth: 3
 
    setup
    help

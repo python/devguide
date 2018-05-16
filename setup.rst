@@ -1,3 +1,5 @@
+.. _setup:
+
 ===============
 Getting Started
 ===============
@@ -14,44 +16,46 @@ completely new to contributing to open source.
 
 .. _setup guide: http://wiki.openhatch.org/Contributing_to_Python
 
+.. seealso::
 
-.. _setup:
-
-Getting Set Up
-==============
-
+   The :ref:`quick-reference` gives brief summary of the process from
+   installing git to submitting a pull request.
 
 .. _vcsetup:
 
-Version Control Setup
----------------------
+Install ``git``
+===============
 
-CPython is developed using `git <https://git-scm.com>`_. The git
+CPython is developed using `git <https://git-scm.com>`_ for version control. The git
 command line program is named ``git``; this is also used to refer to git
-itself. git is easily available for all common operating systems. As the
-CPython repo is hosted on GitHub, please refer to either the
-`GitHub setup instructions <https://help.github.com/articles/set-up-git/>`_
-or the `git project instructions <https://git-scm.com>`_ for step-by-step
-installation directions. You may also want to consider a graphical client
-such as `TortoiseGit <https://tortoisegit.org/>`_ or
-`GitHub Desktop <https://desktop.github.com/>`_.
+itself. git is easily available for all common operating systems.
 
-Once you installed Git, you should set up
-:ref:`your name and email <set-up-name-email>` and `an SSH key
-<https://help.github.com/articles/adding-a-new-ssh-key-to-your-github-account/>`_
-as this will allow you to interact with GitHub without typing a username
-and password each time you execute a command, such as ``git pull``,
-``git push``, or ``git fetch``.  On Windows, you should also
-:ref:`enable autocrlf <autocrlf>`.
+- **Install**
+
+  As the CPython repo is hosted on GitHub, please refer to either the
+  `GitHub setup instructions <https://help.github.com/articles/set-up-git/>`_
+  or the `git project instructions <https://git-scm.com>`_ for step-by-step
+  installation directions. You may also want to consider a graphical client
+  such as `TortoiseGit <https://tortoisegit.org/>`_ or
+  `GitHub Desktop <https://desktop.github.com/>`_.
+
+- **Configure**
+
+  Configure :ref:`your name and email <set-up-name-email>` and create
+  `an SSH key <https://help.github.com/articles/adding-a-new-ssh-key-to-your-github-account/>`_
+  as this will allow you to interact with GitHub without typing a username
+  and password each time you execute a command, such as ``git pull``,
+  ``git push``, or ``git fetch``.  On Windows, you should also
+  :ref:`enable autocrlf <autocrlf>`.
 
 
 .. _checkout:
 
-Getting the Source Code
------------------------
+Get the source code
+===================
 
-In order to get a copy of the source code you should :ref:`fork the
-Python repository on GitHub <fork-cpython>`, :ref:`create a local
+The CPython repo is hosted on GitHub. To get a copy of the source code you should
+:ref:`fork the Python repository on GitHub <fork-cpython>`, :ref:`create a local
 clone of your personal fork, and configure the remotes <clone-your-fork>`.
 
 You will only need to execute these steps once:
@@ -107,8 +111,8 @@ Patches for the documentation can be made from the same repository; see
 
 .. _compiling:
 
-Compiling (for debugging)
--------------------------
+Compile and build
+=================
 
 CPython provides several compilation flags which help with debugging various
 things. While all of the known flags can be found in the
@@ -126,7 +130,7 @@ checks that one should not skip.
 .. _build-dependencies:
 
 Build dependencies
-''''''''''''''''''
+------------------
 
 The core CPython interpreter only needs a C compiler to be built; if
 you get compile errors with a C89 or C99-compliant compiler, please `open a
@@ -136,6 +140,9 @@ for additional libraries (such as the ``zlib`` library for compression).
 Depending on what you intend to work on, you might need to install these
 additional requirements so that the compiled interpreter supports the
 desired features.
+
+UNIX
+----
 
 For UNIX based systems, we try to use system libraries whenever available.
 This means optional components will only build if the relevant system headers
@@ -177,15 +184,16 @@ Now you can install the build dependencies via ``apt``::
 If that package is not available for your system, try reducing the minor
 version until you find a package that is available.
 
+
 .. _MacOS:
 
-On **Mac OS X systems**, use the C compiler and other
-development utilities provided by Apple's Xcode Developer Tools.
-The Developer Tools are not shipped with OS X.
+macOS and OS X
+--------------
 
-For **OS X 10.9 and later**,
+For **macOS systems** (versions 10.12+) and **OS X 10.9 and later**,
 the Developer Tools can be downloaded and installed automatically;
 you do not need to download the complete Xcode application.
+
 If necessary, run the following::
 
     $ xcode-select --install
@@ -193,8 +201,12 @@ If necessary, run the following::
 This will also ensure that the system header files are installed into
 ``/usr/include``.
 
-For **older releases of OS X**, you will need to download either the correct
-version of the Command Line Tools, if available, or install them from the
+On **Mac OS X systems** (versions 10.0 - 10.7) and **OS X 10.8**, use the C
+compiler and other development utilities provided by Apple's Xcode Developer
+Tools. The Developer Tools are not shipped with Mac OS X.
+
+For these **older releases (versions 10.0 - 10.8)**, you will need to download either the
+correct version of the Command Line Tools, if available, or install them from the
 full Xcode app or package for that OS X release.  Older versions may be
 available either as a no-cost download through Apple's App Store or from
 `the Apple Developer web site <https://developer.apple.com/>`_.
@@ -279,7 +291,7 @@ root access is beyond the scope of this guide.
 .. _unix-compiling:
 
 UNIX
-''''
+----
 
 The basic steps for building Python for development is to configure it and
 then compile it.
@@ -331,7 +343,7 @@ the interpreter you just built.
 
 
 Clang
-"""""
+-----
 
 If you are using clang_ to build CPython, some flags you might want to set to
 quiet some standard warnings which are specifically superfluous to CPython are
@@ -352,7 +364,7 @@ still build properly).
 .. _windows-compiling:
 
 Windows
-'''''''
+-------
 
 **Python 3.6** and later can use Microsoft Visual Studio 2017.  You can download
 and use any of the free or paid versions of `Visual Studio 2017`_.
@@ -391,8 +403,8 @@ to build.
 
 .. _regenerate_configure:
 
-Regenerate configure
---------------------
+Regenerate ``configure``
+========================
 
 If a change is made to Python which relies on some POSIX system-specific
 functionality (such as using a new system call), it is necessary to update the
@@ -419,14 +431,14 @@ install your own copy of Autoconf.
 
 .. _build_troubleshooting:
 
-Troubleshooting the build
--------------------------
+Troubleshoot the build
+======================
 
 This section lists some of the common problems that may arise during the
 compilation of Python, with proposed solutions.
 
-Avoiding re-creating auto-generated files
-'''''''''''''''''''''''''''''''''''''''''
+Avoid recreating auto-generated files
+-------------------------------------
 
 Under some circumstances you may encounter Python errors in scripts like
 ``Parser/asdl_c.py`` or ``Python/makeopcodetargets.py`` while running ``make``.
@@ -451,7 +463,7 @@ For editors and tools which the core developers have felt some special comment
 is needed for coding *in* Python, see :ref:`resources`.
 
 
-Directory Structure
+Directory structure
 ===================
 
 There are several top-level directories in the CPython source tree. Knowing what
