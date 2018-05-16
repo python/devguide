@@ -100,14 +100,14 @@ Status of Python branches
 |                  |              |             |                |                | <https://www.python.org/downloads/release/python-365/>`_                   |
 +------------------+--------------+-------------+----------------+----------------+----------------------------------------------------------------------------+
 | 2.7              | :pep:`373`   | bugfix      | 2010-07-03     | *2020-01-01*   | The support has been extended to 2020-01-01.                               |
-|                  |              |             |                |                | `Most recent binary release: Python 2.7.14                                 |
-|                  |              |             |                |                | <https://www.python.org/downloads/release/python-2714/>`_                  |
+|                  |              |             |                |                | `Most recent binary release: Python 2.7.15                                 |
+|                  |              |             |                |                | <https://www.python.org/downloads/release/python-2715/>`_                  |
 +------------------+--------------+-------------+----------------+----------------+----------------------------------------------------------------------------+
-| 3.5              | :pep:`478`   | security    | 2015-09-13     | *2020-09-13*   | `Most recent binary release: Python 3.5.4                                  |
-|                  |              |             |                |                | <https://www.python.org/downloads/release/python-354/>`_                   |
+| 3.5              | :pep:`478`   | security    | 2015-09-13     | *2020-09-13*   | `Most recent security release: Python 3.5.5                                |
+|                  |              |             |                |                | <https://www.python.org/downloads/release/python-355/>`_                   |
 +------------------+--------------+-------------+----------------+----------------+----------------------------------------------------------------------------+
-| 3.4              | :pep:`429`   | security    | 2014-03-16     | *2019-03-16*   | `Most recent security release: Python 3.4.7                                |
-|                  |              |             |                |                | <https://www.python.org/downloads/release/python-347/>`_                   |
+| 3.4              | :pep:`429`   | security    | 2014-03-16     | *2019-03-16*   | `Most recent security release: Python 3.4.8                                |
+|                  |              |             |                |                | <https://www.python.org/downloads/release/python-348/>`_                   |
 +------------------+--------------+-------------+----------------+----------------+----------------------------------------------------------------------------+
 
 Status:
