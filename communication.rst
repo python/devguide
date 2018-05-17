@@ -56,8 +56,8 @@ on Freenode_.
 mailing list is the place to discuss and work on improvements to the CPython
 core development workflow.
 
-A complete list of Python mailing lists can be found at https://mail.python.org/mailman/listinfo.
-Most lists are also mirrored at http://news.gmane.org/ and can be read and
+A complete list of Python mailing lists can be found at https://mail.python.org.
+Most lists are also mirrored at [GMANE](http://gmane.org) and can be read and
 posted to in various ways, including via web browsers, NNTP newsreaders, and
 RSS feed readers.
 
@@ -77,7 +77,7 @@ RSS feed readers.
 Zulip
 -----
 
-We have our own `zulipchat <https://python.zulipchat.com/login/>`_ instance. This should be
+We have our own `zulipchat <https://python.zulipchat.com>`_ instance. This should be
 used to discuss the development of Python only.
 
 IRC
@@ -114,7 +114,7 @@ Setting Expectations for Open Source Participation
 --------------------------------------------------
 
 Burn-out is common in open source due to a misunderstanding of what users, contributors,
-and maintainers should expect from each other. Brett Cannon gave a `talk <https://www.youtube.com/watch?v=-Nk-8fSJM6I&feature=youtu.be>`_
+and maintainers should expect from each other. Brett Cannon gave a `talk <https://youtu.be/-Nk-8fSJM6I>`_
 about this topic that sets out to help everyone set reasonable expectations of each other in
 order to make open source pleasant for everyone involved.
 
