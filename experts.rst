@@ -84,6 +84,7 @@ compileall
 concurrent.futures    pitrou, bquinlan
 configparser          lukasz.langa*
 contextlib            ncoghlan, yselivanov
+contextvars
 copy                  alexandre.vassalotti
 copyreg               alexandre.vassalotti
 cProfile
@@ -92,6 +93,7 @@ csv                   skip.montanaro (inactive)
 ctypes                theller (inactive), belopolsky, amaury.forgeotdarc,
                       meador.inge
 curses                twouters
+dataclasses           eric.smith
 datetime              belopolsky
 dbm
 decimal               facundobatista, rhettinger, mark.dickinson, skrah
@@ -145,12 +147,10 @@ linecache
 locale                lemburg
 logging               vinay.sajip
 lzma
-macpath
 mailbox
 mailcap
 marshal
 math                  mark.dickinson, rhettinger, stutzbach
-memoryview            skrah
 mimetypes
 mmap                  twouters
 modulefinder          theller (inactive), jvr
@@ -196,6 +196,7 @@ resource              twouters
 rlcompleter
 runpy                 ncoghlan
 sched                 giampaolo.rodola
+secrets
 select
 selectors             neologix, giampaolo.rodola
 shelve
@@ -268,6 +269,7 @@ xml.sax.handler
 xml.sax.saxutils
 xml.sax.xmlreader
 xmlrpc
+zipapp                paul.moore
 zipfile               alanmcintyre, serhiy.storchaka, twouters
 zipimport             twouters*
 zlib                  twouters
@@ -332,6 +334,7 @@ io                  benjamin.peterson, stutzbach
 locale              lemburg
 mathematics         mark.dickinson, lemburg, stutzbach
 memory management   tim.peters, lemburg, twouters
+memoryview          skrah
 networking          giampaolo.rodola,
 object model        benjamin.peterson, twouters
 packaging           tarek, lemburg, alexis, eric.araujo, dstufft, paul.moore
