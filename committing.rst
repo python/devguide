@@ -264,6 +264,35 @@ Developers can apply labels to GitHub pull requests).
 
 .. _cherry_picker.py: https://github.com/python/core-workflow/tree/master/cherry_picker
 
+.. _git_worktrees:
+
+Speeding up development workflow using git worktrees
+----------------------------------------------------
+It's often useful to have more than one checkout of the codebase (for testing on one version + 
+developing on another concurrently). For example::
+
+    # create a new clone of upstream/3.6 at ../3.6
+    $ git worktree add ../3.6 upstream/3.6   
+    Preparing ../3.6 (identifier 3.6)
+    HEAD is now at 49731ef8d2 dict: add iterkeys aliases in 3.5
+    $ cd ../3.6;  # go to the checkout
+    $ git cherry-pick 686c146b1ca1eb5c7ef058bb28772ac612a8ec1d  # add a patch and commit the result
+    [bpo-31620 c48137b107] bpo-31620: have asyncio/queues not leak memory when you've exceptions during waiting
+    Date: Fri Sep 29 01:03:19 2017 +0000
+    files changed, 25 insertions(+)
+    create mode 100644 Misc/NEWS.d/next/Library/2017-10-06-04-35-31.bpo-31620.gksLA1.rst
+    $ ./python -m test -j3  # run tests on the new patch
+    # create a another copy of cpython based off of 2.7 branch
+    $ git worktree add ../2.7 upstream/2.7 
+    Preparing ../2.7 (identifier 2.7)
+    HEAD is now at e37fefba8b Revert the last change:
+    $ cd ../2.7  # go to it
+    # make changes  
+    $ git commit   # commit the result
+
+If you want to checkout a branch in multiple worktrees, you have to use ``--force`` option with
+``git checkout`` or ``git worktree add``.
+
 
 Reverting a Merged Pull Request
 '''''''''''''''''''''''''''''''
