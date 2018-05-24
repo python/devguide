@@ -11,11 +11,6 @@ compiled version of the CPython interpreter (CPython is the version of Python
 available from https://www.python.org/). It also gives an overview of the
 directory structure of the CPython source code.
 
-OpenHatch also has a great `setup guide`_ for Python for people who are
-completely new to contributing to open source.
-
-.. _setup guide: http://wiki.openhatch.org/Contributing_to_Python
-
 .. seealso::
 
    The :ref:`quick-reference` gives brief summary of the process from
