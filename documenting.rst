@@ -1494,16 +1494,19 @@ You can also use ``make help`` to see a list of targets supported by
 you submit a :doc:`pull request <pullrequest>`, so you should make
 sure that it runs without errors.
 
-**On Windows**, run the following from the root of your :ref:`repository clone
+**On Windows**, a :file:`make.bat` batchfile tries to emulate :command:`make`
+as closely as possible, but the venv target is not implemented, so you will
+probably want to make sure you are working in a virtual environment first,
+otherwise all dependencies will be automatically installed on your system.
+
+When ready, run the following from the root of your :ref:`repository clone
 <checkout>` to build the output as HTML::
 
    cd Doc
    make html
 
-While the :file:`make.bat` batchfile tries to emulate :command:`make` as
-closely as possible, the venv target is not implemented, so the required
-dependencies will be installed on your system if you do not setup a virtual
-environment first.
+You can also use ``make help`` to see a list of targets supported by
+:file:`make.bat`.
 
 See also :file:`Doc/README.rst` for more information.
 
