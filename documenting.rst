@@ -1463,8 +1463,8 @@ Building the documentation
 
 The toolset used to build the docs is written in Python and is called Sphinx_.
 Sphinx is maintained separately and is not included in this tree.  Also needed
-are docutils_, supplying the base markup that Sphinx uses; Jinja_, a templating
-engine; and optionally Pygments_, a code highlighter.
+are blurb_, a tool to create :file:`Misc/NEWS` on demand; and
+python-docs-theme_, the Sphinx theme for the Python documentation.
 
 To build the documentation, follow the instructions from one of the sections
 below.  You can view the documentation after building the HTML by pointing
@@ -1512,9 +1512,7 @@ Then, from the ``Doc`` directory, run::
 where ``<builder>`` is one of html, text, latex, or htmlhelp (for explanations
 see the make targets above).
 
-.. _docutils: http://docutils.sourceforge.net/
-.. _Jinja: http://jinja.pocoo.org/
-.. _Pygments: http://pygments.org/
+.. _python-docs-theme: https://github.com/python/python-docs-theme
 .. _Sphinx: http://sphinx-doc.org/
 .. _virtualenv: https://virtualenv.pypa.io/
 .. _blurb: https://pypi.org/project/blurb/
