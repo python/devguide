@@ -1512,7 +1512,7 @@ Then, from the ``Doc`` directory, run::
 where ``<builder>`` is one of html, text, latex, or htmlhelp (for explanations
 see the make targets above).
 
-.. _python-docs-theme: https://github.com/python/python-docs-theme
+.. _python-docs-theme: https://pypi.org/project/python-docs-theme/
 .. _Sphinx: http://sphinx-doc.org/
 .. _virtualenv: https://virtualenv.pypa.io/
 .. _blurb: https://pypi.org/project/blurb/
