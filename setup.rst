@@ -364,10 +364,10 @@ Windows
 **Python 3.6** and later can use Microsoft Visual Studio 2017.  You can download
 and use any of the free or paid versions of `Visual Studio 2017`_.
 
-When installing Visual Studio 2017, select the **Python workload** and the
-optional **Python native development** component to obtain all of the necessary
-build tools. If you do not already have git installed, you can find git for
-Windows on the **Individual components** tab of the installer.
+When installing Visual Studio 2017, select the workload for **Python development**
+and the optional **Python native development tools** component to obtain all of
+the necessary build tools. If you do not already have git installed, you can find
+git for Windows on the **Individual components** tab of the installer.
 
 Your first build should use the command line to ensure any external dependencies
 are downloaded:
