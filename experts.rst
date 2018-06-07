@@ -57,7 +57,7 @@ argparse              bethard
 array
 ast                   benjamin.peterson
 asynchat              josiahcarlson, giampaolo.rodola*, stutzbach
-asyncio               yselivanov, giampaolo.rodola, asvetlov
+asyncio               yselivanov, asvetlov
 asyncore              josiahcarlson, giampaolo.rodola*, stutzbach
 atexit
 audioop               serhiy.storchaka
@@ -326,6 +326,7 @@ database            lemburg
 devguide            ncoghlan, eric.araujo, ezio.melotti, willingc
 documentation       ezio.melotti, eric.araujo, willingc
 extension modules   petr.viktorin, ncoghlan
+filesystem          giampaolo.rodola
 f-strings           eric.smith*
 GUI
 i18n                lemburg, eric.araujo
