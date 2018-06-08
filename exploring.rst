@@ -82,7 +82,7 @@ building your understanding of both the 2.x and 3.x versions of CPython:
 
 .. _Python's Innards Series: https://tech.blog.aknin.name/category/my-projects/pythons-innards/
 
-.. _Eli Bendersky's Python Internals: http://eli.thegreenplace.net/tag/python-internals
+.. _Eli Bendersky's Python Internals: https://eli.thegreenplace.net/tag/python-internals
 
 .. _A guide from parser to objects, observed using Eclipse: https://docs.google.com/document/d/1nzNN1jeNCC_bg1LADCvtTuGKvcyMskV1w8Ad2iLlwoI/
 

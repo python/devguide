@@ -20,7 +20,7 @@ gdb 7 and later
 ---------------
 
 In gdb 7, support for `extending gdb with Python
-<http://sourceware.org/gdb/current/onlinedocs/gdb/Python.html#Python>`_ was
+<https://sourceware.org/gdb/current/onlinedocs/gdb/Python.html#Python>`_ was
 added. When CPython is built you will notice a ``python-gdb.py`` file in the
 root directory of your checkout. Read the module docstring for details on how
 to use the file to enhance gdb for easier debugging of a CPython process.

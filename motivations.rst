@@ -101,8 +101,8 @@ participating in the CPython core development process:
 
 .. topic:: Nick Coghlan (Australia)
 
-   * Personal site: `Curious Efficiency <http://www.curiousefficiency.org/>`_
-   * `Extended bio <http://www.curiousefficiency.org/pages/about>`__
+   * Personal site: `Curious Efficiency <https://www.curiousefficiency.org/>`_
+   * `Extended bio <https://www.curiousefficiency.org/pages/about>`__
    * `Tritium <https://www.tritium.com.au/>`__ (Software Developer)
    * Python Software Foundation (Fellow, Packaging Working Group)
 

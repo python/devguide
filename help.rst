@@ -23,7 +23,7 @@ questions about developing for Python.  Just remember that ``#python-dev``
 is for questions involving the development *of* Python whereas ``#python``
 is for questions concerning development *with* Python.
 
-.. _freenode: http://freenode.net/
+.. _freenode: https://freenode.net/
 
 
 Core Mentorship
