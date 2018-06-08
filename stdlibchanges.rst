@@ -47,7 +47,7 @@ Through your public sharing of your code in order to gauge community support
 for it you at least can know that others will come across it who may find it
 useful.
 
-.. _Python Cookbook: http://code.activestate.com/recipes/langs/python/
+.. _Python Cookbook: https://code.activestate.com/recipes/langs/python/
 
 
 Adding a new module

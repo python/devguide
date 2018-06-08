@@ -210,7 +210,7 @@ following from your CPython clone::
 This will give you the most complete coverage possible for CPython's standard
 library.
 
-.. _coverage.py: http://coverage.readthedocs.io/en/latest/
+.. _coverage.py: https://coverage.readthedocs.io/en/latest/
 
 
 .. _coverage_by_regrtest:
@@ -276,5 +276,5 @@ about 20 to 30 minutes on a modern computer.
     Multiple test jobs may not work properly. C coverage reporting has only
     been tested with a single test process.
 
-.. _gcov: http://gcc.gnu.org/onlinedocs/gcc/Gcov.html
+.. _gcov: https://gcc.gnu.org/onlinedocs/gcc/Gcov.html
 .. _lcov: http://ltp.sourceforge.net/coverage/lcov.php

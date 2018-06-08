@@ -41,7 +41,7 @@ Reporting an issue
 If the problem you're reporting is not already in the `issue tracker`_, you
 need to log in by entering your user and password in the form on the left.
 If you don't already have a tracker account, select the "Register" link or,
-if you use `OpenID <http://openid.net>`_, one of the OpenID provider logos in
+if you use `OpenID <https://openid.net>`_, one of the OpenID provider logos in
 the sidebar.
 
 It is not possible to submit a bug report anonymously.
