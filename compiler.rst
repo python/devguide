@@ -575,7 +575,7 @@ References
    213--227, 1997.
 
 .. _The Zephyr Abstract Syntax Description Language.:
-   http://www.cs.princeton.edu/research/techreps/TR-554-97
+   https://www.cs.princeton.edu/research/techreps/TR-554-97
 
 .. [#skip-peephole] Skip Montanaro's Peephole Optimizer Paper
    (https://drive.google.com/open?id=0B2InO7qBBGRXQXlDM3FVdWZxQWc)

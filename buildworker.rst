@@ -58,7 +58,7 @@ Setting up the buildbot worker
 Conventional always-on machines
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-You need a recent version of the `buildbot <http://buildbot.net/>`_ software,
+You need a recent version of the `buildbot <https://buildbot.net/>`_ software,
 and you will probably want a separate 'buildbot' user to run the buildbot
 software.  You may also want to set the buildbot up using a virtual
 environment, depending on how you manage your system.  We won't cover how to that
