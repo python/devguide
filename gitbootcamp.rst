@@ -51,10 +51,10 @@ To list the remote repositories that are configured, along with their URLs::
 You should have two remotes: ``origin`` pointing to your fork,
 and ``upstream`` pointing to the official CPython repository::
 
-   origin  git@github.com:<your-username>/devguide.git (fetch)
-   origin  git@github.com:<your-username>/devguide.git (push)
-   upstream        git@github.com:python/devguide.git (fetch)
-   upstream        git@github.com:python/devguide.git (push)
+   origin  git@github.com:<your-username>/cpython.git (fetch)
+   origin  git@github.com:<your-username>/cpython.git (push)
+   upstream        git@github.com:python/cpython.git (fetch)
+   upstream        git@github.com:python/cpython.git (push)
 
 
 .. _set-up-name-email:
