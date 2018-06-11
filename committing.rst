@@ -212,10 +212,6 @@ repositories means you have to be more careful with your workflow:
   maintenance branches (currently ``2.7`` or ``3.6``).
   You should commit against your own feature branch, and create a pull request.
 
-* For a small change, you can make a quick edit through the web UI of
-  GitHub. You will still create a branch on your fork, and the change will
-  go through the PR process.
-
 It is recommended to keep a fork of the main repository around, as it allows
 simple reversion of all local changes (even "committed" ones) if your local
 clone gets into a state you aren't happy with.
