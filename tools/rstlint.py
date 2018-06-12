@@ -218,17 +218,15 @@ def check_leaked_markup(fn, lines):
 
 
 def main(argv):
-    usage = (
-        '''\
+    usage = '''\
 Usage: %s [-v] [-f] [-s sev] [-i path]* [path]
 
 Options:  -v       verbose (print all checked file names)
           -f       enable checkers that yield many false positives
           -s sev   only show problems with severity >= sev
           -i path  ignore subdir or file path
-'''
-        % argv[0]
-    )
+'''% argv[0]
+
     try:
         gopts, args = getopt.getopt(argv[1:], 'vfs:i:')
     except getopt.GetoptError:
@@ -312,10 +310,8 @@ Options:  -v       verbose (print all checked file names)
     else:
         for severity in sorted(count):
             number = count[severity]
-            print(
-                '%d problem%s with severity %d found.'
-                % (number, number > 1 and 's' or '', severity)
-            )
+            print('%d problem%s with severity %d found.' %
+                  (number, 's' if number > 1 else '', severity))
     return int(bool(count))
 
 
