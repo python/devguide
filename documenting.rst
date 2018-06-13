@@ -1515,7 +1515,7 @@ See also :file:`Doc/README.rst` for more information.
 Without make
 ------------
 
-Install the Sphinx and blurb packages from PyPI.
+Install the Sphinx, blurb, and python-docs-theme packages from PyPI.
 
 Then, from the ``Doc`` directory, run::
 
