@@ -269,9 +269,6 @@ Status
 +===============+============================================================+
 | open          | Issue is not resolved.                                     |
 +---------------+------------------------------------------------------------+
-| languishing   | The issue has no clear solution , e.g., no agreement on a  |
-|               | technical solution or if it is even a problem worth fixing.|
-+---------------+------------------------------------------------------------+
 | pending       | The issue is blocked until someone (often the              |
 |               | :abbr:`OP (original poster)`) provides some critical       |
 |               | information; the issue will be closed after a set amount   |
