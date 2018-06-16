@@ -225,7 +225,7 @@ Options:  -v       verbose (print all checked file names)
           -f       enable checkers that yield many false positives
           -s sev   only show problems with severity >= sev
           -i path  ignore subdir or file path
-'''% argv[0]
+''' % argv[0]
 
     try:
         gopts, args = getopt.getopt(argv[1:], 'vfs:i:')
