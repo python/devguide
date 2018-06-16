@@ -30,7 +30,7 @@ sys.path.append(os.path.abspath('tools'))
 # Add any Sphinx extension module names here, as strings. They can be extensions
 # coming with Sphinx (named 'sphinx.ext.*') or your custom ones.
 extensions = ['sphinx.ext.intersphinx', 'sphinx.ext.todo']
-intersphinx_mapping = {'python': ('https://docs.python.org/3', None),}
+intersphinx_mapping = {'python': ('https://docs.python.org/3', None)}
 todo_include_todos = True
 
 # The suffix of source filenames.
@@ -67,7 +67,7 @@ release = ''
 
 # List of patterns, relative to source directory, that match files and
 # directories to ignore when looking for source files.
-exclude_patterns = ['_build', 'venv*', 'env*', 'README.rst',]
+exclude_patterns = ['_build', 'venv*', 'env*', 'README.rst']
 
 # The reST default role (used for this markup: `text`) to use for all documents.
 #default_role = None
@@ -105,7 +105,7 @@ html_theme_options = {
 html_title = "%s %s" % (project, release)
 
 # Path to find HTML templates.
-templates_path = ['tools/templates',]
+templates_path = ['tools/templates']
 
 # Custom sidebar templates, filenames relative to this file.
 html_sidebars = {
@@ -115,7 +115,7 @@ html_sidebars = {
 }
 
 # Additional static files.
-html_static_path = ['tools/static',]
+html_static_path = ['tools/static']
 
 # A shorter title for the navigation bar.  Default is the same as html_title.
 #html_short_title = None
