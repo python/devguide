@@ -208,13 +208,17 @@ repositories means you have to be more careful with your workflow:
   dedicated to maintenance of the work before the work gets integrated in the
   main repository.
 
-  An exception to this rule: you can make a quick edit through the web UI of
-  GitHub, in which case the branch you create can exist for less than 24 hours.
-  This exception should not be abused and be left only for very simple changes.
-
 * You should not commit directly into the ``master`` branch, or any of the
   maintenance branches (currently ``2.7`` or ``3.6``).
   You should commit against your own feature branch, and create a pull request.
+
+* For a small change, you can make a quick edit through the GitHub web UI.
+  If you choose to use the web UI, be aware that GitHub will
+  create a new branch in the **main** CPython repo (not your fork). Please
+  delete this newly created branch after it has been merged into the 
+  ``master`` branch or any of the maintenance branches. To keep the CPython
+  repo tidy, please try to limit the existence of the new branch to, at most,
+  a few days.
 
 It is recommended to keep a fork of the main repository around, as it allows
 simple reversion of all local changes (even "committed" ones) if your local
