@@ -25,6 +25,9 @@ transliteration too.
 Permissions History
 -------------------
 
+- Pablo Salingo Salgado was given push privileges on June 06, 2018 by Brett Cannon,
+  on the recommendation of Victor Stinner.
+
 - Mark Shannon was given push privileges on May 15, 2018 by Brett Cannon,
   on the recommendation of Larry Hastings.
 
