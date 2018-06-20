@@ -202,8 +202,9 @@ participating in the CPython core development process:
    * `Personal website <https://vstinner.readthedocs.io/>`__
    * Red Hat (Senior Software Engineer)
 
-   Victor is hacking the development version of CPython to make Python better
-   than ever.
+   Victor is paid by Red Hat to maintain Python upstream and downstream (RHEL,
+   CentOS, Fedora & Software collections). See `Victor's contributions to
+   Python <http://vstinner.readthedocs.io/python_contrib.html>`_.
 
 .. topic:: Kushal Das (India)
 
@@ -231,7 +232,7 @@ participating in the CPython core development process:
    manager, Language Summit co-chair, `Jython <http://www.jython.org/>`_
    project leader, `GNU Mailman <http://www.list.org/>`_ project leader, and
    probably lots of other things he shouldn't admit to.
-   
+
 .. topic:: Eric Snow (United States)
 
    * Microsoft (Software Developer)
@@ -242,7 +243,7 @@ participating in the CPython core development process:
    * Microsoft: `<https://notebooks.azure.com/>`_ (Software Engineer)
    * Email address: dinov@microsoft.com
 
-   Dino started working with Python in 2005 by working on IronPython, an 
+   Dino started working with Python in 2005 by working on IronPython, an
    implementation of Python running on .NET.  He was one of the primary
    developers on the project for 6 years.  After that he started the Python
    Tools for Visual Studio project focusing on providing advanced code completion
