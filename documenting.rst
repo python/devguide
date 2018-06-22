@@ -1534,8 +1534,4 @@ see the make targets above).
 Translations
 ============
 
-There are now several official documentation translations.
-
-See section :ref:`21.5. Documentation Translations <experts>` and :PEP:`545`.
-
-According to the PEP, discussion is on `doc-sig <https://mail.python.org/mailman/listinfo/doc-sig>`_.
+There are now several official documentation translations (see section :ref:`21.5. Documentation Translations <experts>` and :PEP:`545` for details). Discussions about translations occur on the `doc-sig <https://mail.python.org/mailman/listinfo/doc-sig>`_ mailing list.
