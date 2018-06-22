@@ -1529,3 +1529,9 @@ see the make targets above).
 .. _Sphinx: http://sphinx-doc.org/
 .. _virtualenv: https://virtualenv.pypa.io/
 .. _blurb: https://pypi.org/project/blurb/
+
+
+Translations
+============
+
+There are now several official documentation translations (see section :ref:`21.5. Documentation Translations <experts>` and :PEP:`545` for details). Discussions about translations occur on the `doc-sig <https://mail.python.org/mailman/listinfo/doc-sig>`_ mailing list.
