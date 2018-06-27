@@ -90,8 +90,8 @@ in the ``cpython`` directory and two remotes that refer to your own GitHub fork
 
 If you want a working copy of an already-released version of Python,
 i.e., a version in :ref:`maintenance mode <maintbranch>`, you can checkout
-a release branch. For instance, to checkout a working copy of Python 3.5,
-do ``git checkout 3.5``.
+a release branch. For instance, to checkout a working copy of Python 3.7,
+do ``git checkout 3.7``.
 
 You will need to re-compile CPython when you do such an update.
 
@@ -174,7 +174,7 @@ Then you should update the packages index::
 
 Now you can install the build dependencies via ``apt``::
 
-   $ sudo apt-get build-dep python3.5
+   $ sudo apt-get build-dep python3.6
 
 If that package is not available for your system, try reducing the minor
 version until you find a package that is available.

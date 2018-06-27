@@ -31,7 +31,7 @@ Branches
 ''''''''
 
 There is a branch for each *feature version*, whether released or not (e.g.
-2.7, 3.6).  Development is handled separately for Python 2 and Python 3:
+2.7, 3.6, 3.7).  Development is handled separately for Python 2 and Python 3:
 no merging happens between 2.x and 3.x branches.
 
 
@@ -46,7 +46,7 @@ changes, performance improvements, bug fixes.
 
 At some point during the life-cycle of a release, a
 new :ref:`maintenance branch <maintbranch>` is created to host all bug fixing
-activity for further micro versions in a feature version (3.6.1, 3.6.2, etc.).
+activity for further micro versions in a feature version (3.7.1, 3.7.2, etc.).
 
 For versions 3.4 and before, this was conventionally done when the final
 release was cut (for example, 3.4.0 final).
@@ -114,16 +114,16 @@ There are 6 open branches right now in the Git repository:
 
 - the ``master`` branch accepts features and bugs fixes for the future
   3.8.0 feature release (RM: Łukasz Langa)
-- the ``3.7`` branch accepts bug, regression, and doc fixes for the upcoming
-  3.7.0 feature release (RM: Ned Deily)
-- the ``3.6`` branch accepts bug fixes for future 3.6.x maintenance releases
-  (RM: Ned Deily)
+- the ``3.7`` branch accepts bug and doc fixes for future 3.7.x maintenance
+  releases (RM: Ned Deily)
+- the ``3.6`` branch accepts bug and doc fixes for future 3.6.x maintenance
+  releases (RM: Ned Deily)
 - the ``3.5`` branch accepts security fixes for future 3.5.x security releases
   (RM: Larry Hastings)
 - the ``3.4`` branch accepts security fixes for future 3.4.x security releases
   (RM: Larry Hastings)
-- the ``2.7`` branch accepts bug fixes for future 2.7.x maintenance releases
-  (RM: Benjamin Peterson)
+- the ``2.7`` branch accepts bug and doc fixes for future 2.7.x maintenance
+  releases (RM: Benjamin Peterson)
 
 See also the :ref:`Status of Python branches <branchstatus>`.
 
