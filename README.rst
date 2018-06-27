@@ -5,6 +5,10 @@ The CPython Developer's Guide
    :target: https://devguide.python.org
    :alt: Documentation Status
 
+.. image:: https://img.shields.io/badge/zulip-join_chat-brightgreen.svg
+   :alt: Python Zulip chat
+   :target: https://python.zulipchat.com
+  
 
 This guide covers how to contribute to CPython. It is known by the
 nickname of "the devguide" by the Python core developers.
