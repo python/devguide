@@ -362,6 +362,7 @@ Translation    Coordinator
 =============  ============
 French         mdk
 Japanese       inada.naoki
+Korean         flowdas
 Bengali India  kushal.das
 Hungarian      gbtami
 Portuguese     rougeth
