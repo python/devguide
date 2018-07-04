@@ -312,7 +312,7 @@ Interest Area       Maintainers
 ==================  ==========================================================
 algorithms
 argument clinic     larry
-ast/compiler        ncoghlan, benjamin.peterson, brett.cannon, yselivanov
+ast/compiler        benjamin.peterson, brett.cannon, yselivanov
 autoconf/makefiles  twouters*
 bsd
 bug tracker         ezio.melotti
