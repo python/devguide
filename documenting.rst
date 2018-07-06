@@ -788,10 +788,9 @@ The directives are:
 
 .. describe:: staticmethod
 
-   Describes an object static method.  The parameters should not include the
-   ``self`` parameter.  The description should include similar information to
-   that described for ``function``.  This directive should be nested in a
-   ``class`` directive.
+   Describes an object static method.  The description should include similar
+   information to that described for ``function``.  This directive should be
+   nested in a ``class`` directive.
 
 .. describe:: classmethod
 
