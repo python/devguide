@@ -703,6 +703,11 @@ The directives are:
    are modified), side effects, and possible exceptions.  A small example may be
    provided.
 
+.. describe:: coroutinefunction
+
+   Describes a module-level coroutine.  The description should include similar
+   information to that described for ``function``.
+
 .. describe:: decorator
 
    Describes a decorator function.  The signature should *not* represent the
@@ -768,11 +773,38 @@ The directives are:
    described for ``function``.  This directive should be nested in a class
    directive, like in the example above.
 
+.. describe:: coroutinemethod
+
+   Describes an object coroutine method.  The parameters should not include the
+   ``self`` parameter.  The description should include similar information to
+   that described for ``function``.  This directive should be nested in a
+   ``class`` directive.
+
 .. describe:: decoratormethod
 
    Same as ``decorator``, but for decorators that are methods.
 
    Refer to a decorator method using the ``:meth:`` role.
+
+.. describe:: staticmethod
+
+   Describes an object static method.  The parameters should not include the
+   ``self`` parameter.  The description should include similar information to
+   that described for ``function``.  This directive should be nested in a
+   ``class`` directive.
+
+.. describe:: classmethod
+
+   Describes an object class method.  The parameters should not include the
+   ``cls`` parameter.  The description should include similar information to
+   that described for ``function``.  This directive should be nested in a
+   ``class`` directive.
+
+.. describe:: abstractmethod
+
+   Describes an object abstract method.  The description should include similar
+   information to that described for ``function``.  This directive should be
+   nested in a ``class`` directive.
 
 .. describe:: opcode
 
@@ -1234,6 +1266,29 @@ units as well as normal text:
 
    Note that there must be no blank line between the directive head and the
    explanation; this is to make these blocks visually continuous in the markup.
+
+.. describe:: deprecated
+
+   Indicates the version from which the described feature is deprecated.
+
+   There is one required argument: the version from which the feature is
+   deprecated.
+
+   Example::
+
+      .. deprecated:: 3.8
+
+.. describe:: deprecated-removed
+
+   Like ``deprecated``, but it also indicates in which version the feature is
+   removed.
+
+   There are two required arguments: the version from which the feature is
+   deprecated, and the version in which the feature is removed.
+
+   Example::
+
+      .. deprecated-removed:: 3.8 4.0
 
 .. describe:: impl-detail
 
