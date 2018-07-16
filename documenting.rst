@@ -753,11 +753,11 @@ The directives are:
 
       .. class:: Spam
 
-            Description of the class.
+         Description of the class.
 
-            .. attribute:: ham
+         .. attribute:: ham
 
-               Description of the attribute.
+            Description of the attribute.
 
    If is also possible to document an attribute outside of a class directive,
    for example if the documentation for different attributes and methods is
