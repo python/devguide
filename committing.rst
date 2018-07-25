@@ -135,23 +135,23 @@ for inclusion.
 Checking if the CLA has been received
 -------------------------------------
 
-To check if a contributor's CLA has been received, use the following URL:
+To check if a contributor's CLA has been received, use the following URL::
 
     https://bugs.python.org/user?@template=clacheck&github_names=
 
 and put in their GitHub username at the end.
 
-For example, to check if GitHub user `gvanrossum` has signed the CLA:
+For example, to check if GitHub user `gvanrossum` has signed the CLA::
 
    https://bugs.python.org/user?@template=clacheck&github_names=gvanrossum
 
 
-You can also check for more than one username at a time by passing a comma separated values,
-for example:
+You can also check for more than one username at a time by passing a comma
+separated values::
 
    https://bugs.python.org/user?@template=clacheck&github_names=gvanrossum,miss-islington,bedevere
 
-It will return a dictionary, for example::
+It will return a dictionary::
    
    {
       bedevere: null,
