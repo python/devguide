@@ -67,3 +67,29 @@ and what you were trying to do), as well as the exact error message you
 encountered.
 
 .. _issue tracker: https://bugs.python.org
+
+
+.. _office hour:
+
+Core Developers Office Hours
+----------------------------
+
+Several core developers have set aside time to host mentorship office hours.
+During the office hour, core developers are available to help contributors with
+our process, answer questions, and help lower the barrier of contributing and
+becoming Python core developers.
+
+The PSF's code of conduct applies for interactions with core developers
+during office hours.
+
++------------------+-------------------------------+------------------------------------------------------------------------+
+| Core Developer   | Schedule                      | Details                                                                |
++==================+===============================+========================================================================+
+| Zachary Ware     | See details link              | Schedule at https://calendly.com/zware                                 |
++------------------+-------------------------------+------------------------------------------------------------------------+
+| Mariatta Wijaya  | 7PM - 8PM Pacific             | In `Python's Zulip Chat`_, Core > Office Hour stream.                  |
+|                  | (Vancouver, Canada Timezone)  | A reminder will be posted to both Zulip and Mariatta's personal twitter|
+|                  |                               | account 24 hours before the start.                                     |
++------------------+-------------------------------+------------------------------------------------------------------------+
+
+.. _Python's Zulip Chat: https://python.zulipchat.com/#narrow/stream/116503-core/topic/Office.20Hour
