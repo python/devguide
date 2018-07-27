@@ -68,7 +68,7 @@ during office hours.
 +==================+===============================+================================================+
 | Zachary Ware     | See details link              | Schedule at https://calendly.com/zware         |
 +------------------+-------------------------------+------------------------------------------------+
-| Mariatta Wijaya  | 7PM - 8PM Pacific             | In `Python's Zulip Chat`_, Core > Office       |
+| Mariatta Wijaya  | Thursdays 7PM - 8PM Pacific   | In `Python's Zulip Chat`_, Core > Office       |
 |                  | (Vancouver, Canada Timezone)  | Hour stream. A reminder will be posted to both |
 |                  |                               | Zulip and `Mariatta's twitter`_ account        |
 |                  |                               | 24 hours before the start.                     |
