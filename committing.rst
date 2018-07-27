@@ -126,9 +126,48 @@ by the CLA. They're entirely within their rights to refuse to sign the CLA
 on that basis, but that refusal *does* mean we **can't accept their patches**
 for inclusion.
 
+
 .. _Contribution: https://www.python.org/psf/contrib/
 .. _Contributor Licensing Agreement:
    https://www.python.org/psf/contrib/contrib-form/
+
+
+Checking if the CLA has been received
+-------------------------------------
+
+To check if a contributor's CLA has been received, use the following URL::
+
+    https://bugs.python.org/user?@template=clacheck&github_names=
+
+and put in their GitHub username at the end.
+
+For example, to check if GitHub user `gvanrossum` has signed the CLA::
+
+   https://bugs.python.org/user?@template=clacheck&github_names=gvanrossum
+
+
+You can also check for more than one username at a time by passing a comma
+separated values::
+
+   https://bugs.python.org/user?@template=clacheck&github_names=gvanrossum,miss-islington,bedevere
+
+It will return a dictionary::
+   
+   {
+      bedevere: null,
+      gvanrossum: true,
+      miss-islington: false
+   }
+
+``null`` value means that there is no bpo account associated with that GitHub username.
+``false`` value means that there is a bpo account with that GitHub username, but the CLA
+has not been received. 
+``true`` value means that the CLA has been received.
+
+If the CLA has been received, remove the `CLA not signed` label, and the bot
+will apply the `CLA signed` label automatically.
+
+For further questions about the CLA process, write to: contributors@python.org.
 
 
 What's New and News Entries
