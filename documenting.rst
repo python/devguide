@@ -1568,8 +1568,8 @@ See also :file:`Doc/README.rst` for more information.
 Using sphinx-build
 ------------------
 
-Sometimes we directly want execute the sphinx-build tool, in this case, you can use
-the following command line but before you have to install the Sphinx, blurb,
+Sometimes we directly want to execute the sphinx-build tool, in this case, you can
+use the following command line but before you have to install the Sphinx, blurb,
 and python-docs-theme packages from PyPI.
 
 Then, from the ``Doc`` directory, run::
