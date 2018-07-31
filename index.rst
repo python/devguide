@@ -9,6 +9,7 @@ to Python_ -- for both new and experienced contributors. It is
 :ref:`maintained <helping-with-the-developers-guide>` by the same
 community that maintains Python.  We welcome your contributions to Python!
 
+.. _quick-reference:
 
 Quick Reference
 ---------------
@@ -93,20 +94,21 @@ Status of Python branches
 +==================+==============+=============+================+================+============================================================================+
 | master           | :pep:`569`   | features    | *2019-10-20*   | *2024-10*      | The master branch is currently the future Python 3.8.                      |
 +------------------+--------------+-------------+----------------+----------------+----------------------------------------------------------------------------+
-| 3.7              | :pep:`537`   | prerelease  | *2018-06-15*   | *2023-06*      | Fixes for features, bugs, and docs in the upcoming 3.7.0 release           |
+| 3.7              | :pep:`537`   | bugfix      | 2018-06-27     | *2023-06-27*   | `Most recent binary release: Python 3.7.0                                  |
+|                  |              |             |                |                | <https://www.python.org/downloads/release/python-370/>`_                   |
 +------------------+--------------+-------------+----------------+----------------+----------------------------------------------------------------------------+
-| 3.6              | :pep:`494`   | bugfix      | 2016-12-23     | *2021-12-23*   | `Most recent binary release: Python 3.6.5                                  |
-|                  |              |             |                |                | <https://www.python.org/downloads/release/python-365/>`_                   |
+| 3.6              | :pep:`494`   | bugfix      | 2016-12-23     | *2021-12-23*   | `Most recent binary release: Python 3.6.6                                  |
+|                  |              |             |                |                | <https://www.python.org/downloads/release/python-366/>`_                   |
 +------------------+--------------+-------------+----------------+----------------+----------------------------------------------------------------------------+
 | 2.7              | :pep:`373`   | bugfix      | 2010-07-03     | *2020-01-01*   | The support has been extended to 2020-01-01.                               |
-|                  |              |             |                |                | `Most recent binary release: Python 2.7.14                                 |
-|                  |              |             |                |                | <https://www.python.org/downloads/release/python-2714/>`_                  |
+|                  |              |             |                |                | `Most recent binary release: Python 2.7.15                                 |
+|                  |              |             |                |                | <https://www.python.org/downloads/release/python-2715/>`_                  |
 +------------------+--------------+-------------+----------------+----------------+----------------------------------------------------------------------------+
-| 3.5              | :pep:`478`   | security    | 2015-09-13     | *2020-09-13*   | `Most recent binary release: Python 3.5.4                                  |
-|                  |              |             |                |                | <https://www.python.org/downloads/release/python-354/>`_                   |
+| 3.5              | :pep:`478`   | security    | 2015-09-13     | *2020-09-13*   | `Most recent security release: Python 3.5.5                                |
+|                  |              |             |                |                | <https://www.python.org/downloads/release/python-355/>`_                   |
 +------------------+--------------+-------------+----------------+----------------+----------------------------------------------------------------------------+
-| 3.4              | :pep:`429`   | security    | 2014-03-16     | *2019-03-16*   | `Most recent security release: Python 3.4.7                                |
-|                  |              |             |                |                | <https://www.python.org/downloads/release/python-347/>`_                   |
+| 3.4              | :pep:`429`   | security    | 2014-03-16     | *2019-03-16*   | `Most recent security release: Python 3.4.8                                |
+|                  |              |             |                |                | <https://www.python.org/downloads/release/python-348/>`_                   |
 +------------------+--------------+-------------+----------------+----------------+----------------------------------------------------------------------------+
 
 Status:
@@ -194,7 +196,7 @@ Guide for contributing to Python:
 +------------------------+---------------------+-----------------------+---------------------+
 | :doc:`fixingissues`    |                     |                       | :doc:`motivations`  |
 +------------------------+---------------------+-----------------------+---------------------+
-| :doc:`communication`   |                     |                       |                     |
+| :doc:`communication`   |                     |                       | :ref:`office hour`  |
 +------------------------+---------------------+-----------------------+---------------------+
 | :doc:`gitbootcamp`     |                     |                       |                     |
 +------------------------+---------------------+-----------------------+---------------------+
@@ -319,6 +321,7 @@ Full Table of Contents
 
 .. toctree::
    :numbered:
+   :maxdepth: 3
 
    setup
    help

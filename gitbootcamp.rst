@@ -51,10 +51,10 @@ To list the remote repositories that are configured, along with their URLs::
 You should have two remotes: ``origin`` pointing to your fork,
 and ``upstream`` pointing to the official CPython repository::
 
-   origin  git@github.com:<your-username>/devguide.git (fetch)
-   origin  git@github.com:<your-username>/devguide.git (push)
-   upstream        git@github.com:python/devguide.git (fetch)
-   upstream        git@github.com:python/devguide.git (push)
+   origin  git@github.com:<your-username>/cpython.git (fetch)
+   origin  git@github.com:<your-username>/cpython.git (push)
+   upstream        git@github.com:python/cpython.git (fetch)
+   upstream        git@github.com:python/cpython.git (push)
 
 
 .. _set-up-name-email:
@@ -362,6 +362,10 @@ Pull requests can be accepted and merged by a Python Core Developer.
       * merge from master
       * adjust code based on review comment
       * rebased
+
+   .. note::
+      `How to Write a Git Commit Message <https://chris.beams.io/posts/git-commit/>`_
+      is a nice article describing how to write a good commit message.
 
 3. Press the ``Confirm squash and merge`` button.
 

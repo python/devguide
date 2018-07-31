@@ -703,6 +703,11 @@ The directives are:
    are modified), side effects, and possible exceptions.  A small example may be
    provided.
 
+.. describe:: coroutinefunction
+
+   Describes a module-level coroutine.  The description should include similar
+   information to that described for ``function``.
+
 .. describe:: decorator
 
    Describes a decorator function.  The signature should *not* represent the
@@ -748,11 +753,11 @@ The directives are:
 
       .. class:: Spam
 
-            Description of the class.
+         Description of the class.
 
-            .. attribute:: ham
+         .. attribute:: ham
 
-               Description of the attribute.
+            Description of the attribute.
 
    If is also possible to document an attribute outside of a class directive,
    for example if the documentation for different attributes and methods is
@@ -768,11 +773,37 @@ The directives are:
    described for ``function``.  This directive should be nested in a class
    directive, like in the example above.
 
+.. describe:: coroutinemethod
+
+   Describes an object coroutine method.  The parameters should not include the
+   ``self`` parameter.  The description should include similar information to
+   that described for ``function``.  This directive should be nested in a
+   ``class`` directive.
+
 .. describe:: decoratormethod
 
    Same as ``decorator``, but for decorators that are methods.
 
    Refer to a decorator method using the ``:meth:`` role.
+
+.. describe:: staticmethod
+
+   Describes an object static method.  The description should include similar
+   information to that described for ``function``.  This directive should be
+   nested in a ``class`` directive.
+
+.. describe:: classmethod
+
+   Describes an object class method.  The parameters should not include the
+   ``cls`` parameter.  The description should include similar information to
+   that described for ``function``.  This directive should be nested in a
+   ``class`` directive.
+
+.. describe:: abstractmethod
+
+   Describes an object abstract method.  The description should include similar
+   information to that described for ``function``.  This directive should be
+   nested in a ``class`` directive.
 
 .. describe:: opcode
 
@@ -1235,6 +1266,29 @@ units as well as normal text:
    Note that there must be no blank line between the directive head and the
    explanation; this is to make these blocks visually continuous in the markup.
 
+.. describe:: deprecated
+
+   Indicates the version from which the described feature is deprecated.
+
+   There is one required argument: the version from which the feature is
+   deprecated.
+
+   Example::
+
+      .. deprecated:: 3.8
+
+.. describe:: deprecated-removed
+
+   Like ``deprecated``, but it also indicates in which version the feature is
+   removed.
+
+   There are two required arguments: the version from which the feature is
+   deprecated, and the version in which the feature is removed.
+
+   Example::
+
+      .. deprecated-removed:: 3.8 4.0
+
 .. describe:: impl-detail
 
    This directive is used to mark CPython-specific information.  Use either with
@@ -1463,8 +1517,8 @@ Building the documentation
 
 The toolset used to build the docs is written in Python and is called Sphinx_.
 Sphinx is maintained separately and is not included in this tree.  Also needed
-are docutils_, supplying the base markup that Sphinx uses; Jinja_, a templating
-engine; and optionally Pygments_, a code highlighter.
+are blurb_, a tool to create :file:`Misc/NEWS` on demand; and
+python-docs-theme_, the Sphinx theme for the Python documentation.
 
 To build the documentation, follow the instructions from one of the sections
 below.  You can view the documentation after building the HTML by pointing
@@ -1494,14 +1548,45 @@ You can also use ``make help`` to see a list of targets supported by
 you submit a :doc:`pull request <pullrequest>`, so you should make
 sure that it runs without errors.
 
-**On Windows**, there is a :file:`make.bat` batchfile that tries to
-emulate :command:`make` as closely as possible.
+**On Windows**, a :file:`make.bat` batchfile tries to emulate :command:`make`
+as closely as possible, but the venv target is not implemented, so you will
+probably want to make sure you are working in a virtual environment before
+proceeding, otherwise all dependencies will be automatically installed on your
+system.
+
+When ready, run the following from the root of your :ref:`repository clone
+<checkout>` to build the output as HTML::
+
+   cd Doc
+   make html
+
+You can also use ``make help`` to see a list of targets supported by
+:file:`make.bat`.
 
 See also :file:`Doc/README.rst` for more information.
 
+Using sphinx-build
+------------------
+
+Sometimes we directly want execute the sphinx-build tool, in this case, you can use
+the following command line but before you have to install the Sphinx, blurb,
+and python-docs-theme packages from PyPI.
+
+Then, from the ``Doc`` directory, run::
+
+   sphinx-build -b<builder> . build/<builder>
+
+where ``<builder>`` is one of html, text, latex, or htmlhelp (for explanations
+see the make targets above).
+
 .. _docutils: http://docutils.sourceforge.net/
-.. _Jinja: http://jinja.pocoo.org/
-.. _Pygments: http://pygments.org/
+.. _python-docs-theme: https://pypi.org/project/python-docs-theme/
 .. _Sphinx: http://sphinx-doc.org/
 .. _virtualenv: https://virtualenv.pypa.io/
 .. _blurb: https://pypi.org/project/blurb/
+
+
+Translations
+============
+
+There are now several official documentation translations (see section :ref:`21.5. Documentation Translations <experts>` and :PEP:`545` for details). Discussions about translations occur on the `doc-sig <https://mail.python.org/mailman/listinfo/doc-sig>`_ mailing list.

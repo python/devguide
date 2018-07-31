@@ -57,7 +57,7 @@ argparse              bethard
 array
 ast                   benjamin.peterson
 asynchat              josiahcarlson, giampaolo.rodola*, stutzbach
-asyncio               yselivanov, giampaolo.rodola, asvetlov
+asyncio               yselivanov, asvetlov
 asyncore              josiahcarlson, giampaolo.rodola*, stutzbach
 atexit
 audioop               serhiy.storchaka
@@ -84,6 +84,7 @@ compileall
 concurrent.futures    pitrou, bquinlan
 configparser          lukasz.langa*
 contextlib            ncoghlan, yselivanov
+contextvars
 copy                  alexandre.vassalotti
 copyreg               alexandre.vassalotti
 cProfile
@@ -92,6 +93,7 @@ csv                   skip.montanaro (inactive)
 ctypes                theller (inactive), belopolsky, amaury.forgeotdarc,
                       meador.inge
 curses                twouters
+dataclasses           eric.smith
 datetime              belopolsky
 dbm
 decimal               facundobatista, rhettinger, mark.dickinson, skrah
@@ -145,12 +147,10 @@ linecache
 locale                lemburg
 logging               vinay.sajip
 lzma
-macpath
 mailbox
 mailcap
 marshal
 math                  mark.dickinson, rhettinger, stutzbach
-memoryview            skrah
 mimetypes
 mmap                  twouters
 modulefinder          theller (inactive), jvr
@@ -196,6 +196,7 @@ resource              twouters
 rlcompleter
 runpy                 ncoghlan
 sched                 giampaolo.rodola
+secrets
 select
 selectors             neologix, giampaolo.rodola
 shelve
@@ -268,6 +269,7 @@ xml.sax.handler
 xml.sax.saxutils
 xml.sax.xmlreader
 xmlrpc
+zipapp                paul.moore
 zipfile               alanmcintyre, serhiy.storchaka, twouters
 zipimport             twouters*
 zlib                  twouters
@@ -310,7 +312,7 @@ Interest Area       Maintainers
 ==================  ==========================================================
 algorithms
 argument clinic     larry
-ast/compiler        ncoghlan, benjamin.peterson, brett.cannon, yselivanov
+ast/compiler        benjamin.peterson, brett.cannon, yselivanov
 autoconf/makefiles  twouters*
 bsd
 bug tracker         ezio.melotti
@@ -324,6 +326,7 @@ database            lemburg
 devguide            ncoghlan, eric.araujo, ezio.melotti, willingc
 documentation       ezio.melotti, eric.araujo, willingc
 extension modules   petr.viktorin, ncoghlan
+filesystem          giampaolo.rodola
 f-strings           eric.smith*
 GUI
 i18n                lemburg, eric.araujo
@@ -332,13 +335,14 @@ io                  benjamin.peterson, stutzbach
 locale              lemburg
 mathematics         mark.dickinson, lemburg, stutzbach
 memory management   tim.peters, lemburg, twouters
+memoryview          skrah
 networking          giampaolo.rodola,
 object model        benjamin.peterson, twouters
 packaging           tarek, lemburg, alexis, eric.araujo, dstufft, paul.moore
 performance         brett.cannon, vstinner, serhiy.storchaka, yselivanov
 pip                 ncoghlan, dstufft, paul.moore, Marcus.Smith
 py3 transition      benjamin.peterson
-release management  tarek, lemburg, benjamin.peterson, barry
+release management  tarek, lemburg, benjamin.peterson, barry,
                     gvanrossum, anthonybaxter, eric.araujo, ned.deily,
                     georg.brandl
 str.format          eric.smith*
@@ -358,7 +362,9 @@ Translation    Coordinator
 =============  ============
 French         mdk
 Japanese       inada.naoki
+Korean         flowdas
 Bengali India  kushal.das
 Hungarian      gbtami
 Portuguese     rougeth
+Chinese (TW)   adrianliaw
 =============  ============

@@ -38,7 +38,7 @@ flags are passed through ``CFLAGS`` and ``CXXFLAGS``, and sometimes through
 ``CC`` and ``CXX`` (in addition to the compiler).
 
 A complete list of sanitizers can be found at `Controlling Code Generation
-<http://clang.llvm.org/docs/UsersManual.html#controlling-code-generation>`_.
+<https://clang.llvm.org/docs/UsersManual.html#controlling-code-generation>`_.
 
 .. note::
 
@@ -66,9 +66,9 @@ Download, Build and Install
 Perform the following to download, build and install the Clang/LLVM 3.4. ::
 
     # Download
-    wget http://llvm.org/releases/3.4/llvm-3.4.src.tar.gz
-    wget http://llvm.org/releases/3.4/clang-3.4.src.tar.gz
-    wget http://llvm.org/releases/3.4/compiler-rt-3.4.src.tar.gz
+    wget https://llvm.org/releases/3.4/llvm-3.4.src.tar.gz
+    wget https://llvm.org/releases/3.4/clang-3.4.src.tar.gz
+    wget https://llvm.org/releases/3.4/compiler-rt-3.4.src.tar.gz
 
     # LLVM
     tar xvf llvm-3.4.src.tar.gz
@@ -351,4 +351,4 @@ Or, you could ignore the entire file with::
 Unfortunately, you won't know what to blacklist until you run the sanitizer.
 
 The documentation is available at `Sanitizer special case list
-<http://clang.llvm.org/docs/SanitizerSpecialCaseList.html>`_.
+<https://clang.llvm.org/docs/SanitizerSpecialCaseList.html>`_.

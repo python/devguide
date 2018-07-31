@@ -75,9 +75,12 @@ Issue Tracker
 '''''''''''''
 
 If you did not gain the Developer role in the `issue tracker`_ before gaining
-commit privileges, please say so. This will allow issues to be assigned to you.
+commit privileges, please say so. The role allows issues to be assigned to you,
+and it allows you to triage (e.g. close or reassign) issues.
+
 A tracker admin should also flip your "is committer" bit in the tracker's
-account screen.
+account screen. This will add the Python logo next to your name in discussions
+on the tracker. Note that this is separate from the Developer role.
 
 It is expected that on the issue tracker you have a username in the form of
 "first_name.last_name". If your initial issue tracker username is not of this
