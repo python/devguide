@@ -11,7 +11,7 @@ module.
 Changes to pre-existing code is not covered as that is considered a bugfix and
 thus is treated as a bug that should be filed on the `issue tracker`_.
 
-.. _issue tracker: http://bugs.python.org/
+.. _issue tracker: https://bugs.python.org/
 
 
 Adding to a pre-existing module
@@ -47,7 +47,7 @@ Through your public sharing of your code in order to gauge community support
 for it you at least can know that others will come across it who may find it
 useful.
 
-.. _Python Cookbook: http://code.activestate.com/recipes/langs/python/
+.. _Python Cookbook: https://code.activestate.com/recipes/langs/python/
 
 
 Adding a new module
@@ -83,7 +83,7 @@ it.
 
 
 Requirements
-''''''''''''''
+''''''''''''
 In order for a module to even be considered for inclusion into the stdlib, a
 couple of requirements must be met.
 
@@ -144,8 +144,7 @@ will once again receive a large amount of feedback and discussion. A PEP
 dictator will be assigned who makes the final call on whether the PEP will be
 accepted or not. If the PEP dictator agrees to accept your PEP (which typically
 means that the core developers end up agreeing in general to accepting
-your PEP) then the module
-will be added to the stdlib once the creators of the module sign
-:ref:`contributor agreements <contributor_agreement>`.
+your PEP) then the module will be added to the stdlib once the creators of the
+module sign :ref:`contributor agreements <contributor_agreement>`.
 
-.. _PEP index: http://www.python.org/dev/peps/
+.. _PEP index: https://www.python.org/dev/peps/

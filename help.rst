@@ -23,7 +23,18 @@ questions about developing for Python.  Just remember that ``#python-dev``
 is for questions involving the development *of* Python whereas ``#python``
 is for questions concerning development *with* Python.
 
-.. _freenode: http://freenode.net/
+.. _freenode: https://freenode.net/
+
+
+Zulip
+-----
+
+An alternative to IRC is our own `Zulip`_ instance.  There are different streams
+for asking help with core development, as well as core developers' office
+hour stream. It is preferred that you ask questions here first or schedule
+an office hour, before posting to python-dev mailing list or filing bugs.
+
+.. _Zulip: https://python.zulipchat.com
 
 
 Core Mentorship
@@ -36,7 +47,35 @@ community of volunteer core developers willing to mentor anyone wishing to
 contribute code, work on bug fixes or improve documentation.  Everyone is
 welcomed and encouraged to contribute.
 
-.. _Python Mentors: http://pythonmentors.com
+.. _Python Mentors: https://www.python.org/dev/core-mentorship/
+
+
+.. _office hour:
+
+Core Developers Office Hours
+----------------------------
+
+Several core developers have set aside time to host mentorship office hours.
+During the office hour, core developers are available to help contributors with
+our process, answer questions, and help lower the barrier of contributing and
+becoming Python core developers.
+
+The PSF's code of conduct applies for interactions with core developers
+during office hours.
+
++------------------+-------------------------------+------------------------------------------------+
+| Core Developer   | Schedule                      | Details                                        |
++==================+===============================+================================================+
+| Zachary Ware     | See details link              | Schedule at https://calendly.com/zware         |
++------------------+-------------------------------+------------------------------------------------+
+| Mariatta Wijaya  | Thursdays 7PM - 8PM Pacific   | In `Python's Zulip Chat`_, Core > Office       |
+|                  | (Vancouver, Canada Timezone)  | Hour stream. A reminder will be posted to both |
+|                  |                               | Zulip and `Mariatta's twitter`_ account        |
+|                  |                               | 24 hours before the start.                     |
++------------------+-------------------------------+------------------------------------------------+
+
+.. _Python's Zulip Chat: https://python.zulipchat.com/#narrow/stream/116503-core/topic/Office.20Hour
+.. _Mariatta's twitter: https://twitter.com/mariatta
 
 
 Mailing Lists
@@ -52,8 +91,8 @@ existing releases.  As with ``#python-dev``, these mailing lists are for
 questions involving the development *of* Python, **not** for development
 *with* Python.
 
-.. _python-ideas: http://mail.python.org/mailman/listinfo/python-ideas
-.. _python-dev: http://mail.python.org/mailman/listinfo/python-dev
+.. _python-ideas: https://mail.python.org/mailman/listinfo/python-ideas
+.. _python-dev: https://mail.python.org/mailman/listinfo/python-dev
 
 
 File a Bug
@@ -66,4 +105,4 @@ you detail which conditions triggered it (including the OS name and version,
 and what you were trying to do), as well as the exact error message you
 encountered.
 
-.. _issue tracker: http://bugs.python.org
+.. _issue tracker: https://bugs.python.org

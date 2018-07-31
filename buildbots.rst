@@ -3,9 +3,11 @@
 Continuous Integration
 ======================
 
+.. highlight:: bash
+
 To assert that there are no regressions in the :doc:`development and maintenance
-branches <devcycle>`, Python has a set of dedicated machines (called *buildbots* or
-*build slaves*) used for continuous integration.  They span a number of
+branches <devcycle>`, Python has a set of dedicated machines (called *buildbots*
+or *build workers*) used for continuous integration.  They span a number of
 hardware/operating system combinations.  Furthermore, each machine hosts
 several *builders*, one per active branch: when a new change is pushed
 to this branch on the public Mercurial repository, all corresponding builders
@@ -28,22 +30,22 @@ Checking results of automatic builds
 
 There are three ways of visualizing recent build results:
 
-* The Web interface for each branch at http://python.org/dev/buildbot/,
+* The Web interface for each branch at https://www.python.org/dev/buildbot/,
   where the so-called "waterfall" view presents a vertical rundown of recent
   builds for each builder.  When interested in one build, you'll have to
   click on it to know which changesets it corresponds to.  Note that
   the buildbot web pages are often slow to load, be patient.
 
 * The command-line ``bbreport.py`` client, which you can get from
-  http://code.google.com/p/bbreport/. Installing it is trivial: just add
+  https://code.google.com/archive/p/bbreport. Installing it is trivial: just add
   the directory containing ``bbreport.py`` to your system path so that
   you can run it from any filesystem location.  For example, if you want
-  to display the latest build results on the development ("default") branch,
+  to display the latest build results on the development ("master") branch,
   type::
 
       bbreport.py -q 3.x
 
-* The buildbot "console" interface at http://buildbot.python.org/all/console
+* The buildbot "console" interface at http://buildbot.python.org/all/#/console
   This works best on a wide, high resolution
   monitor.  Clicking on the colored circles will allow you to open a new page
   containing whatever information about that particular build is of interest to
@@ -107,7 +109,10 @@ The ``--randseed`` option makes it easy to reproduce the exact randomization
 used in a given build.  Again, open the ``stdio`` link for the failing test
 run, and check the beginning of the test output proper.
 
-Let's assume, for the sake of example, that the output starts with::
+Let's assume, for the sake of example, that the output starts with:
+
+.. code-block:: none
+   :emphasize-lines: 6
 
    ./python -Wd -E -bb Lib/test/regrtest.py -uall -rwW
    == CPython 3.3a0 (default:22ae2b002865, Mar 30 2011, 13:58:40) [GCC 4.4.5]
@@ -122,7 +127,9 @@ You can reproduce the exact same order using::
 
    ./python -Wd -E -bb -m test -uall -rwW --randseed 2613169
 
-It will run the following sequence (trimmed for brevity)::
+It will run the following sequence (trimmed for brevity):
+
+.. code-block:: none
 
    [  1/353] test_augassign
    [  2/353] test_functools
@@ -140,7 +147,9 @@ sequence recorded in that text file::
    ./python -Wd -E -bb -m test -uall -rwW --fromfile mytestsequence.txt
 
 In the example sequence above, if ``test_unicode`` had failed, you would
-first test the following sequence::
+first test the following sequence:
+
+.. code-block:: none
 
    [  1/353] test_augassign
    [  2/353] test_functools
@@ -148,7 +157,9 @@ first test the following sequence::
    [  6/353] test_unicode
 
 And, if it succeeds, the following one instead (which, hopefully, shall
-fail)::
+fail):
+
+.. code-block:: none
 
    [  4/353] test_contains
    [  5/353] test_compileall
@@ -186,17 +197,19 @@ offenders:
 When you think a failure might be transient, it is recommended you confirm by
 waiting for the next build.  Still, even if the failure does turn out sporadic
 and unpredictable, the issue should be reported on the bug tracker; even
-better if it can be diagnosed and suppressed by fixing the test's implementation,
-or by making its parameters - such as a timeout - more robust.
+better if it can be diagnosed and suppressed by fixing the test's
+implementation, or by making its parameters - such as a timeout - more robust.
 
 
 Custom builders
 ---------------
 
+.. highlight:: console
+
 When working on a platform-specific issue, you may want to test your changes on
 the buildbot fleet rather than just on Travis and AppVeyor.  To do so, you can
 make use of the `custom builders
-<http://buildbot.python.org/all/waterfall?category=custom.stable&category=custom.unstable>`_.
+<http://buildbot.python.org/all/#/builders?tags=custom.unstable&tags=custom.stable>`_.
 These builders track the ``buildbot-custom`` short-lived branch of the
 ``python/cpython`` repository, which is only accessible to core developers.
 
@@ -220,4 +233,4 @@ recommend you change (temporarily, of course) the contents of the
 the ``Tools/buildbot/test.bat`` script.
 
 .. seealso::
-   :ref:`buildslave`
+   :ref:`buildworker`

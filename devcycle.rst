@@ -31,7 +31,7 @@ Branches
 ''''''''
 
 There is a branch for each *feature version*, whether released or not (e.g.
-2.7, 3.6).  Development is handled separately for Python 2 and Python 3:
+2.7, 3.6, 3.7).  Development is handled separately for Python 2 and Python 3:
 no merging happens between 2.x and 3.x branches.
 
 
@@ -46,7 +46,7 @@ changes, performance improvements, bug fixes.
 
 At some point during the life-cycle of a release, a
 new :ref:`maintenance branch <maintbranch>` is created to host all bug fixing
-activity for further micro versions in a feature version (3.3.1, 3.3.2, etc.).
+activity for further micro versions in a feature version (3.7.1, 3.7.2, etc.).
 
 For versions 3.4 and before, this was conventionally done when the final
 release was cut (for example, 3.4.0 final).
@@ -110,22 +110,20 @@ security patches have been applied to the branch.
 Summary
 -------
 
-There are 7 open branches right now in the Git repository:
+There are 6 open branches right now in the Git repository:
 
-- the ``master`` branch holds the future 3.7 version and descends from ``3.6``
-  (RM: Ned Deily)
-- the ``3.6`` branch holds bug fixes for 3.6.0 and future 3.6.x maintenance releases
-  and descends from ``3.5`` (RM: Ned Deily)
-- the ``3.5`` branch holds bug fixes for future 3.5.x maintenance releases
-  and descends from ``3.4`` (RM: Larry Hastings)
-- the ``3.4`` branch holds security fixes for future 3.4.x security releases
-  and descends from ``3.3`` (RM: Larry Hastings)
-- the ``3.3`` branch holds security fixes for future 3.3.x security releases
-  until September 2017 and descends from ``3.2`` (RM: Georg Brandl)
-- the ``3.2`` branch holds security fixes for future 3.2.x security releases
-  until February 2016 (RM: Georg Brandl)
-- the ``2.7`` branch holds bug fixes for future 2.7.x maintenance releases and
-  descends from ``2.6`` (RM: Benjamin Peterson)
+- the ``master`` branch accepts features and bugs fixes for the future
+  3.8.0 feature release (RM: Łukasz Langa)
+- the ``3.7`` branch accepts bug and doc fixes for future 3.7.x maintenance
+  releases (RM: Ned Deily)
+- the ``3.6`` branch accepts bug and doc fixes for future 3.6.x maintenance
+  releases (RM: Ned Deily)
+- the ``3.5`` branch accepts security fixes for future 3.5.x security releases
+  (RM: Larry Hastings)
+- the ``3.4`` branch accepts security fixes for future 3.4.x security releases
+  (RM: Larry Hastings)
+- the ``2.7`` branch accepts bug and doc fixes for future 2.7.x maintenance
+  releases (RM: Benjamin Peterson)
 
 See also the :ref:`Status of Python branches <branchstatus>`.
 
@@ -168,11 +166,11 @@ bug fixes can now be committed.  This is when core developers should concentrate
 on the task of fixing regressions and other new issues filed by users who have
 downloaded the alpha and beta releases.
 
-Being in beta can be viewed much like being in RC_ but without the extra overhead
-of needing commit reviews.
+Being in beta can be viewed much like being in RC_ but without the extra
+overhead of needing commit reviews.
 
-Please see the note in the `In-development (main) branch`_ section above
-for new information about the creation of the 3.5 maintenance branch during beta.
+Please see the note in the `In-development (main) branch`_ section above for
+new information about the creation of the 3.5 maintenance branch during beta.
 
 
 .. _rc:
@@ -183,8 +181,8 @@ Release Candidate (RC)
 A branch preparing for an RC release can only have bugfixes applied that have
 been reviewed by other core developers.  Generally, these issues must be
 severe enough (e.g. crashes) that they deserve fixing before the final release.
-All other issues should be deferred to the next development cycle, since stability
-is the strongest concern at this point.
+All other issues should be deferred to the next development cycle, since
+stability is the strongest concern at this point.
 
 You **cannot** skip the peer review during an RC, no matter how small! Even if
 it is a simple copy-and-paste change, **everything** requires peer review from

@@ -94,34 +94,60 @@ participating in the CPython core development process:
 
 .. topic:: Brett Cannon (Canada)
 
-   * Personal site: `snarky.ca <http://snarky.ca>`_
-   * `Extended bio <http://stackoverflow.com/cv/DrBrettCannon>`__
+   * Personal site: `snarky.ca <https://snarky.ca/>`_
+   * `Extended bio <https://stackoverflow.com/cv/DrBrettCannon>`__
    * Microsoft (Software Developer)
    * Python Software Foundation (Fellow)
 
 .. topic:: Nick Coghlan (Australia)
 
-   * Personal site: `Curious Efficiency <http://www.curiousefficiency.org/>`_
-   * `Extended bio <http://www.curiousefficiency.org/pages/about>`__
-   * Red Hat (Software Engineer, Developer Experience)
+   * Personal site: `Curious Efficiency <https://www.curiousefficiency.org/>`_
+   * `Extended bio <https://www.curiousefficiency.org/pages/about>`__
+   * `Tritium <https://www.tritium.com.au/>`__ (Software Developer)
    * Python Software Foundation (Fellow, Packaging Working Group)
 
-   Nick originally began participating in CPython core development as an
-   interesting and enlightening hobby activity while working for Boeing Defence
-   Australia. After commencing work for Red Hat, he also became involved in a
-   range of topics related directly to improving the experience of Python
-   developers on the Fedora Linux distribution and derived platforms, and now
-   works for Red Hat's Developer Experience team.
+   Nick began using Python as a testing and prototyping language while working
+   for Boeing Defence Australia, and continues to use it for that purpose today.
 
-   In addition to his personal and professional interest in ensuring Python
-   remains an excellent choice for Linux-based network service and system
-   utility development, he is also interested in helping to ensure its
-   continued suitability for educational and data analysis use cases.
+   As a core developer, he is primarily interested in helping to ensure Python's
+   continued suitability for educational, testing and data analysis use cases,
+   as well as in encouraging good architectural practices when assembling Python
+   applications and test harnesses from open source components.
+
+.. topic:: Steve Dower (United States/Australia)
+
+   * Microsoft (Software Developer)
+   * Personal site: `stevedower.id.au <https://stevedower.id.au/>`_
+   * Speaking: `stevedower.id.au/speaking <https://stevedower.id.au/speaking/>`_
+   * Work blog: `aka.ms/pythonblog <https://aka.ms/pythonblog>`_
+   * Email address: steve.dower@python.org
+
+   Steve started with Python while automating a test harness for medical
+   devices, and now works for Microsoft on anything that makes Python more
+   accessible to developers on any platform.
+
+   As a core developer, his focus is on maintaining the already excellent
+   Windows support and improving Python's ability to be embedded in other
+   applications.
 
 .. topic:: Christian Heimes (Germany)
 
    * Red Hat (Software Developer, Security Engineering / Identity Management)
    * Python Software Foundation (Fellow)
+
+.. topic:: Mariatta (Canada)
+
+   * Personal site: `mariatta.ca <http://mariatta.ca>`_
+   * Works as a `Software Engineer <https://www.linkedin.com/in/mariatta/>`_
+     in Vancouver, helps organize `Vancouver PyLadies
+     <https://www.meetup.com/PyLadies-Vancouver/>`_ meetup on the side, and
+     sometimes `speaks <http://mariatta.ca/pages/talk-chronology.html#talk-chronology>`_
+     at conferences.
+   * Email address: mariatta@python.org
+   * `Patreon <https://www.patreon.com/Mariatta>`_
+
+   Support Mariatta by sending her a `happiness packet <https://www.happinesspackets.io/send/>`_,
+   or `paypal <https://www.paypal.me/mariatta>`_.
 
 .. topic:: R. David Murray (United States)
 
@@ -151,19 +177,90 @@ participating in the CPython core development process:
    spend more of his (and his company's) time on open source work, and so is
    actively seeking additional such contract opportunities.
 
+.. topic:: Antoine Pitrou (France)
+
+   * LinkedIn: `<https://www.linkedin.com/in/pitrou/>`_ (Senior Software Engineer)
+   * Independent (currently Two Sigma Investments)
+   * Python Software Foundation (Fellow)
+   * Available for open source contract work
+   * Email address: antoine@python.org
+
+   Antoine started working with Python in 2005 in order to implement a
+   decentralized virtual world protocol.  He started contributing to CPython
+   in 2007 and became a core developer in 2008.  His motivations have been
+   driven both by the abstract desire to make Python better for the whole
+   world, and by the concrete roadbloacks he was hitting in professional
+   settings.  His current focus is to improve support for system programming
+   and concurrent programming (such as ``multiprocessing``).
+
+   As a professional, Antoine has been first specializing in network
+   programming, and more lately (since 2014) in open source data science
+   infrastructure such as Dask, Numba, Apache Arrow.
+
 .. topic:: Victor Stinner (France)
 
-   * `Personal website <https://haypo-notes.readthedocs.org/>`__
+   * `Personal website <https://vstinner.readthedocs.io/>`__
    * Red Hat (Senior Software Engineer)
 
-   Victor is hacking the development version of CPython to make Python better
-   than ever.
+   Victor is paid by Red Hat to maintain Python upstream and downstream (RHEL,
+   CentOS, Fedora & Software collections). See `Victor's contributions to
+   Python <http://vstinner.readthedocs.io/python_contrib.html>`_.
 
 .. topic:: Kushal Das (India)
 
    * `Personal website <https://kushaldas.in>`__
-   * Red Hat (Fedora Cloud Engineer)
+   * `Freedom of the Press Foundation <https://freedom.press>`__ (Staff)
    * Python Software Foundation (Fellow)
+
+.. topic:: Barry Warsaw (United States)
+
+   * LinkedIn: `<https://www.linkedin.com/in/barry-warsaw/>`_ (Staff Software Engineer - Python Foundation)
+   * Personal site: `barry.warsaw.us <https://barry.warsaw.us/>`_
+   * Blog: `We Fear Change <https://www.wefearchange.org/>`_
+   * Email address: barry@python.org
+   * Python Software Foundation (Fellow)
+
+   Barry has been working in, with, and on Python since 1994.  He attended the
+   first Python workshop at NBS (now `NIST <https://www.nist.gov/>`_) in
+   Gaithersburg, MD in 1994, where he met Guido and several other early Python
+   adopters.  Barry subsequently worked with Guido for 8 years while at `CNRI
+   <http://cnri.reston.va.us/>`_.  From 2007 until 2017, Barry worked for
+   `Canonical <https://www.canonical.com/>`_, corporate sponsor of `Ubuntu
+   <https://www.ubuntu.com/>`_ Linux, primarily on the Python ecosystem, and
+   is both an Ubuntu and a `Debian <http://www.debian.org/>`_ uploading
+   developer.  Barry has served as Python's postmaster, webmaster, release
+   manager, Language Summit co-chair, `Jython <http://www.jython.org/>`_
+   project leader, `GNU Mailman <http://www.list.org/>`_ project leader, and
+   probably lots of other things he shouldn't admit to.
+
+.. topic:: Eric Snow (United States)
+
+   * Microsoft (Software Developer)
+   * Python Software Foundation (Fellow)
+
+.. topic:: Dino Viehland (United States)
+
+   * Microsoft: `<https://notebooks.azure.com/>`_ (Software Engineer)
+   * Email address: dinov@microsoft.com
+
+   Dino started working with Python in 2005 by working on IronPython, an
+   implementation of Python running on .NET.  He was one of the primary
+   developers on the project for 6 years.  After that he started the Python
+   Tools for Visual Studio project focusing on providing advanced code completion
+   and debugging features for Python.  Today he works on
+   `Azure Notebooks <http://notebooks.azure.com/>`_ bringing the Python based
+   Jupyter notebook as a hosted on-line service.
+
+.. topic:: Carol Willing (United States)
+
+   * Personal site: `Willing Consulting <https://www.willingconsulting.com/>`_
+   * `Extended bio <https://www.willingconsulting.com/about/>`__
+   * Project Jupyter, Cal Poly SLO (Research Software Engineer)
+   * Python Software Foundation (Fellow)
+
+   Carol is focused on Python's usage in education and scientific research.
+   She is interested in organizational development, operational workflows,
+   and sustainability of open source projects.
 
 
 .. _goals-of-the-motivations-page:
@@ -220,9 +317,9 @@ their contributions to be funded directly by the community, rather than relying
 on institutional sponsors allowing them to spend some or all of their work
 time contributing to CPython development.
 
-.. _issue metrics: http://bugs.python.org/issue?@template=stats
+.. _issue metrics: https://bugs.python.org/issue?@template=stats
 .. _OpenHub: https://www.openhub.net/p/python/contributors
-.. _core mentorship program: http://pythonmentors.com/
+.. _core mentorship program: https://www.python.org/dev/core-mentorship/
 .. _internships: https://www.gnome.org/outreachy/
 .. _Summer of Code: https://wiki.python.org/moin/SummerOfCode/2016
 
@@ -244,7 +341,7 @@ Limitations on scope
   developers are NOT required to publish their motivations and affiliations if
   they do not choose to do so. This helps to ensure that core contribution
   processes remain open to anyone that is in a position to sign the `Contributor
-  Licensing Agreement`_, the details of which are filed privately with the Python
-  Software Foundation, rather than publicly.
+  Licensing Agreement`_, the details of which are filed privately with the
+  Python Software Foundation, rather than publicly.
 
 .. _Contributor Licensing Agreement: https://www.python.org/psf/contrib/contrib-form/

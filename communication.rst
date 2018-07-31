@@ -26,10 +26,10 @@ Python-ideas_ is a mailing list open to the public to discuss ideas on changing
 Python. If a new idea does not start here (or python-list_, discussed below),
 it will get redirected here.
 
-Sometimes people post new ideas to python-list_ to gather community opinion before
-heading to python-ideas_. The list is also sometimes known as comp.lang.python,
-the name of the newsgroup it mirrors (it is also known by the abbreviation
-c.l.py).
+Sometimes people post new ideas to python-list_ to gather community opinion
+before heading to python-ideas_. The list is also sometimes known as
+comp.lang.python, the name of the newsgroup it mirrors (it is also known by
+the abbreviation c.l.py).
 
 The python-committers_ mailing list is a private mailing list for core
 developers (the archives are publicly available).
@@ -52,23 +52,33 @@ General Python questions should go to `python-list`_ or `tutor`_
 or similar resources, such as StackOverflow_ or the ``#python`` IRC channel
 on Freenode_.
 
-A complete list of Python mailing lists can be found at http://mail.python.org.
-Most lists are also mirrored at nntp://news.gmane.org and can be read with
-NTTP newsreaders.
+`Core-Workflow <https://mail.python.org/mm3/mailman3/lists/core-workflow.python.org/>`_
+mailing list is the place to discuss and work on improvements to the CPython
+core development workflow.
 
-.. _issue tracker: http://bugs.python.org
-.. _new-bugs-announce: http://mail.python.org/mailman/listinfo/new-bugs-announce
-.. _python-bugs-list: http://mail.python.org/mailman/listinfo/python-bugs-list
-.. _python-checkins: http://mail.python.org/mailman/listinfo/python-checkins
-.. _python-committers: http://mail.python.org/mailman/listinfo/python-committers
-.. _python-dev: http://mail.python.org/mailman/listinfo/python-dev
-.. _python-help: http://mail.python.org/mailman/listinfo/python-help
-.. _python-ideas: http://mail.python.org/mailman/listinfo/python-ideas
-.. _python-list: http://mail.python.org/mailman/listinfo/python-list
-.. _tutor: http://mail.python.org/mailman/listinfo/tutor
-.. _StackOverflow: http://stackoverflow.com/
+A complete list of Python mailing lists can be found at https://mail.python.org.
+Most lists are also mirrored at `GMANE <https://gmane.org>`_ and can be read and
+posted to in various ways, including via web browsers, NNTP newsreaders, and
+RSS feed readers.
+
+.. _issue tracker: https://bugs.python.org
+.. _new-bugs-announce: https://mail.python.org/mailman/listinfo/new-bugs-announce
+.. _python-bugs-list: https://mail.python.org/mailman/listinfo/python-bugs-list
+.. _python-checkins: https://mail.python.org/mailman/listinfo/python-checkins
+.. _python-committers: https://mail.python.org/mailman/listinfo/python-committers
+.. _python-dev: https://mail.python.org/mailman/listinfo/python-dev
+.. _python-help: https://mail.python.org/mailman/listinfo/python-help
+.. _python-ideas: https://mail.python.org/mailman/listinfo/python-ideas
+.. _python-list: https://mail.python.org/mailman/listinfo/python-list
+.. _tutor: https://mail.python.org/mailman/listinfo/tutor
+.. _StackOverflow: https://stackoverflow.com/
 .. _Freenode: http://freenode.net/
 
+Zulip
+-----
+
+We have our own `zulipchat <https://python.zulipchat.com>`_ instance. This should be
+used to discuss the development of Python only.
 
 IRC
 ---
@@ -77,7 +87,7 @@ Some core developers enjoy spending time on IRC discussing various issues
 regarding Python's development in the ``#python-dev`` channel on
 ``irc.freenode.net``. This is not a place to ask for help with Python, but to
 discuss issues related to Python's own development.  You can use Freenode's
-`Web interface <http://webchat.freenode.net/>`_ if you don't have an IRC
+`Web interface <https://webchat.freenode.net/>`_ if you don't have an IRC
 client.
 
 
@@ -86,7 +96,7 @@ Blogs
 
 Several core developers are active bloggers and discuss Python's development
 that way. You can find their blogs (and various other developers who use Python)
-at http://planet.python.org/.
+at http://planetpython.org/.
 
 
 Standards of behaviour in these communication channels
@@ -98,4 +108,26 @@ appropriate channels are an excellent way to get started on the mutual respect
 part, greatly increasing the chances of receiving tolerance and encouragement
 in return.
 
-.. _Diversity Statement: http://www.python.org/psf/diversity/
+.. _Diversity Statement: https://www.python.org/psf/diversity/
+
+Setting Expectations for Open Source Participation
+--------------------------------------------------
+
+Burn-out is common in open source due to a misunderstanding of what users, contributors,
+and maintainers should expect from each other. Brett Cannon gave a `talk <https://youtu.be/-Nk-8fSJM6I>`_
+about this topic that sets out to help everyone set reasonable expectations of each other in
+order to make open source pleasant for everyone involved.
+
+Additional Repositories
+-----------------------
+
+`Python Core Workflow`_ hosts the codebase for tools such as `cherry_picker`_
+and `blurb`_.
+
+Python `Performance Benchmark`_ project is intended to be an authoritative
+source of benchmarks for all Python implementations.
+
+.. _Python Core Workflow: https://github.com/python/core-workflow
+.. _cherry_picker: https://pypi.org/project/cherry-picker/
+.. _blurb: https://pypi.org/project/blurb
+.. _Performance Benchmark: https://github.com/python/performance

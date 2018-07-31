@@ -4,6 +4,8 @@
 Documenting Python
 ==================
 
+.. highlight::  rest
+
 The Python language has a substantial body of documentation, much of it
 contributed by various authors. The markup used for the Python documentation is
 `reStructuredText`_, developed by the `docutils`_ project, amended by custom
@@ -17,7 +19,7 @@ The documentation in HTML, PDF or EPUB format is generated from text files
 written using the :ref:`reStructuredText format <markup>` and contained in the
 :ref:`CPython Git repository <setup>`.
 
-.. _reStructuredText: http://docutils.sf.net/rst.html
+.. _reStructuredText: http://docutils.sourceforge.net/rst.html
 
 .. note::
 
@@ -57,6 +59,7 @@ gladly work with you to integrate your text, dealing with the markup for you.
 Please don't let the material in this document stand between the documentation
 and your desire to help out!
 
+.. _style-guide:
 
 Style guide
 ===========
@@ -171,7 +174,8 @@ Bad example (creating worry in the mind of a reader):
     excessive resource consumption.  Never rely on reference counting to
     automatically close a file.
 
-Good example (establishing confident knowledge in the effective use of the language):
+Good example (establishing confident knowledge in the effective use of the
+language):
 
     A best practice for using files is use a try/finally pair to explicitly
     close a file after it is used.  Alternatively, using a with-statement can
@@ -222,8 +226,8 @@ a typical use case.  For instance, the :meth:`str.rpartition` method is better
 demonstrated with an example splitting the domain from a URL than it would be
 with an example of removing the last word from a line of Monty Python dialog.
 
-The ellipsis for the :py:data:`sys.ps2` secondary interpreter prompt should only be
-used sparingly, where it is necessary to clearly differentiate between input
+The ellipsis for the :py:data:`sys.ps2` secondary interpreter prompt should only
+be used sparingly, where it is necessary to clearly differentiate between input
 lines and output lines.  Besides contributing visual clutter, it makes it
 difficult for readers to cut-and-paste examples so they can experiment with
 variations.
@@ -273,6 +277,8 @@ the documentation wasn't consulted until after the error was made.  It is
 unfortunate, but typically no documentation edit would have saved the user from
 making false assumptions about the language ("I was surprised by ...").
 
+
+.. _rst-primer:
 
 reStructuredText Primer
 =======================
@@ -456,7 +462,9 @@ the extension mechanisms of reST, and Sphinx makes heavy use of it.
 
 Basically, a directive consists of a name, arguments, options and content. (Keep
 this terminology in mind, it is used in the next chapter describing custom
-directives.)  Looking at this example, ::
+directives.)  Looking at this example,
+
+::
 
    .. function:: foo(x)
                  foo(y, z)
@@ -695,6 +703,11 @@ The directives are:
    are modified), side effects, and possible exceptions.  A small example may be
    provided.
 
+.. describe:: coroutinefunction
+
+   Describes a module-level coroutine.  The description should include similar
+   information to that described for ``function``.
+
 .. describe:: decorator
 
    Describes a decorator function.  The signature should *not* represent the
@@ -740,11 +753,11 @@ The directives are:
 
       .. class:: Spam
 
-            Description of the class.
+         Description of the class.
 
-            .. attribute:: ham
+         .. attribute:: ham
 
-               Description of the attribute.
+            Description of the attribute.
 
    If is also possible to document an attribute outside of a class directive,
    for example if the documentation for different attributes and methods is
@@ -760,11 +773,37 @@ The directives are:
    described for ``function``.  This directive should be nested in a class
    directive, like in the example above.
 
+.. describe:: coroutinemethod
+
+   Describes an object coroutine method.  The parameters should not include the
+   ``self`` parameter.  The description should include similar information to
+   that described for ``function``.  This directive should be nested in a
+   ``class`` directive.
+
 .. describe:: decoratormethod
 
    Same as ``decorator``, but for decorators that are methods.
 
    Refer to a decorator method using the ``:meth:`` role.
+
+.. describe:: staticmethod
+
+   Describes an object static method.  The description should include similar
+   information to that described for ``function``.  This directive should be
+   nested in a ``class`` directive.
+
+.. describe:: classmethod
+
+   Describes an object class method.  The parameters should not include the
+   ``cls`` parameter.  The description should include similar information to
+   that described for ``function``.  This directive should be nested in a
+   ``class`` directive.
+
+.. describe:: abstractmethod
+
+   Describes an object abstract method.  The description should include similar
+   information to that described for ``function``.  This directive should be
+   nested in a ``class`` directive.
 
 .. describe:: opcode
 
@@ -807,7 +846,9 @@ preceding paragraph and delimited by indentation.
 Representing an interactive session requires including the prompts and output
 along with the Python code.  No special markup is required for interactive
 sessions.  After the last line of input or output presented, there should not be
-an "unused" primary prompt; this is an example of what *not* to do::
+an "unused" primary prompt; this is an example of what *not* to do:
+
+.. code-block:: python
 
    >>> 1 + 1
    2
@@ -815,19 +856,19 @@ an "unused" primary prompt; this is an example of what *not* to do::
 
 Syntax highlighting is handled in a smart way:
 
-* There is a "highlighting language" for each source file.  Per default,
+* There is a "highlighting language" for each source file.  By default,
   this is ``'python'`` as the majority of files will have to highlight Python
   snippets.
 
 * Within Python highlighting mode, interactive sessions are recognized
   automatically and highlighted appropriately.
 
-* The highlighting language can be changed using the ``highlightlang``
+* The highlighting language can be changed using the ``highlight``
   directive, used as follows::
 
-     .. highlightlang:: c
+     .. highlight:: c
 
-  This language is used until the next ``highlightlang`` directive is
+  This language is used until the next ``highlight`` directive is
   encountered.
 
 * The ``code-block`` directive can be used to specify the highlight language
@@ -853,8 +894,8 @@ Syntax highlighting is handled in a smart way:
 
 Longer displays of verbatim text may be included by storing the example text in
 an external file containing only plain text.  The file may be included using the
-``literalinclude`` directive. [1]_ For example, to include the Python source file
-:file:`example.py`, use::
+``literalinclude`` directive. [1]_ For example, to include the Python source
+file :file:`example.py`, use::
 
    .. literalinclude:: example.py
 
@@ -895,8 +936,8 @@ a matching identifier is found:
 
 .. describe:: mod
 
-   The name of a module; a dotted name may be used.  This should also be used for
-   package names.
+   The name of a module; a dotted name may be used.  This should also be used
+   for package names.
 
 .. describe:: func
 
@@ -1032,7 +1073,7 @@ in a different style:
    The name of a file or directory.  Within the contents, you can use curly
    braces to indicate a "variable" part, for example::
 
-      ... is installed in :file:`/usr/lib/python2.{x}/site-packages` ...
+      ``spam`` is installed in :file:`/usr/lib/python2.{x}/site-packages` ...
 
    In the built documentation, the ``x`` will be displayed differently to
    indicate that it is to be replaced by the Python minor version.
@@ -1225,6 +1266,29 @@ units as well as normal text:
    Note that there must be no blank line between the directive head and the
    explanation; this is to make these blocks visually continuous in the markup.
 
+.. describe:: deprecated
+
+   Indicates the version from which the described feature is deprecated.
+
+   There is one required argument: the version from which the feature is
+   deprecated.
+
+   Example::
+
+      .. deprecated:: 3.8
+
+.. describe:: deprecated-removed
+
+   Like ``deprecated``, but it also indicates in which version the feature is
+   removed.
+
+   There are two required arguments: the version from which the feature is
+   deprecated, and the version in which the feature is removed.
+
+   Example::
+
+      .. deprecated-removed:: 3.8 4.0
+
 .. describe:: impl-detail
 
    This directive is used to mark CPython-specific information.  Use either with
@@ -1358,8 +1422,8 @@ pair
    namely ``loop; statement`` and ``statement; loop``.
 triple
    Likewise, ``triple: module; search; path`` is a shortcut that creates three
-   index entries, which are ``module; search path``, ``search; path, module`` and
-   ``path; module search``.
+   index entries, which are ``module; search path``, ``search; path, module``
+   and ``path; module search``.
 module, keyword, operator, object, exception, statement, builtin
    These all create two index entries.  For example, ``module: hashlib``
    creates the entries ``module; hashlib`` and ``hashlib; module``.  The
@@ -1418,8 +1482,8 @@ The following is an example taken from the Python Reference Manual::
 Substitutions
 -------------
 
-The documentation system provides three substitutions that are defined by default.
-They are set in the build configuration file :file:`conf.py`.
+The documentation system provides three substitutions that are defined by
+default. They are set in the build configuration file :file:`conf.py`.
 
 .. describe:: |release|
 
@@ -1449,17 +1513,20 @@ They are set in the build configuration file :file:`conf.py`.
 Building the documentation
 ==========================
 
+.. highlight:: bash
+
 The toolset used to build the docs is written in Python and is called Sphinx_.
 Sphinx is maintained separately and is not included in this tree.  Also needed
-are docutils_, supplying the base markup that Sphinx uses; Jinja_, a templating
-engine; and optionally Pygments_, a code highlighter.
+are blurb_, a tool to create :file:`Misc/NEWS` on demand; and
+python-docs-theme_, the Sphinx theme for the Python documentation.
 
 To build the documentation, follow the instructions from one of the sections
 below.  You can view the documentation after building the HTML by pointing
 a browser at the file :file:`Doc/build/html/index.html`.
 
-You are expected to have installed the latest stable version of Sphinx_ on
-your system or in a virtualenv_, so that the Makefile can find the
+You are expected to have installed the latest stable version of
+Sphinx_ and blurb_ on your system or in a virtualenv_ (which can be
+created using ``make venv``), so that the Makefile can find the
 ``sphinx-build`` command.  You can also specify the location of
 ``sphinx-build`` with the ``SPHINXBUILD`` :command:`make` variable.
 
@@ -1471,17 +1538,30 @@ Using make / make.bat
 <checkout>` to build the output as HTML::
 
    cd Doc
+   make venv
    make html
 
-or alternatively ``make -C Doc html``.
+or alternatively ``make -C Doc/ venv html``.
 
 You can also use ``make help`` to see a list of targets supported by
 :command:`make`.  Note that ``make check`` is automatically run when
 you submit a :doc:`pull request <pullrequest>`, so you should make
 sure that it runs without errors.
 
-**On Windows**, there is a :file:`make.bat` batchfile that tries to
-emulate :command:`make` as closely as possible.
+**On Windows**, a :file:`make.bat` batchfile tries to emulate :command:`make`
+as closely as possible, but the venv target is not implemented, so you will
+probably want to make sure you are working in a virtual environment before
+proceeding, otherwise all dependencies will be automatically installed on your
+system.
+
+When ready, run the following from the root of your :ref:`repository clone
+<checkout>` to build the output as HTML::
+
+   cd Doc
+   make html
+
+You can also use ``make help`` to see a list of targets supported by
+:file:`make.bat`.
 
 See also :file:`Doc/README.rst` for more information.
 
@@ -1489,9 +1569,9 @@ See also :file:`Doc/README.rst` for more information.
 Without make
 ------------
 
-Install the Sphinx package and its dependencies from PyPI.
+Install the Sphinx, blurb, and python-docs-theme packages from PyPI.
 
-Then, from the ``Docs`` directory, run ::
+Then, from the ``Doc`` directory, run::
 
    sphinx-build -b<builder> . build/<builder>
 
@@ -1499,7 +1579,13 @@ where ``<builder>`` is one of html, text, latex, or htmlhelp (for explanations
 see the make targets above).
 
 .. _docutils: http://docutils.sourceforge.net/
-.. _Jinja: http://jinja.pocoo.org/
-.. _Pygments: http://pygments.org/
+.. _python-docs-theme: https://pypi.org/project/python-docs-theme/
 .. _Sphinx: http://sphinx-doc.org/
 .. _virtualenv: https://virtualenv.pypa.io/
+.. _blurb: https://pypi.org/project/blurb/
+
+
+Translations
+============
+
+There are now several official documentation translations (see section :ref:`21.5. Documentation Translations <experts>` and :PEP:`545` for details). Discussions about translations occur on the `doc-sig <https://mail.python.org/mailman/listinfo/doc-sig>`_ mailing list.
