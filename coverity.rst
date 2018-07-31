@@ -143,11 +143,11 @@ Dakshesh Vyas <scan-admin@coverity.com>
 
 .. seealso::
 
-   `Coverity Scan FAQ <http://scan.coverity.com/faq/>`_
+   `Coverity Scan FAQ <https://scan.coverity.com/faq/>`_
 
 
-.. _Coverity Scan: http://scan.coverity.com/
+.. _Coverity Scan: https://scan.coverity.com/
 
-.. _Coverity Connect: http://scan5.coverity.com:8080/
+.. _Coverity Connect: https://scan.coverity.com/projects/python
 
 .. _coverity_model.c: https://hg.python.org/cpython/file/tip/Misc/coverity_model.c

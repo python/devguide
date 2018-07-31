@@ -57,7 +57,7 @@ argparse              bethard
 array
 ast                   benjamin.peterson
 asynchat              josiahcarlson, giampaolo.rodola*, stutzbach
-asyncio               haypo, yselivanov, giampaolo.rodola
+asyncio               yselivanov, asvetlov
 asyncore              josiahcarlson, giampaolo.rodola*, stutzbach
 atexit
 audioop               serhiy.storchaka
@@ -81,9 +81,10 @@ collections           rhettinger
 collections.abc       rhettinger, stutzbach
 colorsys
 compileall
-concurrent.futures    bquinlan
+concurrent.futures    pitrou, bquinlan
 configparser          lukasz.langa*
 contextlib            ncoghlan, yselivanov
+contextvars
 copy                  alexandre.vassalotti
 copyreg               alexandre.vassalotti
 cProfile
@@ -92,6 +93,7 @@ csv                   skip.montanaro (inactive)
 ctypes                theller (inactive), belopolsky, amaury.forgeotdarc,
                       meador.inge
 curses                twouters
+dataclasses           eric.smith
 datetime              belopolsky
 dbm
 decimal               facundobatista, rhettinger, mark.dickinson, skrah
@@ -101,12 +103,12 @@ distutils             eric.araujo, dstufft
 doctest               tim.peters (inactive)
 dummy_threading       brett.cannon
 email                 barry, r.david.murray*
-encodings             lemburg, loewis
+encodings             lemburg
 ensurepip             ncoghlan, dstufft
 enum                  eli.bendersky*, barry, ethan.furman*
 errno                 twouters
 exceptions
-faulthandler          haypo
+faulthandler          vstinner
 fcntl                 twouters
 filecmp
 fileinput
@@ -116,10 +118,10 @@ fpectl                twouters
 fractions             mark.dickinson, rhettinger
 ftplib                giampaolo.rodola*
 functools             ncoghlan, rhettinger
-gc
+gc                    pitrou
 getopt
 getpass
-gettext               loewis
+gettext
 glob
 grp
 gzip
@@ -142,19 +144,17 @@ keyword
 lib2to3               benjamin.peterson
 libmpdec              skrah
 linecache
-locale                loewis, lemburg
+locale                lemburg
 logging               vinay.sajip
 lzma
-macpath
 mailbox
 mailcap
 marshal
 math                  mark.dickinson, rhettinger, stutzbach
-memoryview            skrah
 mimetypes
 mmap                  twouters
 modulefinder          theller (inactive), jvr
-msilib                loewis
+msilib
 msvcrt
 multiprocessing       davin*, pitrou, jnoller (inactive), sbt (inactive)
 netrc
@@ -163,7 +163,7 @@ nntplib
 numbers
 operator
 optparse              aronacher
-os                    loewis
+os
 os.path               serhiy.storchaka
 ossaudiodev
 parser                benjamin.peterson
@@ -196,11 +196,12 @@ resource              twouters
 rlcompleter
 runpy                 ncoghlan
 sched                 giampaolo.rodola
+secrets
 select
 selectors             neologix, giampaolo.rodola
 shelve
 shlex
-shutil                tarek
+shutil                tarek, giampaolo.rodola
 signal
 site
 smtpd                 giampaolo.rodola
@@ -216,7 +217,7 @@ statistics            steven.daprano
 string
 stringprep
 struct                mark.dickinson, meador.inge
-subprocess            astrand (inactive)
+subprocess            astrand (inactive), giampaolo.rodola
 sunau
 symbol
 symtable              benjamin.peterson
@@ -230,7 +231,7 @@ tempfile
 termios               twouters
 test                  ezio.melotti
 textwrap
-threading
+threading             pitrou
 time                  belopolsky
 timeit
 tkinter               gpolo, serhiy.storchaka
@@ -238,12 +239,12 @@ token
 tokenize              meador.inge
 trace                 belopolsky
 traceback
-tracemalloc           haypo
+tracemalloc           vstinner
 tty                   twouters*
 turtle                gregorlingl, willingc
 types                 yselivanov
-typing
-unicodedata           loewis, lemburg, ezio.melotti
+typing                gvanrossum, levkivskyi*
+unicodedata           lemburg, ezio.melotti
 unittest              michael.foord*, ezio.melotti, rbcollins
 unittest.mock         michael.foord*
 urllib                orsenthil
@@ -267,7 +268,8 @@ xml.sax
 xml.sax.handler
 xml.sax.saxutils
 xml.sax.xmlreader
-xmlrpc                loewis
+xmlrpc
+zipapp                paul.moore
 zipfile               alanmcintyre, serhiy.storchaka, twouters
 zipimport             twouters*
 zlib                  twouters
@@ -310,7 +312,7 @@ Interest Area       Maintainers
 ==================  ==========================================================
 algorithms
 argument clinic     larry
-ast/compiler        ncoghlan, benjamin.peterson, brett.cannon, yselivanov
+ast/compiler        benjamin.peterson, brett.cannon, yselivanov
 autoconf/makefiles  twouters*
 bsd
 bug tracker         ezio.melotti
@@ -323,28 +325,32 @@ data formats        mark.dickinson
 database            lemburg
 devguide            ncoghlan, eric.araujo, ezio.melotti, willingc
 documentation       ezio.melotti, eric.araujo, willingc
+extension modules   petr.viktorin, ncoghlan
+filesystem          giampaolo.rodola
+f-strings           eric.smith*
 GUI
 i18n                lemburg, eric.araujo
 import machinery    brett.cannon, ncoghlan, eric.snow
 io                  benjamin.peterson, stutzbach
-locale              lemburg, loewis
-mathematics         mark.dickinson, eric.smith, lemburg, stutzbach
+locale              lemburg
+mathematics         mark.dickinson, lemburg, stutzbach
 memory management   tim.peters, lemburg, twouters
+memoryview          skrah
 networking          giampaolo.rodola,
 object model        benjamin.peterson, twouters
 packaging           tarek, lemburg, alexis, eric.araujo, dstufft, paul.moore
-performance         brett.cannon, haypo, serhiy.storchaka, yselivanov
+performance         brett.cannon, vstinner, serhiy.storchaka, yselivanov
 pip                 ncoghlan, dstufft, paul.moore, Marcus.Smith
 py3 transition      benjamin.peterson
-release management  tarek, lemburg, benjamin.peterson, barry, loewis,
+release management  tarek, lemburg, benjamin.peterson, barry,
                     gvanrossum, anthonybaxter, eric.araujo, ned.deily,
                     georg.brandl
-str.format          eric.smith
+str.format          eric.smith*
 testing             michael.foord, ezio.melotti
 test coverage       giampaolo.rodola
 threads
 time and dates      lemburg, belopolsky
-unicode             lemburg, ezio.melotti, haypo, benjamin.peterson,
+unicode             lemburg, ezio.melotti, vstinner, benjamin.peterson,
 version control     eric.araujo, ezio.melotti
 ==================  ==========================================================
 
@@ -356,7 +362,9 @@ Translation    Coordinator
 =============  ============
 French         mdk
 Japanese       inada.naoki
+Korean         flowdas
 Bengali India  kushal.das
 Hungarian      gbtami
 Portuguese     rougeth
+Chinese (TW)   adrianliaw
 =============  ============

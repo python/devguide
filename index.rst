@@ -2,11 +2,14 @@
 Python Developer's Guide
 ========================
 
-This guide is a comprehensive resource for :ref:`contributing <contributing>`
-to Python_ -- for both new and experienced contributors.  It is
-:ref:`maintained <helping-with-the-developers-guide>` by the same community
-that maintains Python.  We welcome your contributions to Python!
+.. highlight:: bash
 
+This guide is a comprehensive resource for :ref:`contributing <contributing>`
+to Python_ -- for both new and experienced contributors. It is 
+:ref:`maintained <helping-with-the-developers-guide>` by the same
+community that maintains Python.  We welcome your contributions to Python!
+
+.. _quick-reference:
 
 Quick Reference
 ---------------
@@ -27,7 +30,9 @@ instructions please see the :ref:`setup guide <setup>`.
 
       ./configure --with-pydebug && make -j
 
-   and on Windows use::
+   and on Windows use:
+
+   .. code-block:: dosbatch
 
       PCbuild\build.bat -e -d
 
@@ -77,7 +82,6 @@ contributing to Python:
 * `Buildbot status`_
 * :doc:`help`
 * PEPs_ (Python Enhancement Proposals)
-* :doc:`gitdevs`
 * :doc:`gitbootcamp`
 
 .. _branchstatus:
@@ -88,53 +92,36 @@ Status of Python branches
 +------------------+--------------+-------------+----------------+----------------+----------------------------------------------------------------------------+
 | Branch           | Schedule     | Status      | First release  | End-of-life    | Comment                                                                    |
 +==================+==============+=============+================+================+============================================================================+
-| master           | :pep:`537`   | features    | *2018-06-15*   | *2023-06-15*   | The default branch is currently the future version Python 3.7.             |
+| master           | :pep:`569`   | features    | *2019-10-20*   | *2024-10*      | The master branch is currently the future Python 3.8.                      |
 +------------------+--------------+-------------+----------------+----------------+----------------------------------------------------------------------------+
-| 3.6              | :pep:`494`   | bugfix      | 2016-12-23     | *2021-12-23*   | `Most recent binary release: Python 3.6.1                                  |
-|                  |              |             |                |                | <https://www.python.org/downloads/release/python-361/>`_                   |
+| 3.7              | :pep:`537`   | bugfix      | 2018-06-27     | *2023-06-27*   | `Most recent binary release: Python 3.7.0                                  |
+|                  |              |             |                |                | <https://www.python.org/downloads/release/python-370/>`_                   |
 +------------------+--------------+-------------+----------------+----------------+----------------------------------------------------------------------------+
-| 3.5              | :pep:`478`   | bugfix      | 2015-09-13     | *2020-09-13*   | `Most recent binary release: Python 3.5.3                                  |
-|                  |              |             |                |                | <https://www.python.org/downloads/release/python-353/>`_                   |
+| 3.6              | :pep:`494`   | bugfix      | 2016-12-23     | *2021-12-23*   | `Most recent binary release: Python 3.6.6                                  |
+|                  |              |             |                |                | <https://www.python.org/downloads/release/python-366/>`_                   |
 +------------------+--------------+-------------+----------------+----------------+----------------------------------------------------------------------------+
-| 2.7              | :pep:`373`   | bugfix      | 2010-07-03     | *2020-01-01*   | The support has been extended to 2020 (1).                                 |
-|                  |              |             |                |                | `Most recent binary release: Python 2.7.13                                 |
-|                  |              |             |                |                | <https://www.python.org/downloads/release/python-2713/>`_                  |
+| 2.7              | :pep:`373`   | bugfix      | 2010-07-03     | *2020-01-01*   | The support has been extended to 2020-01-01.                               |
+|                  |              |             |                |                | `Most recent binary release: Python 2.7.15                                 |
+|                  |              |             |                |                | <https://www.python.org/downloads/release/python-2715/>`_                  |
 +------------------+--------------+-------------+----------------+----------------+----------------------------------------------------------------------------+
-| 3.4              | :pep:`429`   | security    | 2014-03-16     | *2019-03-16*   | `Most recent security release: Python 3.4.6                                |
-|                  |              |             |                |                | <https://www.python.org/downloads/release/python-346/>`_                   |
+| 3.5              | :pep:`478`   | security    | 2015-09-13     | *2020-09-13*   | `Most recent security release: Python 3.5.5                                |
+|                  |              |             |                |                | <https://www.python.org/downloads/release/python-355/>`_                   |
 +------------------+--------------+-------------+----------------+----------------+----------------------------------------------------------------------------+
-| 3.3              | :pep:`398`   | security    | 2012-09-29     | *2017-09-29*   | `Most recent security release: Python 3.3.6                                |
-|                  |              |             |                |                | <https://www.python.org/downloads/release/python-336/>`_                   |
+| 3.4              | :pep:`429`   | security    | 2014-03-16     | *2019-03-16*   | `Most recent security release: Python 3.4.8                                |
+|                  |              |             |                |                | <https://www.python.org/downloads/release/python-348/>`_                   |
 +------------------+--------------+-------------+----------------+----------------+----------------------------------------------------------------------------+
-| 3.2              | :pep:`392`   | end-of-life | 2011-02-20     | 2016-02-20     | `Final release: Python 3.2.6                                               |
-|                  |              |             |                |                | <https://www.python.org/downloads/release/python-326/>`_                   |
-+------------------+--------------+-------------+----------------+----------------+----------------------------------------------------------------------------+
-| 3.1              | :pep:`375`   | end-of-life | 2009-06-27     | 2012-04-11     | `Final release: Python 3.1.5                                               |
-|                  |              |             |                |                | <https://www.python.org/downloads/release/python-315/>`_                   |
-+------------------+--------------+-------------+----------------+----------------+----------------------------------------------------------------------------+
-| 3.0              | :pep:`361`   | end-of-life | 2008-12-03     | 2009-01-13     | `Final release: Python 3.0.1                                               |
-|                  |              |             |                |                | <https://www.python.org/download/releases/3.0.1/>`_                        |
-+------------------+--------------+-------------+----------------+----------------+----------------------------------------------------------------------------+
-| 2.6              | :pep:`361`   | end-of-life | 2008-10-01     | 2013-10-29     | `Final release: Python 2.6.9                                               |
-|                  |              |             |                |                | <https://www.python.org/download/releases/2.6.9/>`_                        |
-+------------------+--------------+-------------+----------------+----------------+----------------------------------------------------------------------------+
-
-(1) The exact date of Python 2.7 end-of-life has not been decided yet. It will
-be decided by Python 2.7 release manager, Benjamin Peterson, who will update
-the :pep:`373`. Read also the `[Python-Dev] Exact date of Python 2 EOL?
-<https://mail.python.org/pipermail/python-dev/2017-March/147655.html>`_ thread
-on python-dev (March 2017).
 
 Status:
 
-:features: new features are only added to the default branch, this branch
+:features: new features are only added to the master branch, this branch
     accepts any kind of change.
+:prerelease: feature fixes, bugfixes and security fixes are accepted for the
+    upcoming feature release.
 :bugfix: bugfixes and security fixes are accepted, new binaries are still
     released.
 :security: only security fixes are accepted and no more binaries are released,
     but new source-only versions can be released
-:end-of-life: branch no longer maintained; no more changes can be pushed to
-    this branch.
+:end-of-life: release cycle is frozen; no further changes can be pushed to it.
 
 Dates in *italic* are scheduled and can be adjusted.
 
@@ -144,6 +131,37 @@ have reached end-of-life.
 
 See also :ref:`Security branches <secbranch>`.
 
+Each release of Python is tagged in the source repo with a tag of the form
+``vX.Y.ZTN``, where ``X`` is the major version, ``Y`` is the
+minor version, ``Z`` is the micro version, ``T`` is the release level
+(``a`` for alpha releases, ``b`` for beta, ``rc`` release candidate,
+and *null* for final releases), and ``N`` is the release serial number.
+Some examples of release tags: ``v3.7.0a1``, ``v3.6.3``, ``v2.7.14rc1``.
+
+The code base for a release cycle which has reached end-of-life status
+is frozen and no longer has a branch in the repo.  The final state of
+the end-of-lifed branch is recorded as a tag with the same name as the
+former branch, e.g. ``3.3`` or ``2.6``.  For reference, here are the
+most recently end-of-lifed release cycles:
+
++------------------+--------------+-------------+----------------+----------------+----------------------------------------------------------------------------+
+| Tag              | Schedule     | Status      | First release  | End-of-life    | Comment                                                                    |
++==================+==============+=============+================+================+============================================================================+
+| 3.3              | :pep:`398`   | end-of-life | 2012-09-29     | 2017-09-29     | `Final release: Python 3.3.7                                               |
+|                  |              |             |                |                | <https://www.python.org/downloads/release/python-337/>`_                   |
++------------------+--------------+-------------+----------------+----------------+----------------------------------------------------------------------------+
+| 3.2              | :pep:`392`   | end-of-life | 2011-02-20     | 2016-02-20     | `Final release: Python 3.2.6                                               |
+|                  |              |             |                |                | <https://www.python.org/downloads/release/python-326/>`_                   |
++------------------+--------------+-------------+----------------+----------------+----------------------------------------------------------------------------+
+| 3.1              | :pep:`375`   | end-of-life | 2009-06-27     | 2012-04-09     | `Final release: Python 3.1.5                                               |
+|                  |              |             |                |                | <https://www.python.org/downloads/release/python-315/>`_                   |
++------------------+--------------+-------------+----------------+----------------+----------------------------------------------------------------------------+
+| 3.0              | :pep:`361`   | end-of-life | 2008-12-03     | 2009-01-13     | `Final release: Python 3.0.1                                               |
+|                  |              |             |                |                | <https://www.python.org/download/releases/3.0.1/>`_                        |
++------------------+--------------+-------------+----------------+----------------+----------------------------------------------------------------------------+
+| 2.6              | :pep:`361`   | end-of-life | 2008-10-01     | 2013-10-29     | `Final release: Python 2.6.9                                               |
+|                  |              |             |                |                | <https://www.python.org/download/releases/2.6.9/>`_                        |
++------------------+--------------+-------------+----------------+----------------+----------------------------------------------------------------------------+
 
 .. _contributing:
 
@@ -152,7 +170,7 @@ Contributing
 
 We encourage everyone to contribute to Python and that's why we have put up this
 developer's guide.  If you still have questions after reviewing the material in
-this guide, then the `Python Mentors`_ group is available to help guide new
+this guide, then the `Core Python Mentorship`_ group is available to help guide new
 contributors through the process.
 
 A number of individuals from the Python community have contributed to a series
@@ -165,30 +183,36 @@ Core developers and contributors alike will find the following guides useful:
 
 Guide for contributing to Python:
 
-* :doc:`setup`
-* :doc:`help`
-* :doc:`pullrequest`
-* :doc:`runtests`
-* Beginner tasks to become familiar with the development process
-    * :doc:`docquality`
-    * :doc:`coverage`
-* Advanced tasks for once you are comfortable
-    * :doc:`silencewarnings`
-    * Fixing issues found by the :doc:`buildbots <buildbots>`
-    * :doc:`fixingissues`
-* :ref:`tracker` and :ref:`helptriage`
-    * :doc:`triaging`
-    * :doc:`experts`
-* :doc:`communication`
-* :doc:`coredev`
-    * :doc:`committing`
-    * :doc:`devcycle`
-    * :doc:`buildbots`
-    * :doc:`coverity`
-* :doc:`gitdevs`
-* :doc:`gitbootcamp`
++------------------------+---------------------+-----------------------+---------------------+
+| New Contributors       | Documentarians      | Triagers              | Core Developers     |
++========================+=====================+=======================+=====================+
+| :doc:`setup`           | :doc:`docquality`   | :doc:`tracker`        | :doc:`coredev`      |
++------------------------+---------------------+-----------------------+---------------------+
+| :doc:`help`            | :doc:`documenting`  | :doc:`triaging`       | :doc:`developers`   |
++------------------------+---------------------+-----------------------+---------------------+
+| :doc:`pullrequest`     | :ref:`style-guide`  | :ref:`helptriage`     | :doc:`committing`   |
++------------------------+---------------------+-----------------------+---------------------+
+| :doc:`runtests`        | :ref:`rst-primer`   | :doc:`experts`        | :doc:`devcycle`     |
++------------------------+---------------------+-----------------------+---------------------+
+| :doc:`fixingissues`    |                     |                       | :doc:`motivations`  |
++------------------------+---------------------+-----------------------+---------------------+
+| :doc:`communication`   |                     |                       | :ref:`office hour`  |
++------------------------+---------------------+-----------------------+---------------------+
+| :doc:`gitbootcamp`     |                     |                       |                     |
++------------------------+---------------------+-----------------------+---------------------+
 
-It is **recommended** that the above documents be read in the order listed.  You
+Advanced tasks and topics for once you are comfortable:
+
+* :doc:`silencewarnings`
+* Fixing issues found by the :doc:`buildbots <buildbots>`
+* :doc:`coverity`
+* Helping out with reviewing `open pull requests`_.
+  See :ref:`how to review a Pull Request <how-to-review-a-pull-request>`.
+* :doc:`fixingissues`
+
+It is **recommended** that the above documents be read as needed. New 
+contributors will build understanding of the CPython workflow by reading the
+sections mentioned in this table. You
 can stop where you feel comfortable and begin contributing immediately without
 reading and understanding these documents all at once.  If you do choose to skip
 around within the documentation, be aware that it is written assuming preceding
@@ -246,7 +270,6 @@ Key Resources
     * `Meta tracker <http://psf.upfronthosting.co.za/roundup/meta>`_ (issue
       tracker for the issue tracker)
     * :doc:`experts`
-    * `Firefox search engine plug-in`_
 * `Buildbot status`_
 * Source code
     * `Browse online <https://github.com/python/cpython/>`_
@@ -282,12 +305,14 @@ Additional Resources
 Code of Conduct
 ---------------
 Please note that all interactions on
-`Python Software Foundation <https://www.python.org/psf-landing/>`__-supported infrastructure is
-`covered <https://www.python.org/psf/records/board/minutes/2014-01-06/#management-of-the-psfs-web-properties>`__
-by the `PSF Code of Conduct <https://www.python.org/psf/codeofconduct/>`__, which includes all
-infrastructure used in the development of Python itself (e.g. mailing lists, issue trackers, GitHub, etc.).
-In general this means everyone is expected to be open, considerate, and respectful of others no matter what
-their position is within the project.
+`Python Software Foundation <https://www.python.org/psf-landing/>`__-supported
+infrastructure is `covered
+<https://www.python.org/psf/records/board/minutes/2014-01-06/#management-of-the-psfs-web-properties>`__
+by the `PSF Code of Conduct <https://www.python.org/psf/codeofconduct/>`__,
+which includes all infrastructure used in the development of Python itself
+(e.g. mailing lists, issue trackers, GitHub, etc.).
+In general this means everyone is expected to be open, considerate, and
+respectful of others no matter what their position is within the project.
 
 .. _contents:
 
@@ -296,6 +321,7 @@ Full Table of Contents
 
 .. toctree::
    :numbered:
+   :maxdepth: 3
 
    setup
    help
@@ -325,21 +351,20 @@ Full Table of Contents
    extensions
    coverity
    clang
-   buildslave
-   gitdevs
+   buildworker
    motivations
    gitbootcamp
-
+   appendix
 
 .. _Buildbot status: https://www.python.org/dev/buildbot/
-.. _Firefox search engine plug-in: https://www.python.org/dev/searchplugin/
 .. _Misc directory: https://github.com/python/cpython/tree/master/Misc
 .. _PEPs: https://www.python.org/dev/peps/
 .. _python.org maintenance: https://pythondotorg.readthedocs.io/
 .. _Python: https://www.python.org/
-.. _Python Mentors: https://www.python.org/dev/core-mentorship/
+.. _Core Python Mentorship: https://www.python.org/dev/core-mentorship/
 .. _PyPy: http://www.pypy.org/
 .. _Jython: http://www.jython.org/
 .. _IronPython: http://ironpython.net/
 .. _Stackless: http://www.stackless.com/
 .. _Issue tracker: https://bugs.python.org/
+.. _open pull requests: https://github.com/python/cpython/pulls?utf8=%E2%9C%93&q=is%3Apr%20is%3Aopen%20label%3A%22awaiting%20review%22
