@@ -22,6 +22,199 @@ This file is encoded in UTF-8.  If the usual form for a name is not in
 a Latin or extended Latin alphabet, make sure to include an ASCII
 transliteration too.
 
+Active core developers
+----------------------
+
+* 2018
+  + Pablo Galindo Salgado
+  + Mark Shannon
+  + Petr Viktorin
+  + Nathaniel J. Smith
+
+* 2017
+  + Julien Palard
+  + Ivan Levkivskyi
+  + Carol Willing
+  + Mariatta Wijaya
+
+* 2016
+  + Maciej Szulik
+  + Xiang Zhang
+  + INADA Naoki
+  + Xavier de Gaye
+  + Davin Potts
+
+* 2015
+  + Martin Panter
+  + Paul Moore
+
+* 2014
+  + Chris Angelico
+  + Santoso Wijaya
+  + Stefan Richthofer
+  + Robert Collins
+  + Darjus Loktevic
+  + Berker Peksağ
+  + Steve Dower
+  + Kushal Das
+  + Steven d'Aprano
+  + Yury Selivanov
+
+* 2013
+  + Zachary Ware
+  + Donald Stufft
+  + Ethan Furman
+  + Roger Serwy
+
+* 2012
+  + Serhiy Storchaka
+  + Chris Jerdonek
+  + Daniel Holth
+  + Eric Snow
+  + Jeff Allen
+  + Peter Moody
+  + Hynek Schlawack
+  + Richard Oudkerk
+  + Andrew Svetlov
+
+* 2011
+  + Petri Lehtinen
+  + Meador Inge
+  + Sandro Tosi
+  + Charles-François Natali
+  + Nadeem Vawda
+  + Carl Friedrich Bolz
+  + Alexis Métaireau
+  + Elson Rodriguez
+  + Kelsey Hightower
+  + Michael Mulich
+  + Walker Hale
+  + Jeff Hardy
+  + Alex Gaynor
+  + Maciej Fijalkowski
+  + Ross Lagerwall
+  + Eli Bendersky
+  + Ned Deily
+
+* 2010
+  + David Malcolm
+  + Tal Einat
+  + Łukasz Langa
+  + Daniel Stutzbach
+  + Ask Solem
+  + George Boutsioukis
+  + Éric Araujo
+  + Terry Reedy
+  + Brian Quinlan
+  + Reid Kleckner
+  + Alexander Belopolsky
+  + Tim Golden
+  + Giampaolo Rodolà
+  + Jean-Paul Calderone
+  + Brian Curtin
+  + Florent Xicluna
+  + Dino Viehland
+  + Larry Hastings
+  + Victor Stinner
+  + Stefan Krah
+
+* 2009
+  + Doug Hellmann
+  + Ezio Melotti
+  + Paul Kippes
+  + Ron DuPlain
+  + R. David Murray
+  + Chris Withers
+
+* 2008
+  + Tarek Ziadé
+  + Hirokazu Yamamoto
+  + Antoine Pitrou
+  + Jesse Noller
+  + Gregor Lingl
+  + Robert Schuppenies
+  + Rodrigo Bernardo Pimentel
+  + Heiko Weinen
+  + Jesús Cea
+  + Guilherme Polo
+  + Thomas Lee
+  + Jeroen Ruigrok van der Werven
+  + Josiah Carlson
+  + Benjamin Peterson
+  + Jerry Seutter
+  + Jeff Rush
+  + David Wolever
+  + Trent Nelson
+  + Mark Dickinson
+
+* 2007
+  + Amaury Forgeot d'Arc
+  + Christian Heimes
+  + Chris Monson
+  + Bill Janssen
+  + Jeffrey Yasskin
+  + Mark Summerfield
+  + Armin Ronacher
+  + Senthil Kumaran
+  + Alexandre Vassalotti
+  + Travis Oliphant
+  + Ziga Seilnacht
+  + Pete Shinners
+  + Pat Maupin
+  + Eric V. Smith
+  + Steven Bethard
+  + Josiah Carlson
+  + Collin Winter
+
+* 2006
+  + Lars Gustaebel
+  + Matt Fleming
+  + Jackilyn Hoxworth
+  + Mateusz Rukowicz
+  + Steven Bethard
+  + Talin
+  + George Yoshida
+  + Ronald Oussoren
+  + Bob Ippolito
+
+* 2005
+  + Gregory K Johnson
+  + Floris Bruynooghe
+  + Georg Brandl
+  + Terry Reedy
+  + Nick Coghlan
+
+* 2003
+  + Armin Rigo
+  + Eric Price
+
+* 2000
+  + Eric S. Raymond
+
+- Several developers of alternative Python implementations where
+  given access for test suite and library adaptions by MvL:
+  Allison Randal (Parrot), Michael Foord (IronPython),
+  Jim Baker, Philip Jenvey, and Frank Wierzbicki (all Jython).
+
+
+- SVN access granted to the "Need for Speed" Iceland sprint attendees,
+  between May 17 and 21, 2006, by Tim Peters.  All work is to be done
+  in new sandbox projects or on new branches, with merging to the
+  trunk as approved:
+
+  Andrew Dalke
+  Christian Tismer
+  Jack Diederich
+  John Benediktsson
+  Kristján V. Jónsson
+  Martin Blais
+  Richard Emslie
+  Richard Jones
+  Runar Petursson
+  Steve Holden
+  Richard M. Tew
+
+
 Permissions History
 -------------------
 
