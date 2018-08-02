@@ -26,18 +26,21 @@ Active core developers
 ----------------------
 
 * 2018
+
   + Pablo Galindo Salgado
   + Mark Shannon
   + Petr Viktorin
   + Nathaniel J. Smith
 
 * 2017
+
   + Julien Palard
   + Ivan Levkivskyi
   + Carol Willing
   + Mariatta Wijaya
 
 * 2016
+
   + Maciej Szulik
   + Xiang Zhang
   + INADA Naoki
@@ -45,10 +48,12 @@ Active core developers
   + Davin Potts
 
 * 2015
+
   + Martin Panter
   + Paul Moore
 
 * 2014
+
   + Chris Angelico
   + Santoso Wijaya
   + Stefan Richthofer
@@ -61,12 +66,14 @@ Active core developers
   + Yury Selivanov
 
 * 2013
+
   + Zachary Ware
   + Donald Stufft
   + Ethan Furman
   + Roger Serwy
 
 * 2012
+
   + Serhiy Storchaka
   + Chris Jerdonek
   + Daniel Holth
@@ -78,6 +85,7 @@ Active core developers
   + Andrew Svetlov
 
 * 2011
+
   + Petri Lehtinen
   + Meador Inge
   + Sandro Tosi
@@ -97,6 +105,7 @@ Active core developers
   + Ned Deily
 
 * 2010
+
   + David Malcolm
   + Tal Einat
   + Łukasz Langa
@@ -119,6 +128,7 @@ Active core developers
   + Stefan Krah
 
 * 2009
+
   + Doug Hellmann
   + Ezio Melotti
   + Paul Kippes
@@ -127,6 +137,7 @@ Active core developers
   + Chris Withers
 
 * 2008
+
   + Tarek Ziadé
   + Hirokazu Yamamoto
   + Antoine Pitrou
@@ -148,6 +159,7 @@ Active core developers
   + Mark Dickinson
 
 * 2007
+
   + Amaury Forgeot d'Arc
   + Christian Heimes
   + Chris Monson
@@ -167,6 +179,7 @@ Active core developers
   + Collin Winter
 
 * 2006
+  
   + Lars Gustaebel
   + Matt Fleming
   + Jackilyn Hoxworth
@@ -178,6 +191,7 @@ Active core developers
   + Bob Ippolito
 
 * 2005
+  
   + Gregory K Johnson
   + Floris Bruynooghe
   + Georg Brandl
@@ -185,17 +199,18 @@ Active core developers
   + Nick Coghlan
 
 * 2003
+
   + Armin Rigo
   + Eric Price
 
 * 2000
+
   + Eric S. Raymond
 
 - Several developers of alternative Python implementations where
   given access for test suite and library adaptions by MvL:
   Allison Randal (Parrot), Michael Foord (IronPython),
   Jim Baker, Philip Jenvey, and Frank Wierzbicki (all Jython).
-
 
 - SVN access granted to the "Need for Speed" Iceland sprint attendees,
   between May 17 and 21, 2006, by Tim Peters.  All work is to be done
@@ -213,7 +228,6 @@ Active core developers
   Runar Petursson
   Steve Holden
   Richard M. Tew
-
 
 Permissions History
 -------------------
