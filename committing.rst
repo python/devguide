@@ -135,37 +135,11 @@ for inclusion.
 Checking if the CLA has been received
 -------------------------------------
 
-To check if a contributor's CLA has been received, use the following URL::
+To check if a contributor's CLA has been received, go to the following website::
 
-    https://bugs.python.org/user?@template=clacheck&github_names=
+    https://check-python-cla.herokuapp.com/
 
-and put in their GitHub username at the end.
-
-For example, to check if GitHub user `gvanrossum` has signed the CLA::
-
-   https://bugs.python.org/user?@template=clacheck&github_names=gvanrossum
-
-
-You can also check for more than one username at a time by passing a comma
-separated values::
-
-   https://bugs.python.org/user?@template=clacheck&github_names=gvanrossum,miss-islington,bedevere
-
-It will return a dictionary::
-   
-   {
-      bedevere: null,
-      gvanrossum: true,
-      miss-islington: false
-   }
-
-``null`` value means that there is no bpo account associated with that GitHub username.
-``false`` value means that there is a bpo account with that GitHub username, but the CLA
-has not been received. 
-``true`` value means that the CLA has been received.
-
-If the CLA has been received, remove the `CLA not signed` label, and the bot
-will apply the `CLA signed` label automatically.
+and put in their GitHub username.
 
 For further questions about the CLA process, write to: contributors@python.org.
 
