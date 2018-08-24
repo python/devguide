@@ -257,12 +257,9 @@ Here are the steps needed in order to sign the CLA:
    requested by the form is the "Login name" field under "Your Details".
 
 After signing the CLA, please **wait at least one US business day** and
-then check "Your Details" on `b.p.o <https://bugs.python.org>`_ to see if your
-account has been marked as having signed the CLA (the delay is due to a person
-having to manually check your signed CLA). Once you have verified that your
-b.p.o account reflects your signing of the CLA, you can either ask for the CLA
-check to be run again or wait for it to be run automatically the next time you
-push changes to your PR.
+then check the status by going to the `check-python-cla <https://check-python-cla.herokuapp.com>`_
+website. The check will also be run automatically the next time you push changes
+to your PR.
 
 
 .. _PSF license: https://docs.python.org/dev/license.html#terms-and-conditions-for-accessing-or-otherwise-using-python
