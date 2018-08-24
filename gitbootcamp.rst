@@ -115,9 +115,9 @@ To switch to a different branch::
    git checkout <another-branch-name>
 
 Other releases are just branches in the repository.  For example, to work
-on the 2.7 release::
+on the 2.7 release from the ``upstream`` remote::
 
-   git checkout -b 2.7 origin/2.7
+   git checkout -b 2.7 upstream/2.7
 
 
 .. _deleting_branches:
