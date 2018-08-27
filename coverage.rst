@@ -101,7 +101,7 @@ If this does not work for you for some reason, you should try using the
 in-development version of coverage.py to see if it has been updated as needed.
 To do this you should clone/check out the development version of coverage.py:
 
-    hg clone https://bitbucket.org/ned/coveragepy
+    git clone https://github.com/nedbat/coveragepy.git
 
 You will need to use the full path to the installation.
 
