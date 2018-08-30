@@ -537,7 +537,7 @@ they are used in the Python documentation.
 
    This is just an overview of Sphinx' extended markup capabilities; full
    coverage can be found in `its own documentation
-   <http://sphinx.pocoo.org/contents.html>`_.
+   <http://sphinx-doc.org/>`_.
 
 
 Meta-information markup
