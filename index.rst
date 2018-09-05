@@ -348,6 +348,7 @@ Full Table of Contents
    exploring
    grammar
    compiler
+   extensions
    coverity
    clang
    buildworker
