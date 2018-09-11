@@ -104,6 +104,7 @@ affected files as described below.)
 Patches for the documentation can be made from the same repository; see
 :ref:`documenting`.
 
+
 .. _compiling:
 
 Compile and build
@@ -122,22 +123,161 @@ working only on pure Python code the pydebug build provides several useful
 checks that one should not skip.
 
 
-.. _build-dependencies:
+.. _unix-compiling:
 
-Build dependencies
-------------------
+UNIX
+----
 
-The core CPython interpreter only needs a C compiler to be built; if
-you get compile errors with a C89 or C99-compliant compiler, please `open a
-bug report <https://bugs.python.org>`_.
-However, some of the extension modules will need development headers
+The core CPython interpreter only needs a C compiler to be built,
+however, some of the extension modules will need development headers
 for additional libraries (such as the ``zlib`` library for compression).
 Depending on what you intend to work on, you might need to install these
 additional requirements so that the compiled interpreter supports the
 desired features.
 
-UNIX
-----
+If you want to install these optional dependencies, consult the
+:ref:`build-dependencies` section below.
+
+If you don't need to install them, the basic steps for building Python
+for development is to configure it and then compile it.
+
+Configuration is typically:
+
+.. code-block:: bash
+
+   ./configure --with-pydebug
+
+More flags are available to ``configure``, but this is the minimum you should
+do to get a pydebug build of CPython.
+
+Once ``configure`` is done, you can then compile CPython with:
+
+.. code-block:: bash
+
+   make -s -j2
+
+This will build CPython with only warnings and errors being printed to
+stderr and utilize up to 2 CPU cores. If you are using a multi-core machine
+with more than 2 cores (or a single-core machine), you can adjust the number
+passed into the ``-j`` flag to match the number of cores you have.
+
+At the end of the built you should see a success message, possibly followed
+by a list of extension modules that haven't been built because their
+dependencies were missing:
+
+.. code-block:: none
+
+   Python build finished successfully!
+   The necessary bits to build these optional modules were not found:
+   _bz2                  _dbm                  _gdbm
+   _lzma                 _sqlite3              _ssl
+   _tkinter              _uuid                 readline
+   zlib
+   To find the necessary bits, look in setup.py in detect_modules()
+   for the module's name.
+
+If the build failed and you are using a C89 or C99-compliant compiler,
+please `open a bug report <https://bugs.python.org>`_.
+
+If you decide to :ref:`build-dependencies`, you will need to re-run both
+``configure`` and ``make``.
+
+.. _mac-python.exe:
+
+Once CPython is done building you will then have a working build
+that can be run in-place; ``./python`` on most machines (and what is used in
+all examples), ``./python.exe`` wherever a case-insensitive filesystem is used
+(e.g. on OS X by default), in order to avoid conflicts with the ``Python``
+directory. There is normally no need to install your built copy
+of Python! The interpreter will realize where it is being run from
+and thus use the files found in the working copy.  If you are worried
+you might accidentally install your working copy build, you can add
+``--prefix=/tmp/python`` to the configuration step.  When running from your
+working directory, it is best to avoid using the ``--enable-shared`` flag
+to ``configure``; unless you are very careful, you may accidentally run
+with code from an older, installed shared Python library rather than from
+the interpreter you just built.
+
+
+Clang
+'''''
+
+If you are using clang_ to build CPython, some flags you might want to set to
+quiet some standard warnings which are specifically superfluous to CPython are
+``-Wno-unused-value -Wno-empty-body -Qunused-arguments``. You can set your
+``CFLAGS`` environment variable to these flags when running ``configure``.
+
+If you are using clang_ with ccache_, turn off the noisy
+``parentheses-equality`` warnings with the ``-Wno-parentheses-equality`` flag.
+These warnings are caused by clang not  having enough information to detect
+that extraneous parentheses in expanded macros are valid, because the
+preprocessing is done separately by ccache.
+
+If you are using LLVM 2.8, also use the ``-no-integrated-as`` flag in order to
+build the :py:mod:`ctypes` module (without the flag the rest of CPython will
+still build properly).
+
+
+.. _windows-compiling:
+
+Windows
+-------
+
+**Python 3.6** and later can use Microsoft Visual Studio 2017.  You can download
+and use any of the free or paid versions of `Visual Studio 2017`_.
+
+When installing Visual Studio 2017, select the **Python development** workload
+and the optional **Python native development tools** component to obtain all of
+the necessary build tools. If you do not already have git installed, you can
+find git for Windows on the **Individual components** tab of the installer.
+
+.. note:: If you want to build MSI installers, be aware that the build toolchain
+  for them has a dependency on the Microsoft .NET Framework Version 3.5 (which
+  may not be configured on recent versions of Windows, such as Windows 10). If
+  you are building on a recent Windows version, use the Control Panel (Programs
+  | Programs and Features | Turn Windows Features on or off) and ensure that the
+  entry ".NET Framework 3.5 (includes .NET 2.0 and 3.0)" is enabled.
+
+Your first build should use the command line to ensure any external dependencies
+are downloaded:
+
+.. code-block:: dosbatch
+
+   PCBuild\build.bat
+
+After this build succeeds, you can open the ``PCBuild\pcbuild.sln`` solution in
+Visual Studio to continue development.
+
+See the `readme`_ for more details on what other software is necessary and how
+to build.
+
+.. note:: **Python 2.7** uses Microsoft Visual Studio 2008, which is most easily
+   obtained through an MSDN subscription.  To use the build files in the
+   `PCbuild directory`_ you will also need Visual Studio 2010, see the `2.7
+   readme`_ for more details.  If you have VS 2008 but not 2010 you can use the
+   build files in the `PC/VS9.0 directory`_, see the `VS9 readme`_ for details.
+
+.. _Visual Studio 2017: https://www.visualstudio.com/
+.. _readme: https://github.com/python/cpython/blob/master/PCbuild/readme.txt
+.. _PCbuild directory: https://github.com/python/cpython/tree/2.7/PCbuild/
+.. _2.7 readme: https://github.com/python/cpython/blob/2.7/PCbuild/readme.txt
+.. _PC/VS9.0 directory: https://github.com/python/cpython/tree/2.7/PC/VS9.0/
+.. _VS9 readme: https://github.com/python/cpython/blob/2.7/PC/VS9.0/readme.txt
+
+
+.. _build-dependencies:
+
+Install dependencies
+====================
+
+This section explains how to intall additional extensions (e.g. ``zlib``)
+on :ref:`Linux <deps-on-linux>` and :ref:`macOs/OS X <macOS>`.  On Windows,
+extensions are already included and built automatically.
+
+.. _deps-on-linux:
+
+Linux
+-----
 
 For UNIX based systems, we try to use system libraries whenever available.
 This means optional components will only build if the relevant system headers
@@ -223,17 +363,17 @@ with **Homebrew**::
 
     $ brew install openssl xz
 
-and configure python versions >= 3.7::
+and ``configure`` Python versions >= 3.7::
 
     ./configure --with-pydebug --with-openssl=$(brew --prefix openssl)
 
-or configure python versions < 3.7::
+or ``configure`` Python versions < 3.7::
 
     $ CPPFLAGS="-I$(brew --prefix openssl)/include" \
       LDFLAGS="-L$(brew --prefix openssl)/lib" \
       ./configure --with-pydebug
 
-and make::
+and ``make``::
 
     $ make -s -j2
 
@@ -241,29 +381,15 @@ or **MacPorts**::
 
     $ sudo port install pkgconfig openssl xz
 
-and configure::
+and ``configure``::
 
     $ CPPFLAGS="-I/opt/local/include" \
       LDFLAGS="-L/opt/local/lib" \
       ./configure --with-pydebug
 
-and make::
+and ``make``::
 
     $ make -s -j2
-
-
-This will build CPython with only warnings and errors being printed to
-stderr and utilize up to 2 CPU cores. If you are using a multi-core machine
-with more than 2 cores (or a single-core machine), you can adjust the number
-passed into the ``-j`` flag to match the number of cores you have.
-
-Do take note of what modules were **not** built as stated at the end of your
-build. More than likely you are missing a dependency for the module(s) that
-were not built, and so you can install the dependencies and re-run both
-``configure`` and ``make`` (if available for your OS).
-Otherwise the build failed and thus should be fixed (at least with a bug being
-filed on the `issue tracker`_).
-
 
 There will sometimes be optional modules added for a new release which
 won't yet be identified in the OS level build dependencies. In those cases,
@@ -281,126 +407,6 @@ root access is beyond the scope of this guide.
    knowledge of the C language to contribute!  Vast areas of CPython are
    written completely in Python: as of this writing, CPython contains slightly
    more Python code than C.
-
-
-.. _unix-compiling:
-
-UNIX
-----
-
-The basic steps for building Python for development is to configure it and
-then compile it.
-
-Configuration is typically:
-
-.. code-block:: bash
-
-   ./configure --with-pydebug
-
-More flags are available to ``configure``, but this is the minimum you should
-do to get a pydebug build of CPython.
-
-Once ``configure`` is done, you can then compile CPython with:
-
-.. code-block:: bash
-
-   make -s -j2
-
-This will build CPython with only warnings and errors being printed to
-stderr and utilize up to 2 CPU cores. If you are using a multi-core machine
-with more than 2 cores (or a single-core machine), you can adjust the number
-passed into the ``-j`` flag to match the number of cores you have.
-
-Do take note of what modules were **not** built as stated at the end of your
-build. More than likely you are missing a dependency for the module(s) that
-were not built, and so you can install the dependencies and re-run both
-``configure`` and ``make`` (if available for your OS).
-Otherwise the build failed and thus should be fixed (at least with a bug being
-filed on the `issue tracker`_).
-
-.. _mac-python.exe:
-
-Once CPython is done building you will then have a working build
-that can be run in-place; ``./python`` on most machines (and what is used in
-all examples), ``./python.exe`` wherever a case-insensitive filesystem is used
-(e.g. on OS X by default), in order to avoid conflicts with the ``Python``
-directory. There is normally no need to install your built copy
-of Python! The interpreter will realize where it is being run from
-and thus use the files found in the working copy.  If you are worried
-you might accidentally install your working copy build, you can add
-``--prefix=/tmp/python`` to the configuration step.  When running from your
-working directory, it is best to avoid using the ``--enable-shared`` flag
-to ``configure``; unless you are very careful, you may accidentally run
-with code from an older, installed shared Python library rather than from
-the interpreter you just built.
-
-.. _issue tracker: https://bugs.python.org
-
-
-Clang
------
-
-If you are using clang_ to build CPython, some flags you might want to set to
-quiet some standard warnings which are specifically superfluous to CPython are
-``-Wno-unused-value -Wno-empty-body -Qunused-arguments``. You can set your
-``CFLAGS`` environment variable to these flags when running ``configure``.
-
-If you are using clang_ with ccache_, turn off the noisy
-``parentheses-equality`` warnings with the ``-Wno-parentheses-equality`` flag.
-These warnings are caused by clang not  having enough information to detect
-that extraneous parentheses in expanded macros are valid, because the
-preprocessing is done separately by ccache.
-
-If you are using LLVM 2.8, also use the ``-no-integrated-as`` flag in order to
-build the :py:mod:`ctypes` module (without the flag the rest of CPython will
-still build properly).
-
-
-.. _windows-compiling:
-
-Windows
--------
-
-**Python 3.6** and later can use Microsoft Visual Studio 2017.  You can download
-and use any of the free or paid versions of `Visual Studio 2017`_.
-
-When installing Visual Studio 2017, select the **Python development** workload
-and the optional **Python native development tools** component to obtain all of
-the necessary build tools. If you do not already have git installed, you can
-find git for Windows on the **Individual components** tab of the installer.
-
-.. note:: If you want to build MSI installers, be aware that the build toolchain
-  for them has a dependency on the Microsoft .NET Framework Version 3.5 (which
-  may not be configured on recent versions of Windows, such as Windows 10). If
-  you are building on a recent Windows version, use the Control Panel (Programs
-  | Programs and Features | Turn Windows Features on or off) and ensure that the
-  entry ".NET Framework 3.5 (includes .NET 2.0 and 3.0)" is enabled.
-
-Your first build should use the command line to ensure any external dependencies
-are downloaded:
-
-.. code-block:: dosbatch
-
-   PCBuild\build.bat
-
-After this build succeeds, you can open the ``PCBuild\pcbuild.sln`` solution in
-Visual Studio to continue development.
-
-See the `readme`_ for more details on what other software is necessary and how
-to build.
-
-.. note:: **Python 2.7** uses Microsoft Visual Studio 2008, which is most easily
-   obtained through an MSDN subscription.  To use the build files in the
-   `PCbuild directory`_ you will also need Visual Studio 2010, see the `2.7
-   readme`_ for more details.  If you have VS 2008 but not 2010 you can use the
-   build files in the `PC/VS9.0 directory`_, see the `VS9 readme`_ for details.
-
-.. _Visual Studio 2017: https://www.visualstudio.com/
-.. _readme: https://github.com/python/cpython/blob/master/PCbuild/readme.txt
-.. _PCbuild directory: https://github.com/python/cpython/tree/2.7/PCbuild/
-.. _2.7 readme: https://github.com/python/cpython/blob/2.7/PCbuild/readme.txt
-.. _PC/VS9.0 directory: https://github.com/python/cpython/tree/2.7/PC/VS9.0/
-.. _VS9 readme: https://github.com/python/cpython/blob/2.7/PC/VS9.0/readme.txt
 
 
 .. _regenerate_configure:
