@@ -228,7 +228,7 @@ repositories means you have to be more careful with your workflow:
 * For a small change, you can make a quick edit through the GitHub web UI.
   If you choose to use the web UI, be aware that GitHub will
   create a new branch in the **main** CPython repo (not your fork). Please
-  delete this newly created branch after it has been merged into the 
+  delete this newly created branch after it has been merged into the
   ``master`` branch or any of the maintenance branches. To keep the CPython
   repo tidy, please try to limit the existence of the new branch to, at most,
   a few days.
@@ -246,7 +246,7 @@ clone gets into a state you aren't happy with.
 Active branches
 '''''''''''''''
 
-If you do ``git branch`` you will see a :ref:`list of branches <listbranch>`.
+If you do ``git branch`` you will see a :ref:`list of branches <branchstatus>`.
 ``master`` is the in-development branch, and is the only branch that receives
 new features.  The other branches only receive bug fixes or security fixes.
 

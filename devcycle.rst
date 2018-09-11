@@ -26,6 +26,12 @@ We also publish non-final versions which get an additional qualifier:
 :ref:`alpha`, :ref:`beta`, :ref:`release candidate <rc>`.  These versions
 are aimed at testing by advanced users, not production use.
 
+Each release of Python is tagged in the source repo with a tag of the form
+``vX.Y.ZTN``, where ``X`` is the major version, ``Y`` is the
+minor version, ``Z`` is the micro version, ``T`` is the release level
+(``a`` for alpha releases, ``b`` for beta, ``rc`` release candidate,
+and *null* for final releases), and ``N`` is the release serial number.
+Some examples of release tags: ``v3.7.0a1``, ``v3.6.3``, ``v2.7.14rc1``.
 
 Branches
 ''''''''
@@ -100,33 +106,18 @@ You should also consider fixing hard-failing tests in open security branches
 since it is important to be able to run the tests successfully before releasing.
 
 Commits to security branches are to be coordinated with the release manager
-for the corresponding feature version, as listed below in the Summary_.
+for the corresponding feature version, as listed in the :ref:`branchstatus`.
 Any release made from a security branch is source-only and done only when actual
 security patches have been applied to the branch.
 
 
-.. _listbranch:
+End-of-life branches
+--------------------
 
-Summary
--------
-
-There are 6 open branches right now in the Git repository:
-
-- the ``master`` branch accepts features and bugs fixes for the future
-  3.8.0 feature release (RM: Łukasz Langa)
-- the ``3.7`` branch accepts bug and doc fixes for future 3.7.x maintenance
-  releases (RM: Ned Deily)
-- the ``3.6`` branch accepts bug and doc fixes for future 3.6.x maintenance
-  releases (RM: Ned Deily)
-- the ``3.5`` branch accepts security fixes for future 3.5.x security releases
-  (RM: Larry Hastings)
-- the ``3.4`` branch accepts security fixes for future 3.4.x security releases
-  (RM: Larry Hastings)
-- the ``2.7`` branch accepts bug and doc fixes for future 2.7.x maintenance
-  releases (RM: Benjamin Peterson)
-
-See also the :ref:`Status of Python branches <branchstatus>`.
-
+The code base for a release cycle which has reached end-of-life status
+is frozen and no longer has a branch in the repo.  The final state of
+the end-of-lifed branch is recorded as a tag with the same name as the
+former branch, e.g. ``3.3`` or ``2.6``.
 
 .. _stages:
 

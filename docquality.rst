@@ -32,14 +32,14 @@ and validates that your new markup is correct.
 
 You can view the documentation built from :ref:`in-development <indevbranch>`
 and :ref:`maintenance <maintbranch>` branches at https://docs.python.org/dev/.
-The in-development and most recent 3.x (as well as 2.x) maintenance 
-:ref:`branches <listbranch>` are rebuilt once per day.
+The in-development and most recent 3.x (as well as 2.x) maintenance
+branches are rebuilt once per day.
 
 If you would like to be more involved with documentation, consider subscribing
 to the `docs@python.org <https://mail.python.org/mailman/listinfo/docs>`_
-mailing list. The `issue tracker`_ sends new documentation issues to this 
+mailing list. The `issue tracker`_ sends new documentation issues to this
 mailing list, and, less frequently, the list receives some directly mailed bug
-reports. The `docs-sig@python.org <https://mail.python.org/mailman/listinfo/doc-sig>`_ 
+reports. The `docs-sig@python.org <https://mail.python.org/mailman/listinfo/doc-sig>`_
 mailing list discusses the documentation toolchain, projects, and standards.
 
 
@@ -52,13 +52,13 @@ typos to unclear documentation and items lacking documentation.
 
 If you see a documentation issue that you would like to tackle, you can:
 
-* check to see if there is a paperclip or `octocat`_ icon at the end of the 
+* check to see if there is a paperclip or `octocat`_ icon at the end of the
   issue's title column.  If there is, then someone has already created a pull
   request for the issue.
-* leave a comment on the issue saying you are going to try and create a pull 
-  request and roughly how long you think you will take to do so (this allows 
+* leave a comment on the issue saying you are going to try and create a pull
+  request and roughly how long you think you will take to do so (this allows
   others to take on the issue if you happen to forget or lose interest).
-* submit a :doc:`pull request <pullrequest>` for the issue. 
+* submit a :doc:`pull request <pullrequest>` for the issue.
 
 By following the steps in the :ref:`Quick Guide to Pull Requests <pullrequest-quickguide>`,
 you will learn the workflow for documentation pull requests.
