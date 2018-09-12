@@ -37,8 +37,8 @@ instructions please see the :ref:`setup guide <setup>`.
       PCbuild\build.bat -e -d
 
    See also :ref:`more detailed instructions <compiling>`,
-   :ref:`how to build dependencies <build-dependencies>`, and the
-   plaform-specific pages for :ref:`UNIX <unix-compiling>`,
+   :ref:`how to install and build dependencies <build-dependencies>`,
+   and the plaform-specific pages for :ref:`UNIX <unix-compiling>`,
    :ref:`Mac OS <MacOS>`, and :ref:`Windows <windows-compiling>`.
 
 4. :doc:`Run the tests <runtests>`::
