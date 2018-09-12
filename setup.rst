@@ -161,7 +161,7 @@ stderr and utilize up to 2 CPU cores. If you are using a multi-core machine
 with more than 2 cores (or a single-core machine), you can adjust the number
 passed into the ``-j`` flag to match the number of cores you have.
 
-At the end of the built you should see a success message, possibly followed
+At the end of the build you should see a success message, possibly followed
 by a list of extension modules that haven't been built because their
 dependencies were missing:
 
