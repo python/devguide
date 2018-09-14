@@ -25,6 +25,9 @@ transliteration too.
 Permissions History
 -------------------
 
+- Emily Morehouse as given push privileges on September 14, 2018 by Brett Cannon,
+  on the recommendation of Guido van Rossum and Eric Snow.
+
 - Pablo Galindo Salgado was given push privileges on June 06, 2018 by Brett Cannon,
   on the recommendation of Victor Stinner.
 
