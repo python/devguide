@@ -43,8 +43,8 @@ source_suffix = '.rst'
 master_doc = 'index'
 
 # General information about the project.
-project = u'Python Developer\'s Guide'
-copyright = u'2011-%s, Python Software Foundation' % time.strftime('%Y')
+project = 'Python Developer\'s Guide'
+copyright = '2011-%s, Python Software Foundation' % time.strftime('%Y')
 
 # The version info for the project you're documenting, acts as replacement for
 # |version| and |release|, also used in various other places throughout the
@@ -185,8 +185,8 @@ latex_documents = [
     (
         'index',
         'PythonDevelopersGuide.tex',
-        u'Python Developer\'s Guide Documentation',
-        u'Brett Cannon',
+        'Python Developer\'s Guide Documentation',
+        'Brett Cannon',
         'manual',
     ),
 ]
@@ -223,8 +223,8 @@ man_pages = [
     (
         'index',
         'pythondevelopersguide',
-        u"Python Developer's Guide Documentation",
-        [u'Brett Cannon'],
+        "Python Developer's Guide Documentation",
+        ['Brett Cannon'],
         1,
     ),
 ]
