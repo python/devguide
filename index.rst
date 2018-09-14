@@ -105,6 +105,8 @@ Status of Python branches
 | 3.4              | :pep:`429`   | security    | 2014-03-16     | *2019-03-16*   | Larry Hastings    |
 +------------------+--------------+-------------+----------------+----------------+-------------------+
 
+.. Remember to update the end-of-life table in devcycle.rst.
+
 The master branch is currently the future Python 3.8, and is the only
 branch that accepts new features.  The latest release for each Python
 version can be found on the `download page <https://www.python.org/downloads/>`_.
