@@ -119,7 +119,7 @@ is frozen and no longer has a branch in the repo.  The final state of
 the end-of-lifed branch is recorded as a tag with the same name as the
 former branch, e.g. ``3.3`` or ``2.6``.
 
-For reference, here are the Python versions the most recently reached their end-of-life:
+For reference, here are the Python versions that most recently reached their end-of-life:
 
 +------------------+--------------+----------------+----------------+----------------------------------+
 | Branch           | Schedule     | First release  | End-of-life    | Release manager                  |
