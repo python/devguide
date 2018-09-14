@@ -20,26 +20,110 @@ from collections import defaultdict
 
 directives = [
     # standard docutils ones
-    'admonition', 'attention', 'caution', 'class', 'compound', 'container',
-    'contents', 'csv-table', 'danger', 'date', 'default-role', 'epigraph',
-    'error', 'figure', 'footer', 'header', 'highlights', 'hint', 'image',
-    'important', 'include', 'line-block', 'list-table', 'meta', 'note',
-    'parsed-literal', 'pull-quote', 'raw', 'replace',
-    'restructuredtext-test-directive', 'role', 'rubric', 'sectnum', 'sidebar',
-    'table', 'target-notes', 'tip', 'title', 'topic', 'unicode', 'warning',
+    'admonition',
+    'attention',
+    'caution',
+    'class',
+    'compound',
+    'container',
+    'contents',
+    'csv-table',
+    'danger',
+    'date',
+    'default-role',
+    'epigraph',
+    'error',
+    'figure',
+    'footer',
+    'header',
+    'highlights',
+    'hint',
+    'image',
+    'important',
+    'include',
+    'line-block',
+    'list-table',
+    'meta',
+    'note',
+    'parsed-literal',
+    'pull-quote',
+    'raw',
+    'replace',
+    'restructuredtext-test-directive',
+    'role',
+    'rubric',
+    'sectnum',
+    'sidebar',
+    'table',
+    'target-notes',
+    'tip',
+    'title',
+    'topic',
+    'unicode',
+    'warning',
     # Sphinx and Python docs custom ones
-    'acks', 'attribute', 'autoattribute', 'autoclass', 'autodata',
-    'autoexception', 'autofunction', 'automethod', 'automodule', 'centered',
-    'cfunction', 'class', 'classmethod', 'cmacro', 'cmdoption', 'cmember',
-    'code-block', 'confval', 'cssclass', 'ctype', 'currentmodule', 'cvar',
-    'data', 'decorator', 'decoratormethod', 'deprecated-removed',
-    'deprecated(?!-removed)', 'describe', 'directive', 'doctest', 'envvar',
-    'event', 'exception', 'function', 'glossary', 'highlight', 'highlightlang',
-    'impl-detail', 'index', 'literalinclude', 'method', 'miscnews', 'module',
-    'moduleauthor', 'opcode', 'pdbcommand', 'productionlist',
-    'program', 'role', 'sectionauthor', 'seealso', 'sourcecode', 'staticmethod',
-    'tabularcolumns', 'testcode', 'testoutput', 'testsetup', 'toctree', 'todo',
-    'todolist', 'versionadded', 'versionchanged'
+    'acks',
+    'attribute',
+    'autoattribute',
+    'autoclass',
+    'autodata',
+    'autoexception',
+    'autofunction',
+    'automethod',
+    'automodule',
+    'centered',
+    'cfunction',
+    'class',
+    'classmethod',
+    'cmacro',
+    'cmdoption',
+    'cmember',
+    'code-block',
+    'confval',
+    'cssclass',
+    'ctype',
+    'currentmodule',
+    'cvar',
+    'data',
+    'decorator',
+    'decoratormethod',
+    'deprecated-removed',
+    'deprecated(?!-removed)',
+    'describe',
+    'directive',
+    'doctest',
+    'envvar',
+    'event',
+    'exception',
+    'function',
+    'glossary',
+    'highlight',
+    'highlightlang',
+    'impl-detail',
+    'index',
+    'literalinclude',
+    'method',
+    'miscnews',
+    'module',
+    'moduleauthor',
+    'opcode',
+    'pdbcommand',
+    'productionlist',
+    'program',
+    'role',
+    'sectionauthor',
+    'seealso',
+    'sourcecode',
+    'staticmethod',
+    'tabularcolumns',
+    'testcode',
+    'testoutput',
+    'testsetup',
+    'toctree',
+    'todo',
+    'todolist',
+    'versionadded',
+    'versionchanged',
 ]
 
 all_directives = '(' + '|'.join(directives) + ')'
@@ -55,12 +139,14 @@ checker_props = {'severity': 1, 'falsepositives': False}
 
 def checker(*suffixes, **kwds):
     """Decorator to register a function as a checker."""
+
     def deco(func):
         for suffix in suffixes:
             checkers.setdefault(suffix, []).append(func)
         for prop in checker_props:
             setattr(func, prop, kwds.get(prop, checker_props[prop]))
         return func
+
     return deco
 
 
@@ -84,11 +170,11 @@ def check_suspicious_constructs(fn, lines):
     inprod = False
     for lno, line in enumerate(lines):
         if seems_directive_re.search(line):
-            yield lno+1, 'comment seems to be intended as a directive'
+            yield lno + 1, 'comment seems to be intended as a directive'
         if '.. productionlist::' in line:
             inprod = True
         elif not inprod and default_role_re.search(line):
-            yield lno+1, 'default role used'
+            yield lno + 1, 'default role used'
         elif inprod and not line.strip():
             inprod = False
 
@@ -98,11 +184,11 @@ def check_whitespace(fn, lines):
     """Check for whitespace and line length issues."""
     for lno, line in enumerate(lines):
         if '\r' in line:
-            yield lno+1, '\\r in line'
+            yield lno + 1, '\\r in line'
         if '\t' in line:
-            yield lno+1, 'OMG TABS!!!1'
+            yield lno + 1, 'OMG TABS!!!1'
         if line[:-1].rstrip(' \t') != line[:-1]:
-            yield lno+1, 'trailing whitespace'
+            yield lno + 1, 'trailing whitespace'
 
 
 @checker('.rst', severity=0)
@@ -111,12 +197,14 @@ def check_line_length(fn, lines):
     for lno, line in enumerate(lines):
         if len(line) > 81:
             # don't complain about tables, links and function signatures
-            if line.lstrip()[0] not in '+|' and \
-               'http://' not in line and \
-               not line.lstrip().startswith(('.. function',
-                                             '.. method',
-                                             '.. cfunction')):
-                yield lno+1, "line too long"
+            if (
+                line.lstrip()[0] not in '+|'
+                and 'http://' not in line
+                and not line.lstrip().startswith(
+                    ('.. function', '.. method', '.. cfunction')
+                )
+            ):
+                yield lno + 1, "line too long"
 
 
 @checker('.html', severity=2, falsepositives=True)
@@ -126,7 +214,7 @@ def check_leaked_markup(fn, lines):
     """
     for lno, line in enumerate(lines):
         if leaked_markup_re.search(line):
-            yield lno+1, 'possibly leaked markup: %r' % line
+            yield lno + 1, 'possibly leaked markup: %r' % line
 
 
 def main(argv):
@@ -137,7 +225,8 @@ Options:  -v       verbose (print all checked file names)
           -f       enable checkers that yield many false positives
           -s sev   only show problems with severity >= sev
           -i path  ignore subdir or file path
-'''% argv[0]
+''' % argv[0]
+
     try:
         gopts, args = getopt.getopt(argv[1:], 'vfs:i:')
     except getopt.GetoptError:
@@ -222,7 +311,7 @@ Options:  -v       verbose (print all checked file names)
         for severity in sorted(count):
             number = count[severity]
             print('%d problem%s with severity %d found.' %
-                  (number, number > 1 and 's' or '', severity))
+                  (number, 's' if number > 1 else '', severity))
     return int(bool(count))
 
 

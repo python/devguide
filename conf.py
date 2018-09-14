@@ -43,8 +43,8 @@ source_suffix = '.rst'
 master_doc = 'index'
 
 # General information about the project.
-project = u'Python Developer\'s Guide'
-copyright = u'2011-%s, Python Software Foundation' % time.strftime('%Y')
+project = 'Python Developer\'s Guide'
+copyright = '2011-%s, Python Software Foundation' % time.strftime('%Y')
 
 # The version info for the project you're documenting, acts as replacement for
 # |version| and |release|, also used in various other places throughout the
@@ -95,8 +95,8 @@ pygments_style = 'sphinx'
 # Use the upstream python-docs-theme
 html_theme = 'python_docs_theme'
 html_theme_options = {
-  'collapsiblesidebar': True,
-  'issues_url': 'https://github.com/python/devguide/issues/new',
+    'collapsiblesidebar': True,
+    'issues_url': 'https://github.com/python/devguide/issues/new',
 }
 
 
@@ -182,8 +182,13 @@ htmlhelp_basename = 'PythonDevelopersGuidedoc'
 # Grouping the document tree into LaTeX files. List of tuples
 # (source start file, target name, title, author, documentclass [howto/manual]).
 latex_documents = [
-  ('index', 'PythonDevelopersGuide.tex', u'Python Developer\'s Guide Documentation',
-   u'Brett Cannon', 'manual'),
+    (
+        'index',
+        'PythonDevelopersGuide.tex',
+        'Python Developer\'s Guide Documentation',
+        'Brett Cannon',
+        'manual',
+    ),
 ]
 
 # The name of an image file (relative to this directory) to place at the top of
@@ -215,8 +220,13 @@ latex_documents = [
 # One entry per manual page. List of tuples
 # (source start file, name, description, authors, manual section).
 man_pages = [
-    ('index', 'pythondevelopersguide', u"Python Developer's Guide Documentation",
-     [u'Brett Cannon'], 1)
+    (
+        'index',
+        'pythondevelopersguide',
+        "Python Developer's Guide Documentation",
+        ['Brett Cannon'],
+        1,
+    ),
 ]
 
 # ignore linkcheck anchors for /#/$ANCHOR since it is used for
