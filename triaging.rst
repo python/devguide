@@ -4,7 +4,7 @@ Triaging an Issue
 =================
 
 This section of the devguide documents the `issue tracker`_ for users
-and developers. 
+and developers.
 
 Contributors with the Developer role on the `issue tracker`_ can triage issues
 directly without any assistance.
@@ -102,7 +102,7 @@ Components
 The area or Python library affected by the issue. This is a multi-select field.
 
 Choosing certain components, such as `Documentation`, may cause the issue to
-be auto-assigned, i.e. the issue tracker may automatically fill in the 
+be auto-assigned, i.e. the issue tracker may automatically fill in the
 `Assigned To`_ field after you press ``Submit changes``.
 
 One or more components may be selected for an issue:
@@ -178,7 +178,7 @@ What is the severity and urgency?
 | Priority         | Description                                            |
 +==================+========================================================+
 | low              | This is for low-impact bugs.                           |
-+------------------+--------------------------------------------------------+  
++------------------+--------------------------------------------------------+
 | normal           | The default value for most issues filed.               |
 +------------------+--------------------------------------------------------+
 | high             | Try to fix the issue before the next final release.    |
@@ -199,7 +199,7 @@ serious regressions or breakage of very important APIs.  Whether a bug
 is a *release blocker* for the current `release schedule`_ is decided by the
 release manager. Triagers may recommend this priority and should add the
 release manager to the *nosy list*. If needed, consult the
-`release schedule`_ and the release's associated PEP for the release 
+`release schedule`_ and the release's associated PEP for the release
 manager's name.
 
 Keywords
@@ -244,13 +244,15 @@ username(s) to the nosy once an entry is selected.
 
 Assigned To
 '''''''''''
-Who is expected to take the next step in resolving the issue. 
+Who is expected to take the next step in resolving the issue.
 
-It is acceptable
-to assign an issue to someone if the issue cannot move forward without their
-help, e.g., they need to make a technical decision to allow the issue to move
-forward. Also consult the :ref:`experts` as certain stdlib modules should
-always be assigned to a specific person.
+It is acceptable to assign an issue to someone if the issue cannot move
+forward without their help, e.g., they need to make a technical decision to
+allow the issue to move forward. Also consult the :ref:`experts` as certain
+stdlib modules should always be assigned to a specific person.
+
+Note that in order to assign an issue to someone, that person **must** have
+the :ref:`Developer role <devrole>` on the issue tracker.
 
 Dependencies
 ''''''''''''
@@ -294,7 +296,7 @@ with the "open" status.
 +===============+============================================================+
 | open          | Issue is not resolved.                                     |
 +---------------+------------------------------------------------------------+
-| duplicate     | Duplicate of another issue; should have the *Superseder*   | 
+| duplicate     | Duplicate of another issue; should have the *Superseder*   |
 |               | field filled out.                                          |
 +---------------+------------------------------------------------------------+
 | fixed         | A fix for the issue was committed.                         |
@@ -349,7 +351,7 @@ a link to relevant web pages.
 | ``pull request <number>``                                   |                                                       |
 +-------------------------------------------------------------+-------------------------------------------------------+
 | a 10-, 11-, 12-, or 40-digit hex ``<number>``               | Indicates a Git or Mercurial changeset identifier and |
-|                                                             | generates a link to changeset ``<number>`` on GitHub  | 
+|                                                             | generates a link to changeset ``<number>`` on GitHub  |
 |                                                             | or https://hg.python.org/. The ``git`` and ``hg``     |
 |                                                             | prefixes can also be used to disambiguate, and must   |
 |                                                             | precede the number without spaces.                    |
