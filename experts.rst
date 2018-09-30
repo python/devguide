@@ -98,7 +98,7 @@ datetime              belopolsky
 dbm
 decimal               facundobatista, rhettinger, mark.dickinson, skrah
 difflib               tim.peters (inactive)
-dis                   ncoghlan, yselivanov
+dis                   yselivanov
 distutils             eric.araujo, dstufft
 doctest               tim.peters (inactive)
 dummy_threading       brett.cannon
@@ -117,7 +117,7 @@ formatter
 fpectl                twouters
 fractions             mark.dickinson, rhettinger
 ftplib                giampaolo.rodola*
-functools             ncoghlan, rhettinger
+functools             rhettinger
 gc                    pitrou
 getopt
 getpass
@@ -323,7 +323,7 @@ coverity scan       christian.heimes, brett.cannon, twouters
 cryptography        gregory.p.smith, dstufft
 data formats        mark.dickinson
 database            lemburg
-devguide            ncoghlan, eric.araujo, ezio.melotti, willingc
+devguide            eric.araujo, ezio.melotti, willingc
 documentation       ezio.melotti, eric.araujo, willingc
 emoji               mariatta       
 extension modules   petr.viktorin, ncoghlan
