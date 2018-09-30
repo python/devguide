@@ -325,7 +325,7 @@ data formats        mark.dickinson
 database            lemburg
 devguide            eric.araujo, ezio.melotti, willingc
 documentation       ezio.melotti, eric.araujo, willingc
-emoji               mariatta       
+emoji               mariatta
 extension modules   petr.viktorin, ncoghlan
 filesystem          giampaolo.rodola
 f-strings           eric.smith*
