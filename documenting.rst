@@ -1263,7 +1263,7 @@ units as well as normal text:
       .. versionchanged:: 3.1
          The *spam* parameter was added.
 
-   Note that there must be no blank line between the directive head and the
+   Note that there should be no blank line between the directive head and the
    explanation; this is to make these blocks visually continuous in the markup.
 
 .. describe:: deprecated
