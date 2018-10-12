@@ -236,7 +236,10 @@ find git for Windows on the **Individual components** tab of the installer.
   may not be configured on recent versions of Windows, such as Windows 10). If
   you are building on a recent Windows version, use the Control Panel (Programs
   | Programs and Features | Turn Windows Features on or off) and ensure that the
-  entry ".NET Framework 3.5 (includes .NET 2.0 and 3.0)" is enabled.
+  entry ".NET Framework 3.5 (includes .NET 2.0 and 3.0)" is enabled. If you are
+  using the Windows Subsystem for Linux (WSL), clone the repository from a Windows
+  terminal program, otherwise, Visual Studio will not be able to find all the
+  project's files.
 
 Your first build should use the command line to ensure any external dependencies
 are downloaded:
