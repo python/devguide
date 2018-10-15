@@ -256,12 +256,12 @@ to build.
    `PCbuild directory`_ you will also need Visual Studio 2010, see the `2.7
    readme`_ for more details.  If you have VS 2008 but not 2010 you can use the
    build files in the `PC/VS9.0 directory`_, see the `VS9 readme`_ for details.
-   If you are using the Windows Subsystem for Linux (WSL), clone the repository
-   from a native Windows terminal program like cmd.exe command prompt or
-   PowerShell and use a build of git targeted for Windows, e.g. the official one
-   from `<https://git-scm.com>`_, otherwise, Visual Studio will not be
-   able to find all the project's files and will fail the build.
 
+.. note:: If you are using the Windows Subsystem for Linux (WSL), clone the 
+   repository from a native Windows terminal program like cmd.exe command prompt 
+   or PowerShell as well as use a build of git targeted for Windows, e.g., the
+   official one from `<https://git-scm.com>`_, otherwise, Visual Studio will
+   not be able to find all the project's files and will fail the build.
 
 .. _Visual Studio 2017: https://www.visualstudio.com/
 .. _readme: https://github.com/python/cpython/blob/master/PCbuild/readme.txt
