@@ -260,7 +260,7 @@ to build.
 .. note:: If you are using the Windows Subsystem for Linux (WSL), clone the 
    repository from a native Windows terminal program like cmd.exe command prompt 
    or PowerShell as well as use a build of git targeted for Windows, e.g., the
-   official one from `<https://git-scm.com>`_, otherwise, Visual Studio will
+   official one from `<https://git-scm.com>`_. Otherwise, Visual Studio will
    not be able to find all the project's files and will fail the build.
 
 .. _Visual Studio 2017: https://www.visualstudio.com/
