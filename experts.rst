@@ -368,4 +368,5 @@ Bengali India  kushal.das
 Hungarian      gbtami
 Portuguese     rougeth
 Chinese (TW)   adrianliaw
+Chinese (CN)   zhsj
 =============  ============
