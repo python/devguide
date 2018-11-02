@@ -456,6 +456,10 @@ Permissions History
   library work.  His request is archived here:
   https://mail.python.org/pipermail/python-dev/2000-July/005314.html
 
+-  Brett Cannon, David Goodger, Neal Norwitz, Martin v. Loewis, Raymond
+   Hettinger, Tim Peters and Guido van Rossum commit bit predates the start of
+   that list.
+
 
 Permissions Dropped on Request
 ------------------------------
