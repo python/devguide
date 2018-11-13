@@ -214,7 +214,8 @@ participating in the CPython core development process:
 
 .. topic:: Barry Warsaw (United States)
 
-   * LinkedIn: `<https://www.linkedin.com/in/barry-warsaw/>`_ (Staff Software Engineer - Python Foundation)
+   * `LinkedIn: <https://www.linkedin.com/in/barry-warsaw/>`_ (Senior Staff
+     Software Engineer - Python Foundation team)
    * Personal site: `barry.warsaw.us <https://barry.warsaw.us/>`_
    * Blog: `We Fear Change <https://www.wefearchange.org/>`_
    * Email address: barry@python.org
