@@ -223,6 +223,9 @@ still build properly).
 Windows
 -------
 
+For a quick guide to building you can read `this documentation`_ from Victor
+Stinner.
+
 **Python 3.6** and later can use Microsoft Visual Studio 2017.  You can download
 and use any of the free or paid versions of `Visual Studio 2017`_.
 
@@ -257,6 +260,7 @@ to build.
    readme`_ for more details.  If you have VS 2008 but not 2010 you can use the
    build files in the `PC/VS9.0 directory`_, see the `VS9 readme`_ for details.
 
+.. _this documentation: https://cpython-core-tutorial.readthedocs.io/en/latest/build_cpython_windows.html
 .. _Visual Studio 2017: https://www.visualstudio.com/
 .. _readme: https://github.com/python/cpython/blob/master/PCbuild/readme.txt
 .. _PCbuild directory: https://github.com/python/cpython/tree/2.7/PCbuild/
