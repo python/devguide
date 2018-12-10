@@ -175,8 +175,9 @@ Python 2.7 Maintenance Releases" section of the Python 2.7 What's New
 document.
 
 News entries go into the ``Misc/NEWS.d`` directory as individual files. The
-easiest way to create a news entry is to use the
-`blurb <https://pypi.org/project/blurb/>`_ tool and its ``blurb add`` command.
+news entry can be created by using `blurb-it <https://blurb-it.herokuapp.com/>`_,
+or the `blurb <https://pypi.org/project/blurb/>`_ tool and its ``blurb add``
+command.
 
 If you are unable to use the tool you can create the news entry file manually.
 The ``Misc/NEWS.d`` directory contains a sub-directory named ``next`` which
