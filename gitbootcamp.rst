@@ -332,7 +332,7 @@ local copy of a pull request as follows::
 
 .. note::
 
-   [hub](https://github.com/github/hub) command line utility makes this
+   `hub <https://github.com/github/hub>`_ command line utility makes this
    workflow very easy.  You can check out the branch by
    ``hub pr checkout <pr_number> [<branch_name>]``.
    This command configures remote URL for the branch too.
