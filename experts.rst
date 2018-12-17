@@ -197,7 +197,7 @@ rlcompleter
 runpy                 ncoghlan
 sched                 giampaolo.rodola
 secrets
-select
+select                giampaolo.rodola
 selectors             neologix, giampaolo.rodola
 shelve
 shlex
