@@ -31,8 +31,9 @@ implementation laid out in the Dragon Book [Aho86]_.
 
 The grammar file for Python can be found in :file:`Grammar/Grammar` with the
 numeric value of grammar rules stored in :file:`Include/graminit.h`.  The
-numeric values for types of tokens (literal tokens, such as ``:``,
-numbers, etc.) are kept in :file:`Include/token.h`.  The parse tree is made up
+list of types of tokens (literal tokens, such as ``:``, numbers, etc.) can
+be found in :file:`Grammar/Tokens` with the numeric value stored in
+:file:`Include/token.h`.  The parse tree is made up
 of ``node *`` structs (as defined in :file:`Include/node.h`).
 
 Querying data from the node structs can be done with the following
