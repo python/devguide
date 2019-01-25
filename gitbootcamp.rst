@@ -330,6 +330,15 @@ local copy of a pull request as follows::
 
    git pr <pr_number>
 
+.. note::
+
+   `hub <https://github.com/github/hub>`_ command line utility makes this
+   workflow very easy.  You can check out the branch by
+   ``hub pr checkout <pr_number> [<branch_name>]``.
+   This command configures remote URL for the branch too.
+   So you can ``git push`` if the pull request author checked
+   "Allow edits from maintainers" when creating the pull request.
+
 
 .. _accepting-and-merging-a-pr:
 

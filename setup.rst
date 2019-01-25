@@ -223,6 +223,9 @@ still build properly).
 Windows
 -------
 
+For a quick guide to building you can read `this documentation`_ from Victor
+Stinner.
+
 **Python 3.6** and later can use Microsoft Visual Studio 2017.  You can download
 and use any of the free or paid versions of `Visual Studio 2017`_.
 
@@ -263,6 +266,7 @@ to build.
    official one from `<https://git-scm.com>`_. Otherwise, Visual Studio will
    not be able to find all the project's files and will fail the build.
 
+.. _this documentation: https://cpython-core-tutorial.readthedocs.io/en/latest/build_cpython_windows.html
 .. _Visual Studio 2017: https://www.visualstudio.com/
 .. _readme: https://github.com/python/cpython/blob/master/PCbuild/readme.txt
 .. _PCbuild directory: https://github.com/python/cpython/tree/2.7/PCbuild/
@@ -307,9 +311,9 @@ dependencies for the Python you're working on by using the ``apt`` command.
 First, make sure you have enabled the source packages in the sources list.
 You can do this by adding the location of the source packages, including
 URL, distribution name and component name, to ``/etc/apt/sources.list``.
-Take Ubuntu Xenial for example::
+Take Ubuntu Bionic for example::
 
-   deb-src http://archive.ubuntu.com/ubuntu/ xenial main
+   deb-src http://archive.ubuntu.com/ubuntu/ bionic main
 
 For other distributions, like Debian, change the URL and names to correspond
 with the specific distribution.

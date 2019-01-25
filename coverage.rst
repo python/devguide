@@ -62,7 +62,7 @@ required by Python itself will not be viewed as executed by the coverage tools
 and thus look like they have very poor coverage (e.g., the :py:mod:`stat`
 module). In these instances the module will appear to not have any coverage of
 global statements but will have proper coverage of local statements (e.g.,
-function definitions will be not be traced, but the function bodies will).
+function definitions will not be traced, but the function bodies will).
 Calculating the coverage of modules in this situation will simply require
 manually looking at what local statements were not executed.
 

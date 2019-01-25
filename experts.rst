@@ -197,7 +197,7 @@ rlcompleter
 runpy                 ncoghlan
 sched                 giampaolo.rodola
 secrets
-select
+select                giampaolo.rodola
 selectors             neologix, giampaolo.rodola
 shelve
 shlex
@@ -324,7 +324,7 @@ cryptography        gregory.p.smith, dstufft
 data formats        mark.dickinson
 database            lemburg
 devguide            eric.araujo, ezio.melotti, willingc
-documentation       ezio.melotti, eric.araujo, willingc
+documentation       ezio.melotti, eric.araujo, mdk, willingc
 emoji               mariatta
 extension modules   petr.viktorin, ncoghlan
 filesystem          giampaolo.rodola
@@ -345,7 +345,7 @@ pip                 ncoghlan, dstufft, paul.moore, Marcus.Smith
 py3 transition      benjamin.peterson
 release management  tarek, lemburg, benjamin.peterson, barry,
                     gvanrossum, anthonybaxter, eric.araujo, ned.deily,
-                    georg.brandl
+                    georg.brandl, mdk
 str.format          eric.smith*
 testing             michael.foord, ezio.melotti
 test coverage       giampaolo.rodola
@@ -368,4 +368,5 @@ Bengali India  kushal.das
 Hungarian      gbtami
 Portuguese     rougeth
 Chinese (TW)   adrianliaw
+Chinese (CN)   zhsj
 =============  ============
