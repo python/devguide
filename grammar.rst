@@ -32,7 +32,7 @@ Note: sometimes things mysteriously don't work.  Before giving up, try ``make cl
 
 * :file:`Grammar/Grammar`: OK, you'd probably worked this one out. :-)  After changing
   it, run ``make regen-grammar``, to regenerate :file:`Include/graminit.h` and
-  :file:`Python/graminit.c`.  (This runs Python's parser generator, ``Python/pgen``.
+  :file:`Python/graminit.c`.  (This runs Python's parser generator, ``Python/pgen``).
 
 * :file:`Grammar/Tokens` is a place for adding new token types.  After
   changing it, run ``make regen-token`` to regenerate :file:`Include/token.h`,
