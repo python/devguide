@@ -207,3 +207,59 @@ When a final release is being cut, only the release manager (RM) can make
 changes to the branch.  After the final release is published, the full
 :ref:`development cycle <stages>` starts again for the next minor version.
 
+
+Repository Administration
+'''''''''''''''''''''''''
+
+The source code is currently hosted on `GitHub
+<https://github.com/python/cpython>`_.
+
+Organization Owner Policy
+-------------------------
+
+The GitHub Organization Owner role allows for full management of all aspects of
+the Python organization. Allowing for visibility and management of all aspects
+at all levels including organization membership, team membership, access
+control, and merge privileges on all repositories. This role is paramount to
+the security of the Python Language, Community, and Infrastructure.
+
+The Executive Director of the Python Software Foundation delegates authority on
+GitHub Organization Owner Status to Ernest W. Durbin III - Python Software
+Foundation Director of Infrastructure. Common reasons for this role are:
+Infrastructure Staff Membership, Python Software Foundation General Counsel,
+and Python Software Foundation Staff as fallback.
+
+Inactive or unreachable members may be removed with or without notice. Members
+who no longer necessitate this level of access will be removed with notice.
+
+Multi-Factor Authentication must be enabled by the user in order to remain an
+Owner of the Python Organization.
+
+Repository Administrator Role Policy
+------------------------------------
+
+The Administrator role on the repository allows for managing all aspects
+including collaborators, access control, integrations, webhooks, and branch
+protection. Common reasons for this role are: maintenance of Core Developer
+Workflow tooling, Release Managers for all In-development and maintenance
+releases, additional Python Core Developers as necessary for redundancy.
+Occasional temporary administrator access is acceptable as necessary for Core
+Developer workflow projects.
+
+Inactive or unreachable members may be removed with or without notice. Members
+who no longer necessitate this level of access will be removed with notice.
+
+Multi-Factor Authentication must be enabled by the user in order to remain an
+Administrator of the repository.
+
+Repository Release Manager Role Policy
+--------------------------------------
+
+Release Mangers for In-development and Maintenance Python releases are granted
+Administrator privileges on the repository. Once a release branch has entered
+security mode, the Release Manager for that branch is removed as an
+Administrator and granted sole privileges (out side of repository
+administrators) to merge changes to that branch.
+
+Multi-Factor Authentication must be enabled by the user in order to retain
+access as a Releas Manager of the branch.
