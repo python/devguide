@@ -110,6 +110,7 @@ for the corresponding feature version, as listed in the :ref:`branchstatus`.
 Any release made from a security branch is source-only and done only when actual
 security patches have been applied to the branch.
 
+.. _eolbranch:
 
 End-of-life branches
 --------------------
@@ -220,8 +221,11 @@ Organization Owner Policy
 The GitHub Organization Owner role allows for full management of all aspects of
 the Python organization. Allowing for visibility and management of all aspects
 at all levels including organization membership, team membership, access
-control, and merge privileges on all repositories. This role is paramount to
-the security of the Python Language, Community, and Infrastructure.
+control, and merge privileges on all repositories. For full details of the
+permission levels see `GitHub's documentation
+<https://help.github.com/articles/permission-levels-for-an-organization/#permission-levels-for-an-organization>`_.
+This role is paramount to the security of the Python Language, Community, and
+Infrastructure.
 
 The Executive Director of the Python Software Foundation delegates authority on
 GitHub Organization Owner Status to Ernest W. Durbin III - Python Software
@@ -240,11 +244,14 @@ Repository Administrator Role Policy
 
 The Administrator role on the repository allows for managing all aspects
 including collaborators, access control, integrations, webhooks, and branch
-protection. Common reasons for this role are: maintenance of Core Developer
-Workflow tooling, Release Managers for all In-development and maintenance
-releases, additional Python Core Developers as necessary for redundancy.
-Occasional temporary administrator access is acceptable as necessary for Core
-Developer workflow projects.
+protection. For full details of the permission levels see `GitHub's
+documentation
+<https://help.github.com/articles/repository-permission-levels-for-an-organization/>`_.
+Common reasons for this role are: maintenance of Core Developer
+Workflow tooling, Release Managers for all :ref:`in-development <indevbranch>`
+and :ref:`maintenance <maintbranch>` releases, additional Python Core
+Developers as necessary for redundancy. Occasional temporary administrator
+access is acceptable as necessary for Core Developer workflow projects.
 
 Inactive or unreachable members may be removed with or without notice. Members
 who no longer necessitate this level of access will be removed with notice.
@@ -255,10 +262,11 @@ Administrator of the repository.
 Repository Release Manager Role Policy
 --------------------------------------
 
-Release Managers for In-development and Maintenance Python releases are granted
-Administrator privileges on the repository. Once a release branch has entered
-security mode, the Release Manager for that branch is removed as an
-Administrator and granted sole privileges (out side of repository
+Release Managers for :ref:`in-development <indevbranch>` and :ref:`maintenance
+<maintbranch>` Python releases are granted Administrator privileges on the
+repository. Once a release branch has entered :ref:`security mode <secbranch>`
+or :ref:`end-of-life <eolbranch>`, the Release Manager for that branch is
+removed as an Administrator and granted sole privileges (out side of repository
 administrators) to merge changes to that branch.
 
 Multi-Factor Authentication must be enabled by the user in order to retain
