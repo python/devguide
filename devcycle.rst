@@ -255,11 +255,11 @@ Administrator of the repository.
 Repository Release Manager Role Policy
 --------------------------------------
 
-Release Mangers for In-development and Maintenance Python releases are granted
+Release Managers for In-development and Maintenance Python releases are granted
 Administrator privileges on the repository. Once a release branch has entered
 security mode, the Release Manager for that branch is removed as an
 Administrator and granted sole privileges (out side of repository
 administrators) to merge changes to that branch.
 
 Multi-Factor Authentication must be enabled by the user in order to retain
-access as a Releas Manager of the branch.
+access as a Release Manager of the branch.
