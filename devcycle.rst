@@ -240,6 +240,25 @@ who no longer necessitate this level of access will be removed with notice.
 Multi-Factor Authentication must be enabled by the user in order to remain an
 Owner of the Python Organization.
 
+Current Owners
+--------------
+
++----------------------+--------------------------------+-----------------+
+| Name                 | Role                           | GitHub Username |
++======================+================================+=================+
+| Benjamin Peterson    | Infrastructure Staff           | benjaminp       |
++----------------------+--------------------------------+-----------------+
+| Noah Kantrowitz      | Infrastructure Staff           | coderanger      |
++----------------------+--------------------------------+-----------------+
+| Donald Stufft        | Infrastructure Staff           | dstufft         |
++----------------------+--------------------------------+-----------------+
+| Ewa Jodlowska        | PSF Executive Director         | ejodlowska      |
++----------------------+--------------------------------+-----------------+
+| Ernest W. Durbin III | PSF Director of Infrastructure | ewdurbin        |
++----------------------+--------------------------------+-----------------+
+| Van Lindberg         | PSF General Counsel            | VanL            |
++----------------------+--------------------------------+-----------------+
+
 Repository Administrator Role Policy
 ------------------------------------
 
@@ -259,6 +278,27 @@ who no longer necessitate this level of access will be removed with notice.
 
 Multi-Factor Authentication must be enabled by the user in order to remain an
 Administrator of the repository.
+
+Current Administrators
+----------------------
+
++-------------------+----------------------------------------------------------+-----------------+
+| Name              | Role                                                     | GitHub Username |
++===================+==========================================================+=================+
+| Łukasz Langa      | Python 3.8 Release Manager                               | ambv            |
++-------------------+----------------------------------------------------------+-----------------+
+| Benjamin Peterson | Python 2.7 Release Manager                               | benjaminp       |
++-------------------+----------------------------------------------------------+-----------------+
+| Ned Deily         | Python 3.7 Release Manager                               | ned-deily       |
++-------------------+----------------------------------------------------------+-----------------+
+| Berker Peksag     | Maintainer of bpo-linkify and cpython-emailer-webhook    | berkerpeksag    |
++-------------------+----------------------------------------------------------+-----------------+
+| Brett Cannon      | Maintainer of bedevere and the-knights-who-say-ni        | brettcannon     |
++-------------------+----------------------------------------------------------+-----------------+
+| Ezio Melotti      | Maintainer of bugs.python.org GitHub webhook integration | ezio-melotti    |
++-------------------+----------------------------------------------------------+-----------------+
+| Mariatta Wijaya   | Maintainer of blurb_it and miss-islington                | Mariatta        |
++-------------------+----------------------------------------------------------+-----------------+
 
 Repository Release Manager Role Policy
 --------------------------------------
