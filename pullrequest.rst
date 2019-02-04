@@ -401,12 +401,12 @@ of your review process.
 
 Instead of simply "approving" the pull request, leave comments.  For example:
 
-1. If you tested the PR, report the result and the system and version tested on,
+#. If you tested the PR, report the result and the system and version tested on,
    such as 'Windows 10', 'Ubuntu 16.4', or 'Mac High Sierra'.
 
-3. If you request changes, try to suggest how.
+#. If you request changes, try to suggest how.
 
-4. Comment on what is "good" about the pull request, not just the "bad". Doing
+#. Comment on what is "good" about the pull request, not just the "bad". Doing
    so will make it easier for the PR author to find the good in your comments.
 
 Dismissing Review from Another Core Developer
