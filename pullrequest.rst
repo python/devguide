@@ -393,6 +393,21 @@ code and leave comments in the pull request or issue tracker.
    However, please be aware that if you are recommending a pull request as
    'merge-ready', you should always make sure the entire test suite passes.
 
+Leaving a Pull Request Review on GitHub
+---------------------------------------
+
+When you review a pull request, you should provide additional details and context
+of your review process. 
+
+Instead of simply "approving" the pull request, leave comments.  For example:
+
+#. If you tested the PR, report the result and the system and version tested on,
+   such as 'Windows 10', 'Ubuntu 16.4', or 'Mac High Sierra'.
+
+#. If you request changes, try to suggest how.
+
+#. Comment on what is "good" about the pull request, not just the "bad". Doing
+   so will make it easier for the PR author to find the good in your comments.
 
 Dismissing Review from Another Core Developer
 ---------------------------------------------
