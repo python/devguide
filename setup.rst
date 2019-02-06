@@ -405,7 +405,8 @@ Explaining how to build optional dependencies on a UNIX based system without
 root access is beyond the scope of this guide.
 
 For more details on various options and considerations for building, refer
-to the `readme <https://github.com/python/cpython/blob/master/Mac/README>`_.
+to the `macOS readme
+<https://github.com/python/cpython/blob/master/Mac/README>`_.
 
 .. _clang: https://clang.llvm.org/
 .. _ccache: https://ccache.samba.org/
