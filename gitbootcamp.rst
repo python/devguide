@@ -247,6 +247,16 @@ Solution::
 The ``--rebase`` option is only needed if you have local changes to the
 branch.
 
+You can automate the syncing with Upstream master setting up the next alias::
+
+   $ git config --global alias.update '!sh -c "git checkout master && git pull origin master && git pull upstream master && git push origin master"'
+
+Now you can run::
+
+   $ git update
+
+and both local and Origin master branch will be sync with Upstream master branch.
+
 Another scenario:
 
 - You created ``some-branch`` some time ago.
