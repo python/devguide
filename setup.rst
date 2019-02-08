@@ -11,6 +11,13 @@ compiled version of the CPython interpreter (CPython is the version of Python
 available from https://www.python.org/). It also gives an overview of the
 directory structure of the CPython source code.
 
+Alternatively, if you have `Docker <https://www.docker.com/>`_ installed you
+might want to use `our official images
+<https://gitlab.com/python-devs/ci-images/blob/master/README.md>`_.  These
+contain the latest releases of several Python versions, along with git head,
+and are provided for development and testing purposes only.
+
+
 .. seealso::
 
    The :ref:`quick-reference` gives brief summary of the process from
