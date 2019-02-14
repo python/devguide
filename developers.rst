@@ -171,6 +171,9 @@ Permissions History
   Walker Hale were given push privileges on Mar 16 2011 by GFB, for
   contributions to the packaging module.
 
+- Jason R. Coombs was given commit access on Mar 14 2011
+  by Brett Cannon as part of a group sprinting on distutils2.
+
 - Jeff Hardy was given push privileges on Mar 14 2011 by BAC, for stdlib
   compatibility work for IronPython.
 
