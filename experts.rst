@@ -207,8 +207,8 @@ site
 smtpd                 giampaolo.rodola
 smtplib
 sndhdr
-socket
-socketserver
+socket                giampaolo.rodola
+socketserver          giampaolo.rodola
 spwd
 sqlite3               ghaering
 ssl                   janssen, christian.heimes, dstufft, alex
