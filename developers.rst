@@ -25,6 +25,9 @@ transliteration too.
 Permissions History
 -------------------
 
+- Cheryl Sabella was given push privileges on February 19, 2019 by Brett Cannon,
+  on the recommendation of Victor Stinner.
+
 - Lisa Roach was given push privileges on September 14, 2018 by Brett Cannon,
   on the recommendation of Raymond Hettinger.
 
