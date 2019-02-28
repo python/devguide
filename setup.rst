@@ -267,6 +267,12 @@ to build.
    readme`_ for more details.  If you have VS 2008 but not 2010 you can use the
    build files in the `PC/VS9.0 directory`_, see the `VS9 readme`_ for details.
 
+.. note:: If you are using the Windows Subsystem for Linux (WSL), clone the 
+   repository from a native Windows terminal program like cmd.exe command prompt 
+   or PowerShell as well as use a build of git targeted for Windows, e.g., the
+   official one from `<https://git-scm.com>`_. Otherwise, Visual Studio will
+   not be able to find all the project's files and will fail the build.
+
 .. _this documentation: https://cpython-core-tutorial.readthedocs.io/en/latest/build_cpython_windows.html
 .. _Visual Studio 2017: https://www.visualstudio.com/
 .. _readme: https://github.com/python/cpython/blob/master/PCbuild/readme.txt
