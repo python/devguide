@@ -270,10 +270,11 @@ protection. For full details of the permission levels see `GitHub's
 documentation on Repository permission levels
 <https://help.github.com/articles/repository-permission-levels-for-an-organization/>`_.
 Common reasons for this role are: maintenance of Core Developer
-Workflow tooling, Release Managers for all :ref:`in-development <indevbranch>`
-and :ref:`maintenance <maintbranch>` releases, additional Python Core
-Developers as necessary for redundancy. Occasional temporary administrator
-access is acceptable as necessary for Core Developer workflow projects.
+Workflow tooling, Release Managers for all :ref:`in-development <indevbranch>`,
+:ref:`maintenance <maintbranch>`, and :ref:`security mode <secbranch>`
+releases, and additional Python Core Developers as necessary for redundancy.
+Occasional temporary administrator access is acceptable as necessary for Core
+Developer workflow projects.
 
 Inactive or unreachable members may be removed with or without notice. Members
 who no longer necessitate this level of access will be removed with notice.
@@ -293,6 +294,8 @@ Current Administrators
 +-------------------+----------------------------------------------------------+-----------------+
 | Ned Deily         | Python 3.7 Release Manager                               | ned-deily       |
 +-------------------+----------------------------------------------------------+-----------------+
+| Lary Hastings     | Python 3.5 Release Manager                               | larryhastings   |
++-------------------+----------------------------------------------------------+-----------------+
 | Berker Peksag     | Maintainer of bpo-linkify and cpython-emailer-webhook    | berkerpeksag    |
 +-------------------+----------------------------------------------------------+-----------------+
 | Brett Cannon      | Maintainer of bedevere and the-knights-who-say-ni        | brettcannon     |
@@ -305,10 +308,10 @@ Current Administrators
 Repository Release Manager Role Policy
 --------------------------------------
 
-Release Managers for :ref:`in-development <indevbranch>` and :ref:`maintenance
-<maintbranch>` Python releases are granted Administrator privileges on the
-repository. Once a release branch has entered :ref:`security mode <secbranch>`
-or :ref:`end-of-life <eolbranch>`, the Release Manager for that branch is
+Release Managers for :ref:`in-development <indevbranch>`, :ref:`maintenance
+<maintbranch>`, and :ref:`security mode <secbranch>` Python releases are
+granted Administrator privileges on the repository. Once a release branch has
+entered :ref:`end-of-life <eolbranch>`, the Release Manager for that branch is
 removed as an Administrator and granted sole privileges (out side of repository
 administrators) to merge changes to that branch.
 
