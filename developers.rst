@@ -25,8 +25,14 @@ transliteration too.
 Active core developers
 ----------------------
 
+* 2019
+
+  + Cheryl Sabella
+
 * 2018
 
+  + Lisa Roach
+  + Emily Morehouse
   + Pablo Galindo Salgado
   + Mark Shannon
   + Petr Viktorin
