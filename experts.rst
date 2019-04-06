@@ -175,7 +175,7 @@ pipes
 pkgutil
 platform              lemburg
 plistlib
-poplib                giampaolo.rodola
+poplib
 posix                 larry
 pprint                fdrake
 profile
@@ -195,9 +195,9 @@ reprlib
 resource              twouters
 rlcompleter
 runpy                 ncoghlan
-sched                 giampaolo.rodola
+sched
 secrets
-select                giampaolo.rodola
+select
 selectors             neologix, giampaolo.rodola
 shelve
 shlex
@@ -207,8 +207,8 @@ site
 smtpd                 giampaolo.rodola
 smtplib
 sndhdr
-socket                giampaolo.rodola
-socketserver          giampaolo.rodola
+socket
+socketserver
 spwd
 sqlite3               ghaering
 ssl                   janssen, christian.heimes, dstufft, alex
@@ -348,7 +348,7 @@ release management  tarek, lemburg, benjamin.peterson, barry,
                     georg.brandl, mdk
 str.format          eric.smith*
 testing             michael.foord, ezio.melotti
-test coverage       giampaolo.rodola
+test coverage
 threads
 time and dates      lemburg, belopolsky
 unicode             lemburg, ezio.melotti, vstinner, benjamin.peterson,
