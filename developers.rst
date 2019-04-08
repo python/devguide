@@ -25,6 +25,9 @@ transliteration too.
 Permissions History
 -------------------
 
+- Stéphane Wirtel was given push privileges on April 8, 2019 by the Steering
+  Council, on the recommendation of Julien Palard and Victor Stinner.
+
 - Cheryl Sabella was given push privileges on February 19, 2019 by Brett Cannon,
   on the recommendation of Terry Jan Reedy and Victor Stinner.
 
