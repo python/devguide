@@ -287,7 +287,7 @@ to build.
 Install dependencies
 ====================
 
-This section explains how to intall additional extensions (e.g. ``zlib``)
+This section explains how to install additional extensions (e.g. ``zlib``)
 on :ref:`Linux <deps-on-linux>` and :ref:`macOs/OS X <macOS>`.  On Windows,
 extensions are already included and built automatically.
 
