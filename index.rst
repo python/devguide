@@ -25,6 +25,7 @@ instructions please see the :ref:`setup guide <setup>`.
    to your GitHub account and :ref:`get the source code <checkout>` using::
 
       git clone https://github.com/<your_username>/cpython
+      cd cpython
 
 3. Build Python, on UNIX and Mac OS use::
 
