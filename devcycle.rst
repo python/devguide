@@ -215,7 +215,21 @@ Repository Administration
 '''''''''''''''''''''''''
 
 The source code is currently hosted on `GitHub
-<https://github.com/python/cpython>`_.
+<https://github.com/python/cpython>`_ in the `Python organization <https://github.com/python/>`_.
+
+Organization Repository Policy
+------------------------------
+
+Within the `Python organization <https://github.com/python/>`_, repositories are expected to fall within three general categories:
+
+1. The reference implementation of Python and related repositories (i.e. `CPython <https://github.com/python/cpython>`_)
+2. Reference implementations of PEPs (e.g. `mypy <https://github.com/python/mypy>`_)
+3. Tooling and support around CPython and the language (e.g. `python.org repository <https://github.com/python/pythondotorg>`_)
+4. PSF-related repositories (e.g. the `Code of Conduct <https://github.com/python/pycon-code-of-conduct>`_)
+5. PSF Infrastructure repositories (e.g. the `PSF Infrastructure Salt configurations <https://github.com/python/psf-salt>`_)
+
+For any repository which does not explicitly and clearly fall under one of these categories, permission should be sought
+from the `Python steering council <https://github.com/python/steering-council>`_.
 
 Organization Owner Policy
 -------------------------
