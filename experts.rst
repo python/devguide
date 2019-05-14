@@ -102,7 +102,7 @@ dis                   yselivanov
 distutils             eric.araujo, dstufft
 doctest               tim.peters (inactive)
 dummy_threading       brett.cannon
-email                 barry, r.david.murray*
+email                 barry, r.david.murray*, maxking
 encodings             lemburg
 ensurepip             ncoghlan, dstufft
 enum                  eli.bendersky*, barry, ethan.furman*
