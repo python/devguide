@@ -1772,8 +1772,8 @@ There is no election, each country have to sort this out.  Here are some suggest
 -  Coordinator requests are to be public on doc-sig mailing list.
 -  If the given language have a native core dev, the core dev have its
    word on the choice.
--  If one want to become coordinator for its native language, and shows
-   motivation by translating and building a community, it will be named
+-  Anyone who wants to become coordinator for its native language, and shows
+   motivation by translating and building a community, will be named
    coordinator.
 -  In case of concurrency between two persons, no one will sort this out
    for you, it’s open to you to organize a local election or whatever
