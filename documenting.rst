@@ -1620,11 +1620,11 @@ in production, other are work in progress:
 |              |                    | doc-sig/2019-April/004114.html>`__       |
 |              |                    |                                          |
 +--------------+--------------------+------------------------------------------+
-| Japanese     | `Inada Naoki       | `github <https://github.com/python/      |
-| (ja)         | (methane) <https:/ | python-docs-ja/>`__                      |
-|              | /bugs.python.org/u |                                          |
-|              | ser10371>`__       | `doc <https://docs.python.org/ja/>`__    |
-|              |                    |                                          |
+| Japanese     | `Kinebuchi Tomohiko| `github <https://github.com/python/      |
+| (ja)         | (cocoatomo)        | python-docs-ja/>`__                      |
+|              | <https://bugs.     |                                          |
+|              | python.org/        | `doc <https://docs.python.org/ja/>`__    |
+|              | user19001>`__      |                                          |
 +--------------+--------------------+------------------------------------------+
 | Korean (ko)  |                    | `github <https://github.com/python/      |
 |              |                    | python-docs-ko/>`__                      |
