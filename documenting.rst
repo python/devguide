@@ -1776,7 +1776,7 @@ There is no election, each country have to sort this out.  Here are some suggest
    motivation by translating and building a community, will be named
    coordinator.
 -  In case of concurrency between two persons, no one will sort this out
-   for you, it’s open to you to organize a local election or whatever
+   for you.  It is up to you two to organize a local election or whatever
    needed to sort this out.
 -  In case a coordinator become inactive or unreachable for a long
    period of time, someone else can ask for a takeover on doc-sig.
