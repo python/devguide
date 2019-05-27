@@ -1578,14 +1578,242 @@ Sphinx_, blurb_ and python-docs-theme_ packages from PyPI)::
 where ``<builder>`` is one of html, text, latex, or htmlhelp (for explanations
 see the make targets above).
 
+.. _translating:
+
+Translating
+===========
+
+Python documumentation translations are governed by the :PEP:`545`,
+they are built by `docsbuild-scripts
+<https://github.com/python/docsbuild-scripts/>`__ and hosted on
+docs.python.org. There are several documentation translations already
+in production, other are work in progress:
+
++--------------+--------------------+------------------------------------------+
+| Language     | Contact            | Links                                    |
++==============+====================+==========================================+
+| Arabic (ar)  | Abdur-Rahmaan      | `github <https://github.com/             |
+|              | Janhangeer         | Abdur-rahmaanJ/py-docs-ar>`__            |
++--------------+--------------------+------------------------------------------+
+| Bengali as   | `Kushal Das        | `github <https://github.com/python/      |
+| spoken in    | <http://bugs.python| python-docs-bn-in>`__                    |
+| India (bn_IN)| .org/user16382>`__ |                                          |
++--------------+--------------------+------------------------------------------+
+| French (fr)  | `Julien Palard     | `github <https://github.com/python/      |
+|              | (mdk) <https://bug | python-docs-fr/>`__                      |
+|              | s.python.org/user2 | `doc <https://docs.python.org/fr/>`__    |
+|              | 3063>`__           |                                          |
++--------------+--------------------+------------------------------------------+
+| Hindi as     |                    | `github <https://github.com/             |
+| spoken in    |                    | CuriousLearner/python-docs-hi-in>`__     |
+| India        |                    |                                          |
+| (hi_IN)      |                    |                                          |
++--------------+--------------------+------------------------------------------+
+| Hungarian    | `Tamás Bajusz      | `github <https://github.com/python/      |
+| (hu)         | (gbtami) <http://b | python-docs-hu/>`__                      |
+|              | ugs.python.org/use |                                          |
+|              | r25857>`__         | `list <https://mail.python.org/pipermail/|
+|              |                    | python-hu/>`__                           |
+|              |                    |                                          |
++--------------+--------------------+------------------------------------------+
+| Italian (it) |                    | `mail <https://mail.python.org/pipermail/|
+|              |                    | doc-sig/2019-April/004114.html>`__       |
+|              |                    |                                          |
++--------------+--------------------+------------------------------------------+
+| Japanese     | `Inada Naoki       | `github <https://github.com/python/      |
+| (ja)         | (methane) <https:/ | python-docs-ja/>`__                      |
+|              | /bugs.python.org/u |                                          |
+|              | ser10371>`__       | `doc <https://docs.python.org/ja/>`__    |
+|              |                    |                                          |
++--------------+--------------------+------------------------------------------+
+| Korean (ko)  |                    | `github <https://github.com/python/      |
+|              |                    | python-docs-ko/>`__                      |
+|              |                    |                                          |
+|              |                    | `doc <https://docs.python.org/ko/>`__    |
+|              |                    |                                          |
++--------------+--------------------+------------------------------------------+
+| Polish (pl)  |                    | `mail <https://mail.python.org/pipermail/|
+|              |                    | doc-sig/2019-April/004106.html>`__       |
+|              |                    |                                          |
++--------------+--------------------+------------------------------------------+
+| Portuguese   | Gustavo Toffo      |                                          |
+| (pt)         |                    |                                          |
++--------------+--------------------+------------------------------------------+
+| Portuguese   | Marco Rougeth      | `github <https://github.com/python/      |
+| as spoken    |                    | python-docs-pt-br/>`__                   |
+| in Brasil    |                    |                                          |
+| (pt-br)      |                    | `wiki <http://python.org.br/traducao>`__ |
+|              |                    |                                          |
+|              |                    | `telgram <https://t.me/pybr_i18n>`__     |
+|              |                    |                                          |
+|              |                    | `article <http://rgth.co/blog/           |
+|              |                    | python-ptbr-cenario-atual>`__            |
+|              |                    |                                          |
++--------------+--------------------+------------------------------------------+
+| Russian (ru) |                    | `mail <https://mail.python.org/pipermail/|
+|              |                    | doc-sig/2019-May/004131.html>`__         |
+|              |                    |                                          |
++--------------+--------------------+------------------------------------------+
+| Simplified   | `Shengjing         | `transifex <https://www.transifex.com/   |
+| Chinese      | Zhu <https://bugs. | python-doc/python-newest/language/       |
+| (zh-cn)      | python.org/user248 | zh_CN/>`__                               |
+|              | 11>`__             |                                          |
+|              |                    | `github <https://github.com/python/      |
+|              |                    | python-docs-zh-cn/>`__                   |
+|              |                    |                                          |
+|              |                    | `doc <https://docs.python.org/zh-cn/>`__ |
+|              |                    |                                          |
++--------------+--------------------+------------------------------------------+
+| Spanish      | Raul Cumplido      | `github <https://github.com/raulcd/      |
+| (es)         |                    | python-docs.es/>`__                      |
+|              |                    |                                          |
+|              |                    | `old repo <https://github.com/PyAr/      |
+|              |                    | tutorial/>`__                            |
++--------------+--------------------+------------------------------------------+
+| Traditional  | 廖偉涵 Adrian Liaw | `github <https://github.com/python/      |
+| Chinese      |                    | python-docs-zh-tw/>`__                   |
+| (zh-tw)      |                    |                                          |
+|              |                    | `transifex <https://www.transifex.com/   |
+|              |                    | python-tw-doc/python-36-tw>`__           |
+|              |                    |                                          |
+|              |                    | `doc <https://docs.python.org/zh-tw/>`__ |
++--------------+--------------------+------------------------------------------+
+| Turkish (tr) |                    | `github <https://github.com/alaeddingurel|
+|              |                    | /python-docs-tr>`__                      |
+|              |                    |                                          |
++--------------+--------------------+------------------------------------------+
+
+
+Starting a new translation
+--------------------------
+
+First subscribe to the `doc-sig
+<https://mail.python.org/mailman/listinfo/doc-sig>`_ mailing list,
+introduce yourself and the translation you're starting.
+
+Then you can bootstrap your new translation by using our `cookiecutter
+<https://github.com/JulienPalard/python-docs-cookiecutter>`__.
+
+The important steps looks like this:
+
+- Create the github repo (anywhere), with the right hierarchy (using the
+  cookiecutter).
+- Gather people to help you translating, you can't do it alone.
+- You can use any tool to translate, as long as you can synchronize with git,
+  some are using Transifex, some are using only github, you can choose another
+  way, it's up to you.
+- Ensure we updated this page to reflect your work and progress, either via a
+  PR, or by asking on the doc-sig mailing list.
+- When ``tutorial/``, ``library/stdtypes`` and ``library/functions``
+  are complete, ask on doc-sig for your language to be added in the
+  language picker on docs.python.org.
+
+
+PEP 545: TL;DR
+--------------
+
+The :PEP:`545` may be long to read, so here are the interesting points:
+
+- Each translation is assigned an appropriate lowercased language tag,
+  with an optional region subtag (if needed), glued with a dash, like
+  ``pt-br`` or ``fr``.
+
+- Translations files are hosted on
+  ``https://github.com/python/python-docs-{LANGUAGE_TAG}``
+
+- Translations having completed ``tutorial/``, ``library/stdtypes``
+  and ``library/functions`` are hosted on
+  ``https://docs.python.org/{LANGUAGE_TAG}/{VERSION_TAG}/``.
+
+
+How to get help
+---------------
+
+Discussions about translations occur on the `doc-sig
+<https://mail.python.org/mailman/listinfo/doc-sig>`_ mailing list,
+and there's a freenode IRC channel, ``#python-doc``.
+
+
+Translation FAQ
+---------------
+
+Which version of Python documentation should be translated?
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Concensus is to work on current stable, you can then propagate your
+translation from a branch to another using `pomerge
+<https://pypi.org/p/pomerge>`__.
+
+
+Are there some tools to help in managing the repo?
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Here's what's we're using:
+
+- `pomerge <https://pypi.org/p/pomerge>`__ to propagate translation
+  from a files to others.
+- `pospell <https://pypi.org/p/pospell>`__ to check for typo in po files.
+- `powrap <https://pypi.org/p/powrap>`__ to rewrap the ``.po`` files
+  before committing, this helps keeping git diffs short.
+- `potodo <https://pypi.org/p/potodo>`__ to list what needs to be translated.
+
+
+
+How a coordinator is elected?
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+There is no election, each country have to short this out, here's some
+rule if it helps:
+
+-  Coordinator requests are to be public on doc-sig mailing list.
+-  If the given language have a native core dev, the core dev have its
+   word on the choice.
+-  If one want to become coordinator for its native language, and shows
+   motivation by translating and building a community, it will be named
+   coordinator.
+-  In case of concurrency between two persons, no one will sort this out
+   for you, it’s open to you to organize a local election or whatever
+   needed to sort this out.
+-  In case a coordinator become inactive or unreachable for a long
+   period of time, someone else can ask for a takeover on doc-sig.
+
+
+The entry for my translation is missing/not up to date on this page
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Ask on doc-sig, or better, make a PR on the `devguide
+<https://github.com/python/devguide/>`__.
+
+
+I have a translation, but not on git, what should I do?
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Just ask for help on the doc-sig mailing list and our python-fu, git-fu
+and bash-fu combined will help you create an appropriate repository. If
+you use a tool like transifex don’t worry keeping them in sync is not
+that hard.
+
+
+My git hierarchy does not match yours, can I keep it?
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+No, inside the ``github.com/python`` organization we’ll all have the
+exact same hierarchy so bots will be able to build all of our
+translations. So you may have to convert from one hierarchy to another.
+Ask for help on the doc-sig mailing list if you’re not sure on how to do
+it.
+
+What hierarchy should I use in my github repository?
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+As for every projects we have a *branch* per version, we store ``po``
+files in the root of the repository using the ``gettext_compact=0``
+style.
+
+
+
 .. _docutils: http://docutils.sourceforge.net/
 .. _python-docs-theme: https://pypi.org/project/python-docs-theme/
 .. _Sphinx: http://sphinx-doc.org/
 .. _virtualenv: https://virtualenv.pypa.io/
 .. _blurb: https://pypi.org/project/blurb/
-
-
-Translations
-============
-
-There are now several official documentation translations (see section :ref:`21.5. Documentation Translations <experts>` and :PEP:`545` for details). Discussions about translations occur on the `doc-sig <https://mail.python.org/mailman/listinfo/doc-sig>`_ mailing list.
