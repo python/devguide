@@ -1718,8 +1718,13 @@ The :PEP:`545` may be long to read, so here are the interesting points:
   with an optional region subtag (if needed), glued with a dash, like
   ``pt-br`` or ``fr``.
 
+- Each translation is under CC0 and marked as so in the README (as in
+  the cookiecutter).
+
 - Translations files are hosted on
-  ``https://github.com/python/python-docs-{LANGUAGE_TAG}``
+  ``https://github.com/python/python-docs-{LANGUAGE_TAG}`` (not
+  mandatory to start a translation, but mandatory to land on
+  ``docs.python.org``).
 
 - Translations having completed ``tutorial/``, ``library/stdtypes``
   and ``library/functions`` are hosted on
