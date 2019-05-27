@@ -1710,7 +1710,7 @@ The important steps looks like this:
 
 
 PEP 545 summary:
---------------
+----------------
 
 Here are the essential points of :PEP:`545`:
 
