@@ -1689,7 +1689,7 @@ Starting a new translation
 
 First subscribe to the `doc-sig
 <https://mail.python.org/mailman/listinfo/doc-sig>`_ mailing list,
-introduce yourself and the translation you're starting.
+and introduce yourself and the translation you're starting.
 
 Then you can bootstrap your new translation by using our `cookiecutter
 <https://github.com/JulienPalard/python-docs-cookiecutter>`__.
@@ -1699,8 +1699,8 @@ The important steps looks like this:
 - Create the github repo (anywhere), with the right hierarchy (using the
   cookiecutter).
 - Gather people to help you translating, you can't do it alone.
-- You can use any tool to translate, as long as you can synchronize with git,
-  some are using Transifex, some are using only github, you can choose another
+- You can use any tool to translate, as long as you can synchronize with git.
+  Some are using Transifex, some are using only github, or you can choose another
   way, it's up to you.
 - Ensure we updated this page to reflect your work and progress, either via a
   PR, or by asking on the doc-sig mailing list.
@@ -1709,13 +1709,13 @@ The important steps looks like this:
   language picker on docs.python.org.
 
 
-PEP 545: TL;DR
+PEP 545 summary:
 --------------
 
-The :PEP:`545` may be long to read, so here are the interesting points:
+Here are the essential points of :PEP:`545`:
 
 - Each translation is assigned an appropriate lowercased language tag,
-  with an optional region subtag (if needed), glued with a dash, like
+  with an optional region subtag, joined with a dash, like
   ``pt-br`` or ``fr``.
 
 - Each translation is under CC0 and marked as so in the README (as in
@@ -1767,8 +1767,7 @@ Here's what's we're using:
 How a coordinator is elected?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-There is no election, each country have to short this out, here's some
-rule if it helps:
+There is no election, each country have to sort this out.  Here are some suggestions.
 
 -  Coordinator requests are to be public on doc-sig mailing list.
 -  If the given language have a native core dev, the core dev have its
@@ -1795,7 +1794,7 @@ I have a translation, but not on git, what should I do?
 
 Just ask for help on the doc-sig mailing list and our python-fu, git-fu
 and bash-fu combined will help you create an appropriate repository. If
-you use a tool like transifex don’t worry keeping them in sync is not
+you use a tool like transifex don’t worry.  Keeping them in sync is not
 that hard.
 
 
@@ -1811,7 +1810,7 @@ it.
 What hierarchy should I use in my github repository?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-As for every projects we have a *branch* per version, we store ``po``
+As for every project, we have a *branch* per version.  We store ``po``
 files in the root of the repository using the ``gettext_compact=0``
 style.
 
