@@ -220,7 +220,7 @@ The source code is currently hosted on `GitHub
 Organization Repository Policy
 ------------------------------
 
-Within the `Python organization <https://github.com/python/>`_, repositories are expected to fall within three general categories:
+Within the `Python organization <https://github.com/python/>`_, repositories are expected to fall within these general categories:
 
 1. The reference implementation of Python and related repositories (i.e. `CPython <https://github.com/python/cpython>`_)
 2. Reference implementations of PEPs (e.g. `mypy <https://github.com/python/mypy>`_)
