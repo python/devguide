@@ -97,11 +97,11 @@ original check-in message in that case).
 
 Finally, make sure that the submitter of the
 patch has a CLA in place (indicated by an asterisk following their username
-in the `issue tracker`_ or by the "CLA Signed" label on the pull request).
-If the submitter lacks a signed CLA and the patch is non-trivial, direct them
-to the electronic `Contributor Licensing Agreement`_
+in the `issue tracker`_ or by the ``license/cla`` status check on the pull request).
+If the submitter lacks a signed CLA, direct them to the `Contributor Licensing Agreement`_
 to ensure the PSF has the appropriate authorizations in place to relicense
 and redistribute their code.
+
 
 
 Contributor Licensing Agreements
@@ -128,18 +128,8 @@ for inclusion.
 
 
 .. _Contribution: https://www.python.org/psf/contrib/
-.. _Contributor Licensing Agreement:
-   https://www.python.org/psf/contrib/contrib-form/
+.. _Contributor Licensing Agreement: https://psf-cla-assistant-staging.herokuapp.com/python/cpython
 
-
-Checking if the CLA has been received
--------------------------------------
-
-To check if a contributor's CLA has been received, go to the following website::
-
-    https://check-python-cla.herokuapp.com/
-
-and put in their GitHub username.
 
 For further questions about the CLA process, write to: contributors@python.org.
 

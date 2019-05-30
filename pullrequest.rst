@@ -243,30 +243,42 @@ license your code for use with Python (you retain the copyright).
    You only have to sign this document once, it will then apply to all
    your further contributions to Python.
 
-Here are the steps needed in order to sign the CLA:
+You can sign the CLA before, or after you have created a pull request.
 
-1. If you don't have an account on `bugs.python.org <https://bugs.python.org>`_
-   (aka b.p.o), please
-   `register <https://bugs.python.org/user?@template=register>`_ to create one.
+To sign a CLA before you created a pull request:
 
-2. Make sure your GitHub username is listed in the `"Your Details"
-   <https://cloud.githubusercontent.com/assets/2680980/23276970/d14a380c-f9d1-11e6-883d-e13b6b211239.png>`_
-   section at b.p.o.
+1. Go to The PSF's instance of `CLA Assistant`_.
 
-3. Fill out and sign the PSF `contributor form`_. The "bugs.python.org username"
-   requested by the form is the "Login name" field under "Your Details".
+2. Sign in with the GitHub account that you will use to contribute to Python.
 
-After signing the CLA, please **wait at least one US business day** and
-then check the status by going to the `check-python-cla <https://check-python-cla.herokuapp.com>`_
-website. The check will also be run automatically the next time you push changes
-to your PR.
+3. Read the CLA.
 
+4. Enter your information in the form: Full name, address, and email address.
+   It should be the email address associated with your GitHub account.
+
+5. Tick the "I have read and agree to the CLA" checkbox.
+
+6. Press the "I agree" button.
+
+To sign the CLA after you have created a pull request:
+
+1. Click on the ``[CLA|not signed yet]`` button in the comment by ``psf-cla-assistant`` bot.
+
+2. Sign in with the GitHub account used to create the pull request.
+
+3. Read the CLA.
+
+4. Enter your information in the form: Full name, address, and email address.
+   It should be the email address associated with your GitHub account.
+
+5. Tick the "I have read and agree to the CLA" checkbox.
+
+6. Press the "I agree" button.
 
 .. _PSF license: https://docs.python.org/dev/license.html#terms-and-conditions-for-accessing-or-otherwise-using-python
-.. _contributor agreement: https://www.python.org/psf/contrib/
-.. _contributor form: https://www.python.org/psf/contrib/contrib-form/
+.. _contributor agreement: https://psf-cla-assistant-staging.herokuapp.com/python/cpython
 .. _Python Software Foundation: https://www.python.org/psf/
-
+.. _CLA Assistant: https://psf-cla-assistant-staging.herokuapp.com/python/cpython
 
 Submitting
 ----------
@@ -441,3 +453,4 @@ Non-trivial contributions are credited in the ``Misc/ACKS`` file (and, most
 often, in a contribution's news entry as well).  You may be
 asked to make these edits on the behalf of the core developer who
 accepts your pull request.
+
