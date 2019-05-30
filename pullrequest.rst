@@ -120,6 +120,7 @@ You should have already :ref:`set up your system <setup>`,
    You can still upload a patch to bugs.python.org_, but the GitHub pull request
    workflow is **strongly** preferred.
 
+.. _bugs.python.org: https://bugs.python.org
 
 .. _good-prs:
 
