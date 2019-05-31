@@ -387,7 +387,7 @@ after it has been accepted and merged into ``master``.  It is usually indicated
 by the label ``needs backport to X.Y`` on the pull request itself.
 
 Use the utility script
-`cherry_picker.py <https://github.com/python/core-workflow/tree/master/cherry_picker>`_
+`cherry_picker.py <https://github.com/python/cherry_picker>`_
 from the `core-workflow  <https://github.com/python/core-workflow>`_
 repository to backport the commit.
 
