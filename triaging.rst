@@ -29,7 +29,7 @@ A brief description of the issue. Review whether the title is too generic or
 specifies an incorrect term or library.
 
 (Optional) Add a prefix at the start of the title to indicate the module, e.g.
-IDLE, doc, or asycio.
+IDLE, doc, or asyncio.
 
 Type
 ''''
