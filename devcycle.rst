@@ -37,7 +37,7 @@ Branches
 ''''''''
 
 There is a branch for each *feature version*, whether released or not (e.g.
-2.7, 3.6, 3.7).  Development is handled separately for Python 2 and Python 3:
+2.7, 3.7, 3.8).  Development is handled separately for Python 2 and Python 3:
 no merging happens between 2.x and 3.x branches.
 
 
@@ -52,7 +52,7 @@ changes, performance improvements, bug fixes.
 
 At some point during the life-cycle of a release, a
 new :ref:`maintenance branch <maintbranch>` is created to host all bug fixing
-activity for further micro versions in a feature version (3.7.1, 3.7.2, etc.).
+activity for further micro versions in a feature version (3.8.1, 3.8.2, etc.).
 
 For versions 3.4 and before, this was conventionally done when the final
 release was cut (for example, 3.4.0 final).
@@ -72,7 +72,7 @@ A branch for a previous feature release, currently being maintained for bug
 fixes.  There are usually two maintenance branches at any given time: one for
 Python 3.x and one for Python 2.x. Only during the beta/rc phase of a new
 minor/feature release will there be three active maintenance branches, e.g.
-during the beta phase for Python 3.6 there were master, 3.6, 3.5, and 2.7
+during the beta phase for Python 3.8 there are master, 3.8, 3.7, and 2.7
 branches open. At some point in the future, Python 2.x will be closed for bug
 fixes and there will be only one maintenance branch left.
 
@@ -302,7 +302,7 @@ Current Administrators
 +-------------------+----------------------------------------------------------+-----------------+
 | Name              | Role                                                     | GitHub Username |
 +===================+==========================================================+=================+
-| Łukasz Langa      | Python 3.8 Release Manager                               | ambv            |
+| Łukasz Langa      | Python 3.8 and 3.9 Release Manager                       | ambv            |
 +-------------------+----------------------------------------------------------+-----------------+
 | Benjamin Peterson | Python 2.7 Release Manager                               | benjaminp       |
 +-------------------+----------------------------------------------------------+-----------------+

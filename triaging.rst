@@ -166,9 +166,9 @@ Versions
 ''''''''
 The known versions of Python that the issue affects and should be fixed for.
 
-Thus if an issue for a new feature is assigned for e.g., Python 3.7 but is not
-applied before Python 3.7.0 is released, this field should be updated to say
-Python 3.8 as the version and drop Python 3.7.
+Thus if an issue for a new feature is assigned for e.g., Python 3.8 but is not
+applied before Python 3.8.0 is released, this field should be updated to say
+Python 3.9 as the version and drop Python 3.8.
 
 Priority
 ''''''''
