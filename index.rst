@@ -93,7 +93,9 @@ Status of Python branches
 +------------------+--------------+-------------+----------------+----------------+-------------------+
 | Branch           | Schedule     | Status      | First release  | End-of-life    | Release manager   |
 +==================+==============+=============+================+================+===================+
-| master           | :pep:`569`   | features    | *2019-10-20*   | *2024-10*      | Łukasz Langa      |
+| master           | :pep:`596`   | features    | *TBD*          | *TBD*          | Łukasz Langa      |
++------------------+--------------+-------------+----------------+----------------+-------------------+
+| 3.8              | :pep:`569`   | prerelease  | *2019-10-20*   | *2024-10*      | Łukasz Langa      |
 +------------------+--------------+-------------+----------------+----------------+-------------------+
 | 3.7              | :pep:`537`   | bugfix      | 2018-06-27     | *2023-06-27*   | Ned Deily         |
 +------------------+--------------+-------------+----------------+----------------+-------------------+
@@ -108,7 +110,7 @@ Status of Python branches
 
 .. Remember to update the end-of-life table in devcycle.rst.
 
-The master branch is currently the future Python 3.8, and is the only
+The master branch is currently the future Python 3.9, and is the only
 branch that accepts new features.  The latest release for each Python
 version can be found on the `download page <https://www.python.org/downloads/>`_.
 

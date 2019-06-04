@@ -225,7 +225,7 @@ instructions on the `Tracker Development`_ page.
 
    *The meta tracker and its development*
 
-   `The meta tracker <http://psf.upfronthosting.co.za/roundup/meta/>`_
+   `The meta tracker <https://github.com/python/psf-infra-meta/issues>`_
       Where to report issues about the tracker itself.
 
    `The Tracker development wiki page <https://wiki.python.org/moin/TrackerDevelopment>`_
@@ -236,7 +236,7 @@ instructions on the `Tracker Development`_ page.
 
 
 .. _issue tracker: https://bugs.python.org/
-.. _meta tracker: http://psf.upfronthosting.co.za/roundup/meta/
+.. _meta tracker: https://github.com/python/psf-infra-meta/issues
 .. _advanced search: https://bugs.python.org/issue?@template=search
 .. _Tracker Development: https://wiki.python.org/moin/TrackerDevelopment
 .. _devguide repo: https://github.com/python/devguide/issues
