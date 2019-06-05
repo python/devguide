@@ -74,7 +74,10 @@ Python 3.x and one for Python 2.x. Only during the beta/rc phase of a new
 minor/feature release will there be three active maintenance branches, e.g.
 during the beta phase for Python 3.8 there are master, 3.8, 3.7, and 2.7
 branches open. At some point in the future, Python 2.x will be closed for bug
-fixes and there will be only one maintenance branch left.
+fixes and there will be only one maintenance branch left.  Releases
+produced from a maintenance branch are called **maintenance** or **bugfix**
+releases; the terms are used interchangeably. These releases have a
+**micro version** number greater than zero.
 
 The only changes allowed to occur in a maintenance branch without debate are
 bug fixes.  Also, a general rule for maintenance branches is that compatibility
@@ -108,7 +111,8 @@ since it is important to be able to run the tests successfully before releasing.
 Commits to security branches are to be coordinated with the release manager
 for the corresponding feature version, as listed in the :ref:`branchstatus`.
 Any release made from a security branch is source-only and done only when actual
-security patches have been applied to the branch.
+security patches have been applied to the branch. These releases have a
+**micro version** number greater than the last **bugfix** release.
 
 .. _eolbranch:
 
