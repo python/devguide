@@ -244,7 +244,7 @@ license your code for use with Python (you retain the copyright).
    You only have to sign this document once, it will then apply to all
    your further contributions to Python.
 
-You can sign the CLA before, or after you have created a pull request.
+You can sign the CLA before or after you have created a pull request.
 
 To sign a CLA before you created a pull request:
 
