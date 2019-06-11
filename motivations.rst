@@ -147,7 +147,7 @@ participating in the CPython core development process:
    * `Sponsor Mariatta on GitHub <https://github.com/users/Mariatta/sponsorship>`_
    * `Patreon <https://www.patreon.com/Mariatta>`_
 
-   Support Mariatta by `becoming a sponsor <https://github.com/users/Mariatta/sponsorship>_,
+   Support Mariatta by `becoming a sponsor <https://github.com/users/Mariatta/sponsorship>`_,
    sending her a `happiness packet <https://www.happinesspackets.io/send/>`_,
    or `paypal <https://www.paypal.me/mariatta>`_.
 
