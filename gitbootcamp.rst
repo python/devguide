@@ -262,11 +262,10 @@ Solution::
 You may see error messages like "CONFLICT" and "Automatic merge failed;" when
 you run ``git merge upstream/master``.
 
-When it happens, you need to resolve conflict.  See following articles for
-how to resolve conflicts.
+When it happens, you need to resolve conflict.  See these articles about resolving conflicts:
 
-* [About merge conflicts](https://help.github.com/en/articles/about-merge-conflicts)
-* [Resolving a merge conflict using the command line](https://help.github.com/en/articles/resolving-a-merge-conflict-using-the-command-line)
+* `About merge conflicts <https://help.github.com/en/articles/about-merge-conflicts>`_
+* `Resolving a merge conflict using the command line <https://help.github.com/en/articles/resolving-a-merge-conflict-using-the-command-line>`_
 
 
 .. _git_from_mercurial:
