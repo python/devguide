@@ -5,6 +5,19 @@
 Git Bootcamp and Cheat Sheet
 ============================
 
+.. note::
+
+   This section provides instructions on common tasks in CPython's
+   workflow. It's designed to assist new contributors who have
+   some familiarity with git and GitHub.
+
+   If you are new to git and GitHub, please become comfortable with
+   these instructions before submitting a pull request. As there are several
+   ways to accomplish these tasks using git and GitHub, this section reflects
+   one method suitable for new contributors. Experienced contributors may
+   desire a different approach.
+
+
 In this section, we'll go over some commonly used Git commands that are
 relevant to CPython's workflow.
 
@@ -84,7 +97,7 @@ will reject all changesets having the wrong line endings::
 Creating and Switching Branches
 -------------------------------
 
-.. note::
+.. important::
    Never commit directly to the ``master`` branch.
 
 Create a new branch and switch to it::
