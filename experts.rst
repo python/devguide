@@ -94,7 +94,7 @@ ctypes                theller (inactive), belopolsky, amaury.forgeotdarc,
                       meador.inge
 curses                twouters
 dataclasses           eric.smith
-datetime              belopolsky
+datetime              belopolsky, p-ganssle
 dbm
 decimal               facundobatista, rhettinger, mark.dickinson, skrah
 difflib               tim.peters (inactive)
@@ -232,7 +232,7 @@ termios               twouters
 test                  ezio.melotti
 textwrap
 threading             pitrou
-time                  belopolsky
+time                  belopolsky, p-ganssle
 timeit
 tkinter               gpolo, serhiy.storchaka
 token
@@ -350,7 +350,7 @@ str.format          eric.smith*
 testing             michael.foord, ezio.melotti
 test coverage
 threads
-time and dates      lemburg, belopolsky
+time and dates      lemburg, belopolsky, p-ganssle
 unicode             lemburg, ezio.melotti, vstinner, benjamin.peterson,
 version control     eric.araujo, ezio.melotti
 ==================  ==========================================================
