@@ -6,8 +6,8 @@ Dynamic Analysis with Clang
 
 This document describes how to use Clang to perform analysis on Python and its
 libraries. In addition to performing the analysis, the document will cover
-downloading, building and installing the the latest Clang/LLVM combination
-(which is currently 3.4).
+downloading, building and installing the latest Clang/LLVM combination (which
+is currently 3.4).
 
 This document does not cover interpreting the findings. For a discussion of
 interpreting results, see Marshall Clow's `Testing libc++ with
