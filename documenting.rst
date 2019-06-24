@@ -1583,7 +1583,7 @@ see the make targets above).
 Translating
 ===========
 
-Python documumentation translations are governed by the :PEP:`545`,
+Python documentation translations are governed by the :PEP:`545`,
 they are built by `docsbuild-scripts
 <https://github.com/python/docsbuild-scripts/>`__ and hosted on
 docs.python.org. There are several documentation translations already
@@ -1745,7 +1745,7 @@ Translation FAQ
 Which version of Python documentation should be translated?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Concensus is to work on current stable, you can then propagate your
+Consensus is to work on current stable, you can then propagate your
 translation from a branch to another using `pomerge
 <https://pypi.org/p/pomerge>`__.
 

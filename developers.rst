@@ -26,9 +26,9 @@ Permissions History
 -------------------
 
 - Paul Ganssle was given push privileges on June 15, 2019 by Brett Cannon,
-  on the recommendaation of Victor Stinner and Pablo Galindo Salgado.
+  on the recommendation of Victor Stinner and Pablo Galindo Salgado.
 
-- Stefan Behnel was given push privilages on April 8, 2019 by Brett Cannon,
+- Stefan Behnel was given push privileges on April 8, 2019 by Brett Cannon,
   on the recommendation of Serhiy Storchaka.
 
 - Stéphane Wirtel was given push privileges on April 8, 2019 by Brett Cannon,
