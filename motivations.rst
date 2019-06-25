@@ -191,7 +191,7 @@ participating in the CPython core development process:
    decentralized virtual world protocol.  He started contributing to CPython
    in 2007 and became a core developer in 2008.  His motivations have been
    driven both by the abstract desire to make Python better for the whole
-   world, and by the concrete roadbloacks he was hitting in professional
+   world, and by the concrete roadblocks he was hitting in professional
    settings.  His current focus is to improve support for system programming
    and concurrent programming (such as ``multiprocessing``).
 
