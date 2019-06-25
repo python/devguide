@@ -94,7 +94,7 @@ On :ref:`most <mac-python.exe>` Mac OS X systems, replace :file:`./python`
 with :file:`./python.exe`.  On Windows, use :file:`python.bat`.
 
 You can now use python without the ./ for the rest of these instructions, as
-long as your venv is activated. For more info on venv see `Virtual Envrionment
+long as your venv is activated. For more info on venv see `Virtual Environment
 <https://docs.python.org/3/tutorial/venv.html>`_ documentation.
 
 If this does not work for you for some reason, you should try using the
