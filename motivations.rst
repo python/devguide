@@ -182,7 +182,7 @@ participating in the CPython core development process:
 .. topic:: Antoine Pitrou (France)
 
    * LinkedIn: `<https://www.linkedin.com/in/pitrou/>`_ (Senior Software Engineer)
-   * Independent (currently Two Sigma Investments)
+   * Independent (currently Ursa Labs / R Studio)
    * Python Software Foundation (Fellow)
    * Available for open source contract work
    * Email address: antoine@python.org
@@ -192,12 +192,13 @@ participating in the CPython core development process:
    in 2007 and became a core developer in 2008.  His motivations have been
    driven both by the abstract desire to make Python better for the whole
    world, and by the concrete roadblocks he was hitting in professional
-   settings.  His current focus is to improve support for system programming
-   and concurrent programming (such as ``multiprocessing``).
+   settings.  Topics of choice have included interpreter optimizations,
+   garbage collection, network programming, system programming and
+   concurrent programming (such as maintaining ``multiprocessing``).
 
    As a professional, Antoine has been first specializing in network
-   programming, and more lately (since 2014) in open source data science
-   infrastructure such as Dask, Numba, Apache Arrow.
+   programming, and more lately in open source data science infrastructure
+   such as Dask, Numba, Apache Arrow.
 
 .. topic:: Victor Stinner (France)
 
