@@ -1632,6 +1632,9 @@ in production, other are work in progress:
 |              |                    | `doc <https://docs.python.org/ko/>`__    |
 |              |                    |                                          |
 +--------------+--------------------+------------------------------------------+
+| Lithuanian   |                    | `mail <https://mail.python.org/pipermail/|
+| (lt)         |                    | doc-sig/2019-July/004138.html>`__        |
++--------------+--------------------+------------------------------------------+
 | Polish (pl)  |                    | `mail <https://mail.python.org/pipermail/|
 |              |                    | doc-sig/2019-April/004106.html>`__       |
 |              |                    |                                          |
