@@ -151,7 +151,8 @@ Almost all changes made to the code base deserve an entry in ``Misc/NEWS.d``.
 If the change is particularly interesting for end users (e.g. new features,
 significant improvements, or backwards-incompatible changes), an entry in
 the ``What's New in Python`` document (in ``Doc/whatsnew/``) should be added
-as well.
+as well.  Changes that affect documentation only generally do not require
+a news entry.
 
 There are two notable exceptions to this general principle, and they
 both relate to changes that *already* have a news entry, and have not yet
