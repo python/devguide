@@ -9,7 +9,38 @@ and developers.
 Contributors with the Developer role on the `issue tracker`_ can triage issues
 directly without any assistance.
 
-Additionally, this section provides an overview of the `bug triager`_ role.
+Additionally, this section provides an overview of the bug triager role.
+
+Bug Triager
+------------
+
+The bug triager is a role dedicated towards improving workflow efficiency and
+lessening the workload of the core developers. The expectations of this role
+expand upon the "python triager" role on the `issue tracker`_. The responsibilities
+listed below are primarily centered around the Python GitHub repositories. This
+extends beyond cpython, to the other repos such as devguide, core-workflow, and
+python.org.
+
+* PR/issue management
+    - Renaming PRs
+    - Reviewing PRs
+    - Closing PRs and issues
+    - Assisting contributors
+    - Notifying appropriate core developers
+* Applying appropriate labels to PRs/Issues
+    - Skip news
+    - Skip issue
+    - Good first issue
+    - Other categorizations
+
+It is also of paramount importance to treat every contributor to the Python
+project kindly and with respect. Regardless of whether they're entirely new
+or a veteran core developer, they're actively choosing to voluntarily donate their
+time towards the improvement of Python. As is the case with any member of
+the Python Software Foundation, always follow the `PSF Code of Conduct`_.
+
+Note: Existing python triagers on the `issue tracker`_ are welcome to
+self-nominate themselves for the bug triager role if they are interested.
 
 Fields in the Issue Tracker
 ---------------------------
@@ -406,37 +437,6 @@ Checklist for Triaging
 * (Optional) Leave a brief comment about the proposed next action needed. If
   there is a long message list, a summary can be very helpful.
 
-Bug Triager
-------------
-
-The bug triager is a role dedicated towards improving workflow efficiency and
-lessening the workload of the core developers. The expectations of this role
-expand upon the "python triager" role on the `issue tracker`_. The responsibilities
-listed below are primarily centered around the Python GitHub repositories. This
-extends beyond cpython, to the other repos such as devguide, core-workflow, and
-python.org.
-
-* PR/issue management
-    - Renaming PRs
-    - Reviewing PRs
-    - Closing PRs and issues
-    - Assisting contributors
-    - Notifying appropriate core developers
-* Applying appropriate labels to PRs/Issues
-    - Skip news
-    - Skip issue
-    - Good first issue
-    - Other categorizations
-
-It is also of paramount importance to treat every contributor to the Python
-project kindly and with respect. Regardless of whether they're entirely new
-or a veteran core developer, they're actively choosing to voluntarily donate their
-time towards the improvement of Python. As is the case with any member of
-the Python Software Foundation, always follow the `PSF Code of Conduct`_.
-
-Note: Existing python triagers on the `issue tracker`_ are welcome to
-self-nominate themselves for the bug triager role if they are interested.
-
 
 .. _CPython: https://github.com/python/cpython/
 .. _Doc: https://github.com/python/cpython/tree/master/Doc/
@@ -472,5 +472,4 @@ self-nominate themselves for the bug triager role if they are interested.
 .. _Reporting security issues in Python: https://www.python.org/news/security/
 .. _python-ideas: https://mail.python.org/mailman/listinfo/python-ideas
 .. _release schedule: https://devguide.python.org/#status-of-python-branches
-.. _bug triager: https://devguide.python.org/triaging#Bug_Triager
 .. _PSF Code of Conduct: https://www.python.org/psf/codeofconduct/
