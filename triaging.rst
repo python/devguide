@@ -407,7 +407,7 @@ Checklist for Triaging
   there is a long message list, a summary can be very helpful.
 
 Bug Triager
----------------------------
+------------
 
 The bug triager is a role dedicated towards improving workflow efficiency and
 lessening the workload of the core developers. The expectations of this role
