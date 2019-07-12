@@ -39,8 +39,10 @@ or a veteran core developer, they're actively choosing to voluntarily donate the
 time towards the improvement of Python. As is the case with any member of
 the Python Software Foundation, always follow the `PSF Code of Conduct`_.
 
-Note: Existing python triagers on the `issue tracker`_ are welcome to
-self-nominate themselves for the bug triager role if they are interested.
+.. note::
+
+   Existing python triagers on the `issue tracker`_ are welcome to
+   self-nominate themselves for the bug triager role if they are interested.
 
 Fields in the Issue Tracker
 ---------------------------
