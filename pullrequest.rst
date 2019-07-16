@@ -66,6 +66,7 @@ You should have already :ref:`set up your system <setup>`,
 
 * Create a new branch in your local clone::
 
+     git fetch upstream
      git checkout -b <branch-name> upstream/master
 
 * Make changes to the code, and use ``git status`` and ``git diff`` to see them.
