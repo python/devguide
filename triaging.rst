@@ -16,7 +16,7 @@ Python triage team
 
 The Python triage team is a role dedicated towards improving workflow efficiency and
 lessening the workload of the core developers. The expectations of this role
-expand upon the "python triager" role on the `issue tracker`_. The responsibilities
+expand upon the "Developer" role on the `issue tracker`_. The responsibilities
 listed below are primarily centered around the Python GitHub repositories. This
 extends beyond CPython, to the other repos such as devguide and core-workflow.
 
@@ -40,8 +40,8 @@ the Python Software Foundation, always follow the `PSF Code of Conduct`_.
 
 .. note::
 
-   Existing python triagers on the `issue tracker`_ are welcome to
-   self-nominate themselves for the bug triager role if they are interested.
+   Existing members of the "Developer" role on the `issue tracker`_ are welcome to
+   self-nominate for the bug triager role if they are interested.
 
 Fields in the Issue Tracker
 ---------------------------
