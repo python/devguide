@@ -11,7 +11,7 @@ directly without any assistance.
 
 Additionally, this section provides an overview of the bug triager role.
 
-Bug Triager
+Python triage team
 ------------
 
 The bug triager is a role dedicated towards improving workflow efficiency and
