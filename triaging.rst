@@ -12,7 +12,7 @@ directly without any assistance.
 Additionally, this section provides an overview of the bug triager role.
 
 Python triage team
-------------
+-----------------------------
 
 The Python triage team is a role dedicated towards improving workflow efficiency and
 lessening the workload of the core developers. The expectations of this role
