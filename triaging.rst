@@ -18,7 +18,7 @@ The bug triager is a role dedicated towards improving workflow efficiency and
 lessening the workload of the core developers. The expectations of this role
 expand upon the "python triager" role on the `issue tracker`_. The responsibilities
 listed below are primarily centered around the Python GitHub repositories. This
-extends beyond cpython, to the other repos such as devguide, core-workflow, and
+extends beyond CPython, to the other repos such as devguide, core-workflow, and
 python.org.
 
 * PR/issue management
