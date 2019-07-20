@@ -9,16 +9,17 @@ and developers.
 Contributors with the Developer role on the `issue tracker`_ can triage issues
 directly without any assistance.
 
-Additionally, this section provides an overview of the bug triager role.
+Additionally, this section provides an overview of the Python triage team.
 
 Python triage team
 -----------------------------
 
-The Python triage team is a role dedicated towards improving workflow efficiency and
-lessening the workload of the core developers. The expectations of this role
-expand upon the "Developer" role on the `issue tracker`_. The responsibilities
-listed below are primarily centered around the Python GitHub repositories. This
-extends beyond CPython, to the other repos such as devguide and core-workflow.
+The Python triage team is a group dedicated towards improving workflow
+efficiency and lessening the workload of the core developers. The expectations of
+this role expand upon the "Developer" role on the `issue tracker`_. The
+responsibilities listed below are primarily centered around the Python GitHub
+repositories. This extends beyond CPython, to the other repos such as devguide
+and core-workflow.
 
 * PR/issue management
     - Renaming PRs
