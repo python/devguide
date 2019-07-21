@@ -42,7 +42,7 @@ the Python Software Foundation, always follow the `PSF Code of Conduct`_.
 .. note::
 
    Existing members of the "Developer" role on the `issue tracker`_ are welcome to
-   self-nominate for the bug triager role if they are interested.
+   self-nominate for triage team membership if they are interested.
 
 Fields in the Issue Tracker
 ---------------------------
