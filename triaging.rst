@@ -15,11 +15,13 @@ Python triage team
 -----------------------------
 
 The Python triage team is a group dedicated towards improving workflow
-efficiency through thoughtful review and triage of open issues and pull requests. This helps contributors receive timely feedback and enables core developers to focus on reviewed items which reduces their workload. The expectations of
-this role expand upon the "Developer" role on the `issue tracker`_. The
-responsibilities listed below are primarily centered around the Python GitHub
-repositories. This extends beyond CPython, and, as needed, to other repos such as devguide
-and core-workflow.
+efficiency through thoughtful review and triage of open issues and pull
+requests. This helps contributors receive timely feedback and enables core 
+developers to focus on reviewed items which reduces their workload. The 
+expectations of this role expand upon the "Developer" role on the 
+`issue tracker`_. The responsibilities listed below are primarily centered 
+around the Python GitHub repositories. This extends beyond CPython, and, as 
+needed, to other repos such as devguide and core-workflow.
 
 Responsibilities include:
 
