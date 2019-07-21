@@ -12,7 +12,7 @@ directly without any assistance.
 Additionally, this section provides an overview of the Python triage team.
 
 Python triage team
----------------------
+------------------
 
 The Python triage team is a group dedicated towards improving workflow
 efficiency through thoughtful review and triage of open issues and pull
