@@ -21,6 +21,8 @@ responsibilities listed below are primarily centered around the Python GitHub
 repositories. This extends beyond CPython, and, as needed, to other repos such as devguide
 and core-workflow.
 
+Responsibilities include:
+
 * PR/issue management
     - Renaming PRs
     - Reviewing PRs
