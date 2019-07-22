@@ -64,9 +64,12 @@ Step-by-step Guide
 You should have already :ref:`set up your system <setup>`,
 :ref:`got the source code <checkout>`, and :ref:`built Python <compiling>`.
 
+* Update data from your ``upstream`` repository::
+
+     git fetch upstream
+
 * Create a new branch in your local clone::
 
-     git fetch upstream # upstream must be configured as a remote
      git checkout -b <branch-name> upstream/master
 
 * Make changes to the code, and use ``git status`` and ``git diff`` to see them.
