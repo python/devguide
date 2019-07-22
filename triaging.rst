@@ -9,6 +9,45 @@ and developers.
 Contributors with the Developer role on the `issue tracker`_ can triage issues
 directly without any assistance.
 
+Additionally, this section provides an overview of the Python triage team.
+
+Python triage team
+------------------
+
+The Python triage team is a group dedicated towards improving workflow
+efficiency through thoughtful review and triage of open issues and pull
+requests. This helps contributors receive timely feedback and enables core 
+developers to focus on reviewed items which reduces their workload. The 
+expectations of this role expand upon the "Developer" role on the 
+`issue tracker`_. The responsibilities listed below are primarily centered 
+around the Python GitHub repositories. This extends beyond CPython, and, as 
+needed, to other repos such as devguide and core-workflow.
+
+Responsibilities include:
+
+* PR/issue management
+    - Renaming PRs
+    - Reviewing PRs
+    - Closing PRs and issues
+    - Assisting contributors
+    - Notifying appropriate core developers
+* Applying appropriate labels to PRs/Issues
+    - Skip news
+    - Skip issue
+    - Good first issue
+    - Other categorizations
+
+It is also of paramount importance to treat every contributor to the Python
+project kindly and with respect. Regardless of whether they're entirely new
+or a veteran core developer, they're actively choosing to voluntarily donate their
+time towards the improvement of Python. As is the case with any member of
+the Python Software Foundation, always follow the `PSF Code of Conduct`_.
+
+.. note::
+
+   Existing members with the "Developer" role on the `issue tracker`_ are welcome to
+   self-nominate for triage team membership if they are interested.
+
 Fields in the Issue Tracker
 ---------------------------
 
@@ -439,3 +478,4 @@ Checklist for Triaging
 .. _Reporting security issues in Python: https://www.python.org/news/security/
 .. _python-ideas: https://mail.python.org/mailman/listinfo/python-ideas
 .. _release schedule: https://devguide.python.org/#status-of-python-branches
+.. _PSF Code of Conduct: https://www.python.org/psf/codeofconduct/
