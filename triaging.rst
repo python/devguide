@@ -47,6 +47,29 @@ the Python Software Foundation, always follow the `PSF Code of Conduct`_.
 
    Existing members with the "Developer" role on the `issue tracker`_ are welcome to
    self-nominate for triage team membership if they are interested.
+   
+GitHub Labels
+''''''''''''''''
+
+An important component of triaging PRs and issues involves appropriately 
+categorizing them through the usage of labels. Here are several of the
+common ones utilized:
+
++------------+----------------------------------------------------------------------------+
+| Label      | Description                                                                |
++------------+----------------------------------------------------------------------------+
+| skip issue | Used for PRs which involve trivial changes, such as typo fixes,            |
+|            | comment changes, and section rephrases. The majority of PRs require        |
+|            | an issue to be attached to, but if there are no code changes and the       |
+|            | section being modified retains the same meaning, this label might be       |
+|            | appropriate. It is also used commonly for backports.                       |
++------------+----------------------------------------------------------------------------+
+| skip news  | Used frequently in combination with the skip issue label for PRs that      |
+|            | involve trivial changes, backports, or already have a relevant news entry  |
+|            | in another PR. Any potentially impactful changes should have a             |
+|            | corresponding  news entry, but for trivial changes it's commonly at the    |
+|            | discretion of the PR author if they wish to opt-out of making one.         |
++------------+----------------------------------------------------------------------------+
 
 Fields in the Issue Tracker
 ---------------------------
