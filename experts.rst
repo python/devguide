@@ -104,7 +104,7 @@ doctest               tim.peters (inactive)
 dummy_threading       brett.cannon
 email                 barry, r.david.murray*, maxking
 encodings             lemburg
-ensurepip             ncoghlan, dstufft
+ensurepip             ncoghlan, dstufft, pradyunsg
 enum                  eli.bendersky*, barry, ethan.furman*
 errno                 twouters
 exceptions
@@ -341,7 +341,7 @@ networking          giampaolo.rodola,
 object model        benjamin.peterson, twouters
 packaging           tarek, lemburg, alexis, eric.araujo, dstufft, paul.moore
 performance         brett.cannon, vstinner, serhiy.storchaka, yselivanov
-pip                 ncoghlan, dstufft, paul.moore, Marcus.Smith
+pip                 ncoghlan, dstufft, paul.moore, Marcus.Smith, pradyunsg
 py3 transition      benjamin.peterson
 release management  tarek, lemburg, benjamin.peterson, barry,
                     gvanrossum, anthonybaxter, eric.araujo, ned.deily,
