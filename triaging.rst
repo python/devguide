@@ -92,6 +92,9 @@ type-bugfix - Used for PRs that address unintentional behavior, but do not
 pose significant security concerns. Generally, bugfixes will be attached
 to a specific issue where the unintended behavior was first reported.
 
+type-documentation - Used for PRs which exclusively involve changes to
+documentation.
+
 Fields in the Issue Tracker
 ---------------------------
 
