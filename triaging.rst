@@ -52,44 +52,44 @@ the Python Software Foundation, always follow the `PSF Code of Conduct`_.
 GitHub Labels 
 '''''''''''''
 
-An important component of triaging PRs and issues involves appropriately 
+An important component of triaging PRs and issues involves appropriately
 categorizing them through the usage of labels.
 
-invalid - Used manually for PRs that do not meet basic requirements and can 
+invalid - Used manually for PRs that do not meet basic requirements and can
 be automatically added by bedevere when authors attempt to merge maintenace
 branches into the master branch. During competitions, this label casues the
 PR to not count towards the author's contributions.
 
-needs backport to X.Y - Used for PRs which are appropriate to backport to 
-branches prior to master. Generally, backports to the maintenance branches 
-are primarily bugfixes and documentation clarifications. Backports to the 
+needs backport to X.Y - Used for PRs which are appropriate to backport to
+branches prior to master. Generally, backports to the maintenance branches
+are primarily bugfixes and documentation clarifications. Backports to the
 security branches are strictly reserved for PRs involving security fixes, such as
-crashes, privilege escalation, and DoS. The use of this label will cause 
-miss-islington to attempt to automatically merge the PR into the branches 
+crashes, privilege escalation, and DoS. The use of this label will cause
+miss-islington to attempt to automatically merge the PR into the branches
 specified.
 
 skip issue - Used for PRs which involve trivial changes, such as typo fixes,
 comment changes, and section rephrases. The majority of PRs require
-an issue to be attached to, but if there are no code changes and the 
+an issue to be attached to, but if there are no code changes and the
 section being modified retains the same meaning, this label might be
-appropriate. 
+appropriate.
 
 skip news - Similar to the skip issue label, this label is used for PRs which
 involve trivial changes, backports, or already have a relevant news entry
 in another PR. Any potentially impactful changes should have a
-corresponding news entry, but for trivial changes it's commonly at the 
+corresponding news entry, but for trivial changes it's commonly at the
 discretion of the PR author if they wish to opt-out of making one.
 
 OS-X - Used for PRs involving changes which only have an effect upon
-a specific operating system. Current variations of the label include 
+a specific operating system. Current variations of the label include
 OS-Windows and OS-Mac.
 
-sprint - Used for PRs authored during an in-person sprint, such as 
+sprint - Used for PRs authored during an in-person sprint, such as
 PyCons, EuroPython, or other official Python events. The label is
 used to prioritize the review of those PRs during the sprint.
 
-type-bugfix - Used for PRs that fix unintentional behavior, but do not 
-pose significant security concerns. Generally, bugfixes will be attached 
+type-bugfix - Used for PRs that fix unintentional behavior, but do not
+pose significant security concerns. Generally, bugfixes will be attached
 to a specific issue where the unintended behavior was first reported.
 
 Fields in the Issue Tracker
