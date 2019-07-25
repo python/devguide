@@ -85,7 +85,7 @@ a specific operating system. Current variations of the label include
 OS-Windows and OS-Mac.
 
 sprint - Used for PRs authored during an in-person sprint, such as
-PyCons, EuroPython, or other official Python events. The label is
+at PyCon, EuroPython, or other official Python events. The label is
 used to prioritize the review of those PRs during the sprint.
 
 type-bugfix - Used for PRs that address unintentional behavior, but do not
