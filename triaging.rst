@@ -100,7 +100,7 @@ or capabilities beyond the existing specifications.
 
 type-performance - Used for PRs that provide performance optimizations.
 
-type-tests - Used for PRs which exclusively involve changes to the tests.
+type-tests - Used for PRs that exclusively involve changes to the tests.
 
 Fields in the Issue Tracker
 ---------------------------
