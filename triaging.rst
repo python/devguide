@@ -55,8 +55,8 @@ GitHub Labels
 An important component of triaging PRs and issues on GitHub involves
 appropriately categorizing them through the usage of labels.
 
-invalid - Used manually for PRs that do not meet basic requirements and can
-be automatically added by bedevere when authors attempt to merge maintenace
+invalid - Used manually for PRs that do not meet basic requirements and
+automatically added by bedevere when PR authors attempt to merge maintenace
 branches into the master branch. During competitions, this label casues the
 PR to not count towards the author's contributions.
 
