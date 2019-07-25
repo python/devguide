@@ -95,7 +95,8 @@ pose significant security concerns. Generally, bugfixes will be attached
 to a specific issue where the unintended behavior was first reported.
 
 type-documentation - Used for PRs that exclusively involve changes to
-the documentation.
+the documentation. Documentation includes `*.rst` files, docstrings,
+and code comments.
 
 type-enhancement - Used for PRs that provide additional functionality
 or capabilities beyond the existing specifications.
