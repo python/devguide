@@ -55,12 +55,18 @@ GitHub Labels
 An important component of triaging PRs and issues involves appropriately 
 categorizing them through the usage of labels.
 
-needs backport to X.Y - Used for PRs which are appropriate to backport to branches prior to 
-master. Generally, backports to the maintenance branches are primarily
-bugfixes and documentation clarifications. Backports to the security
-branches are strictly reserved for PRs involving security fixes, such as
-crashes, privilege escalation, and DoS. The use of this label will cause the 
-bot to attempt to automatically merge the PR into the branches specified.
+invalid - Used manually for PRs that do not meet basic requirements and can 
+be automatically added by bedevere when authors attempt to merge maintenace
+branches into the master branch. During competitions, this label casues the
+PR to not count towards the author's contributions.
+
+needs backport to X.Y - Used for PRs which are appropriate to backport to 
+branches prior to master. Generally, backports to the maintenance branches 
+are primarily bugfixes and documentation clarifications. Backports to the 
+security branches are strictly reserved for PRs involving security fixes, such as
+crashes, privilege escalation, and DoS. The use of this label will cause 
+miss-islington to attempt to automatically merge the PR into the branches 
+specified.
 
 skip issue - Used for PRs which involve trivial changes, such as typo fixes,
 comment changes, and section rephrases. The majority of PRs require
