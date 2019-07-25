@@ -65,7 +65,7 @@ skip issue - Used for PRs which involve trivial changes, such as typo fixes,
 comment changes, and section rephrases. The majority of PRs require
 an issue to be attached to, but if there are no code changes and the 
 section being modified retains the same meaning, this label might be
-appropriate. It is also used commonly for backports.
+appropriate. 
 
 skip news - Used frequently in combination with the skip issue label for PRs that
 involve trivial changes, backports, or already have a relevant news entry
