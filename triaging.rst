@@ -95,6 +95,9 @@ to a specific issue where the unintended behavior was first reported.
 type-documentation - Used for PRs which exclusively involve changes to
 documentation.
 
+type-enhancement - Used for PRs which provide additional functionality
+or capabilities beyond the existing specifications. 
+
 Fields in the Issue Tracker
 ---------------------------
 
