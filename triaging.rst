@@ -74,6 +74,10 @@ in another PR. Any potentially impactful changes should have a
 corresponding news entry, but for trivial changes it's commonly at the 
 discretion of the PR author if they wish to opt-out of making one.
 
+OS-X - Used for PRs involving changes which only have an effect upon
+a specific operating system. Current variations of the label include 
+OS-Windows and OS-Mac.
+
 
 Fields in the Issue Tracker
 ---------------------------
