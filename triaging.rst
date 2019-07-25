@@ -53,8 +53,7 @@ GitHub Labels
 '''''''''''''
 
 An important component of triaging PRs and issues involves appropriately 
-categorizing them through the usage of labels. Here are several of the
-common ones utilized by the Python triage team:
+categorizing them through the usage of labels.
 
 +-----------------------+----------------------------------------------------------------------------+
 | Label                 | Description                                                                |
