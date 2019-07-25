@@ -52,8 +52,8 @@ the Python Software Foundation, always follow the `PSF Code of Conduct`_.
 GitHub Labels 
 '''''''''''''
 
-An important component of triaging PRs and issues involves appropriately
-categorizing them through the usage of labels.
+An important component of triaging PRs and issues on GitHub involves
+appropriately categorizing them through the usage of labels.
 
 invalid - Used manually for PRs that do not meet basic requirements and can
 be automatically added by bedevere when authors attempt to merge maintenace
