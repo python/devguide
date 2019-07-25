@@ -61,6 +61,9 @@ DO-NOT-MERGE - Used on PRs to prevent miss-islington from being able
 to automatically merge to pull request. This label is appropriate when a PR
 has a non-trivial conflict with the branch it is being merged into.
 
+expert-asyncio - Used for PRs which involve changes to the asyncio module
+or other asynchronous frameworks that utilize it.
+
 invalid - Used manually for PRs that do not meet basic requirements and
 automatically added by bedevere when PR authors attempt to merge maintenace
 branches into the master branch. During competitions, this label casues the
