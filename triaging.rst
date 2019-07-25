@@ -110,6 +110,9 @@ or capabilities beyond the existing specifications.
 
 type-performance - Used for PRs that provide performance optimizations.
 
+type-security - Used for PRs that involve critical security issues. Less severe 
+security concerns can instead use the type-bugfix label.
+
 type-tests - Used for PRs that exclusively involve changes to the tests.
 
 Fields in the Issue Tracker
