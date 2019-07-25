@@ -84,6 +84,10 @@ OS-X - Used for PRs involving changes which only have an effect upon
 a specific operating system. Current variations of the label include 
 OS-Windows and OS-Mac.
 
+sprint - Used for PRs authored during an in-person sprint, such as 
+PyCons, EuroPython, or other official Python events. The label is
+used to prioritize the review of those PRs during the sprint.
+
 
 Fields in the Issue Tracker
 ---------------------------
