@@ -55,6 +55,8 @@ GitHub Labels
 An important component of triaging PRs and issues on GitHub involves
 appropriately categorizing them through the usage of labels.
 
+Labels include:
+
 invalid - Used manually for PRs that do not meet basic requirements and
 automatically added by bedevere when PR authors attempt to merge maintenace
 branches into the master branch. During competitions, this label casues the
