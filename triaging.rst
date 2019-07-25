@@ -59,7 +59,8 @@ needs backport to X.Y - Used for PRs which are appropriate to backport to branch
 master. Generally, backports to the maintenance branches are primarily
 bugfixes and documentation clarifications. Backports to the security
 branches are strictly reserved for PRs involving security fixes, such as
-crashes, privilege escalation, and DoS.
+crashes, privilege escalation, and DoS. The use of this label will cause the 
+bot to attempt to automatically merge the PR into the branches specified.
 
 skip issue - Used for PRs which involve trivial changes, such as typo fixes,
 comment changes, and section rephrases. The majority of PRs require
@@ -67,10 +68,10 @@ an issue to be attached to, but if there are no code changes and the
 section being modified retains the same meaning, this label might be
 appropriate. 
 
-skip news - Used frequently in combination with the skip issue label for PRs that
+skip news - Similar to the skip issue label, this label is used for PRs which
 involve trivial changes, backports, or already have a relevant news entry
 in another PR. Any potentially impactful changes should have a
-corresponding  news entry, but for trivial changes it's commonly at the 
+corresponding news entry, but for trivial changes it's commonly at the 
 discretion of the PR author if they wish to opt-out of making one.
 
 
