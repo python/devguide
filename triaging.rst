@@ -88,6 +88,9 @@ sprint - Used for PRs authored during an in-person sprint, such as
 PyCons, EuroPython, or other official Python events. The label is
 used to prioritize the review of those PRs during the sprint.
 
+type-bugfix - Used for PRs that fix unintentional behavior, but do not 
+pose significant security concerns. Generally, bugfixes will be attached 
+to a specific issue where the unintendedbehavior was first reported.
 
 Fields in the Issue Tracker
 ---------------------------
