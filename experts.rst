@@ -318,8 +318,8 @@ bsd
 bug tracker         ezio.melotti
 buildbots           zach.ware
 bytecode            benjamin.peterson, yselivanov
-core-workflow       mariatta
 context managers    ncoghlan
+core workflow       mariatta
 coverity scan       christian.heimes, brett.cannon, twouters
 cryptography        gregory.p.smith, dstufft
 data formats        mark.dickinson
