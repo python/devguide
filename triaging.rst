@@ -253,6 +253,11 @@ Various informational flags about the issue. Multiple values are possible.
 | easy          | Fixing the issue should not take longer than a day for     |
 |               | someone new to contributing to Python to solve.            |
 +---------------+------------------------------------------------------------+
+| newcomer      | Issue suitable for newcomer/first time contributors.       |
+| friendly      | Not suitable for experienced contributors. Typically it is |
+|               | straightforward, well-defined, low-risk, and optionally    |
+|               | someone is able to mentor the new contributor.             |
++---------------+------------------------------------------------------------+
 | gsoc          | The issue would fit as, or is related to, a GSoC_ project. |
 +---------------+------------------------------------------------------------+
 | needs review  | The patch or pull request attached to the issue is in need |
