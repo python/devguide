@@ -49,8 +49,8 @@ the Python Software Foundation, always follow the `PSF Code of Conduct`_.
    self-nominate for triage team membership if they are interested.
    
 
-GitHub Labels 
-'''''''''''''
+GitHub Labels for PRs
+'''''''''''''''''''''
 
 An important component of triaging PRs for the CPython repo involves
 appropriately categorizing them through the usage of labels.
