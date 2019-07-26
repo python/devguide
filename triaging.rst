@@ -52,10 +52,10 @@ the Python Software Foundation, always follow the `PSF Code of Conduct`_.
 GitHub Labels 
 '''''''''''''
 
-An important component of triaging PRs and issues on GitHub involves
+An important component of triaging PRs for the CPython repo involves
 appropriately categorizing them through the usage of labels.
 
-Labels include:
+Labels for PRs include:
 
 DO-NOT-MERGE - Used on PRs to prevent miss-islington from being able
 to automatically merge to pull request. This label is appropriate when a PR
