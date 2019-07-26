@@ -319,11 +319,12 @@ bug tracker         ezio.melotti
 buildbots           zach.ware
 bytecode            benjamin.peterson, yselivanov
 context managers    ncoghlan
+core workflow       mariatta
 coverity scan       christian.heimes, brett.cannon, twouters
 cryptography        gregory.p.smith, dstufft
 data formats        mark.dickinson
 database            lemburg
-devguide            eric.araujo, ezio.melotti, willingc
+devguide            eric.araujo, ezio.melotti, willingc, mariatta
 documentation       ezio.melotti, eric.araujo, mdk, willingc
 emoji               mariatta
 extension modules   petr.viktorin, ncoghlan
