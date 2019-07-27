@@ -1,0 +1,1284 @@
+{
+    "categories":{
+        "__future__":[
+
+        ],
+        "__main__":[
+            "Guido van Rossum",
+            "Nick Coghlan"
+        ],
+        "_dummy_thread":[
+            "Brett Cannon"
+        ],
+        "_thread":[
+
+        ],
+        "_testbuffer":[
+            "Stefan Krah"
+        ],
+        "abc":[
+
+        ],
+        "aifc":[
+            "R. David Murray"
+        ],
+        "argparse":[
+            "Steven Bethard"
+        ],
+        "array":[
+
+        ],
+        "ast":[
+            "Benjamin Peterson"
+        ],
+        "asynchat":[
+            "Giampaolo Rodola*",
+            "Daniel Stutzbach"
+        ],
+        "asyncio":[
+            "Yury Selivanov",
+            "Andrew Svetlov"
+        ],
+        "asyncore":[
+            "Giampaolo Rodola*",
+            "Daniel Stutzbach"
+        ],
+        "atexit":[
+
+        ],
+        "audioop":[
+            "Serhiy Storchaka"
+        ],
+        "base64":[
+
+        ],
+        "bdb":[
+
+        ],
+        "binascii":[
+
+        ],
+        "binhex":[
+
+        ],
+        "bisect":[
+            "Raymond Hettinger"
+        ],
+        "builtins":[
+
+        ],
+        "bz2":[
+
+        ],
+        "calendar":[
+            "Raymond Hettinger"
+        ],
+        "cgi":[
+
+        ],
+        "cgitb":[
+
+        ],
+        "chunk":[
+
+        ],
+        "cmath":[
+            "Mark Dickinson"
+        ],
+        "cmd":[
+
+        ],
+        "code":[
+
+        ],
+        "codecs":[
+            "Marc-Andre Lemburg",
+            "Walter Dörwald"
+        ],
+        "codeop":[
+
+        ],
+        "collections":[
+            "Raymond Hettinger"
+        ],
+        "collections.abc":[
+            "Raymond Hettinger",
+            "Daniel Stutzbach"
+        ],
+        "colorsys":[
+
+        ],
+        "compileall":[
+
+        ],
+        "concurrent.futures":[
+            "Antoine Pitrou",
+            "Brian Quinlan"
+        ],
+        "configparser":[
+            "Łukasz Langa*"
+        ],
+        "contextlib":[
+            "Nick Coghlan",
+            "Yury Selivanov"
+        ],
+        "contextvars":[
+
+        ],
+        "copy":[
+            "Alexandre Vassalotti"
+        ],
+        "copyreg":[
+            "Alexandre Vassalotti"
+        ],
+        "cProfile":[
+
+        ],
+        "crypt":[
+            "Sean Reifschneider*"
+        ],
+        "csv":[
+
+        ],
+        "ctypes":[
+            "Alexander Belopolsky",
+            "Amaury Forgeot d'Arc",
+            "Meador Inge"
+        ],
+        "curses":[
+            "Thomas Wouters"
+        ],
+        "dataclasses":[
+            "Eric V. Smith"
+        ],
+        "datetime":[
+            "Alexander Belopolsky",
+            "Paul Ganssle"
+        ],
+        "dbm":[
+
+        ],
+        "decimal":[
+            "Facundo Batista",
+            "Raymond Hettinger",
+            "Mark Dickinson",
+            "Stefan Krah"
+        ],
+        "difflib":[
+
+        ],
+        "dis":[
+            "Yury Selivanov"
+        ],
+        "distutils":[
+            "Éric Araujo",
+            "Donald Stufft"
+        ],
+        "doctest":[
+
+        ],
+        "dummy_threading":[
+            "Brett Cannon"
+        ],
+        "email":[
+            "Barry A. Warsaw",
+            "R. David Murray*"
+        ],
+        "encodings":[
+            "Marc-Andre Lemburg"
+        ],
+        "ensurepip":[
+            "Nick Coghlan",
+            "Donald Stufft"
+        ],
+        "enum":[
+            "Eli Bendersky*",
+            "Barry A. Warsaw",
+            "Ethan Furman*"
+        ],
+        "errno":[
+            "Thomas Wouters"
+        ],
+        "exceptions":[
+
+        ],
+        "faulthandler":[
+            "STINNER Victor"
+        ],
+        "fcntl":[
+            "Thomas Wouters"
+        ],
+        "filecmp":[
+
+        ],
+        "fileinput":[
+
+        ],
+        "fnmatch":[
+
+        ],
+        "formatter":[
+
+        ],
+        "fpectl":[
+            "Thomas Wouters"
+        ],
+        "fractions":[
+            "Mark Dickinson",
+            "Raymond Hettinger"
+        ],
+        "ftplib":[
+            "Giampaolo Rodola*"
+        ],
+        "functools":[
+            "Raymond Hettinger"
+        ],
+        "gc":[
+            "Antoine Pitrou"
+        ],
+        "getopt":[
+
+        ],
+        "getpass":[
+
+        ],
+        "gettext":[
+
+        ],
+        "glob":[
+
+        ],
+        "grp":[
+
+        ],
+        "gzip":[
+
+        ],
+        "hashlib":[
+            "Christian Heimes",
+            "Gregory P. Smith"
+        ],
+        "heapq":[
+            "Raymond Hettinger",
+            "Daniel Stutzbach"
+        ],
+        "hmac":[
+            "Christian Heimes",
+            "Gregory P. Smith"
+        ],
+        "html":[
+            "Ezio Melotti"
+        ],
+        "http":[
+
+        ],
+        "idlelib":[
+            "Terry J. Reedy*"
+        ],
+        "imaplib":[
+
+        ],
+        "imghdr":[
+
+        ],
+        "imp":[
+
+        ],
+        "importlib":[
+            "Brett Cannon"
+        ],
+        "inspect":[
+            "Yury Selivanov"
+        ],
+        "io":[
+            "Benjamin Peterson",
+            "Daniel Stutzbach"
+        ],
+        "ipaddress":[
+            "pmoody"
+        ],
+        "itertools":[
+            "Raymond Hettinger"
+        ],
+        "json":[
+            "Ezio Melotti",
+            "Raymond Hettinger"
+        ],
+        "keyword":[
+
+        ],
+        "lib2to3":[
+            "Benjamin Peterson"
+        ],
+        "libmpdec":[
+            "Stefan Krah"
+        ],
+        "linecache":[
+
+        ],
+        "locale":[
+            "Marc-Andre Lemburg"
+        ],
+        "logging":[
+            "Vinay Sajip"
+        ],
+        "lzma":[
+
+        ],
+        "mailbox":[
+
+        ],
+        "mailcap":[
+
+        ],
+        "marshal":[
+
+        ],
+        "math":[
+            "Mark Dickinson",
+            "Raymond Hettinger",
+            "Daniel Stutzbach"
+        ],
+        "mimetypes":[
+
+        ],
+        "mmap":[
+            "Thomas Wouters"
+        ],
+        "modulefinder":[
+
+        ],
+        "msilib":[
+
+        ],
+        "msvcrt":[
+
+        ],
+        "multiprocessing":[
+            "Davin Potts*",
+            "Antoine Pitrou"
+        ],
+        "netrc":[
+
+        ],
+        "nis":[
+
+        ],
+        "nntplib":[
+
+        ],
+        "numbers":[
+
+        ],
+        "operator":[
+
+        ],
+        "optparse":[
+            "Armin Ronacher"
+        ],
+        "os":[
+
+        ],
+        "os.path":[
+            "Serhiy Storchaka"
+        ],
+        "ossaudiodev":[
+
+        ],
+        "parser":[
+            "Benjamin Peterson"
+        ],
+        "pathlib":[
+
+        ],
+        "pdb":[
+
+        ],
+        "pickle":[
+            "Alexandre Vassalotti"
+        ],
+        "pickletools":[
+            "Alexandre Vassalotti"
+        ],
+        "pipes":[
+
+        ],
+        "pkgutil":[
+
+        ],
+        "platform":[
+            "Marc-Andre Lemburg"
+        ],
+        "plistlib":[
+
+        ],
+        "poplib":[
+
+        ],
+        "posix":[
+            "Larry Hastings"
+        ],
+        "pprint":[
+            "Fred L. Drake, Jr."
+        ],
+        "profile":[
+
+        ],
+        "pstats":[
+
+        ],
+        "pty":[
+            "Thomas Wouters*"
+        ],
+        "pwd":[
+
+        ],
+        "py_compile":[
+
+        ],
+        "pybench":[
+            "Marc-Andre Lemburg"
+        ],
+        "pyclbr":[
+
+        ],
+        "pydoc":[
+
+        ],
+        "queue":[
+            "Raymond Hettinger"
+        ],
+        "quopri":[
+
+        ],
+        "random":[
+            "Raymond Hettinger",
+            "Mark Dickinson"
+        ],
+        "re":[
+            "Ezio Melotti",
+            "Serhiy Storchaka"
+        ],
+        "readline":[
+            "Thomas Wouters"
+        ],
+        "reprlib":[
+
+        ],
+        "resource":[
+            "Thomas Wouters"
+        ],
+        "rlcompleter":[
+
+        ],
+        "runpy":[
+            "Nick Coghlan"
+        ],
+        "sched":[
+
+        ],
+        "secrets":[
+
+        ],
+        "select":[
+
+        ],
+        "selectors":[
+            "Charles-François Natali",
+            "Giampaolo Rodola"
+        ],
+        "shelve":[
+
+        ],
+        "shlex":[
+
+        ],
+        "shutil":[
+            "Tarek Ziadé",
+            "Giampaolo Rodola"
+        ],
+        "signal":[
+
+        ],
+        "site":[
+
+        ],
+        "smtpd":[
+            "Giampaolo Rodola"
+        ],
+        "smtplib":[
+
+        ],
+        "sndhdr":[
+
+        ],
+        "socket":[
+
+        ],
+        "socketserver":[
+
+        ],
+        "spwd":[
+
+        ],
+        "sqlite3":[
+            "Gerhard Häring"
+        ],
+        "ssl":[
+            "Bill Janssen",
+            "Christian Heimes",
+            "Donald Stufft",
+            "Alex Gaynor"
+        ],
+        "stat":[
+            "Christian Heimes"
+        ],
+        "statistics":[
+            "Steven D'Aprano"
+        ],
+        "string":[
+
+        ],
+        "stringprep":[
+
+        ],
+        "struct":[
+            "Mark Dickinson",
+            "Meador Inge"
+        ],
+        "subprocess":[
+            "Giampaolo Rodola"
+        ],
+        "sunau":[
+
+        ],
+        "symbol":[
+
+        ],
+        "symtable":[
+            "Benjamin Peterson"
+        ],
+        "sys":[
+
+        ],
+        "sysconfig":[
+            "Tarek Ziadé"
+        ],
+        "syslog":[
+            "Sean Reifschneider*"
+        ],
+        "tabnanny":[
+
+        ],
+        "tarfile":[
+            "Lars Gustäbel"
+        ],
+        "telnetlib":[
+
+        ],
+        "tempfile":[
+
+        ],
+        "termios":[
+            "Thomas Wouters"
+        ],
+        "test":[
+            "Ezio Melotti"
+        ],
+        "textwrap":[
+
+        ],
+        "threading":[
+            "Antoine Pitrou"
+        ],
+        "time":[
+            "Alexander Belopolsky",
+            "Paul Ganssle"
+        ],
+        "timeit":[
+
+        ],
+        "tkinter":[
+            "Guilherme Polo",
+            "Serhiy Storchaka"
+        ],
+        "token":[
+
+        ],
+        "tokenize":[
+            "Meador Inge"
+        ],
+        "trace":[
+            "Alexander Belopolsky"
+        ],
+        "traceback":[
+
+        ],
+        "tracemalloc":[
+            "STINNER Victor"
+        ],
+        "tty":[
+            "Thomas Wouters*"
+        ],
+        "turtle":[
+            "Carol Willing"
+        ],
+        "types":[
+            "Yury Selivanov"
+        ],
+        "typing":[
+            "Guido van Rossum",
+            "Ivan Levkivskyi*"
+        ],
+        "unicodedata":[
+            "Marc-Andre Lemburg",
+            "Ezio Melotti"
+        ],
+        "unittest":[
+            "Michael Foord*",
+            "Ezio Melotti",
+            "Robert Collins"
+        ],
+        "unittest.mock":[
+            "Michael Foord*"
+        ],
+        "urllib":[
+            "Senthil Kumaran"
+        ],
+        "uu":[
+
+        ],
+        "uuid":[
+
+        ],
+        "venv":[
+            "Vinay Sajip"
+        ],
+        "warnings":[
+
+        ],
+        "wave":[
+
+        ],
+        "weakref":[
+            "Fred L. Drake, Jr."
+        ],
+        "webbrowser":[
+
+        ],
+        "winreg":[
+            "Daniel Stutzbach"
+        ],
+        "winsound":[
+
+        ],
+        "wsgiref":[
+            "PJ Eby"
+        ],
+        "xdrlib":[
+
+        ],
+        "xml.dom":[
+
+        ],
+        "xml.dom.minidom":[
+
+        ],
+        "xml.dom.pulldom":[
+
+        ],
+        "xml.etree":[
+            "Eli Bendersky*",
+            "Stefan Behnel"
+        ],
+        "xml.parsers.expat":[
+
+        ],
+        "xml.sax":[
+
+        ],
+        "xml.sax.handler":[
+
+        ],
+        "xml.sax.saxutils":[
+
+        ],
+        "xml.sax.xmlreader":[
+
+        ],
+        "xmlrpc":[
+
+        ],
+        "zipapp":[
+            "Paul Moore"
+        ],
+        "zipfile":[
+            "Alan McIntyre",
+            "Serhiy Storchaka",
+            "Thomas Wouters"
+        ],
+        "zipimport":[
+            "Thomas Wouters*"
+        ],
+        "zlib":[
+            "Thomas Wouters"
+        ],
+        "Tool":[
+
+        ],
+        "Argument Clinic":[
+            "Larry Hastings"
+        ],
+        "Platform":[
+
+        ],
+        "AIX":[
+
+        ],
+        "Cygwin":[
+            "Daniel Stutzbach"
+        ],
+        "FreeBSD":[
+
+        ],
+        "HP-UX":[
+
+        ],
+        "Linux":[
+
+        ],
+        "Mac OS X":[
+            "Ronald Oussoren",
+            "Ned Deily"
+        ],
+        "NetBSD1":[
+
+        ],
+        "OS2/EMX":[
+
+        ],
+        "Solaris/OpenIndiana":[
+            "Jesús Cea Avión"
+        ],
+        "Windows":[
+            "Tim Golden",
+            "Zachary Ware",
+            "Steve Dower",
+            "Paul Moore"
+        ],
+        "JVM/Java":[
+
+        ],
+        "Interest Area":[
+
+        ],
+        "algorithms":[
+
+        ],
+        "argument clinic":[
+            "Larry Hastings"
+        ],
+        "ast/compiler":[
+            "Benjamin Peterson",
+            "Brett Cannon",
+            "Yury Selivanov"
+        ],
+        "autoconf/makefiles":[
+            "Thomas Wouters*"
+        ],
+        "bsd":[
+
+        ],
+        "bug tracker":[
+            "Ezio Melotti"
+        ],
+        "buildbots":[
+            "Zachary Ware"
+        ],
+        "bytecode":[
+            "Benjamin Peterson",
+            "Yury Selivanov"
+        ],
+        "context managers":[
+            "Nick Coghlan"
+        ],
+        "core workflow":[
+
+        ],
+        "coverity scan":[
+            "Christian Heimes",
+            "Brett Cannon",
+            "Thomas Wouters"
+        ],
+        "cryptography":[
+            "Gregory P. Smith",
+            "Donald Stufft"
+        ],
+        "data formats":[
+            "Mark Dickinson"
+        ],
+        "database":[
+            "Marc-Andre Lemburg"
+        ],
+        "devguide":[
+            "Éric Araujo",
+            "Ezio Melotti",
+            "Carol Willing"
+        ],
+        "documentation":[
+            "Ezio Melotti",
+            "Éric Araujo",
+            "Julien Palard",
+            "Carol Willing"
+        ],
+        "emoji":[
+
+        ],
+        "extension modules":[
+            "Petr Viktorin",
+            "Nick Coghlan"
+        ],
+        "filesystem":[
+            "Giampaolo Rodola"
+        ],
+        "f-strings":[
+            "Eric V. Smith*"
+        ],
+        "GUI":[
+
+        ],
+        "i18n":[
+            "Marc-Andre Lemburg",
+            "Éric Araujo"
+        ],
+        "import machinery":[
+            "Brett Cannon",
+            "Nick Coghlan",
+            "Eric Snow"
+        ],
+        "mathematics":[
+            "Mark Dickinson",
+            "Marc-Andre Lemburg",
+            "Daniel Stutzbach"
+        ],
+        "memory management":[
+            "Tim Peters",
+            "Marc-Andre Lemburg",
+            "Thomas Wouters"
+        ],
+        "memoryview":[
+            "Stefan Krah"
+        ],
+        "networking":[
+
+        ],
+        "object model":[
+            "Benjamin Peterson",
+            "Thomas Wouters"
+        ],
+        "packaging":[
+            "Tarek Ziadé",
+            "Marc-Andre Lemburg",
+            "Éric Araujo",
+            "Donald Stufft",
+            "Paul Moore"
+        ],
+        "performance":[
+            "Brett Cannon",
+            "STINNER Victor",
+            "Serhiy Storchaka",
+            "Yury Selivanov"
+        ],
+        "pip":[
+            "Nick Coghlan",
+            "Donald Stufft",
+            "Paul Moore"
+        ],
+        "py3 transition":[
+            "Benjamin Peterson"
+        ],
+        "release management":[
+            "Tarek Ziadé",
+            "Marc-Andre Lemburg",
+            "Benjamin Peterson",
+            "Barry A. Warsaw",
+            "Guido van Rossum",
+            "Éric Araujo",
+            "Ned Deily",
+            "Georg Brandl",
+            "Julien Palard"
+        ],
+        "str.format":[
+            "Eric V. Smith*"
+        ],
+        "testing":[
+            "Michael Foord",
+            "Ezio Melotti"
+        ],
+        "test coverage":[
+
+        ],
+        "threads":[
+
+        ],
+        "time and dates":[
+            "Marc-Andre Lemburg",
+            "Alexander Belopolsky",
+            "Paul Ganssle"
+        ],
+        "unicode":[
+            "Marc-Andre Lemburg",
+            "Ezio Melotti",
+            "STINNER Victor"
+        ],
+        "version control":[
+            "Éric Araujo",
+            "Ezio Melotti"
+        ],
+        "Translation":[
+
+        ],
+        "French":[
+            "Julien Palard"
+        ],
+        "Japanese":[
+            "Inada Naoki"
+        ],
+        "Korean":[
+
+        ],
+        "Bengali India":[
+            "Kushal Das"
+        ],
+        "Hungarian":[
+
+        ],
+        "Portuguese":[
+
+        ],
+        "Chinese (TW)":[
+
+        ],
+        "Chinese (CN)":[
+
+        ]
+    },
+    "maintainers":{
+        "Thomas Wouters*":{
+            "github_name":"Yhg1s",
+            "bpo_name":"twouters"
+        },
+        "Christian Heimes":{
+            "github_name":"tiran",
+            "bpo_name":"christian.heimes"
+        },
+        "Gregory P. Smith":{
+            "github_name":"gpshead",
+            "bpo_name":"gregory.p.smith"
+        },
+        "Bill Janssen":{
+            "github_name":"",
+            "bpo_name":"janssen"
+        },
+        "Tim Golden":{
+            "github_name":"tjguk",
+            "bpo_name":"tim.golden"
+        },
+        "Eli Bendersky*":{
+            "github_name":"",
+            "bpo_name":"eli.bendersky"
+        },
+        "Michael Foord*":{
+            "github_name":"",
+            "bpo_name":"michael.foord"
+        },
+        "Kushal Das":{
+            "github_name":"kushaldas",
+            "bpo_name":"kushal.das"
+        },
+        "Alex Gaynor":{
+            "github_name":"alex",
+            "bpo_name":"alex"
+        },
+        "Raymond Hettinger":{
+            "github_name":"rhettinger",
+            "bpo_name":"rhettinger"
+        },
+        "Thomas Wouters":{
+            "github_name":"Yhg1s",
+            "bpo_name":"twouters"
+        },
+        "Steven D'Aprano":{
+            "github_name":"stevendaprano",
+            "bpo_name":"steven.daprano"
+        },
+        "Serhiy Storchaka":{
+            "github_name":"serhiy-storchaka",
+            "bpo_name":"serhiy.storchaka"
+        },
+        "Facundo Batista":{
+            "github_name":"facundobatista",
+            "bpo_name":"facundobatista"
+        },
+        "Éric Araujo":{
+            "github_name":"merwok",
+            "bpo_name":"eric.araujo"
+        },
+        "Michael Foord":{
+            "github_name":"",
+            "bpo_name":"michael.foord"
+        },
+        "Inada Naoki":{
+            "github_name":"methane",
+            "bpo_name":"inada.naoki"
+        },
+        "Larry Hastings":{
+            "github_name":"larryhastings",
+            "bpo_name":"larry"
+        },
+        "Stefan Krah":{
+            "github_name":"skrah",
+            "bpo_name":"skrah"
+        },
+        "Steve Dower":{
+            "github_name":"zooba",
+            "bpo_name":"steve.dower"
+        },
+        "STINNER Victor":{
+            "github_name":"vstinner",
+            "bpo_name":"vstinner"
+        },
+        "Brett Cannon":{
+            "github_name":"brettcannon",
+            "bpo_name":"brett.cannon"
+        },
+        "Senthil Kumaran":{
+            "github_name":"orsenthil",
+            "bpo_name":"orsenthil"
+        },
+        "Alan McIntyre":{
+            "github_name":"",
+            "bpo_name":"alanmcintyre"
+        },
+        "Ezio Melotti":{
+            "github_name":"ezio-melotti",
+            "bpo_name":"ezio.melotti"
+        },
+        "Tarek Ziadé":{
+            "github_name":"",
+            "bpo_name":"tarek"
+        },
+        "Carol Willing":{
+            "github_name":"willingc",
+            "bpo_name":"willingc"
+        },
+        "Robert Collins":{
+            "github_name":"rbtcollins",
+            "bpo_name":"rbcollins"
+        },
+        "Yury Selivanov":{
+            "github_name":"1st1",
+            "bpo_name":"yselivanov"
+        },
+        "Fred L. Drake, Jr.":{
+            "github_name":"freddrake",
+            "bpo_name":"fdrake"
+        },
+        "Eric Snow":{
+            "github_name":"ericsnowcurrently",
+            "bpo_name":"eric.snow"
+        },
+        "Guilherme Polo":{
+            "github_name":"",
+            "bpo_name":"gpolo"
+        },
+        "Vinay Sajip":{
+            "github_name":"vsajip",
+            "bpo_name":"vinay.sajip"
+        },
+        "Stefan Behnel":{
+            "github_name":"scoder",
+            "bpo_name":"scoder"
+        },
+        "Zachary Ware":{
+            "github_name":"zware",
+            "bpo_name":"zach.ware"
+        },
+        "Paul Ganssle":{
+            "github_name":"pganssle",
+            "bpo_name":"p-ganssle"
+        },
+        "Benjamin Peterson":{
+            "github_name":"benjaminp",
+            "bpo_name":"benjamin.peterson"
+        },
+        "Jesús Cea Avión":{
+            "github_name":"jcea",
+            "bpo_name":"jcea"
+        },
+        "Davin Potts*":{
+            "github_name":"applio",
+            "bpo_name":"davin"
+        },
+        "Andrew Svetlov":{
+            "github_name":"asvetlov",
+            "bpo_name":"asvetlov"
+        },
+        "Amaury Forgeot d'Arc":{
+            "github_name":"amauryfa",
+            "bpo_name":"amaury.forgeotdarc"
+        },
+        "Gerhard Häring":{
+            "github_name":"",
+            "bpo_name":"ghaering"
+        },
+        "Mark Dickinson":{
+            "github_name":"mdickinson",
+            "bpo_name":"mark.dickinson"
+        },
+        "R. David Murray*":{
+            "github_name":"bitdancer",
+            "bpo_name":"r.david.murray"
+        },
+        "Eric V. Smith":{
+            "github_name":"ericvsmith",
+            "bpo_name":"eric.smith"
+        },
+        "Terry J. Reedy*":{
+            "github_name":"terryjreedy",
+            "bpo_name":"terry.reedy"
+        },
+        "Walter Dörwald":{
+            "github_name":"doerwalter",
+            "bpo_name":"doerwalter"
+        },
+        "Ivan Levkivskyi*":{
+            "github_name":"ilevkivskyi",
+            "bpo_name":"levkivskyi"
+        },
+        "Eric V. Smith*":{
+            "github_name":"ericvsmith",
+            "bpo_name":"eric.smith"
+        },
+        "Marc-Andre Lemburg":{
+            "github_name":"malemburg",
+            "bpo_name":"lemburg"
+        },
+        "R. David Murray":{
+            "github_name":"bitdancer",
+            "bpo_name":"r.david.murray"
+        },
+        "Łukasz Langa*":{
+            "github_name":"ambv",
+            "bpo_name":"lukasz.langa"
+        },
+        "Nick Coghlan":{
+            "github_name":"ncoghlan",
+            "bpo_name":"ncoghlan"
+        },
+        "Paul Moore":{
+            "github_name":"pfmoore",
+            "bpo_name":"paul.moore"
+        },
+        "Alexander Belopolsky":{
+            "github_name":"abalkin",
+            "bpo_name":"belopolsky"
+        },
+        "Meador Inge":{
+            "github_name":"meadori",
+            "bpo_name":"meador.inge"
+        },
+        "Charles-François Natali":{
+            "github_name":"",
+            "bpo_name":"neologix"
+        },
+        "Petr Viktorin":{
+            "github_name":"encukou",
+            "bpo_name":"petr.viktorin"
+        },
+        "Sean Reifschneider*":{
+            "github_name":"",
+            "bpo_name":"jafo"
+        },
+        "Ronald Oussoren":{
+            "github_name":"ronaldoussoren",
+            "bpo_name":"ronaldoussoren"
+        },
+        "Guido van Rossum":{
+            "github_name":"gvanrossum",
+            "bpo_name":"gvanrossum"
+        },
+        "Brian Quinlan":{
+            "github_name":"brianquinlan",
+            "bpo_name":"bquinlan"
+        },
+        "Alexandre Vassalotti":{
+            "github_name":"avassalotti",
+            "bpo_name":"alexandre.vassalotti"
+        },
+        "Lars Gustäbel":{
+            "github_name":"gustaebel",
+            "bpo_name":"lars.gustaebel"
+        },
+        "Tim Peters":{
+            "github_name":"tim-one",
+            "bpo_name":"tim.peters"
+        },
+        "PJ Eby":{
+            "github_name":"pjeby",
+            "bpo_name":"pje"
+        },
+        "Barry A. Warsaw":{
+            "github_name":"warsaw",
+            "bpo_name":"barry"
+        },
+        "Armin Ronacher":{
+            "github_name":"mitsuhiko",
+            "bpo_name":"aronacher"
+        },
+        "Ethan Furman*":{
+            "github_name":"ethanfurman",
+            "bpo_name":"ethan.furman"
+        },
+        "Giampaolo Rodola*":{
+            "github_name":"giampaolo",
+            "bpo_name":"giampaolo.rodola"
+        },
+        "Donald Stufft":{
+            "github_name":"dstufft",
+            "bpo_name":"dstufft"
+        },
+        "pmoody":{
+            "github_name":"",
+            "bpo_name":"pmoody"
+        },
+        "Ned Deily":{
+            "github_name":"ned-deily",
+            "bpo_name":"ned.deily"
+        },
+        "Antoine Pitrou":{
+            "github_name":"pitrou",
+            "bpo_name":"pitrou"
+        },
+        "Steven Bethard":{
+            "github_name":"",
+            "bpo_name":"bethard"
+        },
+        "Giampaolo Rodola":{
+            "github_name":"giampaolo",
+            "bpo_name":"giampaolo.rodola"
+        },
+        "Julien Palard":{
+            "github_name":"JulienPalard",
+            "bpo_name":"mdk"
+        },
+        "Daniel Stutzbach":{
+            "github_name":"",
+            "bpo_name":"stutzbach"
+        },
+        "Georg Brandl":{
+            "github_name":"birkenfeld",
+            "bpo_name":"georg.brandl"
+        }
+    }
+}
