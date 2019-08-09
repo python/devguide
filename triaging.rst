@@ -43,11 +43,32 @@ or a veteran core developer, they're actively choosing to voluntarily donate the
 time towards the improvement of Python. As is the case with any member of
 the Python Software Foundation, always follow the `PSF Code of Conduct`_.
 
-.. note::
+Becoming a member of Python Triage team
+---------------------------------------
 
-   Existing members with the "Developer" role on the `issue tracker`_ are welcome to
-   self-nominate for triage team membership if they are interested.
-   
+Any Python core developers are welcome to invite a Python contributor to the
+Python Triage team. Do note that the responsibilities of a Python Triage member
+is more elevated than a bug triager in bpo. For example, the Python Triage member
+has access to more repositories than just CPython. Triages will be responsible
+to handle not just issues, but also pull requests, and even commanding backports.
+
+Any existing triagers in b.p.o can transition to the Python Triage role.
+They can request this to any core developer, and the core developer
+can pass the request to the Python organization admin on GitHub. The request
+can be made privately via DM in Zulip or Discourse, or publicly by opening
+an issue in core-workflow.
+
+Any contributor who is not already a triager in b.p.o can also self-nominate
+to be a member of Python Triage team. They can request this to any core developer,
+via DM in Zulip or Discourse, or publicly by opening an issue in core-workflow.
+If a core developer agrees and willing to vouch for them, the core developer
+can pass the request to the administrator. They should also be added as
+triager in bpo.
+
+For every new triager, it would be great to announce them in Python-committers
+mailing list and core-workflow category in Discourse. `Example announcement
+<https://discuss.python.org/t/abhilash-raj-has-been-granted-triage-role-on-github/2089>`_.
+
 
 GitHub Labels for PRs
 '''''''''''''''''''''
