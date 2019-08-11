@@ -69,7 +69,7 @@ expert-asyncio
 invalid
     Used manually for PRs that do not meet basic requirements and
     automatically added by bedevere when PR authors attempt to merge maintenace
-    branches into the master branch. During competitions, this label casues the
+    branches into the master branch. During competitions, this label causes the
     PR to not count towards the author's contributions.
 
 needs backport to X.Y
