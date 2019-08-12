@@ -44,7 +44,7 @@ time towards the improvement of Python. As is the case with any member of
 the Python Software Foundation, always follow the `PSF Code of Conduct`_.
 
 Becoming a member of the Python triage team
----------------------------------------
+-------------------------------------------
 
 Any Python core developers are welcome to invite a Python contributor to the
 Python triage team. Do note that the responsibilities of a Python triager
