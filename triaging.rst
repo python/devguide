@@ -56,7 +56,8 @@ Any existing developers on b.p.o can transition into becoming a Python triager.
 They can request this to any core developer, and the core developer
 can pass the request to the Python organization admin on GitHub. The request
 can be made privately via a DM in Zulip or Discourse, or publicly by opening
-an issue in the core-workflow repository.
+an `issue in the core-workflow repository
+<https://github.com/python/core-workflow/issues/new?template=triage_membership.md>`_.
 
 Any contributor who is not already a developer on b.p.o can also self-nominate
 to be a member of Python triage team. They can request this to any core developer,
