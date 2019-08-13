@@ -107,7 +107,7 @@ Create a new branch and switch to it::
 
 This is equivalent to::
 
-   # create a new branch off master, without checking it out
+   # create a new branch from master, without checking it out
    git branch <branch-name> master
    # check out the branch
    git checkout <branch-name>
