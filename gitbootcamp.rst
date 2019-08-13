@@ -40,7 +40,7 @@ You will only need to do this once.
 
 .. _clone-your-fork:
 
-Cloning your Forked CPython Repository
+Cloning a Forked CPython Repository
 --------------------------------------
 
 You will only need to do this once.  From your command line::
@@ -157,7 +157,7 @@ Staging and Committing Files
 
 2. To stage the files to be included in your commit::
 
-      git add <filename>
+      git add <filename1> <filename2>
 
 3. To commit the files that have been staged (done in step 2):
 
@@ -201,7 +201,7 @@ Commit the files:
 
 .. code-block:: bash
 
-   git commit -m "<message>"
+   git commit -m <message>
 
 .. _push-changes:
 
