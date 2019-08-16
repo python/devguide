@@ -41,7 +41,7 @@ You will only need to do this once.
 .. _clone-your-fork:
 
 Cloning a Forked CPython Repository
---------------------------------------
+-----------------------------------
 
 You will only need to do this once.  From your command line::
 
