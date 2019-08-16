@@ -217,14 +217,14 @@ the role is converted into a hyperlink. Example news entry with Sphinx::
    :func:`test.support.temp_cwd()`. Patch by Chris Jerdonek.
 
 The inline Sphinx roles should be used to assist readers find more
-information and context on the changes made. If the inline link does not 
-provide additional context, an inline reST code block should be used instead:: 
+information and context on the changes made. If the inline link does not
+provide additional context, an inline reST code block should be used instead::
 
    ``<object>``
 
 Before using a Sphinx role, ensure that a corresponding entry exists
-within the documentation. Also, ``build the HTML using make
-<https://devguide.python.org/documenting/#using-make-make-bat>``_ to 
+within the documentation. Also, `build the HTML using make 
+<https://devguide.python.org/documenting/#using-make-make-bat>`_ to
 verify that the link leads to the correct location.
 
 Working with Git_
