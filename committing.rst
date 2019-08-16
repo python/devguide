@@ -222,7 +222,7 @@ provide additional context, an inline reST code block should be used instead::
 
    ``<object>``
 
-Before using a Sphinx role, ensure that a corresponding entry exists
+Before using any Sphinx roles, ensure that a corresponding entry exists
 within the documentation. Also, `build the HTML locally using make 
 <https://devguide.python.org/documenting/#using-make-make-bat>`_ to
 verify that the link leads to the correct location.
