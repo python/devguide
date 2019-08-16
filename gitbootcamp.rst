@@ -201,7 +201,7 @@ Commit the files:
 
 .. code-block:: bash
 
-   git commit -m <message>
+   git commit -m "<message>"
 
 .. _push-changes:
 
@@ -469,7 +469,7 @@ To edit an open pull request that targets ``master``:
       git fetch upstream
       git merge upstream/master
       git add <filename>
-      git commit -m <message>
+      git commit -m "<message>"
 
 4. Push the changes back to the contributor's PR branch::
 
