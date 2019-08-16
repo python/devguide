@@ -77,7 +77,7 @@ Setting Up Your Name and Email Address
 
 .. code-block:: bash
 
-   git config --global user.name <name>
+   git config --global user.name "<name>"
    git config --global user.email <email>
 
 The ``--global`` flag sets these parameters globally while
