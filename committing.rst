@@ -204,9 +204,28 @@ column width should be used. There is no indentation or leading marker in the
 file (e.g. ``-``). There is also no need to start the entry with the issue
 number as it's part of the file name itself. Example news entry::
 
-  Fix warning message when ``os.chdir()`` fails inside
-  ``test.support.temp_cwd()``.  Patch by Chris Jerdonek.
+   Fix warning message when ``os.chdir()`` fails inside
+   ``test.support.temp_cwd()``.  Patch by Chris Jerdonek.
 
+In addition to inline reST, Misc/NEWS entries also support the usage of
+`Sphinx roles <https://devguide.python.org/documenting/#id4>`. Several
+commonly used roles include :func:, :class:, and :meth:. When a
+corresponding entry is found within the documentation, the text within
+the role is converted into a hyperlink. Example news entry with Sphinx::
+
+   Fix warning message when :func:`os.chdir()` fails inside
+   :func:`test.support.temp_cwd()`. Patch by Chris Jerdonek.
+
+The inline Sphinx roles should be used to assist readers find more
+information and context on the changes made. If the inline link does not 
+provide additional context, an inline reST code block should be used instead:: 
+
+   ``<object>``
+
+Before using a Sphinx role, ensure that a corresponding entry exists
+within the documentation. Also, ``build the HTML using make
+<https://devguide.python.org/documenting/#using-make-make-bat>``_ to 
+verify that the link leads to the correct location.
 
 Working with Git_
 -----------------
