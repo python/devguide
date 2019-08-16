@@ -208,7 +208,7 @@ number as it's part of the file name itself. Example news entry::
    ``test.support.temp_cwd()``.  Patch by Chris Jerdonek.
 
 In addition to inline reST, Misc/NEWS entries also support the usage of
-`Sphinx roles <https://devguide.python.org/documenting/#id4>`. Several
+`Sphinx roles <https://devguide.python.org/documenting/#id4>`_. Several
 commonly used roles include :func:, :class:, and :meth:. When a
 corresponding entry is found within the documentation, the text within
 the role is converted into a hyperlink. Example news entry with Sphinx::
