@@ -213,8 +213,8 @@ commonly used roles include :func:, :class:, and :meth:. When a
 corresponding entry is found within the documentation, the text within
 the role is converted into a hyperlink. Example news entry with Sphinx::
 
-   Fix warning message when :func:`os.chdir()` fails inside
-   :func:`test.support.temp_cwd()`. Patch by Chris Jerdonek.
+   Fix warning message when :func:`os.chdir` fails inside
+   :func:`test.support.temp_cwd`. Patch by Chris Jerdonek.
 
 The inline Sphinx roles should be used to assist readers find more
 information and context on the changes made. If the inline link does not
