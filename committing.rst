@@ -216,7 +216,7 @@ the role is converted into a hyperlink. Example news entry with Sphinx::
    Fix warning message when :func:`os.chdir` fails inside
    :func:`test.support.temp_cwd`. Patch by Chris Jerdonek.
 
-The inline Sphinx roles should be used to assist readers in finding more
+The inline Sphinx roles can be used to assist readers in finding more
 information and context on the changes made. If the inline link does not
 provide additional context, an inline reST code block should be used instead::
 
