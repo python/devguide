@@ -207,7 +207,7 @@ number as it's part of the file name itself. Example news entry::
    Fix warning message when ``os.chdir()`` fails inside
    ``test.support.temp_cwd()``.  Patch by Chris Jerdonek.
 
-In addition to inline reST, Misc/NEWS entries also support the usage of
+In addition to inline reST, news entries also support the usage of
 `Sphinx roles <https://devguide.python.org/documenting/#id4>`_. Several
 commonly used roles include :func:, :class:, and :meth:. When a
 corresponding entry is found within the documentation, the text within
@@ -218,14 +218,19 @@ the role is converted into a hyperlink. Example news entry with Sphinx::
 
 The inline Sphinx roles can be used to assist readers in finding more
 information and context on the changes made. If the inline link does not
-provide additional context, an inline reST code block should be used instead::
+provide additional context, an inline reST code block can be used instead::
 
    ``<object>``
 
 Before using any Sphinx roles, ensure that a corresponding entry exists
-within the documentation. Also, `build the HTML locally using make 
+within the documentation. When editing multiple news entries at once in
+"What's New" or Misc/NEWS.d/, `build the HTML locally using make 
 <https://devguide.python.org/documenting/#using-make-make-bat>`_ to
-verify that the link leads to the correct location.
+verify that the links lead to the correct locations. This does not need to be
+done for individual PR news entries.
+
+The Sphinx roles provide the maximum benefit in "What's New" entries,
+as they are read by the largest volume of users.
 
 Working with Git_
 -----------------
