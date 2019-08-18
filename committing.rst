@@ -223,14 +223,13 @@ provide additional context, an inline reST code block can be used instead::
    ``<object>``
 
 Before using any Sphinx roles, ensure that a corresponding entry exists
-within the documentation. When editing multiple news entries at once in
-"What's New" or Misc/NEWS.d/, `build the HTML locally using make 
+within the documentation. When adding rich formatting to news entries
+`build the HTML locally using make 
 <https://devguide.python.org/documenting/#using-make-make-bat>`_ to
-verify that the links lead to the correct locations. This does not need to be
-done for individual PR news entries.
+verify that the links lead to the correct locations.
 
-The Sphinx roles provide the maximum benefit in "What's New" entries,
-as they are read by the largest volume of users.
+The Sphinx roles can be beneficial to readers, but they are not required.
+Inline code blocks can be used as a viable substitute.
 
 Working with Git_
 -----------------
