@@ -223,10 +223,11 @@ provide additional context, an inline reST code block can be used instead::
    ``<object>``
 
 Before using any Sphinx roles, ensure that a corresponding entry exists
-within the documentation. When adding rich formatting to news entries
-`build the HTML locally using make 
-<https://devguide.python.org/documenting/#using-make-make-bat>`_ to
-verify that the links lead to the correct locations.
+within the documentation. When adding rich formatting to news entries,
+use the netlify deploy preview to verify that the documentation was
+appropriately modified. Alternatively, `make html 
+<https://devguide.python.org/documenting/#using-make-make-bat>`_
+can be used instead.
 
 The Sphinx roles can be beneficial to readers, but they are not required.
 Inline code blocks can be used as a viable substitute.
