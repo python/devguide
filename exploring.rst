@@ -65,6 +65,7 @@ building your understanding of both the 2.x and 3.x versions of CPython:
     "`Yet another guided tour of CPython`_", "A guide for how CPython REPL works", Guido van Rossum, 3.5
     "`Python Asynchronous I/O Walkthrough`_", "How CPython async I/O, generator and coroutine works", Philip Guo, 3.5
     "`Coding Patterns for Python Extensions`_", "Reliable patterns of coding Python Extensions in C", Paul Ross, 3.4
+    "`Your Guide to the CPython Source Code`_", "Your Guide to the CPython Source Code", Anthony Shaw, 3.8
 
 .. csv-table:: **Historical references**
    :header: "Title", "Brief", "Author", "Version"
@@ -85,6 +86,8 @@ building your understanding of both the 2.x and 3.x versions of CPython:
 .. _Python Asynchronous I/O Walkthrough: http://pgbovine.net/python-async-io-walkthrough.htm
 
 .. _Coding Patterns for Python Extensions: https://pythonextensionpatterns.readthedocs.io/en/latest/
+
+.. _Your Guide to the CPython Source Code: https://realpython.com/cpython-source-code-guide/
 
 .. _Python's Innards Series: https://tech.blog.aknin.name/category/my-projects/pythons-innards/
 
