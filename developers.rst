@@ -23,7 +23,7 @@ a Latin or extended Latin alphabet, make sure to include an ASCII
 transliteration too.
 
 Active Python core developers (GitHub)
-----------------------
+--------------------------------------
 
 * 2019
    + Abhilash Raj
