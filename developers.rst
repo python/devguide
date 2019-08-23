@@ -104,7 +104,7 @@ Active Python core developers (GitHub)
 * 2009
    + Doug Hellmann
    + Ezio Melotti
-   + R. David Murray
+   + R\. David Murray
    + Chris Withers
 
 * 2008
