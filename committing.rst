@@ -202,35 +202,19 @@ So a file name may be
 The contents of a news file should be valid reStructuredText. An 80 character
 column width should be used. There is no indentation or leading marker in the
 file (e.g. ``-``). There is also no need to start the entry with the issue
-number as it's part of the file name itself. Example news entry::
-
-   Fix warning message when ``os.chdir()`` fails inside
-   ``test.support.temp_cwd()``.  Patch by Chris Jerdonek.
-
-In addition to inline reST, news entries also support the usage of
-`Sphinx roles <https://devguide.python.org/documenting/#id4>`_. Several
-commonly used roles include :func:, :class:, and :meth:. When a
-corresponding entry is found within the documentation, the text within
-the role is converted into a hyperlink. Example news entry with Sphinx::
+number as it's part of the file name itself. You can use
+:ref:`inline markups <rest-inline-markup>` too. Example news entry::
 
    Fix warning message when :func:`os.chdir` fails inside
    :func:`test.support.temp_cwd`. Patch by Chris Jerdonek.
 
-The inline Sphinx roles can be used to assist readers in finding more
-information and context on the changes made. If the inline link does not
-provide additional context, an inline reST code block can be used instead::
+The inline Sphinx roles like ``:func:`` can be used to assist readers in finding
+more information. You can build html and verify that the link target is
+appropriate by using :ref:`make html <building-using-make>`.
 
-   ``<object>``
+While Sphinx roles can be beneficial to readers, they are not required.
+Inline ````code blocks```` can be used instead.
 
-Before using any Sphinx roles, ensure that a corresponding entry exists
-within the documentation. When adding rich formatting to news entries,
-use the netlify deploy preview to verify that the documentation was
-appropriately modified. Alternatively, `make html 
-<https://devguide.python.org/documenting/#using-make-make-bat>`_
-can be used instead.
-
-The Sphinx roles can be beneficial to readers, but they are not required.
-Inline code blocks can be used as a viable substitute.
 
 Working with Git_
 -----------------

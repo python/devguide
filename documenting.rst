@@ -902,6 +902,7 @@ file :file:`example.py`, use::
 The file name is relative to the current file's path.  Documentation-specific
 include files should be placed in the ``Doc/includes`` subdirectory.
 
+.. _rest-inline-markup:
 
 Inline markup
 -------------
@@ -1530,6 +1531,8 @@ created using ``make venv``), so that the Makefile can find the
 ``sphinx-build`` command.  You can also specify the location of
 ``sphinx-build`` with the ``SPHINXBUILD`` :command:`make` variable.
 
+
+.. _building-using-make:
 
 Using make / make.bat
 ---------------------
