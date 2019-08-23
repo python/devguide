@@ -22,6 +22,118 @@ This file is encoded in UTF-8.  If the usual form for a name is not in
 a Latin or extended Latin alphabet, make sure to include an ASCII
 transliteration too.
 
+Active Python core developers (GitHub)
+----------------------
+
+* 2019
+   + Abhilash Raj
+   + Paul Ganssle
+   + Stefan Behnel
+   + Stéphane Wirtel
+   + Cheryl Sabella
+
+* 2018
+   + Lisa Roach
+   + Emily Morehouse
+   + Pablo Galindo Salgado
+   + Mark Shannon
+   + Petr Viktorin
+   + Nathaniel J. Smith
+
+* 2017
+   + Julien Palard
+   + Ivan Levkivskyi
+   + Carol Willing
+   + Mariatta Wijaya
+
+* 2016
+   + Xiang Zhang
+   + Inada Naoki
+   + Davin Potts
+
+* 2015
+   + Martin Panter
+   + Paul Moore
+
+* 2014
+   + Robert Collins
+   + Berker Peksağ
+   + Steve Dower
+   + Kushal Das
+   + Steven d'Aprano
+   + Yury Selivanov
+
+* 2013
+   + Zachary Ware
+   + Donald Stufft
+   + Ethan Furman
+
+* 2012
+   + Serhiy Storchaka
+   + Chris Jerdonek
+   + Eric Snow
+   + Hynek Schlawack
+   + Andrew Svetlov
+
+* 2011
+   + Petri Lehtinen
+   + Meador Inge
+   + Sandro Tosi
+   + Jeff Hardy
+   + Alex Gaynor
+   + Eli Bendersky
+   + Ned Deily
+   + Jason R. Coombs
+ 
+* 2010
+   + David Malcolm
+   + Tal Einat
+   + Łukasz Langa
+   + Éric Araujo
+   + Terry Reedy
+   + Brian Quinlan
+   + Alexander Belopolsky
+   + Tim Golden
+   + Giampaolo Rodolà
+   + Brian Curtin
+   + Dino Viehland
+   + Larry Hastings
+   + Victor Stinner
+   + Stefan Krah
+ 
+* 2009
+   + Doug Hellmann
+   + Ezio Melotti
+   + R. David Murray
+   + Chris Withers
+
+* 2008
+   + Antoine Pitrou
+   + Jesús Cea
+   + Benjamin Peterson
+   + Jerry Seutter
+   + David Wolever
+   + Trent Nelson
+   + Mark Dickinson
+
+* 2007
+   + Amaury Forgeot d'Arc
+   + Christian Heimes
+   + Armin Ronacher
+   + Senthil Kumaran
+   + Alexandre Vassalotti
+   + Eric V. Smith
+ 
+* 2006
+   + Lars Gustäbel
+   + Ronald Oussoren
+   + Jack Diederich
+
+* 2005
+   + Georg Brandl
+   + Terry Reedy
+   + Nick Coghlan
+
 Permissions History
 -------------------
 
