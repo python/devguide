@@ -202,10 +202,18 @@ So a file name may be
 The contents of a news file should be valid reStructuredText. An 80 character
 column width should be used. There is no indentation or leading marker in the
 file (e.g. ``-``). There is also no need to start the entry with the issue
-number as it's part of the file name itself. Example news entry::
+number as it's part of the file name itself. You can use
+:ref:`inline markups <rest-inline-markup>` too. Example news entry::
 
-  Fix warning message when ``os.chdir()`` fails inside
-  ``test.support.temp_cwd()``.  Patch by Chris Jerdonek.
+   Fix warning message when :func:`os.chdir` fails inside
+   :func:`test.support.temp_cwd`. Patch by Chris Jerdonek.
+
+The inline Sphinx roles like ``:func:`` can be used to assist readers in finding
+more information. You can build html and verify that the link target is
+appropriate by using :ref:`make html <building-using-make>`.
+
+While Sphinx roles can be beneficial to readers, they are not required.
+Inline ````code blocks```` can be used instead.
 
 
 Working with Git_
