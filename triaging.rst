@@ -36,6 +36,12 @@ Responsibilities include:
     - Skip issue
     - Good first issue
     - Other categorizations
+    
+ .. note::
+ 
+    Triagers should only close PRs that could be considered spam. They can
+    suggest for other PRs to be closed, but core developers are responsible for
+    making the final decision.
 
 It is also of paramount importance to treat every contributor to the Python
 project kindly and with respect. Regardless of whether they're entirely new
