@@ -21,6 +21,11 @@ Git Bootcamp and Cheat Sheet
 In this section, we'll go over some commonly used Git commands that are
 relevant to CPython's workflow.
 
+.. note::
+   Setting up git aliases for common tasks can be useful to you. You can
+   get more information about that in
+   `git documentation <https://git-scm.com/book/en/v2/Git-Basics-Git-Aliases>`_
+
 .. contents::
 
 .. _fork-cpython:
