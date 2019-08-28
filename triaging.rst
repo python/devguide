@@ -131,7 +131,7 @@ sprint
 
 stale
     Used for stale PRs or inactive for a long period of time. This label
-    help to core dev identify quickly the PRs candidate to be closed or make
+    help to core dev identify quickly the PR candidate to be closed or make
     a ping to the author.
 
 type-bugfix
