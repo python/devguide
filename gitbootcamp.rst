@@ -8,6 +8,11 @@ Git Bootcamp and Cheat Sheet
 In this section, we'll go over some commonly used Git commands that are
 relevant to CPython's workflow.
 
+.. note::
+   Setting up git aliases for common tasks can be useful to you. You can
+   get more information about that in
+   `git documentation <https://git-scm.com/book/en/v2/Git-Basics-Git-Aliases>`_
+
 .. contents::
 
 .. _fork-cpython:
@@ -246,16 +251,6 @@ Solution::
 
 The ``--rebase`` option is only needed if you have local changes to the
 branch.
-
-You can automate the syncing with Upstream master setting up the next alias::
-
-   $ git config --global alias.update '!sh -c "git checkout master && git pull origin master && git pull upstream master && git push origin master"'
-
-Now you can run::
-
-   $ git update
-
-and both local and Origin master branch will be sync with Upstream master branch.
 
 Another scenario:
 
