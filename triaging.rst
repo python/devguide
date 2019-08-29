@@ -28,7 +28,6 @@ Responsibilities include:
 * PR/issue management
     - Renaming PRs
     - Reviewing PRs
-    - Closing PRs and issues
     - Assisting contributors
     - Notifying appropriate core developers
 * Applying appropriate labels to PRs/Issues
@@ -39,9 +38,11 @@ Responsibilities include:
     
  .. note::
  
-   Triagers should only close PRs that could be considered spam. They can
-   suggest for other PRs to be closed, but core developers are responsible for
-   making the final decision.
+   Although triagers have the permission to close PRs/issues, a core
+   developer must take the final action in doing so. A triager should
+   never directly close a PR/issue. Instead, triagers can make use of the
+   ``stale`` and ``invalid`` labels to suggest that it should be closed.
+   
 
 It is also of paramount importance to treat every contributor to the Python
 project kindly and with respect. Regardless of whether they're entirely new
@@ -100,7 +101,8 @@ invalid
     Used manually for PRs that do not meet basic requirements and
     automatically added by bedevere when PR authors attempt to merge maintenace
     branches into the master branch. During competitions, this label causes the
-    PR to not count towards the author's contributions.
+    PR to not count towards the author's contributions. This label is generally
+    used to suggest that a PR should be closed.
 
 needs backport to X.Y
     Used for PRs which are appropriate to backport to
@@ -124,7 +126,13 @@ skip news
     in another PR. Any potentially impactful changes should have a
     corresponding news entry, but for trivial changes it's commonly at the
     discretion of the PR author if they wish to opt-out of making one.
-
+    
+stale
+    Used for PRs which have not received a response from the author in a
+    significant period of time or are no longer relevant. This label is
+    generally used to suggest that the PR should be closed. In some cases,
+    it is appropriate to open an updated version of the PR.
+    
 OS-X
     Used for PRs involving changes which only have an effect upon
     a specific operating system. Current variations of the label include
