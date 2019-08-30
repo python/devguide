@@ -38,9 +38,9 @@ Responsibilities include:
     
  .. note::
  
-   Although triagers have the permission to close PRs/issues, a core
+   Although triagers have the permission to close PRs, a core
    developer must take the final action in doing so. A triager should
-   never directly close a PR/issue. Instead, triagers can make use of the
+   never directly close a PR. Instead, triagers can make use of the
    ``stale`` and ``invalid`` labels to suggest that it should be closed.
    
 
