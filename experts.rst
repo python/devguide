@@ -53,7 +53,7 @@ _thread
 _testbuffer           skrah
 abc
 aifc                  r.david.murray
-argparse              rhettinger
+argparse              rhettinger*
 array
 ast                   benjamin.peterson
 asynchat              josiahcarlson, giampaolo.rodola*, stutzbach
@@ -65,10 +65,10 @@ base64
 bdb
 binascii
 binhex
-bisect                rhettinger
+bisect                rhettinger*
 builtins
 bz2
-calendar              rhettinger
+calendar              rhettinger*
 cgi                   ethan.furman*, Rhodri James
 cgitb                 ethan.furman*, Rhodri James
 chunk
@@ -77,8 +77,8 @@ cmd
 code
 codecs                lemburg, doerwalter
 codeop
-collections           rhettinger
-collections.abc       rhettinger, stutzbach
+collections           rhettinger*
+collections.abc       rhettinger*, stutzbach
 colorsys
 compileall
 concurrent.futures    pitrou, bquinlan
@@ -117,7 +117,7 @@ formatter
 fpectl                twouters
 fractions             mark.dickinson, rhettinger
 ftplib                giampaolo.rodola*
-functools             rhettinger
+functools             rhettinger*
 gc                    pitrou
 getopt
 getpass
@@ -126,7 +126,7 @@ glob
 grp
 gzip
 hashlib               christian.heimes, gregory.p.smith
-heapq                 rhettinger, stutzbach
+heapq                 rhettinger*, stutzbach
 hmac                  christian.heimes, gregory.p.smith
 html                  ezio.melotti
 http
@@ -138,7 +138,7 @@ importlib             brett.cannon
 inspect               yselivanov
 io                    benjamin.peterson, stutzbach
 ipaddress             pmoody
-itertools             rhettinger
+itertools             rhettinger*
 json                  bob.ippolito (inactive), ezio.melotti, rhettinger
 keyword
 lib2to3               benjamin.peterson
@@ -186,7 +186,7 @@ py_compile
 pybench               lemburg
 pyclbr
 pydoc
-queue                 rhettinger
+queue                 rhettinger*
 quopri
 random                rhettinger, mark.dickinson
 re                    effbot (inactive), ezio.melotti, serhiy.storchaka
@@ -213,7 +213,7 @@ spwd
 sqlite3               ghaering
 ssl                   janssen, christian.heimes, dstufft, alex
 stat                  christian.heimes
-statistics            steven.daprano
+statistics            steven.daprano, rhettinger
 string
 stringprep
 struct                mark.dickinson, meador.inge
@@ -310,7 +310,7 @@ Miscellaneous
 ==================  ==========================================================
 Interest Area       Maintainers
 ==================  ==========================================================
-algorithms
+algorithms          rhettinger*
 argument clinic     larry
 ast/compiler        benjamin.peterson, brett.cannon, yselivanov
 autoconf/makefiles  twouters*
@@ -335,13 +335,13 @@ i18n                lemburg, eric.araujo
 import machinery    brett.cannon, ncoghlan, eric.snow
 io                  benjamin.peterson, stutzbach
 locale              lemburg
-mathematics         mark.dickinson, lemburg, stutzbach
+mathematics         mark.dickinson, lemburg, stutzbach, rhettinger
 memory management   tim.peters, lemburg, twouters
 memoryview          skrah
 networking          giampaolo.rodola,
 object model        benjamin.peterson, twouters
 packaging           tarek, lemburg, alexis, eric.araujo, dstufft, paul.moore
-performance         brett.cannon, vstinner, serhiy.storchaka, yselivanov
+performance         brett.cannon, vstinner, serhiy.storchaka, yselivanov, rhettinger
 pip                 ncoghlan, dstufft, paul.moore, Marcus.Smith, pradyunsg
 py3 transition      benjamin.peterson
 release management  tarek, lemburg, benjamin.peterson, barry,
