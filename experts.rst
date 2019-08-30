@@ -53,7 +53,7 @@ _thread
 _testbuffer           skrah
 abc
 aifc                  r.david.murray
-argparse              bethard
+argparse              rhettinger
 array
 ast                   benjamin.peterson
 asynchat              josiahcarlson, giampaolo.rodola*, stutzbach
