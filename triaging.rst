@@ -129,13 +129,7 @@ skip news
     in another PR. Any potentially impactful changes should have a
     corresponding news entry, but for trivial changes it's commonly at the
     discretion of the PR author if they wish to opt-out of making one.
-    
-stale
-    Used for PRs which have not received a response from the author in a
-    significant period of time or are no longer relevant. This label is
-    generally used to suggest that the PR should be closed. In some cases,
-    it is appropriate to open an updated version of the PR.
-    
+
 OS-X
     Used for PRs involving changes which only have an effect upon
     a specific operating system. Current variations of the label include
