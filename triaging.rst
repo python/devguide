@@ -35,18 +35,16 @@ Responsibilities include:
     - Skip issue
     - Good first issue
     - Other categorizations
-    
- .. note::
 
-   Triagers may have some understanding of when a PR should be closed, but the
-   final decision must be made by a core developer. This is because the creation
-   of a PR constitutes a significant amount of effort from the author. Closing one
-   without careful consideration and proper handling can easily dissaude the
-   author from making further contributions.
+Triagers may have some understanding of when a PR should be closed, but the
+final decision must be made by a core developer. This is because the creation
+of a PR constitutes a significant amount of effort from the author. Closing one
+without careful consideration and proper handling can easily dissaude the
+author from making further contributions.
 
-   Instead of directly closing a PR, triagers can make use of the ``invalid`` and
-   ``stale`` labels to suggest that it should be closed. For more information, see
-   the :ref:`GitHub PR labels <github-pr-labels>` section.
+Instead of directly closing a PR, triagers can make use of the ``invalid`` and
+``stale`` labels to suggest that it should be closed. For more information, see
+the :ref:`GitHub PR labels <github-pr-labels>` section.
 
 It is also of paramount importance to treat every contributor to the Python
 project kindly and with respect. Regardless of whether they're entirely new
