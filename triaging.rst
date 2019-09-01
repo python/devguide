@@ -130,9 +130,10 @@ sprint
     used to prioritize the review of those PRs during the sprint.
 
 stale
-    Used for stale PRs or inactive for a long period of time. This label
-    helps core developers identify quickly the PR candidate to be closed or make
-    a ping to the author.
+    Used for PRs that include changes which are no longer relevant or when the
+    author hasn't responded to feedback in a long period of time. This label
+    helps core developers quickly identify PRs that are candidates for closure 
+    or require a ping to the author.
 
 type-bugfix
     Used for PRs that address unintentional behavior, but do not
