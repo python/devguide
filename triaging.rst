@@ -105,6 +105,11 @@ needs backport to X.Y
     miss-islington to attempt to automatically merge the PR into the branches
     specified.
 
+OS-X
+    Used for PRs involving changes which only have an effect upon
+    a specific operating system. Current variations of the label include
+    OS-Windows and OS-Mac.
+
 skip issue
     Used for PRs which involve trivial changes, such as typo fixes,
     comment changes, and section rephrases. The majority of PRs require
@@ -119,15 +124,16 @@ skip news
     corresponding news entry, but for trivial changes it's commonly at the
     discretion of the PR author if they wish to opt-out of making one.
 
-OS-X
-    Used for PRs involving changes which only have an effect upon
-    a specific operating system. Current variations of the label include
-    OS-Windows and OS-Mac.
-
 sprint
     Used for PRs authored during an in-person sprint, such as
     at PyCon, EuroPython, or other official Python events. The label is
     used to prioritize the review of those PRs during the sprint.
+
+stale
+    Used for PRs that include changes which are no longer relevant or when the
+    author hasn't responded to feedback in a long period of time. This label
+    helps core developers quickly identify PRs that are candidates for closure 
+    or require a ping to the author.
 
 type-bugfix
     Used for PRs that address unintentional behavior, but do not
