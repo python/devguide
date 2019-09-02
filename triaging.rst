@@ -36,13 +36,11 @@ Responsibilities include:
     - Good first issue
     - Other categorizations
 
-Triagers may have some understanding of when a PR should be closed, but the
+As triagers gain experience, they may have some intuition of when a PR should be closed. The triager can recommend closing a PR, but the
 final decision must be made by a core developer. This is because the creation
 of a PR constitutes a significant amount of effort from the author. Closing one
-without careful consideration and proper handling can easily dissaude the
-author from making further contributions.
 
-Instead of directly closing a PR, triagers can make use of the ``invalid`` and
+Triagers can make use of the ``invalid`` and
 ``stale`` labels to suggest that it should be closed. For more information, see
 the :ref:`GitHub PR labels <github-pr-labels>` section.
 
