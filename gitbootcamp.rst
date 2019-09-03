@@ -18,7 +18,7 @@ Git Bootcamp and Cheat Sheet
    desire a different approach.
 
 
-In this section, we'll go over some commonly used Git commands that are
+In this section, we will go over some commonly used Git commands that are
 relevant to CPython's workflow.
 
 .. note::
@@ -33,7 +33,7 @@ relevant to CPython's workflow.
 Forking CPython GitHub Repository
 ---------------------------------
 
-You'll only need to do this once.
+You will only need to do this once.
 
 1. Go to https://github.com/python/cpython.
 
@@ -41,18 +41,18 @@ You'll only need to do this once.
 
 3. When asked where to fork the repository, choose to fork it to your username.
 
-4. Your fork will be created at https://github.com/<username>/cpython.
+4. Your forked CPython repository will be created at https://github.com/<username>/cpython.
 
 .. _clone-your-fork:
 
-Cloning The Forked CPython Repository
--------------------------------------
+Cloning a Forked CPython Repository
+-----------------------------------
 
-You'll only need to do this once.  From your command line::
+You will only need to do this once.  From your command line::
 
    git clone git@github.com:<username>/cpython.git
 
-It is also recommended to configure an ``upstream`` remote::
+It is also recommended to configure an ``upstream`` remote repository::
 
    cd cpython
    git remote add upstream git@github.com:python/cpython.git
@@ -66,11 +66,11 @@ To list the remote repositories that are configured, along with their URLs::
 
    git remote -v
 
-You should have two remotes: ``origin`` pointing to your fork,
+You should have two remote repositories: ``origin`` pointing to your forked CPython repository,
 and ``upstream`` pointing to the official CPython repository::
 
-   origin  git@github.com:<your-username>/cpython.git (fetch)
-   origin  git@github.com:<your-username>/cpython.git (push)
+   origin  git@github.com:<username>/cpython.git (fetch)
+   origin  git@github.com:<username>/cpython.git (push)
    upstream        git@github.com:python/cpython.git (fetch)
    upstream        git@github.com:python/cpython.git (push)
 
@@ -83,17 +83,17 @@ Setting Up Your Name and Email Address
 .. code-block:: bash
 
    git config --global user.name "Your Name"
-   git config --global user.email email@example.org
+   git config --global user.email your.email@example.com
 
-The ``--global`` flag sets these globally,
-``--local`` sets them only for the current project.
+The ``--global`` flag sets these parameters globally while
+the ``--local`` flag sets them only for the current project.
 
 .. _autocrlf:
 
 Enabling ``autocrlf`` on Windows
 --------------------------------
 
-The *autocrlf* option will fix automatically any Windows-specific line endings.
+The ``autocrlf`` option will fix automatically any Windows-specific line endings.
 This should be enabled on Windows, since the public repository has a hook which
 will reject all changesets having the wrong line endings::
 
@@ -112,7 +112,7 @@ Create a new branch and switch to it::
 
 This is equivalent to::
 
-   # create a new branch off 'master', without checking it out
+   # create a new branch from master, without checking it out
    git branch <branch-name> master
    # check out the branch
    git checkout <branch-name>
@@ -137,7 +137,6 @@ on the 2.7 release from the ``upstream`` remote::
 
    git checkout -b 2.7 upstream/2.7
 
-
 .. _deleting_branches:
 
 Deleting Branches
@@ -154,7 +153,6 @@ To delete a **remote** branch::
 
 You may specify more than one branch for deletion.
 
-
 Staging and Committing Files
 ----------------------------
 
@@ -164,7 +162,7 @@ Staging and Committing Files
 
 2. To stage the files to be included in your commit::
 
-      git add path/to/file1 path/to/file2 path/to/file3
+      git add <filename1> <filename2>
 
 3. To commit the files that have been staged (done in step 2):
 
@@ -172,19 +170,17 @@ Staging and Committing Files
 
       git commit -m "bpo-XXXX: This is the commit message."
 
-
 Reverting Changes
 -----------------
 
 To revert changes to a file that has not been committed yet::
 
-   git checkout path/to/file
+   git checkout <filename>
 
 If the change has been committed, and now you want to reset it to whatever
 the origin is at::
 
    git reset --hard HEAD
-
 
 Stashing Changes
 ----------------
@@ -210,15 +206,14 @@ Commit the files:
 
 .. code-block:: bash
 
-   git commit -m '<message>'
-
+   git commit -m "<message>"
 
 .. _push-changes:
 
 Pushing Changes
 ---------------
 
-Once your changes are ready for a review or a pull request, you'll need to push
+Once your changes are ready for a review or a pull request, you will need to push
 them to the remote repository.
 
 ::
@@ -226,35 +221,33 @@ them to the remote repository.
    git checkout <branch-name>
    git push origin <branch-name>
 
-
 Creating a Pull Request
 -----------------------
 
 1. Go to https://github.com/python/cpython.
 
-2. Press ``New pull request`` button.
+2. Press the ``New pull request`` button.
 
-3. Click ``compare across forks`` link.
+3. Click the ``compare across forks`` link.
 
-4. Select the base fork: ``python/cpython`` and base branch: ``master``.
+4. Select the base repository: ``python/cpython`` and base branch: ``master``.
 
-5. Select the head fork: ``<username>/cpython`` and base branch: the branch
+5. Select the head repository: ``<username>/cpython`` and head branch: the branch
    containing your changes.
 
-6. Press ``Create Pull Request`` button.
+6. Press the ``Create pull request`` button.
 
-
-Syncing With Upstream
+Syncing with Upstream
 ---------------------
 
 Scenario:
 
 - You forked the CPython repository some time ago.
 - Time passes.
-- There have been new commits made in upstream CPython repository.
+- There have been new commits made in the upstream CPython repository.
 - Your forked CPython repository is no longer up to date.
 - You now want to update your forked CPython repository to be the same as
-  upstream.
+  the upstream CPython repository.
 
 Solution::
 
@@ -267,8 +260,9 @@ Another scenario:
 - You created ``some-branch`` some time ago.
 - Time passes.
 - You made some commits to ``some-branch``.
-- Meanwhile, there are recent changes from upstream CPython repository.
-- You want to incorporate the recent changes from upstream into ``some-branch``.
+- Meanwhile, there are recent changes from the upstream CPython repository.
+- You want to incorporate the recent changes from the upstream CPython
+  repository into ``some-branch``.
 
 Solution::
 
@@ -282,9 +276,8 @@ you run ``git merge upstream/master``.
 
 When it happens, you need to resolve conflict.  See these articles about resolving conflicts:
 
-* `About merge conflicts <https://help.github.com/en/articles/about-merge-conflicts>`_
-* `Resolving a merge conflict using the command line <https://help.github.com/en/articles/resolving-a-merge-conflict-using-the-command-line>`_
-
+- `About merge conflicts <https://help.github.com/en/articles/about-merge-conflicts>`_
+- `Resolving a merge conflict using the command line <https://help.github.com/en/articles/resolving-a-merge-conflict-using-the-command-line>`_
 
 .. _git_from_mercurial:
 
@@ -326,8 +319,6 @@ Solution:
 
 6. Push the changes and open a pull request.
 
-
-
 .. _git_pr:
 
 Downloading Other's Patches
@@ -342,7 +333,7 @@ On Unix and MacOS, set up the following git alias::
 
    $ git config --global alias.pr '!sh -c "git fetch upstream pull/${1}/head:pr_${1} && git checkout pr_${1}" -'
 
-On Windows, reverse the single (`'`) and double (`"`) quotes:
+On Windows, reverse the single (``'``) and double (``"``) quotes:
 
 .. code-block:: bash
 
@@ -362,10 +353,9 @@ local copy of a pull request as follows::
    So you can ``git push`` if the pull request author checked
    "Allow edits from maintainers" when creating the pull request.
 
-
 .. _accepting-and-merging-a-pr:
 
-Accepting and Merging A Pull Request
+Accepting and Merging a Pull Request
 ------------------------------------
 
 Pull requests can be accepted and merged by a Python Core Developer.
@@ -399,8 +389,7 @@ Pull requests can be accepted and merged by a Python Core Developer.
       `How to Write a Git Commit Message <https://chris.beams.io/posts/git-commit/>`_
       is a nice article describing how to write a good commit message.
 
-3. Press the ``Confirm squash and merge`` button.
-
+4. Press the ``Confirm squash and merge`` button.
 
 Backporting Merged Changes
 --------------------------
@@ -418,7 +407,7 @@ The commit hash for backporting is the squashed commit that was merged to
 the ``master`` branch.  On the merged pull request, scroll to the bottom of the
 page.  Find the event that says something like::
 
-   <coredeveloper> merged commit <commit_sha1> into python:master <sometime> ago.
+   <core_developer> merged commit <commit_sha1> into python:master <sometime> ago.
 
 By following the link to ``<commit_sha1>``, you will get the full commit hash.
 
@@ -466,7 +455,7 @@ items like updating ``Misc/ACKS``.
 To edit an open pull request that targets ``master``:
 
 1. In the pull request page, under the description, there is some information
-   about the contributor's fork and branch name that will be useful later::
+   about the contributor's forked CPython repository and branch name that will be useful later::
 
       <contributor> wants to merge 1 commit into python:master from <contributor>:<branch_name>
 
@@ -474,7 +463,7 @@ To edit an open pull request that targets ``master``:
 
       git pr <pr_number>
 
-   This will checkout the contributor's branch at ``pr_XXX``.
+   This will checkout the contributor's branch at ``<pr_number>``.
 
 3. Make and commit your changes on the branch.  For example, merge in changes
    made to ``master`` since the PR was submitted (any merge commits will be
@@ -485,10 +474,10 @@ To edit an open pull request that targets ``master``:
       git fetch upstream
       git merge upstream/master
       git add <filename>
-      git commit -m "<commit message>"
+      git commit -m "<message>"
 
 4. Push the changes back to the contributor's PR branch::
 
-      git push git@github.com:<contributor>/cpython <pr_XXX>:<branch_name>
+      git push git@github.com:<contributor>/cpython <pr_number>:<branch_name>
 
 5. Optionally, :ref:`delete the PR branch <deleting_branches>`.
