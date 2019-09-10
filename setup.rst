@@ -17,7 +17,6 @@ might want to use `our official images
 contain the latest releases of several Python versions, along with git head,
 and are provided for development and testing purposes only.
 
-
 .. seealso::
 
    The :ref:`quick-reference` gives brief summary of the process from
@@ -166,7 +165,9 @@ Once ``configure`` is done, you can then compile CPython with:
 This will build CPython with only warnings and errors being printed to
 stderr and utilize up to 2 CPU cores. If you are using a multi-core machine
 with more than 2 cores (or a single-core machine), you can adjust the number
-passed into the ``-j`` flag to match the number of cores you have.
+passed into the ``-j`` flag to match the number of cores you have (or if your
+version of Make supports it, you can use ``-j`` without a number and Make
+will not limit the number of steps that can run simultaneously.).
 
 At the end of the build you should see a success message, possibly followed
 by a list of extension modules that haven't been built because their
@@ -267,8 +268,8 @@ to build.
    readme`_ for more details.  If you have VS 2008 but not 2010 you can use the
    build files in the `PC/VS9.0 directory`_, see the `VS9 readme`_ for details.
 
-.. note:: If you are using the Windows Subsystem for Linux (WSL), clone the 
-   repository from a native Windows terminal program like cmd.exe command prompt 
+.. note:: If you are using the Windows Subsystem for Linux (WSL), clone the
+   repository from a native Windows terminal program like cmd.exe command prompt
    or PowerShell as well as use a build of git targeted for Windows, e.g., the
    official one from `<https://git-scm.com>`_. Otherwise, Visual Studio will
    not be able to find all the project's files and will fail the build.
@@ -378,7 +379,7 @@ for the header and library files to your ``configure`` command.  For example,
 
 with **Homebrew**::
 
-    $ brew install openssl xz
+    $ brew install openssl xz gdbm
 
 and ``configure`` Python versions >= 3.7::
 
@@ -396,7 +397,7 @@ and ``make``::
 
 or **MacPorts**::
 
-    $ sudo port install pkgconfig openssl xz
+    $ sudo port install pkgconfig openssl xz gdbm
 
 and ``configure``::
 
