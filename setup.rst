@@ -17,7 +17,6 @@ might want to use `our official images
 contain the latest releases of several Python versions, along with git head,
 and are provided for development and testing purposes only.
 
-
 .. seealso::
 
    The :ref:`quick-reference` gives brief summary of the process from
@@ -167,8 +166,8 @@ This will build CPython with only warnings and errors being printed to
 stderr and utilize up to 2 CPU cores. If you are using a multi-core machine
 with more than 2 cores (or a single-core machine), you can adjust the number
 passed into the ``-j`` flag to match the number of cores you have (or if your
-version of Make supports it, you can leave the number off and Make will use
-as many cores as your machine has).
+version of Make supports it, you can use ``-j`` without a number and Make
+will not limit the number of steps that can run simultaneously.).
 
 At the end of the build you should see a success message, possibly followed
 by a list of extension modules that haven't been built because their
@@ -398,7 +397,7 @@ and ``make``::
 
 or **MacPorts**::
 
-    $ sudo port install pkgconfig openssl xz
+    $ sudo port install pkgconfig openssl xz gdbm
 
 and ``configure``::
 
