@@ -28,7 +28,6 @@ Responsibilities include:
 * PR/issue management
     - Renaming PRs
     - Reviewing PRs
-    - Closing PRs and issues
     - Assisting contributors
     - Notifying appropriate core developers
 * Applying appropriate labels to PRs/Issues
@@ -36,6 +35,16 @@ Responsibilities include:
     - Skip issue
     - Good first issue
     - Other categorizations
+
+As triagers gain experience, they may have some intuition of when a PR should
+be closed. Triagers can recommend closing a PR, but the final decision must be
+made by a core developer. By having triagers and core developers work together,
+the author receives a careful consideration of their PR. This encourages future
+contributions, regardless of whether their PR is accepted or closed.
+
+Triagers can make use of the ``invalid`` and ``stale`` labels to suggest that a
+PR may be suitable for closure. For more information, see the
+:ref:`GitHub PR labels <github-pr-labels>` section.
 
 It is also of paramount importance to treat every contributor to the Python
 project kindly and with respect. Regardless of whether they're entirely new
@@ -72,6 +81,7 @@ For every new triager, it would be great to announce them in the python-committe
 mailing list and core-workflow category in Discourse. `Example announcement
 <https://discuss.python.org/t/abhilash-raj-has-been-granted-triage-role-on-github/2089>`_.
 
+.. _github-pr-labels:
 
 GitHub Labels for PRs
 '''''''''''''''''''''
@@ -93,8 +103,9 @@ expert-asyncio
 invalid
     Used manually for PRs that do not meet basic requirements and
     automatically added by bedevere when PR authors attempt to merge maintenace
-    branches into the master branch. During competitions, this label causes the
-    PR to not count towards the author's contributions.
+    branches into the master branch. During events such as the October
+    Hacktoberfest, this label will prevent the PR from counting toward the
+    author's contributions.
 
 needs backport to X.Y
     Used for PRs which are appropriate to backport to
