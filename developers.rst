@@ -3,7 +3,7 @@
 Developer Log
 =============
 
-This page list the historical members of the Python development team. (The
+This page lists the historical members of the Python development team. (The
 master list is kept in a private repository due to containing sensitive contact
 information.)
 
