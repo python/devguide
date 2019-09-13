@@ -672,7 +672,7 @@ The directives are:
    Describes a global C variable.  The signature should include the type, such
    as::
 
-      .. cvar:: PyObject* PyClass_Type
+      .. c:var:: PyObject* PyClass_Type
 
 .. describe:: data
 
