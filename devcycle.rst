@@ -322,6 +322,8 @@ Current Administrators
 +-------------------+----------------------------------------------------------+-----------------+
 | Mariatta Wijaya   | Maintainer of blurb_it and miss-islington                | Mariatta        |
 +-------------------+----------------------------------------------------------+-----------------+
+| Pablo Galindo     | Maintainer of buildbot.python.org                        | pablogsal       |
++-------------------+----------------------------------------------------------+-----------------+
 
 Repository Release Manager Role Policy
 --------------------------------------
