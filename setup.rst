@@ -450,7 +450,7 @@ example, ``autoconf`` by itself will not regenerate ``pyconfig.h.in``.
 appropriate.
 
 Python's ``configure.ac`` script typically requires a specific version of
-Autoconf.  At the moment, this reads: ``AC_PREREQ(2.65)``.
+Autoconf.  At the moment, this reads: ``AC_PREREQ(2.69)``.
 
 If the system copy of Autoconf does not match this version, you will need to
 install your own copy of Autoconf.
