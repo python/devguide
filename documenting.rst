@@ -1542,9 +1542,8 @@ Using make / make.bat
 
    cd Doc
    make venv
+   source ./venv/bin/activate
    make html
-
-or alternatively ``make -C Doc/ venv html``.
 
 You can also use ``make help`` to see a list of targets supported by
 :command:`make`.  Note that ``make check`` is automatically run when
