@@ -598,9 +598,9 @@ Checklist for Triaging
 .. _Tools: https://github.com/python/cpython/tree/master/Tools/
 .. _Tools/demo: https://github.com/python/cpython/tree/master/Tools/demo/
 .. _Developer's guide: https://github.com/python/devguide/
-.. _GSoC: https://developers.google.com/open-source/gsoc/
+.. _GSoC: https://summerofcode.withgoogle.com/
 .. _issue tracker: https://bugs.python.org
-.. _GitHub pull requests: https://github.com/python/cpython/pulls>
+.. _GitHub pull requests: https://github.com/python/cpython/pulls
 .. _Python source code repositories: https://github.com/python/cpython/
 .. _Reporting security issues in Python: https://www.python.org/news/security/
 .. _python-ideas: https://mail.python.org/mailman/listinfo/python-ideas
