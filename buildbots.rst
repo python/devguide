@@ -15,10 +15,10 @@ will schedule a new build to be run as soon as possible.
 
 The build steps run by the buildbots are the following:
 
-* Checkout of the source tree for the changeset which triggered the build
+* Check out the source tree for the changeset which triggered the build
 * Compile Python
 * Run the test suite using :ref:`strenuous settings <strenuous_testing>`
-* Cleanup the build tree
+* Clean up the build tree
 
 It is your responsibility, as a core developer, to check the automatic
 build results after you push a change to the repository.  It is therefore
