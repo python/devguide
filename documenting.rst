@@ -1619,8 +1619,8 @@ in production, other are work in progress:
 |              |                    | python-hu/>`__                           |
 |              |                    |                                          |
 +--------------+--------------------+------------------------------------------+
-| Indonesian   | `Oon Arfiandwi <   | `github <https://github.com/python/      |
-| (in)         | https://github.com | python-docs-id>`__                       |
+| Indonesian   | `Oon Arfiandwi     | `github <https://github.com/python/      |
+| (in)         | <https://github.com| python-docs-id>`__                       |
 |              | /oonid>`__         |                                          |
 +--------------+--------------------+------------------------------------------+
 | Italian (it) |                    | `mail <https://mail.python.org/pipermail/|
