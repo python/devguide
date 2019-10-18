@@ -118,7 +118,7 @@ Status:
 :prerelease: feature fixes, bugfixes, and security fixes are accepted for the
     upcoming feature release.
 :bugfix: bugfixes and security fixes are accepted, new binaries are still
-    released. (Also called **maintenance** mode)
+    released. (Also called **maintenance** mode or **stable** release)
 :security: only security fixes are accepted and no more binaries are released,
     but new source-only versions can be released
 :end-of-life: release cycle is frozen; no further changes can be pushed to it.
