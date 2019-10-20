@@ -1620,8 +1620,9 @@ in production, other are work in progress:
 |              |                    |                                          |
 +--------------+--------------------+------------------------------------------+
 | Indonesian   | `Oon Arfiandwi     | `github <https://github.com/python/      |
-| (in)         | <https://github.com| python-docs-id>`__                       |
-|              | /oonid>`__         |                                          |
+| (id)         | <https://bugs.pyth | python-docs-id>`__                       |
+|              | on.org/user32660   |                                          |
+|              | />`__              |                                          |
 +--------------+--------------------+------------------------------------------+
 | Italian (it) |                    | `mail <https://mail.python.org/pipermail/|
 |              |                    | doc-sig/2019-April/004114.html>`__       |
