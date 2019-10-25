@@ -1803,10 +1803,9 @@ Ask on doc-sig, or better, make a PR on the `devguide
 I have a translation, but not on git, what should I do?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Just ask for help on the doc-sig mailing list and our python-fu, git-fu
-and bash-fu combined will help you create an appropriate repository. If
-you use a tool like transifex don’t worry.  Keeping them in sync is not
-that hard.
+You can ask for help on the doc-sig mailing list and our python-fu, git-fu
+and bash-fu combined will help you create an appropriate repository. Using
+a tool like transifex can help keeping them in sync.
 
 
 My git hierarchy does not match yours, can I keep it?
