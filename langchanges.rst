@@ -27,8 +27,8 @@ go through Python's stdlib and find examples of code which would benefit from
 your proposed change (which helps communicate the usefulness of your change to
 others). For further guidance, see :ref:`suggesting-changes`.
 
-Your proposed change also needs to be *Pythonic*. While Guido is the only
-person who can truly classify something as Pythonic, you can read the `Zen of
+Your proposed change also needs to be *Pythonic*. While only the Steering
+Council can truly classify something as Pythonic, you can read the `Zen of
 Python`_ for guidance.
 
 .. _Zen of Python: https://www.python.org/dev/peps/pep-0020/
