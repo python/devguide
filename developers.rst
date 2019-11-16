@@ -8,7 +8,7 @@ master list is kept in a private repository due to containing sensitive contact
 information.)
 
 .. csv-table::
-   :header: "Name", "Joined"
+   :header: "Name", "GitHub username", "Joined"
    :file: developers.csv
    :encoding: "utf-8"
 
