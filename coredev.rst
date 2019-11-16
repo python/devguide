@@ -16,7 +16,8 @@ Typically a core developer will offer you the chance to gain commit privilege.
 The person making the offer will become your mentor and watch your commits for
 a while to make sure you understand the development process. If other core
 developers agree that you should gain commit privileges you are then extended
-an official offer.
+an official offer. How core developers come to that agreement are outlined in
+:pep:`13`.
 
 What it Means
 -------------
@@ -61,7 +62,22 @@ Gaining Commit Privileges
 -------------------------
 
 When you have been extended an official offer to become a Python core
-developer, there are several things you must do.
+developer, there are several things you and the person handling your onboarding
+must do.
+
+1. Find out who is handling your onboarding (your mentor should know who this
+   is; at worst ask the steering council)
+1. Email the person handling your onboarding
+1. The person onboarding you will ask you for various account details to record
+   them at https://github.com/python/voters/
+1. They will ask what email address you would like to subscribe to
+   python-committers with
+1. They will turn on various permissions based on the information you provided
+   in the previous steps
+1. They will update the devguide to publicly list your team membership at
+   :ref:`developers`
+1. They will announce your membership to python-committers
+
 
 Mailing Lists
 '''''''''''''
@@ -69,39 +85,6 @@ Mailing Lists
 You are expected to subscribe to python-committers, python-dev,
 python-checkins, and one of new-bugs-announce or python-bugs-list. See
 :ref:`communication` for links to these mailing lists.
-
-
-Issue Tracker
-'''''''''''''
-
-If you did not gain the Developer role in the `issue tracker`_ before gaining
-commit privileges, please say so. The role allows issues to be assigned to you,
-and it allows you to triage (e.g. close or reassign) issues.
-
-A tracker admin should also flip your "is committer" bit in the tracker's
-account screen. This will add the Python logo next to your name in discussions
-on the tracker. Note that this is separate from the Developer role.
-
-It is expected that on the issue tracker you have a username in the form of
-"first_name.last_name". If your initial issue tracker username is not of this
-form, please change it. This is so that it is easier to assign issues to the
-right person.
-
-
-GitHub
-''''''
-
-You will be added to the ``Python core team`` on GitHub. This will give you
-rights to commit to various repositories under the `Python organization`_
-on GitHub. When you are initially added you will be emailed by GitHub with
-an invitation to join the team. Please accept the invite in the email or
-go to https://github.com/python and accept the invite there.
-
-An entry in the :ref:`developers` should also be entered for you.
-Typically the person who sponsored your application to become a core developer
-makes sure an entry is created for you.
-
-.. _Python organization: https://github.com/python
 
 
 .. _contributor_agreement:
