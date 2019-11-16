@@ -67,16 +67,16 @@ must do.
 
 1. Find out who is handling your onboarding (your mentor should know who this
    is; at worst ask the steering council)
-1. Email the person handling your onboarding
-1. The person onboarding you will ask you for various account details to record
+2. Email the person handling your onboarding
+3. The person onboarding you will ask you for various account details to record
    them at https://github.com/python/voters/
-1. They will ask what email address you would like to subscribe to
+4. They will ask what email address you would like to subscribe to
    python-committers with
-1. They will turn on various permissions based on the information you provided
+5. They will turn on various permissions based on the information you provided
    in the previous steps
-1. They will update the devguide to publicly list your team membership at
+6. They will update the devguide to publicly list your team membership at
    :ref:`developers`
-1. They will announce your membership to python-committers
+7. They will announce your membership to python-committers
 
 
 Mailing Lists
