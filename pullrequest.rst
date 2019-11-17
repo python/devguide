@@ -97,8 +97,8 @@ You should have already :ref:`set up your system <setup>`,
 * If someone else added new changesets and you get an error::
 
      git fetch upstream
-     git rebase upstream/master
-     git push --force-with-lease origin <branch-name>
+     git merge upstream/master
+     git push origin <branch-name>
 
 * Finally go on :samp:`https://github.com/{<your-username>}/cpython`: you will
   see a box with the branch you just pushed and a green button that allows
