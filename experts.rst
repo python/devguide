@@ -130,7 +130,8 @@ heapq                 rhettinger*, stutzbach
 hmac                  christian.heimes, gregory.p.smith
 html                  ezio.melotti
 http
-idlelib               kbk (inactive), terry.reedy*, roger.serwy (inactive)
+idlelib               kbk (inactive), terry.reedy*, roger.serwy (inactive),
+                      taleinat
 imaplib
 imghdr
 imp
@@ -213,7 +214,7 @@ spwd
 sqlite3               ghaering
 ssl                   janssen, christian.heimes, dstufft, alex
 stat                  christian.heimes
-statistics            steven.daprano, rhettinger
+statistics            steven.daprano, rhettinger, taleinat
 string
 stringprep
 struct                mark.dickinson, meador.inge
