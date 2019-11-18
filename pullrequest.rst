@@ -108,14 +108,17 @@ You should have already :ref:`set up your system <setup>`,
    git commit -m '<message>'
    git push origin <branch-name>
 
-  * If someone else added new changesets and you get an error::
+  * If a core developer reviewing your PR pushed one or more commits to your
+    PR branch, then after checking out your branch and before editing, run::
 
-     git checkout <branch-name>
      git pull origin <branch-name>  # pull = fetch + merge
-     # if there are merge conflicts: see "Resolving Merge Conflicts" below
-     git push origin <branch-name>
 
-* If time passes and there are merge conflicts with the master branch, merge
+    If you have made local changes that have not been pushed to your fork and
+    there are merge conflicts, git will warn you about this and enter conflict
+    resolution mode. See :ref:`resolving-merge-conflicts` below.
+
+* If time passes and there are merge conflicts with the master branch, GitHub
+  will show a warning to this end and you may be asked to address this. Merge
   the changes from the master branch while resolving the conflicts locally::
 
    git checkout <branch-name>
