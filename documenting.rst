@@ -1643,9 +1643,10 @@ in production, other are work in progress:
 | Lithuanian   |                    | `mail <https://mail.python.org/pipermail/|
 | (lt)         |                    | doc-sig/2019-July/004138.html>`__        |
 +--------------+--------------------+------------------------------------------+
-| Polish (pl)  |                    | `mail <https://mail.python.org/pipermail/|
-|              |                    | doc-sig/2019-April/004106.html>`__       |
-|              |                    |                                          |
+| Polish (pl)  | `Maciej Olko       | `transifex <https://www.transifex.com/   |
+|              | <https://bugs      | python-doc/python-newest/language/pl/>`__|
+|              | .python.org        | `github <https://github.com/m-aciek      |
+|              | /user30466>`__     | /python-docs-pl>`__                      |
 +--------------+--------------------+------------------------------------------+
 | Portuguese   | Gustavo Toffo      |                                          |
 | (pt)         |                    |                                          |
