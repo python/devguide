@@ -18,6 +18,12 @@ Here are the basic steps needed to get :ref:`set up <setup>` and contribute a
 patch. This is meant as a checklist, once you know the basics. For complete
 instructions please see the :ref:`setup guide <setup>`.
 
+.. note::
+
+   First time contributors will need to sign the Contributor Licensing
+   Agreement (CLA) as described in the :ref:`Licensing <cla>` section of
+   this guide.
+
 1. Install and set up :ref:`Git <vcsetup>` and other dependencies
    (see the :ref:`Get Setup <setup>` page for detailed information).
 
@@ -66,12 +72,6 @@ instructions please see the :ref:`setup guide <setup>`.
    pull request description.  For example::
 
       bpo-12345: Fix some bug in spam module
-
-.. note::
-
-   First time contributors will need to sign the Contributor Licensing
-   Agreement (CLA) as described in the :ref:`Licensing <cla>` section of
-   this guide.
 
 Quick Links
 -----------
