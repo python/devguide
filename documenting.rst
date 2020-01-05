@@ -1715,7 +1715,7 @@ The important steps looks like this:
   way, it's up to you.
 - Ensure we updated this page to reflect your work and progress, either via a
   PR, or by asking on the doc-sig mailing list.
-- When ``tutorial/``, ``library/stdtypes`` and ``library/functions``
+- When ``tutorial/``, ``bugs.py`` and ``library/functions``
   are complete, ask on doc-sig for your language to be added in the
   language picker on docs.python.org.
 
