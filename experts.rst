@@ -353,7 +353,7 @@ testing             michael.foord, ezio.melotti
 test coverage
 threads
 time and dates      lemburg, belopolsky, p-ganssle
-unicode             lemburg, ezio.melotti, vstinner, benjamin.peterson,
+unicode             lemburg, ezio.melotti, benjamin.peterson,
 version control     eric.araujo, ezio.melotti
 ==================  ==========================================================
 
