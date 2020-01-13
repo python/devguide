@@ -55,7 +55,7 @@ abc
 aifc                  r.david.murray
 argparse              rhettinger*
 array
-ast                   benjamin.peterson
+ast                   benjamin.peterson, pablogsal
 asynchat              josiahcarlson, giampaolo.rodola*, stutzbach
 asyncio               yselivanov, asvetlov
 asyncore              josiahcarlson, giampaolo.rodola*, stutzbach
@@ -118,7 +118,7 @@ fpectl                twouters
 fractions             mark.dickinson, rhettinger
 ftplib                giampaolo.rodola*
 functools             rhettinger*
-gc                    pitrou
+gc                    pitrou, pablogsal
 getopt
 getpass
 gettext
@@ -167,7 +167,7 @@ optparse              aronacher
 os
 os.path               serhiy.storchaka
 ossaudiodev
-parser                benjamin.peterson
+parser                benjamin.peterson, pablogsal
 pathlib
 pdb
 pickle                alexandre.vassalotti
@@ -313,11 +313,11 @@ Interest Area       Maintainers
 ==================  ==========================================================
 algorithms          rhettinger*
 argument clinic     larry
-ast/compiler        benjamin.peterson, brett.cannon, yselivanov
+ast/compiler        benjamin.peterson, brett.cannon, yselivanov, pablogsal
 autoconf/makefiles  twouters*
 bsd
 bug tracker         ezio.melotti
-buildbots           zach.ware
+buildbots           zach.ware, pablogsal
 bytecode            benjamin.peterson, yselivanov
 context managers    ncoghlan
 core workflow       mariatta
