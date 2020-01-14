@@ -99,7 +99,7 @@ Status of Python branches
 +------------------+--------------+-------------+----------------+----------------+-------------------+
 | 3.7              | :pep:`537`   | bugfix      | 2018-06-27     | *2023-06-27*   | Ned Deily         |
 +------------------+--------------+-------------+----------------+----------------+-------------------+
-| 2.7              | :pep:`373`   | bugfix      | 2010-07-03     | *2020-01-01*   | Benjamin Peterson |
+| 2.7              | :pep:`373`   | unsupported | 2010-07-03     | *2020-01-01*   | Benjamin Peterson |
 +------------------+--------------+-------------+----------------+----------------+-------------------+
 | 3.6              | :pep:`494`   | security    | 2016-12-23     | *2021-12-23*   | Ned Deily         |
 +------------------+--------------+-------------+----------------+----------------+-------------------+
@@ -127,8 +127,8 @@ Dates in *italic* are scheduled and can be adjusted.
 
 By default, the end-of-life is scheduled 5 years after the first release,
 but can be adjusted by the release manager of each branch.  The support for
-Python 2.7 has currently been extended to 2020-01-01.  Versions older than
-2.7 have reached end-of-life.
+Python 2.7 was extended to 2020-01-01.  All Python 2 versions have reached
+end-of-life.
 
 See also the :ref:`devcycle` page for more information about branches.
 
