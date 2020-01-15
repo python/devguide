@@ -19,7 +19,7 @@ patch. This is meant as a checklist, once you know the basics. For complete
 instructions please see the :ref:`setup guide <setup>`.
 
 1. Install and set up :ref:`Git <vcsetup>` and other dependencies
-   (see the :ref:`Get Setup <setup>` page for detailed information).
+   (see the :ref:`Git Setup <setup>` page for detailed information).
 
 2. Fork `the CPython repository <https://github.com/python/cpython>`_
    to your GitHub account and :ref:`get the source code <checkout>` using::
