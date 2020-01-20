@@ -123,14 +123,14 @@ the interpreter create cycles everywhere. Some notable examples:
     * When representing data structures like graphs is very typical for them to
       have internal links to themselves.
 
-To correctly dispose of these objects once they become unreachable, they need to
-be identified first. This is done in the `deduce_unreachable() <https://github.com/python/cpython/blob/6202d856d637a9b4eb9789b4d4a1edb12d877de5/Modules/gcmodule.c#L1089>`__
-function. Inside this component, two double-linked lists are maintained: one list contains
-all objects to be scanned, and the other will contain all objects "tentatively" unreachable.
+To correctly dispose of these objects once they become unreachable, they need to be
+identified first.  Inside the function that identifies cycles, two double-linked
+lists are maintained: one list contains all objects to be scanned, and the other will
+contain all objects "tentatively" unreachable.
 
-To understand how the algorithm works, Let’s take the case of a circular linked list which has
-one link referenced by a variable A, and one self-referencing object which is completely
-unreachable
+To understand how the algorithm works, Let’s take the case of a circular linked list
+which has one link referenced by a variable A, and one self-referencing object which
+is completely unreachable
 
 .. code-block:: python
 
@@ -202,7 +202,7 @@ to ``link 2`` and ``link 3`` below as they are reachable from ``link 1``.  From 
 state in the previous image and after examining the objects referred to by ``link1``
 the GC knows that ``link 3`` is reachable after all, so it is moved back to the
 original list and its ``gc_refs`` field is set to one so if the GC visits it again, it
-does not that is reachable. To avoid visiting a object twice, the GC marks all
+does know that is reachable. To avoid visiting a object twice, the GC marks all
 objects that are not visited yet with and once an object is processed is unmarked so
 the GC does not process it twice.
 
