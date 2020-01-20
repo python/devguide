@@ -235,7 +235,7 @@ obvious.
 
 Suppose we create objects A, B, C in that order. They appear in the young generation
 in the same order. If B points to A, and C to B, and C is reachable from outside,
-then the adjusted refcounts after the first step of the algorith runs will be 0, 0,
+then the adjusted refcounts after the first step of the algorithm runs will be 0, 0,
 and 1 respectively because the only reachable object from the outside is C.
 
 When the next step of the algorithm finds A, A is moved to the unreachable list. The
