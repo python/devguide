@@ -31,8 +31,8 @@ to the object when called):
     >>> sys.getrefcount(x)
     2
 
-The main problem present with the reference count schema is that reference count does not
-handle reference cycles. For instance, consider this code:
+The main problem present with the reference count schema is that reference counting
+does not handle reference cycles. For instance, consider this code:
 
 .. code-block:: python
 
@@ -90,7 +90,7 @@ As is explained later in the `Optimization: reusing fields to save memory`_ sect
 these two extra fields are normally used to keep doubly linked lists of all the
 objects tracked by the garbage collector (these lists are the GC generations, more on
 that in the `Optimization: reusing fields to save memory`_ section), but they are also
-reused to fullfill other pourposes when the full double linked list structure is not
+reused to fullfill other pourposes when the full doubly linked list structure is not
 needed as a memory optimization.
 
 Doubly linked lists are used because they efficiently support most frequently required operations.  In
