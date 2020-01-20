@@ -101,6 +101,7 @@ are further partitioned into, e.g., sets of reachable and unreachable objects.  
 support moving an object from one partition to another, adding a new object,  removing an object
 entirely (objects tracked by GC are most often reclaimed by the refcounting system when GC
 isn't running at all!), and merging partitions, all with a small constant number of pointer updates.
+
 Specific APIs are offered to allocate, deallocate, initialize, track and untrack
 objects with GC support. These APIs can be found in the `Garbage Collector C API
 documentation <https://docs.python.org/3.8/c-api/gcsupport.html>`_.
