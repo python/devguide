@@ -32,7 +32,7 @@ to the object when called):
     2
 
 The main problem present with the reference count schema is that reference count does not
-handle reference cycles. For instance, consider this code
+handle reference cycles. For instance, consider this code:
 
 .. code-block:: python
 
@@ -89,7 +89,7 @@ simple type cast from the original object: :code:`((PyGC_Head *)(the_object)-1)`
 As is explained later in the `Optimization: reusing fields to save memory`_ section,
 these two extra fields are normally used to keep doubly linked lists of all the
 objects tracked by the garbage collector (these lists are the GC generations, more on
-that in the `Optimization: reusing fields to save memory`_ section) but they are also
+that in the `Optimization: reusing fields to save memory`_ section), but they are also
 reused to fullfill other pourposes when the full double linked list structure is not
 needed as a memory optimization.
 
@@ -102,21 +102,21 @@ support moving an object from one partition to another, adding a new object,  re
 entirely (objects tracked by GC are most often reclaimed by the refcounting system when GC
 isn't running at all!), and merging partitions, all with a small constant number of pointer updates.
 
-Specific APIs are offered to allocate, deallocate, initialize, track and untrack
+Specific APIs are offered to allocate, deallocate, initialize, track, and untrack
 objects with GC support. These APIs can be found in the `Garbage Collector C API
 documentation <https://docs.python.org/3.8/c-api/gcsupport.html>`_.
 
-Appart from this object structure, the type object of objects supporting garbage
+Apart from this object structure, the type object for objects supporting garbage
 collection must include the ``Py_TPFLAGS_HAVE_GC`` in its ``tp_flags`` slot and
 provide an implementation of the ``tp_traverse`` handler. Unless it can be proven
 that the objects cannot form reference cycles with only objects of its type or if the
-type are mutable, a ``tp_clear`` implementation must also be provided.
+type is immutable, a ``tp_clear`` implementation must also be provided.
 
 
 Identifiying reference cycles reference cycles
 ----------------------------------------------
 
-The algorithm that why CPython uses to detect those reference cycles is
+The algorithm that CPython uses to detect those reference cycles is
 implemented in the ``gc`` module. The garbage collector **only focuses**
 on cleaning container objects (i.e. objects that can contain a reference
 to one or more objects). These can be arrays, dictionaries, lists, custom
@@ -126,10 +126,10 @@ the interpreter create cycles everywhere. Some notable examples:
 
     * Exceptions contain traceback objects that contain a list of frames that
       contain the exception itself.
-    * Instances have references to their class and the class to the module, which
+    * Instances have references to their class which itself references its module, and the module
       contains references to everything that is inside (and maybe other modules)
       and this can lead back to the original instance.
-    * When representing data structures like graphs is very typical for them to
+    * When representing data structures like graphs, it is very typical for them to
       have internal links to themselves.
 
 To correctly dispose of these objects once they become unreachable, they need to be
@@ -163,10 +163,10 @@ is completely unreachable
 
 When the GC starts, it has all the container objects it wants to scan
 on the first linked list. The objective is to move all the unreachable
-objects. As generally most objects turn out to be reachable, is much more
+objects. Since most objects turn out to be reachable, it is much more
 efficient to move the unreachable as this involves fewer pointer updates.
 
-Every object that supports garbage collection will have a extra reference
+Every object that supports garbage collection will have an extra reference
 count field initialized to the reference count (``gc_ref`` in the figures)
 of that object when the algorithm starts. This is because the algorithm needs
 to modify the reference count to do the computations and in this way the
@@ -175,8 +175,8 @@ interpreter will not modify the real reference count field.
 .. figure:: images/python-cyclic-gc-1-new-page.png
 
 The GC then iterates over all containers in the first list and decrements by one the
-``gc_ref`` field of any other object that container it is referencing.  For doing
-this it makes use of the ``tp_traverse`` slot in the container class (implemented
+``gc_ref`` field of any other object that container is referencing.  Doing
+this makes use of the ``tp_traverse`` slot in the container class (implemented
 using the C API or inherited by a superclass) to know what objects are referenced by
 each container. After all the objects have been scanned, only the objects that have
 references from outside the “objects to scan” list will have ``gc_ref > 0``.
@@ -197,7 +197,7 @@ processed ``link 1`` and ``link 2`` yet.
 
 .. figure:: images/python-cyclic-gc-3-new-page.png
 
-Then the GC scans next the ``link 1`` object. Because its has ``gc_refs == 1``
+Then the GC scans the next ``link 1`` object. Because its has ``gc_refs == 1``
 the gc does not do anything special because it knows it has to be reachable (and is
 already in what will become the reachable list):
 
@@ -205,7 +205,7 @@ already in what will become the reachable list):
 
 When the GC encounters an object which is reachable (``gc_refs > 0``), it traverses
 its references using the ``tp_traverse`` slot to find all the objects that are
-reachable from it, marking moving them to the end of the list of reachable objects (where
+reachable from it, moving them to the end of the list of reachable objects (where
 they started originally) and setting its ``gc_refs`` field to 1. This is what happens
 to ``link 2`` and ``link 3`` below as they are reachable from ``link 1``.  From the
 state in the previous image and after examining the objects referred to by ``link1``
@@ -227,7 +227,7 @@ list are really unreachable and can thus be garbage collected.
 Why moving unreachable objects is better
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-It sounds logical to move the unreachable objects under the premise that most object
+It sounds logical to move the unreachable objects under the premise that most objects
 are usually reachable, until you think about it: the reason it pays isn't actually
 obvious.
 
@@ -241,7 +241,7 @@ same for B when it's first encountered. Then C is traversed, B is moved *back* t
 the reachable list. B is eventually traversed, and then A is moved back to the reachable
 list.
 
-So instead of not moving at all, the reachable objects B and A are moved twice each.
+So instead of not moving at all, the reachable objects B and A are each moved twice.
 Why is this a win? A straightforward algorithm to move the reachable objects instead
 would move A, B, and C once each. The key is that this dance leaves the objects in
 order C, B, A - it's reversed from the original order.  On all *subsequent* scans,
@@ -291,18 +291,18 @@ many temporary objects are created and destroyed very fast. The older an object 
 the less likely is to become unreachable.
 
 To take advantage of this fact, all container objects are segregated across
-three spaces or "generations" (CPython currently uses 3 generations). Every new
+three spaces/generations. Every new
 object starts in the first generation (generation 0). The previous algorithm is
 executed only over the objects of a particular generation and if an object
 survives a collection of its generation it will be moved to the next one
-(generation 1), where it will it will be surveyed for collection less often. If
+(generation 1), where it will be surveyed for collection less often. If
 the same object survives another GC round in this new generation (generation 1)
 it will be moved to the last generation (generation 2) where it will be
 surveyed the least often.
 
 Generations are collected when the number of objects that they contain reach some
-predefined threshold which is unique of each generation and is lower the older the
-generation is. These thresholds can be examined using the  ``gc.get_threshold``
+predefined threshold which is unique of each generation and is lower than the older
+generations are. These thresholds can be examined using the  ``gc.get_threshold``
 function:
 
 .. code-block:: python
@@ -334,13 +334,13 @@ specifically in a generation by calling ``gc.collect(generation=NUM)``.
     >>> x = MyObj()
     >>> x.self = x
 
-    # Initially the object is in the younguest generation
+    # Initially the object is in the younguest generation.
 
     >>> gc.get_objects(generation=0)
     [..., <__main__.MyObj object at 0x7fbcc12a3400>, ...]
 
     # After a collection of the younguest generation the object
-    # moves to the next generation
+    # moves to the next generation.
 
     >>> gc.collect(generation=0)
     0
@@ -354,8 +354,8 @@ specifically in a generation by calling ``gc.collect(generation=NUM)``.
 Collecting the oldest generation
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-In addition to the various configurable thresholds, the GC only trigger a full
-collection of the oldest if the ratio ``long_lived_pending / long_lived_total``
+In addition to the various configurable thresholds, the GC only triggers a full
+collection of the oldest generation if the ratio ``long_lived_pending / long_lived_total``
 is above a given value (hardwired to 25%). The reason is that, while "non-full"
 collections (i.e., collections of the young and middle generations) will always
 examine roughly the same number of objects (determined by the aforementioned
@@ -363,7 +363,7 @@ thresholds) the cost of a full collection is proportional to the total
 number of long-lived objects, which is virtually unbounded.  Indeed, it has
 been remarked that doing a full collection every <constant number> of object
 creations entails a dramatic performance degradation in workloads which consist
-in creating and storing lots of long-lived objects (e.g. building a large list
+of creating and storing lots of long-lived objects (e.g. building a large list
 of GC-tracked objects would show quadratic performance, instead of linear as
 expected). Using the above ratio, instead, yields amortized linear performance
 in the total number of objects (the effect of which can be summarized thusly:
@@ -373,7 +373,7 @@ grows, but we do fewer and fewer of them").
 Optimization: reusing fields to save memory
 -------------------------------------------
 
-In order to save memory, the two linked list pointers in every object with gc
+In order to save memory, the two linked list pointers in every object with GC
 support are reused for several purposes. This is a common optimization known
 as "fat pointers" or "tagged pointers": pointers that carry additional data,
 "folded" into the pointer, meaning stored inline in the data representing the
@@ -385,9 +385,9 @@ used for tags or to keep other information – most often as a bit field (each
 bit a separate tag) – as long as code that uses the pointer masks out these
 bits before accessing memory.  E.g., on a 32-bit architecture (for both
 addresses and word size), a word is 32 bits = 4 bytes, so word-aligned
-addresses are always a multiple of 4, hence end in 00, leaving the last 2 bits
+addresses are always a multiple of 4, hence end in ``00``, leaving the last 2 bits
 available; while on a 64-bit architecture, a word is 64 bits word = 8 bytes, so
-word-aligned addresses end in 000, leaving the last 3 bits available.
+word-aligned addresses end in ``000``, leaving the last 3 bits available.
 
 The CPython GC makes use of two fat pointers:
 
@@ -406,7 +406,7 @@ The CPython GC makes use of two fat pointers:
 Optimization: delay tracking containers
 ---------------------------------------
 
-Certain types of container cannot participate in a reference cycle, and so do
+Certain types of containers cannot participate in a reference cycle, and so do
 not need to be tracked by the garbage collector. Untracking these objects
 reduces the cost of garbage collections. However, determining which objects may
 be untracked is not free, and the costs must be weighed against the benefits
