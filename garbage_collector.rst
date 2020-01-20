@@ -93,6 +93,14 @@ that in the `Optimization: reusing fields to save memory`_ section) but they are
 reused to fullfill other pourposes when the full double linked list structure is not
 needed as a memory optimization.
 
+Doubly linked lists are used because they efficiently support most frequently required operations.  In
+general, the collection of all objects tracked by GC are partitioned into disjoint sets, each in its own
+doubly linked list.  Between collections, objects are partitioned into "generations", reflecting how
+often they're survived collection attempts.  During collections, the generations(s) being collected
+are further partitioned into, e.g., sets of reachable and unreachable objects.  Doubly linked lists
+support moving an object from one partition to another, adding a new object,  removing an object
+entirely (objects tracked by GC are most often reclaimed by the refcounting system when GC
+isn't running at all!), and merging partitions, all with a small constant number of pointer updates.
 Specific APIs are offered to allocate, deallocate, initialize, track and untrack
 objects with GC support. These APIs can be found in the `Garbage Collector C API
 documentation <https://docs.python.org/3.8/c-api/gcsupport.html>`_.
