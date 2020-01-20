@@ -36,10 +36,11 @@ handle reference cycles. For instance, consider this code
 
 .. code-block:: python
 
-	>>> container = []
-	>>> container.append(container)
-	
-	>>> del container
+    >>> container = []
+    >>> container.append(container)
+    >>> sys.getrefcount(container)
+    3
+    >>> del container
 
 In this example, ``container`` holds a reference to itself, so even when we remove
 our reference to it (the variable "container") the reference count never falls to 0
@@ -65,7 +66,7 @@ Normally the C structure supporting a regular Python object looks as follows:
                   
 
 In order to support the garbage collector, the memory layout of objects is altered
-to acomodate extra information **before** the normal layout:
+to accommodate extra information **before** the normal layout:
 
 .. code-block:: none
 
@@ -111,7 +112,7 @@ implemented in the ``gc`` module. The garbage collector **only focuses**
 on cleaning container objects (i.e. objects that can contain a reference
 to one or more objects). These can be arrays, dictionaries, lists, custom
 class instances, classes in extension modules, etc. One could think that
-cycles are uncommon but the thuth is that many internal references needed by
+cycles are uncommon but the truth is that many internal references needed by
 the interpreter create cycles everywhere. Some notable examples:
 
     * Exceptions contain traceback objects that contain a list of frames that
@@ -127,36 +128,38 @@ be identified first. This is done in the `deduce_unreachable() <https://github.c
 function. Inside this component, two double-linked lists are maintained: one list contains
 all objects to be scanned, and the other will contain all objects "tentatively" unreachable.
 
-To understand how the algorith works, Let’s take the case of a circular linked list which has
+To understand how the algorithm works, Let’s take the case of a circular linked list which has
 one link referenced by a variable A, and one self-referencing object which is completely
 unreachable
 
 .. code-block:: python
 
+    >>> import gc
 
-    class Link:
-        def __init__(self, next_link=None):
-            self.next_link = next_link
+    >>> class Link:
+    ...    def __init__(self, next_link=None):
+    ...        self.next_link = next_link
 
-    link_3 = Link()
-    link_2 = Link(link3)
-    link_1 = Link(link2)
-    link_3.next_link = link_1
+    >>> link_3 = Link()
+    >>> link_2 = Link(link3)
+    >>> link_1 = Link(link2)
+    >>> link_3.next_link = link_1
 
-    link_4 = Link()
-    link_4.next_link = link_4
+    >>> link_4 = Link()
+    >>> link_4.next_link = link_4
 
-    import gc
-    gc.collect()
+    >>> del link_4
+    >>> gc.collect()
+    2
 
 When the GC starts, it has all the container objects it wants to scan
-on a the first linked list. The objective is to move all the unreachable
+on the first linked list. The objective is to move all the unreachable
 objects. As generally most objects turn out to be reachable, is much more
 efficient to move the unreachable as this involves fewer pointer updates.
 
 Every object that supports garbage collection will have a extra reference
 count field initialized to the reference count (``gc_ref`` in the figures)
-of that object when the algorithm starts. This is because the algorith needs
+of that object when the algorithm starts. This is because the algorithm needs
 to modify the reference count to do the computations and in this way the
 interpreter will not modify the real reference count field. 
 
@@ -165,7 +168,7 @@ interpreter will not modify the real reference count field.
 The GC then iterates over all containers in the first list and decrements by one the
 ``gc_ref`` field of any other object that container it is referencing.  For doing
 this it makes use of the ``tp_traverse`` slot in the container class (implemented
-using the C API or inherited by a superclass) to know what objects are refered by
+using the C API or inherited by a superclass) to know what objects are referenced by
 each container. After all the objects have been scanned, only the objects that have
 references from outside the “objects to scan” list will have ``gc_ref > 0``.
 
@@ -176,11 +179,11 @@ This is because another object that is reachable from the outside (``gc_refs > 0
 can still have references to it. For instance, the ``link_2`` object in our example
 ended having ``gc_refs == 0`` but is referenced still by the ``link_1`` object that
 is reachable from the outside. To obtain the set of objects that are really
-unreachanle, the garbage collector scans again the container objects using the
-``tp_traverse`` slot with a diferent traverse function that marks objects with
+unreachable, the garbage collector scans again the container objects using the
+``tp_traverse`` slot with a different traverse function that marks objects with
 ``gc_refs == 0`` as "tentatively unreachable" and then moves them to the
 tentatively unreachable list. The following image depicts the state of the lists in a
-moment when the GC processed the ``link 3`` and ``link 4`` objects but hasn’t
+moment when the GC processed the ``link 3`` and ``link 4`` objects but has not
 processed ``link 1`` and ``link 2`` yet.
 
 .. figure:: images/python-cyclic-gc-3-new-page.png
@@ -193,12 +196,12 @@ already in what will become the reachable list):
 
 When the GC encounters an object which is reachable (``gc_refs > 0``), it traverses
 its references using the ``tp_traverse`` slot to find all the objects that are
-reachable from it, marking moving them to the end oflist of reachable objects (where
+reachable from it, marking moving them to the end of the list of reachable objects (where
 they started originally) and setting its ``gc_refs`` field to 1. This is what happens
 to ``link 2`` and ``link 3`` below as they are reachable from ``link 1``.  From the
 state in the previous image and after examining the objects referred to by ``link1``
 the GC knows that ``link 3`` is reachable after all, so it is moved back to the
-original list and its ``gc_refs`` field is set to one so if the GC vitis it again, it
+original list and its ``gc_refs`` field is set to one so if the GC visits it again, it
 does not that is reachable. To avoid visiting a object twice, the GC marks all
 objects that are not visited yet with and once an object is processed is unmarked so
 the GC does not process it twice.
@@ -212,24 +215,49 @@ process in really a breadth first search over the object graph. Once all the obj
 are scanned, the GC knows that all container objects in the tentatively unreachable
 list are really unreachable and can thus be garbage collected.
 
+Why moving unreachable objects is better
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+It sounds logical to move the unreachable objects under the premise that most object
+are usually reachable, until you think about it: the reason it pays isn't actually
+obvious.
+
+Suppose we create objects A, B, C in that order. They appear in the young generation
+in the same order. If B points to A, and C to B, and C is reachable from outside,
+then the adjusted refcounts after the first step of the algorith runs will be 0, 0,
+and 1 respectively because the only reachable object from the outside is C.
+
+When the next step of the algorithm finds A, A is moved to the unreachable list. The
+same for B when it's first encountered. Then C is traversed, B is moved *back* to
+the reachable list. B is eventually traversed, and then A is moved back to the reachable
+list.
+
+So instead of not moving at all, the reachable objects B and A are moved twice each.
+Why is this a win? A straightforward algorithm to move the reachable objects instead
+would move A, B, and C once each. The key is that this dance leaves the objects in
+order C, B, A - it's reversed from the original order.  On all *subsequent* scans,
+none of them will move.  Since most objects aren't in cycles, this can save an
+unbounded number of moves across an unbounded number of later collections. The only
+time the cost can be higher is the first time the chain is scanned.
+
 Destroying unreachable objects
 ------------------------------
 
 Once the GC knows the list of unreachable objects, a very delicate process starts
-with the objective of completely destroying these objects. Roughtly, the process
+with the objective of completely destroying these objects. Roughly, the process
 follows these steps in order:
 
 1. Handle and clean weak references (if any). If an object that is in the unreachable
    set is going to be destroyed and has weak references with callbacks, these
-   callbacks need to be honored. This proces is **very** delicate as any error can
+   callbacks need to be honored. This process is **very** delicate as any error can
    cause objects that will be in an inconsistent state to be resurrected or reached
    by some python functions invoked from the callbacks. To avoid this weak references
    that also are part of the unreachable set (the object and its weak reference
    are in a cycles that are unreachable) then the weak reference needs to be clean
-   inmediately and the callback must not be executed so it does not trigger later
-   when the ``tp_clear`` slot is called, causing havok. This is fine because both
+   immediately and the callback must not be executed so it does not trigger later
+   when the ``tp_clear`` slot is called, causing havoc. This is fine because both
    the object and the weakref are going away, so it's legitimate to pretend the
-   weakref is going away first so the callback is never executed.
+   weak reference is going away first so the callback is never executed.
 
 2. If an object has legacy finalizers (``tp_del`` slot) move them to the
    ``gc.garbage`` list.
@@ -240,7 +268,7 @@ follows these steps in order:
    finds the new subset of objects that are still unreachable by running the cycle
    detection algorithm again and continues with them.
 5. Call the ``tp_clear`` slot of every object so all internal links are broken and
-   the reference counts fall to 0, triggering the destruction of all unreachabke
+   the reference counts fall to 0, triggering the destruction of all unreachable
    objects.
 
 Optimization: generations
@@ -253,9 +281,9 @@ creation. This has proven to be very close to the reality of many Python program
 many temporary objects are created and destroyed very fast. The older an object is
 the less likely is to become unreachable.
 
-To take advatange of this fact, all container objects are segregated across
+To take advantage of this fact, all container objects are segregated across
 three spaces or "generations" (CPython currently uses 3 generations). Every new
-object starts in the firstgeneration (generation 0). The previous algorithm is
+object starts in the first generation (generation 0). The previous algorithm is
 executed only over the objects of a particular generation and if an object
 survives a collection of its generation it will be moved to the next one
 (generation 1), where it will it will be surveyed for collection less often. If
@@ -278,6 +306,41 @@ function:
 The content of these generations can be examined using the
 ``gc.get_objects(generation=NUM)`` function and collections can be triggered
 specifically in a generation by calling ``gc.collect(generation=NUM)``.
+
+.. code-block:: python
+
+    >>> import gc
+    >>> class MyObj:
+    ...     pass
+    ... 
+
+    # Move everything to the last generation so its easier to inspect
+    # the younger generations.
+
+    >>> gc.collect()
+    0
+
+    # Create a reference cycle
+
+    >>> x = MyObj()
+    >>> x.self = x
+
+    # Initially the object is in the younguest generation
+
+    >>> gc.get_objects(generation=0)
+    [..., <__main__.MyObj object at 0x7fbcc12a3400>, ...]
+
+    # After a collection of the younguest generation the object
+    # moves to the next generation
+
+    >>> gc.collect(generation=0)
+    0
+    >>> gc.get_objects(generation=0)
+    []
+    >>> gc.get_objects(generation=1)
+    [..., <__main__.MyObj object at 0x7fbcc12a3400>, ...]
+
+
 
 Collecting the oldest generation
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -302,7 +365,7 @@ Optimization: reusing fields to save memory
 -------------------------------------------
 
 In order to save memory, the two linked list pointers in every object with gc
-support are reused for several pourposes. This is a common optimization known
+support are reused for several purposes. This is a common optimization known
 as "fat pointers" or "tagged pointers": pointers that carry additional data,
 "folded" into the pointer, meaning stored inline in the data representing the
 address, taking advantage of certain properties of memory addressing. This is
