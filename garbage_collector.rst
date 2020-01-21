@@ -91,7 +91,7 @@ simple type cast from the original object: :code:`((PyGC_Head *)(the_object)-1)`
 As is explained later in the `Optimization: reusing fields to save memory`_ section,
 these two extra fields are normally used to keep doubly linked lists of all the
 objects tracked by the garbage collector (these lists are the GC generations, more on
-that in the `Optimization: reusing fields to save memory`_ section), but they are also
+that in the `Optimization: generations`_ section), but they are also
 reused to fullfill other pourposes when the full doubly linked list structure is not
 needed as a memory optimization.
 
