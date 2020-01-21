@@ -264,7 +264,7 @@ follows these steps in order:
    cause objects that will be in an inconsistent state to be resurrected or reached
    by some python functions invoked from the callbacks. To avoid this weak references
    that also are part of the unreachable set (the object and its weak reference
-   are in a cycles that are unreachable) then the weak reference needs to be clean
+   are in a cycles that are unreachable) then the weak reference needs to be cleaned
    immediately and the callback must not be executed so it does not trigger later
    when the ``tp_clear`` slot is called, causing havoc. This is fine because both
    the object and the weakref are going away, so it's legitimate to pretend the
@@ -290,7 +290,7 @@ optimization: generations. The main idea behind this concept is the assumption t
 most objects have a very short lifespan and can thus be collected shortly after their
 creation. This has proven to be very close to the reality of many Python programs as
 many temporary objects are created and destroyed very fast. The older an object is
-the less likely is to become unreachable.
+the less likely it is to become unreachable.
 
 To take advantage of this fact, all container objects are segregated across
 three spaces/generations. Every new
@@ -380,7 +380,7 @@ support are reused for several purposes. This is a common optimization known
 as "fat pointers" or "tagged pointers": pointers that carry additional data,
 "folded" into the pointer, meaning stored inline in the data representing the
 address, taking advantage of certain properties of memory addressing. This is
-possible as most architectures are certain types of data will often be aligned
+possible as most architectures align certain types of data
 to the size of the data, often a word or multiple thereof. This discrepancy
 leaves a few of the least significant bits of the pointer unused, which can be
 used for tags or to keep other information – most often as a bit field (each
@@ -401,7 +401,7 @@ The CPython GC makes use of two fat pointers:
   ``_gc_prev`` is restored.
 
 * The ``_gc_next`` field is used as the "next" pointer to maintain the doubly
-  linked list but during its lowest bit is used to keep the
+  linked list but during collection its lowest bit is used to keep the
   ``NEXT_MASK_UNREACHABLE`` flag that indicates if an object is tentatively
   unreachable during the cycle detection algorithm.
 
