@@ -49,8 +49,8 @@ our reference to it (the variable "container") the reference count never falls t
 because it still has its own internal reference and therefore it will never be
 cleaned just by simple reference counting. For this reason some additional machinery
 is needed to clean these reference cycles between objects once they become
-unreachable. We normally refer to this additional machinery as the Garbage Collector,
-but technically reference counting is also a form of garbage collection.
+unreachable. This is the cyclic garbage collector, usually called just Garbage
+Collector (GC), even though reference counting is also a form of garbage collection.
 
 Memory layout and object structure
 ----------------------------------
@@ -231,7 +231,11 @@ process is really a breadth first search over the object graph. Once all the obj
 are scanned, the GC knows that all container objects in the tentatively unreachable
 list are really unreachable and can thus be garbage collected.
 
-Pragmatically, it's important to note that no recursion is required by any of this, and neither does it in any other way require additional memory proportional to the number of objects, number of pointers, or the lengths of pointer chains.  Apart from ``O(1)`` storage for internal C needs, the objects themselves contain all the storage the GC algorithms require.
+Pragmatically, it's important to note that no recursion is required by any of this,
+and neither does it in any other way require additional memory proportional to the
+number of objects, number of pointers, or the lengths of pointer chains.  Apart from
+``O(1)`` storage for internal C needs, the objects themselves contain all the storage
+the GC algorithms require.
 
 Why moving unreachable objects is better
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -269,7 +273,7 @@ follows these steps in order:
    set is going to be destroyed and has weak references with callbacks, these
    callbacks need to be honored. This process is **very** delicate as any error can
    cause objects that will be in an inconsistent state to be resurrected or reached
-   by some python functions invoked from the callbacks. To avoid this weak references
+   by some python functions invoked from the callbacks. To avoid these weak references
    that also are part of the unreachable set (the object and its weak reference
    are in a cycles that are unreachable) then the weak reference needs to be cleaned
    immediately and the callback must not be executed so it does not trigger later
