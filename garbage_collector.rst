@@ -15,7 +15,7 @@ that CPython counts how many different places there are that have a reference to
 object. Such a place could be another object, or a global (or static) C variable, or
 a local variable in some C function. When an object’s reference count becomes zero,
 the object is deallocated. If it contains references to other objects, their
-reference count is decremented. Those other objects may be deallocated in turn, if
+reference counts are decremented. Those other objects may be deallocated in turn, if
 this decrement makes their reference count become zero, and so on. The reference
 count field can be examined using the ``sys.getrefcount`` function (notice that the
 value returned by this function is always 1 more as the function also has a reference
@@ -46,7 +46,7 @@ does not handle reference cycles. For instance, consider this code:
 
 In this example, ``container`` holds a reference to itself, so even when we remove
 our reference to it (the variable "container") the reference count never falls to 0
-because it still has its own internal reference and therefore it will never be
+because it still has its own internal reference. Therefore it would never be
 cleaned just by simple reference counting. For this reason some additional machinery
 is needed to clean these reference cycles between objects once they become
 unreachable. This is the cyclic garbage collector, usually called just Garbage
@@ -92,7 +92,7 @@ As is explained later in the `Optimization: reusing fields to save memory`_ sect
 these two extra fields are normally used to keep doubly linked lists of all the
 objects tracked by the garbage collector (these lists are the GC generations, more on
 that in the `Optimization: generations`_ section), but they are also
-reused to fullfill other pourposes when the full doubly linked list structure is not
+reused to fullfill other purposes when the full doubly linked list structure is not
 needed as a memory optimization.
 
 Doubly linked lists are used because they efficiently support most frequently required operations.  In
@@ -144,8 +144,8 @@ lists are maintained: one list contains all objects to be scanned, and the other
 contain all objects "tentatively" unreachable.
 
 To understand how the algorithm works, Let’s take the case of a circular linked list
-which has one link referenced by a variable A, and one self-referencing object which
-is completely unreachable
+which has one link referenced by a variable ``A``, and one self-referencing object which
+is completely unreachable:
 
 .. code-block:: python
 
@@ -156,14 +156,15 @@ is completely unreachable
     ...        self.next_link = next_link
 
     >>> link_3 = Link()
-    >>> link_2 = Link(link3)
-    >>> link_1 = Link(link2)
+    >>> link_2 = Link(link_3)
+    >>> link_1 = Link(link_2)
     >>> link_3.next_link = link_1
+    >>> A = link_1
+    >>> del link_1, link_2, link_3
 
     >>> link_4 = Link()
     >>> link_4.next_link = link_4
 
-    >>> del link_4
     >>> gc.collect()
     2
 
@@ -194,16 +195,16 @@ This is because another object that is reachable from the outside (``gc_refs > 0
 can still have references to it. For instance, the ``link_2`` object in our example
 ended having ``gc_refs == 0`` but is referenced still by the ``link_1`` object that
 is reachable from the outside. To obtain the set of objects that are really
-unreachable, the garbage collector scans again the container objects using the
-``tp_traverse`` slot with a different traverse function that marks objects with
+unreachable, the garbage collector re-scans the container objects using the
+``tp_traverse`` slot; this time with a different traverse function that marks objects with
 ``gc_refs == 0`` as "tentatively unreachable" and then moves them to the
 tentatively unreachable list. The following image depicts the state of the lists in a
-moment when the GC processed the ``link 3`` and ``link 4`` objects but has not
-processed ``link 1`` and ``link 2`` yet.
+moment when the GC processed the ``link_3`` and ``link_4`` objects but has not
+processed ``link_1`` and ``link_2`` yet.
 
 .. figure:: images/python-cyclic-gc-3-new-page.png
 
-Then the GC scans the next ``link 1`` object. Because its has ``gc_refs == 1``
+Then the GC scans the next ``link_1`` object. Because its has ``gc_refs == 1``
 the gc does not do anything special because it knows it has to be reachable (and is
 already in what will become the reachable list):
 
@@ -213,9 +214,9 @@ When the GC encounters an object which is reachable (``gc_refs > 0``), it traver
 its references using the ``tp_traverse`` slot to find all the objects that are
 reachable from it, moving them to the end of the list of reachable objects (where
 they started originally) and setting its ``gc_refs`` field to 1. This is what happens
-to ``link 2`` and ``link 3`` below as they are reachable from ``link 1``.  From the
-state in the previous image and after examining the objects referred to by ``link1``
-the GC knows that ``link 3`` is reachable after all, so it is moved back to the
+to ``link_2`` and ``link_3`` below as they are reachable from ``link_1``.  From the
+state in the previous image and after examining the objects referred to by ``link_1``
+the GC knows that ``link_3`` is reachable after all, so it is moved back to the
 original list and its ``gc_refs`` field is set to one so if the GC visits it again, it
 does know that is reachable. To avoid visiting a object twice, the GC marks all
 objects that are already visited once (by unsetting the ``PREV_MASK_COLLECTING`` flag)
@@ -273,13 +274,13 @@ follows these steps in order:
    set is going to be destroyed and has weak references with callbacks, these
    callbacks need to be honored. This process is **very** delicate as any error can
    cause objects that will be in an inconsistent state to be resurrected or reached
-   by some python functions invoked from the callbacks. To avoid these weak references
+   by some python functions invoked from the callbacks. In addition, weak references
    that also are part of the unreachable set (the object and its weak reference
-   are in a cycles that are unreachable) then the weak reference needs to be cleaned
-   immediately and the callback must not be executed so it does not trigger later
-   when the ``tp_clear`` slot is called, causing havoc. This is fine because both
-   the object and the weakref are going away, so it's legitimate to pretend the
-   weak reference is going away first so the callback is never executed.
+   are in a cycles that are unreachable) need to be cleaned
+   immediately, without executing the callback. Otherwise it will be triggered later,
+   when the ``tp_clear`` slot is called, causing havoc. Ignoring the weak reference's
+   callback is fine because both the object and the weakref are going away, so it's
+   legitimate to say the weak reference is going away first.
 
 2. If an object has legacy finalizers (``tp_del`` slot) move them to the
    ``gc.garbage`` list.
@@ -296,7 +297,7 @@ follows these steps in order:
 Optimization: generations
 -------------------------
 
-In order to limit the time each garbage collection takes, the GC is uses a popular
+In order to limit the time each garbage collection takes, the GC uses a popular
 optimization: generations. The main idea behind this concept is the assumption that
 most objects have a very short lifespan and can thus be collected shortly after their
 creation. This has proven to be very close to the reality of many Python programs as
@@ -314,7 +315,7 @@ it will be moved to the last generation (generation 2) where it will be
 surveyed the least often.
 
 Generations are collected when the number of objects that they contain reach some
-predefined threshold which is unique for each generation and is lower than the older
+predefined threshold, which is unique for each generation and is lower the older
 generations are. These thresholds can be examined using the  ``gc.get_threshold``
 function:
 
@@ -411,7 +412,7 @@ of ``PyGC_Head`` discussed in the `Memory layout and object structure`_ section:
       dereferenced directly and the extra information must be stripped off before
       obtaining the real memory address. Special care needs to be taken with
       functions that directly manipulate the linked lists, as these functions
-      normally asume the pointers inside the lists are in a consistent state.
+      normally assume the pointers inside the lists are in a consistent state.
 
 
 * The ``_gc_prev``` field is normally used as the "previous" pointer to maintain the
