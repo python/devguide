@@ -98,7 +98,7 @@ needed as a memory optimization.
 Doubly linked lists are used because they efficiently support most frequently required operations.  In
 general, the collection of all objects tracked by GC are partitioned into disjoint sets, each in its own
 doubly linked list.  Between collections, objects are partitioned into "generations", reflecting how
-often they're survived collection attempts.  During collections, the generations(s) being collected
+often they've survived collection attempts.  During collections, the generations(s) being collected
 are further partitioned into, e.g., sets of reachable and unreachable objects.  Doubly linked lists
 support moving an object from one partition to another, adding a new object,  removing an object
 entirely (objects tracked by GC are most often reclaimed by the refcounting system when GC
@@ -131,7 +131,7 @@ the interpreter create cycles everywhere. Some notable examples:
     * Exceptions contain traceback objects that contain a list of frames that
       contain the exception itself.
     * Module-level functions reference the module's dict (which is needed to resolve globals),
-      which in turn contains an entry for the module-level function.
+      which in turn contains entries for the module-level functions.
     * Instances have references to their class which itself references its module, and the module
       contains references to everything that is inside (and maybe other modules)
       and this can lead back to the original instance.
