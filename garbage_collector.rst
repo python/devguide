@@ -144,7 +144,7 @@ lists are maintained: one list contains all objects to be scanned, and the other
 contain all objects "tentatively" unreachable.
 
 To understand how the algorithm works, Let’s take the case of a circular linked list
-which has one link referenced by a variable `A`, and one self-referencing object which
+which has one link referenced by a variable ``A``, and one self-referencing object which
 is completely unreachable:
 
 .. code-block:: python
