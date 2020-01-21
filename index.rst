@@ -260,6 +260,7 @@ Additional Resources
     * :doc:`exploring`
     * :doc:`grammar`
     * :doc:`compiler`
+    * :doc:`garbage_collector`
 * Tool support
     * :doc:`gdb`
     * :doc:`clang`
@@ -317,6 +318,7 @@ Full Table of Contents
    exploring
    grammar
    compiler
+   garbage_collector
    extensions
    coverity
    clang
