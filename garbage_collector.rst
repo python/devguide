@@ -294,7 +294,7 @@ In order to limit the time each garbage collection takes, the GC is uses a popul
 optimization: generations. The main idea behind this concept is the assumption that
 most objects have a very short lifespan and can thus be collected shortly after their
 creation. This has proven to be very close to the reality of many Python programs as
-many temporary objects are created and destroyed very fast. The older an object is
+many temporarily objects are created and destroyed very fast. The older an object is
 the less likely it is to become unreachable.
 
 To take advantage of this fact, all container objects are segregated across
@@ -399,11 +399,11 @@ word-aligned addresses end in ``000``, leaving the last 3 bits available.
 The CPython GC makes use of two fat pointers:
 
 * The ``_gc_prev``` field is normally used as the "previous" pointer to maintain the
-  doubly linked list but its lowest two bits are used to keep some flags like
+  doubly linked list but its lowest two bits are used to keep the flags
   ``PREV_MASK_COLLECTING`` and ``_PyGC_PREV_MASK_FINALIZED``. Between collections,
   the only flag that can be present is ``_PyGC_PREV_MASK_FINALIZED`` that indicates
   if an object has been already finalized. During collections ``_gc_prev`` is
-  temporary used for storing the temporary copy of the reference count (``gc_refs``),
+  temporarily used for storing the temporarily copy of the reference count (``gc_refs``),
   and the GC linked list becomes a singly linked list until ``_gc_prev`` is restored.
 
 * The ``_gc_next`` field is used as the "next" pointer to maintain the doubly linked
