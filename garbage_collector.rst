@@ -3,6 +3,8 @@
 Design of CPython's Garbage Collector
 =====================================
 
+:Author: Pablo Galindo Salgado
+
 .. highlight:: none
 
 Abstract
