@@ -400,6 +400,15 @@ word-aligned addresses end in ``000``, leaving the last 3 bits available.
 
 The CPython GC makes use of two fat pointers:
 
+  .. warning::
+
+      Because the presence of extra information, "tagged" or "fat" pointers cannot be
+      dereferenced directly and the extra information must be stripped off before to
+      obtain the real memory address. Special care needs to be taken with functions that
+      directly manipulate the linked lists, as these functions normally asume the
+      pointers in them are in a consistent state.
+
+
 * The ``_gc_prev``` field is normally used as the "previous" pointer to maintain the
   doubly linked list but its lowest two bits are used to keep the flags
   ``PREV_MASK_COLLECTING`` and ``_PyGC_PREV_MASK_FINALIZED``. Between collections,
