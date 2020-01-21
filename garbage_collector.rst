@@ -129,7 +129,7 @@ the interpreter create cycles everywhere. Some notable examples:
     * Exceptions contain traceback objects that contain a list of frames that
       contain the exception itself.
       * Module-level functions reference the module's dict (which is needed to resolve globals),
-         which in turn contains an entry for the module-level function.
+        which in turn contains an entry for the module-level function.
     * Instances have references to their class which itself references its module, and the module
       contains references to everything that is inside (and maybe other modules)
       and this can lead back to the original instance.
@@ -216,8 +216,9 @@ state in the previous image and after examining the objects referred to by ``lin
 the GC knows that ``link 3`` is reachable after all, so it is moved back to the
 original list and its ``gc_refs`` field is set to one so if the GC visits it again, it
 does know that is reachable. To avoid visiting a object twice, the GC marks all
-objects that are not visited yet with and once an object is processed is unmarked so
-the GC does not process it twice.
+objects that are already visited once (by unsetting the ``PREV_MASK_COLLECTING`` flag)
+so if an object that has already been processed is referred by some other object, the
+GC does not process it twice.
 
 .. figure:: images/python-cyclic-gc-5-new-page.png
 
