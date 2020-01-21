@@ -29,7 +29,7 @@ to the object when called):
     >>> y = x
     >>> sys.getrefcount(x)
     3
-    del y
+    >>> del y
     >>> sys.getrefcount(x)
     2
 
