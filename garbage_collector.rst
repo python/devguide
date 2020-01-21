@@ -128,8 +128,8 @@ the interpreter create cycles everywhere. Some notable examples:
 
     * Exceptions contain traceback objects that contain a list of frames that
       contain the exception itself.
-      * Module-level functions reference the module's dict (which is needed to resolve globals),
-        which in turn contains an entry for the module-level function.
+    * Module-level functions reference the module's dict (which is needed to resolve globals),
+      which in turn contains an entry for the module-level function.
     * Instances have references to their class which itself references its module, and the module
       contains references to everything that is inside (and maybe other modules)
       and this can lead back to the original instance.
