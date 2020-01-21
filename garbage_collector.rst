@@ -409,7 +409,7 @@ The CPython GC makes use of two fat pointers:
 * The ``_gc_next`` field is used as the "next" pointer to maintain the doubly
   linked list but during collection its lowest bit is used to keep the
   ``NEXT_MASK_UNREACHABLE`` flag that indicates if an object is tentatively
-  unreachable during the cycle detection algorithm.
+  unreachable during the cycle detection algorithm.  This is a drawback to using only doubly linked lists to implement partitions:  while most needed operations are constant-time, there is no efficient way to determine which partition an object is currently in.  Instead, when that's needed, ad hoc tricks (like the ``NEXT_MASK_UNREACHABLE`` flag) are employed.
 
 Optimization: delay tracking containers
 ---------------------------------------
