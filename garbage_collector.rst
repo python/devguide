@@ -10,7 +10,7 @@ Design of CPython's Garbage Collector
 Abstract
 --------
 
-The main garbage collection algorithmused by CPython is reference counting. The basic idea is
+The main garbage collection algorithm used by CPython is reference counting. The basic idea is
 that CPython counts how many different places there are that have a reference to an
 object. Such a place could be another object, or a global (or static) C variable, or
 a local variable in some C function. When an object’s reference count becomes zero,
