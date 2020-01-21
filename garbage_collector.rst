@@ -31,7 +31,7 @@ to the object when called):
     >>> sys.getrefcount(x)
     2
 
-The main problem present with the reference count schema is that reference counting
+The main problem with the reference count schema is that reference counting
 does not handle reference cycles. For instance, consider this code:
 
 .. code-block:: python
@@ -115,7 +115,7 @@ that the objects cannot form reference cycles with only objects of its type or i
 type is immutable, a ``tp_clear`` implementation must also be provided.
 
 
-Identifiying reference cycles reference cycles
+Identifiying reference cycles
 ----------------------------------------------
 
 The algorithm that CPython uses to detect those reference cycles is
@@ -128,6 +128,8 @@ the interpreter create cycles everywhere. Some notable examples:
 
     * Exceptions contain traceback objects that contain a list of frames that
       contain the exception itself.
+      * Module-level functions reference the module's dict (which is needed to resolve globals),
+         which in turn contains an entry for the module-level function.
     * Instances have references to their class which itself references its module, and the module
       contains references to everything that is inside (and maybe other modules)
       and this can lead back to the original instance.
@@ -181,7 +183,7 @@ The GC then iterates over all containers in the first list and decrements by one
 this makes use of the ``tp_traverse`` slot in the container class (implemented
 using the C API or inherited by a superclass) to know what objects are referenced by
 each container. After all the objects have been scanned, only the objects that have
-references from outside the “objects to scan” list will have ``gc_ref > 0``.
+references from outside the “objects to scan” list will have ``gc_refs > 0``.
 
 .. figure:: images/python-cyclic-gc-2-new-page.png
 
@@ -225,6 +227,8 @@ as now all the references that that objects has need to be processed as well. Th
 process in really a breadth first search over the object graph. Once all the objects
 are scanned, the GC knows that all container objects in the tentatively unreachable
 list are really unreachable and can thus be garbage collected.
+
+Pragmatically, it's important to note that no recursion is required by any of this, and neither does it in any other way require additional memory proportional to the number of objects, number of pointers, or the lengths of pointer chains.  Apart from ``O(1)`` storage for internal C needs, the objects themselves contain all the storage the GC algorithms require.
 
 Why moving unreachable objects is better
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -303,7 +307,7 @@ it will be moved to the last generation (generation 2) where it will be
 surveyed the least often.
 
 Generations are collected when the number of objects that they contain reach some
-predefined threshold which is unique of each generation and is lower than the older
+predefined threshold which is unique for each generation and is lower than the older
 generations are. These thresholds can be examined using the  ``gc.get_threshold``
 function:
 
