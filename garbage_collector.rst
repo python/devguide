@@ -398,7 +398,8 @@ addresses are always a multiple of 4, hence end in ``00``, leaving the last 2 bi
 available; while on a 64-bit architecture, a word is 64 bits word = 8 bytes, so
 word-aligned addresses end in ``000``, leaving the last 3 bits available.
 
-The CPython GC makes use of two fat pointers:
+The CPython GC makes use of two fat pointers that corresponds to the extra fields
+of ``PyGC_Head`` discussed in the `Memory layout and object structure`_ section:
 
   .. warning::
 
