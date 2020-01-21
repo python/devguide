@@ -398,12 +398,13 @@ word-aligned addresses end in ``000``, leaving the last 3 bits available.
 
 The CPython GC makes use of two fat pointers:
 
-* Between collections, the ``_gc_prev``` field is used as the "previous"
-  pointer to maintain the doubly linked list but the lowest two bits of are used
-  to keep some flags like `PREV_MASK_COLLECTING`. During collections ``_gc_prev``
-  is temporary used for storing the temporary copy of the reference count
-  (``gc_refs``) , and the GC linked list becomes a singly linked list until
-  ``_gc_prev`` is restored.
+* The ``_gc_prev``` field is normally used as the "previous" pointer to maintain the
+  doubly linked list but the lowest two bits of are used to keep some flags like
+  `PREV_MASK_COLLECTING` and `_PyGC_PREV_MASK_FINALIZED`. Between collections, the
+  only flag that can be present is `_PyGC_PREV_MASK_FINALIZED` that indicates if an
+  object has been already finalized. During collections ``_gc_prev`` is temporary
+  used for storing the temporary copy of the reference count (``gc_refs``), and the
+  GC linked list becomes a singly linked list until ``_gc_prev`` is restored.
 
 * The ``_gc_next`` field is used as the "next" pointer to maintain the doubly
   linked list but during collection its lowest bit is used to keep the
