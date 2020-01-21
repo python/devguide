@@ -113,8 +113,8 @@ documentation <https://docs.python.org/3.8/c-api/gcsupport.html>`_.
 Apart from this object structure, the type object for objects supporting garbage
 collection must include the ``Py_TPFLAGS_HAVE_GC`` in its ``tp_flags`` slot and
 provide an implementation of the ``tp_traverse`` handler. Unless it can be proven
-that the objects cannot form reference cycles with only objects of its type or if the
-type is immutable, a ``tp_clear`` implementation must also be provided.
+that the objects cannot form reference cycles with only objects of its type or unless
+the type is immutable, a ``tp_clear`` implementation must also be provided.
 
 
 Identifiying reference cycles
@@ -227,7 +227,7 @@ GC does not process it twice.
 Notice that once a object that was marked as "tentatively unreachable" and later is
 moved back to the reachable list, it will be visited again by the garbage collector
 as now all the references that that objects has need to be processed as well. This
-process in really a breadth first search over the object graph. Once all the objects
+process is really a breadth first search over the object graph. Once all the objects
 are scanned, the GC knows that all container objects in the tentatively unreachable
 list are really unreachable and can thus be garbage collected.
 
@@ -404,10 +404,10 @@ of ``PyGC_Head`` discussed in the `Memory layout and object structure`_ section:
   .. warning::
 
       Because the presence of extra information, "tagged" or "fat" pointers cannot be
-      dereferenced directly and the extra information must be stripped off before to
-      obtain the real memory address. Special care needs to be taken with functions that
-      directly manipulate the linked lists, as these functions normally asume the
-      pointers in them are in a consistent state.
+      dereferenced directly and the extra information must be stripped off before
+      obtaining the real memory address. Special care needs to be taken with
+      functions that directly manipulate the linked lists, as these functions
+      normally asume the pointers inside the lists are in a consistent state.
 
 
 * The ``_gc_prev``` field is normally used as the "previous" pointer to maintain the
