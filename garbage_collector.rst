@@ -10,7 +10,7 @@ Design of CPython's Garbage Collector
 Abstract
 --------
 
-The main garbage collector system of CPython is reference count. The basic idea is
+The main garbage collection algorithm used by CPython is reference counting. The basic idea is
 that CPython counts how many different places there are that have a reference to an
 object. Such a place could be another object, or a global (or static) C variable, or
 a local variable in some C function. When an object’s reference count becomes zero,
@@ -33,8 +33,8 @@ to the object when called):
     >>> sys.getrefcount(x)
     2
 
-The main problem with the reference count schema is that reference counting
-does not handle reference cycles. For instance, consider this code:
+The main problem with the reference counting scheme is that it does not handle reference
+cycles. For instance, consider this code:
 
 .. code-block:: python
 
@@ -98,7 +98,7 @@ needed as a memory optimization.
 Doubly linked lists are used because they efficiently support most frequently required operations.  In
 general, the collection of all objects tracked by GC are partitioned into disjoint sets, each in its own
 doubly linked list.  Between collections, objects are partitioned into "generations", reflecting how
-often they've survived collection attempts.  During collections, the generations(s) being collected
+often they've survived collection attempts.  During collections, the generation(s) being collected
 are further partitioned into, e.g., sets of reachable and unreachable objects.  Doubly linked lists
 support moving an object from one partition to another, adding a new object,  removing an object
 entirely (objects tracked by GC are most often reclaimed by the refcounting system when GC
@@ -204,7 +204,7 @@ processed ``link_1`` and ``link_2`` yet.
 
 .. figure:: images/python-cyclic-gc-3-new-page.png
 
-Then the GC scans the next ``link_1`` object. Because its has ``gc_refs == 1``
+Then the GC scans the next ``link_1`` object. Because it has ``gc_refs == 1``,
 the gc does not do anything special because it knows it has to be reachable (and is
 already in what will become the reachable list):
 
@@ -225,7 +225,7 @@ GC does not process it twice.
 
 .. figure:: images/python-cyclic-gc-5-new-page.png
 
-Notice that once a object that was marked as "tentatively unreachable" and later is
+Notice that once an object that was marked as "tentatively unreachable" and later is
 moved back to the reachable list, it will be visited again by the garbage collector
 as now all the references that that objects has need to be processed as well. This
 process is really a breadth first search over the object graph. Once all the objects
@@ -276,7 +276,7 @@ follows these steps in order:
    cause objects that will be in an inconsistent state to be resurrected or reached
    by some python functions invoked from the callbacks. In addition, weak references
    that also are part of the unreachable set (the object and its weak reference
-   are in a cycles that are unreachable) need to be cleaned
+   are in cycles that are unreachable) need to be cleaned
    immediately, without executing the callback. Otherwise it will be triggered later,
    when the ``tp_clear`` slot is called, causing havoc. Ignoring the weak reference's
    callback is fine because both the object and the weakref are going away, so it's
@@ -287,7 +287,7 @@ follows these steps in order:
 3. Call the finalizers (``tp_finalize`` slot) and mark the objects as already
    finalized to avoid calling them twice if they resurrect of if other finalizers
    have removed the object first.
-4. Deal with resurrected objects. If some objects have been resurrected the GC
+4. Deal with resurrected objects. If some objects have been resurrected, the GC
    finds the new subset of objects that are still unreachable by running the cycle
    detection algorithm again and continues with them.
 5. Call the ``tp_clear`` slot of every object so all internal links are broken and
@@ -316,7 +316,7 @@ surveyed the least often.
 
 Generations are collected when the number of objects that they contain reach some
 predefined threshold, which is unique for each generation and is lower the older
-generations are. These thresholds can be examined using the  ``gc.get_threshold``
+the generations are. These thresholds can be examined using the  ``gc.get_threshold``
 function:
 
 .. code-block:: python
