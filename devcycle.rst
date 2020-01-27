@@ -37,8 +37,7 @@ Branches
 ''''''''
 
 There is a branch for each *feature version*, whether released or not (e.g.
-2.7, 3.7, 3.8).  Development is handled separately for Python 2 and Python 3:
-no merging happens between 2.x and 3.x branches.
+3.7, 3.8).
 
 
 .. _indevbranch:
@@ -69,12 +68,11 @@ Maintenance branches
 --------------------
 
 A branch for a previous feature release, currently being maintained for bug
-fixes.  There are usually two maintenance branches at any given time: one for
-Python 3.x and one for Python 2.x. Only during the beta/rc phase of a new
+fixes.  There are usually two maintenance branches at any given time for
+Python 3.x. Only during the beta/rc phase of a new
 minor/feature release will there be three active maintenance branches, e.g.
-during the beta phase for Python 3.8 there are master, 3.8, 3.7, and 2.7
-branches open. At some point in the future, Python 2.x will be closed for bug
-fixes and there will be only one maintenance branch left.  Releases
+during the beta phase for Python 3.8 there are master, 3.8, 3.7, and 3.6
+branches open.  Releases
 produced from a maintenance branch are called **maintenance** or **bugfix**
 releases; the terms are used interchangeably. These releases have a
 **micro version** number greater than zero.
@@ -140,6 +138,8 @@ For reference, here are the Python versions that most recently reached their end
 | 3.0              | :pep:`361`   | 2008-12-03     | 2009-01-13     | Barry Warsaw                     |
 +------------------+--------------+----------------+----------------+----------------------------------+
 | 2.6              | :pep:`361`   | 2008-10-01     | 2013-10-29     | Barry Warsaw                     |
++------------------+--------------+----------------+----------------+----------------------------------+
+| 2.7              | :pep:`373`   | 2010-07-03     | 2020-01-01     | Benjamin Peterson                |
 +------------------+--------------+----------------+----------------+----------------------------------+
 
 The latest release for each Python version can be found on the `download page
@@ -307,8 +307,6 @@ Current Administrators
 | Name              | Role                                                     | GitHub Username |
 +===================+==========================================================+=================+
 | Łukasz Langa      | Python 3.8 and 3.9 Release Manager                       | ambv            |
-+-------------------+----------------------------------------------------------+-----------------+
-| Benjamin Peterson | Python 2.7 Release Manager                               | benjaminp       |
 +-------------------+----------------------------------------------------------+-----------------+
 | Ned Deily         | Python 3.7 Release Manager                               | ned-deily       |
 +-------------------+----------------------------------------------------------+-----------------+
