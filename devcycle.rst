@@ -14,13 +14,12 @@ version* of 3, a *minor version* of 1, and a *micro version* of 2.
   incompatible changes are deemed necessary, and are planned very long
   in advance;
 
-* new *minor versions* are feature releases; they get released roughly
-  every 18 months, from the current :ref:`in-development <indevbranch>`
-  branch;
+* new *minor versions* are feature releases; they get released annually,
+  from the current :ref:`in-development <indevbranch>` branch;
 
 * new *micro versions* are bugfix releases; they get released roughly
-  every 6 months, although they can come more often if necessary; they are
-  prepared in :ref:`maintenance <maintbranch>` branches.
+  every 2 months; they are prepared in :ref:`maintenance <maintbranch>`
+  branches.
 
 We also publish non-final versions which get an additional qualifier:
 :ref:`alpha`, :ref:`beta`, :ref:`release candidate <rc>`.  These versions
