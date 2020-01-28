@@ -54,6 +54,9 @@ Note: sometimes things mysteriously don't work.  Before giving up, try ``make cl
 * The :mod:`parser` module.  Add some of your new syntax to ``test_parser``,
   bang on :file:`Modules/parsermodule.c` until it passes.
 
+* ``_Unparser`` in the :file:`Lib/ast.py` will need changes to unparse
+  created / modified AST nodes.
+
 * Add some usage of your new syntax to ``test_grammar.py``.
 
 * Certain changes may require tweaks to the library module :mod:`pyclbr`.
