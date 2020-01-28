@@ -107,14 +107,12 @@ encodings             lemburg
 ensurepip             ncoghlan, dstufft, pradyunsg
 enum                  eli.bendersky*, barry, ethan.furman*
 errno                 twouters
-exceptions
 faulthandler          vstinner
 fcntl                 twouters
 filecmp
 fileinput
 fnmatch
 formatter
-fpectl                twouters
 fractions             mark.dickinson, rhettinger
 ftplib                giampaolo.rodola*
 functools             rhettinger*
@@ -184,7 +182,6 @@ pstats
 pty                   twouters*
 pwd
 py_compile
-pybench               lemburg
 pyclbr
 pydoc
 queue                 rhettinger*
@@ -283,7 +280,6 @@ Tools
 Tool                Maintainers
 ==================  ===========
 Argument Clinic     larry
-pybench             lemburg
 ==================  ===========
 
 
