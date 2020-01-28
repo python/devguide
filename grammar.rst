@@ -55,7 +55,7 @@ Note: sometimes things mysteriously don't work.  Before giving up, try ``make cl
   bang on :file:`Modules/parsermodule.c` until it passes.
 
 * ``_Unparser`` in the :file:`Lib/ast.py` file may need changes to accommodate
-any modifications in the AST nodes.
+  any modifications in the AST nodes.
 
 * Add some usage of your new syntax to ``test_grammar.py``.
 
