@@ -233,7 +233,7 @@ recommend you change (temporarily, of course) the contents of the
 the ``Tools/buildbot/test.bat`` script.
 
 Security considerations concerning third-party buildbots
------------------------
+--------------------------------------------------------
 
 Third-party buildbots are only used for testing purposes.
 None of the buildbots nor the system that they run on are utilised to produce any release materials.
