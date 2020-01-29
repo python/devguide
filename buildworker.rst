@@ -348,8 +348,7 @@ python-dev about buildbot security that includes examples of the tests for
 which privilege matters.  There was no final consensus, but the information is
 useful as a point of reference.
 
-Third-party buildbots are only used for testing fixes.
-None of those buildbots,or systems that they run on are utilised to produce any CPython release materials.
+Third-party buildbots are only used for testing fixes. None of those buildbots nor the system that they run on are utilised to produce any CPython release materials.
 
 .. [#] If the buildbot is going to do Framework builds, it is better to
        use the Apple-shipped Python so as to avoid any chance of the buildbot
