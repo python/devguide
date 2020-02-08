@@ -376,11 +376,16 @@ Various informational flags about the issue. Multiple values are possible.
 |               | someone new to contributing to Python to solve.            |
 +---------------+------------------------------------------------------------+
 | easy (C)      | Fixing the issue should not take longer than a day for     |
-|               | someone new contributing to Python, focused on C/C++.      |
+|               | someone new contributing to Python, focused on C.          |
 +---------------+------------------------------------------------------------+
 | security_issue| The issue would fit as, or is related as a security issue. |
+|               | The main difference from "security" is that this is a      |
+|               | definite security problem that has to be dealt with.       |
 +---------------+------------------------------------------------------------+
-| PEP 3121      | The issue fit as, or is related to the PEP 3123 module     |
+| PEP 3121      | The issue fit as, or is related to the PEP 3121 module     |
+|               | Which is the Extension Module Initialization and           |
+|               | Finalization, For More information:                        |
+|               | https://www.python.org/dev/peps/pep-3121/                  |
 +---------------+------------------------------------------------------------+
 | newcomer      | Issue suitable for newcomer/first time contributors.       |
 | friendly      | Not suitable for experienced contributors. Typically it is |
