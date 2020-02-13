@@ -602,7 +602,7 @@ Checklist for Triaging
 .. _issue tracker: https://bugs.python.org
 .. _GitHub pull requests: https://github.com/python/cpython/pulls
 .. _Python source code repositories: https://github.com/python/cpython/
-.. _Reporting security issues in Python: https://www.python.org/news/security/
+.. _Reporting security issues in Python: https://www.python.org/dev/security/
 .. _python-ideas: https://mail.python.org/mailman/listinfo/python-ideas
 .. _release schedule: https://devguide.python.org/#status-of-python-branches
 .. _PSF Code of Conduct: https://www.python.org/psf/codeofconduct/
