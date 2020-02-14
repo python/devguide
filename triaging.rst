@@ -378,9 +378,9 @@ Various informational flags about the issue. Multiple values are possible.
 | easy (C)      | Fixing the issue should not take longer than a day for     |
 |               | someone new contributing to Python, focused on C.          |
 +---------------+------------------------------------------------------------+
-| security_issue| The issue would fit as, or is related as a security issue. |
-|               | The main difference from "security" is that this is a      |
-|               | definite security problem that has to be dealt with.       |
+| security_issue| This is a security issue or is related to one. The main    |
+|               | difference from the "security" issue type is that this is  |
+|               | a definite security problem that has to be dealt with.     |
 +---------------+------------------------------------------------------------+
 | PEP 3121      | The issue is related to `PEP 3121`_:                       |
 |               | Extension Module Initialization and Finalization.          |
