@@ -156,6 +156,10 @@ Configuration is typically:
 More flags are available to ``configure``, but this is the minimum you should
 do to get a pydebug build of CPython.
 
+.. note::
+   You might need to run ``make clean`` before or after re-running ``configure``
+   in a particular build directory.
+
 Once ``configure`` is done, you can then compile CPython with:
 
 .. code-block:: bash
@@ -450,7 +454,7 @@ example, ``autoconf`` by itself will not regenerate ``pyconfig.h.in``.
 appropriate.
 
 Python's ``configure.ac`` script typically requires a specific version of
-Autoconf.  At the moment, this reads: ``AC_PREREQ(2.65)``.
+Autoconf.  At the moment, this reads: ``AC_PREREQ(2.69)``.
 
 If the system copy of Autoconf does not match this version, you will need to
 install your own copy of Autoconf.

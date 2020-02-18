@@ -1619,6 +1619,11 @@ in production, other are work in progress:
 |              |                    | python-hu/>`__                           |
 |              |                    |                                          |
 +--------------+--------------------+------------------------------------------+
+| Indonesian   | `Oon Arfiandwi     | `github <https://github.com/python/      |
+| (id)         | <https://bugs.pyth | python-docs-id>`__                       |
+|              | on.org/user32660   |                                          |
+|              | />`__              |                                          |
++--------------+--------------------+------------------------------------------+
 | Italian (it) |                    | `mail <https://mail.python.org/pipermail/|
 |              |                    | doc-sig/2019-April/004114.html>`__       |
 |              |                    |                                          |
@@ -1710,7 +1715,7 @@ The important steps looks like this:
   way, it's up to you.
 - Ensure we updated this page to reflect your work and progress, either via a
   PR, or by asking on the doc-sig mailing list.
-- When ``tutorial/``, ``library/stdtypes`` and ``library/functions``
+- When ``tutorial/``, ``bugs.py`` and ``library/functions``
   are complete, ask on doc-sig for your language to be added in the
   language picker on docs.python.org.
 

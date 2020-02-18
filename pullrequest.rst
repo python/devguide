@@ -94,12 +94,6 @@ You should have already :ref:`set up your system <setup>`,
 
      git push origin <branch-name>
 
-* If someone else added new changesets and you get an error::
-
-     git fetch upstream
-     git rebase upstream/master
-     git push --force-with-lease origin <branch-name>
-
 * Finally go on :samp:`https://github.com/{<your-username>}/cpython`: you will
   see a box with the branch you just pushed and a green button that allows
   you to create a pull request against the official CPython repository.
@@ -114,6 +108,24 @@ You should have already :ref:`set up your system <setup>`,
    git commit -m '<message>'
    git push origin <branch-name>
 
+  * If a core developer reviewing your PR pushed one or more commits to your
+    PR branch, then after checking out your branch and before editing, run::
+
+     git pull origin <branch-name>  # pull = fetch + merge
+
+    If you have made local changes that have not been pushed to your fork and
+    there are merge conflicts, git will warn you about this and enter conflict
+    resolution mode. See :ref:`resolving-merge-conflicts` below.
+
+* If time passes and there are merge conflicts with the master branch, GitHub
+  will show a warning to this end and you may be asked to address this. Merge
+  the changes from the master branch while resolving the conflicts locally::
+
+   git checkout <branch-name>
+   git pull upstream master  # pull = fetch + merge
+   # resolve conflicts: see "Resolving Merge Conflicts" below
+   git push origin <branch-name>
+
 * After your PR has been accepted and merged, you can :ref:`delete the branch
   <deleting_branches>`::
 
@@ -123,6 +135,35 @@ You should have already :ref:`set up your system <setup>`,
 .. note::
    You can still upload a patch to bugs.python.org_, but the GitHub pull request
    workflow is **strongly** preferred.
+
+
+.. _resolving-merge-conflicts:
+
+Resolving Merge Conflicts
+'''''''''''''''''''''''''
+
+When merging changes from different branches (or variants of a branch on
+different repos), the two branches may contain incompatible changes to one
+or more files. These are called "merge conflicts" and need to be manually
+resolved as follows:
+
+#. Check which files have merge conflicts::
+
+      git status
+
+#. Edit the affected files and bring them to their intended final state.
+   Make sure to remove the special "conflict markers" inserted by git.
+
+#. Commit the affected files::
+
+      git add <filenames>
+      git merge --continue
+
+When running the final command, git may open an editor for writing a commit
+message. It is usually okay to leave that as-is and close the editor.
+
+See `the merge command's documentation <https://git-scm.com/docs/git-merge>`_
+for a detailed technical explanation.
 
 
 .. _good-prs:
