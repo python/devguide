@@ -384,7 +384,7 @@ Various informational flags about the issue. Multiple values are possible.
 +---------------+------------------------------------------------------------+
 | PEP 3121      | The issue is related to `PEP 3121`_:                       |
 |               | Extension Module Initialization and Finalization.          |
-|               | https://www.python.org/dev/peps/pep-3121/                  |
+|               | _PEP 3121: https://www.python.org/dev/peps/pep-3121/                  |
 +---------------+------------------------------------------------------------+
 | newcomer      | Issue suitable for newcomer/first time contributors.       |
 | friendly      | Not suitable for experienced contributors. Typically it is |
