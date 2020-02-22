@@ -382,7 +382,7 @@ Various informational flags about the issue. Multiple values are possible.
 |               | difference from the "security" issue type is that this is  |
 |               | a definite security problem that has to be dealt with.     |
 +---------------+------------------------------------------------------------+
-| PEP 3121      | The issue is related to `PEP 3121`_                        |
+| PEP 3121      | The issue is related to `PEP 3121`_.                       |
 |               | .. _PEP 3121: https://www.python.org/dev/peps/             |
 |               | Extension Module Initialization and Finalization.          |
 +---------------+------------------------------------------------------------+
