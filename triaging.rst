@@ -375,6 +375,16 @@ Various informational flags about the issue. Multiple values are possible.
 | easy          | Fixing the issue should not take longer than a day for     |
 |               | someone new to contributing to Python to solve.            |
 +---------------+------------------------------------------------------------+
+| easy (C)      | Fixing the issue should not take longer than a day for     |
+|               | someone new contributing to Python, focused on C.          |
++---------------+------------------------------------------------------------+
+| security_issue| This is a security issue or is related to one. The main    |
+|               | difference from the "security" issue type is that this is  |
+|               | a definite security problem that has to be dealt with.     |
++---------------+------------------------------------------------------------+
+| PEP 3121      | The issue is related to PEP `PEP 3121`_.                   |
+|               | Extension Module Initialization and Finalization.          |
++---------------+------------------------------------------------------------+
 | newcomer      | Issue suitable for newcomer/first time contributors.       |
 | friendly      | Not suitable for experienced contributors. Typically it is |
 |               | straightforward, well-defined, low-risk, and optionally    |
@@ -606,3 +616,4 @@ Checklist for Triaging
 .. _python-ideas: https://mail.python.org/mailman/listinfo/python-ideas
 .. _release schedule: https://devguide.python.org/#status-of-python-branches
 .. _PSF Code of Conduct: https://www.python.org/psf/codeofconduct/
+.. _PEP 3121: https://www.python.org/dev/peps/pep-3121/
