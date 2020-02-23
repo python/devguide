@@ -616,4 +616,4 @@ Checklist for Triaging
 .. _python-ideas: https://mail.python.org/mailman/listinfo/python-ideas
 .. _release schedule: https://devguide.python.org/#status-of-python-branches
 .. _PSF Code of Conduct: https://www.python.org/psf/codeofconduct/
-.. _PEP 3121: https://www.python.org/dev/peps/
+.. _PEP 3121: https://www.python.org/dev/peps/pep-3121/
