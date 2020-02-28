@@ -61,22 +61,36 @@ in the :ref:`experts` and :ref:`developers`).
 Gaining Commit Privileges
 -------------------------
 
-When you have been extended an official offer to become a Python core
-developer, there are several things you and the person handling your onboarding
-must do.
+The steps to gaining commit privileges are:
 
-1. Find out who is handling your onboarding (your mentor should know who this
-   is; at worst ask the steering council)
-2. Email the person handling your onboarding
-3. The person onboarding you will ask you for various account details to record
-   them at https://github.com/python/voters/
-4. They will ask what email address you would like to subscribe to
-   python-committers with
-5. They will turn on various permissions based on the information you provided
-   in the previous steps
-6. They will update the devguide to publicly list your team membership at
+1. A core developer starts a poll at https://discuss.python.org/c/committers/
+
+   - Open for 7 days
+   - Results shown upon close
+
+2. The poll is announced on python-committers
+3. Wait for the poll to close and see if the results confirm your membership
+   as per the voting results requied by PEP 13
+4. The person who nominated you emails the steering council with your email
+   address and a request that the council either accept or reject the proposed
+   membership
+5. Assuming the steering council does not object, a member of the council will
+   email you asking for:
+
+   - Account details as required by
+     https://github.com/python/voters/
+   - Your preferred email address to
+     subscribe to python-committers with
+   - A reminder about the Code of Conduct and to report issues to the PSF
+     Conduct WG
+
+6. Once you have provided the pertinent details, your various new privileges
+   will be turned on
+7. Your details will be added to https://github.com/python/voters/
+8. They will update the devguide to publicly list your team membership at
    :ref:`developers`
-7. They will announce your membership to python-committers
+9. An announcement email by the steering council member handling your new
+   membership will be sent to python-committers
 
 
 Mailing Lists
