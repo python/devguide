@@ -65,4 +65,5 @@ Note: sometimes things mysteriously don't work.  Before giving up, try ``make cl
 
 * :file:`Lib/lib2to3/Grammar.txt` may need changes to match the Grammar.
 
-* Documentation must be written!
+* Documentation must be written! Specifically, one or more of the pages in
+  :file:`Doc/reference/` will need to be updated.
