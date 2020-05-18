@@ -1660,7 +1660,7 @@ in production, other are work in progress:
 .. _doc_zh_tw: https://docs.python.org/zh-tw/
 .. _github_ar: https://github.com/Abdur-rahmaanJ/py-docs-ar
 .. _github_bn_in: https://github.com/python/python-docs-bn-in
-.. _github_es: https://github.com/raulcd/python-docs.es
+.. _github_es: https://github.com/PyCampES/python-docs-es
 .. _github_fr: https://github.com/python/python-docs-fr
 .. _github_hi_in: https://github.com/CuriousLearner/python-docs-hi-in
 .. _github_hu: https://github.com/python/python-docs-hu
