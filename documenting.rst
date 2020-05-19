@@ -1595,30 +1595,30 @@ in production, other are work in progress:
 +-----------------+-------------------------------+----------------------------+
 | Language        | Contact                       | Links                      |
 +=================+===============================+============================+
-| Arabic (ar)     | Abdur-Rahmaan Janhangeer      | `github <github_ar_>`_     |
+| Arabic (ar)     | Abdur-Rahmaan Janhangeer      | `GitHub <github_ar_>`_     |
 +-----------------+-------------------------------+----------------------------+
-| Bengali as      | `Kushal Das <bpo_kushal_>`_   | `github <github_bn_in_>`_  |
+| Bengali as      | `Kushal Das <bpo_kushal_>`_   | `GitHub <github_bn_in_>`_  |
 | spoken in       |                               |                            |
 | India (bn_IN)   |                               |                            |
 +-----------------+-------------------------------+----------------------------+
-| French (fr)     | `Julien Palard (mdk)          | `github <github_fr_>`_     |
+| French (fr)     | `Julien Palard (mdk)          | `GitHub <github_fr_>`_     |
 |                 | <bpo_mdk_>`_                  |                            |
 +-----------------+-------------------------------+----------------------------+
-| Hindi as spoken |                               | `github <github_hi_in_>`_  |
+| Hindi as spoken |                               | `GitHub <github_hi_in_>`_  |
 | in india (hi_IN)|                               |                            |
 +-----------------+-------------------------------+----------------------------+
-| Hungarian (hu)  | `Tamás Bajusz (gbtami)        | `github <github_hu_>`_     |
-|                 | <bpo_gbtami_>`_               | `list <list_hu_>`_         |
+| Hungarian (hu)  | `Tamás Bajusz (gbtami)        | `GitHub <github_hu_>`_     |
+|                 | <bpo_gbtami_>`_               | `Mailing List <list_hu_>`_ |
 +-----------------+-------------------------------+----------------------------+
-| Indonesian (id) | `Oon Arfiandwi <bpo_oonid_>`_ | `github <github_id_>`_     |
+| Indonesian (id) | `Oon Arfiandwi <bpo_oonid_>`_ | `GitHub <github_id_>`_     |
 +-----------------+-------------------------------+----------------------------+
 | Italian (it)    |                               | `mail <mail_it_>`_         |
 +-----------------+-------------------------------+----------------------------+
-| Japanese (ja)   | `Kinebuchi Tomohiko           | `github <github_ja_>`_     |
-|                 | (cocoatomo) <bpo_cocoatomo_>`_| `doc <doc_ja_>`_           |
+| Japanese (ja)   | `Kinebuchi Tomohiko           | `GitHub <github_ja_>`_     |
+|                 | (cocoatomo) <bpo_cocoatomo_>`_| `Doc <doc_ja_>`_           |
 +-----------------+-------------------------------+----------------------------+
-| Korean (ko)     |                               | `github <github_ko_>`_     |
-|                 |                               | `doc <doc_ko_>`_           |
+| Korean (ko)     |                               | `GitHub <github_ko_>`_     |
+|                 |                               | `Doc <doc_ko_>`_           |
 +-----------------+-------------------------------+----------------------------+
 | Lithuanian (lt) |                               | `mail <mail_lt_>`_         |
 +-----------------+-------------------------------+----------------------------+
@@ -1626,24 +1626,24 @@ in production, other are work in progress:
 +-----------------+-------------------------------+----------------------------+
 | Portuguese (pt) | Gustavo Toffo                 |                            |
 +-----------------+-------------------------------+----------------------------+
-| Portuguese      | Marco Rougeth                 | `github <github_pt_br_>`_  |
-| as spoken       |                               | `wiki <wiki_pt_br_>`_      |
-| in Brasil       |                               | `telegram <chat_pt_br_>`_  |
+| Portuguese      | Marco Rougeth                 | `GitHub <github_pt_br_>`_  |
+| as spoken       |                               | `Wiki <wiki_pt_br_>`_      |
+| in Brasil       |                               | `Telegram <chat_pt_br_>`_  |
 | (pt-br)         |                               | `article <article_pt_br_>`_|
 +-----------------+-------------------------------+----------------------------+
 | Russian (ru)    |                               | `mail <mail_ru_>`_         |
 +-----------------+-------------------------------+----------------------------+
-| Simplified      | `Shengjing Zhu <bpo_zhsj_>`_  | `tx <tx_zh_cn_>`_          |
-| Chinese         |                               | `github <github_zh_cn_>`_  |
-| (zh-cn)         |                               | `doc <doc_zh_cn_>`_        |
+| Simplified      | `Shengjing Zhu <bpo_zhsj_>`_  | `Transifex <tx_zh_cn_>`_   |
+| Chinese         |                               | `GitHub <github_zh_cn_>`_  |
+| (zh-cn)         |                               | `Doc <doc_zh_cn_>`_        |
 +-----------------+-------------------------------+----------------------------+
-| Spanish (es)    | Raúl Cumplido                 | `github <github_es_>`_     |
+| Spanish (es)    | Raúl Cumplido                 | `GitHub <github_es_>`_     |
 +-----------------+-------------------------------+----------------------------+
-| Traditional     | 廖偉涵 Adrian Liaw            | `github <github_zh_tw_>`_  |
-| Chinese         |                               | `tx <tx_zh_tw_>`_          |
-| (zh-tw)         |                               | `doc <doc_zh_tw_>`_        |
+| Traditional     | 廖偉涵 Adrian Liaw            | `GitHub <github_zh_tw_>`_  |
+| Chinese         |                               | `Transifex <tx_zh_tw_>`_   |
+| (zh-tw)         |                               | `Doc <doc_zh_tw_>`_        |
 +-----------------+-------------------------------+----------------------------+
-| Turkish (tr)    |                               | `github <github_tr_>`_     |
+| Turkish (tr)    |                               | `GitHub <github_tr_>`_     |
 +-----------------+-------------------------------+----------------------------+
 
 .. _article_pt_br: http://rgth.co/blog/python-ptbr-cenario-atual
