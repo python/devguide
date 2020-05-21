@@ -51,6 +51,7 @@ Language development in depth
 * :doc:`exploring`
 * :doc:`grammar`
 * :doc:`compiler`
+* :doc:`garbage_collector`
 * :doc:`stdlibchanges`
 * :doc:`langchanges`
 * :doc:`porting`

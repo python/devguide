@@ -19,7 +19,7 @@ patch. This is meant as a checklist, once you know the basics. For complete
 instructions please see the :ref:`setup guide <setup>`.
 
 1. Install and set up :ref:`Git <vcsetup>` and other dependencies
-   (see the :ref:`Get Setup <setup>` page for detailed information).
+   (see the :ref:`Git Setup <setup>` page for detailed information).
 
 2. Fork `the CPython repository <https://github.com/python/cpython>`_
    to your GitHub account and :ref:`get the source code <checkout>` using::
@@ -99,8 +99,6 @@ Status of Python branches
 +------------------+--------------+-------------+----------------+----------------+-------------------+
 | 3.7              | :pep:`537`   | bugfix      | 2018-06-27     | *2023-06-27*   | Ned Deily         |
 +------------------+--------------+-------------+----------------+----------------+-------------------+
-| 2.7              | :pep:`373`   | bugfix      | 2010-07-03     | *2020-01-01*   | Benjamin Peterson |
-+------------------+--------------+-------------+----------------+----------------+-------------------+
 | 3.6              | :pep:`494`   | security    | 2016-12-23     | *2021-12-23*   | Ned Deily         |
 +------------------+--------------+-------------+----------------+----------------+-------------------+
 | 3.5              | :pep:`478`   | security    | 2015-09-13     | *2020-09-13*   | Larry Hastings    |
@@ -126,9 +124,8 @@ Status:
 Dates in *italic* are scheduled and can be adjusted.
 
 By default, the end-of-life is scheduled 5 years after the first release,
-but can be adjusted by the release manager of each branch.  The support for
-Python 2.7 has currently been extended to 2020-01-01.  Versions older than
-2.7 have reached end-of-life.
+but can be adjusted by the release manager of each branch.  All Python 2
+versions have reached end-of-life.
 
 See also the :ref:`devcycle` page for more information about branches.
 
@@ -260,6 +257,7 @@ Additional Resources
     * :doc:`exploring`
     * :doc:`grammar`
     * :doc:`compiler`
+    * :doc:`garbage_collector`
 * Tool support
     * :doc:`gdb`
     * :doc:`clang`
@@ -317,6 +315,7 @@ Full Table of Contents
    exploring
    grammar
    compiler
+   garbage_collector
    extensions
    coverity
    clang

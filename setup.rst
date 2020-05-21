@@ -156,6 +156,10 @@ Configuration is typically:
 More flags are available to ``configure``, but this is the minimum you should
 do to get a pydebug build of CPython.
 
+.. note::
+   You might need to run ``make clean`` before or after re-running ``configure``
+   in a particular build directory.
+
 Once ``configure`` is done, you can then compile CPython with:
 
 .. code-block:: bash

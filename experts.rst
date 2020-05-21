@@ -55,7 +55,7 @@ abc
 aifc                  r.david.murray
 argparse              rhettinger*
 array
-ast                   benjamin.peterson
+ast                   benjamin.peterson, pablogsal
 asynchat              josiahcarlson, giampaolo.rodola*, stutzbach
 asyncio               yselivanov, asvetlov
 asyncore              josiahcarlson, giampaolo.rodola*, stutzbach
@@ -107,18 +107,16 @@ encodings             lemburg
 ensurepip             ncoghlan, dstufft, pradyunsg
 enum                  eli.bendersky*, barry, ethan.furman*
 errno                 twouters
-exceptions
 faulthandler          vstinner
 fcntl                 twouters
 filecmp
 fileinput
 fnmatch
 formatter
-fpectl                twouters
 fractions             mark.dickinson, rhettinger
 ftplib                giampaolo.rodola*
 functools             rhettinger*
-gc                    pitrou
+gc                    pitrou, pablogsal
 getopt
 getpass
 gettext
@@ -167,7 +165,7 @@ optparse              aronacher
 os
 os.path               serhiy.storchaka
 ossaudiodev
-parser                benjamin.peterson
+parser                benjamin.peterson, pablogsal
 pathlib
 pdb
 pickle                alexandre.vassalotti
@@ -184,7 +182,6 @@ pstats
 pty                   twouters*
 pwd
 py_compile
-pybench               lemburg
 pyclbr
 pydoc
 queue                 rhettinger*
@@ -283,7 +280,6 @@ Tools
 Tool                Maintainers
 ==================  ===========
 Argument Clinic     larry
-pybench             lemburg
 ==================  ===========
 
 
@@ -313,11 +309,11 @@ Interest Area       Maintainers
 ==================  ==========================================================
 algorithms          rhettinger*
 argument clinic     larry
-ast/compiler        benjamin.peterson, brett.cannon, yselivanov
+ast/compiler        benjamin.peterson, brett.cannon, yselivanov, pablogsal
 autoconf/makefiles  twouters*
 bsd
 bug tracker         ezio.melotti
-buildbots           zach.ware
+buildbots           zach.ware, pablogsal
 bytecode            benjamin.peterson, yselivanov
 context managers    ncoghlan
 core workflow       mariatta
@@ -353,7 +349,7 @@ testing             michael.foord, ezio.melotti
 test coverage
 threads
 time and dates      lemburg, belopolsky, p-ganssle
-unicode             lemburg, ezio.melotti, vstinner, benjamin.peterson,
+unicode             lemburg, ezio.melotti, benjamin.peterson,
 version control     eric.araujo, ezio.melotti
 ==================  ==========================================================
 

@@ -1592,108 +1592,95 @@ they are built by `docsbuild-scripts
 docs.python.org. There are several documentation translations already
 in production, other are work in progress:
 
-+--------------+--------------------+------------------------------------------+
-| Language     | Contact            | Links                                    |
-+==============+====================+==========================================+
-| Arabic (ar)  | Abdur-Rahmaan      | `github <https://github.com/             |
-|              | Janhangeer         | Abdur-rahmaanJ/py-docs-ar>`__            |
-+--------------+--------------------+------------------------------------------+
-| Bengali as   | `Kushal Das        | `github <https://github.com/python/      |
-| spoken in    | <http://bugs.python| python-docs-bn-in>`__                    |
-| India (bn_IN)| .org/user16382>`__ |                                          |
-+--------------+--------------------+------------------------------------------+
-| French (fr)  | `Julien Palard     | `github <https://github.com/python/      |
-|              | (mdk) <https://bug | python-docs-fr/>`__                      |
-|              | s.python.org/user2 | `doc <https://docs.python.org/fr/>`__    |
-|              | 3063>`__           |                                          |
-+--------------+--------------------+------------------------------------------+
-| Hindi as     |                    | `github <https://github.com/             |
-| spoken in    |                    | CuriousLearner/python-docs-hi-in>`__     |
-| India        |                    |                                          |
-| (hi_IN)      |                    |                                          |
-+--------------+--------------------+------------------------------------------+
-| Hungarian    | `Tamás Bajusz      | `github <https://github.com/python/      |
-| (hu)         | (gbtami) <http://b | python-docs-hu/>`__                      |
-|              | ugs.python.org/use |                                          |
-|              | r25857>`__         | `list <https://mail.python.org/pipermail/|
-|              |                    | python-hu/>`__                           |
-|              |                    |                                          |
-+--------------+--------------------+------------------------------------------+
-| Indonesian   | `Oon Arfiandwi     | `github <https://github.com/python/      |
-| (id)         | <https://bugs.pyth | python-docs-id>`__                       |
-|              | on.org/user32660   |                                          |
-|              | />`__              |                                          |
-+--------------+--------------------+------------------------------------------+
-| Italian (it) |                    | `mail <https://mail.python.org/pipermail/|
-|              |                    | doc-sig/2019-April/004114.html>`__       |
-|              |                    |                                          |
-+--------------+--------------------+------------------------------------------+
-| Japanese     | `Kinebuchi Tomohiko| `github <https://github.com/python/      |
-| (ja)         | (cocoatomo)        | python-docs-ja/>`__                      |
-|              | <https://bugs.     |                                          |
-|              | python.org/        | `doc <https://docs.python.org/ja/>`__    |
-|              | user19001>`__      |                                          |
-+--------------+--------------------+------------------------------------------+
-| Korean (ko)  |                    | `github <https://github.com/python/      |
-|              |                    | python-docs-ko/>`__                      |
-|              |                    |                                          |
-|              |                    | `doc <https://docs.python.org/ko/>`__    |
-|              |                    |                                          |
-+--------------+--------------------+------------------------------------------+
-| Lithuanian   |                    | `mail <https://mail.python.org/pipermail/|
-| (lt)         |                    | doc-sig/2019-July/004138.html>`__        |
-+--------------+--------------------+------------------------------------------+
-| Polish (pl)  |                    | `mail <https://mail.python.org/pipermail/|
-|              |                    | doc-sig/2019-April/004106.html>`__       |
-|              |                    |                                          |
-+--------------+--------------------+------------------------------------------+
-| Portuguese   | Gustavo Toffo      |                                          |
-| (pt)         |                    |                                          |
-+--------------+--------------------+------------------------------------------+
-| Portuguese   | Marco Rougeth      | `github <https://github.com/python/      |
-| as spoken    |                    | python-docs-pt-br/>`__                   |
-| in Brasil    |                    |                                          |
-| (pt-br)      |                    | `wiki <http://python.org.br/traducao>`__ |
-|              |                    |                                          |
-|              |                    | `telgram <https://t.me/pybr_i18n>`__     |
-|              |                    |                                          |
-|              |                    | `article <http://rgth.co/blog/           |
-|              |                    | python-ptbr-cenario-atual>`__            |
-|              |                    |                                          |
-+--------------+--------------------+------------------------------------------+
-| Russian (ru) |                    | `mail <https://mail.python.org/pipermail/|
-|              |                    | doc-sig/2019-May/004131.html>`__         |
-|              |                    |                                          |
-+--------------+--------------------+------------------------------------------+
-| Simplified   | `Shengjing         | `transifex <https://www.transifex.com/   |
-| Chinese      | Zhu <https://bugs. | python-doc/python-newest/language/       |
-| (zh-cn)      | python.org/user248 | zh_CN/>`__                               |
-|              | 11>`__             |                                          |
-|              |                    | `github <https://github.com/python/      |
-|              |                    | python-docs-zh-cn/>`__                   |
-|              |                    |                                          |
-|              |                    | `doc <https://docs.python.org/zh-cn/>`__ |
-|              |                    |                                          |
-+--------------+--------------------+------------------------------------------+
-| Spanish      | Raul Cumplido      | `github <https://github.com/raulcd/      |
-| (es)         |                    | python-docs.es/>`__                      |
-|              |                    |                                          |
-|              |                    | `old repo <https://github.com/PyAr/      |
-|              |                    | tutorial/>`__                            |
-+--------------+--------------------+------------------------------------------+
-| Traditional  | 廖偉涵 Adrian Liaw | `github <https://github.com/python/      |
-| Chinese      |                    | python-docs-zh-tw/>`__                   |
-| (zh-tw)      |                    |                                          |
-|              |                    | `transifex <https://www.transifex.com/   |
-|              |                    | python-tw-doc/python-36-tw>`__           |
-|              |                    |                                          |
-|              |                    | `doc <https://docs.python.org/zh-tw/>`__ |
-+--------------+--------------------+------------------------------------------+
-| Turkish (tr) |                    | `github <https://github.com/alaeddingurel|
-|              |                    | /python-docs-tr>`__                      |
-|              |                    |                                          |
-+--------------+--------------------+------------------------------------------+
++-----------------+-------------------------------+----------------------------+
+| Language        | Contact                       | Links                      |
++=================+===============================+============================+
+| Arabic (ar)     | Abdur-Rahmaan Janhangeer      | `GitHub <github_ar_>`_     |
++-----------------+-------------------------------+----------------------------+
+| Bengali as      | `Kushal Das <bpo_kushal_>`_   | `GitHub <github_bn_in_>`_  |
+| spoken in       |                               |                            |
+| India (bn_IN)   |                               |                            |
++-----------------+-------------------------------+----------------------------+
+| French (fr)     | `Julien Palard (mdk)          | `GitHub <github_fr_>`_     |
+|                 | <bpo_mdk_>`_                  |                            |
++-----------------+-------------------------------+----------------------------+
+| Hindi as spoken |                               | `GitHub <github_hi_in_>`_  |
+| in india (hi_IN)|                               |                            |
++-----------------+-------------------------------+----------------------------+
+| Hungarian (hu)  | `Tamás Bajusz (gbtami)        | `GitHub <github_hu_>`_     |
+|                 | <bpo_gbtami_>`_               | `Mailing List <list_hu_>`_ |
++-----------------+-------------------------------+----------------------------+
+| Indonesian (id) | `Oon Arfiandwi <bpo_oonid_>`_ | `GitHub <github_id_>`_     |
++-----------------+-------------------------------+----------------------------+
+| Italian (it)    |                               | `mail <mail_it_>`_         |
++-----------------+-------------------------------+----------------------------+
+| Japanese (ja)   | `Kinebuchi Tomohiko           | `GitHub <github_ja_>`_     |
+|                 | (cocoatomo) <bpo_cocoatomo_>`_| `Doc <doc_ja_>`_           |
++-----------------+-------------------------------+----------------------------+
+| Korean (ko)     |                               | `GitHub <github_ko_>`_     |
+|                 |                               | `Doc <doc_ko_>`_           |
++-----------------+-------------------------------+----------------------------+
+| Lithuanian (lt) |                               | `mail <mail_lt_>`_         |
++-----------------+-------------------------------+----------------------------+
+| Polish (pl)     |                               | `mail <mail_pl_>`_         |
+|                 |                               | `Translations <tx_pl_>`_   |
++-----------------+-------------------------------+----------------------------+
+| Portuguese (pt) | Gustavo Toffo                 |                            |
++-----------------+-------------------------------+----------------------------+
+| Portuguese      | Marco Rougeth                 | `GitHub <github_pt_br_>`_  |
+| as spoken       |                               | `Wiki <wiki_pt_br_>`_      |
+| in Brasil       |                               | `Telegram <chat_pt_br_>`_  |
+| (pt-br)         |                               | `article <article_pt_br_>`_|
++-----------------+-------------------------------+----------------------------+
+| Russian (ru)    |                               | `mail <mail_ru_>`_         |
++-----------------+-------------------------------+----------------------------+
+| Simplified      | `Shengjing Zhu <bpo_zhsj_>`_  | `Transifex <tx_zh_cn_>`_   |
+| Chinese         |                               | `GitHub <github_zh_cn_>`_  |
+| (zh-cn)         |                               | `Doc <doc_zh_cn_>`_        |
++-----------------+-------------------------------+----------------------------+
+| Spanish (es)    | Raúl Cumplido                 | `GitHub <github_es_>`_     |
++-----------------+-------------------------------+----------------------------+
+| Traditional     | 廖偉涵 Adrian Liaw            | `GitHub <github_zh_tw_>`_  |
+| Chinese         |                               | `Transifex <tx_zh_tw_>`_   |
+| (zh-tw)         |                               | `Doc <doc_zh_tw_>`_        |
++-----------------+-------------------------------+----------------------------+
+| Turkish (tr)    |                               | `GitHub <github_tr_>`_     |
++-----------------+-------------------------------+----------------------------+
 
+.. _article_pt_br: http://rgth.co/blog/python-ptbr-cenario-atual
+.. _bpo_cocoatomo: https://bugs.python.org/user19001
+.. _bpo_gbtami: https://bugs.python.org/user25857
+.. _bpo_kushal: https://bugs.python.org/user16382
+.. _bpo_mdk: https://bugs.python.org/user23063
+.. _bpo_oonid: https://bugs.python.org/user32660
+.. _bpo_zhsj: https://bugs.python.org/user24811
+.. _chat_pt_br: https://t.me/pybr_i18n
+.. _doc_ja: https://docs.python.org/ja/
+.. _doc_ko: https://docs.python.org/ko/
+.. _doc_zh_cn: https://docs.python.org/zh-cn/
+.. _doc_zh_tw: https://docs.python.org/zh-tw/
+.. _github_ar: https://github.com/Abdur-rahmaanJ/py-docs-ar
+.. _github_bn_in: https://github.com/python/python-docs-bn-in
+.. _github_es: https://github.com/PyCampES/python-docs-es
+.. _github_fr: https://github.com/python/python-docs-fr
+.. _github_hi_in: https://github.com/CuriousLearner/python-docs-hi-in
+.. _github_hu: https://github.com/python/python-docs-hu
+.. _github_id: https://github.com/python/python-docs-id
+.. _github_ja: https://github.com/python/python-docs-ja
+.. _github_ko: https://github.com/python/python-docs-ko
+.. _github_pt_br: https://github.com/python/python-docs-pt-br
+.. _github_tr: https://github.com/alaeddingurel/python-docs-tr
+.. _github_zh_cn: https://github.com/python/python-docs-zh-cn
+.. _github_zh_tw: https://github.com/python/python-docs-zh-tw
+.. _list_hu: https://mail.python.org/pipermail/python-hu
+.. _mail_it: https://mail.python.org/pipermail/doc-sig/2019-April/004114.html
+.. _mail_lt: https://mail.python.org/pipermail/doc-sig/2019-July/004138.html
+.. _mail_pl: https://mail.python.org/pipermail/doc-sig/2019-April/004106.html
+.. _mail_ru: https://mail.python.org/pipermail/doc-sig/2019-May/004131.html
+.. _tx_pl: https://www.transifex.com/python-doc/python-newest/language/pl/
+.. _tx_zh_cn: https://www.transifex.com/python-doc/python-newest/language/
+.. _tx_zh_tw: https://www.transifex.com/python-tw-doc/python-36-tw
+.. _wiki_pt_br: http://python.org.br/traducao
 
 Starting a new translation
 --------------------------
@@ -1715,7 +1702,7 @@ The important steps looks like this:
   way, it's up to you.
 - Ensure we updated this page to reflect your work and progress, either via a
   PR, or by asking on the doc-sig mailing list.
-- When ``tutorial/``, ``library/stdtypes`` and ``library/functions``
+- When ``tutorial/``, ``bugs.py`` and ``library/functions``
   are complete, ask on doc-sig for your language to be added in the
   language picker on docs.python.org.
 
