@@ -37,7 +37,7 @@ Here is a quick overview of how you can contribute to CPython:
 
 #. `Create Pull Request`_ on GitHub to merge a branch from your fork
 
-#. Review and address `comments on your Pull Request`_ (without force-pushing)
+#. Review and address `comments on your Pull Request`_
 
 #. When your changes are merged, you can :ref:`delete the PR branch
    <deleting_branches>`
@@ -48,8 +48,8 @@ Here is a quick overview of how you can contribute to CPython:
        you can skip this step.
 
 .. note::
-   Please keep the commit history in the pull request intact by not squashing,
-   amending, or anything that would require a force push to GitHub.
+   In order to keep the commit history intact, please avoid force-pushing to
+   the PR.
 
 .. _Clear communication: https://opensource.guide/how-to-contribute/#how-to-submit-a-contribution
 .. _Open Source: https://opensource.guide/
