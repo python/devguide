@@ -264,10 +264,10 @@ Commit messages should follow the following structure::
    raises the amount of spam in the module by making it more spammy.
 
 The first line or sentence is meant to be a dense, to-the-point explanation
-of what the purpose of the commit is. The imperative form is strongly
-preferred to a descriptive form such as 'the spam module is now more spammy'.
-Use ``git log --oneline`` to see existing title lines. Furthermore, the first
-line should not end in a period.
+of what the purpose of the commit is. The imperative form (used in the example
+above) is strongly preferred to a descriptive form such as 'the spam module is
+now more spammy'. Use ``git log --oneline`` to see existing title lines.
+Furthermore, the first line should not end in a period.
 
 If this is not enough detail for a commit, a new paragraph(s) can be added
 to explain in proper depth what has happened (detail should be good enough
