@@ -49,7 +49,7 @@ Here is a quick overview of how you can contribute to CPython:
 
 .. note::
    In order to keep the commit history intact, please avoid force-pushing to
-   the PR.
+   the PR. Reviewers often want to look at individual commits.
 
 .. _Clear communication: https://opensource.guide/how-to-contribute/#how-to-submit-a-contribution
 .. _Open Source: https://opensource.guide/
