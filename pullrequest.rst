@@ -48,8 +48,9 @@ Here is a quick overview of how you can contribute to CPython:
        you can skip this step.
 
 .. note::
-   In order to keep the commit history intact, please avoid force-pushing to
-   the PR. Reviewers often want to look at individual commits.
+   In order to keep the commit history intact, please avoid squashing or amending
+   history and then force-pushing to the PR. Reviewers often want to look at
+   individual commits.
 
 .. _Clear communication: https://opensource.guide/how-to-contribute/#how-to-submit-a-contribution
 .. _Open Source: https://opensource.guide/
