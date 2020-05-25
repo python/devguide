@@ -263,20 +263,29 @@ and for each pull request there may be several commits.  In particular:
 
 Commit messages should follow the following structure::
 
-   bpo-42: the spam module is now more spammy (GH-NNNN)
+   bpo-42: Make the spam module more spammy (GH-NNNN)
 
    The spam module sporadically came up short on spam. This change
    raises the amount of spam in the module by making it more spammy.
 
 The first line or sentence is meant to be a dense, to-the-point explanation
-of what the purpose of the commit is.  If this is not enough detail for a
-commit, a new paragraph(s) can be added to explain in proper depth what has
-happened (detail should be good enough that a core developer reading the
-commit message understands the justification for the change).
+of what the purpose of the commit is. The imperative form (used in the example
+above) is strongly preferred to a descriptive form such as 'the spam module is
+now more spammy'. Use ``git log --oneline`` to see existing title lines.
+Furthermore, the first line should not end in a period.
+
+If this is not enough detail for a commit, a new paragraph(s) can be added
+to explain in proper depth what has happened (detail should be good enough
+that a core developer reading the commit message understands the
+justification for the change).
 
 Check :ref:`the git bootcamp <accepting-and-merging-a-pr>` for further
 instructions on how the commit message should look like when merging a pull
 request.
+
+.. note::
+   `How to Write a Git Commit Message <https://chris.beams.io/posts/git-commit/>`_
+   is a nice article that describes how to write a good commit message.
 
 
 .. _cla:
