@@ -280,7 +280,7 @@ request.
 
 .. note::
    `How to Write a Git Commit Message <https://chris.beams.io/posts/git-commit/>`_
-   is a nice article describing how to write a good commit message.
+   is a nice article that describes how to write a good commit message.
 
 
 .. _cla:
