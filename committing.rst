@@ -232,7 +232,7 @@ repositories means you have to be more careful with your workflow:
   main repository.
 
 * You should not commit directly into the ``master`` branch, or any of the
-  maintenance branches (currently ``3.7``, ``3.6``, and ``2.7``).
+  maintenance branches (currently ``3.9`` and ``3.8``).
   You should commit against your own feature branch, and create a pull request.
 
 * For a small change, you can make a quick edit through the GitHub web UI.
@@ -288,7 +288,7 @@ message::
 Prefix the backport pull request with the branch, and reference the pull request
 number from ``master``, for example::
 
-   [3.7] bpo-12345: Fix the Spam Module (GH-NNNN)
+   [3.9] bpo-12345: Fix the Spam Module (GH-NNNN)
 
 Note that cherry_picker.py_ adds the branch prefix automatically.
 
