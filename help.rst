@@ -23,8 +23,12 @@ questions about developing for Python.  Just remember that ``#python-dev``
 is for questions involving the development *of* Python whereas ``#python``
 is for questions concerning development *with* Python.
 
-.. _freenode: https://freenode.net/
+.. note::
 
+  You may not be able to access the history of this channel, so it cannot
+  be used as a "knowledge base" of sorts.
+
+.. _freenode: https://freenode.net/
 
 Zulip
 -----
@@ -35,6 +39,14 @@ hour stream. It is preferred that you ask questions here first or schedule
 an office hour, before posting to python-dev mailing list or filing bugs.
 
 .. _Zulip: https://python.zulipchat.com
+
+Discourse
+---------
+
+Python has a hosted `Discourse`_ instance. Be sure to visit the related Core
+categories, such as Core Development and Core Workflow.
+
+.. _Discourse: https://discuss.python.org/
 
 
 Core Mentorship
