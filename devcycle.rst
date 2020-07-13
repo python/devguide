@@ -67,35 +67,39 @@ Maintenance branches
 --------------------
 
 A branch for a previous feature release, currently being maintained for bug
-fixes.  There are usually two maintenance branches at any given time for
-Python 3.x. Only during the beta/rc phase of a new
-minor/feature release will there be three active maintenance branches, e.g.
-during the beta phase for Python 3.8 there are master, 3.8, 3.7, and 3.6
-branches open.  Releases
-produced from a maintenance branch are called **maintenance** or **bugfix**
+fixes, or for the next feature release in its
+:ref:`beta <beta>` or :ref:`release candidate <rc>` stages.
+There is usually either one or two maintenance branches at any given time for
+Python 3.x.  After the final release of a new minor version (3.x.0), releases
+produced from a maintenance branch are called **bugfix** or **maintenance**
 releases; the terms are used interchangeably. These releases have a
 **micro version** number greater than zero.
 
 The only changes allowed to occur in a maintenance branch without debate are
 bug fixes.  Also, a general rule for maintenance branches is that compatibility
-must not be broken at any point between sibling minor releases (3.5.1, 3.5.2,
+must not be broken at any point between sibling micro releases (3.5.1, 3.5.2,
 etc.).  For both rules, only rare exceptions are accepted and **must** be
 discussed first.
 
-Sometime after a new maintenance branch is created (after a new *minor version*
-is released), the old maintenance branch on that major version will go into
-:ref:`security mode <secbranch>`,
-usually after one last maintenance release at the discretion of the
+A new maintenance branch is normally created when the next feature release
+cycle reaches feature freeze, i.e. at its first beta pre-release.
+From that point on, changes intended for remaining pre-releases, the final
+release (3.x.0), and subsequent bugfix releases are merged to
+that maintenance branch.
+
+Sometime following the final release (3.x.0), the maintenance branch for
+the previous minor version will go into :ref:`security mode <secbranch>`,
+usually after at least one more bugfix release at the discretion of the
 release manager.  For example, the 3.4 maintenance branch was put into
-:ref:`security mode <secbranch>` after the 3.4.4 final maintenance release
-following the release of 3.5.1.
+:ref:`security mode <secbranch>` after the 3.4.4 bugfix release
+which followed the release of 3.5.1.
 
 .. _secbranch:
 
 Security branches
 -----------------
 
-A branch less than 5 years old but no longer in maintenance mode is a security
+A branch less than 5 years old but no longer in bugfix mode is a security
 branch.
 
 The only changes made to a security branch are those fixing issues exploitable
@@ -107,6 +111,7 @@ since it is important to be able to run the tests successfully before releasing.
 
 Commits to security branches are to be coordinated with the release manager
 for the corresponding feature version, as listed in the :ref:`branchstatus`.
+Merging of pull requests to security branches is restricted to release managers.
 Any release made from a security branch is source-only and done only when actual
 security patches have been applied to the branch. These releases have a
 **micro version** number greater than the last **bugfix** release.
@@ -136,9 +141,9 @@ For reference, here are the Python versions that most recently reached their end
 +------------------+--------------+----------------+----------------+----------------------------------+
 | 3.0              | :pep:`361`   | 2008-12-03     | 2009-06-27     | Barry Warsaw                     |
 +------------------+--------------+----------------+----------------+----------------------------------+
-| 2.6              | :pep:`361`   | 2008-10-01     | 2013-10-29     | Barry Warsaw                     |
-+------------------+--------------+----------------+----------------+----------------------------------+
 | 2.7              | :pep:`373`   | 2010-07-03     | 2020-01-01     | Benjamin Peterson                |
++------------------+--------------+----------------+----------------+----------------------------------+
+| 2.6              | :pep:`361`   | 2008-10-01     | 2013-10-29     | Barry Warsaw                     |
 +------------------+--------------+----------------+----------------+----------------------------------+
 
 The latest release for each Python version can be found on the `download page
@@ -305,9 +310,12 @@ Current Administrators
 +-------------------+----------------------------------------------------------+-----------------+
 | Name              | Role                                                     | GitHub Username |
 +===================+==========================================================+=================+
+| Pablo Galindo     | Python 3.10 and 3.11 Release Manager,                    | pablogsal       |
+|                   | Maintainer of buildbot.python.org                        |                 |
++-------------------+----------------------------------------------------------+-----------------+
 | Łukasz Langa      | Python 3.8 and 3.9 Release Manager                       | ambv            |
 +-------------------+----------------------------------------------------------+-----------------+
-| Ned Deily         | Python 3.7 Release Manager                               | ned-deily       |
+| Ned Deily         | Python 3.6 and 3.7 Release Manager                       | ned-deily       |
 +-------------------+----------------------------------------------------------+-----------------+
 | Lary Hastings     | Python 3.5 Release Manager                               | larryhastings   |
 +-------------------+----------------------------------------------------------+-----------------+
@@ -318,8 +326,6 @@ Current Administrators
 | Ezio Melotti      | Maintainer of bugs.python.org GitHub webhook integration | ezio-melotti    |
 +-------------------+----------------------------------------------------------+-----------------+
 | Mariatta Wijaya   | Maintainer of blurb_it and miss-islington                | Mariatta        |
-+-------------------+----------------------------------------------------------+-----------------+
-| Pablo Galindo     | Maintainer of buildbot.python.org                        | pablogsal       |
 +-------------------+----------------------------------------------------------+-----------------+
 
 Repository Release Manager Role Policy
