@@ -69,8 +69,8 @@ bisect                rhettinger*
 builtins
 bz2
 calendar              rhettinger*
-cgi                   ethan.furman*, Rhodri James
-cgitb                 ethan.furman*, Rhodri James
+cgi                   ethan.furman*
+cgitb                 ethan.furman*
 chunk
 cmath                 mark.dickinson
 cmd
