@@ -67,6 +67,11 @@ instructions please see the :ref:`setup guide <setup>`.
 
       bpo-12345: Fix some bug in spam module
 
+8. Add a News entry into the ``Misc/NEWS.d`` directory as individual file. The
+   news entry can be created by using `blurb-it <https://blurb-it.herokuapp.com/>`_,
+   or the `blurb <https://pypi.org/project/blurb/>`_ tool and its ``blurb add``
+   command. Please read more about ``blurb`` in :ref:`documentation <documenting>`
+
 .. note::
 
    First time contributors will need to sign the Contributor Licensing
