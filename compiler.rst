@@ -10,8 +10,8 @@ Abstract
 
 In CPython, the compilation from source code to bytecode involves several steps:
 
-1. Parse source code into a parse tree (:file:`Parser/pgen.c`)
-2. Transform parse tree into an Abstract Syntax Tree (:file:`Python/ast.c`)
+1. Tokenize the source code (:file:`Parser/tokenizer.c`)
+2. Parse the stream of tokens into an Abstract Syntax Tree (:file:`Parser/parser.c`)
 3. Transform AST into a Control Flow Graph (:file:`Python/compile.c`)
 4. Emit bytecode based on the Control Flow Graph (:file:`Python/compile.c`)
 
@@ -23,49 +23,18 @@ in terms of the how the entire system works.  You will most likely need
 to read some source to have an exact understanding of all details.
 
 
-Parse Trees
------------
+Parsing
+-------
 
-Python's parser is an LL(1) parser mostly based off of the
-implementation laid out in the Dragon Book [Aho86]_.
+As of Python 3.9, Python's parser is a PEG parser of a somewhat
+unusual design (since its input is a stream of tokens rather than a
+stream of characters as is more common with PEG parsers).
 
-The grammar file for Python can be found in :file:`Grammar/Grammar` with the
-numeric value of grammar rules stored in :file:`Include/graminit.h`.  The
-list of types of tokens (literal tokens, such as ``:``, numbers, etc.) can
-be found in :file:`Grammar/Tokens` with the numeric value stored in
-:file:`Include/token.h`.  The parse tree is made up
-of ``node *`` structs (as defined in :file:`Include/node.h`).
-
-Querying data from the node structs can be done with the following
-macros (which are all defined in :file:`Include/node.h`):
-
-``CHILD(node *, int)``
-        Returns the nth child of the node using zero-offset indexing
-``RCHILD(node *, int)``
-        Returns the nth child of the node from the right side; use
-        negative numbers!
-``NCH(node *)``
-        Number of children the node has
-``STR(node *)``
-        String representation of the node; e.g., will return ``:`` for a
-        ``COLON`` token
-``TYPE(node *)``
-        The type of node as specified in :file:`Include/graminit.h`
-``REQ(node *, TYPE)``
-        Assert that the node is the type that is expected
-``LINENO(node *)``
-        Retrieve the line number of the source code that led to the
-        creation of the parse rule; defined in :file:`Python/ast.c`
-
-For example, consider the rule for 'while':
-
-.. productionlist::
-   while_stmt: "while" `expression` ":" `suite` : ["else" ":" `suite`]
-
-The node representing this will have ``TYPE(node) == while_stmt`` and
-the number of children can be 4 or 7 depending on whether there is an
-'else' statement.  ``REQ(CHILD(node, 2), COLON)`` can be used to access
-what should be the first ``:`` and require it be an actual ``:`` token.
+The grammar file for Python can be found in
+:file:`Grammar/python.gram`.  The definitions for literal tokens
+(such as ``:``, numbers, etc.) can be found in :file:`Grammar/Tokens`.
+Various C files, including :file:`Parser/parser.c` are generated from
+these (see :doc:`grammar`).
 
 
 Abstract Syntax Trees (AST)
@@ -568,10 +537,6 @@ thanks to having to support both classic and new-style classes.
 
 References
 ----------
-
-.. [Aho86] Alfred V. Aho, Ravi Sethi, Jeffrey D. Ullman.
-   `Compilers: Principles, Techniques, and Tools`,
-   https://www.amazon.com/exec/obidos/tg/detail/-/0201100886/104-0162389-6419108
 
 .. [Wang97]  Daniel C. Wang, Andrew W. Appel, Jeff L. Korn, and Chris
    S. Serra.  `The Zephyr Abstract Syntax Description Language.`_
