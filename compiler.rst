@@ -31,7 +31,7 @@ unusual design (since its input is a stream of tokens rather than a
 stream of characters as is more common with PEG parsers).
 
 The grammar file for Python can be found in
-:file:`Grammar/python.gram`.  The numeric values for literal tokens
+:file:`Grammar/python.gram`.  The definitions for literal tokens
 (such as ``:``, numbers, etc.) can be found in :file:`Grammar/Tokens`.
 Various C files, including :file:`Parser/parser.c` are generated from
 these (see :doc:`grammar`).
