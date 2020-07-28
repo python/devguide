@@ -294,9 +294,11 @@ Note that cherry_picker.py_ adds the branch prefix automatically.
 
 Once the backport pull request has been created, remove the
 ``needs backport to X.Y`` label from the original pull request.  (Only Core
-Developers and Triagers can apply labels to GitHub pull requests).
+Developers and members of the `Python Triage Team`_ can apply labels to GitHub
+pull requests).
 
 .. _cherry_picker.py: https://github.com/python/cherry-picker
+.. _`Python Triage Team`: https://devguide.python.org/triaging/#python-triage-team
 
 
 Reverting a Merged Pull Request
