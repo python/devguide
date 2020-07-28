@@ -294,7 +294,7 @@ Note that cherry_picker.py_ adds the branch prefix automatically.
 
 Once the backport pull request has been created, remove the
 ``needs backport to X.Y`` label from the original pull request.  (Only Core
-Developers can apply labels to GitHub pull requests).
+Developers and Triagers can apply labels to GitHub pull requests).
 
 .. _cherry_picker.py: https://github.com/python/cherry-picker
 
