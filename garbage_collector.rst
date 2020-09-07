@@ -92,7 +92,7 @@ As is explained later in the `Optimization: reusing fields to save memory`_ sect
 these two extra fields are normally used to keep doubly linked lists of all the
 objects tracked by the garbage collector (these lists are the GC generations, more on
 that in the `Optimization: generations`_ section), but they are also
-reused to fullfill other purposes when the full doubly linked list structure is not
+reused to fulfill other purposes when the full doubly linked list structure is not
 needed as a memory optimization.
 
 Doubly linked lists are used because they efficiently support most frequently required operations.  In
@@ -117,7 +117,7 @@ that the objects cannot form reference cycles with only objects of its type or u
 the type is immutable, a ``tp_clear`` implementation must also be provided.
 
 
-Identifiying reference cycles
+Identifying reference cycles
 ----------------------------------------------
 
 The algorithm that CPython uses to detect those reference cycles is
@@ -164,7 +164,9 @@ is completely unreachable:
 
     >>> link_4 = Link()
     >>> link_4.next_link = link_4
+    >>> del link_4
 
+    # Collect the unreachable Link object (and its .__dict__ dict).
     >>> gc.collect()
     2
 
@@ -285,7 +287,7 @@ follows these steps in order:
 2. If an object has legacy finalizers (``tp_del`` slot) move them to the
    ``gc.garbage`` list.
 3. Call the finalizers (``tp_finalize`` slot) and mark the objects as already
-   finalized to avoid calling them twice if they resurrect of if other finalizers
+   finalized to avoid calling them twice if they resurrect or if other finalizers
    have removed the object first.
 4. Deal with resurrected objects. If some objects have been resurrected, the GC
    finds the new subset of objects that are still unreachable by running the cycle
@@ -337,23 +339,23 @@ specifically in a generation by calling ``gc.collect(generation=NUM)``.
     ...     pass
     ... 
 
-    # Move everything to the last generation so its easier to inspect
+    # Move everything to the last generation so it's easier to inspect
     # the younger generations.
 
     >>> gc.collect()
     0
 
-    # Create a reference cycle
+    # Create a reference cycle.
 
     >>> x = MyObj()
     >>> x.self = x
 
-    # Initially the object is in the younguest generation.
+    # Initially the object is in the youngest generation.
 
     >>> gc.get_objects(generation=0)
     [..., <__main__.MyObj object at 0x7fbcc12a3400>, ...]
 
-    # After a collection of the younguest generation the object
+    # After a collection of the youngest generation the object
     # moves to the next generation.
 
     >>> gc.collect(generation=0)
