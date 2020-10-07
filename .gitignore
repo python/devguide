@@ -90,3 +90,4 @@ venv/
 
 # Rope project settings
 .ropeproject
+.vscode/settings.json
