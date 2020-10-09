@@ -16,11 +16,11 @@ Python triage team
 
 The Python triage team is a group dedicated towards improving workflow
 efficiency through thoughtful review and triage of open issues and pull
-requests. This helps contributors receive timely feedback and enables core 
-developers to focus on reviewed items which reduces their workload. The 
-expectations of this role expand upon the "Developer" role on the 
-`issue tracker`_. The responsibilities listed below are primarily centered 
-around the Python GitHub repositories. This extends beyond CPython, and, as 
+requests. This helps contributors receive timely feedback and enables core
+developers to focus on reviewed items which reduces their workload. The
+expectations of this role expand upon the "Developer" role on the
+`issue tracker`_. The responsibilities listed below are primarily centered
+around the Python GitHub repositories. This extends beyond CPython, and, as
 needed, to other repos such as devguide and core-workflow.
 
 Responsibilities include:
@@ -64,7 +64,7 @@ to handle not just issues, but also pull requests, and even managing backports.
 Any existing developers on b.p.o can transition into becoming a Python triager.
 They can request this to any core developer, and the core developer
 can pass the request to the `Python organization admin
-<https://devguide.python.org/devcycle/?highlight=organization%20admin#current-owners>`_
+<https://devguide.python.org/devcycle/#current-owners>`_
 on GitHub. The request
 can be made confidentially via a DM in Zulip or Discourse, or publicly by opening
 an `issue in the core-workflow repository
@@ -143,7 +143,7 @@ sprint
 stale
     Used for PRs that include changes which are no longer relevant or when the
     author hasn't responded to feedback in a long period of time. This label
-    helps core developers quickly identify PRs that are candidates for closure 
+    helps core developers quickly identify PRs that are candidates for closure
     or require a ping to the author.
 
 type-bugfix
@@ -164,7 +164,7 @@ type-performance
     Used for PRs that provide performance optimizations.
 
 type-security
-    Used for PRs that involve critical security issues. Less severe 
+    Used for PRs that involve critical security issues. Less severe
     security concerns can instead use the type-bugfix label.
 
 type-tests
@@ -588,32 +588,32 @@ Checklist for Triaging
 .. _Lib/lib2to3: https://github.com/python/cpython/tree/master/Lib/lib2to3/
 .. _Lib/ctypes: https://github.com/python/cpython/tree/master/Lib/ctypes/
 .. _Lib/distutils: https://github.com/python/cpython/tree/master/Lib/distutils/
-.. _Lib/doctest.py: https://github.com/python/cpython/tree/master/Lib/doctest.py
+.. _Lib/doctest.py: https://github.com/python/cpython/blob/master/Lib/doctest.py
 .. _Lib/idlelib: https://github.com/python/cpython/tree/master/Lib/idlelib/
-.. _Lib/io.py: https://github.com/python/cpython/tree/master/Lib/io.py
-.. _Lib/re.py: https://github.com/python/cpython/tree/master/Lib/re.py
+.. _Lib/io.py: https://github.com/python/cpython/blob/master/Lib/io.py
+.. _Lib/re.py: https://github.com/python/cpython/blob/master/Lib/re.py
 .. _Lib/test: https://github.com/python/cpython/tree/master/Lib/test/
-.. _Lib/test/regrtest.py: https://github.com/python/cpython/tree/master/Lib/test/regrtest.py
+.. _Lib/test/regrtest.py: https://github.com/python/cpython/blob/master/Lib/test/regrtest.py
 .. _Lib/test/support: https://github.com/python/cpython/tree/master/Lib/test/support/
 .. _Lib/tkinter: https://github.com/python/cpython/tree/master/Lib/tkinter/
 .. _Lib/unittest: https://github.com/python/cpython/tree/master/Lib/unittest/
 .. _Lib/xml: https://github.com/python/cpython/tree/master/Lib/xml/
 .. _Modules: https://github.com/python/cpython/tree/master/Modules/
 .. _Modules/_io: https://github.com/python/cpython/tree/master/Modules/_io/
-.. _Modules/_sre.c: https://github.com/python/cpython/tree/master/Modules/_sre.c
+.. _Modules/_sre.c: https://github.com/python/cpython/blob/master/Modules/_sre.c
 .. _Objects: https://github.com/python/cpython/tree/master/Objects/
-.. _Objects/unicodeobject.c: https://github.com/python/cpython/tree/master/Objects/unicodeobject.c
+.. _Objects/unicodeobject.c: https://github.com/python/cpython/blob/master/Objects/unicodeobject.c
 .. _Parser: https://github.com/python/cpython/tree/master/Parser/
 .. _Python: https://github.com/python/cpython/tree/master/Python/
 .. _Tools: https://github.com/python/cpython/tree/master/Tools/
 .. _Tools/demo: https://github.com/python/cpython/tree/master/Tools/demo/
 .. _Developer's guide: https://github.com/python/devguide/
-.. _GSoC: https://summerofcode.withgoogle.com/
+.. _GSoC: https://summerofcode.withgoogle.com/archive/
 .. _issue tracker: https://bugs.python.org
 .. _GitHub pull requests: https://github.com/python/cpython/pulls
 .. _Python source code repositories: https://github.com/python/cpython/
 .. _Reporting security issues in Python: https://www.python.org/dev/security/
-.. _python-ideas: https://mail.python.org/mailman/listinfo/python-ideas
+.. _python-ideas: https://mail.python.org/mailman3/lists/python-ideas.python.org/
 .. _release schedule: https://devguide.python.org/#status-of-python-branches
-.. _PSF Code of Conduct: https://www.python.org/psf/codeofconduct/
+.. _PSF Code of Conduct: https://www.python.org/psf/conduct/
 .. _PEP 3121: https://www.python.org/dev/peps/pep-3121/

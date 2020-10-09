@@ -91,8 +91,8 @@ existing releases.  As with ``#python-dev``, these mailing lists are for
 questions involving the development *of* Python, **not** for development
 *with* Python.
 
-.. _python-ideas: https://mail.python.org/mailman/listinfo/python-ideas
-.. _python-dev: https://mail.python.org/mailman/listinfo/python-dev
+.. _python-ideas: https://mail.python.org/mailman3/lists/python-ideas.python.org/
+.. _python-dev: https://mail.python.org/mailman3/lists/python-dev.python.org/
 
 
 File a Bug

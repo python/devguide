@@ -88,7 +88,7 @@ name in ``Misc/ACKS`` if they aren't already there (and didn't add themselves
 in their patch) and by mentioning "Patch by <x>" in the ``Misc/NEWS.d`` entry
 and the check-in message. If the patch has been heavily modified then "Initial
 patch by <x>" is an appropriate alternate wording.  GitHub now supports `multiple
-authors <https://help.github.com/articles/creating-a-commit-with-multiple-authors/>`_
+authors <https://docs.github.com/en/free-pro-team@latest/github/committing-changes-to-your-project/creating-a-commit-with-multiple-authors>`_
 in a commit. Add ``Co-authored-by: name <name@example.com>`` at the end of the commit message.
 
 If you omit correct attribution in the initial check-in, then update ``ACKS``

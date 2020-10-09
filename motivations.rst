@@ -118,8 +118,8 @@ participating in the CPython core development process:
 
    * Microsoft (Software Developer)
    * Personal site: `stevedower.id.au <https://stevedower.id.au/>`_
-   * Speaking: `stevedower.id.au/speaking <https://stevedower.id.au/speaking/>`_
-   * Work blog: `aka.ms/pythonblog <https://aka.ms/pythonblog>`_
+   * Speaking: `stevedower.id.au/speaking <https://stevedower.id.au/speaking>`_
+   * Work blog: `devblogs.microsoft.com/python <https://devblogs.microsoft.com/python/>`_
    * Email address: steve.dower@python.org
 
    Steve started with Python while automating a test harness for medical
@@ -137,17 +137,17 @@ participating in the CPython core development process:
 
 .. topic:: Mariatta (Canada)
 
-   * Personal site: `mariatta.ca <http://mariatta.ca>`_
+   * Personal site: `mariatta.ca <https://mariatta.ca>`_
    * Works as a `Software Engineer <https://www.linkedin.com/in/mariatta/>`_
      in Vancouver, helps organize `Vancouver PyLadies
      <https://www.meetup.com/PyLadies-Vancouver/>`_ meetup on the side, and
-     sometimes `speaks <http://mariatta.ca/pages/talk-chronology.html#talk-chronology>`_
+     sometimes `speaks <https://mariatta.ca/pages/talk-chronology.html#talk-chronology>`_
      at conferences.
    * Email address: mariatta@python.org
-   * `Sponsor Mariatta on GitHub <https://github.com/users/Mariatta/sponsorship>`_
+   * `Sponsor Mariatta on GitHub <https://github.com/sponsors/Mariatta>`_
    * `Patreon <https://www.patreon.com/Mariatta>`_
 
-   Support Mariatta by `becoming a sponsor <https://github.com/users/Mariatta/sponsorship>`_,
+   Support Mariatta by `becoming a sponsor <https://github.com/sponsors/Mariatta>`_,
    sending her a `happiness packet <https://www.happinesspackets.io/send/>`_,
    or `paypal <https://www.paypal.me/mariatta>`_.
 
@@ -155,7 +155,7 @@ participating in the CPython core development process:
 
    * Personal site: `bitdance.com <http://www.bitdance.com>`_
    * Available for `Python and Internet Services Consulting
-     and Python contract programming <http://www.murrayandwalker.com/>`_
+     and Python contract programming <https://www.murrayandwalker.com/>`_
 
    David has been involved in the Internet since the days when the old IBM
    BITNET and the ARPANet got cross connected, and in Python programming since
@@ -171,7 +171,7 @@ participating in the CPython core development process:
 
    David currently does both proprietary and open source development work,
    primarily in Python, through the company in which he is a partner, `Murray &
-   Walker, Inc <http://www.murrayandwalker.com>`_.  He has done contract work
+   Walker, Inc <https://www.murrayandwalker.com>`_.  He has done contract work
    focused specifically on CPython development both through the PSF (the
    kickstart of the email unicode API development) and directly funded by
    interested corporations (additional development work on email funded by
@@ -229,11 +229,11 @@ participating in the CPython core development process:
    Gaithersburg, MD in 1994, where he met Guido and several other early Python
    adopters.  Barry subsequently worked with Guido for 8 years while at `CNRI
    <http://cnri.reston.va.us/>`_.  From 2007 until 2017, Barry worked for
-   `Canonical <https://www.canonical.com/>`_, corporate sponsor of `Ubuntu
-   <https://www.ubuntu.com/>`_ Linux, primarily on the Python ecosystem, and
+   `Canonical <https://canonical.com/>`_, corporate sponsor of `Ubuntu
+   <https://ubuntu.com/>`_ Linux, primarily on the Python ecosystem, and
    is both an Ubuntu and a `Debian <http://www.debian.org/>`_ uploading
    developer.  Barry has served as Python's postmaster, webmaster, release
-   manager, Language Summit co-chair, `Jython <http://www.jython.org/>`_
+   manager, Language Summit co-chair, `Jython <https://www.jython.org/>`_
    project leader, `GNU Mailman <http://www.list.org/>`_ project leader, and
    probably lots of other things he shouldn't admit to.
 
@@ -252,7 +252,7 @@ participating in the CPython core development process:
    developers on the project for 6 years.  After that he started the Python
    Tools for Visual Studio project focusing on providing advanced code completion
    and debugging features for Python.  Today he works on
-   `Azure Notebooks <http://notebooks.azure.com/>`_ bringing the Python based
+   `Azure Notebooks <https://notebooks.azure.com/>`_ bringing the Python based
    Jupyter notebook as a hosted on-line service.
 
 .. topic:: Carol Willing (United States)
@@ -324,8 +324,8 @@ time contributing to CPython development.
 .. _issue metrics: https://bugs.python.org/issue?@template=stats
 .. _OpenHub: https://www.openhub.net/p/python/contributors
 .. _core mentorship program: https://www.python.org/dev/core-mentorship/
-.. _internships: https://www.gnome.org/outreachy/
-.. _Summer of Code: https://wiki.python.org/moin/SummerOfCode/2016
+.. _internships:  https://www.outreachy.org/
+.. _Summer of Code: https://python-gsoc.org/
 
 
 Limitations on scope
