@@ -212,7 +212,7 @@ participating in the CPython core development process:
 .. topic:: Kushal Das (India)
 
    * `Personal website <https://kushaldas.in>`__
-   * `Freedom of the Press Foundation <https://freedom.press>`__ (Staff)
+   * `Freedom of the Press Foundation <https://freedom.press/>`__ (Staff)
    * Python Software Foundation (Fellow)
 
 .. topic:: Barry Warsaw (United States)

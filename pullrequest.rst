@@ -344,7 +344,7 @@ This will get your changes up to GitHub.
 
 Now you want to
 `create a pull request from your fork
-<https://help.github.com/articles/https://docs.github.com/en/free-pro-team@latest/github/collaborating-with-issues-and-pull-requests/creating-a-pull-request-from-a-fork>`_.
+<https://docs.github.com/en/free-pro-team@latest/github/collaborating-with-issues-and-pull-requests/creating-a-pull-request-from-a-fork>`_.
 If this is a pull request in response to a pre-existing issue on the
 `issue tracker`_, please make sure to reference the issue number using
 ``bpo-NNNN`` in the pull request title or message.

@@ -1814,7 +1814,7 @@ style.
 
 
 
-.. _docutils: http://docutils.sourceforge.io/
+.. _docutils: https://docutils.sourceforge.io/
 .. _python-docs-theme: https://pypi.org/project/python-docs-theme/
 .. _Sphinx: http://sphinx-doc.org/
 .. _virtualenv: https://virtualenv.pypa.io/
