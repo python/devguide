@@ -201,10 +201,15 @@ the encodings module). Do not worry if you can't get this to work or it doesn't
 make any sense; it's entirely optional and only important for a small number of
 modules.
 
-If you still choose to try this, the first step is to build coverage.py's C
-extension code. Assuming that coverage.py's clone is at ``COVERAGEDIR`` and
-your clone of CPython is at ``CPYTHONDIR``, you execute the following in your
-coverage.py clone::
+If you still choose to try this, the first step is to make sure coverage.py's
+C extension is installed. You can check this with::
+
+  ./python COVERAGEDIR --version
+
+If it says 'without C extension', then you will need to build the C extension.
+Assuming that coverage.py's clone is at ``COVERAGEDIR`` and your clone of CPython 
+is at ``CPYTHONDIR``, you can do this by executing the following in your coverage.py 
+clone::
 
   CPPFLAGS="-I CPYTHONDIR -I CPYTHONDIR/Include" CPYTHONDIR/python setup.py build_ext --inplace
 
