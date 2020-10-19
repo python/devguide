@@ -1624,6 +1624,7 @@ in production, other are work in progress:
 +-----------------+-------------------------------+----------------------------+
 | Polish (pl)     |                               | `GitHub <github_pl_>`_     |
 |                 |                               | `Translations <tx_pl_>`_   |
+|                 |                               | `Doc <doc_pl_>`_           |
 +-----------------+-------------------------------+----------------------------+
 | Portuguese (pt) | Gustavo Toffo                 |                            |
 +-----------------+-------------------------------+----------------------------+
@@ -1657,6 +1658,7 @@ in production, other are work in progress:
 .. _chat_pt_br: https://t.me/pybr_i18n
 .. _doc_ja: https://docs.python.org/ja/
 .. _doc_ko: https://docs.python.org/ko/
+.. _doc_pl: https://docs.python.org/pl/
 .. _doc_zh_cn: https://docs.python.org/zh-cn/
 .. _doc_zh_tw: https://docs.python.org/zh-tw/
 .. _github_ar: https://github.com/Abdur-rahmaanJ/py-docs-ar
