@@ -364,9 +364,9 @@ Changing this number will lead to all .pyc files with the old ``MAGIC_NUMBER``
 to be recompiled by the interpreter on import.  Whenever ``MAGIC_NUMBER`` is
 changed, the ranges in the ``magic_values`` array in :file:`PC/launcher.c`
 must also be updated.  Changes to :file:`Lib/importlib/_bootstrap_external.py`
-will take effect only after running ``make regen-importlib``. Running this 
-command before adding the new bytecode target to :file:`Python/ceval.c` will 
-result in an error. You should only run ``make regen-importlib`` after the new 
+will take effect only after running ``make regen-importlib``. Running this
+command before adding the new bytecode target to :file:`Python/ceval.c` will
+result in an error. You should only run ``make regen-importlib`` after the new
 bytecode target has been added.
 
 Finally, you need to introduce the use of the new bytecode.  Altering

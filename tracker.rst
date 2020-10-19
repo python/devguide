@@ -8,7 +8,7 @@ Using the Issue Tracker
 =======================
 
 If you think you have found a bug in Python, you can report it to the
-`issue tracker`_. The `issue tracker`_ is also commonly referred to as 
+`issue tracker`_. The `issue tracker`_ is also commonly referred to as
 `bugs.python.org` and `bpo`.  Documentation bugs can also be reported there.
 
 You can report bugs with the issue tracker itself to the `meta tracker`_.
@@ -27,10 +27,10 @@ already been reported.  Checking if the problem is an existing issue will:
   the next release
 * save time for you and the developers
 * help you learn what needs to be done to fix it
-* determine if additional information, such as how to replicate the issue, 
+* determine if additional information, such as how to replicate the issue,
   is needed
 
-To do see if the issue already exists, search the bug database using the 
+To do see if the issue already exists, search the bug database using the
 search box on the top of the issue tracker page. An `advanced search`_ is also
 available by clicking on "Search" in the sidebar.
 
@@ -59,7 +59,7 @@ in the :ref:`triaging` page.  This is a short summary:
   you can select these too; otherwise, leave them blank;
 * last but not least, you have to describe the problem in detail, including
   what you expected to happen, what did happen, and how to replicate the
-  problem in the **Comment** field. Be sure to include whether any extension 
+  problem in the **Comment** field. Be sure to include whether any extension
   modules were involved, and what hardware and software platform you were using
   (including version information as appropriate).
 
@@ -79,7 +79,7 @@ As humans, we will have differences of opinions from time to time. First and
 foremost, please be respectful that care, thought, and volunteer time went into
 the resolution.
 
-With this in mind, take some time to consider any comments made in association 
+With this in mind, take some time to consider any comments made in association
 with the resolution of the issue. On reflection, the resolution steps may seem
 more reasonable than you initially thought.
 
@@ -91,7 +91,7 @@ win any converts.
 As a reminder, issues closed by a core developer have already been carefully
 considered. Please do not reopen a closed issue.
 
-.. _python-dev: https://mail.python.org/mailman/listinfo/python-dev
+.. _python-dev: https://mail.python.org/mailman3/lists/python-dev.python.org/
 
 
 .. _helptriage:
@@ -122,8 +122,8 @@ For bugs, an issue needs to:
 These are things you can help with once you have experience developing for
 Python:
 
-* try reproducing the bug: For instance, if a bug is not clearly explained 
-  enough for you to reproduce it then there is a good chance a core developer 
+* try reproducing the bug: For instance, if a bug is not clearly explained
+  enough for you to reproduce it then there is a good chance a core developer
   won't be able to either.
 * see if the issue happens on a different Python version: It is always helpful
   to know if a bug not only affects the in-development version of Python, but
@@ -160,12 +160,12 @@ Finding an Issue You Can Help With
 
 If you want to help triage issues, you might also want to search for issues
 in modules which you have a working knowledge.  Search for the name of a module
-in the issue tracker or use the `advanced search`_ to search for specific 
+in the issue tracker or use the `advanced search`_ to search for specific
 components (e.g. "Windows" if you are a Windows developer, "Extension Modules"
 if you are familiar with C, etc.). Finally you can use the "Random issue" link
-in the sidebar to pick random issues until you find an issue that you like.  
+in the sidebar to pick random issues until you find an issue that you like.
 You may find old issues that can be closed, either because they
-are no longer valid or they have a patch that is ready to be committed, 
+are no longer valid or they have a patch that is ready to be committed,
 but no one has had the time to do so.
 
 In the sidebar you can also find links to summaries for easy issues and

@@ -45,7 +45,7 @@ There are three ways of visualizing recent build results:
 
       bbreport.py -q 3.x
 
-* The buildbot "console" interface at http://buildbot.python.org/all/#/console
+* The buildbot "console" interface at https://buildbot.python.org/all/#/console
   This works best on a wide, high resolution
   monitor.  Clicking on the colored circles will allow you to open a new page
   containing whatever information about that particular build is of interest to
@@ -209,7 +209,7 @@ Custom builders
 When working on a platform-specific issue, you may want to test your changes on
 the buildbot fleet rather than just on Travis and AppVeyor.  To do so, you can
 make use of the `custom builders
-<http://buildbot.python.org/all/#/builders?tags=custom.unstable&tags=custom.stable>`_.
+<https://buildbot.python.org/all/#/builders?tags=custom.unstable&tags=custom.stable>`_.
 These builders track the ``buildbot-custom`` short-lived branch of the
 ``python/cpython`` repository, which is only accessible to core developers.
 

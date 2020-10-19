@@ -34,7 +34,7 @@ itself. git is easily available for all common operating systems.
 - **Install**
 
   As the CPython repo is hosted on GitHub, please refer to either the
-  `GitHub setup instructions <https://help.github.com/articles/set-up-git/>`_
+  `GitHub setup instructions <https://docs.github.com/en/free-pro-team@latest/github/getting-started-with-github/set-up-git>`_
   or the `git project instructions <https://git-scm.com>`_ for step-by-step
   installation directions. You may also want to consider a graphical client
   such as `TortoiseGit <https://tortoisegit.org/>`_ or
@@ -43,7 +43,7 @@ itself. git is easily available for all common operating systems.
 - **Configure**
 
   Configure :ref:`your name and email <set-up-name-email>` and create
-  `an SSH key <https://help.github.com/articles/adding-a-new-ssh-key-to-your-github-account/>`_
+  `an SSH key <permanently to https://docs.github.com/en/free-pro-team@latest/github/authenticating-to-github/adding-a-new-ssh-key-to-your-github-account>`_
   as this will allow you to interact with GitHub without typing a username
   and password each time you execute a command, such as ``git pull``,
   ``git push``, or ``git fetch``.  On Windows, you should also
@@ -279,7 +279,7 @@ to build.
    not be able to find all the project's files and will fail the build.
 
 .. _this documentation: https://cpython-core-tutorial.readthedocs.io/en/latest/build_cpython_windows.html
-.. _Visual Studio 2017: https://www.visualstudio.com/
+.. _Visual Studio 2017: permanently to https://visualstudio.microsoft.com/
 .. _readme: https://github.com/python/cpython/blob/master/PCbuild/readme.txt
 .. _PCbuild directory: https://github.com/python/cpython/tree/2.7/PCbuild/
 .. _2.7 readme: https://github.com/python/cpython/blob/2.7/PCbuild/readme.txt
@@ -423,7 +423,7 @@ Explaining how to build optional dependencies on a UNIX based system without
 root access is beyond the scope of this guide.
 
 .. _clang: https://clang.llvm.org/
-.. _ccache: https://ccache.samba.org/
+.. _ccache: https://ccache.dev/
 
 .. note:: While you need a C compiler to build CPython, you don't need any
    knowledge of the C language to contribute!  Vast areas of CPython are
@@ -551,4 +551,3 @@ every rule.
 
 ``Tools``
      Various tools that are (or have been) used to maintain Python.
-

@@ -52,7 +52,7 @@ General Python questions should go to `python-list`_ or `tutor`_
 or similar resources, such as StackOverflow_ or the ``#python`` IRC channel
 on Freenode_.
 
-`Core-Workflow <https://mail.python.org/mm3/mailman3/lists/core-workflow.python.org/>`_
+`Core-Workflow <https://mail.python.org/mailman3/lists/core-workflow.python.org/>`_
 mailing list is the place to discuss and work on improvements to the CPython
 core development workflow.
 
@@ -65,10 +65,10 @@ RSS feed readers.
 .. _new-bugs-announce: https://mail.python.org/mailman/listinfo/new-bugs-announce
 .. _python-bugs-list: https://mail.python.org/mailman/listinfo/python-bugs-list
 .. _python-checkins: https://mail.python.org/mailman/listinfo/python-checkins
-.. _python-committers: https://mail.python.org/mailman/listinfo/python-committers
-.. _python-dev: https://mail.python.org/mailman/listinfo/python-dev
+.. _python-committers: https://mail.python.org/mailman3/lists/python-committers.python.org/
+.. _python-dev: https://mail.python.org/mailman3/lists/python-dev.python.org/
 .. _python-help: https://mail.python.org/mailman/listinfo/python-help
-.. _python-ideas: https://mail.python.org/mailman/listinfo/python-ideas
+.. _python-ideas: permanently to https://mail.python.org/mailman3/lists/python-ideas.python.org/
 .. _python-list: https://mail.python.org/mailman/listinfo/python-list
 .. _tutor: https://mail.python.org/mailman/listinfo/tutor
 .. _StackOverflow: https://stackoverflow.com/
@@ -96,7 +96,7 @@ Blogs
 
 Several core developers are active bloggers and discuss Python's development
 that way. You can find their blogs (and various other developers who use Python)
-at http://planetpython.org/.
+at https://planetpython.org/.
 
 
 Standards of behaviour in these communication channels
@@ -130,4 +130,4 @@ source of benchmarks for all Python implementations.
 .. _Python Core Workflow: https://github.com/python/core-workflow
 .. _cherry_picker: https://pypi.org/project/cherry-picker/
 .. _blurb: https://pypi.org/project/blurb
-.. _Performance Benchmark: https://github.com/python/performance
+.. _Performance Benchmark: https://github.com/python/pyperformance

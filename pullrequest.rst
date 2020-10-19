@@ -57,8 +57,8 @@ Here is a quick overview of how you can contribute to CPython:
 .. _create an issue: https://bugs.python.org/
 .. _CPython: https://github.com/python/cpython
 .. _use HTTPS: https://help.github.com/articles/which-remote-url-should-i-use/
-.. _Create Pull Request: https://help.github.com/articles/creating-a-pull-request/
-.. _comments on your Pull Request: https://help.github.com/articles/commenting-on-a-pull-request/
+.. _Create Pull Request: https://docs.github.com/en/free-pro-team@latest/github/collaborating-with-issues-and-pull-requests/creating-a-pull-request
+.. _comments on your Pull Request: https://docs.github.com/en/free-pro-team@latest/github/collaborating-with-issues-and-pull-requests/commenting-on-a-pull-request
 
 
 .. _pullrequest-steps:
@@ -344,7 +344,7 @@ This will get your changes up to GitHub.
 
 Now you want to
 `create a pull request from your fork
-<https://help.github.com/articles/creating-a-pull-request-from-a-fork/>`_.
+<https://docs.github.com/en/free-pro-team@latest/github/collaborating-with-issues-and-pull-requests/creating-a-pull-request-from-a-fork>`_.
 If this is a pull request in response to a pre-existing issue on the
 `issue tracker`_, please make sure to reference the issue number using
 ``bpo-NNNN`` in the pull request title or message.
@@ -381,7 +381,7 @@ existing patch. In this case, both parties should sign the :ref:`CLA <cla>`.
 When creating a pull request based on another person's patch, provide
 attribution to the original patch author by adding "Co-authored-by:
 Author Name <email_address> ." to the pull request description and commit message.
-See `the GitHub article <https://help.github.com/articles/creating-a-commit-with-multiple-authors/>`_
+See `the GitHub article <https://docs.github.com/en/free-pro-team@latest/github/committing-changes-to-your-project/creating-a-commit-with-multiple-authors>`_
 on how to properly add the co-author info.
 
 See also :ref:`Applying a Patch from Mercurial to Git <git_from_mercurial>`.
@@ -456,7 +456,7 @@ Leaving a Pull Request Review on GitHub
 ---------------------------------------
 
 When you review a pull request, you should provide additional details and context
-of your review process. 
+of your review process.
 
 Instead of simply "approving" the pull request, leave comments.  For example:
 
