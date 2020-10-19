@@ -84,14 +84,25 @@ Install Coverage
 By default, pip will not install into the in-development version of Python you
 just built, and this built version of Python will not see packages installed
 into your default version of Python. One option is to use a virtual environment
-to install coverage::
+to install coverage.
+
+On Unix run::
 
     ./python -m venv ../cpython-venv
     source ../cpython-venv/bin/activate
     pip install coverage
 
-On :ref:`most <mac-python.exe>` Mac OS X systems, replace :file:`./python`
-with :file:`./python.exe`.  On Windows, use :file:`python.bat`.
+On :ref:`most <mac-python.exe>` Mac OS X systems run::
+
+    ./python.exe -m venv ../cpython-venv
+    source ../cpython-venv/bin/activate
+    pip install coverage
+
+On Windows run::
+
+    python.bat -m venv ..\\cpython-venv
+    ..\\cpython-venv\\Scripts\\activate.bat
+    pip install coverage
 
 You can now use python without the ./ for the rest of these instructions, as
 long as your venv is activated. For more info on venv see `Virtual Environment
