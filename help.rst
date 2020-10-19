@@ -12,6 +12,30 @@ Should you require help, there are a :ref:`variety of options available
 usage then please check the rest of this guide first as it should answer your
 question.
 
+Discourse
+---------
+
+Python has a hosted `Discourse`_ instance. Be sure to visit the related Core
+categories, such as
+`Core Development <https://discuss.python.org/c/core-dev/23>`_ and
+`Core Workflow <https://discuss.python.org/c/core-workflow/8>`_.
+
+.. _Discourse: https://discuss.python.org/
+
+Mailing Lists
+-------------
+
+Further options for seeking assistance include the `python-ideas`_ and
+`python-dev`_ mailing lists. Python-ideas contains discussion of speculative
+Python language ideas for possible inclusion into the language. If an idea
+gains traction it can then be discussed and honed to the point of becoming a
+solid proposal and presented on python-dev.  Python-dev contains discussion
+of current Python design issues, release mechanics, and maintenance of
+existing releases.  These mailing lists are for questions involving the
+development *of* Python, **not** for development *with* Python.
+
+.. _python-ideas: https://mail.python.org/mailman/listinfo/python-ideas
+.. _python-dev: https://mail.python.org/mailman/listinfo/python-dev
 
 Ask #python-dev
 ---------------
@@ -19,12 +43,16 @@ Ask #python-dev
 If you are comfortable with IRC you can try asking on ``#python-dev`` (on
 the `freenode`_ network). Typically there are a number of experienced
 developers, ranging from triagers to core developers, who can answer
-questions about developing for Python.  Just remember that ``#python-dev``
-is for questions involving the development *of* Python whereas ``#python``
-is for questions concerning development *with* Python.
+questions about developing for Python.  As with the mailing lists,
+``#python-dev`` is for questions involving the development *of* Python
+whereas ``#python`` is for questions concerning development *with* Python.
+
+.. note::
+
+  You may not be able to access the history of this channel, so it cannot
+  be used as a "knowledge base" of sorts.
 
 .. _freenode: https://freenode.net/
-
 
 Zulip
 -----
@@ -33,6 +61,11 @@ An alternative to IRC is our own `Zulip`_ instance.  There are different streams
 for asking help with core development, as well as core developers' office
 hour stream. It is preferred that you ask questions here first or schedule
 an office hour, before posting to python-dev mailing list or filing bugs.
+
+.. warning::
+
+  This is no longer actively monitored by core devs. Consider asking your questions
+  on Discourse or on the `python-dev`_ mailing list.
 
 .. _Zulip: https://python.zulipchat.com
 
@@ -76,23 +109,6 @@ during office hours.
 
 .. _Python's Zulip Chat: https://python.zulipchat.com/#narrow/stream/116503-core/topic/Office.20Hour
 .. _Mariatta's twitter: https://twitter.com/mariatta
-
-
-Mailing Lists
--------------
-
-Further options for seeking assistance include the `python-ideas`_ and
-`python-dev`_ mailing lists. Python-ideas contains discussion of speculative
-Python language ideas for possible inclusion into the language. If an idea
-gains traction it can then be discussed and honed to the point of becoming a
-solid proposal and presented on python-dev.  Python-dev contains discussion
-of current Python design issues, release mechanics, and maintenance of
-existing releases.  As with ``#python-dev``, these mailing lists are for
-questions involving the development *of* Python, **not** for development
-*with* Python.
-
-.. _python-ideas: https://mail.python.org/mailman/listinfo/python-ideas
-.. _python-dev: https://mail.python.org/mailman/listinfo/python-dev
 
 
 File a Bug
