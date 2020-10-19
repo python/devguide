@@ -1622,7 +1622,7 @@ in production, other are work in progress:
 +-----------------+-------------------------------+----------------------------+
 | Lithuanian (lt) |                               | `mail <mail_lt_>`_         |
 +-----------------+-------------------------------+----------------------------+
-| Polish (pl)     |                               | `mail <mail_pl_>`_         |
+| Polish (pl)     |                               | `GitHub <github_pl_>`_     |
 |                 |                               | `Translations <tx_pl_>`_   |
 +-----------------+-------------------------------+----------------------------+
 | Portuguese (pt) | Gustavo Toffo                 |                            |
@@ -1668,6 +1668,7 @@ in production, other are work in progress:
 .. _github_id: https://github.com/python/python-docs-id
 .. _github_ja: https://github.com/python/python-docs-ja
 .. _github_ko: https://github.com/python/python-docs-ko
+.. _github_pl: https://github.com/python/python-docs-pl
 .. _github_pt_br: https://github.com/python/python-docs-pt-br
 .. _github_tr: https://github.com/alaeddingurel/python-docs-tr
 .. _github_zh_cn: https://github.com/python/python-docs-zh-cn
@@ -1675,7 +1676,6 @@ in production, other are work in progress:
 .. _list_hu: https://mail.python.org/pipermail/python-hu
 .. _mail_it: https://mail.python.org/pipermail/doc-sig/2019-April/004114.html
 .. _mail_lt: https://mail.python.org/pipermail/doc-sig/2019-July/004138.html
-.. _mail_pl: https://mail.python.org/pipermail/doc-sig/2019-April/004106.html
 .. _mail_ru: https://mail.python.org/pipermail/doc-sig/2019-May/004131.html
 .. _tx_pl: https://www.transifex.com/python-doc/python-newest/language/pl/
 .. _tx_zh_cn: https://www.transifex.com/python-doc/python-newest/language/
