@@ -1622,8 +1622,8 @@ in production, other are work in progress:
 +-----------------+-------------------------------+----------------------------+
 | Lithuanian (lt) |                               | `mail <mail_lt_>`_         |
 +-----------------+-------------------------------+----------------------------+
-| Polish (pl)     |                               | `Translations <tx_pl_>`_   |
-|                 |                               | `GitHub <github_pl_>`_     |
+| Polish (pl)     |                               | `GitHub <github_pl_>`_     |
+|                 |                               | `Translations <tx_pl_>`_   |
 |                 |                               | `Doc <doc_pl_>`_           |
 +-----------------+-------------------------------+----------------------------+
 | Portuguese (pt) | Gustavo Toffo                 |                            |
@@ -1663,7 +1663,7 @@ in production, other are work in progress:
 .. _doc_zh_tw: https://docs.python.org/zh-tw/
 .. _github_ar: https://github.com/Abdur-rahmaanJ/py-docs-ar
 .. _github_bn_in: https://github.com/python/python-docs-bn-in
-.. _github_es: https://github.com/PyCampES/python-docs-es
+.. _github_es: https://github.com/python/python-docs-es
 .. _github_fr: https://github.com/python/python-docs-fr
 .. _github_hi_in: https://github.com/CuriousLearner/python-docs-hi-in
 .. _github_hu: https://github.com/python/python-docs-hu
