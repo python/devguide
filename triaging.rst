@@ -93,7 +93,7 @@ Labels for PRs include:
 
 DO-NOT-MERGE
     Used on PRs to prevent miss-islington from being able
-    to automatically merge to pull request. This label is appropriate when a PR
+    to automatically merge the pull request. This label is appropriate when a PR
     has a non-trivial conflict with the branch it is being merged into.
 
 expert-asyncio
