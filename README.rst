@@ -9,7 +9,7 @@ The CPython Developer's Guide
 
 .. |Discourse| image:: https://img.shields.io/badge/discourse-join_chat-brightgreen.svg
    :alt: Python Discourse chat
-   :target: https://pypi.org/project/pydiscourse/
+   :target: https://discuss.python.org/
 
 .. |Codestyle| image:: https://img.shields.io/badge/code%20style-black-000000.svg
    :target: https://github.com/psf/black
@@ -29,4 +29,3 @@ supports the ``venv`` module, because the ``make html`` command will create a
 virtual environment and will install the ``Sphinx`` package::
 
     make html
-
