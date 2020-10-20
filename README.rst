@@ -1,18 +1,18 @@
 The CPython Developer's Guide
 =============================
 
-|ReadTheDocs| |Zulip| |Codestyle|
+|ReadTheDocs| |Discourse| |Codestyle|
 
 .. |ReadTheDocs| image:: https://readthedocs.org/projects/cpython-devguide/badge/
    :target: https://devguide.python.org
    :alt: Documentation Status
 
-.. |Zulip| image:: https://img.shields.io/badge/zulip-join_chat-brightgreen.svg
-   :alt: Python Zulip chat
-   :target: https://python.zulipchat.com
+.. |Discourse| image:: https://img.shields.io/badge/discourse-join_chat-brightgreen.svg
+   :alt: Python Discourse chat
+   :target: https://pypi.org/project/pydiscourse/
 
 .. |Codestyle| image:: https://img.shields.io/badge/code%20style-black-000000.svg
-   :target: https://github.com/ambv/black
+   :target: https://github.com/psf/black
    :alt: Code style is black
 
 
