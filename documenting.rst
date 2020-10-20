@@ -1790,7 +1790,7 @@ Ask on doc-sig, or better, make a PR on the `devguide
 I have a translation, but not on git, what should I do?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Ask for help on the doc-sig mailing list and our python console, git
+Ask for help on the doc-sig mailing list
 and bash command line interface combined will help you create an appropriate repository. 
 Using a tool like transifex can help keeping them in sync.
 
