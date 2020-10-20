@@ -1792,7 +1792,7 @@ I have a translation, but not on git, what should I do?
 
 Ask for help on the doc-sig mailing list
 about creating an appropriate repository. 
-Using a tool like transifex can help keeping them in sync.
+Using a tool like transifex can help keep translations in sync.
 
 
 My git hierarchy does not match yours, can I keep it?
