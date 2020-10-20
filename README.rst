@@ -1,7 +1,7 @@
 The CPython Developer's Guide
 =============================
 
-|ReadTheDocs| |Zulip| |Codestyle|
+|ReadTheDocs| |Discourse| |Codestyle|
 
 .. |ReadTheDocs| image:: https://readthedocs.org/projects/cpython-devguide/badge/
    :target: https://devguide.python.org
