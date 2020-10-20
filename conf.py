@@ -237,7 +237,8 @@ linkcheck_anchors_ignore = [
     '\/.*',
 ]
 
+
 # Use our custom CSS stylesheet to differentiate us from the official python
 # docs.
 def setup(app):
-    app.add_stylesheet('custom.css')
+    app.add_css_file('custom.css')
