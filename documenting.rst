@@ -1791,7 +1791,7 @@ I have a translation, but not on git, what should I do?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Ask for help on the doc-sig mailing list
-and bash command line interface combined will help you create an appropriate repository. 
+about creating an appropriate repository. 
 Using a tool like transifex can help keeping them in sync.
 
 
