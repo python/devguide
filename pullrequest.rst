@@ -238,6 +238,8 @@ The automated patch checklist runs through:
 * Has the documentation been updated?
 * Has the test suite been updated?
 * Has an entry under ``Misc/NEWS.d/next`` been added?
+  (using `blurb-it <https://blurb-it.herokuapp.com/>`_,
+   or the `blurb <https://pypi.org/project/blurb/>`_ tool)
 * Has ``Misc/ACKS`` been updated?
 * Has ``configure`` been regenerated, if necessary?
 * Has ``pyconfig.h.in`` been regenerated, if necessary?
