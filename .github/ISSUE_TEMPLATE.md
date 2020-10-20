@@ -5,7 +5,8 @@ about: Report an issue to help us improve the devguide
 
 <!--
 Note: This repo is for the Python devguide. If you are reporting an issue or
-enhancement for the standard library, then the CPython issue tracker is better
+enhancement for the Python language or CPython interpreter,
+then the CPython issue tracker is better
 suited for this report: https://bugs.python.org
 
 Before filing a new issue, please search the issues to see if there is already
