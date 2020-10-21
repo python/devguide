@@ -186,7 +186,7 @@ your pull request. But if you have systematic deviations from the style guides
 your pull request will be put on hold until you fix the formatting issues.
 
 .. note::
-   Pull requests do only code formatting are usually rejected. On the other
+   Pull requests with only code formatting changes are usually rejected. On the other
    hand, fixing typos and grammar errors in documents and docstrings are very
    welcome.
 
