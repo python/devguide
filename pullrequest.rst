@@ -187,7 +187,7 @@ your pull request will be put on hold until you fix the formatting issues.
 
 .. note::
    Pull requests with only code formatting changes are usually rejected. On the other
-   hand, fixing typos and grammar errors in documents and docstrings are very
+   hand, fixes for typos and grammar errors in documents and docstrings are
    welcome.
 
 Second, be aware of backwards-compatibility considerations. While the core
