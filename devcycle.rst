@@ -319,7 +319,7 @@ Current Administrators
 +-------------------+----------------------------------------------------------+-----------------+
 | Ned Deily         | Python 3.6 and 3.7 Release Manager                       | ned-deily       |
 +-------------------+----------------------------------------------------------+-----------------+
-| Lary Hastings     | Python 3.5 Release Manager                               | larryhastings   |
+| Lary Hastings     | Retired Release Manager (for Python 3.4 and 3.5)         | larryhastings   |
 +-------------------+----------------------------------------------------------+-----------------+
 | Berker Peksag     | Maintainer of bpo-linkify and cpython-emailer-webhook    | berkerpeksag    |
 +-------------------+----------------------------------------------------------+-----------------+
