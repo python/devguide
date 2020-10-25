@@ -1622,9 +1622,8 @@ in production, other are work in progress:
 +-----------------+-------------------------------+----------------------------+
 | Lithuanian (lt) |                               | `mail <mail_lt_>`_         |
 +-----------------+-------------------------------+----------------------------+
-| Polish (pl)     |                               | `GitHub <github_pl_>`_     |
+| Polish (pl)     |                               | `mail <mail_pl_>`_         |
 |                 |                               | `Translations <tx_pl_>`_   |
-|                 |                               | `Doc <doc_pl_>`_           |
 +-----------------+-------------------------------+----------------------------+
 | Portuguese (pt) | Gustavo Toffo                 |                            |
 +-----------------+-------------------------------+----------------------------+
@@ -1658,7 +1657,6 @@ in production, other are work in progress:
 .. _chat_pt_br: https://t.me/pybr_i18n
 .. _doc_ja: https://docs.python.org/ja/
 .. _doc_ko: https://docs.python.org/ko/
-.. _doc_pl: https://docs.python.org/pl/
 .. _doc_zh_cn: https://docs.python.org/zh-cn/
 .. _doc_zh_tw: https://docs.python.org/zh-tw/
 .. _github_ar: https://github.com/Abdur-rahmaanJ/py-docs-ar
@@ -1670,7 +1668,6 @@ in production, other are work in progress:
 .. _github_id: https://github.com/python/python-docs-id
 .. _github_ja: https://github.com/python/python-docs-ja
 .. _github_ko: https://github.com/python/python-docs-ko
-.. _github_pl: https://github.com/python/python-docs-pl
 .. _github_pt_br: https://github.com/python/python-docs-pt-br
 .. _github_tr: https://github.com/alaeddingurel/python-docs-tr
 .. _github_zh_cn: https://github.com/python/python-docs-zh-cn
@@ -1678,6 +1675,7 @@ in production, other are work in progress:
 .. _list_hu: https://mail.python.org/pipermail/python-hu
 .. _mail_it: https://mail.python.org/pipermail/doc-sig/2019-April/004114.html
 .. _mail_lt: https://mail.python.org/pipermail/doc-sig/2019-July/004138.html
+.. _mail_pl: https://mail.python.org/pipermail/doc-sig/2019-April/004106.html
 .. _mail_ru: https://mail.python.org/pipermail/doc-sig/2019-May/004131.html
 .. _tx_pl: https://www.transifex.com/python-doc/python-newest/language/pl/
 .. _tx_zh_cn: https://www.transifex.com/python-doc/python-newest/language/
@@ -1792,10 +1790,9 @@ Ask on doc-sig, or better, make a PR on the `devguide
 I have a translation, but not on git, what should I do?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Just ask for help on the doc-sig mailing list and our python-fu, git-fu
-and bash-fu combined will help you create an appropriate repository. If
-you use a tool like transifex don’t worry.  Keeping them in sync is not
-that hard.
+Ask for help on the doc-sig mailing list
+about creating an appropriate repository. 
+Using a tool like transifex can help keep translations in sync.
 
 
 My git hierarchy does not match yours, can I keep it?
