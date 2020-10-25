@@ -22,4 +22,4 @@ accept the membership which they can do by visiting
 https://github.com/python and clicking on the appropriate button that
 will be displayed to them in the upper part of the page.
 
-.. _Python core team: https://github.com/orgs/python/teams/python-core
+.. _Python core team: https://github.com/orgs/python/people?query=
