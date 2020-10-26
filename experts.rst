@@ -280,6 +280,7 @@ Tools
 Tool                Maintainers
 ==================  ===========
 Argument Clinic     larry
+PEG Generator       gvanrossum, pablogsal, lysnikolaou
 ==================  ===========
 
 
@@ -338,6 +339,7 @@ memoryview
 networking          giampaolo.rodola,
 object model        benjamin.peterson, twouters
 packaging           tarek, lemburg, alexis, eric.araujo, dstufft, paul.moore
+peg parser          gvanrossum, pablogsal, lysnikolaou
 performance         brett.cannon, vstinner, serhiy.storchaka, yselivanov, rhettinger, Mark.Shannon
 pip                 ncoghlan, dstufft, paul.moore, Marcus.Smith, pradyunsg
 py3 transition      benjamin.peterson
