@@ -49,6 +49,8 @@ Note: sometimes things mysteriously don't work.  Before giving up, try ``make cl
 * ``_Unparser`` in the :file:`Lib/ast.py` file may need changes to accommodate
   any modifications in the AST nodes.
 
+* :file:`Doc/library/ast.rst` may need to be updated to reflect changes to AST nodes.
+
 * Add some usage of your new syntax to ``test_grammar.py``.
 
 * Certain changes may require tweaks to the library module :mod:`pyclbr`.
