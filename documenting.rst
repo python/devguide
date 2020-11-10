@@ -1595,7 +1595,7 @@ in production, other are work in progress:
 +-----------------+-------------------------------+----------------------------+
 | Language        | Contact                       | Links                      |
 +=================+===============================+============================+
-| Arabic (ar)     | Abdur-Rahmaan Janhangeer      | `GitHub <github_ar_>`_     |
+| Arabic (ar)     | Ibrahim Elbouhissi            | `GitHub <github_ar_>`_     |
 +-----------------+-------------------------------+----------------------------+
 | Bengali as      | `Kushal Das <bpo_kushal_>`_   | `GitHub <github_bn_in_>`_  |
 | spoken in       |                               |                            |
