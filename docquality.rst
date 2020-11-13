@@ -118,7 +118,7 @@ To build the devguide, some additional dependencies are required (most
 importantly, `Sphinx`_), and the standard way to install dependencies in
 Python projects is to create a virtualenv, and then install dependencies from
 a ``requirements.txt`` file. For your convenience, this is all *automated for
-you*. To build the devguide on a Unix-like system use::
+you*. To build the devguide on a Unix-like system, from within the `Doc` directory, use::
 
    $ make html
 
