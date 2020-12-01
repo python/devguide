@@ -251,7 +251,7 @@ Scenario:
 
 Please do not try to solve this by creating a pull request from
 ``python:master`` to ``<username>:master`` as the authors of the patches will
-get notified (and you will end up embarrassed!).
+get notified unnecessarily.
 
 Solution::
 
