@@ -237,8 +237,8 @@ Creating a Pull Request
 
 6. Press the ``Create pull request`` button.
 
-Syncing with Upstream
----------------------
+Updating your CPython Fork
+--------------------------
 
 Scenario:
 
@@ -249,11 +249,18 @@ Scenario:
 - You now want to update your forked CPython repository to be the same as
   the upstream CPython repository.
 
+Please do not try to solve this by creating a pull request from
+``python:master`` to ``<username>:master`` as the authors of the patches will
+get notified unnecessarily.
+
 Solution::
 
    git checkout master
    git pull upstream master
    git push origin master
+
+.. note:: For the above commands to work, please follow the instructions found
+          in the :ref:`checkout` section
 
 Another scenario:
 
