@@ -336,7 +336,7 @@ Then you should update the packages index::
 
 Now you can install the build dependencies via ``apt``::
 
-   $ sudo apt-get build-dep python3.6
+   $ sudo apt-get build-dep python3
 
 If that package is not available for your system, try reducing the minor
 version until you find a package that is available.
