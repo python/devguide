@@ -1792,7 +1792,9 @@ Ask on doc-sig, or better, make a PR on the `devguide
 I have a translation, but not on git, what should I do?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-You can ask for help on the doc-sig mailing list, and the team will help you create an appropriate repository. You can still use tools like transifex, if you like.
+You can ask for help on the doc-sig mailing list, and the team will help you
+create an appropriate repository. You can still use tools like transifex,
+if you like.
 
 
 My git hierarchy does not match yours, can I keep it?
