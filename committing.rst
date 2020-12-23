@@ -5,212 +5,151 @@ Accepting Pull Requests
 
 .. highlight:: none
 
-This page is aimed to core developers, and covers the steps required to
-accept, merge, and possibly backport a pull request on the main repository.
+This page is a step-by-step guide for core developers who need to assess, 
+merge, and possibly backport a pull request on the main repository.
 
-Is the PR ready to be accepted?
--------------------------------
+Assessing a Pull Request
+--------------
 
-Before a PR is accepted, you must make sure it is ready to enter the public
-source tree.  Use the following as a checklist of what to check for before
-merging (details of various steps can be found later in this document):
+Before you can accept a PR, you need to make sure that it is ready to enter 
+the public source tree. Ask yourself the following questions:
 
-#. Has the submitter signed the CLA?
-   (delineated by a label on the pull request)
-#. Did the test suite pass? (delineated by a pull request check)
-#. Did code coverage increase or stay the same?
-   (delineated by a comment on the pull request)
-#. Are the changes acceptable?
-#. Was ``configure`` regenerated (if necessary)?
-#. Was ``pyconfig.h.in`` regenerated (if necessary)?
-#. Was the submitter added to ``Misc/ACKS`` (as appropriate)?
-#. Was an entry added under ``Misc/NEWS.d/next`` (as appropriate)?
-#. Was "What's New" updated (as appropriate)?
-#. Were appropriate labels added to signify necessary backporting of the
-   pull request?
-#. Was the pull request first made against the ``master`` branch?
+#. **Was the pull request first made against the ``master`` branch?** The 
+  only branch that receives new features is ``master``, the in-development 
+  branch.
 
-.. note::
-   If you want to share your work-in-progress code on a feature or bugfix,
-   either open a ``WIP``-prefixed PR, publish patches on the
-   `issue tracker`_ or create a public fork of the repository.
+#. **Are there comments on the PR?** Look for explanations about whether 
+  the code coverage increased or stayed the same.
 
-.. _issue tracker: https://bugs.python.org
+#. **Are the changes acceptable?** If you want to share your work-in-progress 
+  code on a feature or bugfix, then you can open a ``WIP``-prefixed PR, 
+  publish patches on the `issue tracker <https://bugs.python.org/>`_, or 
+  create a public fork of the repository.
 
+#. **Does the check on the PR show that the test suite passes?** :ref:`Run the 
+  entire test suite <runtests>` to ensure that it passes. Running a single 
+  test is not enough since the changes may have unforeseen effects on other 
+  tests or library modules.
 
-Does the test suite still pass?
-'''''''''''''''''''''''''''''''
+#. **Is the patch in a good state?** Check :ref:`patch` and
+  :ref:`helptriage` to review what is expected of a patch.
 
-You must :ref:`run the whole test suite <runtests>` to ensure that it
-passes before merging any code changes.
+#. **Do the changes meet the requirements of the patch checklist?** :ref:`Run 
+  patchcheck <patchcheck>` to perform a quick confidence check on the changes.
 
-.. note::
-   You really need to run the **entire** test suite.  Running a single test
-   is not enough as the changes may have unforeseen effects on other tests
-   or library modules.
+#. **Does the patch break backwards-compatibility without a strong 
+  reason?** :ref:`Run the entire test suite <runtests>` to
+  make sure that everything still passes. If there is a change to the
+  semantics, then there needs to be a strong reason, because it will 
+  cause some peoples' code to break. If you are unsure if the breakage
+  is worth it, then ask on python-dev.
+   
+#. **Were ``configure`` and ``pyconfig.h.in`` regenerated?** 
+  Regnenerate them if necessary.
 
-   Running the entire test suite doesn't guarantee that the changes
-   will pass the :ref:`continuous integration <buildbots>` tests, as those
-   will exercise more possibilities still (such as different platforms or
-   build options).  But it will at least catch non-build specific,
-   non-platform specific errors, therefore minimizing the chance for
-   breakage.
+#. **Were appropriate labels added to signify necessary backporting of the
+  pull request?** If it is determined that a pull request needs to be 
+  backported into one or more of the maintenance branches, then a core 
+  developer can apply the label ``needs backport to X.Y`` to the pull 
+  request. Once the backport pull request has been created, remove the
+  ``needs backport to X.Y`` label from the original pull request. (Only 
+  core developers and members of the `Python Triage Team`_ can apply 
+  labels to GitHub pull requests).
 
+#. **Does the PR have a label indicating that the submitter has signed the 
+  CLA?** Make sure that the contributor has signed a `Contributor Licensing 
+  Agreement`_ (CLA), unless their change has no possible intellectual 
+  property associated with it (e.g. fixing a spelling mistake in 
+  documentation). To check if a contributor’s CLA has been received, go 
+  to `Check Python CLA <https://check-python-cla.herokuapp.com/>`_ and 
+  put in their GitHub username. For further questions about the CLA 
+  process, write to: contributors@python.org.
 
-Patch checklist
-'''''''''''''''
+#. **Was the contributor added to ``Misc/ACKS``?** Make sure that 
+  the patch is attributed correctly with the contributor's name in 
+  ``Misc/ACKS``. If the patch has been heavily modified, then "Initial
+  patch by <x>" is an appropriate alternate wording. GitHub now 
+  supports `multiple authors 
+  <https://help.github.com/articles/creating-a-commit-with-multiple-authors/>`_
+  in a commit. Add ``Co-authored-by: name <name@example.com>`` at the end 
+  of the commit message.
 
-You should also :ref:`run patchcheck <patchcheck>` to perform a quick
-sanity check on the changes.
+#. **Were ``What's New in Python`` (in ``Doc/whatsnew/``) and 
+  ``Misc/NEWS.d/next``updated?** If the change is particularly interesting 
+  for end users (e.g. new features, significant improvements, or 
+  backwards-incompatible changes), then an entry in the 
+  ``What's New in Python`` document (in ``Doc/whatsnew/``) should be added
+  as well. Changes that affect only documentation generally do not require
+  a news entry. (See the following section for more information.)
 
-
-Handling Others' Code
----------------------
-
-As a core developer you will occasionally want to commit a patch created by
-someone else. When doing so you will want to make sure of some things.
-
-First, make sure the patch is in a good state. Both :ref:`patch` and
-:ref:`helptriage`
-explain what is to be expected of a patch. Typically patches that get cleared by
-triagers are good to go except maybe lacking ``Misc/ACKS`` and ``Misc/NEWS.d``
-entries (which a core developer should make sure are updated appropriately).
-
-Second, make sure the patch does not break backwards-compatibility without a
-good reason. This means :ref:`running the entire test suite <runtests>` to
-make sure everything still passes. It also means that if semantics do change
-there must be a good reason for the breakage of code the change will cause
-(and it **will** break someone's code). If you are unsure if the breakage
-is worth it, ask on python-dev.
-
-Third, ensure the patch is attributed correctly with the contributor's
-name in ``Misc/ACKS`` if they aren't already there (and didn't add themselves
-in their patch) and by mentioning "Patch by <x>" in the ``Misc/NEWS.d`` entry
-and the check-in message. If the patch has been heavily modified then "Initial
-patch by <x>" is an appropriate alternate wording.  GitHub now supports `multiple
-authors <https://help.github.com/articles/creating-a-commit-with-multiple-authors/>`_
-in a commit. Add ``Co-authored-by: name <name@example.com>`` at the end of the commit message.
-
-If you omit correct attribution in the initial check-in, then update ``ACKS``
-and ``NEWS.d`` in a subsequent check-in (don't worry about trying to fix the
-original check-in message in that case).
-
-Finally, make sure that the submitter of the
-patch has a CLA in place (indicated by an asterisk following their username
-in the `issue tracker`_ or by the "CLA Signed" label on the pull request).
-If the submitter lacks a signed CLA and the patch is non-trivial, direct them
-to the electronic `Contributor Licensing Agreement`_
-to ensure the PSF has the appropriate authorizations in place to relicense
-and redistribute their code.
-
-
-Contributor Licensing Agreements
---------------------------------
-
-Always get a `Contributor Licensing Agreement`_ (CLA) signed unless the
-change has no possible intellectual property associated with it (e.g. fixing
-a spelling mistake in documentation). Otherwise it is simply safer from a
-legal standpoint to require the contributor to sign the CLA.
-
-These days, the CLA can be signed electronically through the form linked
-above, and this process is strongly preferred to the old mechanism that
-involved sending a scanned copy of the signed paper form.
-
-As discussed on the PSF Contribution_ page, it is the CLA itself that gives
-the PSF the necessary relicensing rights to redistribute contributions under
-the Python license stack. This is an additional permission granted above and
-beyond the normal permissions provided by the chosen open source license.
-
-Some developers may object to the relicensing permissions granted to the PSF
-by the CLA. They're entirely within their rights to refuse to sign the CLA
-on that basis, but that refusal *does* mean we **can't accept their patches**
-for inclusion.
-
-
-.. _Contribution: https://www.python.org/psf/contrib/
-.. _Contributor Licensing Agreement:
-   https://www.python.org/psf/contrib/contrib-form/
-
-
-Checking if the CLA has been received
--------------------------------------
-
-To check if a contributor's CLA has been received, go to the following website::
-
-    https://check-python-cla.herokuapp.com/
-
-and put in their GitHub username.
-
-For further questions about the CLA process, write to: contributors@python.org.
-
-
-What's New and News Entries
----------------------------
+Updating News and What's New in Python
+--------------------------------------
 
 Almost all changes made to the code base deserve an entry in ``Misc/NEWS.d``.
 If the change is particularly interesting for end users (e.g. new features,
-significant improvements, or backwards-incompatible changes), an entry in
+significant improvements, or backwards-incompatible changes), then an entry in
 the ``What's New in Python`` document (in ``Doc/whatsnew/``) should be added
-as well.  Changes that affect documentation only generally do not require
+as well. Changes that affect documentation only generally do not require
 a news entry.
 
 There are two notable exceptions to this general principle, and they
-both relate to changes that *already* have a news entry, and have not yet
-been included in any formal release (including alpha and beta releases).
-These exceptions are:
+both relate to changes that:
 
-* If a change is reverted prior to release, then the corresponding entry
-  is simply removed. Otherwise, a new entry must be added noting that the
-  change has been reverted (e.g. when a feature is released in an alpha and
-  then cut prior to the first beta).
+* Already have a news entry
+* Have not yet been included in any formal release (including alpha 
+  and beta releases)
 
-* If a change is a fix (or other adjustment) to an earlier unreleased change
-  and the original news entry remains valid, then no additional entry is
-  needed.
+These are the two exceptions:
 
-Needing a What's New entry almost always means that a change is *not*
-suitable for inclusion in a maintenance release. A small number of
-exceptions have been made for Python 2.7 due to the long support period -
-when implemented, these changes *must* be noted in the "New Additions in
-Python 2.7 Maintenance Releases" section of the Python 2.7 What's New
-document.
+#. **If a change is reverted prior to release**, then the corresponding 
+  entry is simply removed. Otherwise, a new entry must be added noting 
+  that the change has been reverted (e.g. when a feature is released in 
+  an alpha and then cut prior to the first beta).
+
+#. **If a change is a fix (or other adjustment) to an earlier unreleased 
+  change and the original news entry remains valid**, then no additional 
+  entry is needed.
+
+If a change needs an entry in ``What's New in Python``, then it very 
+likely *not* suitable for including in a maintenance release.
 
 News entries go into the ``Misc/NEWS.d`` directory as individual files. The
 news entry can be created by using `blurb-it <https://blurb-it.herokuapp.com/>`_,
 or the `blurb <https://pypi.org/project/blurb/>`_ tool and its ``blurb add``
 command.
 
-If you are unable to use the tool you can create the news entry file manually.
-The ``Misc/NEWS.d`` directory contains a sub-directory named ``next`` which
-itself contains various sub-directories representing classifications for what
-was affected (e.g. ``Misc/NEWS.d/next/Library`` for changes relating to the
-standard library). The file name itself should be of the format
+If you are unable to use the tool, then you can create the news entry file 
+manually. The ``Misc/NEWS.d`` directory contains a sub-directory named 
+``next``, which contains various sub-directories representing classifications 
+for what was affected (e.g. ``Misc/NEWS.d/next/Library`` for changes relating 
+to the standard library). The file name itself should be in the format
 ``<datetime>.bpo-<issue-number>.<nonce>.rst``:
 
 * ``<datetime>`` is today's date joined with a ``-`` to the current
-  time, in ``YYYY-MM-DD-hh-mm-ss`` format, e.g. ``2017-05-27-16-46-23``
-* ``<issue-number>`` is the issue number the change is for, e.g. ``12345``
-  for ``bpo-12345``
-* ``<nonce>`` is some "unique" string to guarantee the file name is
-  unique across branches, e.g. ``Yl4gI2`` (typically six characters, but it can
-  be any length of letters and numbers, and its uniqueness can be satisfied by
-  typing random characters on your keyboard)
+  time, in ``YYYY-MM-DD-hh-mm-ss`` format (e.g. ``2017-05-27-16-46-23``).
+* ``<issue-number>`` is the issue number the change is for (e.g. ``12345``
+  for ``bpo-12345``).
+* ``<nonce>`` is a unique string to guarantee that the file name is
+  unique across branches (e.g. ``Yl4gI2``). (It is typically six characters
+  long, but it can be any length of letters and numbers. Its uniqueness 
+  can be satisfied by typing random characters on your keyboard.)
 
-So a file name may be
+As a result, a file name can look something like
 ``Misc/NEWS.d/next/Library/2017-05-27-16-46-23.bpo-12345.Yl4gI2.rst``.
 
 The contents of a news file should be valid reStructuredText. An 80 character
 column width should be used. There is no indentation or leading marker in the
 file (e.g. ``-``). There is also no need to start the entry with the issue
-number as it's part of the file name itself. You can use
-:ref:`inline markups <rest-inline-markup>` too. Example news entry::
+number since it is part of the file name. You can use
+:ref:`inline markups <rest-inline-markup>` too. Here is an example of a news 
+entry::
 
    Fix warning message when :func:`os.chdir` fails inside
    :func:`test.support.temp_cwd`. Patch by Chris Jerdonek.
 
-The inline Sphinx roles like ``:func:`` can be used to assist readers in finding
-more information. You can build html and verify that the link target is
-appropriate by using :ref:`make html <building-using-make>`.
+The inline Sphinx roles like ``:func:`` can be used help readers
+find more information. You can build html and verify that the 
+link target is appropriate by using :ref:`make html <building-using-make>`.
 
 While Sphinx roles can be beneficial to readers, they are not required.
 Inline ````code blocks```` can be used instead.
@@ -222,30 +161,28 @@ Working with Git_
 .. seealso::
    :ref:`gitbootcamp`
 
-As a core developer, the ability to push changes to the official Python
-repositories means you have to be more careful with your workflow:
+As a core developer, you have the ability to push changes to the official 
+Python repositories, so you need to be careful with your workflow:
 
-* You should not push new branches to the main repository.  You can still use
-  them in your fork that you use for development of patches; you can
-  also push these branches to a **separate** public repository that will be
-  dedicated to maintenance of the work before the work gets integrated in the
-  main repository.
+* **You should not push new branches to the main repository.**  You can 
+  still use them in the fork that you use for the development of patches. 
+  You can also push these branches to a **separate** public repository 
+  for maintenance work before it is integrated into the main repository.
 
-* You should not commit directly into the ``master`` branch, or any of the
-  maintenance branches (currently ``3.9`` and ``3.8``).
-  You should commit against your own feature branch, and create a pull request.
+* **You should not commit directly into the ``master`` branch, or any of the
+  maintenance branches (currently ``3.9`` and ``3.8``).** You should commit 
+  against your own feature branch, and then create a pull request.
 
-* For a small change, you can make a quick edit through the GitHub web UI.
+* **For a small change, you can make a quick edit through the GitHub web UI.**
   If you choose to use the web UI, be aware that GitHub will
-  create a new branch in the **main** CPython repo (not your fork). Please
-  delete this newly created branch after it has been merged into the
+  create a new branch in the **main** CPython repo rather than in your fork. 
+  Delete this newly created branch after it has been merged into the 
   ``master`` branch or any of the maintenance branches. To keep the CPython
-  repo tidy, please try to limit the existence of the new branch to, at most,
-  a few days.
+  repo tidy, remove the new branch within a few days.
 
-It is recommended to keep a fork of the main repository around, as it allows
-simple reversion of all local changes (even "committed" ones) if your local
-clone gets into a state you aren't happy with.
+Keep a fork of the main repository, since it will allow you to revert all 
+local changes (even committed ones) if you're not happy with your local 
+clone.
 
 
 .. _Git: https://git-scm.com/
@@ -253,65 +190,65 @@ clone gets into a state you aren't happy with.
 
 .. _committing-active-branches:
 
-Active branches
-'''''''''''''''
+Seeing active branches
+''''''''''''''''''''''
 
-If you do ``git branch`` you will see a :ref:`list of branches <branchstatus>`.
-``master`` is the in-development branch, and is the only branch that receives
-new features.  The other branches only receive bug fixes or security fixes.
+If you use ``git branch``, then you will see a :ref:`list of branches 
+<branchstatus>`. The only branch that receives new features is 
+``master``, the in-development branch. The other branches receive only
+bug fixes or security fixes.
 
 
 .. _branch-merge:
 
-Backporting Changes to an Older Version
+Backporting changes to an older version
 '''''''''''''''''''''''''''''''''''''''
 
-When it is determined that a pull request needs to be backported into one or
-more of the maintenance branches, a core developer can apply the labels
+If it is determined that a pull request needs to be backported into one or
+more of the maintenance branches, then a core developer can apply the label
 ``needs backport to X.Y`` to the pull request.
 
 After the pull request has been merged, miss-islington (bot) will first try to
-do the backport automatically. In case that miss-islington is unable to do it,
+do the backport automatically. If miss-islington is unable to do it,
 then the pull request author or the core developer who merged it should look into
 backporting it themselves, using the backport generated by cherry_picker.py_
 as a starting point.
 
-The commit hash can be obtained from the original pull request, or by using
-``git log`` on the ``master`` branch.
-To display the 10 most recent commit hashes and their first line of the commit
-message::
+You can get the commit hash from the original pull request, or you can use
+``git log`` on the ``master`` branch. To display the 10 most recent commit 
+hashes and their first line of the commit, use the following command::
 
    git log -10 --oneline
 
 .. _backport-pr-title:
 
 Prefix the backport pull request with the branch, and reference the pull request
-number from ``master``, for example::
+number from ``master``. Here is an example::
 
    [3.9] bpo-12345: Fix the Spam Module (GH-NNNN)
 
 Note that cherry_picker.py_ adds the branch prefix automatically.
 
 Once the backport pull request has been created, remove the
-``needs backport to X.Y`` label from the original pull request.  (Only Core
-Developers and members of the `Python Triage Team`_ can apply labels to GitHub
+``needs backport to X.Y`` label from the original pull request. (Only core
+developers and members of the `Python Triage Team`_ can apply labels to GitHub
 pull requests).
 
 .. _cherry_picker.py: https://github.com/python/cherry-picker
 .. _`Python Triage Team`: https://devguide.python.org/triaging/#python-triage-team
 
 
-Reverting a Merged Pull Request
+Reverting a merged pull request
 '''''''''''''''''''''''''''''''
 
 To revert a merged pull request, press the ``Revert`` button at the bottom of
-the pull request.  It will bring up the page to create a new pull request where
-the commit can be reverted.  It also creates a new branch on the main CPython
-repository.  Delete the branch once the pull request has been merged.
+the pull request. That will bring up the page to create a new pull request where
+the commit can be reverted. It also creates a new branch on the main CPython
+repository. Delete the branch once the pull request has been merged.
 
 Always include the reason for reverting the commit to help others understand
-why it was done.  The reason should be included as part of the commit message,
-for example::
+why it was done. The reason should be included as part of the commit message. 
+Here is an example::
 
    Revert bpo-NNNN: Fix Spam Module (GH-111)
 
