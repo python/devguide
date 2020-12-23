@@ -80,9 +80,9 @@ the public source tree. Ask yourself the following questions:
    backwards-incompatible changes), then an entry in the 
    ``What's New in Python`` document (in ``Doc/whatsnew/``) should be added
    as well. Changes that affect only documentation generally do not require
-   a news entry. (See the following section for more information.)
+   a NEWS entry. (See the following section for more information.)
 
-Updating News and What's New in Python
+Updating NEWS and What's New in Python
 --------------------------------------
 
 Almost all changes made to the code base deserve an entry in ``Misc/NEWS.d``.
@@ -90,12 +90,12 @@ If the change is particularly interesting for end users (e.g. new features,
 significant improvements, or backwards-incompatible changes), then an entry in
 the ``What's New in Python`` document (in ``Doc/whatsnew/``) should be added
 as well. Changes that affect documentation only generally do not require
-a news entry.
+a NEWS entry.
 
 There are two notable exceptions to this general principle, and they
 both relate to changes that:
 
-* Already have a news entry
+* Already have a NEWS entry
 * Have not yet been included in any formal release (including alpha 
   and beta releases)
 
@@ -107,18 +107,18 @@ These are the two exceptions:
    an alpha and then cut prior to the first beta).
 
 #. **If a change is a fix (or other adjustment) to an earlier unreleased 
-   change and the original news entry remains valid**, then no additional 
+   change and the original NEWS entry remains valid**, then no additional 
    entry is needed.
 
 If a change needs an entry in ``What's New in Python``, then it very 
 likely *not* suitable for including in a maintenance release.
 
-News entries go into the ``Misc/NEWS.d`` directory as individual files. The
-news entry can be created by using `blurb-it <https://blurb-it.herokuapp.com/>`_,
+NEWS entries go into the ``Misc/NEWS.d`` directory as individual files. The
+NEWS entry can be created by using `blurb-it <https://blurb-it.herokuapp.com/>`_,
 or the `blurb <https://pypi.org/project/blurb/>`_ tool and its ``blurb add``
 command.
 
-If you are unable to use the tool, then you can create the news entry file 
+If you are unable to use the tool, then you can create the NEWS entry file 
 manually. The ``Misc/NEWS.d`` directory contains a sub-directory named 
 ``next``, which contains various sub-directories representing classifications 
 for what was affected (e.g. ``Misc/NEWS.d/next/Library`` for changes relating 
