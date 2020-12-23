@@ -8,7 +8,7 @@ Accepting Pull Requests
 This page is a step-by-step guide for core developers who need to assess, 
 merge, and possibly backport a pull request on the main repository.
 
-Assessing a Pull Request
+Assessing a pull request
 --------------
 
 Before you can accept a PR, you need to make sure that it is ready to enter 
