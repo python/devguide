@@ -15,8 +15,8 @@ Before you can accept a PR, you need to make sure that it is ready to enter
 the public source tree. Ask yourself the following questions:
 
 #. **Was the pull request first made against the ``master`` branch?** The 
-  only branch that receives new features is ``master``, the in-development 
-  branch.
+   only branch that receives new features is ``master``, the in-development 
+   branch.
 #. **Are there comments on the PR?** Look for explanations about whether 
   the code coverage increased or stayed the same.
 
