@@ -137,11 +137,11 @@ to the standard library). The file name itself should be in the format
 As a result, a file name can look something like
 ``Misc/NEWS.d/next/Library/2017-05-27-16-46-23.bpo-12345.Yl4gI2.rst``.
 
-The contents of a news file should be valid reStructuredText. An 80 character
+The contents of a NEWS file should be valid reStructuredText. An 80 character
 column width should be used. There is no indentation or leading marker in the
 file (e.g. ``-``). There is also no need to start the entry with the issue
 number since it is part of the file name. You can use
-:ref:`inline markups <rest-inline-markup>` too. Here is an example of a news 
+:ref:`inline markups <rest-inline-markup>` too. Here is an example of a NEWS 
 entry::
 
    Fix warning message when :func:`os.chdir` fails inside
