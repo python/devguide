@@ -19,68 +19,68 @@ the public source tree. Ask yourself the following questions:
    branch.
    
 #. **Are there comments on the PR?** Look for explanations about whether 
-  the code coverage increased or stayed the same.
+   the code coverage increased or stayed the same.
 
 #. **Are the changes acceptable?** If you want to share your work-in-progress 
-  code on a feature or bugfix, then you can open a ``WIP``-prefixed PR, 
-  publish patches on the `issue tracker <https://bugs.python.org/>`_, or 
-  create a public fork of the repository.
+   code on a feature or bugfix, then you can open a ``WIP``-prefixed PR, 
+   publish patches on the `issue tracker <https://bugs.python.org/>`_, or 
+   create a public fork of the repository.
 
 #. **Does the check on the PR show that the test suite passes?** :ref:`Run the 
-  entire test suite <runtests>` to ensure that it passes. Running a single 
-  test is not enough since the changes may have unforeseen effects on other 
-  tests or library modules.
+   entire test suite <runtests>` to ensure that it passes. Running a single 
+   test is not enough since the changes may have unforeseen effects on other 
+   tests or library modules.
 
 #. **Is the patch in a good state?** Check :ref:`patch` and
-  :ref:`helptriage` to review what is expected of a patch.
+   :ref:`helptriage` to review what is expected of a patch.
 
 #. **Do the changes meet the requirements of the patch checklist?** :ref:`Run 
-  patchcheck <patchcheck>` to perform a quick confidence check on the changes.
+   patchcheck <patchcheck>` to perform a quick confidence check on the changes.
 
 #. **Does the patch break backwards-compatibility without a strong 
-  reason?** :ref:`Run the entire test suite <runtests>` to
-  make sure that everything still passes. If there is a change to the
-  semantics, then there needs to be a strong reason, because it will 
-  cause some peoples' code to break. If you are unsure if the breakage
-  is worth it, then ask on python-dev.
+   reason?** :ref:`Run the entire test suite <runtests>` to
+   make sure that everything still passes. If there is a change to the
+   semantics, then there needs to be a strong reason, because it will 
+   cause some peoples' code to break. If you are unsure if the breakage
+   is worth it, then ask on python-dev.
    
 #. **Were ``configure`` and ``pyconfig.h.in`` regenerated?** 
-  Regnenerate them if necessary.
+   Regnenerate them if necessary.
 
 #. **Were appropriate labels added to signify necessary backporting of the
-  pull request?** If it is determined that a pull request needs to be 
-  backported into one or more of the maintenance branches, then a core 
-  developer can apply the label ``needs backport to X.Y`` to the pull 
-  request. Once the backport pull request has been created, remove the
-  ``needs backport to X.Y`` label from the original pull request. (Only 
-  core developers and members of the `Python Triage Team`_ can apply 
-  labels to GitHub pull requests).
+   pull request?** If it is determined that a pull request needs to be 
+   backported into one or more of the maintenance branches, then a core 
+   developer can apply the label ``needs backport to X.Y`` to the pull 
+   request. Once the backport pull request has been created, remove the
+   ``needs backport to X.Y`` label from the original pull request. (Only 
+   core developers and members of the `Python Triage Team`_ can apply 
+   labels to GitHub pull requests).
 
 #. **Does the PR have a label indicating that the submitter has signed the 
-  CLA?** Make sure that the contributor has signed a `Contributor Licensing 
-  Agreement`_ (CLA), unless their change has no possible intellectual 
-  property associated with it (e.g. fixing a spelling mistake in 
-  documentation). To check if a contributor’s CLA has been received, go 
-  to `Check Python CLA <https://check-python-cla.herokuapp.com/>`_ and 
-  put in their GitHub username. For further questions about the CLA 
-  process, write to: contributors@python.org.
+   CLA?** Make sure that the contributor has signed a `Contributor Licensing 
+   Agreement`_ (CLA), unless their change has no possible intellectual 
+   property associated with it (e.g. fixing a spelling mistake in 
+   documentation). To check if a contributor’s CLA has been received, go 
+   to `Check Python CLA <https://check-python-cla.herokuapp.com/>`_ and 
+   put in their GitHub username. For further questions about the CLA 
+   process, write to: contributors@python.org.
 
 #. **Was the contributor added to ``Misc/ACKS``?** Make sure that 
-  the patch is attributed correctly with the contributor's name in 
-  ``Misc/ACKS``. If the patch has been heavily modified, then "Initial
-  patch by <x>" is an appropriate alternate wording. GitHub now 
-  supports `multiple authors 
-  <https://help.github.com/articles/creating-a-commit-with-multiple-authors/>`_
-  in a commit. Add ``Co-authored-by: name <name@example.com>`` at the end 
-  of the commit message.
+   the patch is attributed correctly with the contributor's name in 
+   ``Misc/ACKS``. If the patch has been heavily modified, then "Initial
+   patch by <x>" is an appropriate alternate wording. GitHub now 
+   supports `multiple authors 
+   <https://help.github.com/articles/creating-a-commit-with-multiple-authors/>`_
+   in a commit. Add ``Co-authored-by: name <name@example.com>`` at the end 
+   of the commit message.
 
 #. **Were ``What's New in Python`` (in ``Doc/whatsnew/``) and 
-  ``Misc/NEWS.d/next``updated?** If the change is particularly interesting 
-  for end users (e.g. new features, significant improvements, or 
-  backwards-incompatible changes), then an entry in the 
-  ``What's New in Python`` document (in ``Doc/whatsnew/``) should be added
-  as well. Changes that affect only documentation generally do not require
-  a news entry. (See the following section for more information.)
+   ``Misc/NEWS.d/next``updated?** If the change is particularly interesting 
+   for end users (e.g. new features, significant improvements, or 
+   backwards-incompatible changes), then an entry in the 
+   ``What's New in Python`` document (in ``Doc/whatsnew/``) should be added
+   as well. Changes that affect only documentation generally do not require
+   a news entry. (See the following section for more information.)
 
 Updating News and What's New in Python
 --------------------------------------
@@ -102,13 +102,13 @@ both relate to changes that:
 These are the two exceptions:
 
 #. **If a change is reverted prior to release**, then the corresponding 
-  entry is simply removed. Otherwise, a new entry must be added noting 
-  that the change has been reverted (e.g. when a feature is released in 
-  an alpha and then cut prior to the first beta).
+   entry is simply removed. Otherwise, a new entry must be added noting 
+   that the change has been reverted (e.g. when a feature is released in 
+   an alpha and then cut prior to the first beta).
 
 #. **If a change is a fix (or other adjustment) to an earlier unreleased 
-  change and the original news entry remains valid**, then no additional 
-  entry is needed.
+   change and the original news entry remains valid**, then no additional 
+   entry is needed.
 
 If a change needs an entry in ``What's New in Python``, then it very 
 likely *not* suitable for including in a maintenance release.
