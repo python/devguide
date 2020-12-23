@@ -175,7 +175,7 @@ Python repositories, so you need to be careful with your workflow:
 
 * **For a small change, you can make a quick edit through the GitHub web UI.**
   If you choose to use the web UI, be aware that GitHub will
-  create a new branch in the **main** CPython repo rather than in your fork. 
+  create a new branch in the main CPython repo rather than in your fork. 
   Delete this newly created branch after it has been merged into the 
   ``master`` branch or any of the maintenance branches. To keep the CPython
   repo tidy, remove the new branch within a few days.
