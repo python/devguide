@@ -14,7 +14,7 @@ Assessing a Pull Request
 Before you can accept a PR, you need to make sure that it is ready to enter 
 the public source tree. Ask yourself the following questions:
 
-#. **Was the pull request first made against the ``master`` branch?** The 
+#. **Was the pull request first made against the master branch?** The 
    only branch that receives new features is ``master``, the in-development 
    branch.
    
@@ -44,7 +44,7 @@ the public source tree. Ask yourself the following questions:
    cause some peoples' code to break. If you are unsure if the breakage
    is worth it, then ask on python-dev.
    
-#. **Were ``configure`` and ``pyconfig.h.in`` regenerated?** 
+#. **Were configure and pyconfig.h.in regenerated?** 
    Regnenerate them if necessary.
 
 #. **Were appropriate labels added to signify necessary backporting of the
@@ -65,7 +65,7 @@ the public source tree. Ask yourself the following questions:
    put in their GitHub username. For further questions about the CLA 
    process, write to: contributors@python.org.
 
-#. **Was the contributor added to ``Misc/ACKS``?** Make sure that 
+#. **Was the contributor added to Misc/ACKS?** Make sure that 
    the patch is attributed correctly with the contributor's name in 
    ``Misc/ACKS``. If the patch has been heavily modified, then "Initial
    patch by <x>" is an appropriate alternate wording. GitHub now 
@@ -74,8 +74,8 @@ the public source tree. Ask yourself the following questions:
    in a commit. Add ``Co-authored-by: name <name@example.com>`` at the end 
    of the commit message.
 
-#. **Were ``What's New in Python`` (in ``Doc/whatsnew/``) and 
-   ``Misc/NEWS.d/next``updated?** If the change is particularly interesting 
+#. **Were What's New in Python (in Doc/whatsnew/) and 
+   Misc/NEWS.d/next updated?** If the change is particularly interesting 
    for end users (e.g. new features, significant improvements, or 
    backwards-incompatible changes), then an entry in the 
    ``What's New in Python`` document (in ``Doc/whatsnew/``) should be added
@@ -169,8 +169,8 @@ Python repositories, so you need to be careful with your workflow:
   You can also push these branches to a **separate** public repository 
   for maintenance work before it is integrated into the main repository.
 
-* **You should not commit directly into the ``master`` branch, or any of the
-  maintenance branches (currently ``3.9`` and ``3.8``).** You should commit 
+* **You should not commit directly into the master branch, or any of the
+  maintenance branches (currently 3.9 and 3.8).** You should commit 
   against your own feature branch, and then create a pull request.
 
 * **For a small change, you can make a quick edit through the GitHub web UI.**
