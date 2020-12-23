@@ -222,7 +222,7 @@ hashes and their first line of the commit, use the following command::
 
 .. _backport-pr-title:
 
-Prefix the backport pull request with the branch, and reference the pull request
+You can prefix the backport pull request with the branch, and reference the pull request
 number from ``master``. Here is an example::
 
    [3.9] bpo-12345: Fix the Spam Module (GH-NNNN)
