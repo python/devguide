@@ -243,7 +243,7 @@ Reverting a merged pull request
 
 To revert a merged pull request, press the ``Revert`` button at the bottom of
 the pull request. That will bring up the page to create a new pull request where
-the commit can be reverted. It also creates a new branch on the main CPython
+the commit can be reverted. It will also create a new branch on the main CPython
 repository. Delete the branch once the pull request has been merged.
 
 Always include the reason for reverting the commit to help others understand
