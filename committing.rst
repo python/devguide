@@ -69,9 +69,10 @@ to enter the public source tree. Ask yourself the following questions:
 
 #. **Does the pull request have a label indicating that the submitter has
    signed the CLA?** Make sure that the contributor has signed a `Contributor
-   Licensing Agreement`_ (CLA), unless their change has no possible
-   intellectual property associated with it (e.g. fixing a spelling mistake
-   in documentation). To check if a contributor’s CLA has been received, go
+   Licensing Agreement <https://www.python.org/psf/contrib/contrib-form/>`_ 
+   (CLA), unless their change has no possible intellectual property 
+   associated with it (e.g. fixing a spelling mistake in documentation). 
+   To check if a contributor’s CLA has been received, go
    to `Check Python CLA <https://check-python-cla.herokuapp.com/>`_ and
    put in their GitHub username. For further questions about the CLA
    process, write to contributors@python.org.
