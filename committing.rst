@@ -69,7 +69,7 @@ to enter the public source tree. Ask yourself the following questions:
    put in their GitHub username. For further questions about the CLA
    process, write to contributors@python.org.
 
-* **Was the contributor added to** ``Misc/ACKS``**?** 
+* **Was the contributor added to** ``Misc/ACKS`` **?** 
    Make sure that the patch is attributed correctly with the contributor's 
    name in ``Misc/ACKS``. If the patch has been heavily modified, then 
    "Initial patch by <x>" is an appropriate alternate wording. GitHub now
@@ -78,7 +78,7 @@ to enter the public source tree. Ask yourself the following questions:
    in a commit. Add ``Co-authored-by: name <name@example.com>`` at the end
    of the commit message.
 
-* **Were What's New in Python (in** ``Doc/whatsnew/``**) and** ``Misc/NEWS.d/next`` **updated?** 
+* **Were What's New in Python (in** ``Doc/whatsnew/`` **) and** ``Misc/NEWS.d/next`` **updated?** 
    If the change is particularly interesting for end users (e.g. new features, 
    significant improvements, or backwards-incompatible changes), then an 
    entry in the ``What's New in Python`` document (in ``Doc/whatsnew/``) should 
