@@ -47,7 +47,7 @@ to enter the public source tree. Ask yourself the following questions:
    be a strong reason, because it will cause some peoples' code to break. 
    If you are unsure if the breakage is worth it, then ask on python-dev.
 
-* **Were configure and pyconfig.h.in regenerated?** 
+* **Were pyconfig.h.in and configure regenerated?** 
    Regenerate them if necessary.
 
 * **Were appropriate labels added to signify necessary backporting of the pull request?**
