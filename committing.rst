@@ -145,14 +145,14 @@ The contents of a ``NEWS`` file should be valid reStructuredText. An 80 characte
 column width should be used. There is no indentation or leading marker in the
 file (e.g. ``-``). There is also no need to start the entry with the issue
 number since it is part of the file name. You can use
-:ref:`inline markups <rest-inline-markup>` too. Here is an example of a NEWS
+:ref:`inline markups <rest-inline-markup>` too. Here is an example of a ``NEWS``
 entry::
 
    Fix warning message when :func:`os.chdir` fails inside
    :func:`test.support.temp_cwd`. Patch by Chris Jerdonek.
 
 The inline Sphinx roles like ``:func:`` can be used help readers
-find more information. You can build html and verify that the
+find more information. You can build HTML and verify that the
 link target is appropriate by using :ref:`make html <building-using-make>`.
 
 While Sphinx roles can be beneficial to readers, they are not required.
