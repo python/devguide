@@ -111,7 +111,7 @@ These are the two exceptions:
    an alpha and then cut prior to the first beta).
 
 #. **If a change is a fix (or other adjustment) to an earlier unreleased
-   change and the original ``NEWS`` entry remains valid**, then no additional
+   change and the original** ``NEWS`` **entry remains valid**, then no additional
    entry is needed.
 
 If a change needs an entry in ``What's New in Python``, then it very
