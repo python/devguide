@@ -14,16 +14,13 @@ Assessing a pull request
 Before you can accept a pull request, you need to make sure that it is ready
 to enter the public source tree. Ask yourself the following questions:
 
-
 * **Was the pull request first made against the master branch?** 
    The only branch that receives new features is ``master``, the 
    in-development branch.
 
-
 * **Are there comments on the pull request?** 
    Look for explanations about whether the code coverage increased or 
    stayed the same.
-
 
 * **Are the changes acceptable?** 
    If you want to share your work-in-progress code on a feature or bugfix, 
@@ -31,22 +28,18 @@ to enter the public source tree. Ask yourself the following questions:
    the `issue tracker <https://bugs.python.org/>`_, or create a public 
    fork of the repository.
 
-
 * **Does the check on the pull request show that the test suite passes?** 
    :ref:`Run the entire test suite <runtests>` to ensure that it passes.
    Running a single test is not enough since the changes may have unforeseen
    effects on other tests or library modules.
 
-
 * **Is the patch in a good state?** 
    Check :ref:`patch` and :ref:`helptriage` to review what is expected of 
    a patch.
 
-
 * **Do the changes meet the requirements of the patch checklist?**
    :ref:`Run patchcheck <patchcheck>` to perform a quick confidence
    check on the changes.
-
 
 * **Does the patch break backwards-compatibility without a strong reason?** 
    :ref:`Run the entire test suite <runtests>` to make sure that everything 
@@ -54,10 +47,8 @@ to enter the public source tree. Ask yourself the following questions:
    be a strong reason, because it will cause some peoples' code to break. 
    If you are unsure if the breakage is worth it, then ask on python-dev.
 
-
 * **Were configure and pyconfig.h.in regenerated?** 
    Regenerate them if necessary.
-
 
 * **Were appropriate labels added to signify necessary backporting of the
    pull request?** 
@@ -68,7 +59,6 @@ to enter the public source tree. Ask yourself the following questions:
    ``needs backport to X.Y`` label from the original pull request. (Only
    core developers and members of the `Python Triage Team`_ can apply
    labels to GitHub pull requests).
-
 
 * **Does the pull request have a label indicating that the submitter has
    signed the CLA?** 
@@ -81,7 +71,6 @@ to enter the public source tree. Ask yourself the following questions:
    put in their GitHub username. For further questions about the CLA
    process, write to contributors@python.org.
 
-
 * **Was the contributor added to Misc/ACKS?** 
    Make sure that the patch is attributed correctly with the contributor's 
    name in ``Misc/ACKS``. If the patch has been heavily modified, then 
@@ -91,7 +80,6 @@ to enter the public source tree. Ask yourself the following questions:
    in a commit. Add ``Co-authored-by: name <name@example.com>`` at the end
    of the commit message.
 
-
 * **Were What's New in Python (in Doc/whatsnew/) and
    Misc/NEWS.d/next updated?** 
    If the change is particularly interesting for end users (e.g. new features, 
@@ -99,7 +87,6 @@ to enter the public source tree. Ask yourself the following questions:
    entry in the ``What's New in Python`` document (in ``Doc/whatsnew/``) should 
    be added as well. Changes that affect only documentation generally do not 
    require a NEWS entry. (See the following section for more information.)
-
 
 
 Updating NEWS and What's New in Python
