@@ -53,8 +53,8 @@ to enter the public source tree. Ask yourself the following questions:
    is worth it, then ask on python-dev.
 
 
-#. **Were configure and pyconfig.h.in regenerated?**
-   Regnenerate them if necessary.
+#. **Were configure and pyconfig.h.in regenerated?** Regenerate them 
+   if necessary.
 
 
 #. **Were appropriate labels added to signify necessary backporting of the
@@ -193,10 +193,10 @@ Python repositories, so you need to be careful with your workflow:
 
 * **For a small change, you can make a quick edit through the GitHub web UI.**
   If you choose to use the web UI, be aware that GitHub will
-  create a new branch in the main CPython repo rather than in your fork.
+  create a new branch in the main CPython repository rather than in your fork.
   Delete this newly created branch after it has been merged into the
   ``master`` branch or any of the maintenance branches. To keep the CPython
-  repo tidy, remove the new branch within a few days.
+  repository tidy, remove the new branch within a few days.
 
 
 Keep a fork of the main repository, since it will allow you to revert all
