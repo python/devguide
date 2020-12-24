@@ -83,7 +83,7 @@ to enter the public source tree. Ask yourself the following questions:
    significant improvements, or backwards-incompatible changes), then an 
    entry in the ``What's New in Python`` document (in ``Doc/whatsnew/``) should 
    be added as well. Changes that affect only documentation generally do not 
-   require a NEWS entry. (See the following section for more information.)
+   require a ``NEWS`` entry. (See the following section for more information.)
 
 
 Updating NEWS and What's New in Python
@@ -94,12 +94,12 @@ If the change is particularly interesting for end users (e.g. new features,
 significant improvements, or backwards-incompatible changes), then an entry in
 the ``What's New in Python`` document (in ``Doc/whatsnew/``) should be added
 as well. Changes that affect documentation only generally do not require
-a NEWS entry.
+a ``NEWS`` entry.
 
 There are two notable exceptions to this general principle, and they
 both relate to changes that:
 
-* Already have a NEWS entry
+* Already have a ``NEWS`` entry
 * Have not yet been included in any formal release (including alpha
   and beta releases)
 
@@ -111,18 +111,18 @@ These are the two exceptions:
    an alpha and then cut prior to the first beta).
 
 #. **If a change is a fix (or other adjustment) to an earlier unreleased
-   change and the original NEWS entry remains valid**, then no additional
+   change and the original ``NEWS`` entry remains valid**, then no additional
    entry is needed.
 
 If a change needs an entry in ``What's New in Python``, then it very
 likely not suitable for including in a maintenance release.
 
-NEWS entries go into the ``Misc/NEWS.d`` directory as individual files. The
-NEWS entry can be created by using `blurb-it <https://blurb-it.herokuapp.com/>`_,
+``NEWS`` entries go into the ``Misc/NEWS.d`` directory as individual files. The
+``NEWS`` entry can be created by using `blurb-it <https://blurb-it.herokuapp.com/>`_,
 or the `blurb <https://pypi.org/project/blurb/>`_ tool and its ``blurb add``
 command.
 
-If you are unable to use the tool, then you can create the NEWS entry file
+If you are unable to use the tool, then you can create the ``NEWS`` entry file
 manually. The ``Misc/NEWS.d`` directory contains a sub-directory named
 ``next``, which contains various sub-directories representing classifications
 for what was affected (e.g. ``Misc/NEWS.d/next/Library`` for changes relating
@@ -141,7 +141,7 @@ to the standard library). The file name itself should be in the format
 As a result, a file name can look something like
 ``Misc/NEWS.d/next/Library/2017-05-27-16-46-23.bpo-12345.Yl4gI2.rst``.
 
-The contents of a NEWS file should be valid reStructuredText. An 80 character
+The contents of a ``NEWS`` file should be valid reStructuredText. An 80 character
 column width should be used. There is no indentation or leading marker in the
 file (e.g. ``-``). There is also no need to start the entry with the issue
 number since it is part of the file name. You can use
@@ -168,17 +168,14 @@ Working with Git_
 As a core developer, you have the ability to push changes to the official
 Python repositories, so you need to be careful with your workflow:
 
-
 * **You should not push new branches to the main repository.**  You can
   still use them in the fork that you use for the development of patches.
   You can also push these branches to a separate public repository
   for maintenance work before it is integrated into the main repository.
 
-
 * **You should not commit directly into the master branch, or any of the
   maintenance branches (currently 3.9 and 3.8).** You should commit
   against your own feature branch, and then create a pull request.
-
 
 * **For a small change, you can make a quick edit through the GitHub web UI.**
   If you choose to use the web UI, be aware that GitHub will
@@ -186,7 +183,6 @@ Python repositories, so you need to be careful with your workflow:
   Delete this newly created branch after it has been merged into the
   ``master`` branch or any of the maintenance branches. To keep the CPython
   repository tidy, remove the new branch within a few days.
-
 
 Keep a fork of the main repository, since it will allow you to revert all
 local changes (even committed ones) if you're not happy with your local
