@@ -15,29 +15,32 @@ Before you can accept a pull request, you need to make sure that it is ready
 to enter the public source tree. Ask yourself the following questions:
 
 
-* **Was the pull request first made against the master branch?** The
-   only branch that receives new features is ``master``, the in-development
-   branch.
+* **Was the pull request first made against the master branch?** 
+   The only branch that receives new features is ``master``, the 
+   in-development branch.
 
 
-* **Are there comments on the pull request?** Look for explanations about
-   whether the code coverage increased or stayed the same.
+* **Are there comments on the pull request?** 
+   Look for explanations about whether the code coverage increased or 
+   stayed the same.
 
 
-* **Are the changes acceptable?** If you want to share your work-in-progress
-   code on a feature or bugfix, then you can open a ``WIP``-prefixed pull
-   request, publish patches on the `issue tracker
-   <https://bugs.python.org/>`_, or create a public fork of the repository.
+* **Are the changes acceptable?** 
+   If you want to share your work-in-progress code on a feature or bugfix, 
+   then you can open a ``WIP``-prefixed pull request, publish patches on 
+   the `issue tracker <https://bugs.python.org/>`_, or create a public 
+   fork of the repository.
 
 
-* **Does the check on the pull request show that the test suite passes?**
+* **Does the check on the pull request show that the test suite passes?** 
    :ref:`Run the entire test suite <runtests>` to ensure that it passes.
    Running a single test is not enough since the changes may have unforeseen
    effects on other tests or library modules.
 
 
-* **Is the patch in a good state?** Check :ref:`patch` and
-   :ref:`helptriage` to review what is expected of a patch.
+* **Is the patch in a good state?** 
+   Check :ref:`patch` and :ref:`helptriage` to review what is expected of 
+   a patch.
 
 
 * **Do the changes meet the requirements of the patch checklist?**
@@ -45,20 +48,20 @@ to enter the public source tree. Ask yourself the following questions:
    check on the changes.
 
 
-* **Does the patch break backwards-compatibility without a strong
-   reason?** :ref:`Run the entire test suite <runtests>` to
-   make sure that everything still passes. If there is a change to the
-   semantics, then there needs to be a strong reason, because it will
-   cause some peoples' code to break. If you are unsure if the breakage
-   is worth it, then ask on python-dev.
+* **Does the patch break backwards-compatibility without a strong reason?** 
+   :ref:`Run the entire test suite <runtests>` to make sure that everything 
+   still passes. If there is a change to the semantics, then there needs to 
+   be a strong reason, because it will cause some peoples' code to break. 
+   If you are unsure if the breakage is worth it, then ask on python-dev.
 
 
-* **Were configure and pyconfig.h.in regenerated?** Regenerate them 
-   if necessary.
+* **Were configure and pyconfig.h.in regenerated?** 
+   Regenerate them if necessary.
 
 
 * **Were appropriate labels added to signify necessary backporting of the
-   pull request?** If it is determined that a pull request needs to be
+   pull request?** 
+   If it is determined that a pull request needs to be
    backported into one or more of the maintenance branches, then a core
    developer can apply the label ``needs backport to X.Y`` to the pull
    request. Once the backport pull request has been created, remove the
@@ -68,7 +71,8 @@ to enter the public source tree. Ask yourself the following questions:
 
 
 * **Does the pull request have a label indicating that the submitter has
-   signed the CLA?** Make sure that the contributor has signed a `Contributor
+   signed the CLA?** 
+   Make sure that the contributor has signed a `Contributor
    Licensing Agreement <https://www.python.org/psf/contrib/contrib-form/>`_ 
    (CLA), unless their change has no possible intellectual property 
    associated with it (e.g. fixing a spelling mistake in documentation). 
@@ -78,10 +82,10 @@ to enter the public source tree. Ask yourself the following questions:
    process, write to contributors@python.org.
 
 
-* **Was the contributor added to Misc/ACKS?** Make sure that
-   the patch is attributed correctly with the contributor's name in
-   ``Misc/ACKS``. If the patch has been heavily modified, then "Initial
-   patch by <x>" is an appropriate alternate wording. GitHub now
+* **Was the contributor added to Misc/ACKS?** 
+   Make sure that the patch is attributed correctly with the contributor's 
+   name in ``Misc/ACKS``. If the patch has been heavily modified, then 
+   "Initial patch by <x>" is an appropriate alternate wording. GitHub now
    supports `multiple authors
    <https://help.github.com/articles/creating-a-commit-with-multiple-authors/>`_
    in a commit. Add ``Co-authored-by: name <name@example.com>`` at the end
@@ -89,12 +93,12 @@ to enter the public source tree. Ask yourself the following questions:
 
 
 * **Were What's New in Python (in Doc/whatsnew/) and
-   Misc/NEWS.d/next updated?** If the change is particularly interesting
-   for end users (e.g. new features, significant improvements, or
-   backwards-incompatible changes), then an entry in the
-   ``What's New in Python`` document (in ``Doc/whatsnew/``) should be added
-   as well. Changes that affect only documentation generally do not require
-   a NEWS entry. (See the following section for more information.)
+   Misc/NEWS.d/next updated?** 
+   If the change is particularly interesting for end users (e.g. new features, 
+   significant improvements, or backwards-incompatible changes), then an 
+   entry in the ``What's New in Python`` document (in ``Doc/whatsnew/``) should 
+   be added as well. Changes that affect only documentation generally do not 
+   require a NEWS entry. (See the following section for more information.)
 
 
 
