@@ -50,8 +50,7 @@ to enter the public source tree. Ask yourself the following questions:
 * **Were configure and pyconfig.h.in regenerated?** 
    Regenerate them if necessary.
 
-* **Were appropriate labels added to signify necessary backporting of the** 
-   **pull request?**
+* **Were appropriate labels added to signify necessary backporting of the pull request?**
    If it is determined that a pull request needs to be
    backported into one or more of the maintenance branches, then a core
    developer can apply the label ``needs backport to X.Y`` to the pull
@@ -60,8 +59,7 @@ to enter the public source tree. Ask yourself the following questions:
    core developers and members of the `Python Triage Team`_ can apply
    labels to GitHub pull requests).
 
-* **Does the pull request have a label indicating that the submitter has** 
-   **signed the CLA?** 
+* **Does the pull request have a label indicating that the submitter has signed the CLA?** 
    Make sure that the contributor has signed a `Contributor
    Licensing Agreement <https://www.python.org/psf/contrib/contrib-form/>`_ 
    (CLA), unless their change has no possible intellectual property 
