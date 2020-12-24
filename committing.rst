@@ -11,22 +11,22 @@ merge, and possibly backport a pull request on the main repository.
 Assessing a pull request
 --------------
 
-Before you can accept a PR, you need to make sure that it is ready to enter 
+Before you can accept a pull request, you need to make sure that it is ready to enter 
 the public source tree. Ask yourself the following questions:
 
 #. **Was the pull request first made against the master branch?** The 
    only branch that receives new features is ``master``, the in-development 
    branch.
   
-#. **Are there comments on the PR?** Look for explanations about whether 
+#. **Are there comments on the pull request?** Look for explanations about whether 
    the code coverage increased or stayed the same.
 
 #. **Are the changes acceptable?** If you want to share your work-in-progress 
-   code on a feature or bugfix, then you can open a ``WIP``-prefixed PR, 
+   code on a feature or bugfix, then you can open a ``WIP``-prefixed pull request, 
    publish patches on the `issue tracker <https://bugs.python.org/>`_, or 
    create a public fork of the repository.
 
-#. **Does the check on the PR show that the test suite passes?** :ref:`Run the 
+#. **Does the check on the pull request show that the test suite passes?** :ref:`Run the 
    entire test suite <runtests>` to ensure that it passes. Running a single 
    test is not enough since the changes may have unforeseen effects on other 
    tests or library modules.
@@ -56,7 +56,7 @@ the public source tree. Ask yourself the following questions:
    core developers and members of the `Python Triage Team`_ can apply 
    labels to GitHub pull requests).
 
-#. **Does the PR have a label indicating that the submitter has signed the 
+#. **Does the pull request have a label indicating that the submitter has signed the 
    CLA?** Make sure that the contributor has signed a `Contributor Licensing 
    Agreement`_ (CLA), unless their change has no possible intellectual 
    property associated with it (e.g. fixing a spelling mistake in 
