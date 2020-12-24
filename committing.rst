@@ -74,7 +74,7 @@ to enter the public source tree. Ask yourself the following questions:
    in documentation). To check if a contributor’s CLA has been received, go
    to `Check Python CLA <https://check-python-cla.herokuapp.com/>`_ and
    put in their GitHub username. For further questions about the CLA
-   process, write to: contributors@python.org.
+   process, write to contributors@python.org.
 
 
 #. **Was the contributor added to Misc/ACKS?** Make sure that
@@ -126,7 +126,7 @@ These are the two exceptions:
    entry is needed.
 
 If a change needs an entry in ``What's New in Python``, then it very
-likely *not* suitable for including in a maintenance release.
+likely not suitable for including in a maintenance release.
 
 NEWS entries go into the ``Misc/NEWS.d`` directory as individual files. The
 NEWS entry can be created by using `blurb-it <https://blurb-it.herokuapp.com/>`_,
@@ -140,14 +140,14 @@ for what was affected (e.g. ``Misc/NEWS.d/next/Library`` for changes relating
 to the standard library). The file name itself should be in the format
 ``<datetime>.bpo-<issue-number>.<nonce>.rst``:
 
-* ``<datetime>`` is today's date joined with a ``-`` to the current
-  time, in ``YYYY-MM-DD-hh-mm-ss`` format (e.g. ``2017-05-27-16-46-23``).
+* ``<datetime>`` is today's date joined with a hyphen (``-``) to the current
+  time, in the ``YYYY-MM-DD-hh-mm-ss`` format (e.g. ``2017-05-27-16-46-23``).
 * ``<issue-number>`` is the issue number the change is for (e.g. ``12345``
   for ``bpo-12345``).
 * ``<nonce>`` is a unique string to guarantee that the file name is
-  unique across branches (e.g. ``Yl4gI2``). (It is typically six characters
+  unique across branches (e.g. ``Yl4gI2``). It is typically six characters
   long, but it can be any length of letters and numbers. Its uniqueness
-  can be satisfied by typing random characters on your keyboard.)
+  can be satisfied by typing random characters on your keyboard.
 
 As a result, a file name can look something like
 ``Misc/NEWS.d/next/Library/2017-05-27-16-46-23.bpo-12345.Yl4gI2.rst``.
