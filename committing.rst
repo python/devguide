@@ -9,7 +9,7 @@ This page is a step-by-step guide for core developers who need to assess,
 merge, and possibly backport a pull request on the main repository.
 
 Assessing a pull request
---------------
+------------------------
 
 Before you can accept a pull request, you need to make sure that it is ready
 to enter the public source tree. Ask yourself the following questions:
