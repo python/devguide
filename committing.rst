@@ -14,7 +14,7 @@ Assessing a pull request
 Before you can accept a pull request, you need to make sure that it is ready
 to enter the public source tree. Ask yourself the following questions:
 
-* **Was the pull request first made against the master branch?** 
+* **Was the pull request first made against the** ``master`` **branch?** 
    The only branch that receives new features is ``master``, the 
    in-development branch.
 
@@ -173,9 +173,9 @@ Python repositories, so you need to be careful with your workflow:
   You can also push these branches to a separate public repository
   for maintenance work before it is integrated into the main repository.
 
-* **You should not commit directly into the master branch, or any of the
-  maintenance branches (currently 3.9 and 3.8).** You should commit
-  against your own feature branch, and then create a pull request.
+* **You should not commit directly into the** ``master`` **branch, or any of the maintenance branches (currently 3.9 and 3.8).**
+  You should commit against your own feature branch, and then create a 
+  pull request.
 
 * **For a small change, you can make a quick edit through the GitHub web UI.**
   If you choose to use the web UI, be aware that GitHub will
