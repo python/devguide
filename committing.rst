@@ -14,6 +14,7 @@ Assessing a pull request
 Before you can accept a PR, you need to make sure that it is ready to enter 
 the public source tree. Ask yourself the following questions:
 
+
 #. **Was the pull request first made against the master branch?** The 
    only branch that receives new features is ``master``, the in-development 
    branch.
@@ -92,6 +93,7 @@ the public source tree. Ask yourself the following questions:
    ``What's New in Python`` document (in ``Doc/whatsnew/``) should be added
    as well. Changes that affect only documentation generally do not require
    a NEWS entry. (See the following section for more information.)
+
 
 
 Updating NEWS and What's New in Python
