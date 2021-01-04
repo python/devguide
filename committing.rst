@@ -41,10 +41,6 @@ to enter the public source tree. Ask yourself the following questions:
    Check :ref:`patch` and :ref:`helptriage` to review what is expected of 
    a patch.
 
-* **Do the changes meet the requirements of the patch checklist?**
-   :ref:`Run patchcheck <patchcheck>` to perform a quick confidence
-   check on the changes.
-
 * **Does the patch break backwards-compatibility without a strong reason?** 
    :ref:`Run the entire test suite <runtests>` to make sure that everything 
    still passes. If there is a change to the semantics, then there needs to 
