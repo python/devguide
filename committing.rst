@@ -40,6 +40,10 @@ to enter the public source tree. Ask yourself the following questions:
 * **Is the patch in a good state?** 
    Check :ref:`patch` and :ref:`helptriage` to review what is expected of 
    a patch.
+   
+* **Do the changes meet the requirements of the patch checklist?**
+   :ref:`Run patchcheck <patchcheck>` to perform a confidence check and 
+   flag extra whitespace.
 
 * **Does the patch break backwards-compatibility without a strong reason?** 
    :ref:`Run the entire test suite <runtests>` to make sure that everything 
