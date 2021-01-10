@@ -1595,7 +1595,7 @@ in production, other are work in progress:
 +-----------------+-------------------------------+----------------------------+
 | Language        | Contact                       | Links                      |
 +=================+===============================+============================+
-| Arabic (ar)     | Abdur-Rahmaan Janhangeer      | `GitHub <github_ar_>`_     |
+| Arabic (ar)     | Ibrahim Elbouhissi            | `GitHub <github_ar_>`_     |
 +-----------------+-------------------------------+----------------------------+
 | Bengali as      | `Kushal Das <bpo_kushal_>`_   | `GitHub <github_bn_in_>`_  |
 | spoken in       |                               |                            |
@@ -1790,9 +1790,15 @@ Ask on doc-sig, or better, make a PR on the `devguide
 I have a translation, but not on git, what should I do?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+master
 Ask for help on the doc-sig mailing list
 about creating an appropriate repository. 
 Using a tool like transifex can help keep translations in sync.
+=======
+You can ask for help on the doc-sig mailing list, and the team will help you
+create an appropriate repository. You can still use tools like transifex,
+if you like.
+ master
 
 
 My git hierarchy does not match yours, can I keep it?

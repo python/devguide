@@ -55,7 +55,7 @@ abc
 aifc                  r.david.murray
 argparse              rhettinger*
 array
-ast                   benjamin.peterson, pablogsal
+ast                   benjamin.peterson, pablogsal, BTaskaya
 asynchat              josiahcarlson, giampaolo.rodola*, stutzbach
 asyncio               yselivanov, asvetlov
 asyncore              josiahcarlson, giampaolo.rodola*, stutzbach
@@ -182,7 +182,7 @@ pstats
 pty                   twouters*
 pwd
 py_compile
-pyclbr
+pyclbr                BTaskaya
 pydoc
 queue                 rhettinger*
 quopri
@@ -280,6 +280,7 @@ Tools
 Tool                Maintainers
 ==================  ===========
 Argument Clinic     larry
+PEG Generator       gvanrossum, pablogsal, lys.nikolaou
 ==================  ===========
 
 
@@ -309,7 +310,7 @@ Interest Area       Maintainers
 ==================  ==========================================================
 algorithms          rhettinger*
 argument clinic     larry
-ast/compiler        benjamin.peterson, brett.cannon, yselivanov, pablogsal, Mark.Shannon
+ast/compiler        benjamin.peterson, brett.cannon, yselivanov, pablogsal, Mark.Shannon, BTaskaya
 autoconf/makefiles  twouters*
 bsd
 bug tracker         ezio.melotti
@@ -338,6 +339,7 @@ memoryview
 networking          giampaolo.rodola,
 object model        benjamin.peterson, twouters
 packaging           tarek, lemburg, alexis, eric.araujo, dstufft, paul.moore
+peg parser          gvanrossum, pablogsal, lys.nikolaou
 performance         brett.cannon, vstinner, serhiy.storchaka, yselivanov, rhettinger, Mark.Shannon
 pip                 ncoghlan, dstufft, paul.moore, Marcus.Smith, pradyunsg
 py3 transition      benjamin.peterson
