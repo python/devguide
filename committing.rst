@@ -18,9 +18,10 @@ to enter the public source tree. Ask yourself the following questions:
    Read the linked b.p.o. issue. If there are ongoing discussions, then 
    we need to have a resolution there before we can merge the pull request.
 
-* **Was the pull request first made against the** ``master`` **branch?** 
+* **Was the pull request first made against the appropriate branch?** 
    The only branch that receives new features is ``master``, the 
-   in-development branch.
+   in-development branch. Pull requests should only target bug-fix branches
+   if an issue appears in only that version and possibly older versions.
 
 * **Are there comments on the pull request?** 
    Look for explanations about whether the code coverage increased or 
@@ -32,27 +33,18 @@ to enter the public source tree. Ask yourself the following questions:
    the `issue tracker <https://bugs.python.org/>`_, or create a public 
    fork of the repository.
 
-* **Does the check on the pull request show that the test suite passes?** 
-   :ref:`Run the entire test suite <runtests>` to ensure that it passes.
-   Running a single test is not enough since the changes may have unforeseen
-   effects on other tests or library modules.
+* **Do the checks on the pull request show that the test suite passes?** 
+   Make sure that all of the status checks are passing.
 
 * **Is the patch in a good state?** 
    Check :ref:`patch` and :ref:`helptriage` to review what is expected of 
    a patch.
-   
-* **Do the changes meet the requirements of the patch checklist?**
-   :ref:`Run patchcheck <patchcheck>` to perform a confidence check and 
-   flag extra whitespace.
 
 * **Does the patch break backwards-compatibility without a strong reason?** 
    :ref:`Run the entire test suite <runtests>` to make sure that everything 
    still passes. If there is a change to the semantics, then there needs to 
    be a strong reason, because it will cause some peoples' code to break. 
    If you are unsure if the breakage is worth it, then ask on python-dev.
-
-* **Were** ``pyconfig.h.in`` **and** ``configure`` **regenerated?** 
-   Regenerate them if necessary.
 
 * **Were appropriate labels added to signify necessary backporting of the pull request?**
    If it is determined that a pull request needs to be
@@ -72,15 +64,6 @@ to enter the public source tree. Ask yourself the following questions:
    to `Check Python CLA <https://check-python-cla.herokuapp.com/>`_ and
    put in their GitHub username. For further questions about the CLA
    process, write to contributors@python.org.
-
-* **Was the contributor added to** ``Misc/ACKS`` **?** 
-   Make sure that the patch is attributed correctly with the contributor's 
-   name in ``Misc/ACKS``. If the patch has been heavily modified, then 
-   "Initial patch by <x>" is an appropriate alternate wording. GitHub now
-   supports `multiple authors
-   <https://help.github.com/articles/creating-a-commit-with-multiple-authors/>`_
-   in a commit. Add ``Co-authored-by: name <name@example.com>`` at the end
-   of the commit message.
 
 * **Were** ``What's New in Python`` **and** ``Misc/NEWS.d/next`` **updated?** 
    If the change is particularly interesting for end users (e.g. new features, 
