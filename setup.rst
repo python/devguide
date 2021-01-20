@@ -323,9 +323,9 @@ dependencies for the Python you're working on by using the ``apt`` command.
 First, make sure you have enabled the source packages in the sources list.
 You can do this by adding the location of the source packages, including
 URL, distribution name and component name, to ``/etc/apt/sources.list``.
-Take Ubuntu Bionic for example::
+Take Ubuntu 20.04 LTS (Focal Fossa) for example::
 
-   deb-src http://archive.ubuntu.com/ubuntu/ bionic main
+   deb-src http://archive.ubuntu.com/ubuntu/ focal main
 
 For other distributions, like Debian, change the URL and names to correspond
 with the specific distribution.
@@ -336,7 +336,7 @@ Then you should update the packages index::
 
 Now you can install the build dependencies via ``apt``::
 
-   $ sudo apt-get build-dep python3.6
+   $ sudo apt-get build-dep python3.8
 
 If that package is not available for your system, try reducing the minor
 version until you find a package that is available.
