@@ -45,6 +45,11 @@ to enter the public source tree. Ask yourself the following questions:
    still passes. If there is a change to the semantics, then there needs to 
    be a strong reason, because it will cause some peoples' code to break. 
    If you are unsure if the breakage is worth it, then ask on python-dev.
+   
+* **Does documentation need to be updated?**
+   If the pull request introduces backwards-incompatible changes (e.g. 
+   deprecating or removing a feature), then make sure that those changes 
+   are reflected in the documentation before you merge the pull request.   
 
 * **Were appropriate labels added to signify necessary backporting of the pull request?**
    If it is determined that a pull request needs to be
