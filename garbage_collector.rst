@@ -222,7 +222,7 @@ the GC knows that ``link_3`` is reachable after all, so it is moved back to the
 original list and its ``gc_refs`` field is set to 1 so that if the GC visits it again, 
 it will know that it's reachable. To avoid visiting an object twice, the GC marks all
 objects that have already been visited once (by unsetting the ``PREV_MASK_COLLECTING`` 
-flag) so that if an object that has already been processed is referred by some other 
+flag) so that if an object that has already been processed is referenced by some other 
 object, the GC does not process it twice.
 
 .. figure:: images/python-cyclic-gc-5-new-page.png
