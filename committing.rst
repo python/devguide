@@ -165,7 +165,7 @@ Python repositories, so you need to be careful with your workflow:
   You can also push these branches to a separate public repository
   for maintenance work before it is integrated into the main repository.
 
-* **You should not commit directly into the** ``master`` **branch, or any of the maintenance branches (currently 3.9 and 3.8).**
+* **You should not commit directly into the** ``master`` **branch, or any of the maintenance branches.**
   You should commit against your own feature branch, and then create a 
   pull request.
 
