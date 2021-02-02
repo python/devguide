@@ -417,7 +417,7 @@ of ``PyGC_Head`` discussed in the `Memory layout and object structure`_ section:
       normally assume the pointers inside the lists are in a consistent state.
 
 
-* The ``_gc_prev``` field is normally used as the "previous" pointer to maintain the
+* The ``_gc_prev`` field is normally used as the "previous" pointer to maintain the
   doubly linked list but its lowest two bits are used to keep the flags
   ``PREV_MASK_COLLECTING`` and ``_PyGC_PREV_MASK_FINALIZED``. Between collections,
   the only flag that can be present is ``_PyGC_PREV_MASK_FINALIZED`` that indicates
