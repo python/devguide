@@ -40,7 +40,7 @@ There are three ways of visualizing recent build results:
   https://code.google.com/archive/p/bbreport. Installing it is trivial: just add
   the directory containing ``bbreport.py`` to your system path so that
   you can run it from any filesystem location.  For example, if you want
-  to display the latest build results on the development ("master") branch,
+  to display the latest build results on the development ("main") branch,
   type::
 
       bbreport.py -q 3.x

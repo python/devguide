@@ -75,7 +75,7 @@ You should have already :ref:`set up your system <setup>`,
 
 * Create a new branch in your local clone::
 
-     git checkout -b <branch-name> upstream/master
+     git checkout -b <branch-name> upstream/main
 
 * Make changes to the code, and use ``git status`` and ``git diff`` to see them.
 
@@ -122,12 +122,12 @@ You should have already :ref:`set up your system <setup>`,
     there are merge conflicts, git will warn you about this and enter conflict
     resolution mode. See :ref:`resolving-merge-conflicts` below.
 
-* If time passes and there are merge conflicts with the master branch, GitHub
+* If time passes and there are merge conflicts with the main branch, GitHub
   will show a warning to this end and you may be asked to address this. Merge
-  the changes from the master branch while resolving the conflicts locally::
+  the changes from the main branch while resolving the conflicts locally::
 
    git checkout <branch-name>
-   git pull upstream master  # pull = fetch + merge
+   git pull upstream main  # pull = fetch + merge
    # resolve conflicts: see "Resolving Merge Conflicts" below
    git push origin <branch-name>
 

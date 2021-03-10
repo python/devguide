@@ -44,7 +44,7 @@ There is a branch for each *feature version*, whether released or not (e.g.
 In-development (main) branch
 ----------------------------
 
-The ``master`` branch is the branch for the next feature release; it is
+The ``main`` branch is the branch for the next feature release; it is
 under active development for all kinds of changes: new features, semantic
 changes, performance improvements, bug fixes.
 
@@ -57,7 +57,7 @@ release was cut (for example, 3.4.0 final).
 
 Starting with the 3.5 release, we create the release maintenance branch
 (e.g. 3.5) at the time we enter beta (3.5.0 beta 1).  This allows
-feature development for the release 3.n+1 to occur within the master
+feature development for the release 3.n+1 to occur within the main
 branch alongside the beta and release candidate stabilization periods
 for release 3.n.
 

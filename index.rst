@@ -52,7 +52,7 @@ instructions please see the :ref:`setup guide <setup>`.
 
 5. Create a new branch where your work for the issue will go, e.g.::
 
-      git checkout -b fix-issue-12345 master
+      git checkout -b fix-issue-12345 main
 
    If an issue does not already exist, please `create it
    <https://bugs.python.org/>`_.  Trivial issues (e.g. typo fixes) do not
@@ -98,7 +98,7 @@ Status of Python branches
 +------------------+--------------+-------------+----------------+----------------+-----------------------+
 | Branch           | Schedule     | Status      | First release  | End-of-life    | Release manager       |
 +==================+==============+=============+================+================+=======================+
-| master           | :pep:`619`   | features    | *2021-10-04*   | *TBD*          | Pablo Galindo Salgado |
+| main             | :pep:`619`   | features    | *2021-10-04*   | *TBD*          | Pablo Galindo Salgado |
 +------------------+--------------+-------------+----------------+----------------+-----------------------+
 | 3.9              | :pep:`596`   | bugfix      | 2020-10-05     | *TBD*          | Łukasz Langa          |
 +------------------+--------------+-------------+----------------+----------------+-----------------------+
@@ -111,7 +111,7 @@ Status of Python branches
 
 .. Remember to update the end-of-life table in devcycle.rst.
 
-The master branch is currently the future Python 3.10, and is the only
+The main branch is currently the future Python 3.10, and is the only
 branch that accepts new features.  The latest release for each Python
 version can be found on the `download page <https://www.python.org/downloads/>`_.
 
@@ -244,7 +244,7 @@ Key Resources
 * `Buildbot status`_
 * Source code
     * `Browse online <https://github.com/python/cpython/>`_
-    * `Snapshot of the *master* branch <https://github.com/python/cpython/archive/master.zip>`_
+    * `Snapshot of the *main* branch <https://github.com/python/cpython/archive/main.zip>`_
     * `Daily OS X installer <http://buildbot.python.org/daily-dmg/>`_
 * PEPs_ (Python Enhancement Proposals)
 * :doc:`help`
@@ -330,7 +330,7 @@ Full Table of Contents
    appendix
 
 .. _Buildbot status: https://www.python.org/dev/buildbot/
-.. _Misc directory: https://github.com/python/cpython/tree/master/Misc
+.. _Misc directory: https://github.com/python/cpython/tree/main/Misc
 .. _PEPs: https://www.python.org/dev/peps/
 .. _python.org maintenance: https://pythondotorg.readthedocs.io/
 .. _Python: https://www.python.org/
