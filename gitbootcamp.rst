@@ -153,6 +153,19 @@ To delete a **remote** branch::
 
 You may specify more than one branch for deletion.
 
+
+Renaming Branch
+---------------
+
+The CPython repository's default branch was renamed from ``master`` to ``main``
+after the Python 3.10b1 release. If you had cloned the repository before this
+change, you can rename your local branch as follows::
+
+    git branch -m master main
+    git fetch upstream
+    git branch -u upstream/master main
+
+
 Staging and Committing Files
 ----------------------------
 
