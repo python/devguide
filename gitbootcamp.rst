@@ -163,7 +163,7 @@ change, you can rename your local branch as follows::
 
     git branch -m master main
     git fetch upstream
-    git branch -u upstream/master main
+    git branch -u upstream/main main
 
 
 Staging and Committing Files
