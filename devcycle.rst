@@ -255,7 +255,7 @@ This role is paramount to the security of the Python Language, Community, and
 Infrastructure.
 
 The Executive Director of the Python Software Foundation delegates authority on
-GitHub Organization Owner Status to Ernest W. Durbin III - Python Software
+GitHub Organization Owner Status to Ee W. Durbin III - Python Software
 Foundation Director of Infrastructure. Common reasons for this role are:
 Infrastructure Staff Membership, Python Software Foundation General Counsel,
 and Python Software Foundation Staff as fallback.
@@ -280,7 +280,7 @@ Current Owners
 +----------------------+--------------------------------+-----------------+
 | Ewa Jodlowska        | PSF Executive Director         | ejodlowska      |
 +----------------------+--------------------------------+-----------------+
-| Ernest W. Durbin III | PSF Director of Infrastructure | ewdurbin        |
+| Ee W. Durbin III     | PSF Director of Infrastructure | ewdurbin        |
 +----------------------+--------------------------------+-----------------+
 | Van Lindberg         | PSF General Counsel            | VanL            |
 +----------------------+--------------------------------+-----------------+
