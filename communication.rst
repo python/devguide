@@ -130,4 +130,4 @@ source of benchmarks for all Python implementations.
 .. _Python Core Workflow: https://github.com/python/core-workflow
 .. _cherry_picker: https://pypi.org/project/cherry-picker/
 .. _blurb: https://pypi.org/project/blurb
-.. _Performance Benchmark: https://github.com/python/performance
+.. _Performance Benchmark: https://github.com/python/pyperformance
