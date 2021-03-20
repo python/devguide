@@ -97,6 +97,7 @@ html_theme = 'python_docs_theme'
 html_theme_options = {
     'collapsiblesidebar': True,
     'issues_url': 'https://github.com/python/devguide/issues/new',
+    'copyright_url': 'https://github.com/python/devguide/blob/master/LICENSE',
 }
 
 
