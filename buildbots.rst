@@ -209,7 +209,7 @@ Custom builders
 When working on a platform-specific issue, you may want to test your changes on
 the buildbot fleet rather than just on Travis and AppVeyor.  To do so, you can
 make use of the `custom builders
-<http://buildbot.python.org/all/#/builders?tags=custom.unstable&tags=custom.stable>`_.
+<https://buildbot.python.org/all/#/builders?tags=%2Bcustom>`_.
 These builders track the ``buildbot-custom`` short-lived branch of the
 ``python/cpython`` repository, which is only accessible to core developers.
 
