@@ -74,11 +74,17 @@ RSS feed readers.
 .. _StackOverflow: https://stackoverflow.com/
 .. _Freenode: http://freenode.net/
 
-Zulip
------
 
-We have our own `zulipchat <https://python.zulipchat.com>`_ instance. This should be
-used to discuss the development of Python only.
+Discourse
+---------
+
+We have our own `_Discourse`_ forum for both developers and users. This forum
+complements the `_python-dev`_, `_python-ideas`_, `_python-help`_, and
+`_python-list`_ mailing lists. Also, voting for new core developers takes place
+at `_Discourse`_.
+
+.. _Discourse: https://discuss.python.org/
+
 
 IRC
 ---
