@@ -78,10 +78,10 @@ RSS feed readers.
 Discourse
 ---------
 
-We have our own `_Discourse`_ forum for both developers and users. This forum
-complements the `_python-dev`_, `_python-ideas`_, `_python-help`_, and
-`_python-list`_ mailing lists. Also, voting for new core developers takes place
-at `_Discourse`_.
+We have our own `Discourse`_ forum for both developers and users. This forum
+complements the `python-dev`_, `python-ideas`_, `python-help`_, and
+`python-list`_ mailing lists. Also, voting for new core developers takes place
+at `Discourse`_.
 
 .. _Discourse: https://discuss.python.org/
 
