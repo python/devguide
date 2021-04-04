@@ -317,8 +317,8 @@ Emission of bytecode is handled by the following macros:
     like ``ADDOP_JUMP`` without a line number; used for artificial jumps
     without no corresponding token in the source code.
 ``ADDOP_JUMP_COMPARE(struct compiler *, cmpop_ty)``
-    depending on the second argument, add an ``ADDOP_I`` with either ``IS_OP``,
-    ``CONTAINS_OP``, or ``COMPARE_OP``.
+    depending on the second argument, add an ``ADDOP_I`` with either an
+    ``IS_OP``, ``CONTAINS_OP``, or ``COMPARE_OP`` opcode.
 
 Several helper functions that will emit bytecode and are named
 :samp:`compiler_{xx}()` where *xx* is what the function helps with (``list``,
