@@ -93,7 +93,7 @@ csv                   skip.montanaro (inactive)
 ctypes                theller (inactive), belopolsky, amaury.forgeotdarc,
                       meador.inge
 curses                twouters
-dataclasses           eric.smith
+dataclasses           eric.smith*
 datetime              belopolsky, p-ganssle
 dbm
 decimal               facundobatista, rhettinger, mark.dickinson
