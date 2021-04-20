@@ -185,9 +185,10 @@ Beta
 ----
 
 After a first beta release is published, no new features are accepted.  Only
-bug fixes can now be committed.  This is when core developers should concentrate
-on the task of fixing regressions and other new issues filed by users who have
-downloaded the alpha and beta releases.
+bug fixes and improvements to documentation and tests can now be committed.
+This is when core developers should concentrate on the task of fixing
+regressions and other new issues filed by users who have downloaded the alpha
+and beta releases.
 
 Being in beta can be viewed much like being in RC_ but without the extra
 overhead of needing commit reviews.
@@ -204,8 +205,9 @@ Release Candidate (RC)
 A branch preparing for an RC release can only have bugfixes applied that have
 been reviewed by other core developers.  Generally, these issues must be
 severe enough (e.g. crashes) that they deserve fixing before the final release.
-All other issues should be deferred to the next development cycle, since
-stability is the strongest concern at this point.
+All other issues (including documentation and test changes) should be deferred
+to the next development cycle, since stability is the strongest concern at this
+point.
 
 You **cannot** skip the peer review during an RC, no matter how small! Even if
 it is a simple copy-and-paste change, **everything** requires peer review from
