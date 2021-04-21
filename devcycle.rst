@@ -205,9 +205,12 @@ Release Candidate (RC)
 A branch preparing for an RC release can only have bugfixes applied that have
 been reviewed by other core developers.  Generally, these issues must be
 severe enough (e.g. crashes) that they deserve fixing before the final release.
-All other issues (including documentation and test changes) should be deferred
-to the next development cycle, since stability is the strongest concern at this
-point.
+All other issues should be deferred to the next development cycle, since
+stability is the strongest concern at this point.
+
+While the goal is to have no code changes between a RC and a final release,
+there may be a need for final documentation or test fixes. Any such proposed
+changes should be discussed first with the release manager.
 
 You **cannot** skip the peer review during an RC, no matter how small! Even if
 it is a simple copy-and-paste change, **everything** requires peer review from
