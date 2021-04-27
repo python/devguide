@@ -142,7 +142,8 @@ sprint
 
 stale
     Used for PRs that include changes which are no longer relevant or when the
-    author hasn't responded to feedback in a long period of time. This label
+    author hasn't responded to feedback in a long period of time or had no
+    comments within 30 days. This label
     helps core developers quickly identify PRs that are candidates for closure 
     or require a ping to the author.
 
