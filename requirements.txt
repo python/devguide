@@ -1,2 +1,2 @@
 Sphinx
-python-docs-theme
+furo
