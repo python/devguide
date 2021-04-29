@@ -57,7 +57,7 @@ mailing list is the place to discuss and work on improvements to the CPython
 core development workflow.
 
 A complete list of Python mailing lists can be found at https://mail.python.org/mailman/listinfo.
-Most lists are also mirrored at `GMANE <https://gmane.org>`_ and can be read and
+Most lists are also mirrored at `GMANE <https://gmane.io/>`_ and can be read and
 posted to in various ways, including via web browsers, NNTP newsreaders, and
 RSS feed readers.
 
