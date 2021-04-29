@@ -1680,7 +1680,7 @@ in production, other are work in progress:
 .. _mail_lt: https://mail.python.org/pipermail/doc-sig/2019-July/004138.html
 .. _mail_ru: https://mail.python.org/pipermail/doc-sig/2019-May/004131.html
 .. _tx_pl: https://www.transifex.com/python-doc/python-newest/
-.. _tx_zh_cn: https://www.transifex.com/python-doc/python-newest/language/
+.. _tx_zh_cn: https://www.transifex.com/python-doc/python-newest/
 .. _tx_zh_tw: https://www.transifex.com/python-tw-doc/python-36-tw
 .. _wiki_pt_br: http://python.org.br/traducao
 
