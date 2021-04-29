@@ -27,7 +27,7 @@ jobs:
         with:
           python-version: ${{ matrix.python-version }}
       - name: Install Dependencies
-        run: python3 -m pip install U pip -r dev-requirements.txt
+        run: python3 -m pip install U pip -r requirements.txt
       - name: Build Docs
         run: sphinx-build -n -W -q -b html -d _build/doctrees . _build/html
       - name: Link Check
