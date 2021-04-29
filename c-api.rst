@@ -9,7 +9,7 @@ The C API is divided into three sections:
    underscore is also considered private.
 2. The public C API, available when ``Python.h`` is included normally.
    Ideally declared in ``Include/cpython/``.
-3. The Limited API, available with :c:macro:`Py_LIMITED_API` defined.
+3. The Limited API, available with ``Py_LIMITED_API`` defined.
    Ideally declared directly under ``Include/``.
 
 Each section has higher stability & maintenance requirements, and you will
@@ -92,7 +92,7 @@ Limited API
 
 The Limited API is a subset of the C API designed to guarantee ABI
 stability across Python 3 versions.
-Defining the macro :c:macro:`Py_LIMITED_API` will limit the exposed API to
+Defining the macro ``Py_LIMITED_API`` will limit the exposed API to
 this subset.
 
 No changes that break the Stable ABI are allowed.
