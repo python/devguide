@@ -23,10 +23,6 @@ to enter the public source tree. Ask yourself the following questions:
    in-development branch. Pull requests should only target bug-fix branches
    if an issue appears in only that version and possibly older versions.
 
-* **Are there comments on the pull request?** 
-   Look for explanations about whether the code coverage increased or 
-   stayed the same.
-
 * **Are the changes acceptable?** 
    If you want to share your work-in-progress code on a feature or bugfix, 
    then you can open a ``WIP``-prefixed pull request, publish patches on 
