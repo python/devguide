@@ -107,7 +107,7 @@ during office hours.
 |                  |                               | 24 hours before the start.                     |
 +------------------+-------------------------------+------------------------------------------------+
 
-.. _Python's Zulip Chat: https://python.zulipchat.com/#narrow/stream/116503-core/topic/Office.20Hour
+.. _Python's Zulip Chat: https://python.zulipchat.com/login/#narrow/stream/116503-core/topic/Office.20Hour
 .. _Mariatta's twitter: https://twitter.com/mariatta
 
 
