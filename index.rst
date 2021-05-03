@@ -98,11 +98,13 @@ Status of Python branches
 +------------------+--------------+-------------+----------------+----------------+-----------------------+
 | Branch           | Schedule     | Status      | First release  | End-of-life    | Release manager       |
 +==================+==============+=============+================+================+=======================+
-| main             | :pep:`619`   | features    | *2021-10-04*   | *TBD*          | Pablo Galindo Salgado |
+| main             | *TBD*        | features    | *TBD*          | *TBD*          | Pablo Galindo Salgado |
++------------------+--------------+-------------+----------------+----------------+-----------------------+
+| 3.10             | :pep:`619`   | prerelase   | *2021-10-04*   | *TBD*          | Pablo Galindo Salgado |
 +------------------+--------------+-------------+----------------+----------------+-----------------------+
 | 3.9              | :pep:`596`   | bugfix      | 2020-10-05     | *TBD*          | Łukasz Langa          |
 +------------------+--------------+-------------+----------------+----------------+-----------------------+
-| 3.8              | :pep:`569`   | bugfix      | 2019-10-14     | *2024-10*      | Łukasz Langa          |
+| 3.8              | :pep:`569`   | security    | 2019-10-14     | *2024-10*      | Łukasz Langa          |
 +------------------+--------------+-------------+----------------+----------------+-----------------------+
 | 3.7              | :pep:`537`   | security    | 2018-06-27     | *2023-06-27*   | Ned Deily             |
 +------------------+--------------+-------------+----------------+----------------+-----------------------+
@@ -111,7 +113,7 @@ Status of Python branches
 
 .. Remember to update the end-of-life table in devcycle.rst.
 
-The main branch is currently the future Python 3.10, and is the only
+The main branch is currently the future Python 3.11, and is the only
 branch that accepts new features.  The latest release for each Python
 version can be found on the `download page <https://www.python.org/downloads/>`_.
 
