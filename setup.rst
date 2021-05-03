@@ -280,7 +280,7 @@ to build.
 
 .. _this documentation: https://cpython-core-tutorial.readthedocs.io/en/latest/build_cpython_windows.html
 .. _Visual Studio 2017: https://www.visualstudio.com/
-.. _readme: https://github.com/python/cpython/blob/master/PCbuild/readme.txt
+.. _readme: https://github.com/python/cpython/blob/main/PCbuild/readme.txt
 .. _PCbuild directory: https://github.com/python/cpython/tree/2.7/PCbuild/
 .. _2.7 readme: https://github.com/python/cpython/blob/2.7/PCbuild/readme.txt
 .. _PC/VS9.0 directory: https://github.com/python/cpython/tree/2.7/PC/VS9.0/
