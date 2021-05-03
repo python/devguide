@@ -150,4 +150,4 @@ Dakshesh Vyas <scan-admin@coverity.com>
 
 .. _Coverity Connect: https://scan.coverity.com/projects/python
 
-.. _coverity_model.c: https://github.com/python/cpython/blob/master/Misc/coverity_model.c
+.. _coverity_model.c: https://github.com/python/cpython/blob/main/Misc/coverity_model.c
