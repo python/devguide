@@ -1,0 +1,194 @@
+=======================
+Changing Python's C API
+=======================
+
+The C API is divided into three sections:
+
+1. The internal, private API, available with ``Py_BUILD_CORE`` defined.
+   Ideally declared in ``Include/internal/``. Any API named with a leading
+   underscore is also considered private.
+2. The public C API, available when ``Python.h`` is included normally.
+   Ideally declared in ``Include/cpython/``.
+3. The Limited API, available with ``Py_LIMITED_API`` defined.
+   Ideally declared directly under ``Include/``.
+
+Each section has higher stability & maintenance requirements, and you will
+need to think about more issues when you add or change definitions in it.
+
+The compatibility guarantees for public C API are explained in the
+user documentation, ``Doc/c-api/stable.rst`` (:ref:`python:stable`).
+
+
+The internal API
+================
+
+Internal API is defined in ``Include/internal/`` and is only available
+for building CPython itself, as indicated by a macro like ``Py_BUILD_CORE``.
+
+While internal API can be changed at any time, it's still good to keep it
+stable: other API or other CPython developers may depend on it.
+
+With PyAPI_FUNC or PyAPI_DATA
+-----------------------------
+
+Functions or structures in ``Include/internal/`` defined with
+``PyAPI_FUNC`` or ``PyAPI_DATA`` are internal functions which are
+exposed only for specific use cases like debuggers and profilers.
+
+
+With the extern keyword
+-----------------------
+
+Functions in ``Include/internal/`` defined with the ``extern`` keyword
+*must not and can not* be used outside the CPython code base.  Only
+built-in stdlib extensions (built with the ``Py_BUILD_CORE_BUILTIN``
+macro defined) can use such functions.
+
+When in doubt, new internal C functions should be defined in
+``Include/internal`` using the ``extern`` keyword.
+
+Private names
+--------------
+
+Any API named with a leading underscore is also considered internal.
+There are two main use cases for using such names rather than putting the
+definition in ``Include/internal/`` (or directly in a ``.c`` file):
+
+* Internal helpers for other public API; users should not use these directly;
+* “Provisional” API, included in a Python release to test real-world usage
+  of new API. Such names should be renamed when stabilized; preferably with
+  a macro aliasing the old name to the new one.
+  See `"Finalizing the API" in PEP 590`_ for an example.
+
+.. _"Finalizing the API" in PEP 590: https://www.python.org/dev/peps/pep-0590/#finalizing-the-api
+
+
+.. _public-capi:
+
+Public C API
+============
+
+CPython's public C API is available when ``Python.h`` is included normally
+(that is, without defining macros to select the other variants).
+
+It should be defined in ``Include/cpython/`` (unless part of the Limited API,
+see below).
+
+Guidelines for expanding/changing the public API:
+
+- Make sure the new API follows reference counting conventions. 
+  (Following them makes the API easier to reason about, and easier use
+  in other Python implementations.)
+
+  - Functions *must not* steal references
+  - Functions *must not* return borrowed references
+  - Functions returning references *must* return a strong reference
+
+- Make sure the ownership rules and lifetimes of all applicable struct
+  fields, arguments and return values are well defined.
+
+
+Limited API
+===========
+
+The Limited API is a subset of the C API designed to guarantee ABI
+stability across Python 3 versions.
+Defining the macro ``Py_LIMITED_API`` will limit the exposed API to
+this subset.
+
+No changes that break the Stable ABI are allowed.
+
+The Limited API should be defined in ``Include/``, excluding the
+``cpython`` and ``internal`` subdirectories.
+
+Guidelines for changing the Limited API
+---------------------------------------
+
+- Guidelines for the general :ref:`public-capi` apply.
+
+- New Limited API should only be defined if ``Py_LIMITED_API`` is set
+  to the version the API was added in or higher.
+  (See below for the proper ``#if`` guard.)
+
+- All parameter types, return values, struct members, etc. need to be part
+  of the Limited API.
+
+  - Functions that deal with ``FILE*`` (or other types with ABI portability
+    issues) should not be added.
+
+- Think twice when defining macros.
+
+  - Macros should not expose implementation details
+  - Functions must be exported as actual functions, not (only)
+    as functions-like macros.
+  - If possible, avoid macros. This makes the Limited API more usable in
+    languages that don't use the C preprocessor.
+
+- Please start a public discussion before expanding the Limited API
+
+- The Limited API and must follow standard C, not just features of currently
+  supported platforms. The exact C dialect is described in :pep:`7`.
+
+  - Documentation examples (and more generally: the intended use of the API)
+    should also follow standard C.
+  - In particular, do not cast a function pointer to ``void*`` (a data pointer)
+    or vice versa.
+
+- Think about ease of use for the user.
+
+  - In C, ease of use itself is not very important; what is useful is 
+    reducing boilerplate code needed to use the API. Bugs like to hide in
+    boiler plates.
+
+  - If a function will be often called with specific value for an argument,
+    consider making it default (used when ``NULL`` is passed in).
+  - The Limited API needs to be well documented.
+
+- Think about future extensions
+
+  - If it's possible that future Python versions will need to add a new
+    field to your struct, make sure it can be done.
+  - Make as few assumptions as possible about implementation details that
+    might change in future CPython versions or differ across C API
+    implementations. The most important CPython-specific implementation
+    details involve:
+
+    - The GIL
+    - :ref:`Garbage collection <gc>`
+    - Memory layout of PyObject, lists/tuples and other structures
+
+If following these guidelines would hurt performance, add a fast function
+(or macro) to the non-limited API and a stable equivalent to the Limited
+API.
+
+If anything is unclear, or you have a good reason to break the guidelines,
+consider discussing the change at the `capi-sig`_ mailing list.
+
+.. _capi-sig: https://mail.python.org/mailman3/lists/capi-sig.python.org/
+
+Adding a new definition to the Limited API
+------------------------------------------
+
+- Add the declaration to a header file directly under ``Include/``, into a
+  block guarded with the following:
+
+  .. code-block:: c
+
+    #if !defined(Py_LIMITED_API) || Py_LIMITED_API+0 >= 0x03yy0000
+
+  with the ``yy`` corresponding to the target CPython version, e.g.
+  ``0x030A0000`` for Python 3.10.
+- Append an entry to the Stable ABI manifest, ``Misc/stable_abi.txt``.
+- Regenerate the autogenerated files using ``make regen-limited-abi``.
+  On platforms without ``make``, run this command directly:
+
+  .. code-block:: shell
+
+     ./python ./Tools/scripts/stable_abi.py --generate-all ./Misc/stable_abi.txt
+
+- Build Python and check the using ``make check-limited-abi``.
+  On platforms without ``make``, run this command directly:
+
+  .. code-block:: shell
+
+    ./python ./Tools/scripts/stable_abi.py --all ./Misc/stable_abi.txt
