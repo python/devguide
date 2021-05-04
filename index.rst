@@ -324,6 +324,7 @@ Full Table of Contents
    compiler
    garbage_collector
    extensions
+   c-api
    coverity
    clang
    buildworker
