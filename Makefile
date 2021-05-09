@@ -3,8 +3,9 @@
 
 # You can set these variables from the command line.
 PYTHON        = python3
+VENVDIR       = ./venv
 SPHINXOPTS    =
-SPHINXBUILD   = ./venv/bin/sphinx-build
+SPHINXBUILD   = $(VENVDIR)/bin/sphinx-build
 PAPER         =
 BUILDDIR      = _build
 
@@ -39,11 +40,11 @@ help:
 	@echo "  serve      to serve devguide on the localhost (8000)"
 
 clean:
-	-rm -rf $(BUILDDIR)/*
+	-rm -rf $(BUILDDIR)/* $(VENVDIR)
 
 venv:
-	$(PYTHON) -m venv venv
-	./venv/bin/python3 -m pip install -r requirements.txt
+	$(PYTHON) -m venv $(VENVDIR)
+	$(VENVDIR)/bin/python3 -m pip install -r requirements.txt
 
 html: venv
 	$(SPHINXBUILD) -b html $(ALLSPHINXOPTS) $(BUILDDIR)/html
