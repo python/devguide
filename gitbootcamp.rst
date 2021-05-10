@@ -157,9 +157,30 @@ You may specify more than one branch for deletion.
 Renaming Branch
 ---------------
 
-The CPython repository's default branch was renamed from ``master`` to ``main``
-after the Python 3.10b1 release. If you had cloned the repository before this
-change, you can rename your local branch as follows::
+The CPython repository's default branch was renamed from ``master`` to
+``main`` after the Python 3.10b1 release.
+
+If you have a fork on GitHub (as described in :ref:`fork-cpython`) that was
+created before the rename, you should visit the GitHub page for your fork to
+rename the branch there. You only have to do this once. GitHub should
+provide you with a dialog for this. If it doesn't (or the dialog was already
+dismissed), you can rename the branch in your fork manually `by following
+these GitHub instructions <https://github.com/github/renaming#renaming-existing-branches>`__
+
+After renaming the branch in your fork, you need to update any local clones
+as well. This only has to be done once per clone::
+
+    git branch -m master main
+    git fetch origin
+    git branch -u origin/main main
+    git remote set-head origin -a
+
+(GitHub also provides these instructions after you rename the branch.)
+
+If you do not have a fork on GitHub, but rather a direct clone of the main
+repo created before the branch rename, you still have to update your local
+clones. This still only has to be done once per clone. In that case, you can
+rename your local branch as follows::
 
     git branch -m master main
     git fetch upstream
