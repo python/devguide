@@ -1,2 +1,2 @@
-Sphinx
-python-docs-theme
+Sphinx==3.5.4
+python-docs-theme==2021.5
