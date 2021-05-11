@@ -43,7 +43,8 @@ clean:
 
 venv:
 	$(PYTHON) -m venv venv
-	./venv/bin/python3 -m pip install --upgrade pip -r requirements.txt
+	./venv/bin/python3 -m pip install --upgrade pip
+	./venv/bin/python3 -m pip install -r requirements.txt
 
 html: venv
 	$(SPHINXBUILD) -b html $(ALLSPHINXOPTS) $(BUILDDIR)/html
