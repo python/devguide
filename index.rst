@@ -46,7 +46,7 @@ instructions please see the :ref:`setup guide <setup>`.
 
       ./python -m test -j3
 
-   On :ref:`most <mac-python.exe>` Mac OS X systems or WSL, replace :file:`./python`
+   On :ref:`most <mac-python.exe>` Mac OS X systems, replace :file:`./python`
    with :file:`./python.exe`.  On Windows, use :file:`python.bat`.
 
 5. Create a new branch where your work for the issue will go, e.g.::
