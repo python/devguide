@@ -236,7 +236,7 @@ tkinter               gpolo, serhiy.storchaka
 token
 tokenize              meador.inge
 trace                 belopolsky
-traceback
+traceback             iritkatriel
 tracemalloc           vstinner
 tty                   twouters*
 turtle                gregorlingl, willingc
