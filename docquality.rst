@@ -99,7 +99,7 @@ lives in a `separate repository`_ and bug reports should be submitted to the
 
 Our devguide workflow uses continuous integration and deployment so changes to
 the devguide are normally published when the pull request is merged. Changes
-to CPython documentation follows the workflow of a CPython release and is
+to CPython documentation follow the workflow of a CPython release and are
 published in the release.
 
 
