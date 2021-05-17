@@ -24,11 +24,6 @@ On :ref:`most <mac-python.exe>` Mac OS X systems, replace :file:`./python`
 with :file:`./python.exe`.  On Windows, use :file:`python.bat`.  If using
 Python 2.7, replace ``test`` with ``test.regrtest``.
 
-If you don't have easy access to a command line, you can run the test suite from
-a Python or IDLE shell::
-
-    >>> from test import autotest
-
 This will run the majority of tests, but exclude a small portion of them; these
 excluded tests use special kinds of resources: for example, accessing the
 Internet, or trying to play a sound or to display a graphical interface on
