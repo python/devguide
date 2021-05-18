@@ -57,7 +57,7 @@ Becoming a member of the Python triage team
 
 Any Python core developers are welcome to invite a Python contributor to the
 Python triage team. Do note that the responsibilities of a Python triager
-is more elevated than a developer on bpo. For example, the Python triager
+are more elevated than a developer on bpo. For example, the Python triager
 has access to more repositories than just CPython. Triagers will be responsible
 to handle not just issues, but also pull requests, and even managing backports.
 
