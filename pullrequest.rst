@@ -286,6 +286,11 @@ to explain in proper depth what has happened (detail should be good enough
 that a core developer reading the commit message understands the
 justification for the change).
 
+Additionally, commit message when started with these words-
+**close**, **closes**, **closed**, **closing**, **fix**, **fixes** or **fixed**
+along with the issue number(bpo-NNN) like ``closes bpo-NNN: ....`` ensure
+auto-closure of the issue in bug tracker as the PR containing the commit is merged.
+
 Check :ref:`the git bootcamp <accepting-and-merging-a-pr>` for further
 instructions on how the commit message should look like when merging a pull
 request.
