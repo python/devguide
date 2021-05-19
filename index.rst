@@ -14,8 +14,8 @@ community that maintains Python.  We welcome your contributions to Python!
 Quick Reference
 ---------------
 
-Here are the basic steps needed to get :ref:`set up <setup>` and contribute a
-patch. This is meant as a checklist, once you know the basics. For complete
+Here are the basic steps needed to get set up and contribute a patch.
+This is meant as a checklist, once you know the basics. For complete
 instructions please see the :ref:`setup guide <setup>`.
 
 1. Install and set up :ref:`Git <vcsetup>` and other dependencies
