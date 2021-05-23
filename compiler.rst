@@ -229,7 +229,7 @@ number is passed as the last parameter to each ``stmt_ty`` function.
 
 .. versionchanged:: 3.9
    The new PEG parser generates an AST directly without creating a
-   parse tree. ``Python/ast.c``is now only used to validate the AST in
+   parse tree. ``Python/ast.c`` is now only used to validate the AST in
    debug mode.
 
 .. seealso:: :pep:`617` (PEP 617 -- New PEG parser for CPython)
