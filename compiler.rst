@@ -470,11 +470,11 @@ Important Files
         are found here.
 
     peg_api.c
-        Contains functions to create an AST from source code which are used by
-        the interpreter.
+        Contains high-level functions to create an AST from source code which
+        are used by the interpreter.
 
     pegen.c
-        The new PEG parser introduced in 3.9. Contains helper functions which
+        The new PEG parser introduced in 3.9.  Contains helper functions which
         are used by functions in :file:`Parser/parser.c` to construct the AST.
         Also contains helper functions which help raise better error messages
         when parsing source code.
