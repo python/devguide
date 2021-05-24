@@ -224,7 +224,7 @@ when a function needs to manipulate a generic ASDL sequence:
 ``asdl_seq_SET_UNTYPED(asdl_seq *, int, stmt_ty)``
         Set a specific index in an ``asdl_seq`` to the specified value
 ``asdl_seq_LEN(asdl_seq *)``
-        Return the length of an ``asdl_seq``
+        Return the length of an ``asdl_seq`` or ``asdl_xx_seq``
 
 Note that typed macros and functions are recommended over their untyped
 counterparts.  Typed macros carry out checks in debug mode and aid
