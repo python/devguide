@@ -380,9 +380,9 @@ and ``configure`` Python versions >= 3.7::
 
 or ``configure`` Python versions < 3.7::
 
-    $ CPPFLAGS="-I$(brew --prefix openssl)/include" \
-      LDFLAGS="-L$(brew --prefix openssl)/lib" \
-      ./configure --with-pydebug
+    $ export CPPFLAGS="-I$(brew --prefix openssl)/include"
+    $ export LDFLAGS="-L$(brew --prefix openssl)/lib"
+    $ ./configure --with-pydebug
 
 and ``make``::
 
@@ -394,9 +394,9 @@ or **MacPorts**::
 
 and ``configure``::
 
-    $ CPPFLAGS="-I/opt/local/include" \
-      LDFLAGS="-L/opt/local/lib" \
-      ./configure --with-pydebug
+    $ export CPPFLAGS="-I/opt/local/include"
+    $ export LDFLAGS="-L/opt/local/lib"
+    $ ./configure --with-pydebug
 
 and ``make``::
 
