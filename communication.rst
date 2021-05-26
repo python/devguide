@@ -72,7 +72,7 @@ RSS feed readers.
 .. _python-list: https://mail.python.org/mailman/listinfo/python-list
 .. _tutor: https://mail.python.org/mailman/listinfo/tutor
 .. _StackOverflow: https://stackoverflow.com/
-.. _LiberaChat: https://libera.chat/
+.. _Libera.Chat: https://libera.chat/
 
 Zulip
 -----
