@@ -50,7 +50,7 @@ to any issue, subscribe to python-bugs-list_.
 
 General Python questions should go to `python-list`_ or `tutor`_
 or similar resources, such as StackOverflow_ or the ``#python`` IRC channel
-on Freenode_.
+on LiberaChat_.
 
 `Core-Workflow <https://mail.python.org/mm3/mailman3/lists/core-workflow.python.org/>`_
 mailing list is the place to discuss and work on improvements to the CPython
@@ -72,7 +72,7 @@ RSS feed readers.
 .. _python-list: https://mail.python.org/mailman/listinfo/python-list
 .. _tutor: https://mail.python.org/mailman/listinfo/tutor
 .. _StackOverflow: https://stackoverflow.com/
-.. _Freenode: http://freenode.net/
+.. _LiberaChat: https://libera.chat/
 
 Zulip
 -----
@@ -85,10 +85,9 @@ IRC
 
 Some core developers enjoy spending time on IRC discussing various issues
 regarding Python's development in the ``#python-dev`` channel on
-``irc.freenode.net``. This is not a place to ask for help with Python, but to
-discuss issues related to Python's own development.  You can use Freenode's
-`Web interface <https://webchat.freenode.net/>`_ if you don't have an IRC
-client.
+``irc.libera.chat``. This is not a place to ask for help with Python, but to
+discuss issues related to Python's own development. See also the
+``#python-dev-notifs`` channel for bots notifications.
 
 
 Blogs

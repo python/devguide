@@ -1736,7 +1736,8 @@ How to get help
 
 Discussions about translations occur on the `doc-sig
 <https://mail.python.org/mailman/listinfo/doc-sig>`_ mailing list,
-and there's a freenode IRC channel, ``#python-doc``.
+and there's a `LiberaChat IRC <https://libera.chat/>`_ channel,
+``#python-doc``.
 
 
 Translation FAQ
