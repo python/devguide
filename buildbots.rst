@@ -52,8 +52,8 @@ There are three ways of visualizing recent build results:
   you.  You can also access builder information by clicking on the builder
   status bubbles in the top line.
 
-If you like IRC, having an IRC client open to the #python-dev channel on
-irc.freenode.net is useful.  Any time a builder changes state (last build
+If you like IRC, having an IRC client open to the #python-dev-notifs channel on
+irc.libera.chat is useful.  Any time a builder changes state (last build
 passed and this one didn't, or vice versa), a message is posted to the channel.
 Keeping an eye on the channel after pushing a changeset is a simple way to get
 notified that there is something you should look in to.

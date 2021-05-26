@@ -41,7 +41,7 @@ Ask #python-dev
 ---------------
 
 If you are comfortable with IRC you can try asking on ``#python-dev`` (on
-the `freenode`_ network). Typically there are a number of experienced
+the `Libera.Chat`_ network). Typically there are a number of experienced
 developers, ranging from triagers to core developers, who can answer
 questions about developing for Python.  As with the mailing lists,
 ``#python-dev`` is for questions involving the development *of* Python
@@ -52,7 +52,7 @@ whereas ``#python`` is for questions concerning development *with* Python.
   You may not be able to access the history of this channel, so it cannot
   be used as a "knowledge base" of sorts.
 
-.. _freenode: https://freenode.net/
+.. _Libera.Chat: https://libera.chat/
 
 Zulip
 -----
