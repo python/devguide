@@ -50,7 +50,7 @@ to any issue, subscribe to python-bugs-list_.
 
 General Python questions should go to `python-list`_ or `tutor`_
 or similar resources, such as StackOverflow_ or the ``#python`` IRC channel
-on LiberaChat_.
+on Libera.Chat_.
 
 `Core-Workflow <https://mail.python.org/mm3/mailman3/lists/core-workflow.python.org/>`_
 mailing list is the place to discuss and work on improvements to the CPython
