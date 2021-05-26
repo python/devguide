@@ -52,7 +52,7 @@ whereas ``#python`` is for questions concerning development *with* Python.
   You may not be able to access the history of this channel, so it cannot
   be used as a "knowledge base" of sorts.
 
-.. _LiberaChat: https://libera.chat/
+.. _Libera.Chat: https://libera.chat/
 
 Zulip
 -----
