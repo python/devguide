@@ -406,7 +406,7 @@ root access is beyond the scope of this guide.
 
 For more details on various options and considerations for building, refer
 to the `macOS readme
-<https://github.com/python/cpython/blob/master/Mac/README>`_.
+<https://github.com/python/cpython/blob/main/Mac/README.rst>`_.
 
 .. _clang: https://clang.llvm.org/
 .. _ccache: https://ccache.samba.org/
