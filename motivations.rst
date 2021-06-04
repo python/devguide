@@ -118,7 +118,7 @@ participating in the CPython core development process:
 
    * Microsoft (Software Developer)
    * Personal site: `stevedower.id.au <https://stevedower.id.au/>`_
-   * Speaking: `stevedower.id.au/speaking <https://stevedower.id.au/speaking/>`_
+   * Speaking: `stevedower.id.au/speaking <https://stevedower.id.au/speaking>`_
    * Work blog: `aka.ms/pythonblog <https://aka.ms/pythonblog>`_
    * Email address: steve.dower@python.org
 

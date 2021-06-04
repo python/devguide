@@ -57,7 +57,7 @@ Becoming a member of the Python triage team
 
 Any Python core developers are welcome to invite a Python contributor to the
 Python triage team. Do note that the responsibilities of a Python triager
-is more elevated than a developer on bpo. For example, the Python triager
+are more elevated than a developer on bpo. For example, the Python triager
 has access to more repositories than just CPython. Triagers will be responsible
 to handle not just issues, but also pull requests, and even managing backports.
 
@@ -103,13 +103,13 @@ expert-asyncio
 invalid
     Used manually for PRs that do not meet basic requirements and
     automatically added by bedevere when PR authors attempt to merge maintenace
-    branches into the master branch. During events such as the October
+    branches into the main branch. During events such as the October
     Hacktoberfest, this label will prevent the PR from counting toward the
     author's contributions.
 
 needs backport to X.Y
     Used for PRs which are appropriate to backport to
-    branches prior to master. Generally, backports to the maintenance branches
+    branches prior to main. Generally, backports to the maintenance branches
     are primarily bugfixes and documentation clarifications. Backports to the
     security branches are strictly reserved for PRs involving security fixes, such as
     crashes, privilege escalation, and DoS. The use of this label will cause
@@ -582,31 +582,31 @@ Checklist for Triaging
 
 
 .. _CPython: https://github.com/python/cpython/
-.. _Doc: https://github.com/python/cpython/tree/master/Doc/
-.. _Grammar: https://github.com/python/cpython/tree/master/Grammar/
-.. _Lib: https://github.com/python/cpython/tree/master/Lib/
-.. _Lib/lib2to3: https://github.com/python/cpython/tree/master/Lib/lib2to3/
-.. _Lib/ctypes: https://github.com/python/cpython/tree/master/Lib/ctypes/
-.. _Lib/distutils: https://github.com/python/cpython/tree/master/Lib/distutils/
-.. _Lib/doctest.py: https://github.com/python/cpython/tree/master/Lib/doctest.py
-.. _Lib/idlelib: https://github.com/python/cpython/tree/master/Lib/idlelib/
-.. _Lib/io.py: https://github.com/python/cpython/tree/master/Lib/io.py
-.. _Lib/re.py: https://github.com/python/cpython/tree/master/Lib/re.py
-.. _Lib/test: https://github.com/python/cpython/tree/master/Lib/test/
-.. _Lib/test/regrtest.py: https://github.com/python/cpython/tree/master/Lib/test/regrtest.py
-.. _Lib/test/support: https://github.com/python/cpython/tree/master/Lib/test/support/
-.. _Lib/tkinter: https://github.com/python/cpython/tree/master/Lib/tkinter/
-.. _Lib/unittest: https://github.com/python/cpython/tree/master/Lib/unittest/
-.. _Lib/xml: https://github.com/python/cpython/tree/master/Lib/xml/
-.. _Modules: https://github.com/python/cpython/tree/master/Modules/
-.. _Modules/_io: https://github.com/python/cpython/tree/master/Modules/_io/
-.. _Modules/_sre.c: https://github.com/python/cpython/tree/master/Modules/_sre.c
-.. _Objects: https://github.com/python/cpython/tree/master/Objects/
-.. _Objects/unicodeobject.c: https://github.com/python/cpython/tree/master/Objects/unicodeobject.c
-.. _Parser: https://github.com/python/cpython/tree/master/Parser/
-.. _Python: https://github.com/python/cpython/tree/master/Python/
-.. _Tools: https://github.com/python/cpython/tree/master/Tools/
-.. _Tools/demo: https://github.com/python/cpython/tree/master/Tools/demo/
+.. _Doc: https://github.com/python/cpython/tree/main/Doc/
+.. _Grammar: https://github.com/python/cpython/tree/main/Grammar/
+.. _Lib: https://github.com/python/cpython/tree/main/Lib/
+.. _Lib/lib2to3: https://github.com/python/cpython/tree/main/Lib/lib2to3/
+.. _Lib/ctypes: https://github.com/python/cpython/tree/main/Lib/ctypes/
+.. _Lib/distutils: https://github.com/python/cpython/tree/main/Lib/distutils/
+.. _Lib/doctest.py: https://github.com/python/cpython/tree/main/Lib/doctest.py
+.. _Lib/idlelib: https://github.com/python/cpython/tree/main/Lib/idlelib/
+.. _Lib/io.py: https://github.com/python/cpython/tree/main/Lib/io.py
+.. _Lib/re.py: https://github.com/python/cpython/tree/main/Lib/re.py
+.. _Lib/test: https://github.com/python/cpython/tree/main/Lib/test/
+.. _Lib/test/regrtest.py: https://github.com/python/cpython/tree/main/Lib/test/regrtest.py
+.. _Lib/test/support: https://github.com/python/cpython/tree/main/Lib/test/support/
+.. _Lib/tkinter: https://github.com/python/cpython/tree/main/Lib/tkinter/
+.. _Lib/unittest: https://github.com/python/cpython/tree/main/Lib/unittest/
+.. _Lib/xml: https://github.com/python/cpython/tree/main/Lib/xml/
+.. _Modules: https://github.com/python/cpython/tree/main/Modules/
+.. _Modules/_io: https://github.com/python/cpython/tree/main/Modules/_io/
+.. _Modules/_sre.c: https://github.com/python/cpython/tree/main/Modules/_sre.c
+.. _Objects: https://github.com/python/cpython/tree/main/Objects/
+.. _Objects/unicodeobject.c: https://github.com/python/cpython/tree/main/Objects/unicodeobject.c
+.. _Parser: https://github.com/python/cpython/tree/main/Parser/
+.. _Python: https://github.com/python/cpython/tree/main/Python/
+.. _Tools: https://github.com/python/cpython/tree/main/Tools/
+.. _Tools/demo: https://github.com/python/cpython/tree/main/Tools/demo/
 .. _Developer's guide: https://github.com/python/devguide/
 .. _GSoC: https://summerofcode.withgoogle.com/
 .. _issue tracker: https://bugs.python.org

@@ -266,12 +266,6 @@ Visual Studio to continue development.
 See the `readme`_ for more details on what other software is necessary and how
 to build.
 
-.. note:: **Python 2.7** uses Microsoft Visual Studio 2008, which is most easily
-   obtained through an MSDN subscription.  To use the build files in the
-   `PCbuild directory`_ you will also need Visual Studio 2010, see the `2.7
-   readme`_ for more details.  If you have VS 2008 but not 2010 you can use the
-   build files in the `PC/VS9.0 directory`_, see the `VS9 readme`_ for details.
-
 .. note:: If you are using the Windows Subsystem for Linux (WSL), clone the
    repository from a native Windows terminal program like cmd.exe command prompt
    or PowerShell as well as use a build of git targeted for Windows, e.g., the
@@ -280,12 +274,7 @@ to build.
 
 .. _this documentation: https://cpython-core-tutorial.readthedocs.io/en/latest/build_cpython_windows.html
 .. _Visual Studio 2017: https://www.visualstudio.com/
-.. _readme: https://github.com/python/cpython/blob/master/PCbuild/readme.txt
-.. _PCbuild directory: https://github.com/python/cpython/tree/2.7/PCbuild/
-.. _2.7 readme: https://github.com/python/cpython/blob/2.7/PCbuild/readme.txt
-.. _PC/VS9.0 directory: https://github.com/python/cpython/tree/2.7/PC/VS9.0/
-.. _VS9 readme: https://github.com/python/cpython/blob/2.7/PC/VS9.0/readme.txt
-
+.. _readme: https://github.com/python/cpython/blob/main/PCbuild/readme.txt
 
 .. _build-dependencies:
 
@@ -415,9 +404,7 @@ and ``make``::
 
 There will sometimes be optional modules added for a new release which
 won't yet be identified in the OS level build dependencies. In those cases,
-just ask for assistance on the core-mentorship list. If working on bug
-fixes for Python 2.7, use ``python`` in place of ``python3`` in the above
-commands.
+just ask for assistance on the core-mentorship list.
 
 Explaining how to build optional dependencies on a UNIX based system without
 root access is beyond the scope of this guide.

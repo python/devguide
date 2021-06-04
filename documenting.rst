@@ -1679,8 +1679,8 @@ in production, other are work in progress:
 .. _mail_it: https://mail.python.org/pipermail/doc-sig/2019-April/004114.html
 .. _mail_lt: https://mail.python.org/pipermail/doc-sig/2019-July/004138.html
 .. _mail_ru: https://mail.python.org/pipermail/doc-sig/2019-May/004131.html
-.. _tx_pl: https://www.transifex.com/python-doc/python-newest/language/pl/
-.. _tx_zh_cn: https://www.transifex.com/python-doc/python-newest/language/
+.. _tx_pl: https://www.transifex.com/python-doc/python-newest/
+.. _tx_zh_cn: https://www.transifex.com/python-doc/python-newest/
 .. _tx_zh_tw: https://www.transifex.com/python-tw-doc/python-36-tw
 .. _wiki_pt_br: http://python.org.br/traducao
 
@@ -1736,7 +1736,8 @@ How to get help
 
 Discussions about translations occur on the `doc-sig
 <https://mail.python.org/mailman/listinfo/doc-sig>`_ mailing list,
-and there's a freenode IRC channel, ``#python-doc``.
+and there's a `Libera.Chat IRC <https://libera.chat/>`_ channel,
+``#python-doc``.
 
 
 Translation FAQ

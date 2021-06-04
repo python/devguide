@@ -81,7 +81,7 @@ The steps to gaining commit privileges are:
      https://github.com/python/voters/
    - Your preferred email address to
      subscribe to python-committers with
-   - A reminder about the Code of Conduct and to report issues to the PSF
+   - A reminder about the `Code of Conduct`_ and to report issues to the PSF
      Conduct WG
 
 6. Once you have provided the pertinent details, your various new privileges
@@ -91,6 +91,8 @@ The steps to gaining commit privileges are:
    :ref:`developers`
 9. An announcement email by the steering council member handling your new
    membership will be sent to python-committers
+   
+.. _Code of Conduct: https://www.python.org/psf/conduct/
 
 
 Mailing Lists

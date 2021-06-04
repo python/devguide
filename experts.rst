@@ -211,7 +211,7 @@ spwd
 sqlite3               ghaering
 ssl                   janssen, christian.heimes, dstufft, alex
 stat                  christian.heimes
-statistics            steven.daprano, rhettinger, taleinat
+statistics            steven.daprano, rhettinger
 string
 stringprep
 struct                mark.dickinson, meador.inge
@@ -236,7 +236,7 @@ tkinter               gpolo, serhiy.storchaka
 token
 tokenize              meador.inge
 trace                 belopolsky
-traceback
+traceback             iritkatriel
 tracemalloc           vstinner
 tty                   twouters*
 turtle                gregorlingl, willingc

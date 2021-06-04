@@ -1,3 +1,4 @@
+Irit Katriel,iritkatriel,2021-05-10,,
 Batuhan Taskaya,isidentical,2020-11-08,,
 Brandt Bucher,brandtbucher,2020-09-14,,
 Lysandros Nikolaou,lysnikolaou,2020-06-29,,
@@ -24,7 +25,7 @@ Xiang Zhang,zhangyangyu,2016-11-21,,
 Inada Naoki,methane,2016-09-26,,
 Xavier de Gaye,xdegaye,2016-06-03,2018-01-25,Privileges relinquished on 2018-01-25
 Davin Potts,applio,2016-03-06,,
-Martin Panter,vadmium,2015-08-10,,
+Martin Panter,vadmium,2015-08-10,2020-11-26,
 Paul Moore,pfmoore,2015-03-15,,
 Robert Collins,rbtcollins,2014-10-16,,To work on unittest
 Berker Peksağ,berkerpeksag,2014-06-26,,
@@ -42,8 +43,8 @@ Peter Moody,,2012-05-20,2017-02-10,For ipaddress module; did not make GitHub tra
 Hynek Schlawack,hynek,2012-05-14,,
 Richard Oudkerk,,2012-04-29,2017-02-10,For multiprocessing module; did not make GitHub transition
 Andrew Svetlov,asvetlov,2012-03-13,,At PyCon sprint
-Petri Lehtinen,akheron,2011-10-22,,
-Meador Inge,meadori,2011-09-19,,
+Petri Lehtinen,akheron,2011-10-22,2020-11-12,
+Meador Inge,meadori,2011-09-19,2020-11-26,
 Jeremy Kloth,jkloth,2011-09-12,,
 Sandro Tosi,sandrotosi,2011-08-01,,
 Alex Gaynor,alex,2011-07-18,,For PyPy compatibility (since expanded scope)
@@ -51,9 +52,9 @@ Charles-François Natali,,2011-05-19,2017-02-10,Did not make GitHub transition
 Nadeem Vawda,,2011-04-10,2017-02-10,Did not make GitHub transition
 Jason R. Coombs,jaraco,2011-03-14,,For sprinting on distutils2
 Ross Lagerwall,,2011-03-13,2017-02-10,Did not make GitHub transition
-Eli Bendersky,eliben,2011-01-11,,
+Eli Bendersky,eliben,2011-01-11,2020-11-26,
 Ned Deily,ned-deily,2011-01-09,,
-David Malcolm,davidmalcolm,2010-10-27,,
+David Malcolm,davidmalcolm,2010-10-27,2020-11-12,relinquished privileges on 2020-11-12
 Tal Einat,taleinat,2010-10-04,,For IDLE
 Łukasz Langa,ambv,2010-09-08,,
 Daniel Stutzbach,,2010-08-22,2017-02-10,Did not make GitHub transition
@@ -69,16 +70,16 @@ Dino Viehland,DinoV,2010-02-23,,For IronPython compatibility
 Larry Hastings,larryhastings,2010-02-22,,
 Victor Stinner,vstinner,2010-01-30,,
 Stefan Krah,skrah,2010-01-05,2020-10-07,For the decimal module
-Doug Hellmann,dhellmann,2009-09-20,,For documentation
+Doug Hellmann,dhellmann,2009-09-20,2020-11-11,For documentation; relinquished privileges on 2020-11-11
 Frank Wierzbicki,,2009-08-02,2017-02-10,For Jython compatibility; did not make GitHub transition
 Ezio Melotti,ezio-melotti,2009-06-07,,For documentation
-Philip Jenvey,pjenvey,2009-05-07,,For Jython compatibility
+Philip Jenvey,pjenvey,2009-05-07,2020-11-26,For Jython compatibility
 Michael Foord,voidspace,2009-04-01,,For IronPython compatibility
 R\. David Murray,bitdancer,2009-03-30,,
 Chris Withers,cjw296,2009-03-08,,
 Tarek Ziadé,,2008-12-21,2017-02-10,For distutils module; did not make GitHub transition
 Hirokazu Yamamoto,,2008-08-12,2017-02-10,For Windows build; did not make GitHub transition
-Armin Ronacher,mitsuhiko,2008-07-23,,For documentation toolset and ast module
+Armin Ronacher,mitsuhiko,2008-07-23,2020-11-26,For documentation toolset and ast module
 Antoine Pitrou,pitrou,2008-07-16,,
 Senthil Kumaran,orsenthil,2008-06-16,,For GSoC
 Jesse Noller,,2008-06-16,2017-02-10,For multiprocessing module; did not make GitHub transition
@@ -86,22 +87,22 @@ Jesús Cea,jcea,2008-05-13,,For bsddb module
 Guilherme Polo,,2008-04-24,2017-02-10,Did not make GitHub transition
 Jeroen Ruigrok van der Werven,,2008-04-12,2017-02-10,For documentation; did not make GitHub transition
 Benjamin Peterson,benjaminp,2008-03-25,,For bug triage
-David Wolever,wolever,2008-03-17,,For 2to3 module
-Trent Nelson,tpn,2008-03-17,,
+David Wolever,wolever,2008-03-17,2020-11-21,For 2to3 module
+Trent Nelson,tpn,2008-03-17,2020-11-26,
 Mark Dickinson,mdickinson,2008-01-06,,For maths-related work
-Amaury Forgeot d'Arc,amauryfa,2007-11-09,,
+Amaury Forgeot d'Arc,amauryfa,2007-11-09,2020-11-26,
 Christian Heimes,tiran,2007-10-31,,
 Bill Janssen,,2007-08-28,2017-02-10,For ssl module; did not make GitHub transition
 Jeffrey Yasskin,,2007-08-09,2017-02-10,Did not make GitHub transition
 Mark Summerfield,,2007-08-01,2017-02-10,For documentation; did not make GitHub transition
-Alexandre Vassalotti,avassalotti,2007-05-21,,For GSoC
+Alexandre Vassalotti,avassalotti,2007-05-21,2020-11-12,For GSoC
 Travis E. Oliphant,,2007-04-17,2017-02-10,Did not make GitHub transition
 Eric V. Smith,ericvsmith,2007-02-28,,For PEP 3101 in a sandbox
 Josiah Carlson,,2007-01-06,2017-02-10,For asyncore and asynchat modules; did not make GitHub transition
 Collin Winter,,2007-01-05,2017-02-10,For PEP access; did not make GitHub transition
 Richard Jones,,2006-05-23,2017-02-10,For Need for Speed sprint; did not make GitHub transition
 Kristján Valur Jónsson,,2006-05-17,2017-02-10,For Need for Speed sprint; did not make GitHub transition
-Jack Diederich,jackdied,2006-05-17,,For Need for Speed sprint
+Jack Diederich,jackdied,2006-05-17,2020-11-26,For Need for Speed sprint
 Steven Bethard,,2006-04-27,2017-02-10,For PEP access and SourceForge maintenance; did not make GitHub transition
 Gerhard Häring,,2006-04-23,2017-02-10,Did not make the GitHub transition
 George Yoshida,,2006-04-17,2017-02-10,For tracker administration; did not make GitHub transition
@@ -115,10 +116,10 @@ Facundo Batista,facundobatista,2004-10-16,,
 Sean Reifschneider,,2004-09-17,2017-02-10,Did not make GitHub transition
 Johannes Gijsbers,,2004-08-14,2005-07-27,Privileges relinquished on 2005-07-27
 Matthias Klose,doko42,2004-08-04,,
-PJ Eby,pjeby,2004-03-24,,
+PJ Eby,pjeby,2004-03-24,2020-11-26,
 Vinay Sajip,vsajip,2004-02-20,,
 Hye-Shik Chang,,2003-12-10,2017-02-10,Did not make GitHub transition
-Armin Rigo,,2003-10-24,2012,Privileges relinquished in 2012
+Armin Rigo,,2003-10-24,2012-06-01,Privileges relinquished in 2012
 Andrew McNamara,,2003-06-09,2017-02-10,Did not make GitHub transition
 Samuele Pedroni,,2003-05-16,2017-02-10,Did not make GitHub transition
 Alex Martelli,aleaxit,2003-04-22,,
@@ -145,10 +146,10 @@ Steven M. Gava,,2001-06-25,2017-02-10,Did not make GitHub transition
 Steve Purcell,,2001-03-22,2017-02-10,Did not make GitHub transition
 Jim Fulton,,2000-10-06,2017-02-10,Did not make GitHub transition
 Ka-Ping Yee,,2000-10-03,2017-02-10,Did not make GitHub transition
-Lars Gustäbel,gustaebel,2000-09-21,,For tarfile module
+Lars Gustäbel,gustaebel,2000-09-21,2020-11-26,For tarfile module
 Neil Schemenauer,nascheme,2000-09-15,,
 Martin v. Löwis,,2000-09-08,2017-02-10,Did not make GitHub transition
-Thomas Heller,theller,2000-09-07,,
+Thomas Heller,theller,2000-09-07,2020-11-18,
 Moshe Zadka,,2000-07-29,2005-04-08,Privileges relinquished on 2005-04-08
 Thomas Wouters,Yhg1s,2000-07-14,,
 Peter Schneider-Kamp,,2000-07-10,2017-02-10,Did not make GitHub transition
@@ -163,12 +164,12 @@ Eric S. Raymond,,2000-06-02,2017-02-10,Did not make GitHub transition
 Greg Stein,,1999-11-07,2017-02-10,Did not make GitHub transition
 Just van Rossum,,1999-01-22,2017-02-10,Did not make GitHub transition
 Greg Ward,,1998-12-18,2017-02-10,Did not make GitHub transition
-Andrew Kuchling,akuchling,1998-04-09,2021-02-22,Privileges relinquished on 2021-02-22
+Andrew Kuchling,akuchling,1998-04-09,,
 Ken Manheimer,,1998-03-03,2005-04-08,Privileges relinquished on 2005-04-08
-Jeremy Hylton,jeremyhylton,1997-08-13,,
+Jeremy Hylton,jeremyhylton,1997-08-13,2020-11-26,
 Roger E. Masse,,1996-12-09,2017-02-10,Did not make GitHub transition
 Fred Drake,freddrake,1996-07-23,,
 Barry Warsaw,warsaw,1994-07-25,,
 Jack Jansen,jackjansen,1992-08-13,,
-Sjoerd Mullender,sjoerdmullender,1992-08-04,,
+Sjoerd Mullender,sjoerdmullender,1992-08-04,2020-11-14,
 Guido van Rossum,gvanrossum,1989-12-25,,

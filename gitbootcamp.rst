@@ -103,17 +103,17 @@ Creating and Switching Branches
 -------------------------------
 
 .. important::
-   Never commit directly to the ``master`` branch.
+   Never commit directly to the ``main`` branch.
 
 Create a new branch and switch to it::
 
-   # creates a new branch off master and switch to it
-   git checkout -b <branch-name> master
+   # creates a new branch off main and switch to it
+   git checkout -b <branch-name> main
 
 This is equivalent to::
 
-   # create a new branch from master, without checking it out
-   git branch <branch-name> master
+   # create a new branch from main, without checking it out
+   git branch <branch-name> main
    # check out the branch
    git checkout <branch-name>
 
@@ -144,7 +144,7 @@ Deleting Branches
 
 To delete a **local** branch that you no longer need::
 
-   git checkout master
+   git checkout main
    git branch -D <branch-name>
 
 To delete a **remote** branch::
@@ -152,6 +152,40 @@ To delete a **remote** branch::
    git push origin -d <branch-name>
 
 You may specify more than one branch for deletion.
+
+
+Renaming Branch
+---------------
+
+The CPython repository's default branch was renamed from ``master`` to
+``main`` after the Python 3.10b1 release.
+
+If you have a fork on GitHub (as described in :ref:`fork-cpython`) that was
+created before the rename, you should visit the GitHub page for your fork to
+rename the branch there. You only have to do this once. GitHub should
+provide you with a dialog for this. If it doesn't (or the dialog was already
+dismissed), you can rename the branch in your fork manually `by following
+these GitHub instructions <https://github.com/github/renaming#renaming-existing-branches>`__
+
+After renaming the branch in your fork, you need to update any local clones
+as well. This only has to be done once per clone::
+
+    git branch -m master main
+    git fetch origin
+    git branch -u origin/main main
+    git remote set-head origin -a
+
+(GitHub also provides these instructions after you rename the branch.)
+
+If you do not have a fork on GitHub, but rather a direct clone of the main
+repo created before the branch rename, you still have to update your local
+clones. This still only has to be done once per clone. In that case, you can
+rename your local branch as follows::
+
+    git branch -m master main
+    git fetch upstream
+    git branch -u upstream/main main
+
 
 Staging and Committing Files
 ----------------------------
@@ -230,7 +264,7 @@ Creating a Pull Request
 
 3. Click the ``compare across forks`` link.
 
-4. Select the base repository: ``python/cpython`` and base branch: ``master``.
+4. Select the base repository: ``python/cpython`` and base branch: ``main``.
 
 5. Select the head repository: ``<username>/cpython`` and head branch: the branch
    containing your changes.
@@ -250,14 +284,14 @@ Scenario:
   the upstream CPython repository.
 
 Please do not try to solve this by creating a pull request from
-``python:master`` to ``<username>:master`` as the authors of the patches will
+``python:main`` to ``<username>:main`` as the authors of the patches will
 get notified unnecessarily.
 
 Solution::
 
-   git checkout master
-   git pull upstream master
-   git push origin master
+   git checkout main
+   git pull upstream main
+   git push origin main
 
 .. note:: For the above commands to work, please follow the instructions found
           in the :ref:`checkout` section
@@ -275,11 +309,11 @@ Solution::
 
    git checkout some-branch
    git fetch upstream
-   git merge upstream/master
+   git merge upstream/main
    git push origin some-branch
 
 You may see error messages like "CONFLICT" and "Automatic merge failed;" when
-you run ``git merge upstream/master``.
+you run ``git merge upstream/main``.
 
 When it happens, you need to resolve conflict.  See these articles about resolving conflicts:
 
@@ -308,7 +342,7 @@ Solution:
 
    .. code-block:: bash
 
-       git checkout $(git rev-list -n 1 --before="yyyy-mm-dd hh:mm:ss" master)
+       git checkout $(git rev-list -n 1 --before="yyyy-mm-dd hh:mm:ss" main)
        git apply /path/to/issueNNNN-git.patch
 
    If the patch still won't apply, then a patch tool will not be able to
@@ -321,7 +355,7 @@ Solution:
 5. If the patch was applied to an old revision, it needs to be updated and
    merge conflicts need to be resolved::
 
-       git rebase master
+       git rebase main
        git mergetool
 
 6. Push the changes and open a pull request.
@@ -388,7 +422,7 @@ Pull requests can be accepted and merged by a Python Core Developer.
       bpo-12345: Improve the spam module (#777)
 
       * Improve the spam module
-      * merge from master
+      * merge from main
       * adjust code based on review comment
       * rebased
 
@@ -402,7 +436,7 @@ Backporting Merged Changes
 --------------------------
 
 A pull request may need to be backported into one of the maintenance branches
-after it has been accepted and merged into ``master``.  It is usually indicated
+after it has been accepted and merged into ``main``.  It is usually indicated
 by the label ``needs backport to X.Y`` on the pull request itself.
 
 Use the utility script
@@ -411,10 +445,10 @@ from the `core-workflow  <https://github.com/python/core-workflow>`_
 repository to backport the commit.
 
 The commit hash for backporting is the squashed commit that was merged to
-the ``master`` branch.  On the merged pull request, scroll to the bottom of the
+the ``main`` branch.  On the merged pull request, scroll to the bottom of the
 page.  Find the event that says something like::
 
-   <core_developer> merged commit <commit_sha1> into python:master <sometime> ago.
+   <core_developer> merged commit <commit_sha1> into python:main <sometime> ago.
 
 By following the link to ``<commit_sha1>``, you will get the full commit hash.
 
@@ -459,12 +493,12 @@ items like updating ``Misc/ACKS``.
 
 .. _Allow edits from maintainers: https://help.github.com/articles/allowing-changes-to-a-pull-request-branch-created-from-a-fork/
 
-To edit an open pull request that targets ``master``:
+To edit an open pull request that targets ``main``:
 
 1. In the pull request page, under the description, there is some information
    about the contributor's forked CPython repository and branch name that will be useful later::
 
-      <contributor> wants to merge 1 commit into python:master from <contributor>:<branch_name>
+      <contributor> wants to merge 1 commit into python:main from <contributor>:<branch_name>
 
 2. Fetch the pull request, using the :ref:`git pr <git_pr>` alias::
 
@@ -473,13 +507,13 @@ To edit an open pull request that targets ``master``:
    This will checkout the contributor's branch at ``<pr_number>``.
 
 3. Make and commit your changes on the branch.  For example, merge in changes
-   made to ``master`` since the PR was submitted (any merge commits will be
+   made to ``main`` since the PR was submitted (any merge commits will be
    removed by the later ``Squash and Merge`` when accepting the change):
 
    .. code-block:: bash
 
       git fetch upstream
-      git merge upstream/master
+      git merge upstream/main
       git add <filename>
       git commit -m "<message>"
 
