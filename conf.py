@@ -29,7 +29,7 @@ sys.path.append(os.path.abspath('tools'))
 
 # Add any Sphinx extension module names here, as strings. They can be extensions
 # coming with Sphinx (named 'sphinx.ext.*') or your custom ones.
-extensions = ['sphinx.ext.intersphinx', 'sphinx.ext.todo']
+extensions = ['sphinx.ext.intersphinx', 'sphinx.ext.todo', 'sphinx_copybutton']
 intersphinx_mapping = {'python': ('https://docs.python.org/3', None)}
 todo_include_todos = True
 
@@ -93,11 +93,8 @@ pygments_style = 'sphinx'
 # -- Options for HTML output ---------------------------------------------------
 
 # Use the upstream python-docs-theme
-html_theme = 'python_docs_theme'
-html_theme_options = {
-    'collapsiblesidebar': True,
-    'issues_url': 'https://github.com/python/devguide/issues/new',
-}
+html_theme = 'furo'
+html_theme_options = {}
 
 
 # The name for this set of Sphinx documents.  If None, it defaults to
@@ -107,13 +104,6 @@ html_title = "%s %s" % (project, release)
 # Path to find HTML templates.
 templates_path = ['tools/templates']
 
-# Custom sidebar templates, filenames relative to this file.
-html_sidebars = {
-    # Defaults taken from http://www.sphinx-doc.org/en/stable/config.html#confval-html_sidebars
-    # Removes the quick search block
-    '**': ['localtoc.html', 'globaltoc.html', 'relations.html', 'customsourcelink.html'],
-}
-
 # Additional static files.
 html_static_path = ['tools/static']
 
@@ -122,7 +112,7 @@ html_static_path = ['tools/static']
 
 # The name of an image file (relative to this directory) to place at the top
 # of the sidebar.
-#html_logo = None
+html_logo = "python-logo.png"
 
 # The name of an image file (within the static path) to use as favicon of the
 # docs.  This file should be a Windows icon file (.ico) being 16x16 or 32x32
