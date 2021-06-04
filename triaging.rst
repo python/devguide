@@ -66,13 +66,13 @@ They can request this to any core developer, and the core developer
 can pass the request to the `Python organization admin
 <https://devguide.python.org/devcycle/?highlight=organization%20admin#current-owners>`_
 on GitHub. The request
-can be made confidentially via a DM in Zulip or Discourse, or publicly by opening
+can be made confidentially via a DM in Discourse, or publicly by opening
 an `issue in the core-workflow repository
 <https://github.com/python/core-workflow/issues/new?template=triage_membership.md>`_.
 
 Any contributor who is not already a developer on b.p.o can also self-nominate
 to be a member of Python triage team. They can request this to any core developer,
-confidentially via DM in Zulip or Discourse, or publicly by opening an issue in core-workflow.
+confidentially via DM in Discourse, or publicly by opening an issue in core-workflow.
 If a core developer agrees and is willing to vouch for them, the core developer
 can pass the request to the GitHub administrator. They should also be added as
 developer on bpo.

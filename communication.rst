@@ -74,11 +74,17 @@ RSS feed readers.
 .. _StackOverflow: https://stackoverflow.com/
 .. _Libera.Chat: https://libera.chat/
 
-Zulip
------
 
-We have our own `zulipchat <https://python.zulipchat.com>`_ instance. This should be
-used to discuss the development of Python only.
+Discourse
+---------
+
+We have our own `Discourse`_ forum for both developers and users. This forum
+complements the `python-dev`_, `python-ideas`_, `python-help`_, and
+`python-list`_ mailing lists. Also, voting for new core developers takes place
+at `Discourse`_.
+
+.. _Discourse: https://discuss.python.org/
+
 
 IRC
 ---
