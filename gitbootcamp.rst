@@ -26,8 +26,6 @@ relevant to CPython's workflow.
    get more information about that in
    `git documentation <https://git-scm.com/book/en/v2/Git-Basics-Git-Aliases>`_
 
-.. contents::
-
 .. _fork-cpython:
 
 Forking CPython GitHub Repository
