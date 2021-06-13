@@ -288,26 +288,42 @@ number is passed as the last parameter to each ``stmt_ty`` function.
 Control Flow Graphs
 -------------------
 
-A control flow graph (often referenced by its acronym, CFG) is a
-directed graph that models the flow of a program using basic blocks that
-contain the intermediate representation (abbreviated "IR", and in this
-case is Python bytecode) within the blocks.  Basic blocks themselves are
-a block of IR that has a single entry point but possibly multiple exit
-points.  The single entry point is the key to basic blocks; it all has
-to do with jumps.  An entry point is the target of something that
-changes control flow (such as a function call or a jump) while exit
-points are instructions that would change the flow of the program (such
-as jumps and 'return' statements).  What this means is that a basic
-block is a chunk of code that starts at the entry point and runs to an
-exit point or the end of the block.
+A *control flow graph* (often referenced by its acronym, CFG) is a
+directed graph that models the flow of a program.  A node of a CFG is
+not an individual bytecode instruction, but instead represents a
+sequence of bytecode instructions that always execute sequentially.
+Each node is called a *basic block* and must always execute from
+start to finish, with a single entry point at the beginning and a
+single exit point at the end.  If some bytecode instruction *a* needs
+to jump to some other bytecode instruction *b*, then *a* must occur at
+the end of its basic block, and *b* must occur at the start of its
+basic block.
 
-As an example, consider an 'if' statement with an 'else' block.  The
-guard on the 'if' is a basic block which is pointed to by the basic
-block containing the code leading to the 'if' statement.  The 'if'
-statement block contains jumps (which are exit points) to the true body
-of the 'if' and the 'else' body (which may be ``NULL``), each of which are
-their own basic blocks.  Both of those blocks in turn point to the
-basic block representing the code following the entire 'if' statement.
+As an example, consider the following code snippet:
+
+.. code-block:: Python
+
+   if x < 10:
+       f1()
+       f2()
+   else:
+       g()
+   end()
+
+The `x < 10` guard is represented by its own basic block that
+compares `x` with `10` and then ends in a conditional jump based on
+the result of the comparison.  This conditional jump allows the block
+to point to both the body of the `if` and the body of the `else`.  The
+`if` basic block contains the `f1()` and `f2()` calls and points to
+the `end()` basic block. The `else` basic block contains the `g()`
+call and similarly points to the `end()` block.
+
+Note that more complex code in the guard, the `if` body, or the `else`
+body may be represented by multiple basic blocks. For instance,
+short-circuiting boolean logic in a guard like `if x or y:`
+will produce one basic block that tests the truth value of `x`
+and then points both (1) to the start of the `if` body and (2) to
+a different basic block that tests the truth value of y.
 
 CFGs are usually one step away from final code output.  Code is directly
 generated from the basic blocks (with jump targets adjusted based on the
