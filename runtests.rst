@@ -48,7 +48,7 @@ verbose mode (using ``-v``), so that individual failures are detailed::
 To run a single test case, use the ``unittest`` module, providing the import
 path to the test case::
 
-   ./python -m unittest -v test.test_abc.TestABC
+   ./python -m unittest -v test.test_abc.TestABC_Py
 
 If you have a multi-core or multi-CPU machine, you can enable parallel testing
 using several Python processes so as to speed up things::
