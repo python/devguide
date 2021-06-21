@@ -258,9 +258,9 @@ are downloaded:
 
 .. code-block:: dosbatch
 
-   PCBuild\build.bat
+   PCbuild\build.bat
 
-After this build succeeds, you can open the ``PCBuild\pcbuild.sln`` solution in
+After this build succeeds, you can open the ``PCbuild\pcbuild.sln`` solution in
 Visual Studio to continue development.
 
 See the `readme`_ for more details on what other software is necessary and how
