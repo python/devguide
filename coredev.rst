@@ -70,7 +70,7 @@ The steps to gaining commit privileges are:
 
 2. The poll is announced on python-committers
 3. Wait for the poll to close and see if the results confirm your membership
-   as per the voting results requied by PEP 13
+   as per the voting results required by PEP 13
 4. The person who nominated you emails the steering council with your email
    address and a request that the council either accept or reject the proposed
    membership
