@@ -310,19 +310,19 @@ As an example, consider the following code snippet:
        g()
    end()
 
-The `x < 10` guard is represented by its own basic block that
-compares `x` with `10` and then ends in a conditional jump based on
+The ``x < 10`` guard is represented by its own basic block that
+compares ``x`` with ``10`` and then ends in a conditional jump based on
 the result of the comparison.  This conditional jump allows the block
-to point to both the body of the `if` and the body of the `else`.  The
-`if` basic block contains the `f1()` and `f2()` calls and points to
-the `end()` basic block. The `else` basic block contains the `g()`
-call and similarly points to the `end()` block.
+to point to both the body of the ``if`` and the body of the ``else``.  The
+``if`` basic block contains the ``f1()`` and ``f2()`` calls and points to
+the ``end()`` basic block. The ``else`` basic block contains the ``g()``
+call and similarly points to the ``end()`` block.
 
-Note that more complex code in the guard, the `if` body, or the `else`
+Note that more complex code in the guard, the ``if`` body, or the ``else``
 body may be represented by multiple basic blocks. For instance,
-short-circuiting boolean logic in a guard like `if x or y:`
-will produce one basic block that tests the truth value of `x`
-and then points both (1) to the start of the `if` body and (2) to
+short-circuiting boolean logic in a guard like ``if x or y:``
+will produce one basic block that tests the truth value of ``x``
+and then points both (1) to the start of the ``if`` body and (2) to
 a different basic block that tests the truth value of y.
 
 CFGs are usually one step away from final code output.  Code is directly
