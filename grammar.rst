@@ -23,14 +23,16 @@ Checklist
 Note: sometimes things mysteriously don't work.  Before giving up, try ``make clean``.
 
 * :file:`Grammar/python.gram`: The grammar, with actions that build AST nodes.  After changing
-  it, run ``make regen-pegen``, to regenerate :file:`Parser/parser.c`.
+  it, run ``make regen-pegen`` (or ``build.bat --regen`` on Windows), to
+  regenerate :file:`Parser/parser.c`.
   (This runs Python's parser generator, ``Tools/peg_generator``).
 
 * :file:`Grammar/Tokens` is a place for adding new token types.  After
   changing it, run ``make regen-token`` to regenerate :file:`Include/token.h`,
   :file:`Parser/token.c`, :file:`Lib/token.py` and
   :file:`Doc/library/token-list.inc`.  If you change both ``python.gram`` and ``Tokens``,
-  run ``make regen-token`` before ``make regen-pegen``.
+  run ``make regen-token`` before ``make regen-pegen``. On Windows,
+  ``build.bat --regen`` will regenerate both at the same time.
 
 * :file:`Parser/Python.asdl` may need changes to match the grammar.  Then run ``make
   regen-ast`` to regenerate :file:`Include/Python-ast.h` and :file:`Python/Python-ast.c`.
