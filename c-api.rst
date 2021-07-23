@@ -124,6 +124,13 @@ Guidelines for changing the Limited API
   - If possible, avoid macros. This makes the Limited API more usable in
     languages that don't use the C preprocessor.
 
+- Think twice when using ``enum``.
+
+  - If a new identifier is added to an ``enum`` in the future, passing it to
+    older extensions can lead to issues (unspecified/undefined behavior in
+    C++; possible size change in C).
+    It is safer to use ``int`` for types and ``#define`` for naming values.
+
 - Please start a public discussion before expanding the Limited API
 
 - The Limited API and must follow standard C, not just features of currently
