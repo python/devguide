@@ -37,6 +37,9 @@ Here is a quick overview of how you can contribute to CPython:
 
 #. `Create Pull Request`_ on GitHub to merge a branch from your fork
 
+#. Make sure the continuous integration checks on your Pull Request
+   are green (i.e. successful)
+
 #. Review and address `comments on your Pull Request`_
 
 #. When your changes are merged, you can :ref:`delete the PR branch
