@@ -25,6 +25,28 @@ build results after you push a change to the repository.  It is therefore
 important that you get acquainted with the way these results are presented,
 and how various kinds of failures can be explained and diagnosed.
 
+In case of trouble
+------------------
+
+Please read this page in full. If your questions aren't answered here and you
+need assistance with the buildbots, a good way to get help is to either:
+
+* contact the ``python-buildbots@python.org`` mailing list where all buildbot
+  worker owners are subscribed; or
+* contact the release manager of the branch you have issues with.
+
+Buildbot failures on Pull Requests
+----------------------------------
+
+The ``bedevere-bot`` on GitHub will put a message on your merged Pull Request
+if building your commit on a stable buildbot worker fails. Take care to
+evaluate the failure, even if it looks unrelated at first glance.
+
+Not all failures will generate a notification since not all builds are executed
+after each commit. In particular, reference leaks builds take several hours to
+complete so they are done periodically. This is why it's important for you to
+be able to check the results yourself, too.
+
 Checking results of automatic builds
 ------------------------------------
 
