@@ -262,6 +262,7 @@ Additional Resources
 * Help with ...
     * :doc:`exploring`
     * :doc:`grammar`
+    * :doc:`parser`
     * :doc:`compiler`
     * :doc:`garbage_collector`
 * Tool support
@@ -293,7 +294,6 @@ Full Table of Contents
 ----------------------
 
 .. toctree::
-   :numbered:
    :maxdepth: 3
 
    setup
@@ -320,6 +320,7 @@ Full Table of Contents
    gdb
    exploring
    grammar
+   parser
    compiler
    garbage_collector
    extensions

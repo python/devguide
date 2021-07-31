@@ -40,6 +40,7 @@ these (see :doc:`grammar`).
 Abstract Syntax Trees (AST)
 ---------------------------
 
+.. _compiler-ast-trees:
 
 .. sidebar:: Green Tree Snakes
 
