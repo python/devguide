@@ -20,7 +20,7 @@ particular, both the current parser and the old LL(1) parser are the output of a
 means that the way the parser is written is by feeding a description of the
 Grammar of the Python language to a special program (the parser generator) which
 outputs the parser. The way the Python language is changed is therefore by
-modifiying the grammar file and developers rarely need to interact with the
+modifying the grammar file and developers rarely need to interact with the
 parser generator itself other than use it to generate the parser.
 
 How PEG Parsers Work
@@ -86,7 +86,7 @@ Key ideas
   it just means "try something else".
 * By default PEG parsers run in exponential time and they are keep linear By
   using memoization.
-* If parsing fails completely (no rule can suceed parsing all the input text), the
+* If parsing fails completely (no rule can succeed parsing all the input text), the
   PEG parser doesn't have a concept of "where the syntax error is".
 
 
@@ -95,27 +95,28 @@ Consecuences or the ordered choice operator
 
 .. _consecuences-of-ordered-choice:
 
-Although PEG may look like EBNF, but its meaning is quite different. The fact
-that in PEG parsers alternatives are ordered (which is the core of how PEG
-parsers work) has deep consecuences, other than removing ambiguity.
+Although PEG may look like EBNF, its meaning is quite different. The fact
+that in PEG parsers alternatives are ordered (which is at the core of how PEG
+parsers work) has deep consequences, other than removing ambiguity.
 
-If a rule has two alternatives and the first of them suceeds, the second one is **not** attempted
-even if the caller rule fails to parse the rest of the input. This is often described that the parser
-is "eager". To illustrate, this, consider the following two rules: ::
+If a rule has two alternatives and the first of them succeeds, the second one is
+**not** attempted even if the caller rule fails to parse the rest of the input.
+This is often described that the parser is "eager". To illustrate this, consider
+the following two rules (in these examples, a token is an individual character): ::
 
     first_rule:  ( 'a' | 'aa' ) 'a'
     second_rule: ('aa' | 'a'  ) 'a'
 
-In a relgular EBNF grammar, both rules specify the language ``{aa, aaa}`` but
+In a regular EBNF grammar, both rules specify the language ``{aa, aaa}`` but
 in PEG, one of these two rules accepts the string ``aaa`` but not the string
 ``aa``. The other does the opposite -- it accepts the string the string ``aa``
-but not the string ``aaa``. The rule ``('a'/'aa')'a'`` does
-not accept ``aaa`` because ``'a'/'aa'`` consumes the first ``a``, letting the
+but not the string ``aaa``. The rule ``('a'|'aa')'a'`` does
+not accept ``aaa`` because ``'a'|'aa'`` consumes the first ``a``, letting the
 final ``a`` in the rule consume the second, and leaving out the third ``a``.
-As the rule has suceeded, no attempt is ever made to go back and let
-``'a'/'aa'`` try the second alternative. The expression ``('aa'/'a')'a'`` does
-not accept ``aa`` because ``'aa'/'a'`` accepts all of ``aa``, leaving nothing
-for the final ``a``. Again, the second alternative of ``'aa'/'a'`` is not
+As the rule has succeeded, no attempt is ever made to go back and let
+``'a'|'aa'`` try the second alternative. The expression ``('aa'|'a')'a'`` does
+not accept ``aa`` because ``'aa'|'a'`` accepts all of ``aa``, leaving nothing
+for the final ``a``. Again, the second alternative of ``'aa'|'a'`` is not
 tried.
 
 .. caution::
@@ -130,7 +131,7 @@ for example: ::
         | 'if' expression 'then' block 'else' block
 
 In this example, the second alternative will never be tried because the first one will
-suceed first (even if the input string has a ``'else' block`` that follows). To correctly
+succeed first (even if the input string has a ``'else' block`` that follows). To correctly
 write this rule you can simply alter the order: ::
 
     my_rule:
@@ -172,8 +173,6 @@ Match e1, then match e2.
 ::
 
     rule_name: first_rule second_rule
-
-.. _e1-e2-1:
 
 ``e1 | e2``
 '''''''''''
@@ -222,8 +221,6 @@ optional:
 
     rule_name: e (',' e)* [',']
 
-.. _e-1:
-
 ``e*``
 ''''''
 
@@ -232,8 +229,6 @@ Match zero or more occurrences of e.
 ::
 
     rule_name: (e1 e2)*
-
-.. _e-2:
 
 ``e+``
 ''''''
@@ -255,16 +250,12 @@ tree does not include the separator. This is otherwise identical to
 
     rule_name: ','.e+
 
-.. _e-3:
-
 ``&e``
 ''''''
 
 .. _peg-positive-lookahead:
 
 Succeed if e can be parsed, without consuming any input.
-
-.. _e-4:
 
 ``!e``
 ''''''
@@ -280,8 +271,6 @@ consists of an atom, which is not followed by a ``.`` or a ``(`` or a
 ::
 
     primary: atom !'.' !'(' !'['
-
-.. _e-5:
 
 ``~``
 ''''''
@@ -316,7 +305,7 @@ and "hidden left-recursion" like::
 Variables in the Grammar
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
-A subexpression can be named by preceding it with an identifier and an
+A sub-expression can be named by preceding it with an identifier and an
 ``=`` sign. The name can then be used in the action (see below), like this: ::
 
     rule_name[return_type]: '(' a=some_other_rule ')' { a }
@@ -558,8 +547,8 @@ to regenerate the parser or to execute: ::
     ./PCbuild/build.bat --regen
 
 
-Gramatical elements and rules
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Grammatical elements and rules
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Pegen has some special grammatical elements and rules:
 
@@ -582,10 +571,10 @@ Tokenization
 
 Is commong among PEG parser frameworks that the parser does both the parsing and the tokenization,
 but this does not happen in pegen. The reason is that the Python language needs a custom tokenizer
-to handle things like indentation bounderies, some special keywords like ``ASYNC`` and ``AWAIT``
-(for compatibility pourposes), backtracking errors (such as unclosed parenthesis), dealing with encoding,
-interactive mode and much more. Some of these reasons are also there for historical pourposes, and some
-others are usefull even today.
+to handle things like indentation boundaries, some special keywords like ``ASYNC`` and ``AWAIT``
+(for compatibility purposes), backtracking errors (such as unclosed parenthesis), dealing with encoding,
+interactive mode and much more. Some of these reasons are also there for historical purposes, and some
+others are useful even today.
 
 The list of tokens (all uppercase names in the grammar) that you can use can be found in the :file:`Grammar/Tokens`
 file. If you change this file to add new tokens, make sure to regenerate the files by executing: ::
@@ -715,7 +704,7 @@ has to be used to report generic errors unless something is explicitly declared
 as an error in there grammar.
 
 To report generic syntax errors, pegen uses a common heuristic in PEG parsers:
-the location of *generic* synax errors is reported in the furthest token that
+the location of *generic* syntax errors is reported in the furthest token that
 was attempted to be matched but failed. This is only done if parsing has failed
 (the parser returns ``NULL`` in C or ``None`` in Python) but no exception has
 been raised.
@@ -726,11 +715,11 @@ been raised.
     between rules.
 
 As the Python grammar was primordially written as an LL(1) grammar, this heuristic
-has an extremelly high success rate, but some of PEG features can have small effects,
+has an extremely high success rate, but some of PEG features can have small effects,
 such as :ref:`positive lookaheads <peg-positive-lookahead>` and
 :ref:`negative lookaheads <peg-negative-lookahead>`.
 
-To generate more precise syntax errors, custom rules are used. This is a common practive
+To generate more precise syntax errors, custom rules are used. This is a common practice
 also on context free grammars: the parser will try to accept some construct that is known
 to be incorrect just to report a specific syntax error for that construct. In pegen grammars,
 these rules start with ``invalid_`` prefix. This is because trying to match this rules
@@ -768,13 +757,13 @@ Generating AST objects
 
 The output of the C parser used by CPython that is generated by the
 :file:`Grammar/Python.gram` grammar file is a Python AST object (using C
-structs). This means that the actions in the grammar file generate AST objects
+structures). This means that the actions in the grammar file generate AST objects
 when they succeed. Constructing these objects can be quite cumbersome (see
 themselves :ref:`AST compiler section <compiler-ast-trees>` for more information
 on how these objects are constructed and how they are used by the compiler) so
 special helper functions are used. These functions are declared in the
 :file:`Parser/pegen.h` header file and defined in the :file:`Parser/pegen.c`
-file. These functions allow you to joing AST sequences, get specific elements
+file. These functions allow you to join AST sequences, get specific elements
 from them or to do extra processing on the generated tree.
 
 .. caution::
@@ -790,7 +779,7 @@ complicated than a single expression of C code, is normally better to create a
 custom helper in :file:`Parser/pegen.c` and expose it in the
 :file:`Parser/pegen.h` header file so it can be used from the grammar.
 
-If the parsing succeds, the parser **must** return a **valid** AST object.
+If the parsing succeeds, the parser **must** return a **valid** AST object.
 
 Testing
 -------
@@ -858,7 +847,7 @@ consist of trace lines with the following structure:
 
     <indentation> ('>'|'-'|'+'|'!') <rule_name>[<token_location>]: <alternative> ...
 
-Every line is indented by a different ammount (``<indentation>``) depending on how deep the call stack is. The next
+Every line is indented by a different amount (``<indentation>``) depending on how deep the call stack is. The next
 character marks the type of the trace:
 
 * ``>`` indicates that a rule is going to be attempted to be parsed.
@@ -867,7 +856,7 @@ character marks the type of the trace:
 * ``!`` indicates that an exception or an error has ben detected and the parser is unwinding.
 
 The <token_location> part indicates the current index in the token array, the
-<rule_name> part idicates what rule is being parsed and the <alternative> part
+<rule_name> part indicates what rule is being parsed and the <alternative> part
 indicates what alternative withing that rule is being attempted.
 
 
