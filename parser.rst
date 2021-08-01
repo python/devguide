@@ -1,7 +1,7 @@
 .. _parser:
 
-How to use CPython's Parser
-===========================
+Guide of CPython's Parser
+=========================
 
 :Author: Pablo Galindo Salgado
 
@@ -67,8 +67,7 @@ technique called "packrat parsing" [1]_ which not only loads the entire
 program in memory before parsing it but also allows the parser to backtrack
 arbitrarily. This is made efficient by memoizing the rules already matched for
 each position. The cost of the memoization cache is that the parser will naturally
-use more memory than a simple LL(1) parser, which normally are table-based. We
-will explain later in this document why we consider this cost acceptable.
+use more memory than a simple LL(1) parser, which normally are table-based. 
 
 
 Key ideas
@@ -745,12 +744,30 @@ two phases:
     * Make sure **all** invalid rules start with the ``invalid_`` prefix to not
       impact performance of parsing correct Python code.
     * Make sure the parser doesn't behave differently for regular rules when you introduce invalid rules
-      (see the :ref:`how PEG parsers work section <how-peg-parsers-work>` for more information)>
+      (see the :ref:`how PEG parsers work section <how-peg-parsers-work>` for more information).
 
 You can find a collection of macros to raise specialized syntax errors in the
 :file:`Parser/pegen.h` header file. These macros allow also to report ranges for
 the custom errors that will be highlighted in the tracebacks that will be
 displayed when the error is reported.
+
+.. tip::
+    A good way to test if an invalid rule will be triggered when you expect is to test if introducing
+    a syntax error **after** valid code triggers or not the rule. For example: ::
+
+        <valid python code> $ 42
+    
+    Should trigger the syntax error in the ``$`` character. If your rule is not correctly defined this
+    won't happen. For example, if you try to define a rule to match Python 2 style ``print`` statements
+    to make a better error message and you define it as: ::
+
+        invalid_print: "print" expression
+    
+    This will **seem** to work because the parser will correctly parse ``print(something)`` because is valid
+    code and the second phase will never execute but if you try to parse ``print(something) $ 3`` the first pass
+    of the parser will fail (because of the ``$``) and in the second phase, the rule will match the
+    ``print(something)`` as ``print`` followed by the variable ``something`` between parenthesis and the error
+    will be reported there instead in the ``$`` character.
 
 Generating AST objects
 ~~~~~~~~~~~~~~~~~~~~~~
