@@ -100,7 +100,7 @@ that in PEG parsers alternatives are ordered (which is the core of how PEG
 parsers work) has deep consecuences, other than removing ambiguity.
 
 If a rule has two alternatives and the first of them suceeds, the second one is **not** attempted
-even if the caller rule failes to parse the rest of the input. This is often described that the parser
+even if the caller rule fails to parse the rest of the input. This is often described that the parser
 is "eager". To illustrate, this, consider the following two rules: ::
 
     first_rule:  ( 'a' | 'aa' ) 'a'
