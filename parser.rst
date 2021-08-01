@@ -568,7 +568,7 @@ Pegen has some special grammatical elements and rules:
 Tokenization
 ~~~~~~~~~~~~
 
-Is common among PEG parser frameworks that the parser does both the parsing and the tokenization,
+It is common among PEG parser frameworks that the parser does both the parsing and the tokenization,
 but this does not happen in Pegen. The reason is that the Python language needs a custom tokenizer
 to handle things like indentation boundaries, some special keywords like ``ASYNC`` and ``AWAIT``
 (for compatibility purposes), backtracking errors (such as unclosed parenthesis), dealing with encoding,
@@ -774,7 +774,7 @@ displayed when the error is reported.
 
         invalid_print: "print" expression
     
-    This will **seem** to work because the parser will correctly parse ``print(something)`` because is valid
+    This will **seem** to work because the parser will correctly parse ``print(something)`` because it is valid
     code and the second phase will never execute but if you try to parse ``print(something) $ 3`` the first pass
     of the parser will fail (because of the ``$``) and in the second phase, the rule will match the
     ``print(something)`` as ``print`` followed by the variable ``something`` between parenthesis and the error
