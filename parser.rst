@@ -109,7 +109,7 @@ is "eager". To illustrate, this, consider the following two rules: ::
 In a relgular EBNF grammar, both rules specify the language ``{aa, aaa}`` but
 in PEG, one of these two rules accepts the string ``aaa`` but not the string
 ``aa``. The other does the opposite -- it accepts the string the string ``aa``
-but not the string ``aaa``. The reason is that the rule ``('a'/'aa')'a'`` does
+but not the string ``aaa``. The rule ``('a'/'aa')'a'`` does
 not accept ``aaa`` because ``'a'/'aa'`` consumes the first ``a``, letting the
 final ``a`` in the rule consume the second, and leaving out the third ``a``.
 As the rule has suceeded, no attempt is ever made to go back and let
@@ -134,8 +134,8 @@ suceed first (even if the input string has a ``'else' block`` that follows). To 
 write this rule you can simply alter the order: ::
 
     my_rule:
-        | 'if' expression 'then' block
         | 'if' expression 'then' block 'else' block
+        | 'if' expression 'then' block
 
 In this case, if the input string doesn't have an ``'else' block``, the first alternative
 will fail and the second will be attempted without said part.
