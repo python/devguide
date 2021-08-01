@@ -264,7 +264,7 @@ Succeed if e can be parsed, without consuming any input.
 
 Fail if e can be parsed, without consuming any input.
 
-An example taken from the proposed Python grammar specifies that a primary
+An example taken from the Python grammar specifies that a primary
 consists of an atom, which is not followed by a ``.`` or a ``(`` or a
 ``[``:
 
@@ -288,11 +288,12 @@ parsed.
 Left recursion
 ~~~~~~~~~~~~~~
 
-PEG parsers normally do not support left recursion but we have implemented a
+PEG parsers normally do not support left recursion but pegen implements a
 technique similar to the one described in Medeiros et al. [2]_ but using the
-memoization cache instead of static variables. This approach is closer to the one
-described in Warth et al. [3]_. This allows us to write not only simple left-recursive
-rules but also more complicated rules that involve indirect left-recursion like::
+memoization cache instead of static variables. This approach is closer to the
+one described in Warth et al. [3]_. This allows us to write not only simple
+left-recursive rules but also more complicated rules that involve indirect
+left-recursion like::
 
   rule1: rule2 | 'a'
   rule2: rule3 | 'b'
@@ -316,24 +317,23 @@ Grammar actions
 .. _peg-grammar-actions:
 
 To avoid the intermediate steps that obscure the relationship between the
-grammar and the AST generation the proposed PEG parser allows directly
-generating AST nodes for a rule via grammar actions. Grammar actions are
-language-specific expressions that are evaluated when a grammar rule is
-successfully parsed. These expressions can be written in Python or C
-depending on the desired output of the parser generator. This means that if
-one would want to generate a parser in Python and another in C, two grammar
-files should be written, each one with a different set of actions, keeping
-everything else apart from said actions identical in both files. As an
-example of a grammar with Python actions, the piece of the parser generator
-that parses grammar files is bootstrapped from a meta-grammar file with
-Python actions that generate the grammar tree as a result of the parsing. 
+grammar and the AST generation the PEG parser allows directly generating AST
+nodes for a rule via grammar actions. Grammar actions are language-specific
+expressions that are evaluated when a grammar rule is successfully parsed. These
+expressions can be written in Python or C depending on the desired output of the
+parser generator. This means that if one would want to generate a parser in
+Python and another in C, two grammar files should be written, each one with a
+different set of actions, keeping everything else apart from said actions
+identical in both files. As an example of a grammar with Python actions, the
+piece of the parser generator that parses grammar files is bootstrapped from a
+meta-grammar file with Python actions that generate the grammar tree as a result
+of the parsing. 
 
-In the specific case of the new proposed PEG grammar for Python, having
-actions allows directly describing how the AST is composed in the grammar
-itself, making it more clear and maintainable. This AST generation process is
-supported by the use of some helper functions that factor out common AST
-object manipulations and some other required operations that are not directly
-related to the grammar.
+In the specific case of the PEG grammar for Python, having actions allows
+directly describing how the AST is composed in the grammar itself, making it
+more clear and maintainable. This AST generation process is supported by the use
+of some helper functions that factor out common AST object manipulations and
+some other required operations that are not directly related to the grammar.
 
 To indicate these actions each alternative can be followed by the action code
 inside curly-braces, which specifies the return value of the alternative::
