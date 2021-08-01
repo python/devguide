@@ -78,7 +78,7 @@ Key ideas
     or context free grammar. PEG is optimized to describe **how** input strings will
     be parsed, while context-free grammars are optimized to generate strings of the
     language they describe (in EBNF, to know if given string is in the language you need
-    to do work to find out as is not imediately obvious from the grammar).
+    to do work to find out as is not immediately obvious from the grammar).
 
 * Alternatives are ordered ( ``A | B`` is not the same as ``B | A`` ).
 * If a rule returns a failure doesn't mean that the parsing has failed,
@@ -89,10 +89,10 @@ Key ideas
   PEG parser doesn't have a concept of "where the syntax error is".
 
 
-Consecuences or the ordered choice operator
+Consequences or the ordered choice operator
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. _consecuences-of-ordered-choice:
+.. _consequences-of-ordered-choice:
 
 Although PEG may look like EBNF, its meaning is quite different. The fact
 that in PEG parsers alternatives are ordered (which is at the core of how PEG
@@ -287,7 +287,7 @@ parsed.
 Left recursion
 ~~~~~~~~~~~~~~
 
-PEG parsers normally do not support left recursion but pegen implements a
+PEG parsers normally do not support left recursion but Pegen implements a
 technique similar to the one described in Medeiros et al. [2]_ but using the
 memoization cache instead of static variables. This approach is closer to the
 one described in Warth et al. [3]_. This allows us to write not only simple
@@ -511,7 +511,7 @@ parser. It contains the following pieces:
   located at :file:`Tools/peg_generator/pegen/metagrammar.gram`.
 * A generated parser (using the parser generator) that can directly produce C and Python AST objects. 
 
-The source code for pegen lives at :file:`Tools/peg_generator/pegen` but normally all typical commands to interact
+The source code for Pegen lives at :file:`Tools/peg_generator/pegen` but normally all typical commands to interact
 with the parser generator are executed from the main makefile.
 
 How to regenerate the parser
@@ -535,7 +535,7 @@ How to regenerate the meta-parser
 The meta-grammar (the grammar that describes the grammar for the grammar files
 themselves) is located at :file:`Tools/peg_generator/pegen/metagrammar.gram`.
 Although is very unlikely that you ever need to modify it, if you make any modifications
-to this file (in order to implement new ``pegen`` features) you will need to regenerate
+to this file (in order to implement new Pegen features) you will need to regenerate
 the meta-parser (the parser that parses the grammar files). To do so just execute: ::
 
     make regen-metaparser
@@ -568,8 +568,8 @@ Pegen has some special grammatical elements and rules:
 Tokenization
 ~~~~~~~~~~~~
 
-Is commong among PEG parser frameworks that the parser does both the parsing and the tokenization,
-but this does not happen in pegen. The reason is that the Python language needs a custom tokenizer
+Is common among PEG parser frameworks that the parser does both the parsing and the tokenization,
+but this does not happen in Pegen. The reason is that the Python language needs a custom tokenizer
 to handle things like indentation boundaries, some special keywords like ``ASYNC`` and ``AWAIT``
 (for compatibility purposes), backtracking errors (such as unclosed parenthesis), dealing with encoding,
 interactive mode and much more. Some of these reasons are also there for historical purposes, and some
@@ -671,8 +671,8 @@ as well as soft keywords:
 .. caution::
     Soft keywords can be a bit challenging to manage as they can be accepted in
     places you don't intend to, given how the order alternatives behave in PEG
-    parser (see :ref:`consecuences of ordered choice section
-    <consecuences-of-ordered-choice>` for some background on this). In general,
+    parser (see :ref:`consequences of ordered choice section
+    <consequences-of-ordered-choice>` for some background on this). In general,
     try to define them in places where there is not a lot of alternatives.
 
 Error handling
@@ -731,7 +731,7 @@ two phases:
    and the second phase will not be attempted.
 
 2. If the first phase failed, a second parsing attempt is done including the rules that start
-   with an ``invalid_`` prefix. By design this attempt **cannot suceed** and is only executed
+   with an ``invalid_`` prefix. By design this attempt **cannot succeed** and is only executed
    to give it a change to the invalid rules to detect specific situations where custom, more precise,
    syntax errors can be raised. This also allows to trade a bit of performance for precision reporting
    errors: given that we know that the input text is invalid, so there is no need to be fast because
