@@ -9,13 +9,15 @@ Abstract
 There's more to changing Python's grammar than editing
 :file:`Grammar/python.gram`.  Here's a checklist.
 
-NOTE: These instructions are for Python 3.9 and beyond.  Earlier
-versions use a different parser technology.  You probably shouldn't
-try to change the grammar of earlier Python versions, but if you
-really want to, use GitHub to track down the earlier version of this
-file in the devguide.  (Python 3.9 itself actually supports both
-parsers; the old parser can be invoked by passing ``-X oldparser``.)
+.. note::
+    These instructions are for Python 3.9 and beyond.  Earlier
+    versions use a different parser technology.  You probably shouldn't
+    try to change the grammar of earlier Python versions, but if you
+    really want to, use GitHub to track down the earlier version of this
+    file in the devguide.
 
+For more information on how to use the new parser, check the
+:ref:`section on how to use CPython's parser <parser>`.
 
 Checklist
 ---------
