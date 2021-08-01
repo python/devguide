@@ -28,8 +28,8 @@ How PEG Parsers Work
 
 .. _how-peg-parsers-work:
 
-A PEG (Parsing Expression Grammar) grammar differs from a context-free grammar
-(like the current one) in the fact that the way it is written more closely
+A PEG (Parsing Expression Grammar) grammar (like the current one) differs from a
+context-free grammar in that the way it is written more closely
 reflects how the parser will operate when parsing it. The fundamental technical
 difference is that the choice operator is ordered. This means that when writing::
 
