@@ -613,6 +613,17 @@ in the C generated parse code that allows to measure how much each rule uses
 memoization (check the :file:`Parser/pegen.c` file for more information) but it
 needs to be manually activated.
 
+Automatic variables
+~~~~~~~~~~~~~~~~~~~
+
+To make writing actions easier, Pegen inject some automatic variables in the namespace available
+when writing actions. In the C parser, some of these automatic variable names are:
+
+* ``p``: The parser structure.
+* ``EXTRA``: This is a macro that expands to ``(_start_lineno, _start_col_offset, _end_lineno, _end_col_offset, p->arena)``,
+  which is normally used to create AST nodes as almost all constructors need these attributes to be provided. All of the
+  location variables are taken from the location information of the current token.
+
 Hard and Soft keywords
 ~~~~~~~~~~~~~~~~~~~~~~
 
