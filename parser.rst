@@ -872,7 +872,7 @@ To activate verbose mode you can add the ``-d`` flag when executing Python:
 
     $ python -d file_to_test.py
 
-This will print **a lot** of output to `stderr` so is probably better to dump it to a file for further analysis. The output
+This will print **a lot** of output to ``stderr`` so is probably better to dump it to a file for further analysis. The output
 consist of trace lines with the following structure:
 
     <indentation> ('>'|'-'|'+'|'!') <rule_name>[<token_location>]: <alternative> ...
