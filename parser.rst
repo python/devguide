@@ -43,7 +43,8 @@ order in which they are written. This makes the choice operator not commutative.
 
 Unlike LL(1) parsers, PEG-based parsers cannot be ambiguous: if a string parses,
 it has exactly one valid parse tree. This means that a PEG-based parser cannot
-suffer from the ambiguity problems described in the previous section.
+suffer from the ambiguity problems that can arise with LL(1) parsers and with
+context-free grammars in general.
 
 PEG parsers are usually constructed as a recursive descent parser in which every
 rule in the grammar corresponds to a function in the program implementing the
@@ -59,15 +60,15 @@ an input string as its argument, and yields one of the following results:
 Notice that "failure" results do not imply that the program is incorrect or a
 parsing failure because as the choice operator is ordered, a "failure" result
 merely indicates "try the following option". A direct implementation of a PEG
-parser as a recursive descent parser will present exponential time performance in
-the worst case as compared with LL(1) parsers, because PEG parsers have infinite lookahead
-(this means that they can consider an arbitrary number of tokens before deciding
-for a rule). Usually, PEG parsers avoid this exponential time complexity with a
-technique called "packrat parsing" [1]_ which not only loads the entire
-program in memory before parsing it but also allows the parser to backtrack
-arbitrarily. This is made efficient by memoizing the rules already matched for
-each position. The cost of the memoization cache is that the parser will naturally
-use more memory than a simple LL(1) parser, which normally are table-based. 
+parser as a recursive descent parser will present exponential time performance
+the worst case, because PEG parsers have infinite lookahead (this means that
+they can consider an arbitrary number of tokens before deciding for a rule).
+Usually, PEG parsers avoid this exponential time complexity with a technique called
+"packrat parsing" [1]_ which not only loads the entire program in memory before
+parsing it but also allows the parser to backtrack arbitrarily. This is made
+efficient by memoizing the rules already matched for each position. The cost
+of the memoization cache is that the parser will naturally use more memory
+than a simple LL(1) parser, which normally are table-based. 
 
 
 Key ideas
@@ -466,7 +467,6 @@ returns a valid C-based Python AST:
     atom[expr_ty]: 
         | n=NAME { n }
         | n=NUMBER { n }
-        | s=STRING { s }
 
 Here ``EXTRA`` is a macro that expands to ``start_lineno, start_col_offset,
 end_lineno, end_col_offset, p->arena``, those being variables automatically
@@ -590,7 +590,7 @@ and the parser just receives tokens from it.
 Memoization
 ~~~~~~~~~~~
 
-As described previously, to avoid exponential time complexity in the parser, memoization is used. In the Python
+As described previously, to avoid exponential time complexity in the parser, memoization is used. 
 
 The C parser used by Python is highly optimized and memoization can be expensive both in memory and time. Although
 the memory cost is obvious (the parser needs memory for storing previous results in the cache) the execution time
@@ -666,6 +666,7 @@ You can get a list of all keywords defined in the grammar from Python:
 
 .. code-block:: python
 
+    >>> import keyword
     >>> keyword.kwlist
     ['False', 'None', 'True', 'and', 'as', 'assert', 'async', 'await', 'break',
     'class', 'continue', 'def', 'del', 'elif', 'else', 'except', 'finally', 'for',
@@ -676,6 +677,7 @@ as well as soft keywords:
 
 .. code-block:: python
 
+    >>> import keyword
     >>> keyword.softkwlist
     ['_', 'case', 'match']
 
