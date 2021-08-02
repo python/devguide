@@ -883,7 +883,7 @@ character marks the type of the trace:
 * ``>`` indicates that a rule is going to be attempted to be parsed.
 * ``-`` indicates that a rule has failed to be parsed.
 * ``+`` indicates that a rule has been parsed correctly.
-* ``!`` indicates that an exception or an error has ben detected and the parser is unwinding.
+* ``!`` indicates that an exception or an error has been detected and the parser is unwinding.
 
 The <token_location> part indicates the current index in the token array, the
 <rule_name> part indicates what rule is being parsed and the <alternative> part
