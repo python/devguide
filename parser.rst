@@ -83,9 +83,9 @@ Key ideas
 * Alternatives are ordered ( ``A | B`` is not the same as ``B | A`` ).
 * If a rule returns a failure doesn't mean that the parsing has failed,
   it just means "try something else".
-* By default PEG parsers run in exponential time and they are keep linear By
+* By default PEG parsers run in exponential time, which can be optimized to linear by
   using memoization.
-* If parsing fails completely (no rule can succeed parsing all the input text), the
+* If parsing fails completely (no rule succeeds in parsing all the input text), the
   PEG parser doesn't have a concept of "where the syntax error is".
 
 
@@ -100,7 +100,7 @@ parsers work) has deep consequences, other than removing ambiguity.
 
 If a rule has two alternatives and the first of them succeeds, the second one is
 **not** attempted even if the caller rule fails to parse the rest of the input.
-This is often described that the parser is "eager". To illustrate this, consider
+Thus the parser is said to be "eager". To illustrate this, consider
 the following two rules (in these examples, a token is an individual character): ::
 
     first_rule:  ( 'a' | 'aa' ) 'a'
@@ -122,7 +122,7 @@ tried.
 
     The effects of ordered choice such as illustrated above, may be hidden by many levels of rules.
 
-For this reason, avoid writing rules where an alternative is contained in the next one,
+For this reason, writing rules where an alternative is contained in the next one is in almost all cases a mistake,
 for example: ::
 
     my_rule:
@@ -500,7 +500,7 @@ A similar grammar written to target Python AST objects:
 Pegen
 -----
 
-Pegen is the parser generator used in CPython to produce the final PEG parser used by the interpreter. Is the
+Pegen is the parser generator used in CPython to produce the final PEG parser used by the interpreter. It is the
 program that can be used to read the python grammar located in :file:`Grammar/Python.gram` and produce the final C
 parser. It contains the following pieces:
 
@@ -534,7 +534,7 @@ How to regenerate the meta-parser
 
 The meta-grammar (the grammar that describes the grammar for the grammar files
 themselves) is located at :file:`Tools/peg_generator/pegen/metagrammar.gram`.
-Although is very unlikely that you ever need to modify it, if you make any modifications
+Although it is very unlikely that you will ever need to modify it, if you make any modifications
 to this file (in order to implement new Pegen features) you will need to regenerate
 the meta-parser (the parser that parses the grammar files). To do so just execute: ::
 
@@ -592,7 +592,7 @@ Memoization
 
 As described previously, to avoid exponential time complexity in the parser, memoization is used. In the Python
 
-The C parser used by Python is highly optimized and memoization can expensive both in memory and time. Although
+The C parser used by Python is highly optimized and memoization can be expensive both in memory and time. Although
 the memory cost is obvious (the parser needs memory for storing previous results in the cache) the execution time
 cost comes for continuously checking if the given rule has a cache hit or not. In many situations, just parsing it
 again can be faster. Pegen **disables memoization by default** except for rules with the special marker `memo` after
@@ -601,7 +601,7 @@ the rule name (and type, if present): ::
     rule_name[typr] (memo):
         ...
 
-Selectively turning on memoization for a handful of rules, the parser becomes faster and uses less memory.
+By selectively turning on memoization for a handful of rules, the parser becomes faster and uses less memory.
 
 .. note::
     Left-recursive rules always use memoization, since the implementation of left-recursion depends on it.
@@ -616,7 +616,7 @@ needs to be manually activated.
 Automatic variables
 ~~~~~~~~~~~~~~~~~~~
 
-To make writing actions easier, Pegen inject some automatic variables in the namespace available
+To make writing actions easier, Pegen injects some automatic variables in the namespace available
 when writing actions. In the C parser, some of these automatic variable names are:
 
 * ``p``: The parser structure.
@@ -700,7 +700,7 @@ error messages.
 
 .. note::
     Tokenizer errors are normally reported by raising exceptions but some special
-    tokenizer errors such as unclosed parenthesis will be reported only after themselves
+    tokenizer errors such as unclosed parenthesis will be reported only after the
     parser finishes without returning anything.
 
 How Syntax errors are reported
@@ -708,10 +708,10 @@ How Syntax errors are reported
 
 As described previously in the :ref:`how PEG parsers work section
 <how-peg-parsers-work>`, PEG parsers doesn't have a defined concept of where
-errors happened in the grammar, because if a rule fails that doesn't imply a
+errors happened in the grammar, because a rule failure doesn't imply a
 parsing failure like in context free grammars. This means that some heuristic
 has to be used to report generic errors unless something is explicitly declared
-as an error in there grammar.
+as an error in the grammar.
 
 To report generic syntax errors, pegen uses a common heuristic in PEG parsers:
 the location of *generic* syntax errors is reported in the furthest token that
@@ -721,18 +721,18 @@ been raised.
 
 .. caution::
     Positive and negative lookaheads will try to match a token so they will affect
-    the location of generic syntax errors. Use them carefully around at boundaries
+    the location of generic syntax errors. Use them carefully at boundaries
     between rules.
 
 As the Python grammar was primordially written as an LL(1) grammar, this heuristic
-has an extremely high success rate, but some of PEG features can have small effects,
+has an extremely high success rate, but some PEG features can have small effects,
 such as :ref:`positive lookaheads <peg-positive-lookahead>` and
 :ref:`negative lookaheads <peg-negative-lookahead>`.
 
 To generate more precise syntax errors, custom rules are used. This is a common practice
 also on context free grammars: the parser will try to accept some construct that is known
 to be incorrect just to report a specific syntax error for that construct. In pegen grammars,
-these rules start with ``invalid_`` prefix. This is because trying to match this rules
+these rules start with ``invalid_`` prefix. This is because trying to match these rules
 normally has a performance impact on parsing (and can also affect the 'correct' grammar itself
 in some tricky cases, depending on the ordering of the rules) so the generated parser acts in
 two phases:
@@ -743,9 +743,9 @@ two phases:
 
 2. If the first phase failed, a second parsing attempt is done including the rules that start
    with an ``invalid_`` prefix. By design this attempt **cannot succeed** and is only executed
-   to give it a change to the invalid rules to detect specific situations where custom, more precise,
+   to give to the invalid rules a chance to detect specific situations where custom, more precise,
    syntax errors can be raised. This also allows to trade a bit of performance for precision reporting
-   errors: given that we know that the input text is invalid, so there is no need to be fast because
+   errors: given that we know that the input text is invalid, there is no need to be fast because
    the interpreter is going to stop anyway.
 
 .. important::
@@ -764,7 +764,7 @@ displayed when the error is reported.
 
 .. tip::
     A good way to test if an invalid rule will be triggered when you expect is to test if introducing
-    a syntax error **after** valid code triggers or not the rule. For example: ::
+    a syntax error **after** valid code triggers the rule or not. For example: ::
 
         <valid python code> $ 42
     
@@ -778,7 +778,7 @@ displayed when the error is reported.
     code and the second phase will never execute but if you try to parse ``print(something) $ 3`` the first pass
     of the parser will fail (because of the ``$``) and in the second phase, the rule will match the
     ``print(something)`` as ``print`` followed by the variable ``something`` between parenthesis and the error
-    will be reported there instead in the ``$`` character.
+    will be reported there instead of the ``$`` character.
 
 Generating AST objects
 ~~~~~~~~~~~~~~~~~~~~~~
@@ -787,7 +787,7 @@ The output of the C parser used by CPython that is generated by the
 :file:`Grammar/Python.gram` grammar file is a Python AST object (using C
 structures). This means that the actions in the grammar file generate AST objects
 when they succeed. Constructing these objects can be quite cumbersome (see
-themselves :ref:`AST compiler section <compiler-ast-trees>` for more information
+the :ref:`AST compiler section <compiler-ast-trees>` for more information
 on how these objects are constructed and how they are used by the compiler) so
 special helper functions are used. These functions are declared in the
 :file:`Parser/pegen.h` header file and defined in the :file:`Parser/pegen.c`
@@ -834,7 +834,7 @@ As the generated C parser is the one used by Python, this means that if somethin
 new rules to the grammar you cannot correctly compile and execute Python anymore. This makes it a bit challenging
 to debug when something goes wrong, specially when making experiments.
 
-For this reason, is a good idea to experiment first by generating a Python parser. To do this, you can go to the
+For this reason it is a good idea to experiment first by generating a Python parser. To do this, you can go to the
 :file:`Tools/peg_generator/` directory on the CPython repository and manually call the parser generator by executing:
 
 .. code-block:: shell
@@ -861,8 +861,8 @@ can be a bit hard to understand at first.
 
 .. note::
 
-    When activating verbose mode in the Python parser, is better to not use interactive mode as it can be much harder to
-    understand, as interactive mode involves some special steps compared with regular parsing.
+    When activating verbose mode in the Python parser, it is better to not use interactive mode as it can be much harder to
+    understand, because interactive mode involves some special steps compared to regular parsing.
 
 To activate verbose mode you can add the ``-d`` flag when executing Python:
 
@@ -885,7 +885,7 @@ character marks the type of the trace:
 
 The <token_location> part indicates the current index in the token array, the
 <rule_name> part indicates what rule is being parsed and the <alternative> part
-indicates what alternative withing that rule is being attempted.
+indicates what alternative within that rule is being attempted.
 
 
 References
