@@ -87,7 +87,7 @@ Key ideas
 * By default PEG parsers run in exponential time, which can be optimized to linear by
   using memoization.
 * If parsing fails completely (no rule succeeds in parsing all the input text), the
-  PEG parser doesn't have a concept of "where the syntax error is".
+  PEG parser doesn't have a concept of "where the :exc:`SyntaxError` is".
 
 
 Consequences or the ordered choice operator
@@ -288,12 +288,12 @@ parsed.
 Left recursion
 ~~~~~~~~~~~~~~
 
-PEG parsers normally do not support left recursion but Pegen implements a
-technique similar to the one described in Medeiros et al. [2]_ but using the
-memoization cache instead of static variables. This approach is closer to the
-one described in Warth et al. [3]_. This allows us to write not only simple
-left-recursive rules but also more complicated rules that involve indirect
-left-recursion like::
+PEG parsers normally do not support left recursion but CPython's parser
+generator implements a technique similar to the one described in Medeiros et al.
+[2]_ but using the memoization cache instead of static variables. This approach
+is closer to the one described in Warth et al. [3]_. This allows us to write not
+only simple left-recursive rules but also more complicated rules that involve
+indirect left-recursion like::
 
   rule1: rule2 | 'a'
   rule2: rule3 | 'b'
