@@ -61,7 +61,7 @@ Notice that "failure" results do not imply that the program is incorrect or a
 parsing failure because as the choice operator is ordered, a "failure" result
 merely indicates "try the following option". A direct implementation of a PEG
 parser as a recursive descent parser will present exponential time performance
-the worst case, because PEG parsers have infinite lookahead (this means that
+in the worst case, because PEG parsers have infinite lookahead (this means that
 they can consider an arbitrary number of tokens before deciding for a rule).
 Usually, PEG parsers avoid this exponential time complexity with a technique called
 "packrat parsing" [1]_ which not only loads the entire program in memory before
@@ -78,11 +78,11 @@ Key ideas
     Don't try to reason about a PEG grammar in the same way you would to with an EBNF
     or context free grammar. PEG is optimized to describe **how** input strings will
     be parsed, while context-free grammars are optimized to generate strings of the
-    language they describe (in EBNF, to know if given string is in the language you need
-    to do work to find out as is not immediately obvious from the grammar).
+    language they describe (in EBNF, to know if a given string is in the language, you need
+    to do work to find out as it is not immediately obvious from the grammar).
 
 * Alternatives are ordered ( ``A | B`` is not the same as ``B | A`` ).
-* If a rule returns a failure doesn't mean that the parsing has failed,
+* If a rule returns a failure, it doesn't mean that the parsing has failed,
   it just means "try something else".
 * By default PEG parsers run in exponential time, which can be optimized to linear by
   using memoization.
@@ -121,7 +121,7 @@ tried.
 
 .. caution::
 
-    The effects of ordered choice such as illustrated above, may be hidden by many levels of rules.
+    The effects of ordered choice, such as the ones illustrated above, may be hidden by many levels of rules.
 
 For this reason, writing rules where an alternative is contained in the next one is in almost all cases a mistake,
 for example: ::
@@ -131,7 +131,7 @@ for example: ::
         | 'if' expression 'then' block 'else' block
 
 In this example, the second alternative will never be tried because the first one will
-succeed first (even if the input string has a ``'else' block`` that follows). To correctly
+succeed first (even if the input string has an ``'else' block`` that follows). To correctly
 write this rule you can simply alter the order: ::
 
     my_rule:
@@ -609,7 +609,7 @@ By selectively turning on memoization for a handful of rules, the parser becomes
 To know if a new rule needs memoization or not, benchmarking is required
 (comparing execution times and memory usage of some considerably big files with
 and without memoization). There is a very simple instrumentation API available
-in the C generated parse code that allows to measure how much each rule uses
+in the generated C parse code that allows to measure how much each rule uses
 memoization (check the :file:`Parser/pegen.c` file for more information) but it
 needs to be manually activated.
 
@@ -650,7 +650,7 @@ keyword as a variable will always fail:
             ^^^^^
     SyntaxError: invalid syntax
 
-While soft keywords don't have this limitation if used in a context other when they
+While soft keywords don't have this limitation if used in a context other the one where they
 are defined as keywords:
 
 .. code-block:: python
@@ -684,7 +684,7 @@ as well as soft keywords:
 .. caution::
     Soft keywords can be a bit challenging to manage as they can be accepted in
     places you don't intend to, given how the order alternatives behave in PEG
-    parser (see :ref:`consequences of ordered choice section
+    parsers (see :ref:`consequences of ordered choice section
     <consequences-of-ordered-choice>` for some background on this). In general,
     try to define them in places where there is not a lot of alternatives.
 
@@ -709,7 +709,7 @@ How Syntax errors are reported
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 As described previously in the :ref:`how PEG parsers work section
-<how-peg-parsers-work>`, PEG parsers doesn't have a defined concept of where
+<how-peg-parsers-work>`, PEG parsers don't have a defined concept of where
 errors happened in the grammar, because a rule failure doesn't imply a
 parsing failure like in context free grammars. This means that some heuristic
 has to be used to report generic errors unless something is explicitly declared
@@ -732,9 +732,9 @@ such as :ref:`positive lookaheads <peg-positive-lookahead>` and
 :ref:`negative lookaheads <peg-negative-lookahead>`.
 
 To generate more precise syntax errors, custom rules are used. This is a common practice
-also on context free grammars: the parser will try to accept some construct that is known
+also in context free grammars: the parser will try to accept some construct that is known
 to be incorrect just to report a specific syntax error for that construct. In pegen grammars,
-these rules start with ``invalid_`` prefix. This is because trying to match these rules
+these rules start with the ``invalid_`` prefix. This is because trying to match these rules
 normally has a performance impact on parsing (and can also affect the 'correct' grammar itself
 in some tricky cases, depending on the ordering of the rules) so the generated parser acts in
 two phases:
@@ -753,7 +753,7 @@ two phases:
 .. important::
     When defining invalid rules:
 
-    * Make sure all custom invalid rules raise :exc:`SyntaxError` exceptions (or a subclass if it).
+    * Make sure all custom invalid rules raise :exc:`SyntaxError` exceptions (or a subclass of it).
     * Make sure **all** invalid rules start with the ``invalid_`` prefix to not
       impact performance of parsing correct Python code.
     * Make sure the parser doesn't behave differently for regular rules when you introduce invalid rules
@@ -779,7 +779,7 @@ displayed when the error is reported.
     This will **seem** to work because the parser will correctly parse ``print(something)`` because it is valid
     code and the second phase will never execute but if you try to parse ``print(something) $ 3`` the first pass
     of the parser will fail (because of the ``$``) and in the second phase, the rule will match the
-    ``print(something)`` as ``print`` followed by the variable ``something`` between parenthesis and the error
+    ``print(something)`` as ``print`` followed by the variable ``something`` between parentheses and the error
     will be reported there instead of the ``$`` character.
 
 Generating AST objects
@@ -834,7 +834,7 @@ Making experiments
 
 As the generated C parser is the one used by Python, this means that if something goes wrong when adding some
 new rules to the grammar you cannot correctly compile and execute Python anymore. This makes it a bit challenging
-to debug when something goes wrong, specially when making experiments.
+to debug when something goes wrong, especially when making experiments.
 
 For this reason it is a good idea to experiment first by generating a Python parser. To do this, you can go to the
 :file:`Tools/peg_generator/` directory on the CPython repository and manually call the parser generator by executing:
@@ -873,7 +873,7 @@ To activate verbose mode you can add the ``-d`` flag when executing Python:
     $ python -d file_to_test.py
 
 This will print **a lot** of output to ``stderr`` so is probably better to dump it to a file for further analysis. The output
-consist of trace lines with the following structure:
+consists of trace lines with the following structure:
 
     <indentation> ('>'|'-'|'+'|'!') <rule_name>[<token_location>]: <alternative> ...
 
