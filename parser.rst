@@ -57,18 +57,19 @@ an input string as its argument, and yields one of the following results:
   characters of the input string supplied to it.
 * A "failure" result, in which case no input is consumed.
 
-Notice that "failure" results do not imply that the program is incorrect or a
-parsing failure because as the choice operator is ordered, a "failure" result
-merely indicates "try the following option". A direct implementation of a PEG
-parser as a recursive descent parser will present exponential time performance
-in the worst case, because PEG parsers have infinite lookahead (this means that
-they can consider an arbitrary number of tokens before deciding for a rule).
-Usually, PEG parsers avoid this exponential time complexity with a technique called
-"packrat parsing" [1]_ which not only loads the entire program in memory before
-parsing it but also allows the parser to backtrack arbitrarily. This is made
-efficient by memoizing the rules already matched for each position. The cost
-of the memoization cache is that the parser will naturally use more memory
-than a simple LL(1) parser, which normally are table-based. 
+Notice that "failure" results do not imply that the program is incorrect, nor do
+they necessarily mean that the parsing has failed. Since the choice operator is
+ordered, a failure very often merely indicates "try the following option".  A
+direct implementation of a PEG parser as a recursive descent parser will present
+exponential time performance in the worst case, because PEG parsers have
+infinite lookahead (this means that they can consider an arbitrary number of
+tokens before deciding for a rule).  Usually, PEG parsers avoid this exponential
+time complexity with a technique called "packrat parsing" [1]_ which not only
+loads the entire program in memory before parsing it but also allows the parser
+to backtrack arbitrarily. This is made efficient by memoizing the rules already
+matched for each position. The cost of the memoization cache is that the parser
+will naturally use more memory than a simple LL(1) parser, which normally are
+table-based. 
 
 
 Key ideas
@@ -348,8 +349,16 @@ different possibilities:
 1. If there’s a single name in the alternative, this gets returned.
 2. If not, a dummy name object gets returned (this case should be avoided).
 
-If the action is omitted and Python code is being generated, then a list
-with all the parsed expressions gets returned (this is meant for debugging).
+If the action is ommited, a default action is generated: 
+
+* If there's a single name in the rule in the rule, it gets returned.
+
+* If there is more than one name in the rule, a collection with all parsed
+  expressions gets returned (the type of the collection will be different
+  in C and Python).
+
+This default behaviour is primarily made for very simple situations and for
+debugging pourposes.
 
 The full meta-grammar for the grammars supported by the PEG generator is:
 
@@ -448,25 +457,26 @@ returns a valid C-based Python AST:
 
 ::
 
-    start[mod_ty]: a=expr_stmt* $ { Module(a, NULL, p->arena) }
-    expr_stmt[stmt_ty]: a=expr NEWLINE { _Py_Expr(a, EXTRA) }
-    expr[expr_ty]: 
-        | l=expr '+' r=term { _Py_BinOp(l, Add, r, EXTRA) }
-        | l=expr '-' r=term { _Py_BinOp(l, Sub, r, EXTRA) }
-        | t=term { t }
+    start[mod_ty]: a=expr_stmt* ENDMARKER { _PyAST_Module(a, NULL, p->arena) }
+    expr_stmt[stmt_ty]: a=expr NEWLINE { _PyAST_Expr(a, EXTRA) }
 
-    term[expr_ty]: 
-        | l=term '*' r=factor { _Py_BinOp(l, Mult, r, EXTRA) }
-        | l=term '/' r=factor { _Py_BinOp(l, Div, r, EXTRA) }
-        | f=factor { f }
+    expr[expr_ty]:
+        | l=expr '+' r=term { _PyAST_BinOp(l, Add, r, EXTRA) }
+        | l=expr '-' r=term { _PyAST_BinOp(l, Sub, r, EXTRA) }
+        | term
 
-    factor[expr_ty]: 
+    term[expr_ty]:
+        | l=term '*' r=factor { _PyAST_BinOp(l, Mult, r, EXTRA) }
+        | l=term '/' r=factor { _PyAST_BinOp(l, Div, r, EXTRA) }
+        | factor
+
+    factor[expr_ty]:
         | '(' e=expr ')' { e }
-        | a=atom { a }
+        | atom
 
-    atom[expr_ty]: 
-        | n=NAME { n }
-        | n=NUMBER { n }
+    atom[expr_ty]:
+        | NAME
+        | NUMBER
 
 Here ``EXTRA`` is a macro that expands to ``start_lineno, start_col_offset,
 end_lineno, end_col_offset, p->arena``, those being variables automatically
@@ -477,24 +487,26 @@ A similar grammar written to target Python AST objects:
 
 ::
 
-    start: expr NEWLINE? ENDMARKER { ast.Expression(expr) }
-    expr: 
-        | expr '+' term { ast.BinOp(expr, ast.Add(), term) }
-        | expr '-' term { ast.BinOp(expr, ast.Sub(), term) }
-        | term { term }
+    start[ast.Module]: a=expr_stmt* ENDMARKER { ast.Module(body=a or [] }
+    expr_stmt: a=expr NEWLINE { ast.Expr(value=a, EXTRA) }
+
+    expr:
+        | l=expr '+' r=term { ast.BinOp(left=l, op=ast.Add(), right=r, EXTRA) }
+        | l=expr '-' r=term { ast.BinOp(left=l, op=ast.Sub(), right=r, EXTRA) }
+        | term
 
     term:
-        | l=term '*' r=factor { ast.BinOp(l, ast.Mult(), r) }
-        | term '/' factor { ast.BinOp(term, ast.Div(), factor) }
-        | factor { factor }
+        | l=term '*' r=factor { ast.BinOp(left=l, op=ast.Mult(), right=r, EXTRA) }
+        | l=term '/' r=factor { ast.BinOp(left=l, op=ast.Div(), right=r, EXTRA) }
+        | factor
 
     factor:
-        | '(' expr ')' { expr }
-        | atom { atom }
+        | '(' e=expr ')' { e }
+        | atom
 
-    atom: 
-        | NAME { ast.Name(id=name.string, ctx=ast.Load()) }
-        | NUMBER { ast.Constant(value=ast.literal_eval(number.string)) }
+    atom:
+        | NAME
+        | NUMBER
 
 
 Pegen
