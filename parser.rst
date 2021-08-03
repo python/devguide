@@ -550,7 +550,7 @@ Although it is very unlikely that you will ever need to modify it, if you make a
 to this file (in order to implement new Pegen features) you will need to regenerate
 the meta-parser (the parser that parses the grammar files). To do so just execute: ::
 
-    make regen-metaparser
+    make regen-pegen-metaparser
 
 If you are on Windows you can use the Visual Studio project files
 to regenerate the parser or to execute: ::
