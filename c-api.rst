@@ -186,9 +186,9 @@ Adding a new definition to the Limited API
 
      ./python ./Tools/scripts/stable_abi.py --generate-all ./Misc/stable_abi.txt
 
-   .. note::
-      The command above requires GCC when regenerating certain files. Clang may
-      work but it's untested. MSVC will not work.
+  .. note::
+     The command above requires GCC when regenerating certain files. Clang may
+     work but it's untested. MSVC will not work.
 
 - Build Python and check the using ``make check-limited-abi``.
   On platforms without ``make``, run this command directly:
