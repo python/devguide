@@ -343,12 +343,6 @@ inside curly-braces, which specifies the return value of the alternative::
         | first_alt1 first_alt2 { first_alt1 }
         | second_alt1 second_alt2 { second_alt1 }
 
-If the action is omitted and C code is being generated, then there are two
-different possibilities:
-
-1. If there’s a single name in the alternative, this gets returned.
-2. If not, a dummy name object gets returned (this case should be avoided).
-
 If the action is ommited, a default action is generated: 
 
 * If there's a single name in the rule in the rule, it gets returned.
