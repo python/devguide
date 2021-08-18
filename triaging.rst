@@ -171,10 +171,10 @@ type-tests
     Used for PRs that exclusively involve changes to the tests.
 
 test-with-buildbots
-   Used on PRs to test the latest commit with the buildbot fleet. Generally for
-   PRs with large code changes requiring more testing before merging. This
-   may take multiple hours to complete. Triagers can also stop a stuck build
-   using the web interface.
+    Used on PRs to test the latest commit with the buildbot fleet. Generally for
+    PRs with large code changes requiring more testing before merging. This
+    may take multiple hours to complete. Triagers can also stop a stuck build
+    using the web interface.
 
 Fields in the Issue Tracker
 ---------------------------
