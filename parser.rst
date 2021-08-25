@@ -847,7 +847,7 @@ For this reason it is a good idea to experiment first by generating a Python par
 
 .. code-block:: shell
 
-    $ python -m pegen python ~/github/pegen/data/expr.gram
+    $ python -m pegen python <PATH TO YOUR GRAMMAR FILE>
 
 This will generate a file called :file:`parse.py` in the same directory that you can use to parse some input:
 
