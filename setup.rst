@@ -128,6 +128,8 @@ when you shouldn't is if you are taking performance measurements). Even when
 working only on pure Python code the pydebug build provides several useful
 checks that one should not skip.
 
+.. seealso:: The effects of various configure and build flags are documented in
+   the `Python configure docs <https://docs.python.org/dev/using/configure.html>`_.
 
 .. _unix-compiling:
 
