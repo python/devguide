@@ -448,9 +448,9 @@ appropriate.
 
 Python's ``configure.ac`` script typically requires a specific version of
 Autoconf.  At the moment, this reads: ``AC_PREREQ(2.69)``. It also requires
-to have the ``pkg-config`` utility installed in the system and the ``pkg.m4``
-macro file located in the approapiate ``alocal`` location. You can easily check
-if this is correctly configured by running:
+to have the ``autoconf-archive`` and ``pkg-config`` utilities installed in
+the system and the ``pkg.m4`` macro file located in the approapiate ``alocal``
+location. You can easily check if this is correctly configured by running:
 
 .. code-block:: bash
 
