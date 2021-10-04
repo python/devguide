@@ -447,7 +447,14 @@ example, ``autoconf`` by itself will not regenerate ``pyconfig.h.in``.
 appropriate.
 
 Python's ``configure.ac`` script typically requires a specific version of
-Autoconf.  At the moment, this reads: ``AC_PREREQ(2.69)``.
+Autoconf.  At the moment, this reads: ``AC_PREREQ(2.69)``. It also requires
+to have the ``autoconf-archive`` and ``pkg-config`` utilities installed in
+the system and the ``pkg.m4`` macro file located in the appropriate ``alocal``
+location. You can easily check if this is correctly configured by running:
+
+.. code-block:: bash
+
+   ls $(aclocal --print-ac-dir) | grep pkg.m4
 
 If the system copy of Autoconf does not match this version, you will need to
 install your own copy of Autoconf.
