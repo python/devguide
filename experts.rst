@@ -368,6 +368,6 @@ Korean         flowdas
 Bengali India  kushal.das
 Hungarian      gbtami
 Portuguese     rougeth
-Chinese (TW)   adrianliaw
+Chinese (TW)   mattwang44, josix
 Chinese (CN)   zhsj
 =============  ============
