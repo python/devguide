@@ -291,7 +291,7 @@ Current Owners
 +----------------------+--------------------------------+-----------------+
 | Ezio Melotti         | roundup -> github migration    | ezio-melotti    |
 +----------------------+--------------------------------+-----------------+
-| Łukasz Langa         | CPython Developr in Residence  | ambv            |
+| Łukasz Langa         | CPython Developer in Residence | ambv            |
 +----------------------+--------------------------------+-----------------+
 
 Repository Administrator Role Policy
