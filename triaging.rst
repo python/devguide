@@ -16,11 +16,11 @@ Python triage team
 
 The Python triage team is a group dedicated towards improving workflow
 efficiency through thoughtful review and triage of open issues and pull
-requests. This helps contributors receive timely feedback and enables core 
-developers to focus on reviewed items which reduces their workload. The 
-expectations of this role expand upon the "Developer" role on the 
-`issue tracker`_. The responsibilities listed below are primarily centered 
-around the Python GitHub repositories. This extends beyond CPython, and, as 
+requests. This helps contributors receive timely feedback and enables core
+developers to focus on reviewed items which reduces their workload. The
+expectations of this role expand upon the "Developer" role on the
+`issue tracker`_. The responsibilities listed below are primarily centered
+around the Python GitHub repositories. This extends beyond CPython, and, as
 needed, to other repos such as devguide and core-workflow.
 
 Responsibilities include:
@@ -143,7 +143,7 @@ sprint
 stale
     Used for PRs that include changes which are no longer relevant or when the
     author hasn't responded to feedback in a long period of time. This label
-    helps core developers quickly identify PRs that are candidates for closure 
+    helps core developers quickly identify PRs that are candidates for closure
     or require a ping to the author.
 
 type-bugfix
@@ -164,7 +164,7 @@ type-performance
     Used for PRs that provide performance optimizations.
 
 type-security
-    Used for PRs that involve critical security issues. Less severe 
+    Used for PRs that involve critical security issues. Less severe
     security concerns can instead use the type-bugfix label.
 
 type-tests
@@ -443,7 +443,9 @@ forward.
 
 Superseder
 ''''''''''
-The issue is a duplicate of the listed issue(s).
+The issue is a duplicate of the listed issue(s). The issue should just be the
+number, not the b.p.o URL or "issueXXXXX". If this is set, the Resolution should
+be set to *Duplicate*.
 
 Status
 ''''''
