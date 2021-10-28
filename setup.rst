@@ -328,13 +328,15 @@ Then you should update the packages index::
 Now you can install the build dependencies via ``apt``::
 
    $ sudo apt-get build-dep python3
+   $ sudo apt-get install pkg-config
 
 If you want to build all optional modules, install the following packages and
 their dependencies::
 
-   $ sudo apt-get install build-essential gdb lcov libbz2-dev libffi-dev \
-         libgdbm-dev liblzma-dev libncurses5-dev libreadline6-dev \
-         libsqlite3-dev libssl-dev lzma lzma-dev tk-dev uuid-dev zlib1g-dev
+   $ sudo apt-get install build-essential gdb lcov pkg-config \
+         libbz2-dev libffi-dev libgdbm-dev libgdbm-compat-dev liblzma-dev \
+         libncurses5-dev libreadline6-dev libsqlite3-dev libssl-dev \
+         lzma lzma-dev tk-dev uuid-dev zlib1g-dev
 
 
 .. _MacOS:
