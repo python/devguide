@@ -1769,7 +1769,7 @@ Here's what's we're using:
 How a coordinator is elected?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-There is no election, each country have to sort this out.  Here are some suggestions.
+There is no election, each translation have to sort this out.  Here are some suggestions.
 
 -  Coordinator requests are to be public on doc-sig mailing list.
 -  If the given language have a native core dev, the core dev have its
