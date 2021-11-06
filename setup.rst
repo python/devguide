@@ -318,6 +318,10 @@ Take Ubuntu Bionic for example::
 
    deb-src http://archive.ubuntu.com/ubuntu/ bionic main
 
+Alternatively, uncomment lines with deb-src using an editor, i.e.::
+
+   sudo nano /etc/apt/sources.list
+
 For other distributions, like Debian, change the URL and names to correspond
 with the specific distribution.
 
