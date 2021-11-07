@@ -1690,9 +1690,9 @@ in production, other are work in progress:
 Starting a new translation
 --------------------------
 
-First subscribe to the `doc-sig
-<https://mail.python.org/mailman/listinfo/doc-sig>`_ mailing list,
-and introduce yourself and the translation you're starting.
+First subscribe to the `translation mailing list <translation_ml_>`_,
+and introduce yourself and the translation you're starting. Translations
+fall under the aegis of the `PSF Translation Workgroup <translation_wg_>`_
 
 Then you can bootstrap your new translation by using our `cookiecutter
 <https://github.com/JulienPalard/python-docs-cookiecutter>`__.
@@ -1706,10 +1706,14 @@ The important steps looks like this:
   Some are using Transifex, some are using only github, or you can choose another
   way, it's up to you.
 - Ensure we updated this page to reflect your work and progress, either via a
-  PR, or by asking on the doc-sig mailing list.
+  PR, or by asking on the `translation mailing list <translation_ml_>`_.
 - When ``tutorial/``, ``bugs.py`` and ``library/functions``
-  are complete, ask on doc-sig for your language to be added in the
+  are complete, ask on the `translation mailing list <translation_ml_>`_ for your language to be added in the
   language picker on docs.python.org.
+
+
+.. _translation_ml: https://mail.python.org/mailman3/lists/translation.python.org/
+.. _translation_wg: https://wiki.python.org/psf/TranslationWG/Charter
 
 
 PEP 545 summary:
