@@ -1,6 +1,6 @@
 .. _parser:
 
-Guide of CPython's Parser
+Guide to CPython's Parser
 =========================
 
 :Author: Pablo Galindo Salgado
