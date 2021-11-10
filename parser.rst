@@ -276,7 +276,8 @@ consists of an atom, which is not followed by a ``.`` or a ``(`` or a
 ``~``
 ''''''
 
-Commit to the current alternative, even if it fails to parse.
+Commit to the current alternative, even if it fails to parse (this is called
+the "cut").
 
 ::
 
