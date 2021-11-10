@@ -343,7 +343,7 @@ inside curly-braces, which specifies the return value of the alternative::
         | first_alt1 first_alt2 { first_alt1 }
         | second_alt1 second_alt2 { second_alt1 }
 
-If the action is ommited, a default action is generated: 
+If the action is omitted, a default action is generated:
 
 * If there's a single name in the rule in the rule, it gets returned.
 
@@ -352,7 +352,7 @@ If the action is ommited, a default action is generated:
   in C and Python).
 
 This default behaviour is primarily made for very simple situations and for
-debugging pourposes.
+debugging purposes.
 
 The full meta-grammar for the grammars supported by the PEG generator is:
 
