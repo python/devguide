@@ -354,6 +354,15 @@ If the action is ommited, a default action is generated:
 This default behaviour is primarily made for very simple situations and for
 debugging pourposes.
 
+.. warning::
+
+    It's important that the actions don't mutate any AST nodes that are passed
+    into them via variables referring to other rules. The reason for mutation
+    being not allowed is that the AST nodes are cached by memoization and could
+    potentially be reused in a different context, where the mutation would be
+    invalid. If an action needs to change an AST node, it should instead make a
+    new copy of the node and change that.
+
 The full meta-grammar for the grammars supported by the PEG generator is:
 
 ::
