@@ -303,7 +303,7 @@ In order to limit the time each garbage collection takes, the GC uses a popular
 optimization: generations. The main idea behind this concept is the assumption that
 most objects have a very short lifespan and can thus be collected shortly after their
 creation. This has proven to be very close to the reality of many Python programs as
-many temporarily objects are created and destroyed very fast. The older an object is
+many temporary objects are created and destroyed very fast. The older an object is
 the less likely it is that it will become unreachable.
 
 To take advantage of this fact, all container objects are segregated into
