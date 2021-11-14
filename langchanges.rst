@@ -46,8 +46,7 @@ the change. This process is the Python Enhancement Proposal (PEP) process.
 You will first need a PEP that you will present to python-ideas. You may be a
 little hazy on the technical details as various core developers can help with
 that, but do realize that if you do not present your idea to python-ideas or
-python-list ahead of time you may find out it is technically not possible
-(e.g., Python's parser will not support the grammar change as a PEG parser).
+python-list ahead of time you may find out it is technically not possible.
 Expect extensive comments on the PEP, some of which will be negative.
 
 Once your PEP has been modified to be of proper quality and to take into
