@@ -244,16 +244,16 @@ participating in the CPython core development process:
 
 .. topic:: Dino Viehland (United States)
 
-   * Microsoft: `<https://notebooks.azure.com/>`_ (Software Engineer)
-   * Email address: dinov@microsoft.com
+   * Meta (Software Engineer)
+   * Email address: dinoviehland@gmail.com
 
    Dino started working with Python in 2005 by working on IronPython, an
    implementation of Python running on .NET.  He was one of the primary
    developers on the project for 6 years.  After that he started the Python
    Tools for Visual Studio project focusing on providing advanced code completion
    and debugging features for Python.  Today he works on
-   `Azure Notebooks <http://notebooks.azure.com/>`_ bringing the Python based
-   Jupyter notebook as a hosted on-line service.
+   `Cinder <https://github.com/facebookincubator/cinder/>`_ improving Python
+   performance for Instagram.
 
 .. topic:: Carol Willing (United States)
 
