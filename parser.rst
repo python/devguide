@@ -169,7 +169,7 @@ Python-style comments.
 ``e1 e2``
 '''''''''
 
-Match e1, then match e2.
+Match ``e1``, then match ``e2``.
 
 ::
 
@@ -178,7 +178,7 @@ Match e1, then match e2.
 ``e1 | e2``
 '''''''''''
 
-Match e1 or e2.
+Match ``e1`` or ``e2``.
 
 The first alternative can also appear on the line after the rule name
 for formatting purposes. In that case, a \| must be used before the
@@ -193,7 +193,7 @@ first alternative, like so:
 ``( e )``
 '''''''''
 
-Match e.
+Match ``e``.
 
 ::
 
@@ -209,7 +209,7 @@ operator together with the repeat operators:
 ``[ e ] or e?``
 '''''''''''''''
 
-Optionally match e.
+Optionally match ``e``.
 
 ::
 
@@ -225,7 +225,7 @@ optional:
 ``e*``
 ''''''
 
-Match zero or more occurrences of e.
+Match zero or more occurrences of ``e``.
 
 ::
 
@@ -234,7 +234,7 @@ Match zero or more occurrences of e.
 ``e+``
 ''''''
 
-Match one or more occurrences of e.
+Match one or more occurrences of ``e``.
 
 ::
 
@@ -243,7 +243,7 @@ Match one or more occurrences of e.
 ``s.e+``
 ''''''''
 
-Match one or more occurrences of e, separated by s. The generated parse
+Match one or more occurrences of ``e``, separated by ``s``. The generated parse
 tree does not include the separator. This is otherwise identical to
 ``(e (s e)*)``.
 
@@ -256,14 +256,14 @@ tree does not include the separator. This is otherwise identical to
 
 .. _peg-positive-lookahead:
 
-Succeed if e can be parsed, without consuming any input.
+Succeed if ``e`` can be parsed, without consuming any input.
 
 ``!e``
 ''''''
 
 .. _peg-negative-lookahead:
 
-Fail if e can be parsed, without consuming any input.
+Fail if ``e`` can be parsed, without consuming any input.
 
 An example taken from the Python grammar specifies that a primary
 consists of an atom, which is not followed by a ``.`` or a ``(`` or a
@@ -276,14 +276,15 @@ consists of an atom, which is not followed by a ``.`` or a ``(`` or a
 ``~``
 ''''''
 
-Commit to the current alternative, even if it fails to parse.
+Commit to the current alternative, even if it fails to parse (this is called
+the "cut").
 
 ::
 
     rule_name: '(' ~ some_rule ')' | some_alt
 
 In this example, if a left parenthesis is parsed, then the other
-alternative won’t be considered, even if some_rule or ‘)’ fail to be
+alternative won’t be considered, even if some_rule or ``)`` fail to be
 parsed.
 
 Left recursion
@@ -343,7 +344,7 @@ inside curly-braces, which specifies the return value of the alternative::
         | first_alt1 first_alt2 { first_alt1 }
         | second_alt1 second_alt2 { second_alt1 }
 
-If the action is ommited, a default action is generated: 
+If the action is omitted, a default action is generated:
 
 * If there's a single name in the rule, it gets returned.
 
