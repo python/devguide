@@ -110,7 +110,7 @@ the following two rules (in these examples, a token is an individual character):
 
 In a regular EBNF grammar, both rules specify the language ``{aa, aaa}`` but
 in PEG, one of these two rules accepts the string ``aaa`` but not the string
-``aa``. The other does the opposite -- it accepts the string the string ``aa``
+``aa``. The other does the opposite -- it accepts the string ``aa``
 but not the string ``aaa``. The rule ``('a'|'aa')'a'`` does
 not accept ``aaa`` because ``'a'|'aa'`` consumes the first ``a``, letting the
 final ``a`` in the rule consume the second, and leaving out the third ``a``.
@@ -345,14 +345,14 @@ inside curly-braces, which specifies the return value of the alternative::
 
 If the action is ommited, a default action is generated: 
 
-* If there's a single name in the rule in the rule, it gets returned.
+* If there's a single name in the rule, it gets returned.
 
 * If there is more than one name in the rule, a collection with all parsed
   expressions gets returned (the type of the collection will be different
   in C and Python).
 
 This default behaviour is primarily made for very simple situations and for
-debugging pourposes.
+debugging purposes.
 
 The full meta-grammar for the grammars supported by the PEG generator is:
 
@@ -863,7 +863,7 @@ Verbose mode
 ~~~~~~~~~~~~
 
 When Python is compiled in debug mode (by adding ``--with-pydebug`` when running the configure step in Linux or by
-adding ``-d`` when calling the :file:`PCbuild/python.bat` script in Windows), is possible to activate a **very** verbose
+adding ``-d`` when calling the :file:`PCbuild/python.bat` script in Windows), it is possible to activate a **very** verbose
 mode in the generated parser. This is very useful to debug the generated parser and to understand how it works, but it
 can be a bit hard to understand at first. 
 
