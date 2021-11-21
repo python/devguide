@@ -808,7 +808,7 @@ when they succeed. Constructing these objects can be quite cumbersome (see
 the :ref:`AST compiler section <compiler-ast-trees>` for more information
 on how these objects are constructed and how they are used by the compiler) so
 special helper functions are used. These functions are declared in the
-:file:`Parser/pegen.h` header file and defined in the :file:`Parser/pegen.c`
+:file:`Parser/pegen.h` header file and defined in the :file:`Parser/action_helpers.c`
 file. These functions allow you to join AST sequences, get specific elements
 from them or to do extra processing on the generated tree.
 
@@ -822,7 +822,7 @@ from them or to do extra processing on the generated tree.
 
 As a general rule, if an action spawns multiple lines or requires something more
 complicated than a single expression of C code, is normally better to create a
-custom helper in :file:`Parser/pegen.c` and expose it in the
+custom helper in :file:`Parser/action_helpers.c` and expose it in the
 :file:`Parser/pegen.h` header file so it can be used from the grammar.
 
 If the parsing succeeds, the parser **must** return a **valid** AST object.
