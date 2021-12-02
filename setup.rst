@@ -13,7 +13,7 @@ directory structure of the CPython source code.
 
 Alternatively, if you have `Docker <https://www.docker.com/>`_ installed you
 might want to use `our official images
-<https://gitlab.com/python-devs/ci-images/blob/master/README.md>`_.  These
+<https://gitlab.com/python-devs/ci-images/blob/main/README.md>`_.  These
 contain the latest releases of several Python versions, along with git head,
 and are provided for development and testing purposes only.
 
