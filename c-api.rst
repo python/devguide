@@ -126,7 +126,7 @@ Some examples:
   its size must not change.
 - Exported symbols (functions and data) must continue to be available
   as exported symbols. Specifically, a function can only be converted
-  to a `static inline` function (or macro) if Python also continues to
+  to a ``static inline`` function (or macro) if Python also continues to
   provide the actual function.
   For an example, see the ``Py_NewRef`` `macro`_ and `redefinition`_ in 3.10.
 
