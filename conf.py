@@ -93,7 +93,7 @@ pygments_style = 'sphinx'
 # -- Options for HTML output ---------------------------------------------------
 
 # Use the upstream python-docs-theme
-#html_theme = 'furo'
+html_theme = 'furo'
 html_theme_options = {}
 
 
