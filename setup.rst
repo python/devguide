@@ -240,7 +240,7 @@ Windows
 For a quick guide to building you can read `this documentation`_ from Victor
 Stinner.
 
-**Python 3.6** and later can use Microsoft Visual Studio 2017.  You can download
+**Python 3.7** and later can use Microsoft Visual Studio 2017.  You can download
 and use any of the free or paid versions of `Visual Studio 2017`_.
 
 When installing Visual Studio 2017, select the **Python development** workload
