@@ -131,6 +131,8 @@ For reference, here are the Python versions that most recently reached their end
 +------------------+--------------+----------------+----------------+----------------------------------+
 | Branch           | Schedule     | First release  | End-of-life    | Release manager                  |
 +==================+==============+================+================+==================================+
+| 3.6              | :pep:`494`   | 2016-12-23     | 2021-12-23     | Ned Deily                        |
++------------------+--------------+----------------+----------------+----------------------------------+
 | 3.5              | :pep:`478`   | 2015-09-13     | 2020-09-30     | Larry Hastings                   |
 +------------------+--------------+----------------+----------------+----------------------------------+
 | 3.4              | :pep:`429`   | 2014-03-16     | 2019-03-18     | Larry Hastings                   |
@@ -260,7 +262,7 @@ This role is paramount to the security of the Python Language, Community, and
 Infrastructure.
 
 The Executive Director of the Python Software Foundation delegates authority on
-GitHub Organization Owner Status to Ee W. Durbin III - Python Software
+GitHub Organization Owner Status to Ee Durbin - Python Software
 Foundation Director of Infrastructure. Common reasons for this role are:
 Infrastructure Staff Membership, Python Software Foundation General Counsel,
 and Python Software Foundation Staff as fallback.
@@ -285,9 +287,13 @@ Current Owners
 +----------------------+--------------------------------+-----------------+
 | Ewa Jodlowska        | PSF Executive Director         | ejodlowska      |
 +----------------------+--------------------------------+-----------------+
-| Ee W. Durbin III     | PSF Director of Infrastructure | ewdurbin        |
+| Ee Durbin            | PSF Director of Infrastructure | ewdurbin        |
 +----------------------+--------------------------------+-----------------+
 | Van Lindberg         | PSF General Counsel            | VanL            |
++----------------------+--------------------------------+-----------------+
+| Ezio Melotti         | roundup -> github migration    | ezio-melotti    |
++----------------------+--------------------------------+-----------------+
+| Łukasz Langa         | CPython Developer in Residence | ambv            |
 +----------------------+--------------------------------+-----------------+
 
 Repository Administrator Role Policy
@@ -320,11 +326,12 @@ Current Administrators
 | Pablo Galindo     | Python 3.10 and 3.11 Release Manager,                    | pablogsal       |
 |                   | Maintainer of buildbot.python.org                        |                 |
 +-------------------+----------------------------------------------------------+-----------------+
-| Łukasz Langa      | Python 3.8 and 3.9 Release Manager                       | ambv            |
+| Łukasz Langa      | Python 3.8 and 3.9 Release Manager,                      | ambv            |
+|                   | PSF CPython Developer in Residence 2021-2022             |                 |
 +-------------------+----------------------------------------------------------+-----------------+
 | Ned Deily         | Python 3.6 and 3.7 Release Manager                       | ned-deily       |
 +-------------------+----------------------------------------------------------+-----------------+
-| Lary Hastings     | Retired Release Manager (for Python 3.4 and 3.5)         | larryhastings   |
+| Larry Hastings    | Retired Release Manager (for Python 3.4 and 3.5)         | larryhastings   |
 +-------------------+----------------------------------------------------------+-----------------+
 | Berker Peksag     | Maintainer of bpo-linkify and cpython-emailer-webhook    | berkerpeksag    |
 +-------------------+----------------------------------------------------------+-----------------+

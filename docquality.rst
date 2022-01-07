@@ -32,8 +32,7 @@ and validates that your new markup is correct.
 
 You can view the documentation built from :ref:`in-development <indevbranch>`
 and :ref:`maintenance <maintbranch>` branches at https://docs.python.org/dev/.
-The in-development and most recent 3.x (as well as 2.x) maintenance
-branches are rebuilt once per day.
+The in-development and recent maintenance branches are rebuilt once per day.
 
 If you would like to be more involved with documentation, consider subscribing
 to the `docs@python.org <https://mail.python.org/mailman/listinfo/docs>`_
@@ -99,7 +98,7 @@ lives in a `separate repository`_ and bug reports should be submitted to the
 
 Our devguide workflow uses continuous integration and deployment so changes to
 the devguide are normally published when the pull request is merged. Changes
-to CPython documentation follows the workflow of a CPython release and is
+to CPython documentation follow the workflow of a CPython release and are
 published in the release.
 
 

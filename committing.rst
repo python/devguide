@@ -102,7 +102,7 @@ These are the two exceptions:
    change and the original** ``NEWS`` **entry remains valid**, then no additional
    entry is needed.
 
-If a change needs an entry in ``What's New in Python``, then it very
+If a change needs an entry in ``What's New in Python``, then it is very
 likely not suitable for including in a maintenance release.
 
 ``NEWS`` entries go into the ``Misc/NEWS.d`` directory as individual files. The

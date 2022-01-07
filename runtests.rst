@@ -48,7 +48,7 @@ verbose mode (using ``-v``), so that individual failures are detailed::
 To run a single test case, use the ``unittest`` module, providing the import
 path to the test case::
 
-   ./python -m unittest -v test.test_abc.TestABC
+   ./python -m unittest -v test.test_abc.TestABC_Py
 
 If you have a multi-core or multi-CPU machine, you can enable parallel testing
 using several Python processes so as to speed up things::
@@ -132,4 +132,4 @@ Benchmarking is useful to test that a change does not degrade performance.
 `The Python Benchmark Suite <https://github.com/python/pyperformance>`_
 has a collection of benchmarks for all Python implementations. Documentation
 about running the benchmarks is in the `README.txt
-<https://github.com/python/pyperformance/blob/master/README.rst>`_ of the repo.
+<https://github.com/python/pyperformance/blob/main/README.rst>`_ of the repo.

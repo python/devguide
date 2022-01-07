@@ -57,7 +57,7 @@ Becoming a member of the Python triage team
 
 Any Python core developers are welcome to invite a Python contributor to the
 Python triage team. Do note that the responsibilities of a Python triager
-is more elevated than a developer on bpo. For example, the Python triager
+are more elevated than a developer on bpo. For example, the Python triager
 has access to more repositories than just CPython. Triagers will be responsible
 to handle not just issues, but also pull requests, and even managing backports.
 
@@ -66,13 +66,13 @@ They can request this to any core developer, and the core developer
 can pass the request to the `Python organization admin
 <https://devguide.python.org/devcycle/?highlight=organization%20admin#current-owners>`_
 on GitHub. The request
-can be made confidentially via a DM in Zulip or Discourse, or publicly by opening
+can be made confidentially via a DM in Discourse, or publicly by opening
 an `issue in the core-workflow repository
 <https://github.com/python/core-workflow/issues/new?template=triage_membership.md>`_.
 
 Any contributor who is not already a developer on b.p.o can also self-nominate
 to be a member of Python triage team. They can request this to any core developer,
-confidentially via DM in Zulip or Discourse, or publicly by opening an issue in core-workflow.
+confidentially via DM in Discourse, or publicly by opening an issue in core-workflow.
 If a core developer agrees and is willing to vouch for them, the core developer
 can pass the request to the GitHub administrator. They should also be added as
 developer on bpo.
@@ -169,6 +169,12 @@ type-security
 
 type-tests
     Used for PRs that exclusively involve changes to the tests.
+
+test-with-buildbots
+    Used on PRs to test the latest commit with the buildbot fleet. Generally for
+    PRs with large code changes requiring more testing before merging. This
+    may take multiple hours to complete. Triagers can also stop a stuck build
+    using the web interface.
 
 Fields in the Issue Tracker
 ---------------------------

@@ -30,7 +30,7 @@ already been reported.  Checking if the problem is an existing issue will:
 * determine if additional information, such as how to replicate the issue, 
   is needed
 
-To do see if the issue already exists, search the bug database using the 
+To see if an issue already exists, search the bug database using the 
 search box on the top of the issue tracker page. An `advanced search`_ is also
 available by clicking on "Search" in the sidebar.
 

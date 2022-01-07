@@ -101,8 +101,44 @@ No changes that break the Stable ABI are allowed.
 The Limited API should be defined in ``Include/``, excluding the
 ``cpython`` and ``internal`` subdirectories.
 
-Guidelines for changing the Limited API
----------------------------------------
+
+Guidelines for changing the Limited API, and removing items from it
+-------------------------------------------------------------------
+
+While the *Stable ABI*  must not be broken, the existing Limited API can be
+changed, and items can be removed from it, if:
+
+- the Backwards Compatibility Policy (:pep:`387`) is followed, and
+- the Stable ABI is not broken -- that is, extensions compiled with
+  Limited API of older versions of Python continue to work on
+  newer versions of Python.
+
+This is tricky to do and requires careful thought.
+Some examples:
+
+- Functions, structs etc. accessed by macros in *any version* of the
+  Limited API are part of the Stable ABI, even if they are named with
+  an underscore. They must not be removed and their signature must not change.
+  (Their implementation may change, though.)
+- Structs members cannot be rearranged if they were part of any version of
+  the Limited API.
+- If the Limited API allows users to allocate a struct directly,
+  its size must not change.
+- Exported symbols (functions and data) must continue to be available
+  as exported symbols. Specifically, a function can only be converted
+  to a ``static inline`` function (or macro) if Python also continues to
+  provide the actual function.
+  For an example, see the ``Py_NewRef`` `macro`_ and `redefinition`_ in 3.10.
+
+.. _macro: https://github.com/python/cpython/blob/v3.10.1/Include/object.h#L591-L595
+.. _redefinition: https://github.com/python/cpython/blob/v3.10.1/Objects/object.c#L2298-L2308
+
+It is possible to remove items marked as part of the Stable ABI, but only
+if there was no way to use them in any past version of the Limited API.
+
+
+Guidelines for adding to the Limited API
+----------------------------------------
 
 - Guidelines for the general :ref:`public-capi` apply.
 
