@@ -5,7 +5,7 @@
 version: 2
 
 sphinx:
-  builder: htmldir
+  builder: dirhtml
   configuration: conf.py
 
 formats: all
