@@ -26,7 +26,6 @@ needed, to other repos such as devguide and core-workflow.
 Responsibilities include:
 
 * PR/issue management
-    - Renaming PRs
     - Reviewing PRs
     - Assisting contributors
     - Notifying appropriate core developers
