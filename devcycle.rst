@@ -285,8 +285,6 @@ Current Owners
 +----------------------+--------------------------------+-----------------+
 | Donald Stufft        | Infrastructure Staff           | dstufft         |
 +----------------------+--------------------------------+-----------------+
-| Ewa Jodlowska        | PSF Executive Director         | ejodlowska      |
-+----------------------+--------------------------------+-----------------+
 | Ee Durbin            | PSF Director of Infrastructure | ewdurbin        |
 +----------------------+--------------------------------+-----------------+
 | Van Lindberg         | PSF General Counsel            | VanL            |
