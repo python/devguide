@@ -240,7 +240,7 @@ Commit the files:
 
    git commit -m "<message>"
 
-.. _diff-changes::
+.. _diff-changes:
 
 Comparing Changes
 -----------------
