@@ -240,6 +240,27 @@ Commit the files:
 
    git commit -m "<message>"
 
+.. _diff-changes::
+
+Comparing Changes
+-----------------
+
+View all non-commited changes::
+
+   git diff
+
+Compare to the ``main`` branch::
+
+   git diff main
+
+Exclude generated files from diff (note the single quotes)::
+
+   git diff main ':(attr:!generated)'
+
+Exclude generated files from diff by default::
+
+   git config diff.generated.binary true
+
 .. _push-changes:
 
 Pushing Changes
