@@ -368,7 +368,18 @@ Scenario:
 - A contributor made a pull request to CPython.
 - Before merging it, you want to be able to test their changes locally.
 
-On Unix and MacOS, set up the following git alias::
+If you've got [GitHub CLI](https://cli.github.com) or
+[hub](https://hub.github.com) installed, you can simply do::
+
+   $ gh pr checkout <pr_number>   # GitHub CLI
+   $ hub pr checkout <pr_number>  # hub
+
+Both of these tools will configure a remote URL for the branch, so you can
+``git push`` if the pull request author checked "Allow edits from maintainers"
+when creating the pull request.
+
+If you don't have GitHub CLI or hub installed, you can set up a git alias. On
+Unix and macOS::
 
    $ git config --global alias.pr '!sh -c "git fetch upstream pull/${1}/head:pr_${1} && git checkout pr_${1}" -'
 
@@ -382,15 +393,6 @@ The alias only needs to be done once.  After the alias is set up, you can get a
 local copy of a pull request as follows::
 
    git pr <pr_number>
-
-.. note::
-
-   `hub <https://github.com/github/hub>`_ command line utility makes this
-   workflow very easy.  You can check out the branch by
-   ``hub pr checkout <pr_number> [<branch_name>]``.
-   This command configures remote URL for the branch too.
-   So you can ``git push`` if the pull request author checked
-   "Allow edits from maintainers" when creating the pull request.
 
 .. _accepting-and-merging-a-pr:
 
