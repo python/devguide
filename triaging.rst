@@ -505,13 +505,7 @@ with the "open" status.
 
 Mercurial Repository
 ''''''''''''''''''''
-HTTP link to a Mercurial repository that contains a patch for the issue.
-A :guilabel:`Create Patch` button will appear that computes a diff for the
-head revision of the remote branch and attaches it to the issue.  The button
-supports only CPython_ patches.
-
-If you don't indicate a remote branch, ``default`` is used.  You can
-indicate a remote branch by adding ``#BRANCH`` to the end of the URL.
+This field is not used anymore.
 
 Generating Special Links in a Comment
 -------------------------------------

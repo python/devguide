@@ -394,8 +394,6 @@ Author Name <email_address> ." to the pull request description and commit messag
 See `the GitHub article <https://help.github.com/articles/creating-a-commit-with-multiple-authors/>`_
 on how to properly add the co-author info.
 
-See also :ref:`Applying a Patch from Mercurial to Git <git_from_mercurial>`.
-
 Reviewing
 ---------
 
