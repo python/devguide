@@ -368,8 +368,8 @@ Scenario:
 - A contributor made a pull request to CPython.
 - Before merging it, you want to be able to test their changes locally.
 
-If you've got [GitHub CLI](https://cli.github.com) or
-[hub](https://hub.github.com) installed, you can simply do::
+If you've got `GitHub CLI <https://cli.github.com>`_ or
+`hub <https://hub.github.com>`_ installed, you can simply do::
 
    $ gh pr checkout <pr_number>   # GitHub CLI
    $ hub pr checkout <pr_number>  # hub
