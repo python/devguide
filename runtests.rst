@@ -50,6 +50,19 @@ path to the test case::
 
    ./python -m unittest -v test.test_abc.TestABC_Py
 
+Some test modules also support direct invocation, 
+which might be useful for IDEs and local debugging::
+
+   ./python Lib/test/test_typing.py
+
+But, there are several important notes:
+
+1. This way of running tests exists only 
+   for local developer needs and is discouraged for anything else
+2. Some modules do not support it at all, for example ``test_importlib``,
+   in other words: if some module does not have ``unittest.main()``
+   most likely it does not support direct invocation
+
 If you have a multi-core or multi-CPU machine, you can enable parallel testing
 using several Python processes so as to speed up things::
 
