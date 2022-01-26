@@ -253,13 +253,20 @@ Compare to the ``main`` branch::
 
    git diff main
 
-Exclude generated files from diff (note the single quotes)::
+Exclude generated files from diff using an `attr <_gitattributes>`_
+`pathspec <_pathspec>`_ (note the single quotes)::
 
    git diff main ':(attr:!generated)'
 
 Exclude generated files from diff by default::
 
    git config diff.generated.binary true
+
+The `generated` `attribute <_gitattributes>`_ is defined in `.gitattributes`,
+found in the repository root.
+
+.. _pathspec: https://git-scm.com/docs/gitglossary#def_pathspec
+.. _gitattributes: https://git-scm.com/docs/gitattributes
 
 .. _push-changes:
 
