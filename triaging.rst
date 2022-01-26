@@ -517,7 +517,7 @@ GitHub PR
 '''''''''
 GitHub pull request number or full URL to a pull request.  This field is
 usually not needed as links are automatically created between issues and PRs
-when an issue number is mentioned in the PR description or commit message(s).
+when an issue number is mentioned in the PR description or a commit message.
 
 Generating Special Links in a Comment
 -------------------------------------
