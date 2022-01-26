@@ -37,9 +37,6 @@ The existence of this list is not meant to indicate that these people
 by non-committers to find responsible parties, and by committers who do
 not feel qualified to make a decision in a particular context.
 
-See also :PEP:`291` and :PEP:`360` for information about certain modules
-with special rules.
-
 
 Stdlib
 ------
