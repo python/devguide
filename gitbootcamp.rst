@@ -240,6 +240,32 @@ Commit the files:
 
    git commit -m "<message>"
 
+.. _diff-changes:
+
+Comparing Changes
+-----------------
+
+View all non-commited changes::
+
+   git diff
+
+Compare to the ``main`` branch::
+
+   git diff main
+
+Exclude generated files from diff using an ``attr``
+`pathspec <https://git-scm.com/docs/gitglossary#def_pathspec>`_ (note the
+single quotes)::
+
+   git diff main ':(attr:!generated)'
+
+Exclude generated files from diff by default::
+
+   git config diff.generated.binary true
+
+The ``generated`` `attribute <https://git-scm.com/docs/gitattributes>`_ is
+defined in :file:`.gitattributes`, found in the repository root.
+
 .. _push-changes:
 
 Pushing Changes
