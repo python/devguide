@@ -50,7 +50,7 @@ __future__
 __main__              gvanrossum, ncoghlan
 _dummy_thread         brett.cannon
 _thread
-_testbuffer           
+_testbuffer
 abc
 aifc                  r.david.murray
 argparse              rhettinger*
@@ -141,7 +141,7 @@ itertools             rhettinger*
 json                  bob.ippolito (inactive), ezio.melotti, rhettinger
 keyword
 lib2to3               benjamin.peterson
-libmpdec              
+libmpdec
 linecache
 locale                lemburg
 logging               vinay.sajip
@@ -187,7 +187,7 @@ pydoc
 queue                 rhettinger*
 quopri
 random                rhettinger, mark.dickinson
-re                    effbot (inactive), ezio.melotti, serhiy.storchaka
+re                    ezio.melotti, serhiy.storchaka
 readline              twouters
 reprlib
 resource              twouters
@@ -254,13 +254,13 @@ wave
 weakref               fdrake
 webbrowser
 winreg                stutzbach
-winsound              effbot (inactive)
+winsound
 wsgiref               pje
 xdrlib
 xml.dom
 xml.dom.minidom
 xml.dom.pulldom
-xml.etree             effbot (inactive), eli.bendersky*, scoder
+xml.etree             eli.bendersky*, scoder
 xml.parsers.expat
 xml.sax
 xml.sax.handler
@@ -335,7 +335,7 @@ io                  benjamin.peterson, stutzbach
 locale              lemburg
 mathematics         mark.dickinson, lemburg, stutzbach, rhettinger
 memory management   tim.peters, lemburg, twouters
-memoryview          
+memoryview
 networking          giampaolo.rodola,
 object model        benjamin.peterson, twouters
 packaging           tarek, lemburg, alexis, eric.araujo, dstufft, paul.moore
