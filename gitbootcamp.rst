@@ -263,7 +263,7 @@ Exclude generated files from diff by default::
 
    git config diff.generated.binary true
 
-The `generated` `attribute <https://git-scm.com/docs/gitattributes>`_ is
+The ``generated`` `attribute <https://git-scm.com/docs/gitattributes>`_ is
 defined in `.gitattributes`, found in the repository root.
 
 .. _push-changes:
