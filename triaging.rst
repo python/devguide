@@ -513,6 +513,12 @@ supports only CPython_ patches.
 If you don't indicate a remote branch, ``default`` is used.  You can
 indicate a remote branch by adding ``#BRANCH`` to the end of the URL.
 
+GitHub PR
+'''''''''
+GitHub pull request number or full URL to a pull request.  This field is
+usually not needed as links are automatically created between issues and PRs
+when an issue number is mentioned in the PR description or a commit message.
+
 Generating Special Links in a Comment
 -------------------------------------
 Using the following abbreviations in a comment will automatically generate
