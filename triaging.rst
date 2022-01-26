@@ -522,13 +522,18 @@ a link to relevant web pages.
 | Comment abbreviation                                        | Description                                           |
 +=============================================================+=======================================================+
 | ``#<number>``,                                              | Links to the tracker issue ``<number>``.              |
+| ``bpo-<number>``,                                           |                                                       |
 | ``issue<number>``, or                                       |                                                       |
 | ``issue <number>``                                          |                                                       |
 +-------------------------------------------------------------+-------------------------------------------------------+
 | ``msg<number>``                                             | Links to the tracker message ``<number>``.            |
 +-------------------------------------------------------------+-------------------------------------------------------+
 | ``PR <number>``,                                            | Links to `GitHub pull requests`_.                     |
-| ``PR<number>``, or                                          |                                                       |
+| ``PR-<number>``,                                            |                                                       |
+| ``PR<number>``,                                             |                                                       |
+| ``GH <number>``,                                            |                                                       |
+| ``GH-<number>``,                                            |                                                       |
+| ``GH<number>``, or                                          |                                                       |
 | ``pull request <number>``                                   |                                                       |
 +-------------------------------------------------------------+-------------------------------------------------------+
 | a 10-, 11-, 12-, or 40-digit hex ``<number>``               | Indicates a Git or Mercurial changeset identifier and |
