@@ -505,7 +505,9 @@ with the "open" status.
 
 Mercurial Repository
 ''''''''''''''''''''
-This field is not used anymore.
+Deprecated: HTTP link to a Mercurial repository that contains a patch for the issue.
+
+New repository links should not be added to new or existing issues.
 
 Generating Special Links in a Comment
 -------------------------------------
