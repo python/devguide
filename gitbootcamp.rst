@@ -318,6 +318,49 @@ When it happens, you need to resolve conflict.  See these articles about resolvi
 - `About merge conflicts <https://help.github.com/en/articles/about-merge-conflicts>`_
 - `Resolving a merge conflict using the command line <https://help.github.com/en/articles/resolving-a-merge-conflict-using-the-command-line>`_
 
+.. _git_from_patch:
+
+Applying a Patch to Git
+-----------------------
+
+Scenario:
+
+- A patch exists but there is no pull request for it.
+
+Solution:
+
+1. Download the patch locally.
+
+2. Apply the patch::
+
+       git apply /path/to/patch.diff
+
+   If there are errors, update to a revision from when the patch was
+   created and then try the ``git apply`` again:
+
+   .. code-block:: bash
+
+       git checkout $(git rev-list -n 1 --before="yyyy-mm-dd hh:mm:ss" main)
+       git apply /path/to/patch.diff
+
+   If the patch still won't apply, then a patch tool will not be able to
+   apply the patch and it will need to be re-implemented manually.
+
+3. If the apply was successful, create a new branch and switch to it.
+
+4. Stage and commit the changes.
+
+5. If the patch was applied to an old revision, it needs to be updated and
+   merge conflicts need to be resolved::
+
+       git rebase main
+       git mergetool
+
+   For very old changes, ``git merge --no-ff`` may be easier than a rebase,
+   with regards to resolving conflicts.
+
+6. Push the changes and open a pull request.
+
 .. _git_pr:
 
 Downloading Other's Patches
