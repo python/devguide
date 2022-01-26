@@ -509,6 +509,12 @@ Deprecated: HTTP link to a Mercurial repository that contains a patch for the is
 
 New repository links should not be added to new or existing issues.
 
+GitHub PR
+'''''''''
+GitHub pull request number or full URL to a pull request.  This field is
+usually not needed as links are automatically created between issues and PRs
+when an issue number is mentioned in the PR description or a commit message.
+
 Generating Special Links in a Comment
 -------------------------------------
 Using the following abbreviations in a comment will automatically generate
@@ -518,13 +524,18 @@ a link to relevant web pages.
 | Comment abbreviation                                        | Description                                           |
 +=============================================================+=======================================================+
 | ``#<number>``,                                              | Links to the tracker issue ``<number>``.              |
+| ``bpo-<number>``,                                           |                                                       |
 | ``issue<number>``, or                                       |                                                       |
 | ``issue <number>``                                          |                                                       |
 +-------------------------------------------------------------+-------------------------------------------------------+
 | ``msg<number>``                                             | Links to the tracker message ``<number>``.            |
 +-------------------------------------------------------------+-------------------------------------------------------+
 | ``PR <number>``,                                            | Links to `GitHub pull requests`_.                     |
-| ``PR<number>``, or                                          |                                                       |
+| ``PR-<number>``,                                            |                                                       |
+| ``PR<number>``,                                             |                                                       |
+| ``GH <number>``,                                            |                                                       |
+| ``GH-<number>``,                                            |                                                       |
+| ``GH<number>``, or                                          |                                                       |
 | ``pull request <number>``                                   |                                                       |
 +-------------------------------------------------------------+-------------------------------------------------------+
 | a 10-, 11-, 12-, or 40-digit hex ``<number>``               | Indicates a Git or Mercurial changeset identifier and |
