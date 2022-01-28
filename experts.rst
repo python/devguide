@@ -307,12 +307,12 @@ Interest Area       Maintainers
 ==================  ==========================================================
 algorithms          rhettinger*
 argument clinic     larry
-ast/compiler        benjamin.peterson, brett.cannon, yselivanov, pablogsal, Mark.Shannon, BTaskaya
+ast/compiler        benjamin.peterson, brett.cannon, yselivanov, pablogsal, Mark.Shannon, BTaskaya, brandtbucher
 autoconf/makefiles  twouters*
 bsd
 bug tracker         ezio.melotti
 buildbots           zach.ware, pablogsal
-bytecode            benjamin.peterson, yselivanov, Mark.Shannon
+bytecode            benjamin.peterson, yselivanov, Mark.Shannon, brandtbucher
 context managers    ncoghlan
 core workflow       mariatta
 coverity scan       christian.heimes, brett.cannon, twouters
@@ -338,7 +338,7 @@ object model        benjamin.peterson, twouters
 packaging           tarek, lemburg, alexis, eric.araujo, dstufft, paul.moore
 pattern matching    brandtbucher*
 peg parser          gvanrossum, pablogsal, lys.nikolaou
-performance         brett.cannon, vstinner, serhiy.storchaka, yselivanov, rhettinger, Mark.Shannon
+performance         brett.cannon, vstinner, serhiy.storchaka, yselivanov, rhettinger, Mark.Shannon, brandtbucher
 pip                 ncoghlan, dstufft, paul.moore, Marcus.Smith, pradyunsg
 py3 transition      benjamin.peterson
 release management  tarek, lemburg, benjamin.peterson, barry,
