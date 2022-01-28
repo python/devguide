@@ -25,7 +25,7 @@ jobs:
       - name: Install Dependencies
         run: python3 -m pip install -U pip -r requirements.txt
       - name: Build Docs
-        run: sphinx-build -n -W -q -b html -d _build/doctrees . _build/html
+        run: sphinx-build --color -n -W -b html -d _build/doctrees . _build/html
       - name: Link Check
-        run: sphinx-build -b linkcheck -d _build/doctrees . _build/linkcheck
+        run: sphinx-build --color -b linkcheck -d _build/doctrees . _build/linkcheck
         continue-on-error: true
