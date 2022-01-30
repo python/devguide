@@ -238,7 +238,7 @@ Key Resources
     * :PEP:`7` (Style Guide for C Code)
     * :PEP:`8` (Style Guide for Python Code)
 * `Issue tracker`_
-    * `Meta tracker <http://psf.upfronthosting.co.za/roundup/meta>`_ (issue
+    * `Meta tracker <https://issues.roundup-tracker.org/>`_ (issue
       tracker for the issue tracker)
     * :doc:`experts`
 * `Buildbot status`_
