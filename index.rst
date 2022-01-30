@@ -245,7 +245,7 @@ Key Resources
 * Source code
     * `Browse online <https://github.com/python/cpython/>`_
     * `Snapshot of the *main* branch <https://github.com/python/cpython/archive/main.zip>`_
-    * `Daily OS X installer <http://buildbot.python.org/daily-dmg/>`_
+    * `Daily OS X installer <https://buildbot.python.org/daily-dmg/>`_
 * PEPs_ (Python Enhancement Proposals)
 * :doc:`help`
 * :doc:`developers`
@@ -281,7 +281,7 @@ Please note that all interactions on
 `Python Software Foundation <https://www.python.org/psf-landing/>`__-supported
 infrastructure is `covered
 <https://www.python.org/psf/records/board/minutes/2014-01-06/#management-of-the-psfs-web-properties>`__
-by the `PSF Code of Conduct <https://www.python.org/psf/codeofconduct/>`__,
+by the `PSF Code of Conduct <https://www.python.org/psf/conduct/>`__,
 which includes all infrastructure used in the development of Python itself
 (e.g. mailing lists, issue trackers, GitHub, etc.).
 In general this means everyone is expected to be open, considerate, and
@@ -337,9 +337,9 @@ Full Table of Contents
 .. _python.org maintenance: https://pythondotorg.readthedocs.io/
 .. _Python: https://www.python.org/
 .. _Core Python Mentorship: https://www.python.org/dev/core-mentorship/
-.. _PyPy: http://www.pypy.org
-.. _Jython: http://www.jython.org/
-.. _IronPython: http://ironpython.net/
-.. _Stackless: http://www.stackless.com/
+.. _PyPy: https://www.pypy.org
+.. _Jython: https://www.jython.org/
+.. _IronPython: https://ironpython.net/
+.. _Stackless: https://github.com/stackless-dev/stackless/wiki/
 .. _Issue tracker: https://bugs.python.org/
 .. _open pull requests: https://github.com/python/cpython/pulls?utf8=%E2%9C%93&q=is%3Apr%20is%3Aopen%20label%3A%22awaiting%20review%22

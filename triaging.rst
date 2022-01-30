@@ -602,21 +602,21 @@ Checklist for Triaging
 .. _Lib/lib2to3: https://github.com/python/cpython/tree/main/Lib/lib2to3/
 .. _Lib/ctypes: https://github.com/python/cpython/tree/main/Lib/ctypes/
 .. _Lib/distutils: https://github.com/python/cpython/tree/main/Lib/distutils/
-.. _Lib/doctest.py: https://github.com/python/cpython/tree/main/Lib/doctest.py
+.. _Lib/doctest.py: https://github.com/python/cpython/blob/main/Lib/doctest.py
 .. _Lib/idlelib: https://github.com/python/cpython/tree/main/Lib/idlelib/
-.. _Lib/io.py: https://github.com/python/cpython/tree/main/Lib/io.py
-.. _Lib/re.py: https://github.com/python/cpython/tree/main/Lib/re.py
+.. _Lib/io.py: https://github.com/python/cpython/blob/main/Lib/io.py
+.. _Lib/re.py: https://github.com/python/cpython/blob/main/Lib/re.py
 .. _Lib/test: https://github.com/python/cpython/tree/main/Lib/test/
-.. _Lib/test/regrtest.py: https://github.com/python/cpython/tree/main/Lib/test/regrtest.py
+.. _Lib/test/regrtest.py: https://github.com/python/cpython/blob/main/Lib/test/regrtest.py
 .. _Lib/test/support: https://github.com/python/cpython/tree/main/Lib/test/support/
 .. _Lib/tkinter: https://github.com/python/cpython/tree/main/Lib/tkinter/
 .. _Lib/unittest: https://github.com/python/cpython/tree/main/Lib/unittest/
 .. _Lib/xml: https://github.com/python/cpython/tree/main/Lib/xml/
 .. _Modules: https://github.com/python/cpython/tree/main/Modules/
 .. _Modules/_io: https://github.com/python/cpython/tree/main/Modules/_io/
-.. _Modules/_sre.c: https://github.com/python/cpython/tree/main/Modules/_sre.c
+.. _Modules/_sre.c: https://github.com/python/cpython/blob/main/Modules/_sre.c
 .. _Objects: https://github.com/python/cpython/tree/main/Objects/
-.. _Objects/unicodeobject.c: https://github.com/python/cpython/tree/main/Objects/unicodeobject.c
+.. _Objects/unicodeobject.c: https://github.com/python/cpython/blob/main/Objects/unicodeobject.c
 .. _Parser: https://github.com/python/cpython/tree/main/Parser/
 .. _Python: https://github.com/python/cpython/tree/main/Python/
 .. _Tools: https://github.com/python/cpython/tree/main/Tools/
@@ -627,7 +627,7 @@ Checklist for Triaging
 .. _GitHub pull requests: https://github.com/python/cpython/pulls
 .. _Python source code repositories: https://github.com/python/cpython/
 .. _Reporting security issues in Python: https://www.python.org/dev/security/
-.. _python-ideas: https://mail.python.org/mailman/listinfo/python-ideas
+.. _python-ideas: https://mail.python.org/mailman3/lists/python-ideas.python.org
 .. _release schedule: https://devguide.python.org/#status-of-python-branches
-.. _PSF Code of Conduct: https://www.python.org/psf/codeofconduct/
+.. _PSF Code of Conduct: https://www.python.org/psf/conduct/
 .. _PEP 3121: https://www.python.org/dev/peps/pep-3121/

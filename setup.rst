@@ -34,7 +34,7 @@ itself. git is easily available for all common operating systems.
 - **Install**
 
   As the CPython repo is hosted on GitHub, please refer to either the
-  `GitHub setup instructions <https://help.github.com/articles/set-up-git/>`_
+  `GitHub setup instructions <https://docs.github.com/en/get-started/quickstart/set-up-git>`_
   or the `git project instructions <https://git-scm.com>`_ for step-by-step
   installation directions. You may also want to consider a graphical client
   such as `TortoiseGit <https://tortoisegit.org/>`_ or
@@ -276,7 +276,7 @@ to build.
    not be able to find all the project's files and will fail the build.
 
 .. _this documentation: https://cpython-core-tutorial.readthedocs.io/en/latest/build_cpython_windows.html
-.. _Visual Studio 2017: https://www.visualstudio.com/
+.. _Visual Studio 2017: https://visualstudio.microsoft.com/
 .. _readme: https://github.com/python/cpython/blob/main/PCbuild/readme.txt
 
 .. _build-dependencies:
@@ -419,7 +419,7 @@ Explaining how to build optional dependencies on a UNIX based system without
 root access is beyond the scope of this guide.
 
 .. _clang: https://clang.llvm.org/
-.. _ccache: https://ccache.samba.org/
+.. _ccache: https://ccache.dev/
 
 .. note:: While you need a C compiler to build CPython, you don't need any
    knowledge of the C language to contribute!  Vast areas of CPython are

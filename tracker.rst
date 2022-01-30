@@ -91,7 +91,7 @@ win any converts.
 As a reminder, issues closed by a core developer have already been carefully
 considered. Please do not reopen a closed issue.
 
-.. _python-dev: https://mail.python.org/mailman/listinfo/python-dev
+.. _python-dev: https://mail.python.org/mailman3/lists/python-dev.python.org/
 
 
 .. _helptriage:

@@ -294,7 +294,7 @@ instructions on how the commit message should look like when merging a pull
 request.
 
 .. note::
-   `How to Write a Git Commit Message <https://chris.beams.io/posts/git-commit/>`_
+   `How to Write a Git Commit Message <https://cbea.ms/git-commit/>`_
    is a nice article that describes how to write a good commit message.
 
 

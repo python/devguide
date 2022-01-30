@@ -67,7 +67,7 @@ There are three ways of visualizing recent build results:
 
       bbreport.py -q 3.x
 
-* The buildbot "console" interface at http://buildbot.python.org/all/#/console
+* The buildbot "console" interface at https://buildbot.python.org/all/
   This works best on a wide, high resolution
   monitor.  Clicking on the colored circles will allow you to open a new page
   containing whatever information about that particular build is of interest to
