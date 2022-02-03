@@ -95,7 +95,7 @@ In a terminal window for the buildbot user, issue the following commands (you
 can put the ``buildarea`` wherever you want to)::
 
     mkdir buildarea
-    buildbot-worker create-worker buildarea buildbot.python.org:9020 workername workerpasswd
+    buildbot-worker create-worker buildarea buildbot-api.python.org:9020 workername workerpasswd
 
 (Note that on Windows, the ``buildbot-worker`` command will be in the
 :file:`Scripts` directory of your Python installation.)
