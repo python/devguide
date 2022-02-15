@@ -1626,6 +1626,7 @@ in production, other are work in progress:
 | Polish (pl)     |                               | `GitHub <github_pl_>`_     |
 |                 |                               | `Translations <tx_pl_>`_   |
 |                 |                               | `Doc <doc_pl_>`_           |
+|                 |                               | `mail <mail_pl_>`_         |
 +-----------------+-------------------------------+----------------------------+
 | Portuguese (pt) | Gustavo Toffo                 |                            |
 +-----------------+-------------------------------+----------------------------+
@@ -1681,6 +1682,7 @@ in production, other are work in progress:
 .. _list_hu: https://mail.python.org/pipermail/python-hu
 .. _mail_it: https://mail.python.org/pipermail/doc-sig/2019-April/004114.html
 .. _mail_lt: https://mail.python.org/pipermail/doc-sig/2019-July/004138.html
+.. _mail_pl: https://mail.python.org/pipermail/doc-sig/2019-April/004106.html
 .. _mail_ru: https://mail.python.org/pipermail/doc-sig/2019-May/004131.html
 .. _tx_pl: https://www.transifex.com/python-doc/python-newest/
 .. _tx_zh_cn: https://www.transifex.com/python-doc/python-newest/
