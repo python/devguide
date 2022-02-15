@@ -1692,9 +1692,9 @@ in production, other are work in progress:
 Starting a new translation
 --------------------------
 
-First subscribe to the `doc-sig
-<https://mail.python.org/mailman/listinfo/doc-sig>`_ mailing list,
-and introduce yourself and the translation you're starting.
+First subscribe to the `translation mailing list <translation_ml_>`_,
+and introduce yourself and the translation you're starting. Translations
+fall under the aegis of the `PSF Translation Workgroup <translation_wg_>`_
 
 Then you can bootstrap your new translation by using our `cookiecutter
 <https://github.com/JulienPalard/python-docs-cookiecutter>`__.
@@ -1708,9 +1708,9 @@ The important steps looks like this:
   Some are using Transifex, some are using only github, or you can choose another
   way, it's up to you.
 - Ensure we updated this page to reflect your work and progress, either via a
-  PR, or by asking on the doc-sig mailing list.
+  PR, or by asking on the `translation mailing list <translation_ml_>`_.
 - When ``tutorial/``, ``bugs.py`` and ``library/functions``
-  are complete, ask on doc-sig for your language to be added in the
+  are complete, ask on the `translation mailing list <translation_ml_>`_ for your language to be added in the
   language picker on docs.python.org.
 
 
@@ -1739,8 +1739,7 @@ Here are the essential points of :PEP:`545`:
 How to get help
 ---------------
 
-Discussions about translations occur on the `doc-sig
-<https://mail.python.org/mailman/listinfo/doc-sig>`_ mailing list,
+Discussions about translations occur on the `translation mailing list <translation_ml_>`_,
 and there's a `Libera.Chat IRC <https://libera.chat/>`_ channel,
 ``#python-doc``.
 
@@ -1775,7 +1774,7 @@ How a coordinator is elected?
 
 There is no election, each translation have to sort this out.  Here are some suggestions.
 
--  Coordinator requests are to be public on doc-sig mailing list.
+-  Coordinator requests are to be public on the `translation mailing list <translation_ml_>`_.
 -  If the given language have a native core dev, the core dev have its
    word on the choice.
 -  Anyone who wants to become coordinator for its native language, and shows
@@ -1785,21 +1784,21 @@ There is no election, each translation have to sort this out.  Here are some sug
    for you.  It is up to you two to organize a local election or whatever
    needed to sort this out.
 -  In case a coordinator become inactive or unreachable for a long
-   period of time, someone else can ask for a takeover on doc-sig.
+   period of time, someone else can ask for a takeover on the `translation mailing list <translation_ml_>`_.
 
 
 The entry for my translation is missing/not up to date on this page
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Ask on doc-sig, or better, make a PR on the `devguide
+Ask on the `translation mailing list <translation_ml_>`_, or better, make a PR on the `devguide
 <https://github.com/python/devguide/>`__.
 
 
 I have a translation, but not on git, what should I do?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-You can ask for help on the doc-sig mailing list, and the team will help you
-create an appropriate repository. You can still use tools like transifex,
+You can ask for help on the `translation mailing list <translation_ml_>`_, and 
+the team will help you create an appropriate repository. You can still use tools like transifex,
 if you like.
 
 
@@ -1809,8 +1808,8 @@ My git hierarchy does not match yours, can I keep it?
 No, inside the ``github.com/python`` organization we’ll all have the
 exact same hierarchy so bots will be able to build all of our
 translations. So you may have to convert from one hierarchy to another.
-Ask for help on the doc-sig mailing list if you’re not sure on how to do
-it.
+Ask for help on the `translation mailing list <translation_ml_>`_ if you’re
+not sure on how to do it.
 
 What hierarchy should I use in my github repository?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -1826,3 +1825,5 @@ style.
 .. _Sphinx: http://sphinx-doc.org/
 .. _virtualenv: https://virtualenv.pypa.io/
 .. _blurb: https://pypi.org/project/blurb/
+.. _translation_wg: https://wiki.python.org/psf/TranslationWG/Charter
+.. _translation_ml: https://mail.python.org/mailman3/lists/translation.python.org/
