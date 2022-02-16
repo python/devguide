@@ -238,7 +238,7 @@ tracemalloc           vstinner
 tty                   twouters*
 turtle                gregorlingl, willingc
 types                 yselivanov
-typing                gvanrossum, kj
+typing                gvanrossum, kj, JelleZijlstra*
 unicodedata           lemburg, ezio.melotti
 unittest              michael.foord*, ezio.melotti, rbcollins
 unittest.mock         michael.foord*
