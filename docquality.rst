@@ -62,8 +62,7 @@ If you see a documentation issue that you would like to tackle, you can:
 By following the steps in the :ref:`Quick Guide to Pull Requests <pullrequest-quickguide>`,
 you will learn the workflow for documentation pull requests.
 
-.. _issue tracker: https://bugs.python.org
-.. _documentation issues: https://bugs.python.org/issue?%40search_text=&ignore=file%3Acontent&title=&%40columns=title&id=&%40columns=id&stage=&creation=&creator=&activity=&%40columns=activity&%40sort=activity&actor=&nosy=&type=&components=4&versions=&dependencies=&assignee=&keywords=6&priority=&status=1&%40columns=status&resolution=&nosy_count=&message_count=&%40group=&%40pagesize=100&%40startwith=0&%40sortdir=on&%40queryname=&%40old-queryname=&%40action=search
+.. _documentation issues: https://github.com/python/cpython/issues?q=is%3Aissue+is%3Aopen+label%3Adocumentation
 .. _octocat: https://github.com/logos
 
 
@@ -136,3 +135,4 @@ without errors.
 .. _devguide repo: https://github.com/python/devguide
 .. _devguide GitHub tracker: https://github.com/python/devguide/issues
 .. _Sphinx: https://www.sphinx-doc.org/
+.. _issue tracker: https://github.com/python/cpython/issues

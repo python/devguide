@@ -77,7 +77,7 @@ Most lists are also mirrored at `GMANE <https://gmane.io/>`_ and can be read and
 posted to in various ways, including via web browsers, NNTP newsreaders, and
 RSS feed readers.
 
-.. _issue tracker: https://bugs.python.org
+.. _issue tracker: https://github.com/python/cpython/issues
 .. _new-bugs-announce: https://mail.python.org/mailman/listinfo/new-bugs-announce
 .. _python-bugs-list: https://mail.python.org/mailman/listinfo/python-bugs-list
 .. _python-checkins: https://mail.python.org/mailman/listinfo/python-checkins

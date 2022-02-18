@@ -262,8 +262,6 @@ Once you have increased coverage, you need to create an issue on the
 issue set the "Components" to "Test" and "Versions" to the version of Python you
 worked on (i.e., the in-development version).
 
-.. _issue tracker: https://bugs.python.org
-
 
 Measuring coverage of C code with gcov and lcov
 """""""""""""""""""""""""""""""""""""""""""""""
@@ -292,5 +290,6 @@ about 20 to 30 minutes on a modern computer.
     Multiple test jobs may not work properly. C coverage reporting has only
     been tested with a single test process.
 
+.. _issue tracker: https://github.com/python/cpython/issues
 .. _gcov: https://gcc.gnu.org/onlinedocs/gcc/Gcov.html
 .. _lcov: http://ltp.sourceforge.net/coverage/lcov.php
