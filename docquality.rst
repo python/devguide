@@ -35,7 +35,7 @@ and :ref:`maintenance <maintbranch>` branches at https://docs.python.org/dev/.
 The in-development and recent maintenance branches are rebuilt once per day.
 
 If you would like to be more involved with documentation, consider subscribing
-to the `docs@python.org <https://mail.python.org/mailman/listinfo/docs>`_
+to the `docs@python.org <https://mail.python.org/mailman3/lists/docs.python.org/>`_
 mailing list. The `issue tracker`_ sends new documentation issues to this
 mailing list, and, less frequently, the list receives some directly mailed bug
 reports. The `docs-sig@python.org <https://mail.python.org/mailman/listinfo/doc-sig>`_
@@ -135,4 +135,4 @@ without errors.
 .. _separate repository:
 .. _devguide repo: https://github.com/python/devguide
 .. _devguide GitHub tracker: https://github.com/python/devguide/issues
-.. _Sphinx: http://www.sphinx-doc.org/
+.. _Sphinx: https://www.sphinx-doc.org/

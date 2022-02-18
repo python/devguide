@@ -63,7 +63,7 @@ Gaining Commit Privileges
 
 The steps to gaining commit privileges are:
 
-1. A core developer starts a poll at https://discuss.python.org/c/committers/
+1. A core developer starts a poll at https://discuss.python.org/c/committers/5
 
    - Open for 7 days
    - Results shown upon close
@@ -175,4 +175,4 @@ And finally, enjoy yourself! Contributing to open source software should be fun
 break or figure out what you need to do to make it enjoyable again.
 
 
-.. _PSF Code of Conduct: https://www.python.org/psf/codeofconduct/
+.. _PSF Code of Conduct: https://www.python.org/psf/conduct/

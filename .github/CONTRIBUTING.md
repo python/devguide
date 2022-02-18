@@ -40,6 +40,6 @@ someone could take a look at your pull request.
 ## Code of Conduct
 
 All interactions for this project are covered by the
-[PSF Code of Conduct](https://www.python.org/psf/codeofconduct/). Everyone is
+[PSF Code of Conduct](https://www.python.org/psf/conduct/). Everyone is
 expected to be open, considerate, and respectful of others no matter their
 position within the project.

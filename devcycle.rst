@@ -257,7 +257,7 @@ at all levels including organization membership, team membership, access
 control, and merge privileges on all repositories. For full details of the
 permission levels see `GitHub's documentation on Organization permission
 levels
-<https://help.github.com/articles/permission-levels-for-an-organization/#permission-levels-for-an-organization>`_.
+<https://docs.github.com/en/organizations/managing-peoples-access-to-your-organization-with-roles/roles-in-an-organization#permissions-for-organization-roles>`_.
 This role is paramount to the security of the Python Language, Community, and
 Infrastructure.
 
@@ -300,8 +300,8 @@ Repository Administrator Role Policy
 The Administrator role on the repository allows for managing all aspects
 including collaborators, access control, integrations, webhooks, and branch
 protection. For full details of the permission levels see `GitHub's
-documentation on Repository permission levels
-<https://help.github.com/articles/repository-permission-levels-for-an-organization/>`_.
+documentation on repository permission levels
+<https://docs.github.com/en/organizations/managing-peoples-access-to-your-organization-with-roles/roles-in-an-organization#permissions-for-organization-roles>`_.
 Common reasons for this role are: maintenance of Core Developer
 Workflow tooling, Release Managers for all :ref:`in-development <indevbranch>`,
 :ref:`maintenance <maintbranch>`, and :ref:`security mode <secbranch>`
