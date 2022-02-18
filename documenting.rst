@@ -19,7 +19,7 @@ The documentation in HTML, PDF or EPUB format is generated from text files
 written using the :ref:`reStructuredText format <markup>` and contained in the
 :ref:`CPython Git repository <setup>`.
 
-.. _reStructuredText: http://docutils.sourceforge.net/rst.html
+.. _reStructuredText: https://docutils.sourceforge.io/rst.html
 
 .. note::
 
@@ -291,7 +291,7 @@ language, this will not take too long.
 .. seealso::
 
     The authoritative `reStructuredText User
-    Documentation <http://docutils.sourceforge.net/rst.html>`_.
+    Documentation <https://docutils.sourceforge.io/rst.html>`_.
 
 
 Paragraphs
@@ -537,7 +537,7 @@ they are used in the Python documentation.
 
    This is just an overview of Sphinx' extended markup capabilities; full
    coverage can be found in `its own documentation
-   <http://sphinx-doc.org/>`_.
+   <https://sphinx-doc.org/>`_.
 
 
 Meta-information markup
@@ -1651,7 +1651,7 @@ in production, other are work in progress:
 |                 | <email_egeakman_>`_           |                            |
 +-----------------+-------------------------------+----------------------------+
 
-.. _article_pt_br: http://rgth.co/blog/python-ptbr-cenario-atual
+.. _article_pt_br: https://rgth.co/blog/python-ptbr-cenario-atual/
 .. _bpo_cocoatomo: https://bugs.python.org/user19001
 .. _bpo_gbtami: https://bugs.python.org/user25857
 .. _bpo_kushal: https://bugs.python.org/user16382
@@ -1667,7 +1667,7 @@ in production, other are work in progress:
 .. _doc_pl: https://docs.python.org/pl/
 .. _doc_zh_cn: https://docs.python.org/zh-cn/
 .. _doc_zh_tw: https://docs.python.org/zh-tw/
-.. _github_ar: https://github.com/Abdur-rahmaanJ/py-docs-ar
+.. _github_ar: https://github.com/Abdur-rahmaanJ/python-docs-ar
 .. _github_bn_in: https://github.com/python/python-docs-bn-in
 .. _github_es: https://github.com/python/python-docs-es
 .. _github_fr: https://github.com/python/python-docs-fr
@@ -1689,7 +1689,7 @@ in production, other are work in progress:
 .. _tx_pl: https://www.transifex.com/python-doc/python-newest/
 .. _tx_zh_cn: https://www.transifex.com/python-doc/python-newest/
 .. _tx_zh_tw: https://www.transifex.com/python-tw-doc/python-36-tw
-.. _wiki_pt_br: http://python.org.br/traducao
+.. _wiki_pt_br: https://python.org.br/traducao/
 
 Starting a new translation
 --------------------------
@@ -1754,7 +1754,7 @@ Which version of Python documentation should be translated?
 
 Consensus is to work on current stable, you can then propagate your
 translation from a branch to another using `pomerge
-<https://pypi.org/p/pomerge>`__.
+<https://pypi.org/project/pomerge/>`__.
 
 
 Are there some tools to help in managing the repo?
@@ -1762,12 +1762,12 @@ Are there some tools to help in managing the repo?
 
 Here's what's we're using:
 
-- `pomerge <https://pypi.org/p/pomerge>`__ to propagate translation
+- `pomerge <https://pypi.org/project/pomerge/>`__ to propagate translation
   from a files to others.
-- `pospell <https://pypi.org/p/pospell>`__ to check for typo in po files.
-- `powrap <https://pypi.org/p/powrap>`__ to rewrap the ``.po`` files
+- `pospell <https://pypi.org/project/pospell/>`__ to check for typo in po files.
+- `powrap <https://pypi.org/project/powrap/>`__ to rewrap the ``.po`` files
   before committing, this helps keeping git diffs short.
-- `potodo <https://pypi.org/p/potodo>`__ to list what needs to be translated.
+- `potodo <https://pypi.org/project/potodo/>`__ to list what needs to be translated.
 
 
 
@@ -1822,9 +1822,9 @@ style.
 
 
 
-.. _docutils: http://docutils.sourceforge.net/
+.. _docutils: https://docutils.sourceforge.io/
 .. _python-docs-theme: https://pypi.org/project/python-docs-theme/
-.. _Sphinx: http://sphinx-doc.org/
+.. _Sphinx: https://sphinx-doc.org/
 .. _virtualenv: https://virtualenv.pypa.io/
 .. _blurb: https://pypi.org/project/blurb/
 .. _translation_wg: https://wiki.python.org/psf/TranslationWG/Charter

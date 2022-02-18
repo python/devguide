@@ -456,7 +456,7 @@ Pull requests can be accepted and merged by a Python Core Developer.
       * rebased
 
    .. note::
-      `How to Write a Git Commit Message <https://chris.beams.io/posts/git-commit/>`_
+      `How to Write a Git Commit Message <https://cbea.ms/git-commit/>`_
       is a nice article describing how to write a good commit message.
 
 4. Press the ``Confirm squash and merge`` button.

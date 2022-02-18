@@ -910,7 +910,7 @@ References
 ----------
 
 .. [1] Ford, Bryan
-   http://pdos.csail.mit.edu/~baford/packrat/thesis
+   https://pdos.csail.mit.edu/~baford/packrat/thesis/
 
 .. [2] Medeiros et al.
    https://arxiv.org/pdf/1207.0443.pdf
