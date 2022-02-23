@@ -1606,7 +1606,7 @@ in production, other are work in progress:
 |                 | <bpo_mdk_>`_                  |                            |
 +-----------------+-------------------------------+----------------------------+
 | Hindi as spoken |                               | `GitHub <github_hi_in_>`_  |
-| in india (hi_IN)|                               |                            |
+| in India (hi_IN)|                               |                            |
 +-----------------+-------------------------------+----------------------------+
 | Hungarian (hu)  | `Tamás Bajusz (gbtami)        | `GitHub <github_hu_>`_     |
 |                 | <bpo_gbtami_>`_               | `Mailing List <list_hu_>`_ |
