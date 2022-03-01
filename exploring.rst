@@ -83,7 +83,7 @@ building your understanding of both the 2.x and 3.x versions of CPython:
 
 .. _Yet another guided tour of CPython: https://paper.dropbox.com/doc/Yet-another-guided-tour-of-CPython-XY7KgFGn88zMNivGJ4Jzv
 
-.. _Python Asynchronous I/O Walkthrough: https://www.youtube.com/playlist?list=PLpEcQSRWP2IjVRlTUptdD05kG-UkJynQThttps://www.youtube.com/playlist?list=PLpEcQSRWP2IjVRlTUptdD05kG-UkJynQT
+.. _Python Asynchronous I/O Walkthrough: https://www.youtube.com/playlist?list=PLpEcQSRWP2IjVRlTUptdD05kG-UkJynQT
 
 .. _Coding Patterns for Python Extensions: https://pythonextensionpatterns.readthedocs.io/en/latest/
 
