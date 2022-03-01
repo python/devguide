@@ -537,7 +537,7 @@ they are used in the Python documentation.
 
    This is just an overview of Sphinx' extended markup capabilities; full
    coverage can be found in `its own documentation
-   <https://sphinx-doc.org/>`_.
+   <https://www.sphinx-doc.org/>`_.
 
 
 Meta-information markup
@@ -1824,7 +1824,7 @@ style.
 
 .. _docutils: https://docutils.sourceforge.io/
 .. _python-docs-theme: https://pypi.org/project/python-docs-theme/
-.. _Sphinx: https://sphinx-doc.org/
+.. _Sphinx: https://www.sphinx-doc.org/
 .. _virtualenv: https://virtualenv.pypa.io/
 .. _blurb: https://pypi.org/project/blurb/
 .. _translation_wg: https://wiki.python.org/psf/TranslationWG/Charter
