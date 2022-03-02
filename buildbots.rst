@@ -229,7 +229,7 @@ Custom builders
 .. highlight:: console
 
 When working on a platform-specific issue, you may want to test your changes on
-the buildbot fleet rather than just on Travis and AppVeyor.  To do so, you can
+the buildbot fleet rather than just on GitHub Actions and Azure Pipelines.  To do so, you can
 make use of the `custom builders
 <https://buildbot.python.org/all/#/builders?tags=%2Bcustom>`_.
 These builders track the ``buildbot-custom`` short-lived branch of the
