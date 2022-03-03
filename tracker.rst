@@ -91,7 +91,7 @@ win any converts.
 As a reminder, issues closed by a core developer have already been carefully
 considered. Please do not reopen a closed issue.
 
-.. _python-dev: https://mail.python.org/mailman/listinfo/python-dev
+.. _python-dev: https://mail.python.org/mailman3/lists/python-dev.python.org/
 
 
 .. _helptriage:
@@ -225,18 +225,15 @@ instructions on the `Tracker Development`_ page.
 
    *The meta tracker and its development*
 
-   `The meta tracker <https://github.com/python/psf-infra-meta/issues>`_
+   `The meta tracker <https://github.com/python/bugs.python.org/issues>`_
       Where to report issues about the tracker itself.
 
    `The Tracker development wiki page <https://wiki.python.org/moin/TrackerDevelopment>`_
       Instructions about setting up a local instance of the bug tracker.
 
-   `The Tracker-discuss mailing list <https://mail.python.org/mailman/listinfo/tracker-discuss>`_
-      Discussions about the bug tracker.
-
 
 .. _issue tracker: https://bugs.python.org/
-.. _meta tracker: https://github.com/python/psf-infra-meta/issues
+.. _meta tracker: https://github.com/python/bugs.python.org/issues
 .. _advanced search: https://bugs.python.org/issue?@template=search
 .. _Tracker Development: https://wiki.python.org/moin/TrackerDevelopment
 .. _devguide repo: https://github.com/python/devguide/issues

@@ -16,17 +16,16 @@ Python triage team
 
 The Python triage team is a group dedicated towards improving workflow
 efficiency through thoughtful review and triage of open issues and pull
-requests. This helps contributors receive timely feedback and enables core 
-developers to focus on reviewed items which reduces their workload. The 
-expectations of this role expand upon the "Developer" role on the 
-`issue tracker`_. The responsibilities listed below are primarily centered 
-around the Python GitHub repositories. This extends beyond CPython, and, as 
+requests. This helps contributors receive timely feedback and enables core
+developers to focus on reviewed items which reduces their workload. The
+expectations of this role expand upon the "Developer" role on the
+`issue tracker`_. The responsibilities listed below are primarily centered
+around the Python GitHub repositories. This extends beyond CPython, and, as
 needed, to other repos such as devguide and core-workflow.
 
 Responsibilities include:
 
 * PR/issue management
-    - Renaming PRs
     - Reviewing PRs
     - Assisting contributors
     - Notifying appropriate core developers
@@ -143,7 +142,7 @@ sprint
 stale
     Used for PRs that include changes which are no longer relevant or when the
     author hasn't responded to feedback in a long period of time. This label
-    helps core developers quickly identify PRs that are candidates for closure 
+    helps core developers quickly identify PRs that are candidates for closure
     or require a ping to the author.
 
 type-bugfix
@@ -164,7 +163,7 @@ type-performance
     Used for PRs that provide performance optimizations.
 
 type-security
-    Used for PRs that involve critical security issues. Less severe 
+    Used for PRs that involve critical security issues. Less severe
     security concerns can instead use the type-bugfix label.
 
 type-tests
@@ -443,7 +442,9 @@ forward.
 
 Superseder
 ''''''''''
-The issue is a duplicate of the listed issue(s).
+The issue is a duplicate of the listed issue(s). The issue should just be the
+number, not the b.p.o URL or "issueXXXXX". If this is set, the Resolution should
+be set to *Duplicate*.
 
 Status
 ''''''
@@ -506,13 +507,15 @@ with the "open" status.
 
 Mercurial Repository
 ''''''''''''''''''''
-HTTP link to a Mercurial repository that contains a patch for the issue.
-A :guilabel:`Create Patch` button will appear that computes a diff for the
-head revision of the remote branch and attaches it to the issue.  The button
-supports only CPython_ patches.
+Deprecated: HTTP link to a Mercurial repository that contains a patch for the issue.
 
-If you don't indicate a remote branch, ``default`` is used.  You can
-indicate a remote branch by adding ``#BRANCH`` to the end of the URL.
+New repository links should not be added to new or existing issues.
+
+GitHub PR
+'''''''''
+GitHub pull request number or full URL to a pull request.  This field is
+usually not needed as links are automatically created between issues and PRs
+when an issue number is mentioned in the PR description or a commit message.
 
 Generating Special Links in a Comment
 -------------------------------------
@@ -523,13 +526,18 @@ a link to relevant web pages.
 | Comment abbreviation                                        | Description                                           |
 +=============================================================+=======================================================+
 | ``#<number>``,                                              | Links to the tracker issue ``<number>``.              |
+| ``bpo-<number>``,                                           |                                                       |
 | ``issue<number>``, or                                       |                                                       |
 | ``issue <number>``                                          |                                                       |
 +-------------------------------------------------------------+-------------------------------------------------------+
 | ``msg<number>``                                             | Links to the tracker message ``<number>``.            |
 +-------------------------------------------------------------+-------------------------------------------------------+
 | ``PR <number>``,                                            | Links to `GitHub pull requests`_.                     |
-| ``PR<number>``, or                                          |                                                       |
+| ``PR-<number>``,                                            |                                                       |
+| ``PR<number>``,                                             |                                                       |
+| ``GH <number>``,                                            |                                                       |
+| ``GH-<number>``,                                            |                                                       |
+| ``GH<number>``, or                                          |                                                       |
 | ``pull request <number>``                                   |                                                       |
 +-------------------------------------------------------------+-------------------------------------------------------+
 | a 10-, 11-, 12-, or 40-digit hex ``<number>``               | Indicates a Git or Mercurial changeset identifier and |
@@ -594,21 +602,21 @@ Checklist for Triaging
 .. _Lib/lib2to3: https://github.com/python/cpython/tree/main/Lib/lib2to3/
 .. _Lib/ctypes: https://github.com/python/cpython/tree/main/Lib/ctypes/
 .. _Lib/distutils: https://github.com/python/cpython/tree/main/Lib/distutils/
-.. _Lib/doctest.py: https://github.com/python/cpython/tree/main/Lib/doctest.py
+.. _Lib/doctest.py: https://github.com/python/cpython/blob/main/Lib/doctest.py
 .. _Lib/idlelib: https://github.com/python/cpython/tree/main/Lib/idlelib/
-.. _Lib/io.py: https://github.com/python/cpython/tree/main/Lib/io.py
-.. _Lib/re.py: https://github.com/python/cpython/tree/main/Lib/re.py
+.. _Lib/io.py: https://github.com/python/cpython/blob/main/Lib/io.py
+.. _Lib/re.py: https://github.com/python/cpython/blob/main/Lib/re.py
 .. _Lib/test: https://github.com/python/cpython/tree/main/Lib/test/
-.. _Lib/test/regrtest.py: https://github.com/python/cpython/tree/main/Lib/test/regrtest.py
+.. _Lib/test/regrtest.py: https://github.com/python/cpython/blob/main/Lib/test/regrtest.py
 .. _Lib/test/support: https://github.com/python/cpython/tree/main/Lib/test/support/
 .. _Lib/tkinter: https://github.com/python/cpython/tree/main/Lib/tkinter/
 .. _Lib/unittest: https://github.com/python/cpython/tree/main/Lib/unittest/
 .. _Lib/xml: https://github.com/python/cpython/tree/main/Lib/xml/
 .. _Modules: https://github.com/python/cpython/tree/main/Modules/
 .. _Modules/_io: https://github.com/python/cpython/tree/main/Modules/_io/
-.. _Modules/_sre.c: https://github.com/python/cpython/tree/main/Modules/_sre.c
+.. _Modules/_sre.c: https://github.com/python/cpython/blob/main/Modules/_sre.c
 .. _Objects: https://github.com/python/cpython/tree/main/Objects/
-.. _Objects/unicodeobject.c: https://github.com/python/cpython/tree/main/Objects/unicodeobject.c
+.. _Objects/unicodeobject.c: https://github.com/python/cpython/blob/main/Objects/unicodeobject.c
 .. _Parser: https://github.com/python/cpython/tree/main/Parser/
 .. _Python: https://github.com/python/cpython/tree/main/Python/
 .. _Tools: https://github.com/python/cpython/tree/main/Tools/
@@ -619,7 +627,7 @@ Checklist for Triaging
 .. _GitHub pull requests: https://github.com/python/cpython/pulls
 .. _Python source code repositories: https://github.com/python/cpython/
 .. _Reporting security issues in Python: https://www.python.org/dev/security/
-.. _python-ideas: https://mail.python.org/mailman/listinfo/python-ideas
+.. _python-ideas: https://mail.python.org/mailman3/lists/python-ideas.python.org
 .. _release schedule: https://devguide.python.org/#status-of-python-branches
-.. _PSF Code of Conduct: https://www.python.org/psf/codeofconduct/
+.. _PSF Code of Conduct: https://www.python.org/psf/conduct/
 .. _PEP 3121: https://www.python.org/dev/peps/pep-3121/

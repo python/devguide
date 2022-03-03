@@ -294,7 +294,7 @@ instructions on how the commit message should look like when merging a pull
 request.
 
 .. note::
-   `How to Write a Git Commit Message <https://chris.beams.io/posts/git-commit/>`_
+   `How to Write a Git Commit Message <https://cbea.ms/git-commit/>`_
    is a nice article that describes how to write a good commit message.
 
 
@@ -394,7 +394,7 @@ Author Name <email_address> ." to the pull request description and commit messag
 See `the GitHub article <https://help.github.com/articles/creating-a-commit-with-multiple-authors/>`_
 on how to properly add the co-author info.
 
-See also :ref:`Applying a Patch from Mercurial to Git <git_from_mercurial>`.
+See also :ref:`Applying a Patch to Git <git_from_patch>`.
 
 Reviewing
 ---------

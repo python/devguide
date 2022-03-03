@@ -19,7 +19,7 @@ The documentation in HTML, PDF or EPUB format is generated from text files
 written using the :ref:`reStructuredText format <markup>` and contained in the
 :ref:`CPython Git repository <setup>`.
 
-.. _reStructuredText: http://docutils.sourceforge.net/rst.html
+.. _reStructuredText: https://docutils.sourceforge.io/rst.html
 
 .. note::
 
@@ -291,7 +291,7 @@ language, this will not take too long.
 .. seealso::
 
     The authoritative `reStructuredText User
-    Documentation <http://docutils.sourceforge.net/rst.html>`_.
+    Documentation <https://docutils.sourceforge.io/rst.html>`_.
 
 
 Paragraphs
@@ -537,7 +537,7 @@ they are used in the Python documentation.
 
    This is just an overview of Sphinx' extended markup capabilities; full
    coverage can be found in `its own documentation
-   <http://sphinx-doc.org/>`_.
+   <https://www.sphinx-doc.org/>`_.
 
 
 Meta-information markup
@@ -1606,7 +1606,7 @@ in production; others are works in progress.
 |                 | <bpo_mdk_>`_                  |                            |
 +-----------------+-------------------------------+----------------------------+
 | Hindi as spoken |                               | `GitHub <github_hi_in_>`_  |
-| in india (hi_IN)|                               |                            |
+| in India (hi_IN)|                               |                            |
 +-----------------+-------------------------------+----------------------------+
 | Hungarian (hu)  | `Tamás Bajusz (gbtami)        | `GitHub <github_hu_>`_     |
 |                 | <bpo_gbtami_>`_               | `Mailing List <list_hu_>`_ |
@@ -1626,6 +1626,7 @@ in production; others are works in progress.
 | Polish (pl)     |                               | `GitHub <github_pl_>`_     |
 |                 |                               | `Translations <tx_pl_>`_   |
 |                 |                               | `Doc <doc_pl_>`_           |
+|                 |                               | `mail <mail_pl_>`_         |
 +-----------------+-------------------------------+----------------------------+
 | Portuguese (pt) | Gustavo Toffo                 |                            |
 +-----------------+-------------------------------+----------------------------+
@@ -1646,10 +1647,11 @@ in production; others are works in progress.
 | Chinese         | <bpo_mattwang44_>`_,          | `Transifex <tx_zh_tw_>`_   |
 | (zh-tw)         | Josix Wang                    | `Doc <doc_zh_tw_>`_        |
 +-----------------+-------------------------------+----------------------------+
-| Turkish (tr)    |                               | `GitHub <github_tr_>`_     |
+| Turkish (tr)    | `Ege Akman (egeakman)         | `GitHub <github_tr_>`_     |
+|                 | <email_egeakman_>`_           |                            |
 +-----------------+-------------------------------+----------------------------+
 
-.. _article_pt_br: http://rgth.co/blog/python-ptbr-cenario-atual
+.. _article_pt_br: https://rgth.co/blog/python-ptbr-cenario-atual/
 .. _bpo_cocoatomo: https://bugs.python.org/user19001
 .. _bpo_gbtami: https://bugs.python.org/user25857
 .. _bpo_kushal: https://bugs.python.org/user16382
@@ -1658,13 +1660,14 @@ in production; others are works in progress.
 .. _bpo_osdotsystem: https://bugs.python.org/user28057
 .. _bpo_zhsj: https://bugs.python.org/user24811
 .. _bpo_mattwang44: https://bugs.python.org/user39654
+.. _email_egeakman: mailto:egeakmanegeakman@hotmail.com
 .. _chat_pt_br: https://t.me/pybr_i18n
 .. _doc_ja: https://docs.python.org/ja/
 .. _doc_ko: https://docs.python.org/ko/
 .. _doc_pl: https://docs.python.org/pl/
 .. _doc_zh_cn: https://docs.python.org/zh-cn/
 .. _doc_zh_tw: https://docs.python.org/zh-tw/
-.. _github_ar: https://github.com/Abdur-rahmaanJ/py-docs-ar
+.. _github_ar: https://github.com/Abdur-rahmaanJ/python-docs-ar
 .. _github_bn_in: https://github.com/python/python-docs-bn-in
 .. _github_es: https://github.com/python/python-docs-es
 .. _github_fr: https://github.com/python/python-docs-fr
@@ -1675,24 +1678,25 @@ in production; others are works in progress.
 .. _github_ko: https://github.com/python/python-docs-ko
 .. _github_pl: https://github.com/python/python-docs-pl
 .. _github_pt_br: https://github.com/python/python-docs-pt-br
-.. _github_tr: https://github.com/alaeddingurel/python-docs-tr
+.. _github_tr: https://github.com/python-docs-tr/python-docs-tr
 .. _github_zh_cn: https://github.com/python/python-docs-zh-cn
 .. _github_zh_tw: https://github.com/python/python-docs-zh-tw
 .. _list_hu: https://mail.python.org/pipermail/python-hu
 .. _mail_it: https://mail.python.org/pipermail/doc-sig/2019-April/004114.html
 .. _mail_lt: https://mail.python.org/pipermail/doc-sig/2019-July/004138.html
+.. _mail_pl: https://mail.python.org/pipermail/doc-sig/2019-April/004106.html
 .. _mail_ru: https://mail.python.org/pipermail/doc-sig/2019-May/004131.html
 .. _tx_pl: https://www.transifex.com/python-doc/python-newest/
 .. _tx_zh_cn: https://www.transifex.com/python-doc/python-newest/
 .. _tx_zh_tw: https://www.transifex.com/python-tw-doc/python-36-tw
-.. _wiki_pt_br: http://python.org.br/traducao
+.. _wiki_pt_br: https://python.org.br/traducao/
 
 Starting a new translation
 --------------------------
 
-First subscribe to the `doc-sig
-<https://mail.python.org/mailman/listinfo/doc-sig>`_ mailing list,
-and introduce yourself and the translation you're starting.
+First subscribe to the `translation mailing list <translation_ml_>`_,
+and introduce yourself and the translation you're starting. Translations
+fall under the aegis of the `PSF Translation Workgroup <translation_wg_>`_
 
 Then you can bootstrap your new translation by using our `cookiecutter
 <https://github.com/JulienPalard/python-docs-cookiecutter>`__.
@@ -1703,12 +1707,12 @@ The important steps look like this:
   cookiecutter).
 - Gather people to help you translate. You can't do it alone.
 - You can use any tool to translate, as long as you can synchronize with git.
-  Some use Transifex, some use only GitHub. You can choose another
+  Some use Transifex, and some use only GitHub. You can choose another
   way if you like; it's up to you.
 - Ensure we update this page to reflect your work and progress, either via a
-  PR, or by asking on the doc-sig mailing list.
+  PR or by asking on the `translation mailing list <translation_ml_>`_.
 - When ``tutorial/``, ``bugs.py`` and ``library/functions``
-  are complete, ask on doc-sig for your language to be added in the
+  are complete, ask on the `translation mailing list <translation_ml_>`_ for your language to be added in the
   language picker on docs.python.org.
 
 
@@ -1737,8 +1741,7 @@ Here are the essential points of :PEP:`545`:
 How to get help
 ---------------
 
-Discussions about translations occur on the `doc-sig
-<https://mail.python.org/mailman/listinfo/doc-sig>`_ mailing list,
+Discussions about translations occur on the `translation mailing list <translation_ml_>`_,
 and there's a `Libera.Chat IRC <https://libera.chat/>`_ channel,
 ``#python-doc``.
 
@@ -1751,7 +1754,8 @@ Which version of the Python documentation should be translated?
 
 Consensus is to work on current stable. You can then propagate your
 translation from one branch to another using `pomerge
-<https://pypi.org/p/pomerge>`__.
+<https://pypi.org/project/pomerge/>`__.
+
 
 
 Are there some tools to help in managing the repo?
@@ -1759,12 +1763,12 @@ Are there some tools to help in managing the repo?
 
 Here's what we're using:
 
-- `pomerge <https://pypi.org/p/pomerge>`__ to propagate translations
+- `pomerge <https://pypi.org/project/pomerge/>`__ to propagate translations
   from one file to others.
-- `pospell <https://pypi.org/p/pospell>`__ to check for typos in ``.po`` files.
-- `powrap <https://pypi.org/p/powrap>`__ to rewrap the ``.po`` files
+- `pospell <https://pypi.org/project/pospell/>`__ to check for typos in ``.po`` files.
+- `powrap <https://pypi.org/project/powrap/>`__ to rewrap the ``.po`` files
   before committing. This helps keep git diffs short.
-- `potodo <https://pypi.org/p/potodo>`__ to list what needs to be translated.
+- `potodo <https://pypi.org/project/potodo/>`__ to list what needs to be translated.
 
 
 How is a coordinator elected?
@@ -1772,7 +1776,7 @@ How is a coordinator elected?
 
 There is no election; each translation has to sort this out.  Here are some suggestions.
 
--  Coordinator requests are to be public on the doc-sig mailing list.
+-  Coordinator requests are to be public on the `translation mailing list <translation_ml_>`_.
 -  If the given language has a native core dev, the core dev has their 
    say on the choice.
 -  Anyone who wants to become coordinator for their native language and shows
@@ -1782,21 +1786,21 @@ There is no election; each translation has to sort this out.  Here are some sugg
    for you.  It is up to you two to organize a local election or whatever is
    needed to sort this out.
 -  If a coordinator becomes inactive or unreachable for a long
-   period of time, someone else can ask for a takeover on doc-sig.
+   period of time, someone else can ask for a takeover on the `translation mailing list <translation_ml_>`_.
 
 
 The entry for my translation is missing/not up to date on this page
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Ask on doc-sig, or better, make a PR on the `devguide
+Ask on the `translation mailing list <translation_ml_>`_, or better, make a PR on the `devguide
 <https://github.com/python/devguide/>`__.
 
 
 I have a translation, but it's not in git. What should I do?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-You can ask for help on the doc-sig mailing list, and the team will help you
-create an appropriate repository. You can still use tools like Transifex,
+You can ask for help on the `translation mailing list <translation_ml_>`_, and 
+the team will help you create an appropriate repository. You can still use tools like transifex,
 if you like.
 
 
@@ -1806,8 +1810,8 @@ My git hierarchy does not match yours. Can I keep it?
 No, inside the ``github.com/python`` organization we’ll all have the
 exact same hierarchy so bots will be able to build all of our
 translations. So you may have to convert from one hierarchy to another.
-Ask for help on the doc-sig mailing list if you’re not sure on how to do
-it.
+Ask for help on the `translation mailing list <translation_ml_>`_ if you’re
+not sure on how to do it.
 
 
 What hierarchy should I use in my GitHub repository?
@@ -1819,8 +1823,10 @@ style.
 
 
 
-.. _docutils: http://docutils.sourceforge.net/
+.. _docutils: https://docutils.sourceforge.io/
 .. _python-docs-theme: https://pypi.org/project/python-docs-theme/
-.. _Sphinx: http://sphinx-doc.org/
+.. _Sphinx: https://www.sphinx-doc.org/
 .. _virtualenv: https://virtualenv.pypa.io/
 .. _blurb: https://pypi.org/project/blurb/
+.. _translation_wg: https://wiki.python.org/psf/TranslationWG/Charter
+.. _translation_ml: https://mail.python.org/mailman3/lists/translation.python.org/

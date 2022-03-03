@@ -240,6 +240,32 @@ Commit the files:
 
    git commit -m "<message>"
 
+.. _diff-changes:
+
+Comparing Changes
+-----------------
+
+View all non-commited changes::
+
+   git diff
+
+Compare to the ``main`` branch::
+
+   git diff main
+
+Exclude generated files from diff using an ``attr``
+`pathspec <https://git-scm.com/docs/gitglossary#def_pathspec>`_ (note the
+single quotes)::
+
+   git diff main ':(attr:!generated)'
+
+Exclude generated files from diff by default::
+
+   git config diff.generated.binary true
+
+The ``generated`` `attribute <https://git-scm.com/docs/gitattributes>`_ is
+defined in :file:`.gitattributes`, found in the repository root.
+
 .. _push-changes:
 
 Pushing Changes
@@ -318,14 +344,14 @@ When it happens, you need to resolve conflict.  See these articles about resolvi
 - `About merge conflicts <https://help.github.com/en/articles/about-merge-conflicts>`_
 - `Resolving a merge conflict using the command line <https://help.github.com/en/articles/resolving-a-merge-conflict-using-the-command-line>`_
 
-.. _git_from_mercurial:
+.. _git_from_patch:
 
-Applying a Patch from Mercurial to Git
---------------------------------------
+Applying a Patch to Git
+-----------------------
 
 Scenario:
 
-- A Mercurial patch exists but there is no pull request for it.
+- A patch exists but there is no pull request for it.
 
 Solution:
 
@@ -333,7 +359,7 @@ Solution:
 
 2. Apply the patch::
 
-       git apply /path/to/issueNNNN-git.patch
+       git apply /path/to/patch.diff
 
    If there are errors, update to a revision from when the patch was
    created and then try the ``git apply`` again:
@@ -341,7 +367,7 @@ Solution:
    .. code-block:: bash
 
        git checkout $(git rev-list -n 1 --before="yyyy-mm-dd hh:mm:ss" main)
-       git apply /path/to/issueNNNN-git.patch
+       git apply /path/to/patch.diff
 
    If the patch still won't apply, then a patch tool will not be able to
    apply the patch and it will need to be re-implemented manually.
@@ -356,6 +382,9 @@ Solution:
        git rebase main
        git mergetool
 
+   For very old changes, ``git merge --no-ff`` may be easier than a rebase,
+   with regards to resolving conflicts.
+
 6. Push the changes and open a pull request.
 
 .. _git_pr:
@@ -368,7 +397,18 @@ Scenario:
 - A contributor made a pull request to CPython.
 - Before merging it, you want to be able to test their changes locally.
 
-On Unix and MacOS, set up the following git alias::
+If you've got `GitHub CLI <https://cli.github.com>`_ or
+`hub <https://hub.github.com>`_ installed, you can simply do::
+
+   $ gh pr checkout <pr_number>   # GitHub CLI
+   $ hub pr checkout <pr_number>  # hub
+
+Both of these tools will configure a remote URL for the branch, so you can
+``git push`` if the pull request author checked "Allow edits from maintainers"
+when creating the pull request.
+
+If you don't have GitHub CLI or hub installed, you can set up a git alias. On
+Unix and macOS::
 
    $ git config --global alias.pr '!sh -c "git fetch upstream pull/${1}/head:pr_${1} && git checkout pr_${1}" -'
 
@@ -382,15 +422,6 @@ The alias only needs to be done once.  After the alias is set up, you can get a
 local copy of a pull request as follows::
 
    git pr <pr_number>
-
-.. note::
-
-   `hub <https://github.com/github/hub>`_ command line utility makes this
-   workflow very easy.  You can check out the branch by
-   ``hub pr checkout <pr_number> [<branch_name>]``.
-   This command configures remote URL for the branch too.
-   So you can ``git push`` if the pull request author checked
-   "Allow edits from maintainers" when creating the pull request.
 
 .. _accepting-and-merging-a-pr:
 
@@ -425,7 +456,7 @@ Pull requests can be accepted and merged by a Python Core Developer.
       * rebased
 
    .. note::
-      `How to Write a Git Commit Message <https://chris.beams.io/posts/git-commit/>`_
+      `How to Write a Git Commit Message <https://cbea.ms/git-commit/>`_
       is a nice article describing how to write a good commit message.
 
 4. Press the ``Confirm squash and merge`` button.

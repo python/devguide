@@ -227,6 +227,12 @@ linkcheck_anchors_ignore = [
     '\/.*',
 ]
 
+linkcheck_ignore = [
+    # The voters repo is private and appears as a 404
+    'https://github.com/python/voters/',
+    # The python-core team link is private, redirects to login
+    'https://github.com/orgs/python/teams/python-core',
+]
 
 # Use our custom CSS stylesheet to differentiate us from the official python
 # docs.
