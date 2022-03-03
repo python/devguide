@@ -1757,7 +1757,6 @@ translation from one branch to another using `pomerge
 <https://pypi.org/project/pomerge/>`__.
 
 
-
 Are there some tools to help in managing the repo?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
