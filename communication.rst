@@ -151,7 +151,7 @@ mailing list (the appropriate venue for sharing conclusions will depend on the
 specific discussion).
 
 Note: existing Discord users may want to right click on their username in the
-automatic Discover welcome message and choose "Edit Server Profile" in order to
+automatic Discord welcome message and choose "Edit Server Profile" in order to
 set a specific `Server Nickname`_
 
 .. _voter record: https://github.com/python/voters/blob/main/python-core.toml
