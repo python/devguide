@@ -138,7 +138,7 @@ link should be generated and sent to them directly.
 
 When first joining the server, new users will only have access to the ``#welcome``
 and ``#rules-and-info`` channels. To link their Discord ID with their project
-role, core developers may update their Steering Council `voter record`_ with
+role, core developers may update their Steering Council 🔒 `voter record`_ with
 their Discord ID before posting in the ``#welcome`` channel to request access
 to the rest of the server channels. Triagers, documentarians, and core developers
 that would prefer not to add their Discord ID to their Steering Council voter
