@@ -6,6 +6,19 @@ Following Python's Development
 Python's development is communicated through a myriad of ways, mostly through
 mailing lists, but also other forms.
 
+
+Standards of behaviour in these communication channels
+------------------------------------------------------
+We try to foster environments of mutual respect, tolerance and encouragement,
+as described in the PSF's `Diversity Statement`_. Abiding by the guidelines
+in this document and asking questions or posting suggestions in the
+appropriate channels are an excellent way to get started on the mutual respect
+part, greatly increasing the chances of receiving tolerance and encouragement
+in return.
+
+.. _Diversity Statement: https://www.python.org/psf/diversity/
+
+
 .. _mailinglists:
 
 Mailing Lists
@@ -36,6 +49,9 @@ developers (the archives are publicly available).
 If something only affects core developers (e.g., the
 tree is frozen for commits, etc.), it is discussed here instead of python-dev
 to keep traffic down on the latter.
+
+python-dev_, python-committers_, and python-ideas_ all use Mailman 3, and
+are hence accessible via the Mailman 3 `web gateway`_.
 
 Python-checkins_ sends out an email for every commit to Python's various
 repositories from https://github.com/python/cpython. All core developers
@@ -73,24 +89,80 @@ RSS feed readers.
 .. _tutor: https://mail.python.org/mailman/listinfo/tutor
 .. _StackOverflow: https://stackoverflow.com/
 .. _Libera.Chat: https://libera.chat/
+.. _web gateway: https://mail.python.org/archives/
 
 
-Discourse
----------
+Discourse (discuss.python.org web forum)
+----------------------------------------
 
 We have our own `Discourse`_ forum for both developers and users. This forum
 complements the `python-dev`_, `python-ideas`_, `python-help`_, and
-`python-list`_ mailing lists. Also, voting for new core developers takes place
-at `Discourse`_.
+`python-list`_ mailing lists.
+
+Most core development discussions take place in the open forum categories for
+`PEPs`_ and `Core Development`_. (These are the Discourse equivalents to the
+python-dev mailing list)
+
+The `Committers`_ category restricts posting to core developers only, and is
+used more for announcements and notifications, rather than for discussions. It
+is also the venue for core developer promotion votes. (This category is the
+equivalent of the python-committers mailing list)
+
+There is a final, rarely used, core development category on Discourse that is
+only visible to core developers. This can be used to share administrative
+information with all core developers in a non-public forum (e.g. logistics for
+in person core development sprints), as well as for individual core developers
+to share info that they'd like other core devs to be aware of, but would prefer
+not to have permanently archived on the internet.
 
 .. _Discourse: https://discuss.python.org/
+.. _PEPs: https://discuss.python.org/c/peps/
+.. _Core Development: https://discuss.python.org/c/core-dev/
+.. _Committers: https://discuss.python.org/c/committers/
+
+
+Discord (private chat server)
+-----------------------------
+
+For more real-time discussions, the core development team have a private Discord
+server available. Core developers, Steering Council members, triagers, and
+documentarians on the project are eligible to join the server. Joining the
+Discord server is entirely optional, as all essential communications occur on
+the mailing lists and Discourse forums.
+
+For core developers, a long lived multiple use invitation link for this server
+can be found in the private core developer only section of the Discourse forum.
+
+For triagers and documentarians joining the Discord server, a single use invitation
+link should be generated and sent to them directly.
+
+When first joining the server, new users will only have access to the ``#welcome``
+and ``#rules-and-info`` channels. To link their Discord ID with their project
+role, core developers may update their Steering Council 🔒 `voter record`_ with
+their Discord ID before posting in the ``#welcome`` channel to request access
+to the rest of the server channels. Triagers, documentarians, and core developers
+that would prefer not to add their Discord ID to their Steering Council voter
+record may instead be vouched for by an existing member of the Discord server.
+
+As a private, non-archived, forum, final decisions on design and development
+questions should not be made on Discord. Any conclusions from Discord discussions
+should be summarised and posted to the issue tracker, Discourse forum, or
+mailing list (the appropriate venue for sharing conclusions will depend on the
+specific discussion).
+
+Note: existing Discord users may want to right click on their username in the
+automatic Discord welcome message and choose "Edit Server Profile" in order to
+set a specific `Server Nickname`_
+
+.. _voter record: https://github.com/python/voters/blob/main/python-core.toml
+.. _Server Nickname: https://support.discord.com/hc/en-us/articles/219070107-Server-Nicknames
+
 
 
 IRC
 ---
 
-Some core developers enjoy spending time on IRC discussing various issues
-regarding Python's development in the ``#python-dev`` channel on
+Some core developers still participate in the ``#python-dev`` IRC channel on
 ``irc.libera.chat``. This is not a place to ask for help with Python, but to
 discuss issues related to Python's own development. See also the
 ``#python-dev-notifs`` channel for bots notifications.
@@ -103,17 +175,6 @@ Several core developers are active bloggers and discuss Python's development
 that way. You can find their blogs (and various other developers who use Python)
 at https://planetpython.org/.
 
-
-Standards of behaviour in these communication channels
-------------------------------------------------------
-We try to foster environments of mutual respect, tolerance and encouragement,
-as described in the PSF's `Diversity Statement`_. Abiding by the guidelines
-in this document and asking questions or posting suggestions in the
-appropriate channels are an excellent way to get started on the mutual respect
-part, greatly increasing the chances of receiving tolerance and encouragement
-in return.
-
-.. _Diversity Statement: https://www.python.org/psf/diversity/
 
 Setting Expectations for Open Source Participation
 --------------------------------------------------
