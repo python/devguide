@@ -1,3 +1,3 @@
 Sphinx==4.4.0
-furo<2022.2.24
+furo<2022.3.5
 sphinx_copybutton>=0.3.3
