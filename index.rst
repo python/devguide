@@ -333,7 +333,7 @@ Full Table of Contents
 
 .. _Buildbot status: https://www.python.org/dev/buildbot/
 .. _Misc directory: https://github.com/python/cpython/tree/main/Misc
-.. _PEPs: https://www.python.org/dev/peps/
+.. _PEPs: https://peps.python.org/
 .. _python.org maintenance: https://pythondotorg.readthedocs.io/
 .. _Python: https://www.python.org/
 .. _Core Python Mentorship: https://www.python.org/dev/core-mentorship/

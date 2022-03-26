@@ -11,5 +11,5 @@ Read the following references:
 
 * https://docs.python.org/dev/c-api/
 * https://docs.python.org/dev/extending/
-* https://www.python.org/dev/peps/pep-0399/
+* :pep:`399`
 * https://pythonextensionpatterns.readthedocs.io/en/latest/

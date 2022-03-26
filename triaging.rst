@@ -387,7 +387,7 @@ Various informational flags about the issue. Multiple values are possible.
 |               | difference from the "security" issue type is that this is  |
 |               | a definite security problem that has to be dealt with.     |
 +---------------+------------------------------------------------------------+
-| PEP 3121      | The issue is related to PEP `PEP 3121`_.                   |
+| PEP 3121      | The issue is related to :pep:`3121`.                       |
 |               | Extension Module Initialization and Finalization.          |
 +---------------+------------------------------------------------------------+
 | newcomer      | Issue suitable for newcomer/first time contributors.       |
@@ -630,4 +630,3 @@ Checklist for Triaging
 .. _python-ideas: https://mail.python.org/mailman3/lists/python-ideas.python.org
 .. _release schedule: https://devguide.python.org/#status-of-python-branches
 .. _PSF Code of Conduct: https://www.python.org/psf/conduct/
-.. _PEP 3121: https://www.python.org/dev/peps/pep-3121/
