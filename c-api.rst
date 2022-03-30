@@ -58,9 +58,7 @@ definition in ``Include/internal/`` (or directly in a ``.c`` file):
 * “Provisional” API, included in a Python release to test real-world usage
   of new API. Such names should be renamed when stabilized; preferably with
   a macro aliasing the old name to the new one.
-  See `"Finalizing the API" in PEP 590`_ for an example.
-
-.. _"Finalizing the API" in PEP 590: https://www.python.org/dev/peps/pep-0590/#finalizing-the-api
+  See :pep:`"Finalizing the API" in PEP 590 <590#finalizing-the-api>` for an example.
 
 
 .. _public-capi:
