@@ -81,7 +81,7 @@ Philip Jenvey,pjenvey,2009-05-07,2020-11-26,For Jython compatibility
 Michael Foord,voidspace,2009-04-01,,For IronPython compatibility
 R\. David Murray,bitdancer,2009-03-30,,
 Chris Withers,cjw296,2009-03-08,,
-Tarek Ziadé,,2008-12-21,2017-02-10,For distutils module; did not make GitHub transition
+Tarek Ziadé,tarekziade,2008-12-21,2017-02-10,For distutils module
 Hirokazu Yamamoto,,2008-08-12,2017-02-10,For Windows build; did not make GitHub transition
 Armin Ronacher,mitsuhiko,2008-07-23,2020-11-26,For documentation toolset and ast module
 Antoine Pitrou,pitrou,2008-07-16,,
@@ -102,7 +102,7 @@ Mark Summerfield,,2007-08-01,2017-02-10,For documentation; did not make GitHub t
 Alexandre Vassalotti,avassalotti,2007-05-21,2020-11-12,For GSoC
 Travis E. Oliphant,,2007-04-17,2017-02-10,Did not make GitHub transition
 Eric V. Smith,ericvsmith,2007-02-28,,For PEP 3101 in a sandbox
-Josiah Carlson,,2007-01-06,2017-02-10,For asyncore and asynchat modules; did not make GitHub transition
+Josiah Carlson,josiahcarlson,2007-01-06,2017-02-10,For asyncore and asynchat modules
 Collin Winter,,2007-01-05,2017-02-10,For PEP access; did not make GitHub transition
 Richard Jones,,2006-05-23,2017-02-10,For Need for Speed sprint; did not make GitHub transition
 Kristján Valur Jónsson,,2006-05-17,2017-02-10,For Need for Speed sprint; did not make GitHub transition
@@ -114,7 +114,7 @@ Ronald Oussoren,ronaldoussoren,2006-03-03,,For Mac-related work
 Nick Coghlan,ncoghlan,2005-10-16,,
 Georg Brandl,birkenfeld,2005-05-28,,
 Terry Jan Reedy,terryjreedy,2005-04-07,,
-Bob Ippolito,,2005-03-02,2017-02-10,For Mac-related work; did not make GitHub transition
+Bob Ippolito,etrepum,2005-03-02,2017-02-10,For Mac-related work
 Peter Astrand,,2004-10-21,2017-02-10,Did not make GitHub transition
 Facundo Batista,facundobatista,2004-10-16,,
 Sean Reifschneider,,2004-09-17,2017-02-10,Did not make GitHub transition
