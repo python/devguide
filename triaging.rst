@@ -35,17 +35,23 @@ Responsibilities include:
     - Good first issue
     - Other categorizations
 
-As triagers gain experience, they may have some intuition of when a PR should
-be closed. Triagers can recommend closing a PR, but the final decision must be
-made by a core developer. By having triagers and core developers work together,
+Although triagers have the power to close PRs, they should generally not do so
+without first consulting a core developer. By having triagers and core developers work together,
 the author receives a careful consideration of their PR. This encourages future
 contributions, regardless of whether their PR is accepted or closed.
 
-Triagers can make use of the ``invalid`` and ``stale`` labels to suggest that a
+Nonetheless, triagers should feel free to close a PR if they judge that the
+chance of the PR being merged is exceedingly low. This can include PRs that
+make solely cosmetic changes to a module, PRs that propose changes to
+deprecated modules, and/or PRs that self-evidently lie far below the quality
+threshhold required for a change to be made to code in the Python GitHub
+repositories.
+
+Triagers can also make use of the ``invalid`` and ``stale`` labels to suggest that a
 PR may be suitable for closure. For more information, see the
 :ref:`GitHub PR labels <github-pr-labels>` section.
 
-It is also of paramount importance to treat every contributor to the Python
+Note that it is of paramount importance to treat every contributor to the Python
 project kindly and with respect. Regardless of whether they're entirely new
 or a veteran core developer, they're actively choosing to voluntarily donate their
 time towards the improvement of Python. As is the case with any member of
