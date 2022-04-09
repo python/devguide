@@ -41,11 +41,15 @@ the author receives a careful consideration of their PR. This encourages future
 contributions, regardless of whether their PR is accepted or closed.
 
 Nonetheless, triagers should feel free to close a PR if they judge that the
-chance of the PR being merged is exceedingly low. This can include PRs that
-make solely cosmetic changes to a module, PRs that propose changes to
-deprecated modules, and/or PRs that self-evidently lie far below the quality
-threshhold required for a change to be made to code in the Python GitHub
-repositories.
+chance of the PR being merged is exceedingly low. This can include (but is not
+necessarily limited to) PRs that meet at least one of the following criteria:
+
+* PRs proposing solely cosmetic changes
+* PRs proposing changes to deprecated modules
+* PRs that are no longer relevant. This includes:
+    - PRs proposing fixes for bugs that can no longer be reproduced
+    - PRs proposing changes that have been rejected by Python core developers
+      elsewhere (e.g. in an issue or a PEP rejection notice).
 
 Triagers can also make use of the ``invalid`` and ``stale`` labels to suggest that a
 PR may be suitable for closure. For more information, see the
