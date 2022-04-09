@@ -4,20 +4,25 @@ Experts Index
 =============
 
 This document has tables that list Python Modules, Tools, Platforms and
-Interest Areas and names for each item that indicate a maintainer or an
-expert in the field.  This list is intended to be used by issue submitters,
-issue triage people, and other issue participants to find people to add to
-the nosy list or to contact directly by email for help and decisions on
-feature requests and bug fixes.  People on this list may be asked to render
-final judgement on a feature or bug.  If no active maintainer is listed for
-a given module, then questionable changes should go to python-dev, while
-any other issues can and should be decided by any committer.
+Interest Areas and GitHub names for each item that indicate a maintainer or
+an expert in the field.  This list is intended to be used by issue submitters,
+issue triage people, and other issue participants to find people to @mention
+or add as reviewers to issues and pull requests.  People on this list may be
+asked to render final judgement on a feature or bug.  If no active maintainer
+is listed for a given module, then questionable changes should go to
+python-dev, while any other issues can and should be decided by any committer.
+
+Developers can choose to follow labels, so if a label that they are
+following is added to an issue or pull request, they will be notified
+automatically.  The :file:`CODEOWNERS` file is also used to indicate
+maintainers that will be automatically added as reviewers to pull requests.
 
 Unless a name is followed by a '*', you should never assign an issue to
-that person, only make them nosy.  Names followed by a '*' may be assigned
-issues involving the module or topic.
+that person.  Names followed by a '*' may be assigned issues involving the
+module or topic.
 
-.. TODO document automatic assignment/nosy: people need not add them manually
+Names followed by a '^' indicate old bugs.python.org usernames, for people
+that did not transition to GitHub.
 
 The Platform and Interest Area tables list broader fields in which various
 people have expertise.  These people can also be contacted for help,
@@ -45,19 +50,19 @@ Module                Maintainers
 ====================  =============================================
 __future__
 __main__              gvanrossum, ncoghlan
-_dummy_thread         brett.cannon
+_dummy_thread         brettcannon
 _thread
 _testbuffer
 abc
-aifc                  r.david.murray
+aifc                  bitdancer
 argparse              rhettinger*
 array
-ast                   benjamin.peterson, pablogsal, BTaskaya
-asynchat              josiahcarlson, giampaolo.rodola*, stutzbach
-asyncio               yselivanov, asvetlov
-asyncore              josiahcarlson, giampaolo.rodola*, stutzbach
+ast                   benjaminp, pablogsal, isidentical
+asynchat              josiahcarlson, giampaolo*, stutzbach^
+asyncio               1st1, asvetlov
+asyncore              josiahcarlson, giampaolo*, stutzbach^
 atexit
-audioop               serhiy.storchaka
+audioop               serhiy-storchaka
 base64
 bdb
 binascii
@@ -66,52 +71,51 @@ bisect                rhettinger*
 builtins
 bz2
 calendar              rhettinger*
-cgi                   ethan.furman*
-cgitb                 ethan.furman*
+cgi                   ethanfurman*
+cgitb                 ethanfurman*
 chunk
-cmath                 mark.dickinson
+cmath                 mdickinson
 cmd
 code
-codecs                lemburg, doerwalter
+codecs                malemburg, doerwalter
 codeop
 collections           rhettinger*
-collections.abc       rhettinger*, stutzbach
+collections.abc       rhettinger*, stutzbach^
 colorsys
 compileall
-concurrent.futures    pitrou, bquinlan
-configparser          lukasz.langa*
-contextlib            ncoghlan, yselivanov
+concurrent.futures    pitrou, brianquinlan
+configparser          ambv*
+contextlib            ncoghlan, 1st1
 contextvars
-copy                  alexandre.vassalotti
-copyreg               alexandre.vassalotti
+copy                  avassalotti
+copyreg               avassalotti
 cProfile
-crypt                 jafo*
-csv                   skip.montanaro (inactive)
-ctypes                theller (inactive), belopolsky, amaury.forgeotdarc,
-                      meador.inge
-curses                twouters
-dataclasses           eric.smith*
-datetime              belopolsky, p-ganssle
+crypt                 jafo^*
+csv                   smontanaro (inactive)
+ctypes                theller (inactive), abalkin, amauryfa, meadori
+curses                Yhg1s
+dataclasses           ericvsmith*
+datetime              abalkin, pganssle
 dbm
-decimal               facundobatista, rhettinger, mark.dickinson
-difflib               tim.peters (inactive)
-dis                   yselivanov
-distutils             eric.araujo, dstufft
-doctest               tim.peters (inactive)
-dummy_threading       brett.cannon
-email                 barry, r.david.murray*, maxking
-encodings             lemburg
+decimal               facundobatista, rhettinger, mdickinson
+difflib               tim-one (inactive)
+dis                   1st1
+distutils             merwok, dstufft
+doctest               tim-one (inactive)
+dummy_threading       brettcannon
+email                 warsaw, bitdancer*, maxking
+encodings             malemburg
 ensurepip             ncoghlan, dstufft, pradyunsg
-enum                  eli.bendersky*, barry, ethan.furman*
-errno                 twouters
+enum                  eliben*, warsaw, ethanfurman*
+errno                 Yhg1s
 faulthandler          vstinner
-fcntl                 twouters
+fcntl                 Yhg1s
 filecmp
 fileinput
 fnmatch
 formatter
-fractions             mark.dickinson, rhettinger
-ftplib                giampaolo.rodola*
+fractions             mdickinson, rhettinger
+ftplib                giampaolo*
 functools             rhettinger*
 gc                    pitrou, pablogsal
 getopt
@@ -120,154 +124,154 @@ gettext
 glob
 grp
 gzip
-hashlib               christian.heimes, gregory.p.smith
-heapq                 rhettinger*, stutzbach
-hmac                  christian.heimes, gregory.p.smith
-html                  ezio.melotti
+hashlib               tiran, gpshead
+heapq                 rhettinger*, stutzbach^
+hmac                  tiran, gpshead
+html                  ezio-melotti
 http
-idlelib               kbk (inactive), terry.reedy*, roger.serwy (inactive),
+idlelib               kbkaiser (inactive), terryjreedy*, serwy (inactive),
                       taleinat
 imaplib
 imghdr
 imp
-importlib             brett.cannon
-inspect               yselivanov
-io                    benjamin.peterson, stutzbach
-ipaddress             pmoody
+importlib             brettcannon
+inspect               1st1
+io                    benjaminp, stutzbach^
+ipaddress             pmoody^
 itertools             rhettinger*
-json                  bob.ippolito (inactive), ezio.melotti, rhettinger
+json                  etrepum (inactive), ezio-melotti, rhettinger
 keyword
-lib2to3               benjamin.peterson
+lib2to3               benjaminp
 libmpdec
 linecache
-locale                lemburg
-logging               vinay.sajip
+locale                malemburg
+logging               vsajip
 lzma
 mailbox
 mailcap
 marshal
-math                  mark.dickinson, rhettinger, stutzbach
+math                  mdickinson, rhettinger, stutzbach^
 mimetypes
-mmap                  twouters
-modulefinder          theller (inactive), jvr
+mmap                  Yhg1s
+modulefinder          theller (inactive), jvr^
 msilib
 msvcrt
-multiprocessing       davin*, pitrou, jnoller (inactive), sbt (inactive)
+multiprocessing       applio*, pitrou, jnoller^ (inactive), sbt^ (inactive)
 netrc
 nis
 nntplib
 numbers
 operator
-optparse              aronacher
+optparse              mitsuhiko
 os
-os.path               serhiy.storchaka
+os.path               serhiy-storchaka
 ossaudiodev
-parser                benjamin.peterson, pablogsal
+parser                benjaminp, pablogsal
 pathlib
 pdb
-pickle                alexandre.vassalotti
-pickletools           alexandre.vassalotti
+pickle                avassalotti
+pickletools           avassalotti
 pipes
 pkgutil
-platform              lemburg
+platform              malemburg
 plistlib
 poplib
-posix                 larry
-pprint                fdrake
+posix                 larryhastings
+pprint                freddrake
 profile
 pstats
-pty                   twouters*
+pty                   Yhg1s*
 pwd
 py_compile
-pyclbr                BTaskaya
+pyclbr                isidentical
 pydoc
 queue                 rhettinger*
 quopri
-random                rhettinger, mark.dickinson
-re                    ezio.melotti, serhiy.storchaka
-readline              twouters
+random                rhettinger, mdickinson
+re                    ezio-melotti, serhiy-storchaka
+readline              Yhg1s
 reprlib
-resource              twouters
+resource              Yhg1s
 rlcompleter
 runpy                 ncoghlan
 sched
 secrets
 select
-selectors             neologix, giampaolo.rodola
+selectors             neologix^, giampaolo
 shelve
 shlex
-shutil                tarek, giampaolo.rodola
+shutil                tarekziade, giampaolo
 signal
 site
-smtpd                 giampaolo.rodola
+smtpd                 giampaolo
 smtplib
 sndhdr
 socket
 socketserver
 spwd
-sqlite3               ghaering
-ssl                   janssen, christian.heimes, dstufft, alex
-stat                  christian.heimes
-statistics            steven.daprano, rhettinger
+sqlite3               ghaering^
+ssl                   jackjansen, tiran, dstufft, alex
+stat                  tiran
+statistics            stevendaprano, rhettinger
 string
 stringprep
-struct                mark.dickinson, meador.inge
-subprocess            astrand (inactive), giampaolo.rodola
+struct                mdickinson, meadori
+subprocess            astrand^ (inactive), giampaolo
 sunau
 symbol
-symtable              benjamin.peterson
+symtable              benjaminp
 sys
-sysconfig             tarek
-syslog                jafo*
-tabnanny              tim.peters (inactive)
-tarfile               lars.gustaebel
+sysconfig             tarekziade
+syslog                jafo^*
+tabnanny              tim-one (inactive)
+tarfile               gustaebel
 telnetlib
 tempfile
-termios               twouters
-test                  ezio.melotti
+termios               Yhg1s
+test                  ezio-melotti
 textwrap
 threading             pitrou
-time                  belopolsky, p-ganssle
+time                  abalkin, pganssle
 timeit
-tkinter               gpolo, serhiy.storchaka
+tkinter               gpolo^, serhiy-storchaka
 token
-tokenize              meador.inge
-trace                 belopolsky
+tokenize              meadori
+trace                 abalkin
 traceback             iritkatriel
 tracemalloc           vstinner
-tty                   twouters*
-turtle                gregorlingl, willingc
-types                 yselivanov
-typing                gvanrossum, kj, JelleZijlstra*
-unicodedata           lemburg, ezio.melotti
-unittest              michael.foord*, ezio.melotti, rbcollins
-unittest.mock         michael.foord*
+tty                   Yhg1s*
+turtle                gregorlingl^, willingc
+types                 1st1
+typing                gvanrossum, Fidget-Spinner, JelleZijlstra*
+unicodedata           malemburg, ezio-melotti
+unittest              voidspace*, ezio-melotti, rbtcollins
+unittest.mock         voidspace*
 urllib                orsenthil
 uu
 uuid
-venv                  vinay.sajip
+venv                  vsajip
 warnings
 wave
-weakref               fdrake
+weakref               freddrake
 webbrowser
-winreg                stutzbach
+winreg                stutzbach^
 winsound
-wsgiref               pje
+wsgiref               pjenvey
 xdrlib
 xml.dom
 xml.dom.minidom
 xml.dom.pulldom
-xml.etree             eli.bendersky*, scoder
+xml.etree             eliben*, scoder
 xml.parsers.expat
 xml.sax
 xml.sax.handler
 xml.sax.saxutils
 xml.sax.xmlreader
 xmlrpc
-zipapp                paul.moore
-zipfile               alanmcintyre, serhiy.storchaka, twouters
-zipimport             twouters*
-zlib                  twouters
+zipapp                pfmoore
+zipfile               alanmcintyre^, serhiy-storchaka, Yhg1s
+zipimport             Yhg1s*
+zlib                  Yhg1s
 ====================  =============================================
 
 
@@ -276,8 +280,8 @@ Tools
 ==================  ===========
 Tool                Maintainers
 ==================  ===========
-Argument Clinic     larry
-PEG Generator       gvanrossum, pablogsal, lys.nikolaou
+Argument Clinic     larryhastings
+PEG Generator       gvanrossum, pablogsal, lysnikolaou
 ==================  ===========
 
 
@@ -286,17 +290,17 @@ Platforms
 ===================   ===========
 Platform              Maintainers
 ===================   ===========
-AIX                   David.Edelsohn
-Cygwin                jlt63, stutzbach
+AIX                   David.Edelsohn^
+Cygwin                jlt63^, stutzbach^
 FreeBSD
 HP-UX
 Linux
-Mac OS X              ronaldoussoren, ned.deily
+Mac OS X              ronaldoussoren, ned-deily
 NetBSD1
-OS2/EMX               aimacintyre
+OS2/EMX               aimacintyre^
 Solaris/OpenIndiana   jcea
-Windows               tim.golden, zach.ware, steve.dower, paul.moore
-JVM/Java              frank.wierzbicki
+Windows               tjguk, zware, zooba, pfmoore
+JVM/Java              frank.wierzbicki^
 ===================   ===========
 
 
@@ -306,51 +310,51 @@ Miscellaneous
 Interest Area       Maintainers
 ==================  ==========================================================
 algorithms          rhettinger*
-argument clinic     larry
-ast/compiler        benjamin.peterson, brett.cannon, yselivanov, pablogsal, Mark.Shannon, BTaskaya, brandtbucher
-autoconf/makefiles  twouters*
+argument clinic     larryhastings
+ast/compiler        benjaminp, brettcannon, 1st1, pablogsal, markshannon, isidentical, brandtbucher
+autoconf/makefiles  Yhg1s*
 bsd
-bug tracker         ezio.melotti
-buildbots           zach.ware, pablogsal
-bytecode            benjamin.peterson, yselivanov, Mark.Shannon, brandtbucher
+bug tracker         ezio-melotti
+buildbots           zware, pablogsal
+bytecode            benjaminp, 1st1, markshannon, brandtbucher
 context managers    ncoghlan
-core workflow       mariatta
-coverity scan       christian.heimes, brett.cannon, twouters
-cryptography        gregory.p.smith, dstufft
-data formats        mark.dickinson
-database            lemburg
-devguide            eric.araujo, ezio.melotti, willingc, mariatta
-documentation       ezio.melotti, eric.araujo, mdk, willingc
-emoji               mariatta
-extension modules   petr.viktorin, ncoghlan
-filesystem          giampaolo.rodola
-f-strings           eric.smith*
+core workflow       Mariatta
+coverity scan       tiran, brettcannon, Yhg1s
+cryptography        gpshead, dstufft
+data formats        mdickinson
+database            malemburg
+devguide            merwok, ezio-melotti, willingc, Mariatta
+documentation       ezio-melotti, merwok, JulienPalard, willingc
+emoji               Mariatta
+extension modules   encukou, ncoghlan
+filesystem          giampaolo
+f-strings           ericvsmith*
 GUI
-i18n                lemburg, eric.araujo
-import machinery    brett.cannon, ncoghlan, eric.snow
-io                  benjamin.peterson, stutzbach
-locale              lemburg
-mathematics         mark.dickinson, lemburg, stutzbach, rhettinger
-memory management   tim.peters, lemburg, twouters
+i18n                malemburg, merwok
+import machinery    brettcannon, ncoghlan, ericsnowcurrently
+io                  benjaminp, stutzbach^
+locale              malemburg
+mathematics         mdickinson, malemburg, stutzbach^, rhettinger
+memory management   tim-one, malemburg, Yhg1s
 memoryview
-networking          giampaolo.rodola,
-object model        benjamin.peterson, twouters
-packaging           tarek, lemburg, alexis, eric.araujo, dstufft, paul.moore
+networking          giampaolo
+object model        benjaminp, Yhg1s
+packaging           tarekziade, malemburg, alexis^, merwok, dstufft, pfmoore
 pattern matching    brandtbucher*
-peg parser          gvanrossum, pablogsal, lys.nikolaou
-performance         brett.cannon, vstinner, serhiy.storchaka, yselivanov, rhettinger, Mark.Shannon, brandtbucher
-pip                 ncoghlan, dstufft, paul.moore, Marcus.Smith, pradyunsg
-py3 transition      benjamin.peterson
-release management  tarek, lemburg, benjamin.peterson, barry,
-                    gvanrossum, anthonybaxter, eric.araujo, ned.deily,
-                    georg.brandl, mdk
-str.format          eric.smith*
-testing             michael.foord, ezio.melotti
+peg parser          gvanrossum, pablogsal, lysnikolaou
+performance         brettcannon, vstinner, serhiy-storchaka, 1st1, rhettinger, markshannon, brandtbucher
+pip                 ncoghlan, dstufft, pfmoore, Marcus.Smith^, pradyunsg
+py3 transition      benjaminp
+release management  tarekziade, malemburg, benjaminp, warsaw,
+                    gvanrossum, anthonybaxter^, merwok, ned-deily,
+                    birkenfeld, JulienPalard
+str.format          ericvsmith*
+testing             voidspace, ezio-melotti
 test coverage
 threads
-time and dates      lemburg, belopolsky, p-ganssle
-unicode             lemburg, ezio.melotti, benjamin.peterson,
-version control     eric.araujo, ezio.melotti
+time and dates      malemburg, abalkin, pganssle
+unicode             malemburg, ezio-melotti, benjaminp
+version control     merwok, ezio-melotti
 ==================  ==========================================================
 
 
@@ -359,10 +363,10 @@ Documentation Translations
 =============  ============
 Translation    Coordinator
 =============  ============
-French         mdk
-Japanese       inada.naoki
+French         JulienPalard
+Japanese       methane
 Korean         flowdas
-Bengali India  kushal.das
+Bengali India  kushaldas
 Hungarian      gbtami
 Portuguese     rougeth
 Chinese (TW)   mattwang44, josix
