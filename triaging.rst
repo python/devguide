@@ -49,7 +49,7 @@ necessarily limited to) PRs that meet one or more of the following criteria:
 * PRs that are no longer relevant. This includes:
     - PRs proposing fixes for bugs that can no longer be reproduced
     - PRs proposing changes that have been rejected by Python core developers
-      elsewhere (e.g. in an issue or a PEP rejection notice).
+      elsewhere (e.g. in an issue or a PEP rejection notice)
 
 Triagers can also make use of the ``invalid`` and ``stale`` labels to suggest that a
 PR may be suitable for closure. For more information, see the
