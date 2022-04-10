@@ -41,8 +41,9 @@ the author receives a careful consideration of their PR. This encourages future
 contributions, regardless of whether their PR is accepted or closed.
 
 Nonetheless, triagers should feel free to close a PR if they judge that the
-chance of the PR being merged is exceedingly low. This can include (but is not
-necessarily limited to) PRs that meet one or more of the following criteria:
+chance of the PR being merged would be exceedingly low, even if substantial
+revisions were made to the PR. This can include (but is not necessarily
+limited to) PRs that fall into one or more of the following categories:
 
 * PRs proposing solely cosmetic changes
 * PRs proposing changes to deprecated modules
@@ -50,6 +51,9 @@ necessarily limited to) PRs that meet one or more of the following criteria:
     - PRs proposing fixes for bugs that can no longer be reproduced
     - PRs proposing changes that have been rejected by Python core developers
       elsewhere (e.g. in an issue or a PEP rejection notice)
+
+If a triager has any doubt about whether to close a PR, they should consult a core
+developer before taking any action.
 
 Triagers can also make use of the ``invalid`` and ``stale`` labels to suggest that a
 PR may be suitable for closure. For more information, see the
