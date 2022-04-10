@@ -90,7 +90,7 @@ appear under their name from an automated import.  Others never linked Github on
 
 In those cases a "mannequin" account is present to help follow the conversation
 that happened in the issue. In case the user did share their Github account
-name in their `bpo_` profile, we use that. Otherwise, their classic `bpo_`
+name in their `bpo`_ profile, we use that. Otherwise, their classic `bpo`_
 username is used instead.
 
 Where did the "Resolution" field go?
