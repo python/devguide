@@ -1,9 +1,9 @@
 .. _github-labels:
 
-Github Labels
+GitHub Labels
 =============
 
-We're using labels on Github to categorize issues and pull requests.
+We're using labels on GitHub to categorize issues and pull requests.
 Many labels are shared for both use cases, while some are dedicated
 only to one. Below is a possibly inexhaustive list, but it should get
 you going. For a full list, see `here <https://github.com/python/cpython/issues/labels>`_.
