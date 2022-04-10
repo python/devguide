@@ -35,17 +35,31 @@ Responsibilities include:
     - Good first issue
     - Other categorizations
 
-As triagers gain experience, they may have some intuition of when a PR should
-be closed. Triagers can recommend closing a PR, but the final decision must be
-made by a core developer. By having triagers and core developers work together,
+Although triagers have the power to close PRs, they should generally not do so
+without first consulting a core developer. By having triagers and core developers work together,
 the author receives a careful consideration of their PR. This encourages future
 contributions, regardless of whether their PR is accepted or closed.
 
-Triagers can make use of the ``invalid`` and ``stale`` labels to suggest that a
+Nonetheless, triagers should feel free to close a PR if they judge that the
+chance of the PR being merged would be exceedingly low, even if substantial
+revisions were made to the PR. This includes (but is not limited to) the
+following:
+
+* PRs proposing solely cosmetic changes
+* PRs proposing changes to deprecated modules
+* PRs that are no longer relevant. This includes:
+    - PRs proposing fixes for bugs that can no longer be reproduced
+    - PRs proposing changes that have been rejected by Python core developers
+      elsewhere (e.g. in an issue or a PEP rejection notice)
+
+If a triager has any doubt about whether to close a PR, they should consult a core
+developer before taking any action.
+
+Triagers can also make use of the ``invalid`` and ``stale`` labels to suggest that a
 PR may be suitable for closure. For more information, see the
 :ref:`GitHub PR labels <github-pr-labels>` section.
 
-It is also of paramount importance to treat every contributor to the Python
+Note that it is of paramount importance to treat every contributor to the Python
 project kindly and with respect. Regardless of whether they're entirely new
 or a veteran core developer, they're actively choosing to voluntarily donate their
 time towards the improvement of Python. As is the case with any member of
