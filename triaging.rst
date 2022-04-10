@@ -73,7 +73,7 @@ Python triage team. Triagers will be responsible to handle not just issues, but
 also pull requests, and even managing backports. A Python triager has access to
 more repositories than just CPython.
 
-Any existing active contributor to the Python repository on Github can
+Any existing active contributor to the Python repository on GitHub can
 transition into becoming a Python triager. They can request this to any core
 developer, and the core developer can pass the request to the `Python
 organization admin
@@ -151,7 +151,7 @@ specific type, please do not set a type.
 
 Stage
 '''''
-A needed next action to advance the issue.  The *stage* on Github issues is
+A needed next action to advance the issue.  The *stage* on GitHub issues is
 determined by presence of a linked PR and whether the issue is still open
 or closed. It is the PR that holds code review-related labels.
 
@@ -230,7 +230,7 @@ Nosy List
 '''''''''
 A list of people who may be interested in an issue.
 
-This used to be a feature of the old issue tracker. On Github issues the
+This used to be a feature of the old issue tracker. On GitHub issues the
 same effect is achieved by tagging people in a comment using ``@username``.
 
 It is acceptable to tag someone to if you think the issue should be brought to
@@ -264,16 +264,16 @@ comment. Long story short, if you add this::
     - [ ] https://github.com/octo-org/octo-repo/issues/740
     - [ ] Add delight to the experience when all tasks are complete :tada:
 
-then those will become sub-tasks on the given issue. Moreover, Github will
+then those will become sub-tasks on the given issue. Moreover, GitHub will
 automatically mark a task as complete if the other referenced issue is
 closed.
 
-More details in the `official Github documentation
+More details in the `official GitHub documentation
 <https://docs.github.com/en/issues/tracking-your-work-with-issues/about-task-lists>`_.
 
 Superseder
 ''''''''''
-The issue is a duplicate of the listed issue(s). To make Github mark
+The issue is a duplicate of the listed issue(s). To make GitHub mark
 an issue as duplicate, write "Duplicate of #xxxx" in a comment.
 
 Status
@@ -302,7 +302,7 @@ a link to relevant web pages.
 | Comment abbreviation                                        | Description                                           |
 +=============================================================+=======================================================+
 | ``#<number>``,                                              | Links to the tracker issue or PR ``<number>`` (they   |
-| ``GH-<number>``                                             | share the same sequence of integers on Github).       |
+| ``GH-<number>``                                             | share the same sequence of integers on GitHub).       |
 +-------------------------------------------------------------+-------------------------------------------------------+
 | ``BPO-<number>``                                            | Links to the old bug tracker at bugs.python.org.      |
 +-------------------------------------------------------------+-------------------------------------------------------+
