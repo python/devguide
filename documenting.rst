@@ -1623,6 +1623,9 @@ in production; others are works in progress.
 +-----------------+-------------------------------+----------------------------+
 | Lithuanian (lt) |                               | `mail <mail_lt_>`_         |
 +-----------------+-------------------------------+----------------------------+
+| Persian (fa)    | `Komeil Parseh (mmdbalkhi)    | `GitHub <github_fa_>`_     |
+|                 | <bpo_mmdbalkhi_>`_            |                            |
++-----------------+-------------------------------+----------------------------+
 | Polish (pl)     |                               | `GitHub <github_pl_>`_     |
 |                 |                               | `Translations <tx_pl_>`_   |
 |                 |                               | `Doc <doc_pl_>`_           |
@@ -1656,6 +1659,7 @@ in production; others are works in progress.
 .. _bpo_gbtami: https://bugs.python.org/user25857
 .. _bpo_kushal: https://bugs.python.org/user16382
 .. _bpo_mdk: https://bugs.python.org/user23063
+.. _bpo_mmdbalkhi: https://bugs.python.org/user41619
 .. _bpo_oonid: https://bugs.python.org/user32660
 .. _bpo_osdotsystem: https://bugs.python.org/user28057
 .. _bpo_zhsj: https://bugs.python.org/user24811
@@ -1670,6 +1674,7 @@ in production; others are works in progress.
 .. _github_ar: https://github.com/Abdur-rahmaanJ/python-docs-ar
 .. _github_bn_in: https://github.com/python/python-docs-bn-in
 .. _github_es: https://github.com/python/python-docs-es
+.. _github_fa: https://github.com/mmdbalkhi/python-docs-fa
 .. _github_fr: https://github.com/python/python-docs-fr
 .. _github_hi_in: https://github.com/CuriousLearner/python-docs-hi-in
 .. _github_hu: https://github.com/python/python-docs-hu
