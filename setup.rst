@@ -191,7 +191,7 @@ dependencies were missing:
    for the module's name.
 
 If the build failed and you are using a C89 or C99-compliant compiler,
-please `open a bug report <https://bugs.python.org>`_.
+please open a bug report on the `issue tracker`_.
 
 If you decide to :ref:`build-dependencies`, you will need to re-run both
 ``configure`` and ``make``.
@@ -555,3 +555,5 @@ every rule.
 ``Tools``
      Various tools that are (or have been) used to maintain Python.
 
+
+.. _issue tracker: https://github.com/python/cpython/issues

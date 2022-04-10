@@ -121,4 +121,4 @@ you detail which conditions triggered it (including the OS name and version,
 and what you were trying to do), as well as the exact error message you
 encountered.
 
-.. _issue tracker: https://bugs.python.org
+.. _issue tracker: https://github.com/python/cpython/issues
