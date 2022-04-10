@@ -42,8 +42,8 @@ contributions, regardless of whether their PR is accepted or closed.
 
 Nonetheless, triagers should feel free to close a PR if they judge that the
 chance of the PR being merged would be exceedingly low, even if substantial
-revisions were made to the PR. This can include (but is not necessarily
-limited to) PRs that fall into one or more of the following categories:
+revisions were made to the PR. This includes (but is not limited to) the
+following:
 
 * PRs proposing solely cosmetic changes
 * PRs proposing changes to deprecated modules
