@@ -18,7 +18,7 @@ type-behavior
 
 type-documentation
     Used for issues/PRs that exclusively involve changes to
-    the documentation. Documentation includes `*.rst` files, docstrings,
+    the documentation. Documentation includes ``*.rst`` files, docstrings,
     and code comments.
 
 type-enhancement
