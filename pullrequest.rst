@@ -57,7 +57,7 @@ Here is a quick overview of how you can contribute to CPython:
 
 .. _Clear communication: https://opensource.guide/how-to-contribute/#how-to-submit-a-contribution
 .. _Open Source: https://opensource.guide/
-.. _create an issue: https://bugs.python.org/
+.. _create an issue: https://github.com/python/cpython/issues
 .. _CPython: https://github.com/python/cpython
 .. _use HTTPS: https://help.github.com/articles/which-remote-url-should-i-use/
 .. _Create Pull Request: https://help.github.com/articles/creating-a-pull-request/
@@ -139,11 +139,6 @@ You should have already :ref:`set up your system <setup>`,
 
      git branch -D <branch-name>  # delete local branch
      git push origin -d <branch-name>  # delete remote branch
-
-.. note::
-   You can still upload a patch to bugs.python.org_, but the GitHub pull request
-   workflow is **strongly** preferred.
-
 
 .. _resolving-merge-conflicts:
 
@@ -314,22 +309,16 @@ license your code for use with Python (you retain the copyright).
 
 Here are the steps needed in order to sign the CLA:
 
-1. If you don't have an account on `bugs.python.org <https://bugs.python.org>`_
-   (aka b.p.o), please
-   `register <https://bugs.python.org/user?@template=register>`_ to create one.
+1. Create a change and submit it as a pull request.
 
-2. Make sure your GitHub username is listed in the `"Your Details"
-   <https://cloud.githubusercontent.com/assets/2680980/23276970/d14a380c-f9d1-11e6-883d-e13b6b211239.png>`_
-   section at b.p.o.
+2. When ``cpython-cla-bot`` comments on your pull request that commit
+   authors are required to sign a Contributor License Agreement, click
+   on the button in the comment to sign it. It's enough to log in through
+   Github. The process is automatic.
 
-3. Fill out and sign the PSF `contributor form`_. The "bugs.python.org username"
-   requested by the form is the "Login name" field under "Your Details".
-
-After signing the CLA, please **wait at least one US business day** and
-then check the status by going to the `check-python-cla <https://check-python-cla.herokuapp.com>`_
-website. The check will also be run automatically the next time you push changes
-to your PR.
-
+3. After signing, the comment by ``cpython-cla-bot`` will update to
+   indicate that "all commit authors signed the Contributor License
+   Agreement.
 
 .. _PSF license: https://docs.python.org/dev/license.html#terms-and-conditions-for-accessing-or-otherwise-using-python
 .. _contributor agreement: https://www.python.org/psf/contrib/
@@ -377,8 +366,6 @@ A detailed commit history allows reviewers to view the diff of one commit to
 another so they can easily verify whether their comments have been addressed.
 The commits will be squashed when the pull request is merged.
 
-
-.. _issue tracker: https://bugs.python.org
 
 Converting an Existing Patch from b.p.o to GitHub
 -------------------------------------------------
@@ -510,3 +497,5 @@ Non-trivial contributions are credited in the ``Misc/ACKS`` file (and, most
 often, in a contribution's news entry as well).  You may be
 asked to make these edits on the behalf of the core developer who
 accepts your pull request.
+
+.. _issue tracker: https://github.com/python/cpython/issues
