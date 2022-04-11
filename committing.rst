@@ -218,6 +218,8 @@ the pull request number from ``main``. Here is an example::
 
    [3.9] gh-12345: Fix the Spam Module (GH-NNNN)
 
+Here "gh-12345" is the GitHub *issue* number, and "GH-NNNN" is the
+number of the original *pull request*.
 Note that cherry_picker.py_ adds the branch prefix automatically.
 
 Once the backport pull request has been created, remove the
