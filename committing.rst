@@ -114,19 +114,19 @@ manually. The ``Misc/NEWS.d`` directory contains a sub-directory named
 ``next``, which contains various sub-directories representing classifications
 for what was affected (e.g. ``Misc/NEWS.d/next/Library`` for changes relating
 to the standard library). The file name itself should be in the format
-``<datetime>.bpo-<issue-number>.<nonce>.rst``:
+``<datetime>.gh-issue-<issue-number>.<nonce>.rst``:
 
 * ``<datetime>`` is today's date joined with a hyphen (``-``) to the current
   time, in the ``YYYY-MM-DD-hh-mm-ss`` format (e.g. ``2017-05-27-16-46-23``).
 * ``<issue-number>`` is the issue number the change is for (e.g. ``12345``
-  for ``bpo-12345``).
+  for ``gh-issue-12345``).
 * ``<nonce>`` is a unique string to guarantee that the file name is
   unique across branches (e.g. ``Yl4gI2``). It is typically six characters
   long, but it can be any length of letters and numbers. Its uniqueness
   can be satisfied by typing random characters on your keyboard.
 
 As a result, a file name can look something like
-``Misc/NEWS.d/next/Library/2017-05-27-16-46-23.bpo-12345.Yl4gI2.rst``.
+``Misc/NEWS.d/next/Library/2017-05-27-16-46-23.gh-issue-12345.Yl4gI2.rst``.
 
 The contents of a ``NEWS`` file should be valid reStructuredText. An 80 character
 column width should be used. There is no indentation or leading marker in the
@@ -216,7 +216,7 @@ hashes and their first line of the commit, use the following command::
 You can prefix the backport pull request with the branch, and reference
 the pull request number from ``main``. Here is an example::
 
-   [3.9] bpo-12345: Fix the Spam Module (GH-NNNN)
+   [3.9] gh-12345: Fix the Spam Module (GH-NNNN)
 
 Note that cherry_picker.py_ adds the branch prefix automatically.
 
@@ -242,7 +242,7 @@ Always include the reason for reverting the commit to help others
 understand why it was done. The reason should be included as part of
 the commit message. Here is an example::
 
-   Revert bpo-NNNN: Fix Spam Module (GH-111)
+   Revert gh-NNNN: Fix Spam Module (GH-111)
 
    Reverts python/cpython#111.
    Reason: This commit broke the buildbot.
