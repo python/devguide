@@ -200,7 +200,7 @@ Staging and Committing Files
 
    .. code-block:: bash
 
-      git commit -m "bpo-XXXX: This is the commit message."
+      git commit -m "gh-XXXX: This is the commit message."
 
 Reverting Changes
 -----------------
@@ -441,14 +441,14 @@ Pull requests can be accepted and merged by a Python Core Developer.
 
    Example of good commit message::
 
-      bpo-12345: Improve the spam module (GH-777)
+      gh-12345: Improve the spam module (GH-777)
 
       * Add method A to the spam module
       * Update the documentation of the spam module
 
    Example of bad commit message::
 
-      bpo-12345: Improve the spam module (#777)
+      gh-12345: Improve the spam module (#777)
 
       * Improve the spam module
       * merge from main
@@ -487,17 +487,17 @@ commands:
 .. code-block:: bash
 
    git fetch upstream
-   git rev-parse ":/bpo-12345"
+   git rev-parse ":/gh-12345"
 
 The above commands will print out the hash of the commit containing
-``"bpo-12345"`` as part of the commit message.
+``"gh-12345"`` as part of the commit message.
 
 When formatting the commit message for a backport commit: leave the original
 one as is and delete the number of the backport pull request.
 
 Example of good backport commit message::
 
-    bpo-12345: Improve the spam module (GH-777)
+    gh-12345: Improve the spam module (GH-777)
 
     * Add method A to the spam module
     * Update the documentation of the spam module
@@ -506,7 +506,7 @@ Example of good backport commit message::
 
 Example of bad backport commit message::
 
-    bpo-12345: Improve the spam module (GH-777) (#888)
+    gh-12345: Improve the spam module (GH-777) (#888)
 
     * Add method A to the spam module
     * Update the documentation of the spam module

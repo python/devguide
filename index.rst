@@ -61,10 +61,10 @@ instructions please see the :ref:`setup guide <setup>`.
    everything is ok, commit.
 
 7. Push the branch on your fork on GitHub and :doc:`create a pull request
-   <pullrequest>`.  Include the issue number using ``bpo-NNNN`` in the
+   <pullrequest>`.  Include the issue number using ``gh-NNNN`` in the
    pull request description.  For example::
 
-      bpo-12345: Fix some bug in spam module
+      gh-12345: Fix some bug in spam module
 
 8. Add a News entry into the ``Misc/NEWS.d`` directory as individual file. The
    news entry can be created by using `blurb-it <https://blurb-it.herokuapp.com/>`_,
