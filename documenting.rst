@@ -1781,7 +1781,7 @@ How is a coordinator elected?
 There is no election; each translation has to sort this out.  Here are some suggestions.
 
 -  Coordinator requests are to be public on the `translation mailing list <translation_ml_>`_.
--  If the given language has a native core dev, the core dev has their 
+-  If the given language has a native core dev, the core dev has their
    say on the choice.
 -  Anyone who wants to become coordinator for their native language and shows
    motivation by translating and building a community will be named
@@ -1803,7 +1803,7 @@ Ask on the `translation mailing list <translation_ml_>`_, or better, make a PR o
 I have a translation, but it's not in git. What should I do?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-You can ask for help on the `translation mailing list <translation_ml_>`_, and 
+You can ask for help on the `translation mailing list <translation_ml_>`_, and
 the team will help you create an appropriate repository. You can still use tools like transifex,
 if you like.
 

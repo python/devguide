@@ -15,36 +15,36 @@ Before you can accept a pull request, you need to make sure that it is ready
 to enter the public source tree. Ask yourself the following questions:
 
 * **Are there ongoing discussions at** ``bugs.python.org`` **(b.p.o.)?**
-   Read the linked b.p.o. issue. If there are ongoing discussions, then 
+   Read the linked b.p.o. issue. If there are ongoing discussions, then
    we need to have a resolution there before we can merge the pull request.
 
-* **Was the pull request first made against the appropriate branch?** 
+* **Was the pull request first made against the appropriate branch?**
    The only branch that receives new features is ``main``, the
    in-development branch. Pull requests should only target bug-fix branches
    if an issue appears in only that version and possibly older versions.
 
-* **Are the changes acceptable?** 
-   If you want to share your work-in-progress code on a feature or bugfix, 
-   then you can open a ``WIP``-prefixed pull request, publish patches on 
+* **Are the changes acceptable?**
+   If you want to share your work-in-progress code on a feature or bugfix,
+   then you can open a ``WIP``-prefixed pull request, publish patches on
    the `issue tracker`_, or create a public fork of the repository.
 
-* **Do the checks on the pull request show that the test suite passes?** 
+* **Do the checks on the pull request show that the test suite passes?**
    Make sure that all of the status checks are passing.
 
-* **Is the patch in a good state?** 
-   Check :ref:`patch` and :ref:`helptriage` to review what is expected of 
+* **Is the patch in a good state?**
+   Check :ref:`patch` and :ref:`helptriage` to review what is expected of
    a patch.
 
-* **Does the patch break backwards-compatibility without a strong reason?** 
-   :ref:`Run the entire test suite <runtests>` to make sure that everything 
-   still passes. If there is a change to the semantics, then there needs to 
-   be a strong reason, because it will cause some peoples' code to break. 
+* **Does the patch break backwards-compatibility without a strong reason?**
+   :ref:`Run the entire test suite <runtests>` to make sure that everything
+   still passes. If there is a change to the semantics, then there needs to
+   be a strong reason, because it will cause some peoples' code to break.
    If you are unsure if the breakage is worth it, then ask on python-dev.
-   
+
 * **Does documentation need to be updated?**
-   If the pull request introduces backwards-incompatible changes (e.g. 
-   deprecating or removing a feature), then make sure that those changes 
-   are reflected in the documentation before you merge the pull request.   
+   If the pull request introduces backwards-incompatible changes (e.g.
+   deprecating or removing a feature), then make sure that those changes
+   are reflected in the documentation before you merge the pull request.
 
 * **Were appropriate labels added to signify necessary backporting of the pull request?**
    If it is determined that a pull request needs to be
@@ -55,21 +55,21 @@ to enter the public source tree. Ask yourself the following questions:
    core developers and members of the `Python Triage Team`_ can apply
    labels to GitHub pull requests).
 
-* **Does the pull request pass a check indicating that the submitter has signed the CLA?** 
+* **Does the pull request pass a check indicating that the submitter has signed the CLA?**
    Make sure that the contributor has signed a `Contributor
-   Licensing Agreement <https://www.python.org/psf/contrib/contrib-form/>`_ 
-   (CLA), unless their change has no possible intellectual property 
-   associated with it (e.g. fixing a spelling mistake in documentation). 
+   Licensing Agreement <https://www.python.org/psf/contrib/contrib-form/>`_
+   (CLA), unless their change has no possible intellectual property
+   associated with it (e.g. fixing a spelling mistake in documentation).
    To check if a contributor’s CLA has been received, go
    to `Check Python CLA <https://check-python-cla.herokuapp.com/>`_ and
    put in their GitHub username. For further questions about the CLA
    process, write to contributors@python.org.
 
-* **Were** ``What's New in Python`` **and** ``Misc/NEWS.d/next`` **updated?** 
-   If the change is particularly interesting for end users (e.g. new features, 
-   significant improvements, or backwards-incompatible changes), then an 
-   entry in the ``What's New in Python`` document (in ``Doc/whatsnew/``) should 
-   be added as well. Changes that affect only documentation generally do not 
+* **Were** ``What's New in Python`` **and** ``Misc/NEWS.d/next`` **updated?**
+   If the change is particularly interesting for end users (e.g. new features,
+   significant improvements, or backwards-incompatible changes), then an
+   entry in the ``What's New in Python`` document (in ``Doc/whatsnew/``) should
+   be added as well. Changes that affect only documentation generally do not
    require a ``NEWS`` entry. (See the following section for more information.)
 
 
@@ -161,7 +161,7 @@ Python repositories, so you need to be careful with your workflow:
   for maintenance work before it is integrated into the main repository.
 
 * **You should not commit directly into the** ``main`` **branch, or any of the maintenance branches.**
-  You should commit against your own feature branch, and then create a 
+  You should commit against your own feature branch, and then create a
   pull request.
 
 * **For a small change, you can make a quick edit through the GitHub web UI.**
