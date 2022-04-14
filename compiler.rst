@@ -406,7 +406,7 @@ Emission of bytecode is handled by the following macros:
     just like ``ADDOP_O``, but name mangling is also handled; used for
     attribute loading or importing based on name
 ``ADDOP_LOAD_CONST(struct compiler *, PyObject *)``
-    add the `LOAD_CONST` opcode with the proper argument based on the
+    add the ``LOAD_CONST`` opcode with the proper argument based on the
     position of the specified PyObject in the consts table.
 ``ADDOP_LOAD_CONST_NEW(struct compiler *, PyObject *)``
     just like ``ADDOP_LOAD_CONST_NEW``, but steals a reference to PyObject
