@@ -570,7 +570,7 @@ Pegen has some special grammatical elements and rules:
 * Strings with single quotes (') (e.g. ``'class'``) denote KEYWORDS.
 * Strings with double quotes (") (e.g. ``"match"``) denote SOFT KEYWORDS.
 * Upper case names (e.g. ``NAME``) denote tokens in the :file:`Grammar/Tokens` file.
-* Rule names starting with `invalid_` are used for specialized syntax errors.
+* Rule names starting with ``invalid_`` are used for specialized syntax errors.
 
   - These rules are NOT used in the first pass of the parser.
   - Only if the first pass fails to parse, a second pass including the invalid
@@ -611,7 +611,7 @@ As described previously, to avoid exponential time complexity in the parser, mem
 The C parser used by Python is highly optimized and memoization can be expensive both in memory and time. Although
 the memory cost is obvious (the parser needs memory for storing previous results in the cache) the execution time
 cost comes for continuously checking if the given rule has a cache hit or not. In many situations, just parsing it
-again can be faster. Pegen **disables memoization by default** except for rules with the special marker `memo` after
+again can be faster. Pegen **disables memoization by default** except for rules with the special marker ``memo`` after
 the rule name (and type, if present): ::
 
     rule_name[typr] (memo):

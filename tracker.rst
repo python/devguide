@@ -16,12 +16,12 @@ If you would like to file an issue about this devguide, please do so at the
 
 .. note::
     Python used to use a dedicated `Roundup`_ instance as its issue tracker.
-    That old bug tracker was hosted under the domain `bugs.python.org`
-    (sometimes called `bpo` for short). Currently a read-only version is still
-    available on that domain for historical purposes. All `bpo` data has been
+    That old bug tracker was hosted under the domain ``bugs.python.org``
+    (sometimes called ``bpo`` for short). Currently a read-only version is still
+    available on that domain for historical purposes. All ``bpo`` data has been
     migrated to the current `issue tracker`_ on Github.
 
-    If you're familiar with `bpo` and would like to learn more about Github
+    If you're familiar with ``bpo`` and would like to learn more about Github
     issues, please read this page, and the :doc:`triaging` page as they
     provide good introductory material. There is also a :doc:`gh-faq`
     document to answer some of the more popular questions.
