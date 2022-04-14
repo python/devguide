@@ -65,7 +65,7 @@ Normally the C structure supporting a regular Python object looks as follows:
                   |                    *ob_type                   | |
                   +--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+ /
                   |                      ...                      |
-                  
+
 
 In order to support the garbage collector, the memory layout of objects is altered
 to accommodate extra information **before** the normal layout:
@@ -82,7 +82,7 @@ to accommodate extra information **before** the normal layout:
                   |                    *ob_type                   | |
                   +--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+ /
                   |                      ...                      |
-                  
+
 
 In this way the object can be treated as a normal python object and when the extra
 information associated to the GC is needed the previous fields can be accessed by a
@@ -179,7 +179,7 @@ Every object that supports garbage collection will have an extra reference
 count field initialized to the reference count (``gc_ref`` in the figures)
 of that object when the algorithm starts. This is because the algorithm needs
 to modify the reference count to do the computations and in this way the
-interpreter will not modify the real reference count field. 
+interpreter will not modify the real reference count field.
 
 .. figure:: images/python-cyclic-gc-1-new-page.png
 
@@ -219,10 +219,10 @@ they started originally) and setting its ``gc_refs`` field to 1. This is what ha
 to ``link_2`` and ``link_3`` below as they are reachable from ``link_1``.  From the
 state in the previous image and after examining the objects referred to by ``link_1``
 the GC knows that ``link_3`` is reachable after all, so it is moved back to the
-original list and its ``gc_refs`` field is set to 1 so that if the GC visits it again, 
+original list and its ``gc_refs`` field is set to 1 so that if the GC visits it again,
 it will know that it's reachable. To avoid visiting an object twice, the GC marks all
-objects that have already been visited once (by unsetting the ``PREV_MASK_COLLECTING`` 
-flag) so that if an object that has already been processed is referenced by some other 
+objects that have already been visited once (by unsetting the ``PREV_MASK_COLLECTING``
+flag) so that if an object that has already been processed is referenced by some other
 object, the GC does not process it twice.
 
 .. figure:: images/python-cyclic-gc-5-new-page.png
@@ -337,7 +337,7 @@ specifically in a generation by calling ``gc.collect(generation=NUM)``.
     >>> import gc
     >>> class MyObj:
     ...     pass
-    ... 
+    ...
 
     # Move everything to the last generation so it's easier to inspect
     # the younger generations.
@@ -462,7 +462,7 @@ benefit from delayed tracking:
   when created. During garbage collection it is determined whether any surviving
   tuples can be untracked. A tuple can be untracked if all of its contents are
   already not tracked. Tuples are examined for untracking in all garbage collection
-  cycles. It may take more than one cycle to untrack a tuple. 
+  cycles. It may take more than one cycle to untrack a tuple.
 
 * Dictionaries containing only immutable objects also do not need to be tracked.
   Dictionaries are untracked when created. If a tracked item is inserted into a
@@ -472,7 +472,7 @@ benefit from delayed tracking:
 
 The garbage collector module provides the Python function ``is_tracked(obj)``, which returns
 the current tracking status of the object. Subsequent garbage collections may change the
-tracking status of the object. 
+tracking status of the object.
 
 .. code-block:: python
 
