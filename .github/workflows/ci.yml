@@ -2,6 +2,9 @@ name: Tests
 
 on: [pull_request, push, workflow_dispatch]
 
+env:
+  FORCE_COLOR: 1
+
 jobs:
   test:
     name: test
@@ -9,15 +12,13 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v2
-      - uses: actions/setup-python@v2
+      - uses: actions/checkout@v3
+      - uses: actions/setup-python@v3
         with:
           python-version: "3.10"
           cache: pip
-      - name: Install Dependencies
-        run: python3 -m pip install -U pip -r requirements.txt
-      - name: Build Docs
-        run: sphinx-build --color -n -W -b html -d _build/doctrees . _build/html
-      - name: Link Check
-        run: sphinx-build --color -b linkcheck -d _build/doctrees . _build/linkcheck
+      - name: Build docs
+        run: make html
+      - name: Link check
+        run: make linkcheck
         continue-on-error: true
