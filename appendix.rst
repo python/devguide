@@ -1,4 +1,4 @@
-Appendix: Topics 
+Appendix: Topics
 ================
 
 Basics for contributors
@@ -67,4 +67,4 @@ Testing and continuous integration
 * :doc:`buildbots`
 * :doc:`buildworker`
 * :doc:`coverity`
-  
+

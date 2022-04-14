@@ -453,7 +453,7 @@ Leaving a Pull Request Review on GitHub
 ---------------------------------------
 
 When you review a pull request, you should provide additional details and context
-of your review process. 
+of your review process.
 
 Instead of simply "approving" the pull request, leave comments.  For example:
 

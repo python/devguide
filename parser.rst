@@ -69,7 +69,7 @@ loads the entire program in memory before parsing it but also allows the parser
 to backtrack arbitrarily. This is made efficient by memoizing the rules already
 matched for each position. The cost of the memoization cache is that the parser
 will naturally use more memory than a simple LL(1) parser, which normally are
-table-based. 
+table-based.
 
 
 Key ideas
@@ -329,7 +329,7 @@ different set of actions, keeping everything else apart from said actions
 identical in both files. As an example of a grammar with Python actions, the
 piece of the parser generator that parses grammar files is bootstrapped from a
 meta-grammar file with Python actions that generate the grammar tree as a result
-of the parsing. 
+of the parsing.
 
 In the specific case of the PEG grammar for Python, having actions allows
 directly describing how the AST is composed in the grammar itself, making it
@@ -525,7 +525,7 @@ parser. It contains the following pieces:
 * A PEG meta-grammar that automatically generates a Python parser that is used for the parser generator itself
   (this means that there are no manually-written parsers). The meta-grammar is
   located at :file:`Tools/peg_generator/pegen/metagrammar.gram`.
-* A generated parser (using the parser generator) that can directly produce C and Python AST objects. 
+* A generated parser (using the parser generator) that can directly produce C and Python AST objects.
 
 The source code for Pegen lives at :file:`Tools/peg_generator/pegen` but normally all typical commands to interact
 with the parser generator are executed from the main makefile.
@@ -606,7 +606,7 @@ and the parser just receives tokens from it.
 Memoization
 ~~~~~~~~~~~
 
-As described previously, to avoid exponential time complexity in the parser, memoization is used. 
+As described previously, to avoid exponential time complexity in the parser, memoization is used.
 
 The C parser used by Python is highly optimized and memoization can be expensive both in memory and time. Although
 the memory cost is obvious (the parser needs memory for storing previous results in the cache) the execution time
@@ -785,13 +785,13 @@ displayed when the error is reported.
     a syntax error **after** valid code triggers the rule or not. For example: ::
 
         <valid python code> $ 42
-    
+
     Should trigger the syntax error in the ``$`` character. If your rule is not correctly defined this
     won't happen. For example, if you try to define a rule to match Python 2 style ``print`` statements
     to make a better error message and you define it as: ::
 
         invalid_print: "print" expression
-    
+
     This will **seem** to work because the parser will correctly parse ``print(something)`` because it is valid
     code and the second phase will never execute but if you try to parse ``print(something) $ 3`` the first pass
     of the parser will fail (because of the ``$``) and in the second phase, the rule will match the
@@ -818,7 +818,7 @@ from them or to do extra processing on the generated tree.
     AST to decide if is valid or not but this will render the `official grammar
     <https://docs.python.org/3/reference/grammar.html>`_ partially incorrect
     (because actions are not included) and will make it more difficult for other
-    Python implementations to adapt the grammar to their own needs. 
+    Python implementations to adapt the grammar to their own needs.
 
 As a general rule, if an action spawns multiple lines or requires something more
 complicated than a single expression of C code, is normally better to create a
@@ -875,7 +875,7 @@ Verbose mode
 When Python is compiled in debug mode (by adding ``--with-pydebug`` when running the configure step in Linux or by
 adding ``-d`` when calling the :file:`PCbuild/python.bat` script in Windows), it is possible to activate a **very** verbose
 mode in the generated parser. This is very useful to debug the generated parser and to understand how it works, but it
-can be a bit hard to understand at first. 
+can be a bit hard to understand at first.
 
 .. note::
 
