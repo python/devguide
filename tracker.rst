@@ -36,7 +36,7 @@ already been reported.  Checking if the problem is an existing issue will:
   the next release
 * save time for you and the developers
 * help you learn what needs to be done to fix it
-* determine if additional information, such as how to replicate the issue, 
+* determine if additional information, such as how to replicate the issue,
   is needed
 
 To see if an issue already exists, search the bug database using the search box
@@ -100,7 +100,7 @@ As humans, we will have differences of opinions from time to time. First and
 foremost, please be respectful that care, thought, and volunteer time went into
 the resolution.
 
-With this in mind, take some time to consider any comments made in association 
+With this in mind, take some time to consider any comments made in association
 with the resolution of the issue. On reflection, the resolution steps may seem
 more reasonable than you initially thought.
 
@@ -139,8 +139,8 @@ For bugs, an issue needs to:
 These are things you can help with once you have experience developing for
 Python:
 
-* try reproducing the bug: For instance, if a bug is not clearly explained 
-  enough for you to reproduce it then there is a good chance a core developer 
+* try reproducing the bug: For instance, if a bug is not clearly explained
+  enough for you to reproduce it then there is a good chance a core developer
   won't be able to either.
 * see if the issue happens on a different Python version: It is always helpful
   to know if a bug not only affects the in-development version of Python, but

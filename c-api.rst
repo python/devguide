@@ -74,7 +74,7 @@ see below).
 
 Guidelines for expanding/changing the public API:
 
-- Make sure the new API follows reference counting conventions. 
+- Make sure the new API follows reference counting conventions.
   (Following them makes the API easier to reason about, and easier use
   in other Python implementations.)
 
@@ -170,7 +170,7 @@ Guidelines for adding to the Limited API
 
 - Think about ease of use for the user.
 
-  - In C, ease of use itself is not very important; what is useful is 
+  - In C, ease of use itself is not very important; what is useful is
     reducing boilerplate code needed to use the API. Bugs like to hide in
     boiler plates.
 

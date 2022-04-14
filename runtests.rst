@@ -50,14 +50,14 @@ path to the test case::
 
    ./python -m unittest -v test.test_abc.TestABC_Py
 
-Some test modules also support direct invocation, 
+Some test modules also support direct invocation,
 which might be useful for IDEs and local debugging::
 
    ./python Lib/test/test_typing.py
 
 But, there are several important notes:
 
-1. This way of running tests exists only 
+1. This way of running tests exists only
    for local developer needs and is discouraged for anything else
 2. Some modules do not support it at all. One example is``test_importlib``.
    In other words: if some module does not have ``unittest.main()``, then
