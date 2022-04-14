@@ -1572,8 +1572,8 @@ Using sphinx-build
 ------------------
 
 Sometimes we directly want to execute the sphinx-build tool instead of through
-`make` (although the latter is still the preferred way). In this case, you can
-use the following command line from the `Doc` directory (make sure to install
+``make`` (although the latter is still the preferred way). In this case, you can
+use the following command line from the ``Doc`` directory (make sure to install
 Sphinx_, blurb_ and python-docs-theme_ packages from PyPI)::
 
    sphinx-build -b<builder> . build/<builder>

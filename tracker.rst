@@ -8,7 +8,7 @@ Using the Issue Tracker
 =======================
 
 If you think you have found a bug in Python, you can report it to the
-`issue tracker`_. The `issue tracker`_ is now hosted on Github, alongside
+`issue tracker`_. The `issue tracker`_ is now hosted on GitHub, alongside
 the codebase and pull requests.  Documentation bugs can also be reported there.
 
 If you would like to file an issue about this devguide, please do so at the
@@ -16,12 +16,12 @@ If you would like to file an issue about this devguide, please do so at the
 
 .. note::
     Python used to use a dedicated `Roundup`_ instance as its issue tracker.
-    That old bug tracker was hosted under the domain `bugs.python.org`
-    (sometimes called `bpo` for short). Currently a read-only version is still
-    available on that domain for historical purposes. All `bpo` data has been
-    migrated to the current `issue tracker`_ on Github.
+    That old bug tracker was hosted under the domain ``bugs.python.org``
+    (sometimes called ``bpo`` for short). Currently a read-only version is still
+    available on that domain for historical purposes. All ``bpo`` data has been
+    migrated to the current `issue tracker`_ on GitHub.
 
-    If you're familiar with `bpo` and would like to learn more about Github
+    If you're familiar with ``bpo`` and would like to learn more about GitHub
     issues, please read this page, and the :doc:`triaging` page as they
     provide good introductory material. There is also a :doc:`gh-faq`
     document to answer some of the more popular questions.
@@ -41,14 +41,14 @@ already been reported.  Checking if the problem is an existing issue will:
 
 To see if an issue already exists, search the bug database using the search box
 above the list of bugs on the issues page. A form-based `advanced search`_ query
-builder is also available on Github to help creating the text query you need.
+builder is also available on GitHub to help creating the text query you need.
 
 Reporting an issue
 ------------------
 
 If the problem you're reporting is not already in the `issue tracker`_, you
 can report it using the green "New issue" button on the right of the search
-box above the list of bugs. If you're not already signed in to Github, it
+box above the list of bugs. If you're not already signed in to GitHub, it
 will ask you to do so now.
 
 First you need to select what kind of problem you want to report. The
@@ -90,7 +90,7 @@ developers, this is covered in the :ref:`triaging` page. You don't need
 to worry about those when reporting issues as a Python user.
 
 You will automatically receive an update each time an action is taken on
-the bug, unless you changed your Github notification settings.
+the bug, unless you changed your GitHub notification settings.
 
 
 Disagreement With a Resolution on the Issue Tracker
