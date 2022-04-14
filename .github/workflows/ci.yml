@@ -19,6 +19,8 @@ jobs:
           cache: pip
       - name: Build docs
         run: make html
+      - name: Check markup
+        run: make check
       - name: Link check
         run: make linkcheck
         continue-on-error: true
