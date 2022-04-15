@@ -225,9 +225,6 @@ Sub-pages related to the Issue Tracker
    `The Python-bugs-list mailing list <https://mail.python.org/mailman/listinfo/python-bugs-list>`_
       Where all the changes to issues are reported.
 
-   `The Tracker-discuss mailing list <https://mail.python.org/mailman/listinfo/tracker-discuss>`_
-      Discussions about the bug tracker itself.
-
 
 .. _issue tracker: https://github.com/python/cpython/issues
 .. _advanced search: https://github.com/search/advanced

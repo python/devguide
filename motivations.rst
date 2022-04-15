@@ -95,7 +95,6 @@ participating in the CPython core development process:
 .. topic:: Brett Cannon (Canada)
 
    * Personal site: `snarky.ca <https://snarky.ca/>`_
-   * `Extended bio <https://stackoverflow.com/cv/DrBrettCannon>`__
    * Microsoft (Software Developer)
    * Python Software Foundation (Fellow)
 
