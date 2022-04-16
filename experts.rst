@@ -127,7 +127,7 @@ gzip
 hashlib               tiran, gpshead
 heapq                 rhettinger*, stutzbach^
 hmac                  tiran, gpshead
-html                  ezio-melotti
+html                  ezio-melotti*
 http
 idlelib               kbkaiser (inactive), terryjreedy*, serwy (inactive),
                       taleinat
@@ -314,11 +314,11 @@ argument clinic     larryhastings
 ast/compiler        benjaminp, brettcannon, 1st1, pablogsal, markshannon, isidentical, brandtbucher
 autoconf/makefiles  Yhg1s*
 bsd
-bug tracker         ezio-melotti
+issue tracker       ezio-melotti
 buildbots           zware, pablogsal
 bytecode            benjaminp, 1st1, markshannon, brandtbucher
 context managers    ncoghlan
-core workflow       Mariatta
+core workflow       Mariatta, ezio-melotti
 coverity scan       tiran, brettcannon, Yhg1s
 cryptography        gpshead, dstufft
 data formats        mdickinson
