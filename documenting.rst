@@ -1596,35 +1596,35 @@ in production; others are works in progress.
 | Language        | Contact                       | Links                      |
 +=================+===============================+============================+
 | Arabic (ar)     | `Abdur-Rahmaan Janhangeer     | `GitHub <github_ar_>`_     |
-|                 | <bpo_osdotsystem_>`_          |                            |
+|                 | <gh_osdotsystem_>`_           |                            |
 +-----------------+-------------------------------+----------------------------+
-| Bengali as      | `Kushal Das <bpo_kushal_>`_   | `GitHub <github_bn_in_>`_  |
+| Bengali as      | `Kushal Das <gh_kushal_>`_    | `GitHub <github_bn_in_>`_  |
 | spoken in       |                               |                            |
 | India (bn_IN)   |                               |                            |
 +-----------------+-------------------------------+----------------------------+
-| French (fr)     | `Julien Palard (mdk)          | `GitHub <github_fr_>`_     |
-|                 | <bpo_mdk_>`_                  |                            |
+| French (fr)     | `Julien Palard (@JulienPalard)| `GitHub <github_fr_>`_     |
+|                 | <gh_mdk_>`_                   |                            |
 +-----------------+-------------------------------+----------------------------+
 | Hindi as spoken |                               | `GitHub <github_hi_in_>`_  |
 | in India (hi_IN)|                               |                            |
 +-----------------+-------------------------------+----------------------------+
-| Hungarian (hu)  | `Tamás Bajusz (gbtami)        | `GitHub <github_hu_>`_     |
-|                 | <bpo_gbtami_>`_               | `Mailing List <list_hu_>`_ |
+| Hungarian (hu)  | `Tamás Bajusz (@gbtami)       | `GitHub <github_hu_>`_     |
+|                 | <gh_gbtami_>`_                | `Mailing List <list_hu_>`_ |
 +-----------------+-------------------------------+----------------------------+
-| Indonesian (id) | `Oon Arfiandwi <bpo_oonid_>`_ | `GitHub <github_id_>`_     |
+| Indonesian (id) | `Oon Arfiandwi <gh_oonid_>`_  | `GitHub <github_id_>`_     |
 +-----------------+-------------------------------+----------------------------+
 | Italian (it)    |                               | `mail <mail_it_>`_         |
 +-----------------+-------------------------------+----------------------------+
 | Japanese (ja)   | `Kinebuchi Tomohiko           | `GitHub <github_ja_>`_     |
-|                 | (cocoatomo) <bpo_cocoatomo_>`_| `Doc <doc_ja_>`_           |
+|                 | (@cocoatomo) <gh_cocoatomo_>`_| `Doc <doc_ja_>`_           |
 +-----------------+-------------------------------+----------------------------+
 | Korean (ko)     |                               | `GitHub <github_ko_>`_     |
 |                 |                               | `Doc <doc_ko_>`_           |
 +-----------------+-------------------------------+----------------------------+
 | Lithuanian (lt) |                               | `mail <mail_lt_>`_         |
 +-----------------+-------------------------------+----------------------------+
-| Persian (fa)    | `Komeil Parseh (mmdbalkhi)    | `GitHub <github_fa_>`_     |
-|                 | <bpo_mmdbalkhi_>`_            |                            |
+| Persian (fa)    | `Komeil Parseh (@mmdbalkhi)   | `GitHub <github_fa_>`_     |
+|                 | <gh_mmdbalkhi_>`_             |                            |
 +-----------------+-------------------------------+----------------------------+
 | Polish (pl)     |                               | `GitHub <github_pl_>`_     |
 |                 |                               | `Translations <tx_pl_>`_   |
@@ -1640,30 +1640,30 @@ in production; others are works in progress.
 +-----------------+-------------------------------+----------------------------+
 | Russian (ru)    |                               | `mail <mail_ru_>`_         |
 +-----------------+-------------------------------+----------------------------+
-| Simplified      | `Shengjing Zhu <bpo_zhsj_>`_  | `Transifex <tx_zh_cn_>`_   |
+| Simplified      | `Shengjing Zhu <gh_zhsj_>`_   | `Transifex <tx_zh_cn_>`_   |
 | Chinese         |                               | `GitHub <github_zh_cn_>`_  |
 | (zh-cn)         |                               | `Doc <doc_zh_cn_>`_        |
 +-----------------+-------------------------------+----------------------------+
 | Spanish (es)    | Raúl Cumplido                 | `GitHub <github_es_>`_     |
 +-----------------+-------------------------------+----------------------------+
 | Traditional     | `王威翔 Matt Wang             | `GitHub <github_zh_tw_>`_  |
-| Chinese         | <bpo_mattwang44_>`_,          | `Transifex <tx_zh_tw_>`_   |
+| Chinese         | <gh_mattwang44_>`_,           | `Transifex <tx_zh_tw_>`_   |
 | (zh-tw)         | Josix Wang                    | `Doc <doc_zh_tw_>`_        |
 +-----------------+-------------------------------+----------------------------+
-| Turkish (tr)    | `Ege Akman (egeakman)         | `GitHub <github_tr_>`_     |
+| Turkish (tr)    | `Ege Akman (@egeakman)        | `GitHub <github_tr_>`_     |
 |                 | <email_egeakman_>`_           |                            |
 +-----------------+-------------------------------+----------------------------+
 
 .. _article_pt_br: https://rgth.co/blog/python-ptbr-cenario-atual/
-.. _bpo_cocoatomo: https://bugs.python.org/user19001
-.. _bpo_gbtami: https://bugs.python.org/user25857
-.. _bpo_kushal: https://bugs.python.org/user16382
-.. _bpo_mdk: https://bugs.python.org/user23063
-.. _bpo_mmdbalkhi: https://bugs.python.org/user41619
-.. _bpo_oonid: https://bugs.python.org/user32660
-.. _bpo_osdotsystem: https://bugs.python.org/user28057
-.. _bpo_zhsj: https://bugs.python.org/user24811
-.. _bpo_mattwang44: https://bugs.python.org/user39654
+.. _gh_cocoatomo: https://github.com/cocoatomo
+.. _gh_gbtami: https://github.com/gbtami
+.. _gh_kushal: https://github.com/Kushal997-das
+.. _gh_mdk: https://github.com/JulienPalard
+.. _gh_mmdbalkhi: https://github.com/mmdbalkhi
+.. _gh_oonid: https://github.com/oonid
+.. _gh_osdotsystem: https://github.com/Abdur-rahmaanJ
+.. _gh_zhsj: https://github.com/zhsj
+.. _gh_mattwang44: https://github.com/mattwang44
 .. _email_egeakman: mailto:egeakmanegeakman@hotmail.com
 .. _chat_pt_br: https://t.me/pybr_i18n
 .. _doc_ja: https://docs.python.org/ja/
