@@ -128,8 +128,8 @@ Some examples:
   provide the actual function.
   For an example, see the ``Py_NewRef`` `macro`_ and `redefinition`_ in 3.10.
 
-.. _macro: https://github.com/python/cpython/blob/v3.10.1/Include/object.h#L591-L595
-.. _redefinition: https://github.com/python/cpython/blob/v3.10.1/Objects/object.c#L2298-L2308
+.. _macro: https://github.com/python/cpython/blob/2cd268a3a9340346dd86b66db2e9b428b3f878fc/Include/object.h#L592-L596
+.. _redefinition: https://github.com/python/cpython/blob/2cd268a3a9340346dd86b66db2e9b428b3f878fc/Objects/object.c#L2303-L2313
 
 It is possible to remove items marked as part of the Stable ABI, but only
 if there was no way to use them in any past version of the Limited API.
