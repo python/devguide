@@ -1655,15 +1655,15 @@ in production; others are works in progress.
 +-----------------+-------------------------------+----------------------------+
 
 .. _article_pt_br: https://rgth.co/blog/python-ptbr-cenario-atual/
-.. _bpo_cocoatomo: https://github.com/cocoatomo
-.. _bpo_gbtami: https://github.com/gbtami
-.. _bpo_kushal: https://github.com/Kushal997-das
-.. _bpo_mdk: https://github.com/JulienPalard
-.. _bpo_mmdbalkhi: https://github.com/mmdbalkhi
-.. _bpo_oonid: https://github.com/oonid
-.. _bpo_osdotsystem: https://github.com/Abdur-rahmaanJ
-.. _bpo_zhsj: https://github.com/zhsj
-.. _bpo_mattwang44: https://github.com/mattwang44
+.. _gh_cocoatomo: https://github.com/cocoatomo
+.. _gh_gbtami: https://github.com/gbtami
+.. _gh_kushal: https://github.com/Kushal997-das
+.. _gh_mdk: https://github.com/JulienPalard
+.. _gh_mmdbalkhi: https://github.com/mmdbalkhi
+.. _gh_oonid: https://github.com/oonid
+.. _gh_osdotsystem: https://github.com/Abdur-rahmaanJ
+.. _gh_zhsj: https://github.com/zhsj
+.. _gh_mattwang44: https://github.com/mattwang44
 .. _email_egeakman: mailto:egeakmanegeakman@hotmail.com
 .. _chat_pt_br: https://t.me/pybr_i18n
 .. _doc_ja: https://docs.python.org/ja/
