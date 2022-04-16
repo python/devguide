@@ -1602,13 +1602,13 @@ in production; others are works in progress.
 | spoken in       |                               |                            |
 | India (bn_IN)   |                               |                            |
 +-----------------+-------------------------------+----------------------------+
-| French (fr)     | `Julien Palard (mdk)          | `GitHub <github_fr_>`_     |
+| French (fr)     | `Julien Palard (@JulienPalard)| `GitHub <github_fr_>`_     |
 |                 | <gh_mdk_>`_                   |                            |
 +-----------------+-------------------------------+----------------------------+
 | Hindi as spoken |                               | `GitHub <github_hi_in_>`_  |
 | in India (hi_IN)|                               |                            |
 +-----------------+-------------------------------+----------------------------+
-| Hungarian (hu)  | `Tamás Bajusz (gbtami)        | `GitHub <github_hu_>`_     |
+| Hungarian (hu)  | `Tamás Bajusz (@gbtami)       | `GitHub <github_hu_>`_     |
 |                 | <gh_gbtami_>`_                | `Mailing List <list_hu_>`_ |
 +-----------------+-------------------------------+----------------------------+
 | Indonesian (id) | `Oon Arfiandwi <gh_oonid_>`_  | `GitHub <github_id_>`_     |
@@ -1616,14 +1616,14 @@ in production; others are works in progress.
 | Italian (it)    |                               | `mail <mail_it_>`_         |
 +-----------------+-------------------------------+----------------------------+
 | Japanese (ja)   | `Kinebuchi Tomohiko           | `GitHub <github_ja_>`_     |
-|                 | (cocoatomo) <gh_cocoatomo_>`_ | `Doc <doc_ja_>`_           |
+|                 | (@cocoatomo) <gh_cocoatomo_>`_| `Doc <doc_ja_>`_           |
 +-----------------+-------------------------------+----------------------------+
 | Korean (ko)     |                               | `GitHub <github_ko_>`_     |
 |                 |                               | `Doc <doc_ko_>`_           |
 +-----------------+-------------------------------+----------------------------+
 | Lithuanian (lt) |                               | `mail <mail_lt_>`_         |
 +-----------------+-------------------------------+----------------------------+
-| Persian (fa)    | `Komeil Parseh (mmdbalkhi)    | `GitHub <github_fa_>`_     |
+| Persian (fa)    | `Komeil Parseh (@mmdbalkhi)   | `GitHub <github_fa_>`_     |
 |                 | <gh_mmdbalkhi_>`_             |                            |
 +-----------------+-------------------------------+----------------------------+
 | Polish (pl)     |                               | `GitHub <github_pl_>`_     |
@@ -1650,7 +1650,7 @@ in production; others are works in progress.
 | Chinese         | <gh_mattwang44_>`_,           | `Transifex <tx_zh_tw_>`_   |
 | (zh-tw)         | Josix Wang                    | `Doc <doc_zh_tw_>`_        |
 +-----------------+-------------------------------+----------------------------+
-| Turkish (tr)    | `Ege Akman (egeakman)         | `GitHub <github_tr_>`_     |
+| Turkish (tr)    | `Ege Akman (@egeakman)        | `GitHub <github_tr_>`_     |
 |                 | <email_egeakman_>`_           |                            |
 +-----------------+-------------------------------+----------------------------+
 
