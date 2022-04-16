@@ -1655,15 +1655,15 @@ in production; others are works in progress.
 +-----------------+-------------------------------+----------------------------+
 
 .. _article_pt_br: https://rgth.co/blog/python-ptbr-cenario-atual/
-.. _bpo_cocoatomo: https://bugs.python.org/user19001
-.. _bpo_gbtami: https://bugs.python.org/user25857
-.. _bpo_kushal: https://bugs.python.org/user16382
-.. _bpo_mdk: https://bugs.python.org/user23063
-.. _bpo_mmdbalkhi: https://bugs.python.org/user41619
-.. _bpo_oonid: https://bugs.python.org/user32660
-.. _bpo_osdotsystem: https://bugs.python.org/user28057
-.. _bpo_zhsj: https://bugs.python.org/user24811
-.. _bpo_mattwang44: https://bugs.python.org/user39654
+.. _bpo_cocoatomo: https://github.com/cocoatomo
+.. _bpo_gbtami: https://github.com/gbtami
+.. _bpo_kushal: https://github.com/Kushal997-das
+.. _bpo_mdk: https://github.com/JulienPalard
+.. _bpo_mmdbalkhi: https://github.com/mmdbalkhi
+.. _bpo_oonid: https://github.com/oonid
+.. _bpo_osdotsystem: https://github.com/Abdur-rahmaanJ
+.. _bpo_zhsj: https://github.com/zhsj
+.. _bpo_mattwang44: https://github.com/mattwang44
 .. _email_egeakman: mailto:egeakmanegeakman@hotmail.com
 .. _chat_pt_br: https://t.me/pybr_i18n
 .. _doc_ja: https://docs.python.org/ja/
