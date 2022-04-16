@@ -177,7 +177,7 @@ For Windows:
 
     * Alternatively (note: don't do both!), set up the worker
       service as described in the `buildbot documentation
-      <https://web.archive.org/web/20201113084744/http://trac.buildbot.net/wiki/RunningBuildbotOnWindows>`_.
+      <https://docs.buildbot.net/current/manual/installation/requirements.html#windows-support>`_.
 
 To start the worker running for your initial testing, you can do::
 
