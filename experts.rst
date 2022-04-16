@@ -359,16 +359,5 @@ version control     merwok, ezio-melotti
 
 
 Documentation Translations
---------------------------
-=============  ============
-Translation    Coordinator
-=============  ============
-French         JulienPalard
-Japanese       methane
-Korean         flowdas
-Bengali India  kushaldas
-Hungarian      gbtami
-Portuguese     rougeth
-Chinese (TW)   mattwang44, josix
-Chinese (CN)   zhsj
-=============  ============
+
+check  `this table <https://devguide.python.org/documenting/#translating>`_ for translations
