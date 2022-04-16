@@ -60,9 +60,9 @@ to enter the public source tree. Ask yourself the following questions:
    Licensing Agreement <https://www.python.org/psf/contrib/contrib-form/>`_
    (CLA), unless their change has no possible intellectual property
    associated with it (e.g. fixing a spelling mistake in documentation).
-   To check if a contributor’s CLA has been received, go
-   to `Check Python CLA <https://check-python-cla.herokuapp.com/>`_ and
-   put in their GitHub username. For further questions about the CLA
+   The `CPython CLA Bot <https://github.com/apps/cpython-cla-bot/>`_
+   checks whether the author has signed the CLA, and replies in the PR
+   if they haven't. For further questions about the CLA
    process, write to contributors@python.org.
 
 * **Were** ``What's New in Python`` **and** ``Misc/NEWS.d/next`` **updated?**

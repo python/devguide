@@ -62,7 +62,7 @@ If you see a documentation issue that you would like to tackle, you can:
 By following the steps in the :ref:`Quick Guide to Pull Requests <pullrequest-quickguide>`,
 you will learn the workflow for documentation pull requests.
 
-.. _documentation issues: https://github.com/python/cpython/issues?q=is%3Aissue+is%3Aopen+label%3Adocumentation
+.. _documentation issues: https://github.com/python/cpython/issues?q=is%3Aissue+is%3Aopen+label%3Adocs
 .. _octocat: https://github.com/logos
 
 
