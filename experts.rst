@@ -360,15 +360,5 @@ version control     merwok, ezio-melotti
 
 Documentation Translations
 --------------------------
-=============  ============
-Translation    Coordinator
-=============  ============
-French         JulienPalard
-Japanese       methane
-Korean         flowdas
-Bengali India  kushaldas
-Hungarian      gbtami
-Portuguese     rougeth
-Chinese (TW)   mattwang44, josix
-Chinese (CN)   zhsj
-=============  ============
+
+For a list of translators, see :ref:`this table about translations <translating>`.
