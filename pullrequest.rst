@@ -268,7 +268,7 @@ and for each pull request there may be several commits.  In particular:
 
 Commit messages should follow the following structure::
 
-   gh-42: Make the spam module more spammy (GH-NNNN)
+   Make the spam module more spammy
 
    The spam module sporadically came up short on spam. This change
    raises the amount of spam in the module by making it more spammy.
@@ -346,7 +346,7 @@ Now you want to
 <https://help.github.com/articles/creating-a-pull-request-from-a-fork/>`_.
 If this is a pull request in response to a pre-existing issue on the
 `issue tracker`_, please make sure to reference the issue number using
-``gh-NNNN`` in the pull request title or message.
+``gh-NNNNN: `` in the pull request title.
 
 If this is a pull request for an unreported issue (assuming you already
 performed a search on the issue tracker for a pre-existing issue), create a
