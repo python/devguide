@@ -7,7 +7,7 @@ env:
 
 jobs:
   test:
-    name: test
+    name: Check build, markup, and links
 
     runs-on: ubuntu-latest
 
