@@ -346,7 +346,7 @@ Now you want to
 <https://help.github.com/articles/creating-a-pull-request-from-a-fork/>`_.
 If this is a pull request in response to a pre-existing issue on the
 `issue tracker`_, please make sure to reference the issue number using
-``gh-NNNNN: `` in the pull request title.
+``gh-NNNNN: `` in the pull request title and ``#NNNNN`` in the description.
 
 If this is a pull request for an unreported issue (assuming you already
 performed a search on the issue tracker for a pre-existing issue), create a
