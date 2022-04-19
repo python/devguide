@@ -64,7 +64,7 @@ Component
 library
     Used for issues involving Python modules in the ``Lib/`` dir.
 
-documentation
+docs
     Used for issues involving documentation in the ``Doc/`` dir.
 
 interpreter-core
