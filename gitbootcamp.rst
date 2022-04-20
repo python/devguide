@@ -200,7 +200,7 @@ Staging and Committing Files
 
    .. code-block:: bash
 
-      git commit -m "gh-XXXX: This is the commit message."
+      git commit -m "This is the commit message."
 
 Reverting Changes
 -----------------
