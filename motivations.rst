@@ -181,9 +181,8 @@ participating in the CPython core development process:
 .. topic:: Antoine Pitrou (France)
 
    * LinkedIn: `<https://www.linkedin.com/in/pitrou/>`_ (Senior Software Engineer)
-   * Independent (currently Ursa Labs / R Studio)
+   * Voltron Data
    * Python Software Foundation (Fellow)
-   * Available for open source contract work
    * Email address: antoine@python.org
 
    Antoine started working with Python in 2005 in order to implement a
@@ -196,8 +195,9 @@ participating in the CPython core development process:
    concurrent programming (such as maintaining ``multiprocessing``).
 
    As a professional, Antoine has been first specializing in network
-   programming, and more lately in open source data science infrastructure
-   such as Dask, Numba, Apache Arrow.
+   programming, and more lately in open source data science infrastructure.
+   He is currently working full time on Apache Arrow as a technical leader
+   for Voltron Data.
 
 .. topic:: Victor Stinner (France)
 
