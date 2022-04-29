@@ -205,6 +205,11 @@ results in %BUILDDIR%/doctest/output.txt.
 cmd /C %PYTHON% tools\rstlint.py -i tools -i venv
 goto end
 
+:serve
+	echo.The serve target was removed, use htmlview instead ^
+(see https://github.com/python/cpython/issues/80510)
+goto end
+
 :end
 popd
 endlocal
