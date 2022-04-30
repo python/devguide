@@ -145,5 +145,5 @@ check:
 	$(PYTHON) tools/rstlint.py -i tools -i venv
 
 serve:
-	@echo "The serve target was removed, use htmlview instead" \
+	@echo "The 'serve' target was removed, use 'htmlview' instead" \
 	      "(see https://github.com/python/cpython/issues/80510)"
