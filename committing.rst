@@ -14,8 +14,8 @@ Assessing a pull request
 Before you can accept a pull request, you need to make sure that it is ready
 to enter the public source tree. Ask yourself the following questions:
 
-* **Are there ongoing discussions at** ``bugs.python.org`` **(b.p.o.)?**
-   Read the linked b.p.o. issue. If there are ongoing discussions, then
+* **Are there ongoing discussions at the issue tracker?**
+   Read the linked issue. If there are ongoing discussions, then
    we need to have a resolution there before we can merge the pull request.
 
 * **Was the pull request first made against the appropriate branch?**

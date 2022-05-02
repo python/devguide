@@ -1,7 +1,7 @@
 GitHub issues for BPO users
 ===========================
 
-Here are some frequently asked quesions about how to do things in
+Here are some frequently asked questions about how to do things in
 GitHub issues that you used to be able to do on `bpo`_.
 
 Before you ask your own question, make sure you read :doc:`tracker`
