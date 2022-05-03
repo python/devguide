@@ -362,7 +362,7 @@ Checklist for Triaging
 .. _Tools/demo: https://github.com/python/cpython/tree/main/Tools/demo/
 .. _Developer's guide: https://github.com/python/devguide/
 .. _GSoC: https://summerofcode.withgoogle.com/
-.. _issue tracker: https://bugs.python.org
+.. _issue tracker: https://devguide.python.org/tracker/
 .. _GitHub pull requests: https://github.com/python/cpython/pulls
 .. _Python source code repositories: https://github.com/python/cpython/
 .. _Reporting security issues in Python: https://www.python.org/dev/security/

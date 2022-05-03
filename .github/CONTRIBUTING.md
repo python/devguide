@@ -22,7 +22,7 @@ comments they leave and their "Details" links, respectively. The key points of
 our workflow that are not covered by a bot or status check are:
 
 - All discussions that are not directly related to the code in the pull request
-  should happen on [bugs.python.org](https://bugs.python.org/)
+  should happen on the [issue tracker](https://devguide.python.org/tracker/)
 - Upon your first non-trivial pull request (which includes documentation changes),
   feel free to add yourself to [`Misc/ACKS`](https://github.com/python/cpython/blob/main/Misc/ACKS)
 
