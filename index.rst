@@ -54,8 +54,8 @@ instructions please see the :ref:`setup guide <setup>`.
       git checkout -b fix-issue-12345 main
 
    If an issue does not already exist, please `create it
-   <https://devguide.python.org/tracker/>`_.  Trivial issues (e.g. typo fixes) do not
-   require any issue to be created.
+   <https://github.com/python/cpython/issues>`_.  Trivial issues (e.g. typo fixes) do
+   not require any issue to be created.
 
 6. Once you fixed the issue, run the tests, run ``make patchcheck``, and if
    everything is ok, commit.
