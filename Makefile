@@ -3,21 +3,23 @@
 
 # You can set these variables from the command line.
 PYTHON        = python3
-SPHINXOPTS    =
-SPHINXBUILD   = ./venv/bin/sphinx-build
-PAPER         =
+VENVDIR       = ./venv
 BUILDDIR      = _build
+SPHINXOPTS    =
+SPHINXBUILD   = $(VENVDIR)/bin/sphinx-build
+PAPER         =
 
 # Internal variables.
 PAPEROPT_a4     = -D latex_paper_size=a4
 PAPEROPT_letter = -D latex_paper_size=letter
 ALLSPHINXOPTS   = -d $(BUILDDIR)/doctrees $(PAPEROPT_$(PAPER)) $(SPHINXOPTS) .
 
-.PHONY: help clean html dirhtml singlehtml pickle json htmlhelp qthelp \
+.PHONY: help venv clean html dirhtml singlehtml pickle json htmlhelp qthelp \
         devhelp epub latex latexpdf text man changes linkcheck doctest htmlview check
 
 help:
 	@echo "Please use \`make <target>' where <target> is one of"
+	@echo "  venv       to create a venv with necessary tools"
 	@echo "  html       to make standalone HTML files"
 	@echo "  htmlview   to open the index page built by the html target in your browser"
 	@echo "  dirhtml    to make HTML files named index.html in directories"
@@ -41,9 +43,15 @@ clean:
 	-rm -rf $(BUILDDIR)/*
 
 venv:
-	$(PYTHON) -m venv venv
-	./venv/bin/python3 -m pip install --upgrade pip
-	./venv/bin/python3 -m pip install -r requirements.txt
+	@if [ -d $(VENVDIR) ] ; then \
+		echo "venv already exists."; \
+		echo "To recreate it, remove it first with \`make clean-venv'."; \
+	else \
+		$(PYTHON) -m venv $(VENVDIR); \
+		$(VENVDIR)/bin/python3 -m pip install --upgrade pip; \
+		$(VENVDIR)/bin/python3 -m pip install -r requirements.txt; \
+		echo "The venv has been created in the $(VENVDIR) directory"; \
+	fi
 
 html: venv
 	$(SPHINXBUILD) -b html $(ALLSPHINXOPTS) $(BUILDDIR)/html
