@@ -120,16 +120,17 @@ you*. To build the devguide on a Unix-like system use::
 
    $ make html
 
-in the checkout directory. On Windows use:
+in the checkout directory.  On Windows use:
 
 .. code-block:: doscon
 
    > .\make html
 
-You will find the generated files in ``_build/html``. Note that ``make check``
-runs automatically when you submit a :doc:`pull request <pullrequest>`. You may
-wish to run ``make check`` and ``make linkcheck`` to make sure that it runs
-without errors.
+You will find the generated files in ``_build/html`` or, if you use
+``make htmlview``, the docs will be opened in a browser once the build
+completes.  Note that ``make check`` runs automatically when you submit
+a :doc:`pull request <pullrequest>`.  You may wish to run ``make check``
+and ``make linkcheck`` to make sure that it runs without errors.
 
 .. _separate repository:
 .. _devguide repo: https://github.com/python/devguide
