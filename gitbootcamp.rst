@@ -295,6 +295,15 @@ Creating a Pull Request
 
 6. Press the ``Create pull request`` button.
 
+You should include the issue number (``GH-NNNN``) in the title and in the
+body of the PR.
+
+You might also use `special keywords
+<https://docs.github.com/en/issues/tracking-your-work-with-issues/linking-a-pull-request-to-an-issue#linking-a-pull-request-to-an-issue-using-a-keyword>`_
+to automatically close the linked issue once the PR is merged, however you
+should avoid them if other PRs need to be merged before the issue can be
+closed (e.g. backports to other branches).
+
 Updating your CPython Fork
 --------------------------
 
