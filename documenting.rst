@@ -1544,7 +1544,9 @@ Using make / make.bat
    make venv
    make html
 
-or alternatively ``make -C Doc/ venv html``.
+or alternatively ``make -C Doc/ venv html``.  ``htmlview`` can be used
+instead of ``html`` to conveniently open the docs in a browser once the
+build completes.
 
 You can also use ``make help`` to see a list of targets supported by
 :command:`make`.  Note that ``make check`` is automatically run when
