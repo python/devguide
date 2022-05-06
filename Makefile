@@ -14,12 +14,12 @@ PAPEROPT_letter = -D latex_paper_size=letter
 ALLSPHINXOPTS   = -d $(BUILDDIR)/doctrees $(PAPEROPT_$(PAPER)) $(SPHINXOPTS) .
 
 .PHONY: help clean html dirhtml singlehtml pickle json htmlhelp qthelp \
-        devhelp epub latex latexpdf text man changes linkcheck doctest check \
-        serve
+        devhelp epub latex latexpdf text man changes linkcheck doctest htmlview check
 
 help:
 	@echo "Please use \`make <target>' where <target> is one of"
 	@echo "  html       to make standalone HTML files"
+	@echo "  htmlview   to open the index page built by the html target in your browser"
 	@echo "  dirhtml    to make HTML files named index.html in directories"
 	@echo "  singlehtml to make a single large HTML file"
 	@echo "  pickle     to make pickle files"
@@ -36,7 +36,6 @@ help:
 	@echo "  linkcheck  to check all external links for integrity"
 	@echo "  doctest    to run all doctests embedded in the documentation (if enabled)"
 	@echo "  check      to run a check for frequent markup errors"
-	@echo "  serve      to serve devguide on the localhost (8000)"
 
 clean:
 	-rm -rf $(BUILDDIR)/*
@@ -139,8 +138,12 @@ doctest: venv
 	@echo "Testing of doctests in the sources finished, look at the " \
 	      "results in $(BUILDDIR)/doctest/output.txt."
 
+htmlview: html
+	$(PYTHON) -c "import os, webbrowser; webbrowser.open('file://' + os.path.realpath('_build/html/index.html'))"
+
 check:
 	$(PYTHON) tools/rstlint.py -i tools -i venv
 
-serve: html
-	tools/serve.py _build/html
+serve:
+	@echo "The 'serve' target was removed, use 'htmlview' instead" \
+	      "(see https://github.com/python/cpython/issues/80510)"
