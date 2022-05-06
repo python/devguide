@@ -22,6 +22,7 @@ help:
 	@echo "  venv       to create a venv with necessary tools"
 	@echo "  html       to make standalone HTML files"
 	@echo "  htmlview   to open the index page built by the html target in your browser"
+	@echo "  clean      to remove the venv and build files"
 	@echo "  dirhtml    to make HTML files named index.html in directories"
 	@echo "  singlehtml to make a single large HTML file"
 	@echo "  pickle     to make pickle files"
@@ -39,8 +40,11 @@ help:
 	@echo "  doctest    to run all doctests embedded in the documentation (if enabled)"
 	@echo "  check      to run a check for frequent markup errors"
 
-clean:
+clean: clean-venv
 	-rm -rf $(BUILDDIR)/*
+
+clean-venv:
+	rm -rf $(VENVDIR)
 
 venv:
 	@if [ -d $(VENVDIR) ] ; then \
