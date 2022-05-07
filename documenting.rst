@@ -1649,8 +1649,8 @@ in production; others are works in progress.
 | Spanish (es)    | Raúl Cumplido                 | `GitHub <github_es_>`_     |
 +-----------------+-------------------------------+----------------------------+
 | Traditional     | `王威翔 Matt Wang             | `GitHub <github_zh_tw_>`_  |
-| Chinese         | <gh_mattwang44_>`_,           | `Transifex <tx_zh_tw_>`_   |
-| (zh-tw)         | Josix Wang                    | `Doc <doc_zh_tw_>`_        |
+| Chinese         | <gh_mattwang44_>`_,           | `Doc <doc_zh_tw_>`_        |
+| (zh-tw)         | Josix Wang                    |                            |
 +-----------------+-------------------------------+----------------------------+
 | Turkish (tr)    | `Ege Akman (@egeakman)        | `GitHub <github_tr_>`_     |
 |                 | <email_egeakman_>`_           |                            |
@@ -1695,7 +1695,6 @@ in production; others are works in progress.
 .. _mail_ru: https://mail.python.org/pipermail/doc-sig/2019-May/004131.html
 .. _tx_pl: https://www.transifex.com/python-doc/python-newest/
 .. _tx_zh_cn: https://www.transifex.com/python-doc/python-newest/
-.. _tx_zh_tw: https://www.transifex.com/python-tw-doc/python-36-tw
 .. _wiki_pt_br: https://python.org.br/traducao/
 
 Starting a new translation
