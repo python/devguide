@@ -1649,8 +1649,8 @@ in production; others are works in progress.
 | Spanish (es)    | Raúl Cumplido                 | `GitHub <github_es_>`_     |
 +-----------------+-------------------------------+----------------------------+
 | Traditional     | `王威翔 Matt Wang             | `GitHub <github_zh_tw_>`_  |
-| Chinese         | <gh_mattwang44_>`_,           | `Transifex <tx_zh_tw_>`_   |
-| (zh-tw)         | Josix Wang                    | `Doc <doc_zh_tw_>`_        |
+| Chinese         | <gh_mattwang44_>`_,           | `Doc <doc_zh_tw_>`_        |
+| (zh-tw)         | Josix Wang                    |                            |
 +-----------------+-------------------------------+----------------------------+
 | Turkish (tr)    | `Ege Akman (@egeakman)        | `GitHub <github_tr_>`_     |
 |                 | <email_egeakman_>`_           |                            |
