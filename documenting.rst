@@ -1695,7 +1695,6 @@ in production; others are works in progress.
 .. _mail_ru: https://mail.python.org/pipermail/doc-sig/2019-May/004131.html
 .. _tx_pl: https://www.transifex.com/python-doc/python-newest/
 .. _tx_zh_cn: https://www.transifex.com/python-doc/python-newest/
-.. _tx_zh_tw: https://www.transifex.com/python-tw-doc/python-36-tw
 .. _wiki_pt_br: https://python.org.br/traducao/
 
 Starting a new translation
