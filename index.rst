@@ -114,7 +114,7 @@ Status of Python branches
 
 Dates in *italic* are scheduled and can be adjusted.
 
-The main branch is currently the future Python 3.11, and is the only
+The main branch is currently the future Python 3.12, and is the only
 branch that accepts new features.  The latest release for each Python
 version can be found on the `download page <https://www.python.org/downloads/>`_.
 
