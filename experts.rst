@@ -83,7 +83,7 @@ collections           rhettinger*
 collections.abc       rhettinger*, stutzbach^
 colorsys
 compileall
-concurrent.futures    pitrou, brianquinlan
+concurrent.futures    pitrou, brianquinlan, gpshead*
 configparser          ambv*
 contextlib            ncoghlan, 1st1
 contextvars
@@ -108,7 +108,7 @@ encodings             malemburg
 ensurepip             ncoghlan, dstufft, pradyunsg
 enum                  eliben*, warsaw, ethanfurman*
 errno                 Yhg1s
-faulthandler          vstinner
+faulthandler          vstinner, gpshead
 fcntl                 Yhg1s
 filecmp
 fileinput
@@ -124,9 +124,9 @@ gettext
 glob
 grp
 gzip
-hashlib               tiran, gpshead
+hashlib               tiran, gpshead*
 heapq                 rhettinger*, stutzbach^
-hmac                  tiran, gpshead
+hmac                  tiran, gpshead*
 html                  ezio-melotti*
 http
 idlelib               kbkaiser (inactive), terryjreedy*, serwy (inactive),
@@ -156,7 +156,7 @@ mmap                  Yhg1s
 modulefinder          theller (inactive), jvr^
 msilib
 msvcrt
-multiprocessing       applio*, pitrou, jnoller^ (inactive), sbt^ (inactive)
+multiprocessing       applio*, pitrou, jnoller^ (inactive), sbt^ (inactive), gpshead*
 netrc
 nis
 nntplib
@@ -176,7 +176,7 @@ pkgutil
 platform              malemburg
 plistlib
 poplib
-posix                 larryhastings
+posix                 larryhastings, gpshead
 pprint                freddrake
 profile
 pstats
@@ -201,12 +201,12 @@ selectors             neologix^, giampaolo
 shelve
 shlex
 shutil                tarekziade, giampaolo
-signal
+signal                gpshead
 site
 smtpd                 giampaolo
 smtplib
 sndhdr
-socket
+socket                gpshead
 socketserver
 spwd
 sqlite3               ghaering^
@@ -216,7 +216,7 @@ statistics            stevendaprano, rhettinger
 string
 stringprep
 struct                mdickinson, meadori
-subprocess            astrand^ (inactive), giampaolo
+subprocess            astrand^ (inactive), giampaolo, gpshead*
 sunau
 symbol
 symtable              benjaminp
@@ -230,7 +230,7 @@ tempfile
 termios               Yhg1s
 test                  ezio-melotti
 textwrap
-threading             pitrou
+threading             pitrou, gpshead
 time                  abalkin, pganssle
 timeit
 tkinter               gpolo^, serhiy-storchaka
@@ -244,7 +244,7 @@ turtle                gregorlingl^, willingc
 types                 1st1
 typing                gvanrossum, Fidget-Spinner, JelleZijlstra*
 unicodedata           malemburg, ezio-melotti
-unittest              voidspace*, ezio-melotti, rbtcollins
+unittest              voidspace*, ezio-melotti, rbtcollins, gpshead
 unittest.mock         voidspace*
 urllib                orsenthil
 uu
@@ -269,9 +269,9 @@ xml.sax.saxutils
 xml.sax.xmlreader
 xmlrpc
 zipapp                pfmoore
-zipfile               alanmcintyre^, serhiy-storchaka, Yhg1s
+zipfile               alanmcintyre^, serhiy-storchaka, Yhg1s, gpshead
 zipimport             Yhg1s*
-zlib                  Yhg1s
+zlib                  Yhg1s, gpshead*
 ====================  =============================================
 
 
@@ -332,12 +332,12 @@ f-strings           ericvsmith*
 GUI
 i18n                malemburg, merwok
 import machinery    brettcannon, ncoghlan, ericsnowcurrently
-io                  benjaminp, stutzbach^
+io                  benjaminp, stutzbach^, gpshead
 locale              malemburg
 mathematics         mdickinson, malemburg, stutzbach^, rhettinger
 memory management   tim-one, malemburg, Yhg1s
 memoryview
-networking          giampaolo
+networking          giampaolo, gpshead
 object model        benjaminp, Yhg1s
 packaging           tarekziade, malemburg, alexis^, merwok, dstufft, pfmoore
 pattern matching    brandtbucher*
@@ -351,7 +351,7 @@ release management  tarekziade, malemburg, benjaminp, warsaw,
 str.format          ericvsmith*
 testing             voidspace, ezio-melotti
 test coverage
-threads
+threads             gpshead
 time and dates      malemburg, abalkin, pganssle
 unicode             malemburg, ezio-melotti, benjaminp
 version control     merwok, ezio-melotti
