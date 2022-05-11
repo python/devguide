@@ -55,7 +55,7 @@ _thread
 _testbuffer
 abc
 aifc                  bitdancer
-argparse              rhettinger*
+argparse
 array
 ast                   benjaminp, pablogsal, isidentical
 asynchat              josiahcarlson, giampaolo*, stutzbach^
@@ -70,7 +70,7 @@ binhex
 bisect                rhettinger*
 builtins
 bz2
-calendar              rhettinger*
+calendar
 cgi                   ethanfurman*
 cgitb                 ethanfurman*
 chunk
@@ -114,7 +114,7 @@ filecmp
 fileinput
 fnmatch
 formatter
-fractions             mdickinson, rhettinger
+fractions             mdickinson
 ftplib                giampaolo*
 functools             rhettinger*
 gc                    pitrou, pablogsal
