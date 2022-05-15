@@ -873,7 +873,7 @@ Verbose mode
 ~~~~~~~~~~~~
 
 When Python is compiled in debug mode (by adding ``--with-pydebug`` when running the configure step in Linux or by
-adding ``-d`` when calling the :file:`PCbuild/python.bat` script in Windows), it is possible to activate a **very** verbose
+adding ``-d`` when calling the :file:`PCbuild/build.bat` script in Windows), it is possible to activate a **very** verbose
 mode in the generated parser. This is very useful to debug the generated parser and to understand how it works, but it
 can be a bit hard to understand at first.
 
