@@ -10,6 +10,17 @@ if "%PYTHON%" == "" (
 	set PYTHON=py -3
 )
 
+if not defined SPHINXLINT (
+    %PYTHON% -c "import sphinxlint" > nul 2> nul
+    if errorlevel 1 (
+        echo Installing sphinx-lint with %PYTHON%
+        rem Should have been installed with Sphinx earlier
+        %PYTHON% -m pip install "sphinx-lint<1"
+        if errorlevel 1 exit /B
+    )
+    set SPHINXLINT=%PYTHON% -m sphinxlint
+)
+
 set BUILDDIR=_build
 set ALLSPHINXOPTS=-d %BUILDDIR%/doctrees %SPHINXOPTS% .
 if NOT "%PAPER%" == "" (
@@ -202,7 +213,8 @@ results in %BUILDDIR%/doctest/output.txt.
 )
 
 :check
-cmd /C %PYTHON% tools\rstlint.py -i tools -i venv
+rem Ignore the tools and venv dirs and check that the default role is not used.
+cmd /S /C "%SPHINXLINT% -i tools -i venv --enable default-role"
 goto end
 
 :serve
