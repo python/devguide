@@ -15,7 +15,7 @@ if not defined SPHINXLINT (
     if errorlevel 1 (
         echo Installing sphinx-lint with %PYTHON%
         rem Should have been installed with Sphinx earlier
-        %PYTHON% -m pip install sphinx-lint
+        %PYTHON% -m pip install "sphinx-lint<1"
         if errorlevel 1 exit /B
     )
     set SPHINXLINT=%PYTHON% -m sphinxlint
