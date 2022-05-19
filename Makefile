@@ -52,10 +52,7 @@ venv:
 		echo "venv already exists."; \
 		echo "To recreate it, remove it first with \`make clean-venv'."; \
 	else \
-		$(PYTHON) -m venv $(VENVDIR); \
-		$(VENVDIR)/bin/python3 -m pip install --upgrade pip; \
-		$(VENVDIR)/bin/python3 -m pip install -r requirements.txt; \
-		echo "The venv has been created in the $(VENVDIR) directory"; \
+		$(MAKE) ensure-venv; \
 	fi
 
 ensure-venv:
@@ -162,7 +159,7 @@ doctest: ensure-venv
 htmlview: html
 	$(PYTHON) -c "import os, webbrowser; webbrowser.open('file://' + os.path.realpath('_build/html/index.html'))"
 
-check: venv
+check: ensure-venv
 	# Ignore the tools and venv dirs and check that the default role is not used.
 	$(SPHINXLINT) -i tools -i $(VENVDIR) --enable default-role
 
