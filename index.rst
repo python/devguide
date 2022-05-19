@@ -14,8 +14,8 @@ community that maintains Python.  We welcome your contributions to Python!
 Quick Reference
 ---------------
 
-Here are the basic steps needed to get :ref:`set up <setup>` and contribute a
-patch. This is meant as a checklist, once you know the basics. For complete
+Here are the basic steps needed to get set up and contribute a patch.
+This is meant as a checklist, once you know the basics. For complete
 instructions please see the :ref:`setup guide <setup>`.
 
 1. Install and set up :ref:`Git <vcsetup>` and other dependencies
@@ -103,7 +103,7 @@ Status of Python branches
 +------------------+--------------+-------------+----------------+----------------+-----------------------+
 | 3.10             | :pep:`619`   | bugfix      | 2021-10-04     | *2026-10*      | Pablo Galindo Salgado |
 +------------------+--------------+-------------+----------------+----------------+-----------------------+
-| 3.9              | :pep:`596`   | bugfix      | 2020-10-05     | *2025-10*      | Łukasz Langa          |
+| 3.9              | :pep:`596`   | security    | 2020-10-05     | *2025-10*      | Łukasz Langa          |
 +------------------+--------------+-------------+----------------+----------------+-----------------------+
 | 3.8              | :pep:`569`   | security    | 2019-10-14     | *2024-10*      | Łukasz Langa          |
 +------------------+--------------+-------------+----------------+----------------+-----------------------+

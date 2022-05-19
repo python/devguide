@@ -7,6 +7,7 @@ VENVDIR       = ./venv
 BUILDDIR      = _build
 SPHINXOPTS    =
 SPHINXBUILD   = $(VENVDIR)/bin/sphinx-build
+SPHINXLINT    = $(VENVDIR)/bin/sphinx-lint
 PAPER         =
 
 # Internal variables.
@@ -161,8 +162,9 @@ doctest: ensure-venv
 htmlview: html
 	$(PYTHON) -c "import os, webbrowser; webbrowser.open('file://' + os.path.realpath('_build/html/index.html'))"
 
-check:
-	$(PYTHON) tools/rstlint.py -i tools -i venv
+check: venv
+	# Ignore the tools and venv dirs and check that the default role is not used.
+	$(SPHINXLINT) -i tools -i $(VENVDIR) --enable default-role
 
 serve:
 	@echo "The 'serve' target was removed, use 'htmlview' instead" \
