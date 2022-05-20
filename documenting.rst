@@ -1623,6 +1623,9 @@ in production; others are works in progress.
 | Korean (ko)     |                               | `GitHub <github_ko_>`_     |
 |                 |                               | `Doc <doc_ko_>`_           |
 +-----------------+-------------------------------+----------------------------+
+| Marathi (mr)    | `Sanket Garade                | `GitHub <github_mr_>`_     |
+|                 |  <email_garade_>_`            |                            |
++-----------------+-------------------------------+----------------------------+
 | Lithuanian (lt) |                               | `mail <mail_lt_>`_         |
 +-----------------+-------------------------------+----------------------------+
 | Persian (fa)    | `Komeil Parseh (@mmdbalkhi)   | `GitHub <github_fa_>`_     |
@@ -1667,6 +1670,7 @@ in production; others are works in progress.
 .. _gh_zhsj: https://github.com/zhsj
 .. _gh_mattwang44: https://github.com/mattwang44
 .. _email_egeakman: mailto:egeakmanegeakman@hotmail.com
+.. _email_garade: mailto:garade@pm.me
 .. _chat_pt_br: https://t.me/pybr_i18n
 .. _doc_ja: https://docs.python.org/ja/
 .. _doc_ko: https://docs.python.org/ko/
@@ -1683,6 +1687,7 @@ in production; others are works in progress.
 .. _github_id: https://github.com/python/python-docs-id
 .. _github_ja: https://github.com/python/python-docs-ja
 .. _github_ko: https://github.com/python/python-docs-ko
+.. _github_mr: https://github.com/sanketgarade/python-doc-mr
 .. _github_pl: https://github.com/python/python-docs-pl
 .. _github_pt_br: https://github.com/python/python-docs-pt-br
 .. _github_tr: https://github.com/python-docs-tr/python-docs-tr
