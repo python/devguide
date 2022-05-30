@@ -1,4 +1,4 @@
-Sphinx==4.5.0
+Sphinx==5.0.0
 furo<2022.4.8
 sphinx_copybutton>=0.3.3
 sphinx-lint<1
