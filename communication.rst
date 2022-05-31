@@ -211,9 +211,6 @@ To activate the mailing list mode, go to the `email preferences
 <https://discuss.python.org/my/preferences/emails>`_, check "Enable
 mailing list mode" and save changes.
 
-.. note:: This setting overrides the activity summary. Muted topics and
-  categories will not be included in these emails
-
 .. _Discourse: https://discuss.python.org/
 .. _PEPs: https://discuss.python.org/c/peps/
 .. _Core Development: https://discuss.python.org/c/core-dev/
