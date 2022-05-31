@@ -176,7 +176,7 @@ it has been moved to, and the person who posted it will also be notified.
 
 Following categories (Category notifications)
 ''''''''''''''''''''''''''''''''''''''''''''''
-Notification level can also be set per category. To change any of these
+Notifications can be set for individual categories and topics. To change any of these
 defaults, you can either go to your user preferences, or visit the category
 page, and use the notification button 🔔 above the topic list,
 on the top right hand corner of the category page beside the “+ New Topic” button.
