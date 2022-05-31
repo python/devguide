@@ -93,7 +93,7 @@ RSS feed readers.
 
 
 Discourse
------------
+---------
 **(discuss.python.org web forum)**
 
 We have our own `Discourse`_ forum for both developers and users. This forum
