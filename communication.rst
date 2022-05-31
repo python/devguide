@@ -207,9 +207,9 @@ Enabling mailing list mode
 In mailing list mode, you will receive one email per post, as happens with
 traditional mailing lists. This is desirable if you prefer to interact via email,
 without visiting the forum website.
-To activate the mailing list mode, go to preferences >emails, check on "enable
+To activate the mailing list mode, go to the `email preferences
+<https://discuss.python.org/my/preferences/emails>`_, check "Enable
 mailing list mode" and save changes.
-(https://discuss.python.org/u/username/preferences/emails)
 
 .. note:: This setting overrides the activity summary. Muted topics and
   categories will not be included in these emails
