@@ -146,8 +146,8 @@ These tutorials can be activated by replying to a welcome message from "discours
 Greetings!" received under Notifications and Messages in your user account.
 
 * Click on your personal account found on the top right hand corner of the page.
-* The dropdown menu will show 4 different glyphs namely Notifications 🔔, Bookmark,
-  Messages ✉️ and Preferences.
+* The dropdown menu will show four different icons: 🔔 (Notifications),
+  🔖 (Bookmarks), ✉️ (Messages), and 👤 (Preferences).
 * Select either Notifications or Messages.
 * Open the "Greetings!" message sent by discobot.
 * Ensure that you read through the `Python Code of Conduct <https://discuss.python.org/faq>`_.
