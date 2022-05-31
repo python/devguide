@@ -128,7 +128,7 @@ internet (e.g. logistics for in-person core development sprints).
 Getting Started
 ''''''''''''''''
 To start a topic or participate in any discussions in the forum, sign up and
-create an account using an email address or Github account. You can do so by
+create an account using an email address or GitHub account. You can do so by
 clicking the "Sign Up" button on the top right hand corner of the `Discourse`_
 main page.
 
