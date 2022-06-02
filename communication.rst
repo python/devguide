@@ -123,7 +123,7 @@ The Python Discourse `Quick Start <https://discuss.python.org/t/python-discourse
 compiled by `Carol Willing <https://discuss.python.org/u/willingc/>`_ gives you
 a quick overview on how to kick off Python Discourse.
 
-New users can get familiarise with the forum by going through Discobot tutorials.
+We recommend new users getting familiarised with the forum by going through Discobot tutorials.
 These tutorials can be activated by replying to a welcome message from "discourse
 Greetings!" received under Notifications and Messages in your user account.
 
@@ -131,7 +131,7 @@ Greetings!" received under Notifications and Messages in your user account.
 * The dropdown menu will show four different icons: 🔔 (Notifications),
   🔖 (Bookmarks), ✉️ (Messages), and 👤 (Preferences).
 * Select either Notifications or Messages.
-* Open the "Greetings!" message sent by discobot.
+* Open the "Greetings!" message sent by Discobot to start the tutorial.
 * Ensure that you read through the `Python Code of Conduct <https://discuss.python.org/faq>`_.
   We are to be open, considerate and respectful to all users in the community.
 * Click on the bookmark glyph found on the bottom right corner of the message beside
