@@ -106,8 +106,8 @@ All categories are open for users to read and post with the exception of
 the Committers category.
 
 The `Committers`_ category is an "argument clinic" for Python committers with
-the commit bit on `CPython <https://github.com/python/cpython>`_ and related
-projects. It is open for all users to read but posting is restricted to core
+the commit bit on `CPython <https://github.com/python/cpython>`_.
+It is open for all users to read but posting is restricted to core
 developers. It is often used for announcements and notifications. It is also
 a common venue for the core developer promotion votes (This category is
 equivalent to the python-committers mailing list)
@@ -134,12 +134,7 @@ Greetings!" received under Notifications and Messages in your user account.
 * Open the "Greetings!" message sent by Discobot to start the tutorial.
 * Ensure that you read through the `Python Code of Conduct <https://discuss.python.org/faq>`_.
   We are to be open, considerate and respectful to all users in the community.
-* Click on the bookmark glyph found on the bottom right corner of the message beside
-  the reply button.
-* Discobot will then reply and guide you through a simple tutorial on how to use
-  Discourse.
 
-.. note:: You will receive a certified badge if you follow through the entire new user tutorial.
 
 
 Reading topics
