@@ -106,8 +106,8 @@ All categories are open for users to read and post with the exception of
 the Committers category.
 
 The `Committers`_ category is an "argument clinic" for Python committers with
-the commit bit on `CPython <https://github.com/python/cpython>`_ and related
-projects. It is open for all users to read but posting is restricted to core
+the commit bit on `CPython <https://github.com/python/cpython>`_.
+It is open for all users to read but posting is restricted to core
 developers. It is often used for announcements and notifications. It is also
 a common venue for the core developer promotion votes (This category is
 equivalent to the python-committers mailing list)
