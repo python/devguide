@@ -124,8 +124,6 @@ compiled by `Carol Willing <https://discuss.python.org/u/willingc/>`_ gives you
 a quick overview on how to kick off Python Discourse.
 
 New users can get familiarise with the forum by going through Discobot tutorials.
-These tutorials can be activated by replying to a welcome message from "discourse
-Greetings!" received under Notifications and Messages in your user account.
 
 * Click on your personal account found on the top right hand corner of the page.
 * The dropdown menu will show four different icons: 🔔 (Notifications),
