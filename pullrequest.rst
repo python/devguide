@@ -490,6 +490,14 @@ versions of Python as a bugfix if the core developer doing the merge believes
 it is warranted.
 
 
+Closing PR
+----------
+
+On 2022-05-19, `the GitHub issues release an update <https://github.blog/changelog/2022-05-19-the-new-github-issues-may-19th-update/>`_:
+issue closed reasons. When closing PR, the core developer may opt to close as
+``complete`` or ``not-planned``.
+
+
 Crediting
 ---------
 
