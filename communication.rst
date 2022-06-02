@@ -132,10 +132,6 @@ New users can get familiarise with the forum by going through Discobot tutorials
 * Open the "Greetings!" message sent by discobot.
 * Ensure that you read through the `Python Code of Conduct <https://discuss.python.org/faq>`_.
   We are to be open, considerate and respectful to all users in the community.
-* Click on the bookmark glyph found on the bottom right corner of the message beside
-  the reply button.
-* Discobot will then reply and guide you through a simple tutorial on how to use
-  Discourse.
 
 .. note:: You will receive a certified badge if you follow through the entire new user tutorial.
 
