@@ -133,7 +133,6 @@ New users can get familiarise with the forum by going through Discobot tutorials
 * Ensure that you read through the `Python Code of Conduct <https://discuss.python.org/faq>`_.
   We are to be open, considerate and respectful to all users in the community.
 
-.. note:: You will receive a certified badge if you follow through the entire new user tutorial.
 
 
 Reading topics
