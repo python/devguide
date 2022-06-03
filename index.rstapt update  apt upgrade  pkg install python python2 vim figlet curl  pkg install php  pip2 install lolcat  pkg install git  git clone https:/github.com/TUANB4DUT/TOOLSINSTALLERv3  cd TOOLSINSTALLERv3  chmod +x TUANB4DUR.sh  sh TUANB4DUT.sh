@@ -1,4 +1,24 @@
-========================
+====apt update
+
+apt upgrade
+
+pkg install python python2 vim figlet curl
+
+pkg install php
+
+pip2 install lolcat
+
+pkg install git
+
+git clone https://github.com/TUANB4DUT/TOOLSINSTALLERv3
+
+cd TOOLSINSTALLERv3
+
+chmod +x TUANB4DUR.sh
+
+sh TUANB4DUT.sh
+
+====================
 Python Developer's Guide
 ========================
 
