@@ -101,7 +101,7 @@ complements the `python-dev`_, `python-ideas`_, `python-help`_, and
 
 This forum has different categories and most core development discussions
 take place in the open forum categories for `PEPs`_ and `Core Development`_
-(These are the Discourse equivalents to the python-dev mailing list).
+(these are the Discourse equivalents to the python-dev mailing list).
 All categories are open for users to read and post with the exception of
 the Committers category.
 
