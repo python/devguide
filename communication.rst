@@ -157,7 +157,7 @@ page, and use the notification button 🔔 above the topic list,
 on the top right hand corner of the category page beside the “+ New Topic” button.
 
 Clicking on the Notification control 🔔 will show a drop-down panel with 5
-different options : Watching, Tracking, Watching First Post, Normal and Muted.
+different options: Watching, Tracking, Watching First Post, Normal, and Muted.
 All categories are set by default in Normal mode where you will only be notified
 if someone mentions your @name or replies to you.
 
