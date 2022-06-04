@@ -101,16 +101,14 @@ complements the `python-dev`_, `python-ideas`_, `python-help`_, and
 
 This forum has different categories and most core development discussions
 take place in the open forum categories for `PEPs`_ and `Core Development`_
-(These are the Discourse equivalents to the python-dev mailing list).
+(these are the Discourse equivalents to the python-dev mailing list).
 All categories are open for users to read and post with the exception of
-the Committers category.
+the Committers category, where posting is restricted to the `CPython
+<https://github.com/python/cpython>`_ core developers.
 
-The `Committers`_ category is an "argument clinic" for Python committers with
-the commit bit on `CPython <https://github.com/python/cpython>`_.
-It is open for all users to read but posting is restricted to core
-developers. It is often used for announcements and notifications. It is also
-a common venue for the core developer promotion votes (This category is
-equivalent to the python-committers mailing list)
+The Committers category is often used for announcements and notifications.
+It is also a common venue for the core developer promotion votes (this
+category is equivalent to the python-committers mailing list).
 
 Tutorials for new users
 '''''''''''''''''''''''
@@ -157,7 +155,7 @@ page, and use the notification button 🔔 above the topic list,
 on the top right hand corner of the category page beside the “+ New Topic” button.
 
 Clicking on the Notification control 🔔 will show a drop-down panel with 5
-different options : Watching, Tracking, Watching First Post, Normal and Muted.
+different options: Watching, Tracking, Watching First Post, Normal, and Muted.
 All categories are set by default in Normal mode where you will only be notified
 if someone mentions your @name or replies to you.
 
@@ -171,10 +169,19 @@ from that particular thread.
 
 Customising notifications on user preference
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+<<<<<<< HEAD
 To get a bird's eye view of all your customised notifications, you can
 go to Preferences of your account. This allows you to make adjustments
 according to categories, users and tags.
 (https://discuss.python.org/my/preferences/categories)
+=======
+You can customise or make adjustments to all your notifications according to
+`categories, users, and tags under Preferences of your account
+<https://discuss.python.org/my/preferences/notifications>`_.
+Accessing this page allows you to view all your saved notifications in bird’s
+eye view and makes it easier for you to make changes and adjustments.
+
+>>>>>>> 378742081fb47fa3fd78c6791592dea65c4a12e1
 
 
 Enabling mailing list mode
