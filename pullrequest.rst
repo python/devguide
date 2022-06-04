@@ -489,8 +489,6 @@ with the next major release of Python. It may also be backported to older
 versions of Python as a bugfix if the core developer doing the merge believes
 it is warranted.
 
-Your pull request can be closed with reason: either as ``complete`` or
-``not-planned``.
 
 Crediting
 ---------
