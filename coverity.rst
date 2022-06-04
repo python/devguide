@@ -80,18 +80,6 @@ False positives
   ``path_t.nullable`` is explicitly enabled. CID 719648
 
 
-Intentionally
--------------
-
-``Py_VA_COPY()``
-  Python is written in C89 (ANSI C), therefore it can't use C99 features such
-  as ``va_copy()``. Python's own variant ``Py_VA_COPY()`` uses ``memcpy()``
-  to make a copy of a ``va_list`` variable. Coverity detects two issues in
-  this approach: "Passing argument "lva" of type "va_list" and sizeof(va_list)
-  to function memcpy() is suspicious." CID 486405 and "Uninitialized pointer
-  read" CID 486630.
-
-
 Modeling
 ========
 
