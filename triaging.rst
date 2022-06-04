@@ -125,11 +125,15 @@ specific type, please do not set a type.
 +----------------+----------------------------------------------------------+
 |      Type      |                       Description                        |
 +================+==========================================================+
+| bug            |                                                          |
++----------------+----------------------------------------------------------+
 | behavior       | Unexpected behavior, result, or exception.  Most bugs    |
 |                | will have this type. This group also includes compile    |
 |                | errors, and crashers.                                    |
 +----------------+----------------------------------------------------------+
-| enhancement    | Issues that propose the addition of new functionality,   |
+| docs           |                                                          |
++----------------+----------------------------------------------------------+
+| feature        | Issues that propose the addition of new functionality,   |
 |                | such as new functions, classes, modules, or even new     |
 |                | arguments for existing functions. Also used for          |
 |                | improvements in the documentation, test suite and        |
@@ -147,6 +151,8 @@ specific type, please do not set a type.
 |                | security vulnerabilities using the procedure found in    |
 |                | the `Reporting security issues in Python`_ page on the   |
 |                | python.org website.                                      |
++----------------+----------------------------------------------------------+
+| tests          |                                                          |
 +----------------+----------------------------------------------------------+
 
 Stage
