@@ -174,7 +174,6 @@ go to Preferences of your account. This allows you to make adjustments
 according to categories, users and tags.
 (https://discuss.python.org/my/preferences/categories)
 
-
 Enabling mailing list mode
 ''''''''''''''''''''''''''
 In mailing list mode, you will receive one email per post, as happens with
