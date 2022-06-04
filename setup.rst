@@ -405,7 +405,7 @@ Explaining how to build optional dependencies on a UNIX based system without
 root access is beyond the scope of this guide.
 
 For more details on various options and considerations for building, refer
-to the `macOS readme
+to the `macOS README
 <https://github.com/python/cpython/blob/main/Mac/README.rst>`_.
 
 .. _clang: https://clang.llvm.org/
