@@ -171,12 +171,10 @@ from that particular thread.
 
 Customising notifications on user preference
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-You can customise or make adjustments to all your notifications according to
-categories, users and tags under Preferences of your account.
+To get a bird's eye view of all your customised notifications, you can
+go to Preferences of your account. This allows you to make adjustments
+according to categories, users and tags.
 (https://discuss.python.org/my/preferences/categories)
-Accessing this page allows you to view all your saved notifications in bird’s
-eye view and makes it easier for you to make changes and adjustments.
-
 
 
 Enabling mailing list mode
