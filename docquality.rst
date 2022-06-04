@@ -32,11 +32,10 @@ and validates that your new markup is correct.
 
 You can view the documentation built from :ref:`in-development <indevbranch>`
 and :ref:`maintenance <maintbranch>` branches at https://docs.python.org/dev/.
-The in-development and most recent 3.x (as well as 2.x) maintenance
-branches are rebuilt once per day.
+The in-development and recent maintenance branches are rebuilt once per day.
 
 If you would like to be more involved with documentation, consider subscribing
-to the `docs@python.org <https://mail.python.org/mailman/listinfo/docs>`_
+to the `docs@python.org <https://mail.python.org/mailman3/lists/docs.python.org/>`_
 mailing list. The `issue tracker`_ sends new documentation issues to this
 mailing list, and, less frequently, the list receives some directly mailed bug
 reports. The `docs-sig@python.org <https://mail.python.org/mailman/listinfo/doc-sig>`_
@@ -63,8 +62,7 @@ If you see a documentation issue that you would like to tackle, you can:
 By following the steps in the :ref:`Quick Guide to Pull Requests <pullrequest-quickguide>`,
 you will learn the workflow for documentation pull requests.
 
-.. _issue tracker: https://bugs.python.org
-.. _documentation issues: https://bugs.python.org/issue?%40search_text=&ignore=file%3Acontent&title=&%40columns=title&id=&%40columns=id&stage=&creation=&creator=&activity=&%40columns=activity&%40sort=activity&actor=&nosy=&type=&components=4&versions=&dependencies=&assignee=&keywords=6&priority=&status=1&%40columns=status&resolution=&nosy_count=&message_count=&%40group=&%40pagesize=100&%40startwith=0&%40sortdir=on&%40queryname=&%40old-queryname=&%40action=search
+.. _documentation issues: https://github.com/python/cpython/issues?q=is%3Aissue+is%3Aopen+label%3Adocs
 .. _octocat: https://github.com/logos
 
 
@@ -99,7 +97,7 @@ lives in a `separate repository`_ and bug reports should be submitted to the
 
 Our devguide workflow uses continuous integration and deployment so changes to
 the devguide are normally published when the pull request is merged. Changes
-to CPython documentation follows the workflow of a CPython release and is
+to CPython documentation follow the workflow of a CPython release and are
 published in the release.
 
 
@@ -122,18 +120,20 @@ you*. To build the devguide on a Unix-like system use::
 
    $ make html
 
-in the checkout directory. On Windows use:
+in the checkout directory.  On Windows use:
 
 .. code-block:: doscon
 
    > .\make html
 
-You will find the generated files in ``_build/html``. Note that ``make check``
-runs automatically when you submit a :doc:`pull request <pullrequest>`. You may
-wish to run ``make check`` and ``make linkcheck`` to make sure that it runs
-without errors.
+You will find the generated files in ``_build/html`` or, if you use
+``make htmlview``, the docs will be opened in a browser once the build
+completes.  Note that ``make check`` runs automatically when you submit
+a :doc:`pull request <pullrequest>`.  You may wish to run ``make check``
+and ``make linkcheck`` to make sure that it runs without errors.
 
 .. _separate repository:
 .. _devguide repo: https://github.com/python/devguide
 .. _devguide GitHub tracker: https://github.com/python/devguide/issues
-.. _Sphinx: http://www.sphinx-doc.org/
+.. _Sphinx: https://www.sphinx-doc.org/
+.. _issue tracker: https://github.com/python/cpython/issues

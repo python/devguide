@@ -1,4 +1,4 @@
-Appendix: Topics 
+Appendix: Topics
 ================
 
 Basics for contributors
@@ -44,6 +44,8 @@ Issue tracking and triaging
 
 * :doc:`tracker`
 * :doc:`triaging`
+* :doc:`gh-labels`
+* :doc:`gh-faq`
 
 Language development in depth
 -----------------------------
@@ -65,4 +67,4 @@ Testing and continuous integration
 * :doc:`buildbots`
 * :doc:`buildworker`
 * :doc:`coverity`
-  
+

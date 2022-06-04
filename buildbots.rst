@@ -25,6 +25,28 @@ build results after you push a change to the repository.  It is therefore
 important that you get acquainted with the way these results are presented,
 and how various kinds of failures can be explained and diagnosed.
 
+In case of trouble
+------------------
+
+Please read this page in full. If your questions aren't answered here and you
+need assistance with the buildbots, a good way to get help is to either:
+
+* contact the ``python-buildbots@python.org`` mailing list where all buildbot
+  worker owners are subscribed; or
+* contact the release manager of the branch you have issues with.
+
+Buildbot failures on Pull Requests
+----------------------------------
+
+The ``bedevere-bot`` on GitHub will put a message on your merged Pull Request
+if building your commit on a stable buildbot worker fails. Take care to
+evaluate the failure, even if it looks unrelated at first glance.
+
+Not all failures will generate a notification since not all builds are executed
+after each commit. In particular, reference leaks builds take several hours to
+complete so they are done periodically. This is why it's important for you to
+be able to check the results yourself, too.
+
 Checking results of automatic builds
 ------------------------------------
 
@@ -40,20 +62,20 @@ There are three ways of visualizing recent build results:
   https://code.google.com/archive/p/bbreport. Installing it is trivial: just add
   the directory containing ``bbreport.py`` to your system path so that
   you can run it from any filesystem location.  For example, if you want
-  to display the latest build results on the development ("master") branch,
+  to display the latest build results on the development ("main") branch,
   type::
 
       bbreport.py -q 3.x
 
-* The buildbot "console" interface at http://buildbot.python.org/all/#/console
+* The buildbot "console" interface at https://buildbot.python.org/all/
   This works best on a wide, high resolution
   monitor.  Clicking on the colored circles will allow you to open a new page
   containing whatever information about that particular build is of interest to
   you.  You can also access builder information by clicking on the builder
   status bubbles in the top line.
 
-If you like IRC, having an IRC client open to the #python-dev channel on
-irc.freenode.net is useful.  Any time a builder changes state (last build
+If you like IRC, having an IRC client open to the #python-dev-notifs channel on
+irc.libera.chat is useful.  Any time a builder changes state (last build
 passed and this one didn't, or vice versa), a message is posted to the channel.
 Keeping an eye on the channel after pushing a changeset is a simple way to get
 notified that there is something you should look in to.
@@ -207,9 +229,9 @@ Custom builders
 .. highlight:: console
 
 When working on a platform-specific issue, you may want to test your changes on
-the buildbot fleet rather than just on Travis and AppVeyor.  To do so, you can
+the buildbot fleet rather than just on GitHub Actions and Azure Pipelines.  To do so, you can
 make use of the `custom builders
-<http://buildbot.python.org/all/#/builders?tags=custom.unstable&tags=custom.stable>`_.
+<https://buildbot.python.org/all/#/builders?tags=%2Bcustom>`_.
 These builders track the ``buildbot-custom`` short-lived branch of the
 ``python/cpython`` repository, which is only accessible to core developers.
 

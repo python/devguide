@@ -83,7 +83,7 @@ building your understanding of both the 2.x and 3.x versions of CPython:
 
 .. _Yet another guided tour of CPython: https://paper.dropbox.com/doc/Yet-another-guided-tour-of-CPython-XY7KgFGn88zMNivGJ4Jzv
 
-.. _Python Asynchronous I/O Walkthrough: http://pgbovine.net/python-async-io-walkthrough.htm
+.. _Python Asynchronous I/O Walkthrough: https://www.youtube.com/playlist?list=PLpEcQSRWP2IjVRlTUptdD05kG-UkJynQT
 
 .. _Coding Patterns for Python Extensions: https://pythonextensionpatterns.readthedocs.io/en/latest/
 
@@ -95,4 +95,4 @@ building your understanding of both the 2.x and 3.x versions of CPython:
 
 .. _A guide from parser to objects, observed using Eclipse: https://docs.google.com/document/d/1nzNN1jeNCC_bg1LADCvtTuGKvcyMskV1w8Ad2iLlwoI/
 
-.. _CPython internals\: A ten-hour codewalk through the Python interpreter source code: http://pgbovine.net/cpython-internals.htm
+.. _CPython internals\: A ten-hour codewalk through the Python interpreter source code: https://www.youtube.com/playlist?list=PLzV58Zm8FuBL6OAv1Yu6AwXZrnsFbbR0S

@@ -24,11 +24,6 @@ On :ref:`most <mac-python.exe>` Mac OS X systems, replace :file:`./python`
 with :file:`./python.exe`.  On Windows, use :file:`python.bat`.  If using
 Python 2.7, replace ``test`` with ``test.regrtest``.
 
-If you don't have easy access to a command line, you can run the test suite from
-a Python or IDLE shell::
-
-    >>> from test import autotest
-
 This will run the majority of tests, but exclude a small portion of them; these
 excluded tests use special kinds of resources: for example, accessing the
 Internet, or trying to play a sound or to display a graphical interface on
@@ -48,7 +43,20 @@ verbose mode (using ``-v``), so that individual failures are detailed::
 To run a single test case, use the ``unittest`` module, providing the import
 path to the test case::
 
-   ./python -m unittest -v test.test_abc.TestABC
+   ./python -m unittest -v test.test_abc.TestABC_Py
+
+Some test modules also support direct invocation,
+which might be useful for IDEs and local debugging::
+
+   ./python Lib/test/test_typing.py
+
+But, there are several important notes:
+
+1. This way of running tests exists only
+   for local developer needs and is discouraged for anything else
+2. Some modules do not support it at all. One example is``test_importlib``.
+   In other words: if some module does not have ``unittest.main()``, then
+   most likely it does not support direct invocation.
 
 If you have a multi-core or multi-CPU machine, you can enable parallel testing
 using several Python processes so as to speed up things::
@@ -129,7 +137,7 @@ Benchmarks
 ----------
 Benchmarking is useful to test that a change does not degrade performance.
 
-`The Python Benchmark Suite <https://github.com/python/performance>`_
+`The Python Benchmark Suite <https://github.com/python/pyperformance>`_
 has a collection of benchmarks for all Python implementations. Documentation
 about running the benchmarks is in the `README.txt
-<https://github.com/python/performance/blob/master/README.rst>`_ of the repo.
+<https://github.com/python/pyperformance/blob/main/README.rst>`_ of the repo.

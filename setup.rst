@@ -13,7 +13,7 @@ directory structure of the CPython source code.
 
 Alternatively, if you have `Docker <https://www.docker.com/>`_ installed you
 might want to use `our official images
-<https://gitlab.com/python-devs/ci-images/blob/master/README.md>`_.  These
+<https://gitlab.com/python-devs/ci-images/blob/main/README.md>`_.  These
 contain the latest releases of several Python versions, along with git head,
 and are provided for development and testing purposes only.
 
@@ -34,7 +34,7 @@ itself. git is easily available for all common operating systems.
 - **Install**
 
   As the CPython repo is hosted on GitHub, please refer to either the
-  `GitHub setup instructions <https://help.github.com/articles/set-up-git/>`_
+  `GitHub setup instructions <https://docs.github.com/en/get-started/quickstart/set-up-git>`_
   or the `git project instructions <https://git-scm.com>`_ for step-by-step
   installation directions. You may also want to consider a graphical client
   such as `TortoiseGit <https://tortoisegit.org/>`_ or
@@ -128,6 +128,8 @@ when you shouldn't is if you are taking performance measurements). Even when
 working only on pure Python code the pydebug build provides several useful
 checks that one should not skip.
 
+.. seealso:: The effects of various configure and build flags are documented in
+   the `Python configure docs <https://docs.python.org/dev/using/configure.html>`_.
 
 .. _unix-compiling:
 
@@ -189,7 +191,7 @@ dependencies were missing:
    for the module's name.
 
 If the build failed and you are using a C89 or C99-compliant compiler,
-please `open a bug report <https://bugs.python.org>`_.
+please open a bug report on the `issue tracker`_.
 
 If you decide to :ref:`build-dependencies`, you will need to re-run both
 ``configure`` and ``make``.
@@ -238,7 +240,8 @@ Windows
 For a quick guide to building you can read `this documentation`_ from Victor
 Stinner.
 
-**Python 3.6** and later can use Microsoft Visual Studio 2017.  You can download
+All current versions of Python can be built using Microsoft Visual Studio 2017
+or later.  You can download
 and use any of the free or paid versions of `Visual Studio 2017`_.
 
 When installing Visual Studio 2017, select the **Python development** workload
@@ -258,19 +261,13 @@ are downloaded:
 
 .. code-block:: dosbatch
 
-   PCBuild\build.bat
+   PCbuild\build.bat
 
-After this build succeeds, you can open the ``PCBuild\pcbuild.sln`` solution in
+After this build succeeds, you can open the ``PCbuild\pcbuild.sln`` solution in
 Visual Studio to continue development.
 
 See the `readme`_ for more details on what other software is necessary and how
 to build.
-
-.. note:: **Python 2.7** uses Microsoft Visual Studio 2008, which is most easily
-   obtained through an MSDN subscription.  To use the build files in the
-   `PCbuild directory`_ you will also need Visual Studio 2010, see the `2.7
-   readme`_ for more details.  If you have VS 2008 but not 2010 you can use the
-   build files in the `PC/VS9.0 directory`_, see the `VS9 readme`_ for details.
 
 .. note:: If you are using the Windows Subsystem for Linux (WSL), clone the
    repository from a native Windows terminal program like cmd.exe command prompt
@@ -279,13 +276,8 @@ to build.
    not be able to find all the project's files and will fail the build.
 
 .. _this documentation: https://cpython-core-tutorial.readthedocs.io/en/latest/build_cpython_windows.html
-.. _Visual Studio 2017: https://www.visualstudio.com/
-.. _readme: https://github.com/python/cpython/blob/master/PCbuild/readme.txt
-.. _PCbuild directory: https://github.com/python/cpython/tree/2.7/PCbuild/
-.. _2.7 readme: https://github.com/python/cpython/blob/2.7/PCbuild/readme.txt
-.. _PC/VS9.0 directory: https://github.com/python/cpython/tree/2.7/PC/VS9.0/
-.. _VS9 readme: https://github.com/python/cpython/blob/2.7/PC/VS9.0/readme.txt
-
+.. _Visual Studio 2017: https://visualstudio.microsoft.com/
+.. _readme: https://github.com/python/cpython/blob/main/PCbuild/readme.txt
 
 .. _build-dependencies:
 
@@ -336,10 +328,16 @@ Then you should update the packages index::
 
 Now you can install the build dependencies via ``apt``::
 
-   $ sudo apt-get build-dep python3.10
+   $ sudo apt-get build-dep python3
+   $ sudo apt-get install pkg-config
 
-If that package is not available for your system, try reducing the minor
-version until you find a package that is available.
+If you want to build all optional modules, install the following packages and
+their dependencies::
+
+   $ sudo apt-get install build-essential gdb lcov pkg-config \
+         libbz2-dev libffi-dev libgdbm-dev libgdbm-compat-dev liblzma-dev \
+         libncurses5-dev libreadline6-dev libsqlite3-dev libssl-dev \
+         lzma lzma-dev tk-dev uuid-dev zlib1g-dev
 
 
 .. _MacOS:
@@ -415,15 +413,13 @@ and ``make``::
 
 There will sometimes be optional modules added for a new release which
 won't yet be identified in the OS level build dependencies. In those cases,
-just ask for assistance on the core-mentorship list. If working on bug
-fixes for Python 2.7, use ``python`` in place of ``python3`` in the above
-commands.
+just ask for assistance on the core-mentorship list.
 
 Explaining how to build optional dependencies on a UNIX based system without
 root access is beyond the scope of this guide.
 
 .. _clang: https://clang.llvm.org/
-.. _ccache: https://ccache.samba.org/
+.. _ccache: https://ccache.dev/
 
 .. note:: While you need a C compiler to build CPython, you don't need any
    knowledge of the C language to contribute!  Vast areas of CPython are
@@ -454,7 +450,14 @@ example, ``autoconf`` by itself will not regenerate ``pyconfig.h.in``.
 appropriate.
 
 Python's ``configure.ac`` script typically requires a specific version of
-Autoconf.  At the moment, this reads: ``AC_PREREQ(2.69)``.
+Autoconf.  At the moment, this reads: ``AC_PREREQ(2.69)``. It also requires
+to have the ``autoconf-archive`` and ``pkg-config`` utilities installed in
+the system and the ``pkg.m4`` macro file located in the appropriate ``alocal``
+location. You can easily check if this is correctly configured by running:
+
+.. code-block:: bash
+
+   ls $(aclocal --print-ac-dir) | grep pkg.m4
 
 If the system copy of Autoconf does not match this version, you will need to
 install your own copy of Autoconf.
@@ -552,3 +555,5 @@ every rule.
 ``Tools``
      Various tools that are (or have been) used to maintain Python.
 
+
+.. _issue tracker: https://github.com/python/cpython/issues

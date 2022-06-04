@@ -44,7 +44,7 @@ There is a branch for each *feature version*, whether released or not (e.g.
 In-development (main) branch
 ----------------------------
 
-The ``master`` branch is the branch for the next feature release; it is
+The ``main`` branch is the branch for the next feature release; it is
 under active development for all kinds of changes: new features, semantic
 changes, performance improvements, bug fixes.
 
@@ -57,7 +57,7 @@ release was cut (for example, 3.4.0 final).
 
 Starting with the 3.5 release, we create the release maintenance branch
 (e.g. 3.5) at the time we enter beta (3.5.0 beta 1).  This allows
-feature development for the release 3.n+1 to occur within the master
+feature development for the release 3.n+1 to occur within the main
 branch alongside the beta and release candidate stabilization periods
 for release 3.n.
 
@@ -131,6 +131,8 @@ For reference, here are the Python versions that most recently reached their end
 +------------------+--------------+----------------+----------------+----------------------------------+
 | Branch           | Schedule     | First release  | End-of-life    | Release manager                  |
 +==================+==============+================+================+==================================+
+| 3.6              | :pep:`494`   | 2016-12-23     | 2021-12-23     | Ned Deily                        |
++------------------+--------------+----------------+----------------+----------------------------------+
 | 3.5              | :pep:`478`   | 2015-09-13     | 2020-09-30     | Larry Hastings                   |
 +------------------+--------------+----------------+----------------+----------------------------------+
 | 3.4              | :pep:`429`   | 2014-03-16     | 2019-03-18     | Larry Hastings                   |
@@ -185,9 +187,10 @@ Beta
 ----
 
 After a first beta release is published, no new features are accepted.  Only
-bug fixes can now be committed.  This is when core developers should concentrate
-on the task of fixing regressions and other new issues filed by users who have
-downloaded the alpha and beta releases.
+bug fixes and improvements to documentation and tests can now be committed.
+This is when core developers should concentrate on the task of fixing
+regressions and other new issues filed by users who have downloaded the alpha
+and beta releases.
 
 Being in beta can be viewed much like being in RC_ but without the extra
 overhead of needing commit reviews.
@@ -206,6 +209,10 @@ been reviewed by other core developers.  Generally, these issues must be
 severe enough (e.g. crashes) that they deserve fixing before the final release.
 All other issues should be deferred to the next development cycle, since
 stability is the strongest concern at this point.
+
+While the goal is to have no code changes between a RC and a final release,
+there may be a need for final documentation or test fixes. Any such proposed
+changes should be discussed first with the release manager.
 
 You **cannot** skip the peer review during an RC, no matter how small! Even if
 it is a simple copy-and-paste change, **everything** requires peer review from
@@ -250,12 +257,12 @@ at all levels including organization membership, team membership, access
 control, and merge privileges on all repositories. For full details of the
 permission levels see `GitHub's documentation on Organization permission
 levels
-<https://help.github.com/articles/permission-levels-for-an-organization/#permission-levels-for-an-organization>`_.
+<https://docs.github.com/en/organizations/managing-peoples-access-to-your-organization-with-roles/roles-in-an-organization#permissions-for-organization-roles>`_.
 This role is paramount to the security of the Python Language, Community, and
 Infrastructure.
 
 The Executive Director of the Python Software Foundation delegates authority on
-GitHub Organization Owner Status to Ernest W. Durbin III - Python Software
+GitHub Organization Owner Status to Ee Durbin - Python Software
 Foundation Director of Infrastructure. Common reasons for this role are:
 Infrastructure Staff Membership, Python Software Foundation General Counsel,
 and Python Software Foundation Staff as fallback.
@@ -278,11 +285,13 @@ Current Owners
 +----------------------+--------------------------------+-----------------+
 | Donald Stufft        | Infrastructure Staff           | dstufft         |
 +----------------------+--------------------------------+-----------------+
-| Ewa Jodlowska        | PSF Executive Director         | ejodlowska      |
-+----------------------+--------------------------------+-----------------+
-| Ernest W. Durbin III | PSF Director of Infrastructure | ewdurbin        |
+| Ee Durbin            | PSF Director of Infrastructure | ewdurbin        |
 +----------------------+--------------------------------+-----------------+
 | Van Lindberg         | PSF General Counsel            | VanL            |
++----------------------+--------------------------------+-----------------+
+| Ezio Melotti         | roundup -> github migration    | ezio-melotti    |
++----------------------+--------------------------------+-----------------+
+| Łukasz Langa         | CPython Developer in Residence | ambv            |
 +----------------------+--------------------------------+-----------------+
 
 Repository Administrator Role Policy
@@ -291,8 +300,8 @@ Repository Administrator Role Policy
 The Administrator role on the repository allows for managing all aspects
 including collaborators, access control, integrations, webhooks, and branch
 protection. For full details of the permission levels see `GitHub's
-documentation on Repository permission levels
-<https://help.github.com/articles/repository-permission-levels-for-an-organization/>`_.
+documentation on repository permission levels
+<https://docs.github.com/en/organizations/managing-peoples-access-to-your-organization-with-roles/roles-in-an-organization#permissions-for-organization-roles>`_.
 Common reasons for this role are: maintenance of Core Developer
 Workflow tooling, Release Managers for all :ref:`in-development <indevbranch>`,
 :ref:`maintenance <maintbranch>`, and :ref:`security mode <secbranch>`
@@ -315,11 +324,12 @@ Current Administrators
 | Pablo Galindo     | Python 3.10 and 3.11 Release Manager,                    | pablogsal       |
 |                   | Maintainer of buildbot.python.org                        |                 |
 +-------------------+----------------------------------------------------------+-----------------+
-| Łukasz Langa      | Python 3.8 and 3.9 Release Manager                       | ambv            |
+| Łukasz Langa      | Python 3.8 and 3.9 Release Manager,                      | ambv            |
+|                   | PSF CPython Developer in Residence 2021-2022             |                 |
 +-------------------+----------------------------------------------------------+-----------------+
 | Ned Deily         | Python 3.6 and 3.7 Release Manager                       | ned-deily       |
 +-------------------+----------------------------------------------------------+-----------------+
-| Lary Hastings     | Retired Release Manager (for Python 3.4 and 3.5)         | larryhastings   |
+| Larry Hastings    | Retired Release Manager (for Python 3.4 and 3.5)         | larryhastings   |
 +-------------------+----------------------------------------------------------+-----------------+
 | Berker Peksag     | Maintainer of bpo-linkify and cpython-emailer-webhook    | berkerpeksag    |
 +-------------------+----------------------------------------------------------+-----------------+

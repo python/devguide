@@ -8,9 +8,9 @@ assignees: ''
 ---
 
 > Note: This repo is for the Python devguide. If you are requesting an
-enhancementfor the Python language or CPython interpreter,
+enhancement for the Python language or CPython interpreter,
 then the CPython issue tracker is better
-suited for this report: https://bugs.python.org
+suited for this report: https://github.com/python/cpython/issues
 
 **Describe the bug**
 A clear and concise description of what the bug is.

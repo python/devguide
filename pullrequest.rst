@@ -37,6 +37,9 @@ Here is a quick overview of how you can contribute to CPython:
 
 #. `Create Pull Request`_ on GitHub to merge a branch from your fork
 
+#. Make sure the continuous integration checks on your Pull Request
+   are green (i.e. successful)
+
 #. Review and address `comments on your Pull Request`_
 
 #. When your changes are merged, you can :ref:`delete the PR branch
@@ -54,7 +57,7 @@ Here is a quick overview of how you can contribute to CPython:
 
 .. _Clear communication: https://opensource.guide/how-to-contribute/#how-to-submit-a-contribution
 .. _Open Source: https://opensource.guide/
-.. _create an issue: https://bugs.python.org/
+.. _create an issue: https://github.com/python/cpython/issues
 .. _CPython: https://github.com/python/cpython
 .. _use HTTPS: https://help.github.com/articles/which-remote-url-should-i-use/
 .. _Create Pull Request: https://help.github.com/articles/creating-a-pull-request/
@@ -75,7 +78,7 @@ You should have already :ref:`set up your system <setup>`,
 
 * Create a new branch in your local clone::
 
-     git checkout -b <branch-name> upstream/master
+     git checkout -b <branch-name> upstream/main
 
 * Make changes to the code, and use ``git status`` and ``git diff`` to see them.
 
@@ -122,12 +125,12 @@ You should have already :ref:`set up your system <setup>`,
     there are merge conflicts, git will warn you about this and enter conflict
     resolution mode. See :ref:`resolving-merge-conflicts` below.
 
-* If time passes and there are merge conflicts with the master branch, GitHub
+* If time passes and there are merge conflicts with the main branch, GitHub
   will show a warning to this end and you may be asked to address this. Merge
-  the changes from the master branch while resolving the conflicts locally::
+  the changes from the main branch while resolving the conflicts locally::
 
    git checkout <branch-name>
-   git pull upstream master  # pull = fetch + merge
+   git pull upstream main  # pull = fetch + merge
    # resolve conflicts: see "Resolving Merge Conflicts" below
    git push origin <branch-name>
 
@@ -136,11 +139,6 @@ You should have already :ref:`set up your system <setup>`,
 
      git branch -D <branch-name>  # delete local branch
      git push origin -d <branch-name>  # delete remote branch
-
-.. note::
-   You can still upload a patch to bugs.python.org_, but the GitHub pull request
-   workflow is **strongly** preferred.
-
 
 .. _resolving-merge-conflicts:
 
@@ -270,7 +268,7 @@ and for each pull request there may be several commits.  In particular:
 
 Commit messages should follow the following structure::
 
-   bpo-42: Make the spam module more spammy (GH-NNNN)
+   Make the spam module more spammy
 
    The spam module sporadically came up short on spam. This change
    raises the amount of spam in the module by making it more spammy.
@@ -291,7 +289,7 @@ instructions on how the commit message should look like when merging a pull
 request.
 
 .. note::
-   `How to Write a Git Commit Message <https://chris.beams.io/posts/git-commit/>`_
+   `How to Write a Git Commit Message <https://cbea.ms/git-commit/>`_
    is a nice article that describes how to write a good commit message.
 
 
@@ -311,22 +309,16 @@ license your code for use with Python (you retain the copyright).
 
 Here are the steps needed in order to sign the CLA:
 
-1. If you don't have an account on `bugs.python.org <https://bugs.python.org>`_
-   (aka b.p.o), please
-   `register <https://bugs.python.org/user?@template=register>`_ to create one.
+1. Create a change and submit it as a pull request.
 
-2. Make sure your GitHub username is listed in the `"Your Details"
-   <https://cloud.githubusercontent.com/assets/2680980/23276970/d14a380c-f9d1-11e6-883d-e13b6b211239.png>`_
-   section at b.p.o.
+2. When ``cpython-cla-bot`` comments on your pull request that commit
+   authors are required to sign a Contributor License Agreement, click
+   on the button in the comment to sign it. It's enough to log in through
+   GitHub. The process is automatic.
 
-3. Fill out and sign the PSF `contributor form`_. The "bugs.python.org username"
-   requested by the form is the "Login name" field under "Your Details".
-
-After signing the CLA, please **wait at least one US business day** and
-then check the status by going to the `check-python-cla <https://check-python-cla.herokuapp.com>`_
-website. The check will also be run automatically the next time you push changes
-to your PR.
-
+3. After signing, the comment by ``cpython-cla-bot`` will update to
+   indicate that "all commit authors signed the Contributor License
+   Agreement.
 
 .. _PSF license: https://docs.python.org/dev/license.html#terms-and-conditions-for-accessing-or-otherwise-using-python
 .. _contributor agreement: https://www.python.org/psf/contrib/
@@ -354,7 +346,7 @@ Now you want to
 <https://help.github.com/articles/creating-a-pull-request-from-a-fork/>`_.
 If this is a pull request in response to a pre-existing issue on the
 `issue tracker`_, please make sure to reference the issue number using
-``bpo-NNNN`` in the pull request title or message.
+``gh-NNNNN:`` prefix in the pull request title and ``#NNNNN`` in the description.
 
 If this is a pull request for an unreported issue (assuming you already
 performed a search on the issue tracker for a pre-existing issue), create a
@@ -375,8 +367,6 @@ another so they can easily verify whether their comments have been addressed.
 The commits will be squashed when the pull request is merged.
 
 
-.. _issue tracker: https://bugs.python.org
-
 Converting an Existing Patch from b.p.o to GitHub
 -------------------------------------------------
 
@@ -391,7 +381,7 @@ Author Name <email_address> ." to the pull request description and commit messag
 See `the GitHub article <https://help.github.com/articles/creating-a-commit-with-multiple-authors/>`_
 on how to properly add the co-author info.
 
-See also :ref:`Applying a Patch from Mercurial to Git <git_from_mercurial>`.
+See also :ref:`Applying a Patch to Git <git_from_patch>`.
 
 Reviewing
 ---------
@@ -463,7 +453,7 @@ Leaving a Pull Request Review on GitHub
 ---------------------------------------
 
 When you review a pull request, you should provide additional details and context
-of your review process. 
+of your review process.
 
 Instead of simply "approving" the pull request, leave comments.  For example:
 
@@ -507,3 +497,5 @@ Non-trivial contributions are credited in the ``Misc/ACKS`` file (and, most
 often, in a contribution's news entry as well).  You may be
 asked to make these edits on the behalf of the core developer who
 accepts your pull request.
+
+.. _issue tracker: https://github.com/python/cpython/issues

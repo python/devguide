@@ -15,4 +15,4 @@ If you decide to tackle a warning you have found, open an issue on the `issue
 tracker`_ (if one has not already been opened) and say you are going to try and
 tackle the issue, and then proceed to fix the issue.
 
-.. _issue tracker: https://bugs.python.org
+.. _issue tracker: https://github.com/python/cpython/issues

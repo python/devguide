@@ -28,10 +28,8 @@ your proposed change (which helps communicate the usefulness of your change to
 others). For further guidance, see :ref:`suggesting-changes`.
 
 Your proposed change also needs to be *Pythonic*. While only the Steering
-Council can truly classify something as Pythonic, you can read the `Zen of
-Python`_ for guidance.
-
-.. _Zen of Python: https://www.python.org/dev/peps/pep-0020/
+Council can truly classify something as Pythonic, you can read the
+:pep:`Zen of Python <20>` for guidance.
 
 
 .. index:: PEP process
@@ -46,9 +44,8 @@ the change. This process is the Python Enhancement Proposal (PEP) process.
 You will first need a PEP that you will present to python-ideas. You may be a
 little hazy on the technical details as various core developers can help with
 that, but do realize that if you do not present your idea to python-ideas or
-python-list ahead of time you may find out it is technically not possible
-(e.g., Python's parser will not support the grammar change as it is an LL(1)
-parser). Expect extensive comments on the PEP, some of which will be negative.
+python-list ahead of time you may find out it is technically not possible.
+Expect extensive comments on the PEP, some of which will be negative.
 
 Once your PEP has been modified to be of proper quality and to take into
 account comments made on python-ideas, it may proceed to python-dev. There it
@@ -80,7 +77,7 @@ task.
 
 If the idea is reasonable, someone will suggest posting it as a feature
 request on the `issue tracker`_, or, for larger changes, writing it up as
-a `draft PEP`_.
+a :pep:`draft PEP <1>`.
 
 Sometimes core developers will differ in opinion, or merely be collectively
 unconvinced. When there isn't an obvious victor then the
@@ -89,9 +86,9 @@ unconvinced. When there isn't an obvious victor then the
 For some examples on language changes that were accepted please read
 `Justifying Python Language Changes`_.
 
-.. _python-ideas: https://mail.python.org/mailman/listinfo/python-ideas
-.. _issue tracker: https://bugs.python.org
-.. _PEP Index: https://www.python.org/dev/peps/
+.. _python-ideas: https://mail.python.org/mailman3/lists/python-ideas.python.org/
+.. _issue tracker: https://github.com/python/cpython/issues
+.. _PEP Index: https://peps.python.org/
 .. _draft PEP: https://www.python.org/dev/peps/pep-0001/
 .. _Status Quo Wins a Stalemate: https://www.curiousefficiency.org/posts/2011/02/status-quo-wins-stalemate.html
 .. _Justifying Python Language Changes: https://www.curiousefficiency.org/posts/2011/02/justifying-python-language-changes.html

@@ -65,7 +65,7 @@ Normally the C structure supporting a regular Python object looks as follows:
                   |                    *ob_type                   | |
                   +--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+ /
                   |                      ...                      |
-                  
+
 
 In order to support the garbage collector, the memory layout of objects is altered
 to accommodate extra information **before** the normal layout:
@@ -82,7 +82,7 @@ to accommodate extra information **before** the normal layout:
                   |                    *ob_type                   | |
                   +--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+ /
                   |                      ...                      |
-                  
+
 
 In this way the object can be treated as a normal python object and when the extra
 information associated to the GC is needed the previous fields can be accessed by a
@@ -179,7 +179,7 @@ Every object that supports garbage collection will have an extra reference
 count field initialized to the reference count (``gc_ref`` in the figures)
 of that object when the algorithm starts. This is because the algorithm needs
 to modify the reference count to do the computations and in this way the
-interpreter will not modify the real reference count field. 
+interpreter will not modify the real reference count field.
 
 .. figure:: images/python-cyclic-gc-1-new-page.png
 
@@ -219,17 +219,17 @@ they started originally) and setting its ``gc_refs`` field to 1. This is what ha
 to ``link_2`` and ``link_3`` below as they are reachable from ``link_1``.  From the
 state in the previous image and after examining the objects referred to by ``link_1``
 the GC knows that ``link_3`` is reachable after all, so it is moved back to the
-original list and its ``gc_refs`` field is set to one so if the GC visits it again, it
-does know that is reachable. To avoid visiting a object twice, the GC marks all
-objects that are already visited once (by unsetting the ``PREV_MASK_COLLECTING`` flag)
-so if an object that has already been processed is referred by some other object, the
-GC does not process it twice.
+original list and its ``gc_refs`` field is set to 1 so that if the GC visits it again,
+it will know that it's reachable. To avoid visiting an object twice, the GC marks all
+objects that have already been visited once (by unsetting the ``PREV_MASK_COLLECTING``
+flag) so that if an object that has already been processed is referenced by some other
+object, the GC does not process it twice.
 
 .. figure:: images/python-cyclic-gc-5-new-page.png
 
-Notice that once an object that was marked as "tentatively unreachable" and later is
-moved back to the reachable list, it will be visited again by the garbage collector
-as now all the references that that objects has need to be processed as well. This
+Notice that an object that was marked as "tentatively unreachable" and was later
+moved back to the reachable list will be visited again by the garbage collector
+as now all the references that that object has need to be processed as well. This
 process is really a breadth first search over the object graph. Once all the objects
 are scanned, the GC knows that all container objects in the tentatively unreachable
 list are really unreachable and can thus be garbage collected.
@@ -276,7 +276,7 @@ follows these steps in order:
    set is going to be destroyed and has weak references with callbacks, these
    callbacks need to be honored. This process is **very** delicate as any error can
    cause objects that will be in an inconsistent state to be resurrected or reached
-   by some python functions invoked from the callbacks. In addition, weak references
+   by some Python functions invoked from the callbacks. In addition, weak references
    that also are part of the unreachable set (the object and its weak reference
    are in cycles that are unreachable) need to be cleaned
    immediately, without executing the callback. Otherwise it will be triggered later,
@@ -303,10 +303,10 @@ In order to limit the time each garbage collection takes, the GC uses a popular
 optimization: generations. The main idea behind this concept is the assumption that
 most objects have a very short lifespan and can thus be collected shortly after their
 creation. This has proven to be very close to the reality of many Python programs as
-many temporarily objects are created and destroyed very fast. The older an object is
-the less likely it is to become unreachable.
+many temporary objects are created and destroyed very fast. The older an object is
+the less likely it is that it will become unreachable.
 
-To take advantage of this fact, all container objects are segregated across
+To take advantage of this fact, all container objects are segregated into
 three spaces/generations. Every new
 object starts in the first generation (generation 0). The previous algorithm is
 executed only over the objects of a particular generation and if an object
@@ -316,7 +316,7 @@ the same object survives another GC round in this new generation (generation 1)
 it will be moved to the last generation (generation 2) where it will be
 surveyed the least often.
 
-Generations are collected when the number of objects that they contain reach some
+Generations are collected when the number of objects that they contain reaches some
 predefined threshold, which is unique for each generation and is lower the older
 the generations are. These thresholds can be examined using the  ``gc.get_threshold``
 function:
@@ -337,7 +337,7 @@ specifically in a generation by calling ``gc.collect(generation=NUM)``.
     >>> import gc
     >>> class MyObj:
     ...     pass
-    ... 
+    ...
 
     # Move everything to the last generation so it's easier to inspect
     # the younger generations.
@@ -402,10 +402,10 @@ bit a separate tag) – as long as code that uses the pointer masks out these
 bits before accessing memory.  E.g., on a 32-bit architecture (for both
 addresses and word size), a word is 32 bits = 4 bytes, so word-aligned
 addresses are always a multiple of 4, hence end in ``00``, leaving the last 2 bits
-available; while on a 64-bit architecture, a word is 64 bits word = 8 bytes, so
+available; while on a 64-bit architecture, a word is 64 bits = 8 bytes, so
 word-aligned addresses end in ``000``, leaving the last 3 bits available.
 
-The CPython GC makes use of two fat pointers that corresponds to the extra fields
+The CPython GC makes use of two fat pointers that correspond to the extra fields
 of ``PyGC_Head`` discussed in the `Memory layout and object structure`_ section:
 
   .. warning::
@@ -417,7 +417,7 @@ of ``PyGC_Head`` discussed in the `Memory layout and object structure`_ section:
       normally assume the pointers inside the lists are in a consistent state.
 
 
-* The ``_gc_prev``` field is normally used as the "previous" pointer to maintain the
+* The ``_gc_prev`` field is normally used as the "previous" pointer to maintain the
   doubly linked list but its lowest two bits are used to keep the flags
   ``PREV_MASK_COLLECTING`` and ``_PyGC_PREV_MASK_FINALIZED``. Between collections,
   the only flag that can be present is ``_PyGC_PREV_MASK_FINALIZED`` that indicates
@@ -440,7 +440,7 @@ Optimization: delay tracking containers
 
 Certain types of containers cannot participate in a reference cycle, and so do
 not need to be tracked by the garbage collector. Untracking these objects
-reduces the cost of garbage collections. However, determining which objects may
+reduces the cost of garbage collection. However, determining which objects may
 be untracked is not free, and the costs must be weighed against the benefits
 for garbage collection. There are two possible strategies for when to untrack
 a container:
@@ -462,7 +462,7 @@ benefit from delayed tracking:
   when created. During garbage collection it is determined whether any surviving
   tuples can be untracked. A tuple can be untracked if all of its contents are
   already not tracked. Tuples are examined for untracking in all garbage collection
-  cycles. It may take more than one cycle to untrack a tuple. 
+  cycles. It may take more than one cycle to untrack a tuple.
 
 * Dictionaries containing only immutable objects also do not need to be tracked.
   Dictionaries are untracked when created. If a tracked item is inserted into a
@@ -470,9 +470,9 @@ benefit from delayed tracking:
   full garbage collection (all generations), the collector will untrack any dictionaries
   whose contents are not tracked.
 
-The garbage collector module provides the python function is_tracked(obj), which returns
+The garbage collector module provides the Python function ``is_tracked(obj)``, which returns
 the current tracking status of the object. Subsequent garbage collections may change the
-tracking status of the object. 
+tracking status of the object.
 
 .. code-block:: python
 

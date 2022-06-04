@@ -19,12 +19,12 @@ to go about setting up a buildbot worker, getting it added, and some hints about
 buildbot maintenance.
 
 Anyone running a buildbot that is part of the fleet should subscribe to the
-`python-buildbots <https://mail.python.org/mailman/listinfo/python-buildbots>`_
+`python-buildbots <https://mail.python.org/mailman3/lists/python-buildbots.python.org/>`_
 mailing list.  This mailing list is also the place to contact if you want to
 contribute a buildbot but have questions.
 
 As for what kind of buildbot to run...take a look at our `current fleet
-<http://buildbot.python.org/all/#/workers>`_.  Pretty much anything that isn't
+<https://buildbot.python.org/all/>`_.  Pretty much anything that isn't
 on that list would be interesting: different Linux/UNIX distributions,
 different versions of the various OSes, other OSes if you or someone are
 prepared to make the test suite actually pass on that new OS.  Even if you only
@@ -95,7 +95,7 @@ In a terminal window for the buildbot user, issue the following commands (you
 can put the ``buildarea`` wherever you want to)::
 
     mkdir buildarea
-    buildbot-worker create-worker buildarea buildbot.python.org:9020 workername workerpasswd
+    buildbot-worker create-worker buildarea buildbot-api.python.org:9020 workername workerpasswd
 
 (Note that on Windows, the ``buildbot-worker`` command will be in the
 :file:`Scripts` directory of your Python installation.)
@@ -177,7 +177,7 @@ For Windows:
 
     * Alternatively (note: don't do both!), set up the worker
       service as described in the `buildbot documentation
-      <http://trac.buildbot.net/wiki/RunningBuildbotOnWindows#Service>`_.
+      <https://docs.buildbot.net/current/manual/installation/requirements.html#windows-support>`_.
 
 To start the worker running for your initial testing, you can do::
 
@@ -185,7 +185,7 @@ To start the worker running for your initial testing, you can do::
 
 Then you can either wait for someone to make a commit, or you can pick a
 builder associated with your worker from the `list of builders
-<http://buildbot.python.org/all/#/builders>`_ and force a build.
+<https://buildbot.python.org/all/>`_ and force a build.
 
 In any case you should initially monitor builds on your builders to make sure
 the tests are passing and to resolve any platform issues that may be revealed
@@ -198,7 +198,7 @@ Latent workers
 ^^^^^^^^^^^^^^
 
 We also support running `latent workers
-<http://docs.buildbot.net/current/manual/cfg-workers.html#latent-workers>`_
+<http://docs.buildbot.net/current/manual/configuration/workers.html#latent-workers>`_
 on the AWS EC2 service.  To set up such a worker:
 
     * Start an instance of your chosen base AMI and set it up as a
@@ -221,7 +221,7 @@ instance(s), so it is recommended to periodically check and make sure
 there are no "zombie" instances running on your account, created by the
 buildbot master.  Also, if you notice that your worker seems to have been
 down for an unexpectedly long time, please ping the `python-buildbots
-<https://mail.python.org/mailman/listinfo/python-buildbots>`_ list to
+<https://mail.python.org/mailman3/lists/python-buildbots.python.org/>`_ list to
 request that the master be restarted.
 
 Latent workers should also be updated periodically to include operating system

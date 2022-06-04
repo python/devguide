@@ -112,7 +112,7 @@ If this does not work for you for some reason, you should try using the
 in-development version of coverage.py to see if it has been updated as needed.
 To do this you should clone/check out the development version of coverage.py:
 
-    git clone https://github.com/nedbat/coveragepy.git
+    git clone https://github.com/nedbat/coveragepy
 
 You will need to use the full path to the installation.
 
@@ -207,8 +207,8 @@ C extension is installed. You can check this with::
   ./python COVERAGEDIR --version
 
 If it says 'without C extension', then you will need to build the C extension.
-Assuming that coverage.py's clone is at ``COVERAGEDIR`` and your clone of CPython 
-is at ``CPYTHONDIR``, you can do this by executing the following in your coverage.py 
+Assuming that coverage.py's clone is at ``COVERAGEDIR`` and your clone of CPython
+is at ``CPYTHONDIR``, you can do this by executing the following in your coverage.py
 clone::
 
   CPPFLAGS="-I CPYTHONDIR -I CPYTHONDIR/Include" CPYTHONDIR/python setup.py build_ext --inplace
@@ -262,8 +262,6 @@ Once you have increased coverage, you need to create an issue on the
 issue set the "Components" to "Test" and "Versions" to the version of Python you
 worked on (i.e., the in-development version).
 
-.. _issue tracker: https://bugs.python.org
-
 
 Measuring coverage of C code with gcov and lcov
 """""""""""""""""""""""""""""""""""""""""""""""
@@ -292,5 +290,6 @@ about 20 to 30 minutes on a modern computer.
     Multiple test jobs may not work properly. C coverage reporting has only
     been tested with a single test process.
 
+.. _issue tracker: https://github.com/python/cpython/issues
 .. _gcov: https://gcc.gnu.org/onlinedocs/gcc/Gcov.html
 .. _lcov: http://ltp.sourceforge.net/coverage/lcov.php

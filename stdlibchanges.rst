@@ -11,8 +11,6 @@ module.
 Changes to pre-existing code is not covered as that is considered a bugfix and
 thus is treated as a bug that should be filed on the `issue tracker`_.
 
-.. _issue tracker: https://bugs.python.org/
-
 
 Adding to a pre-existing module
 -------------------------------
@@ -37,7 +35,7 @@ suggested.
 
 If you have found general acceptance and usefulness for your code from people,
 you can open an issue on the `issue tracker`_ with the code attached as a
-:ref:`patch <patch>`. If possible, also submit a
+:ref:`pull request <patch>`. If possible, also submit a
 :ref:`contributor agreement <contributor_agreement>`.
 
 If a core developer decides that your code would be useful to the general
@@ -147,4 +145,5 @@ means that the core developers end up agreeing in general to accepting
 your PEP) then the module will be added to the stdlib once the creators of the
 module sign :ref:`contributor agreements <contributor_agreement>`.
 
-.. _PEP index: https://www.python.org/dev/peps/
+.. _issue tracker: https://github.com/python/cpython/issues
+.. _PEP index: https://peps.python.org/

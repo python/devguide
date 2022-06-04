@@ -14,8 +14,8 @@ community that maintains Python.  We welcome your contributions to Python!
 Quick Reference
 ---------------
 
-Here are the basic steps needed to get :ref:`set up <setup>` and contribute a
-patch. This is meant as a checklist, once you know the basics. For complete
+Here are the basic steps needed to get set up and contribute a patch.
+This is meant as a checklist, once you know the basics. For complete
 instructions please see the :ref:`setup guide <setup>`.
 
 1. Install and set up :ref:`Git <vcsetup>` and other dependencies
@@ -47,25 +47,24 @@ instructions please see the :ref:`setup guide <setup>`.
       ./python -m test -j3
 
    On :ref:`most <mac-python.exe>` Mac OS X systems, replace :file:`./python`
-   with :file:`./python.exe`.  On Windows, use :file:`python.bat`.  With Python
-   2.7, replace ``test`` with ``test.regrtest``.
+   with :file:`./python.exe`.  On Windows, use :file:`python.bat`.
 
 5. Create a new branch where your work for the issue will go, e.g.::
 
-      git checkout -b fix-issue-12345 master
+      git checkout -b fix-issue-12345 main
 
    If an issue does not already exist, please `create it
-   <https://bugs.python.org/>`_.  Trivial issues (e.g. typo fixes) do not
-   require any issue to be created.
+   <https://github.com/python/cpython/issues>`_.  Trivial issues (e.g. typo fixes) do
+   not require any issue to be created.
 
 6. Once you fixed the issue, run the tests, run ``make patchcheck``, and if
    everything is ok, commit.
 
 7. Push the branch on your fork on GitHub and :doc:`create a pull request
-   <pullrequest>`.  Include the issue number using ``bpo-NNNN`` in the
+   <pullrequest>`.  Include the issue number using ``gh-NNNN`` in the
    pull request description.  For example::
 
-      bpo-12345: Fix some bug in spam module
+      gh-12345: Fix some bug in spam module
 
 8. Add a News entry into the ``Misc/NEWS.d`` directory as individual file. The
    news entry can be created by using `blurb-it <https://blurb-it.herokuapp.com/>`_,
@@ -98,20 +97,24 @@ Status of Python branches
 +------------------+--------------+-------------+----------------+----------------+-----------------------+
 | Branch           | Schedule     | Status      | First release  | End-of-life    | Release manager       |
 +==================+==============+=============+================+================+=======================+
-| master           | :pep:`619`   | features    | *2021-10-04*   | *TBD*          | Pablo Galindo Salgado |
+| main             | TBA          | features    | *2023-10-03*   | *2028-10*      | Thomas Wouters        |
 +------------------+--------------+-------------+----------------+----------------+-----------------------+
-| 3.9              | :pep:`596`   | bugfix      | 2020-10-05     | *TBD*          | Łukasz Langa          |
+| 3.11             | :pep:`664`   | bugfix      | *2022-10-03*   | *2027-10*      | Pablo Galindo Salgado |
 +------------------+--------------+-------------+----------------+----------------+-----------------------+
-| 3.8              | :pep:`569`   | bugfix      | 2019-10-14     | *2024-10*      | Łukasz Langa          |
+| 3.10             | :pep:`619`   | bugfix      | 2021-10-04     | *2026-10*      | Pablo Galindo Salgado |
++------------------+--------------+-------------+----------------+----------------+-----------------------+
+| 3.9              | :pep:`596`   | security    | 2020-10-05     | *2025-10*      | Łukasz Langa          |
++------------------+--------------+-------------+----------------+----------------+-----------------------+
+| 3.8              | :pep:`569`   | security    | 2019-10-14     | *2024-10*      | Łukasz Langa          |
 +------------------+--------------+-------------+----------------+----------------+-----------------------+
 | 3.7              | :pep:`537`   | security    | 2018-06-27     | *2023-06-27*   | Ned Deily             |
-+------------------+--------------+-------------+----------------+----------------+-----------------------+
-| 3.6              | :pep:`494`   | security    | 2016-12-23     | *2021-12-23*   | Ned Deily             |
 +------------------+--------------+-------------+----------------+----------------+-----------------------+
 
 .. Remember to update the end-of-life table in devcycle.rst.
 
-The master branch is currently the future Python 3.10, and is the only
+Dates in *italic* are scheduled and can be adjusted.
+
+The main branch is currently the future Python 3.12, and is the only
 branch that accepts new features.  The latest release for each Python
 version can be found on the `download page <https://www.python.org/downloads/>`_.
 
@@ -126,13 +129,12 @@ Status:
     but new source-only versions can be released
 :end-of-life: release cycle is frozen; no further changes can be pushed to it.
 
-Dates in *italic* are scheduled and can be adjusted.
+See also the :ref:`devcycle` page for more information about branches.
 
 By default, the end-of-life is scheduled 5 years after the first release,
 but can be adjusted by the release manager of each branch.  All Python 2
 versions have reached end-of-life.
 
-See also the :ref:`devcycle` page for more information about branches.
 
 .. _contributing:
 
@@ -238,14 +240,14 @@ Key Resources
     * :PEP:`7` (Style Guide for C Code)
     * :PEP:`8` (Style Guide for Python Code)
 * `Issue tracker`_
-    * `Meta tracker <http://psf.upfronthosting.co.za/roundup/meta>`_ (issue
+    * `Meta tracker <https://issues.roundup-tracker.org/>`_ (issue
       tracker for the issue tracker)
     * :doc:`experts`
 * `Buildbot status`_
 * Source code
     * `Browse online <https://github.com/python/cpython/>`_
-    * `Snapshot of the *master* branch <https://github.com/python/cpython/archive/master.zip>`_
-    * `Daily OS X installer <http://buildbot.python.org/daily-dmg/>`_
+    * `Snapshot of the *main* branch <https://github.com/python/cpython/archive/main.zip>`_
+    * `Daily OS X installer <https://buildbot.python.org/daily-dmg/>`_
 * PEPs_ (Python Enhancement Proposals)
 * :doc:`help`
 * :doc:`developers`
@@ -261,6 +263,7 @@ Additional Resources
 * Help with ...
     * :doc:`exploring`
     * :doc:`grammar`
+    * :doc:`parser`
     * :doc:`compiler`
     * :doc:`garbage_collector`
 * Tool support
@@ -280,7 +283,7 @@ Please note that all interactions on
 `Python Software Foundation <https://www.python.org/psf-landing/>`__-supported
 infrastructure is `covered
 <https://www.python.org/psf/records/board/minutes/2014-01-06/#management-of-the-psfs-web-properties>`__
-by the `PSF Code of Conduct <https://www.python.org/psf/codeofconduct/>`__,
+by the `PSF Code of Conduct <https://www.python.org/psf/conduct/>`__,
 which includes all infrastructure used in the development of Python itself
 (e.g. mailing lists, issue trackers, GitHub, etc.).
 In general this means everyone is expected to be open, considerate, and
@@ -292,7 +295,6 @@ Full Table of Contents
 ----------------------
 
 .. toctree::
-   :numbered:
    :maxdepth: 3
 
    setup
@@ -319,9 +321,11 @@ Full Table of Contents
    gdb
    exploring
    grammar
+   parser
    compiler
    garbage_collector
    extensions
+   c-api
    coverity
    clang
    buildworker
@@ -330,14 +334,14 @@ Full Table of Contents
    appendix
 
 .. _Buildbot status: https://www.python.org/dev/buildbot/
-.. _Misc directory: https://github.com/python/cpython/tree/master/Misc
-.. _PEPs: https://www.python.org/dev/peps/
+.. _Misc directory: https://github.com/python/cpython/tree/main/Misc
+.. _PEPs: https://peps.python.org/
 .. _python.org maintenance: https://pythondotorg.readthedocs.io/
 .. _Python: https://www.python.org/
 .. _Core Python Mentorship: https://www.python.org/dev/core-mentorship/
-.. _PyPy: http://www.pypy.org/
-.. _Jython: http://www.jython.org/
-.. _IronPython: http://ironpython.net/
-.. _Stackless: http://www.stackless.com/
-.. _Issue tracker: https://bugs.python.org/
+.. _PyPy: https://www.pypy.org
+.. _Jython: https://www.jython.org/
+.. _IronPython: https://ironpython.net/
+.. _Stackless: https://github.com/stackless-dev/stackless/wiki/
+.. _Issue tracker: https://github.com/python/cpython/issues
 .. _open pull requests: https://github.com/python/cpython/pulls?utf8=%E2%9C%93&q=is%3Apr%20is%3Aopen%20label%3A%22awaiting%20review%22

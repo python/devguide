@@ -34,14 +34,14 @@ of current Python design issues, release mechanics, and maintenance of
 existing releases.  These mailing lists are for questions involving the
 development *of* Python, **not** for development *with* Python.
 
-.. _python-ideas: https://mail.python.org/mailman/listinfo/python-ideas
-.. _python-dev: https://mail.python.org/mailman/listinfo/python-dev
+.. _python-ideas: https://mail.python.org/mailman3/lists/python-ideas.python.org
+.. _python-dev: https://mail.python.org/mailman3/lists/python-dev.python.org/
 
 Ask #python-dev
 ---------------
 
 If you are comfortable with IRC you can try asking on ``#python-dev`` (on
-the `freenode`_ network). Typically there are a number of experienced
+the `Libera.Chat`_ network). Typically there are a number of experienced
 developers, ranging from triagers to core developers, who can answer
 questions about developing for Python.  As with the mailing lists,
 ``#python-dev`` is for questions involving the development *of* Python
@@ -52,7 +52,7 @@ whereas ``#python`` is for questions concerning development *with* Python.
   You may not be able to access the history of this channel, so it cannot
   be used as a "knowledge base" of sorts.
 
-.. _freenode: https://freenode.net/
+.. _Libera.Chat: https://libera.chat/
 
 Zulip
 -----
@@ -107,7 +107,7 @@ during office hours.
 |                  |                               | 24 hours before the start.                     |
 +------------------+-------------------------------+------------------------------------------------+
 
-.. _Python's Zulip Chat: https://python.zulipchat.com/#narrow/stream/116503-core/topic/Office.20Hour
+.. _Python's Zulip Chat: https://python.zulipchat.com/login/#narrow/stream/116503-core/topic/Office.20Hour
 .. _Mariatta's twitter: https://twitter.com/mariatta
 
 
@@ -121,4 +121,4 @@ you detail which conditions triggered it (including the OS name and version,
 and what you were trying to do), as well as the exact error message you
 encountered.
 
-.. _issue tracker: https://bugs.python.org
+.. _issue tracker: https://github.com/python/cpython/issues

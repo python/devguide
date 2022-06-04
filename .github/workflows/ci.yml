@@ -1,0 +1,26 @@
+name: Tests
+
+on: [pull_request, push, workflow_dispatch]
+
+env:
+  FORCE_COLOR: 1
+
+jobs:
+  test:
+    name: Check build, markup, and links
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-python@v3
+        with:
+          python-version: "3.10"
+          cache: pip
+      - name: Build docs
+        run: make html
+      - name: Check markup
+        run: make check
+      - name: Link check
+        run: make linkcheck
+        continue-on-error: true
