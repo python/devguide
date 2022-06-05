@@ -110,7 +110,8 @@ after a consensus has been reached amongst the core developers is unlikely to
 win any converts.
 
 As a reminder, issues closed by a core developer have already been carefully
-considered. Please do not reopen a closed issue.
+considered. Please do not reopen a closed issue. An issue can be closed with
+reason either as ``complete`` or ``not planned``.
 
 .. _helptriage:
 
