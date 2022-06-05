@@ -318,7 +318,7 @@ Take Ubuntu Bionic for example::
 
    deb-src http://archive.ubuntu.com/ubuntu/ bionic main
 
-Alternatively, uncomment lines with deb-src using an editor, i.e.::
+Alternatively, uncomment lines with ``deb-src`` using an editor, e.g.::
 
    sudo nano /etc/apt/sources.list
 
