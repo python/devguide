@@ -232,6 +232,10 @@ linkcheck_ignore = [
     'https://github.com/python/voters/',
     # The python-core team link is private, redirects to login
     'https://github.com/orgs/python/teams/python-core',
+    # The Discourse groups are private unless you are logged in
+    'https://discuss.python.org/groups/staff',
+    'https://discuss.python.org/groups/moderators',
+    'https://discuss.python.org/groups/admins',
 ]
 
 # Use our custom CSS stylesheet to differentiate us from the official python
