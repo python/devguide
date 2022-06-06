@@ -141,7 +141,7 @@ Reading topics
 Click a topic title and read down the list of replies in chronological order,
 following links or previewing replies and quotes as you go. Use your mouse to
 scroll the screen, or use the timeline scroll bar on the right which also shows
-you how far through the conversation you’ve read. On smaller screens, select the
+you how far through the conversation you've read. On smaller screens, select the
 bottom progress bar to expand it.
 
 
