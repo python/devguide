@@ -106,7 +106,7 @@ All categories are open for users to read and post with the exception of
 the Committers category, where posting is restricted to the `CPython
 <https://github.com/python/cpython>`_ core developers.
 
-The Committers category is often used for announcements and notifications.
+The `Committers`_ category is often used for announcements and notifications.
 It is also a common venue for the core developer promotion votes (this
 category is equivalent to the python-committers mailing list).
 
