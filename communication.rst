@@ -130,8 +130,9 @@ Greetings!" received under Notifications and Messages in your user account.
   🔖 (Bookmarks), ✉️ (Messages), and 👤 (Preferences).
 * Select either Notifications or Messages.
 * Open the "Greetings!" message sent by Discobot to start the tutorial.
-* Ensure that you read through the `Python Code of Conduct <https://discuss.python.org/faq>`_.
-  We are to be open, considerate and respectful to all users in the community.
+
+Ensure that you read through the `Python Code of Conduct <https://discuss.python.org/faq>`_.
+We are to be open, considerate and respectful to all users in the community.
 
 
 
