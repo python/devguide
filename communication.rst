@@ -99,21 +99,94 @@ We have our own `Discourse`_ forum for both developers and users. This forum
 complements the `python-dev`_, `python-ideas`_, `python-help`_, and
 `python-list`_ mailing lists.
 
-Most core development discussions take place in the open forum categories for
-`PEPs`_ and `Core Development`_. (These are the Discourse equivalents to the
-python-dev mailing list)
+This forum has different categories and most core development discussions
+take place in the open forum categories for `PEPs`_ and `Core Development`_
+(these are the Discourse equivalents to the python-dev mailing list).
+All categories are open for users to read and post with the exception of
+the `Committers`_ category, where posting is restricted to the `CPython
+<https://github.com/python/cpython>`_ core developers.
 
-The `Committers`_ category restricts posting to core developers only, and is
-used more for announcements and notifications, rather than for discussions. It
-is also the venue for core developer promotion votes. (This category is the
-equivalent of the python-committers mailing list)
+The Committers category is often used for announcements and notifications.
+It is also a common venue for the core developer promotion votes (this
+category is equivalent to the python-committers mailing list).
 
-There is a final, rarely used, core development category on Discourse that is
-only visible to core developers. This can be used to share administrative
-information with all core developers in a non-public forum (e.g. logistics for
-in person core development sprints), as well as for individual core developers
-to share info that they'd like other core devs to be aware of, but would prefer
-not to have permanently archived on the internet.
+Tutorials for new users
+'''''''''''''''''''''''
+To start a topic or participate in any discussions in the forum, sign up and
+create an account using an email address or GitHub account. You can do so by
+clicking the "Sign Up" button on the top right hand corner of the `Discourse`_
+main page.
+
+The Python Discourse `Quick Start <https://discuss.python.org/t/python-discourse-quick-start/116>`_
+compiled by `Carol Willing <https://discuss.python.org/u/willingc/>`_ gives you
+a quick overview on how to kick off Python Discourse.
+
+We recommend new users getting familiarised with the forum by going through Discobot tutorials.
+These tutorials can be activated by replying to a welcome message from "discourse
+Greetings!" received under Notifications and Messages in your user account.
+
+* Click on your personal account found on the top right hand corner of the page.
+* The dropdown menu will show four different icons: 🔔 (Notifications),
+  🔖 (Bookmarks), ✉️ (Messages), and 👤 (Preferences).
+* Select either Notifications or Messages.
+* Open the "Greetings!" message sent by Discobot to start the tutorial.
+
+Ensure that you read through the `Python Code of Conduct <https://discuss.python.org/faq>`_.
+We are to be open, considerate and respectful to all users in the community.
+You can report messages that don't respect the CoC by clicking on the three
+dots under the message and then on the ⚐ icon.  You can also mention the
+`@staff <https://discuss.python.org/groups/staff>`_,
+`@moderators <https://discuss.python.org/groups/moderators>`_, or
+`@admins <https://discuss.python.org/groups/admins>`_ groups in a message.
+
+
+
+Reading topics
+'''''''''''''''
+Click a topic title and read down the list of replies in chronological order,
+following links or previewing replies and quotes as you go. Use your mouse to
+scroll the screen, or use the timeline scroll bar on the right which also shows
+you how far through the conversation you've read. On smaller screens, select the
+bottom progress bar to expand it.
+
+
+Notifications
+'''''''''''''
+
+Following categories (Category notifications)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Notifications can be set for individual categories and topics. To change any of these
+defaults, you can either go to your user preferences, or visit the category
+page, and use the notification button 🔔 above the topic list,
+on the top right hand corner of the category page beside the "+ New Topic" button.
+
+Clicking on the Notification control 🔔 will show a drop-down panel with 5
+different options: Watching, Tracking, Watching First Post, Normal, and Muted.
+All categories are set by default in Normal mode where you will only be notified
+if someone mentions your @name or replies to you.
+
+Following individual threads (Topic notifications)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+To follow any individual topics or threads, you can adjust your notifications
+through the notification button 🔔 found on the right of the topic at the end
+of the timeline. You can also do so at the bottom of each topic.
+Select "Watching" and you will be notified when there is any new updated reply
+from that particular thread.
+
+Customising notifications on user preference
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+To get a bird's eye view of all your customised notifications, you can
+go to `Preferences of your account <https://discuss.python.org/my/preferences/categories>`_.
+This allows you to make adjustments according to categories, users, and tags.
+
+Enabling mailing list mode
+''''''''''''''''''''''''''
+In mailing list mode, you will receive one email per post, as happens with
+traditional mailing lists. This is desirable if you prefer to interact via email,
+without visiting the forum website.
+To activate the mailing list mode, go to the `email preferences
+<https://discuss.python.org/my/preferences/emails>`_, check "Enable
+mailing list mode" and save changes.
 
 .. _Discourse: https://discuss.python.org/
 .. _PEPs: https://discuss.python.org/c/peps/
