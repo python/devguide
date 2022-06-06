@@ -103,10 +103,10 @@ This forum has different categories and most core development discussions
 take place in the open forum categories for `PEPs`_ and `Core Development`_
 (these are the Discourse equivalents to the python-dev mailing list).
 All categories are open for users to read and post with the exception of
-the Committers category, where posting is restricted to the `CPython
+the `Committers`_ category, where posting is restricted to the `CPython
 <https://github.com/python/cpython>`_ core developers.
 
-The `Committers`_ category is often used for announcements and notifications.
+The Committers category is often used for announcements and notifications.
 It is also a common venue for the core developer promotion votes (this
 category is equivalent to the python-committers mailing list).
 
