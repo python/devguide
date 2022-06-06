@@ -165,7 +165,7 @@ Following individual threads (Topic notifications)
 To follow any individual topics or threads, you can adjust your notifications
 through the notification button 🔔 found on the right of the topic at the end
 of the timeline. You can also do so at the bottom of each topic.
-Select “Watching” and you will be notified when there is any new updated reply
+Select "Watching" and you will be notified when there is any new updated reply
 from that particular thread.
 
 Customising notifications on user preference
