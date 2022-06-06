@@ -133,6 +133,11 @@ Greetings!" received under Notifications and Messages in your user account.
 
 Ensure that you read through the `Python Code of Conduct <https://discuss.python.org/faq>`_.
 We are to be open, considerate and respectful to all users in the community.
+You can report messages that don't respect the CoC by clicking on the three
+dots under the message and then on the ⚐ icon.  You can also mention the
+`@staff <https://discuss.python.org/groups/staff>`_,
+`@moderators <https://discuss.python.org/groups/moderators>`_, or
+`@admins <https://discuss.python.org/groups/admins>`_ groups in a message.
 
 
 
