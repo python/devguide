@@ -125,13 +125,13 @@ specific type, please do not set a type.
 +----------------+----------------------------------------------------------+
 |      Type      |                       Description                        |
 +================+==========================================================+
-| bug            |                                                          |
+| bug            | Unexpected behaviour, or error.                          |
 +----------------+----------------------------------------------------------+
 | behavior       | Unexpected behavior, result, or exception.  Most bugs    |
 |                | will have this type. This group also includes compile    |
 |                | errors, and crashers.                                    |
 +----------------+----------------------------------------------------------+
-| docs           |                                                          |
+| docs           | Documentation in the Doc/ directory.                     |
 +----------------+----------------------------------------------------------+
 | feature        | Issues that propose the addition of new functionality,   |
 |                | such as new functions, classes, modules, or even new     |
@@ -152,7 +152,7 @@ specific type, please do not set a type.
 |                | the `Reporting security issues in Python`_ page on the   |
 |                | python.org website.                                      |
 +----------------+----------------------------------------------------------+
-| tests          |                                                          |
+| tests          | Tests in the Lib/test/ directory.                        |
 +----------------+----------------------------------------------------------+
 
 Stage
