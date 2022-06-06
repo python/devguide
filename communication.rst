@@ -153,7 +153,7 @@ Following categories (Category notifications)
 Notifications can be set for individual categories and topics. To change any of these
 defaults, you can either go to your user preferences, or visit the category
 page, and use the notification button 🔔 above the topic list,
-on the top right hand corner of the category page beside the “+ New Topic” button.
+on the top right hand corner of the category page beside the "+ New Topic" button.
 
 Clicking on the Notification control 🔔 will show a drop-down panel with 5
 different options: Watching, Tracking, Watching First Post, Normal, and Muted.
