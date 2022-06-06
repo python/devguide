@@ -551,3 +551,42 @@ To edit an open pull request that targets ``main``:
       git push git@github.com:<contributor>/cpython <pr_number>:<branch_name>
 
 5. Optionally, :ref:`delete the PR branch <deleting_branches>`.
+
+
+GitHub CLI
+----------
+
+WIP: short description.
+
+
+Example of useful commands:
+
+1. Login
+
+   .. code-block:: bash
+
+      gh auth login
+
+2. Create a PR
+
+   .. code-block:: bash
+
+      gh pr create
+
+3. Checkout others PR
+
+   .. code-block:: bash
+
+      gh pr checkout
+
+4. Set ssh at the git protocol
+
+   .. code-block:: bash
+
+      gh config set git_protocol ssh
+
+5. Set the browser
+
+   .. code-block:: bash
+
+      gh config set browser <$browser-path>
