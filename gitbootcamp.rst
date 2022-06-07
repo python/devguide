@@ -561,32 +561,22 @@ WIP: short description.
 
 Example of useful commands:
 
-1. Login
-
-   .. code-block:: bash
+#. Login::
 
       gh auth login
 
-2. Create a PR
-
-   .. code-block:: bash
+#. Create a PR::
 
       gh pr create
 
-3. Checkout others PR
-
-   .. code-block:: bash
+#. Checkout others PR::
 
       gh pr checkout
 
-4. Set ssh at the git protocol
-
-   .. code-block:: bash
+#. Set ``ssh`` at the git protocol::
 
       gh config set git_protocol ssh
 
-5. Set the browser
+#. Set the browser::
 
-   .. code-block:: bash
-
-      gh config set browser <$browser-path>
+      gh config set browser <browser-path>
