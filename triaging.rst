@@ -125,13 +125,14 @@ specific type, please do not set a type.
 +----------------+----------------------------------------------------------+
 |      Type      |                       Description                        |
 +================+==========================================================+
-| bug            |                                                          |
+| bug            | Unexpected behaviour, bug, or error.                                                         |
 +----------------+----------------------------------------------------------+
 | behavior       | Unexpected behavior, result, or exception.  Most bugs    |
 |                | will have this type. This group also includes compile    |
 |                | errors, and crashers.                                    |
 +----------------+----------------------------------------------------------+
-| docs           |                                                          |
+| crash          | A hard crash of the interpreter, possibly with a core    |
+|                | dump.                                                    |
 +----------------+----------------------------------------------------------+
 | feature        | Issues that propose the addition of new functionality,   |
 |                | such as new functions, classes, modules, or even new     |
@@ -151,8 +152,6 @@ specific type, please do not set a type.
 |                | security vulnerabilities using the procedure found in    |
 |                | the `Reporting security issues in Python`_ page on the   |
 |                | python.org website.                                      |
-+----------------+----------------------------------------------------------+
-| tests          |                                                          |
 +----------------+----------------------------------------------------------+
 
 Stage
