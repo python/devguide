@@ -560,8 +560,8 @@ GitHub CLI is a CLI (Command Line Interface) to work with GitHub resources.
 You can create new pull request, create new release, set alias command,
 check PR status, and etc, using this CLI.
 
-You may view installation instruction here:
-https://github.com/cli/cli#installation
+You can install GitHub CLI `by following this installation instructions.
+<https://github.com/cli/cli#installation`__
 
 Example of useful commands:
 
