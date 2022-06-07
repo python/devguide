@@ -571,7 +571,7 @@ Example of useful commands:
 
 #. Checkout others PR::
 
-      gh pr checkout
+      gh pr checkout <pr-id>
 
 #. Set ``ssh`` at the git protocol::
 
