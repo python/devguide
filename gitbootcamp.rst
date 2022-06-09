@@ -561,26 +561,25 @@ You can create new pull request, create new release, set alias command,
 check PR status, and etc, using this CLI.
 
 You can install GitHub CLI `by following this installation instructions.
-<https://github.com/cli/cli#installation`__
+<https://github.com/cli/cli#installation>`_ After installing GitHub CLI,
+you need to have your GitHub CLI authenticated::
+
+    gh auth login
 
 Example of useful commands:
 
-#. Login::
-
-      gh auth login
-
-#. Create a PR::
+* Create a PR::
 
       gh pr create
 
-#. Checkout others PR::
+* Checkout others PR::
 
       gh pr checkout <pr-id>
 
-#. Set ``ssh`` at the git protocol::
+* Set ``ssh`` at the git protocol::
 
       gh config set git_protocol ssh
 
-#. Set the browser::
+* Set the browser::
 
       gh config set browser <browser-path>
