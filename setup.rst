@@ -406,7 +406,7 @@ and ``make``::
 
 For example::
 
-   $ brew install openssl@3
+   $ brew install openssl@1.1
 
 or **MacPorts**::
 
