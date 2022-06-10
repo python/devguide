@@ -293,9 +293,9 @@ Current Owners
 +----------------------+--------------------------------+-----------------+
 
 Certain actions (blocking spam accounts, inviting new users, adjusting
-organisation-level settings) can only `be performed`_ by owners of the Python
-organisation on GitHub. The ``@python/organization-owners`` team can be
-mentioned to request assistance from an organisation owner.
+organization-level settings) can only `be performed`_ by owners of the Python
+organization on GitHub. The ``@python/organization-owners`` team can be
+mentioned to request assistance from an organization owner.
 
 .. _be performed: https://docs.github.com/en/organizations/managing-peoples-access-to-your-organization-with-roles/roles-in-an-organization#permissions-for-organization-roles
 
