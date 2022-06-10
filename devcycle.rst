@@ -292,9 +292,12 @@ Current Owners
 | Łukasz Langa         | CPython Developer in Residence | ambv            |
 +----------------------+--------------------------------+-----------------+
 
-``@python/organization-owners`` can be mentioned across the GitHub organization
-to request that one of the Organization Owners address an issue that requires
-the access levels granted soley to `permissions level <https://docs.github.com/en/organizations/managing-peoples-access-to-your-organization-with-roles/roles-in-an-organization#permissions-for-organization-roles>`_.
+Certain actions (blocking spam accounts, inviting new users, adjusting
+organisation-level settings) can only `be performed`_ by owners of the Python
+organisation on GitHub. The ``@python/organization-owners`` team can be
+mentioned to request assistance from an organisation owner.
+
+.. _be performed: https://docs.github.com/en/organizations/managing-peoples-access-to-your-organization-with-roles/roles-in-an-organization#permissions-for-organization-roles
 
 Repository Administrator Role Policy
 ------------------------------------
