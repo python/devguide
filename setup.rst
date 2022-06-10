@@ -385,10 +385,11 @@ for the header and library files to your ``configure`` command.  For example,
 
 with **Homebrew**::
 
-    $ brew install openssl xz gdbm
+    $ brew install openssl xz gdbm tcl-tk
 
 and ``configure`` Python versions >= 3.7::
 
+    PKG_CONFIG_PATH="$(brew --prefix tcl-tk)/lib/pkgconfig" 
     ./configure --with-pydebug --with-openssl=$(brew --prefix openssl)
 
 or ``configure`` Python versions < 3.7::
