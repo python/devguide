@@ -389,7 +389,7 @@ with **Homebrew**::
 
 and ``configure`` Python versions >= 3.7::
 
-    PKG_CONFIG_PATH="$(brew --prefix tcl-tk)/lib/pkgconfig" 
+    PKG_CONFIG_PATH="$(brew --prefix tcl-tk)/lib/pkgconfig"
     ./configure --with-pydebug --with-openssl=$(brew --prefix openssl)
 
 or ``configure`` Python versions < 3.7::
