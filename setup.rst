@@ -385,7 +385,7 @@ for the header and library files to your ``configure`` command.  For example,
 
 with **Homebrew**::
 
-    $ brew install openssl xz gdbm
+    $ brew install openssl@1.1 xz gdbm
 
 and ``configure`` Python versions >= 3.7::
 
@@ -400,13 +400,6 @@ or ``configure`` Python versions < 3.7::
 and ``make``::
 
     $ make -s -j2
-
-.. note:: 
-   If the _hashlib and _ssl modules do not build, specifying the openssl version can resolve the issue. As indicated earlier, you might need to run ``make clean`` before or after re-running ``configure``.
-
-For example::
-
-   $ brew install openssl@1.1
 
 or **MacPorts**::
 
