@@ -385,7 +385,7 @@ for the header and library files to your ``configure`` command.  For example,
 
 with **Homebrew**::
 
-    $ brew install openssl xz gdbm tcl-tk
+    $ brew install pkg-config openssl xz gdbm tcl-tk
 
 and ``configure`` Python versions >= 3.7::
 
