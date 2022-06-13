@@ -400,15 +400,6 @@ For Python versions 3.9 through 3.7::
                   --with-tcltk-libs="$(pkg-config --libs tcl tk)" \
                   --with-tcltk-includes="$(pkg-config --cflags tcl tk)"
 
-For Python versions 3.6 and older::
-
-    $ export PKG_CONFIG_PATH="$(brew --prefix tcl-tk)/lib/pkgconfig"
-    $ CPPFLAGS="-I$(brew --prefix openssl)/include" \
-      LDFLAGS="-L$(brew --prefix openssl)/lib" \
-      ./configure --with-pydebug \
-                  --with-tcltk-libs="$(pkg-config --libs tcl tk)" \
-                  --with-tcltk-includes="$(pkg-config --cflags tcl tk)"
-
 and ``make``::
 
     $ make -s -j2
