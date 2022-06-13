@@ -387,12 +387,12 @@ with **Homebrew**::
 
     $ brew install pkg-config openssl xz gdbm tcl-tk
 
-For Python 3.11 and newer::
+For Python 3.10 and newer::
 
     $ PKG_CONFIG_PATH="$(brew --prefix tcl-tk)/lib/pkgconfig" \
       ./configure --with-pydebug --with-openssl=$(brew --prefix openssl)
 
-For Python versions 3.10 through 3.7::
+For Python versions 3.9 through 3.7::
 
     $ export PKG_CONFIG_PATH="$(brew --prefix tcl-tk)/lib/pkgconfig"
     $ ./configure --with-pydebug \
