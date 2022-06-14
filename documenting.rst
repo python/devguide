@@ -1658,6 +1658,8 @@ in production; others are works in progress.
 | Turkish (tr)    | `Ege Akman (@egeakman)        | `GitHub <github_tr_>`_     |
 |                 | <email_egeakman_>`_           |                            |
 +-----------------+-------------------------------+----------------------------+
+| Ukrainian       |                               | `mail <mail_uk_>`_         |
++-----------------+-------------------------------+----------------------------+
 
 .. _article_pt_br: https://rgth.co/blog/python-ptbr-cenario-atual/
 .. _gh_cocoatomo: https://github.com/cocoatomo
@@ -1698,6 +1700,7 @@ in production; others are works in progress.
 .. _mail_lt: https://mail.python.org/pipermail/doc-sig/2019-July/004138.html
 .. _mail_pl: https://mail.python.org/pipermail/doc-sig/2019-April/004106.html
 .. _mail_ru: https://mail.python.org/pipermail/doc-sig/2019-May/004131.html
+.. _mail_uk: https://mail.python.org/archives/list/translation@python.org/thread/OCSM3TWNKO5FAJ3WOLP7U7CLCHCSJILP/
 .. _tx_pl: https://www.transifex.com/python-doc/python-newest/
 .. _tx_zh_cn: https://www.transifex.com/python-doc/python-newest/
 .. _wiki_pt_br: https://python.org.br/traducao/
