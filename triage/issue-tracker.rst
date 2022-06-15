@@ -1,8 +1,8 @@
 .. _tracker:
 
-==============
-Issue Tracking
-==============
+=============
+Issue Tracker
+=============
 
 
 Using the Issue Tracker

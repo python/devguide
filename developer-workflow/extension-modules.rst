@@ -1,7 +1,8 @@
 .. _extensions:
 
-Updating standard library extension modules
-===========================================
+==================================
+Standard Library Extension Modules
+==================================
 
 In this section, we could explain how to write a CPython extension with the C language, but the topic can take a complete book.
 

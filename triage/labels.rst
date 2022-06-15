@@ -1,5 +1,6 @@
 .. _gh-labels:
 
+=============
 GitHub Labels
 =============
 
@@ -9,7 +10,7 @@ only to one. Below is a possibly inexhaustive list, but it should get
 you going. For a full list, see `here <https://github.com/python/cpython/issues/labels>`_.
 
 General purpose labels
-----------------------
+======================
 
 type-behavior
     Used for issues/PRs that address unintentional behavior, but do not
@@ -43,10 +44,10 @@ spam
     Used for issues/PRs that don't include enough eggs or bacon.
 
 Labels specific to issues
--------------------------
+=========================
 
 Priority
-^^^^^^^^
+--------
 
 release-blocker
     The highest priority of an issue. If unaddressed, will cause the
@@ -59,7 +60,7 @@ deferred-blocker
     of development.
 
 Component
-^^^^^^^^^
+---------
 
 library
     Used for issues involving Python modules in the ``Lib/`` dir.
@@ -79,7 +80,7 @@ tests
     files in the ``Lib/test/`` dir.
 
 Other
-^^^^^
+-----
 
 new
     Denotes that the issue hasn't been looked at by triagers or core
@@ -90,7 +91,7 @@ easy
 
 
 Labels specific to PRs
-----------------------
+======================
 
 DO-NOT-MERGE
     Used on PRs to prevent miss-islington from being able
@@ -173,14 +174,14 @@ test-with-buildbots
 .. _github-pr-labels:
 
 GitHub Labels for PRs
----------------------
+=====================
 
 An important component of triaging PRs for the CPython repo involves
 appropriately categorizing them through the usage of labels. For this
 purpose we're using :ref:`gh-labels`.
 
 Applying labels for Issues
---------------------------
+==========================
 
 The major elements found in an issue report include:
 
@@ -194,7 +195,7 @@ The major elements found in an issue report include:
 * History
 
 Title
-'''''
+-----
 A brief description of the issue. Review whether the title is too generic or
 specifies an incorrect term or library.
 
@@ -202,7 +203,7 @@ specifies an incorrect term or library.
 IDLE, doc, or asyncio.
 
 Type
-''''
+----
 Describes the type of issue.  If an issue does not fit within any
 specific type, please do not set a type.
 
@@ -234,13 +235,13 @@ specific type, please do not set a type.
 +----------------+----------------------------------------------------------+
 
 Stage
-'''''
+-----
 A needed next action to advance the issue.  The *stage* on GitHub issues is
 determined by presence of a linked PR and whether the issue is still open
 or closed. It is the PR that holds code review-related labels.
 
 Components
-''''''''''
+----------
 The area or Python library affected by the issue. A single issue can apply
 multiple component labels.
 
@@ -268,7 +269,7 @@ One or more components may be selected for an issue:
 +-------------------+------------------------------------------------------+
 
 Versions
-''''''''
+--------
 The known versions of Python that the issue affects and should be fixed for.
 
 Thus if an issue for a new feature is assigned for e.g., Python 3.8 but is not
@@ -276,7 +277,7 @@ applied before Python 3.8.0 is released, this label should be updated to say
 ``python-3.9`` as the version and drop ``python-3.8``.
 
 Priority
-''''''''
+--------
 What is the severity and urgency?
 
 +------------------+--------------------------------------------------------+
@@ -301,7 +302,7 @@ tagging them in a comment using ``@username``. If needed, consult the
 release manager's name.
 
 Keywords
-''''''''
+--------
 Various informational flags about the issue. Multiple values are possible.
 
 +---------------+------------------------------------------------------------+
@@ -312,7 +313,7 @@ Various informational flags about the issue. Multiple values are possible.
 +---------------+------------------------------------------------------------+
 
 Nosy List
-'''''''''
+---------
 A list of people who may be interested in an issue.
 
 This used to be a feature of the old issue tracker. On GitHub issues the
@@ -328,7 +329,7 @@ decided this issue is not for you, you might click the *🔕 Unsubscribe*
 button in the sidebar.
 
 Assignees
-'''''''''
+---------
 Who is expected to take the next step in resolving the issue.
 
 It is acceptable to assign an issue to someone if the issue cannot move
@@ -340,7 +341,7 @@ Note that in order to assign an issue to someone, that person **must** be
 a team member, likely a Triager or a core developer.
 
 Dependencies
-''''''''''''
+------------
 The issue requires the listed issue(s) to be resolved first before it can move
 forward. This is achieved using checkbox lists in the initial issue description
 comment. Long story short, if you add this::
@@ -357,12 +358,12 @@ More details in the `official GitHub documentation
 <https://docs.github.com/en/issues/tracking-your-work-with-issues/about-task-lists>`_.
 
 Superseder
-''''''''''
+----------
 The issue is a duplicate of the listed issue(s). To make GitHub mark
 an issue as duplicate, write "Duplicate of #xxxx" in a comment.
 
 Status
-''''''
+------
 
 +---------------+------------------------------------------------------------+
 |    Status     |                        Description                         |
@@ -373,13 +374,13 @@ Status
 +---------------+------------------------------------------------------------+
 
 Linked pull requests
-''''''''''''''''''''
+--------------------
 A link might be added manually using the cog icon next to this field.
 Most commonly though, if the PR includes "Fixes #xxx" in its description,
 the link will be added automatically.
 
 Generating Special Links in a Comment
--------------------------------------
+=====================================
 Using the following abbreviations in a comment will automatically generate
 a link to relevant web pages.
 

@@ -1,8 +1,8 @@
 .. _setup:
 
-===============
-Getting Started
-===============
+==================
+Setup and Building
+==================
 
 .. highlight:: console
 

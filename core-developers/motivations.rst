@@ -1,7 +1,8 @@
 .. _motivations:
 
-Core Developer Motivations and Affiliations
-===========================================
+============================
+Motivations and Affiliations
+============================
 
 CPython core developers participate in the core development process for a
 variety of reasons. Being accepted as a core developer indicates that
@@ -29,7 +30,7 @@ For more information on the origins and purpose of this page, see
 .. _published-motivations:
 
 Published entries
------------------
+=================
 
 The following core developers have chosen to provide additional details
 regarding their professional affiliations and (optionally) other reasons for
@@ -270,7 +271,7 @@ participating in the CPython core development process:
 .. _goals-of-the-motivations-page:
 
 Goals of this page
-------------------
+==================
 
 The `issue metrics`_ automatically collected by the CPython issue tracker
 strongly suggest that the current core development process is bottlenecked on
@@ -329,7 +330,7 @@ time contributing to CPython development.
 
 
 Limitations on scope
---------------------
+====================
 
 * Specific technical areas of interest for core developers should be captured in
   the :ref:`Experts Index <experts>`.

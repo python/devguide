@@ -1,8 +1,8 @@
 .. _triaging:
 
-===================
- Triaging an Issue
-===================
+=================
+Triaging an Issue
+=================
 
 This section of the devguide documents the :ref:`issue tracker <tracker>` for
 users and developers.

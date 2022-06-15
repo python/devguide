@@ -1,12 +1,13 @@
 .. _compiler:
 
-Design of CPython's Compiler
-============================
+===============
+Compiler Design
+===============
 
 .. highlight:: none
 
 Abstract
---------
+========
 
 In CPython, the compilation from source code to bytecode involves several steps:
 
@@ -24,7 +25,7 @@ to read some source to have an exact understanding of all details.
 
 
 Parsing
--------
+=======
 
 As of Python 3.9, Python's parser is a PEG parser of a somewhat
 unusual design (since its input is a stream of tokens rather than a
@@ -38,7 +39,7 @@ these (see :ref:`grammar`).
 
 
 Abstract Syntax Trees (AST)
----------------------------
+===========================
 
 .. _compiler-ast-trees:
 
@@ -127,7 +128,7 @@ initializes the *name*, *args*, *body*, and *attributes* fields.
 
 
 Memory Management
------------------
+=================
 
 Before discussing the actual implementation of the compiler, a discussion of
 how memory is handled is in order.  To make memory management simple, an arena
@@ -161,7 +162,7 @@ the arena about it by calling ``PyArena_AddPyObject()``.
 
 
 Source Code to AST
-------------------
+==================
 
 The AST is generated from source code using the function
 ``_PyParser_ASTFromString()`` or ``_PyParser_ASTFromFile()``
@@ -287,7 +288,7 @@ number is passed as the last parameter to each ``stmt_ty`` function.
 
 
 Control Flow Graphs
--------------------
+===================
 
 A *control flow graph* (often referenced by its acronym, CFG) is a
 directed graph that models the flow of a program.  A node of a CFG is
@@ -333,7 +334,7 @@ following the edges.
 
 
 AST to CFG to Bytecode
-----------------------
+======================
 
 With the AST created, the next step is to create the CFG. The first step
 is to convert the AST to Python bytecode without having jump targets
@@ -449,7 +450,7 @@ handled by calling ``assemble()``.
 
 
 Introducing New Bytecode
-------------------------
+========================
 
 Sometimes a new feature requires a new opcode.  But adding new bytecode is
 not as simple as just suddenly introducing new bytecode in the AST ->
@@ -507,7 +508,7 @@ for recompiling generated C files.
 
 
 Code Objects
-------------
+============
 
 The result of ``PyAST_CompileObject()`` is a ``PyCodeObject`` which is defined in
 :file:`Include/code.h`.  And with that you now have executable Python bytecode!
@@ -518,7 +519,7 @@ statement in ``_PyEval_EvalFrameDefault()``.
 
 
 Important Files
----------------
+===============
 
 + Parser/
 
@@ -655,7 +656,7 @@ Important Files
 
 
 Known Compiler-related Experiments
-----------------------------------
+==================================
 
 This section lists known experiments involving the compiler (including
 bytecode).
@@ -675,7 +676,7 @@ thanks to having to support both classic and new-style classes.
 
 
 References
-----------
+==========
 
 .. [Wang97]  Daniel C. Wang, Andrew W. Appel, Jeff L. Korn, and Chris
    S. Serra.  `The Zephyr Abstract Syntax Description Language.`_
