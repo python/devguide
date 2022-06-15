@@ -1,5 +1,6 @@
 .. _coverage:
 
+======================
 Increase Test Coverage
 ======================
 
@@ -36,7 +37,7 @@ implicit testing by other code that happens to use the module.
 
 
 Common Gotchas
-""""""""""""""
+==============
 
 Please realize that coverage reports on modules already imported before coverage
 data starts to be recorded will be wrong. Typically you can tell a module falls
@@ -54,7 +55,7 @@ stick with whitebox testing in order to properly exercise the code.
 
 
 Measuring Coverage
-""""""""""""""""""
+==================
 
 It should be noted that a quirk of running coverage over Python's own stdlib is
 that certain modules are imported as part of interpreter startup. Those modules
@@ -256,7 +257,7 @@ times.
 
 
 Filing the Issue
-""""""""""""""""
+================
 Once you have increased coverage, you need to create an issue on the
 `issue tracker`_ and submit a :ref:`pull request <pullrequest>`. On the
 issue set the "Components" to "Test" and "Versions" to the version of Python you
@@ -264,7 +265,7 @@ worked on (i.e., the in-development version).
 
 
 Measuring coverage of C code with gcov and lcov
-"""""""""""""""""""""""""""""""""""""""""""""""
+===============================================
 
 It's also possible to measure the function, line and branch coverage of
 Python's C code. Right now only GCC with `gcov`_ is supported. In order to

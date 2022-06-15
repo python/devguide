@@ -1,6 +1,7 @@
 .. _buildbots:
 
-Continuous Integration
+======================
+Working with Buildbots
 ======================
 
 .. highlight:: bash
@@ -26,7 +27,7 @@ important that you get acquainted with the way these results are presented,
 and how various kinds of failures can be explained and diagnosed.
 
 In case of trouble
-------------------
+==================
 
 Please read this page in full. If your questions aren't answered here and you
 need assistance with the buildbots, a good way to get help is to either:
@@ -36,7 +37,7 @@ need assistance with the buildbots, a good way to get help is to either:
 * contact the release manager of the branch you have issues with.
 
 Buildbot failures on Pull Requests
-----------------------------------
+==================================
 
 The ``bedevere-bot`` on GitHub will put a message on your merged Pull Request
 if building your commit on a stable buildbot worker fails. Take care to
@@ -48,7 +49,7 @@ complete so they are done periodically. This is why it's important for you to
 be able to check the results yourself, too.
 
 Checking results of automatic builds
-------------------------------------
+====================================
 
 There are three ways of visualizing recent build results:
 
@@ -89,7 +90,7 @@ branch, it often happens that a single build is scheduled for all these
 changesets.
 
 Stability
----------
+=========
 
 A subset of the buildbots are marked "stable".  They are taken into account
 when making a new release.  The rule is that all stable builders must be free of
@@ -103,7 +104,7 @@ prevent some tests from succeeding (or even terminating at all), but
 introducing additional failures should generally not be an option.
 
 Flags-dependent failures
-------------------------
+========================
 
 Sometimes, while you have run the :ref:`whole test suite <runtests>` before
 committing, you may witness unexpected failures on the buildbots.  One source
@@ -119,7 +120,7 @@ the failing build's tests.  For example::
    ``-m test``.
 
 Ordering-dependent failures
----------------------------
+===========================
 
 Sometimes the failure is even subtler, as it relies on the order in which
 the tests are run.  The buildbots *randomize* test order (by using the ``-r``
@@ -200,7 +201,7 @@ good luck!
 
 
 Transient failures
-------------------
+==================
 
 While we try to make the test suite as reliable as possible, some tests do
 not reach a perfect level of reproducibility.  Some of them will sometimes
@@ -224,7 +225,7 @@ implementation, or by making its parameters - such as a timeout - more robust.
 
 
 Custom builders
----------------
+===============
 
 .. highlight:: console
 

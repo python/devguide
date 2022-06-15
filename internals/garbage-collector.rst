@@ -1,15 +1,16 @@
 .. _gc:
 .. _garbage_collector:
 
-Design of CPython's Garbage Collector
-=====================================
+========================
+Garbage Collector Design
+========================
 
 :Author: Pablo Galindo Salgado
 
 .. highlight:: none
 
 Abstract
---------
+========
 
 The main garbage collection algorithm used by CPython is reference counting. The basic idea is
 that CPython counts how many different places there are that have a reference to an
@@ -54,7 +55,7 @@ unreachable. This is the cyclic garbage collector, usually called just Garbage
 Collector (GC), even though reference counting is also a form of garbage collection.
 
 Memory layout and object structure
-----------------------------------
+==================================
 
 Normally the C structure supporting a regular Python object looks as follows:
 
@@ -119,7 +120,7 @@ the type is immutable, a ``tp_clear`` implementation must also be provided.
 
 
 Identifying reference cycles
-----------------------------------------------
+============================
 
 The algorithm that CPython uses to detect those reference cycles is
 implemented in the ``gc`` module. The garbage collector **only focuses**
@@ -242,7 +243,7 @@ number of objects, number of pointers, or the lengths of pointer chains.  Apart 
 the GC algorithms require.
 
 Why moving unreachable objects is better
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+----------------------------------------
 
 It sounds logical to move the unreachable objects under the premise that most objects
 are usually reachable, until you think about it: the reason it pays isn't actually
@@ -267,7 +268,7 @@ unbounded number of moves across an unbounded number of later collections. The o
 time the cost can be higher is the first time the chain is scanned.
 
 Destroying unreachable objects
-------------------------------
+==============================
 
 Once the GC knows the list of unreachable objects, a very delicate process starts
 with the objective of completely destroying these objects. Roughly, the process
@@ -298,7 +299,7 @@ follows these steps in order:
    objects.
 
 Optimization: generations
--------------------------
+=========================
 
 In order to limit the time each garbage collection takes, the GC uses a popular
 optimization: generations. The main idea behind this concept is the assumption that
@@ -369,7 +370,7 @@ specifically in a generation by calling ``gc.collect(generation=NUM)``.
 
 
 Collecting the oldest generation
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+--------------------------------
 
 In addition to the various configurable thresholds, the GC only triggers a full
 collection of the oldest generation if the ratio ``long_lived_pending / long_lived_total``
@@ -388,7 +389,7 @@ in the total number of objects (the effect of which can be summarized thusly:
 grows, but we do fewer and fewer of them").
 
 Optimization: reusing fields to save memory
--------------------------------------------
+===========================================
 
 In order to save memory, the two linked list pointers in every object with GC
 support are reused for several purposes. This is a common optimization known
@@ -437,7 +438,7 @@ of ``PyGC_Head`` discussed in the `Memory layout and object structure`_ section:
   ``NEXT_MASK_UNREACHABLE`` flag) are employed.
 
 Optimization: delay tracking containers
----------------------------------------
+=======================================
 
 Certain types of containers cannot participate in a reference cycle, and so do
 not need to be tracked by the garbage collector. Untracking these objects

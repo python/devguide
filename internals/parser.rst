@@ -1,14 +1,15 @@
 .. _parser:
 
-Guide to CPython's Parser
-=========================
+===================
+Guide to the Parser
+===================
 
 :Author: Pablo Galindo Salgado
 
 .. highlight:: none
 
 Abstract
---------
+========
 
 The Parser in CPython is currently a `PEG (Parser Expression Grammar)
 <https://en.wikipedia.org/wiki/Parsing_expression_grammar>`_ parser.  The first
@@ -24,7 +25,7 @@ modifying the grammar file and developers rarely need to interact with the
 parser generator itself other than use it to generate the parser.
 
 How PEG Parsers Work
---------------------
+====================
 
 .. _how-peg-parsers-work:
 
@@ -73,7 +74,7 @@ table-based.
 
 
 Key ideas
-~~~~~~~~~
+---------
 
 .. important::
     Don't try to reason about a PEG grammar in the same way you would to with an EBNF
@@ -92,7 +93,7 @@ Key ideas
 
 
 Consequences or the ordered choice operator
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+-------------------------------------------
 
 .. _consequences-of-ordered-choice:
 
@@ -143,7 +144,7 @@ In this case, if the input string doesn't have an ``'else' block``, the first al
 will fail and the second will be attempted without said part.
 
 Syntax
-------
+======
 
 The grammar consists of a sequence of rules of the form: ::
 
@@ -159,7 +160,7 @@ If the return type is omitted, then a ``void *`` is returned in C and an
 ``Any`` in Python.
 
 Grammar Expressions
-~~~~~~~~~~~~~~~~~~~
+-------------------
 
 ``# comment``
 '''''''''''''
@@ -288,7 +289,7 @@ alternative won’t be considered, even if some_rule or ``)`` fail to be
 parsed.
 
 Left recursion
-~~~~~~~~~~~~~~
+--------------
 
 PEG parsers normally do not support left recursion but CPython's parser
 generator implements a technique similar to the one described in Medeiros et al.
@@ -306,7 +307,7 @@ and "hidden left-recursion" like::
   rule: 'optional'? rule '@' some_other_rule
 
 Variables in the Grammar
-~~~~~~~~~~~~~~~~~~~~~~~~
+------------------------
 
 A sub-expression can be named by preceding it with an identifier and an
 ``=`` sign. The name can then be used in the action (see below), like this: ::
@@ -314,7 +315,7 @@ A sub-expression can be named by preceding it with an identifier and an
     rule_name[return_type]: '(' a=some_other_rule ')' { a }
 
 Grammar actions
-~~~~~~~~~~~~~~~
+---------------
 
 .. _peg-grammar-actions:
 
@@ -514,7 +515,7 @@ A similar grammar written to target Python AST objects:
 
 
 Pegen
------
+=====
 
 Pegen is the parser generator used in CPython to produce the final PEG parser used by the interpreter. It is the
 program that can be used to read the python grammar located in :file:`Grammar/Python.gram` and produce the final C
@@ -531,7 +532,7 @@ The source code for Pegen lives at :file:`Tools/peg_generator/pegen` but normall
 with the parser generator are executed from the main makefile.
 
 How to regenerate the parser
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+----------------------------
 
 Once you have made the changes to the grammar files, to regenerate the ``C``
 parser (the one used by the interpreter) just execute: ::
@@ -546,7 +547,7 @@ use the Visual Studio project files to regenerate the parser or to execute: ::
 The generated parser file is located at :file:`Parser/parser.c`.
 
 How to regenerate the meta-parser
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+---------------------------------
 
 The meta-grammar (the grammar that describes the grammar for the grammar files
 themselves) is located at :file:`Tools/peg_generator/pegen/metagrammar.gram`.
@@ -563,7 +564,7 @@ to regenerate the parser or to execute: ::
 
 
 Grammatical elements and rules
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+------------------------------
 
 Pegen has some special grammatical elements and rules:
 
@@ -582,7 +583,7 @@ Pegen has some special grammatical elements and rules:
     (like any rule in PEG).
 
 Tokenization
-~~~~~~~~~~~~
+------------
 
 It is common among PEG parser frameworks that the parser does both the parsing and the tokenization,
 but this does not happen in Pegen. The reason is that the Python language needs a custom tokenizer
@@ -604,7 +605,7 @@ How tokens are generated and the rules governing this is completely up to the to
 and the parser just receives tokens from it.
 
 Memoization
-~~~~~~~~~~~
+-----------
 
 As described previously, to avoid exponential time complexity in the parser, memoization is used.
 
@@ -630,7 +631,7 @@ memoization (check the :file:`Parser/pegen.c` file for more information) but it
 needs to be manually activated.
 
 Automatic variables
-~~~~~~~~~~~~~~~~~~~
+-------------------
 
 To make writing actions easier, Pegen injects some automatic variables in the namespace available
 when writing actions. In the C parser, some of these automatic variable names are:
@@ -641,7 +642,7 @@ when writing actions. In the C parser, some of these automatic variable names ar
   location variables are taken from the location information of the current token.
 
 Hard and Soft keywords
-~~~~~~~~~~~~~~~~~~~~~~
+----------------------
 
 .. note::
     In the grammar files, keywords are defined using **single quotes** (e.g. `'class'`) while soft
@@ -705,7 +706,7 @@ as well as soft keywords:
     try to define them in places where there is not a lot of alternatives.
 
 Error handling
-~~~~~~~~~~~~~~
+--------------
 
 When a pegen-generated parser detects that an exception is raised, it will
 **automatically stop parsing**, no matter what the current state of the parser
@@ -722,7 +723,7 @@ error messages.
     parser finishes without returning anything.
 
 How Syntax errors are reported
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+------------------------------
 
 As described previously in the :ref:`how PEG parsers work section
 <how-peg-parsers-work>`, PEG parsers don't have a defined concept of where
@@ -799,7 +800,7 @@ displayed when the error is reported.
     will be reported there instead of the ``$`` character.
 
 Generating AST objects
-~~~~~~~~~~~~~~~~~~~~~~
+----------------------
 
 The output of the C parser used by CPython that is generated by the
 :file:`Grammar/Python.gram` grammar file is a Python AST object (using C
@@ -828,7 +829,7 @@ custom helper in :file:`Parser/action_helpers.c` and expose it in the
 If the parsing succeeds, the parser **must** return a **valid** AST object.
 
 Testing
--------
+=======
 
 There are three files that contain tests for the grammar and the parser:
 
@@ -843,10 +844,10 @@ Tests for the parser generator itself can be found in the :file:`Lib/test/test_p
 
 
 Debugging generated parsers
----------------------------
+===========================
 
 Making experiments
-~~~~~~~~~~~~~~~~~~
+------------------
 
 As the generated C parser is the one used by Python, this means that if something goes wrong when adding some
 new rules to the grammar you cannot correctly compile and execute Python anymore. This makes it a bit challenging
@@ -870,7 +871,7 @@ better understand some complex situations.
 
 
 Verbose mode
-~~~~~~~~~~~~
+------------
 
 When Python is compiled in debug mode (by adding ``--with-pydebug`` when running the configure step in Linux or by
 adding ``-d`` when calling the :file:`PCbuild/build.bat` script in Windows), it is possible to activate a **very** verbose
@@ -907,7 +908,7 @@ indicates what alternative within that rule is being attempted.
 
 
 References
-----------
+==========
 
 .. [1] Ford, Bryan
    https://pdos.csail.mit.edu/~baford/packrat/thesis/

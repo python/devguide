@@ -1,7 +1,8 @@
 .. _runtests:
 
-Running & Writing Tests
-=======================
+=========================
+Running and Writing Tests
+=========================
 
 .. note::
 
@@ -11,7 +12,7 @@ Running & Writing Tests
     on new features not available in earlier versions of Python.
 
 Running
--------
+=======
 
 The shortest, simplest way of running the test suite is the following command
 from the root directory of your checkout (after you have
@@ -96,7 +97,7 @@ above.
 
 
 Unexpected Skips
-^^^^^^^^^^^^^^^^
+----------------
 
 Sometimes when running the test suite, you will see "unexpected skips"
 reported. These represent cases where an entire test module has been
@@ -114,7 +115,7 @@ settings on some platforms will disallow some tests)
 
 
 Writing
--------
+=======
 
 Writing tests for Python is much like writing tests for your own code. Tests
 need to be thorough, fast, isolated, consistently repeatable, and as simple as
@@ -134,7 +135,8 @@ you have to take to make your tests robust and portable.
 
 
 Benchmarks
-----------
+==========
+
 Benchmarking is useful to test that a change does not degrade performance.
 
 `The Python Benchmark Suite <https://github.com/python/pyperformance>`_

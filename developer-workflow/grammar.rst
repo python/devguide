@@ -1,10 +1,11 @@
 .. _grammar:
 
+==========================
 Changing CPython's Grammar
 ==========================
 
 Abstract
---------
+========
 
 There's more to changing Python's grammar than editing
 :file:`Grammar/python.gram`.  Here's a checklist.
@@ -20,7 +21,7 @@ For more information on how to use the new parser, check the
 :ref:`section on how to use CPython's parser <parser>`.
 
 Checklist
----------
+=========
 
 Note: sometimes things mysteriously don't work.  Before giving up, try ``make clean``.
 
