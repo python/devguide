@@ -5,6 +5,7 @@
 .. toctree::
    :maxdepth: 1
 
+   responsibilities
    committing
    experts
    developer-log
