@@ -14,10 +14,9 @@ This high-level **Helping with Documentation** section provides:
 * an overview of Python's documentation
 * how to help with documentation issues
 * information on proofreading
-* guidance on contributing to this Developer's Guide
 
-The next chapter, :ref:`Documenting Python <documenting>`, gives extensive,
-detailed information on how to write documentation and submit changes.
+You will find extensive and detailed information on how to write documentation
+and submit changes on the :ref:`Documenting Python <documenting>` page.
 
 
 Python Documentation
