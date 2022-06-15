@@ -49,7 +49,7 @@ if "%1" == "help" (
 	echo.  changes    to make an overview over all changed/added/deprecated items
 	echo.  linkcheck  to check all external links for integrity
 	echo.  doctest    to run all doctests embedded in the documentation if enabled
-	echo.  check      to check for stylistic and formal issues using rstlint
+	echo.  check      to check for stylistic and formal issues using sphinx-lint
 	goto end
 )
 
