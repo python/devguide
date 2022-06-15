@@ -181,7 +181,7 @@ of that object when the algorithm starts. This is because the algorithm needs
 to modify the reference count to do the computations and in this way the
 interpreter will not modify the real reference count field.
 
-.. figure:: images/python-cyclic-gc-1-new-page.png
+.. figure:: /_static/python-cyclic-gc-1-new-page.png
 
 The GC then iterates over all containers in the first list and decrements by one the
 ``gc_ref`` field of any other object that container is referencing.  Doing
@@ -190,7 +190,7 @@ using the C API or inherited by a superclass) to know what objects are reference
 each container. After all the objects have been scanned, only the objects that have
 references from outside the “objects to scan” list will have ``gc_refs > 0``.
 
-.. figure:: images/python-cyclic-gc-2-new-page.png
+.. figure:: /_static/python-cyclic-gc-2-new-page.png
 
 Notice that having ``gc_refs == 0`` does not imply that the object is unreachable.
 This is because another object that is reachable from the outside (``gc_refs > 0``)
@@ -204,13 +204,13 @@ tentatively unreachable list. The following image depicts the state of the lists
 moment when the GC processed the ``link_3`` and ``link_4`` objects but has not
 processed ``link_1`` and ``link_2`` yet.
 
-.. figure:: images/python-cyclic-gc-3-new-page.png
+.. figure:: /_static/python-cyclic-gc-3-new-page.png
 
 Then the GC scans the next ``link_1`` object. Because it has ``gc_refs == 1``,
 the gc does not do anything special because it knows it has to be reachable (and is
 already in what will become the reachable list):
 
-.. figure:: images/python-cyclic-gc-4-new-page.png
+.. figure:: /_static/python-cyclic-gc-4-new-page.png
 
 When the GC encounters an object which is reachable (``gc_refs > 0``), it traverses
 its references using the ``tp_traverse`` slot to find all the objects that are
@@ -225,7 +225,7 @@ objects that have already been visited once (by unsetting the ``PREV_MASK_COLLEC
 flag) so that if an object that has already been processed is referenced by some other
 object, the GC does not process it twice.
 
-.. figure:: images/python-cyclic-gc-5-new-page.png
+.. figure:: /_static/python-cyclic-gc-5-new-page.png
 
 Notice that an object that was marked as "tentatively unreachable" and was later
 moved back to the reachable list will be visited again by the garbage collector
