@@ -204,18 +204,8 @@ an issue for you in order to properly triage something. This will not only help
 speed up and simplify your work in helping out, but also help lessen the
 workload for everyone by gaining your help.
 
-Sub-pages related to the Issue Tracker
-======================================
-
-.. toctree::
-   :maxdepth: 1
-
-   gh-labels
-   gh-faq
 
 .. seealso::
-
-   | *Issues with Python and documentation*
 
    `The Python issue tracker <https://github.com/python/cpython/issues>`_
       Where to report issues about Python.
