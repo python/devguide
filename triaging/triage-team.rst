@@ -62,32 +62,15 @@ the Python Software Foundation, always follow the `PSF Code of Conduct`_.
 Becoming a member of the Python triage team
 ===========================================
 
-Any Python core developers are welcome to invite a Python contributor to the
+All Python core developers are welcome to invite a Python contributor to the
 Python triage team. Triagers will be responsible to handle not just issues, but
 also pull requests, and even managing backports. A Python triager has access to
 more repositories than just CPython.
 
-Any existing active contributor to the Python repository on GitHub can
-transition into becoming a Python triager. They can request this to any core
-developer, and the core developer can pass the request to the `Python
-organization admin
-<https://devguide.python.org/devcycle/?highlight=organization%20admin#current-owners>`_
-on GitHub. The request can be made confidentially via a DM in Discourse, or
-publicly by opening an `issue in the core-workflow repository
-<https://github.com/python/core-workflow/issues/new?template=triage_membership.md>`_.
-
-For every new triager, it would be great to announce them in the python-committers
-mailing list and core-workflow category in Discourse. `Example announcement
-<https://discuss.python.org/t/abhilash-raj-has-been-granted-triage-role-on-github/2089>`_.
-
-
-Gaining the "Triager" Role on the Issue Tracker
-===============================================
-
 When you have consistently shown the ability to properly
 help triage issues without guidance, you may request that you
 be given the "Triager" role on the `issue tracker`_. You can make the request
-to any person who already has the Triager role. If they decide you are ready
+to any core developer. If they decide you are ready
 to gain the extra privileges on the tracker they will then act as a mentor to
 you until you are ready to do things entirely on your own. There is no set rule
 as to how many issues you need to have helped with before or how long you have
@@ -101,5 +84,19 @@ tracker, releasing you from the burden of having to ask others to set values on
 an issue for you in order to properly triage something. This will not only help
 speed up and simplify your work in helping out, but also help lessen the
 workload for everyone by gaining your help.
+
+Any existing active contributor to the Python repository on GitHub can
+transition into becoming a Python triager. They can request this to any core
+developer, either confidentially via a DM in Discourse, or
+publicly by opening an `issue in the core-workflow repository
+<https://github.com/python/core-workflow/issues/new?template=triage_membership.md>`_.
+If the core devloper decides you are ready to gain the extra privileges on the
+tracker, they will ask a :ref:`Python organization admin <current owners>`
+to invite you to the Python organisation, and then  act as a mentor to you until
+you are ready to do things entirely on your own.
+
+For every new triager, it would be great to announce them in the python-committers
+mailing list and core-workflow category in Discourse. `Example announcement
+<https://discuss.python.org/t/abhilash-raj-has-been-granted-triage-role-on-github/2089>`_.
 
 .. _issue tracker: https://devguide.python.org/tracker/
