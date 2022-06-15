@@ -297,40 +297,14 @@ Full Table of Contents
 .. toctree::
    :maxdepth: 3
 
-   setup
-   help
-   pullrequest
-   runtests
-   coverage
-   docquality
-   documenting
-   silencewarnings
-   fixingissues
-   tracker
-   triaging
-   communication
-   porting
-   coredev
-   developers
-   committing
-   devcycle
-   buildbots
-   stdlibchanges
-   langchanges
-   experts
-   gdb
-   exploring
-   grammar
-   parser
-   compiler
-   garbage_collector
-   extensions
-   c-api
-   coverity
-   clang
-   buildworker
-   motivations
-   gitbootcamp
+   getting-started/index
+   developer-workflow/index
+   triage/index
+   documentation/index
+   testing/index
+   core-developers/index
+   internals/index
+   advanced-tools/index
    appendix
 
 .. _Buildbot status: https://www.python.org/dev/buildbot/
