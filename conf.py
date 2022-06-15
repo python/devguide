@@ -1,10 +1,10 @@
 import time
 
-# Add any Sphinx extension module names here, as strings. They can be extensions
-# coming with Sphinx (named 'sphinx.ext.*') or your custom ones.
-extensions = ['sphinx.ext.intersphinx', 'sphinx.ext.todo', 'sphinx_copybutton']
-intersphinx_mapping = {'python': ('https://docs.python.org/3', None)}
-todo_include_todos = True
+extensions = [
+    'sphinx.ext.intersphinx',
+    'sphinx.ext.todo',
+    'sphinx_copybutton',
+]
 
 # The master toctree document.
 master_doc = 'index'
@@ -15,10 +15,13 @@ copyright = f'2011-{time.strftime("%Y")}, Python Software Foundation'
 
 # List of patterns, relative to source directory, that match files and
 # directories to ignore when looking for source files.
-exclude_patterns = ['_build', 'venv*', 'env*', 'README.rst', '.github']
-
-# The name of the Pygments (syntax highlighting) style to use.
-pygments_style = 'sphinx'
+exclude_patterns = [
+    '_build',
+    'venv*',
+    'env*',
+    'README.rst',
+    '.github',
+]
 
 # Use the upstream python-docs-theme
 html_theme = 'furo'
@@ -49,3 +52,9 @@ linkcheck_ignore = [
     'https://discuss.python.org/groups/moderators',
     'https://discuss.python.org/groups/admins',
 ]
+
+intersphinx_mapping = {
+    'python': ('https://docs.python.org/3', None),
+}
+
+todo_include_todos = True
