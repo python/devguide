@@ -6,7 +6,7 @@ Python Developer's Guide
 
 This guide is a comprehensive resource for :ref:`contributing <contributing>`
 to Python_ -- for both new and experienced contributors. It is
-:ref:`maintained <helping-with-the-developers-guide>` by the same
+:ref:`maintained <devguide>` by the same
 community that maintains Python.  We welcome your contributions to Python!
 
 .. _quick-reference:
@@ -259,7 +259,7 @@ Additional Resources
 --------------------
 
 * Anyone can clone the sources for this guide.  See
-  :ref:`helping-with-the-developers-guide`.
+  :ref:`devguide`.
 * Help with ...
     * :ref:`exploring`
     * :ref:`grammar`
