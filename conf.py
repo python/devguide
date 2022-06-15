@@ -31,9 +31,6 @@ html_theme_options = {}
 # The name for this set of Sphinx documents.
 html_title = ""
 
-# Path to find HTML templates.
-templates_path = ['tools/templates']
-
 # Additional static files.
 html_static_path = ['tools/static']
 
