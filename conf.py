@@ -53,39 +53,6 @@ html_logo = "python-logo.png"
 # using the given strftime format.
 html_last_updated_fmt = '%b %d, %Y'
 
-# Output file base name for HTML help builder.
-htmlhelp_basename = 'PythonDevelopersGuidedoc'
-
-
-# -- Options for LaTeX output --------------------------------------------------
-
-# Grouping the document tree into LaTeX files. List of tuples
-# (source start file, target name, title, author, documentclass [howto/manual]).
-latex_documents = [
-    (
-        'index',
-        'PythonDevelopersGuide.tex',
-        'Python Developer\'s Guide Documentation',
-        'Brett Cannon',
-        'manual',
-    ),
-]
-
-
-# -- Options for manual page output --------------------------------------------
-
-# One entry per manual page. List of tuples
-# (source start file, name, description, authors, manual section).
-man_pages = [
-    (
-        'index',
-        'pythondevelopersguide',
-        "Python Developer's Guide Documentation",
-        ['Brett Cannon'],
-        1,
-    ),
-]
-
 # ignore linkcheck anchors for /#/$ANCHOR since it is used for
 # dynamic pages such as http://buildbot.python.org/all/#/console
 # http://www.sphinx-doc.org/en/stable/config.html?highlight=linkcheck#confval-linkcheck_anchors_ignore
