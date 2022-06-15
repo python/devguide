@@ -1,8 +1,8 @@
 .. _documenting:
 
-==================
-Documenting Python
-==================
+=================
+ Getting Started
+=================
 
 .. highlight::  rest
 

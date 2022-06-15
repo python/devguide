@@ -1,8 +1,8 @@
-
 .. _buildworker:
 
-Running a buildbot worker
-=========================
+======================
+ New Buildbot Workers
+======================
 
 .. highlight:: bash
 
@@ -35,7 +35,7 @@ contribute.
 
 
 Preparing for buildbot worker setup
------------------------------------
+===================================
 
 Since the goal is to build Python from source, the system will need to have
 everything required to do normal python development:  a compiler, a linker, and
@@ -53,10 +53,10 @@ the "buildbot worker" step below.
 
 
 Setting up the buildbot worker
-------------------------------
+==============================
 
 Conventional always-on machines
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+-------------------------------
 
 You need a recent version of the `buildbot <https://buildbot.net/>`_ software,
 and you will probably want a separate 'buildbot' user to run the buildbot
@@ -195,7 +195,7 @@ idea.
 
 
 Latent workers
-^^^^^^^^^^^^^^
+--------------
 
 We also support running `latent workers
 <http://docs.buildbot.net/current/manual/configuration/workers.html#latent-workers>`_
@@ -242,7 +242,7 @@ buildmaster administrators with the new AMI ID.
 
 
 Buildbot worker operation
--------------------------
+=========================
 
 Most of the time, running a worker is a "set and forget" operation,
 depending on the level of involvement you want to have in resolving bugs
@@ -273,7 +273,7 @@ to resolve the issue.
 
 
 Required Ports
---------------
+==============
 
 The worker operates as a *client* to the *buildmaster*.  This means that
 all network connections are *outbound*.  This is true also for the network
@@ -303,7 +303,7 @@ using either ``localhost`` or ``127.0.0.1``.
 
 
 Required Resources
-------------------
+==================
 
 Based on the last time we did a `survey
 <https://mail.python.org/pipermail/python-dev/2012-March/117978.html>`_ on
@@ -321,7 +321,7 @@ suite.
 
 
 Security Considerations
------------------------
+=======================
 
 We only allow builds to be triggered against commits to the
 `CPython repository on GitHub <https://github.com/python/cpython>`_.

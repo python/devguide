@@ -1,7 +1,8 @@
 .. _silencewarnings:
 
-Silence Warnings From the Test Suite
-====================================
+======================================
+ Silence Warnings From the Test Suite
+======================================
 
 When running Python's test suite, no warnings should result when you run it
 under :ref:`strenuous testing conditions <strenuous_testing>` (you can ignore

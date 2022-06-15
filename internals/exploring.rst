@@ -1,7 +1,8 @@
 .. _exploring:
 
-Exploring CPython's Internals
-=============================
+========================
+Exploring the Internals
+========================
 
 This is a quick guide for people who are interested in learning more about
 CPython's internals. It provides a summary of the source code structure
@@ -9,7 +10,7 @@ and contains references to resources providing a more in-depth view.
 
 
 CPython Source Code Layout
---------------------------
+==========================
 
 This guide gives an overview of CPython's code structure.
 It serves as a summary of file locations for modules and builtins.
@@ -49,7 +50,7 @@ Some exceptions:
 
 
 Additional References
----------------------
+=====================
 
 For over 20 years the CPython code base has been changing and evolving.
 Here's a sample of resources about the architecture of CPython aimed at

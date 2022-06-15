@@ -1,13 +1,14 @@
 .. _patch:
 .. _pullrequest:
 
+=============================
 Lifecycle of a Pull Request
-===========================
+=============================
 
 .. highlight:: bash
 
 Introduction
-------------
+============
 
 CPython uses a workflow based on pull requests. What this means is
 that you create a branch in Git, make your changes, push those changes
@@ -18,7 +19,7 @@ the official CPython repository (``upstream``).
 .. _pullrequest-quickguide:
 
 Quick Guide
------------
+===========
 
 `Clear communication`_ is key to contributing to any project, especially an
 `Open Source`_ project like CPython.
@@ -68,7 +69,7 @@ Here is a quick overview of how you can contribute to CPython:
 .. _pullrequest-steps:
 
 Step-by-step Guide
-------------------
+==================
 
 You should have already :ref:`set up your system <setup>`,
 :ref:`got the source code <checkout>`, and :ref:`built Python <compiling>`.
@@ -144,7 +145,7 @@ You should have already :ref:`set up your system <setup>`,
 .. _resolving-merge-conflicts:
 
 Resolving Merge Conflicts
-'''''''''''''''''''''''''
+-------------------------
 
 When merging changes from different branches (or variants of a branch on
 different repos), the two branches may contain incompatible changes to one
@@ -173,7 +174,7 @@ for a detailed technical explanation.
 .. _good-prs:
 
 Making Good PRs
----------------
+===============
 
 When creating a pull request for submission, there are several things that you
 should do to help ensure that your pull request is accepted.
@@ -217,7 +218,7 @@ additions/changes should be included.
 .. _patchcheck:
 
 ``patchcheck``
---------------
+==============
 
 ``patchcheck`` is a simple automated patch checklist that guides a developer
 through the common patch generation checks. To run ``patchcheck``:
@@ -257,7 +258,7 @@ making a complete patch.
 .. _good-commits:
 
 Making Good Commits
--------------------
+===================
 
 Each feature or bugfix should be addressed by a single pull request,
 and for each pull request there may be several commits.  In particular:
@@ -297,7 +298,7 @@ request.
 .. _cla:
 
 Licensing
----------
+=========
 
 To accept your change we must have your formal approval for distributing
 your work under the `PSF license`_.  Therefore, you need to sign a
@@ -328,7 +329,7 @@ Here are the steps needed in order to sign the CLA:
 
 
 Submitting
-----------
+==========
 
 Once you are satisfied with your work you will want to commit your
 changes to your branch. In general you can run ``git commit -a`` and
@@ -369,7 +370,7 @@ The commits will be squashed when the pull request is merged.
 
 
 Converting an Existing Patch from b.p.o to GitHub
--------------------------------------------------
+=================================================
 
 When a patch exists in the `issue tracker`_ that should be converted into a
 GitHub pull request, please first ask the original patch author to prepare
@@ -385,7 +386,7 @@ on how to properly add the co-author info.
 See also :ref:`Applying a Patch to Git <git_from_patch>`.
 
 Reviewing
----------
+=========
 
 To begin with, please be patient! There are many more people
 submitting pull requests than there are people capable of reviewing
@@ -410,7 +411,7 @@ thus iterate until a satisfactory solution has emerged.
 
 
 How to Review a Pull Request
-''''''''''''''''''''''''''''
+----------------------------
 
 One of the bottlenecks in the Python development
 process is the lack of code reviews.
@@ -451,7 +452,7 @@ code and leave comments in the pull request or issue tracker.
    'merge-ready', you should always make sure the entire test suite passes.
 
 Leaving a Pull Request Review on GitHub
----------------------------------------
+=======================================
 
 When you review a pull request, you should provide additional details and context
 of your review process.
@@ -467,7 +468,7 @@ Instead of simply "approving" the pull request, leave comments.  For example:
    so will make it easier for the PR author to find the good in your comments.
 
 Dismissing Review from Another Core Developer
----------------------------------------------
+=============================================
 
 A core developer can dismiss another core developer's review if they confirmed
 that the requested changes have been made.  When a core developer has assigned
@@ -476,7 +477,7 @@ the PR, and their review should not be dismissed.
 
 
 Committing/Rejecting
---------------------
+====================
 
 Once your pull request has reached an acceptable state (and thus considered
 "accepted"), it will either be merged or rejected. If it is rejected, please
@@ -492,7 +493,7 @@ it is warranted.
 
 
 Crediting
----------
+=========
 
 Non-trivial contributions are credited in the ``Misc/ACKS`` file (and, most
 often, in a contribution's news entry as well).  You may be

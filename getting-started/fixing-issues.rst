@@ -1,7 +1,8 @@
 .. _fixingissues:
 
-Fixing "easy" Issues (and Beyond)
-=================================
+===================================
+ Fixing "easy" Issues (and Beyond)
+===================================
 
 When you feel comfortable enough to want to help tackle issues by trying to
 create a patch to fix an issue, you can start by looking at the `"easy"

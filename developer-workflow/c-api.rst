@@ -1,6 +1,6 @@
-=======================
-Changing Python's C API
-=======================
+=========================
+ Changing Python's C API
+=========================
 
 The C API is divided into three sections:
 

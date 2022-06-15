@@ -1,14 +1,15 @@
 .. _communication:
 
-Following Python's Development
-==============================
+================================
+ Following Python's Development
+================================
 
 Python's development is communicated through a myriad of ways, mostly through
 mailing lists, but also other forms.
 
 
 Standards of behaviour in these communication channels
-------------------------------------------------------
+======================================================
 We try to foster environments of mutual respect, tolerance and encouragement,
 as described in the PSF's `Diversity Statement`_. Abiding by the guidelines
 in this document and asking questions or posting suggestions in the
@@ -22,7 +23,7 @@ in return.
 .. _mailinglists:
 
 Mailing Lists
--------------
+=============
 
 python-dev_ is the primary mailing list for discussions about Python's
 development. The list is open to the public and is subscribed to by all core
@@ -93,7 +94,7 @@ RSS feed readers.
 
 
 Discourse (discuss.python.org web forum)
-----------------------------------------
+========================================
 
 We have our own `Discourse`_ forum for both developers and users. This forum
 complements the `python-dev`_, `python-ideas`_, `python-help`_, and
@@ -111,7 +112,7 @@ It is also a common venue for the core developer promotion votes (this
 category is equivalent to the python-committers mailing list).
 
 Tutorials for new users
-'''''''''''''''''''''''
+-------------------------
 To start a topic or participate in any discussions in the forum, sign up and
 create an account using an email address or GitHub account. You can do so by
 clicking the "Sign Up" button on the top right hand corner of the `Discourse`_
@@ -142,7 +143,7 @@ dots under the message and then on the ⚐ icon.  You can also mention the
 
 
 Reading topics
-'''''''''''''''
+-----------------
 Click a topic title and read down the list of replies in chronological order,
 following links or previewing replies and quotes as you go. Use your mouse to
 scroll the screen, or use the timeline scroll bar on the right which also shows
@@ -151,10 +152,10 @@ bottom progress bar to expand it.
 
 
 Notifications
-'''''''''''''
+-------------
 
 Following categories (Category notifications)
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+'''''''''''''''''''''''''''''''''''''''''''''
 Notifications can be set for individual categories and topics. To change any of these
 defaults, you can either go to your user preferences, or visit the category
 page, and use the notification button 🔔 above the topic list,
@@ -166,7 +167,7 @@ All categories are set by default in Normal mode where you will only be notified
 if someone mentions your @name or replies to you.
 
 Following individual threads (Topic notifications)
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+''''''''''''''''''''''''''''''''''''''''''''''''''
 To follow any individual topics or threads, you can adjust your notifications
 through the notification button 🔔 found on the right of the topic at the end
 of the timeline. You can also do so at the bottom of each topic.
@@ -174,13 +175,13 @@ Select "Watching" and you will be notified when there is any new updated reply
 from that particular thread.
 
 Customising notifications on user preference
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+''''''''''''''''''''''''''''''''''''''''''''
 To get a bird's eye view of all your customised notifications, you can
 go to `Preferences of your account <https://discuss.python.org/my/preferences/categories>`_.
 This allows you to make adjustments according to categories, users, and tags.
 
 Enabling mailing list mode
-''''''''''''''''''''''''''
+--------------------------
 In mailing list mode, you will receive one email per post, as happens with
 traditional mailing lists. This is desirable if you prefer to interact via email,
 without visiting the forum website.
@@ -195,7 +196,7 @@ mailing list mode" and save changes.
 
 
 Discord (private chat server)
------------------------------
+=============================
 
 For more real-time discussions, the core development team have a private Discord
 server available. Core developers, Steering Council members, triagers, and
@@ -233,7 +234,7 @@ set a specific `Server Nickname`_
 
 
 IRC
----
+===
 
 Some core developers still participate in the ``#python-dev`` IRC channel on
 ``irc.libera.chat``. This is not a place to ask for help with Python, but to
@@ -242,7 +243,7 @@ discuss issues related to Python's own development. See also the
 
 
 Blogs
------
+=====
 
 Several core developers are active bloggers and discuss Python's development
 that way. You can find their blogs (and various other developers who use Python)
@@ -250,7 +251,7 @@ at https://planetpython.org/.
 
 
 Setting Expectations for Open Source Participation
---------------------------------------------------
+==================================================
 
 Burn-out is common in open source due to a misunderstanding of what users, contributors,
 and maintainers should expect from each other. Brett Cannon gave a `talk <https://www.youtube.com/watch?v=-Nk-8fSJM6I>`_
@@ -258,7 +259,7 @@ about this topic that sets out to help everyone set reasonable expectations of e
 order to make open source pleasant for everyone involved.
 
 Additional Repositories
------------------------
+=======================
 
 `Python Core Workflow`_ hosts the codebase for tools such as `cherry_picker`_
 and `blurb`_.

@@ -1,7 +1,8 @@
 .. _gdb:
 
-gdb Support
-===========
+=============
+ GDB Support
+=============
 
 .. highlight:: none
 
@@ -17,7 +18,7 @@ limitation.
 
 
 gdb 7 and later
----------------
+===============
 
 In gdb 7, support for `extending gdb with Python
 <https://sourceware.org/gdb/current/onlinedocs/gdb/Python.html#Python>`_ was
@@ -300,7 +301,7 @@ thread is doing at the Python level::
 
 
 gdb 6 and earlier
------------------
+=================
 
 The file at ``Misc/gdbinit`` contains a gdb configuration file which provides
 extra commands when working with a CPython process. To register these commands
@@ -311,7 +312,7 @@ from your gdb session.
 
 
 Updating auto-load-safe-path to allow test_gdb to run
------------------------------------------------------
+=====================================================
 
 ``test_gdb`` attempts to automatically load additional Python specific
 hooks into gdb in order to test them. Unfortunately, the command line

@@ -1,8 +1,8 @@
 .. _clang:
 
-***************************
-Dynamic Analysis with Clang
-***************************
+=============================
+ Dynamic Analysis with Clang
+=============================
 
 .. highlight:: bash
 

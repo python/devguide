@@ -1,7 +1,8 @@
 .. _porting:
 
-Porting Python to a new platform
---------------------------------
+===========================
+ Porting to a New Platform
+===========================
 
 The first step is to familiarize yourself with the development toolchain on
 the platform in question, notably the C compiler. Make sure you can compile and

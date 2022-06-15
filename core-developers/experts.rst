@@ -1,7 +1,8 @@
 .. _experts:
 
-Experts Index
-=============
+===============
+ Experts Index
+===============
 
 This document has tables that list Python Modules, Tools, Platforms and
 Interest Areas and GitHub names for each item that indicate a maintainer or
@@ -44,7 +45,8 @@ not feel qualified to make a decision in a particular context.
 
 
 Stdlib
-------
+======
+
 ====================  =============================================
 Module                Maintainers
 ====================  =============================================
@@ -276,7 +278,8 @@ zlib                  Yhg1s, gpshead*
 
 
 Tools
------
+=====
+
 ==================  ===========
 Tool                Maintainers
 ==================  ===========
@@ -286,7 +289,8 @@ PEG Generator       gvanrossum, pablogsal, lysnikolaou
 
 
 Platforms
----------
+=========
+
 ===================   ===========
 Platform              Maintainers
 ===================   ===========
@@ -305,7 +309,8 @@ JVM/Java              frank.wierzbicki^
 
 
 Miscellaneous
--------------
+=============
+
 ==================  ==========================================================
 Interest Area       Maintainers
 ==================  ==========================================================
@@ -359,6 +364,6 @@ version control     merwok, ezio-melotti
 
 
 Documentation Translations
---------------------------
+==========================
 
 For a list of translators, see :ref:`this table about translations <translating>`.

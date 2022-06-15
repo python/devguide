@@ -1,7 +1,8 @@
 .. _docquality:
 
-Helping with Documentation
-==========================
+============================
+ Helping with Documentation
+============================
 
 Python is known for having well-written documentation. Maintaining the
 documentation's accuracy and keeping a high level of quality takes a lot of
@@ -20,7 +21,7 @@ detailed information on how to write documentation and submit changes.
 
 
 Python Documentation
---------------------
+====================
 
 The :ref:`Documenting Python <documenting>` section covers the details of how
 Python's documentation works. It includes information about the markup
@@ -43,7 +44,7 @@ mailing list discusses the documentation toolchain, projects, and standards.
 
 
 Helping with documentation issues
----------------------------------
+=================================
 
 If you look at `documentation issues`_ on the `issue tracker`_, you
 will find various documentation problems that may need work. Issues vary from
@@ -67,7 +68,7 @@ you will learn the workflow for documentation pull requests.
 
 
 Proofreading
-------------
+============
 
 While an issue filed on the `issue tracker`_ means there is a known issue
 somewhere, that does not mean there are not other issues lurking about in the
