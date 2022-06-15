@@ -52,8 +52,8 @@ to enter the public source tree. Ask yourself the following questions:
    developer can apply the label ``needs backport to X.Y`` to the pull
    request. Once the backport pull request has been created, remove the
    ``needs backport to X.Y`` label from the original pull request. (Only
-   core developers and members of the `Python Triage Team`_ can apply
-   labels to GitHub pull requests).
+   core developers and members of the :ref:`Python Triage Team <triage-team>`
+   can apply labels to GitHub pull requests).
 
 * **Does the pull request pass a check indicating that the submitter has signed the CLA?**
    Make sure that the contributor has signed a `Contributor
@@ -224,11 +224,10 @@ Note that cherry_picker.py_ adds the branch prefix automatically.
 
 Once the backport pull request has been created, remove the
 ``needs backport to X.Y`` label from the original pull request. (Only
-core developers and members of the `Python Triage Team`_ can apply
-labels to GitHub pull requests).
+core developers and members of the :ref:`Python Triage Team <triage-team>`
+can apply labels to GitHub pull requests).
 
 .. _cherry_picker.py: https://github.com/python/cherry-picker
-.. _`Python Triage Team`: https://devguide.python.org/triaging/#python-triage-team
 
 
 Reverting a merged pull request
