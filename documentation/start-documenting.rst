@@ -1550,7 +1550,7 @@ build completes.
 
 You can also use ``make help`` to see a list of targets supported by
 :command:`make`.  Note that ``make check`` is automatically run when
-you submit a :doc:`pull request <pullrequest>`, so you should make
+you submit a :ref:`pull request <pullrequest>`, so you should make
 sure that it runs without errors.
 
 **On Windows**, a :file:`make.bat` batchfile tries to emulate :command:`make`

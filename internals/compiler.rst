@@ -34,7 +34,7 @@ The grammar file for Python can be found in
 :file:`Grammar/python.gram`.  The definitions for literal tokens
 (such as ``:``, numbers, etc.) can be found in :file:`Grammar/Tokens`.
 Various C files, including :file:`Parser/parser.c` are generated from
-these (see :doc:`grammar`).
+these (see :ref:`grammar`).
 
 
 Abstract Syntax Trees (AST)

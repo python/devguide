@@ -3,10 +3,10 @@
 Triaging an Issue
 =================
 
-This section of the devguide documents the `issue tracker`_ for users
-and developers.
+This section of the devguide documents the :ref:`issue tracker <tracker>` for
+users and developers.
 
-Contributors with the Triager role on the `issue tracker`_ can triage issues
+Contributors with the Triager role on the issue tracker can triage issues
 directly without any assistance.
 
 Additionally, this section provides an overview of the Python triage team.
@@ -93,7 +93,7 @@ GitHub Labels for PRs
 
 An important component of triaging PRs for the CPython repo involves
 appropriately categorizing them through the usage of labels. For this
-purpose we're using :doc:`gh-labels`.
+purpose we're using :ref:`gh-labels`.
 
 Applying labels for Issues
 --------------------------

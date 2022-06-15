@@ -57,7 +57,7 @@ If you see a documentation issue that you would like to tackle, you can:
 * leave a comment on the issue saying you are going to try and create a pull
   request and roughly how long you think you will take to do so (this allows
   others to take on the issue if you happen to forget or lose interest).
-* submit a :doc:`pull request <pullrequest>` for the issue.
+* submit a :ref:`pull request <pullrequest>` for the issue.
 
 By following the steps in the :ref:`Quick Guide to Pull Requests <pullrequest-quickguide>`,
 you will learn the workflow for documentation pull requests.
@@ -104,7 +104,7 @@ published in the release.
 Developer's Guide workflow
 --------------------------
 
-To submit a :doc:`pull request <pullrequest>`, you can fork the
+To submit a :ref:`pull request <pullrequest>`, you can fork the
 `devguide repo`_ to your GitHub account and clone it using::
 
     $ git clone https://github.com/<your_username>/devguide
@@ -129,7 +129,7 @@ in the checkout directory.  On Windows use:
 You will find the generated files in ``_build/html`` or, if you use
 ``make htmlview``, the docs will be opened in a browser once the build
 completes.  Note that ``make check`` runs automatically when you submit
-a :doc:`pull request <pullrequest>`.  You may wish to run ``make check``
+a :ref:`pull request <pullrequest>`.  You may wish to run ``make check``
 and ``make linkcheck`` to make sure that it runs without errors.
 
 .. _separate repository:

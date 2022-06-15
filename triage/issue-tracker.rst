@@ -1,8 +1,9 @@
+.. _tracker:
+
 ==============
 Issue Tracking
 ==============
 
-.. _tracker:
 
 Using the Issue Tracker
 =======================
@@ -22,8 +23,8 @@ If you would like to file an issue about this devguide, please do so at the
     migrated to the current `issue tracker`_ on GitHub.
 
     If you're familiar with ``bpo`` and would like to learn more about GitHub
-    issues, please read this page, and the :doc:`triaging` page as they
-    provide good introductory material. There is also a :doc:`gh-faq`
+    issues, please read this page, and the :ref:`triaging` page as they
+    provide good introductory material. There is also a :ref:`gh-faq`
     document to answer some of the more popular questions.
 
 Checking if a bug already exists

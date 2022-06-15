@@ -1,4 +1,5 @@
 .. _gc:
+.. _garbage_collector:
 
 Design of CPython's Garbage Collector
 =====================================

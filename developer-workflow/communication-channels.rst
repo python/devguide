@@ -92,6 +92,8 @@ RSS feed readers.
 .. _web gateway: https://mail.python.org/archives/
 
 
+.. _discourse_discuss:
+
 Discourse (discuss.python.org web forum)
 ----------------------------------------
 
