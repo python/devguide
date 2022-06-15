@@ -1,8 +1,4 @@
-import os
-import sys
 import time
-
-sys.path.append(os.path.abspath('tools'))
 
 # Add any Sphinx extension module names here, as strings. They can be extensions
 # coming with Sphinx (named 'sphinx.ext.*') or your custom ones.
@@ -31,9 +27,6 @@ html_theme_options = {}
 # The name for this set of Sphinx documents.
 html_title = ""
 
-# Additional static files.
-html_static_path = ['tools/static']
-
 # The name of an image file (relative to this directory) to place at the top
 # of the sidebar.
 html_logo = "python-logo.png"
@@ -56,8 +49,3 @@ linkcheck_ignore = [
     'https://discuss.python.org/groups/moderators',
     'https://discuss.python.org/groups/admins',
 ]
-
-# Use our custom CSS stylesheet to differentiate us from the official python
-# docs.
-def setup(app):
-    app.add_css_file('custom.css')
