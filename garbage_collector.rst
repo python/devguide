@@ -139,11 +139,11 @@ the interpreter create cycles everywhere. Some notable examples:
       have internal links to themselves.
 
 To correctly dispose of these objects once they become unreachable, they need to be
-identified first.  Inside the function that identifies cycles, two double-linked
+identified first.  Inside the function that identifies cycles, two doubly linked
 lists are maintained: one list contains all objects to be scanned, and the other will
 contain all objects "tentatively" unreachable.
 
-To understand how the algorithm works, Let’s take the case of a circular linked list
+To understand how the algorithm works, let’s take the case of a circular linked list
 which has one link referenced by a variable ``A``, and one self-referencing object which
 is completely unreachable:
 
