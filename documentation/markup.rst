@@ -6,6 +6,9 @@ reStructuredText Markup
 
 .. highlight::  rest
 
+This document describes the custom reStructuredText markup introduced by Sphinx
+to support Python documentation and how it should be used.
+
 
 .. _rst-primer:
 
@@ -190,7 +193,8 @@ A directive is a generic block of explicit markup.  Besides roles, it is one of
 the extension mechanisms of reST, and Sphinx makes heavy use of it.
 
 Basically, a directive consists of a name, arguments, options and content. (Keep
-this terminology in mind, it is used in the next chapter describing custom
+this terminology in mind, it is used in `:ref:`the next section
+<Additional Markup Constructs>` describing custom
 directives.)  Looking at this example,
 
 ::
