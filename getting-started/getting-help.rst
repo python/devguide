@@ -15,7 +15,7 @@ question.
 Discourse
 ---------
 
-Python has a hosted `Discourse`_ instance. This forum has many different
+Python has a hosted :ref:`Discourse <discourse_discuss>` instance. This forum has many different
 categories and most core development discussions take place in the open forum
 categories for `PEPs`_ and `Core Development`_ .
 Most categories are open for all users to read and post with the exception of
@@ -25,7 +25,7 @@ categories, such as
 `Core Workflow <https://discuss.python.org/c/core-workflow/8>`_.
 
 .. seealso::
-  `Discourse <https://devguide.python.org/communication/#discourse-discuss-python-org-web-forum>`_
+  :ref:`Discourse <discourse_discuss>`
   on how to get started.
 
 

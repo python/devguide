@@ -48,7 +48,7 @@ Note: sometimes things mysteriously don't work.  Before giving up, try ``make cl
 * :file:`Python/ast_unparse.c` will need changes to unparse AST objects involved with the
   grammar change ("unparsing" is used to turn annotations into strings per :pep:`563`).
 
-* The :doc:`compiler` has its own page.
+* The :ref:`compiler` has its own page.
 
 * ``_Unparser`` in the :file:`Lib/ast.py` file may need changes to accommodate
   any modifications in the AST nodes.

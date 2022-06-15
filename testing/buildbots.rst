@@ -5,7 +5,7 @@ Continuous Integration
 
 .. highlight:: bash
 
-To assert that there are no regressions in the :doc:`development and maintenance
+To assert that there are no regressions in the :ref:`development and maintenance
 branches <devcycle>`, Python has a set of dedicated machines (called *buildbots*
 or *build workers*) used for continuous integration.  They span a number of
 hardware/operating system combinations.  Furthermore, each machine hosts
@@ -105,7 +105,7 @@ introducing additional failures should generally not be an option.
 Flags-dependent failures
 ------------------------
 
-Sometimes, while you have run the :doc:`whole test suite <runtests>` before
+Sometimes, while you have run the :ref:`whole test suite <runtests>` before
 committing, you may witness unexpected failures on the buildbots.  One source
 of such discrepancies is if different flags have been passed to the test runner
 or to Python itself.  To reproduce, make sure you use the same flags as the

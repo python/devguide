@@ -1,4 +1,5 @@
 .. _patch:
+.. _pullrequest:
 
 Lifecycle of a Pull Request
 ===========================
@@ -89,7 +90,7 @@ You should have already :ref:`set up your system <setup>`,
      make patchcheck
      ./python -m test
 
-  (Learn more about :ref:`patchcheck` and about :doc:`runtests`)
+  (Learn more about :ref:`patchcheck` and about :ref:`runtests`)
 
 * Once you are satisfied with the changes, add the files and commit them::
 
