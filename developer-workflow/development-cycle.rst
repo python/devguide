@@ -273,6 +273,8 @@ who no longer necessitate this level of access will be removed with notice.
 Multi-Factor Authentication must be enabled by the user in order to remain an
 Owner of the Python Organization.
 
+.. _current owners:
+
 Current Owners
 --------------
 

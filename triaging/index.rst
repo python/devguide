@@ -9,3 +9,4 @@
    triaging
    labels
    github-bpo-faq
+   triage-team
