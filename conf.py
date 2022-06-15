@@ -29,13 +29,10 @@ html_static_path = ['static']
 html_css_files = [
     'adjust_logo_size.css',
 ]
+html_logo = "static/python-logo.png"
 
-# The name for this set of Sphinx documents.
+# Set to '' to prevent appending "documentation" to the site title
 html_title = ""
-
-# The name of an image file (relative to this directory) to place at the top
-# of the sidebar.
-html_logo = "python-logo.png"
 
 # ignore linkcheck anchors for /#/$ANCHOR since it is used for
 # dynamic pages such as http://buildbot.python.org/all/#/console
