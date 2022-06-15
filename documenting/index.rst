@@ -7,3 +7,4 @@
 
    start-documenting
    help-documenting
+   style-guide
