@@ -9,3 +9,4 @@
    help-documenting
    style-guide
    markup
+   translating
