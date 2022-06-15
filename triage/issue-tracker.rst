@@ -151,7 +151,7 @@ Python:
   Python's test suite, having that written can be very helpful.
 
 This is all helpful as it allows triagers (i.e.,
-:ref:`people with the Developer role on the issue tracker <devrole>`) to
+:ref:`people with the Developer role on the issue tracker <triagers>`) to
 properly classify an issue so it can be handled by the right core developers in
 a timely fashion.
 
@@ -168,7 +168,7 @@ by making sure the patch:
 * includes proper documentation changes
 * submitter is listed in ``Misc/ACKS``, either already or the patch adds them
 
-Doing all of this allows core developers and :ref:`triagers <devrole>` to more
+Doing all of this allows core developers and :ref:`triagers` to more
 quickly look for subtle issues that only people with extensive experience
 working on Python's code base will notice.
 
@@ -180,30 +180,6 @@ in modules which you have a working knowledge.  Search for the name of a module
 in the issue tracker or use the `advanced search`_ query builder to search for
 specific kinds of issues (e.g. the "Windows" label if you are a Windows
 developer, "Extension Modules" if you are familiar with C, etc.).
-
-
-.. _devrole:
-
-Gaining the "Triager" Role on the Issue Tracker
-===============================================
-
-When you have consistently shown the ability to properly
-help triage issues without guidance, you may request that you
-be given the "Triager" role on the `issue tracker`_. You can make the request
-to any person who already has the Triager role. If they decide you are ready
-to gain the extra privileges on the tracker they will then act as a mentor to
-you until you are ready to do things entirely on your own. There is no set rule
-as to how many issues you need to have helped with before or how long you have
-been participating. The key requirements are that you show the desire to
-help, you are able to work well with others (especially those already with the
-Triager role), and that have a firm grasp of how to do things on the issue
-tracker properly on your own.
-
-Gaining the Triager role will allow you to set any value on any issue in the
-tracker, releasing you from the burden of having to ask others to set values on
-an issue for you in order to properly triage something. This will not only help
-speed up and simplify your work in helping out, but also help lessen the
-workload for everyone by gaining your help.
 
 
 .. seealso::
