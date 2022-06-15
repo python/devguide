@@ -23,9 +23,12 @@ exclude_patterns = [
     '.github',
 ]
 
-# Use the upstream python-docs-theme
 html_theme = 'furo'
 html_theme_options = {}
+html_static_path = ['static']
+html_css_files = [
+    'adjust_logo_size.css',
+]
 
 # The name for this set of Sphinx documents.
 html_title = ""
