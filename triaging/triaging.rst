@@ -93,7 +93,7 @@ GitHub Labels for PRs
 
 An important component of triaging PRs for the CPython repo involves
 appropriately categorizing them through the usage of labels. For this
-purpose we're using :doc:`gh-labels`.
+purpose we're using :ref:`gh-labels`.
 
 Applying labels for Issues
 --------------------------

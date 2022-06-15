@@ -1,4 +1,4 @@
-.. _github-labels:
+.. _gh-labels:
 
 GitHub Labels
 =============

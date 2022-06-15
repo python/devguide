@@ -1,11 +1,13 @@
+.. _gh-faq:
+
 GitHub issues for BPO users
 ===========================
 
 Here are some frequently asked questions about how to do things in
 GitHub issues that you used to be able to do on `bpo`_.
 
-Before you ask your own question, make sure you read :doc:`tracker`
-and :doc:`triaging` (specifically including :doc:`gh-labels`) as those
+Before you ask your own question, make sure you read :ref:`tracker`
+and :ref:`triaging` (specifically including :ref:`gh-labels`) as those
 pages include a lot of introductory material.
 
 How to format my comments nicely?

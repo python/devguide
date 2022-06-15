@@ -1,8 +1,8 @@
+.. _coverity:
+
 =============
 Coverity Scan
 =============
-
-.. _coverity:
 
 Coverity Scan is a free service for static code analysis of Open Source
 projects. It is based on Coverity's commercial product and is able to analyze

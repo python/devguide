@@ -42,7 +42,7 @@ instructions please see the :ref:`setup guide <setup>`.
    and the platform-specific pages for :ref:`UNIX <unix-compiling>`,
    :ref:`Mac OS <MacOS>`, and :ref:`Windows <windows-compiling>`.
 
-4. :doc:`Run the tests <runtests>`::
+4. :ref:`Run the tests <runtests>`::
 
       ./python -m test -j3
 
@@ -60,7 +60,7 @@ instructions please see the :ref:`setup guide <setup>`.
 6. Once you fixed the issue, run the tests, run ``make patchcheck``, and if
    everything is ok, commit.
 
-7. Push the branch on your fork on GitHub and :doc:`create a pull request
+7. Push the branch on your fork on GitHub and :ref:`create a pull request
    <pullrequest>`.  Include the issue number using ``gh-NNNN`` in the
    pull request description.  For example::
 
@@ -85,9 +85,9 @@ contributing to Python:
 
 * `Issue tracker`_
 * `Buildbot status`_
-* :doc:`help`
+* :ref:`help`
 * PEPs_ (Python Enhancement Proposals)
-* :doc:`gitbootcamp`
+* :ref:`gitbootcamp`
 
 .. _branchstatus:
 
@@ -159,29 +159,29 @@ Guide for contributing to Python:
 +------------------------+---------------------+-----------------------+---------------------+
 | New Contributors       | Documentarians      | Triagers              | Core Developers     |
 +========================+=====================+=======================+=====================+
-| :doc:`setup`           | :doc:`docquality`   | :doc:`tracker`        | :doc:`coredev`      |
+| :ref:`setup`           | :ref:`docquality`   | :ref:`tracker`        | :ref:`coredev`      |
 +------------------------+---------------------+-----------------------+---------------------+
-| :doc:`help`            | :doc:`documenting`  | :doc:`triaging`       | :doc:`developers`   |
+| :ref:`help`            | :ref:`documenting`  | :ref:`triaging`       | :ref:`developers`   |
 +------------------------+---------------------+-----------------------+---------------------+
-| :doc:`pullrequest`     | :ref:`style-guide`  | :ref:`helptriage`     | :doc:`committing`   |
+| :ref:`pullrequest`     | :ref:`style-guide`  | :ref:`helptriage`     | :ref:`committing`   |
 +------------------------+---------------------+-----------------------+---------------------+
-| :doc:`runtests`        | :ref:`rst-primer`   | :doc:`experts`        | :doc:`devcycle`     |
+| :ref:`runtests`        | :ref:`rst-primer`   | :ref:`experts`        | :ref:`devcycle`     |
 +------------------------+---------------------+-----------------------+---------------------+
-| :doc:`fixingissues`    | :ref:`translating`  |                       | :doc:`motivations`  |
+| :ref:`fixingissues`    | :ref:`translating`  |                       | :ref:`motivations`  |
 +------------------------+---------------------+-----------------------+---------------------+
-| :doc:`communication`   |                     |                       | :ref:`office hour`  |
+| :ref:`communication`   |                     |                       | :ref:`office hour`  |
 +------------------------+---------------------+-----------------------+---------------------+
-| :doc:`gitbootcamp`     |                     |                       |                     |
+| :ref:`gitbootcamp`     |                     |                       |                     |
 +------------------------+---------------------+-----------------------+---------------------+
 
 Advanced tasks and topics for once you are comfortable:
 
-* :doc:`silencewarnings`
-* Fixing issues found by the :doc:`buildbots <buildbots>`
-* :doc:`coverity`
+* :ref:`silencewarnings`
+* Fixing issues found by the :ref:`buildbots <buildbots>`
+* :ref:`coverity`
 * Helping out with reviewing `open pull requests`_.
   See :ref:`how to review a Pull Request <how-to-review-a-pull-request>`.
-* :doc:`fixingissues`
+* :ref:`fixingissues`
 
 It is **recommended** that the above documents be read as needed. New
 contributors will build understanding of the CPython workflow by reading the
@@ -206,8 +206,8 @@ developer's toolkit.
 While these kinds of change are much rarer than those described above, they do
 happen and that process is also described as part of this guide:
 
-* :doc:`stdlibchanges`
-* :doc:`langchanges`
+* :ref:`stdlibchanges`
+* :ref:`langchanges`
 
 
 Other Interpreter Implementations
@@ -242,15 +242,15 @@ Key Resources
 * `Issue tracker`_
     * `Meta tracker <https://issues.roundup-tracker.org/>`_ (issue
       tracker for the issue tracker)
-    * :doc:`experts`
+    * :ref:`experts`
 * `Buildbot status`_
 * Source code
     * `Browse online <https://github.com/python/cpython/>`_
     * `Snapshot of the *main* branch <https://github.com/python/cpython/archive/main.zip>`_
     * `Daily OS X installer <https://buildbot.python.org/daily-dmg/>`_
 * PEPs_ (Python Enhancement Proposals)
-* :doc:`help`
-* :doc:`developers`
+* :ref:`help`
+* :ref:`developers`
 
 
 .. _resources:
@@ -261,14 +261,14 @@ Additional Resources
 * Anyone can clone the sources for this guide.  See
   :ref:`helping-with-the-developers-guide`.
 * Help with ...
-    * :doc:`exploring`
-    * :doc:`grammar`
-    * :doc:`parser`
-    * :doc:`compiler`
-    * :doc:`garbage_collector`
+    * :ref:`exploring`
+    * :ref:`grammar`
+    * :ref:`parser`
+    * :ref:`compiler`
+    * :ref:`garbage_collector`
 * Tool support
-    * :doc:`gdb`
-    * :doc:`clang`
+    * :ref:`gdb`
+    * :ref:`clang`
     * Various tools with configuration files as found in the `Misc directory`_
     * Information about editors and their configurations can be found in the
       `wiki <https://wiki.python.org/moin/PythonEditors>`_
