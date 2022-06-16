@@ -154,38 +154,7 @@ Core developers and contributors alike will find the following guides useful:
 * `How to Contribute to Open Source <https://opensource.guide/how-to-contribute/>`_
 * `Building Welcoming Communities <https://opensource.guide/building-community/>`_
 
-Guide for contributing to Python:
-
-+------------------------+---------------------+-----------------------+---------------------+
-| New Contributors       | Documentarians      | Triagers              | Core Developers     |
-+========================+=====================+=======================+=====================+
-| :ref:`setup`           | :ref:`docquality`   | :ref:`tracker`        | :ref:`coredev`      |
-+------------------------+---------------------+-----------------------+---------------------+
-| :ref:`help`            | :ref:`documenting`  | :ref:`triaging`       | :ref:`developers`   |
-+------------------------+---------------------+-----------------------+---------------------+
-| :ref:`pullrequest`     | :ref:`style-guide`  | :ref:`helptriage`     | :ref:`committing`   |
-+------------------------+---------------------+-----------------------+---------------------+
-| :ref:`runtests`        | :ref:`rst-primer`   | :ref:`experts`        | :ref:`devcycle`     |
-+------------------------+---------------------+-----------------------+---------------------+
-| :ref:`fixingissues`    | :ref:`translating`  |                       | :ref:`motivations`  |
-+------------------------+---------------------+-----------------------+---------------------+
-| :ref:`communication`   |                     |                       | :ref:`office hour`  |
-+------------------------+---------------------+-----------------------+---------------------+
-| :ref:`gitbootcamp`     |                     |                       |                     |
-+------------------------+---------------------+-----------------------+---------------------+
-
-Advanced tasks and topics for once you are comfortable:
-
-* :ref:`silencewarnings`
-* Fixing issues found by the :ref:`buildbots <buildbots>`
-* :ref:`coverity`
-* Helping out with reviewing `open pull requests`_.
-  See :ref:`how to review a Pull Request <how-to-review-a-pull-request>`.
-* :ref:`fixingissues`
-
-It is **recommended** that the above documents be read as needed. New
-contributors will build understanding of the CPython workflow by reading the
-sections mentioned in this table. You
+We **recommend** that the documents in this guide be read as needed. You
 can stop where you feel comfortable and begin contributing immediately without
 reading and understanding these documents all at once.  If you do choose to skip
 around within the documentation, be aware that it is written assuming preceding
@@ -317,4 +286,3 @@ Full Table of Contents
 .. _IronPython: https://ironpython.net/
 .. _Stackless: https://github.com/stackless-dev/stackless/wiki/
 .. _Issue tracker: https://github.com/python/cpython/issues
-.. _open pull requests: https://github.com/python/cpython/pulls?utf8=%E2%9C%93&q=is%3Apr%20is%3Aopen%20label%3A%22awaiting%20review%22
