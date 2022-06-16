@@ -14,7 +14,7 @@ supported by corporations.  Even the corporate sponsored buildbots, however,
 tend to exist because some individual championed them, made them a reality, and
 is committed to maintaining them.
 
-Anyone can contribute a buildbot to the fleet.  This chapter describes how
+Anyone can contribute a buildbot to the fleet.  This document describes how
 to go about setting up a buildbot worker, getting it added, and some hints about
 buildbot maintenance.
 
