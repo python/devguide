@@ -10,7 +10,7 @@ efficiency through thoughtful review and triage of open issues and pull
 requests. This helps contributors receive timely feedback and enables core
 developers to focus on reviewed items which reduces their workload. The
 expectations of this role expand upon the "Triager" role on the
-`issue tracker`_. The responsibilities listed below are primarily centered
+:ref:`issue tracker <tracker>`. The responsibilities listed below are primarily centered
 around the Python GitHub repositories. This extends beyond CPython, and, as
 needed, to other repos such as devguide and core-workflow.
 
@@ -69,7 +69,7 @@ more repositories than just CPython.
 
 When you have consistently shown the ability to properly
 help triage issues without guidance, you may request that you
-be given the "Triager" role on the `issue tracker`_. You can make the request
+be given the "Triager" role on the :ref:`issue tracker <tracker>`. You can make the request
 to any core developer. If they decide you are ready
 to gain the extra privileges on the tracker they will then act as a mentor to
 you until you are ready to do things entirely on your own. There is no set rule
@@ -98,5 +98,3 @@ you are ready to do things entirely on your own.
 For every new triager, it would be great to announce them in the python-committers
 mailing list and core-workflow category in Discourse. `Example announcement
 <https://discuss.python.org/t/abhilash-raj-has-been-granted-triage-role-on-github/2089>`_.
-
-.. _issue tracker: https://devguide.python.org/tracker/

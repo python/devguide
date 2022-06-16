@@ -3,10 +3,10 @@
 Triaging an Issue
 =================
 
-This section of the devguide documents the `issue tracker`_ for users
-and developers.
+This section of the devguide documents the :ref:`issue tracker <tracker>` for
+users and developers.
 
-Contributors with the Triager role on the `issue tracker`_ can triage issues
+Contributors with the Triager role on the issue tracker can triage issues
 directly without any assistance.
 
 .. _github-pr-labels:
