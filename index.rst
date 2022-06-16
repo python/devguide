@@ -305,7 +305,6 @@ Full Table of Contents
    core-developers/index
    internals/index
    advanced-tools/index
-   appendix
 
 .. _Buildbot status: https://www.python.org/dev/buildbot/
 .. _Misc directory: https://github.com/python/cpython/tree/main/Misc
