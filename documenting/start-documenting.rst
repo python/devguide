@@ -11,8 +11,6 @@ contributed by various authors. The markup used for the Python documentation is
 `reStructuredText`_, developed by the `docutils`_ project, amended by custom
 directives and using a toolset named `Sphinx`_ to post-process the HTML output.
 
-This document describes the style guide for our documentation.
-
 The documentation in HTML, PDF or EPUB format is generated from text files
 written using the :ref:`reStructuredText format <markup>` and contained in the
 :ref:`CPython Git repository <setup>`.

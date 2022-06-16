@@ -6,6 +6,9 @@
 
 .. highlight::  rest
 
+This document describes the style guide for our documentation.
+
+
 Use of whitespace
 =================
 
