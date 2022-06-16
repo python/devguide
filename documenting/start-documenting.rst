@@ -41,7 +41,7 @@ The involvement of the community takes many forms, from authoring to bug reports
 to just plain complaining when the documentation could be more complete or
 easier to use.
 
-This document is aimed at authors and potential authors of documentation for
+This section is aimed at authors and potential authors of documentation for
 Python.  More specifically, it is for people contributing to the standard
 documentation and developing additional documents using the same tools as the
 standard documents.  This guide will be less useful for authors using the Python
@@ -54,7 +54,7 @@ documented here, there's a welcoming place for you among the Python contributors
 as well.  Any time you feel that you can clarify existing documentation or
 provide documentation that's missing, the existing documentation team will
 gladly work with you to integrate your text, dealing with the markup for you.
-Please don't let the material in this document stand between the documentation
+Please don't let the material in this section stand between the documentation
 and your desire to help out!
 
 
