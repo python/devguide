@@ -1,3 +1,4 @@
+.. _issue-tracker:
 .. _tracker:
 
 =============

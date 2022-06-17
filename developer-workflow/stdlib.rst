@@ -1,3 +1,4 @@
+.. _stdlib:
 .. _stdlibchanges:
 
 Adding to the Stdlib

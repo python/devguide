@@ -1,3 +1,4 @@
+.. _lang-changes:
 .. _langchanges:
 
 Changing the Python Language

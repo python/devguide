@@ -1,3 +1,4 @@
+.. _developer-log:
 .. _developers:
 
 Developer Log

@@ -1,3 +1,4 @@
+.. _extension-modules:
 .. _extensions:
 
 ==================================
