@@ -1,3 +1,4 @@
+.. _become-core-developer:
 .. _coredev:
 
 ==============================

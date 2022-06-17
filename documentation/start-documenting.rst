@@ -1,3 +1,4 @@
+.. _start-documenting:
 .. _documenting:
 
 ===============

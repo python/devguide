@@ -1,3 +1,4 @@
+.. _getting-help:
 .. _help:
 
 Where to Get Help

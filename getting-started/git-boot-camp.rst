@@ -1,9 +1,10 @@
-.. highlight:: console
-
+.. _git-boot-camp:
 .. _gitbootcamp:
 
 Git Bootcamp and Cheat Sheet
 ============================
+
+.. highlight:: console
 
 .. note::
 
