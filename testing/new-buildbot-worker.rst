@@ -1,3 +1,4 @@
+.. _new-buildbot-worker:
 .. _buildworker:
 
 ======================

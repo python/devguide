@@ -1,3 +1,4 @@
+.. _silence-warnings:
 .. _silencewarnings:
 
 ======================================

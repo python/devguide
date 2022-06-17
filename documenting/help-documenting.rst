@@ -1,3 +1,4 @@
+.. _help-documenting:
 .. _docquality:
 
 ============================

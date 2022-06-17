@@ -1,3 +1,4 @@
+.. _garbage-collector:
 .. _gc:
 .. _garbage_collector:
 
