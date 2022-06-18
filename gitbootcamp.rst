@@ -194,7 +194,7 @@ Staging and Committing Files
 
 2. To stage the files to be included in your commit::
 
-      git add <filename1> <filename2>
+      git add -p <filename1> <filename2>
 
 3. To commit the files that have been staged (done in step 2):
 
@@ -224,21 +224,6 @@ To stash away changes that are not ready to be committed yet::
 To re-apply the last stashed change::
 
    git stash pop
-
-.. _commit-changes:
-
-Committing Changes
-------------------
-
-Add the files you want to commit::
-
-   git add <filename>
-
-Commit the files:
-
-.. code-block:: bash
-
-   git commit -m "<message>"
 
 .. _diff-changes:
 
