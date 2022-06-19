@@ -3,4 +3,5 @@
 /* Make the site logo smaller */
 .sidebar-logo {
     width: 128px;
+    height: 128px;
 }
