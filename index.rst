@@ -115,36 +115,20 @@ Core developers and contributors alike will find the following guides useful:
 
 Guide for contributing to Python:
 
-+------------------------+---------------------+-----------------------+---------------------+
-| New Contributors       | Documentarians      | Triagers              | Core Developers     |
-+========================+=====================+=======================+=====================+
-| :ref:`setup`           | :ref:`docquality`   | :ref:`tracker`        | :ref:`coredev`      |
-+------------------------+---------------------+-----------------------+---------------------+
-| :ref:`help`            | :ref:`documenting`  | :ref:`triaging`       | :ref:`developers`   |
-+------------------------+---------------------+-----------------------+---------------------+
-| :ref:`pullrequest`     | :ref:`style-guide`  | :ref:`helptriage`     | :ref:`committing`   |
-+------------------------+---------------------+-----------------------+---------------------+
-| :ref:`runtests`        | :ref:`rst-primer`   | :ref:`experts`        | :ref:`devcycle`     |
-+------------------------+---------------------+-----------------------+---------------------+
-| :ref:`fixingissues`    | :ref:`translating`  |                       | :ref:`motivations`  |
-+------------------------+---------------------+-----------------------+---------------------+
-| :ref:`communication`   |                     |                       | :ref:`office hour`  |
-+------------------------+---------------------+-----------------------+---------------------+
-| :ref:`gitbootcamp`     |                     |                       |                     |
-+------------------------+---------------------+-----------------------+---------------------+
+======================== =================== ======================= =======================
+Contributors             Documentarians      Triagers                Core Developers
+======================== =================== ======================= =======================
+:ref:`setup`             :ref:`docquality`   :ref:`tracker`          :ref:`responsibilities`
+:ref:`help`              :ref:`documenting`  :ref:`triaging`         :ref:`developers`
+:ref:`pullrequest`       :ref:`style-guide`  :ref:`helptriage`       :ref:`committing`
+:ref:`runtests`          :ref:`rst-primer`   :ref:`experts`          :ref:`devcycle`
+:ref:`fixingissues`      :ref:`translating`  :ref:`labels`           :ref:`motivations`
+:ref:`communication`                         :ref:`gh-faq`           :ref:`office hour`
+:ref:`gitbootcamp`                           :ref:`triage-team`      :ref:`experts`
+:ref:`devcycle`
+======================== =================== ======================= =======================
 
-Advanced tasks and topics for once you are comfortable:
-
-* :ref:`silencewarnings`
-* Fixing issues found by the :ref:`buildbots <buildbots>`
-* :ref:`coverity`
-* Helping out with reviewing `open pull requests`_.
-  See :ref:`how to review a Pull Request <how-to-review-a-pull-request>`.
-* :ref:`fixingissues`
-
-It is **recommended** that the above documents be read as needed. New
-contributors will build understanding of the CPython workflow by reading the
-sections mentioned in this table. You
+We **recommend** that the documents in this guide be read as needed. You
 can stop where you feel comfortable and begin contributing immediately without
 reading and understanding these documents all at once.  If you do choose to skip
 around within the documentation, be aware that it is written assuming preceding
@@ -265,7 +249,6 @@ Full Table of Contents
    internals/index
    advanced-tools/index
    versions
-   appendix
 
 .. _Buildbot status: https://www.python.org/dev/buildbot/
 .. _Misc directory: https://github.com/python/cpython/tree/main/Misc
