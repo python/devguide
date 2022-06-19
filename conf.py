@@ -25,11 +25,11 @@ exclude_patterns = [
 
 html_theme = 'furo'
 html_theme_options = {}
-html_static_path = ['static']
+html_static_path = ['_static']
 html_css_files = [
     'adjust_logo_size.css',
 ]
-html_logo = "static/python-logo.png"
+html_logo = "_static/python-logo.png"
 
 # Set to '' to prevent appending "documentation" to the site title
 html_title = ""
