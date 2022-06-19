@@ -194,7 +194,8 @@ Staging and Committing Files
 
 2. To stage the files to be included in your commit::
 
-      git add -p <filename1> <filename2>
+      git add -p  # to review and add changes to existing files
+      git add <filename1> <filename2>  # to add new files
 
 3. To commit the files that have been staged (done in step 2):
 
