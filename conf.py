@@ -27,9 +27,9 @@ html_theme = 'furo'
 html_theme_options = {}
 html_static_path = ['_static']
 html_css_files = [
-    'adjust_logo_size.css',
+    'devguide_overrides.css',
 ]
-html_logo = "_static/python-logo.png"
+html_logo = "_static/python-logo-128x128.png"
 
 # Set to '' to prevent appending "documentation" to the site title
 html_title = ""
