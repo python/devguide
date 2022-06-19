@@ -1,0 +1,6 @@
+/* Style overrides for the devguide */
+
+/* Make the site logo smaller */
+.sidebar-logo {
+    width: 50%;
+}
