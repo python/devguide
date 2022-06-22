@@ -503,6 +503,7 @@ check fail even if the Python ABI is the same. The easier way to regenerate
 the ABI file using the same platform as the CI uses is by using docker:
 
 .. code-block:: bash
+
    # In the CPython root:
    $ docker run -v`pwd`:/src -it ubuntu:20.04 bash
    $ cd /src
