@@ -475,6 +475,51 @@ install your own copy of Autoconf.
 
 .. _build_troubleshooting:
 
+Regenerate the ABI dump
+=======================
+
+Maintainance branches (not ``main``) have a special file located in
+``Doc/data/pythonX.Y.abi`` that allows us to know if a given Pull Request
+affects the public ABI. This file is used by the GitHub CI in a check
+called ``Check if the ABI has changed`` that will fail if a give Pull Request
+has changes to the ABI and the ABI file is not updated.
+
+This check acts as a fail-safe and **doesn't necessarily mean that the Pull
+Request cannot be merged**. When this check fails you should add the relevant
+release manager to the PR so that they are aware of the change and they can
+validate if the change can be made or nor.
+
+.. important::
+   ABI changes are allowed before the first release candidate. After the first release
+   candidate, all further releases must have the same ABI for ensuring compatibility
+   with native extensions and other tools that interact with the Python interpreter.
+   See the documentation about the :ref:`release candidate <rc>` phase.
+
+You can regenerate the ABI file by yourself by invoking the ``regen abidump``
+Make target. Note that for doing this you need to regenerate the ABI file in
+the same environment that the GitHub CI uses to check for it. This is because
+different platform may include some platform-specific details that make the
+check fail even if the Python ABI is the same. The easier way to regenerate
+the ABI file using the same platform as the CI uses is by using docker:
+
+.. code-block:: bash
+   # In the CPython root:
+   $ docker run -v`pwd`:/src -it ubuntu:20.04 bash
+   $ cd /src
+   # Install dependencies to compile CPython
+   $ .github/workflows/posix-deps-apt.sh
+   # Install dependencies to run the ABI regeneration
+   $ apt-get install -yq abigail-tools python3
+   # Ensure CPython is built with all the debugging information
+   $ export CFLAGS="-g3 -O0"
+   # Build Python
+   $ ./configure --enable-shared && make
+   # Regenerate the ABI file
+   $ make regen-abidump
+
+This will change the ``Doc/data/pythonX.Y.abi`` file with the latest changes
+so it can be committed to the Pull Request so the check can pass.
+
 Troubleshoot the build
 ======================
 
