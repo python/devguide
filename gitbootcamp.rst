@@ -112,7 +112,10 @@ This is equivalent to::
 
    # create a new branch from main, without checking it out
    git branch <branch-name> main
+
    # check out the branch
+   git switch <branch-name>
+   # or using old command
    git checkout <branch-name>
 
 To find the branch you are currently on::
@@ -128,6 +131,8 @@ To list all the branches, including the remote branches::
 
 To switch to a different branch::
 
+   git switch <another-branch-name>
+   # or using old command
    git checkout <another-branch-name>
 
 Other releases are just branches in the repository.  For example, to work
@@ -142,7 +147,7 @@ Deleting Branches
 
 To delete a **local** branch that you no longer need::
 
-   git checkout main
+   git switch main
    git branch -D <branch-name>
 
 To delete a **remote** branch::
@@ -262,7 +267,7 @@ them to the remote repository.
 
 ::
 
-   git checkout <branch-name>
+   git switch <branch-name>
    git push origin <branch-name>
 
 Creating a Pull Request
@@ -299,7 +304,7 @@ get notified unnecessarily.
 
 Solution::
 
-   git checkout main
+   git switch main
    git pull upstream main
    git push origin main
 
@@ -317,7 +322,7 @@ Another scenario:
 
 Solution::
 
-   git checkout some-branch
+   git switch some-branch
    git fetch upstream
    git merge upstream/main
    git push origin some-branch
