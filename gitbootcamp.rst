@@ -103,10 +103,9 @@ Creating and Switching Branches
 .. important::
    Never commit directly to the ``main`` branch.
 
-Create a new branch and switch to it::
+Create a new branch from ``main`` and switch to it::
 
-   # creates a new branch off main and switch to it
-   git checkout -b <branch-name> main
+   git switch -c <branch-name> main
 
 This is equivalent to::
 
@@ -133,7 +132,7 @@ To switch to a different branch::
 Other releases are just branches in the repository.  For example, to work
 on the 2.7 release from the ``upstream`` remote::
 
-   git checkout -b 2.7 upstream/2.7
+   git switch -c 2.7 upstream/2.7
 
 .. _deleting_branches:
 
