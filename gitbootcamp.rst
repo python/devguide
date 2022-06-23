@@ -110,13 +110,10 @@ Create a new branch and switch to it::
 
 This is equivalent to::
 
-   # create a new branch from main, without checking it out
+   # create a new branch from main
    git branch <branch-name> main
-
-   # check out the branch
+   # switch to the new branch
    git switch <branch-name>
-   # or using old command
-   git checkout <branch-name>
 
 To find the branch you are currently on::
 
@@ -132,8 +129,6 @@ To list all the branches, including the remote branches::
 To switch to a different branch::
 
    git switch <another-branch-name>
-   # or using old command
-   git checkout <another-branch-name>
 
 Other releases are just branches in the repository.  For example, to work
 on the 2.7 release from the ``upstream`` remote::
