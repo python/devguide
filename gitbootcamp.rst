@@ -103,17 +103,16 @@ Creating and Switching Branches
 .. important::
    Never commit directly to the ``main`` branch.
 
-Create a new branch and switch to it::
+Create a new branch from ``main`` and switch to it::
 
-   # creates a new branch off main and switch to it
-   git checkout -b <branch-name> main
+   git switch -c <branch-name> main
 
 This is equivalent to::
 
-   # create a new branch from main, without checking it out
+   # create a new branch from main
    git branch <branch-name> main
-   # check out the branch
-   git checkout <branch-name>
+   # switch to the new branch
+   git switch <branch-name>
 
 To find the branch you are currently on::
 
@@ -128,12 +127,12 @@ To list all the branches, including the remote branches::
 
 To switch to a different branch::
 
-   git checkout <another-branch-name>
+   git switch <another-branch-name>
 
 Other releases are just branches in the repository.  For example, to work
 on the 2.7 release from the ``upstream`` remote::
 
-   git checkout -b 2.7 upstream/2.7
+   git switch -c 2.7 upstream/2.7
 
 .. _deleting_branches:
 
@@ -142,7 +141,7 @@ Deleting Branches
 
 To delete a **local** branch that you no longer need::
 
-   git checkout main
+   git switch main
    git branch -D <branch-name>
 
 To delete a **remote** branch::
@@ -262,7 +261,7 @@ them to the remote repository.
 
 ::
 
-   git checkout <branch-name>
+   git switch <branch-name>
    git push origin <branch-name>
 
 Creating a Pull Request
@@ -299,7 +298,7 @@ get notified unnecessarily.
 
 Solution::
 
-   git checkout main
+   git switch main
    git pull upstream main
    git push origin main
 
@@ -317,7 +316,7 @@ Another scenario:
 
 Solution::
 
-   git checkout some-branch
+   git switch some-branch
    git fetch upstream
    git merge upstream/main
    git push origin some-branch

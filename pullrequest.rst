@@ -110,7 +110,7 @@ You should have already :ref:`set up your system <setup>`,
   to your branch, making more changes, committing them, and pushing them to
   automatically update your PR::
 
-   git checkout <branch-name>
+   git switch <branch-name>
    # make changes and run tests
    git add <filenames>
    git commit -m '<message>'
@@ -129,7 +129,7 @@ You should have already :ref:`set up your system <setup>`,
   will show a warning to this end and you may be asked to address this. Merge
   the changes from the main branch while resolving the conflicts locally::
 
-   git checkout <branch-name>
+   git switch <branch-name>
    git pull upstream main  # pull = fetch + merge
    # resolve conflicts: see "Resolving Merge Conflicts" below
    git push origin <branch-name>
