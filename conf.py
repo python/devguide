@@ -29,7 +29,7 @@ html_static_path = ['_static']
 html_css_files = [
     'devguide_overrides.css',
 ]
-html_logo = "_static/python-logo-128x128.png"
+html_logo = "_static/python-logo.svg"
 
 # Set to '' to prevent appending "documentation" to the site title
 html_title = ""
