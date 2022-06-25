@@ -29,7 +29,12 @@ sys.path.append(os.path.abspath('tools'))
 
 # Add any Sphinx extension module names here, as strings. They can be extensions
 # coming with Sphinx (named 'sphinx.ext.*') or your custom ones.
-extensions = ['sphinx.ext.intersphinx', 'sphinx.ext.todo', 'sphinx_copybutton']
+extensions = [
+    'sphinx.ext.intersphinx',
+    'sphinx.ext.todo',
+    'sphinx_copybutton',
+    'sphinxext.rediraffe',
+]
 intersphinx_mapping = {'python': ('https://docs.python.org/3', None)}
 todo_include_todos = True
 
@@ -226,6 +231,44 @@ linkcheck_anchors_ignore = [
     # match any anchor that starts with a '/' since this is an invalid HTML anchor
     '\/.*',
 ]
+rediraffe_redirects = {
+    "clang.rst": "advanced-tools/clang.rst",
+    "coverity.rst": "advanced-tools/coverity.rst",
+    "gdb.rst": "advanced-tools/gdb.rst",
+    "coredev.rst": "core-developers/become-core-developer.rst",
+    "committing.rst": "core-developers/committing.rst",
+    "developers.rst": "core-developers/developer-log.rst",
+    "experts.rst": "core-developers/experts.rst",
+    "motivations.rst": "core-developers/motivations.rst",
+    "c-api.rst": "developer-workflow/c-api.rst",
+    "communication.rst": "developer-workflow/communication-channels.rst",
+    "devcycle.rst": "developer-workflow/development-cycle.rst",
+    "extensions.rst": "developer-workflow/extension-modules.rst",
+    "grammar.rst": "developer-workflow/grammar.rst",
+    "langchanges.rst": "developer-workflow/lang-changes.rst",
+    "porting.rst": "developer-workflow/porting.rst",
+    "stdlibchanges.rst": "developer-workflow/stdlib.rst",
+    "docquality.rst": "documentation/help-documenting.rst",
+    "documenting.rst": "documentation/start-documenting.rst",
+    "fixingissues.rst": "getting-started/fixing-issues.rst",
+    "help.rst": "getting-started/getting-help.rst",
+    "gitbootcamp.rst": "getting-started/git-boot-camp.rst",
+    "pullrequest.rst": "getting-started/pull-request-lifecycle.rst",
+    "setup.rst": "getting-started/setup-building.rst",
+    "compiler.rst": "internals/compiler.rst",
+    "exploring.rst": "internals/exploring.rst",
+    "garbage_collector.rst": "internals/garbage-collector.rst",
+    "parser.rst": "internals/parser.rst",
+    "buildbots.rst": "testing/buildbots.rst",
+    "coverage.rst": "testing/coverage.rst",
+    "buildworker.rst": "testing/new-buildbot-worker.rst",
+    "runtests.rst": "testing/run-write-tests.rst",
+    "silencewarnings.rst": "testing/silence-warnings.rst",
+    "gh-faq.rst": "triage/github-bpo-faq.rst",
+    "tracker.rst": "triage/issue-tracker.rst",
+    "gh-labels.rst": "triage/labels.rst",
+    "triaging.rst": "triage/triaging.rst",
+}
 
 linkcheck_ignore = [
     # The voters repo is private and appears as a 404
@@ -237,6 +280,8 @@ linkcheck_ignore = [
     'https://discuss.python.org/groups/moderators',
     'https://discuss.python.org/groups/admins',
 ]
+
+
 
 # Use our custom CSS stylesheet to differentiate us from the official python
 # docs.
