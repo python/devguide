@@ -184,6 +184,8 @@ rename your local branch as follows::
     git branch -u upstream/main main
 
 
+.. _commit-changes:
+
 Staging and Committing Files
 ----------------------------
 
