@@ -478,7 +478,7 @@ install your own copy of Autoconf.
 Regenerate the ABI dump
 =======================
 
-Maintainance branches (not ``main``) have a special file located in
+Maintenance branches (not ``main``) have a special file located in
 ``Doc/data/pythonX.Y.abi`` that allows us to know if a given Pull Request
 affects the public ABI. This file is used by the GitHub CI in a check
 called ``Check if the ABI has changed`` that will fail if a given Pull Request
