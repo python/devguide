@@ -103,7 +103,7 @@ expert-asyncio
 
 invalid
     Used manually for PRs that do not meet basic requirements and
-    automatically added by bedevere when PR authors attempt to merge maintenace
+    automatically added by bedevere when PR authors attempt to merge maintenance
     branches into the main branch. During events such as the October
     Hacktoberfest, this label will prevent the PR from counting toward the
     author's contributions.
