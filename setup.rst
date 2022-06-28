@@ -526,7 +526,9 @@ directly in one single command:
 
 .. code-block:: bash
 
-  $ docker run -v$(pwd):/src:Z -w /src --rm -it ubuntu:20.04 bash /src/.github/workflows/regen-abidump.sh
+   # In the CPython root:
+   $ docker run -v$(pwd):/src:Z -w /src --rm -it ubuntu:22.04 \
+       bash /src/.github/workflows/regen-abidump.sh
 
 Troubleshoot the build
 ======================
