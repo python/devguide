@@ -521,6 +521,13 @@ the ABI file using the same platform as the CI uses is by using docker:
 This will change the ``Doc/data/pythonX.Y.abi`` file with the latest changes
 so it can be committed to the Pull Request and the check can pass.
 
+Alternatively, you can use the script located in ``.github/workflows/regen-abidump.sh``
+directly in one single command:
+
+.. code-block:: bash
+
+  $ docker run -v$(pwd):/src:Z -w /src --rm -it ubuntu:20.04 bash /src/.github/workflows/regen-abidump.sh
+
 Troubleshoot the build
 ======================
 
