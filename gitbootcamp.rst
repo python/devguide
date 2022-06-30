@@ -556,9 +556,9 @@ To edit an open pull request that targets ``main``:
 GitHub CLI
 ----------
 
-GitHub CLI is a command-line interface to work with GitHub.
-For example, you can create pull requests and releases,
-set alias commands, check PR statuses.
+`GitHub CLI <https://cli.github.com>`_ is a command-line
+interface that allows you to create, update, and check GitHub
+issues and pull requests.
 
 You can install GitHub CLI `by following these instructions
 <https://github.com/cli/cli#installation>`_. After installing,
