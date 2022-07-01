@@ -536,3 +536,35 @@ To edit an open pull request that targets ``main``:
       git push git@github.com:<contributor>/cpython <pr_number>:<branch_name>
 
 5. Optionally, :ref:`delete the PR branch <deleting_branches>`.
+
+
+GitHub CLI
+----------
+
+`GitHub CLI <https://cli.github.com>`_ is a command-line
+interface that allows you to create, update, and check GitHub
+issues and pull requests.
+
+You can install GitHub CLI `by following these instructions
+<https://github.com/cli/cli#installation>`_. After installing,
+you need to authenticate::
+
+    gh auth login
+
+Examples of useful commands:
+
+* Create a PR::
+
+      gh pr create
+
+* Check out another PR::
+
+      gh pr checkout <pr-id>
+
+* Set ``ssh`` as the Git protocol::
+
+      gh config set git_protocol ssh
+
+* Set the browser::
+
+      gh config set browser <browser-path>
