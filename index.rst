@@ -97,10 +97,11 @@ Status of Python branches
 .. csv-table::
    :header-rows: 1
    :widths: 15, 15, 15, 15, 15, 25
-   :file: branches.csv
+   :file: include/branches.csv
 
-.. Update the status of the branches in branches.csv
-.. Remember to update the end-of-life table in devcycle.rst.
+.. Update the status of the branches in include/branches.csv
+.. Remember to update the end-of-life table in devcycle.rst,
+   and the main branch a couple of lines below.
 
 Dates in *italic* are scheduled and can be adjusted.
 
