@@ -96,7 +96,6 @@ Status of Python branches
 
 .. csv-table::
    :header-rows: 1
-   :widths: 15, 15, 15, 15, 15, 25
    :file: include/branches.csv
 
 .. Update the status of the branches in include/branches.csv

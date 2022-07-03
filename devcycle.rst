@@ -130,8 +130,6 @@ For reference, here are the Python versions that most recently reached their end
 
 .. csv-table::
    :header-rows: 1
-   :width: 85%
-   :widths: 5, 5, 15, 12, 40
    :file: include/end-of-life.csv
 
 The latest release for each Python version can be found on the `download page
