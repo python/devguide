@@ -89,51 +89,10 @@ contributing to Python:
 * PEPs_ (Python Enhancement Proposals)
 * :ref:`gitbootcamp`
 
-.. _branchstatus:
-
 Status of Python branches
 -------------------------
 
-+------------------+--------------+-------------+----------------+----------------+-----------------------+
-| Branch           | Schedule     | Status      | First release  | End-of-life    | Release manager       |
-+==================+==============+=============+================+================+=======================+
-| main             | TBA          | features    | *2023-10-03*   | *2028-10*      | Thomas Wouters        |
-+------------------+--------------+-------------+----------------+----------------+-----------------------+
-| 3.11             | :pep:`664`   | bugfix      | *2022-10-03*   | *2027-10*      | Pablo Galindo Salgado |
-+------------------+--------------+-------------+----------------+----------------+-----------------------+
-| 3.10             | :pep:`619`   | bugfix      | 2021-10-04     | *2026-10*      | Pablo Galindo Salgado |
-+------------------+--------------+-------------+----------------+----------------+-----------------------+
-| 3.9              | :pep:`596`   | security    | 2020-10-05     | *2025-10*      | Łukasz Langa          |
-+------------------+--------------+-------------+----------------+----------------+-----------------------+
-| 3.8              | :pep:`569`   | security    | 2019-10-14     | *2024-10*      | Łukasz Langa          |
-+------------------+--------------+-------------+----------------+----------------+-----------------------+
-| 3.7              | :pep:`537`   | security    | 2018-06-27     | *2023-06-27*   | Ned Deily             |
-+------------------+--------------+-------------+----------------+----------------+-----------------------+
-
-.. Remember to update the end-of-life table in devcycle.rst.
-
-Dates in *italic* are scheduled and can be adjusted.
-
-The main branch is currently the future Python 3.12, and is the only
-branch that accepts new features.  The latest release for each Python
-version can be found on the `download page <https://www.python.org/downloads/>`_.
-
-Status:
-
-:features: new features, bugfixes, and security fixes are accepted.
-:prerelease: feature fixes, bugfixes, and security fixes are accepted for the
-    upcoming feature release.
-:bugfix: bugfixes and security fixes are accepted, new binaries are still
-    released. (Also called **maintenance** mode or **stable** release)
-:security: only security fixes are accepted and no more binaries are released,
-    but new source-only versions can be released
-:end-of-life: release cycle is frozen; no further changes can be pushed to it.
-
-See also the :ref:`devcycle` page for more information about branches.
-
-By default, the end-of-life is scheduled 5 years after the first release,
-but can be adjusted by the release manager of each branch.  All Python 2
-versions have reached end-of-life.
+Moved to :ref:`versions`
 
 
 .. _contributing:
@@ -305,6 +264,7 @@ Full Table of Contents
    core-developers/index
    internals/index
    advanced-tools/index
+   versions
    appendix
 
 .. _Buildbot status: https://www.python.org/dev/buildbot/
