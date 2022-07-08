@@ -319,7 +319,7 @@ Current Administrators
 +-------------------+----------------------------------------------------------+-----------------+
 | Berker Peksag     | Maintainer of bpo-linkify and cpython-emailer-webhook    | berkerpeksag    |
 +-------------------+----------------------------------------------------------+-----------------+
-| Brett Cannon      | Maintainer of bedevere and the-knights-who-say-ni        | brettcannon     |
+| Brett Cannon      | Maintainer of bedevere                                   | brettcannon     |
 +-------------------+----------------------------------------------------------+-----------------+
 | Ezio Melotti      | Maintainer of bugs.python.org GitHub webhook integration | ezio-melotti    |
 +-------------------+----------------------------------------------------------+-----------------+
