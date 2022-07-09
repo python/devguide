@@ -319,11 +319,11 @@ Current Administrators
 +-------------------+----------------------------------------------------------+-----------------+
 | Berker Peksag     | Maintainer of bpo-linkify and cpython-emailer-webhook    | berkerpeksag    |
 +-------------------+----------------------------------------------------------+-----------------+
-| Brett Cannon      | Maintainer of bedevere                                   | brettcannon     |
+| Brett Cannon      |                                                          | brettcannon     |
 +-------------------+----------------------------------------------------------+-----------------+
 | Ezio Melotti      | Maintainer of bugs.python.org GitHub webhook integration | ezio-melotti    |
 +-------------------+----------------------------------------------------------+-----------------+
-| Mariatta Wijaya   | Maintainer of blurb_it and miss-islington                | Mariatta        |
+| Mariatta Wijaya   | Maintainer of bedevere, blurb_it and miss-islington      | Mariatta        |
 +-------------------+----------------------------------------------------------+-----------------+
 
 Repository Release Manager Role Policy
