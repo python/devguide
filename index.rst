@@ -6,7 +6,7 @@ Python Developer's Guide
 
 This guide is a comprehensive resource for :ref:`contributing <contributing>`
 to Python_ -- for both new and experienced contributors. It is
-:ref:`maintained <helping-with-the-developers-guide>` by the same
+:ref:`maintained <devguide>` by the same
 community that maintains Python.  We welcome your contributions to Python!
 
 .. _quick-reference:
@@ -42,7 +42,7 @@ instructions please see the :ref:`setup guide <setup>`.
    and the platform-specific pages for :ref:`UNIX <unix-compiling>`,
    :ref:`Mac OS <MacOS>`, and :ref:`Windows <windows-compiling>`.
 
-4. :doc:`Run the tests <runtests>`::
+4. :ref:`Run the tests <runtests>`::
 
       ./python -m test -j3
 
@@ -60,7 +60,7 @@ instructions please see the :ref:`setup guide <setup>`.
 6. Once you fixed the issue, run the tests, run ``make patchcheck``, and if
    everything is ok, commit.
 
-7. Push the branch on your fork on GitHub and :doc:`create a pull request
+7. Push the branch on your fork on GitHub and :ref:`create a pull request
    <pullrequest>`.  Include the issue number using ``gh-NNNN`` in the
    pull request description.  For example::
 
@@ -85,55 +85,14 @@ contributing to Python:
 
 * `Issue tracker`_
 * `Buildbot status`_
-* :doc:`help`
+* :ref:`help`
 * PEPs_ (Python Enhancement Proposals)
-* :doc:`gitbootcamp`
-
-.. _branchstatus:
+* :ref:`gitbootcamp`
 
 Status of Python branches
 -------------------------
 
-+------------------+--------------+-------------+----------------+----------------+-----------------------+
-| Branch           | Schedule     | Status      | First release  | End-of-life    | Release manager       |
-+==================+==============+=============+================+================+=======================+
-| main             | TBA          | features    | *2023-10-03*   | *2028-10*      | Thomas Wouters        |
-+------------------+--------------+-------------+----------------+----------------+-----------------------+
-| 3.11             | :pep:`664`   | bugfix      | *2022-10-03*   | *2027-10*      | Pablo Galindo Salgado |
-+------------------+--------------+-------------+----------------+----------------+-----------------------+
-| 3.10             | :pep:`619`   | bugfix      | 2021-10-04     | *2026-10*      | Pablo Galindo Salgado |
-+------------------+--------------+-------------+----------------+----------------+-----------------------+
-| 3.9              | :pep:`596`   | security    | 2020-10-05     | *2025-10*      | Łukasz Langa          |
-+------------------+--------------+-------------+----------------+----------------+-----------------------+
-| 3.8              | :pep:`569`   | security    | 2019-10-14     | *2024-10*      | Łukasz Langa          |
-+------------------+--------------+-------------+----------------+----------------+-----------------------+
-| 3.7              | :pep:`537`   | security    | 2018-06-27     | *2023-06-27*   | Ned Deily             |
-+------------------+--------------+-------------+----------------+----------------+-----------------------+
-
-.. Remember to update the end-of-life table in devcycle.rst.
-
-Dates in *italic* are scheduled and can be adjusted.
-
-The main branch is currently the future Python 3.12, and is the only
-branch that accepts new features.  The latest release for each Python
-version can be found on the `download page <https://www.python.org/downloads/>`_.
-
-Status:
-
-:features: new features, bugfixes, and security fixes are accepted.
-:prerelease: feature fixes, bugfixes, and security fixes are accepted for the
-    upcoming feature release.
-:bugfix: bugfixes and security fixes are accepted, new binaries are still
-    released. (Also called **maintenance** mode or **stable** release)
-:security: only security fixes are accepted and no more binaries are released,
-    but new source-only versions can be released
-:end-of-life: release cycle is frozen; no further changes can be pushed to it.
-
-See also the :ref:`devcycle` page for more information about branches.
-
-By default, the end-of-life is scheduled 5 years after the first release,
-but can be adjusted by the release manager of each branch.  All Python 2
-versions have reached end-of-life.
+Moved to :ref:`versions`
 
 
 .. _contributing:
@@ -156,36 +115,20 @@ Core developers and contributors alike will find the following guides useful:
 
 Guide for contributing to Python:
 
-+------------------------+---------------------+-----------------------+---------------------+
-| New Contributors       | Documentarians      | Triagers              | Core Developers     |
-+========================+=====================+=======================+=====================+
-| :doc:`setup`           | :doc:`docquality`   | :doc:`tracker`        | :doc:`coredev`      |
-+------------------------+---------------------+-----------------------+---------------------+
-| :doc:`help`            | :doc:`documenting`  | :doc:`triaging`       | :doc:`developers`   |
-+------------------------+---------------------+-----------------------+---------------------+
-| :doc:`pullrequest`     | :ref:`style-guide`  | :ref:`helptriage`     | :doc:`committing`   |
-+------------------------+---------------------+-----------------------+---------------------+
-| :doc:`runtests`        | :ref:`rst-primer`   | :doc:`experts`        | :doc:`devcycle`     |
-+------------------------+---------------------+-----------------------+---------------------+
-| :doc:`fixingissues`    | :ref:`translating`  |                       | :doc:`motivations`  |
-+------------------------+---------------------+-----------------------+---------------------+
-| :doc:`communication`   |                     |                       | :ref:`office hour`  |
-+------------------------+---------------------+-----------------------+---------------------+
-| :doc:`gitbootcamp`     |                     |                       |                     |
-+------------------------+---------------------+-----------------------+---------------------+
+======================== =================== ======================= =======================
+Contributors             Documentarians      Triagers                Core Developers
+======================== =================== ======================= =======================
+:ref:`setup`             :ref:`docquality`   :ref:`tracker`          :ref:`responsibilities`
+:ref:`help`              :ref:`documenting`  :ref:`triaging`         :ref:`developers`
+:ref:`pullrequest`       :ref:`style-guide`  :ref:`helptriage`       :ref:`committing`
+:ref:`runtests`          :ref:`rst-primer`   :ref:`experts`          :ref:`devcycle`
+:ref:`fixingissues`      :ref:`translating`  :ref:`labels`           :ref:`motivations`
+:ref:`communication`                         :ref:`gh-faq`           :ref:`office hour`
+:ref:`gitbootcamp`                           :ref:`triage-team`      :ref:`experts`
+:ref:`devcycle`
+======================== =================== ======================= =======================
 
-Advanced tasks and topics for once you are comfortable:
-
-* :doc:`silencewarnings`
-* Fixing issues found by the :doc:`buildbots <buildbots>`
-* :doc:`coverity`
-* Helping out with reviewing `open pull requests`_.
-  See :ref:`how to review a Pull Request <how-to-review-a-pull-request>`.
-* :doc:`fixingissues`
-
-It is **recommended** that the above documents be read as needed. New
-contributors will build understanding of the CPython workflow by reading the
-sections mentioned in this table. You
+We **recommend** that the documents in this guide be read as needed. You
 can stop where you feel comfortable and begin contributing immediately without
 reading and understanding these documents all at once.  If you do choose to skip
 around within the documentation, be aware that it is written assuming preceding
@@ -206,8 +149,8 @@ developer's toolkit.
 While these kinds of change are much rarer than those described above, they do
 happen and that process is also described as part of this guide:
 
-* :doc:`stdlibchanges`
-* :doc:`langchanges`
+* :ref:`stdlibchanges`
+* :ref:`langchanges`
 
 
 Other Interpreter Implementations
@@ -242,15 +185,15 @@ Key Resources
 * `Issue tracker`_
     * `Meta tracker <https://issues.roundup-tracker.org/>`_ (issue
       tracker for the issue tracker)
-    * :doc:`experts`
+    * :ref:`experts`
 * `Buildbot status`_
 * Source code
     * `Browse online <https://github.com/python/cpython/>`_
     * `Snapshot of the *main* branch <https://github.com/python/cpython/archive/main.zip>`_
     * `Daily OS X installer <https://buildbot.python.org/daily-dmg/>`_
 * PEPs_ (Python Enhancement Proposals)
-* :doc:`help`
-* :doc:`developers`
+* :ref:`help`
+* :ref:`developers`
 
 
 .. _resources:
@@ -259,16 +202,16 @@ Additional Resources
 --------------------
 
 * Anyone can clone the sources for this guide.  See
-  :ref:`helping-with-the-developers-guide`.
+  :ref:`devguide`.
 * Help with ...
-    * :doc:`exploring`
-    * :doc:`grammar`
-    * :doc:`parser`
-    * :doc:`compiler`
-    * :doc:`garbage_collector`
+    * :ref:`exploring`
+    * :ref:`grammar`
+    * :ref:`parser`
+    * :ref:`compiler`
+    * :ref:`garbage_collector`
 * Tool support
-    * :doc:`gdb`
-    * :doc:`clang`
+    * :ref:`gdb`
+    * :ref:`clang`
     * Various tools with configuration files as found in the `Misc directory`_
     * Information about editors and their configurations can be found in the
       `wiki <https://wiki.python.org/moin/PythonEditors>`_
@@ -297,41 +240,15 @@ Full Table of Contents
 .. toctree::
    :maxdepth: 3
 
-   setup
-   help
-   pullrequest
-   runtests
-   coverage
-   docquality
-   documenting
-   silencewarnings
-   fixingissues
-   tracker
-   triaging
-   communication
-   porting
-   coredev
-   developers
-   committing
-   devcycle
-   buildbots
-   stdlibchanges
-   langchanges
-   experts
-   gdb
-   exploring
-   grammar
-   parser
-   compiler
-   garbage_collector
-   extensions
-   c-api
-   coverity
-   clang
-   buildworker
-   motivations
-   gitbootcamp
-   appendix
+   getting-started/index
+   developer-workflow/index
+   triage/index
+   documentation/index
+   testing/index
+   core-developers/index
+   internals/index
+   advanced-tools/index
+   versions
 
 .. _Buildbot status: https://www.python.org/dev/buildbot/
 .. _Misc directory: https://github.com/python/cpython/tree/main/Misc
