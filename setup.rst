@@ -505,30 +505,12 @@ the ABI file using the same platform as the CI uses is by using docker:
 .. code-block:: bash
 
    # In the CPython root:
-   $ docker run -v`pwd`:/src -it ubuntu:20.04 bash
-   $ cd /src
-   # Install dependencies to compile CPython
-   $ .github/workflows/posix-deps-apt.sh
-   # Install dependencies to run the ABI regeneration
-   $ apt-get install -yq abigail-tools python3
-   # Ensure CPython is built with all the debugging information
-   $ export CFLAGS="-g3 -O0"
-   # Build Python
-   $ ./configure --enable-shared && make
-   # Regenerate the ABI file
-   $ make regen-abidump
-
-This will change the ``Doc/data/pythonX.Y.abi`` file with the latest changes
-so it can be committed to the Pull Request and the check can pass.
-
-Alternatively, you can use the script located in ``.github/workflows/regen-abidump.sh``
-directly in one single command:
-
-.. code-block:: bash
-
-   # In the CPython root:
    $ docker run -v$(pwd):/src:Z -w /src --rm -it ubuntu:22.04 \
        bash /src/.github/workflows/regen-abidump.sh
+
+Note that the ``ubuntu`` version used to execute the script matters and
+**must** match the version used by the CI to check the ABI. See the
+``.github/workflows/build.yml`` file for more information.
 
 Troubleshoot the build
 ======================
