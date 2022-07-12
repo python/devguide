@@ -10,6 +10,17 @@ if "%PYTHON%" == "" (
 	set PYTHON=py -3
 )
 
+if not defined SPHINXLINT (
+    %PYTHON% -c "import sphinxlint" > nul 2> nul
+    if errorlevel 1 (
+        echo Installing sphinx-lint with %PYTHON%
+        rem Should have been installed with Sphinx earlier
+        %PYTHON% -m pip install "sphinx-lint<1"
+        if errorlevel 1 exit /B
+    )
+    set SPHINXLINT=%PYTHON% -m sphinxlint
+)
+
 set BUILDDIR=_build
 set ALLSPHINXOPTS=-d %BUILDDIR%/doctrees %SPHINXOPTS% .
 if NOT "%PAPER%" == "" (
@@ -17,13 +28,13 @@ if NOT "%PAPER%" == "" (
 )
 
 if "%1" == "check" goto check
-if "%1" == "serve" goto serve
 
 if "%1" == "" goto help
 if "%1" == "help" (
 	:help
 	echo.Please use `make ^<target^>` where ^<target^> is one of
 	echo.  html       to make standalone HTML files
+	echo.  htmlview   to open the index page built by the html target in your browser
 	echo.  dirhtml    to make HTML files named index.html in directories
 	echo.  singlehtml to make a single large HTML file
 	echo.  pickle     to make pickle files
@@ -38,8 +49,7 @@ if "%1" == "help" (
 	echo.  changes    to make an overview over all changed/added/deprecated items
 	echo.  linkcheck  to check all external links for integrity
 	echo.  doctest    to run all doctests embedded in the documentation if enabled
-	echo.  check      to check for stylistic and formal issues using rstlint
-	echo.  serve      to serve devguide on the localhost ^(8000^)
+	echo.  check      to check for stylistic and formal issues using sphinx-lint
 	goto end
 )
 
@@ -49,7 +59,7 @@ if "%1" == "clean" (
 	goto end
 )
 
-rem Targets other than "clean", "check", "serve", "help", or "" need the
+rem Targets other than "clean", "check", "help", or "" need the
 rem Sphinx build command, which the user may define via SPHINXBUILD.
 
 if not defined SPHINXBUILD (
@@ -70,6 +80,17 @@ if "%1" == "html" (
 	echo.
 	echo.Build finished. The HTML pages are in %BUILDDIR%/html.
 	goto end
+)
+
+if "%1" == "htmlview" (
+    cmd /C %this% html
+
+    if EXIST "%BUILDDIR%\html\index.html" (
+        echo.Opening "%BUILDDIR%\html\index.html" in the default web browser...
+        start "" "%BUILDDIR%\html\index.html"
+    )
+
+    goto end
 )
 
 if "%1" == "dirhtml" (
@@ -192,11 +213,13 @@ results in %BUILDDIR%/doctest/output.txt.
 )
 
 :check
-cmd /C %PYTHON% tools\rstlint.py -i tools -i venv
+rem Ignore the tools and venv dirs and check that the default role is not used.
+cmd /S /C "%SPHINXLINT% -i tools -i venv --enable default-role"
 goto end
 
 :serve
-cmd /C %PYTHON% tools\serve.py %BUILDDIR%\html
+	echo.The serve target was removed, use htmlview instead ^
+(see https://github.com/python/cpython/issues/80510)
 goto end
 
 :end
