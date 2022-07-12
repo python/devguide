@@ -6,7 +6,7 @@ Python Developer's Guide
 
 This guide is a comprehensive resource for :ref:`contributing <contributing>`
 to Python_ -- for both new and experienced contributors. It is
-:ref:`maintained <helping-with-the-developers-guide>` by the same
+:ref:`maintained <devguide>` by the same
 community that maintains Python.  We welcome your contributions to Python!
 
 .. _quick-reference:
@@ -14,8 +14,8 @@ community that maintains Python.  We welcome your contributions to Python!
 Quick Reference
 ---------------
 
-Here are the basic steps needed to get :ref:`set up <setup>` and contribute a
-patch. This is meant as a checklist, once you know the basics. For complete
+Here are the basic steps needed to get set up and contribute a patch.
+This is meant as a checklist, once you know the basics. For complete
 instructions please see the :ref:`setup guide <setup>`.
 
 1. Install and set up :ref:`Git <vcsetup>` and other dependencies
@@ -42,7 +42,7 @@ instructions please see the :ref:`setup guide <setup>`.
    and the platform-specific pages for :ref:`UNIX <unix-compiling>`,
    :ref:`Mac OS <MacOS>`, and :ref:`Windows <windows-compiling>`.
 
-4. :doc:`Run the tests <runtests>`::
+4. :ref:`Run the tests <runtests>`::
 
       ./python -m test -j3
 
@@ -54,17 +54,17 @@ instructions please see the :ref:`setup guide <setup>`.
       git checkout -b fix-issue-12345 main
 
    If an issue does not already exist, please `create it
-   <https://bugs.python.org/>`_.  Trivial issues (e.g. typo fixes) do not
-   require any issue to be created.
+   <https://github.com/python/cpython/issues>`_.  Trivial issues (e.g. typo fixes) do
+   not require any issue to be created.
 
 6. Once you fixed the issue, run the tests, run ``make patchcheck``, and if
    everything is ok, commit.
 
-7. Push the branch on your fork on GitHub and :doc:`create a pull request
-   <pullrequest>`.  Include the issue number using ``bpo-NNNN`` in the
+7. Push the branch on your fork on GitHub and :ref:`create a pull request
+   <pullrequest>`.  Include the issue number using ``gh-NNNN`` in the
    pull request description.  For example::
 
-      bpo-12345: Fix some bug in spam module
+      gh-12345: Fix some bug in spam module
 
 8. Add a News entry into the ``Misc/NEWS.d`` directory as individual file. The
    news entry can be created by using `blurb-it <https://blurb-it.herokuapp.com/>`_,
@@ -85,55 +85,15 @@ contributing to Python:
 
 * `Issue tracker`_
 * `Buildbot status`_
-* :doc:`help`
+* :ref:`help`
 * PEPs_ (Python Enhancement Proposals)
-* :doc:`gitbootcamp`
-
-.. _branchstatus:
+* :ref:`gitbootcamp`
 
 Status of Python branches
 -------------------------
 
-+------------------+--------------+-------------+----------------+----------------+-----------------------+
-| Branch           | Schedule     | Status      | First release  | End-of-life    | Release manager       |
-+==================+==============+=============+================+================+=======================+
-| main             | *TBD*        | features    | *TBD*          | *TBD*          | Pablo Galindo Salgado |
-+------------------+--------------+-------------+----------------+----------------+-----------------------+
-| 3.10             | :pep:`619`   | prerelease  | *2021-10-04*   | *TBD*          | Pablo Galindo Salgado |
-+------------------+--------------+-------------+----------------+----------------+-----------------------+
-| 3.9              | :pep:`596`   | bugfix      | 2020-10-05     | *TBD*          | Łukasz Langa          |
-+------------------+--------------+-------------+----------------+----------------+-----------------------+
-| 3.8              | :pep:`569`   | security    | 2019-10-14     | *2024-10*      | Łukasz Langa          |
-+------------------+--------------+-------------+----------------+----------------+-----------------------+
-| 3.7              | :pep:`537`   | security    | 2018-06-27     | *2023-06-27*   | Ned Deily             |
-+------------------+--------------+-------------+----------------+----------------+-----------------------+
-| 3.6              | :pep:`494`   | security    | 2016-12-23     | *2021-12-23*   | Ned Deily             |
-+------------------+--------------+-------------+----------------+----------------+-----------------------+
+Moved to :ref:`versions`
 
-.. Remember to update the end-of-life table in devcycle.rst.
-
-The main branch is currently the future Python 3.11, and is the only
-branch that accepts new features.  The latest release for each Python
-version can be found on the `download page <https://www.python.org/downloads/>`_.
-
-Status:
-
-:features: new features, bugfixes, and security fixes are accepted.
-:prerelease: feature fixes, bugfixes, and security fixes are accepted for the
-    upcoming feature release.
-:bugfix: bugfixes and security fixes are accepted, new binaries are still
-    released. (Also called **maintenance** mode or **stable** release)
-:security: only security fixes are accepted and no more binaries are released,
-    but new source-only versions can be released
-:end-of-life: release cycle is frozen; no further changes can be pushed to it.
-
-Dates in *italic* are scheduled and can be adjusted.
-
-By default, the end-of-life is scheduled 5 years after the first release,
-but can be adjusted by the release manager of each branch.  All Python 2
-versions have reached end-of-life.
-
-See also the :ref:`devcycle` page for more information about branches.
 
 .. _contributing:
 
@@ -155,36 +115,20 @@ Core developers and contributors alike will find the following guides useful:
 
 Guide for contributing to Python:
 
-+------------------------+---------------------+-----------------------+---------------------+
-| New Contributors       | Documentarians      | Triagers              | Core Developers     |
-+========================+=====================+=======================+=====================+
-| :doc:`setup`           | :doc:`docquality`   | :doc:`tracker`        | :doc:`coredev`      |
-+------------------------+---------------------+-----------------------+---------------------+
-| :doc:`help`            | :doc:`documenting`  | :doc:`triaging`       | :doc:`developers`   |
-+------------------------+---------------------+-----------------------+---------------------+
-| :doc:`pullrequest`     | :ref:`style-guide`  | :ref:`helptriage`     | :doc:`committing`   |
-+------------------------+---------------------+-----------------------+---------------------+
-| :doc:`runtests`        | :ref:`rst-primer`   | :doc:`experts`        | :doc:`devcycle`     |
-+------------------------+---------------------+-----------------------+---------------------+
-| :doc:`fixingissues`    | :ref:`translating`  |                       | :doc:`motivations`  |
-+------------------------+---------------------+-----------------------+---------------------+
-| :doc:`communication`   |                     |                       | :ref:`office hour`  |
-+------------------------+---------------------+-----------------------+---------------------+
-| :doc:`gitbootcamp`     |                     |                       |                     |
-+------------------------+---------------------+-----------------------+---------------------+
+======================== =================== ======================= =======================
+Contributors             Documentarians      Triagers                Core Developers
+======================== =================== ======================= =======================
+:ref:`setup`             :ref:`docquality`   :ref:`tracker`          :ref:`responsibilities`
+:ref:`help`              :ref:`documenting`  :ref:`triaging`         :ref:`developers`
+:ref:`pullrequest`       :ref:`style-guide`  :ref:`helptriage`       :ref:`committing`
+:ref:`runtests`          :ref:`rst-primer`   :ref:`experts`          :ref:`devcycle`
+:ref:`fixingissues`      :ref:`translating`  :ref:`labels`           :ref:`motivations`
+:ref:`communication`                         :ref:`gh-faq`           :ref:`office hour`
+:ref:`gitbootcamp`                           :ref:`triage-team`      :ref:`experts`
+:ref:`devcycle`
+======================== =================== ======================= =======================
 
-Advanced tasks and topics for once you are comfortable:
-
-* :doc:`silencewarnings`
-* Fixing issues found by the :doc:`buildbots <buildbots>`
-* :doc:`coverity`
-* Helping out with reviewing `open pull requests`_.
-  See :ref:`how to review a Pull Request <how-to-review-a-pull-request>`.
-* :doc:`fixingissues`
-
-It is **recommended** that the above documents be read as needed. New
-contributors will build understanding of the CPython workflow by reading the
-sections mentioned in this table. You
+We **recommend** that the documents in this guide be read as needed. You
 can stop where you feel comfortable and begin contributing immediately without
 reading and understanding these documents all at once.  If you do choose to skip
 around within the documentation, be aware that it is written assuming preceding
@@ -205,8 +149,8 @@ developer's toolkit.
 While these kinds of change are much rarer than those described above, they do
 happen and that process is also described as part of this guide:
 
-* :doc:`stdlibchanges`
-* :doc:`langchanges`
+* :ref:`stdlibchanges`
+* :ref:`langchanges`
 
 
 Other Interpreter Implementations
@@ -239,17 +183,17 @@ Key Resources
     * :PEP:`7` (Style Guide for C Code)
     * :PEP:`8` (Style Guide for Python Code)
 * `Issue tracker`_
-    * `Meta tracker <http://psf.upfronthosting.co.za/roundup/meta>`_ (issue
+    * `Meta tracker <https://issues.roundup-tracker.org/>`_ (issue
       tracker for the issue tracker)
-    * :doc:`experts`
+    * :ref:`experts`
 * `Buildbot status`_
 * Source code
     * `Browse online <https://github.com/python/cpython/>`_
     * `Snapshot of the *main* branch <https://github.com/python/cpython/archive/main.zip>`_
-    * `Daily OS X installer <http://buildbot.python.org/daily-dmg/>`_
+    * `Daily OS X installer <https://buildbot.python.org/daily-dmg/>`_
 * PEPs_ (Python Enhancement Proposals)
-* :doc:`help`
-* :doc:`developers`
+* :ref:`help`
+* :ref:`developers`
 
 
 .. _resources:
@@ -258,15 +202,16 @@ Additional Resources
 --------------------
 
 * Anyone can clone the sources for this guide.  See
-  :ref:`helping-with-the-developers-guide`.
+  :ref:`devguide`.
 * Help with ...
-    * :doc:`exploring`
-    * :doc:`grammar`
-    * :doc:`compiler`
-    * :doc:`garbage_collector`
+    * :ref:`exploring`
+    * :ref:`grammar`
+    * :ref:`parser`
+    * :ref:`compiler`
+    * :ref:`garbage_collector`
 * Tool support
-    * :doc:`gdb`
-    * :doc:`clang`
+    * :ref:`gdb`
+    * :ref:`clang`
     * Various tools with configuration files as found in the `Misc directory`_
     * Information about editors and their configurations can be found in the
       `wiki <https://wiki.python.org/moin/PythonEditors>`_
@@ -281,7 +226,7 @@ Please note that all interactions on
 `Python Software Foundation <https://www.python.org/psf-landing/>`__-supported
 infrastructure is `covered
 <https://www.python.org/psf/records/board/minutes/2014-01-06/#management-of-the-psfs-web-properties>`__
-by the `PSF Code of Conduct <https://www.python.org/psf/codeofconduct/>`__,
+by the `PSF Code of Conduct <https://www.python.org/psf/conduct/>`__,
 which includes all infrastructure used in the development of Python itself
 (e.g. mailing lists, issue trackers, GitHub, etc.).
 In general this means everyone is expected to be open, considerate, and
@@ -293,53 +238,27 @@ Full Table of Contents
 ----------------------
 
 .. toctree::
-   :numbered:
    :maxdepth: 3
 
-   setup
-   help
-   pullrequest
-   runtests
-   coverage
-   docquality
-   documenting
-   silencewarnings
-   fixingissues
-   tracker
-   triaging
-   communication
-   porting
-   coredev
-   developers
-   committing
-   devcycle
-   buildbots
-   stdlibchanges
-   langchanges
-   experts
-   gdb
-   exploring
-   grammar
-   compiler
-   garbage_collector
-   extensions
-   c-api
-   coverity
-   clang
-   buildworker
-   motivations
-   gitbootcamp
-   appendix
+   getting-started/index
+   developer-workflow/index
+   triage/index
+   documentation/index
+   testing/index
+   core-developers/index
+   internals/index
+   advanced-tools/index
+   versions
 
 .. _Buildbot status: https://www.python.org/dev/buildbot/
 .. _Misc directory: https://github.com/python/cpython/tree/main/Misc
-.. _PEPs: https://www.python.org/dev/peps/
+.. _PEPs: https://peps.python.org/
 .. _python.org maintenance: https://pythondotorg.readthedocs.io/
 .. _Python: https://www.python.org/
 .. _Core Python Mentorship: https://www.python.org/dev/core-mentorship/
-.. _PyPy: http://www.pypy.org
-.. _Jython: http://www.jython.org/
-.. _IronPython: http://ironpython.net/
-.. _Stackless: http://www.stackless.com/
-.. _Issue tracker: https://bugs.python.org/
+.. _PyPy: https://www.pypy.org
+.. _Jython: https://www.jython.org/
+.. _IronPython: https://ironpython.net/
+.. _Stackless: https://github.com/stackless-dev/stackless/wiki/
+.. _Issue tracker: https://github.com/python/cpython/issues
 .. _open pull requests: https://github.com/python/cpython/pulls?utf8=%E2%9C%93&q=is%3Apr%20is%3Aopen%20label%3A%22awaiting%20review%22
