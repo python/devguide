@@ -17,19 +17,22 @@ Dates shown in *italic* are scheduled and can be adjusted.
 
 .. csv-table::
    :header-rows: 1
-   :widths: 15, 15, 15, 15, 15, 25
+   :widths: 5, 5, 15, 15, 12, 40
    :file: include/branches.csv
 
+.. Remember to update main branch in the paragraph above too
 
-Unsupported versions
+
+Unsupported Versions
 ====================
 
 .. csv-table::
    :header-rows: 1
-   :widths: 5, 5, 15, 12, 40
+   :widths: 5, 5, 15, 15, 12, 40
    :file: include/end-of-life.csv
 
-Status key
+
+Status Key
 ==========
 
 :features: new features, bugfixes, and security fixes are accepted.

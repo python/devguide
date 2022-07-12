@@ -1,10 +1,10 @@
-Branch,Schedule,First release,End-of-life,Release manager
-3.6,:pep:`494`,2016-12-23,2021-12-23,Ned Deily
-3.5,:pep:`478`,2015-09-13,2020-09-30,Larry Hastings
-3.4,:pep:`429`,2014-03-16,2019-03-18,Larry Hastings
-3.3,:pep:`398`,2012-09-29,2017-09-29,"Georg Brandl, Ned Deily (3.3.7+)"
-3.2,:pep:`392`,2011-02-20,2016-02-20,Georg Brandl
-3.1,:pep:`375`,2009-06-27,2012-04-09,Benjamin Peterson
-3.0,:pep:`361`,2008-12-03,2009-06-27,Barry Warsaw
-2.7,:pep:`373`,2010-07-03,2020-01-01,Benjamin Peterson
-2.6,:pep:`361`,2008-10-01,2013-10-29,Barry Warsaw
+Branch,Schedule,Status,First release,End-of-life,Release manager
+3.6,:pep:`494`,end-of-life,2016-12-23,2021-12-23,Ned Deily
+3.5,:pep:`478`,end-of-life,2015-09-13,2020-09-30,Larry Hastings
+3.4,:pep:`429`,end-of-life,2014-03-16,2019-03-18,Larry Hastings
+3.3,:pep:`398`,end-of-life,2012-09-29,2017-09-29,"Georg Brandl, Ned Deily (3.3.7+)"
+3.2,:pep:`392`,end-of-life,2011-02-20,2016-02-20,Georg Brandl
+3.1,:pep:`375`,end-of-life,2009-06-27,2012-04-09,Benjamin Peterson
+3.0,:pep:`361`,end-of-life,2008-12-03,2009-06-27,Barry Warsaw
+2.7,:pep:`373`,end-of-life,2010-07-03,2020-01-01,Benjamin Peterson
+2.6,:pep:`361`,end-of-life,2008-10-01,2013-10-29,Barry Warsaw
