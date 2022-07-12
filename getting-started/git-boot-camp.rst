@@ -283,8 +283,7 @@ Creating a Pull Request
 
 6. Press the ``Create pull request`` button.
 
-You should include the issue number (``GH-NNNN``) in the title and in the
-body of the PR.
+You should include the issue number in the title of the PR (``gh-NNNNN: ...``).
 
 You might also use `special keywords
 <https://docs.github.com/en/issues/tracking-your-work-with-issues/linking-a-pull-request-to-an-issue#linking-a-pull-request-to-an-issue-using-a-keyword>`_
