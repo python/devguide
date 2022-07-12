@@ -22,7 +22,7 @@ if not defined SPHINXLINT (
 )
 
 set BUILDDIR=_build
-set SPHINXOPTS="-W --keep-going -n"
+set SPHINXOPTS=-W --keep-going -n
 set ALLSPHINXOPTS=-d %BUILDDIR%/doctrees %SPHINXOPTS% .
 if NOT "%PAPER%" == "" (
 	set ALLSPHINXOPTS=-D latex_paper_size=%PAPER% %ALLSPHINXOPTS%
