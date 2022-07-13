@@ -10,6 +10,29 @@ This document describes the custom reStructuredText markup introduced by Sphinx
 to support Python documentation and how it should be used.
 
 
+Quick Reference
+===============
+
+This table summarizes which markup should be used for some commonly used
+elements:
+
+================ ========================================= ====================
+Element          Markup                                    See also
+================ ========================================= ====================
+arguments        ``*arg*``                                 :ref:`inline-markup`
+variables        ````var````                               :ref:`inline-markup`
+literals         ````0````, ````[]````                     :ref:`inline-markup`
+True/False/None  ````True````, ````False````, ````None```` :ref:`inline-markup`
+code snippets    ````print('hello world')````              :ref:`inline-markup`
+functions        ``:func:`sorted```                        :ref:`roles`
+func definitions ``.. function:: func(args)``              :ref:`directives`
+reference labels ``.. _label-name:``                       :ref:`doc-ref-role`
+internal ref     ``:ref:`label-name```                     :ref:`doc-ref-role`
+external links   ```Link text <https://target>`_``         :ref:`hyperlinks`
+comments         ``.. a comment``                          :ref:`comments`
+================ ========================================= ====================
+
+
 .. _rst-primer:
 
 reStructuredText Primer
@@ -34,6 +57,7 @@ chunks of text separated by one or more blank lines.  As in Python, indentation
 is significant in reST, so all lines of the same paragraph must be left-aligned
 to the same level of indentation.
 
+.. _inline-markup:
 
 Inline markup
 -------------
@@ -42,7 +66,9 @@ The standard reST inline markup is quite simple: use
 
 * one asterisk: ``*text*`` for emphasis (italics),
 * two asterisks: ``**text**`` for strong emphasis (boldface), and
-* backquotes: ````text```` for code samples.
+* backquotes: ````text```` for code samples, variables, and literals.
+
+Italic is also used for function and method arguments (``*arg*``).
 
 If asterisks or backquotes appear in running text and could be confused with
 inline markup delimiters, they have to be escaped with a backslash.
@@ -132,6 +158,7 @@ The handling of the ``::`` marker is smart:
 That way, the second sentence in the above example's first paragraph would be
 rendered as "The next paragraph is a code sample:".
 
+.. _hyperlinks:
 
 Hyperlinks
 ----------
@@ -185,6 +212,7 @@ indentation.  (There needs to be a blank line between explicit markup and normal
 paragraphs.  This may all sound a bit complicated, but it is intuitive enough
 when you write it.)
 
+.. _directives:
 
 Directives
 ----------
@@ -229,12 +257,17 @@ body at the bottom of the document after a "Footnotes" rubric heading, like so::
 
 You can also explicitly number the footnotes for better context.
 
+.. _comments:
 
 Comments
 --------
 
 Every explicit markup block which isn't a valid markup construct (like the
 footnotes above) is regarded as a comment.
+
+Comments are generally preceeded by ``..``::
+
+   .. This is a comment
 
 
 Source encoding
@@ -636,9 +669,10 @@ The file name is relative to the current file's path.  Documentation-specific
 include files should be placed in the ``Doc/includes`` subdirectory.
 
 .. _rest-inline-markup:
+.. _roles:
 
-Inline markup
--------------
+Roles
+-----
 
 As said before, Sphinx uses interpreted text roles to insert semantic markup in
 documents.
