@@ -283,11 +283,12 @@ Creating a Pull Request
 
 6. Press the ``Create pull request`` button.
 
-You should include the issue number in the title of the PR (``gh-NNNNN: ...``).
+You should include the issue number in the title of the PR,
+in the format ``gh-NNNNN: <PR Title>``.
 
 You might also use `special keywords
 <https://docs.github.com/en/issues/tracking-your-work-with-issues/linking-a-pull-request-to-an-issue#linking-a-pull-request-to-an-issue-using-a-keyword>`_
-to automatically close the linked issue once the PR is merged, however you
+to automatically close the linked issue once the PR is merged. However, you
 should avoid them if other PRs need to be merged before the issue can be
 closed (e.g. backports to other branches).
 
