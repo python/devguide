@@ -40,7 +40,7 @@ html_title = ""
 # http://www.sphinx-doc.org/en/stable/config.html?highlight=linkcheck#confval-linkcheck_anchors_ignore
 linkcheck_anchors_ignore = [
     # match any anchor that starts with a '/' since this is an invalid HTML anchor
-    '\/.*',
+    r'\/.*',
 ]
 rediraffe_redirects = {
     "clang.rst": "advanced-tools/clang.rst",
