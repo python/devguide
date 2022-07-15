@@ -149,8 +149,8 @@ Inline ````code blocks```` can be used instead.
 Working with Git_
 -----------------
 
-.. seealso::
-   :ref:`gitbootcamp`
+..
+   :true:
 
 As a core developer, you have the ability to push changes to the official
 Python repositories, so you need to be careful with your workflow:
