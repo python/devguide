@@ -52,7 +52,6 @@ Module                Maintainers
 ====================  =============================================
 __future__
 __main__              gvanrossum, ncoghlan
-_dummy_thread         brettcannon
 _thread
 _testbuffer
 abc
@@ -104,7 +103,6 @@ difflib               tim-one (inactive)
 dis                   1st1
 distutils             merwok, dstufft
 doctest               tim-one (inactive)
-dummy_threading       brettcannon
 email                 warsaw, bitdancer*, maxking
 encodings             malemburg
 ensurepip             ncoghlan, dstufft, pradyunsg
