@@ -209,7 +209,7 @@ sndhdr
 socket                gpshead
 socketserver
 spwd
-sqlite3               ghaering^
+sqlite3               ghaering^, erlend-aasland*
 ssl                   jackjansen, tiran, dstufft, alex
 stat                  tiran
 statistics            stevendaprano, rhettinger
