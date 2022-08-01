@@ -391,13 +391,13 @@ with **Homebrew**::
 For Python 3.10 and newer::
 
     $ PKG_CONFIG_PATH="$(brew --prefix tcl-tk)/lib/pkgconfig" \
-      ./configure --with-pydebug --with-openssl=$(brew --prefix openssl)
+      ./configure --with-pydebug --with-openssl=$(brew --prefix openssl@1.1)
 
 For Python versions 3.9 through 3.7::
 
     $ export PKG_CONFIG_PATH="$(brew --prefix tcl-tk)/lib/pkgconfig"
     $ ./configure --with-pydebug \
-                  --with-openssl=$(brew --prefix openssl) \
+                  --with-openssl=$(brew --prefix openssl@1.1) \
                   --with-tcltk-libs="$(pkg-config --libs tcl tk)" \
                   --with-tcltk-includes="$(pkg-config --cflags tcl tk)"
 
