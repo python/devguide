@@ -16,21 +16,22 @@ Quick Reference
 This table summarizes which markup should be used for some commonly used
 elements:
 
-================ ========================================= ====================
-Element          Markup                                    See also
-================ ========================================= ====================
-arguments        ``*arg*``                                 :ref:`inline-markup`
-variables        ````var````                               :ref:`inline-markup`
-literals         ````0````, ````[]````                     :ref:`inline-markup`
-True/False/None  ````True````, ````False````, ````None```` :ref:`inline-markup`
-code snippets    ````print('hello world')````              :ref:`inline-markup`
-functions        ``:func:`sorted```                        :ref:`roles`
-func definitions ``.. function:: func(args)``              :ref:`directives`
-reference labels ``.. _label-name:``                       :ref:`doc-ref-role`
-internal ref     ``:ref:`label-name```                     :ref:`doc-ref-role`
-external links   ```Link text <https://target>`_``         :ref:`hyperlinks`
-comments         ``.. a comment``                          :ref:`comments`
-================ ========================================= ====================
+===================== =========================================== ====================
+Element               Markup                                      See also
+===================== =========================================== ====================
+arguments/parameters  ``*arg*``                                   :ref:`inline-markup`
+vars/literals/code    ````var````, ````42````, ````len(s) - 1```` :ref:`inline-markup`
+True/False/None       ````True````, ````False````, ````None````   :ref:`inline-markup`
+functions             ``:func:`sorted```                          :ref:`roles`
+func definitions      ``.. function:: func(args)``                :ref:`directives`
+reference labels      ``.. _label-name:``                         :ref:`doc-ref-role`
+internal ref          ``:ref:`label-name```                       :ref:`doc-ref-role`
+external links        ```Link text <https://target>`_``           :ref:`hyperlinks`
+roles w/ custom text  ``:role:`custom text <target>```            :ref:`roles`
+roles w/o link        ``:role:`!target```                         :ref:`roles`
+roles w/o first part  ``:role:`~hidden.hidden.visible```          :ref:`roles`
+comments              ``.. a comment``                            :ref:`comments`
+===================== =========================================== ====================
 
 
 .. _rst-primer:
