@@ -16,22 +16,22 @@ Quick Reference
 This table summarizes which markup should be used for some commonly used
 elements:
 
-===================== =========================================== ====================
-Element               Markup                                      See also
-===================== =========================================== ====================
-arguments/parameters  ``*arg*``                                   :ref:`inline-markup`
-vars/literals/code    ````var````, ````42````, ````len(s) - 1```` :ref:`inline-markup`
-True/False/None       ````True````, ````False````, ````None````   :ref:`inline-markup`
-functions             ``:func:`sorted```                          :ref:`roles`
-func definitions      ``.. function:: func(args)``                :ref:`directives`
-reference labels      ``.. _label-name:``                         :ref:`doc-ref-role`
-internal ref          ``:ref:`label-name```                       :ref:`doc-ref-role`
-external links        ```Link text <https://target>`_``           :ref:`hyperlinks`
-roles w/ custom text  ``:role:`custom text <target>```            :ref:`roles`
-roles w/o link        ``:role:`!target```                         :ref:`roles`
-roles w/o first part  ``:role:`~hidden.hidden.visible```          :ref:`roles`
-comments              ``.. a comment``                            :ref:`comments`
-===================== =========================================== ====================
+======================= =========================================== ====================
+Element                 Markup                                      See also
+======================= =========================================== ====================
+arguments/parameters    ``*arg*``                                   :ref:`inline-markup`
+variables/literals/code ````foo````, ````42````, ````len(s) - 1```` :ref:`inline-markup`
+True/False/None         ````True````, ````False````, ````None````   :ref:`inline-markup`
+functions definitions   ``.. function:: print(*args)``              :ref:`directives`
+functions references    ``:func:`print```                           :ref:`roles`
+reference labels        ``.. _label-name:``                         :ref:`doc-ref-role`
+internal references     ``:ref:`label-name```                       :ref:`doc-ref-role`
+external links          ```Link text <https://example.com>`_``      :ref:`hyperlinks`
+roles w/ custom text    ``:role:`custom text <target>```            :ref:`roles`
+roles w/ only last part ``:role:`~hidden.hidden.visible```          :ref:`roles`
+roles w/o link          ``:role:`!target```                         :ref:`roles`
+comments                ``.. a comment``                            :ref:`comments`
+======================= =========================================== ====================
 
 
 .. _rst-primer:
@@ -263,10 +263,8 @@ You can also explicitly number the footnotes for better context.
 Comments
 --------
 
-Every explicit markup block which isn't a valid markup construct (like the
-footnotes above) is regarded as a comment.
-
-Comments are generally preceeded by ``..``::
+Every explicit markup block (starting with :literal:`.. \ `) which isn't a
+:ref:`valid markup construct <directives>` is regarded as a comment::
 
    .. This is a comment
 
@@ -678,8 +676,12 @@ Roles
 As said before, Sphinx uses interpreted text roles to insert semantic markup in
 documents.
 
-Names of local variables, such as function/method arguments, are an exception,
-they should be marked simply with ``*var*``.
+There are a couple of cases where roles can be omitted in favor of
+simpler markup:
+
+* Function and method arguments can be marked with ``*arg*``.
+* ``True``, ``False``, ``None``, and variables can be marked with
+  :literal:`\`\`...```.
 
 For all other roles, you have to write ``:rolename:`content```.
 
