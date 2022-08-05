@@ -671,11 +671,11 @@ include files should be placed in the ``Doc/includes`` subdirectory.
 Roles
 -----
 
-As :ref:`previously mentioned <inline-markup>`,  Sphinx uses
+As :ref:`previously mentioned <inline-markup>`, Sphinx uses
 interpreted text roles of the form ``:rolename:`content```
 to insert semantic markup in documents.
 
-In the CPython documentation, there are a few common cases
+In the CPython documentation, there are a couple common cases
 where simpler markup should be used:
 
 * ``*arg*`` (rendered as *arg*) for function and method arguments.
