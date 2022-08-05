@@ -69,8 +69,6 @@ The standard reST inline markup is quite simple: use
 * two asterisks: ``**text**`` for strong emphasis (boldface), and
 * backquotes: ````text```` for code samples, variables, and literals.
 
-Italic is also used for function and method arguments (``*arg*``).
-
 If asterisks or backquotes appear in running text and could be confused with
 inline markup delimiters, they have to be escaped with a backslash.
 
@@ -673,17 +671,15 @@ include files should be placed in the ``Doc/includes`` subdirectory.
 Roles
 -----
 
-As said before, Sphinx uses interpreted text roles to insert semantic markup in
-documents.
+As :ref:`previously mentioned <inline-markup>`,  Sphinx uses
+interpreted text roles of the form ``:rolename:`content```
+to insert semantic markup in documents.
 
-There are a couple of cases where roles can be omitted in favor of
-simpler markup:
+In the CPython documentation, there are a few common cases
+where simpler markup should be used:
 
-* Function and method arguments can be marked with ``*arg*``.
-* ``True``, ``False``, ``None``, and variables can be marked with
-  :literal:`\`\`...```.
-
-For all other roles, you have to write ``:rolename:`content```.
+* ``*arg*`` (rendered as *arg*) for function and method arguments.
+* ````True````/````False````/````None```` for ``True``/``False``/``None``.
 
 There are some additional facilities that make cross-referencing roles more
 versatile:
