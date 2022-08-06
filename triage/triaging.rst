@@ -7,9 +7,6 @@ Triaging an Issue
 This section of the devguide documents the :ref:`issue tracker <tracker>` for
 users and developers.
 
-Contributors with the Triager role on the issue tracker can triage issues
-directly without any assistance.
-
 
 Checklist for Triaging
 ======================
@@ -24,6 +21,8 @@ Checklist for Triaging
   "Projects" fields.
 * You might also leave a brief comment about the proposed next action needed.
   If there is a long message list, a summary can be very helpful.
+* Finally, you can set the `triaged` label (unless you want other triagers
+  to take a look).
 
 Note: some of these fields can only be set/edited by core developers.
 
@@ -40,8 +39,7 @@ working on Python is needed in order to effectively help triage.
 
 Around the clock, new issues are being opened on the :ref:`issue tracker
 <tracker>` and existing issues are being updated. Every issue needs to be
-triaged to make sure various things are in proper order. Even without special
-privileges you can help with this process.
+triaged to make sure various things are in proper order.
 
 Classifying Reports
 -------------------
@@ -55,13 +53,13 @@ For bugs, an issue needs to:
 These are things you can help with once you have experience developing for
 Python:
 
-* try reproducing the bug: for instance, if a bug is not clearly explained
+* Try reproducing the bug: for instance, if a bug is not explained clearly
   enough for you to reproduce it, then there is a good chance a core developer
   won't be able to either.
-* see if the issue happens on a different Python version: it is always helpful
+* See if the issue happens on a different Python version: it is always helpful
   to know if a bug not only affects the in-development version of Python, but
   whether it also affects other versions in maintenance mode.
-* write a unit test: if the bug lacks a unit test that should end up in
+* Write a unit test: if the bug lacks a unit test that should end up in
   Python's test suite, having that written can be very helpful.
 
 This is all helpful as it allows members of the :ref:`triage team <triage-team>`
@@ -71,16 +69,16 @@ in a timely fashion.
 Reviewing Pull Requests
 -----------------------
 
-If an issue has a pull request attached that has not been reviewed,
+If an issue has a linked pull request that has not been reviewed,
 you can help by making sure the pull request:
 
-* follows the style guides
-* doesn't have conflicts with the ``main`` branch
 * is a good solution to the problem it is trying to solve
+* follows the style guides
 * includes proper tests
 * includes proper documentation changes
 * includes a :ref:`NEWS entry <news-entry>` (if needed)
 * includes the author in ``Misc/ACKS``, either already or the patch adds them
+* doesn't have conflicts with the ``main`` branch
 
 Doing all of this allows core developers and :ref:`triagers <triage-team>`
 to more quickly look for subtle issues that only people with extensive
