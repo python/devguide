@@ -72,6 +72,7 @@ to enter the public source tree. Ask yourself the following questions:
    be added as well. Changes that affect only documentation generally do not
    require a ``NEWS`` entry. (See the following section for more information.)
 
+.. _news-entry:
 
 Updating NEWS and What's New in Python
 --------------------------------------

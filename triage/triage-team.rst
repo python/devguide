@@ -16,15 +16,11 @@ needed, to other repos such as devguide and core-workflow.
 
 Responsibilities include:
 
-* PR/issue management
-    - Reviewing PRs
-    - Assisting contributors
-    - Notifying appropriate core developers
-* Applying appropriate labels to PRs/Issues
-    - Skip news
-    - Skip issue
-    - Good first issue
-    - Other categorizations
+* Classify issues and PRs
+* Applying appropriate :ref:`labels <gh-labels>` to PRs/Issues
+* Notifying appropriate core developers
+* :ref:`Reviewing PRs <reviewing-prs>`
+* Assisting contributors
 
 Although triagers have the power to close PRs, they should generally not do so
 without first consulting a core developer. By having triagers and core developers work together,
@@ -46,9 +42,9 @@ following:
 If a triager has any doubt about whether to close a PR, they should consult a core
 developer before taking any action.
 
-Triagers can also make use of the ``invalid`` and ``stale`` labels to suggest that a
+Triagers can also make use of the ``pending`` and ``stale`` labels to suggest that a
 PR may be suitable for closure. For more information, see the
-:ref:`GitHub PR labels <github-pr-labels>` section.
+:ref:`GitHub PR labels <gh-labels>` section.
 
 Note that it is of paramount importance to treat every contributor to the Python
 project kindly and with respect. Regardless of whether they're entirely new

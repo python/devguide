@@ -10,190 +10,125 @@ Many labels are shared for both use cases, while some are dedicated
 only to one. Below is a possibly inexhaustive list, but it should get
 you going. For a full list, see `here <https://github.com/python/cpython/issues/labels>`_.
 
-General purpose labels
-======================
 
-type-behavior
-    Used for issues/PRs that address unintentional behavior, but do not
-    pose significant security concerns. Generally, bugfixes will be attached
-    to a specific issue where the unintended behavior was first reported.
+Type labels
+===========
 
-type-documentation
-    Used for issues/PRs that exclusively involve changes to
-    the documentation. Documentation includes ``*.rst`` files, docstrings,
-    and code comments.
+These labels are used to specify the type of issue:
 
-type-enhancement
-    Used for issues/PRs that provide additional functionality
-    or capabilities beyond the existing specifications.
+* ``type-bug``: for unexpected behaviors, bugs, or errors (not hard crashes).
+* ``type-crash``: for hard crashes of the interpreter, possibly with a
+  core dump.
+* ``type-feature``: for feature requests or enhancements.
+* ``type-security``: for security issues.
 
-type-performance
-    Used for issues/PRs that provide performance optimizations.
+Since most PRs have an associated issue, it is not necessary to apply these
+labels to PRs
 
-type-security
-    Used for issues/PRs that involve critical security issues. Less severe
-    security concerns can instead use the type-bugfix label.
 
-type-tests
-    Used for issues/PRs that exclusively involve changes to the tests.
+Component labels
+================
 
-OS-Mac / OS-Windows
-    Used for issues/PRs involving changes which only have an effect upon
-    a specific operating system.
+These labels are mostly used to specify which :ref:`part of the codebase
+<directory-structure>` is affected by the issue/PR:
 
-spam
-    Used for issues/PRs that don't include enough eggs or bacon.
 
-Labels specific to issues
-=========================
+* ``stdlib``: for standard library modules in the :file:`Lib` directory
+  (written in Python).
+* ``extension-modules``: for standard library modules in the :file:`Modules`
+  directory (written in C).
+* ``interpreter-core``: for changes related to the interpreter core in the
+  :file:`Objects`, :file:`Python`, :file:`Grammar`, and :file:`Parser` dirs
+  (written mostly in C).
+* ``docs``: for documentation in the :file:`Doc` directory (written in
+  reStructuredText), docstrings, and code comments.
+* ``tests``: for tests in the :file:`Lib/test` directory (written in Python)
+  and changes other related to tests, ``unittest``, or ``doctests``.
 
-Priority
---------
 
-release-blocker
-    The highest priority of an issue. If unaddressed, will cause the
-    release manager to hold releasing a new version of Python.
+Expert labels
+=============
 
-deferred-blocker
-    A release blocker that was pushed one or more releases into the
-    future. Possibly a temporary workaround was employed, or the version
-    of Python the issue is affecting is still in alpha or beta stages
-    of development.
+These labels are used to specify the area of expertise required to address
+the issue/PR.  This includes both specific modules/packages and generic
+interest areas.
 
-Component
----------
+Adding these labels is also a way to notify the relevant experts, since
+they are encouraged to subscribe to these labels.  Depending on the label,
+this might also automatically add the issue to a GitHub project.
 
-library
-    Used for issues involving Python modules in the ``Lib/`` dir.
+You can see the `full list of expert labels on GitHub
+<https://github.com/python/cpython/labels?q=expert>`_.
 
-docs
-    Used for issues involving documentation in the ``Doc/`` dir.
 
-interpreter-core
-    Used for issues in interpreter core (``Objects/``, ``Python/``,
-    ``Grammar/``, and ``Parser/`` dirs).
+OS labels
+=========
 
-extension-modules
-    Used for issues involving C modules in the ``Modules/`` dir.
+These labels are used to specify which operating systems are affected.
+Since most issues either affect all systems or are specific to Unix,
+the only available labels are ``OS-windows``, ``OS-mac``, and ``OS-freebsd``.
 
-tests
-    Used for issues involving only Python's regression test suite, i.e.
-    files in the ``Lib/test/`` dir.
 
-Other
------
+Version labels
+==============
 
-new
-    Denotes that the issue hasn't been looked at by triagers or core
-    developers yet.
+These labels are used to indicate which versions of Python are affected.
+The available version labels (with the form :samp:`3.{x}`) are updated
+whenever new major releases are created or retired.
 
-easy
-    Denotes that the issue is a good candidate for a newcomer to address.
+
+Other labels
+============
+
+* ``triaged``: for issue has been accepted as valid by a triager.
+* ``easy``: for issues that are considered easy.
+* ``build``/``performance``: for issues related respectively to the
+  build process and performances.
+* ``release-blocker``/``deferred-blocker``: for issues/PRs that, unless
+  fixed, will hold the current or next release respectively.
+* ``pending``: for issues/PRs that will be closed unless further feedback
+  is provided.
+* ``stale``: for issues/PRs that have been inactive for a while.
+* ``sprint``: used for easier filtering of issues/PRs being worked on during
+  official sprints.
 
 
 Labels specific to PRs
 ======================
 
-DO-NOT-MERGE
-    Used on PRs to prevent miss-islington from being able
-    to automatically merge the pull request. This label is appropriate when a PR
-    has a non-trivial conflict with the branch it is being merged into.
+The following labels only apply to PRs.  They are either set automatically
+by bots, or applied by humans to trigger specific bot behaviors.
 
-expert-asyncio
-    Used for PRs which involve changes to the asyncio module
-    or other asynchronous frameworks that utilize it.
+* ``DO-NOT-MERGE``: for PRs that shouldn't be merged in their current state.
+  It also prevents ``miss-islington`` from being able to automatically merge
+  the PR.
+* :samp:`needs backport to {X.Y}`: used to indicate which branches the PR should be
+  backported to.  Once the PR is merged, ``miss-islington`` will automatically
+  attempt to create backport PRs for the versions indicated by these labels.
+  See also :ref:`the status of the Python branches <branchstatus>` for a list
+  of branches and the type of PRs that can be backported to them.
+* ``skip issue``: for trivial changes (such as typo fixes, comment changes,
+  and section rephrases) that don't require a corresponding issue.
+* ``skip news``: for PRs that don't need a NEWS entry.  The :ref:`news-entry`
+  section covers in details in which cases the NEWS entry can be skipped.
+* :samp:`awaiting *`: these labels are applied and used by ``bedevere`` to
+  indicate the stage of a PR:
 
-invalid
-    Used manually for PRs that do not meet basic requirements and
-    automatically added by bedevere when PR authors attempt to merge maintenance
-    branches into the main branch. During events such as the October
-    Hacktoberfest, this label will prevent the PR from counting toward the
-    author's contributions.
+  * ``awaiting review``: the PR hasn't been reviewed and is waiting for a
+    review.
+  * ``awaiting core review``: a review by a core developer is needed.
+  * ``awaiting changes``: a reviewer requested changes to proceed with the PR.
+  * ``awaiting change review``: a review of the requested changes is needed.
+  * ``awaiting merge``: the PR has been approved by a core developer and is
+    ready to merge.
 
-needs backport to X.Y
-    Used for PRs which are appropriate to backport to
-    branches prior to main. Generally, backports to the maintenance branches
-    are primarily bugfixes and documentation clarifications. Backports to the
-    security branches are strictly reserved for PRs involving security fixes, such as
-    crashes, privilege escalation, and DoS. The use of this label will cause
-    miss-islington to attempt to automatically merge the PR into the branches
-    specified.
+* ``test-with-buildbots``: used to test the latest commit with the buildbot
+  fleet whenever more testing is required before merging.  This may take
+  multiple hours to complete. Triagers can also stop a stuck build using
+  the web interface.
 
-skip issue
-    Used for PRs which involve trivial changes, such as typo fixes,
-    comment changes, and section rephrases. The majority of PRs require
-    an issue to be attached to, but if there are no code changes and the
-    section being modified retains the same meaning, this label might be
-    appropriate.
-
-skip news
-    Similar to the skip issue label, this label is used for PRs which
-    involve trivial changes, backports, or already have a relevant news entry
-    in another PR. Any potentially impactful changes should have a
-    corresponding news entry, but for trivial changes it's commonly at the
-    discretion of the PR author if they wish to opt-out of making one.
-
-sprint
-    Used for PRs authored during an in-person sprint, such as
-    at PyCon, EuroPython, or other official Python events. The label is
-    used to prioritize the review of those PRs during the sprint.
-
-stale
-    Used for PRs that include changes which are no longer relevant, or when the
-    author hasn't responded to feedback in a long period of time, or when the
-    reviewer is unresponsive. This label helps core developers quickly identify
-    PRs that are candidates for closure or require a ping to the author or
-    reviewer.
-
-awaiting review
-    Used for PRs that haven't been reviewed by anyone yet.
-
-awaiting core review
-    Used when the PR is authored by a core developer or when a non-core
-    developer has reviewed the PR, even if they requested changes.
-    Note that reviewers could have been added manually by a triager or core
-    developer, or included automatically through use of the `CODEOWNERS
-    <https://github.com/python/cpython/blob/main/.github/CODEOWNERS>`_
-    file.
-
-awaiting changes
-    A reviewer required changes to proceed with the PR.
-
-awaiting change review
-    The PR author made requested changes, and they are waiting for review.
-
-awaiting merge
-    The PR has been approved by a core developer and is ready to merge.
-
-test-with-buildbots
-    Used on PRs to test the latest commit with the buildbot fleet. Generally for
-    PRs with large code changes requiring more testing before merging. This
-    may take multiple hours to complete. Triagers can also stop a stuck build
-    using the web interface.
-
-
-.. _github-pr-labels:
-
-GitHub Labels for PRs
-=====================
-
-An important component of triaging PRs for the CPython repo involves
-appropriately categorizing them through the usage of labels. For this
-purpose we're using :ref:`gh-labels`.
-
-Applying labels for Issues
-==========================
-
-The major elements found in an issue report include:
-
-* Classification (including *Title*) - Metadata that lets us categorize
-  the issue. Apart from the *Title* field, we use some *type-*, *component-*, and
-  *version-* specific labels.
-* Process - These fields indicate the state of the issue and its progress
-  toward resolution. The fields are *Status* (open/closed), *Assignees*,
-  *Comment*, as well as *priority-* and *keyword-* specific labels.
-* Messages
-* History
+.. TODO: delete most of what follows, since it seems specific for bpo.
+   Some things are still relevant, and should be moved elsewhere.
 
 Title
 -----
