@@ -21,7 +21,7 @@ Checklist for Triaging
   "Projects" fields.
 * You might also leave a brief comment about the proposed next action needed.
   If there is a long message list, a summary can be very helpful.
-* Finally, you can set the `triaged` label (unless you want other triagers
+* Finally, you can set the ``triaged`` label (unless you want other triagers
   to take a look).
 
 Note: some of these fields can only be set/edited by core developers.
