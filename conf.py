@@ -1,6 +1,12 @@
+import os
+import sys
 import time
 
+# Location of custom extensions.
+sys.path.insert(0, os.path.abspath(".") + "/_extensions")
+
 extensions = [
+    'custom_roles',
     'sphinx.ext.intersphinx',
     'sphinx.ext.todo',
     'sphinx_copybutton',
