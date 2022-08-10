@@ -10,10 +10,7 @@ from docutils import nodes
 def setup(app):
     app.add_role(
         "gh-label",
-        autolink(
-            "https://github.com/python/cpython/issues"
-            "?q=is%%3Aopen+sort%%3Aupdated-desc+label%%3A%s"
-        ),
+        autolink("https://github.com/python/cpython/labels/%s"),
     )
     # Parallel safety:
     # https://www.sphinx-doc.org/en/master/extdev/index.html#extension-metadata
@@ -23,7 +20,7 @@ def setup(app):
 def autolink(pattern):
     def role(name, rawtext, text, lineno, inliner, options={}, content=[]):
         if " " in text:
-            url_text = urllib.parse.quote_plus(f'"{text}"')
+            url_text = urllib.parse.quote(f"{text}")
         else:
             url_text = text
         url = pattern % (url_text,)
