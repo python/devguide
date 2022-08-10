@@ -110,7 +110,8 @@ Labels specific to PRs
     Hacktoberfest, this label will prevent the PR from counting toward the
     author's contributions.
 
-:gh-label:`needs backport to X.Y`
+needs backport to X.Y
+    For example, :gh-label:`needs backport to 3.11`.
     Used for PRs which are appropriate to backport to
     branches prior to main. Generally, backports to the maintenance branches
     are primarily bugfixes and documentation clarifications. Backports to the
