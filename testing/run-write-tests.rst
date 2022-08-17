@@ -134,6 +134,8 @@ When you are adding tests to an existing test file, it is also recommended
 that you study the other tests in that file; it will teach you which precautions
 you have to take to make your tests robust and portable.
 
+For tests of the C API, see Tests sections in :ref:`c-api`.
+
 
 Benchmarks
 ==========
