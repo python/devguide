@@ -113,9 +113,9 @@ To add a new set of tests (or extract a set out of the monolithic
 - The file should define a module as usual, except:
 
   - Instead of ``<Python.h>``, include ``"parts.h"``.
-  - Instead of ``PyInit_modname``, define ``_PyTestCapi_Init_yourfeature``
-    that *takes* the ``_testcapi`` module and adds functions/classes to it.
-    (Use ``PyModule_AddFunctions`` to add functions).
+  - Instead of ``PyInit_modname``, define a ``_PyTestCapi_Init_yourfeature``
+    function that *takes* the ``_testcapi`` module and adds functions/classes
+    to it. (You can use ``PyModule_AddFunctions`` to add functions.)
 
 - Add the ``_PyTestCapi_Init_*`` function to ``Modules/_testcapi/parts.h``
 
