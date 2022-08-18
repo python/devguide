@@ -286,11 +286,24 @@ Creating a Pull Request
 You should include the issue number in the title of the PR,
 in the format ``gh-NNNNN: <PR Title>``.
 
-You might also use `special keywords
-<https://docs.github.com/en/issues/tracking-your-work-with-issues/linking-a-pull-request-to-an-issue#linking-a-pull-request-to-an-issue-using-a-keyword>`_
-to automatically close the linked issue once the PR is merged. However, you
-should avoid them if other PRs need to be merged before the issue can be
-closed (e.g. backports to other branches).
+Linking to Issues and Pull Requests
+-----------------------------------
+
+You can link to issues and pull requests using ``gh-NNNNN`` (this form is
+preferred over ``#NNNNN``).  If the reference appears in a list, the link
+will be expanded to show the status and title of the issue/PR.
+
+When you create a PR that includes ``gh-NNNNN`` in the title, `bedevere`_
+will automatically add a link to the issue in the first message.
+
+In addition, pull requests support `special keywords`_ that can be used to
+link to an issue and automatically close it when the PR is merged.
+However, issues often require multiple PRs before they can be closed (e.g.
+backports to other branches), so this features is only useful when
+a single PR is enough to address and close the issue.
+
+.. _bedevere: https://github.com/python/bedevere
+.. _special keywords: https://docs.github.com/en/issues/tracking-your-work-with-issues/linking-a-pull-request-to-an-issue#linking-a-pull-request-to-an-issue-using-a-keyword
 
 Updating your CPython Fork
 --------------------------
