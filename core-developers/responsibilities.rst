@@ -45,9 +45,9 @@ Mailing Lists
 =============
 
 Some mailing lists have been replaced by the `discussion forum
-<https://discuss.python.org/>`_. On this forum, the `Core Development` and `PEPs`
-categories supplant the python-dev mailing list, and the `Ideas` category supplants
-the python-ideas mailing list. The `Committers` category replaces the python-committers
+<https://discuss.python.org/>`_. On this forum, the ``Core Development`` and ``PEPs``
+categories supplant the python-dev mailing list, and the ``Ideas`` category supplants
+the python-ideas mailing list. The ``Committers`` category replaces the python-committers
 mailing list.
 
 You may wish to subscribe to `python-checkins
@@ -56,7 +56,7 @@ include checkin log entries and diffs. (You may need to set up some way of filte
 for areas of interest to you.)
 
 If you want notification of new issues, you can use the appropriate GitHub notification
-settings for the `python/cpython` repository.
+settings for the ``python/cpython`` repository.
 
 
 .. _contributor_agreement:

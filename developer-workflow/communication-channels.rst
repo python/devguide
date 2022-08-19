@@ -30,16 +30,13 @@ Mailing Lists
 .. note:: Some mailing lists have been supplanted by categories in the `discussion
    forum <https://discuss.python.org/>`_. Specifically,
 
-   * The python-dev mailing list is supplanted by posts in the `Core Development`
-     and `PEPs` categories on the forum.
+   * The python-dev mailing list is supplanted by posts in the ``Core Development``
+     and ``PEPs`` categories on the forum.
 
-   * The python-ideas mailing list is supplanted by posts in the `Core Ideas`
+   * The python-ideas mailing list is supplanted by posts in the ``Ideas``
      category on the forum.
 
-   * The python-ideas mailing list is supplanted by posts in the `Core Ideas`
-     category on the forum.
-
-   Discussion in `Core Development` is focused on issues related to Python's
+   Discussion in ``Core Development`` is focused on issues related to Python's
    development, such as how to handle a specific issue, a PEP, etc.
 
    - Ideas about new functionality should **not** start here and instead
