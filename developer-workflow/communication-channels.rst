@@ -27,45 +27,36 @@ in return.
 Mailing Lists
 =============
 
-python-dev_ is the primary mailing list for discussions about Python's
-development. The list is open to the public and is subscribed to by all core
-developers plus many people simply interested in following Python's
-development. Discussion is focused on issues related to Python's development,
-such as how to handle a specific issue, a PEP, etc.
+.. note:: Some mailing lists have been supplanted by categories in the `discussion
+   forum <https://discuss.python.org/>`_. Specifically,
 
-- Ideas about new functionality should **not** start here and instead
-  should be sent to python-ideas_.
-- Technical support questions should also not be asked here and instead
-  should go to python-list_ or python-help_.
+   * The python-dev mailing list is supplanted by posts in the `Core Development`
+     and `PEPs` categories on the forum.
 
-Python-ideas_ is a mailing list open to the public to discuss ideas on changing
-Python. If a new idea does not start here (or python-list_, discussed below),
-it will get redirected here.
+   * The python-ideas mailing list is supplanted by posts in the `Core Ideas`
+     category on the forum.
 
-Sometimes people post new ideas to python-list_ to gather community opinion
-before heading to python-ideas_. The list is also sometimes known as
-comp.lang.python, the name of the newsgroup it mirrors (it is also known by
-the abbreviation c.l.py).
+   * The python-ideas mailing list is supplanted by posts in the `Core Ideas`
+     category on the forum.
 
-The python-committers_ mailing list is a private mailing list for core
-developers (the archives are publicly available).
-If something only affects core developers (e.g., the
-tree is frozen for commits, etc.), it is discussed here instead of python-dev
-to keep traffic down on the latter.
+   Discussion in `Core Development` is focused on issues related to Python's
+   development, such as how to handle a specific issue, a PEP, etc.
 
-python-dev_, python-committers_, and python-ideas_ all use Mailman 3, and
-are hence accessible via the Mailman 3 `web gateway`_.
+   - Ideas about new functionality should **not** start here and instead
+     should be discussed in `Ideas`.
+   - Technical support questions should also not be asked here and instead
+     should go to the python-list_ or python-help_ mailing lists, or the
+     `Help` category on the forum.
 
-Python-checkins_ sends out an email for every commit to Python's various
-repositories from https://github.com/python/cpython. All core developers
-subscribe to this list and are known to reply to these emails to make comments
-about various issues they catch in the commit. Replies get redirected to
-python-dev.
+For looking at old posts on the mailing lists, python-dev_, python-committers_, and
+python-ideas_ all use Mailman 3, and are hence accessible via the Mailman 3 `web
+gateway`_.
 
-There are two mailing lists related to issues on the `issue tracker`_. If you
-only want an email for when a new issue is open, subscribe to
-new-bugs-announce_. If you would rather receive an email for all changes made
-to any issue, subscribe to python-bugs-list_.
+The python-checkins_ mailing list sends out an email for every commit to Python's
+various repositories from https://github.com/python/cpython. Many core developers
+subscribe to this list and are known to respond to these emails to make comments about
+various issues they catch in the commit. Replies get redirected to python-dev, but a
+better place for developers to respond is GitHub.
 
 General Python questions should go to `python-list`_ or `tutor`_
 or similar resources, such as StackOverflow_ or the ``#python`` IRC channel
