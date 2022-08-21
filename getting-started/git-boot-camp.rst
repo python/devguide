@@ -299,8 +299,8 @@ will automatically add a link to the issue in the first message.
 In addition, pull requests support `special keywords`_ that can be used to
 link to an issue and automatically close it when the PR is merged.
 However, issues often require multiple PRs before they can be closed (e.g.
-backports to other branches), so this features is only useful when
-a single PR is enough to address and close the issue.
+backports to other branches), so this features is only useful if
+you know for sure that a single PR is enough to address and close the issue.
 
 .. _bedevere: https://github.com/python/bedevere
 .. _special keywords: https://docs.github.com/en/issues/tracking-your-work-with-issues/linking-a-pull-request-to-an-issue#linking-a-pull-request-to-an-issue-using-a-keyword
