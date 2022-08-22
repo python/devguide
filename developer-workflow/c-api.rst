@@ -108,7 +108,7 @@ files.
 To add a new set of tests (or extract a set out of the monolithic
 :file:`Modules/_testcapimodule.c`):
 
-- Create a C named ``Modules/_testcapi/yourfeature.c``
+- Create a C file named ``Modules/_testcapi/yourfeature.c``
 
 - The file should define a module as usual, except:
 
