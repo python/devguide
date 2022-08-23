@@ -12,7 +12,7 @@ Next, learn how to compile and run the Python interpreter on a platform to
 which it has already been ported; preferably Unix, but Windows will
 do, too. The build process for Python, in particular the ``Makefile`` in the
 source distribution, will give you a hint on which files to compile
-for Python.  Not all source files are relevant: some are platform-specific, 
+for Python.  Not all source files are relevant: some are platform-specific,
 and others are only used in emergencies (e.g. ``getopt.c``).
 
 It is not recommended to start porting Python without at least a medium-level
