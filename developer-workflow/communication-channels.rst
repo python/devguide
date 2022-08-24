@@ -30,29 +30,23 @@ Mailing Lists
 .. note:: Some mailing lists have been supplanted by categories in the `discussion
    forum <https://discuss.python.org/>`_. Specifically,
 
-   * The python-dev mailing list is supplanted by posts in the ``Core Development``
-     and ``PEPs`` categories on the forum.
+   * The python-dev mailing list is supplanted by posts in the `Core Development`_
+     and `PEPs`_ categories on the forum.
 
-   * The python-ideas mailing list is supplanted by posts in the ``Ideas``
+   * The python-ideas mailing list is supplanted by posts in the `Ideas`_
      category on the forum.
 
    Discussion in ``Core Development`` is focused on issues related to Python's
    development, such as how to handle a specific issue, a PEP, etc.
 
    - Ideas about new functionality should **not** start here and instead
-     should be discussed in `Ideas`.
+     should be discussed in `Ideas`_.
    - Technical support questions should also not be asked here and instead
      should go to the python-list_ or python-help_ mailing lists, or the
-     ``Help`` category on the forum.
+     `Python Help`_ category on the forum.
 
 Old threads in the python-dev_, python-committers_, and python-ideas_ mailing lists
 can be accessed through the Mailman 3 `web gateway`_.
-
-The python-checkins_ mailing list sends out an email for every commit to Python's
-various repositories from https://github.com/python/cpython. Many core developers
-subscribe to this list and are known to respond to these emails to make comments about
-various issues they catch in the commit. Replies get redirected to python-dev, but a
-better place for developers to respond is GitHub.
 
 General Python questions should go to `python-list`_ or `tutor`_
 or similar resources, such as StackOverflow_ or the ``#python`` IRC channel
@@ -189,7 +183,8 @@ mailing list mode" and save changes.
 .. _PEPs: https://discuss.python.org/c/peps/
 .. _Core Development: https://discuss.python.org/c/core-dev/
 .. _Committers: https://discuss.python.org/c/committers/
-
+.. _Ideas: https://discuss.python.org/c/ideas/
+.. _Python Help: https://discuss.python.org/c/users/
 
 Discord (private chat server)
 =============================

@@ -41,22 +41,15 @@ making design and development decisions in different areas (as documented
 in the :ref:`experts` and :ref:`developers`).
 
 
-Mailing Lists
-=============
+Mailing Lists and Bug Notifications
+===================================
 
-Some mailing lists have been replaced by the `discussion forum
-<https://discuss.python.org/>`_. On this forum, the ``Core Development`` and ``PEPs``
-categories supplant the python-dev mailing list, and the ``Ideas`` category supplants
-the python-ideas mailing list. The ``Committers`` category replaces the python-committers
-mailing list.
-
-You may wish to subscribe to `python-checkins
-<https://mail.python.org/mailman/listinfo/python-checkins>`_ - posts to this list
-include checkin log entries and diffs. (You may need to set up some way of filtering
-for areas of interest to you.)
+Mailing lists have generally been replaced by the `discussion forum
+<https://discuss.python.org/>`_. Refer to :ref:`mailinglists` for more information.
 
 If you want notification of new issues, you can use the appropriate GitHub notification
-settings for the ``python/cpython`` repository.
+settings for the `python/cpython <https://github.com/python/cpython>`_ repository -
+follow the link and click on the "Watch" button to set your notification options.
 
 
 .. _contributor_agreement:
