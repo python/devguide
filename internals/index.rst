@@ -9,3 +9,4 @@ CPython's Internals
    parser
    compiler
    garbage-collector
+   interpreter
