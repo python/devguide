@@ -46,7 +46,7 @@ Mailing Lists
      `Python Help`_ category on Discourse.
 
 Existing threads on the python-dev_, python-committers_, and python-ideas_ mailing lists
-can be accessed through the Mailman 3 `web gateway`_.
+can be accessed through the `online archive <web gateway_>`__.
 
 General Python questions should go to `python-list`_ or `tutor`_
 or similar resources, such as StackOverflow_ or the ``#python`` IRC channel
