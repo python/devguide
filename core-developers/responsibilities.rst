@@ -48,7 +48,7 @@ Mailing lists have generally been replaced by the `Discourse forum
 <https://discuss.python.org/>`_. Refer to :ref:`mailinglists` for more information.
 
 If you want notification of new issues, you can use the appropriate GitHub notification
-settings for the `python/cpython <https://github.com/python/cpython>`_ repository -
+settings for the `python/cpython <https://github.com/python/cpython>`_ repository —
 follow the link and click on the "Watch" button to set your notification options.
 
 
