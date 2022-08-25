@@ -180,9 +180,9 @@ To activate the mailing list mode, go to the `email preferences
 mailing list mode" and save changes.
 
 .. _Discourse: https://discuss.python.org/
-.. _PEPs: https://discuss.python.org/c/peps/
-.. _Core Development: https://discuss.python.org/c/core-dev/
-.. _Committers: https://discuss.python.org/c/committers/
+.. _PEPs: https://discuss.python.org/c/peps/19
+.. _Core Development: https://discuss.python.org/c/core-dev/23
+.. _Committers: https://discuss.python.org/c/committers/5
 .. _Ideas: https://discuss.python.org/c/ideas/6
 .. _Python Help: https://discuss.python.org/c/users/7
 
