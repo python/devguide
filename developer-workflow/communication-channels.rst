@@ -45,7 +45,7 @@ Mailing Lists
      should go to the python-list_ or python-help_ mailing lists, or the
      `Python Help`_ category on Discourse.
 
-Old threads in the python-dev_, python-committers_, and python-ideas_ mailing lists
+Existing threads on the python-dev_, python-committers_, and python-ideas_ mailing lists
 can be accessed through the Mailman 3 `web gateway`_.
 
 General Python questions should go to `python-list`_ or `tutor`_
