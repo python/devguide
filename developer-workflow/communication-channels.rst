@@ -27,8 +27,8 @@ in return.
 Mailing Lists
 =============
 
-.. note:: Some mailing lists have been supplanted by categories in the `discussion
-   forum <https://discuss.python.org/>`_. Specifically,
+.. note:: Some mailing lists have been supplanted by categories in the
+  Python `Discourse`_. Specifically,
 
    * The python-dev mailing list is supplanted by posts in the `Core Development`_
      and `PEPs`_ categories on the forum.
