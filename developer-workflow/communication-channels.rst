@@ -30,8 +30,8 @@ Mailing Lists
 .. note:: Some mailing lists have been supplanted by categories in the
   Python `Discourse`_. Specifically,
 
-   * The python-dev mailing list is supplanted by posts in the `Core Development`_
-     and `PEPs`_ categories on the forum.
+   * The python-dev list is superseded by the `Core Development`_
+     and `PEPs`_ categories on Discourse.
 
    * The python-ideas mailing list is supplanted by posts in the `Ideas`_
      category on the forum.
