@@ -33,8 +33,8 @@ Mailing Lists
    * The python-dev list is superseded by the `Core Development`_
      and `PEPs`_ categories on Discourse.
 
-   * The python-ideas mailing list is supplanted by posts in the `Ideas`_
-     category on the forum.
+   * The python-ideas list is superseded by posts in the `Ideas`_
+     category on Discourse.
 
    Discussion in :guilabel:`Core Development` is focused on issues related to Python's
    own development, such as how to handle a specific issue, a PEP, etc.
