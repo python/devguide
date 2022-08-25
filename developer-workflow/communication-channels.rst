@@ -41,7 +41,7 @@ Mailing Lists
 
    - Ideas about new functionality should **not** start here, and instead
      should be discussed in `Ideas`_.
-   - Technical support questions should also not be asked here and instead
+   - Technical support questions should also not be asked here, and instead
      should go to the python-list_ or python-help_ mailing lists, or the
      `Python Help`_ category on the forum.
 
