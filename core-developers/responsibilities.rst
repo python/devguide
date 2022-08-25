@@ -49,7 +49,7 @@ Mailing lists have generally been replaced by the `Discourse forum
 
 If you want notification of new issues, you can use the appropriate GitHub notification
 settings for the `python/cpython <https://github.com/python/cpython>`_ repository —
-follow the link and click on the "Watch" button to set your notification options.
+follow the link and click on the :guilabel:`Watch` button to set your notification options.
 
 
 .. _contributor_agreement:
