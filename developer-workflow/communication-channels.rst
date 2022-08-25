@@ -36,7 +36,7 @@ Mailing Lists
    * The python-ideas mailing list is supplanted by posts in the `Ideas`_
      category on the forum.
 
-   Discussion in ``Core Development`` is focused on issues related to Python's
+   Discussion in :guilabel:`Core Development` is focused on issues related to Python's
    development, such as how to handle a specific issue, a PEP, etc.
 
    - Ideas about new functionality should **not** start here and instead
