@@ -183,8 +183,8 @@ mailing list mode" and save changes.
 .. _PEPs: https://discuss.python.org/c/peps/
 .. _Core Development: https://discuss.python.org/c/core-dev/
 .. _Committers: https://discuss.python.org/c/committers/
-.. _Ideas: https://discuss.python.org/c/ideas/
-.. _Python Help: https://discuss.python.org/c/users/
+.. _Ideas: https://discuss.python.org/c/ideas/6
+.. _Python Help: https://discuss.python.org/c/users/7
 
 Discord (private chat server)
 =============================
