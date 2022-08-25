@@ -39,7 +39,7 @@ Mailing Lists
    Discussion in :guilabel:`Core Development` is focused on issues related to Python's
    own development, such as how to handle a specific issue, a PEP, etc.
 
-   - Ideas about new functionality should **not** start here and instead
+   - Ideas about new functionality should **not** start here, and instead
      should be discussed in `Ideas`_.
    - Technical support questions should also not be asked here and instead
      should go to the python-list_ or python-help_ mailing lists, or the
