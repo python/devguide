@@ -43,7 +43,7 @@ Mailing Lists
      should be discussed in `Ideas`_.
    - Technical support questions should also not be asked here, and instead
      should go to the python-list_ or python-help_ mailing lists, or the
-     `Python Help`_ category on the forum.
+     `Python Help`_ category on Discourse.
 
 Old threads in the python-dev_, python-committers_, and python-ideas_ mailing lists
 can be accessed through the Mailman 3 `web gateway`_.
