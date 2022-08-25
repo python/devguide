@@ -44,7 +44,7 @@ in the :ref:`experts` and :ref:`developers`).
 Mailing Lists and Bug Notifications
 ===================================
 
-Mailing lists have generally been replaced by the `discussion forum
+Mailing lists have generally been replaced by the `Discourse forum
 <https://discuss.python.org/>`_. Refer to :ref:`mailinglists` for more information.
 
 If you want notification of new issues, you can use the appropriate GitHub notification
