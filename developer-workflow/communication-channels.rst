@@ -28,7 +28,7 @@ Mailing Lists
 =============
 
 .. note:: Some mailing lists have been supplanted by categories in the
-  Python `Discourse`_. Specifically,
+   Python `Discourse`_. Specifically,
 
    * The python-dev list is superseded by the `Core Development`_
      and `PEPs`_ categories on Discourse.
