@@ -56,10 +56,11 @@ on Libera.Chat_.
 issue tracker is the place to discuss and work on improvements to the CPython
 core development workflow.
 
-A complete list of Python mailing lists can be found at https://mail.python.org/mailman/listinfo.
-Most lists are also mirrored at `GMANE <https://gmane.io/>`_ and can be read and
-posted to in various ways, including via web browsers, NNTP newsreaders, and
-RSS feed readers.
+A complete list of Python mailing lists can be found at
+https://mail.python.org/mailman/listinfo (older lists, using Mailman2) or
+https://mail.python.org/archives/ (newer lists, using Mailman3). Some lists may also
+be mirrored at `GMANE <https://gmane.io/>`_ and can be read and posted to in various
+ways, including via web browsers, NNTP newsreaders, and RSS feed readers.
 
 .. _issue tracker: https://github.com/python/cpython/issues
 .. _new-bugs-announce: https://mail.python.org/mailman/listinfo/new-bugs-announce
