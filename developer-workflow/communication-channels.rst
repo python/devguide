@@ -58,7 +58,7 @@ core development workflow.
 
 A complete list of Python mailing lists can be found at
 https://mail.python.org/mailman/listinfo (older lists, using Mailman2) or
-https://mail.python.org/archives/ (newer lists, using Mailman3). Some lists may also
+https://mail.python.org/mailman3/ (newer lists, using Mailman3). Some lists may also
 be mirrored at `GMANE <https://gmane.io/>`_ and can be read and posted to in various
 ways, including via web browsers, NNTP newsreaders, and RSS feed readers.
 
