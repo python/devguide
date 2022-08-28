@@ -81,13 +81,19 @@ You will only need to execute these steps once:
       $ cd cpython
       $ git remote add upstream git@github.com:python/cpython.git
 
-7. Verify that your setup is correct::
+7. Configure ``git`` to pull main from the ``upstream`` remote::
+
+      $ git config --local branch.main.remote upstream
+
+8. Verify that your setup is correct::
 
       $ git remote -v
       origin  git@github.com:<your-username>/cpython.git (fetch)
       origin  git@github.com:<your-username>/cpython.git (push)
       upstream        git@github.com:python/cpython.git (fetch)
       upstream        git@github.com:python/cpython.git (push)
+      $ git config branch.main.remote
+      upstream
 
 If you did everything correctly, you should now have a copy of the code
 in the ``cpython`` directory and two remotes that refer to your own GitHub fork
