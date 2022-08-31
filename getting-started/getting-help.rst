@@ -19,21 +19,29 @@ question.
 Discourse
 ---------
 
-Python has a hosted :ref:`Discourse <discourse_discuss>` instance. This forum has many different
-categories and most core development discussions take place in the open forum
-categories for `PEPs`_ and `Core Development`_ .
-Most categories are open for all users to read and post with the exception of
-Committers and Core Development categories. Be sure to visit the related Core
-categories, such as
-`Core Development <https://discuss.python.org/c/core-dev/23>`_ and
-`Core Workflow <https://discuss.python.org/c/core-workflow/8>`_.
+Python has a hosted Discourse instance at `discuss.python.org <Discourse_>`_.
+This forum has many different categories,
+of which all but `Committers`_ are open for all users to read and post.
+For most general questions and help related to the development
+of the Python language, interpreter and standard library itself
+(as opposed to developing your own libraries and applications *with* Python),
+the `Core Development category`_ is the place to ask.
+The `Ideas category`_ is the place to propose and discuss new ideas
+for the Python language and standard library,
+while the `Core Workflow category`_ is the place to post
+about questions, concerns and issues with the dev infrastructure and bots.
 
 .. seealso::
-  :ref:`Discourse <discourse_discuss>`
-  on how to get started.
+  :ref:`discourse_discuss` for more information on how to get started.
+
+.. _Discourse: https://discuss.python.org/
+.. _Committers: https://discuss.python.org/c/committers/5
+.. _Core Development category: https://discuss.python.org/c/core-dev/23
+.. _Core Workflow category: https://discuss.python.org/c/core-workflow/8
+.. _Ideas category: https://discuss.python.org/c/ideas/6
 
 
-.. _PEPs: https://discuss.python.org/c/peps/
+.. _help-mailing-lists:
 
 Mailing Lists
 -------------
