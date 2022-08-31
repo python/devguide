@@ -9,7 +9,8 @@ collaborate constructively with other contributors, including core developers.
 This responsibility covers all forms of contribution, whether that's submitting
 patches to the implementation or documentation, reviewing other peoples'
 patches, triaging issues on the issue tracker, or discussing design and
-development ideas on the core mailing lists.
+development ideas on the core
+:ref:`communication channels <communication-channels>`.
 
 Core developers accept key additional responsibilities around the ongoing
 management of the project:
@@ -23,8 +24,9 @@ management of the project:
   with this part of the process, and it is most welcome when they do, the
   actual responsibility rests with the core developer that merged the change
 * core developers also bear the primary responsibility for deciding when
-  changes proposed on the issue tracker should be escalated to python-ideas
-  or python-dev for wider discussion, as well as suggesting the use of the
+  changes proposed on the issue tracker should be escalated to
+  the appropriate :ref:`Discourse category <discourse_discuss>`
+  for wider discussion, as well as suggesting the use of the
   Python Enhancement Proposal process to manage the design and justification
   of complex changes, or changes with a potentially significant impact on
   end users
@@ -32,8 +34,9 @@ management of the project:
 As a result of the additional responsibilities they accept, core developers
 gain the privilege of being able to approve proposed changes, as well as being
 able to reject them as inappropriate. Core developers are also able to request
-that even already merged changes be escalated to python-dev for further
-discussion, and potentially even reverted prior to release.
+that even already merged changes be escalated to
+:ref:`Discourse <discourse_discuss>` for further discussion,
+and potentially even reverted prior to release.
 
 Becoming a core developer isn't a binary "all-or-nothing" status - CPython
 is a large project, and different core developers accept responsibility for

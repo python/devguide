@@ -13,6 +13,9 @@ Should you require help, there are a :ref:`variety of options available
 usage then please check the rest of this guide first as it should answer your
 question.
 
+
+.. _help-discourse:
+
 Discourse
 ---------
 
@@ -35,17 +38,19 @@ categories, such as
 Mailing Lists
 -------------
 
-Further options for seeking assistance include the `python-ideas`_ and
-`python-dev`_ mailing lists. Python-ideas contains discussion of speculative
-Python language ideas for possible inclusion into the language. If an idea
-gains traction it can then be discussed and honed to the point of becoming a
-solid proposal and presented on python-dev.  Python-dev contains discussion
-of current Python design issues, release mechanics, and maintenance of
-existing releases.  These mailing lists are for questions involving the
+Further options for seeking assistance include the
+`python-ideas`_ and `python-dev`_ mailing lists,
+which respectively correspond to the Ideas and Core Development
+:ref:`help-discourse` categories, respectively.
+The Discourse categories are generally more active
+and are the preferred venue for new discussions,
+but the mailing lists are still monitored and responded to.
+These mailing lists are for questions involving the
 development *of* Python, **not** for development *with* Python.
 
 .. _python-ideas: https://mail.python.org/mailman3/lists/python-ideas.python.org
 .. _python-dev: https://mail.python.org/mailman3/lists/python-dev.python.org/
+
 
 Ask #python-dev
 ---------------
@@ -74,8 +79,8 @@ an office hour, before posting to python-dev mailing list or filing bugs.
 
 .. warning::
 
-  This is no longer actively monitored by core devs. Consider asking your questions
-  on Discourse or on the `python-dev`_ mailing list.
+  This is no longer actively monitored by core devs.
+  Consider asking your questions in the relevant `Discourse`_ category instead.
 
 .. _Zulip: https://python.zulipchat.com
 

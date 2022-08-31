@@ -5,8 +5,8 @@
 Following Python's Development
 ==============================
 
-Python's development is communicated through a myriad of ways, mostly through
-mailing lists, but also other forms.
+Python's development is communicated through a myriad of ways,
+primarily :ref:`Discourse <discourse_discuss>` along with other platforms.
 
 
 Standards of behaviour in these communication channels
