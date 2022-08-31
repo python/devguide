@@ -44,11 +44,13 @@ making design and development decisions in different areas (as documented
 in the :ref:`experts` and :ref:`developers`).
 
 
-Mailing Lists and Bug Notifications
-===================================
+Communication Channels and Bug Notifications
+============================================
 
-Mailing lists have generally been replaced by the `Discourse forum
-<https://discuss.python.org/>`_. Refer to :ref:`mailinglists` for more information.
+Mailing lists have generally been replaced by the
+`Discourse forum <https://discuss.python.org/>`_ (``discuss.python.org``).
+Refer to the :ref:`mailinglists` and :ref:`discourse_discuss` sections
+for more information.
 
 If you want notification of new issues, you can use the appropriate GitHub notification
 settings for the `python/cpython <https://github.com/python/cpython>`_ repository —

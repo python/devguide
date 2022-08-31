@@ -63,9 +63,6 @@ be mirrored at `GMANE <https://gmane.io/>`_ and can be read and posted to in var
 ways, including via web browsers, NNTP newsreaders, and RSS feed readers.
 
 .. _issue tracker: https://github.com/python/cpython/issues
-.. _new-bugs-announce: https://mail.python.org/mailman/listinfo/new-bugs-announce
-.. _python-bugs-list: https://mail.python.org/mailman/listinfo/python-bugs-list
-.. _python-checkins: https://mail.python.org/mailman/listinfo/python-checkins
 .. _python-committers: https://mail.python.org/mailman3/lists/python-committers.python.org/
 .. _python-dev: https://mail.python.org/mailman3/lists/python-dev.python.org/
 .. _python-help: https://mail.python.org/mailman/listinfo/python-help
@@ -187,6 +184,7 @@ mailing list mode" and save changes.
 .. _Ideas: https://discuss.python.org/c/ideas/6
 .. _Python Help: https://discuss.python.org/c/users/7
 
+
 Discord (private chat server)
 =============================
 
@@ -222,7 +220,6 @@ set a specific `Server Nickname`_
 
 .. _voter record: https://github.com/python/voters/blob/main/python-core.toml
 .. _Server Nickname: https://support.discord.com/hc/en-us/articles/219070107-Server-Nicknames
-
 
 
 IRC

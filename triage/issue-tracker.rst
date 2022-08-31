@@ -67,9 +67,10 @@ available choices are:
   possible changes to future Python versions, track core development
   discussions, or join a specific special-interest group.
 
-Depending on your choice, a dedicated form template will appear. In particular,
-you'll notice that the last button actually takes you to `Discourse`_ where
-many Python-related discussions take place.
+Depending on your choice, a dedicated form template will appear.
+In particular, you'll notice that the last button actually takes you to
+the `Python Discourse`_ (``discuss.python.org``),
+where many Python-related discussions take place.
 
 The submission form has only two fields that you need to fill:
 
