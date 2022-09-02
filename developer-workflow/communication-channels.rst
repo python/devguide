@@ -6,7 +6,7 @@ Following Python's Development
 ==============================
 
 Python's development is communicated through a myriad of ways,
-primarily :ref:`Discourse <discourse_discuss>` along with other platforms.
+primarily :ref:`Discourse <communication-discourse>` along with other platforms.
 
 
 Standards of behaviour in these communication channels
@@ -74,7 +74,7 @@ ways, including via web browsers, NNTP newsreaders, and RSS feed readers.
 .. _web gateway: https://mail.python.org/archives/
 
 
-.. _discourse_discuss:
+.. _communication-discourse:
 
 Discourse (discuss.python.org web forum)
 ========================================

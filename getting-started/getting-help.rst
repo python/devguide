@@ -32,7 +32,7 @@ while the `Core Workflow category`_ is the place to post
 about questions, concerns and issues with the dev infrastructure and bots.
 
 .. seealso::
-  :ref:`discourse_discuss` for more information on how to get started.
+  :ref:`communication-discourse` for more information on how to get started.
 
 .. _Discourse: https://discuss.python.org/
 .. _Committers: https://discuss.python.org/c/committers/5
@@ -89,7 +89,7 @@ an office hour, before posting to python-dev mailing list or filing bugs.
 
   This is no longer actively monitored by core devs.
   Consider asking your questions in the relevant
-  :ref:`Discourse <discourse_discuss>` category instead.
+  :ref:`Discourse <communication-discourse>` category instead.
 
 .. _Zulip: https://python.zulipchat.com
 

@@ -25,7 +25,7 @@ management of the project:
   actual responsibility rests with the core developer that merged the change
 * core developers also bear the primary responsibility for deciding when
   changes proposed on the issue tracker should be escalated to
-  the appropriate :ref:`Discourse category <discourse_discuss>`
+  the appropriate :ref:`Discourse <communication-discourse>` category
   for wider discussion, as well as suggesting the use of the
   Python Enhancement Proposal process to manage the design and justification
   of complex changes, or changes with a potentially significant impact on
@@ -35,7 +35,7 @@ As a result of the additional responsibilities they accept, core developers
 gain the privilege of being able to approve proposed changes, as well as being
 able to reject them as inappropriate. Core developers are also able to request
 that even already merged changes be escalated to
-:ref:`Discourse <discourse_discuss>` for further discussion,
+:ref:`Discourse <communication-discourse>` for further discussion,
 and potentially even reverted prior to release.
 
 Becoming a core developer isn't a binary "all-or-nothing" status - CPython
@@ -49,7 +49,7 @@ Communication Channels and Bug Notifications
 
 Mailing lists have generally been replaced by the
 `Discourse forum <https://discuss.python.org/>`_ (``discuss.python.org``).
-Refer to the :ref:`mailinglists` and :ref:`discourse_discuss` sections
+Refer to the :ref:`mailinglists` and :ref:`communication-discourse` sections
 for more information.
 
 If you want notification of new issues, you can use the appropriate GitHub notification
