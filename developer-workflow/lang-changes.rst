@@ -23,7 +23,7 @@ Because of the seriousness that language changes carry, any change must be
 beneficial to a large proportion of Python users. If the change only benefits a
 small percentage of Python developers then the change will not be made. A good
 way to see if your idea would work for a large portion of the Python community
-is to ask in the `Ideas category`_ on the `Python Discourse`_. You can also
+is to ask in the `Ideas Discourse category`_. You can also
 go through Python's stdlib and find examples of code which would benefit from
 your proposed change (which helps communicate the usefulness of your change to
 others). For further guidance, see :ref:`suggesting-changes`.
@@ -41,7 +41,7 @@ Council can truly classify something as Pythonic, you can read the
 Suggesting new features and language changes
 --------------------------------------------
 
-The `Ideas category`_ on the `Python Discourse`_
+The `Ideas Discourse category`_
 is specifically intended for discussion of new features and language changes.
 Please don't be disappointed if your idea isn't met with universal approval:
 as the :pep:`long list of Withdrawn and Rejected PEPs
@@ -83,8 +83,7 @@ to inform others who may propose a similar language change in the future.
 
 
 .. _issue tracker: https://github.com/python/cpython/issues
+.. _Ideas Discourse category: https://discuss.python.org/c/ideas/6
 .. _Status Quo Wins a Stalemate: https://www.curiousefficiency.org/posts/2011/02/status-quo-wins-stalemate.html
 .. _Justifying Python Language Changes: https://www.curiousefficiency.org/posts/2011/02/justifying-python-language-changes.html
 
-.. _Python Discourse: https://discuss.python.org/
-.. _Ideas category: https://discuss.python.org/c/ideas/6

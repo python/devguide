@@ -220,8 +220,8 @@ specific type, please do not set a type.
 |                | arguments for existing functions. Also used for          |
 |                | improvements in the documentation, test suite and        |
 |                | other refactorings. A good place to discuss enhancements |
-|                | prior to filing an issue is `Ideas category`_            |
-|                | on the :ref:`Python Discourse <discourse_discuss>`.      |
+|                | prior to filing an issue is the                          |
+|                | `Ideas Discourse category`_.                             |
 +----------------+----------------------------------------------------------+
 | performance    | Situations where too much time is necessary to complete  |
 |                | the task. For example, a common task now takes           |
@@ -410,4 +410,4 @@ a link to relevant web pages.
 .. _Parser: https://github.com/python/cpython/tree/main/Parser/
 .. _Python: https://github.com/python/cpython/tree/main/Python/
 .. _Reporting security issues in Python: https://www.python.org/dev/security/
-.. _Ideas category: https://discuss.python.org/c/ideas/6
+.. _Ideas Discourse category: https://discuss.python.org/c/ideas/6

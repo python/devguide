@@ -399,7 +399,7 @@ received any notice from reviewers (i.e., no comment made) after one
 month, first "ping" the issue on the `issue tracker`_ to remind the
 nosy list that the pull request needs a review.
 If you don't get a response within a week after pinging the issue,
-you can post on the `Core Development category`_ of the `Python Discourse`_
+you can post on the `Core Development Discourse category`_
 to ask for someone to review your pull request.
 
 When someone does manage to find the time to look at your pull request
@@ -503,5 +503,4 @@ asked to make these edits on the behalf of the core developer who
 accepts your pull request.
 
 .. _issue tracker: https://github.com/python/cpython/issues
-.. _Python Discourse: https://discuss.python.org/
-.. _Core Development category: https://discuss.python.org/c/core-dev/23
+.. _Core Development Discourse category: https://discuss.python.org/c/core-dev/23

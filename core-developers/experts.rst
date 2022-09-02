@@ -11,7 +11,8 @@ issue triage people, and other issue participants to find people to @mention
 or add as reviewers to issues and pull requests.  People on this list may be
 asked to render final judgment on a feature or bug.  If no active maintainer
 is listed for a given module, then questionable changes should be discussed
-`on Discourse <https://discuss.python.org/c/core-dev/23>`__,
+on the `Core Development Discourse category
+<https://discuss.python.org/c/core-dev/23>`__,
 while any other issues can and should be decided by any committer.
 
 Developers can choose to follow labels, so if a label that they are

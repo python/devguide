@@ -108,7 +108,7 @@ with the resolution of the issue. On reflection, the resolution steps may seem
 more reasonable than you initially thought.
 
 If you still feel the resolution is incorrect, then raise a thoughtful question
-on the `Core Development category`_ of the `Python Discourse`_.
+on the `Core Development Discourse category`_.
 Further argument and disrespectful responses
 after a consensus has been reached amongst the core developers is unlikely to
 win any converts.
@@ -128,4 +128,4 @@ reason either as ``complete`` or ``not planned``.
 .. _devguide repo: https://github.com/python/devguide/issues
 .. _Roundup: https://roundup.sourceforge.io/
 .. _Python Discourse: https://discuss.python.org/
-.. _Core Development category: https://discuss.python.org/c/core-dev/23
+.. _Core Development Discourse category: https://discuss.python.org/c/core-dev/23

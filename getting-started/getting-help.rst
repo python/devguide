@@ -88,7 +88,8 @@ an office hour, before posting to python-dev mailing list or filing bugs.
 .. warning::
 
   This is no longer actively monitored by core devs.
-  Consider asking your questions in the relevant `Discourse`_ category instead.
+  Consider asking your questions in the relevant
+  :ref:`Discourse <discourse_discuss>` category instead.
 
 .. _Zulip: https://python.zulipchat.com
 

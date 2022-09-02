@@ -27,7 +27,7 @@ You have a several options for this:
 
 * Search the `issue tracker`_ for discussion related to the proposed addition.
   This may turn up an issue that explains why the suggestion wasn't accepted.
-* Open a new thread in the `Ideas category`_ on the `Python Discourse`_
+* Open a new thread in the `Ideas Discourse category`_
   to gather feedback directly from the Python core developers and community.
 * Write a blog post about the code, which may also help gather useful feedback.
 * Post it to the `Python Cookbook`_.
@@ -46,8 +46,7 @@ Through your public sharing of your code in order to gauge community support
 for it you at least can know that others will come across it who may find it
 useful.
 
-.. _Python Discourse: https://discuss.python.org/
-.. _Ideas category: https://discuss.python.org/c/ideas/6
+.. _Ideas Discourse category: https://discuss.python.org/c/ideas/6
 .. _Python Cookbook: https://code.activestate.com/recipes/langs/python/
 
 
