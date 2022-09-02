@@ -91,8 +91,8 @@ the `Committers`_ category, where posting is restricted to the `CPython
 <https://github.com/python/cpython>`_ core developers.
 
 The Committers category is often used for announcements and notifications.
-It is also a common venue for the core developer promotion votes (this
-category is equivalent to the python-committers mailing list).
+It is also the designated venue for the core developer promotion votes
+(as the Discourse equivalent of the `python-committers`_ mailing list).
 
 Tutorials for new users
 -------------------------
