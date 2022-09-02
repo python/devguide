@@ -125,7 +125,7 @@ Proposal Process
 
 If the module you want to propose adding to the stdlib meets the requirements,
 you may propose its inclusion
-by following the :abbr:`PEP (Python enhancement proposal)` process.
+by following the :abbr:`PEP (Python Enhancement Proposal)` process.
 See :pep:`1` for details,
 and the :pep:`PEP index <0>` for previously-accepted PEPs
 that have proposed a module for inclusion.
