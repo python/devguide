@@ -39,12 +39,12 @@ The current document focuses on the bytecode interpreter.
 Code objects
 ============
 
-The interpreter uses as its starting point a code object (```frame->f_code``).
+The interpreter uses as its starting point a code object (``frame->f_code``).
 Code objects contain many fields used by the interpreter, as well as some for use by debuggers and other tools.
 In 3.11, the final field of a code object is an array of indeterminate length containing the bytecode, ``code->co_code_adaptive``.
 (In previous versions the code object was a ``bytes`` object, ``code->co_code``; it was changed to save an allocation and to allow it to be mutated.)
 
-Code objects are typically produced by the bytecode :ref:``compiler``, although often they are written to disk by one process and read back in by another.
+Code objects are typically produced by the bytecode :ref:`compiler`, although often they are written to disk by one process and read back in by another.
 The disk version of a code object is serialized using the `marshal protocol <https://docs.python.org/dev/library/marshal.html>`_.
 Some code objects are pre-loaded into the interpreter using ``Tools/scripts/deepfreeze.py``, which writes ``Python/deepfreeze/deepfreeze.c``.
 
@@ -57,7 +57,7 @@ Instruction decoding
 The first task of the interpreter is to decode the bytecode instructions.
 Bytecode is stored as an array of 16-bit code units (``_Py_CODEUNIT``).
 Each code unit contains an 8-bit ``opcode`` and an 8-bit argument (``oparg``), both unsigned.
-In order to make the bytecode format independent of the machine architecture when stored on disk, ``opcode`` is always the first byte and ``oparg`` is always the second byte.
+In order to make the bytecode format independent of the machine byte order when stored on disk, ``opcode`` is always the first byte and ``oparg`` is always the second byte.
 Macros are used to extract the ``opcode`` and ``oparg`` from a code unit (``_Py_OPCODE(word)`` and ``_Py_OPARG(word)``).
 Some instructions (e.g. ``NOP`` or ``POP_TOP``) have no argument -- in this case we ignore ``oparg``.
 
@@ -66,21 +66,11 @@ A simple instruction decoding loop would look like this::
     _Py_CODEUNIT *first_instr = code->co_code_adaptive;
     _Py_CODEUNIT *next_instr = first_instr;
     while (1) {
-        _Py_CODEUNIT word = *next_instr;
+        _Py_CODEUNIT word = *next_instr++;
         unsigned char opcode = _Py_OPCODE(word);
-        unsigned char oparg = _Py_OPARG(word);
-        next_instr++;
-
+        unsigned int oparg = _Py_OPARG(word);
         switch (opcode) {
-        case NOP:
-            break;
-    
-        // ... A case for each known opcode ...
-    
-        default:
-            PyErr_SetString(PyExc_SystemError, "unknown opcode");
-            return NULL;
-        }
+        // ... A case for each opcode ...
     }
 
 This format supports 256 different opcodes, which is sufficient.
@@ -92,45 +82,21 @@ For example, this sequence of code units::
     EXTENDED_ARG  0
     LOAD_CONST    0
 
-would set ``opcode`` to ``LOAD_CONST`` and ``oparg`` to ``65536`` (i.e., ``2**16``).
+would set ``opcode`` to ``LOAD_CONST`` and ``oparg`` to ``65536`` (i.e., ``0x1_00_00``).
 The compiler should limit itself to at most three ``EXTENDED_ARG`` prefixes, to allow the resulting ``oparg`` to fit in 32 bits, but the interpreter does not check this.
 A series of code units starting with ``EXTENDED_ARG`` is called a complete instruction, to distinguish it from code unit, which is always two bytes.
+The following loop, to be inserted just above the ``switch`` statement, will make it decode a complete instruction::
 
-If we allow ourselves the use of ``goto``, the decoding loop (still far from realistic) could look like this::
-
-    _Py_CODEUNIT *first_instr = code->co_code_adaptive;
-    _Py_CODEUNIT *next_instr = first_instr;
-    while (1) {
-        _Py_CODEUNIT word = *next_instr;
-        unsigned char opcode = _Py_OPCODE(word);
-        unsigned int oparg = _Py_OPARG(word);
-        next_instr++;
-
-    dispatch_opcode:
-        switch (opcode) {
-        case NOP:
-            break;
-
-        // ... A case for each known opcode ...
-
-        case EXTENDED_ARG:
-            word = *next_instr;
-            opcode = _Py_OPCODE(word);
-            oparg *= 256;
-            oparg += _Py_OPARG(word);
-            next_instr++;
-            goto dispatch_opcode;
-
-        default:
-            PyErr_SetString(PyExc_SystemError, "unknown opcode");
-            return NULL;
-        }
+    while (opcode == EXTENDED_ARG) {
+        word = *next_instr++;
+        opcode = _Py_OPCODE(word);
+        oparg = (oparg << 8) | _Py_OPARG(word);
     }
 
 Jumps
 =====
 
-Note that in the switch statement, ``next_instr`` (the "instruction offset") already points to the next instruction.
+Note that when the switch statement is reached, ``next_instr`` (the "instruction offset") already points to the next instruction.
 Thus, jump instructions can be implemented by manipulating ``next_instr``:
 
 - An absolute jump (``JUMP_ABSOLUTE``) sets ``next_instr = first_instr + oparg``.
@@ -148,11 +114,12 @@ The size of the inline cache for a particular instruction is fixed by its ``opco
 Cache entries are reserved by the compiler and initialized with zeros.
 If an instruction has an inline cache, the layout of its cache can be described by a ``struct`` definition and the address of the cache is given by casting ``next_instr`` to a pointer to the cache ``struct``.
 The size of such a ``struct`` must be independent of the machine architecture and word size.
-Even though inline cache entries are represented by code units, they do not have to conform to the ``opcode``/``oparg`` format.
+Even though inline cache entries are represented by code units, they do not have to conform to the ``opcode`` / ``oparg`` format.
 
 The instruction implementation is responsible for advancing ``next_instr`` past the inline cache.
 For example, if an instruction's inline cache is four bytes (two code units) in size, the code for the instruction must contain ``next_instr += 2;``.
 This is equivalent to a relative forward jump by that many code units.
+(The proper way to code this is ``JUMPBY(n)``, where ``n`` is the number of code units to jump, typically given as a named constant.)
 
 Serializing non-zero cache entries would present a problem because the serialization (``marshal``) format must be independent of the machine byte order.
 
@@ -174,6 +141,12 @@ There is no overflow or underflow check (except when compiled in debug mode) -- 
 At any point during execution, the stack level is knowable based on the instruction pointer alone, and some properties of each item on the stack are also known.
 In particular, only a few instructions may push a ``NULL`` onto the stack, and the positions that may be ``NULL`` are known.
 A few other instructions (``GET_ITER``, ``FOR_ITER``) push or pop an object that is known to be an interator.
+
+Instruction sequences that do not allow statically knowing the stack depth are deemed illegal (and never generated by the bytecode compiler).
+For example, the following sequence is illegal, because it keeps pushing items on the stack::
+
+    LOAD_FAST 0
+    JUMP_BACKWARD 2
 
 Do not confuse the evaluation stack with the call stack, which is used to implement calling and returning from functions.
 
@@ -239,8 +212,17 @@ For C code, you have to call ``PyCode_Addr2Location()``.
 Fortunately, the locations table is only consulted by exception handling (to set ``tb_lineno``) and by tracing (to pass the line number to the tracing function).
 In order to reduce the overhead during tracing, the mapping from instruction offset to linenumber is cached in the ``_co_linearray`` field.
 
-XXX exception chaining
-----------------------
+Exception chaining
+------------------
+
+When an exception is raised during exception handling, the new exception is chained to the old one.
+This is done by making the ``__context__`` field of the new exception point to the old one.
+This is the responsibility of ``_PyErr_SetObject()`` (which is ultimately called by all ``PyErr_Set*()`` functions).
+Separately, if a statement of the form ``raise X from Y`` is executed, the ``__cause__`` field of the raised exception (``X``) is set to ``Y``.
+This is done by ``PyException_SetCause()``, called in response to all ``RAISE_VARARGS`` instructions.
+A special case is ``raise X from None``, which sets the ``__cause__`` field to ``None`` (at the C level, it sets ``cause`` to ``NULL``).
+
+XXX Other exception details
 
 Python-to-Python calls
 ======================
