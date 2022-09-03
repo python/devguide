@@ -93,6 +93,8 @@ The following loop, to be inserted just above the ``switch`` statement, will mak
         oparg = (oparg << 8) | _Py_OPARG(word);
     }
 
+For various reasons the actual decoding code is more complicated; we'll get to the reasons.
+
 Jumps
 =====
 
@@ -235,13 +237,36 @@ This approach is very general but consumes several C stack frames for each neste
 In 3.11 the ``CALL`` instruction special-cases function objects to "inline" the call.
 When a call gets inlined, a new frame gets pushed onto the call stack and the interpreter "jumps" to the start of the callee's bytecode.
 When the callee executes a ``RETURN_VALUE`` instruction, the frame is popped off the call stack and the interpreter returns to the caller.
-There is a flag in the frame (``frame->is_entry``) that indicates whether the frame was inlined.
+There is a flag in the frame (``frame->is_entry``) that indicates whether the frame was inlined (set if it wasn't).
 If ``RETURN_VALUE`` returns to a caller where this flag is set, it performs the usual cleanup and return from ``_PyEval_EvalFrameDefault()``.
 
 A similar check is performed when an unhandled exception occurs.
 
 The call stack
 ==============
+
+Up through 3.10 the call stack used to be implemented as a singly-linked list of ``PyFrameObject``s.
+This was expensive because each call would require a heap allocation for the stack frame.
+(There was some optimization using a free list, but this was not always effective, because frames are variable length.)
+
+In 3.11 frames are no longer fully-fledged objects.
+Instead, a leaner internal ``_PyInterpreterFrame`` structure is used, which is allocated using a custom allocator, ``_PyThreadState_BumpFramePointer()``.
+Usually a frame allocation is just a pointer bump, which improves memory locality.
+The function ``_PyEvalFramePushAndInit()`` allocates and initializes a frame structure.
+
+Sometimes an actual ``PyFrameObject`` is needed, usually because some Python code calls ``sys._getframe()`` or an extension module calls ``PyEval_GetFrame()``.
+In this case we allocate a proper ``PyFrameObject`` and initialize it from the ``_PyInterpreterFrame``.
+This would be a pessimization, but fortunately this happens rarely (introspecting frames is not a common operation).
+
+Things get more complicated when generators are involved, since those don't follow the push/pop model.
+(The same applies to async functions, which are implemented using the same infrastructure.)
+A generator object has space for a ``_PyInterpreterFrame`` structure, including the variable-size part (used for locals and eval stack).
+When a generator (or async) function is first called, a special opcode, ``RETURN_GENERATOR`` is executed, which is responsible for creating the generator object.
+The generator object's ``_PyInterpreterFrame`` is initialized with a copy of the current stack frame.
+The current stack frame is then popped off the stack and the generator object is returned.
+(Details differ depending on the ``is_entry`` flag.)
+When the generator is resumed, the interpreter pushes the ``_PyInterpreterFrame`` onto the stack and resumes execution.
+(There is more hairiness for generators and their ilk, we'll discuss these in a later section in more detail.)
 
 XXX Also frame layout and use, locals "plus"
 
