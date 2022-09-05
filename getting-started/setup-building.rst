@@ -81,7 +81,7 @@ You will only need to execute these steps once:
       $ cd cpython
       $ git remote add upstream git@github.com:python/cpython.git
 
-7. Configure ``git`` to pull main from the ``upstream`` remote::
+7. Configure ``git`` to pull ``main`` from the ``upstream`` remote::
 
       $ git config --local branch.main.remote upstream
 
