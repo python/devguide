@@ -25,8 +25,8 @@ and are provided for development and testing purposes only.
 
 .. _vcsetup:
 
-Install ``git``
-===============
+Install ``git`` and ``gh``
+==========================
 
 CPython is developed using `git <https://git-scm.com>`_ for version control. The git
 command line program is named ``git``; this is also used to refer to git
@@ -41,14 +41,20 @@ itself. git is easily available for all common operating systems.
   such as `TortoiseGit <https://tortoisegit.org/>`_ or
   `GitHub Desktop <https://desktop.github.com/>`_.
 
+  CPython source is managed through GitHub, who provide a
+  `CLI <https://cli.github.com/>`_ (Command Line Interface) for working
+  with GitHub. Follow the installation instructions from that page, after
+  which you should have a ``gh`` command available.
+
 - **Configure**
 
-  Configure :ref:`your name and email <set-up-name-email>` and create
-  `an SSH key <https://help.github.com/articles/adding-a-new-ssh-key-to-your-github-account/>`_
-  as this will allow you to interact with GitHub without typing a username
-  and password each time you execute a command, such as ``git pull``,
-  ``git push``, or ``git fetch``.  On Windows, you should also
-  :ref:`enable autocrlf <autocrlf>`.
+  Use ``gh`` to set up an SSH key::
+
+      $ gh auth login -h GitHub.com
+
+  Follow the prompts to configure an SSH key and install that with GitHub.
+
+  On Windows, you should also :ref:`enable autocrlf <autocrlf>`.
 
 
 .. _checkout:
@@ -62,35 +68,17 @@ clone of your personal fork, and configure the remotes <clone-your-fork>`.
 
 You will only need to execute these steps once per machine:
 
-1. Go to https://github.com/python/cpython.
+1. Fork and clone the project::
 
-2. Press :guilabel:`Fork` on the top right.
-
-3. When asked where to fork the repository, choose to fork it to your username.
-
-4. Your fork will be created at :samp:`https://github.com/{<username>}/cpython`.
-
-5. Clone your GitHub fork (replace ``<username>`` with your username)::
-
-      $ git clone git@github.com:<username>/cpython.git
-
-   (You can use both SSH-based or HTTPS-based URLs.)
-
-6. Configure an ``upstream`` remote::
-
+      $ gh repo fork python/cpython --clone --remote
       $ cd cpython
-      $ git remote add upstream git@github.com:python/cpython.git
 
-7. Configure ``git`` to pull ``main`` from the ``upstream`` remote::
-
-      $ git config --local branch.main.remote upstream
-
-8. Since one should never attempt to push to ``upstream``, configure
+2. Since one should never attempt to push to ``upstream``, configure
    ``git`` to push always to ``origin``::
 
       $ git remote set-url --push upstream git@github.com:<your-username>/cpython.git
 
-9. Verify that your setup is correct::
+3. Verify that your setup is correct::
 
       $ git remote -v
       origin  git@github.com:<your-username>/cpython.git (fetch)
