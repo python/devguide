@@ -60,7 +60,7 @@ The CPython repo is hosted on GitHub. To get a copy of the source code you shoul
 :ref:`fork the Python repository on GitHub <fork-cpython>`, :ref:`create a local
 clone of your personal fork, and configure the remotes <clone-your-fork>`.
 
-You will only need to execute these steps once:
+You will only need to execute these steps once per machine:
 
 1. Go to https://github.com/python/cpython.
 
@@ -85,13 +85,18 @@ You will only need to execute these steps once:
 
       $ git config --local branch.main.remote upstream
 
-8. Verify that your setup is correct::
+8. Since one should never attempt to push to ``upstream``, configure
+   ``git`` to push always to ``origin``::
+
+      $ git remote set-url --push upstream git@github.com:<your-username>/cpython.git
+
+9. Verify that your setup is correct::
 
       $ git remote -v
       origin  git@github.com:<your-username>/cpython.git (fetch)
       origin  git@github.com:<your-username>/cpython.git (push)
       upstream        git@github.com:python/cpython.git (fetch)
-      upstream        git@github.com:python/cpython.git (push)
+      upstream        git@github.com:<your-username>/cpython.git (push)
       $ git config branch.main.remote
       upstream
 
