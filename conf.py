@@ -97,3 +97,7 @@ intersphinx_mapping = {
 }
 
 todo_include_todos = True
+
+# Strip the dollar prompt when copying code
+# https://sphinx-copybutton.readthedocs.io/en/latest/use.html#strip-and-configure-input-prompts-for-code-cells
+copybutton_prompt_text = "$"
