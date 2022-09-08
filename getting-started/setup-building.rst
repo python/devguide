@@ -150,11 +150,9 @@ If you want to install these optional dependencies, consult the
 If you don't need to install them, the basic steps for building Python
 for development is to configure it and then compile it.
 
-Configuration is typically:
+Configuration is typically::
 
-.. code-block:: bash
-
-   ./configure --with-pydebug
+   $ ./configure --with-pydebug
 
 More flags are available to ``configure``, but this is the minimum you should
 do to get a pydebug build of CPython.
@@ -163,11 +161,9 @@ do to get a pydebug build of CPython.
    You might need to run ``make clean`` before or after re-running ``configure``
    in a particular build directory.
 
-Once ``configure`` is done, you can then compile CPython with:
+Once ``configure`` is done, you can then compile CPython with::
 
-.. code-block:: bash
-
-   make -s -j2
+   $ make -s -j2
 
 This will build CPython with only warnings and errors being printed to
 stderr and utilize up to 2 CPU cores. If you are using a multi-core machine
@@ -465,11 +461,9 @@ Python's ``configure.ac`` script typically requires a specific version of
 Autoconf.  At the moment, this reads: ``AC_PREREQ(2.69)``. It also requires
 to have the ``autoconf-archive`` and ``pkg-config`` utilities installed in
 the system and the ``pkg.m4`` macro file located in the appropriate ``alocal``
-location. You can easily check if this is correctly configured by running:
+location. You can easily check if this is correctly configured by running::
 
-.. code-block:: bash
-
-   ls $(aclocal --print-ac-dir) | grep pkg.m4
+   $ ls $(aclocal --print-ac-dir) | grep pkg.m4
 
 If the system copy of Autoconf does not match this version, you will need to
 install your own copy of Autoconf.
@@ -501,9 +495,7 @@ Make target. Note that for doing this you need to regenerate the ABI file in
 the same environment that the GitHub CI uses to check for it. This is because
 different platforms may include some platform-specific details that make the
 check fail even if the Python ABI is the same. The easier way to regenerate
-the ABI file using the same platform as the CI uses is by using docker:
-
-.. code-block:: bash
+the ABI file using the same platform as the CI uses is by using Docker::
 
    # In the CPython root:
    $ docker run -v$(pwd):/src:Z -w /src --rm -it ubuntu:22.04 \
