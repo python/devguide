@@ -9,9 +9,11 @@ Interest Areas and GitHub names for each item that indicate a maintainer or
 an expert in the field.  This list is intended to be used by issue submitters,
 issue triage people, and other issue participants to find people to @mention
 or add as reviewers to issues and pull requests.  People on this list may be
-asked to render final judgement on a feature or bug.  If no active maintainer
-is listed for a given module, then questionable changes should go to
-python-dev, while any other issues can and should be decided by any committer.
+asked to render final judgment on a feature or bug.  If no active maintainer
+is listed for a given module, then questionable changes should be discussed
+on the `Core Development Discourse category
+<https://discuss.python.org/c/core-dev/23>`__,
+while any other issues can and should be decided by any committer.
 
 Developers can choose to follow labels, so if a label that they are
 following is added to an issue or pull request, they will be notified
