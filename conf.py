@@ -4,6 +4,7 @@ extensions = [
     'sphinx.ext.intersphinx',
     'sphinx.ext.todo',
     'sphinx_copybutton',
+    'sphinxext.opengraph',
     'sphinxext.rediraffe',
 ]
 
@@ -97,3 +98,7 @@ intersphinx_mapping = {
 }
 
 todo_include_todos = True
+
+# sphinxext-opengraph config
+ogp_site_url = "https://devguide.python.org/"
+ogp_image = "https://devguide.python.org/_static/python-logo.svg"

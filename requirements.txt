@@ -2,4 +2,5 @@ Sphinx==5.2.1
 furo>=2022.6.4
 sphinx_copybutton>=0.3.3
 sphinx-lint<1
+sphinxext-opengraph
 sphinxext-rediraffe
