@@ -56,7 +56,7 @@ But, there are several important notes:
 
 1. This way of running tests exists only
    for local developer needs and is discouraged for anything else
-2. Some modules do not support it at all. One example is``test_importlib``.
+2. Some modules do not support it at all. One example is ``test_importlib``.
    In other words: if some module does not have ``unittest.main()``, then
    most likely it does not support direct invocation.
 
