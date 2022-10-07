@@ -1,6 +1,12 @@
+import os
+import sys
 import time
 
+# Location of custom extensions.
+sys.path.insert(0, os.path.abspath(".") + "/_extensions")
+
 extensions = [
+    'custom_roles',
     'sphinx.ext.intersphinx',
     'sphinx.ext.todo',
     'sphinx_copybutton',
@@ -40,7 +46,7 @@ html_title = ""
 # http://www.sphinx-doc.org/en/stable/config.html?highlight=linkcheck#confval-linkcheck_anchors_ignore
 linkcheck_anchors_ignore = [
     # match any anchor that starts with a '/' since this is an invalid HTML anchor
-    '\/.*',
+    r'\/.*',
 ]
 rediraffe_redirects = {
     "clang.rst": "advanced-tools/clang.rst",

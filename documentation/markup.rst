@@ -10,6 +10,30 @@ This document describes the custom reStructuredText markup introduced by Sphinx
 to support Python documentation and how it should be used.
 
 
+Quick Reference
+===============
+
+This table summarizes which markup should be used for some commonly used
+elements:
+
+======================= =========================================== ====================
+Element                 Markup                                      See also
+======================= =========================================== ====================
+arguments/parameters    ``*arg*``                                   :ref:`inline-markup`
+variables/literals/code ````foo````, ````42````, ````len(s) - 1```` :ref:`inline-markup`
+True/False/None         ````True````, ````False````, ````None````   :ref:`inline-markup`
+functions definitions   ``.. function:: print(*args)``              :ref:`directives`
+functions references    ``:func:`print```                           :ref:`roles`
+reference labels        ``.. _label-name:``                         :ref:`doc-ref-role`
+internal references     ``:ref:`label-name```                       :ref:`doc-ref-role`
+external links          ```Link text <https://example.com>`_``      :ref:`hyperlinks`
+roles w/ custom text    ``:role:`custom text <target>```            :ref:`roles`
+roles w/ only last part ``:role:`~hidden.hidden.visible```          :ref:`roles`
+roles w/o link          ``:role:`!target```                         :ref:`roles`
+comments                ``.. a comment``                            :ref:`comments`
+======================= =========================================== ====================
+
+
 .. _rst-primer:
 
 reStructuredText Primer
@@ -34,6 +58,7 @@ chunks of text separated by one or more blank lines.  As in Python, indentation
 is significant in reST, so all lines of the same paragraph must be left-aligned
 to the same level of indentation.
 
+.. _inline-markup:
 
 Inline markup
 -------------
@@ -42,7 +67,7 @@ The standard reST inline markup is quite simple: use
 
 * one asterisk: ``*text*`` for emphasis (italics),
 * two asterisks: ``**text**`` for strong emphasis (boldface), and
-* backquotes: ````text```` for code samples.
+* backquotes: ````text```` for code samples, variables, and literals.
 
 If asterisks or backquotes appear in running text and could be confused with
 inline markup delimiters, they have to be escaped with a backslash.
@@ -132,6 +157,7 @@ The handling of the ``::`` marker is smart:
 That way, the second sentence in the above example's first paragraph would be
 rendered as "The next paragraph is a code sample:".
 
+.. _hyperlinks:
 
 Hyperlinks
 ----------
@@ -185,6 +211,7 @@ indentation.  (There needs to be a blank line between explicit markup and normal
 paragraphs.  This may all sound a bit complicated, but it is intuitive enough
 when you write it.)
 
+.. _directives:
 
 Directives
 ----------
@@ -229,12 +256,15 @@ body at the bottom of the document after a "Footnotes" rubric heading, like so::
 
 You can also explicitly number the footnotes for better context.
 
+.. _comments:
 
 Comments
 --------
 
-Every explicit markup block which isn't a valid markup construct (like the
-footnotes above) is regarded as a comment.
+Every explicit markup block (starting with :literal:`.. \ `) which isn't a
+:ref:`valid markup construct <directives>` is regarded as a comment::
+
+   .. This is a comment
 
 
 Source encoding
@@ -636,17 +666,20 @@ The file name is relative to the current file's path.  Documentation-specific
 include files should be placed in the ``Doc/includes`` subdirectory.
 
 .. _rest-inline-markup:
+.. _roles:
 
-Inline markup
--------------
+Roles
+-----
 
-As said before, Sphinx uses interpreted text roles to insert semantic markup in
-documents.
+As :ref:`previously mentioned <inline-markup>`, Sphinx uses
+interpreted text roles of the form ``:rolename:`content```
+to insert semantic markup in documents.
 
-Names of local variables, such as function/method arguments, are an exception,
-they should be marked simply with ``*var*``.
+In the CPython documentation, there are a couple common cases
+where simpler markup should be used:
 
-For all other roles, you have to write ``:rolename:`content```.
+* ``*arg*`` (rendered as *arg*) for function and method arguments.
+* ````True````/````False````/````None```` for ``True``/``False``/``None``.
 
 There are some additional facilities that make cross-referencing roles more
 versatile:

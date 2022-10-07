@@ -13,39 +13,48 @@ Should you require help, there are a :ref:`variety of options available
 usage then please check the rest of this guide first as it should answer your
 question.
 
+
+.. _help-discourse:
+
 Discourse
 ---------
 
-Python has a hosted :ref:`Discourse <discourse_discuss>` instance. This forum has many different
-categories and most core development discussions take place in the open forum
-categories for `PEPs`_ and `Core Development`_ .
-Most categories are open for all users to read and post with the exception of
-Committers and Core Development categories. Be sure to visit the related Core
-categories, such as
-`Core Development <https://discuss.python.org/c/core-dev/23>`_ and
-`Core Workflow <https://discuss.python.org/c/core-workflow/8>`_.
+Python has a hosted Discourse instance at `discuss.python.org <Discourse_>`_.
+This forum has many different categories,
+most of which are open for all users to read and post.
+Those particularly relevant for help contributing to Python itself include:
+
+* `Core Development`_ for most general questions and help
+* `Ideas`_ to discuss new ideas for the Python
+* `Core Workflow`_ for questions about the dev infrastructure and bots
 
 .. seealso::
-  :ref:`Discourse <discourse_discuss>`
-  on how to get started.
+  :ref:`communication-discourse` for more information on how to get started.
+
+.. _Discourse: https://discuss.python.org/
+.. _Core Development: https://discuss.python.org/c/core-dev/23
+.. _Core Workflow: https://discuss.python.org/c/core-workflow/8
+.. _Ideas: https://discuss.python.org/c/ideas/6
 
 
-.. _PEPs: https://discuss.python.org/c/peps/
+.. _help-mailing-lists:
 
 Mailing Lists
 -------------
 
-Further options for seeking assistance include the `python-ideas`_ and
-`python-dev`_ mailing lists. Python-ideas contains discussion of speculative
-Python language ideas for possible inclusion into the language. If an idea
-gains traction it can then be discussed and honed to the point of becoming a
-solid proposal and presented on python-dev.  Python-dev contains discussion
-of current Python design issues, release mechanics, and maintenance of
-existing releases.  These mailing lists are for questions involving the
+Further options for seeking assistance include the
+`python-ideas`_ and `python-dev`_ mailing lists,
+which correspond to the `Ideas`_ and `Core Development`_
+:ref:`help-discourse` categories, respectively.
+The Discourse categories are generally more active
+and are the preferred venue for new discussions,
+but the mailing lists are still monitored and responded to.
+These mailing lists are for questions involving the
 development *of* Python, **not** for development *with* Python.
 
 .. _python-ideas: https://mail.python.org/mailman3/lists/python-ideas.python.org
 .. _python-dev: https://mail.python.org/mailman3/lists/python-dev.python.org/
+
 
 Ask #python-dev
 ---------------
@@ -74,8 +83,9 @@ an office hour, before posting to python-dev mailing list or filing bugs.
 
 .. warning::
 
-  This is no longer actively monitored by core devs. Consider asking your questions
-  on Discourse or on the `python-dev`_ mailing list.
+  This is no longer actively monitored by core devs.
+  Consider asking your questions in the relevant
+  :ref:`Discourse <communication-discourse>` category instead.
 
 .. _Zulip: https://python.zulipchat.com
 

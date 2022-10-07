@@ -151,8 +151,8 @@ reading experience.
 Instead, these security concerns should be gathered into a dedicated
 "Security Considerations" section within the module's documentation, and
 cross-referenced from the documentation of affected interfaces with a note
-similar to ``"Please refer to the :ref:`security-considerations` section
-for important information on how to avoid common mistakes."``.
+similar to :samp:`"Please refer to the :ref:\`{security-considerations}\`
+section for important information on how to avoid common mistakes."`.
 
 Similarly, if there is a common error that affects many interfaces in a
 module (e.g. OS level pipe buffers filling up and stalling child processes),
