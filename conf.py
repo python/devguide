@@ -1,6 +1,12 @@
+import os
+import sys
 import time
 
+# Location of custom extensions.
+sys.path.insert(0, os.path.abspath(".") + "/_extensions")
+
 extensions = [
+    'custom_roles',
     'sphinx.ext.intersphinx',
     'sphinx.ext.todo',
     'sphinx_copybutton',
@@ -102,3 +108,7 @@ todo_include_todos = True
 # sphinxext-opengraph config
 ogp_site_url = "https://devguide.python.org/"
 ogp_image = "https://devguide.python.org/_static/python-logo.svg"
+
+# Strip the dollar prompt when copying code
+# https://sphinx-copybutton.readthedocs.io/en/latest/use.html#strip-and-configure-input-prompts-for-code-cells
+copybutton_prompt_text = "$"
