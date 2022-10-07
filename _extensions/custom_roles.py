@@ -8,6 +8,12 @@ from docutils import nodes
 
 
 def setup(app):
+    # role to link to cpython files
+    app.add_role(
+        "cpy-file",
+        autolink("https://github.com/python/cpython/blob/main/%s"),
+    )
+    # role to link to cpython labels
     app.add_role(
         "gh-label",
         autolink("https://github.com/python/cpython/labels/%s"),
