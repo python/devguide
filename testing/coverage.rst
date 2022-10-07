@@ -258,8 +258,9 @@ times.
 
 Filing the Issue
 ================
-Once you have increased coverage, you need to create an issue on the
-`issue tracker`_ and submit a :ref:`pull request <pullrequest>`.
+Once you have increased coverage,
+you need to create an issue on the `issue tracker`_ and
+submit a :ref:`pull request <pullrequest>`.
 
 
 Measuring coverage of C code with gcov and lcov

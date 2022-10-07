@@ -833,9 +833,9 @@ Testing
 
 There are three files that contain tests for the grammar and the parser:
 
-* `Lib/test/test_grammar.py`.
-* `Lib/test/test_syntax.py`.
-* `Lib/test/test_exceptions.py`.
+* ``Lib/test/test_grammar.py``.
+* ``Lib/test/test_syntax.py``.
+* ``Lib/test/test_exceptions.py``.
 
 Check the contents of these files to know which is the best place to place new tests depending
 on the nature of the new feature you are adding.

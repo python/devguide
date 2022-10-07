@@ -1,6 +1,6 @@
 Sphinx==5.2.3
 furo>=2022.6.4
 sphinx_copybutton>=0.3.3
-sphinx-lint==0.6.1
+sphinx-lint==0.6.5
 sphinxext-opengraph
 sphinxext-rediraffe
