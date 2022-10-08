@@ -11,18 +11,18 @@ users and developers.
 Checklist for Triaging
 ======================
 
-* Check that the title is concise with specifics which are helpful to
-  someone scanning a list of issue titles.
-* For pull request, ensure that the corresponding issue is added before
+* Check that the title is reasonably concise, while including enough specifics
+  so that those scanning the list of issues can quickly identify its topic.
+* For pull requests, ensure that the corresponding issue is added before
   the title (``gh-NNNNN: ...``).
 * Read the initial message and the comments.
 * Set all the relevant :ref:`labels <gh-labels>`.
-* Where appropriate, you might set the "Assignees", "Reviewers", and
-  "Projects" fields.
+* Where appropriate, set the :guilabel:`Assignees`,
+  :guilabel`Reviewers`, and :guilabel:`Project` fields.
 * You might also leave a brief comment about the proposed next action needed.
   If there is a long message list, a summary can be very helpful.
-* Finally, you can set the :gh-label:`triaged` label (unless you want other triagers
-  to take a look).
+* If instead the issue is invalid (can't reproduce, duplicate, etc.),
+  you can close it as "not planned".
 
 Note: some of these fields can only be set/edited by core developers.
 
@@ -39,7 +39,7 @@ working on Python is needed in order to effectively help triage.
 
 Around the clock, new issues are being opened on the :ref:`issue tracker
 <tracker>` and existing issues are being updated. Every issue needs to be
-triaged to make sure various things are in proper order.
+triaged to make sure everything runs smoothly.
 
 Classifying Reports
 -------------------
@@ -53,7 +53,7 @@ For bugs, an issue needs to:
 These are things you can help with once you have experience developing for
 Python:
 
-* Try reproducing the bug: for instance, if a bug is not explained clearly
+* Try reproducing the bug: if it is not explained clearly
   enough for you to reproduce it, then there is a good chance a core developer
   won't be able to either.
 * See if the issue happens on a different Python version: it is always helpful
