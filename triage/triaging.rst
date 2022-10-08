@@ -15,16 +15,18 @@ Checklist for Triaging
 * Check that the title is reasonably concise, while including enough specifics
   so that those scanning the list of issues can quickly identify its topic.
 * For pull requests, ensure that the corresponding issue is added before
-  the title (``gh-NNNNN: ...``).
+  the title (:samp:`gh-NNNNN: {Title}`).
 * Set all the relevant :ref:`labels <gh-labels>`.
 * Where appropriate, set the :guilabel:`Assignees`, :guilabel:`Reviewers`,
   :guilabel:`Project` fields, and possibly @mention relevant people.
 * You might also leave a brief comment about the proposed next action needed.
   If there is a long message list, a summary can be very helpful.
-* If instead the issue is invalid (can't reproduce, duplicate, etc.),
+* If the issue is clearly invalid (unrelated to CPython, duplicate, spam, etc),
   you can close it as "not planned".
 
-Note: some of these fields can only be set/edited by core developers.
+.. Remove note once python/core-workflow#460 is implemented
+
+.. note:: Some of these fields can only be set/edited by core developers.
 
 
 .. _helptriage:
@@ -90,7 +92,7 @@ Finding an Issue You Can Help With
 ----------------------------------
 
 If you want to help with triaging, you might also want to search for issues
-in modules which you have a working knowledge.  Search for the name of a
+in modules for which you have a working knowledge.  Search for the name of a
 module in the issue tracker, filter by label, or use the `advanced search`_
 to find these issues.
 
