@@ -11,14 +11,14 @@ users and developers.
 Checklist for Triaging
 ======================
 
+* Read the initial message and the comments.
 * Check that the title is reasonably concise, while including enough specifics
   so that those scanning the list of issues can quickly identify its topic.
 * For pull requests, ensure that the corresponding issue is added before
   the title (``gh-NNNNN: ...``).
-* Read the initial message and the comments.
 * Set all the relevant :ref:`labels <gh-labels>`.
-* Where appropriate, set the :guilabel:`Assignees`,
-  :guilabel`Reviewers`, and :guilabel:`Project` fields.
+* Where appropriate, set the :guilabel:`Assignees`, :guilabel:`Reviewers`,
+  :guilabel:`Project` fields, and possibly @mention relevant people.
 * You might also leave a brief comment about the proposed next action needed.
   If there is a long message list, a summary can be very helpful.
 * If instead the issue is invalid (can't reproduce, duplicate, etc.),
@@ -73,7 +73,7 @@ If an issue has a linked pull request that has not been reviewed,
 you can help by making sure the pull request:
 
 * is a good solution to the problem it is trying to solve
-* follows the style guides
+* follows the style guides (:pep:`7`, :pep:`8`, :ref:`style-guide`, etc.)
 * includes proper tests
 * includes proper documentation changes
 * includes a :ref:`NEWS entry <news-entry>` (if needed)
