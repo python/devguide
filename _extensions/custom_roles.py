@@ -25,12 +25,16 @@ def setup(app):
 
 def autolink(pattern):
     def role(name, rawtext, text, lineno, inliner, options={}, content=[]):
+        """Combine literal + reference (unless the text is prefixed by a !)."""
         if " " in text:
             url_text = urllib.parse.quote(f"{text}")
         else:
             url_text = text
         url = pattern % (url_text,)
-        node = nodes.reference(rawtext, text, refuri=url, **options)
+        node = nodes.literal('', text.lstrip('!'), **options)
+        # don't create a reference if the text starts with !
+        if not text.startswith('!'):
+            node = nodes.reference('', '', node, refuri=url, **options)
         return [node], []
 
     return role
