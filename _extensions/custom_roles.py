@@ -11,12 +11,12 @@ def setup(app):
     # role to link to cpython files
     app.add_role(
         "cpy-file",
-        autolink("https://github.com/python/cpython/blob/main/%s"),
+        autolink("https://github.com/python/cpython/blob/main/{}"),
     )
     # role to link to cpython labels
     app.add_role(
         "gh-label",
-        autolink("https://github.com/python/cpython/labels/%s"),
+        autolink("https://github.com/python/cpython/labels/{}"),
     )
     # Parallel safety:
     # https://www.sphinx-doc.org/en/master/extdev/index.html#extension-metadata
@@ -30,8 +30,8 @@ def autolink(pattern):
             url_text = urllib.parse.quote(f"{text}")
         else:
             url_text = text
-        url = pattern % (url_text,)
-        node = nodes.literal('', text.lstrip('!'), **options)
+        url = pattern.format(url_text)
+        node = nodes.literal(rawtext, text.lstrip('!'), **options)
         # don't create a reference if the text starts with !
         if not text.startswith('!'):
             node = nodes.reference('', '', node, refuri=url, **options)
