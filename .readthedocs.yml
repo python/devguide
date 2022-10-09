@@ -14,4 +14,4 @@ build:
     python: "3.10"
 
   commands:
-    - make html BUILDDIR=_readthedocs
+    - make dirhtml BUILDDIR=_readthedocs
