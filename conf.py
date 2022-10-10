@@ -107,7 +107,7 @@ todo_include_todos = True
 
 # sphinxext-opengraph config
 ogp_site_url = "https://devguide.python.org/"
-ogp_image = "https://devguide.python.org/_static/python-logo.svg"
+ogp_image = "https://devguide.python.org/_static/og-image.png"
 
 # Strip the dollar prompt when copying code
 # https://sphinx-copybutton.readthedocs.io/en/latest/use.html#strip-and-configure-input-prompts-for-code-cells
