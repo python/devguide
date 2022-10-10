@@ -107,6 +107,7 @@ todo_include_todos = True
 
 # sphinxext-opengraph config
 ogp_site_url = "https://devguide.python.org/"
+ogp_site_name = "Python Developer's Guide"
 ogp_image = "https://devguide.python.org/_static/og-image.png"
 ogp_custom_meta_tags = [
     '<meta property="og:image:width" content="1200">',
