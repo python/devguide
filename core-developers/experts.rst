@@ -62,7 +62,7 @@ argparse
 array
 ast                   benjaminp, pablogsal, isidentical
 asynchat              josiahcarlson, giampaolo*, stutzbach^
-asyncio               1st1, asvetlov
+asyncio               1st1, asvetlov, gvanrossum, graingert, kumaraditya303
 asyncore              josiahcarlson, giampaolo*, stutzbach^
 atexit
 audioop               serhiy-storchaka
