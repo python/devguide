@@ -36,7 +36,7 @@ def autolink(pattern):
             node = nodes.literal(rawtext, text[1:])
         else:
             node = nodes.reference(rawtext, '', nodes.literal(rawtext, text),
-			           refuri=url, internal=False)
+                                   refuri=url, internal=False)
         return [node], []
 
     return role
