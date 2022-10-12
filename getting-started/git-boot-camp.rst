@@ -54,7 +54,7 @@ You will only need to do this once per machine.  From your command line::
 It is also recommended to configure an ``upstream`` remote repository::
 
    cd cpython
-   git remote add upstream git@github.com:python/cpython.git
+   git remote add upstream https://github.com/python/cpython
 
 You can also use SSH-based or HTTPS-based URLs.
 
@@ -82,7 +82,7 @@ and ``upstream`` pointing to the official CPython repository::
 
    origin  git@github.com:<username>/cpython.git (fetch)
    origin  git@github.com:<username>/cpython.git (push)
-   upstream        git@github.com:python/cpython.git (fetch)
+   upstream        https://github.com/python/cpython (fetch)
    upstream        git@github.com:<username>/cpython.git (push)
 
 To verify the upstream for ``main``::

@@ -79,7 +79,7 @@ You will only need to execute these steps once per machine:
 6. Configure an ``upstream`` remote::
 
       $ cd cpython
-      $ git remote add upstream https://github.com/python/cpython.git
+      $ git remote add upstream https://github.com/python/cpython
 
 7. Configure ``git`` to pull ``main`` from the ``upstream`` remote::
 
@@ -95,7 +95,7 @@ You will only need to execute these steps once per machine:
       $ git remote -v
       origin  git@github.com:<your-username>/cpython.git (fetch)
       origin  git@github.com:<your-username>/cpython.git (push)
-      upstream        git@github.com:python/cpython.git (fetch)
+      upstream        https://github.com/python/cpython (fetch)
       upstream        git@github.com:<your-username>/cpython.git (push)
       $ git config branch.main.remote
       upstream
