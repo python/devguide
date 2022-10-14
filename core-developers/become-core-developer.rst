@@ -25,37 +25,39 @@ an official offer. How core developers come to that agreement are outlined in
 Gaining Commit Privileges
 =========================
 
-The steps to gaining commit privileges are:
+After a candidate has demonstrated consistent contributions, commit privileges
+are granted through these steps:
 
-1. A core developer starts a poll in the
-   `Committers category`_ on the `Python Discourse`_ (``discuss.python.org``)
+1. A core developer (submitter, usually the mentor) starts a poll in the
+   `Committers category`_ on the `Python Discourse`_ (``discuss.python.org``).
 
    - Open for 7 days
    - Results shown upon close
+   - Cross-post the announcement to the `python-committers mailing list`_
 
-2. The poll is announced on the `python-committers mailing list`_
-3. Wait for the poll to close and see if the results confirm your membership
-   as per the voting results required by :pep:`13`
-4. The person who nominated you emails the steering council with your email
-   address and a request that the council either accept or reject the proposed
-   membership
-5. Assuming the steering council does not object, a member of the council will
-   email you asking for:
+2. After the poll has closed, the submitter confirms the membership per
+   :pep:`13` (2/3 of the vote).
+3. The submitter then emails the
+   `steering council <mailto:steering-council@python.org>`_ with the
+   candidate's email address requesting that the council either accept or reject the proposed
+   membership.
+4. Assuming the steering council does not object, a member of the council or delegate
+   (approver) will email the candidate:
 
-   - Account details as required by
-     🔒 https://github.com/python/voters/
-   - Your preferred email address to
-     subscribe to the python-committers mailing list with
-   - A reminder about the `Code of Conduct`_ and to report issues to the PSF
-     Conduct WG
+   - A request for account details as required by
+     `🔒 python/voters <https://github.com/python/voters>`_
+   - A request for the committer's preferred address for subscription to
+     ``python-committers@``
+   - A reminder about the `Code of Conduct`_ and guidance on reporting issues
+     to the PSF Conduct WG
 
-6. Once you have provided the pertinent details, your various new privileges
-   will be turned on
-7. Your details will be added to 🔒 https://github.com/python/voters/
-8. They will update the devguide to publicly list your team membership at
-   :ref:`developers`
-9. An announcement email by the steering council member handling your new
-   membership will be sent to the Committers Discourse category
+5. Once the candidate has provided the pertinent details, the approver will enable
+   various new privileges.
+6. The approver will add the new committer's details to
+   `🔒 python/voters <https://github.com/python/voters>`_.
+7. The approver will update the devguide to publicly list the new committer's team
+   membership at :ref:`developers`.
+8. The approver sends an announcement email to the Committers Discourse category.
 
 .. _Code of Conduct: https://www.python.org/psf/conduct/
 .. _Committers category: https://discuss.python.org/c/committers/5
