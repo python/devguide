@@ -645,8 +645,8 @@ Hard and Soft keywords
 ----------------------
 
 .. note::
-    In the grammar files, keywords are defined using **single quotes** (e.g. `'class'`) while soft
-    keywords are defined using **double quotes** (e.g. `"match"`).
+    In the grammar files, keywords are defined using **single quotes** (e.g. ``'class'``) while soft
+    keywords are defined using **double quotes** (e.g. ``"match"``).
 
 There are two kinds of keywords allowed in pegen grammars: *hard* and *soft*
 keywords. The difference between hard and soft keywords is that hard keywords
