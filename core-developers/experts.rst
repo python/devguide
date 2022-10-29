@@ -223,7 +223,7 @@ sunau
 symbol
 symtable              benjaminp
 sys
-sysconfig             tarekziade
+sysconfig             FFY00
 syslog                jafo^*
 tabnanny              tim-one (inactive)
 tarfile               gustaebel
