@@ -47,16 +47,28 @@ You will only need to do this once.
 Cloning a Forked CPython Repository
 -----------------------------------
 
-You will only need to do this once.  From your command line::
+You will only need to do this once per machine.  From your command line::
 
    git clone git@github.com:<username>/cpython.git
 
 It is also recommended to configure an ``upstream`` remote repository::
 
    cd cpython
-   git remote add upstream git@github.com:python/cpython.git
+   git remote add upstream https://github.com/python/cpython
 
 You can also use SSH-based or HTTPS-based URLs.
+
+Configure the Remotes
+---------------------
+
+Configure ``git`` to pull ``main`` from the ``upstream`` remote::
+
+   git config --local branch.main.remote upstream
+
+Since one should never attempt to push to ``upstream``, configure
+``git`` to push always to ``origin``::
+
+   git remote set-url --push upstream git@github.com:<username>/cpython.git
 
 Listing the Remote Repositories
 -------------------------------
@@ -70,8 +82,15 @@ and ``upstream`` pointing to the official CPython repository::
 
    origin  git@github.com:<username>/cpython.git (fetch)
    origin  git@github.com:<username>/cpython.git (push)
-   upstream        git@github.com:python/cpython.git (fetch)
-   upstream        git@github.com:python/cpython.git (push)
+   upstream        https://github.com/python/cpython (fetch)
+   upstream        git@github.com:<username>/cpython.git (push)
+
+To verify the upstream for ``main``::
+
+   git config branch.main.remote
+
+It should emit ``upstream``, indicating to track/pull changes for ``main`` from the
+``upstream`` remote.
 
 
 .. _set-up-name-email:
