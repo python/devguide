@@ -109,12 +109,12 @@ participating in the CPython core development process:
    * Python Software Foundation (Fellow, Packaging Working Group)
 
    Nick began using Python as a testing and prototyping language while working
-   for Boeing Defence Australia, and continues to use it for that purpose today.
+   for Boeing Defence Australia and continues to use it for that purpose today.
 
    As a core developer, he is primarily interested in helping to ensure Python's
    continued suitability for educational, testing and data analysis use cases,
    as well as in encouraging good architectural practices when assembling Python
-   applications and test harnesses from open source components.
+   applications and test harnesses from open-source components.
 
 .. topic:: Steve Dower (United States/Australia)
 
@@ -125,7 +125,7 @@ participating in the CPython core development process:
    * Email address: steve.dower@python.org
 
    Steve started with Python while automating a test harness for medical
-   devices, and now works for Microsoft on anything that makes Python more
+   devices and now works for Microsoft on anything that makes Python more
    accessible to developers on any platform.
 
    As a core developer, his focus is on maintaining the already excellent
@@ -160,25 +160,25 @@ participating in the CPython core development process:
      and Python contract programming <https://www.murrayandwalker.com/>`_
 
    David has been involved in the Internet since the days when the old IBM
-   BITNET and the ARPANet got cross connected, and in Python programming since
+   BITNET and the ARPANet got cross-connected, and in Python programming since
    he first discovered it around the days of Python 1.4.  After transitioning
    from being Director of Operations for dialup Internet providers (when that
-   business started declining) to being a full time independent consultant,
+   business started declining) to being a full-time independent consultant,
    David started contributing directly to CPython development.  He became a
    committer in 2009.  He subsequently took over primary maintenance of the
-   email package from Barry Warsaw, and contributed the unicode oriented API.
+   email package from Barry Warsaw, and contributed the unicode-oriented API.
    David is also active in mentoring new contributors and, when time is
    available, working on the infrastructure that supports CPython development,
    specifically the Roundup-based bug tracker and the buildbot system.
 
-   David currently does both proprietary and open source development work,
+   David currently does both proprietary and open-source development work,
    primarily in Python, through the company in which he is a partner, `Murray &
    Walker, Inc <https://www.murrayandwalker.com>`_.  He has done contract work
    focused specifically on CPython development both through the PSF (the
    kickstart of the email unicode API development) and directly funded by
    interested corporations (additional development work on email funded by
    QNX, and work on CPython ICC support funded by Intel).  He would like to
-   spend more of his (and his company's) time on open source work, and so is
+   spend more of his (and his company's) time on open-source work, and so is
    actively seeking additional such contract opportunities.
 
 .. topic:: Antoine Pitrou (France)
@@ -198,8 +198,8 @@ participating in the CPython core development process:
    concurrent programming (such as maintaining ``multiprocessing``).
 
    As a professional, Antoine has been first specializing in network
-   programming, and more lately in open source data science infrastructure.
-   He is currently working full time on Apache Arrow as a technical leader
+   programming, and more lately in open-source data science infrastructure.
+   He is currently working full-time on Apache Arrow as a technical leader
    for Voltron Data.
 
 .. topic:: Victor Stinner (France)
@@ -267,7 +267,7 @@ participating in the CPython core development process:
 
    Carol is focused on Python's usage in education and scientific research.
    She is interested in organizational development, operational workflows,
-   and sustainability of open source projects.
+   and sustainability of open-source projects.
 
 
 .. _goals-of-the-motivations-page:
@@ -280,7 +280,7 @@ strongly suggest that the current core development process is bottlenecked on
 core developer time - this is most clearly indicated in the first metrics graph,
 which shows both the number of open issues and the number of patches awaiting
 review growing steadily over time, despite CPython being one of the most
-active open source projects in the world. This bottleneck then impacts not only
+active open-source projects in the world. This bottleneck then impacts not only
 resolving open issues and applying submitted patches, but also the process of
 identifying, nominating and mentoring new core developers.
 
