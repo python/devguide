@@ -1,7 +1,7 @@
 .. _gdb:
 
 ===========
-GDB Support
+GDB support
 ===========
 
 .. highlight:: none
@@ -17,7 +17,7 @@ or what type or value has a given Python object represented by a standard
 limitation.
 
 
-gdb 7 and later
+GDB 7 and later
 ===============
 
 In gdb 7, support for `extending gdb with Python
@@ -300,7 +300,7 @@ thread is doing at the Python level::
 .. note:: This is only available for Python 2.7, 3.2 and higher.
 
 
-gdb 6 and earlier
+GDB 6 and earlier
 =================
 
 The file at ``Misc/gdbinit`` contains a gdb configuration file which provides
@@ -359,7 +359,7 @@ machine, since the main interpreter loop function,
 ``_PyEval_EvalFrameDefault``, is well over 4,000 lines long as of Python 3.12.
 Fortunately, among the `many ways to set breakpoints
 <https://sourceware.org/gdb/onlinedocs/gdb/Specify-Location.html>`_,
-you can break at C labels, such as those generated for computed gotos. 
+you can break at C labels, such as those generated for computed gotos.
 If you are debugging an interpreter compiled with computed goto support
 (generally true, certainly when using GCC), each instruction will be
 prefaced with a label named ``TARGET_<instruction>``, e.g.,
