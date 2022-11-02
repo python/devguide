@@ -326,32 +326,28 @@ to ``~/.gdbinit`` (edit the specific list of paths as appropriate)::
     add-auto-load-safe-path ~/devel/py3k:~/devel/py32:~/devel/py27
 
 
-GDB Tips
+GDB tips
 ========
 
 Learning to use GDB effectively improves your chances of successfully
 debugging problems with Python's internals.  The tips here aren't yet
-organized in any particular way.  Over time, as the section grows,
-hopefully useful organization will become apparent.
+organized in any particular way.
 
 Saving and Loading Breakpoints
 ------------------------------
 
 With extended exposure to particular parts of the Python runtime, you
 might find it helpful to define a routine set of breakpoints and
-commands to execute when they are hit.  (These might be appropriate to
-a specific debugging/development task, or more generally useful.)  To
-make using multiple semi-static breakpoints easier to use, you can
-save breakpoints to a file and load them in future sessions.  For
-example, you can save your current breakpoints to the file
-``python.brk`` with this command::
+commands to execute when they are hit.
+For convenience, save your breakpoints to a file and load them in future
+sessions using the ``save breakpoints`` command::
 
-  save breakpoints python.brk
+   (gdb) save breakpoints python.brk
 
 You can edit the file to your heart's content, then load it in a later
 session::
 
-  source python.brk
+   (gdb) source python.brk
 
 
 Breaking at Labels
@@ -363,14 +359,14 @@ machine, since the main interpreter loop function,
 ``_PyEval_EvalFrameDefault``, is well over 4,000 lines long as of Python 3.12.
 Fortunately, among the `many ways to set breakpoints
 <https://sourceware.org/gdb/onlinedocs/gdb/Specify-Location.html>`_,
-you can break at C labels, such as those generated for computed gotos.  If you are
-debugging an interpreter compiled with computed goto support
+you can break at C labels, such as those generated for computed gotos. 
+If you are debugging an interpreter compiled with computed goto support
 (generally true, certainly when using GCC), each instruction will be
 prefaced with a label named ``TARGET_<instruction>``, e.g.,
 ``TARGET_LOAD_CONST``.  You can then set a breakpoint with a command
 like::
 
-  break ceval.c:_PyEval_EvalFrameDefault:TARGET_LOAD_CONST
+   (gdb) break ceval.c:_PyEval_EvalFrameDefault:TARGET_LOAD_CONST
 
 Add commands, save to a file, then reload in future sessions without
 worrying that the starting line number of individual instructions
