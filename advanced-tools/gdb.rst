@@ -333,7 +333,7 @@ Learning to use GDB effectively improves your chances of successfully
 debugging problems with Python's internals.  The tips here aren't yet
 organized in any particular way.
 
-Saving and Loading Breakpoints
+Saving and loading breakpoints
 ------------------------------
 
 With extended exposure to particular parts of the Python runtime, you
@@ -350,7 +350,7 @@ session::
    (gdb) source python.brk
 
 
-Breaking at Labels
+Breaking at labels
 ------------------
 
 You will most often set breakpoints at the start of functions, but
