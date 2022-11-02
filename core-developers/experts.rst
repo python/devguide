@@ -223,7 +223,7 @@ sunau
 symbol
 symtable              benjaminp
 sys
-sysconfig             tarekziade
+sysconfig             FFY00
 syslog                jafo^*
 tabnanny              tim-one (inactive)
 tarfile               gustaebel
@@ -244,7 +244,7 @@ tracemalloc           vstinner
 tty                   Yhg1s*
 turtle                gregorlingl^, willingc
 types                 1st1
-typing                gvanrossum, Fidget-Spinner, JelleZijlstra*
+typing                gvanrossum, Fidget-Spinner, JelleZijlstra*, AlexWaygood*
 unicodedata           malemburg, ezio-melotti
 unittest              voidspace*, ezio-melotti, rbtcollins, gpshead
 unittest.mock         voidspace*
