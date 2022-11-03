@@ -330,8 +330,7 @@ GDB tips
 ========
 
 Learning to use GDB effectively improves your chances of successfully
-debugging problems with Python's internals.  The tips here aren't yet
-organized in any particular way.
+debugging problems with Python's internals.
 
 Saving and loading breakpoints
 ------------------------------
