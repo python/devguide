@@ -112,6 +112,7 @@ ogp_image = "_static/og-image.png"
 ogp_custom_meta_tags = [
     '<meta property="og:image:width" content="1200">',
     '<meta property="og:image:height" content="630">',
+    '<meta name="theme-color" content="#3776ab" />',
 ]
 
 # Strip the dollar prompt when copying code
