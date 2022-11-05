@@ -49,8 +49,8 @@ in production; others are works in progress.
 | Persian (fa)    | `Komeil Parseh (@mmdbalkhi)   | `GitHub <github_fa_>`_     |
 |                 | <gh_mmdbalkhi_>`_             |                            |
 +-----------------+-------------------------------+----------------------------+
-| Polish (pl)     |                               | `GitHub <github_pl_>`_     |
-|                 |                               | `Translations <tx_pl_>`_   |
+| Polish (pl)     | `Maciej Olko (@m-aciek)       | `GitHub <github_pl_>`_     |
+|                 | <gh_maciek_>`_                | `Translations <tx_pl_>`_   |
 |                 |                               | `Doc <doc_pl_>`_           |
 |                 |                               | `mail <mail_pl_>`_         |
 +-----------------+-------------------------------+----------------------------+
@@ -84,6 +84,7 @@ in production; others are works in progress.
 .. _gh_cocoatomo: https://github.com/cocoatomo
 .. _gh_gbtami: https://github.com/gbtami
 .. _gh_kushal: https://github.com/Kushal997-das
+.. _gh_maciek: https://github.com/m-aciek
 .. _gh_mdk: https://github.com/JulienPalard
 .. _gh_mmdbalkhi: https://github.com/mmdbalkhi
 .. _gh_oonid: https://github.com/oonid
