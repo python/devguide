@@ -62,6 +62,13 @@ definition in ``Include/internal/`` (or directly in a ``.c`` file):
   a macro aliasing the old name to the new one.
   See :pep:`"Finalizing the API" in PEP 590 <590#finalizing-the-api>` for an example.
 
+Internal API Tests
+------------------
+
+C tests for the internal C API live in ``Modules/_testinternalcapi.c``.
+Functions named ``test_*`` are used as tests directly.
+Python parts of the tests live in various places in ``Lib/test``.
+
 
 .. _public-capi:
 
@@ -86,6 +93,40 @@ Guidelines for expanding/changing the public API:
 
 - Make sure the ownership rules and lifetimes of all applicable struct
   fields, arguments and return values are well defined.
+
+
+C API Tests
+-----------
+
+Tests for the public C API live in the ``_testcapi`` module.
+Functions named ``test_*`` are used as tests directly.
+Tests that need Python code (or are just easier to partially write in Python)
+live in ``Lib/test``, mainly in :file:`Lib/test/test_capi.py`.
+
+Due to its size, the ``_testcapi`` module is defined in several source
+files.
+To add a new set of tests (or extract a set out of the monolithic
+:file:`Modules/_testcapimodule.c`):
+
+- Create a C file named ``Modules/_testcapi/yourfeature.c``
+
+- The file should define a module as usual, except:
+
+  - Instead of ``<Python.h>``, include ``"parts.h"``.
+  - Instead of ``PyInit_modname``, define a ``_PyTestCapi_Init_yourfeature``
+    function that *takes* the ``_testcapi`` module and adds functions/classes
+    to it. (You can use ``PyModule_AddFunctions`` to add functions.)
+
+- Add the ``_PyTestCapi_Init_*`` function to ``Modules/_testcapi/parts.h``
+
+- Call the ``_PyTestCapi_Init_*`` from ``PyInit__testcapi`` in
+  ``Modules/_testcapimodule.c``.
+
+Note that all ``Modules/_testcapi/*.c`` sources initialize the same module,
+so be careful about name collisions.
+
+When moving existing tests, feel free to replace ``TestError`` with
+``PyExc_AssertionError`` unless actually testing custom exceptions.
 
 
 Limited API
@@ -228,3 +269,30 @@ Adding a new definition to the Limited API
   .. code-block:: shell
 
     ./python ./Tools/scripts/stable_abi.py --all ./Misc/stable_abi.toml
+
+- Add tests -- see below.
+
+
+Limited API Tests
+-----------------
+
+Since Limited API is a subset of the C API, there's no need to test the
+behavior of individual functions. Rather, the tests could verify that some
+task is possible using the exposed subset, or exercise a feature that was
+removed from the current Limited API but still needs to be supported for
+older Limited API/Stable ABI versions.
+
+To add a test file:
+
+- Add a C file ``Modules/_testcapi/yourfeature_limited.c``. If that file
+  already exists but its ``Py_LIMITED_API`` version is too low, add a version
+  postfix, e.g. ``yourfeature_limited_3_12.c`` for Python 3.12+.
+- ``#define Py_LIMITED_API`` to the minimum limited API version needed.
+- ``#include "parts.h"`` after the ``Py_LIMITED_API`` definition
+- Enclose the entire rest of the file in ``#ifdef LIMITED_API_AVAILABLE``,
+  so it's skipped on incompatible builds.
+- Follow the general instructions for `C API tests`_. All additions go in the
+  sections guarded by ``#ifdef LIMITED_API_AVAILABLE``.
+
+Use the ``test.support.requires_limited_api`` decorator for Python tests
+in ``Lib/test``, so they're skipped on incompatible builds.

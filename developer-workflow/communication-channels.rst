@@ -5,8 +5,8 @@
 Following Python's Development
 ==============================
 
-Python's development is communicated through a myriad of ways, mostly through
-mailing lists, but also other forms.
+Python's development is communicated through a myriad of ways,
+primarily :ref:`Discourse <communication-discourse>` along with other platforms.
 
 
 Standards of behaviour in these communication channels
@@ -27,45 +27,26 @@ in return.
 Mailing Lists
 =============
 
-python-dev_ is the primary mailing list for discussions about Python's
-development. The list is open to the public and is subscribed to by all core
-developers plus many people simply interested in following Python's
-development. Discussion is focused on issues related to Python's development,
-such as how to handle a specific issue, a PEP, etc.
+.. note:: Some mailing lists have been supplanted by categories in the
+   Python `Discourse`_. Specifically,
 
-- Ideas about new functionality should **not** start here and instead
-  should be sent to python-ideas_.
-- Technical support questions should also not be asked here and instead
-  should go to python-list_ or python-help_.
+   * The python-dev list is superseded by the `Core Development`_
+     and `PEPs`_ categories on Discourse.
 
-Python-ideas_ is a mailing list open to the public to discuss ideas on changing
-Python. If a new idea does not start here (or python-list_, discussed below),
-it will get redirected here.
+   * The python-ideas list is superseded by posts in the `Ideas`_
+     category on Discourse.
 
-Sometimes people post new ideas to python-list_ to gather community opinion
-before heading to python-ideas_. The list is also sometimes known as
-comp.lang.python, the name of the newsgroup it mirrors (it is also known by
-the abbreviation c.l.py).
+   Discussion in :guilabel:`Core Development` is focused on issues related to Python's
+   own development, such as how to handle a specific issue, a PEP, etc.
 
-The python-committers_ mailing list is a private mailing list for core
-developers (the archives are publicly available).
-If something only affects core developers (e.g., the
-tree is frozen for commits, etc.), it is discussed here instead of python-dev
-to keep traffic down on the latter.
+   - Ideas about new functionality should **not** start here, and instead
+     should be discussed in `Ideas`_.
+   - Technical support questions should also not be asked here, and instead
+     should go to the python-list_ or python-help_ mailing lists, or the
+     `Python Help`_ category on Discourse.
 
-python-dev_, python-committers_, and python-ideas_ all use Mailman 3, and
-are hence accessible via the Mailman 3 `web gateway`_.
-
-Python-checkins_ sends out an email for every commit to Python's various
-repositories from https://github.com/python/cpython. All core developers
-subscribe to this list and are known to reply to these emails to make comments
-about various issues they catch in the commit. Replies get redirected to
-python-dev.
-
-There are two mailing lists related to issues on the `issue tracker`_. If you
-only want an email for when a new issue is open, subscribe to
-new-bugs-announce_. If you would rather receive an email for all changes made
-to any issue, subscribe to python-bugs-list_.
+Existing threads on the python-dev_, python-committers_, and python-ideas_ mailing lists
+can be accessed through the `online archive <web gateway_>`__.
 
 General Python questions should go to `python-list`_ or `tutor`_
 or similar resources, such as StackOverflow_ or the ``#python`` IRC channel
@@ -75,15 +56,13 @@ on Libera.Chat_.
 issue tracker is the place to discuss and work on improvements to the CPython
 core development workflow.
 
-A complete list of Python mailing lists can be found at https://mail.python.org/mailman/listinfo.
-Most lists are also mirrored at `GMANE <https://gmane.io/>`_ and can be read and
-posted to in various ways, including via web browsers, NNTP newsreaders, and
-RSS feed readers.
+A complete list of Python mailing lists can be found at
+https://mail.python.org/mailman/listinfo (older lists, using Mailman2) or
+https://mail.python.org/mailman3/ (newer lists, using Mailman3). Some lists may also
+be mirrored at `GMANE <https://gmane.io/>`_ and can be read and posted to in various
+ways, including via web browsers, NNTP newsreaders, and RSS feed readers.
 
 .. _issue tracker: https://github.com/python/cpython/issues
-.. _new-bugs-announce: https://mail.python.org/mailman/listinfo/new-bugs-announce
-.. _python-bugs-list: https://mail.python.org/mailman/listinfo/python-bugs-list
-.. _python-checkins: https://mail.python.org/mailman/listinfo/python-checkins
 .. _python-committers: https://mail.python.org/mailman3/lists/python-committers.python.org/
 .. _python-dev: https://mail.python.org/mailman3/lists/python-dev.python.org/
 .. _python-help: https://mail.python.org/mailman/listinfo/python-help
@@ -95,7 +74,7 @@ RSS feed readers.
 .. _web gateway: https://mail.python.org/archives/
 
 
-.. _discourse_discuss:
+.. _communication-discourse:
 
 Discourse (discuss.python.org web forum)
 ========================================
@@ -112,8 +91,8 @@ the `Committers`_ category, where posting is restricted to the `CPython
 <https://github.com/python/cpython>`_ core developers.
 
 The Committers category is often used for announcements and notifications.
-It is also a common venue for the core developer promotion votes (this
-category is equivalent to the python-committers mailing list).
+It is also the designated venue for the core developer promotion votes
+(as the Discourse equivalent of the `python-committers`_ mailing list).
 
 Tutorials for new users
 -------------------------
@@ -199,9 +178,11 @@ To activate the mailing list mode, go to the `email preferences
 mailing list mode" and save changes.
 
 .. _Discourse: https://discuss.python.org/
-.. _PEPs: https://discuss.python.org/c/peps/
-.. _Core Development: https://discuss.python.org/c/core-dev/
-.. _Committers: https://discuss.python.org/c/committers/
+.. _PEPs: https://discuss.python.org/c/peps/19
+.. _Core Development: https://discuss.python.org/c/core-dev/23
+.. _Committers: https://discuss.python.org/c/committers/5
+.. _Ideas: https://discuss.python.org/c/ideas/6
+.. _Python Help: https://discuss.python.org/c/users/7
 
 
 Discord (private chat server)
@@ -239,7 +220,6 @@ set a specific `Server Nickname`_
 
 .. _voter record: https://github.com/python/voters/blob/main/python-core.toml
 .. _Server Nickname: https://support.discord.com/hc/en-us/articles/219070107-Server-Nicknames
-
 
 
 IRC

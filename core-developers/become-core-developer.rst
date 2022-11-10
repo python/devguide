@@ -27,14 +27,15 @@ Gaining Commit Privileges
 
 The steps to gaining commit privileges are:
 
-1. A core developer starts a poll at https://discuss.python.org/c/committers/5
+1. A core developer starts a poll in the
+   `Committers category`_ on the `Python Discourse`_ (``discuss.python.org``)
 
    - Open for 7 days
    - Results shown upon close
 
-2. The poll is announced on python-committers
+2. The poll is announced on the `python-committers mailing list`_
 3. Wait for the poll to close and see if the results confirm your membership
-   as per the voting results required by PEP 13
+   as per the voting results required by :pep:`13`
 4. The person who nominated you emails the steering council with your email
    address and a request that the council either accept or reject the proposed
    membership
@@ -44,7 +45,7 @@ The steps to gaining commit privileges are:
    - Account details as required by
      🔒 https://github.com/python/voters/
    - Your preferred email address to
-     subscribe to python-committers with
+     subscribe to the python-committers mailing list with
    - A reminder about the `Code of Conduct`_ and to report issues to the PSF
      Conduct WG
 
@@ -54,6 +55,9 @@ The steps to gaining commit privileges are:
 8. They will update the devguide to publicly list your team membership at
    :ref:`developers`
 9. An announcement email by the steering council member handling your new
-   membership will be sent to python-committers
+   membership will be sent to the Committers Discourse category
 
 .. _Code of Conduct: https://www.python.org/psf/conduct/
+.. _Committers category: https://discuss.python.org/c/committers/5
+.. _Python Discourse: https://discuss.python.org
+.. _python-committers mailing list: https://mail.python.org/mailman3/lists/python-committers.python.org/

@@ -397,9 +397,10 @@ request (we cannot force anyone to review pull requests and no one is
 employed to look at pull requests). If your pull request has not
 received any notice from reviewers (i.e., no comment made) after one
 month, first "ping" the issue on the `issue tracker`_ to remind the
-nosy list that the pull request needs a review.  If you don't get a response
-within a week after pinging the issue, then you can try emailing
-python-dev@python.org to ask for someone to review your pull request.
+nosy list that the pull request needs a review.
+If you don't get a response within a week after pinging the issue,
+you can post on the `Core Development Discourse category`_
+to ask for someone to review your pull request.
 
 When someone does manage to find the time to look at your pull request
 they will most likely make comments about how it can be improved
@@ -502,3 +503,4 @@ asked to make these edits on the behalf of the core developer who
 accepts your pull request.
 
 .. _issue tracker: https://github.com/python/cpython/issues
+.. _Core Development Discourse category: https://discuss.python.org/c/core-dev/23

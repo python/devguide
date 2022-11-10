@@ -47,16 +47,28 @@ You will only need to do this once.
 Cloning a Forked CPython Repository
 -----------------------------------
 
-You will only need to do this once.  From your command line::
+You will only need to do this once per machine.  From your command line::
 
    git clone git@github.com:<username>/cpython.git
 
 It is also recommended to configure an ``upstream`` remote repository::
 
    cd cpython
-   git remote add upstream git@github.com:python/cpython.git
+   git remote add upstream https://github.com/python/cpython
 
 You can also use SSH-based or HTTPS-based URLs.
+
+Configure the Remotes
+---------------------
+
+Configure ``git`` to pull ``main`` from the ``upstream`` remote::
+
+   git config --local branch.main.remote upstream
+
+Since one should never attempt to push to ``upstream``, configure
+``git`` to push always to ``origin``::
+
+   git remote set-url --push upstream git@github.com:<username>/cpython.git
 
 Listing the Remote Repositories
 -------------------------------
@@ -70,8 +82,15 @@ and ``upstream`` pointing to the official CPython repository::
 
    origin  git@github.com:<username>/cpython.git (fetch)
    origin  git@github.com:<username>/cpython.git (push)
-   upstream        git@github.com:python/cpython.git (fetch)
-   upstream        git@github.com:python/cpython.git (push)
+   upstream        https://github.com/python/cpython (fetch)
+   upstream        git@github.com:<username>/cpython.git (push)
+
+To verify the upstream for ``main``::
+
+   git config branch.main.remote
+
+It should emit ``upstream``, indicating to track/pull changes for ``main`` from the
+``upstream`` remote.
 
 
 .. _set-up-name-email:
@@ -282,6 +301,28 @@ Creating a Pull Request
    containing your changes.
 
 6. Press the ``Create pull request`` button.
+
+You should include the issue number in the title of the PR,
+in the format ``gh-NNNNN: <PR Title>``.
+
+Linking to Issues and Pull Requests
+-----------------------------------
+
+You can link to issues and pull requests using ``gh-NNNNN`` (this form is
+preferred over ``#NNNNN``).  If the reference appears in a list, the link
+will be expanded to show the status and title of the issue/PR.
+
+When you create a PR that includes ``gh-NNNNN`` in the title, `bedevere`_
+will automatically add a link to the issue in the first message.
+
+In addition, pull requests support `special keywords`_ that can be used to
+link to an issue and automatically close it when the PR is merged.
+However, issues often require multiple PRs before they can be closed (e.g.
+backports to other branches), so this features is only useful if
+you know for sure that a single PR is enough to address and close the issue.
+
+.. _bedevere: https://github.com/python/bedevere
+.. _special keywords: https://docs.github.com/en/issues/tracking-your-work-with-issues/linking-a-pull-request-to-an-issue#linking-a-pull-request-to-an-issue-using-a-keyword
 
 Updating your CPython Fork
 --------------------------

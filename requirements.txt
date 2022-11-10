@@ -1,5 +1,5 @@
-Sphinx==5.0.2
+Sphinx==5.3.0
 furo>=2022.6.4
 sphinx_copybutton>=0.3.3
-sphinx-lint<1
+sphinx-lint==0.6.7
 sphinxext-rediraffe

@@ -20,19 +20,19 @@ If you have found that a function, method, or class is useful and you believe
 it would be useful to the general Python community, there are some steps to go
 through in order to see it added to the stdlib.
 
-First is you should gauge the usefulness of the code. Typically this is done
-by sharing the code publicly. You have a couple of options for this. One is to
-post it online at the `Python Cookbook`_. Based on feedback or reviews of the
-recipe you can see if others find the functionality as useful as you do.
-A search of the issue tracker for previous suggestions related to the proposed
-addition may turn up a rejected issue that explains why the suggestion will not
-be accepted.
-Another is to do a blog post about the code and see what kind of responses you
-receive. Posting to python-list (see :ref:`communication` for where to find the
-list and other mailing lists) to discuss your code also works. Finally, asking
-on a specific :abbr:`SIG (special interest group)` from mail.python.org or
-python-ideas is also acceptable. This is not a required step but it is
-suggested.
+First, you should gauge the usefulness of the code,
+which is typically done by sharing the code publicly.
+This is not a required step, but it is suggested.
+You have a several options for this:
+
+* Search the `issue tracker`_ for discussion related to the proposed addition.
+  This may turn up an issue that explains why the suggestion wasn't accepted.
+* Open a new thread in the `Ideas Discourse category`_
+  to gather feedback directly from the Python core developers and community.
+* Write a blog post about the code, which may also help gather useful feedback.
+* Post it to the `Python Cookbook`_.
+  Based on feedback and reviews of the recipe,
+  you can see if others find the functionality as useful as you do.
 
 If you have found general acceptance and usefulness for your code from people,
 you can open an issue on the `issue tracker`_ with the code attached as a
@@ -46,6 +46,7 @@ Through your public sharing of your code in order to gauge community support
 for it you at least can know that others will come across it who may find it
 useful.
 
+.. _Ideas Discourse category: https://discuss.python.org/c/ideas/6
 .. _Python Cookbook: https://code.activestate.com/recipes/langs/python/
 
 
@@ -121,30 +122,16 @@ uniform.
 
 Proposal Process
 ''''''''''''''''
-If the module you want to propose adding to the stdlib meets the proper
-requirements, you may propose its inclusion. To start, you should email
-python-list or python-ideas to make sure the community in general would support
-the inclusion of the module (see :ref:`communication`).
 
-If the feedback from the community is positive overall, you will need to write
-a :abbr:`PEP (Python enhancement proposal)` for the module's inclusion. It
-should outline what the module's overall goal is, why it should be included in
-the stdlib, and specify the API of the module. See the `PEP index`_ for PEPs
-that have been accepted before that proposed a module for inclusion.
+If the module you want to propose adding to the stdlib meets the requirements,
+you may propose its inclusion
+by following the :abbr:`PEP (Python Enhancement Proposal)` process.
+See :pep:`1` for details,
+and the :pep:`PEP index <0>` for previously-accepted PEPs
+that have proposed a module for inclusion.
 
-Once your PEP is written, send it to python-ideas for basic vetting. Be
-prepared for extensive feedback and lots of discussion (not all of it
-positive). This will help make the PEP be of good quality and properly
-formatted.
-
-When you have listened to, responded, and integrated as appropriate the
-feedback from python-ideas into your PEP, you may send it to python-dev. You
-will once again receive a large amount of feedback and discussion. A PEP
-dictator will be assigned who makes the final call on whether the PEP will be
-accepted or not. If the PEP dictator agrees to accept your PEP (which typically
-means that the core developers end up agreeing in general to accepting
-your PEP) then the module will be added to the stdlib once the creators of the
-module sign :ref:`contributor agreements <contributor_agreement>`.
+If the PEP is accepted, then the module will be added to the stdlib
+once the authors of the module sign
+:ref:`contributor agreements <contributor_agreement>`.
 
 .. _issue tracker: https://github.com/python/cpython/issues
-.. _PEP index: https://peps.python.org/

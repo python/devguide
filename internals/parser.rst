@@ -645,8 +645,8 @@ Hard and Soft keywords
 ----------------------
 
 .. note::
-    In the grammar files, keywords are defined using **single quotes** (e.g. `'class'`) while soft
-    keywords are defined using **double quotes** (e.g. `"match"`).
+    In the grammar files, keywords are defined using **single quotes** (e.g. ``'class'``) while soft
+    keywords are defined using **double quotes** (e.g. ``"match"``).
 
 There are two kinds of keywords allowed in pegen grammars: *hard* and *soft*
 keywords. The difference between hard and soft keywords is that hard keywords
@@ -833,9 +833,9 @@ Testing
 
 There are three files that contain tests for the grammar and the parser:
 
-* `Lib/test/test_grammar.py`.
-* `Lib/test/test_syntax.py`.
-* `Lib/test/test_exceptions.py`.
+* ``Lib/test/test_grammar.py``.
+* ``Lib/test/test_syntax.py``.
+* ``Lib/test/test_exceptions.py``.
 
 Check the contents of these files to know which is the best place to place new tests depending
 on the nature of the new feature you are adding.

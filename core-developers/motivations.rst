@@ -88,9 +88,11 @@ participating in the CPython core development process:
 
    If there's a kind of link you'd like to include in your entry that isn't
    already covered by the categories mentioned above, please start a discussion
-   about that on the python-committers mailing list.
+   about that on the Committers category on the Python Discourse
+   (discuss.python.org) or the python-committers mailing list.
 
-   python-committers is also the appropriate point of contact for any other
+   The Committers Discourse category or the python-committers mailing list
+   is also the appropriate point of contact for any other
    questions or suggestions relating to this page.
 
 .. topic:: Brett Cannon (Canada)

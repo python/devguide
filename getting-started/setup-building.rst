@@ -60,7 +60,7 @@ The CPython repo is hosted on GitHub. To get a copy of the source code you shoul
 :ref:`fork the Python repository on GitHub <fork-cpython>`, :ref:`create a local
 clone of your personal fork, and configure the remotes <clone-your-fork>`.
 
-You will only need to execute these steps once:
+You will only need to execute these steps once per machine:
 
 1. Go to https://github.com/python/cpython.
 
@@ -79,15 +79,26 @@ You will only need to execute these steps once:
 6. Configure an ``upstream`` remote::
 
       $ cd cpython
-      $ git remote add upstream git@github.com:python/cpython.git
+      $ git remote add upstream https://github.com/python/cpython
 
-7. Verify that your setup is correct::
+7. Configure ``git`` to pull ``main`` from the ``upstream`` remote::
+
+      $ git config --local branch.main.remote upstream
+
+8. Since one should never attempt to push to ``upstream``, configure
+   ``git`` to push always to ``origin``::
+
+      $ git remote set-url --push upstream git@github.com:<your-username>/cpython.git
+
+9. Verify that your setup is correct::
 
       $ git remote -v
       origin  git@github.com:<your-username>/cpython.git (fetch)
       origin  git@github.com:<your-username>/cpython.git (push)
-      upstream        git@github.com:python/cpython.git (fetch)
-      upstream        git@github.com:python/cpython.git (push)
+      upstream        https://github.com/python/cpython (fetch)
+      upstream        git@github.com:<your-username>/cpython.git (push)
+      $ git config branch.main.remote
+      upstream
 
 If you did everything correctly, you should now have a copy of the code
 in the ``cpython`` directory and two remotes that refer to your own GitHub fork
@@ -150,11 +161,9 @@ If you want to install these optional dependencies, consult the
 If you don't need to install them, the basic steps for building Python
 for development is to configure it and then compile it.
 
-Configuration is typically:
+Configuration is typically::
 
-.. code-block:: bash
-
-   ./configure --with-pydebug
+   $ ./configure --with-pydebug
 
 More flags are available to ``configure``, but this is the minimum you should
 do to get a pydebug build of CPython.
@@ -163,11 +172,9 @@ do to get a pydebug build of CPython.
    You might need to run ``make clean`` before or after re-running ``configure``
    in a particular build directory.
 
-Once ``configure`` is done, you can then compile CPython with:
+Once ``configure`` is done, you can then compile CPython with::
 
-.. code-block:: bash
-
-   make -s -j2
+   $ make -s -j2
 
 This will build CPython with only warnings and errors being printed to
 stderr and utilize up to 2 CPU cores. If you are using a multi-core machine
@@ -390,16 +397,22 @@ with **Homebrew**::
 
 For Python 3.10 and newer::
 
-    $ PKG_CONFIG_PATH="$(brew --prefix tcl-tk)/lib/pkgconfig" \
-      ./configure --with-pydebug --with-openssl=$(brew --prefix openssl)
+    $ CFLAGS="-I$(brew --prefix gdbm)/include -I$(brew --prefix xz)/include" \
+      LDFLAGS="-L$(brew --prefix gdbm)/lib -I$(brew --prefix xz)/lib" \
+      PKG_CONFIG_PATH="$(brew --prefix tcl-tk)/lib/pkgconfig" \
+      ./configure --with-pydebug \
+                  --with-openssl=$(brew --prefix openssl)
+
 
 For Python versions 3.9 through 3.7::
 
-    $ export PKG_CONFIG_PATH="$(brew --prefix tcl-tk)/lib/pkgconfig"
-    $ ./configure --with-pydebug \
-                  --with-openssl=$(brew --prefix openssl) \
-                  --with-tcltk-libs="$(pkg-config --libs tcl tk)" \
-                  --with-tcltk-includes="$(pkg-config --cflags tcl tk)"
+    $ CFLAGS="-I$(brew --prefix gdbm)/include -I$(brew --prefix xz)/include" \
+      LDFLAGS="-L$(brew --prefix gdbm)/lib -L$(brew --prefix xz)/lib" \
+      PKG_CONFIG_PATH="$(brew --prefix tcl-tk)/lib/pkgconfig" \
+      ./configure --with-pydebug \
+              --with-openssl=$(brew --prefix openssl@1.1) \
+              --with-tcltk-libs="$(pkg-config --libs tcl tk)" \
+              --with-tcltk-includes="$(pkg-config --cflags tcl tk)"
 
 and ``make``::
 
@@ -465,11 +478,9 @@ Python's ``configure.ac`` script typically requires a specific version of
 Autoconf.  At the moment, this reads: ``AC_PREREQ(2.69)``. It also requires
 to have the ``autoconf-archive`` and ``pkg-config`` utilities installed in
 the system and the ``pkg.m4`` macro file located in the appropriate ``alocal``
-location. You can easily check if this is correctly configured by running:
+location. You can easily check if this is correctly configured by running::
 
-.. code-block:: bash
-
-   ls $(aclocal --print-ac-dir) | grep pkg.m4
+   $ ls $(aclocal --print-ac-dir) | grep pkg.m4
 
 If the system copy of Autoconf does not match this version, you will need to
 install your own copy of Autoconf.
@@ -501,9 +512,7 @@ Make target. Note that for doing this you need to regenerate the ABI file in
 the same environment that the GitHub CI uses to check for it. This is because
 different platforms may include some platform-specific details that make the
 check fail even if the Python ABI is the same. The easier way to regenerate
-the ABI file using the same platform as the CI uses is by using docker:
-
-.. code-block:: bash
+the ABI file using the same platform as the CI uses is by using Docker::
 
    # In the CPython root:
    $ docker run -v$(pwd):/src:Z -w /src --rm -it ubuntu:22.04 \

@@ -9,9 +9,11 @@ Interest Areas and GitHub names for each item that indicate a maintainer or
 an expert in the field.  This list is intended to be used by issue submitters,
 issue triage people, and other issue participants to find people to @mention
 or add as reviewers to issues and pull requests.  People on this list may be
-asked to render final judgement on a feature or bug.  If no active maintainer
-is listed for a given module, then questionable changes should go to
-python-dev, while any other issues can and should be decided by any committer.
+asked to render final judgment on a feature or bug.  If no active maintainer
+is listed for a given module, then questionable changes should be discussed
+on the `Core Development Discourse category
+<https://discuss.python.org/c/core-dev/23>`__,
+while any other issues can and should be decided by any committer.
 
 Developers can choose to follow labels, so if a label that they are
 following is added to an issue or pull request, they will be notified
@@ -52,7 +54,6 @@ Module                Maintainers
 ====================  =============================================
 __future__
 __main__              gvanrossum, ncoghlan
-_dummy_thread         brettcannon
 _thread
 _testbuffer
 abc
@@ -61,7 +62,7 @@ argparse
 array
 ast                   benjaminp, pablogsal, isidentical
 asynchat              josiahcarlson, giampaolo*, stutzbach^
-asyncio               1st1, asvetlov
+asyncio               1st1, asvetlov, gvanrossum, graingert, kumaraditya303
 asyncore              josiahcarlson, giampaolo*, stutzbach^
 atexit
 audioop               serhiy-storchaka
@@ -104,7 +105,6 @@ difflib               tim-one (inactive)
 dis                   1st1
 distutils             merwok, dstufft
 doctest               tim-one (inactive)
-dummy_threading       brettcannon
 email                 warsaw, bitdancer*, maxking
 encodings             malemburg
 ensurepip             ncoghlan, dstufft, pradyunsg
@@ -211,7 +211,7 @@ sndhdr
 socket                gpshead
 socketserver
 spwd
-sqlite3               ghaering^
+sqlite3               ghaering^, erlend-aasland*
 ssl                   jackjansen, tiran, dstufft, alex
 stat                  tiran
 statistics            stevendaprano, rhettinger
@@ -223,7 +223,7 @@ sunau
 symbol
 symtable              benjaminp
 sys
-sysconfig             tarekziade
+sysconfig             FFY00
 syslog                jafo^*
 tabnanny              tim-one (inactive)
 tarfile               gustaebel
@@ -244,7 +244,7 @@ tracemalloc           vstinner
 tty                   Yhg1s*
 turtle                gregorlingl^, willingc
 types                 1st1
-typing                gvanrossum, Fidget-Spinner, JelleZijlstra*
+typing                gvanrossum, Fidget-Spinner, JelleZijlstra*, AlexWaygood*
 unicodedata           malemburg, ezio-melotti
 unittest              voidspace*, ezio-melotti, rbtcollins, gpshead
 unittest.mock         voidspace*

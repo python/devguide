@@ -258,10 +258,9 @@ times.
 
 Filing the Issue
 ================
-Once you have increased coverage, you need to create an issue on the
-`issue tracker`_ and submit a :ref:`pull request <pullrequest>`. On the
-issue set the "Components" to "Test" and "Versions" to the version of Python you
-worked on (i.e., the in-development version).
+Once you have increased coverage,
+you need to create an issue on the `issue tracker`_ and
+submit a :ref:`pull request <pullrequest>`.
 
 
 Measuring coverage of C code with gcov and lcov
