@@ -29,7 +29,8 @@ Here is a quick overview of how you can contribute to CPython:
 
 #. `Create an issue`_ that describes your change [*]_
 
-#. :ref:`Create a new branch in Git <pullrequest-steps>`
+#. :ref:`Create a new branch in Git <pullrequest-steps>` from the
+   ``main`` branch
 
 #. Work on changes (e.g. fix a bug or add a new feature)
 
@@ -79,9 +80,15 @@ You should have already :ref:`set up your system <setup>`,
 
      git fetch upstream
 
-* Create a new branch in your local clone::
+* Create a new branch in your local clone from the ``main`` branch
+  in the upstream repository::
 
      git checkout -b <branch-name> upstream/main
+
+  * NOTE: Don't work on old branches of Python. Even if you're working on
+    a fix for a bug you discovered in an older version of Python, we
+    want to fix it in ``main`` first and then
+    :ref:`port your fix back <branch-merge>` later.
 
 * Make changes to the code, and use ``git status`` and ``git diff`` to see them.
 
@@ -180,7 +187,14 @@ Making Good PRs
 When creating a pull request for submission, there are several things that you
 should do to help ensure that your pull request is accepted.
 
-First, make sure to follow Python's style guidelines. For Python code you
+First, make your change against the right version of Python. Even if you're
+fixing a bug, your fix needs to go to the ``main`` branch first. After the
+fix is merged, it will be :ref:`ported back <branch-merge>` to older
+maintenance releases as well. That way we ensure all affected versions are
+handled. Unless you're sure that your change does not apply to ``main``,
+don't base your fixes on old versions of Python.
+
+Second, make sure to follow Python's style guidelines. For Python code you
 should follow :PEP:`8`, and for C code you should follow :PEP:`7`. If you have
 one or two discrepancies those can be fixed by the core developer who merges
 your pull request. But if you have systematic deviations from the style guides
@@ -191,7 +205,7 @@ your pull request will be put on hold until you fix the formatting issues.
    hand, fixes for typos and grammar errors in documents and docstrings are
    welcome.
 
-Second, be aware of backwards-compatibility considerations. While the core
+Third, be aware of backwards-compatibility considerations. While the core
 developer who eventually handles your pull request will make the final call on
 whether something is acceptable, thinking about backwards-compatibility early
 will help prevent having your pull request rejected on these grounds. Put
@@ -204,15 +218,15 @@ default values which maintain the existing behavior.) If in doubt, have a look
 at :PEP:`387` or :ref:`discuss <communication>` the issue with experienced
 developers.
 
-Third, make sure you have proper tests to verify your pull request works as
+Fourth, make sure you have proper tests to verify your pull request works as
 expected. Pull requests will not be accepted without the proper tests!
 
-Fourth, make sure the entire test suite :ref:`runs <runtests>` **without
+Fifth, make sure the entire test suite :ref:`runs <runtests>` **without
 failure** because of your changes.  It is not sufficient to only run whichever
 test seems impacted by your changes, because there might be interferences
 unknown to you between your changes and some other part of the interpreter.
 
-Fifth, proper :ref:`documentation <documenting>`
+Sixth, proper :ref:`documentation <documenting>`
 additions/changes should be included.
 
 
