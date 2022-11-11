@@ -86,7 +86,7 @@ You should have already :ref:`set up your system <setup>`,
      git checkout -b <branch-name> upstream/main
 
   .. note::
-     Almost all changes to Python, including bug fixes, should first be 
+     Almost all changes to Python, including bug fixes, should first be
      made against the ``main`` branch. See :ref:`here <good-prs>` for
      more details.
 
