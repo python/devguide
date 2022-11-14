@@ -17,7 +17,7 @@ while any other issues can and should be decided by any committer.
 
 Developers can choose to follow labels, so if a label that they are
 following is added to an issue or pull request, they will be notified
-automatically.  The :cpy-file:`CODEOWNERS` file is also used to indicate
+automatically.  The :cpy-file:`.github/CODEOWNERS` file is also used to indicate
 maintainers that will be automatically added as reviewers to pull requests.
 
 Unless a name is followed by a '*', you should never assign an issue to
