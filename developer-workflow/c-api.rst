@@ -101,12 +101,12 @@ C API Tests
 Tests for the public C API live in the ``_testcapi`` module.
 Functions named ``test_*`` are used as tests directly.
 Tests that need Python code (or are just easier to partially write in Python)
-live in ``Lib/test``, mainly in :file:`Lib/test/test_capi.py`.
+live in ``Lib/test``, mainly in :cpy-file:`Lib/test/test_capi.py`.
 
 Due to its size, the ``_testcapi`` module is defined in several source
 files.
 To add a new set of tests (or extract a set out of the monolithic
-:file:`Modules/_testcapimodule.c`):
+:cpy-file:`Modules/_testcapimodule.c`):
 
 - Create a C file named ``Modules/_testcapi/yourfeature.c``
 

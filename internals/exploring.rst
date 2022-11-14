@@ -32,21 +32,21 @@ For builtin types, the typical layout is:
 
 * :file:`Objects/{<builtin>}object.c`
 * :file:`Lib/test/test_{<builtin>}.py`
-* :file:`Doc/library/stdtypes.rst`
+* :cpy-file:`Doc/library/stdtypes.rst`
 
 For builtin functions, the typical layout is:
 
-* :file:`Python/bltinmodule.c`
-* :file:`Lib/test/test_builtin.py`
-* :file:`Doc/library/functions.rst`
+* :cpy-file:`Python/bltinmodule.c`
+* :cpy-file:`Lib/test/test_builtin.py`
+* :cpy-file:`Doc/library/functions.rst`
 
 Some exceptions:
 
-* builtin type ``int`` is at :file:`Objects/longobject.c`
-* builtin type ``str`` is at :file:`Objects/unicodeobject.c`
-* builtin module ``sys`` is at :file:`Python/sysmodule.c`
-* builtin module ``marshal`` is at :file:`Python/marshal.c`
-* Windows-only module ``winreg`` is at :file:`PC/winreg.c`
+* builtin type ``int`` is at :cpy-file:`Objects/longobject.c`
+* builtin type ``str`` is at :cpy-file:`Objects/unicodeobject.c`
+* builtin module ``sys`` is at :cpy-file:`Python/sysmodule.c`
+* builtin module ``marshal`` is at :cpy-file:`Python/marshal.c`
+* Windows-only module ``winreg`` is at :cpy-file:`PC/winreg.c`
 
 
 Additional References
