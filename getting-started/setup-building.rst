@@ -76,21 +76,16 @@ You will only need to execute these steps once per machine:
 
    (You can use both SSH-based or HTTPS-based URLs.)
 
-6. Configure an ``upstream`` remote::
+.. Step 6 and 7 are are duplicated in bootcamp as well. Please update these steps in both places.
+
+6. Add an ``upstream`` remote, then configure ``git`` to pull ``main`` from ``upstream`` and always push to ``origin``::
 
       $ cd cpython
       $ git remote add upstream https://github.com/python/cpython
-
-7. Configure ``git`` to pull ``main`` from the ``upstream`` remote::
-
       $ git config --local branch.main.remote upstream
-
-8. Since one should never attempt to push to ``upstream``, configure
-   ``git`` to push always to ``origin``::
-
       $ git remote set-url --push upstream git@github.com:<your-username>/cpython.git
 
-9. Verify that your setup is correct::
+7. Verify that your setup is correct::
 
       $ git remote -v
       origin  git@github.com:<your-username>/cpython.git (fetch)
@@ -99,6 +94,8 @@ You will only need to execute these steps once per machine:
       upstream        git@github.com:<your-username>/cpython.git (push)
       $ git config branch.main.remote
       upstream
+
+For more information about these commands see :ref:`Git Bootcamp and Cheat Sheat <git-boot-camp>`.
 
 If you did everything correctly, you should now have a copy of the code
 in the ``cpython`` directory and two remotes that refer to your own GitHub fork
