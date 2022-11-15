@@ -61,6 +61,9 @@ You can also use SSH-based or HTTPS-based URLs.
 Configure the Remotes
 ---------------------
 
+.. These steps are duplicated in setup-building in step 6 and 7.
+   Please update these there as well.
+
 Configure ``git`` to pull ``main`` from the ``upstream`` remote::
 
    git config --local branch.main.remote upstream
