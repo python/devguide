@@ -38,6 +38,7 @@ help:
 	@echo "  linkcheck  to check all external links for integrity"
 	@echo "  doctest    to run all doctests embedded in the documentation (if enabled)"
 	@echo "  check      to run a check for frequent markup errors"
+	@echo "  versions   to update release cycle after changing release-cycle.json"
 
 .PHONY: clean
 clean: clean-venv
@@ -66,7 +67,7 @@ ensure-venv:
 	fi
 
 .PHONY: html
-html: ensure-venv
+html: ensure-venv versions
 	$(SPHINXBUILD) -b html $(ALLSPHINXOPTS) $(BUILDDIR)/html
 	@echo
 	@echo "Build finished. The HTML pages are in $(BUILDDIR)/html."
@@ -186,3 +187,17 @@ check: ensure-venv
 serve:
 	@echo "The 'serve' target was removed, use 'htmlview' instead" \
 	      "(see https://github.com/python/cpython/issues/80510)"
+
+# TODO make.bat
+include/branches.csv: include/release-cycle.json
+	$(PYTHON) generate-release-cycle.py
+
+include/end-of-life.csv: include/release-cycle.json
+	$(PYTHON) generate-release-cycle.py
+
+include/release-cycle.mmd: include/release-cycle.json
+	$(PYTHON) generate-release-cycle.py
+
+.PHONY: versions
+versions: include/branches.csv include/end-of-life.csv include/release-cycle.mmd
+	@echo Release cycle data generated.

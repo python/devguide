@@ -1,0 +1,122 @@
+[
+  {
+    "cycle": "main",
+    "pep": 693,
+    "status": "features",
+    "releaseManager": "Thomas Wouters",
+    "releaseDate": "2023-10-02",
+    "eol": "2028-10"
+  },
+  {
+    "cycle": "3.11",
+    "pep": 664,
+    "status": "bugfix",
+    "releaseManager": "Pablo Galindo Salgado",
+    "releaseDate": "2022-10-24",
+    "eol": "2027-10"
+  },
+  {
+    "cycle": "3.10",
+    "pep": 619,
+    "status": "bugfix",
+    "releaseManager": "Pablo Galindo Salgado",
+    "releaseDate": "2021-10-04",
+    "eol": "2026-10"
+  },
+  {
+    "cycle": "3.9",
+    "pep": 596,
+    "status": "security",
+    "releaseManager": "Łukasz Langa",
+    "releaseDate": "2020-10-05",
+    "eol": "2025-10"
+  },
+  {
+    "cycle": "3.8",
+    "pep": 569,
+    "status": "security",
+    "releaseManager": "Łukasz Langa",
+    "releaseDate": "2019-10-14",
+    "eol": "2024-10"
+  },
+  {
+    "cycle": "3.7",
+    "pep": 537,
+    "status": "security",
+    "releaseManager": "Ned Deily",
+    "releaseDate": "2018-06-27",
+    "eol": "2023-06-27"
+  },
+  {
+    "cycle": "3.6",
+    "pep": 494,
+    "status": "end-of-life",
+    "releaseManager": "Ned Deily",
+    "releaseDate": "2016-12-23",
+    "eol": "2021-12-23"
+  },
+  {
+    "cycle": "3.5",
+    "pep": 478,
+    "status": "end-of-life",
+    "releaseManager": "Larry Hastings",
+    "releaseDate": "2015-09-13",
+    "eol": "2020-09-30"
+  },
+  {
+    "cycle": "3.4",
+    "pep": 429,
+    "status": "end-of-life",
+    "releaseManager": "Larry Hastings",
+    "releaseDate": "2014-03-16",
+    "eol": "2019-03-18"
+  },
+  {
+    "cycle": "3.3",
+    "pep": 398,
+    "status": "end-of-life",
+    "releaseManager": "Georg Brandl, Ned Deily (3.3.7+)",
+    "releaseDate": "2012-09-29",
+    "eol": "2017-09-29"
+  },
+  {
+    "cycle": "3.2",
+    "pep": 392,
+    "status": "end-of-life",
+    "releaseManager": "Georg Brandl",
+    "releaseDate": "2011-02-20",
+    "eol": "2016-02-20"
+  },
+  {
+    "cycle": "2.7",
+    "pep": 373,
+    "status": "end-of-life",
+    "releaseManager": "Benjamin Peterson",
+    "releaseDate": "2010-07-03",
+    "eol": "2020-01-01"
+  },
+  {
+    "cycle": "3.1",
+    "pep": 375,
+    "status": "end-of-life",
+    "releaseManager": "Benjamin Peterson",
+    "releaseDate": "2009-06-27",
+    "eol": "2012-04-09"
+  },
+  {
+    "cycle": "3.0",
+    "pep": 361,
+    "status": "end-of-life",
+    "releaseManager": "Barry Warsaw",
+    "releaseDate": "2008-12-03",
+    "eol": "2009-06-27"
+  },
+  {
+    "cycle": "2.6",
+    "pep": 361,
+    "status": "end-of-life",
+    "releaseManager": "Barry Warsaw",
+    "releaseDate": "2008-10-01",
+    "eol": "2013-10-29"
+  }
+]

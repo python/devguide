@@ -10,6 +10,7 @@ extensions = [
     'sphinx.ext.intersphinx',
     'sphinx.ext.todo',
     'sphinx_copybutton',
+    'sphinxcontrib.mermaid',
     'sphinxext.rediraffe',
 ]
 

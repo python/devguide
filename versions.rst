@@ -32,6 +32,12 @@ Unsupported Versions
    :file: include/end-of-life.csv
 
 
+Python Release Cycle
+====================
+
+.. mermaid:: include/release-cycle.mmd
+
+
 Status Key
 ==========
 
