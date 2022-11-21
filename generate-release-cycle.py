@@ -81,8 +81,12 @@ class Versions:
                 "include/end-of-life.csv", "w", encoding="UTF-8", newline=""
             ) as file_eol,
         ):
-            csv_branches = csv.writer(file_branches, quoting=csv.QUOTE_MINIMAL)
-            csv_eol = csv.writer(file_eol, quoting=csv.QUOTE_MINIMAL)
+            csv_branches = csv.writer(
+                file_branches, quoting=csv.QUOTE_MINIMAL, lineterminator="\n"
+            )
+            csv_eol = csv.writer(
+                file_eol, quoting=csv.QUOTE_MINIMAL, lineterminator="\n"
+            )
 
             csv_branches.writerow(CSV_HEADER)
             csv_eol.writerow(CSV_HEADER)
