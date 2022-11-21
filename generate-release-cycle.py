@@ -74,8 +74,12 @@ class Versions:
         now_str = str(dt.datetime.utcnow())
 
         with (
-            open("include/branches.csv", "w", newline="") as file_branches,
-            open("include/end-of-life.csv", "w", newline="") as file_eol,
+            open(
+                "include/branches.csv", "w", encoding="UTF-8", newline=""
+            ) as file_branches,
+            open(
+                "include/end-of-life.csv", "w", encoding="UTF-8", newline=""
+            ) as file_eol,
         ):
             csv_branches = csv.writer(file_branches, quoting=csv.QUOTE_MINIMAL)
             csv_eol = csv.writer(file_eol, quoting=csv.QUOTE_MINIMAL)
@@ -117,7 +121,9 @@ class Versions:
             )
             out.append(v)
 
-        with open("include/release-cycle.mmd", "w") as f:
+        with open(
+            "include/release-cycle.mmd", "w", encoding="UTF-8", newline="\n"
+        ) as f:
             f.writelines(out)
 
 
