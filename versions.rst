@@ -10,6 +10,12 @@ branch that accepts new features.  The latest release for each Python
 version can be found on the `download page <https://www.python.org/downloads/>`_.
 
 
+Python Release Cycle
+====================
+
+.. mermaid:: include/release-cycle.mmd
+
+
 Supported Versions
 ==================
 
@@ -30,12 +36,6 @@ Unsupported Versions
    :header-rows: 1
    :widths: 5, 5, 15, 15, 12, 40
    :file: include/end-of-life.csv
-
-
-Python Release Cycle
-====================
-
-.. mermaid:: include/release-cycle.mmd
 
 
 Status Key
