@@ -38,6 +38,7 @@ help:
 	@echo "  linkcheck  to check all external links for integrity"
 	@echo "  doctest    to run all doctests embedded in the documentation (if enabled)"
 	@echo "  check      to run a check for frequent markup errors"
+	@echo "  lint       to lint all the files"
 	@echo "  versions   to update release cycle after changing release-cycle.json"
 
 .PHONY: clean
@@ -182,6 +183,11 @@ htmlview: html
 check: ensure-venv
 	# Ignore the tools and venv dirs and check that the default role is not used.
 	$(SPHINXLINT) -i tools -i $(VENVDIR) --enable default-role
+
+.PHONY: lint
+lint: venv
+	$(VENVDIR)/bin/python3 -m pre_commit --version > /dev/null || $(VENVDIR)/bin/python3 -m pip install pre-commit
+	$(VENVDIR)/bin/python3 -m pre_commit run --all-files
 
 .PHONY: serve
 serve:

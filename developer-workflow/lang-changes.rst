@@ -86,4 +86,3 @@ to inform others who may propose a similar language change in the future.
 .. _Ideas Discourse category: https://discuss.python.org/c/ideas/6
 .. _Status Quo Wins a Stalemate: https://www.curiousefficiency.org/posts/2011/02/status-quo-wins-stalemate.html
 .. _Justifying Python Language Changes: https://www.curiousefficiency.org/posts/2011/02/justifying-python-language-changes.html
-
