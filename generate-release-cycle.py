@@ -31,7 +31,7 @@ CSV_HEADER = (
     "Schedule",
     "Status",
     "First release",
-    "End-of-life",
+    "End of life",
     "Release manager",
 )
 
