@@ -245,6 +245,14 @@ still build properly).
 Windows
 -------
 
+.. note:: If you are using the Windows Subsystem for Linux (WSL),
+   :ref:`clone the repository <checkout>` from a native Windows shell program
+   like PowerShell or the ``cmd.exe`` command prompt,
+   and use a build of Git targeted for Windows,
+   e.g. the `Git for Windows download from the official Git website`_.
+   Otherwise, Visual Studio will not be able to find all the project's files
+   and will fail the build.
+
 For a concise step by step summary of building Python on Windows,
 you can read `Victor Stinner's guide`_.
 
@@ -299,14 +307,6 @@ from the dropdown menus in the toolbar.
 
 See the `PCBuild readme`_ for more details on what other software is necessary
 and how to build.
-
-.. note:: If you are using the Windows Subsystem for Linux (WSL),
-   :ref:`clone the repository <checkout>` from a native Windows shell program
-   like PowerShell or the ``cmd.exe`` command prompt,
-   and use a build of Git targeted for Windows,
-   e.g. the `Git for Windows download from the official Git website`_.
-   Otherwise, Visual Studio will not be able to find all the project's files
-   and will fail the build.
 
 .. _Victor Stinner's guide: https://cpython-core-tutorial.readthedocs.io/en/latest/build_cpython_windows.html
 .. _Visual Studio: https://visualstudio.microsoft.com/
