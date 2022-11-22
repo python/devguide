@@ -20,7 +20,7 @@ MERMAID_SECTION = """
 """  # noqa: E501
 
 MERMAID_STATUS_MAPPING = {
-    "features": "",
+    "feature": "",
     "bugfix": "active,",
     "security": "done,",
     "end-of-life": "crit,",

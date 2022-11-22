@@ -1,5 +1,5 @@
 Branch,Schedule,Status,First release,End-of-life,Release manager
-main,:pep:`693`,features,*2023-10-02*,*2028-10*,Thomas Wouters
+main,:pep:`693`,feature,*2023-10-02*,*2028-10*,Thomas Wouters
 3.11,:pep:`664`,bugfix,2022-10-24,*2027-10*,Pablo Galindo Salgado
 3.10,:pep:`619`,bugfix,2021-10-04,*2026-10*,Pablo Galindo Salgado
 3.9,:pep:`596`,security,2020-10-05,*2025-10*,Łukasz Langa

@@ -41,7 +41,7 @@ Unsupported Versions
 Status Key
 ==========
 
-:features: new features, bugfixes, and security fixes are accepted.
+:feature: new features, bugfixes, and security fixes are accepted.
 :prerelease: feature fixes, bugfixes, and security fixes are accepted for the
     upcoming feature release.
 :bugfix: bugfixes and security fixes are accepted, new binaries are still
