@@ -269,10 +269,31 @@ are downloaded:
 
 .. code-block:: dosbatch
 
-   PCbuild\build.bat
+   PCbuild\build.bat -c Debug
 
-After this build succeeds, you can open the ``PCbuild\pcbuild.sln`` solution in
-Visual Studio to continue development.
+The above command line build uses the ``-c Debug`` argument
+to build in the ``Debug`` configuration,
+which enables checks and assertions helpful for developing Python.
+By default, it builds in the ``Release`` configuration
+and for the 64-bit ``x64`` platform rather than 32-bit ``Win32``;
+use ``-c`` and ``-p`` to control build config and platform, respectively.
+
+After this build succeeds, you can open the ``PCbuild\pcbuild.sln`` solution
+in the Visual Studio IDE to continue development, if you prefer.
+When building in Visual Studio,
+make sure to select build settings that match what you used with the script
+(the :guilabel:`Debug` configuration and the :guilabel:`x64` platform)
+from the dropdown menus in the toolbar.
+
+.. note::
+
+   If you need to change the build configuration or platform,
+   build once with the ``build.bat`` script set to those options first
+   before building with them in VS to ensure all files are rebuilt properly,
+   or you may encouter errors when loading modules that were not rebuilt.
+
+   Avoid selecting the ``PGInstrument`` and ``PGUpdate`` configurations,
+   as these are intended for PGO builds and not for normal development.
 
 See the `readme`_ for more details on what other software is necessary and how
 to build.
