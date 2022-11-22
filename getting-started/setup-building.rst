@@ -305,6 +305,12 @@ from the dropdown menus in the toolbar.
    Avoid selecting the ``PGInstrument`` and ``PGUpdate`` configurations,
    as these are intended for PGO builds and not for normal development.
 
+You can run the build of Python you've compiled with:
+
+.. code-block:: batch
+
+   PCbuild\amd64\python_d.exe
+
 See the `PCBuild readme`_ for more details on what other software is necessary
 and how to build.
 
