@@ -245,29 +245,31 @@ still build properly).
 Windows
 -------
 
-For a quick guide to building you can read `this documentation`_ from Victor
-Stinner.
+For a concise step by step summary of building Python on Windows,
+you can read `Victor Stinner's guide`_.
 
-All current versions of Python can be built using Microsoft Visual Studio 2017
-or later.  You can download
-and use any of the free or paid versions of `Visual Studio 2017`_.
+All supported versions of Python can be built
+using Microsoft Visual Studio 2017 or later.
+You can download and use any of the free or paid versions of `Visual Studio`_.
 
-When installing Visual Studio 2017, select the **Python development** workload
-and the optional **Python native development tools** component to obtain all of
-the necessary build tools. If you do not already have git installed, you can
-find git for Windows on the **Individual components** tab of the installer.
+When installing it, select the :guilabel:`Python development` workload
+and the optional :guilabel:`Python native development tools` component
+to obtain all of the necessary build tools.
+You can find Git for Windows on the :guilabel:`Individual components` tab
+if you don't already have it installed.
 
 .. note:: If you want to build MSI installers, be aware that the build toolchain
-  for them has a dependency on the Microsoft .NET Framework Version 3.5 (which
-  may not be configured on recent versions of Windows, such as Windows 10). If
-  you are building on a recent Windows version, use the Control Panel (Programs
-  | Programs and Features | Turn Windows Features on or off) and ensure that the
-  entry ".NET Framework 3.5 (includes .NET 2.0 and 3.0)" is enabled.
+   for them has a dependency on the Microsoft .NET Framework Version 3.5
+   (which may not be included on recent versions of Windows, such as Windows 10).
+   If you are building on a recent Windows version, use the Control Panel
+   (:menuselection:`Programs --> Programs and Features --> Turn Windows Features on or off`)
+   and ensure that the entry
+   :guilabel:`.NET Framework 3.5 (includes .NET 2.0 and 3.0)` is enabled.
 
 Your first build should use the command line to ensure any external dependencies
 are downloaded:
 
-.. code-block:: dosbatch
+.. code-block:: batch
 
    PCbuild\build.bat -c Debug
 
@@ -295,18 +297,22 @@ from the dropdown menus in the toolbar.
    Avoid selecting the ``PGInstrument`` and ``PGUpdate`` configurations,
    as these are intended for PGO builds and not for normal development.
 
-See the `readme`_ for more details on what other software is necessary and how
-to build.
+See the `PCBuild readme`_ for more details on what other software is necessary
+and how to build.
 
-.. note:: If you are using the Windows Subsystem for Linux (WSL), clone the
-   repository from a native Windows terminal program like cmd.exe command prompt
-   or PowerShell as well as use a build of git targeted for Windows, e.g., the
-   official one from `<https://git-scm.com>`_. Otherwise, Visual Studio will
-   not be able to find all the project's files and will fail the build.
+.. note:: If you are using the Windows Subsystem for Linux (WSL),
+   :ref:`clone the repository <checkout>` from a native Windows shell program
+   like PowerShell or the ``cmd.exe`` command prompt,
+   and use a build of Git targeted for Windows,
+   e.g. the `Git for Windows download from the official Git website`_.
+   Otherwise, Visual Studio will not be able to find all the project's files
+   and will fail the build.
 
-.. _this documentation: https://cpython-core-tutorial.readthedocs.io/en/latest/build_cpython_windows.html
-.. _Visual Studio 2017: https://visualstudio.microsoft.com/
-.. _readme: https://github.com/python/cpython/blob/main/PCbuild/readme.txt
+.. _Victor Stinner's guide: https://cpython-core-tutorial.readthedocs.io/en/latest/build_cpython_windows.html
+.. _Visual Studio: https://visualstudio.microsoft.com/
+.. _PCBuild readme: https://github.com/python/cpython/blob/main/PCbuild/readme.txt
+.. _Git for Windows download from the official Git website: https://git-scm.com/download/win
+
 
 .. _build-dependencies:
 
