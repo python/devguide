@@ -15,8 +15,8 @@ gantt
 """.lstrip()
 
 MERMAID_SECTION = """
-    section Python {cycle}
-    {release_status}               :{mermaid_status}   python{cycle}, {release_date},{eol}
+    section Python {version}
+    {release_status}               :{mermaid_status}   python{version}, {release_date},{eol}
 """  # noqa: E501
 
 MERMAID_STATUS_MAPPING = {
@@ -34,11 +34,6 @@ CSV_HEADER = (
     "End of life",
     "Release manager",
 )
-
-
-def cycle(branch: str) -> str:
-    """Convert branch name to version number"""
-    return "3.12" if branch == "main" else branch
 
 
 def pep(number: int) -> str:
@@ -92,21 +87,21 @@ class Versions:
             csv_eol.writerow(CSV_HEADER)
 
             sorted_versions = sorted(
-                self.versions,
-                key=lambda d: int(cycle(d["cycle"]).replace(".", "")),
+                self.versions.items(),
+                key=lambda k: int(k[0].replace(".", "")),
                 reverse=True,
             )
-            for version in sorted_versions:
+            for version, details in sorted_versions:
                 row = (
-                    version["cycle"],
-                    pep(version["pep"]),
-                    version["status"],
-                    csv_date(version["releaseDate"], now_str),
-                    csv_date(version["eol"], now_str),
-                    version["releaseManager"],
+                    details["branch"],
+                    pep(details["pep"]),
+                    details["status"],
+                    csv_date(details["releaseDate"], now_str),
+                    csv_date(details["eol"], now_str),
+                    details["releaseManager"],
                 )
 
-                if version["status"] == "end-of-life":
+                if details["status"] == "end-of-life":
                     csv_eol.writerow(row)
                 else:
                     csv_branches.writerow(row)
@@ -115,13 +110,13 @@ class Versions:
         """Output Mermaid file"""
         out = [MERMAID_HEADER]
 
-        for version in reversed(self.versions):
+        for version, details in reversed(self.versions.items()):
             v = MERMAID_SECTION.format(
-                cycle=cycle(version["cycle"]),
-                release_date=version["releaseDate"],
-                eol=mermaid_date(version["eol"]),
-                release_status=version["status"],
-                mermaid_status=MERMAID_STATUS_MAPPING[version["status"]],
+                version=version,
+                release_date=details["releaseDate"],
+                eol=mermaid_date(details["eol"]),
+                release_status=details["status"],
+                mermaid_status=MERMAID_STATUS_MAPPING[details["status"]],
             )
             out.append(v)
 
