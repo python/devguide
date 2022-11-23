@@ -96,9 +96,9 @@ class Versions:
                     details["branch"],
                     pep(details["pep"]),
                     details["status"],
-                    csv_date(details["releaseDate"], now_str),
+                    csv_date(details["release_date"], now_str),
                     csv_date(details["eol"], now_str),
-                    details["releaseManager"],
+                    details["release_manager"],
                 )
 
                 if details["status"] == "end-of-life":
@@ -113,7 +113,7 @@ class Versions:
         for version, details in reversed(self.versions.items()):
             v = MERMAID_SECTION.format(
                 version=version,
-                release_date=details["releaseDate"],
+                release_date=details["release_date"],
                 eol=mermaid_date(details["eol"]),
                 release_status=details["status"],
                 mermaid_status=MERMAID_STATUS_MAPPING[details["status"]],
