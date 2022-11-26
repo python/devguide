@@ -26,20 +26,6 @@ MERMAID_STATUS_MAPPING = {
     "end-of-life": "crit,",
 }
 
-CSV_HEADER = (
-    "Branch",
-    "Schedule",
-    "Status",
-    "First release",
-    "End of life",
-    "Release manager",
-)
-
-
-def pep(number: int) -> str:
-    """Format PEP number with Sphinx role"""
-    return f":pep:`{number}`"
-
 
 def csv_date(date_str: str, now_str: str) -> str:
     """Format a date for CSV"""
@@ -63,48 +49,36 @@ class Versions:
     def __init__(self) -> None:
         with open("include/release-cycle.json", encoding="UTF-8") as in_file:
             self.versions = json.load(in_file)
+        self.sorted_versions = sorted(
+            self.versions.items(),
+            key=lambda k: [int(i) for i in k.split(".")],
+            reverse=True,
+        )
 
     def save_csv(self) -> None:
         """Output CSV files"""
         now_str = str(dt.datetime.utcnow())
 
-        with (
-            open(
-                "include/branches.csv", "w", encoding="UTF-8", newline=""
-            ) as file_branches,
-            open(
-                "include/end-of-life.csv", "w", encoding="UTF-8", newline=""
-            ) as file_eol,
-        ):
-            csv_branches = csv.writer(
-                file_branches, quoting=csv.QUOTE_MINIMAL, lineterminator="\n"
-            )
-            csv_eol = csv.writer(
-                file_eol, quoting=csv.QUOTE_MINIMAL, lineterminator="\n"
-            )
+        versions_bycategory = {"branches": {}, "end-of-life": {}}
+        for version, details in self.sorted_versions.items():
+            row = {
+                "Branch": details["branch"],
+                "Schedule": f":pep:`{details['pep']}`",
+                "Status": details["status"],
+                "First release": csv_date(details["release_date"], now_str),
+                "End of life": csv_date(details["eol"], now_str),
+                "Release manager": details["release_manager"],
+            }
+            cat = "end-of-life" if details["status"] == "end-of-life" else "branches"
+            versions_bycategory[cat][version] = row
 
-            csv_branches.writerow(CSV_HEADER)
-            csv_eol.writerow(CSV_HEADER)
-
-            sorted_versions = sorted(
-                self.versions.items(),
-                key=lambda k: int(k[0].replace(".", "")),
-                reverse=True,
-            )
-            for version, details in sorted_versions:
-                row = (
-                    details["branch"],
-                    pep(details["pep"]),
-                    details["status"],
-                    csv_date(details["release_date"], now_str),
-                    csv_date(details["eol"], now_str),
-                    details["release_manager"],
+        for cat, versions in versions_bycategory.items():
+            with open(f"include/{cat}.csv", "w", encoding="UTF-8", newline="") as file:
+                csv_file = csv.DictWriter(
+                    file, fieldnames=versions.keys(), lineterminator="\n"
                 )
-
-                if details["status"] == "end-of-life":
-                    csv_eol.writerow(row)
-                else:
-                    csv_branches.writerow(row)
+                csv_file.writeheader()
+                row = csv_file.writerows(versions.values())
 
     def save_mermaid(self) -> None:
         """Output Mermaid file"""
