@@ -37,6 +37,7 @@ html_css_files = [
     'devguide_overrides.css',
 ]
 html_logo = "_static/python-logo.svg"
+html_favicon = "favicon.ico"
 
 # Set to '' to prevent appending "documentation" to the site title
 html_title = ""
