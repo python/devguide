@@ -51,7 +51,7 @@ class Versions:
             self.versions = json.load(in_file)
         self.sorted_versions = sorted(
             self.versions.items(),
-            key=lambda k: [int(i) for i in k.split(".")],
+            key=lambda k: [int(i) for i in k[0].split(".")],
             reverse=True,
         )
 
@@ -59,8 +59,9 @@ class Versions:
         """Output CSV files"""
         now_str = str(dt.datetime.utcnow())
 
-        versions_bycategory = {"branches": {}, "end-of-life": {}}
-        for version, details in self.sorted_versions.items():
+        versions_by_category = {"branches": {}, "end-of-life": {}}
+        headers = None
+        for version, details in self.sorted_versions:
             row = {
                 "Branch": details["branch"],
                 "Schedule": f":pep:`{details['pep']}`",
@@ -69,16 +70,15 @@ class Versions:
                 "End of life": csv_date(details["eol"], now_str),
                 "Release manager": details["release_manager"],
             }
+            headers = row.keys()
             cat = "end-of-life" if details["status"] == "end-of-life" else "branches"
-            versions_bycategory[cat][version] = row
+            versions_by_category[cat][version] = row
 
-        for cat, versions in versions_bycategory.items():
+        for cat, versions in versions_by_category.items():
             with open(f"include/{cat}.csv", "w", encoding="UTF-8", newline="") as file:
-                csv_file = csv.DictWriter(
-                    file, fieldnames=versions.keys(), lineterminator="\n"
-                )
+                csv_file = csv.DictWriter(file, fieldnames=headers, lineterminator="\n")
                 csv_file.writeheader()
-                row = csv_file.writerows(versions.values())
+                csv_file.writerows(versions.values())
 
     def save_mermaid(self) -> None:
         """Output Mermaid file"""
