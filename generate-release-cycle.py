@@ -61,8 +61,8 @@ class Versions:
     """For converting JSON to CSV and Mermaid"""
 
     def __init__(self) -> None:
-        with open("include/release-cycle.json") as f:
-            self.versions = json.load(f)
+        with open("include/release-cycle.json", encoding="UTF-8") as in_file:
+            self.versions = json.load(in_file)
 
     def save_csv(self) -> None:
         """Output CSV files"""
