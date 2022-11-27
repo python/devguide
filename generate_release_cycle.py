@@ -55,7 +55,7 @@ class Versions:
             reverse=True,
         )
 
-    def save_csv(self) -> None:
+    def write_csv(self) -> None:
         """Output CSV files"""
         now_str = str(dt.datetime.utcnow())
 
@@ -80,7 +80,7 @@ class Versions:
                 csv_file.writeheader()
                 csv_file.writerows(versions.values())
 
-    def save_mermaid(self) -> None:
+    def write_mermaid(self) -> None:
         """Output Mermaid file"""
         out = [MERMAID_HEADER]
 
@@ -102,8 +102,8 @@ class Versions:
 
 def main() -> None:
     versions = Versions()
-    versions.save_csv()
-    versions.save_mermaid()
+    versions.write_csv()
+    versions.write_mermaid()
 
 
 if __name__ == "__main__":
