@@ -190,13 +190,13 @@ serve:
 
 # TODO make.bat
 include/branches.csv: include/release-cycle.json
-	$(PYTHON) generate-release-cycle.py
+	$(PYTHON) generate_release_cycle.py
 
 include/end-of-life.csv: include/release-cycle.json
-	$(PYTHON) generate-release-cycle.py
+	$(PYTHON) generate_release_cycle.py
 
 include/release-cycle.mmd: include/release-cycle.json
-	$(PYTHON) generate-release-cycle.py
+	$(PYTHON) generate_release_cycle.py
 
 .PHONY: versions
 versions: include/branches.csv include/end-of-life.csv include/release-cycle.mmd
