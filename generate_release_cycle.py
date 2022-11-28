@@ -16,7 +16,7 @@ gantt
 
 MERMAID_SECTION = """
     section Python {version}
-    {release_status}               :{mermaid_status}   python{version}, {release_date},{eol}
+    {release_status}               :{mermaid_status}   python{version}, {first_release},{eol}
 """  # noqa: E501
 
 MERMAID_STATUS_MAPPING = {
@@ -66,8 +66,8 @@ class Versions:
                 "Branch": details["branch"],
                 "Schedule": f":pep:`{details['pep']}`",
                 "Status": details["status"],
-                "First release": csv_date(details["release_date"], now_str),
-                "End of life": csv_date(details["eol"], now_str),
+                "First release": csv_date(details["first_release"], now_str),
+                "End of life": csv_date(details["end_of_life"], now_str),
                 "Release manager": details["release_manager"],
             }
             headers = row.keys()
@@ -87,8 +87,8 @@ class Versions:
         for version, details in reversed(self.versions.items()):
             v = MERMAID_SECTION.format(
                 version=version,
-                release_date=details["release_date"],
-                eol=mermaid_date(details["eol"]),
+                first_release=details["first_release"],
+                eol=mermaid_date(details["end_of_life"]),
                 release_status=details["status"],
                 mermaid_status=MERMAID_STATUS_MAPPING[details["status"]],
             )
