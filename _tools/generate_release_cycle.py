@@ -1,6 +1,4 @@
-"""
-Read in a JSON and generate two CSVs and a Mermaid file
-"""
+"""Read in a JSON and generate two CSVs and a Mermaid file."""
 from __future__ import annotations
 
 import csv
@@ -28,7 +26,7 @@ MERMAID_STATUS_MAPPING = {
 
 
 def csv_date(date_str: str, now_str: str) -> str:
-    """Format a date for CSV"""
+    """Format a date for CSV."""
     if date_str > now_str:
         # Future, add italics
         return f"*{date_str}*"
@@ -36,7 +34,7 @@ def csv_date(date_str: str, now_str: str) -> str:
 
 
 def mermaid_date(date_str: str) -> str:
-    """Format a date for Mermaid"""
+    """Format a date for Mermaid."""
     if len(date_str) == len("yyyy-mm"):
         # Mermaid needs a full yyyy-mm-dd, so let's approximate
         date_str = f"{date_str}-01"
@@ -44,7 +42,7 @@ def mermaid_date(date_str: str) -> str:
 
 
 class Versions:
-    """For converting JSON to CSV and Mermaid"""
+    """For converting JSON to CSV and Mermaid."""
 
     def __init__(self) -> None:
         with open("include/release-cycle.json", encoding="UTF-8") as in_file:
@@ -56,7 +54,7 @@ class Versions:
         )
 
     def write_csv(self) -> None:
-        """Output CSV files"""
+        """Output CSV files."""
         now_str = str(dt.datetime.utcnow())
 
         versions_by_category = {"branches": {}, "end-of-life": {}}
@@ -81,7 +79,7 @@ class Versions:
                 csv_file.writerows(versions.values())
 
     def write_mermaid(self) -> None:
-        """Output Mermaid file"""
+        """Output Mermaid file."""
         out = [MERMAID_HEADER]
 
         for version, details in reversed(self.versions.items()):
