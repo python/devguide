@@ -188,15 +188,14 @@ serve:
 	@echo "The 'serve' target was removed, use 'htmlview' instead" \
 	      "(see https://github.com/python/cpython/issues/80510)"
 
-# TODO make.bat
 include/branches.csv: include/release-cycle.json
-	$(PYTHON) generate_release_cycle.py
+	$(PYTHON) _tools/generate_release_cycle.py
 
 include/end-of-life.csv: include/release-cycle.json
-	$(PYTHON) generate_release_cycle.py
+	$(PYTHON) _tools/generate_release_cycle.py
 
 include/release-cycle.mmd: include/release-cycle.json
-	$(PYTHON) generate_release_cycle.py
+	$(PYTHON) _tools/generate_release_cycle.py
 
 .PHONY: versions
 versions: include/branches.csv include/end-of-life.csv include/release-cycle.mmd
