@@ -1,0 +1,34 @@
+name: Test release cycle
+
+on: [pull_request, push, workflow_dispatch]
+
+env:
+  FORCE_COLOR: 1
+
+jobs:
+  test:
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [windows-latest, ubuntu-latest]
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Silence Windows warnings
+        run: |
+          git config core.eol lf
+          git config core.autocrlf true
+
+      - uses: actions/setup-python@v4
+        with:
+          python-version: "3"
+
+      - name: Generate release cycle output
+        run: python _tools/generate_release_cycle.py
+
+      - name: Check for differences
+        run: |
+          git status --porcelain
+          test $(git status --porcelain | wc -l) = 0
