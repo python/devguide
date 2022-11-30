@@ -19,16 +19,17 @@ jobs:
       - name: Silence Windows warnings
         run: |
           git config core.eol lf
-          git config core.autocrlf true
+          git config core.autocrlf input
 
       - uses: actions/setup-python@v4
         with:
           python-version: "3"
 
       - name: Generate release cycle output
-        run: python _tools/generate_release_cycle.py
+        run: python -I -bb -X dev -X warn_default_encoding -W error _tools/generate_release_cycle.py
 
       - name: Check for differences
         run: |
-          git status --porcelain
+          git status
+          git diff
           test $(git status --porcelain | wc -l) = 0
