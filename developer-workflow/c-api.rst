@@ -122,6 +122,11 @@ To add a new set of tests (or extract a set out of the monolithic
 - Call the ``_PyTestCapi_Init_*`` from ``PyInit__testcapi`` in
   ``Modules/_testcapimodule.c``.
 
+- Add the new C file to :cpy-file:`Modules/Setup.stdlib.in`,
+  :cpy-file:`PCbuild/_testcapi.vcxproj` and
+  :cpy-file:`PCbuild/_testcapi.vcxproj.filters`,
+  alongside the other ``_testcapi/*.c`` entries.
+
 Note that all ``Modules/_testcapi/*.c`` sources initialize the same module,
 so be careful about name collisions.
 

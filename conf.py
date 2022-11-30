@@ -11,6 +11,7 @@ extensions = [
     'sphinx.ext.todo',
     'sphinx_copybutton',
     'sphinxcontrib.mermaid',
+    'sphinxext.opengraph',
     'sphinxext.rediraffe',
 ]
 
@@ -38,6 +39,7 @@ html_css_files = [
     'devguide_overrides.css',
 ]
 html_logo = "_static/python-logo.svg"
+html_favicon = "_static/favicon.png"
 
 # Set to '' to prevent appending "documentation" to the site title
 html_title = ""
@@ -104,6 +106,16 @@ intersphinx_mapping = {
 }
 
 todo_include_todos = True
+
+# sphinxext-opengraph config
+ogp_site_url = "https://devguide.python.org/"
+ogp_site_name = "Python Developer's Guide"
+ogp_image = "_static/og-image.png"
+ogp_custom_meta_tags = [
+    '<meta property="og:image:width" content="1200">',
+    '<meta property="og:image:height" content="630">',
+    '<meta name="theme-color" content="#3776ab" />',
+]
 
 # Strip the dollar prompt when copying code
 # https://sphinx-copybutton.readthedocs.io/en/latest/use.html#strip-and-configure-input-prompts-for-code-cells

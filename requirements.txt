@@ -3,4 +3,5 @@ furo>=2022.6.4
 sphinx-lint==0.6.7
 sphinx_copybutton>=0.3.3
 sphinxcontrib-mermaid
+sphinxext-opengraph>=0.7.1
 sphinxext-rediraffe
