@@ -373,8 +373,8 @@ you run ``git merge upstream/main``.
 
 When it happens, you need to resolve conflict.  See these articles about resolving conflicts:
 
-- `About merge conflicts <https://help.github.com/en/articles/about-merge-conflicts>`_
-- `Resolving a merge conflict using the command line <https://help.github.com/en/articles/resolving-a-merge-conflict-using-the-command-line>`_
+- `About merge conflicts <https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/addressing-merge-conflicts/about-merge-conflicts>`_
+- `Resolving a merge conflict using the command line <https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/addressing-merge-conflicts/resolving-a-merge-conflict-using-the-command-line>`_
 
 .. _git_from_patch:
 
@@ -552,7 +552,7 @@ prior to merging themselves, rather than asking the submitter to do them. This
 can be particularly appropriate when the remaining changes are bookkeeping
 items like updating ``Misc/ACKS``.
 
-.. _Allow edits from maintainers: https://help.github.com/articles/allowing-changes-to-a-pull-request-branch-created-from-a-fork/
+.. _Allow edits from maintainers: https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/working-with-forks/allowing-changes-to-a-pull-request-branch-created-from-a-fork
 
 To edit an open pull request that targets ``main``:
 

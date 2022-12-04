@@ -103,7 +103,7 @@ in production; others are works in progress.
 .. _github_ar: https://github.com/Abdur-rahmaanJ/python-docs-ar
 .. _github_bn_in: https://github.com/python/python-docs-bn-in
 .. _github_es: https://github.com/python/python-docs-es
-.. _github_fa: https://github.com/mmdbalkhi/python-docs-fa
+.. _github_fa: https://github.com/ftg-iran/python-docs-fa
 .. _github_fr: https://github.com/python/python-docs-fr
 .. _github_hi_in: https://github.com/CuriousLearner/python-docs-hi-in
 .. _github_hu: https://github.com/python/python-docs-hu
@@ -122,9 +122,9 @@ in production; others are works in progress.
 .. _mail_lt: https://mail.python.org/pipermail/doc-sig/2019-July/004138.html
 .. _mail_pl: https://mail.python.org/pipermail/doc-sig/2019-April/004106.html
 .. _mail_ru: https://mail.python.org/pipermail/doc-sig/2019-May/004131.html
-.. _tx_pl: https://www.transifex.com/python-doc/python-newest/
-.. _tx_uk: https://www.transifex.com/python-doc/python-newest/
-.. _tx_zh_cn: https://www.transifex.com/python-doc/python-newest/
+.. _tx_pl: https://explore.transifex.com/python-doc/python-newest/
+.. _tx_uk: https://explore.transifex.com/python-doc/python-newest/
+.. _tx_zh_cn: https://explore.transifex.com/python-doc/python-newest/
 .. _wiki_pt_br: https://python.org.br/traducao/
 
 Starting a new translation

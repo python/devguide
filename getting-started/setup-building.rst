@@ -44,7 +44,7 @@ itself. git is easily available for all common operating systems.
 - **Configure**
 
   Configure :ref:`your name and email <set-up-name-email>` and create
-  `an SSH key <https://help.github.com/articles/adding-a-new-ssh-key-to-your-github-account/>`_
+  `an SSH key <https://docs.github.com/en/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account>`_
   as this will allow you to interact with GitHub without typing a username
   and password each time you execute a command, such as ``git pull``,
   ``git push``, or ``git fetch``.  On Windows, you should also
