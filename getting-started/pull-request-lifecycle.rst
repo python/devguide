@@ -241,7 +241,7 @@ should do to help ensure that your pull request is accepted.
 ``patchcheck`` is a simple automated patch checklist that guides a developer
 through the common patch generation checks. To run ``patchcheck``:
 
-   On *UNIX* (including Mac OS X)::
+   On *UNIX* (including macOS)::
 
       make patchcheck
 

@@ -299,7 +299,7 @@ Cygwin                jlt63^, stutzbach^
 FreeBSD
 HP-UX
 Linux
-Mac OS X              ronaldoussoren, ned-deily
+macOS                 ronaldoussoren, ned-deily
 NetBSD1
 OS2/EMX               aimacintyre^
 Solaris/OpenIndiana   jcea
