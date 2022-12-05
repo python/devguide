@@ -1,4 +1,4 @@
-Branch,Schedule,Status,First release,End-of-life,Release manager
+Branch,Schedule,Status,First release,End of life,Release manager
 3.6,:pep:`494`,end-of-life,2016-12-23,2021-12-23,Ned Deily
 3.5,:pep:`478`,end-of-life,2015-09-13,2020-09-30,Larry Hastings
 3.4,:pep:`429`,end-of-life,2014-03-16,2019-03-18,Larry Hastings
