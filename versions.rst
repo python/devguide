@@ -55,3 +55,16 @@ See also the :ref:`devcycle` page for more information about branches.
 By default, the end-of-life is scheduled 5 years after the first release,
 but can be adjusted by the release manager of each branch.  All Python 2
 versions have reached end-of-life.
+
+.. raw:: html
+
+    <noscript>
+        <style>
+            #python-release-cycle:after {
+                content: "Enable JavaScript to see the release cycle chart.";
+            }
+            .mermaid {
+                display: none;
+            }
+        </style>
+    </noscript>
