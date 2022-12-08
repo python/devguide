@@ -190,7 +190,6 @@ Key Resources
 * Source code
     * `Browse online <https://github.com/python/cpython/>`_
     * `Snapshot of the *main* branch <https://github.com/python/cpython/archive/main.zip>`_
-    * `Daily macOS installer <https://buildbot.python.org/daily-dmg/>`_
 * PEPs_ (Python Enhancement Proposals)
 * :ref:`help`
 * :ref:`developers`
