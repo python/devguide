@@ -80,7 +80,7 @@ Add a checkbox list like this in the issue description::
 then those will become sub-tasks on the given issue. Moreover, GitHub will
 automatically mark a task as complete if the other referenced issue is
 closed. More details in the `official GitHub documentation
-<https://docs.github.com/en/issues/tracking-your-work-with-issues/about-task-lists>`_.
+<https://docs.github.com/en/get-started/writing-on-github/working-with-advanced-formatting/about-task-lists>`_.
 
 What on Earth is a "mannequin"?
 ===============================
