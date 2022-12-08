@@ -110,7 +110,7 @@ After ``make install`` executes, the compilers will be installed in
     libclang_rt.lsan-x86_64.a   libclang_rt.ubsan_cxx-x86_64.a
     libclang_rt.msan-x86_64.a   libclang_rt.ubsan-x86_64.a
 
-On Mac OS X, the libraries are installed in
+On macOS, the libraries are installed in
 ``/usr/local/lib/clang/3.3/lib/darwin/``:
 
 .. code-block:: console

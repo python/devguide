@@ -209,7 +209,7 @@ If you decide to :ref:`build-dependencies`, you will need to re-run both
 Once CPython is done building you will then have a working build
 that can be run in-place; ``./python`` on most machines (and what is used in
 all examples), ``./python.exe`` wherever a case-insensitive filesystem is used
-(e.g. on OS X by default), in order to avoid conflicts with the ``Python``
+(e.g. on macOS by default), in order to avoid conflicts with the ``Python``
 directory. There is normally no need to install your built copy
 of Python! The interpreter will realize where it is being run from
 and thus use the files found in the working copy.  If you are worried
@@ -326,7 +326,7 @@ Install dependencies
 ====================
 
 This section explains how to install additional extensions (e.g. ``zlib``)
-on :ref:`Linux <deps-on-linux>` and :ref:`macOs/OS X <macOS>`.  On Windows,
+on :ref:`Linux <deps-on-linux>` and :ref:`macOS`.  On Windows,
 extensions are already included and built automatically.
 
 .. _deps-on-linux:
@@ -385,7 +385,7 @@ their dependencies::
          lzma lzma-dev tk-dev uuid-dev zlib1g-dev
 
 
-.. _MacOS:
+.. _macOS:
 
 macOS and OS X
 --------------
@@ -610,7 +610,7 @@ every rule.
      The part of the standard library implemented in pure Python.
 
 ``Mac``
-     Mac-specific code (e.g., using IDLE as an OS X application).
+     Mac-specific code (e.g., using IDLE as a macOS application).
 
 ``Misc``
      Things that do not belong elsewhere. Typically this is varying kinds of
