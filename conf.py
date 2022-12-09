@@ -51,6 +51,18 @@ linkcheck_anchors_ignore = [
     # match any anchor that starts with a '/' since this is an invalid HTML anchor
     r'\/.*',
 ]
+
+linkcheck_ignore = [
+    # The voters repo is private and appears as a 404
+    'https://github.com/python/voters/',
+    # The python-core team link is private, redirects to login
+    'https://github.com/orgs/python/teams/python-core',
+    # The Discourse groups are private unless you are logged in
+    'https://discuss.python.org/groups/staff',
+    'https://discuss.python.org/groups/moderators',
+    'https://discuss.python.org/groups/admins',
+]
+
 rediraffe_redirects = {
     "clang.rst": "advanced-tools/clang.rst",
     "coverity.rst": "advanced-tools/coverity.rst",
@@ -89,17 +101,6 @@ rediraffe_redirects = {
     "gh-labels.rst": "triage/labels.rst",
     "triaging.rst": "triage/triaging.rst",
 }
-
-linkcheck_ignore = [
-    # The voters repo is private and appears as a 404
-    'https://github.com/python/voters/',
-    # The python-core team link is private, redirects to login
-    'https://github.com/orgs/python/teams/python-core',
-    # The Discourse groups are private unless you are logged in
-    'https://discuss.python.org/groups/staff',
-    'https://discuss.python.org/groups/moderators',
-    'https://discuss.python.org/groups/admins',
-]
 
 intersphinx_mapping = {
     'python': ('https://docs.python.org/3', None),
