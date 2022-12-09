@@ -44,6 +44,30 @@ html_favicon = "_static/favicon.png"
 # Set to '' to prevent appending "documentation" to the site title
 html_title = ""
 
+linkcheck_allowed_redirects = {
+    # Edit page
+    r"https://docs.google.com/document/d/.*/": r"https://docs.google.com/document/d/.*/edit",
+    # Canonical
+    r"https://docs.python.org/": r"https://docs.python.org/3/",
+    # Translations with country codes
+    r"https://docs.python.org/[a-z-]+/": r"https://docs.python.org/[a-z-]+/3/",
+    # Personal /my/ links redirect to login page
+    r"https://discuss.python.org/my/.*": r"https://discuss.python.org/login-preferences",
+    # Login page
+    r"https://github.com/python/core-workflow/issues/new.*": r"https://github.com/login.*",
+    # Archive redirect
+    r"https://github.com/python/cpython/archive/main.zip": r"https://codeload.github.com/python/cpython/zip/refs/heads/main",
+    # Blob to tree
+    r"https://github.com/python/cpython/blob/.*": r"https://github.com/python/cpython/tree/.*",
+    # HackMD shortcuts
+    r"https://hackmd.io/s/.*": r"https://hackmd.io/@.*",
+    # Read the Docs
+    r"https://virtualenv.pypa.io/": r"https://virtualenv.pypa.io/en/latest/",
+    r"https://www.sphinx-doc.org/": r"https://www.sphinx-doc.org/en/master/",
+    # Cookie consent
+    r"https://www.youtube.com/playlist.*": r"https://consent.youtube.com/ml.*",
+}
+
 # ignore linkcheck anchors for /#/$ANCHOR since it is used for
 # dynamic pages such as http://buildbot.python.org/all/#/console
 # http://www.sphinx-doc.org/en/stable/config.html?highlight=linkcheck#confval-linkcheck_anchors_ignore
