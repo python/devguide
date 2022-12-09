@@ -61,6 +61,12 @@ linkcheck_ignore = [
     'https://discuss.python.org/groups/staff',
     'https://discuss.python.org/groups/moderators',
     'https://discuss.python.org/groups/admins',
+    # Anchor not found
+    r'https://github.com.+?#L\d+',
+    r'https://github.com/cli/cli#installation',
+    r'https://github.com/github/renaming#renaming-existing-branches',
+    # 403 Client Error: Forbidden
+    r'https://support.discord.com/hc/en-us/articles/219070107-Server-Nicknames',
 ]
 
 rediraffe_redirects = {
