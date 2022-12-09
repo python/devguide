@@ -343,7 +343,7 @@ Here are the steps needed in order to sign the CLA:
 .. _PSF license: https://docs.python.org/dev/license.html#terms-and-conditions-for-accessing-or-otherwise-using-python
 .. _contributor agreement: https://www.python.org/psf/contrib/
 .. _contributor form: https://www.python.org/psf/contrib/contrib-form/
-.. _Python Software Foundation: https://www.python.org/psf/
+.. _Python Software Foundation: https://www.python.org/psf-landing/
 
 
 Submitting
