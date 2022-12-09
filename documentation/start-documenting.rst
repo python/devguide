@@ -101,11 +101,11 @@ You can also use ``make help`` to see a list of targets supported by
 you submit a :ref:`pull request <pullrequest>`, so you should make
 sure that it runs without errors.
 
-**On Windows**, a :file:`make.bat` batchfile tries to emulate :command:`make`
-as closely as possible, but the venv target is not implemented, so you will
-probably want to make sure you are working in a virtual environment before
-proceeding, otherwise all dependencies will be automatically installed on your
-system.
+**On Windows**, the :cpy-file:`Doc/make.bat` batchfile tries to emulate
+:command:`make` as closely as possible, but the venv target is not implemented,
+so you will probably want to make sure you are working in a virtual environment
+before proceeding, otherwise all dependencies will be automatically installed
+on your system.
 
 When ready, run the following from the root of your :ref:`repository clone
 <checkout>` to build the output as HTML::
@@ -114,9 +114,9 @@ When ready, run the following from the root of your :ref:`repository clone
    make html
 
 You can also use ``make help`` to see a list of targets supported by
-:file:`make.bat`.
+:cpy-file:`Doc/make.bat`.
 
-See also :file:`Doc/README.rst` for more information.
+See also :cpy-file:`Doc/README.rst` for more information.
 
 Using sphinx-build
 ------------------
