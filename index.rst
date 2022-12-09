@@ -27,7 +27,7 @@ instructions please see the :ref:`setup guide <setup>`.
       git clone https://github.com/<your_username>/cpython
       cd cpython
 
-3. Build Python, on UNIX and Mac OS use::
+3. Build Python, on UNIX and macOS use::
 
       ./configure --with-pydebug && make -j
 
@@ -40,13 +40,13 @@ instructions please see the :ref:`setup guide <setup>`.
    See also :ref:`more detailed instructions <compiling>`,
    :ref:`how to install and build dependencies <build-dependencies>`,
    and the platform-specific pages for :ref:`UNIX <unix-compiling>`,
-   :ref:`Mac OS <MacOS>`, and :ref:`Windows <windows-compiling>`.
+   :ref:`macOS`, and :ref:`Windows <windows-compiling>`.
 
 4. :ref:`Run the tests <runtests>`::
 
       ./python -m test -j3
 
-   On :ref:`most <mac-python.exe>` Mac OS X systems, replace :file:`./python`
+   On :ref:`most <mac-python.exe>` macOS systems, replace :file:`./python`
    with :file:`./python.exe`.  On Windows, use :file:`python.bat`.
 
 5. Create a new branch where your work for the issue will go, e.g.::
@@ -183,14 +183,11 @@ Key Resources
     * :PEP:`7` (Style Guide for C Code)
     * :PEP:`8` (Style Guide for Python Code)
 * `Issue tracker`_
-    * `Meta tracker <https://issues.roundup-tracker.org/>`_ (issue
-      tracker for the issue tracker)
     * :ref:`experts`
 * `Buildbot status`_
 * Source code
     * `Browse online <https://github.com/python/cpython/>`_
     * `Snapshot of the *main* branch <https://github.com/python/cpython/archive/main.zip>`_
-    * `Daily OS X installer <https://buildbot.python.org/daily-dmg/>`_
 * PEPs_ (Python Enhancement Proposals)
 * :ref:`help`
 * :ref:`developers`

@@ -695,7 +695,7 @@ References
    (https://legacy.python.org/workshops/1998-11/proceedings/papers/montanaro/montanaro.html)
 
 .. [#Bytecodehacks] Bytecodehacks Project
-   (http://bytecodehacks.sourceforge.net/bch-docs/bch/index.html)
+   (https://bytecodehacks.sourceforge.net/bch-docs/bch/index.html)
 
 .. [#CALL_ATTR] CALL_ATTR opcode
    (https://bugs.python.org/issue709744)

@@ -5,3 +5,68 @@
     width: 111px;
     height: 110px;
 }
+
+/* Release cycle chart */
+#python-release-cycle .mermaid .active0,
+#python-release-cycle .mermaid .active1,
+#python-release-cycle .mermaid .active2,
+#python-release-cycle .mermaid .active3 {
+    fill: #00dd00;
+    stroke: darkgreen;
+}
+
+#python-release-cycle .mermaid .done0,
+#python-release-cycle .mermaid .done1,
+#python-release-cycle .mermaid .done2,
+#python-release-cycle .mermaid .done3 {
+    fill: orange;
+    stroke: darkorange;
+}
+
+#python-release-cycle .mermaid .task0,
+#python-release-cycle .mermaid .task1,
+#python-release-cycle .mermaid .task2,
+#python-release-cycle .mermaid .task3 {
+    fill: #007acc;
+    stroke: #004455;
+}
+
+#python-release-cycle .mermaid .section0,
+#python-release-cycle .mermaid .section2 {
+    fill: darkgrey;
+}
+
+/* Set master colours */
+:root {
+    --mermaid-section1-3: white;
+    --mermaid-text-color: black;
+}
+
+@media (prefers-color-scheme: dark) {
+    body[data-theme=auto] {
+        --mermaid-section1-3: black;
+        --mermaid-text-color: #ffffffcc;
+    }
+}
+body[data-theme=dark] {
+    --mermaid-section1-3: black;
+    --mermaid-text-color: #ffffffcc;
+}
+
+#python-release-cycle .mermaid .section1,
+#python-release-cycle .mermaid .section3 {
+    fill: var(--mermaid-section1-3);
+}
+
+#python-release-cycle .mermaid .grid .tick text,
+#python-release-cycle .mermaid .sectionTitle0,
+#python-release-cycle .mermaid .sectionTitle1,
+#python-release-cycle .mermaid .sectionTitle2,
+#python-release-cycle .mermaid .sectionTitle3,
+#python-release-cycle .mermaid .taskTextOutside0,
+#python-release-cycle .mermaid .taskTextOutside1,
+#python-release-cycle .mermaid .taskTextOutside2,
+#python-release-cycle .mermaid .taskTextOutside3,
+#python-release-cycle .mermaid .titleText {
+    fill: var(--mermaid-text-color);
+}

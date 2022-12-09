@@ -299,7 +299,7 @@ Cygwin                jlt63^, stutzbach^
 FreeBSD
 HP-UX
 Linux
-Mac OS X              ronaldoussoren, ned-deily
+macOS                 ronaldoussoren, ned-deily
 NetBSD1
 OS2/EMX               aimacintyre^
 Solaris/OpenIndiana   jcea
@@ -323,13 +323,13 @@ issue tracker       ezio-melotti
 buildbots           zware, pablogsal
 bytecode            benjaminp, 1st1, markshannon, brandtbucher
 context managers    ncoghlan
-core workflow       Mariatta, ezio-melotti
+core workflow       Mariatta, ezio-melotti, hugovk
 coverity scan       tiran, brettcannon, Yhg1s
 cryptography        gpshead, dstufft
 data formats        mdickinson
 database            malemburg
-devguide            merwok, ezio-melotti, willingc, Mariatta
-documentation       ezio-melotti, merwok, JulienPalard, willingc
+devguide            merwok, ezio-melotti, willingc, Mariatta, hugovk
+documentation       ezio-melotti, merwok, JulienPalard, willingc, hugovk
 emoji               Mariatta
 extension modules   encukou, ncoghlan
 filesystem          giampaolo

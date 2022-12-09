@@ -10,6 +10,12 @@ branch that accepts new features.  The latest release for each Python
 version can be found on the `download page <https://www.python.org/downloads/>`_.
 
 
+Python Release Cycle
+====================
+
+.. mermaid:: include/release-cycle.mmd
+
+
 Supported Versions
 ==================
 
@@ -35,7 +41,7 @@ Unsupported Versions
 Status Key
 ==========
 
-:features: new features, bugfixes, and security fixes are accepted.
+:feature: new features, bugfixes, and security fixes are accepted.
 :prerelease: feature fixes, bugfixes, and security fixes are accepted for the
     upcoming feature release.
 :bugfix: bugfixes and security fixes are accepted, new binaries are still
@@ -49,3 +55,16 @@ See also the :ref:`devcycle` page for more information about branches.
 By default, the end-of-life is scheduled 5 years after the first release,
 but can be adjusted by the release manager of each branch.  All Python 2
 versions have reached end-of-life.
+
+.. raw:: html
+
+    <noscript>
+        <style>
+            #python-release-cycle:after {
+                content: "Enable JavaScript to see the release cycle chart.";
+            }
+            .mermaid {
+                display: none;
+            }
+        </style>
+    </noscript>

@@ -73,23 +73,6 @@ whereas ``#python`` is for questions concerning development *with* Python.
 
 .. _Libera.Chat: https://libera.chat/
 
-Zulip
------
-
-An alternative to IRC is our own `Zulip`_ instance.  There are different streams
-for asking help with core development, as well as core developers' office
-hour stream. It is preferred that you ask questions here first or schedule
-an office hour, before posting to python-dev mailing list or filing bugs.
-
-.. warning::
-
-  This is no longer actively monitored by core devs.
-  Consider asking your questions in the relevant
-  :ref:`Discourse <communication-discourse>` category instead.
-
-.. _Zulip: https://python.zulipchat.com
-
-
 Core Mentorship
 ---------------
 
@@ -121,15 +104,6 @@ during office hours.
 +==================+===============================+================================================+
 | Zachary Ware     | See details link              | Schedule at https://calendly.com/zware         |
 +------------------+-------------------------------+------------------------------------------------+
-| Mariatta Wijaya  | Thursdays 7PM - 8PM Pacific   | In `Python's Zulip Chat`_, Core > Office       |
-|                  | (Vancouver, Canada Timezone)  | Hour stream. A reminder will be posted to both |
-|                  |                               | Zulip and `Mariatta's twitter`_ account        |
-|                  |                               | 24 hours before the start.                     |
-+------------------+-------------------------------+------------------------------------------------+
-
-.. _Python's Zulip Chat: https://python.zulipchat.com/login/#narrow/stream/116503-core/topic/Office.20Hour
-.. _Mariatta's twitter: https://twitter.com/mariatta
-
 
 File a Bug
 ----------

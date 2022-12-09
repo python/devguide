@@ -93,7 +93,7 @@ On Unix run::
     source ../cpython-venv/bin/activate
     pip install coverage
 
-On :ref:`most <mac-python.exe>` Mac OS X systems run::
+On :ref:`most <mac-python.exe>` macOS systems run::
 
     ./python.exe -m venv ../cpython-venv
     source ../cpython-venv/bin/activate
@@ -292,4 +292,4 @@ about 20 to 30 minutes on a modern computer.
 
 .. _issue tracker: https://github.com/python/cpython/issues
 .. _gcov: https://gcc.gnu.org/onlinedocs/gcc/Gcov.html
-.. _lcov: http://ltp.sourceforge.net/coverage/lcov.php
+.. _lcov: https://ltp.sourceforge.net/coverage/lcov.php

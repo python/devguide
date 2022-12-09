@@ -22,7 +22,7 @@ from the root directory of your checkout (after you have
     ./python -m test
 
 You may need to change this command as follows throughout this section.
-On :ref:`most <mac-python.exe>` Mac OS X systems, replace :file:`./python`
+On :ref:`most <mac-python.exe>` macOS systems, replace :file:`./python`
 with :file:`./python.exe`.  On Windows, use :file:`python.bat`.  If using
 Python 2.7, replace ``test`` with ``test.regrtest``.
 
