@@ -85,11 +85,11 @@ linkcheck_ignore = [
     'https://discuss.python.org/groups/staff',
     'https://discuss.python.org/groups/moderators',
     'https://discuss.python.org/groups/admins',
-    # Anchor not found
+    # The crawler gets "Anchor not found" for GitHub anchors
     r'https://github.com.+?#L\d+',
     r'https://github.com/cli/cli#installation',
     r'https://github.com/github/renaming#renaming-existing-branches',
-    # 403 Client Error: Forbidden
+    # Discord doesn't allow robot crawlers: "403 Client Error: Forbidden"
     r'https://support.discord.com/hc/en-us/articles/219070107-Server-Nicknames',
 ]
 
