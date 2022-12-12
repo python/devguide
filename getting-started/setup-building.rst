@@ -391,7 +391,7 @@ their dependencies::
 macOS
 -----
 
-For **macOS systems** (versions 10.12+),
+For **macOS systems** (versions 10.9+),
 the Developer Tools can be downloaded and installed automatically;
 you do not need to download the complete Xcode application.
 
