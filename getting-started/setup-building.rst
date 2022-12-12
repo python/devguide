@@ -145,7 +145,7 @@ checks that one should not skip.
 
 .. _unix-compiling:
 
-UNIX
+Unix
 ----
 
 The core CPython interpreter only needs a C compiler to be built,
@@ -334,7 +334,7 @@ extensions are already included and built automatically.
 Linux
 -----
 
-For UNIX based systems, we try to use system libraries whenever available.
+For Unix-based systems, we try to use system libraries whenever available.
 This means optional components will only build if the relevant system headers
 are available. The best way to obtain the appropriate headers will vary by
 distribution, but the appropriate commands for some popular distributions
