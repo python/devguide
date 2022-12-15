@@ -145,7 +145,7 @@ checks that one should not skip.
 
 .. _unix-compiling:
 
-UNIX
+Unix
 ----
 
 The core CPython interpreter only needs a C compiler to be built,
@@ -334,7 +334,7 @@ extensions are already included and built automatically.
 Linux
 -----
 
-For UNIX based systems, we try to use system libraries whenever available.
+For Unix-based systems, we try to use system libraries whenever available.
 This means optional components will only build if the relevant system headers
 are available. The best way to obtain the appropriate headers will vary by
 distribution, but the appropriate commands for some popular distributions
@@ -385,12 +385,13 @@ their dependencies::
          lzma lzma-dev tk-dev uuid-dev zlib1g-dev
 
 
+.. _macOS and OS X:
 .. _macOS:
 
-macOS and OS X
---------------
+macOS
+-----
 
-For **macOS systems** (versions 10.12+) and **OS X 10.9 and later**,
+For **macOS systems** (versions 10.9+),
 the Developer Tools can be downloaded and installed automatically;
 you do not need to download the complete Xcode application.
 
@@ -401,21 +402,11 @@ If necessary, run the following::
 This will also ensure that the system header files are installed into
 ``/usr/include``.
 
-On **Mac OS X systems** (versions 10.0 - 10.7) and **OS X 10.8**, use the C
-compiler and other development utilities provided by Apple's Xcode Developer
-Tools. The Developer Tools are not shipped with Mac OS X.
-
-For these **older releases (versions 10.0 - 10.8)**, you will need to download either the
-correct version of the Command Line Tools, if available, or install them from the
-full Xcode app or package for that OS X release.  Older versions may be
-available either as a no-cost download through Apple's App Store or from
-`the Apple Developer web site <https://developer.apple.com/>`_.
-
 .. _Homebrew: https://brew.sh
 
 .. _MacPorts: https://www.macports.org
 
-Also note that OS X does not include several libraries used by the Python
+Also note that macOS does not include several libraries used by the Python
 standard library, including ``libzma``, so expect to see some extension module
 build failures unless you install local copies of them.  As of OS X 10.11,
 Apple no longer provides header files for the deprecated system version of
@@ -466,10 +457,10 @@ and ``make``::
     $ make -s -j2
 
 There will sometimes be optional modules added for a new release which
-won't yet be identified in the OS level build dependencies. In those cases,
+won't yet be identified in the OS-level build dependencies. In those cases,
 just ask for assistance on the core-mentorship list.
 
-Explaining how to build optional dependencies on a UNIX based system without
+Explaining how to build optional dependencies on a Unix-based system without
 root access is beyond the scope of this guide.
 
 For more details on various options and considerations for building, refer
