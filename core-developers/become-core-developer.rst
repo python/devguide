@@ -29,7 +29,7 @@ After a candidate has demonstrated consistent contributions, commit privileges
 are granted through these steps:
 
 1. A core developer (submitter, usually the mentor) starts a poll in the
-   `Committers category`_ on the `Python Discourse`_ (``discuss.python.org``).
+   `Committers category`_ on the `Python Discourse`_.
 
    - Open for 7 days
    - Results shown upon close
