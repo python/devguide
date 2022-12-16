@@ -45,7 +45,7 @@ are granted through these steps:
    - A request for account details as required by
      `🔒 python/voters <https://github.com/python/voters>`_
    - A request for the committer's preferred address for subscription to
-     ``python-committers@``
+     the `python-committers mailing list`_
    - A reminder about the `Code of Conduct`_ and guidance on reporting issues
      to the PSF Conduct WG
 
