@@ -39,6 +39,7 @@ are granted through these steps:
    (as per :pep:`13`), the submitter emails the `steering council
    <mailto:steering-council@python.org>`_ with the candidate's email address
    requesting that the council either accept or reject the proposed membership.
+
 #. Assuming the steering council does not object, a member of the council or delegate
    (approver) will email the candidate:
 
@@ -50,6 +51,7 @@ are granted through these steps:
      to the PSF Conduct WG
 
 #. Once the candidate has provided the pertinent details, the approver will:
+
    - enable various new privileges;
    - add the new committer's details to
      `🔒 python/voters <https://github.com/python/voters>`_;
