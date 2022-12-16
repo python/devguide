@@ -35,12 +35,10 @@ are granted through these steps:
    - Results shown upon close
    - Cross-post the announcement to the `python-committers mailing list`_
 
-2. After the poll has closed, the submitter confirms the membership per
-   :pep:`13` (2/3 of the vote).
-3. The submitter then emails the
-   `steering council <mailto:steering-council@python.org>`_ with the
-   candidate's email address requesting that the council either accept or reject the proposed
-   membership.
+2. If the candidate receives at least two-thirds positive votes when the poll closes
+   (as per :pep:`13`), the submitter emails the `steering council
+   <mailto:steering-council@python.org>`_ with the candidate's email address
+   requesting that the council either accept or reject the proposed membership.
 4. Assuming the steering council does not object, a member of the council or delegate
    (approver) will email the candidate:
 
