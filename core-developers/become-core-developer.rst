@@ -39,7 +39,7 @@ are granted through these steps:
    (as per :pep:`13`), the submitter emails the `steering council
    <mailto:steering-council@python.org>`_ with the candidate's email address
    requesting that the council either accept or reject the proposed membership.
-4. Assuming the steering council does not object, a member of the council or delegate
+3. Assuming the steering council does not object, a member of the council or delegate
    (approver) will email the candidate:
 
    - A request for account details as required by
