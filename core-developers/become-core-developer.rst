@@ -28,18 +28,18 @@ Gaining Commit Privileges
 After a candidate has demonstrated consistent contributions, commit privileges
 are granted through these steps:
 
-1. A core developer (submitter, usually the mentor) starts a poll in the
+#. A core developer (submitter, usually the mentor) starts a poll in the
    `Committers category`_ on the `Python Discourse`_ and cross-post to
    the `python-committers mailing list`_.
 
    - Open for 7 days
    - Results shown upon close
 
-2. If the candidate receives at least two-thirds positive votes when the poll closes
+#. If the candidate receives at least two-thirds positive votes when the poll closes
    (as per :pep:`13`), the submitter emails the `steering council
    <mailto:steering-council@python.org>`_ with the candidate's email address
    requesting that the council either accept or reject the proposed membership.
-3. Assuming the steering council does not object, a member of the council or delegate
+#. Assuming the steering council does not object, a member of the council or delegate
    (approver) will email the candidate:
 
    - A request for account details as required by
@@ -49,7 +49,7 @@ are granted through these steps:
    - A reminder about the `Code of Conduct`_ and guidance on reporting issues
      to the PSF Conduct WG
 
-4. Once the candidate has provided the pertinent details, the approver will:
+#. Once the candidate has provided the pertinent details, the approver will:
    - enable various new privileges;
    - add the new committer's details to
      `🔒 python/voters <https://github.com/python/voters>`_;
