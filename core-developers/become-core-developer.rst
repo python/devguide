@@ -49,13 +49,13 @@ are granted through these steps:
    - A reminder about the `Code of Conduct`_ and guidance on reporting issues
      to the PSF Conduct WG
 
-5. Once the candidate has provided the pertinent details, the approver will enable
-   various new privileges.
-6. The approver will add the new committer's details to
-   `🔒 python/voters <https://github.com/python/voters>`_.
-7. The approver will update the devguide to publicly list the new committer's team
-   membership at :ref:`developers`.
-8. The approver sends an announcement email to the Committers Discourse category.
+4. Once the candidate has provided the pertinent details, the approver will:
+   - enable various new privileges;
+   - add the new committer's details to
+     `🔒 python/voters <https://github.com/python/voters>`_;
+   - update the devguide to publicly list the new committer's team membership
+     at :ref:`developers`;
+   - send an announcement email to the Committers Discourse category.
 
 .. _Code of Conduct: https://www.python.org/psf/conduct/
 .. _Committers category: https://discuss.python.org/c/committers/5
