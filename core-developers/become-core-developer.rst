@@ -29,11 +29,11 @@ After a candidate has demonstrated consistent contributions, commit privileges
 are granted through these steps:
 
 1. A core developer (submitter, usually the mentor) starts a poll in the
-   `Committers category`_ on the `Python Discourse`_.
+   `Committers category`_ on the `Python Discourse`_ and cross-post to
+   the `python-committers mailing list`_.
 
    - Open for 7 days
    - Results shown upon close
-   - Cross-post the announcement to the `python-committers mailing list`_
 
 2. If the candidate receives at least two-thirds positive votes when the poll closes
    (as per :pep:`13`), the submitter emails the `steering council
