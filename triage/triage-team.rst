@@ -90,7 +90,7 @@ transition into becoming a Python triager. They can request this to any core
 developer, either confidentially via a DM in Discourse, or
 publicly by opening an `issue in the core-workflow repository
 <https://github.com/python/core-workflow/issues/new?template=triage_membership.md>`_.
-If the core devloper decides you are ready to gain the extra privileges on the
+If the core developer decides you are ready to gain the extra privileges on the
 tracker, they will ask a :ref:`Python organization admin <current owners>`
 to invite you to the Python organisation, and then  act as a mentor to you until
 you are ready to do things entirely on your own.
