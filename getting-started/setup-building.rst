@@ -98,7 +98,7 @@ You will only need to execute these steps once per machine:
       upstream
 
 For more information about these commands see
-:ref:`Git Bootcamp and Cheat Sheat <git-boot-camp>`.
+:ref:`Git Bootcamp and Cheat Sheet <git-boot-camp>`.
 
 If you did everything correctly, you should now have a copy of the code
 in the ``cpython`` directory and two remotes that refer to your own GitHub fork
@@ -300,7 +300,7 @@ from the dropdown menus in the toolbar.
    If you need to change the build configuration or platform,
    build once with the ``build.bat`` script set to those options first
    before building with them in VS to ensure all files are rebuilt properly,
-   or you may encouter errors when loading modules that were not rebuilt.
+   or you may encounter errors when loading modules that were not rebuilt.
 
    Avoid selecting the ``PGInstrument`` and ``PGUpdate`` configurations,
    as these are intended for PGO builds and not for normal development.
