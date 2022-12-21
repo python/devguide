@@ -74,7 +74,7 @@ in production; others are works in progress.
 | (zh-tw)         | Josix Wang                    |                            |
 +-----------------+-------------------------------+----------------------------+
 | Turkish (tr)    | `Ege Akman (@egeakman)        | `GitHub <github_tr_>`_     |
-|                 | <email_egeakman_>`_           |                            |
+|                 | <gh_egeakman_>`_              | `GH-Pages <gh_pages_tr_>`_ |
 +-----------------+-------------------------------+----------------------------+
 | Ukrainian (uk)  | `Dmytro Kazanzhy (@kazanzhy)  | `GitHub <github_uk_>`_     |
 |                 | <email_kazanzhy_>`_           | `Translations <tx_uk_>`_   |
@@ -91,7 +91,7 @@ in production; others are works in progress.
 .. _gh_osdotsystem: https://github.com/Abdur-rahmaanJ
 .. _gh_zhsj: https://github.com/zhsj
 .. _gh_mattwang44: https://github.com/mattwang44
-.. _email_egeakman: mailto:egeakmanegeakman@hotmail.com
+.. _gh_egeakman: https://github.com/egeakman
 .. _email_garade: mailto:garade@pm.me
 .. _email_kazanzhy: mailto:dkazanzhy@gmail.com
 .. _chat_pt_br: https://t.me/pybr_i18n
@@ -100,6 +100,7 @@ in production; others are works in progress.
 .. _doc_pl: https://docs.python.org/pl/
 .. _doc_zh_cn: https://docs.python.org/zh-cn/
 .. _doc_zh_tw: https://docs.python.org/zh-tw/
+.. _gh_pages_tr: https://python.github.io/python-docs-tr/
 .. _github_ar: https://github.com/Abdur-rahmaanJ/python-docs-ar
 .. _github_bn_in: https://github.com/python/python-docs-bn-in
 .. _github_es: https://github.com/python/python-docs-es
@@ -113,7 +114,7 @@ in production; others are works in progress.
 .. _github_mr: https://github.com/sanketgarade/python-doc-mr
 .. _github_pl: https://github.com/python/python-docs-pl
 .. _github_pt_br: https://github.com/python/python-docs-pt-br
-.. _github_tr: https://github.com/python-docs-tr/python-docs-tr
+.. _github_tr: https://github.com/python/python-docs-tr
 .. _github_uk: https://github.com/python/python-docs-uk
 .. _github_zh_cn: https://github.com/python/python-docs-zh-cn
 .. _github_zh_tw: https://github.com/python/python-docs-zh-tw
