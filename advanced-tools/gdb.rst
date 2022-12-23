@@ -357,7 +357,7 @@ this approach is less helpful when debugging the runtime virtual
 machine, since the main interpreter loop function,
 ``_PyEval_EvalFrameDefault``, is well over 4,000 lines long as of Python 3.12.
 Fortunately, among the `many ways to set breakpoints
-<https://sourceware.org/gdb/onlinedocs/gdb/Specify-Location.html>`_,
+<https://sourceware.org/gdb/onlinedocs/gdb/Location-Specifications.html>`_,
 you can break at C labels, such as those generated for computed gotos.
 If you are debugging an interpreter compiled with computed goto support
 (generally true, certainly when using GCC), each instruction will be
