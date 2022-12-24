@@ -153,3 +153,6 @@ ogp_custom_meta_tags = [
 copybutton_prompt_text = "$"
 # https://sphinx-copybutton.readthedocs.io/en/latest/use.html#honor-line-continuation-characters-when-copying-multline-snippets
 copybutton_line_continuation_character = "\\"
+
+# Generate a single pot/po file (instead of one pot/po for each rst file)
+gettext_compact = 'devguide'

@@ -5,3 +5,4 @@ sphinx_copybutton>=0.3.3
 sphinxcontrib-mermaid
 sphinxext-opengraph>=0.7.1
 sphinxext-rediraffe
+sphinx-intl

@@ -8,6 +8,7 @@ BUILDDIR      = _build
 SPHINXOPTS    = -W --keep-going -n
 SPHINXBUILD   = $(VENVDIR)/bin/sphinx-build
 SPHINXLINT    = $(VENVDIR)/bin/sphinx-lint
+SPHINXINTL    = $(VENVDIR)/bin/sphinx-intl
 PAPER         =
 
 # Internal variables.
@@ -200,3 +201,18 @@ include/release-cycle.mmd: include/release-cycle.json
 .PHONY: versions
 versions: include/branches.csv include/end-of-life.csv include/release-cycle.mmd
 	@echo Release cycle data generated.
+
+.PHONY: translations
+translations: ensure-venv pot update-po
+
+.PHONY: pot
+pot:
+	$(SPHINXBUILD) -b gettext $(ALLSPHINXOPTS) $(BUILDDIR)/pot
+	# Set Report-Msgid-Bugs-To (which comes empty) and remove trailing whitespace from Project-Id-Version
+	sed -i $(BUILDDIR)/pot/devguide.pot \
+	    -e 's|^"Report-Msgid-Bugs-To:.*|"Report-Msgid-Bugs-To: https://github.com/python/devguide/issues\\n"|' \
+	    -e '/^"Project-Id-Version: /s/ \\n"/\\n"/'
+
+.PHONY: update-po
+update-po:
+	$(SPHINXINTL) update -p $(BUILDDIR)/pot
