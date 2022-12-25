@@ -76,8 +76,6 @@ to enter the public source tree. Ask yourself the following questions:
 
 .. _news-entry:
 
-.. _news-entry:
-
 Updating NEWS and What's New in Python
 --------------------------------------
 
