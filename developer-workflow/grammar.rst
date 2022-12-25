@@ -28,18 +28,19 @@ Note: sometimes things mysteriously don't work.  Before giving up, try ``make cl
 * :cpy-file:`Grammar/python.gram`: The grammar, with actions that build AST nodes.
   After changing it, run ``make regen-pegen`` (or ``build.bat --regen`` on Windows),
   to regenerate :cpy-file:`Parser/parser.c`.
-  (This runs Python's parser generator, ``Tools/peg_generator``).
+  (This runs Python's parser generator, :cpy-file:`Tools/peg_generator`).
 
 * :cpy-file:`Grammar/Tokens` is a place for adding new token types.  After
-  changing it, run ``make regen-token`` to regenerate :cpy-file:`Include/token.h`,
-  :cpy-file:`Parser/token.c`, :cpy-file:`Lib/token.py` and
-  :cpy-file:`Doc/library/token-list.inc`.  If you change both ``python.gram``
-  and ``Tokens``, run ``make regen-token`` before ``make regen-pegen``.
+  changing it, run ``make regen-token`` to regenerate
+  :cpy-file:`Include/internal/pycore_token.h`, :cpy-file:`Parser/token.c`,
+  :cpy-file:`Lib/token.py` and :cpy-file:`Doc/library/token-list.inc`.
+  If you change both ``python.gram`` and ``Tokens``,
+  run ``make regen-token`` before ``make regen-pegen``.
   On Windows, ``build.bat --regen`` will regenerate both at the same time.
 
 * :cpy-file:`Parser/Python.asdl` may need changes to match the grammar.
-  Then run ``make regen-ast`` to regenerate :cpy-file:`Include/Python-ast.h`
-  and :cpy-file:`Python/Python-ast.c`.
+  Then run ``make regen-ast`` to regenerate
+  :cpy-file:`Include/internal/pycore_ast.h` and :cpy-file:`Python/Python-ast.c`.
 
 * :cpy-file:`Parser/tokenizer.c` contains the tokenization code.
   This is where you would add a new type of comment or string literal, for example.

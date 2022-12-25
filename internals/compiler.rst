@@ -490,7 +490,7 @@ Finally, you need to introduce the use of the new bytecode.  Altering
 places to change. You must add the case for a new opcode into the 'switch'
 statement in the ``stack_effect()`` function in :cpy-file:`Python/compile.c`.
 If the new opcode has a jump target, you will need to update macros and
-'switch' statements in :cpy-file:`Python/peephole.c`.  If it affects a control
+'switch' statements in :cpy-file:`Python/compile.c`.  If it affects a control
 flow or the block stack, you may have to update the ``frame_setlineno()``
 function in :cpy-file:`Objects/frameobject.c`.  :cpy-file:`Lib/dis.py` may need
 an update if the new opcode interprets its argument in a special way (like
@@ -514,7 +514,8 @@ Code Objects
 ============
 
 The result of ``PyAST_CompileObject()`` is a ``PyCodeObject`` which is defined in
-:cpy-file:`Include/code.h`.  And with that you now have executable Python bytecode!
+:cpy-file:`Include/cpython/code.h`.  And with that you now have executable
+Python bytecode!
 
 The code objects (byte code) are executed in :cpy-file:`Python/ceval.c`.  This file
 will also need a new case statement for the new opcode in the big switch
@@ -579,18 +580,14 @@ Important Files
 
    * :cpy-file:`Python/symtable.c`: Generates a symbol table from AST.
 
-   * :cpy-file:`Python/peephole.c`: Optimizes the bytecode.
-
    * :cpy-file:`Python/pyarena.c`: Implementation of the arena memory manager.
-
-   * :cpy-file:`Python/wordcode_helpers.h`: Helpers for generating bytecode.
 
    * :cpy-file:`Python/opcode_targets.h`: One of the files that must be
      modified if :cpy-file:`Lib/opcode.py` is.
 
 * :cpy-file:`Include/`
-   * :cpy-file:`Include/code.h`: Header file for :cpy-file:`Objects/codeobject.c`;
-     contains definition of ``PyCodeObject``.
+   * :cpy-file:`Include/cpython/code.h`: Header file for
+     :cpy-file:`Objects/codeobject.c`; contains definition of ``PyCodeObject``.
 
    * :cpy-file:`Include/opcode.h`: One of the files that must be modified if
      :cpy-file:`Lib/opcode.py` is.
