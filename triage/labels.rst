@@ -16,11 +16,12 @@ Type labels
 
 These labels are used to specify the type of issue:
 
-* ``type-bug``: for unexpected behaviors, bugs, or errors (not hard crashes).
-* ``type-crash``: for hard crashes of the interpreter, possibly with a
+* :gh-label:`type-bug`: for unexpected behaviors, bugs, or errors
+  (not hard crashes).
+* :gh-label:`type-crash`: for hard crashes of the interpreter, possibly with a
   core dump.
-* ``type-feature``: for feature requests or enhancements.
-* ``type-security``: for security issues.
+* :gh-label:`type-feature`: for feature requests or enhancements.
+* :gh-label:`type-security`: for security issues.
 
 Since most PRs have an associated issue, it is not necessary to apply these
 labels to PRs
@@ -32,17 +33,17 @@ Component labels
 These labels are mostly used to specify which :ref:`part of the codebase
 <directory-structure>` is affected by the issue/PR:
 
-* ``stdlib``: for standard library modules in the :file:`Lib` directory
+* :gh-label:`stdlib`: for standard library modules in the :file:`Lib` directory
   (written in Python).
-* ``extension-modules``: for standard library modules in the :file:`Modules`
-  directory (written in C).
-* ``interpreter-core``: for changes related to the interpreter core in the
-  :file:`Objects`, :file:`Python`, :file:`Grammar`, and :file:`Parser` dirs
+* :gh-label:`extension-modules`: for standard library modules in the
+  :file:`Modules` directory (written in C).
+* :gh-label:`interpreter-core`: for changes related to the interpreter core in
+  the :file:`Objects`, :file:`Python`, :file:`Grammar`, and :file:`Parser` dirs
   (written mostly in C).
-* ``docs``: for documentation in the :file:`Doc` directory (written in
+* :gh-label:`docs`: for documentation in the :file:`Doc` directory (written in
   reStructuredText), docstrings, and code comments.
-* ``tests``: for tests in the :file:`Lib/test` directory (written in Python)
-  and changes other related to tests, ``unittest``, or ``doctests``.
+* :gh-label:`tests`: for tests in the :file:`Lib/test` directory (written in
+  Python) and changes other related to tests, ``unittest``, or ``doctests``.
 
 
 Expert labels
@@ -65,7 +66,8 @@ OS labels
 
 These labels are used to specify which operating systems are affected.
 Since most issues either affect all systems or are specific to Unix,
-the only available labels are ``OS-windows``, ``OS-mac``, and ``OS-freebsd``.
+the only available labels are :gh-label:`OS-windows`, :gh-label:`OS-mac`,
+and :gh-label:`OS-freebsd`.
 
 
 Version labels
@@ -79,17 +81,17 @@ whenever new major releases are created or retired.
 Other labels
 ============
 
-* ``triaged``: for issue has been accepted as valid by a triager.
-* ``easy``: for issues that are considered easy.
-* ``build``/``performance``: for issues related respectively to the
-  build process and performances.
-* ``release-blocker``/``deferred-blocker``: for issues/PRs that, unless
-  fixed, will hold the current or next release respectively.
-* ``pending``: for issues/PRs that will be closed unless further feedback
-  is provided.
-* ``stale``: for issues/PRs that have been inactive for a while.
-* ``sprint``: used for easier filtering of issues/PRs being worked on during
-  official sprints.
+* :gh-label:`triaged`: for issue has been accepted as valid by a triager.
+* :gh-label:`easy`: for issues that are considered easy.
+* :gh-label:`build`/:gh-label:`performance`: for issues related respectively
+  to the build process and performances.
+* :gh-label:`release-blocker`/:gh-label:`deferred-blocker`: for issues/PRs
+  that, unless fixed, will hold the current or next release respectively.
+* :gh-label:`pending`: for issues/PRs that will be closed unless further
+  feedback is provided.
+* :gh-label:`stale`: for issues/PRs that have been inactive for a while.
+* :gh-label:`sprint`: used for easier filtering of issues/PRs being worked on
+  during official sprints.
 
 
 
@@ -99,33 +101,37 @@ Labels specific to PRs
 The following labels only apply to PRs.  They are either set automatically
 by bots, or applied by humans to trigger specific bot behaviors.
 
-* ``DO-NOT-MERGE``: for PRs that shouldn't be merged in their current state.
-  It also prevents ``miss-islington`` from being able to automatically merge
-  the PR.
-* :samp:`needs backport to {X.Y}`: used to indicate which branches the PR should be
-  backported to.  Once the PR is merged, ``miss-islington`` will automatically
-  attempt to create backport PRs for the versions indicated by these labels.
+* :gh-label:`DO-NOT-MERGE`: for PRs that shouldn't be merged in their current
+  state.  It also prevents ``miss-islington`` from being able to automatically
+  merge the PR.
+* :samp:`needs backport to {X.Y}`: used to indicate which branches the PR
+  should be backported to.  Once the PR is merged, ``miss-islington`` will
+  automatically attempt to create backport PRs for the versions indicated
+  by these labels.
   See also :ref:`the status of the Python branches <branchstatus>` for a list
   of branches and the type of PRs that can be backported to them.
-* ``skip issue``: for trivial changes (such as typo fixes, comment changes,
-  and section rephrases) that don't require a corresponding issue.
-* ``skip news``: for PRs that don't need a NEWS entry.  The :ref:`news-entry`
-  section covers in details in which cases the NEWS entry can be skipped.
+* :gh-label:`skip issue`: for trivial changes (such as typo fixes, comment
+  changes, and section rephrases) that don't require a corresponding issue.
+* :gh-label:`skip news`: for PRs that don't need a NEWS entry.
+  The :ref:`news-entry` section covers in details in which cases the NEWS entry
+  can be skipped.
 * :samp:`awaiting *`: these labels are applied and used by ``bedevere`` to
   indicate the stage of a PR:
 
-  * ``awaiting review``: the PR hasn't been reviewed and is waiting for a
-    review.
-  * ``awaiting core review``: a review by a core developer is needed.
-  * ``awaiting changes``: a reviewer requested changes to proceed with the PR.
-  * ``awaiting change review``: a review of the requested changes is needed.
-  * ``awaiting merge``: the PR has been approved by a core developer and is
-    ready to merge.
+  * :gh-label:`awaiting review`: the PR hasn't been reviewed and is waiting
+    for a review.
+  * :gh-label:`awaiting core review`: a review by a core developer is needed.
+  * :gh-label:`awaiting changes`: a reviewer requested changes to proceed with
+    the PR.
+  * :gh-label:`awaiting change review`: a review of the requested changes
+    is needed.
+  * :gh-label:`awaiting merge`: the PR has been approved by a core developer
+    and is ready to merge.
 
-* ``test-with-buildbots``: used to test the latest commit with the buildbot
-  fleet whenever more testing is required before merging.  This may take
-  multiple hours to complete. Triagers can also stop a stuck build using
-  the web interface.
+* :gh-label:`test-with-buildbots`: used to test the latest commit with
+  the buildbot fleet whenever more testing is required before merging.
+  This may take multiple hours to complete. Triagers can also stop
+  a stuck build using the web interface.
 
 .. TODO: delete most of what follows, since it seems specific for bpo.
    Some things are still relevant, and should be moved elsewhere.
