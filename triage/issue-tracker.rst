@@ -84,16 +84,43 @@ The submission form has only two fields that you need to fill:
   information as appropriate). In particular, *what version of Python* you
   were using.
 
-Understanding the issue's progress and status
----------------------------------------------
+It is also acceptable to tag someone to if you think the issue
+should be brought to their attention.  Use the :ref:`experts` to know
+who wants to be added to the nosy list for issues targeting specific areas.
 
 There is a number of additional fields like **Assignees**, **Labels**,
 **Projects**, and **Milestone**. Those are filled by triagers and core
-developers, this is covered in the :ref:`triaging` page. You don't need
+developers and are covered in the :ref:`triaging` page. You don't need
 to worry about those when reporting issues as a Python user.
 
-You will automatically receive an update each time an action is taken on
-the bug, unless you changed your GitHub notification settings.
+Adding special links
+--------------------
+
+The following abbreviations can be used in a comment to generate a link:
+
+* :samp:`GH-{*}`: to link to another issue or PR;
+* :samp:`PEP-{*}`: to link to a specific PEP;
+* :samp:`BPO-{*}`: to link to a bugs.python.org issue;
+
+See also the `list of autolinks supported by GitHub <autolinks_>`_.
+
+Following issues
+----------------
+
+If you want to subscribe yourself to an issue, click the *🔔 Subscribe*
+button in the sidebar.  Similarly, if you were tagged by somebody else but
+decided this issue is not for you, you might click the *🔕 Unsubscribe*
+button in the sidebar.  Note that you are automatically subscribed to
+issues you created.
+
+Tracking dependencies and duplicates
+------------------------------------
+
+It is possible to use `checklists`_ to track dependencies or,
+in case of meta-issues, to link to the other related issues.
+
+By writing :samp:`Duplicate of {#xxx}` in a comment, you can
+`mark issues and PRs as duplicates <duplicates_>`_.
 
 
 Disagreement With a Resolution on the Issue Tracker
@@ -128,4 +155,7 @@ reason either as ``complete`` or ``not planned``.
 .. _devguide repo: https://github.com/python/devguide/issues
 .. _Roundup: https://roundup.sourceforge.io/
 .. _Python Discourse: https://discuss.python.org/
+.. _autolinks: https://docs.github.com/en/get-started/writing-on-github/working-with-advanced-formatting/autolinked-references-and-urls
+.. _checklists: https://docs.github.com/en/get-started/writing-on-github/working-with-advanced-formatting/about-task-lists
+.. _duplicates: https://docs.github.com/en/issues/tracking-your-work-with-issues/marking-issues-or-pull-requests-as-a-duplicate
 .. _Core Development Discourse category: https://discuss.python.org/c/core-dev/23

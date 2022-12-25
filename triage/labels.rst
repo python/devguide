@@ -16,15 +16,18 @@ Type labels
 
 These labels are used to specify the type of issue:
 
-* :gh-label:`type-bug`: for unexpected behaviors, bugs, or errors
+* :gh-label:`type-bug`: for unexpected behaviors, bugs, or exceptions
   (not hard crashes).
 * :gh-label:`type-crash`: for hard crashes of the interpreter, possibly with a
   core dump.
 * :gh-label:`type-feature`: for feature requests or enhancements.
+  The `Ideas Discourse category`_ can be used to discuss enhancements
+  before filing an issue.
 * :gh-label:`type-security`: for security issues.
+  See also `Reporting security issues in Python`_.
 
 Since most PRs have an associated issue, it is not necessary to apply these
-labels to PRs
+labels to PRs.
 
 
 Component labels
@@ -78,6 +81,9 @@ These labels are used to indicate which versions of Python are affected.
 The available version labels (with the form :samp:`3.{x}`) are updated
 whenever new major releases are created or retired.
 
+See also :ref:`the branch status page <branchstatus>`
+for a list of active branches.
+
 
 Other labels
 ============
@@ -93,7 +99,6 @@ Other labels
 * :gh-label:`stale`: for issues/PRs that have been inactive for a while.
 * :gh-label:`sprint`: used for easier filtering of issues/PRs being worked on
   during official sprints.
-
 
 
 Labels specific to PRs
@@ -134,222 +139,6 @@ by bots, or applied by humans to trigger specific bot behaviors.
   This may take multiple hours to complete. Triagers can also stop
   a stuck build using the web interface.
 
-.. TODO: delete most of what follows, since it seems specific for bpo.
-   Some things are still relevant, and should be moved elsewhere.
 
-Title
------
-A brief description of the issue. Review whether the title is too generic or
-specifies an incorrect term or library.
-
-(Optional) Add a prefix at the start of the title to indicate the module, e.g.
-IDLE, doc, or asyncio.
-
-Type
-----
-Describes the type of issue.  If an issue does not fit within any
-specific type, please do not set a type.
-
-+----------------+----------------------------------------------------------+
-|      Type      |                       Description                        |
-+================+==========================================================+
-| behavior       | Unexpected behavior, result, or exception.  Most bugs    |
-|                | will have this type. This group also includes compile    |
-|                | errors, and crashers.                                    |
-+----------------+----------------------------------------------------------+
-| enhancement    | Issues that propose the addition of new functionality,   |
-|                | such as new functions, classes, modules, or even new     |
-|                | arguments for existing functions. Also used for          |
-|                | improvements in the documentation, test suite and        |
-|                | other refactorings. A good place to discuss enhancements |
-|                | prior to filing an issue is the                          |
-|                | `Ideas Discourse category`_.                             |
-+----------------+----------------------------------------------------------+
-| performance    | Situations where too much time is necessary to complete  |
-|                | the task. For example, a common task now takes           |
-|                | significantly longer to complete. This group also        |
-|                | includes resource usage (e.g. too much memory needed)    |
-|                | issues.                                                  |
-+----------------+----------------------------------------------------------+
-| security       | Issues that might have security implications. Report     |
-|                | security vulnerabilities using the procedure found in    |
-|                | the `Reporting security issues in Python`_ page on the   |
-|                | python.org website.                                      |
-+----------------+----------------------------------------------------------+
-
-Stage
------
-A needed next action to advance the issue.  The *stage* on GitHub issues is
-determined by presence of a linked PR and whether the issue is still open
-or closed. It is the PR that holds code review-related labels.
-
-Components
-----------
-The area or Python library affected by the issue. A single issue can apply
-multiple component labels.
-
-One or more components may be selected for an issue:
-
-+-------------------+------------------------------------------------------+
-|     Component     |                     Description                      |
-+===================+======================================================+
-| Documentation     | The documentation in Doc_ (source used to build HTML |
-|                   | docs for https://docs.python.org/).                  |
-+-------------------+------------------------------------------------------+
-| Extension Modules | C modules in Modules_.                               |
-+-------------------+------------------------------------------------------+
-| Interpreter Core  | The interpreter core.                                |
-|                   | The built-in objects in `Objects`_, the `Python`_,   |
-|                   | `Grammar`_ and `Parser`_ dirs.                       |
-+-------------------+------------------------------------------------------+
-| Library (Lib)     | Python modules in Lib_.                              |
-+-------------------+------------------------------------------------------+
-| Tests             | The unittest framework in `Lib/unittest`_            |
-|                   | The doctest framework `Lib/doctest.py`_.             |
-|                   | The CPython tests in `Lib/test`_.                    |
-|                   | The test runner in `Lib/test/regrtest.py`_.          |
-|                   | The test support utilities in `Lib/test/support`_.   |
-+-------------------+------------------------------------------------------+
-
-Versions
---------
-The known versions of Python that the issue affects and should be fixed for.
-
-Thus if an issue for a new feature is assigned for e.g., Python 3.8 but is not
-applied before Python 3.8.0 is released, this label should be updated to say
-``python-3.9`` as the version and drop ``python-3.8``.
-
-Priority
---------
-What is the severity and urgency?
-
-+------------------+--------------------------------------------------------+
-| Priority         | Description                                            |
-+==================+========================================================+
-| normal           | The default value for most issues filed.               |
-+------------------+--------------------------------------------------------+
-| deferred blocker | The issue will not hold up the next release, *n*. It   |
-|                  | will be promoted to a *release blocker* for the        |
-|                  | following release, *n+1*.                              |
-+------------------+--------------------------------------------------------+
-| release blocker  | The issue **must** be fixed before *any* release is    |
-|                  | made, e.g., will block the next release even if it is  |
-|                  | an alpha release.                                      |
-+------------------+--------------------------------------------------------+
-
-As a guideline, whether a bug is a *release blocker* for the current
-:ref:`release schedule <branchstatus>` is decided by the release manager.
-Triagers may recommend this priority and should notify the release manager by
-tagging them in a comment using ``@username``. If needed, consult the
-:ref:`release schedule <branchstatus>` and the release's associated PEP for the
-release manager's name.
-
-Keywords
---------
-Various informational flags about the issue. Multiple values are possible.
-
-+---------------+------------------------------------------------------------+
-|    Keyword    |                        Description                         |
-+===============+============================================================+
-| easy          | Fixing the issue should not take longer than a day for     |
-|               | someone new to contributing to Python to solve.            |
-+---------------+------------------------------------------------------------+
-
-Nosy List
----------
-A list of people who may be interested in an issue.
-
-This used to be a feature of the old issue tracker. On GitHub issues the
-same effect is achieved by tagging people in a comment using ``@username``.
-
-It is acceptable to tag someone to if you think the issue should be brought to
-their attention. Use the :ref:`experts` to know who wants to be added to the
-nosy list for issues targeting specific areas.
-
-If you want to subscribe yourself to an issue, click the *🔔 Subscribe*
-button in the sidebar. Similarly, if you were tagged by somebody else but
-decided this issue is not for you, you might click the *🔕 Unsubscribe*
-button in the sidebar.
-
-Assignees
----------
-Who is expected to take the next step in resolving the issue.
-
-It is acceptable to assign an issue to someone if the issue cannot move
-forward without their help, e.g., they need to make a technical decision to
-allow the issue to move forward. Also consult the :ref:`experts` as certain
-stdlib modules should always be assigned to a specific person.
-
-Note that in order to assign an issue to someone, that person **must** be
-a team member, likely a Triager or a core developer.
-
-Dependencies
-------------
-The issue requires the listed issue(s) to be resolved first before it can move
-forward. This is achieved using checkbox lists in the initial issue description
-comment. Long story short, if you add this::
-
-    - [x] #739
-    - [ ] https://github.com/octo-org/octo-repo/issues/740
-    - [ ] Add delight to the experience when all tasks are complete :tada:
-
-then those will become sub-tasks on the given issue. Moreover, GitHub will
-automatically mark a task as complete if the other referenced issue is
-closed.
-
-More details in the `official GitHub documentation
-<https://docs.github.com/en/get-started/writing-on-github/working-with-advanced-formatting/about-task-lists>`_.
-
-Superseder
-----------
-The issue is a duplicate of the listed issue(s). To make GitHub mark
-an issue as duplicate, write "Duplicate of #xxxx" in a comment.
-
-Status
-------
-
-+---------------+------------------------------------------------------------+
-|    Status     |                        Description                         |
-+===============+============================================================+
-| open          | Issue is not resolved.                                     |
-+---------------+------------------------------------------------------------+
-| closed        | The issue has been resolved (somehow).                     |
-+---------------+------------------------------------------------------------+
-
-Linked pull requests
---------------------
-A link might be added manually using the cog icon next to this field.
-Most commonly though, if the PR includes "Fixes #xxx" in its description,
-the link will be added automatically.
-
-Generating Special Links in a Comment
-=====================================
-Using the following abbreviations in a comment will automatically generate
-a link to relevant web pages.
-
-+-------------------------------------------------------------+-------------------------------------------------------+
-| Comment abbreviation                                        | Description                                           |
-+=============================================================+=======================================================+
-| ``#<number>``,                                              | Links to the tracker issue or PR ``<number>`` (they   |
-| ``GH-<number>``                                             | share the same sequence of integers on GitHub).       |
-+-------------------------------------------------------------+-------------------------------------------------------+
-| ``BPO-<number>``                                            | Links to the old bug tracker at bugs.python.org.      |
-+-------------------------------------------------------------+-------------------------------------------------------+
-| a 10-, 11-, 12-, or 40-digit hex ``<number>``               | Indicates a Git changeset identifier and              |
-|                                                             | generates a link to changeset ``<number>`` on GitHub. |
-+-------------------------------------------------------------+-------------------------------------------------------+
-
-.. _Doc: https://github.com/python/cpython/tree/main/Doc/
-.. _Grammar: https://github.com/python/cpython/tree/main/Grammar/
-.. _Lib: https://github.com/python/cpython/tree/main/Lib/
-.. _Lib/doctest.py: https://github.com/python/cpython/blob/main/Lib/doctest.py
-.. _Lib/test: https://github.com/python/cpython/tree/main/Lib/test/
-.. _Lib/test/regrtest.py: https://github.com/python/cpython/blob/main/Lib/test/regrtest.py
-.. _Lib/test/support: https://github.com/python/cpython/tree/main/Lib/test/support/
-.. _Lib/unittest: https://github.com/python/cpython/tree/main/Lib/unittest/
-.. _Modules: https://github.com/python/cpython/tree/main/Modules/
-.. _Objects: https://github.com/python/cpython/tree/main/Objects/
-.. _Parser: https://github.com/python/cpython/tree/main/Parser/
-.. _Python: https://github.com/python/cpython/tree/main/Python/
 .. _Reporting security issues in Python: https://www.python.org/dev/security/
 .. _Ideas Discourse category: https://discuss.python.org/c/ideas/6
