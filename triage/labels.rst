@@ -33,17 +33,18 @@ Component labels
 These labels are mostly used to specify which :ref:`part of the codebase
 <directory-structure>` is affected by the issue/PR:
 
-* :gh-label:`stdlib`: for standard library modules in the :file:`Lib` directory
-  (written in Python).
+* :gh-label:`stdlib`: for standard library modules in the :cpy-file:`Lib`
+  directory (written in Python).
 * :gh-label:`extension-modules`: for standard library modules in the
-  :file:`Modules` directory (written in C).
+  :cpy-file:`Modules` directory (written in C).
 * :gh-label:`interpreter-core`: for changes related to the interpreter core in
-  the :file:`Objects`, :file:`Python`, :file:`Grammar`, and :file:`Parser` dirs
-  (written mostly in C).
-* :gh-label:`docs`: for documentation in the :file:`Doc` directory (written in
-  reStructuredText), docstrings, and code comments.
-* :gh-label:`tests`: for tests in the :file:`Lib/test` directory (written in
-  Python) and changes other related to tests, ``unittest``, or ``doctests``.
+  the :cpy-file:`Objects`, :cpy-file:`Python`, :cpy-file:`Grammar`,
+  and :cpy-file:`Parser` dirs (written mostly in C).
+* :gh-label:`docs`: for documentation in the :cpy-file:`Doc` directory
+  (written in reStructuredText), docstrings, and code comments.
+* :gh-label:`tests`: for tests in the :cpy-file:`Lib/test` directory
+  (written in Python) and changes other related to tests, ``unittest``,
+  or ``doctests``.
 
 
 Expert labels
