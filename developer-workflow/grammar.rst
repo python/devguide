@@ -28,7 +28,7 @@ Note: sometimes things mysteriously don't work.  Before giving up, try ``make cl
 * :cpy-file:`Grammar/python.gram`: The grammar, with actions that build AST nodes.
   After changing it, run ``make regen-pegen`` (or ``build.bat --regen`` on Windows),
   to regenerate :cpy-file:`Parser/parser.c`.
-  (This runs Python's parser generator, ``Tools/peg_generator``).
+  (This runs Python's parser generator, :cpy-file:`Tools/peg_generator`).
 
 * :cpy-file:`Grammar/Tokens` is a place for adding new token types.  After
   changing it, run ``make regen-token`` to regenerate
