@@ -44,7 +44,7 @@ itself. git is easily available for all common operating systems.
 - **Configure**
 
   Configure :ref:`your name and email <set-up-name-email>` and create
-  `an SSH key <https://help.github.com/articles/adding-a-new-ssh-key-to-your-github-account/>`_
+  `an SSH key <https://docs.github.com/en/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account>`_
   as this will allow you to interact with GitHub without typing a username
   and password each time you execute a command, such as ``git pull``,
   ``git push``, or ``git fetch``.  On Windows, you should also
@@ -60,7 +60,7 @@ The CPython repo is hosted on GitHub. To get a copy of the source code you shoul
 :ref:`fork the Python repository on GitHub <fork-cpython>`, :ref:`create a local
 clone of your personal fork, and configure the remotes <clone-your-fork>`.
 
-You will only need to execute these steps once:
+You will only need to execute these steps once per machine:
 
 1. Go to https://github.com/python/cpython.
 
@@ -76,18 +76,29 @@ You will only need to execute these steps once:
 
    (You can use both SSH-based or HTTPS-based URLs.)
 
-6. Configure an ``upstream`` remote::
+.. Step 6 and 7 are are duplicated in bootcamp as well.
+   Please update these steps in both places.
+
+6. Add an ``upstream`` remote, then configure ``git``
+   to pull ``main`` from ``upstream`` and always push to ``origin``::
 
       $ cd cpython
-      $ git remote add upstream git@github.com:python/cpython.git
+      $ git remote add upstream https://github.com/python/cpython
+      $ git config --local branch.main.remote upstream
+      $ git remote set-url --push upstream git@github.com:<your-username>/cpython.git
 
 7. Verify that your setup is correct::
 
       $ git remote -v
       origin  git@github.com:<your-username>/cpython.git (fetch)
       origin  git@github.com:<your-username>/cpython.git (push)
-      upstream        git@github.com:python/cpython.git (fetch)
-      upstream        git@github.com:python/cpython.git (push)
+      upstream        https://github.com/python/cpython (fetch)
+      upstream        git@github.com:<your-username>/cpython.git (push)
+      $ git config branch.main.remote
+      upstream
+
+For more information about these commands see
+:ref:`Git Bootcamp and Cheat Sheet <git-boot-camp>`.
 
 If you did everything correctly, you should now have a copy of the code
 in the ``cpython`` directory and two remotes that refer to your own GitHub fork
@@ -134,7 +145,7 @@ checks that one should not skip.
 
 .. _unix-compiling:
 
-UNIX
+Unix
 ----
 
 The core CPython interpreter only needs a C compiler to be built,
@@ -150,11 +161,9 @@ If you want to install these optional dependencies, consult the
 If you don't need to install them, the basic steps for building Python
 for development is to configure it and then compile it.
 
-Configuration is typically:
+Configuration is typically::
 
-.. code-block:: bash
-
-   ./configure --with-pydebug
+   $ ./configure --with-pydebug
 
 More flags are available to ``configure``, but this is the minimum you should
 do to get a pydebug build of CPython.
@@ -163,11 +172,9 @@ do to get a pydebug build of CPython.
    You might need to run ``make clean`` before or after re-running ``configure``
    in a particular build directory.
 
-Once ``configure`` is done, you can then compile CPython with:
+Once ``configure`` is done, you can then compile CPython with::
 
-.. code-block:: bash
-
-   make -s -j2
+   $ make -s -j2
 
 This will build CPython with only warnings and errors being printed to
 stderr and utilize up to 2 CPU cores. If you are using a multi-core machine
@@ -202,7 +209,7 @@ If you decide to :ref:`build-dependencies`, you will need to re-run both
 Once CPython is done building you will then have a working build
 that can be run in-place; ``./python`` on most machines (and what is used in
 all examples), ``./python.exe`` wherever a case-insensitive filesystem is used
-(e.g. on OS X by default), in order to avoid conflicts with the ``Python``
+(e.g. on macOS by default), in order to avoid conflicts with the ``Python``
 directory. There is normally no need to install your built copy
 of Python! The interpreter will realize where it is being run from
 and thus use the files found in the working copy.  If you are worried
@@ -238,47 +245,80 @@ still build properly).
 Windows
 -------
 
-For a quick guide to building you can read `this documentation`_ from Victor
-Stinner.
+.. note:: If you are using the Windows Subsystem for Linux (WSL),
+   :ref:`clone the repository <checkout>` from a native Windows shell program
+   like PowerShell or the ``cmd.exe`` command prompt,
+   and use a build of Git targeted for Windows,
+   e.g. the `Git for Windows download from the official Git website`_.
+   Otherwise, Visual Studio will not be able to find all the project's files
+   and will fail the build.
 
-All current versions of Python can be built using Microsoft Visual Studio 2017
-or later.  You can download
-and use any of the free or paid versions of `Visual Studio 2017`_.
+For a concise step by step summary of building Python on Windows,
+you can read `Victor Stinner's guide`_.
 
-When installing Visual Studio 2017, select the **Python development** workload
-and the optional **Python native development tools** component to obtain all of
-the necessary build tools. If you do not already have git installed, you can
-find git for Windows on the **Individual components** tab of the installer.
+All supported versions of Python can be built
+using Microsoft Visual Studio 2017 or later.
+You can download and use any of the free or paid versions of `Visual Studio`_.
+
+When installing it, select the :guilabel:`Python development` workload
+and the optional :guilabel:`Python native development tools` component
+to obtain all of the necessary build tools.
+You can find Git for Windows on the :guilabel:`Individual components` tab
+if you don't already have it installed.
 
 .. note:: If you want to build MSI installers, be aware that the build toolchain
-  for them has a dependency on the Microsoft .NET Framework Version 3.5 (which
-  may not be configured on recent versions of Windows, such as Windows 10). If
-  you are building on a recent Windows version, use the Control Panel (Programs
-  | Programs and Features | Turn Windows Features on or off) and ensure that the
-  entry ".NET Framework 3.5 (includes .NET 2.0 and 3.0)" is enabled.
+   for them has a dependency on the Microsoft .NET Framework Version 3.5
+   (which may not be included on recent versions of Windows, such as Windows 10).
+   If you are building on a recent Windows version, use the Control Panel
+   (:menuselection:`Programs --> Programs and Features --> Turn Windows Features on or off`)
+   and ensure that the entry
+   :guilabel:`.NET Framework 3.5 (includes .NET 2.0 and 3.0)` is enabled.
 
 Your first build should use the command line to ensure any external dependencies
 are downloaded:
 
-.. code-block:: dosbatch
+.. code-block:: batch
 
-   PCbuild\build.bat
+   PCbuild\build.bat -c Debug
 
-After this build succeeds, you can open the ``PCbuild\pcbuild.sln`` solution in
-Visual Studio to continue development.
+The above command line build uses the ``-c Debug`` argument
+to build in the ``Debug`` configuration,
+which enables checks and assertions helpful for developing Python.
+By default, it builds in the ``Release`` configuration
+and for the 64-bit ``x64`` platform rather than 32-bit ``Win32``;
+use ``-c`` and ``-p`` to control build config and platform, respectively.
 
-See the `readme`_ for more details on what other software is necessary and how
-to build.
+After this build succeeds, you can open the ``PCbuild\pcbuild.sln`` solution
+in the Visual Studio IDE to continue development, if you prefer.
+When building in Visual Studio,
+make sure to select build settings that match what you used with the script
+(the :guilabel:`Debug` configuration and the :guilabel:`x64` platform)
+from the dropdown menus in the toolbar.
 
-.. note:: If you are using the Windows Subsystem for Linux (WSL), clone the
-   repository from a native Windows terminal program like cmd.exe command prompt
-   or PowerShell as well as use a build of git targeted for Windows, e.g., the
-   official one from `<https://git-scm.com>`_. Otherwise, Visual Studio will
-   not be able to find all the project's files and will fail the build.
+.. note::
 
-.. _this documentation: https://cpython-core-tutorial.readthedocs.io/en/latest/build_cpython_windows.html
-.. _Visual Studio 2017: https://visualstudio.microsoft.com/
-.. _readme: https://github.com/python/cpython/blob/main/PCbuild/readme.txt
+   If you need to change the build configuration or platform,
+   build once with the ``build.bat`` script set to those options first
+   before building with them in VS to ensure all files are rebuilt properly,
+   or you may encounter errors when loading modules that were not rebuilt.
+
+   Avoid selecting the ``PGInstrument`` and ``PGUpdate`` configurations,
+   as these are intended for PGO builds and not for normal development.
+
+You can run the build of Python you've compiled with:
+
+.. code-block:: batch
+
+   PCbuild\amd64\python_d.exe
+
+See the `PCBuild readme`_ for more details on what other software is necessary
+and how to build.
+
+.. _Victor Stinner's guide: https://cpython-core-tutorial.readthedocs.io/en/latest/build_cpython_windows.html
+.. _Visual Studio: https://visualstudio.microsoft.com/
+.. _PCBuild readme: https://github.com/python/cpython/blob/main/PCbuild/readme.txt
+.. _Git for Windows download from the official Git website: https://git-scm.com/download/win
+
 
 .. _build-dependencies:
 
@@ -286,7 +326,7 @@ Install dependencies
 ====================
 
 This section explains how to install additional extensions (e.g. ``zlib``)
-on :ref:`Linux <deps-on-linux>` and :ref:`macOs/OS X <macOS>`.  On Windows,
+on :ref:`Linux <deps-on-linux>` and :ref:`macOS`.  On Windows,
 extensions are already included and built automatically.
 
 .. _deps-on-linux:
@@ -294,7 +334,7 @@ extensions are already included and built automatically.
 Linux
 -----
 
-For UNIX based systems, we try to use system libraries whenever available.
+For Unix-based systems, we try to use system libraries whenever available.
 This means optional components will only build if the relevant system headers
 are available. The best way to obtain the appropriate headers will vary by
 distribution, but the appropriate commands for some popular distributions
@@ -345,12 +385,13 @@ their dependencies::
          lzma lzma-dev tk-dev uuid-dev zlib1g-dev
 
 
-.. _MacOS:
+.. _macOS and OS X:
+.. _macOS:
 
-macOS and OS X
---------------
+macOS
+-----
 
-For **macOS systems** (versions 10.12+) and **OS X 10.9 and later**,
+For **macOS systems** (versions 10.9+),
 the Developer Tools can be downloaded and installed automatically;
 you do not need to download the complete Xcode application.
 
@@ -361,21 +402,11 @@ If necessary, run the following::
 This will also ensure that the system header files are installed into
 ``/usr/include``.
 
-On **Mac OS X systems** (versions 10.0 - 10.7) and **OS X 10.8**, use the C
-compiler and other development utilities provided by Apple's Xcode Developer
-Tools. The Developer Tools are not shipped with Mac OS X.
-
-For these **older releases (versions 10.0 - 10.8)**, you will need to download either the
-correct version of the Command Line Tools, if available, or install them from the
-full Xcode app or package for that OS X release.  Older versions may be
-available either as a no-cost download through Apple's App Store or from
-`the Apple Developer web site <https://developer.apple.com/>`_.
-
 .. _Homebrew: https://brew.sh
 
 .. _MacPorts: https://www.macports.org
 
-Also note that OS X does not include several libraries used by the Python
+Also note that macOS does not include several libraries used by the Python
 standard library, including ``libzma``, so expect to see some extension module
 build failures unless you install local copies of them.  As of OS X 10.11,
 Apple no longer provides header files for the deprecated system version of
@@ -390,16 +421,22 @@ with **Homebrew**::
 
 For Python 3.10 and newer::
 
-    $ PKG_CONFIG_PATH="$(brew --prefix tcl-tk)/lib/pkgconfig" \
-      ./configure --with-pydebug --with-openssl=$(brew --prefix openssl@1.1)
+    $ CFLAGS="-I$(brew --prefix gdbm)/include -I$(brew --prefix xz)/include" \
+      LDFLAGS="-L$(brew --prefix gdbm)/lib -I$(brew --prefix xz)/lib" \
+      PKG_CONFIG_PATH="$(brew --prefix tcl-tk)/lib/pkgconfig" \
+      ./configure --with-pydebug \
+                  --with-openssl=$(brew --prefix openssl)
+
 
 For Python versions 3.9 through 3.7::
 
-    $ export PKG_CONFIG_PATH="$(brew --prefix tcl-tk)/lib/pkgconfig"
-    $ ./configure --with-pydebug \
-                  --with-openssl=$(brew --prefix openssl@1.1) \
-                  --with-tcltk-libs="$(pkg-config --libs tcl tk)" \
-                  --with-tcltk-includes="$(pkg-config --cflags tcl tk)"
+    $ CFLAGS="-I$(brew --prefix gdbm)/include -I$(brew --prefix xz)/include" \
+      LDFLAGS="-L$(brew --prefix gdbm)/lib -L$(brew --prefix xz)/lib" \
+      PKG_CONFIG_PATH="$(brew --prefix tcl-tk)/lib/pkgconfig" \
+      ./configure --with-pydebug \
+              --with-openssl=$(brew --prefix openssl@1.1) \
+              --with-tcltk-libs="$(pkg-config --libs tcl tk)" \
+              --with-tcltk-includes="$(pkg-config --cflags tcl tk)"
 
 and ``make``::
 
@@ -420,10 +457,10 @@ and ``make``::
     $ make -s -j2
 
 There will sometimes be optional modules added for a new release which
-won't yet be identified in the OS level build dependencies. In those cases,
+won't yet be identified in the OS-level build dependencies. In those cases,
 just ask for assistance on the core-mentorship list.
 
-Explaining how to build optional dependencies on a UNIX based system without
+Explaining how to build optional dependencies on a Unix-based system without
 root access is beyond the scope of this guide.
 
 For more details on various options and considerations for building, refer
@@ -465,11 +502,9 @@ Python's ``configure.ac`` script typically requires a specific version of
 Autoconf.  At the moment, this reads: ``AC_PREREQ(2.69)``. It also requires
 to have the ``autoconf-archive`` and ``pkg-config`` utilities installed in
 the system and the ``pkg.m4`` macro file located in the appropriate ``alocal``
-location. You can easily check if this is correctly configured by running:
+location. You can easily check if this is correctly configured by running::
 
-.. code-block:: bash
-
-   ls $(aclocal --print-ac-dir) | grep pkg.m4
+   $ ls $(aclocal --print-ac-dir) | grep pkg.m4
 
 If the system copy of Autoconf does not match this version, you will need to
 install your own copy of Autoconf.
@@ -501,9 +536,7 @@ Make target. Note that for doing this you need to regenerate the ABI file in
 the same environment that the GitHub CI uses to check for it. This is because
 different platforms may include some platform-specific details that make the
 check fail even if the Python ABI is the same. The easier way to regenerate
-the ABI file using the same platform as the CI uses is by using docker:
-
-.. code-block:: bash
+the ABI file using the same platform as the CI uses is by using Docker::
 
    # In the CPython root:
    $ docker run -v$(pwd):/src:Z -w /src --rm -it ubuntu:22.04 \
@@ -569,7 +602,7 @@ every rule.
      The part of the standard library implemented in pure Python.
 
 ``Mac``
-     Mac-specific code (e.g., using IDLE as an OS X application).
+     Mac-specific code (e.g., using IDLE as a macOS application).
 
 ``Misc``
      Things that do not belong elsewhere. Typically this is varying kinds of

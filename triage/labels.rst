@@ -32,7 +32,6 @@ Component labels
 These labels are mostly used to specify which :ref:`part of the codebase
 <directory-structure>` is affected by the issue/PR:
 
-
 * ``stdlib``: for standard library modules in the :file:`Lib` directory
   (written in Python).
 * ``extension-modules``: for standard library modules in the :file:`Modules`
@@ -91,6 +90,7 @@ Other labels
 * ``stale``: for issues/PRs that have been inactive for a while.
 * ``sprint``: used for easier filtering of issues/PRs being worked on during
   official sprints.
+
 
 
 Labels specific to PRs
@@ -155,8 +155,8 @@ specific type, please do not set a type.
 |                | arguments for existing functions. Also used for          |
 |                | improvements in the documentation, test suite and        |
 |                | other refactorings. A good place to discuss enhancements |
-|                | prior to filing an issue is `python-ideas`_ mailing      |
-|                | list.                                                    |
+|                | prior to filing an issue is the                          |
+|                | `Ideas Discourse category`_.                             |
 +----------------+----------------------------------------------------------+
 | performance    | Situations where too much time is necessary to complete  |
 |                | the task. For example, a common task now takes           |
@@ -291,7 +291,7 @@ automatically mark a task as complete if the other referenced issue is
 closed.
 
 More details in the `official GitHub documentation
-<https://docs.github.com/en/issues/tracking-your-work-with-issues/about-task-lists>`_.
+<https://docs.github.com/en/get-started/writing-on-github/working-with-advanced-formatting/about-task-lists>`_.
 
 Superseder
 ----------
@@ -345,4 +345,4 @@ a link to relevant web pages.
 .. _Parser: https://github.com/python/cpython/tree/main/Parser/
 .. _Python: https://github.com/python/cpython/tree/main/Python/
 .. _Reporting security issues in Python: https://www.python.org/dev/security/
-.. _python-ideas: https://mail.python.org/mailman3/lists/python-ideas.python.org
+.. _Ideas Discourse category: https://discuss.python.org/c/ideas/6

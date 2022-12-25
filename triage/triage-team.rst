@@ -86,11 +86,13 @@ transition into becoming a Python triager. They can request this to any core
 developer, either confidentially via a DM in Discourse, or
 publicly by opening an `issue in the core-workflow repository
 <https://github.com/python/core-workflow/issues/new?template=triage_membership.md>`_.
-If the core devloper decides you are ready to gain the extra privileges on the
+If the core developer decides you are ready to gain the extra privileges on the
 tracker, they will ask a :ref:`Python organization admin <current owners>`
 to invite you to the Python organisation, and then  act as a mentor to you until
 you are ready to do things entirely on your own.
 
-For every new triager, it would be great to announce them in the python-committers
-mailing list and core-workflow category in Discourse. `Example announcement
-<https://discuss.python.org/t/abhilash-raj-has-been-granted-triage-role-on-github/2089>`_.
+For every new triager, it would be great to announce them in the
+`Committers category <https://discuss.python.org/c/committers/5>`_
+on the `Python Discourse <https://discuss.python.org/>`_
+(`example announcement
+<https://discuss.python.org/t/abhilash-raj-has-been-granted-triage-role-on-github/2089>`__).

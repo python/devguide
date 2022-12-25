@@ -39,7 +39,9 @@ to enter the public source tree. Ask yourself the following questions:
    :ref:`Run the entire test suite <runtests>` to make sure that everything
    still passes. If there is a change to the semantics, then there needs to
    be a strong reason, because it will cause some peoples' code to break.
-   If you are unsure if the breakage is worth it, then ask on python-dev.
+   If you are unsure if the breakage is worth it, then ask
+   on the `Core Development Discourse category
+   <https://discuss.python.org/c/core-dev/23>`__.
 
 * **Does documentation need to be updated?**
    If the pull request introduces backwards-incompatible changes (e.g.
@@ -71,6 +73,8 @@ to enter the public source tree. Ask yourself the following questions:
    entry in the ``What's New in Python`` document (in ``Doc/whatsnew/``) should
    be added as well. Changes that affect only documentation generally do not
    require a ``NEWS`` entry. (See the following section for more information.)
+
+.. _news-entry:
 
 .. _news-entry:
 

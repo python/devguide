@@ -22,7 +22,7 @@ from the root directory of your checkout (after you have
     ./python -m test
 
 You may need to change this command as follows throughout this section.
-On :ref:`most <mac-python.exe>` Mac OS X systems, replace :file:`./python`
+On :ref:`most <mac-python.exe>` macOS systems, replace :file:`./python`
 with :file:`./python.exe`.  On Windows, use :file:`python.bat`.  If using
 Python 2.7, replace ``test`` with ``test.regrtest``.
 
@@ -56,7 +56,7 @@ But, there are several important notes:
 
 1. This way of running tests exists only
    for local developer needs and is discouraged for anything else
-2. Some modules do not support it at all. One example is``test_importlib``.
+2. Some modules do not support it at all. One example is ``test_importlib``.
    In other words: if some module does not have ``unittest.main()``, then
    most likely it does not support direct invocation.
 
@@ -133,6 +133,8 @@ That module is not suitable for use outside of the standard library.
 When you are adding tests to an existing test file, it is also recommended
 that you study the other tests in that file; it will teach you which precautions
 you have to take to make your tests robust and portable.
+
+For tests of the C API, see Tests sections in :ref:`c-api`.
 
 
 Benchmarks

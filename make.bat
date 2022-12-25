@@ -223,6 +223,14 @@ goto end
 (see https://github.com/python/cpython/issues/80510)
 goto end
 
+if "%1" == "versions" (
+	%PYTHON% _tools/generate_release_cycle.py
+	if errorlevel 1 exit /b 1
+	echo.
+	echo Release cycle data generated.
+	goto end
+)
+
 :end
 popd
 endlocal

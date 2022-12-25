@@ -1,3 +1,8 @@
+Shantanu Jain,hauntsaninja,2022-12-19,,
+Kumar Aditya,kumaraditya303,2022-11-21,,
+Hugo van Kemenade,hugovk,2022-11-21,,
+Alex Waygood,AlexWaygood,2022-10-18,,
+Filipe Laíns,FFY00,2022-10-17,,
 Erlend Egeberg Aasland,erlend-aasland,2022-05-05,,
 Jelle Zijlstra,JelleZijlstra,2022-02-15,,
 Dennis Sweeney,sweeneyde,2022-02-02,,
@@ -86,7 +91,7 @@ Tarek Ziadé,tarekziade,2008-12-21,2017-02-10,For distutils module
 Hirokazu Yamamoto,,2008-08-12,2017-02-10,For Windows build; did not make GitHub transition
 Armin Ronacher,mitsuhiko,2008-07-23,2020-11-26,For documentation toolset and ast module
 Antoine Pitrou,pitrou,2008-07-16,,
-Senthil Kumaran,orsenthil,2008-06-16,,For GSoC
+Senthil Kumaran,orsenthil,2008-06-16,,
 Jesse Noller,,2008-06-16,2017-02-10,For multiprocessing module; did not make GitHub transition
 Jesús Cea,jcea,2008-05-13,,For bsddb module
 Guilherme Polo,,2008-04-24,2017-02-10,Did not make GitHub transition
@@ -123,7 +128,7 @@ Johannes Gijsbers,,2004-08-14,2005-07-27,Privileges relinquished on 2005-07-27
 Matthias Klose,doko42,2004-08-04,,
 PJ Eby,pjeby,2004-03-24,2020-11-26,
 Vinay Sajip,vsajip,2004-02-20,,
-Hye-Shik Chang,,2003-12-10,2017-02-10,Did not make GitHub transition
+Hye-Shik Chang,hyeshik,2003-12-10,,
 Armin Rigo,,2003-10-24,2012-06-01,Privileges relinquished in 2012
 Andrew McNamara,,2003-06-09,2017-02-10,Did not make GitHub transition
 Samuele Pedroni,,2003-05-16,2017-02-10,Did not make GitHub transition
@@ -132,7 +137,7 @@ Brett Cannon,brettcannon,2003-04-18,,
 David Goodger,,2003-01-02,2017-02-10,Did not make GitHub transition
 Gustavo Niemeyer,,2002-11-05,2017-02-10,Did not make GitHub transition
 Tony Lownds,,2002-09-22,2017-02-10,Did not make GitHub transition
-Steve Holden,,2002-06-14,2017-02-10,"Relinquished privileges on 2005-04-07,
+Steve Holden,holdenweb,2002-06-14,2017-02-10,"Relinquished privileges on 2005-04-07,
         but granted again for Need for Speed sprint; did not make GitHub transition"
 Christian Tismer,ctismer,2002-05-17,,For Need for Speed sprint
 Jason Tishler,,2002-05-15,2017-02-10,Did not make GitHub transition

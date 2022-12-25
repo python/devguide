@@ -49,8 +49,8 @@ in production; others are works in progress.
 | Persian (fa)    | `Komeil Parseh (@mmdbalkhi)   | `GitHub <github_fa_>`_     |
 |                 | <gh_mmdbalkhi_>`_             |                            |
 +-----------------+-------------------------------+----------------------------+
-| Polish (pl)     |                               | `GitHub <github_pl_>`_     |
-|                 |                               | `Translations <tx_pl_>`_   |
+| Polish (pl)     | `Maciej Olko (@m-aciek)       | `GitHub <github_pl_>`_     |
+|                 | <gh_maciek_>`_                | `Translations <tx_pl_>`_   |
 |                 |                               | `Doc <doc_pl_>`_           |
 |                 |                               | `mail <mail_pl_>`_         |
 +-----------------+-------------------------------+----------------------------+
@@ -74,7 +74,7 @@ in production; others are works in progress.
 | (zh-tw)         | Josix Wang                    |                            |
 +-----------------+-------------------------------+----------------------------+
 | Turkish (tr)    | `Ege Akman (@egeakman)        | `GitHub <github_tr_>`_     |
-|                 | <email_egeakman_>`_           |                            |
+|                 | <gh_egeakman_>`_              | `GH-Pages <gh_pages_tr_>`_ |
 +-----------------+-------------------------------+----------------------------+
 | Ukrainian (uk)  | `Dmytro Kazanzhy (@kazanzhy)  | `GitHub <github_uk_>`_     |
 |                 | <email_kazanzhy_>`_           | `Translations <tx_uk_>`_   |
@@ -84,13 +84,14 @@ in production; others are works in progress.
 .. _gh_cocoatomo: https://github.com/cocoatomo
 .. _gh_gbtami: https://github.com/gbtami
 .. _gh_kushal: https://github.com/Kushal997-das
+.. _gh_maciek: https://github.com/m-aciek
 .. _gh_mdk: https://github.com/JulienPalard
 .. _gh_mmdbalkhi: https://github.com/mmdbalkhi
 .. _gh_oonid: https://github.com/oonid
 .. _gh_osdotsystem: https://github.com/Abdur-rahmaanJ
 .. _gh_zhsj: https://github.com/zhsj
 .. _gh_mattwang44: https://github.com/mattwang44
-.. _email_egeakman: mailto:egeakmanegeakman@hotmail.com
+.. _gh_egeakman: https://github.com/egeakman
 .. _email_garade: mailto:garade@pm.me
 .. _email_kazanzhy: mailto:dkazanzhy@gmail.com
 .. _chat_pt_br: https://t.me/pybr_i18n
@@ -99,10 +100,11 @@ in production; others are works in progress.
 .. _doc_pl: https://docs.python.org/pl/
 .. _doc_zh_cn: https://docs.python.org/zh-cn/
 .. _doc_zh_tw: https://docs.python.org/zh-tw/
+.. _gh_pages_tr: https://python.github.io/python-docs-tr/
 .. _github_ar: https://github.com/Abdur-rahmaanJ/python-docs-ar
 .. _github_bn_in: https://github.com/python/python-docs-bn-in
 .. _github_es: https://github.com/python/python-docs-es
-.. _github_fa: https://github.com/mmdbalkhi/python-docs-fa
+.. _github_fa: https://github.com/ftg-iran/python-docs-fa
 .. _github_fr: https://github.com/python/python-docs-fr
 .. _github_hi_in: https://github.com/CuriousLearner/python-docs-hi-in
 .. _github_hu: https://github.com/python/python-docs-hu
@@ -112,7 +114,7 @@ in production; others are works in progress.
 .. _github_mr: https://github.com/sanketgarade/python-doc-mr
 .. _github_pl: https://github.com/python/python-docs-pl
 .. _github_pt_br: https://github.com/python/python-docs-pt-br
-.. _github_tr: https://github.com/python-docs-tr/python-docs-tr
+.. _github_tr: https://github.com/python/python-docs-tr
 .. _github_uk: https://github.com/python/python-docs-uk
 .. _github_zh_cn: https://github.com/python/python-docs-zh-cn
 .. _github_zh_tw: https://github.com/python/python-docs-zh-tw
@@ -121,9 +123,9 @@ in production; others are works in progress.
 .. _mail_lt: https://mail.python.org/pipermail/doc-sig/2019-July/004138.html
 .. _mail_pl: https://mail.python.org/pipermail/doc-sig/2019-April/004106.html
 .. _mail_ru: https://mail.python.org/pipermail/doc-sig/2019-May/004131.html
-.. _tx_pl: https://www.transifex.com/python-doc/python-newest/
-.. _tx_uk: https://www.transifex.com/python-doc/python-newest/
-.. _tx_zh_cn: https://www.transifex.com/python-doc/python-newest/
+.. _tx_pl: https://explore.transifex.com/python-doc/python-newest/
+.. _tx_uk: https://explore.transifex.com/python-doc/python-newest/
+.. _tx_zh_cn: https://explore.transifex.com/python-doc/python-newest/
 .. _wiki_pt_br: https://python.org.br/traducao/
 
 Starting a new translation
