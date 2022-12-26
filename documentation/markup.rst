@@ -220,8 +220,8 @@ A directive is a generic block of explicit markup.  Besides roles, it is one of
 the extension mechanisms of reST, and Sphinx makes heavy use of it.
 
 Basically, a directive consists of a name, arguments, options and content. (Keep
-this terminology in mind, it is used in `:ref:`the next section
-<Additional Markup Constructs>` describing custom
+this terminology in mind, it is used in :ref:`the next section
+<additional-markup-constructs>` describing custom
 directives.)  Looking at this example,
 
 ::
@@ -287,6 +287,7 @@ There are some problems one commonly runs into while authoring reST documents:
   separated from the surrounding text by non-word characters, you have to use
   an escaped space to get around that.
 
+.. _additional-markup-constructs:
 
 Additional Markup Constructs
 ============================
