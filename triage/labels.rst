@@ -44,9 +44,9 @@ These labels are mostly used to specify which :ref:`part of the codebase
   the :cpy-file:`Objects`, :cpy-file:`Python`, :cpy-file:`Grammar`,
   and :cpy-file:`Parser` dirs (written mostly in C).
 * :gh-label:`docs`: for documentation in the :cpy-file:`Doc` directory
-  (written in reStructuredText), docstrings, and code comments.
+  (written in :ref:`reStructuredText <markup>`), docstrings, and code comments.
 * :gh-label:`tests`: for tests in the :cpy-file:`Lib/test` directory
-  (written in Python) and changes other related to tests, ``unittest``,
+  (written in Python) and other changes related to tests, ``unittest``,
   or ``doctests``.
 
 
@@ -58,7 +58,7 @@ the issue/PR.  This includes both specific modules/packages and generic
 interest areas.
 
 Adding these labels is also a way to notify the relevant experts, since
-they are encouraged to subscribe to these labels.  Depending on the label,
+they are encouraged to subscribe to them.  Depending on the label,
 this might also automatically add the issue to a GitHub project.
 
 You can see the `full list of expert labels on GitHub
@@ -105,7 +105,7 @@ Labels specific to PRs
 ======================
 
 The following labels only apply to PRs.  They are either set automatically
-by bots, or applied by humans to trigger specific bot behaviors.
+by bots, or added by humans to trigger specific bot behaviors.
 
 * :gh-label:`DO-NOT-MERGE`: for PRs that shouldn't be merged in their current
   state.  It also prevents ``miss-islington`` from being able to automatically
@@ -121,7 +121,7 @@ by bots, or applied by humans to trigger specific bot behaviors.
 * :gh-label:`skip news`: for PRs that don't need a NEWS entry.
   The :ref:`news-entry` section covers in details in which cases the NEWS entry
   can be skipped.
-* :samp:`awaiting *`: these labels are applied and used by ``bedevere`` to
+* :samp:`awaiting {action}`: these labels are applied and used by ``bedevere`` to
   indicate the stage of a PR:
 
   * :gh-label:`awaiting review`: the PR hasn't been reviewed and is waiting

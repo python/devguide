@@ -16,8 +16,8 @@ needed, to other repos such as devguide and core-workflow.
 
 Responsibilities include:
 
-* Classify issues and PRs
-* Applying appropriate :ref:`labels <gh-labels>` to PRs/Issues
+* Classifying issues and PRs
+* Applying appropriate :ref:`labels <gh-labels>` to issues/PRs
 * Notifying appropriate core developers
 * :ref:`Reviewing PRs <reviewing-prs>`
 * Assisting contributors
