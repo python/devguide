@@ -89,12 +89,6 @@ contributing to Python:
 * PEPs_ (Python Enhancement Proposals)
 * :ref:`gitbootcamp`
 
-Status of Python branches
--------------------------
-
-Moved to :ref:`versions`
-
-
 .. _contributing:
 
 Contributing
@@ -228,6 +222,11 @@ which includes all infrastructure used in the development of Python itself
 (e.g. mailing lists, issue trackers, GitHub, etc.).
 In general this means everyone is expected to be open, considerate, and
 respectful of others no matter what their position is within the project.
+
+Status of Python branches
+-------------------------
+
+Moved to :ref:`versions`
 
 .. _contents:
 
