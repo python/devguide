@@ -78,7 +78,7 @@ Version labels
 ==============
 
 These labels are used to indicate which versions of Python are affected.
-The available version labels (with the form :samp:`3.{x}`) are updated
+The available version labels (with the form :samp:`3.{N}`) are updated
 whenever new major releases are created or retired.
 
 See also :ref:`the branch status page <branchstatus>`
@@ -94,6 +94,9 @@ Other labels
   to the build process and performances.
 * :gh-label:`release-blocker`/:gh-label:`deferred-blocker`: for issues/PRs
   that, unless fixed, will hold the current or next release respectively.
+  Triagers may set these labels, and the :ref:`branch's release manager <branchstatus>`
+  will review them and determine if they indeed qualify,
+  removing or retaining the label as appropriate.
 * :gh-label:`pending`: for issues/PRs that will be closed unless further
   feedback is provided.
 * :gh-label:`stale`: for issues/PRs that have been inactive for a while.
@@ -108,8 +111,8 @@ The following labels only apply to PRs.  They are either set automatically
 by bots, or added by humans to trigger specific bot behaviors.
 
 * :gh-label:`DO-NOT-MERGE`: for PRs that shouldn't be merged in their current
-  state.  It also prevents ``miss-islington`` from being able to automatically
-  merge the PR.
+  state.  It also prevents `miss-islington <https://github.com/python/miss-islington>`
+  from being able to automatically merge the PR.
 * :samp:`needs backport to {X.Y}`: used to indicate which branches the PR
   should be backported to.  Once the PR is merged, ``miss-islington`` will
   automatically attempt to create backport PRs for the versions indicated

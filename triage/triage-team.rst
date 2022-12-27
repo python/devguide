@@ -42,7 +42,7 @@ following:
 If a triager has any doubt about whether to close a PR, they should consult a core
 developer before taking any action.
 
-Triagers can also make use of the ``pending`` and ``stale`` labels to suggest that a
+Triagers can also make use of the :gh-label:`pending` and :gh-label:`stale` labels to suggest that a
 PR may be suitable for closure. For more information, see the
 :ref:`GitHub PR labels <gh-labels>` section.
 
