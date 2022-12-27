@@ -111,8 +111,8 @@ The following labels only apply to PRs.  They are either set automatically
 by bots, or added by humans to trigger specific bot behaviors.
 
 * :gh-label:`DO-NOT-MERGE`: for PRs that shouldn't be merged in their current
-  state.  It also prevents `miss-islington <https://github.com/python/miss-islington>`
-  from being able to automatically merge the PR.
+  state.  It also prevents `miss-islington`_ from being able to automatically
+  merge the PR.
 * :samp:`needs backport to {X.Y}`: used to indicate which branches the PR
   should be backported to.  Once the PR is merged, ``miss-islington`` will
   automatically attempt to create backport PRs for the versions indicated
@@ -145,3 +145,4 @@ by bots, or added by humans to trigger specific bot behaviors.
 
 .. _Reporting security issues in Python: https://www.python.org/dev/security/
 .. _Ideas Discourse category: https://discuss.python.org/c/ideas/6
+.. _miss-islington: https://github.com/python/miss-islington
