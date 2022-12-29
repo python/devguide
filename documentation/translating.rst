@@ -75,6 +75,7 @@ in production; others are works in progress.
 +-----------------+-------------------------------+----------------------------+
 | Turkish (tr)    | `Ege Akman (@egeakman)        | `GitHub <github_tr_>`_     |
 |                 | <gh_egeakman_>`_              | `GH-Pages <gh_pages_tr_>`_ |
+|                 |                               | `Doc <doc_tr_>`_           |
 +-----------------+-------------------------------+----------------------------+
 | Ukrainian (uk)  | `Dmytro Kazanzhy (@kazanzhy)  | `GitHub <github_uk_>`_     |
 |                 | <email_kazanzhy_>`_           | `Translations <tx_uk_>`_   |
@@ -98,6 +99,7 @@ in production; others are works in progress.
 .. _doc_ja: https://docs.python.org/ja/
 .. _doc_ko: https://docs.python.org/ko/
 .. _doc_pl: https://docs.python.org/pl/
+.. _doc_tr: https://docs.python.org/tr/
 .. _doc_zh_cn: https://docs.python.org/zh-cn/
 .. _doc_zh_tw: https://docs.python.org/zh-tw/
 .. _gh_pages_tr: https://python.github.io/python-docs-tr/
