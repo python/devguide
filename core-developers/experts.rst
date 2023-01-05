@@ -238,6 +238,7 @@ timeit
 tkinter               gpolo^, serhiy-storchaka
 token
 tokenize              meadori
+tomllib               hauntsaninja*
 trace                 abalkin
 traceback             iritkatriel
 tracemalloc           vstinner
