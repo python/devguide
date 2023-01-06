@@ -169,7 +169,7 @@ os
 os.path               serhiy-storchaka
 ossaudiodev
 parser                benjaminp, pablogsal
-pathlib
+pathlib               barneygale*
 pdb
 pickle                avassalotti
 pickletools           avassalotti
