@@ -317,7 +317,7 @@ Interest Area       Maintainers
 ==================  ==========================================================
 algorithms          rhettinger*
 argument clinic     larryhastings
-ast/compiler        benjaminp, brettcannon, 1st1, pablogsal, markshannon, isidentical, brandtbucher
+ast/compiler        benjaminp, 1st1, pablogsal, markshannon, isidentical, brandtbucher
 autoconf/makefiles  Yhg1s*
 bsd
 issue tracker       ezio-melotti
@@ -325,7 +325,7 @@ buildbots           zware, pablogsal
 bytecode            benjaminp, 1st1, markshannon, brandtbucher
 context managers    ncoghlan
 core workflow       Mariatta, ezio-melotti, hugovk
-coverity scan       tiran, brettcannon, Yhg1s
+coverity scan       tiran, Yhg1s
 cryptography        gpshead, dstufft
 data formats        mdickinson
 database            malemburg
@@ -348,7 +348,7 @@ object model        benjaminp, Yhg1s
 packaging           tarekziade, malemburg, alexis^, merwok, dstufft, pfmoore
 pattern matching    brandtbucher*
 peg parser          gvanrossum, pablogsal, lysnikolaou
-performance         brettcannon, vstinner, serhiy-storchaka, 1st1, rhettinger, markshannon, brandtbucher
+performance         vstinner, serhiy-storchaka, 1st1, rhettinger, markshannon, brandtbucher
 pip                 ncoghlan, dstufft, pfmoore, Marcus.Smith^, pradyunsg
 py3 transition      benjaminp
 release management  tarekziade, malemburg, benjaminp, warsaw,
