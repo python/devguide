@@ -52,8 +52,8 @@ typos to unclear documentation and items lacking documentation.
 
 If you see a documentation issue that you would like to tackle, you can:
 
-* check to see if there is a paperclip or `octocat`_ icon at the end of the
-  issue's title column.  If there is, then someone has already created a pull
+* check to see if there is pull request icon to the right of the
+  issue's title.  If there is, then someone has already created a pull
   request for the issue.
 * leave a comment on the issue saying you are going to try and create a pull
   request and roughly how long you think you will take to do so (this allows
