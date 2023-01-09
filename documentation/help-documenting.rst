@@ -37,8 +37,7 @@ The in-development and recent maintenance branches are rebuilt once per day.
 
 If you would like to be more involved with documentation, consider subscribing
 to the `docs@python.org <https://mail.python.org/mailman3/lists/docs.python.org/>`_
-mailing list. The `issue tracker`_ sends new documentation issues to this
-mailing list, and, less frequently, the list receives some directly mailed bug
+mailing list which occasionally receives bug
 reports. The `docs-sig@python.org <https://mail.python.org/mailman/listinfo/doc-sig>`_
 mailing list discusses the documentation toolchain, projects, and standards.
 
