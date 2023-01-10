@@ -37,10 +37,10 @@ The in-development and recent maintenance branches are rebuilt once per day.
 
 If you would like to be more involved with documentation, consider subscribing
 to the `docs@python.org <https://mail.python.org/mailman3/lists/docs.python.org/>`_
-mailing list. The `issue tracker`_ sends new documentation issues to this
-mailing list, and, less frequently, the list receives some directly mailed bug
-reports. The `docs-sig@python.org <https://mail.python.org/mailman/listinfo/doc-sig>`_
-mailing list discusses the documentation toolchain, projects, and standards.
+mailing list and the `Documentation category on the Python Discourse
+<https://discuss.python.org/c/documentation/26>`_,
+where user issues are raised and documentation toolchain, projects, and standards
+are discussed.
 
 
 Helping with documentation issues
@@ -52,8 +52,9 @@ typos to unclear documentation and items lacking documentation.
 
 If you see a documentation issue that you would like to tackle, you can:
 
-* check to see if there is a paperclip or `octocat`_ icon at the end of the
-  issue's title column.  If there is, then someone has already created a pull
+* check to see if there is pull request icon to the right of the issue's title,
+  or an open pull request listed under :guilabel:`Linked PRs` in the issue body.
+  If there is, then someone has already created a pull
   request for the issue.
 * leave a comment on the issue saying you are going to try and create a pull
   request and roughly how long you think you will take to do so (this allows
