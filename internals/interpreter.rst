@@ -18,7 +18,7 @@ Introduction
 
 The bytecode interpreter's job is to execute Python code.
 Its main input is a code object, although this is not a direct argument to the interpreter.
-The interpreter is structured as a (potentially recursive) function taking a thread state (``tstate``) and a stack frame (``frame``).
+The interpreter is structured as a (recursive) function taking a thread state (``tstate``) and a stack frame (``frame``).
 The function also takes an integer ``throwflag``, which is used by the implementation of ``generator.throw()``.
 It returns a new reference to a Python object (``PyObject *``) or an error indicator, ``NULL``.
 Since :pep:`523` this function is configurable by setting ``interp->eval_frame``; we describe only the default function, ``_PyEval_EvalFrameDefault()``.
@@ -71,6 +71,7 @@ A simple instruction decoding loop would look like this::
         unsigned int oparg = _Py_OPARG(word);
         switch (opcode) {
         // ... A case for each opcode ...
+        }
     }
 
 This format supports 256 different opcodes, which is sufficient.
@@ -93,7 +94,7 @@ The following loop, to be inserted just above the ``switch`` statement, will mak
         oparg = (oparg << 8) | _Py_OPARG(word);
     }
 
-For various reasons the actual decoding code is more complicated; we'll get to the reasons.
+For various reasons (mostly efficiency, given that ``EXTENDED_ARG`` is rare) the actual code is different; we'll get to the reasons.
 
 Jumps
 =====
@@ -110,16 +111,18 @@ A relative jump whose ``oparg`` is zero is a no-op.
 Inline cache entries
 ====================
 
-Some (usually specialized) instructions have an associated "inline cache".
+Some (specialized or specializable) instructions have an associated "inline cache".
 The inline cache consists of one or more two-byte entries included in the bytecode array.
 The size of the inline cache for a particular instruction is fixed by its ``opcode`` alone.
+Moreover, the inline cache size for a family of specialized/specializable instructions (e.g., ``LOAD_ATTR``, ``LOAD_ATTR_SLOT``, ``LOAD_ATTR_MODULE``) must all be the same.
 Cache entries are reserved by the compiler and initialized with zeros.
 If an instruction has an inline cache, the layout of its cache can be described by a ``struct`` definition and the address of the cache is given by casting ``next_instr`` to a pointer to the cache ``struct``.
-The size of such a ``struct`` must be independent of the machine architecture and word size.
+The size of such a ``struct`` must be independent of the machine architecture, word size and alignment requirements.
+For 32-bit fields, the ``struct`` should use ``_Py_CODEUNIT field[2]``.
 Even though inline cache entries are represented by code units, they do not have to conform to the ``opcode`` / ``oparg`` format.
 
 The instruction implementation is responsible for advancing ``next_instr`` past the inline cache.
-For example, if an instruction's inline cache is four bytes (two code units) in size, the code for the instruction must contain ``next_instr += 2;``.
+For example, if an instruction's inline cache is four bytes (i.e., two code units) in size, the code for the instruction must contain ``next_instr += 2;``.
 This is equivalent to a relative forward jump by that many code units.
 (The proper way to code this is ``JUMPBY(n)``, where ``n`` is the number of code units to jump, typically given as a named constant.)
 
@@ -131,8 +134,8 @@ The evaluation stack
 ====================
 
 Apart from unconditional jumps, almost all instructions read or write some data in the form of object references (``PyObject *``).
-The CPython bytecode interpreter is a stack machine, meaning that it operates by pushing data onto and popping it off the stack.
-For example, the "add" instruction (which used to be called ``BINARY_ADD`` but is now ``BINARY_OP 0``) pops two objects off the stack and pushes the result back onto the stack.
+The CPython 3.11 bytecode interpreter is a stack machine, meaning that it operates by pushing data onto and popping it off the stack.
+For example, the "add" instruction (which used to be called ``BINARY_ADD`` in 3.10 but is now ``BINARY_OP 0``) pops two objects off the stack and pushes the result back onto the stack.
 An interesting property of the CPython bytecode interpreter is that the stack size required to evaluate a given function is known in advance.
 The stack size is computed by the bytecode compiler and is stored in ``code->co_stacksize``.
 The interpreter uses this information to allocate stack.
@@ -144,7 +147,8 @@ At any point during execution, the stack level is knowable based on the instruct
 In particular, only a few instructions may push a ``NULL`` onto the stack, and the positions that may be ``NULL`` are known.
 A few other instructions (``GET_ITER``, ``FOR_ITER``) push or pop an object that is known to be an interator.
 
-Instruction sequences that do not allow statically knowing the stack depth are deemed illegal (and never generated by the bytecode compiler).
+Instruction sequences that do not allow statically knowing the stack depth are deemed illegal.
+The bytecode compiler never generates such sequences.
 For example, the following sequence is illegal, because it keeps pushing items on the stack::
 
     LOAD_FAST 0
@@ -155,7 +159,7 @@ Do not confuse the evaluation stack with the call stack, which is used to implem
 Error handling
 ==============
 
-When an instruction like encounters an error, an exception is raised.
+When an instruction like ``BINARY_OP`` encounters an error, an exception is raised.
 At this point a traceback entry is added to the exception (by ``PyTraceBack_Here()``) and cleanup is performed.
 In the simplest case (absent any ``try`` blocks) this results in the remaining objects being popped off the evaluation stack and their reference count (if not ``NULL``) decremented.
 Then the interpreter function (``_PyEval_EvalFrameDefault()``) returns ``NULL``.
@@ -177,7 +181,7 @@ The table is conceptually a list of records, each containing four variable-lengt
 - depth_and_lasti: the low bit gives the "lasti" flag, the remaining bits give the stack depth
 
 The stack depth is used to clean up evaluation stack entries above this depth.
-The "lasti" flag indicates whether, after stack cleanup, the instruction offset of the raising instruction should be pushed.
+The "lasti" flag indicates whether, after stack cleanup, the instruction offset of the raising instruction should be pushed (as a ``PyLongObject *``).
 For more information on the design, see the file ``Objects/exception_handling_notes.txt``.
 
 Each varint is encoded as one or more bytes.
@@ -209,7 +213,7 @@ For Python code, a convenient method exists, ``co_positions()``, which returns a
 There is also ``co_lines()`` which returns an interator of *(start, end, line)* tuples, where *start* and *end* are bytecode offsets.
 The latter is described by :pep:`626`.
 It is more compact, but doesn't return end line numbers or column offsets.
-For C code, you have to call ``PyCode_Addr2Location()``.
+From C code, you have to call ``PyCode_Addr2Location()``.
 
 Fortunately, the locations table is only consulted by exception handling (to set ``tb_lineno``) and by tracing (to pass the line number to the tracing function).
 In order to reduce the overhead during tracing, the mapping from instruction offset to linenumber is cached in the ``_co_linearray`` field.
@@ -224,7 +228,7 @@ Separately, if a statement of the form ``raise X from Y`` is executed, the ``__c
 This is done by ``PyException_SetCause()``, called in response to all ``RAISE_VARARGS`` instructions.
 A special case is ``raise X from None``, which sets the ``__cause__`` field to ``None`` (at the C level, it sets ``cause`` to ``NULL``).
 
-XXX Other exception details
+(TODO: Other exception details.)
 
 Python-to-Python calls
 ======================
@@ -245,7 +249,7 @@ A similar check is performed when an unhandled exception occurs.
 The call stack
 ==============
 
-Up through 3.10 the call stack used to be implemented as a singly-linked list of ``PyFrameObject``s.
+Up through 3.10 the call stack used to be implemented as a singly-linked list of ``PyFrameObject`` objects.
 This was expensive because each call would require a heap allocation for the stack frame.
 (There was some optimization using a free list, but this was not always effective, because frames are variable length.)
 
@@ -256,7 +260,7 @@ The function ``_PyEvalFramePushAndInit()`` allocates and initializes a frame str
 
 Sometimes an actual ``PyFrameObject`` is needed, usually because some Python code calls ``sys._getframe()`` or an extension module calls ``PyEval_GetFrame()``.
 In this case we allocate a proper ``PyFrameObject`` and initialize it from the ``_PyInterpreterFrame``.
-This would be a pessimization, but fortunately this happens rarely (introspecting frames is not a common operation).
+This is a pessimization, but fortunately this happens rarely (introspecting frames is not a common operation).
 
 Things get more complicated when generators are involved, since those don't follow the push/pop model.
 (The same applies to async functions, which are implemented using the same infrastructure.)
@@ -268,7 +272,7 @@ The current stack frame is then popped off the stack and the generator object is
 When the generator is resumed, the interpreter pushes the ``_PyInterpreterFrame`` onto the stack and resumes execution.
 (There is more hairiness for generators and their ilk, we'll discuss these in a later section in more detail.)
 
-XXX Also frame layout and use, locals "plus"
+(TODO: Also frame layout and use, and "locals plus".)
 
 All sorts of variables
 ======================
@@ -281,12 +285,12 @@ The key types of variables are:
 - globals and builtins: the compiler does not distinguish between globals and builtins (though the specializing interpreter does)
 - cells -- used for nonlocal references
 
-XXX More
+(TODO: Write the rest of this section. Alas, the author got distracted and won't have time to continue this for a while.)
 
-XXX Getting variable names
+Other topics
+============
 
-XXX More
-========
+(TODO: Each of the following probably deserves its own section.)
 
 - co_consts, co_names, co_varnames, and their ilk
 - How calls work (how args are transferred, return, exceptions)
