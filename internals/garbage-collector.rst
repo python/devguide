@@ -191,38 +191,38 @@ The GC then iterates over all containers in the first list and decrements by one
 this makes use of the ``tp_traverse`` slot in the container class (implemented
 using the C API or inherited by a superclass) to know what objects are referenced by
 each container. After all the objects have been scanned, only the objects that have
-references from outside the “objects to scan” list will have ``gc_refs > 0``.
+references from outside the “objects to scan” list will have ``gc_ref > 0``.
 
 .. figure:: /_static/python-cyclic-gc-2-new-page.png
 
-Notice that having ``gc_refs == 0`` does not imply that the object is unreachable.
-This is because another object that is reachable from the outside (``gc_refs > 0``)
+Notice that having ``gc_ref == 0`` does not imply that the object is unreachable.
+This is because another object that is reachable from the outside (``gc_ref > 0``)
 can still have references to it. For instance, the ``link_2`` object in our example
-ended having ``gc_refs == 0`` but is referenced still by the ``link_1`` object that
+ended having ``gc_ref == 0`` but is referenced still by the ``link_1`` object that
 is reachable from the outside. To obtain the set of objects that are really
 unreachable, the garbage collector re-scans the container objects using the
 ``tp_traverse`` slot; this time with a different traverse function that marks objects with
-``gc_refs == 0`` as "tentatively unreachable" and then moves them to the
+``gc_ref == 0`` as "tentatively unreachable" and then moves them to the
 tentatively unreachable list. The following image depicts the state of the lists in a
 moment when the GC processed the ``link_3`` and ``link_4`` objects but has not
 processed ``link_1`` and ``link_2`` yet.
 
 .. figure:: /_static/python-cyclic-gc-3-new-page.png
 
-Then the GC scans the next ``link_1`` object. Because it has ``gc_refs == 1``,
+Then the GC scans the next ``link_1`` object. Because it has ``gc_ref == 1``,
 the gc does not do anything special because it knows it has to be reachable (and is
 already in what will become the reachable list):
 
 .. figure:: /_static/python-cyclic-gc-4-new-page.png
 
-When the GC encounters an object which is reachable (``gc_refs > 0``), it traverses
+When the GC encounters an object which is reachable (``gc_ref > 0``), it traverses
 its references using the ``tp_traverse`` slot to find all the objects that are
 reachable from it, moving them to the end of the list of reachable objects (where
-they started originally) and setting its ``gc_refs`` field to 1. This is what happens
+they started originally) and setting its ``gc_ref`` field to 1. This is what happens
 to ``link_2`` and ``link_3`` below as they are reachable from ``link_1``.  From the
 state in the previous image and after examining the objects referred to by ``link_1``
 the GC knows that ``link_3`` is reachable after all, so it is moved back to the
-original list and its ``gc_refs`` field is set to 1 so that if the GC visits it again,
+original list and its ``gc_ref`` field is set to 1 so that if the GC visits it again,
 it will know that it's reachable. To avoid visiting an object twice, the GC marks all
 objects that have already been visited once (by unsetting the ``PREV_MASK_COLLECTING``
 flag) so that if an object that has already been processed is referenced by some other
@@ -425,7 +425,7 @@ of ``PyGC_Head`` discussed in the `Memory layout and object structure`_ section:
   ``PREV_MASK_COLLECTING`` and ``_PyGC_PREV_MASK_FINALIZED``. Between collections,
   the only flag that can be present is ``_PyGC_PREV_MASK_FINALIZED`` that indicates
   if an object has been already finalized. During collections ``_gc_prev`` is
-  temporarily used for storing a copy of the reference count (``gc_refs``), in
+  temporarily used for storing a copy of the reference count (``gc_ref``), in
   addition to two flags, and the GC linked list becomes a singly linked list until
   ``_gc_prev`` is restored.
 
