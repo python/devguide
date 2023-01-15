@@ -319,10 +319,15 @@ the same object survives another GC round in this new generation (generation 1)
 it will be moved to the last generation (generation 2) where it will be
 surveyed the least often.
 
-Generations are collected when the number of objects that they contain reaches some
-predefined threshold, which is unique for each generation and is lower the older
-the generations are. These thresholds can be examined using the  ``gc.get_threshold``
-function:
+In order to decide when to run, the collector keeps track of the number of object
+allocations and deallocations since the last collection. When the number of
+allocations minus the number of deallocations exceeds ``threshold_0``,
+collection starts. Initially only generation 0 is examined. If generation 0 has
+been examined more than ``threshold_1`` times since generation 1 has been
+examined, then generation 1 is examined as well. With generation 2,
+things are a bit more complicated; see :ref:`gc-oldest-generation` for
+more information. These thresholds can be examined using the
+:func:`gc.get_threshold` function:
 
 .. code-block:: python
 
@@ -369,6 +374,7 @@ specifically in a generation by calling ``gc.collect(generation=NUM)``.
     [..., <__main__.MyObj object at 0x7fbcc12a3400>, ...]
 
 
+.. _gc-oldest-generation:
 
 Collecting the oldest generation
 --------------------------------
