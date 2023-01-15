@@ -324,7 +324,7 @@ allocations and deallocations since the last collection. When the number of
 allocations minus the number of deallocations exceeds ``threshold_0``,
 collection starts. Initially only generation 0 is examined. If generation 0 has
 been examined more than ``threshold_`` times since generation 1 has been
-examined, then generation 1 is examined as well. With the third generation,
+examined, then generation 1 is examined as well. With generation 2,
 things are a bit more complicated, see :ref:`gc-oldest-generation` for
 more information. These thresholds can be examined using the
 :func:`gc.get_threshold` function:
