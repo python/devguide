@@ -319,7 +319,7 @@ the same object survives another GC round in this new generation (generation 1)
 it will be moved to the last generation (generation 2) where it will be
 surveyed the least often.
 
-In order to decide when to run, the collector keeps track of the number object
+In order to decide when to run, the collector keeps track of the number of object
 allocations and deallocations since the last collection. When the number of
 allocations minus the number of deallocations exceeds ``threshold_0``,
 collection starts. Initially only generation 0 is examined. If generation 0 has
@@ -327,7 +327,7 @@ been examined more than ``threshold_`` times since generation 1 has been
 examined, then generation 1 is examined as well. With the third generation,
 things are a bit more complicated, see `Collecting the oldest generation`_ for
 more information. These thresholds can be examined using the
-``gc.get_threshold`` function:
+:func:`gc.get_threshold` function:
 
 .. code-block:: python
 
