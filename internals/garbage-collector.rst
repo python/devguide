@@ -374,6 +374,7 @@ specifically in a generation by calling ``gc.collect(generation=NUM)``.
     [..., <__main__.MyObj object at 0x7fbcc12a3400>, ...]
 
 
+.. _gc-oldest-generation:
 
 Collecting the oldest generation
 --------------------------------
