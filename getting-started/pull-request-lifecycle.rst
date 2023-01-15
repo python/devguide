@@ -249,7 +249,7 @@ through the common patch generation checks. To run ``patchcheck``:
 
    .. code-block:: dosbatch
 
-      python.bat Tools\scripts\patchcheck.py
+      python.bat Tools\patchcheck\patchcheck.py
 
 The automated patch checklist runs through:
 
