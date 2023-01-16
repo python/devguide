@@ -244,9 +244,10 @@ This approach is very general but consumes several C stack frames for each neste
 
 In 3.11, the ``CALL`` instruction special-cases function objects to "inline" the call.
 When a call gets inlined, a new frame gets pushed onto the call stack and the interpreter "jumps" to the start of the callee's bytecode.
-When the callee executes a ``RETURN_VALUE`` instruction, the frame is popped off the call stack and the interpreter returns to the caller.
+When an inlined callee executes a ``RETURN_VALUE`` instruction, the frame is popped off the call stack and the interpreter returns to its caller,
+by popping a frame off the call stack and "jumping" to the return address.
 There is a flag in the frame (``frame->is_entry``) that indicates whether the frame was inlined (set if it wasn't).
-If ``RETURN_VALUE`` returns to a caller where this flag is set, it performs the usual cleanup and return from ``_PyEval_EvalFrameDefault()``.
+If ``RETURN_VALUE`` finds this flag set, it performs the usual cleanup and returns from ``_PyEval_EvalFrameDefault()`` altogether, to a C caller.
 
 A similar check is performed when an unhandled exception occurs.
 
