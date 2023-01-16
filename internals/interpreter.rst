@@ -46,7 +46,7 @@ In 3.11, the final field of a code object is an array of indeterminate length co
 
 Code objects are typically produced by the bytecode :ref:`compiler <compiler>`, although they are often written to disk by one process and read back in by another.
 The disk version of a code object is serialized using the :mod:`marshal` protocol.
-Some code objects are pre-loaded into the interpreter using :cpy-file:`Tools/scripts/deepfreeze.py`, which writes :cpy-file:`Python/deepfreeze/deepfreeze.c`.
+Some code objects are pre-loaded into the interpreter using ``Tools/scripts/deepfreeze.py``, which writes ``Python/deepfreeze/deepfreeze.c``.
 
 Code objects are nominally immutable.
 Some fields (including ``co_code_adaptive``) are mutable, but mutable fields are not included when code objects are hashed or compared.
