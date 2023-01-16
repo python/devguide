@@ -139,6 +139,7 @@ The evaluation stack
 
 Apart from unconditional jumps, almost all instructions read or write some data in the form of object references (``PyObject *``).
 The CPython 3.11 bytecode interpreter is a stack machine, meaning that it operates by pushing data onto and popping it off the stack.
+The stack is a pre-allocated array of object references.
 For example, the "add" instruction (which used to be called ``BINARY_ADD`` in 3.10 but is now ``BINARY_OP 0``) pops two objects off the stack and pushes the result back onto the stack.
 An interesting property of the CPython bytecode interpreter is that the stack size required to evaluate a given function is known in advance.
 The stack size is computed by the bytecode compiler and is stored in ``code->co_stacksize``.
