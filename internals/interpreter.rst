@@ -116,7 +116,7 @@ Inline cache entries
 ====================
 
 Some (specialized or specializable) instructions have an associated "inline cache".
-The inline cache consists of one or more two-byte entries included in the bytecode array.
+The inline cache consists of one or more two-byte entries included in the bytecode array as additional words following the ``opcode`` /``oparg`` pair.
 The size of the inline cache for a particular instruction is fixed by its ``opcode`` alone.
 Moreover, the inline cache size for a family of specialized/specializable instructions (e.g., ``LOAD_ATTR``, ``LOAD_ATTR_SLOT``, ``LOAD_ATTR_MODULE``) must all be the same.
 Cache entries are reserved by the compiler and initialized with zeros.
