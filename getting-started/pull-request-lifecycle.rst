@@ -254,7 +254,7 @@ through the common patch generation checks. To run ``patchcheck``:
 The automated patch checklist runs through:
 
 * Are there any whitespace problems in Python files?
-  (using ``Tools/patchcheck/reindent.py``)
+  (using :cpy-file:`Tools/patchcheck/reindent.py`)
 * Are there any whitespace problems in C files?
 * Are there any whitespace problems in the documentation?
 * Has the documentation been updated?
