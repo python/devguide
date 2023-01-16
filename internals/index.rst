@@ -8,5 +8,5 @@ CPython's Internals
    exploring
    parser
    compiler
-   garbage-collector
    interpreter
+   garbage-collector
