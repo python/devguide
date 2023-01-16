@@ -19,7 +19,7 @@ Introduction
 The job of the bytecode interpreter, in :cpy-file:`Python/ceval.c`, is to execute Python code.
 Its main input is a code object, although this is not a direct argument to the interpreter.
 The interpreter is structured as a (recursive) function taking a thread state (``tstate``) and a stack frame (``frame``).
-The function also takes an integer ``throwflag``, which is used by the implementation of :func:`generator.throw`.
+The function also takes an integer ``throwflag``, which is used by the implementation of ``generator.throw``.
 It returns a new reference to a Python object (``PyObject *``) or an error indicator, ``NULL``.
 Per :pep:`523`, this function is configurable by setting ``interp->eval_frame``; we describe only the default function, ``_PyEval_EvalFrameDefault()``.
 (This function's signature has evolved and no longer matches what PEP 523 specifies; the thread state argument is added and the stack frame argument is no longer an object.)
@@ -130,7 +130,7 @@ For example, if an instruction's inline cache is four bytes (i.e., two code unit
 This is equivalent to a relative forward jump by that many code units.
 (The proper way to code this is ``JUMPBY(n)``, where ``n`` is the number of code units to jump, typically given as a named constant.)
 
-Serializing non-zero cache entries would present a problem because the serialization (:mod`marshal`) format must be independent of the machine byte order.
+Serializing non-zero cache entries would present a problem because the serialization (:mod:`marshal`) format must be independent of the machine byte order.
 
 More information about the use of inline caches :pep:`can be found in PEP 659 <659#ancillary-data>`.
 
@@ -229,7 +229,7 @@ This is done by making the ``__context__`` field of the new exception point to t
 This is the responsibility of ``_PyErr_SetObject()`` in :cpy-file:`Python/errors.c` (which is ultimately called by all ``PyErr_Set*()`` functions).
 Separately, if a statement of the form :samp:`raise {X} from {Y}` is executed, the ``__cause__`` field of the raised exception (:samp:`{X}`) is set to :samp:`{Y}`.
 This is done by :c:func:`PyException_SetCause`, called in response to all ``RAISE_VARARGS`` instructions.
-A special case is `:samp:`raise {X} from None`, which sets the ``__cause__`` field to ``None`` (at the C level, it sets ``cause`` to ``NULL``).
+A special case is :samp:`raise {X} from None`, which sets the ``__cause__`` field to ``None`` (at the C level, it sets ``cause`` to ``NULL``).
 
 (TODO: Other exception details.)
 
