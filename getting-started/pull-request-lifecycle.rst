@@ -249,15 +249,14 @@ through the common patch generation checks. To run ``patchcheck``:
 
    .. code-block:: dosbatch
 
-      python.bat Tools\scripts\patchcheck.py
+      python.bat Tools\patchcheck\patchcheck.py
 
 The automated patch checklist runs through:
 
 * Are there any whitespace problems in Python files?
-  (using ``Tools/scripts/reindent.py``)
+  (using :cpy-file:`Tools/patchcheck/reindent.py`)
 * Are there any whitespace problems in C files?
 * Are there any whitespace problems in the documentation?
-  (using ``Tools/scripts/reindent-rst.py``)
 * Has the documentation been updated?
 * Has the test suite been updated?
 * Has an entry under ``Misc/NEWS.d/next`` been added?
