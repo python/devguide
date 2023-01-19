@@ -1,0 +1,1040 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg
+    xmlns="http://www.w3.org/2000/svg"
+    class="release-cycle-chart"
+    viewBox="0 0 828 459.0"
+>
+
+    
+        
+
+        
+            <!-- Row shading -->
+            <rect
+                class="release-cycle-row-shade"
+                x="0em"
+                y="6.75"
+                width="828"
+                height="27.0"
+            />
+        
+    
+        
+
+        
+    
+        
+
+        
+            <!-- Row shading -->
+            <rect
+                class="release-cycle-row-shade"
+                x="0em"
+                y="60.75"
+                width="828"
+                height="27.0"
+            />
+        
+    
+        
+
+        
+    
+        
+
+        
+            <!-- Row shading -->
+            <rect
+                class="release-cycle-row-shade"
+                x="0em"
+                y="114.75"
+                width="828"
+                height="27.0"
+            />
+        
+    
+        
+
+        
+    
+        
+
+        
+            <!-- Row shading -->
+            <rect
+                class="release-cycle-row-shade"
+                x="0em"
+                y="168.75"
+                width="828"
+                height="27.0"
+            />
+        
+    
+        
+
+        
+    
+        
+
+        
+            <!-- Row shading -->
+            <rect
+                class="release-cycle-row-shade"
+                x="0em"
+                y="222.75"
+                width="828"
+                height="27.0"
+            />
+        
+    
+        
+
+        
+    
+        
+
+        
+            <!-- Row shading -->
+            <rect
+                class="release-cycle-row-shade"
+                x="0em"
+                y="276.75"
+                width="828"
+                height="27.0"
+            />
+        
+    
+        
+
+        
+    
+        
+
+        
+            <!-- Row shading -->
+            <rect
+                class="release-cycle-row-shade"
+                x="0em"
+                y="330.75"
+                width="828"
+                height="27.0"
+            />
+        
+    
+        
+
+        
+    
+        
+
+        
+            <!-- Row shading -->
+            <rect
+                class="release-cycle-row-shade"
+                x="0em"
+                y="384.75"
+                width="828"
+                height="27.0"
+            />
+        
+    
+
+    
+        <text
+            class="release-cycle-year-text"
+            x="117.36714579055442"
+            y="432.0"
+            font-size="13.5"
+            text-anchor="middle"
+        >
+            &#39;08
+        </text>
+        <line
+            class="release-cycle-year-line"
+            x1="134.7277207392197"
+            x2="134.7277207392197"
+            y1="0"
+            y2="432.0"
+            font-size="18"
+        />
+    
+        <text
+            class="release-cycle-year-text"
+            x="152.04086242299795"
+            y="432.0"
+            font-size="13.5"
+            text-anchor="middle"
+        >
+            &#39;09
+        </text>
+        <line
+            class="release-cycle-year-line"
+            x1="169.35400410677616"
+            x2="169.35400410677616"
+            y1="0"
+            y2="432.0"
+            font-size="18"
+        />
+    
+        <text
+            class="release-cycle-year-text"
+            x="186.6671457905544"
+            y="432.0"
+            font-size="13.5"
+            text-anchor="middle"
+        >
+            &#39;10
+        </text>
+        <line
+            class="release-cycle-year-line"
+            x1="203.98028747433264"
+            x2="203.98028747433264"
+            y1="0"
+            y2="432.0"
+            font-size="18"
+        />
+    
+        <text
+            class="release-cycle-year-text"
+            x="221.29342915811088"
+            y="432.0"
+            font-size="13.5"
+            text-anchor="middle"
+        >
+            &#39;11
+        </text>
+        <line
+            class="release-cycle-year-line"
+            x1="238.6065708418891"
+            x2="238.6065708418891"
+            y1="0"
+            y2="432.0"
+            font-size="18"
+        />
+    
+        <text
+            class="release-cycle-year-text"
+            x="255.96714579055438"
+            y="432.0"
+            font-size="13.5"
+            text-anchor="middle"
+        >
+            &#39;12
+        </text>
+        <line
+            class="release-cycle-year-line"
+            x1="273.3277207392197"
+            x2="273.3277207392197"
+            y1="0"
+            y2="432.0"
+            font-size="18"
+        />
+    
+        <text
+            class="release-cycle-year-text"
+            x="290.64086242299794"
+            y="432.0"
+            font-size="13.5"
+            text-anchor="middle"
+        >
+            &#39;13
+        </text>
+        <line
+            class="release-cycle-year-line"
+            x1="307.9540041067762"
+            x2="307.9540041067762"
+            y1="0"
+            y2="432.0"
+            font-size="18"
+        />
+    
+        <text
+            class="release-cycle-year-text"
+            x="325.2671457905544"
+            y="432.0"
+            font-size="13.5"
+            text-anchor="middle"
+        >
+            &#39;14
+        </text>
+        <line
+            class="release-cycle-year-line"
+            x1="342.58028747433264"
+            x2="342.58028747433264"
+            y1="0"
+            y2="432.0"
+            font-size="18"
+        />
+    
+        <text
+            class="release-cycle-year-text"
+            x="359.8934291581109"
+            y="432.0"
+            font-size="13.5"
+            text-anchor="middle"
+        >
+            &#39;15
+        </text>
+        <line
+            class="release-cycle-year-line"
+            x1="377.2065708418891"
+            x2="377.2065708418891"
+            y1="0"
+            y2="432.0"
+            font-size="18"
+        />
+    
+        <text
+            class="release-cycle-year-text"
+            x="394.5671457905544"
+            y="432.0"
+            font-size="13.5"
+            text-anchor="middle"
+        >
+            &#39;16
+        </text>
+        <line
+            class="release-cycle-year-line"
+            x1="411.9277207392197"
+            x2="411.9277207392197"
+            y1="0"
+            y2="432.0"
+            font-size="18"
+        />
+    
+        <text
+            class="release-cycle-year-text"
+            x="429.240862422998"
+            y="432.0"
+            font-size="13.5"
+            text-anchor="middle"
+        >
+            &#39;17
+        </text>
+        <line
+            class="release-cycle-year-line"
+            x1="446.5540041067762"
+            x2="446.5540041067762"
+            y1="0"
+            y2="432.0"
+            font-size="18"
+        />
+    
+        <text
+            class="release-cycle-year-text"
+            x="463.8671457905544"
+            y="432.0"
+            font-size="13.5"
+            text-anchor="middle"
+        >
+            &#39;18
+        </text>
+        <line
+            class="release-cycle-year-line"
+            x1="481.18028747433266"
+            x2="481.18028747433266"
+            y1="0"
+            y2="432.0"
+            font-size="18"
+        />
+    
+        <text
+            class="release-cycle-year-text"
+            x="498.49342915811087"
+            y="432.0"
+            font-size="13.5"
+            text-anchor="middle"
+        >
+            &#39;19
+        </text>
+        <line
+            class="release-cycle-year-line"
+            x1="515.8065708418891"
+            x2="515.8065708418891"
+            y1="0"
+            y2="432.0"
+            font-size="18"
+        />
+    
+        <text
+            class="release-cycle-year-text"
+            x="533.1671457905544"
+            y="432.0"
+            font-size="13.5"
+            text-anchor="middle"
+        >
+            &#39;20
+        </text>
+        <line
+            class="release-cycle-year-line"
+            x1="550.5277207392197"
+            x2="550.5277207392197"
+            y1="0"
+            y2="432.0"
+            font-size="18"
+        />
+    
+        <text
+            class="release-cycle-year-text"
+            x="567.8408624229979"
+            y="432.0"
+            font-size="13.5"
+            text-anchor="middle"
+        >
+            &#39;21
+        </text>
+        <line
+            class="release-cycle-year-line"
+            x1="585.1540041067761"
+            x2="585.1540041067761"
+            y1="0"
+            y2="432.0"
+            font-size="18"
+        />
+    
+        <text
+            class="release-cycle-year-text"
+            x="602.4671457905544"
+            y="432.0"
+            font-size="13.5"
+            text-anchor="middle"
+        >
+            &#39;22
+        </text>
+        <line
+            class="release-cycle-year-line"
+            x1="619.7802874743326"
+            x2="619.7802874743326"
+            y1="0"
+            y2="432.0"
+            font-size="18"
+        />
+    
+        <text
+            class="release-cycle-year-text"
+            x="637.0934291581109"
+            y="432.0"
+            font-size="13.5"
+            text-anchor="middle"
+        >
+            &#39;23
+        </text>
+        <line
+            class="release-cycle-year-line"
+            x1="654.4065708418891"
+            x2="654.4065708418891"
+            y1="0"
+            y2="432.0"
+            font-size="18"
+        />
+    
+        <text
+            class="release-cycle-year-text"
+            x="671.7671457905544"
+            y="432.0"
+            font-size="13.5"
+            text-anchor="middle"
+        >
+            &#39;24
+        </text>
+        <line
+            class="release-cycle-year-line"
+            x1="689.1277207392197"
+            x2="689.1277207392197"
+            y1="0"
+            y2="432.0"
+            font-size="18"
+        />
+    
+        <text
+            class="release-cycle-year-text"
+            x="706.4408624229978"
+            y="432.0"
+            font-size="13.5"
+            text-anchor="middle"
+        >
+            &#39;25
+        </text>
+        <line
+            class="release-cycle-year-line"
+            x1="723.7540041067762"
+            x2="723.7540041067762"
+            y1="0"
+            y2="432.0"
+            font-size="18"
+        />
+    
+        <text
+            class="release-cycle-year-text"
+            x="741.0671457905544"
+            y="432.0"
+            font-size="13.5"
+            text-anchor="middle"
+        >
+            &#39;26
+        </text>
+        <line
+            class="release-cycle-year-line"
+            x1="758.3802874743326"
+            x2="758.3802874743326"
+            y1="0"
+            y2="432.0"
+            font-size="18"
+        />
+    
+        <text
+            class="release-cycle-year-text"
+            x="775.6934291581109"
+            y="432.0"
+            font-size="13.5"
+            text-anchor="middle"
+        >
+            &#39;27
+        </text>
+        <line
+            class="release-cycle-year-line"
+            x1="793.006570841889"
+            x2="793.006570841889"
+            y1="0"
+            y2="432.0"
+            font-size="18"
+        />
+    
+
+    <!-- A line for today -->
+    <line
+        class="release-cycle-today-line"
+        x1="621.5827515400409"
+        x2="621.5827515400409"
+        y1="0"
+        y2="432.0"
+        font-size="18"
+    />
+
+    
+        
+
+        <!-- Legend on the left -->
+        <text
+            class="release-cycle-version-label"
+            x="9.0"
+            y="27.0"
+            font-size="18"
+        >
+            Python 2.6
+        </text>
+
+        <!-- Colourful blob with a label -->
+        
+        
+        
+        <rect
+            class="release-cycle-blob release-cycle-blob-end-of-life"
+            x="126.0"
+            y="9.0"
+            width="175.88254620123206"
+            height="22.5"
+            rx="0.25em"
+            ry="0.25em"
+        />
+        <text
+            class="release-cycle-blob-label"
+            x="213.94127310061603"
+            y="25.2"
+            font-size="13.5"
+            text-anchor="middle"
+        >
+            end-of-life
+        </text>
+    
+        
+
+        <!-- Legend on the left -->
+        <text
+            class="release-cycle-version-label"
+            x="9.0"
+            y="54.0"
+            font-size="18"
+        >
+            Python 2.7
+        </text>
+
+        <!-- Colourful blob with a label -->
+        
+        
+        
+        <rect
+            class="release-cycle-blob release-cycle-blob-end-of-life"
+            x="186.71457905544148"
+            y="36.0"
+            width="329.0919917864476"
+            height="22.5"
+            rx="0.25em"
+            ry="0.25em"
+        />
+        <text
+            class="release-cycle-blob-label"
+            x="351.2605749486653"
+            y="52.199999999999996"
+            font-size="13.5"
+            text-anchor="middle"
+        >
+            end-of-life
+        </text>
+    
+        
+
+        <!-- Legend on the left -->
+        <text
+            class="release-cycle-version-label"
+            x="9.0"
+            y="81.0"
+            font-size="18"
+        >
+            Python 3.0
+        </text>
+
+        <!-- Colourful blob with a label -->
+        
+        
+        
+        <rect
+            class="release-cycle-blob release-cycle-blob-end-of-life"
+            x="131.97659137577003"
+            y="63.0"
+            width="19.542505133470236"
+            height="22.5"
+            rx="0.25em"
+            ry="0.25em"
+        />
+        <text
+            class="release-cycle-blob-label"
+            x="141.7478439425051"
+            y="79.2"
+            font-size="13.5"
+            text-anchor="middle"
+        >
+            end-of-life
+        </text>
+    
+        
+
+        <!-- Legend on the left -->
+        <text
+            class="release-cycle-version-label"
+            x="9.0"
+            y="108.0"
+            font-size="18"
+        >
+            Python 3.1
+        </text>
+
+        <!-- Colourful blob with a label -->
+        
+        
+        
+        <rect
+            class="release-cycle-blob release-cycle-blob-end-of-life"
+            x="151.51909650924026"
+            y="90.0"
+            width="96.47926078028748"
+            height="22.5"
+            rx="0.25em"
+            ry="0.25em"
+        />
+        <text
+            class="release-cycle-blob-label"
+            x="199.758726899384"
+            y="106.2"
+            font-size="13.5"
+            text-anchor="middle"
+        >
+            end-of-life
+        </text>
+    
+        
+
+        <!-- Legend on the left -->
+        <text
+            class="release-cycle-version-label"
+            x="9.0"
+            y="135.0"
+            font-size="18"
+        >
+            Python 3.2
+        </text>
+
+        <!-- Colourful blob with a label -->
+        
+        
+        
+        <rect
+            class="release-cycle-blob release-cycle-blob-end-of-life"
+            x="208.723613963039"
+            y="117.0"
+            width="173.2262833675565"
+            height="22.5"
+            rx="0.25em"
+            ry="0.25em"
+        />
+        <text
+            class="release-cycle-blob-label"
+            x="295.33675564681727"
+            y="133.20000000000002"
+            font-size="13.5"
+            text-anchor="middle"
+        >
+            end-of-life
+        </text>
+    
+        
+
+        <!-- Legend on the left -->
+        <text
+            class="release-cycle-version-label"
+            x="9.0"
+            y="162.0"
+            font-size="18"
+        >
+            Python 3.3
+        </text>
+
+        <!-- Colourful blob with a label -->
+        
+        
+        
+        <rect
+            class="release-cycle-blob release-cycle-blob-end-of-life"
+            x="264.4102669404517"
+            y="144.0"
+            width="173.22628336755645"
+            height="22.5"
+            rx="0.25em"
+            ry="0.25em"
+        />
+        <text
+            class="release-cycle-blob-label"
+            x="351.02340862423"
+            y="160.20000000000002"
+            font-size="13.5"
+            text-anchor="middle"
+        >
+            end-of-life
+        </text>
+    
+        
+
+        <!-- Legend on the left -->
+        <text
+            class="release-cycle-version-label"
+            x="9.0"
+            y="189.0"
+            font-size="18"
+        >
+            Python 3.4
+        </text>
+
+        <!-- Colourful blob with a label -->
+        
+        
+        
+        <rect
+            class="release-cycle-blob release-cycle-blob-end-of-life"
+            x="314.9741273100616"
+            y="171.0"
+            width="173.41601642710475"
+            height="22.5"
+            rx="0.25em"
+            ry="0.25em"
+        />
+        <text
+            class="release-cycle-blob-label"
+            x="401.682135523614"
+            y="187.20000000000002"
+            font-size="13.5"
+            text-anchor="middle"
+        >
+            end-of-life
+        </text>
+    
+        
+
+        <!-- Legend on the left -->
+        <text
+            class="release-cycle-version-label"
+            x="9.0"
+            y="216.0"
+            font-size="18"
+        >
+            Python 3.5
+        </text>
+
+        <!-- Colourful blob with a label -->
+        
+        
+        
+        <rect
+            class="release-cycle-blob release-cycle-blob-end-of-life"
+            x="366.7712525667351"
+            y="198.0"
+            width="174.9338809034908"
+            height="22.5"
+            rx="0.25em"
+            ry="0.25em"
+        />
+        <text
+            class="release-cycle-blob-label"
+            x="454.2381930184805"
+            y="214.20000000000002"
+            font-size="13.5"
+            text-anchor="middle"
+        >
+            end-of-life
+        </text>
+    
+        
+
+        <!-- Legend on the left -->
+        <text
+            class="release-cycle-version-label"
+            x="9.0"
+            y="243.0"
+            font-size="18"
+        >
+            Python 3.6
+        </text>
+
+        <!-- Colourful blob with a label -->
+        
+        
+        
+        <rect
+            class="release-cycle-blob release-cycle-blob-end-of-life"
+            x="411.07392197125256"
+            y="225.0"
+            width="173.2262833675564"
+            height="22.5"
+            rx="0.25em"
+            ry="0.25em"
+        />
+        <text
+            class="release-cycle-blob-label"
+            x="497.6870636550308"
+            y="241.20000000000002"
+            font-size="13.5"
+            text-anchor="middle"
+        >
+            end-of-life
+        </text>
+    
+        
+
+        <!-- Legend on the left -->
+        <text
+            class="release-cycle-version-label"
+            x="9.0"
+            y="270.0"
+            font-size="18"
+        >
+            Python 3.7
+        </text>
+
+        <!-- Colourful blob with a label -->
+        
+        
+        
+        <rect
+            class="release-cycle-blob release-cycle-blob-security"
+            x="463.3453798767967"
+            y="252.0"
+            width="173.2262833675566"
+            height="22.5"
+            rx="0.25em"
+            ry="0.25em"
+        />
+        <text
+            class="release-cycle-blob-label"
+            x="549.958521560575"
+            y="268.2"
+            font-size="13.5"
+            text-anchor="middle"
+        >
+            security
+        </text>
+    
+        
+
+        <!-- Legend on the left -->
+        <text
+            class="release-cycle-version-label"
+            x="9.0"
+            y="297.0"
+            font-size="18"
+        >
+            Python 3.8
+        </text>
+
+        <!-- Colourful blob with a label -->
+        
+        
+        
+        <rect
+            class="release-cycle-blob release-cycle-blob-security"
+            x="508.3121149897331"
+            y="279.0"
+            width="172.08788501026683"
+            height="22.5"
+            rx="0.25em"
+            ry="0.25em"
+        />
+        <text
+            class="release-cycle-blob-label"
+            x="594.3560574948666"
+            y="295.2"
+            font-size="13.5"
+            text-anchor="middle"
+        >
+            security
+        </text>
+    
+        
+
+        <!-- Legend on the left -->
+        <text
+            class="release-cycle-version-label"
+            x="9.0"
+            y="324.0"
+            font-size="18"
+        >
+            Python 3.9
+        </text>
+
+        <!-- Colourful blob with a label -->
+        
+        
+        
+        <rect
+            class="release-cycle-blob release-cycle-blob-security"
+            x="542.1794661190966"
+            y="306.0"
+            width="172.84681724845998"
+            height="22.5"
+            rx="0.25em"
+            ry="0.25em"
+        />
+        <text
+            class="release-cycle-blob-label"
+            x="628.6028747433265"
+            y="322.2"
+            font-size="13.5"
+            text-anchor="middle"
+        >
+            security
+        </text>
+    
+        
+
+        <!-- Legend on the left -->
+        <text
+            class="release-cycle-version-label"
+            x="9.0"
+            y="351.0"
+            font-size="18"
+        >
+            Python 3.10
+        </text>
+
+        <!-- Colourful blob with a label -->
+        
+        
+        
+        <rect
+            class="release-cycle-blob release-cycle-blob-bugfix"
+            x="576.7108829568789"
+            y="333.0"
+            width="172.94168377823414"
+            height="22.5"
+            rx="0.25em"
+            ry="0.25em"
+        />
+        <text
+            class="release-cycle-blob-label"
+            x="663.181724845996"
+            y="349.2"
+            font-size="13.5"
+            text-anchor="middle"
+        >
+            bugfix
+        </text>
+    
+        
+
+        <!-- Legend on the left -->
+        <text
+            class="release-cycle-version-label"
+            x="9.0"
+            y="378.0"
+            font-size="18"
+        >
+            Python 3.11
+        </text>
+
+        <!-- Colourful blob with a label -->
+        
+        
+        
+        <rect
+            class="release-cycle-blob release-cycle-blob-bugfix"
+            x="613.234496919918"
+            y="360.0"
+            width="171.04435318275148"
+            height="22.5"
+            rx="0.25em"
+            ry="0.25em"
+        />
+        <text
+            class="release-cycle-blob-label"
+            x="698.7566735112937"
+            y="376.2"
+            font-size="13.5"
+            text-anchor="middle"
+        >
+            bugfix
+        </text>
+    
+        
+
+        <!-- Legend on the left -->
+        <text
+            class="release-cycle-version-label"
+            x="9.0"
+            y="405.0"
+            font-size="18"
+        >
+            Python 3.12
+        </text>
+
+        <!-- Colourful blob with a label -->
+        
+        
+        
+        <rect
+            class="release-cycle-blob release-cycle-blob-feature"
+            x="645.7737166324436"
+            y="387.0"
+            width="173.22628336755645"
+            height="22.5"
+            rx="0.25em"
+            ry="0.25em"
+        />
+        <text
+            class="release-cycle-blob-label"
+            x="732.3868583162218"
+            y="403.2"
+            font-size="13.5"
+            text-anchor="middle"
+        >
+            feature
+        </text>
+    
+</svg>

@@ -1,28 +1,11 @@
-"""Read in a JSON and generate two CSVs and a Mermaid file."""
+"""Read in a JSON and generate two CSVs and a SVG file."""
 from __future__ import annotations
 
 import csv
 import datetime as dt
 import json
 
-MERMAID_HEADER = """
-gantt
-    dateFormat  YYYY-MM-DD
-    title       Python release cycle
-    axisFormat  %Y
-""".lstrip()
-
-MERMAID_SECTION = """
-    section Python {version}
-    {release_status}               :{mermaid_status}   python{version}, {first_release},{eol}
-"""  # noqa: E501
-
-MERMAID_STATUS_MAPPING = {
-    "feature": "",
-    "bugfix": "active,",
-    "security": "done,",
-    "end-of-life": "crit,",
-}
+import jinja2
 
 
 def csv_date(date_str: str, now_str: str) -> str:
@@ -32,24 +15,27 @@ def csv_date(date_str: str, now_str: str) -> str:
         return f"*{date_str}*"
     return date_str
 
-
-def mermaid_date(date_str: str) -> str:
-    """Format a date for Mermaid."""
+def parse_date(date_str: str) -> dt.date:
     if len(date_str) == len("yyyy-mm"):
-        # Mermaid needs a full yyyy-mm-dd, so let's approximate
-        date_str = f"{date_str}-01"
-    return date_str
-
+        # We need a full yyyy-mm-dd, so let's approximate
+        return dt.date.fromisoformat(date_str + '-01')
+    return dt.date.fromisoformat(date_str)
 
 class Versions:
-    """For converting JSON to CSV and Mermaid."""
+    """For converting JSON to CSV and SVG."""
 
     def __init__(self) -> None:
         with open("include/release-cycle.json", encoding="UTF-8") as in_file:
             self.versions = json.load(in_file)
+
+        # Generate a few additional fields
+        for key, version in self.versions.items():
+            version['key'] = key
+            version['first_release_date'] = parse_date(version['first_release'])
+            version['end_of_life_date'] = parse_date(version['end_of_life'])
         self.sorted_versions = sorted(
-            self.versions.items(),
-            key=lambda k: [int(i) for i in k[0].split(".")],
+            self.versions.values(),
+            key=lambda v: [int(i) for i in v['key'].split(".")],
             reverse=True,
         )
 
@@ -59,7 +45,7 @@ class Versions:
 
         versions_by_category = {"branches": {}, "end-of-life": {}}
         headers = None
-        for version, details in self.sorted_versions:
+        for details in self.sorted_versions:
             row = {
                 "Branch": details["branch"],
                 "Schedule": f":pep:`{details['pep']}`",
@@ -70,7 +56,7 @@ class Versions:
             }
             headers = row.keys()
             cat = "end-of-life" if details["status"] == "end-of-life" else "branches"
-            versions_by_category[cat][version] = row
+            versions_by_category[cat][details['key']] = row
 
         for cat, versions in versions_by_category.items():
             with open(f"include/{cat}.csv", "w", encoding="UTF-8", newline="") as file:
@@ -78,30 +64,76 @@ class Versions:
                 csv_file.writeheader()
                 csv_file.writerows(versions.values())
 
-    def write_mermaid(self) -> None:
-        """Output Mermaid file."""
-        out = [MERMAID_HEADER]
+    def write_svg(self) -> None:
+        """Output SVG file."""
+        env = jinja2.Environment(
+            loader=jinja2.FileSystemLoader('_tools/'),
+            autoescape=True,
+            undefined=jinja2.StrictUndefined,
+        )
+        template = env.get_template("release_cycle_template.svg")
 
-        for version, details in reversed(self.versions.items()):
-            v = MERMAID_SECTION.format(
-                version=version,
-                first_release=details["first_release"],
-                eol=mermaid_date(details["end_of_life"]),
-                release_status=details["status"],
-                mermaid_status=MERMAID_STATUS_MAPPING[details["status"]],
-            )
-            out.append(v)
+        # Scale. Should be roughly the pixel size of the font.
+        # All later sizes are miltiplied by this, so you can think of all other
+        # numbers being multiples of the font size, like using `em` units in
+        # CSS.
+        # (Ideally we'd actually use `em` units, but SVG viewBox doesn't take
+        # those.)
+        SCALE = 18
+
+        # Width of the drawing and main parts
+        DIAGRAM_WIDTH = 46
+        LEGEND_WIDTH = 7
+        RIGHT_MARGIN = 0.5
+
+        # Height of one line. If you change this you'll need to tweak
+        # some positioning nombers in the template as well.
+        LINE_HEIGHT = 1.5
+
+        first_date = min(
+            ver['first_release_date'] for ver in self.sorted_versions
+        )
+        last_date = max(
+            ver['end_of_life_date'] for ver in self.sorted_versions
+        )
+
+        def date_to_x(date):
+            """Convert datetime.date to a SVG X coordinate"""
+            num_days = (date - first_date).days
+            total_days = (last_date - first_date).days
+            ratio = num_days / total_days
+            x = ratio * (DIAGRAM_WIDTH - LEGEND_WIDTH - RIGHT_MARGIN)
+            return x + LEGEND_WIDTH
+
+        def year_to_x(year):
+            """Convert year number to a SVG X coordinate of 1st January"""
+            return date_to_x(dt.date(year, 1, 1))
+
+        def format_year(year):
+            """Format year number for display"""
+            return f"'{year % 100:02}"
 
         with open(
-            "include/release-cycle.mmd", "w", encoding="UTF-8", newline="\n"
+            "include/release-cycle.svg", "w", encoding="UTF-8",
         ) as f:
-            f.writelines(out)
+            template.stream(
+                SCALE=SCALE,
+                diagram_width=DIAGRAM_WIDTH,
+                diagram_height=(len(self.sorted_versions) + 2) * LINE_HEIGHT,
+                years=range(first_date.year, last_date.year),
+                LINE_HEIGHT=LINE_HEIGHT,
+                versions=list(reversed(self.sorted_versions)),
+                today=dt.date.today(),
+                year_to_x=year_to_x,
+                date_to_x=date_to_x,
+                format_year=format_year,
+            ).dump(f)
 
 
 def main() -> None:
     versions = Versions()
     versions.write_csv()
-    versions.write_mermaid()
+    versions.write_svg()
 
 
 if __name__ == "__main__":

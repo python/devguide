@@ -7,66 +7,70 @@
 }
 
 /* Release cycle chart */
-#python-release-cycle .mermaid .active0,
-#python-release-cycle .mermaid .active1,
-#python-release-cycle .mermaid .active2,
-#python-release-cycle .mermaid .active3 {
-    fill: #00dd00;
-    stroke: darkgreen;
+
+.release-cycle-chart {
+    width: 100%;
+    /* filter: grayscale(100%); */
 }
 
-#python-release-cycle .mermaid .done0,
-#python-release-cycle .mermaid .done1,
-#python-release-cycle .mermaid .done2,
-#python-release-cycle .mermaid .done3 {
-    fill: orange;
-    stroke: darkorange;
+.release-cycle-chart .release-cycle-year-line {
+    stroke: var(--color-foreground-primary);
+    stroke-width: 0.8px;
+    opacity: 75%;
 }
 
-#python-release-cycle .mermaid .task0,
-#python-release-cycle .mermaid .task1,
-#python-release-cycle .mermaid .task2,
-#python-release-cycle .mermaid .task3 {
-    fill: #007acc;
-    stroke: #004455;
+.release-cycle-chart .release-cycle-year-text {
+    fill: var(--color-foreground-primary);
 }
 
-#python-release-cycle .mermaid .section0,
-#python-release-cycle .mermaid .section2 {
-    fill: darkgrey;
+.release-cycle-chart .release-cycle-today-line {
+    stroke: var(--color-brand-primary);
+    stroke-width: 1.6px;
 }
 
-/* Set master colours */
-:root {
-    --mermaid-section1-3: white;
-    --mermaid-text-color: black;
+.release-cycle-chart .release-cycle-row-shade {
+    fill: var(--color-background-item);
+    opacity: 50%;
 }
 
-@media (prefers-color-scheme: dark) {
-    body[data-theme=auto] {
-        --mermaid-section1-3: black;
-        --mermaid-text-color: #ffffffcc;
-    }
-}
-body[data-theme=dark] {
-    --mermaid-section1-3: black;
-    --mermaid-text-color: #ffffffcc;
+.release-cycle-chart .release-cycle-version-label {
+    fill: var(--color-foreground-primary);
 }
 
-#python-release-cycle .mermaid .section1,
-#python-release-cycle .mermaid .section3 {
-    fill: var(--mermaid-section1-3);
+.release-cycle-chart .release-cycle-blob {
+    stroke-width: 1.6px;
+    /* default colours, overriden below for individual statuses */
+    fill: var(--color-background-primary);
+    stroke: var(--color-foreground-primary);
 }
 
-#python-release-cycle .mermaid .grid .tick text,
-#python-release-cycle .mermaid .sectionTitle0,
-#python-release-cycle .mermaid .sectionTitle1,
-#python-release-cycle .mermaid .sectionTitle2,
-#python-release-cycle .mermaid .sectionTitle3,
-#python-release-cycle .mermaid .taskTextOutside0,
-#python-release-cycle .mermaid .taskTextOutside1,
-#python-release-cycle .mermaid .taskTextOutside2,
-#python-release-cycle .mermaid .taskTextOutside3,
-#python-release-cycle .mermaid .titleText {
-    fill: var(--mermaid-text-color);
+.release-cycle-chart .release-cycle-blob-label {
+    /* white looks good on both light & dark */
+    fill: white;
+    filter:
+        drop-shadow(1px 1px 0.5px rgba(0, 0, 0, 0.5))
+        drop-shadow(-1px 1px 0.5px rgba(0, 0, 0, 0.5))
+        drop-shadow(1px -1px 0.5px rgba(0, 0, 0, 0.5))
+        drop-shadow(-1px -1px 0.5px rgba(0, 0, 0, 0.5))
+        ;
+}
+
+.release-cycle-chart .release-cycle-blob-end-of-life {
+    fill: #DD2200;
+    stroke: #FF8888;
+}
+
+.release-cycle-chart .release-cycle-blob-security {
+    fill: #FFDD44;
+    stroke: #FF8800;
+}
+
+.release-cycle-chart .release-cycle-blob-bugfix {
+    fill: #00DD22;
+    stroke: #008844;
+}
+
+.release-cycle-chart .release-cycle-blob-feature {
+    fill: #2222EE;
+    stroke: #008888;
 }

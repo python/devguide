@@ -194,9 +194,9 @@ include/branches.csv: include/release-cycle.json
 include/end-of-life.csv: include/release-cycle.json
 	$(PYTHON) _tools/generate_release_cycle.py
 
-include/release-cycle.mmd: include/release-cycle.json
+include/release-cycle.svg: include/release-cycle.json
 	$(PYTHON) _tools/generate_release_cycle.py
 
 .PHONY: versions
-versions: include/branches.csv include/end-of-life.csv include/release-cycle.mmd
+versions: include/branches.csv include/end-of-life.csv include/release-cycle.svg
 	@echo Release cycle data generated.
