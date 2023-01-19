@@ -285,7 +285,7 @@ Tools
 Tool                Maintainers
 ==================  ===========
 Argument Clinic     larryhastings
-Deepfreeze          kumaraditya303
+Deepfreeze          ericsnowcurrently, gvanrossum, kumaraditya303
 PEG Generator       gvanrossum, pablogsal, lysnikolaou
 ==================  ===========
 
@@ -335,7 +335,7 @@ documentation       ezio-melotti, merwok, JulienPalard, willingc, hugovk
 emoji               Mariatta
 extension modules   encukou, ncoghlan
 filesystem          giampaolo
-frozen modules      kumaraditya303
+frozen modules      ericsnowcurrently, gvanrossum, kumaraditya303
 f-strings           ericvsmith*
 GUI
 i18n                malemburg, merwok
@@ -357,7 +357,7 @@ release management  tarekziade, malemburg, benjaminp, warsaw,
                     gvanrossum, anthonybaxter^, merwok, ned-deily,
                     birkenfeld, JulienPalard
 str.format          ericvsmith*
-subinterpreters     kumaraditya303
+subinterpreters     ericsnowcurrently, kumaraditya303
 testing             voidspace, ezio-melotti
 test coverage
 threads             gpshead
