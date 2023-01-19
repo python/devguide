@@ -27,6 +27,9 @@ jobs:
       - name: Generate release cycle output
         run: python -I -bb -X dev -X warn_default_encoding -W error _tools/generate_release_cycle.py
 
+      - name: Ignore release-cycle.svg, which encodes the current date
+        run: git restore include/release-cycle.svg
+
       - name: Check for differences
         run: |
           git add .
