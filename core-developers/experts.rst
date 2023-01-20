@@ -285,7 +285,7 @@ Tools
 Tool                Maintainers
 ==================  ===========
 Argument Clinic     larryhastings
-Deepfreeze          ericsnowcurrently, gvanrossum, kumaraditya303
+Deepfreeze          gvanrossum, kumaraditya303
 PEG Generator       gvanrossum, pablogsal, lysnikolaou
 ==================  ===========
 
