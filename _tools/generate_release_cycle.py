@@ -99,7 +99,6 @@ class Versions:
             ver['end_of_life_date'] for ver in self.sorted_versions
         )
 
-        def date_to_x(date):
         def date_to_x(date: dt.date) -> float:
             """Convert datetime.date to an SVG X coordinate"""
             num_days = (date - first_date).days
