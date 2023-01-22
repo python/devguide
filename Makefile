@@ -73,7 +73,7 @@ html: ensure-venv versions
 	@echo "Build finished. The HTML pages are in $(BUILDDIR)/html."
 
 .PHONY: dirhtml
-dirhtml: ensure-venv
+dirhtml: ensure-venv versions
 	$(SPHINXBUILD) -b dirhtml $(ALLSPHINXOPTS) $(BUILDDIR)/dirhtml
 	@echo
 	@echo "Build finished. The HTML pages are in $(BUILDDIR)/dirhtml."
@@ -189,14 +189,14 @@ serve:
 	      "(see https://github.com/python/cpython/issues/80510)"
 
 include/branches.csv: include/release-cycle.json
-	$(PYTHON) _tools/generate_release_cycle.py
+	$(VENVDIR)/bin/python3 _tools/generate_release_cycle.py
 
 include/end-of-life.csv: include/release-cycle.json
-	$(PYTHON) _tools/generate_release_cycle.py
+	$(VENVDIR)/bin/python3 _tools/generate_release_cycle.py
 
 include/release-cycle.svg: include/release-cycle.json
-	$(PYTHON) _tools/generate_release_cycle.py
+	$(VENVDIR)/bin/python3 _tools/generate_release_cycle.py
 
 .PHONY: versions
-versions: include/branches.csv include/end-of-life.csv include/release-cycle.svg
+versions: venv include/branches.csv include/end-of-life.csv include/release-cycle.svg
 	@echo Release cycle data generated.
