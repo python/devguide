@@ -14,6 +14,9 @@ jobs:
         os: [windows-latest, ubuntu-latest]
 
     steps:
+      - name: Silence Windows warnings
+        run: git config --global core.autocrlf input
+
       - uses: actions/checkout@v3
 
       - uses: actions/setup-python@v4
