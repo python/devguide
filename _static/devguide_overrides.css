@@ -47,30 +47,30 @@
 .release-cycle-chart .release-cycle-blob-label {
     /* white looks good on both light & dark */
     fill: white;
-    filter:
-        drop-shadow(1px 1px 0.5px rgba(0, 0, 0, 0.5))
-        drop-shadow(-1px 1px 0.5px rgba(0, 0, 0, 0.5))
-        drop-shadow(1px -1px 0.5px rgba(0, 0, 0, 0.5))
-        drop-shadow(-1px -1px 0.5px rgba(0, 0, 0, 0.5))
-        ;
 }
 
-.release-cycle-chart .release-cycle-blob-end-of-life {
+.release-cycle-chart .release-cycle-blob-label.release-cycle-blob-security,
+.release-cycle-chart .release-cycle-blob-label.release-cycle-blob-bugfix {
+    /* but use black to improve contrast for lighter backgrounds */
+    fill: black;
+}
+
+.release-cycle-chart .release-cycle-blob.release-cycle-blob-end-of-life {
     fill: #DD2200;
     stroke: #FF8888;
 }
 
-.release-cycle-chart .release-cycle-blob-security {
+.release-cycle-chart .release-cycle-blob.release-cycle-blob-security {
     fill: #FFDD44;
     stroke: #FF8800;
 }
 
-.release-cycle-chart .release-cycle-blob-bugfix {
+.release-cycle-chart .release-cycle-blob.release-cycle-blob-bugfix {
     fill: #00DD22;
     stroke: #008844;
 }
 
-.release-cycle-chart .release-cycle-blob-feature {
+.release-cycle-chart .release-cycle-blob.release-cycle-blob-feature {
     fill: #2222EE;
     stroke: #008888;
 }

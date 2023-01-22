@@ -448,7 +448,7 @@
             ry="0.25em"
         />
         <text
-            class="release-cycle-blob-label"
+            class="release-cycle-blob-label release-cycle-blob-end-of-life"
             x="213.94127310061603"
             y="25.2"
             font-size="13.5"
@@ -478,7 +478,7 @@
             ry="0.25em"
         />
         <text
-            class="release-cycle-blob-label"
+            class="release-cycle-blob-label release-cycle-blob-end-of-life"
             x="351.2605749486653"
             y="52.199999999999996"
             font-size="13.5"
@@ -508,7 +508,7 @@
             ry="0.25em"
         />
         <text
-            class="release-cycle-blob-label"
+            class="release-cycle-blob-label release-cycle-blob-end-of-life"
             x="141.7478439425051"
             y="79.2"
             font-size="13.5"
@@ -538,7 +538,7 @@
             ry="0.25em"
         />
         <text
-            class="release-cycle-blob-label"
+            class="release-cycle-blob-label release-cycle-blob-end-of-life"
             x="199.758726899384"
             y="106.2"
             font-size="13.5"
@@ -568,7 +568,7 @@
             ry="0.25em"
         />
         <text
-            class="release-cycle-blob-label"
+            class="release-cycle-blob-label release-cycle-blob-end-of-life"
             x="295.33675564681727"
             y="133.20000000000002"
             font-size="13.5"
@@ -598,7 +598,7 @@
             ry="0.25em"
         />
         <text
-            class="release-cycle-blob-label"
+            class="release-cycle-blob-label release-cycle-blob-end-of-life"
             x="351.02340862423"
             y="160.20000000000002"
             font-size="13.5"
@@ -628,7 +628,7 @@
             ry="0.25em"
         />
         <text
-            class="release-cycle-blob-label"
+            class="release-cycle-blob-label release-cycle-blob-end-of-life"
             x="401.682135523614"
             y="187.20000000000002"
             font-size="13.5"
@@ -658,7 +658,7 @@
             ry="0.25em"
         />
         <text
-            class="release-cycle-blob-label"
+            class="release-cycle-blob-label release-cycle-blob-end-of-life"
             x="454.2381930184805"
             y="214.20000000000002"
             font-size="13.5"
@@ -688,7 +688,7 @@
             ry="0.25em"
         />
         <text
-            class="release-cycle-blob-label"
+            class="release-cycle-blob-label release-cycle-blob-end-of-life"
             x="497.6870636550308"
             y="241.20000000000002"
             font-size="13.5"
@@ -718,7 +718,7 @@
             ry="0.25em"
         />
         <text
-            class="release-cycle-blob-label"
+            class="release-cycle-blob-label release-cycle-blob-security"
             x="549.958521560575"
             y="268.2"
             font-size="13.5"
@@ -748,7 +748,7 @@
             ry="0.25em"
         />
         <text
-            class="release-cycle-blob-label"
+            class="release-cycle-blob-label release-cycle-blob-security"
             x="594.3560574948666"
             y="295.2"
             font-size="13.5"
@@ -778,7 +778,7 @@
             ry="0.25em"
         />
         <text
-            class="release-cycle-blob-label"
+            class="release-cycle-blob-label release-cycle-blob-security"
             x="628.6028747433265"
             y="322.2"
             font-size="13.5"
@@ -808,7 +808,7 @@
             ry="0.25em"
         />
         <text
-            class="release-cycle-blob-label"
+            class="release-cycle-blob-label release-cycle-blob-bugfix"
             x="663.181724845996"
             y="349.2"
             font-size="13.5"
@@ -838,7 +838,7 @@
             ry="0.25em"
         />
         <text
-            class="release-cycle-blob-label"
+            class="release-cycle-blob-label release-cycle-blob-bugfix"
             x="698.7566735112937"
             y="376.2"
             font-size="13.5"
@@ -868,7 +868,7 @@
             ry="0.25em"
         />
         <text
-            class="release-cycle-blob-label"
+            class="release-cycle-blob-label release-cycle-blob-feature"
             x="732.3868583162218"
             y="403.2"
             font-size="13.5"
