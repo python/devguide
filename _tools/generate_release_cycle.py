@@ -121,7 +121,7 @@ class Versions:
                 SCALE=SCALE,
                 diagram_width=DIAGRAM_WIDTH,
                 diagram_height=(len(self.sorted_versions) + 2) * LINE_HEIGHT,
-                years=range(first_date.year, last_date.year),
+                years=range(first_date.year, last_date.year + 1),
                 LINE_HEIGHT=LINE_HEIGHT,
                 versions=list(reversed(self.sorted_versions)),
                 today=dt.datetime.strptime(today, "%Y-%m-%d").date(),

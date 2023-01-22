@@ -425,6 +425,15 @@
             y2="432.0"
             font-size="18"
         />
+        <text
+            class="release-cycle-year-text"
+            x="810.3671457905544"
+            y="432.0"
+            font-size="13.5"
+            text-anchor="middle"
+        >
+            &#39;28
+        </text>
 
 
         <!-- Legend on the left -->

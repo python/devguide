@@ -30,6 +30,7 @@
         >
             {{ format_year(year) }}
         </text>
+        {% if not loop.last %}
         <line
             class="release-cycle-year-line"
             x1="{{ year_to_x(year + 1) * SCALE }}"
@@ -38,6 +39,7 @@
             y2="{{ (diagram_height - LINE_HEIGHT) * SCALE }}"
             font-size="{{ SCALE }}"
         />
+        {% endif %}
     {% endfor %}
 
     {% for version in versions %}
