@@ -426,16 +426,6 @@
             font-size="18"
         />
 
-    <!-- A line for today -->
-    <line
-        class="release-cycle-today-line"
-        x1="621.7724845995892"
-        x2="621.7724845995892"
-        y1="0"
-        y2="432.0"
-        font-size="18"
-    />
-
 
         <!-- Legend on the left -->
         <text
@@ -886,4 +876,14 @@
         >
             feature
         </text>
+
+    <!-- A line for today -->
+    <line
+        class="release-cycle-today-line"
+        x1="621.7724845995892"
+        x2="621.7724845995892"
+        y1="0"
+        y2="432.0"
+        font-size="18"
+    />
 </svg>

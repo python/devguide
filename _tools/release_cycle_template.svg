@@ -40,16 +40,6 @@
         />
     {% endfor %}
 
-    <!-- A line for today -->
-    <line
-        class="release-cycle-today-line"
-        x1="{{date_to_x(today) * SCALE}}"
-        x2="{{date_to_x(today) * SCALE}}"
-        y1="0"
-        y2="{{(diagram_height - LINE_HEIGHT) * SCALE}}"
-        font-size="{{SCALE}}"
-    />
-
     {% for version in versions %}
         {% set y = loop.index * LINE_HEIGHT %}
 
@@ -86,4 +76,14 @@
             {{version.status}}
         </text>
     {% endfor %}
+
+    <!-- A line for today -->
+    <line
+        class="release-cycle-today-line"
+        x1="{{date_to_x(today) * SCALE}}"
+        x2="{{date_to_x(today) * SCALE}}"
+        y1="0"
+        y2="{{(diagram_height - LINE_HEIGHT) * SCALE}}"
+        font-size="{{SCALE}}"
+    />
 </svg>
