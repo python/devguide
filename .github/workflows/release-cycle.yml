@@ -20,6 +20,7 @@ jobs:
         with:
           python-version: "3"
           cache: pip
+          cache-dependency-path: .github/workflows/release-cycle.yml
 
       - name: Install Jinja
         run: python -m pip install jinja2

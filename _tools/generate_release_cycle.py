@@ -1,4 +1,4 @@
-"""Read in a JSON and generate two CSVs and a SVG file."""
+"""Read in a JSON and generate two CSVs and an SVG file."""
 from __future__ import annotations
 
 import csv
@@ -69,6 +69,8 @@ class Versions:
         env = jinja2.Environment(
             loader=jinja2.FileSystemLoader('_tools/'),
             autoescape=True,
+            lstrip_blocks=True,
+            trim_blocks=True,
             undefined=jinja2.StrictUndefined,
         )
         template = env.get_template("release_cycle_template.svg")
@@ -87,7 +89,7 @@ class Versions:
         RIGHT_MARGIN = 0.5
 
         # Height of one line. If you change this you'll need to tweak
-        # some positioning nombers in the template as well.
+        # some positioning numbers in the template as well.
         LINE_HEIGHT = 1.5
 
         first_date = min(
@@ -98,23 +100,24 @@ class Versions:
         )
 
         def date_to_x(date):
-            """Convert datetime.date to a SVG X coordinate"""
+        def date_to_x(date: dt.date) -> float:
+            """Convert datetime.date to an SVG X coordinate"""
             num_days = (date - first_date).days
             total_days = (last_date - first_date).days
             ratio = num_days / total_days
             x = ratio * (DIAGRAM_WIDTH - LEGEND_WIDTH - RIGHT_MARGIN)
             return x + LEGEND_WIDTH
 
-        def year_to_x(year):
-            """Convert year number to a SVG X coordinate of 1st January"""
+        def year_to_x(year: int) -> float:
+            """Convert year number to an SVG X coordinate of 1st January"""
             return date_to_x(dt.date(year, 1, 1))
 
-        def format_year(year):
+        def format_year(year: int) -> str:
             """Format year number for display"""
             return f"'{year % 100:02}"
 
         with open(
-            "include/release-cycle.svg", "w", encoding="UTF-8",
+            "include/release-cycle.svg", "w", encoding="UTF-8", newline="\n"
         ) as f:
             template.stream(
                 SCALE=SCALE,
