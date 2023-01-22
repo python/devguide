@@ -75,10 +75,10 @@ class Versions:
             trim_blocks=True,
             undefined=jinja2.StrictUndefined,
         )
-        template = env.get_template("release_cycle_template.svg")
+        template = env.get_template("release_cycle_template.svg.jinja")
 
         # Scale. Should be roughly the pixel size of the font.
-        # All later sizes are miltiplied by this, so you can think of all other
+        # All later sizes are multiplied by this, so you can think of all other
         # numbers being multiples of the font size, like using `em` units in
         # CSS.
         # (Ideally we'd actually use `em` units, but SVG viewBox doesn't take
