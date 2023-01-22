@@ -2,7 +2,7 @@
 <svg
     xmlns="http://www.w3.org/2000/svg"
     class="release-cycle-chart"
-    viewBox="0 0 {{diagram_width * SCALE}} {{diagram_height * SCALE}}"
+    viewBox="0 0 {{ diagram_width * SCALE }} {{ diagram_height * SCALE }}"
 >
 
     {% for version in versions %}
@@ -13,9 +13,9 @@
             <rect
                 class="release-cycle-row-shade"
                 x="0em"
-                y="{{(y - 1.125) * SCALE}}"
-                width="{{diagram_width * SCALE}}"
-                height="{{LINE_HEIGHT * SCALE}}"
+                y="{{ (y - 1.125) * SCALE }}"
+                width="{{ diagram_width * SCALE }}"
+                height="{{ LINE_HEIGHT * SCALE }}"
             />
         {% endif %}
     {% endfor %}
@@ -23,20 +23,20 @@
     {% for year in years %}
         <text
             class="release-cycle-year-text"
-            x="{{(year_to_x(year) + year_to_x(year+1)) / 2 * SCALE}}"
-            y="{{(diagram_height - LINE_HEIGHT) * SCALE}}"
-            font-size="{{SCALE * 0.75}}"
+            x="{{ (year_to_x(year) + year_to_x(year + 1)) / 2 * SCALE }}"
+            y="{{ (diagram_height - LINE_HEIGHT) * SCALE }}"
+            font-size="{{ SCALE * 0.75 }}"
             text-anchor="middle"
         >
             {{ format_year(year) }}
         </text>
         <line
             class="release-cycle-year-line"
-            x1="{{year_to_x(year+1) * SCALE}}"
-            x2="{{year_to_x(year+1) * SCALE}}"
+            x1="{{ year_to_x(year + 1) * SCALE }}"
+            x2="{{ year_to_x(year + 1) * SCALE }}"
             y1="0"
-            y2="{{(diagram_height - LINE_HEIGHT) * SCALE}}"
-            font-size="{{SCALE}}"
+            y2="{{ (diagram_height - LINE_HEIGHT) * SCALE }}"
+            font-size="{{ SCALE }}"
         />
     {% endfor %}
 
@@ -46,11 +46,11 @@
         <!-- Legend on the left -->
         <text
             class="release-cycle-version-label"
-            x="{{0.5 * SCALE}}"
-            y="{{y * SCALE}}"
-            font-size="{{SCALE}}"
+            x="{{ 0.5 * SCALE }}"
+            y="{{ y * SCALE }}"
+            font-size="{{ SCALE }}"
         >
-            Python {{version.key}}
+            Python {{ version.key }}
         </text>
 
         <!-- Colourful blob with a label -->
@@ -58,32 +58,32 @@
         {% set end_x = date_to_x(version.end_of_life_date) %}
         {% set mid_x = (start_x + end_x) / 2 %}
         <rect
-            class="release-cycle-blob release-cycle-blob-{{version.status}}"
-            x="{{start_x * SCALE}}"
-            y="{{(y - 1) * SCALE}}"
-            width="{{(end_x - start_x) * SCALE}}"
-            height="{{1.25 * SCALE}}"
+            class="release-cycle-blob release-cycle-blob-{{ version.status }}"
+            x="{{ start_x * SCALE }}"
+            y="{{ (y - 1) * SCALE }}"
+            width="{{ (end_x - start_x) * SCALE }}"
+            height="{{ 1.25 * SCALE }}"
             rx="0.25em"
             ry="0.25em"
         />
         <text
-            class="release-cycle-blob-label release-cycle-blob-{{version.status}}"
-            x="{{mid_x * SCALE}}"
-            y="{{(y - 0.1) * SCALE}}"
-            font-size="{{SCALE * 0.75}}"
+            class="release-cycle-blob-label release-cycle-blob-{{ version.status }}"
+            x="{{ mid_x * SCALE }}"
+            y="{{ (y - 0.1) * SCALE }}"
+            font-size="{{ SCALE * 0.75 }}"
             text-anchor="middle"
         >
-            {{version.status}}
+            {{ version.status }}
         </text>
     {% endfor %}
 
     <!-- A line for today -->
     <line
         class="release-cycle-today-line"
-        x1="{{date_to_x(today) * SCALE}}"
-        x2="{{date_to_x(today) * SCALE}}"
+        x1="{{ date_to_x(today) * SCALE }}"
+        x2="{{ date_to_x(today) * SCALE }}"
         y1="0"
-        y2="{{(diagram_height - LINE_HEIGHT) * SCALE}}"
-        font-size="{{SCALE}}"
+        y2="{{ (diagram_height - LINE_HEIGHT) * SCALE }}"
+        font-size="{{ SCALE }}"
     />
 </svg>
