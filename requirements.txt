@@ -1,7 +1,7 @@
 Sphinx==6.0.0
 furo>=2022.6.4
+jinja2
 sphinx-lint==0.6.7
 sphinx_copybutton>=0.3.3
 sphinxext-opengraph>=0.7.1
 sphinxext-rediraffe
-jinja2
