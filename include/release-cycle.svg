@@ -5,10 +5,7 @@
     viewBox="0 0 828 459.0"
 >
 
-    
-        
 
-        
             <!-- Row shading -->
             <rect
                 class="release-cycle-row-shade"
@@ -17,15 +14,8 @@
                 width="828"
                 height="27.0"
             />
-        
-    
-        
 
-        
-    
-        
 
-        
             <!-- Row shading -->
             <rect
                 class="release-cycle-row-shade"
@@ -34,15 +24,8 @@
                 width="828"
                 height="27.0"
             />
-        
-    
-        
 
-        
-    
-        
 
-        
             <!-- Row shading -->
             <rect
                 class="release-cycle-row-shade"
@@ -51,15 +34,8 @@
                 width="828"
                 height="27.0"
             />
-        
-    
-        
 
-        
-    
-        
 
-        
             <!-- Row shading -->
             <rect
                 class="release-cycle-row-shade"
@@ -68,15 +44,8 @@
                 width="828"
                 height="27.0"
             />
-        
-    
-        
 
-        
-    
-        
 
-        
             <!-- Row shading -->
             <rect
                 class="release-cycle-row-shade"
@@ -85,15 +54,8 @@
                 width="828"
                 height="27.0"
             />
-        
-    
-        
 
-        
-    
-        
 
-        
             <!-- Row shading -->
             <rect
                 class="release-cycle-row-shade"
@@ -102,15 +64,8 @@
                 width="828"
                 height="27.0"
             />
-        
-    
-        
 
-        
-    
-        
 
-        
             <!-- Row shading -->
             <rect
                 class="release-cycle-row-shade"
@@ -119,15 +74,8 @@
                 width="828"
                 height="27.0"
             />
-        
-    
-        
 
-        
-    
-        
 
-        
             <!-- Row shading -->
             <rect
                 class="release-cycle-row-shade"
@@ -136,10 +84,7 @@
                 width="828"
                 height="27.0"
             />
-        
-    
 
-    
         <text
             class="release-cycle-year-text"
             x="117.36714579055442"
@@ -157,7 +102,6 @@
             y2="432.0"
             font-size="18"
         />
-    
         <text
             class="release-cycle-year-text"
             x="152.04086242299795"
@@ -175,7 +119,6 @@
             y2="432.0"
             font-size="18"
         />
-    
         <text
             class="release-cycle-year-text"
             x="186.6671457905544"
@@ -193,7 +136,6 @@
             y2="432.0"
             font-size="18"
         />
-    
         <text
             class="release-cycle-year-text"
             x="221.29342915811088"
@@ -211,7 +153,6 @@
             y2="432.0"
             font-size="18"
         />
-    
         <text
             class="release-cycle-year-text"
             x="255.96714579055438"
@@ -229,7 +170,6 @@
             y2="432.0"
             font-size="18"
         />
-    
         <text
             class="release-cycle-year-text"
             x="290.64086242299794"
@@ -247,7 +187,6 @@
             y2="432.0"
             font-size="18"
         />
-    
         <text
             class="release-cycle-year-text"
             x="325.2671457905544"
@@ -265,7 +204,6 @@
             y2="432.0"
             font-size="18"
         />
-    
         <text
             class="release-cycle-year-text"
             x="359.8934291581109"
@@ -283,7 +221,6 @@
             y2="432.0"
             font-size="18"
         />
-    
         <text
             class="release-cycle-year-text"
             x="394.5671457905544"
@@ -301,7 +238,6 @@
             y2="432.0"
             font-size="18"
         />
-    
         <text
             class="release-cycle-year-text"
             x="429.240862422998"
@@ -319,7 +255,6 @@
             y2="432.0"
             font-size="18"
         />
-    
         <text
             class="release-cycle-year-text"
             x="463.8671457905544"
@@ -337,7 +272,6 @@
             y2="432.0"
             font-size="18"
         />
-    
         <text
             class="release-cycle-year-text"
             x="498.49342915811087"
@@ -355,7 +289,6 @@
             y2="432.0"
             font-size="18"
         />
-    
         <text
             class="release-cycle-year-text"
             x="533.1671457905544"
@@ -373,7 +306,6 @@
             y2="432.0"
             font-size="18"
         />
-    
         <text
             class="release-cycle-year-text"
             x="567.8408624229979"
@@ -391,7 +323,6 @@
             y2="432.0"
             font-size="18"
         />
-    
         <text
             class="release-cycle-year-text"
             x="602.4671457905544"
@@ -409,7 +340,6 @@
             y2="432.0"
             font-size="18"
         />
-    
         <text
             class="release-cycle-year-text"
             x="637.0934291581109"
@@ -427,7 +357,6 @@
             y2="432.0"
             font-size="18"
         />
-    
         <text
             class="release-cycle-year-text"
             x="671.7671457905544"
@@ -445,7 +374,6 @@
             y2="432.0"
             font-size="18"
         />
-    
         <text
             class="release-cycle-year-text"
             x="706.4408624229978"
@@ -463,7 +391,6 @@
             y2="432.0"
             font-size="18"
         />
-    
         <text
             class="release-cycle-year-text"
             x="741.0671457905544"
@@ -481,7 +408,6 @@
             y2="432.0"
             font-size="18"
         />
-    
         <text
             class="release-cycle-year-text"
             x="775.6934291581109"
@@ -499,20 +425,17 @@
             y2="432.0"
             font-size="18"
         />
-    
 
     <!-- A line for today -->
     <line
         class="release-cycle-today-line"
-        x1="621.5827515400409"
-        x2="621.5827515400409"
+        x1="621.7724845995892"
+        x2="621.7724845995892"
         y1="0"
         y2="432.0"
         font-size="18"
     />
 
-    
-        
 
         <!-- Legend on the left -->
         <text
@@ -525,9 +448,6 @@
         </text>
 
         <!-- Colourful blob with a label -->
-        
-        
-        
         <rect
             class="release-cycle-blob release-cycle-blob-end-of-life"
             x="126.0"
@@ -546,8 +466,6 @@
         >
             end-of-life
         </text>
-    
-        
 
         <!-- Legend on the left -->
         <text
@@ -560,9 +478,6 @@
         </text>
 
         <!-- Colourful blob with a label -->
-        
-        
-        
         <rect
             class="release-cycle-blob release-cycle-blob-end-of-life"
             x="186.71457905544148"
@@ -581,8 +496,6 @@
         >
             end-of-life
         </text>
-    
-        
 
         <!-- Legend on the left -->
         <text
@@ -595,9 +508,6 @@
         </text>
 
         <!-- Colourful blob with a label -->
-        
-        
-        
         <rect
             class="release-cycle-blob release-cycle-blob-end-of-life"
             x="131.97659137577003"
@@ -616,8 +526,6 @@
         >
             end-of-life
         </text>
-    
-        
 
         <!-- Legend on the left -->
         <text
@@ -630,9 +538,6 @@
         </text>
 
         <!-- Colourful blob with a label -->
-        
-        
-        
         <rect
             class="release-cycle-blob release-cycle-blob-end-of-life"
             x="151.51909650924026"
@@ -651,8 +556,6 @@
         >
             end-of-life
         </text>
-    
-        
 
         <!-- Legend on the left -->
         <text
@@ -665,9 +568,6 @@
         </text>
 
         <!-- Colourful blob with a label -->
-        
-        
-        
         <rect
             class="release-cycle-blob release-cycle-blob-end-of-life"
             x="208.723613963039"
@@ -686,8 +586,6 @@
         >
             end-of-life
         </text>
-    
-        
 
         <!-- Legend on the left -->
         <text
@@ -700,9 +598,6 @@
         </text>
 
         <!-- Colourful blob with a label -->
-        
-        
-        
         <rect
             class="release-cycle-blob release-cycle-blob-end-of-life"
             x="264.4102669404517"
@@ -721,8 +616,6 @@
         >
             end-of-life
         </text>
-    
-        
 
         <!-- Legend on the left -->
         <text
@@ -735,9 +628,6 @@
         </text>
 
         <!-- Colourful blob with a label -->
-        
-        
-        
         <rect
             class="release-cycle-blob release-cycle-blob-end-of-life"
             x="314.9741273100616"
@@ -756,8 +646,6 @@
         >
             end-of-life
         </text>
-    
-        
 
         <!-- Legend on the left -->
         <text
@@ -770,9 +658,6 @@
         </text>
 
         <!-- Colourful blob with a label -->
-        
-        
-        
         <rect
             class="release-cycle-blob release-cycle-blob-end-of-life"
             x="366.7712525667351"
@@ -791,8 +676,6 @@
         >
             end-of-life
         </text>
-    
-        
 
         <!-- Legend on the left -->
         <text
@@ -805,9 +688,6 @@
         </text>
 
         <!-- Colourful blob with a label -->
-        
-        
-        
         <rect
             class="release-cycle-blob release-cycle-blob-end-of-life"
             x="411.07392197125256"
@@ -826,8 +706,6 @@
         >
             end-of-life
         </text>
-    
-        
 
         <!-- Legend on the left -->
         <text
@@ -840,9 +718,6 @@
         </text>
 
         <!-- Colourful blob with a label -->
-        
-        
-        
         <rect
             class="release-cycle-blob release-cycle-blob-security"
             x="463.3453798767967"
@@ -861,8 +736,6 @@
         >
             security
         </text>
-    
-        
 
         <!-- Legend on the left -->
         <text
@@ -875,9 +748,6 @@
         </text>
 
         <!-- Colourful blob with a label -->
-        
-        
-        
         <rect
             class="release-cycle-blob release-cycle-blob-security"
             x="508.3121149897331"
@@ -896,8 +766,6 @@
         >
             security
         </text>
-    
-        
 
         <!-- Legend on the left -->
         <text
@@ -910,9 +778,6 @@
         </text>
 
         <!-- Colourful blob with a label -->
-        
-        
-        
         <rect
             class="release-cycle-blob release-cycle-blob-security"
             x="542.1794661190966"
@@ -931,8 +796,6 @@
         >
             security
         </text>
-    
-        
 
         <!-- Legend on the left -->
         <text
@@ -945,9 +808,6 @@
         </text>
 
         <!-- Colourful blob with a label -->
-        
-        
-        
         <rect
             class="release-cycle-blob release-cycle-blob-bugfix"
             x="576.7108829568789"
@@ -966,8 +826,6 @@
         >
             bugfix
         </text>
-    
-        
 
         <!-- Legend on the left -->
         <text
@@ -980,9 +838,6 @@
         </text>
 
         <!-- Colourful blob with a label -->
-        
-        
-        
         <rect
             class="release-cycle-blob release-cycle-blob-bugfix"
             x="613.234496919918"
@@ -1001,8 +856,6 @@
         >
             bugfix
         </text>
-    
-        
 
         <!-- Legend on the left -->
         <text
@@ -1015,9 +868,6 @@
         </text>
 
         <!-- Colourful blob with a label -->
-        
-        
-        
         <rect
             class="release-cycle-blob release-cycle-blob-feature"
             x="645.7737166324436"
@@ -1036,5 +886,4 @@
         >
             feature
         </text>
-    
 </svg>
