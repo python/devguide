@@ -1,6 +1,7 @@
 """Read in a JSON and generate two CSVs and an SVG file."""
 from __future__ import annotations
 
+import argparse
 import csv
 import datetime as dt
 import json
@@ -66,7 +67,7 @@ class Versions:
                 csv_file.writeheader()
                 csv_file.writerows(versions.values())
 
-    def write_svg(self) -> None:
+    def write_svg(self, today: str) -> None:
         """Output SVG file."""
         env = jinja2.Environment(
             loader=jinja2.FileSystemLoader("_tools/"),
@@ -123,7 +124,7 @@ class Versions:
                 years=range(first_date.year, last_date.year),
                 LINE_HEIGHT=LINE_HEIGHT,
                 versions=list(reversed(self.sorted_versions)),
-                today=dt.date.today(),
+                today=dt.datetime.strptime(today, "%Y-%m-%d").date(),
                 year_to_x=year_to_x,
                 date_to_x=date_to_x,
                 format_year=format_year,
@@ -131,9 +132,20 @@ class Versions:
 
 
 def main() -> None:
+    parser = argparse.ArgumentParser(
+        description=__doc__, formatter_class=argparse.ArgumentDefaultsHelpFormatter
+    )
+    parser.add_argument(
+        "--today",
+        default=str(dt.date.today()),
+        metavar=" YYYY-MM-DD",
+        help="Override today for testing",
+    )
+    args = parser.parse_args()
+
     versions = Versions()
     versions.write_csv()
-    versions.write_svg()
+    versions.write_svg(args.today)
 
 
 if __name__ == "__main__":
