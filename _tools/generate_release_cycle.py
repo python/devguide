@@ -15,11 +15,13 @@ def csv_date(date_str: str, now_str: str) -> str:
         return f"*{date_str}*"
     return date_str
 
+
 def parse_date(date_str: str) -> dt.date:
     if len(date_str) == len("yyyy-mm"):
         # We need a full yyyy-mm-dd, so let's approximate
-        return dt.date.fromisoformat(date_str + '-01')
+        return dt.date.fromisoformat(date_str + "-01")
     return dt.date.fromisoformat(date_str)
+
 
 class Versions:
     """For converting JSON to CSV and SVG."""
@@ -30,12 +32,12 @@ class Versions:
 
         # Generate a few additional fields
         for key, version in self.versions.items():
-            version['key'] = key
-            version['first_release_date'] = parse_date(version['first_release'])
-            version['end_of_life_date'] = parse_date(version['end_of_life'])
+            version["key"] = key
+            version["first_release_date"] = parse_date(version["first_release"])
+            version["end_of_life_date"] = parse_date(version["end_of_life"])
         self.sorted_versions = sorted(
             self.versions.values(),
-            key=lambda v: [int(i) for i in v['key'].split(".")],
+            key=lambda v: [int(i) for i in v["key"].split(".")],
             reverse=True,
         )
 
@@ -56,7 +58,7 @@ class Versions:
             }
             headers = row.keys()
             cat = "end-of-life" if details["status"] == "end-of-life" else "branches"
-            versions_by_category[cat][details['key']] = row
+            versions_by_category[cat][details["key"]] = row
 
         for cat, versions in versions_by_category.items():
             with open(f"include/{cat}.csv", "w", encoding="UTF-8", newline="") as file:
@@ -67,7 +69,7 @@ class Versions:
     def write_svg(self) -> None:
         """Output SVG file."""
         env = jinja2.Environment(
-            loader=jinja2.FileSystemLoader('_tools/'),
+            loader=jinja2.FileSystemLoader("_tools/"),
             autoescape=True,
             lstrip_blocks=True,
             trim_blocks=True,
@@ -92,12 +94,8 @@ class Versions:
         # some positioning numbers in the template as well.
         LINE_HEIGHT = 1.5
 
-        first_date = min(
-            ver['first_release_date'] for ver in self.sorted_versions
-        )
-        last_date = max(
-            ver['end_of_life_date'] for ver in self.sorted_versions
-        )
+        first_date = min(ver["first_release_date"] for ver in self.sorted_versions)
+        last_date = max(ver["end_of_life_date"] for ver in self.sorted_versions)
 
         def date_to_x(date: dt.date) -> float:
             """Convert datetime.date to an SVG X coordinate"""
