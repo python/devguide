@@ -223,7 +223,7 @@ This includes, for example:
 
 * The reference implementation of Python and related repositories (i.e. `CPython <https://github.com/python/cpython>`_)
 * Tooling and support around CPython development (e.g. `pyperformance <https://github.com/python/pyperformance>`_, `Bedevere <https://github.com/python/bedevere>`_)
-* Helpers and backports for Python/CPython features (e.g. `typing-extensions <https://github.com/python/typing-extensions>`_, `typeshed <https://github.com/python/typeshed>`_, `tzdata <https://github.com/python/tzdata>`_, `pythoncapi-compat <https://github.com/python/pythoncapi-compat>`_)
+* Helpers and backports for Python/CPython features (e.g. `typing_extensions <https://github.com/python/typing_extensions>`_, `typeshed <https://github.com/python/typeshed>`_, `tzdata <https://github.com/python/tzdata>`_, `pythoncapi-compat <https://github.com/python/pythoncapi-compat>`_)
 * Organization-related repositories (e.g. the `Code of Conduct <https://github.com/python/pycon-code-of-conduct>`_, `.github <https://github.com/python/.github>`_)
 * Documentation and websites for all the above (e.g. `python.org repository <https://github.com/python/pythondotorg>`_, `PEPs <https://github.com/python/peps>`_, `Devguide <https://github.com/python/devguide>`_, docs translations)
 * Infrastructure for all the above (e.g. `docsbuild-scripts <https://github.com/python/docsbuild-scripts>`_, `buildmaster-config <https://github.com/python/buildmaster-config>`_)
