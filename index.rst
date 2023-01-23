@@ -168,6 +168,11 @@ developers to work on them.  Some major examples that may be of interest are:
 * Stackless_: A Python interpreter focused on providing lightweight
   microthreads while remaining largely compatible with CPython specific
   extension modules
+* MicroPython_: A tiny Python interpreter with small subset of the Python
+  standard library that is optimised to run on microcontrollers and in
+  constrained environments.
+* CircuitPython_: A fork of MicroPython designed to simplify experimenting
+  and learning to code on low-cost microcontroller boards.
 
 
 Key Resources
@@ -256,4 +261,6 @@ Full Table of Contents
 .. _Jython: https://www.jython.org/
 .. _IronPython: https://ironpython.net/
 .. _Stackless: https://github.com/stackless-dev/stackless/wiki/
+.. _MicroPython: https://micropython.org/
+.. _CircuitPython: https://circuitpython.org/
 .. _Issue tracker: https://github.com/python/cpython/issues
