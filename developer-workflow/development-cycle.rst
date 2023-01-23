@@ -216,16 +216,43 @@ The source code is currently hosted on `GitHub
 Organization Repository Policy
 ------------------------------
 
-Within the `Python organization <https://github.com/python/>`_, repositories are expected to fall within these general categories:
+Within the `Github Python organization <https://github.com/python/>`_,
+repositories are expected to relate to the Python language, the CPython
+reference implementation, their documentation and their development workflow.
+This includes, for example:
 
-1. The reference implementation of Python and related repositories (i.e. `CPython <https://github.com/python/cpython>`_)
-2. Reference implementations of PEPs (e.g. `mypy <https://github.com/python/mypy>`_)
-3. Tooling and support around CPython and the language (e.g. `python.org repository <https://github.com/python/pythondotorg>`_)
-4. PSF-related repositories (e.g. the `Code of Conduct <https://github.com/python/pycon-code-of-conduct>`_)
-5. PSF Infrastructure repositories (e.g. the `PSF Infrastructure Salt configurations <https://github.com/python/psf-salt>`_)
+* The reference implementation of Python and related repositories (i.e. `CPython <https://github.com/python/cpython>`_)
+* Tooling and support around CPython development (e.g. `pyperformance <https://github.com/python/pyperformance>`_, `Bedevere <https://github.com/python/bedevere>`_)
+* Helpers and backports for Python/CPython features (e.g. `typing-extensions <https://github.com/python/typing-extensions>`_, `typeshed <https://github.com/python/typeshed>`_, `tzdata <https://github.com/python/tzdata>`_, `pythoncapi-compat <https://github.com/python/pythoncapi-compat>`_)
+* Organization-related repositories (e.g. the `Code of Conduct <https://github.com/python/pycon-code-of-conduct>`_, `.github <https://github.com/python/.github>`_)
+* Documentation and websites for all the above (e.g. `python.org repository <https://github.com/python/pythondotorg>`_, `PEPs <https://github.com/python/peps>`_, `Devguide <https://github.com/python/devguide>`_, docs translations)
+* Infrastructure for all the above (e.g. `docsbuild-scripts <https://github.com/python/docsbuild-scripts>`_, `buildmaster-config <https://github.com/python/buildmaster-config>`_)
+* Discussions and notes around official development-related processes and events (e.g. `steering-council <https://github.com/python/steering-council>`_, `core-sprint <https://github.com/python/core-sprint>`_)
 
-For any repository which does not explicitly and clearly fall under one of these categories, permission should be sought
-from the `Python steering council <https://github.com/python/steering-council>`_.
+Before adding a new repository to the organization, have discussion to seeking
+consensus in our `Committers forum <https://discuss.python.org/c/committers/5>`_.
+Once people are satisfied with that, ask the `Python steering council <https://github.com/python/steering-council>`_
+to grant permission.
+
+Note that several repositories remain in the organization for historic reasons,
+and would probably not be appropriate to add today.
+
+Generally, new repositories should start their life under personal GitHub
+accounts or other GitHub orgs. It is relatively easy to move a repository to
+the organization once it is mature. For example, this would now apply to
+experimental features like `asyncio <https://github.com/python/asyncio>`_,
+`exceptiongroups <https://github.com/python/exceptiongroups>`_, or
+`typed_ast <https://github.com/python/typed_ast>`_, and drafts of new guides
+and other documentation (e.g. `redistributor-guide <https://github.com/python/redistributor-guide>`_).
+
+General-use tools and libraries (e.g. `mypy <https://github.com/python/mypy>`_
+or `black <https://github.com/psf/black>`_) should also be developed outside
+the python organization, unless core devs (as represented by the SC)
+specifically want to “bless” one implementation (as with e.g.
+`typeshed <https://github.com/python/typeshed>`_,
+`tzdata <https://github.com/python/tzdata>`_, or
+`pythoncapi-compat <https://github.com/python/pythoncapi-compat>`_).
+
 
 Organization Owner Policy
 -------------------------
