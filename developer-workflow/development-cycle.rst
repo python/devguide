@@ -216,7 +216,7 @@ The source code is currently hosted on `GitHub
 Organization Repository Policy
 ------------------------------
 
-Within the `Github Python organization <https://github.com/python/>`_,
+Within the `GitHub Python organization <https://github.com/python/>`_,
 repositories are expected to relate to the Python language, the CPython
 reference implementation, their documentation and their development workflow.
 This includes, for example:
