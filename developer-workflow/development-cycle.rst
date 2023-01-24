@@ -241,9 +241,9 @@ Generally, new repositories should start their life under personal GitHub
 accounts or other GitHub orgs. It is relatively easy to move a repository to
 the organization once it is mature. For example, this would now apply to
 experimental features like `asyncio <https://github.com/python/asyncio>`_,
-`exceptiongroups <https://github.com/python/exceptiongroups>`_, or
-`typed_ast <https://github.com/python/typed_ast>`_, and drafts of new guides
-and other documentation (e.g. `redistributor-guide <https://github.com/python/redistributor-guide>`_).
+`exceptiongroups <https://github.com/python/exceptiongroups>`_,
+and drafts of new guides and other documentation (e.g. `redistributor-guide
+<https://github.com/python/redistributor-guide>`_).
 
 General-use tools and libraries (e.g. `mypy <https://github.com/python/mypy>`_
 or `Black <https://github.com/psf/black>`_) should also be developed outside
