@@ -246,8 +246,8 @@ experimental features like `asyncio <https://github.com/python/asyncio>`_,
 and other documentation (e.g. `redistributor-guide <https://github.com/python/redistributor-guide>`_).
 
 General-use tools and libraries (e.g. `mypy <https://github.com/python/mypy>`_
-or `black <https://github.com/psf/black>`_) should also be developed outside
-the python organization, unless core devs (as represented by the SC)
+or `Black <https://github.com/psf/black>`_) should also be developed outside
+the ``python`` organization, unless core devs (as represented by the SC)
 specifically want to “bless” one implementation (as with e.g.
 `typeshed <https://github.com/python/typeshed>`_,
 `tzdata <https://github.com/python/tzdata>`_, or
