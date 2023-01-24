@@ -229,8 +229,8 @@ This includes, for example:
 * Infrastructure for all the above (e.g. `docsbuild-scripts <https://github.com/python/docsbuild-scripts>`_, `buildmaster-config <https://github.com/python/buildmaster-config>`_)
 * Discussions and notes around official development-related processes and events (e.g. `steering-council <https://github.com/python/steering-council>`_, `core-sprint <https://github.com/python/core-sprint>`_)
 
-Before adding a new repository to the organization, have discussion to seeking
-consensus in our `Committers forum <https://discuss.python.org/c/committers/5>`_.
+Before adding a new repository to the organization, open a discussion to seek consensus
+in the `Committers Discourse category <https://discuss.python.org/c/committers/5>`_.
 Once people are satisfied with that, ask the `Python steering council <https://github.com/python/steering-council>`_
 to grant permission.
 
