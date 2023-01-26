@@ -103,7 +103,7 @@ before building the documentation.
 .. _using-make-make-bat:
 .. _doc-build-make:
 
-Build using Make / make.bat
+Build using make / make.bat
 ---------------------------
 
 A Unix ``Makefile`` is provided, :cpy-file:`Doc/Makefile`,
@@ -112,10 +112,10 @@ that attempts to emulate it as closely as practical.
 
 .. important::
 
-   The Windows ``make.bat`` batch file lacks a ``make venv`` target,
-   automatically installing any missing dependencies
-   into your current environment.
-   Make sure the environment you `created above <doc-create-venv-windows>`__
+   The Windows ``make.bat`` batch file lacks a ``make venv`` target.
+   Instead, it automatically installs any missing dependencies
+   into the currently activated environment (or the base Python, if none).
+   Make sure the environment you :ref:`created above <doc-create-venv-windows>`
    is `activated <venv-activate_>`__ before running ``make.bat``.
 
 To build the docs as HTML, run::
@@ -125,12 +125,12 @@ To build the docs as HTML, run::
 .. tip:: Substitute ``htmlview`` for ``html`` to open the docs in a web browser
          once the build completes.
 
-To check the docs for common errors with `sphinx-lint`_
+To check the docs for common errors with `Sphinx Lint`_
 (which is run on all :ref:`pull requests <pullrequest>`), use::
 
    make check
 
-To list other supported :program:`Make` targets for your platform, run::
+To list other supported :program:`make` targets, run::
 
    make help
 
@@ -146,7 +146,7 @@ Build using Sphinx directly
 Advanced users may want to invoke Sphinx directly,
 to pass specialized options or to handle specific use cases.
 
-First, ensure the environment you `created above <doc-create-venv-windows>`__
+Make sure the environment you :ref:`created above <doc-create-venv-windows>`
 is `activated <venv-activate_>`__.
 Then, install the documentation requirements, :cpy-file:`Doc/requirements.txt`.
 Using pip::
@@ -164,7 +164,7 @@ replace ``html`` above with the desired builder ``name``.
 .. _docutils: https://docutils.sourceforge.io/
 .. _Sphinx: https://www.sphinx-doc.org/
 .. _Sphinx builder: https://www.sphinx-doc.org/en/master/usage/builders/index.html
-.. _sphinx-lint: https://github.com/sphinx-contrib/sphinx-lint
+.. _Sphinx Lint: https://github.com/sphinx-contrib/sphinx-lint
 .. _venv-activate: https://packaging.python.org/en/latest/guides/installing-using-pip-and-virtual-environments/#activating-a-virtual-environment
 .. _venv-create: https://packaging.python.org/en/latest/guides/installing-using-pip-and-virtual-environments/#creating-a-virtual-environment
 
