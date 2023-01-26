@@ -92,10 +92,10 @@ Key ideas
   PEG parser doesn't have a concept of "where the :exc:`SyntaxError` is".
 
 
+.. _consequences-of-ordered-choice:
+
 Consequences of the ordered choice operator
 -------------------------------------------
-
-.. _consequences-of-ordered-choice:
 
 Although PEG may look like EBNF, its meaning is quite different. The fact
 that in PEG parsers alternatives are ordered (which is at the core of how PEG
