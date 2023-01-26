@@ -92,7 +92,7 @@ Key ideas
   PEG parser doesn't have a concept of "where the :exc:`SyntaxError` is".
 
 
-Consequences or the ordered choice operator
+Consequences of the ordered choice operator
 -------------------------------------------
 
 .. _consequences-of-ordered-choice:
