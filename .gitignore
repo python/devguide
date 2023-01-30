@@ -87,5 +87,7 @@ celerybeat-schedule
 # Rope project settings
 .ropeproject
 
-# Generated SVG file
+# Generated CSV and SVG files
+include/branches.csv
+include/end-of-life.csv
 include/release-cycle.svg
