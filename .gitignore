@@ -9,6 +9,7 @@ __pycache__/
 # Distribution / packaging
 .Python
 env/
+ENV/
 venv/
 build/
 develop-eggs/
@@ -80,13 +81,13 @@ celerybeat-schedule
 # dotenv
 .env
 
-# virtualenv
-venv/
-ENV/
-venv/
-
 # Spyder project settings
 .spyderproject
 
 # Rope project settings
 .ropeproject
+
+# Generated CSV and SVG files
+include/branches.csv
+include/end-of-life.csv
+include/release-cycle.svg
