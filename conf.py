@@ -49,19 +49,19 @@ html_title = ""
 
 linkcheck_allowed_redirects = {
     # Edit page
-    r"https://docs.google.com/document/d/.*/": r"https://docs.google.com/document/d/.*/edit",
+    r"https://docs.google.com/document/d/.*/": r"https://docs.google.com/document/d/.*/edit",  # noqa: E501
     # Canonical
     r"https://docs.python.org/": r"https://docs.python.org/3/",
     # Translations with country codes
     r"https://docs.python.org/[a-z-]+/": r"https://docs.python.org/[a-z-]+/3/",
     # Personal /my/ links redirect to login page
-    r"https://discuss.python.org/my/.*": r"https://discuss.python.org/login-preferences",
+    r"https://discuss.python.org/my/.*": r"https://discuss.python.org/login-preferences",  # noqa: E501
     # Login page
-    r"https://github.com/python/core-workflow/issues/new.*": r"https://github.com/login.*",
+    r"https://github.com/python/core-workflow/issues/new.*": r"https://github.com/login.*",  # noqa: E501
     # Archive redirect
-    r"https://github.com/python/cpython/archive/main.zip": r"https://codeload.github.com/python/cpython/zip/refs/heads/main",
+    r"https://github.com/python/cpython/archive/main.zip": r"https://codeload.github.com/python/cpython/zip/refs/heads/main",  # noqa: E501
     # Blob to tree
-    r"https://github.com/python/cpython/blob/.*": r"https://github.com/python/cpython/tree/.*",
+    r"https://github.com/python/cpython/blob/.*": r"https://github.com/python/cpython/tree/.*",  # noqa: E501
     # HackMD shortcuts
     r"https://hackmd.io/s/.*": r"https://hackmd.io/@.*",
     # Read the Docs
