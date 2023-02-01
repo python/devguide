@@ -7,6 +7,7 @@ sys.path.insert(0, os.path.abspath(".") + "/_extensions")
 
 extensions = [
     'custom_roles',
+    'notfound.extension',
     'sphinx.ext.intersphinx',
     'sphinx.ext.todo',
     'sphinx_copybutton',
@@ -139,6 +140,9 @@ intersphinx_mapping = {
 }
 
 todo_include_todos = True
+
+# sphinx-notfound-page
+notfound_urls_prefix = "/"
 
 # sphinxext-opengraph config
 ogp_site_url = "https://devguide.python.org/"
