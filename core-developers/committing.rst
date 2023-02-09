@@ -120,8 +120,8 @@ for what was affected (e.g. ``Misc/NEWS.d/next/Library`` for changes relating
 to the standard library). The file name itself should be in the format
 ``<datetime>.gh-issue-<issue-number>.<nonce>.rst``:
 
-* ``<datetime>`` is today's date joined with a hyphen (``-``) to the current
-  time, in the ``YYYY-MM-DD-hh-mm-ss`` format (e.g. ``2017-05-27-16-46-23``).
+* ``<datetime>`` is today's date joined with a hyphen (``-``) to your current
+  local time, in the ``YYYY-MM-DD-hh-mm-ss`` format (e.g. ``2017-05-27-16-46-23``).
 * ``<issue-number>`` is the issue number the change is for (e.g. ``12345``
   for ``gh-issue-12345``).
 * ``<nonce>`` is a unique string to guarantee that the file name is
