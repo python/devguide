@@ -417,24 +417,26 @@ for the header and library files to your ``configure`` command.  For example,
 
 with **Homebrew**::
 
-    $ brew install pkg-config openssl@1.1 xz gdbm tcl-tk
-
 For Python 3.10 and newer::
+
+    $ brew install pkg-config openssl xz gdbm tcl-tk
 
     $ CFLAGS="-I$(brew --prefix gdbm)/include -I$(brew --prefix xz)/include" \
       LDFLAGS="-L$(brew --prefix gdbm)/lib -I$(brew --prefix xz)/lib" \
       PKG_CONFIG_PATH="$(brew --prefix tcl-tk)/lib/pkgconfig" \
       ./configure --with-pydebug \
-                  --with-openssl=$(brew --prefix openssl)
+                  --with-openssl="$(brew --prefix openssl)"
 
 
 For Python versions 3.9 through 3.7::
 
-    $ CFLAGS="-I$(brew --prefix gdbm)/include -I$(brew --prefix xz)/include" \
+    $ brew install pkg-config openssl@1.1 xz gdbm tcl-tk
+
+    $ export PKG_CONFIG_PATH="$(brew --prefix tcl-tk)/lib/pkgconfig"; \
+      CFLAGS="-I$(brew --prefix gdbm)/include -I$(brew --prefix xz)/include" \
       LDFLAGS="-L$(brew --prefix gdbm)/lib -L$(brew --prefix xz)/lib" \
-      PKG_CONFIG_PATH="$(brew --prefix tcl-tk)/lib/pkgconfig" \
       ./configure --with-pydebug \
-              --with-openssl=$(brew --prefix openssl@1.1) \
+              --with-openssl="$(brew --prefix openssl@1.1)" \
               --with-tcltk-libs="$(pkg-config --libs tcl tk)" \
               --with-tcltk-includes="$(pkg-config --cflags tcl tk)"
 
