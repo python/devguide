@@ -414,16 +414,16 @@ OpenSSL which means that you will not be able to build the ``_ssl`` extension.
 One solution is to install these libraries from a third-party package
 manager, like Homebrew_ or MacPorts_, and then add the appropriate paths
 for the header and library files to your ``configure`` command.  For example,
-
-with **Homebrew**::
+with **Homebrew**,
 
 For Python 3.10 and newer::
 
     $ brew install pkg-config openssl xz gdbm tcl-tk
 
+and ``configure``::
+
     $ CFLAGS="-I$(brew --prefix gdbm)/include -I$(brew --prefix xz)/include" \
       LDFLAGS="-L$(brew --prefix gdbm)/lib -I$(brew --prefix xz)/lib" \
-      PKG_CONFIG_PATH="$(brew --prefix tcl-tk)/lib/pkgconfig" \
       ./configure --with-pydebug \
                   --with-openssl="$(brew --prefix openssl)"
 
@@ -431,6 +431,8 @@ For Python 3.10 and newer::
 For Python versions 3.9 through 3.7::
 
     $ brew install pkg-config openssl@1.1 xz gdbm tcl-tk
+
+and ``configure``::
 
     $ export PKG_CONFIG_PATH="$(brew --prefix tcl-tk)/lib/pkgconfig"; \
       CFLAGS="-I$(brew --prefix gdbm)/include -I$(brew --prefix xz)/include" \
