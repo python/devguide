@@ -413,14 +413,13 @@ Apple no longer provides header files for the deprecated system version of
 OpenSSL which means that you will not be able to build the ``_ssl`` extension.
 One solution is to install these libraries from a third-party package
 manager, like Homebrew_ or MacPorts_, and then add the appropriate paths
-for the header and library files to your ``configure`` command.  For example,
-with **Homebrew**,
+for the header and library files to your ``configure`` command.
 
-For Python 3.10 and newer::
+For example, with **Homebrew**, install the dependencies::
 
     $ brew install pkg-config openssl xz gdbm tcl-tk
 
-and ``configure``::
+Then, for Python 3.10 and newer::
 
     $ CFLAGS="-I$(brew --prefix gdbm)/include -I$(brew --prefix xz)/include" \
       LDFLAGS="-L$(brew --prefix gdbm)/lib -I$(brew --prefix xz)/lib" \
@@ -428,11 +427,7 @@ and ``configure``::
                   --with-openssl="$(brew --prefix openssl)"
 
 
-For Python versions 3.9 through 3.7::
-
-    $ brew install pkg-config openssl@1.1 xz gdbm tcl-tk
-
-and ``configure``::
+For Python 3.7 through 3.9::
 
     $ export PKG_CONFIG_PATH="$(brew --prefix tcl-tk)/lib/pkgconfig"; \
       CFLAGS="-I$(brew --prefix gdbm)/include -I$(brew --prefix xz)/include" \
