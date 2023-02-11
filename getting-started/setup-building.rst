@@ -417,14 +417,14 @@ for the header and library files to your ``configure`` command.
 
 For example, with **Homebrew**, install the dependencies::
 
-    $ brew install pkg-config openssl xz gdbm tcl-tk
+    $ brew install pkg-config openssl@1.1 xz gdbm tcl-tk
 
 Then, for Python 3.10 and newer::
 
     $ CFLAGS="-I$(brew --prefix gdbm)/include -I$(brew --prefix xz)/include" \
       LDFLAGS="-L$(brew --prefix gdbm)/lib -I$(brew --prefix xz)/lib" \
       ./configure --with-pydebug \
-                  --with-openssl="$(brew --prefix openssl)"
+                  --with-openssl="$(brew --prefix openssl@1.1)"
 
 
 For Python 3.7 through 3.9::
