@@ -427,7 +427,7 @@ Then, for Python 3.10 and newer::
                   --with-openssl="$(brew --prefix openssl@1.1)"
 
 
-For Python 3.7 through 3.9::
+Or, for Python 3.7 through 3.9::
 
     $ export PKG_CONFIG_PATH="$(brew --prefix tcl-tk)/lib/pkgconfig"; \
       CFLAGS="-I$(brew --prefix gdbm)/include -I$(brew --prefix xz)/include" \
