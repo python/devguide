@@ -419,7 +419,7 @@ For example, with **Homebrew**, install the dependencies::
 
     $ brew install pkg-config openssl@1.1 xz gdbm tcl-tk
 
-Then, for Python 3.10 and newer::
+Then, for Python 3.10 and newer, run ``configure``::
 
     $ CFLAGS="-I$(brew --prefix gdbm)/include -I$(brew --prefix xz)/include" \
       LDFLAGS="-L$(brew --prefix gdbm)/lib -I$(brew --prefix xz)/lib" \
@@ -438,11 +438,11 @@ Or, for Python 3.7 through 3.9::
               --with-tcltk-libs="$(pkg-config --libs tcl tk)" \
               --with-tcltk-includes="$(pkg-config --cflags tcl tk)"
 
-and ``make``::
+And finally, run ``make``::
 
     $ make -s -j2
 
-or **MacPorts**::
+Alternatively, with **MacPorts**::
 
     $ sudo port install pkgconfig openssl xz gdbm
 
