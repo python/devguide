@@ -423,6 +423,7 @@ Then, for Python 3.10 and newer::
 
     $ CFLAGS="-I$(brew --prefix gdbm)/include -I$(brew --prefix xz)/include" \
       LDFLAGS="-L$(brew --prefix gdbm)/lib -I$(brew --prefix xz)/lib" \
+      PKG_CONFIG_PATH="$(brew --prefix tcl-tk)/lib/pkgconfig" \
       ./configure --with-pydebug \
                   --with-openssl="$(brew --prefix openssl@1.1)"
 
