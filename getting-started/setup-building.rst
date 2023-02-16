@@ -314,7 +314,7 @@ You can run the build of Python you've compiled with:
 See the `PCBuild readme`_ for more details on what other software is necessary
 and how to build.
 
-.. _Victor Stinner's guide: https://cpython-core-tutorial.readthedocs.io/en/latest/build_cpython_windows.html
+.. _Victor Stinner's guide: https://web.archive.org/web/20220907075854/https://cpython-core-tutorial.readthedocs.io/en/latest/build_cpython_windows.html
 .. _Visual Studio: https://visualstudio.microsoft.com/
 .. _PCBuild readme: https://github.com/python/cpython/blob/main/PCbuild/readme.txt
 .. _Git for Windows download from the official Git website: https://git-scm.com/download/win
