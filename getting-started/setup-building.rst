@@ -413,36 +413,36 @@ Apple no longer provides header files for the deprecated system version of
 OpenSSL which means that you will not be able to build the ``_ssl`` extension.
 One solution is to install these libraries from a third-party package
 manager, like Homebrew_ or MacPorts_, and then add the appropriate paths
-for the header and library files to your ``configure`` command.  For example,
+for the header and library files to your ``configure`` command.
 
-with **Homebrew**::
+For example, with **Homebrew**, install the dependencies::
 
     $ brew install pkg-config openssl@1.1 xz gdbm tcl-tk
 
-For Python 3.10 and newer::
+Then, for Python 3.10 and newer, run ``configure``::
 
     $ CFLAGS="-I$(brew --prefix gdbm)/include -I$(brew --prefix xz)/include" \
       LDFLAGS="-L$(brew --prefix gdbm)/lib -I$(brew --prefix xz)/lib" \
       PKG_CONFIG_PATH="$(brew --prefix tcl-tk)/lib/pkgconfig" \
       ./configure --with-pydebug \
-                  --with-openssl=$(brew --prefix openssl)
+                  --with-openssl="$(brew --prefix openssl@1.1)"
 
 
-For Python versions 3.9 through 3.7::
+Or, for Python 3.7 through 3.9::
 
-    $ CFLAGS="-I$(brew --prefix gdbm)/include -I$(brew --prefix xz)/include" \
+    $ export PKG_CONFIG_PATH="$(brew --prefix tcl-tk)/lib/pkgconfig"; \
+      CFLAGS="-I$(brew --prefix gdbm)/include -I$(brew --prefix xz)/include" \
       LDFLAGS="-L$(brew --prefix gdbm)/lib -L$(brew --prefix xz)/lib" \
-      PKG_CONFIG_PATH="$(brew --prefix tcl-tk)/lib/pkgconfig" \
       ./configure --with-pydebug \
-              --with-openssl=$(brew --prefix openssl@1.1) \
+              --with-openssl="$(brew --prefix openssl@1.1)" \
               --with-tcltk-libs="$(pkg-config --libs tcl tk)" \
               --with-tcltk-includes="$(pkg-config --cflags tcl tk)"
 
-and ``make``::
+And finally, run ``make``::
 
     $ make -s -j2
 
-or **MacPorts**::
+Alternatively, with **MacPorts**::
 
     $ sudo port install pkgconfig openssl xz gdbm
 
