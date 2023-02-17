@@ -19,7 +19,7 @@ The CPython Developer's Guide
 This guide covers how to contribute to CPython. It is known by the
 nickname of "the devguide" by the Python core developers.
 
-The official home of this guide is https://devguide.python.org.
+The official home of this guide is https://devguide.python.org and if you want to have a structured roadmap to Python then do visit [Python Developer Roadmap](https://roadmap.sh/python).
 
 Compilation
 -----------
