@@ -424,7 +424,7 @@ Then, for Python 3.11 and newer, run ``configure``::
     $ GDBM_CFLAGS="-I$(brew --prefix gdbm)/include" \
       GDBM_LIBS="-L$(brew --prefix gdbm)/lib -lgdbm" \
       LIBLZMA_CFLAGS="-I$(brew --prefix xz)/include" \
-      LIBLZMA_LIBS="-I$(brew --prefix xz)/lib" \
+      LIBLZMA_LIBS="-I$(brew --prefix xz)/lib -llzma" \
       PKG_CONFIG_PATH="$(brew --prefix tcl-tk)/lib/pkgconfig" \
       ./configure --with-pydebug \
                   --with-openssl="$(brew --prefix openssl@1.1)"
