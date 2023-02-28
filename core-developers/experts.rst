@@ -168,7 +168,7 @@ optparse              mitsuhiko
 os
 os.path               serhiy-storchaka
 ossaudiodev
-parser                benjaminp, pablogsal
+parser                pablogsal
 pathlib               barneygale*
 pdb
 pickle                avassalotti
