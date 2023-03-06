@@ -64,79 +64,109 @@ Building the documentation
 
 .. highlight:: bash
 
-The toolset used to build the docs is written in Python and is called Sphinx_.
-Sphinx is maintained separately and is not included in this tree.  Also needed
-are blurb_, a tool to create :file:`Misc/NEWS` on demand; and
-python-docs-theme_, the Sphinx theme for the Python documentation.
+To build the documentation, follow the steps in one of the sections below.
+You can view the documentation after building the HTML
+by opening the file :file:`Doc/build/html/index.html` in a web browser.
 
-To build the documentation, follow the instructions from one of the sections
-below.  You can view the documentation after building the HTML by pointing
-a browser at the file :file:`Doc/build/html/index.html`.
+.. note::
 
-You are expected to have installed the latest stable version of
-Sphinx_ and blurb_ on your system or in a virtualenv_ (which can be
-created using ``make venv``), so that the Makefile can find the
-``sphinx-build`` command.  You can also specify the location of
-``sphinx-build`` with the ``SPHINXBUILD`` :command:`make` variable.
+   The following instructions all assume your current working dir is
+   the ``Doc`` subdirectory in your :ref:`CPython repository clone <checkout>`.
+   Make sure to switch to it with ``cd Doc`` if necessary.
+
+
+.. _doc-create-venv:
+
+Create a virtual environment
+----------------------------
+
+.. _doc-create-venv-unix:
+
+**On Unix platforms** that support :program:`make`
+(including Linux, macOS and BSD),
+you can create a new :mod:`venv` with the required dependencies using::
+
+   make venv
+
+Building the docs with :program:`make` will automatically use this environment
+without you having to activate it.
+
+.. _doc-create-venv-windows:
+
+**On Windows**, or if not using :program:`make`,
+`create a new virtual environment <venv-create_>`__ manually.
+Always be sure to `activate this environment <venv-activate_>`__
+before building the documentation.
 
 
 .. _building-using-make:
+.. _using-make-make-bat:
+.. _doc-build-make:
 
-Using make / make.bat
----------------------
+Build using make / make.bat
+---------------------------
 
-**On Unix**, run the following from the root of your :ref:`repository clone
-<checkout>` to build the output as HTML::
+A Unix ``Makefile`` is provided, :cpy-file:`Doc/Makefile`,
+along with a :cpy-file:`Doc/make.bat` batch file for Windows
+that attempts to emulate it as closely as practical.
 
-   cd Doc
-   make venv
+.. important::
+
+   The Windows ``make.bat`` batch file lacks a ``make venv`` target.
+   Instead, it automatically installs any missing dependencies
+   into the currently activated environment (or the base Python, if none).
+   Make sure the environment you :ref:`created above <doc-create-venv-windows>`
+   is `activated <venv-activate_>`__ before running ``make.bat``.
+
+To build the docs as HTML, run::
+
    make html
 
-or alternatively ``make -C Doc/ venv html``.  ``htmlview`` can be used
-instead of ``html`` to conveniently open the docs in a browser once the
-build completes.
+.. tip:: Substitute ``htmlview`` for ``html`` to open the docs in a web browser
+         once the build completes.
 
-You can also use ``make help`` to see a list of targets supported by
-:command:`make`.  Note that ``make check`` is automatically run when
-you submit a :ref:`pull request <pullrequest>`, so you should make
-sure that it runs without errors.
+To check the docs for common errors with `Sphinx Lint`_
+(which is run on all :ref:`pull requests <pullrequest>`), use::
 
-**On Windows**, the :cpy-file:`Doc/make.bat` batchfile tries to emulate
-:command:`make` as closely as possible, but the venv target is not implemented,
-so you will probably want to make sure you are working in a virtual environment
-before proceeding, otherwise all dependencies will be automatically installed
-on your system.
+   make check
 
-When ready, run the following from the root of your :ref:`repository clone
-<checkout>` to build the output as HTML::
+To list other supported :program:`make` targets, run::
 
-   cd Doc
-   make html
+   make help
 
-You can also use ``make help`` to see a list of targets supported by
-:cpy-file:`Doc/make.bat`.
+See :cpy-file:`Doc/README.rst` for more information.
 
-See also :cpy-file:`Doc/README.rst` for more information.
 
-Using sphinx-build
-------------------
+.. _using-sphinx-build:
+.. _doc-build-sphinx:
 
-Sometimes we directly want to execute the sphinx-build tool instead of through
-``make`` (although the latter is still the preferred way). In this case, you can
-use the following command line from the ``Doc`` directory (make sure to install
-Sphinx_, blurb_ and python-docs-theme_ packages from PyPI)::
+Build using Sphinx directly
+---------------------------
 
-   sphinx-build -b<builder> . build/<builder>
+Advanced users may want to invoke Sphinx directly,
+to pass specialized options or to handle specific use cases.
 
-where ``<builder>`` is one of html, text, latex, or htmlhelp (for explanations
-see the make targets above).
+Make sure the environment you :ref:`created above <doc-create-venv-windows>`
+is `activated <venv-activate_>`__.
+Then, install the documentation requirements, :cpy-file:`Doc/requirements.txt`.
+Using pip::
+
+   python -m pip install --upgrade -r requirements.txt
+
+Finally, directly invoke Sphinx with::
+
+   python -m sphinx -b html . build/html
+
+To use a different `Sphinx builder`_,
+replace ``html`` above with the desired builder ``name``.
 
 
 .. _docutils: https://docutils.sourceforge.io/
-.. _python-docs-theme: https://pypi.org/project/python-docs-theme/
 .. _Sphinx: https://www.sphinx-doc.org/
-.. _virtualenv: https://virtualenv.pypa.io/
-.. _blurb: https://pypi.org/project/blurb/
+.. _Sphinx builder: https://www.sphinx-doc.org/en/master/usage/builders/index.html
+.. _Sphinx Lint: https://github.com/sphinx-contrib/sphinx-lint
+.. _venv-activate: https://packaging.python.org/en/latest/guides/installing-using-pip-and-virtual-environments/#activating-a-virtual-environment
+.. _venv-create: https://packaging.python.org/en/latest/guides/installing-using-pip-and-virtual-environments/#creating-a-virtual-environment
 
 
 Style Guide
