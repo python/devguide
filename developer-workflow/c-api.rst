@@ -12,8 +12,8 @@ The C API is divided into these tiers:
 2. The “general” public C API, available when ``Python.h`` is included normally.
    Ideally declared in ``Include/cpython/``.
 3. The Unstable C API, identified by the ``PyUnstable_`` name prefix.
-   Ideally declared in ``Include/cpython/`` along with the general public API.
-4. The Limited C API, available with ``Py_LIMITED_API`` defined.
+   Ideally declared in :cpy-file:`Include/cpython/` along with the general public API.
+4. The Limited C API, available with :c:macro:`Py_LIMITED_API` defined.
    Ideally declared directly under ``Include/``.
 
 Each tier has different stability & maintenance requirements to think about
@@ -31,8 +31,9 @@ for building CPython itself, as indicated by a macro like ``Py_BUILD_CORE``.
 
 While internal API can be changed at any time, it's still good to keep it
 stable: other API or other CPython developers may depend on it.
-For users, internal API is sometimes the best a workaround for a thorny problem
--- though those use cases should be discussed on `Discourse <https://discuss.python.org/c/30>`_
+For users, internal API is sometimes the best workaround for a thorny problem
+--- though those use cases should be discussed on the
+`C API Discourse category <https://discuss.python.org/c/30>`_
 or an issue so we can try to find a supported way to serve them.
 
 
@@ -61,16 +62,16 @@ Private names
 
 Any API named with a leading underscore is also considered internal.
 There is currently only one main use case for using such names rather than
-putting the definition in ``Include/internal/`` (or directly in a ``.c`` file):
+putting the definition in :cpy-file:`Include/internal/` (or directly in a ``.c`` file):
 
-* Internal helpers for other public API, which users should not call directly.
+* Internal helpers for other public APIs, which users should not call directly.
 
-Note that historically, underscores were used for API that is better served by
+Note that historically, underscores were used for APIs that are better served by
 the :ref:`unstable-capi`:
 
-* “provisional” API, included in a Python release to test real-world
-  usage of new API;
-* API for very specialized uses like JIT compilers.
+* “provisional” APIs, included in a Python release to test real-world
+  usage of new APIs;
+* APIs for very specialized uses like JIT compilers.
 
 
 Internal API Tests
@@ -157,9 +158,9 @@ Users of this tier may need to change their code with every minor release.
 In many ways, this tier is like the general C API:
 
 - it's available when ``Python.h`` is included normally,
-- it should be defined  in ``Include/cpython/``,
+- it should be defined  in :cpy-file:`Include/cpython/`,
 - it requires tests, so we don't break it unintentionally
-- it requires docs, so both we and the users
+- it requires docs, so both we and the users,
   can agree on the expected behavior,
 - it is tested and documented in the same way.
 
@@ -169,7 +170,7 @@ The differences are:
   prefix. This defines what's in the unstable tier.
 - The unstable API can change in minor versions, without any deprecation
   period.
-- A stability note is appears in the docs.
+- A stability note appears in the docs.
   This happens automatically, based on the name
   (via :cpy-file:`Doc/tools/extensions/c_annotations.py`).
 
@@ -178,55 +179,57 @@ use this API reliably:
 
 * Changes and removals can be done in minor releases (3.x.0, including
   Alphas and Betas for 3.x.0).
-* Adding new unstable API *for an existing feature* is allowed even after
+* Adding a new unstable API *for an existing feature* is allowed even after
   Beta feature freeze, up until the first Release Candidate.
-  Consensus on Core Development Discourse or is needed in the Beta period.
+  Consensus on the `Core Development Discourse <https://discuss.python.org/c/core-dev/23>`_
+  is needed in the Beta period.
 * Backwards-incompatible changes should make existing C callers fail to compile.
   For example, arguments should be added/removed, or a function should be
   renamed.
-* When moving API into or out of the Unstable tier, the old name
+* When moving an API into or out of the Unstable tier, the old name
   should continue to be available (but deprecated) until an incompatible
   change is made. In other words, while we're allowed to break calling code,
   we shouldn't break it *unnecessarily*.
 
 
-Moving API from the public tier to unstable
--------------------------------------------
+Moving an API from the public tier to Unstable
+----------------------------------------------
 
 * Expose the API under its new name, with the ``PyUnstable_`` prefix.
 * Make the old name an alias (e.g. a ``static inline`` function calling the
   new function).
-* Deprecate the old name, typically using ``Py_DEPRECATED``.
-* Announce the change in What's New.
+* Deprecate the old name, typically using :c:macro:`Py_DEPRECATED`.
+* Announce the change in the "What's New".
 
 The old name should continue to be available until an incompatible change is
 made. Per Python’s backwards compatibility policy (:pep:`387`),
-this deprecation needs to last at least two releases (modulo SC exceptions).
+this deprecation needs to last at least two releases
+(modulo Steering Council exceptions).
 
-The rules are relaxed for API that was introduced before the official
-Unstable tier.
-For the following, you can make an incompatible change (and remove the old name)
-as if the function was already part of the Unstable tier:
+The rules are relaxed for APIs that were introduced in Python versions
+before 3.12, when the official Unstable tier was added.
+You can make an incompatible change (and remove the old name)
+as if the function was already part of the Unstable tier
+for APIs introduced before Python 3.12 that are either:
 
-* API introduced before Python 3.12 that is documented to be less stable than default.
-* API introduced before Python 3.12 that was named with a leading underscore.
+* Documented to be less stable than default.
+* Named with a leading underscore.
 
-Moving API from the private tier to unstable
---------------------------------------------
+Moving an API from the private tier to unstable
+-----------------------------------------------
 
 * Expose the API under its new name, with the ``PyUnstable_`` prefix.
 * If the old name is documented, or widely used externally,
-  make it an alias and deprecate it (typically with ``Py_DEPRECATED``).
+  make it an alias and deprecate it (typically with :c:macro:`Py_DEPRECATED`).
   It should continue to be available until an incompatible change is made,
   as if it was previously public.
 
   This applies even to underscored names. Python wasn't always strict with
   the leading underscore.
-
 * Announce the change in What's New.
 
-Moving API from unstable to public
-----------------------------------
+Moving an API from unstable to public
+-------------------------------------
 
 * Expose the API under its new name, without the ``PyUnstable_`` prefix.
 * Make the old ``PyUnstable_*`` name be an alias (e.g. a ``static inline``
