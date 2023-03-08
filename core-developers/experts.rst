@@ -85,7 +85,7 @@ codeop
 collections           rhettinger*
 collections.abc       rhettinger*, stutzbach^
 colorsys
-compileall
+compileall            carljm
 concurrent.futures    pitrou, brianquinlan, gpshead*
 configparser          ambv*
 contextlib            ncoghlan, 1st1
@@ -97,7 +97,7 @@ crypt                 jafo^*
 csv                   smontanaro (inactive)
 ctypes                theller (inactive), abalkin, amauryfa, meadori
 curses                Yhg1s
-dataclasses           ericvsmith*
+dataclasses           ericvsmith*, carljm
 datetime              abalkin, pganssle
 dbm
 decimal               facundobatista, rhettinger, mdickinson
@@ -184,7 +184,7 @@ profile
 pstats
 pty                   Yhg1s*
 pwd
-py_compile
+py_compile            carljm
 pyclbr                isidentical
 pydoc
 queue                 rhettinger*
@@ -245,7 +245,7 @@ tracemalloc           vstinner
 tty                   Yhg1s*
 turtle                gregorlingl^, willingc
 types                 1st1
-typing                gvanrossum, Fidget-Spinner, JelleZijlstra*, AlexWaygood*
+typing                gvanrossum, Fidget-Spinner, JelleZijlstra*, AlexWaygood*, carljm
 unicodedata           malemburg, ezio-melotti
 unittest              voidspace*, ezio-melotti, rbtcollins, gpshead
 unittest.mock         voidspace*
@@ -318,12 +318,12 @@ Interest Area       Maintainers
 ==================  ==========================================================
 algorithms          rhettinger*
 argument clinic     larryhastings
-ast/compiler        benjaminp, 1st1, pablogsal, markshannon, isidentical, brandtbucher
+ast/compiler        benjaminp, 1st1, pablogsal, markshannon, isidentical, brandtbucher, carljm
 autoconf/makefiles  Yhg1s*
 bsd
 issue tracker       ezio-melotti
 buildbots           zware, pablogsal
-bytecode            benjaminp, 1st1, markshannon, brandtbucher
+bytecode            benjaminp, 1st1, markshannon, brandtbucher, carljm
 context managers    ncoghlan
 core workflow       Mariatta, ezio-melotti, hugovk
 coverity scan       tiran, Yhg1s
@@ -350,7 +350,7 @@ object model        benjaminp, Yhg1s
 packaging           tarekziade, malemburg, alexis^, merwok, dstufft, pfmoore
 pattern matching    brandtbucher*
 peg parser          gvanrossum, pablogsal, lysnikolaou
-performance         vstinner, serhiy-storchaka, 1st1, rhettinger, markshannon, brandtbucher
+performance         vstinner, serhiy-storchaka, 1st1, rhettinger, markshannon, brandtbucher, carljm
 pip                 ncoghlan, dstufft, pfmoore, Marcus.Smith^, pradyunsg
 py3 transition      benjaminp
 release management  tarekziade, malemburg, benjaminp, warsaw,
