@@ -245,7 +245,7 @@ tracemalloc           vstinner
 tty                   Yhg1s*
 turtle                gregorlingl^, willingc
 types                 1st1
-typing                gvanrossum, Fidget-Spinner, JelleZijlstra*, AlexWaygood*
+typing                gvanrossum, Fidget-Spinner, JelleZijlstra*, AlexWaygood*, carljm
 unicodedata           malemburg, ezio-melotti
 unittest              voidspace*, ezio-melotti, rbtcollins, gpshead
 unittest.mock         voidspace*
