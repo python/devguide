@@ -86,10 +86,11 @@ The submission form has only two fields that you need to fill:
 
 You can tag someone, with :samp:`@{username}` in a comment,
 if you think the issue should be brought to their attention.
-Use the :ref:`experts` to know who wants to be tagged for specific areas.
+Use the :ref:`experts` to know who wants to be
+tagged or assigned for specific areas.
 
 There are a number of additional fields like **Assignees**, **Labels**,
-**Projects**, and **Milestone**. Those are filled by triagers and core
+and **Projects**. Those are filled by triagers and core
 developers and are covered in the :ref:`triaging` page. You don't need
 to worry about those when reporting issues as a Python user.
 

@@ -76,8 +76,6 @@ the only available labels are :gh-label:`OS-windows`, :gh-label:`OS-mac`,
 and :gh-label:`OS-freebsd`.
 
 
-.. _Versions:
-
 Version labels
 ==============
 
@@ -134,25 +132,14 @@ by bots, or added by humans to trigger specific bot behaviors.
 * :gh-label:`skip news`: for PRs that don't need a NEWS entry.
   The :ref:`news-entry` section covers in details in which cases the NEWS entry
   can be skipped.
-* :samp:`awaiting {action}`: these labels are applied and used by ``bedevere`` to
-  indicate the stage of a PR:
-
-  * :gh-label:`awaiting review`: the PR hasn't been reviewed and is waiting
-    for a review.
-  * :gh-label:`awaiting core review`: a review by a core developer is needed.
-  * :gh-label:`awaiting changes`: a reviewer requested changes to proceed with
-    the PR.
-  * :gh-label:`awaiting change review`: a review of the requested changes
-    is needed.
-  * :gh-label:`awaiting merge`: the PR has been approved by a core developer
-    and is ready to merge.
-
 * :gh-label:`test-with-buildbots`: used to test the latest commit with
-  the buildbot fleet whenever more testing is required before merging.
-  This may take multiple hours to complete. Triagers can also stop
-  a stuck build using the web interface.
+  the :ref:`buildbot fleet <buildbots>` whenever more testing is required
+  before merging.  This may take multiple hours to complete.
+* :samp:`awaiting {action}`: these labels are applied and used by `bedevere`_
+  to indicate the stage of a PR and should not be applied manually.
 
 
 .. _Reporting security issues in Python: https://www.python.org/dev/security/
 .. _Ideas Discourse category: https://discuss.python.org/c/ideas/6
 .. _miss-islington: https://github.com/python/miss-islington
+.. _bedevere: https://github.com/python/bedevere/#pr-state-machine
