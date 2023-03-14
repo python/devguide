@@ -11,6 +11,9 @@ only to one. Below is a possibly inexhaustive list, but it should get
 you going. For a full list, see `here <https://github.com/python/cpython/issues/labels>`_.
 
 
+.. _general-purpose-labels:
+.. _Type:
+
 Type labels
 ===========
 
