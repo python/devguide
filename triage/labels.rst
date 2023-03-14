@@ -26,9 +26,8 @@ These labels are used to specify the type of issue:
 * :gh-label:`type-security`: for security issues.
   See also `Reporting security issues in Python`_.
 
-Since most PRs have an associated issue, it is not necessary to apply these
-labels to PRs.
 
+.. _Component:
 
 Component labels
 ================
@@ -74,6 +73,8 @@ the only available labels are :gh-label:`OS-windows`, :gh-label:`OS-mac`,
 and :gh-label:`OS-freebsd`.
 
 
+.. _Versions:
+
 Version labels
 ==============
 
@@ -84,6 +85,10 @@ whenever new major releases are created or retired.
 See also :ref:`the branch status page <branchstatus>`
 for a list of active branches.
 
+
+.. _Keywords:
+.. _Other:
+.. _Priority:
 
 Other labels
 ============
@@ -103,6 +108,8 @@ Other labels
 * :gh-label:`sprint`: used for easier filtering of issues/PRs being worked on
   during official sprints.
 
+
+.. _GitHub Labels for PRs:
 
 Labels specific to PRs
 ======================
