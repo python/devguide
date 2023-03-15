@@ -28,6 +28,22 @@ Checklist for Triaging
 
 .. note:: Some of these fields can only be set/edited by core developers.
 
+Assignees
+---------
+This field indicates who is expected to take the next step in resolving
+the issue.
+
+It is acceptable to assign an issue to someone if the issue cannot move
+forward without their help, e.g., they need to make a technical decision to
+allow the issue to move forward. Also consult the :ref:`experts` as certain
+stdlib modules should always be assigned to a specific person.
+
+Note that in order to assign an issue to someone, that person **must** be
+a team member, likely a Triager or a core developer.
+
+.. The Assignees subsection was copied from the labels.rst page in #930.
+   For consistency, other the fields mentioned above should be documented too.
+
 
 .. _helptriage:
 
