@@ -110,7 +110,7 @@ Following issues
 
 If you want to subscribe yourself to an issue, click the :guilabel:`🔔 Subscribe`
 button in the sidebar.  Similarly, if you were tagged by somebody else but
-decided this issue is not for you, you might click the :guilabel:`🔕 Unsubscribe`
+decided this issue is not for you, click the :guilabel:`🔕 Unsubscribe`
 button in the sidebar.  Note that you are automatically subscribed to
 issues you created.
 

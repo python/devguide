@@ -44,7 +44,7 @@ developer before taking any action.
 
 Triagers can also make use of the :gh-label:`pending` and :gh-label:`stale` labels to suggest that a
 PR may be suitable for closure. For more information, see the
-:ref:`other` section.
+entries in the :ref:`labels-other` section.
 
 Note that it is of paramount importance to treat every contributor to the Python
 project kindly and with respect. Regardless of whether they're entirely new

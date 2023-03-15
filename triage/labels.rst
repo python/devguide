@@ -13,6 +13,7 @@ you going. For a full list, see `here <https://github.com/python/cpython/issues/
 
 .. _general-purpose-labels:
 .. _Type:
+.. _labels-type:
 
 Type labels
 ===========
@@ -31,12 +32,13 @@ These labels are used to specify the type of issue:
 
 
 .. _Component:
+.. _labels-component:
 
 Component labels
 ================
 
 These labels are mostly used to specify which :ref:`part of the codebase
-<directory-structure>` is affected by the issue/PR:
+<build-directory-structure>` is affected by the issue/PR:
 
 * :gh-label:`stdlib`: for standard library modules in the :cpy-file:`Lib`
   directory (written in Python).
@@ -48,8 +50,8 @@ These labels are mostly used to specify which :ref:`part of the codebase
 * :gh-label:`docs`: for documentation in the :cpy-file:`Doc` directory
   (written in :ref:`reStructuredText <markup>`), docstrings, and code comments.
 * :gh-label:`tests`: for tests in the :cpy-file:`Lib/test` directory
-  (written in Python) and other changes related to tests, ``unittest``,
-  or ``doctests``.
+  (written in Python) and other changes related to tests, :mod:`unittest`,
+  or :mod:`doctest`.
 
 
 Expert labels
@@ -90,6 +92,7 @@ for a list of active branches.
 .. _Keywords:
 .. _Other:
 .. _Priority:
+.. _labels-other:
 
 Other labels
 ============
@@ -100,22 +103,24 @@ Other labels
   to the build process and performances.
 * :gh-label:`release-blocker`/:gh-label:`deferred-blocker`: for issues/PRs
   that, unless fixed, will hold the current or next release respectively.
-  Triagers may set these labels, and the :ref:`branch's release manager <branchstatus>`
+  Triagers may set these labels for issues that must be fixed before a release,
+  and the :ref:`branch's release manager <branchstatus>`
   will review them and determine if they indeed qualify,
   removing or retaining the label as appropriate.
 * :gh-label:`pending`: for issues/PRs that will be closed unless further
   feedback is provided.
 * :gh-label:`stale`: for issues/PRs that have been inactive for a while.
-* :gh-label:`sprint`: used for easier filtering of issues/PRs being worked on
+* :gh-label:`sprint`: for easier filtering of issues/PRs being worked on
   during official sprints.
 
 
 .. _GitHub Labels for PRs:
+.. _github-pr-labels:
 
 Labels specific to PRs
 ======================
 
-The following labels only apply to PRs.  They are either set automatically
+The following labels only apply to :ref:`Pull Requests <pullrequest>`.  They are either set automatically
 by bots, or added by humans to trigger specific bot behaviors.
 
 * :gh-label:`DO-NOT-MERGE`: for PRs that shouldn't be merged in their current
