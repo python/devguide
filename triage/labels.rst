@@ -120,8 +120,9 @@ Other labels
 Labels specific to PRs
 ======================
 
-The following labels only apply to :ref:`Pull Requests <pullrequest>`.  They are either set automatically
-by bots, or added by humans to trigger specific bot behaviors.
+The following labels only apply to :ref:`Pull Requests <pullrequest>`.
+They are either set automatically by bots, or added by humans
+to trigger specific bot behaviors.
 
 * :gh-label:`DO-NOT-MERGE`: for PRs that shouldn't be merged in their current
   state.  It also prevents `miss-islington`_ from being able to automatically
