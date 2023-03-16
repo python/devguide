@@ -31,8 +31,8 @@ This field indicates who is expected to take the next step in resolving
 the issue.
 
 It is acceptable to assign an issue to someone if the issue cannot move
-forward without their help, e.g., they need to make a technical decision to
-allow the issue to move forward. Also consult the :ref:`experts` as certain
+forward without their help; e.g., they need to make a technical decision on
+how to proceed. Also consult the :ref:`experts` as certain
 stdlib modules should always be assigned to a specific person.
 
 Note that in order to assign an issue to someone, that person **must** be

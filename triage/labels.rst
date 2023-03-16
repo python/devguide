@@ -100,7 +100,7 @@ Other labels
 * :gh-label:`triaged`: for issue has been accepted as valid by a triager.
 * :gh-label:`easy`: for issues that are considered easy.
 * :gh-label:`build`/:gh-label:`performance`: for issues related
-  to the build process or performances, respectively.
+  to the build process or performance, respectively.
 * :gh-label:`release-blocker`/:gh-label:`deferred-blocker`: for issues/PRs
   that, unless fixed, will hold the current or next release respectively.
   Triagers may set these labels for issues that must be fixed before a release,
