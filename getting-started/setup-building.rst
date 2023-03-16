@@ -577,6 +577,7 @@ support.
 For editors and tools which the core developers have felt some special comment
 is needed for coding *in* Python, see :ref:`resources`.
 
+.. _build-directory-structure:
 
 Directory structure
 ===================

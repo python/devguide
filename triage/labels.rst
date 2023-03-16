@@ -11,405 +11,144 @@ Many labels are shared for both use cases, while some are dedicated
 only to one. Below is a possibly inexhaustive list, but it should get
 you going. For a full list, see `here <https://github.com/python/cpython/issues/labels>`_.
 
-General purpose labels
-======================
 
-:gh-label:`type-behavior`
-    Used for issues/PRs that address unintentional behavior, but do not
-    pose significant security concerns. Generally, bugfixes will be attached
-    to a specific issue where the unintended behavior was first reported.
+.. _general-purpose-labels:
+.. _Type:
+.. _labels-type:
 
-:gh-label:`type-documentation`
-    Used for issues/PRs that exclusively involve changes to
-    the documentation. Documentation includes ``*.rst`` files, docstrings,
-    and code comments.
+Type labels
+===========
 
-:gh-label:`type-enhancement`
-    Used for issues/PRs that provide additional functionality
-    or capabilities beyond the existing specifications.
+These labels are used to specify the type of issue:
 
-:gh-label:`type-performance`
-    Used for issues/PRs that provide performance optimizations.
+* :gh-label:`type-bug`: for unexpected behaviors, bugs, or exceptions
+  (not hard crashes).
+* :gh-label:`type-crash`: for hard crashes of the interpreter, possibly with a
+  core dump.
+* :gh-label:`type-feature`: for feature requests or enhancements.
+  The `Ideas Discourse category`_ can be used to discuss enhancements
+  before filing an issue.
+* :gh-label:`type-security`: for security issues.
+  See also `Reporting security issues in Python`_.
 
-:gh-label:`type-security`
-    Used for issues/PRs that involve critical security issues. Less severe
-    security concerns can instead use the type-bugfix label.
 
-:gh-label:`type-tests`
-    Used for issues/PRs that exclusively involve changes to the tests.
+.. _Component:
+.. _labels-component:
 
-:gh-label:`OS-Mac` / :gh-label:`OS-Windows`
-    Used for issues/PRs involving changes which only have an effect upon
-    a specific operating system.
+Component labels
+================
 
-:gh-label:`spam`
-    Used for issues/PRs that don't include enough eggs or bacon.
+These labels are mostly used to specify which :ref:`part of the codebase
+<build-directory-structure>` is affected by the issue/PR:
 
-Labels specific to issues
-=========================
+* :gh-label:`stdlib`: for standard library modules in the :cpy-file:`Lib`
+  directory (written in Python).
+* :gh-label:`extension-modules`: for standard library modules in the
+  :cpy-file:`Modules` directory (written in C).
+* :gh-label:`interpreter-core`: for changes related to the interpreter core in
+  the :cpy-file:`Objects`, :cpy-file:`Python`, :cpy-file:`Grammar`,
+  and :cpy-file:`Parser` dirs (written mostly in C).
+* :gh-label:`docs`: for documentation in the :cpy-file:`Doc` directory
+  (written in :ref:`reStructuredText <markup>`), docstrings, and code comments.
+* :gh-label:`tests`: for tests in the :cpy-file:`Lib/test` directory
+  (written in Python) and other changes related to tests, :mod:`unittest`,
+  or :mod:`doctest`.
 
-Priority
---------
 
-:gh-label:`release-blocker`
-    The highest priority of an issue. If unaddressed, will cause the
-    release manager to hold releasing a new version of Python.
+Expert labels
+=============
 
-:gh-label:`deferred-blocker`
-    A release blocker that was pushed one or more releases into the
-    future. Possibly a temporary workaround was employed, or the version
-    of Python the issue is affecting is still in alpha or beta stages
-    of development.
+These labels are used to specify the area of expertise required to address
+the issue/PR.  This includes both specific modules/packages and generic
+interest areas.
 
-Component
----------
+Adding these labels is also a way to notify the relevant experts, since
+they are encouraged to subscribe to them.  Depending on the label,
+this might also automatically add the issue to a GitHub project.
 
-:gh-label:`library`
-    Used for issues involving Python modules in the ``Lib/`` dir.
+You can see the `full list of expert labels on GitHub
+<https://github.com/python/cpython/labels?q=expert>`_.
 
-:gh-label:`docs`
-    Used for issues involving documentation in the ``Doc/`` dir.
 
-:gh-label:`interpreter-core`
-    Used for issues in interpreter core (``Objects/``, ``Python/``,
-    ``Grammar/``, and ``Parser/`` dirs).
+OS labels
+=========
 
-:gh-label:`extension-modules`
-    Used for issues involving C modules in the ``Modules/`` dir.
+These labels are used to specify which operating systems are affected.
+Since most issues either affect all systems or are specific to Unix,
+the only available labels are :gh-label:`OS-windows`, :gh-label:`OS-mac`,
+and :gh-label:`OS-freebsd`.
 
-:gh-label:`tests`
-    Used for issues involving only Python's regression test suite, i.e.
-    files in the ``Lib/test/`` dir.
 
-Other
------
+Version labels
+==============
 
-:gh-label:`new`
-    Denotes that the issue hasn't been looked at by triagers or core
-    developers yet.
+These labels are used to indicate which versions of Python are affected.
+The available version labels (with the form :samp:`3.{N}`) are updated
+whenever new major releases are created or retired.
 
-:gh-label:`easy`
-    Denotes that the issue is a good candidate for a newcomer to address.
+See also :ref:`the branch status page <branchstatus>`
+for a list of active branches.
 
+
+.. _Keywords:
+.. _Other:
+.. _Priority:
+.. _labels-other:
+
+Other labels
+============
+
+* :gh-label:`triaged`: for issue has been accepted as valid by a triager.
+* :gh-label:`easy`: for issues that are considered easy.
+* :gh-label:`build`/:gh-label:`performance`: for issues related
+  to the build process or performance, respectively.
+* :gh-label:`release-blocker`/:gh-label:`deferred-blocker`: for issues/PRs
+  that, unless fixed, will hold the current or next release respectively.
+  Triagers may set these labels for issues that must be fixed before a release,
+  and the :ref:`branch's release manager <branchstatus>`
+  will review them and determine if they indeed qualify,
+  removing or retaining the label as appropriate.
+* :gh-label:`pending`: for issues/PRs that will be closed unless further
+  feedback is provided.
+* :gh-label:`stale`: for issues/PRs that have been inactive for a while.
+* :gh-label:`sprint`: for easier filtering of issues/PRs being worked on
+  during official sprints.
+
+
+.. _GitHub Labels for PRs:
+.. _github-pr-labels:
 
 Labels specific to PRs
 ======================
 
-:gh-label:`DO-NOT-MERGE`
-    Used on PRs to prevent miss-islington from being able
-    to automatically merge the pull request. This label is appropriate when a PR
-    has a non-trivial conflict with the branch it is being merged into.
+The following labels only apply to :ref:`Pull Requests <pullrequest>`.
+They are either set automatically by bots, or added by humans
+to trigger specific bot behaviors.
 
-:gh-label:`expert-asyncio`
-    Used for PRs which involve changes to the asyncio module
-    or other asynchronous frameworks that utilize it.
-
-:gh-label:`invalid`
-    Used manually for PRs that do not meet basic requirements and
-    automatically added by bedevere when PR authors attempt to merge maintenance
-    branches into the main branch. During events such as the October
-    Hacktoberfest, this label will prevent the PR from counting toward the
-    author's contributions.
-
-needs backport to X.Y
-    For example, :gh-label:`needs backport to 3.11`.
-    Used for PRs which are appropriate to backport to
-    branches prior to main. Generally, backports to the maintenance branches
-    are primarily bugfixes and documentation clarifications. Backports to the
-    security branches are strictly reserved for PRs involving security fixes, such as
-    crashes, privilege escalation, and DoS. The use of this label will cause
-    miss-islington to attempt to automatically merge the PR into the branches
-    specified.
-
-:gh-label:`skip issue`
-    Used for PRs which involve trivial changes, such as typo fixes,
-    comment changes, and section rephrases. The majority of PRs require
-    an issue to be attached to, but if there are no code changes and the
-    section being modified retains the same meaning, this label might be
-    appropriate.
-
-:gh-label:`skip news`
-    Similar to the skip issue label, this label is used for PRs which
-    involve trivial changes, backports, or already have a relevant news entry
-    in another PR. Any potentially impactful changes should have a
-    corresponding news entry, but for trivial changes it's commonly at the
-    discretion of the PR author if they wish to opt-out of making one.
-
-:gh-label:`sprint`
-    Used for PRs authored during an in-person sprint, such as
-    at PyCon, EuroPython, or other official Python events. The label is
-    used to prioritize the review of those PRs during the sprint.
-
-:gh-label:`stale`
-    Used for PRs that include changes which are no longer relevant, or when the
-    author hasn't responded to feedback in a long period of time, or when the
-    reviewer is unresponsive. This label helps core developers quickly identify
-    PRs that are candidates for closure or require a ping to the author or
-    reviewer.
-
-:gh-label:`awaiting review`
-    Used for PRs that haven't been reviewed by anyone yet.
-
-:gh-label:`awaiting core review`
-    Used when the PR is authored by a core developer or when a non-core
-    developer has reviewed the PR, even if they requested changes.
-    Note that reviewers could have been added manually by a triager or core
-    developer, or included automatically through use of the `CODEOWNERS
-    <https://github.com/python/cpython/blob/main/.github/CODEOWNERS>`_
-    file.
-
-:gh-label:`awaiting changes`
-    A reviewer required changes to proceed with the PR.
-
-:gh-label:`awaiting change review`
-    The PR author made requested changes, and they are waiting for review.
-
-:gh-label:`awaiting merge`
-    The PR has been approved by a core developer and is ready to merge.
-
-:gh-label:`test-with-buildbots`
-    Used on PRs to test the latest commit with the buildbot fleet. Generally for
-    PRs with large code changes requiring more testing before merging. This
-    may take multiple hours to complete. Triagers can also stop a stuck build
-    using the web interface.
+* :gh-label:`automerge`: for automatically merging PRs approved
+  by a core dev once all CI checks pass.
+* :gh-label:`DO-NOT-MERGE`: for PRs that shouldn't be merged in their current
+  state.  It also prevents `miss-islington`_ from being able to automatically
+  merge the PR.
+* :samp:`needs backport to {X.Y}`: used to indicate which branches the PR
+  should be backported to.  Once the PR is merged, ``miss-islington`` will
+  automatically attempt to create backport PRs for the versions indicated
+  by these labels.
+  See also :ref:`the status of the Python branches <branchstatus>` for a list
+  of branches and the type of PRs that can be backported to them.
+* :gh-label:`skip issue`: for trivial changes (such as typo fixes, comment
+  changes, and section rephrases) that don't require a corresponding issue.
+* :gh-label:`skip news`: for PRs that don't need a NEWS entry.
+  The :ref:`news-entry` section covers in details in which cases the NEWS entry
+  can be skipped.
+* :gh-label:`test-with-buildbots`: used to test the latest commit with
+  the :ref:`buildbot fleet <buildbots>` whenever more testing is required
+  before merging.  This may take multiple hours to complete.
+* :samp:`awaiting {action}`: these labels are applied and used by `bedevere`_
+  to indicate the stage of a PR and should not be applied manually.
 
 
-.. _github-pr-labels:
-
-GitHub Labels for PRs
-=====================
-
-An important component of triaging PRs for the CPython repo involves
-appropriately categorizing them through the usage of labels. For this
-purpose we're using :ref:`gh-labels`.
-
-Applying labels for Issues
-==========================
-
-The major elements found in an issue report include:
-
-* Classification (including *Title*) - Metadata that lets us categorize
-  the issue. Apart from the *Title* field, we use some *type-*, *component-*, and
-  *version-* specific labels.
-* Process - These fields indicate the state of the issue and its progress
-  toward resolution. The fields are *Status* (open/closed), *Assignees*,
-  *Comment*, as well as *priority-* and *keyword-* specific labels.
-* Messages
-* History
-
-Title
------
-A brief description of the issue. Review whether the title is too generic or
-specifies an incorrect term or library.
-
-(Optional) Add a prefix at the start of the title to indicate the module, e.g.
-IDLE, doc, or asyncio.
-
-Type
-----
-Describes the type of issue.  If an issue does not fit within any
-specific type, please do not set a type.
-
-+----------------+----------------------------------------------------------+
-|      Type      |                       Description                        |
-+================+==========================================================+
-| behavior       | Unexpected behavior, result, or exception.  Most bugs    |
-|                | will have this type. This group also includes compile    |
-|                | errors, and crashers.                                    |
-+----------------+----------------------------------------------------------+
-| enhancement    | Issues that propose the addition of new functionality,   |
-|                | such as new functions, classes, modules, or even new     |
-|                | arguments for existing functions. Also used for          |
-|                | improvements in the documentation, test suite and        |
-|                | other refactorings. A good place to discuss enhancements |
-|                | prior to filing an issue is the                          |
-|                | `Ideas Discourse category`_.                             |
-+----------------+----------------------------------------------------------+
-| performance    | Situations where too much time is necessary to complete  |
-|                | the task. For example, a common task now takes           |
-|                | significantly longer to complete. This group also        |
-|                | includes resource usage (e.g. too much memory needed)    |
-|                | issues.                                                  |
-+----------------+----------------------------------------------------------+
-| security       | Issues that might have security implications. Report     |
-|                | security vulnerabilities using the procedure found in    |
-|                | the `Reporting security issues in Python`_ page on the   |
-|                | python.org website.                                      |
-+----------------+----------------------------------------------------------+
-
-Stage
------
-A needed next action to advance the issue.  The *stage* on GitHub issues is
-determined by presence of a linked PR and whether the issue is still open
-or closed. It is the PR that holds code review-related labels.
-
-Components
-----------
-The area or Python library affected by the issue. A single issue can apply
-multiple component labels.
-
-One or more components may be selected for an issue:
-
-+-------------------+------------------------------------------------------+
-|     Component     |                     Description                      |
-+===================+======================================================+
-| Documentation     | The documentation in Doc_ (source used to build HTML |
-|                   | docs for https://docs.python.org/).                  |
-+-------------------+------------------------------------------------------+
-| Extension Modules | C modules in Modules_.                               |
-+-------------------+------------------------------------------------------+
-| Interpreter Core  | The interpreter core.                                |
-|                   | The built-in objects in `Objects`_, the `Python`_,   |
-|                   | `Grammar`_ and `Parser`_ dirs.                       |
-+-------------------+------------------------------------------------------+
-| Library (Lib)     | Python modules in Lib_.                              |
-+-------------------+------------------------------------------------------+
-| Tests             | The unittest framework in `Lib/unittest`_            |
-|                   | The doctest framework `Lib/doctest.py`_.             |
-|                   | The CPython tests in `Lib/test`_.                    |
-|                   | The test runner in `Lib/test/regrtest.py`_.          |
-|                   | The test support utilities in `Lib/test/support`_.   |
-+-------------------+------------------------------------------------------+
-
-Versions
---------
-The known versions of Python that the issue affects and should be fixed for.
-
-Thus if an issue for a new feature is assigned for e.g., Python 3.8 but is not
-applied before Python 3.8.0 is released, this label should be updated to say
-``python-3.9`` as the version and drop ``python-3.8``.
-
-Priority
---------
-What is the severity and urgency?
-
-+------------------+--------------------------------------------------------+
-| Priority         | Description                                            |
-+==================+========================================================+
-| normal           | The default value for most issues filed.               |
-+------------------+--------------------------------------------------------+
-| deferred blocker | The issue will not hold up the next release, *n*. It   |
-|                  | will be promoted to a *release blocker* for the        |
-|                  | following release, *n+1*.                              |
-+------------------+--------------------------------------------------------+
-| release blocker  | The issue **must** be fixed before *any* release is    |
-|                  | made, e.g., will block the next release even if it is  |
-|                  | an alpha release.                                      |
-+------------------+--------------------------------------------------------+
-
-As a guideline, whether a bug is a *release blocker* for the current
-:ref:`release schedule <branchstatus>` is decided by the release manager.
-Triagers may recommend this priority and should notify the release manager by
-tagging them in a comment using ``@username``. If needed, consult the
-:ref:`release schedule <branchstatus>` and the release's associated PEP for the
-release manager's name.
-
-Keywords
---------
-Various informational flags about the issue. Multiple values are possible.
-
-+---------------+------------------------------------------------------------+
-|    Keyword    |                        Description                         |
-+===============+============================================================+
-| easy          | Fixing the issue should not take longer than a day for     |
-|               | someone new to contributing to Python to solve.            |
-+---------------+------------------------------------------------------------+
-
-Nosy List
----------
-A list of people who may be interested in an issue.
-
-This used to be a feature of the old issue tracker. On GitHub issues the
-same effect is achieved by tagging people in a comment using ``@username``.
-
-It is acceptable to tag someone to if you think the issue should be brought to
-their attention. Use the :ref:`experts` to know who wants to be added to the
-nosy list for issues targeting specific areas.
-
-If you want to subscribe yourself to an issue, click the *🔔 Subscribe*
-button in the sidebar. Similarly, if you were tagged by somebody else but
-decided this issue is not for you, you might click the *🔕 Unsubscribe*
-button in the sidebar.
-
-Assignees
----------
-Who is expected to take the next step in resolving the issue.
-
-It is acceptable to assign an issue to someone if the issue cannot move
-forward without their help, e.g., they need to make a technical decision to
-allow the issue to move forward. Also consult the :ref:`experts` as certain
-stdlib modules should always be assigned to a specific person.
-
-Note that in order to assign an issue to someone, that person **must** be
-a team member, likely a Triager or a core developer.
-
-Dependencies
-------------
-The issue requires the listed issue(s) to be resolved first before it can move
-forward. This is achieved using checkbox lists in the initial issue description
-comment. Long story short, if you add this::
-
-    - [x] #739
-    - [ ] https://github.com/octo-org/octo-repo/issues/740
-    - [ ] Add delight to the experience when all tasks are complete :tada:
-
-then those will become sub-tasks on the given issue. Moreover, GitHub will
-automatically mark a task as complete if the other referenced issue is
-closed.
-
-More details in the `official GitHub documentation
-<https://docs.github.com/en/get-started/writing-on-github/working-with-advanced-formatting/about-task-lists>`_.
-
-Superseder
-----------
-The issue is a duplicate of the listed issue(s). To make GitHub mark
-an issue as duplicate, write "Duplicate of #xxxx" in a comment.
-
-Status
-------
-
-+---------------+------------------------------------------------------------+
-|    Status     |                        Description                         |
-+===============+============================================================+
-| open          | Issue is not resolved.                                     |
-+---------------+------------------------------------------------------------+
-| closed        | The issue has been resolved (somehow).                     |
-+---------------+------------------------------------------------------------+
-
-Linked pull requests
---------------------
-A link might be added manually using the cog icon next to this field.
-Most commonly though, if the PR includes "Fixes #xxx" in its description,
-the link will be added automatically.
-
-Generating Special Links in a Comment
-=====================================
-Using the following abbreviations in a comment will automatically generate
-a link to relevant web pages.
-
-+-------------------------------------------------------------+-------------------------------------------------------+
-| Comment abbreviation                                        | Description                                           |
-+=============================================================+=======================================================+
-| ``#<number>``,                                              | Links to the tracker issue or PR ``<number>`` (they   |
-| ``GH-<number>``                                             | share the same sequence of integers on GitHub).       |
-+-------------------------------------------------------------+-------------------------------------------------------+
-| ``BPO-<number>``                                            | Links to the old bug tracker at bugs.python.org.      |
-+-------------------------------------------------------------+-------------------------------------------------------+
-| a 10-, 11-, 12-, or 40-digit hex ``<number>``               | Indicates a Git changeset identifier and              |
-|                                                             | generates a link to changeset ``<number>`` on GitHub. |
-+-------------------------------------------------------------+-------------------------------------------------------+
-
-.. _Doc: https://github.com/python/cpython/tree/main/Doc/
-.. _Grammar: https://github.com/python/cpython/tree/main/Grammar/
-.. _Lib: https://github.com/python/cpython/tree/main/Lib/
-.. _Lib/doctest.py: https://github.com/python/cpython/blob/main/Lib/doctest.py
-.. _Lib/test: https://github.com/python/cpython/tree/main/Lib/test/
-.. _Lib/test/regrtest.py: https://github.com/python/cpython/blob/main/Lib/test/regrtest.py
-.. _Lib/test/support: https://github.com/python/cpython/tree/main/Lib/test/support/
-.. _Lib/unittest: https://github.com/python/cpython/tree/main/Lib/unittest/
-.. _Modules: https://github.com/python/cpython/tree/main/Modules/
-.. _Objects: https://github.com/python/cpython/tree/main/Objects/
-.. _Parser: https://github.com/python/cpython/tree/main/Parser/
-.. _Python: https://github.com/python/cpython/tree/main/Python/
 .. _Reporting security issues in Python: https://www.python.org/dev/security/
 .. _Ideas Discourse category: https://discuss.python.org/c/ideas/6
+.. _miss-islington: https://github.com/python/miss-islington
+.. _bedevere: https://github.com/python/bedevere/#pr-state-machine
