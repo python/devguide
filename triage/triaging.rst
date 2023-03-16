@@ -24,12 +24,9 @@ Checklist for Triaging
 * If the issue is clearly invalid (unrelated to CPython, duplicate, spam, etc),
   you can close it as "not planned".
 
-.. Remove note once python/core-workflow#460 is implemented
-
-.. note:: Some of these fields can only be set/edited by core developers.
-
 Assignees
 ---------
+
 This field indicates who is expected to take the next step in resolving
 the issue.
 
