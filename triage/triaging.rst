@@ -39,7 +39,7 @@ allow the issue to move forward. Also consult the :ref:`experts` as certain
 stdlib modules should always be assigned to a specific person.
 
 Note that in order to assign an issue to someone, that person **must** be
-a team member, likely a Triager or a core developer.
+a team member, likely a triager or a core developer.
 
 .. The Assignees subsection was copied from the labels.rst page in #930.
    For consistency, the other fields mentioned above should be documented too.
