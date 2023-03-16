@@ -42,7 +42,7 @@ Note that in order to assign an issue to someone, that person **must** be
 a team member, likely a Triager or a core developer.
 
 .. The Assignees subsection was copied from the labels.rst page in #930.
-   For consistency, other the fields mentioned above should be documented too.
+   For consistency, the other fields mentioned above should be documented too.
 
 
 .. _helptriage:
