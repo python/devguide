@@ -36,7 +36,11 @@ in production; others are works in progress.
 | Italian (it)    |                               | `mail <mail_it_>`_         |
 +-----------------+-------------------------------+----------------------------+
 | Japanese (ja)   | `Kinebuchi Tomohiko           | `GitHub <github_ja_>`_     |
-|                 | (@cocoatomo) <gh_cocoatomo_>`_| `Doc <doc_ja_>`_           |
+|                 | (@cocoatomo)                  | `Doc <doc_ja_>`_           |
+|                 | <gh_cocoatomo_>`_,            |                            |
+|                 | `Atsuo Ishimoto               |                            |
+|                 | (@atsuoishimoto)              |                            |
+|                 | <gh_atsuoishimoto_>`_         |                            |
 +-----------------+-------------------------------+----------------------------+
 | Korean (ko)     |                               | `GitHub <github_ko_>`_     |
 |                 |                               | `Doc <doc_ko_>`_           |
@@ -83,6 +87,7 @@ in production; others are works in progress.
 
 .. _article_pt_br: https://rgth.co/blog/python-ptbr-cenario-atual/
 .. _gh_cocoatomo: https://github.com/cocoatomo
+.. _gh_atsuoishimoto: https://github.com/atsuoishimoto
 .. _gh_gbtami: https://github.com/gbtami
 .. _gh_kushal: https://github.com/Kushal997-das
 .. _gh_maciek: https://github.com/m-aciek
