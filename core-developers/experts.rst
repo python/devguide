@@ -356,6 +356,7 @@ py3 transition      benjaminp
 release management  tarekziade, malemburg, benjaminp, warsaw,
                     gvanrossum, anthonybaxter^, merwok, ned-deily,
                     birkenfeld, JulienPalard
+runtime lifecycle   ericsnowcurrently, kumaraditya303, zooba
 str.format          ericvsmith*
 subinterpreters     ericsnowcurrently, kumaraditya303
 testing             voidspace, ezio-melotti
