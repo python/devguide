@@ -18,7 +18,7 @@
   "3.10": {
     "branch": "3.10",
     "pep": 619,
-    "status": "bugfix",
+    "status": "security",
     "first_release": "2021-10-04",
     "end_of_life": "2026-10",
     "release_manager": "Pablo Galindo Salgado"
