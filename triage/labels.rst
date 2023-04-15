@@ -54,6 +54,15 @@ These labels are mostly used to specify which :ref:`part of the codebase
   (written in Python) and other changes related to tests, :mod:`unittest`,
   or :mod:`doctest`.
 
+OS labels
+=========
+
+These labels are used to specify which operating systems are affected.
+Since most issues either affect all systems or are specific to Unix,
+the only available labels are :gh-label:`OS-windows`, :gh-label:`OS-mac`,
+and :gh-label:`OS-freebsd`.
+
+
 .. _Expert labels:
 
 Topic labels
@@ -69,15 +78,6 @@ this might also automatically add the issue to a GitHub project.
 
 You can see the `full list of topic labels on GitHub
 <https://github.com/python/cpython/labels?q=topic>`_.
-
-
-OS labels
-=========
-
-These labels are used to specify which operating systems are affected.
-Since most issues either affect all systems or are specific to Unix,
-the only available labels are :gh-label:`OS-windows`, :gh-label:`OS-mac`,
-and :gh-label:`OS-freebsd`.
 
 
 Version labels
