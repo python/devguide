@@ -68,7 +68,7 @@ and :gh-label:`OS-freebsd`.
 Topic labels
 ============
 
-These labels are used to specify the area of expertise required to address
+These labels are used to denote the specific topic area, if any, of
 the issue/PR.  This includes both specific modules/packages and generic
 interest areas.
 
