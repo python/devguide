@@ -54,9 +54,10 @@ These labels are mostly used to specify which :ref:`part of the codebase
   (written in Python) and other changes related to tests, :mod:`unittest`,
   or :mod:`doctest`.
 
+.. _Expert labels:
 
-Expert labels
-=============
+Topic labels
+============
 
 These labels are used to specify the area of expertise required to address
 the issue/PR.  This includes both specific modules/packages and generic
@@ -66,8 +67,8 @@ Adding these labels is also a way to notify the relevant experts, since
 they are encouraged to subscribe to them.  Depending on the label,
 this might also automatically add the issue to a GitHub project.
 
-You can see the `full list of expert labels on GitHub
-<https://github.com/python/cpython/labels?q=expert>`_.
+You can see the `full list of topic labels on GitHub
+<https://github.com/python/cpython/labels?q=topic>`_.
 
 
 OS labels
