@@ -9,10 +9,10 @@ The C API is divided into these tiers:
 1. The internal, private API, available with ``Py_BUILD_CORE`` defined.
    Ideally declared in ``Include/internal/``. Any API named with a leading
    underscore is also considered private.
-2. The “general” public C API, available when :cpy-file:`Include/Python.h` is included normally.
-   Ideally declared in ``Include/cpython/``.
-3. The Unstable C API, identified by the ``PyUnstable_`` name prefix.
+2. The Unstable C API, identified by the ``PyUnstable_`` name prefix.
    Ideally declared in :cpy-file:`Include/cpython/` along with the general public API.
+3. The “general” public C API, available when :cpy-file:`Include/Python.h` is included normally.
+   Ideally declared in ``Include/cpython/``.
 4. The Limited C API, available with :c:macro:`Py_LIMITED_API` defined.
    Ideally declared directly under ``Include/``.
 
