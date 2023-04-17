@@ -64,6 +64,7 @@ and :gh-label:`OS-freebsd`.
 
 
 .. _Expert labels:
+.. _Topic labels:
 
 Topic labels
 ============
