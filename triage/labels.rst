@@ -54,22 +54,6 @@ These labels are mostly used to specify which :ref:`part of the codebase
   (written in Python) and other changes related to tests, :mod:`unittest`,
   or :mod:`doctest`.
 
-
-Expert labels
-=============
-
-These labels are used to specify the area of expertise required to address
-the issue/PR.  This includes both specific modules/packages and generic
-interest areas.
-
-Adding these labels is also a way to notify the relevant experts, since
-they are encouraged to subscribe to them.  Depending on the label,
-this might also automatically add the issue to a GitHub project.
-
-You can see the `full list of expert labels on GitHub
-<https://github.com/python/cpython/labels?q=expert>`_.
-
-
 OS labels
 =========
 
@@ -77,6 +61,24 @@ These labels are used to specify which operating systems are affected.
 Since most issues either affect all systems or are specific to Unix,
 the only available labels are :gh-label:`OS-windows`, :gh-label:`OS-mac`,
 and :gh-label:`OS-freebsd`.
+
+
+.. _Expert labels:
+.. _Topic labels:
+
+Topic labels
+============
+
+These labels are used to denote the specific topic area, if any, of
+the issue/PR.  This includes both specific modules/packages and generic
+interest areas.
+
+Adding these labels is also a way to notify the relevant experts, since
+they are encouraged to subscribe to them.  Depending on the label,
+this might also automatically add the issue to a GitHub project.
+
+You can see the `full list of topic labels on GitHub
+<https://github.com/python/cpython/labels?q=topic>`_.
 
 
 Version labels
