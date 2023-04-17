@@ -236,9 +236,9 @@ Moving an API from unstable to public
   function calling the new function).
 * Announce the change in What's New.
 
-The old name should continue to be available until an incompatible change is
-made.
-There's no need to deprecate it (it was unstable to begin with),
+The old name should remain available until the
+new public name is deprecated or removed.
+There's no need to deprecate the old name (it was unstable to begin with),
 but there's also no need to break working code just because some function
 is now ready for a wider audience.
 
