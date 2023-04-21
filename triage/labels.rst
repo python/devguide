@@ -127,8 +127,6 @@ The following labels only apply to :ref:`Pull Requests <pullrequest>`.
 They are either set automatically by bots, or added by humans
 to trigger specific bot behaviors.
 
-* :gh-label:`automerge`: for automatically merging PRs approved
-  by a core dev once all CI checks pass.
 * :gh-label:`DO-NOT-MERGE`: for PRs that shouldn't be merged in their current
   state.  It also prevents `miss-islington`_ from being able to automatically
   merge the PR.
