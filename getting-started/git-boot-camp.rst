@@ -465,11 +465,12 @@ You can read more about what to look for before accepting a change
 :ref:`here <committing>`.
 
 All pull requests have required checks that need to pass before a change
-can be merged. After a change was accepted by at least one core
-developer review, you can schedule an automatic merge of the change by
+can be merged. At any point, a core developer can schedule an automatic merge
+of the change by
 clicking the gray ``Enable auto-merge (squash)`` button. You will find
 it at the bottom of the pull request page. The auto-merge will only
-happen if all the required checks pass.
+happen if all the required checks pass, but the PR does not need to have been
+approved for a successful auto-merge to take place.
 
 If all required checks are already finished on a PR you're reviewing,
 in place of the gray ``Enable auto-merge`` button you will find a green
@@ -516,8 +517,9 @@ recommended approach.
 To pause automatic merging, apply the "DO-NOT-MERGE" label to the PR or
 submit a review requesting changes. The latter will put an "awaiting
 changes" label on the PR, which pauses the auto-merge similarly to
-"DO-NOT-MERGE". After the author submits a fix, re-requests review, and
-receives a new accepting review, auto-merge will complete.
+"DO-NOT-MERGE". After the author submits a fix and re-requests review, you can
+resume the auto-merge process either by submitting an approving review or by
+dismissing your previous review that requested changes.
 
 Note that pushing new changes after the auto-merge flow was enabled
 does **NOT** stop it.
