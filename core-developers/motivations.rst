@@ -259,15 +259,15 @@ participating in the CPython core development process:
 
 .. topic:: Carol Willing (United States)
 
-   * Noteable: `<https://noteable.io/about-us/>`__ (Technical Evangelist)
+   * Noteable: `<https://noteable.io/about-us/>`__ (VP Engineering)
    * Personal site: `Willing Consulting <https://www.willingconsulting.com/>`_
    * `Extended bio <https://www.willingconsulting.com/about/>`__
-   * Project Jupyter (Steering Council, Core Team for JupyterHub/Binder)
+   * Project Jupyter (Software Council, Core Team for JupyterHub/Binder)
    * Python Software Foundation (Fellow)
 
    Carol is focused on Python's usage in education and scientific research.
-   She is interested in organizational development, operational workflows,
-   and sustainability of open source projects.
+   She is interested in distributed computing, organizational development,
+   operational workflows, and sustainability of open source projects.
 
 
 .. _goals-of-the-motivations-page:
