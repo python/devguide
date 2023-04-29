@@ -29,7 +29,7 @@ instructions please see the :ref:`setup guide <setup>`.
 
 3. Build Python, on UNIX and macOS use::
 
-      ./configure --with-pydebug && make -j
+      ./configure --with-pydebug && make -j4
 
    and on Windows use:
 
