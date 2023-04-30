@@ -112,7 +112,6 @@ fcntl                 Yhg1s
 filecmp
 fileinput
 fnmatch
-formatter
 fractions             mdickinson
 ftplib                giampaolo*
 functools             rhettinger*
