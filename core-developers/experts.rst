@@ -61,15 +61,12 @@ aifc                  bitdancer
 argparse
 array
 ast                   benjaminp, pablogsal, isidentical
-asynchat              josiahcarlson, giampaolo*, stutzbach^
 asyncio               1st1, asvetlov, gvanrossum, graingert, kumaraditya303, willingc
-asyncore              josiahcarlson, giampaolo*, stutzbach^
 atexit
 audioop               serhiy-storchaka
 base64
 bdb
 binascii
-binhex
 bisect                rhettinger*
 builtins
 bz2
@@ -115,7 +112,6 @@ fcntl                 Yhg1s
 filecmp
 fileinput
 fnmatch
-formatter
 fractions             mdickinson
 ftplib                giampaolo*
 functools             rhettinger*
@@ -135,7 +131,6 @@ idlelib               kbkaiser (inactive), terryjreedy*, serwy (inactive),
                       taleinat
 imaplib
 imghdr
-imp
 importlib             brettcannon
 inspect               1st1
 io                    benjaminp, stutzbach^
@@ -205,7 +200,6 @@ shlex
 shutil                tarekziade, giampaolo
 signal                gpshead
 site
-smtpd                 giampaolo
 smtplib
 sndhdr
 socket                gpshead
@@ -220,7 +214,6 @@ stringprep
 struct                mdickinson, meadori
 subprocess            astrand^ (inactive), giampaolo, gpshead*
 sunau
-symbol
 symtable              benjaminp
 sys
 sysconfig             FFY00
