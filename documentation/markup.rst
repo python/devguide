@@ -30,7 +30,7 @@ external links          ```Link text <https://example.com>`_``      :ref:`hyperl
 roles w/ custom text    ``:role:`custom text <target>```            :ref:`roles`
 roles w/ only last part ``:role:`~hidden.hidden.visible```          :ref:`roles`
 roles w/o link          ``:role:`!target```                         :ref:`roles`
-issues                  ``:gh:`ID```, ``:bpo:`ID```                 :ref:`roles`
+issues                  ``:gh:`ID```, ``:issue:`ID```                 :ref:`roles`
 CPython source          ``:source:`PATH```                          :ref:`roles`
 comments                ``.. a comment``                            :ref:`comments`
 ======================= =========================================== ====================
