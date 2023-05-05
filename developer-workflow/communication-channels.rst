@@ -252,7 +252,7 @@ Additional Repositories
 
 `Python Core Workflow`_ hosts the codebase for tools such as `blurb`_.
 
-Other Core Workflows can be found here:
+Other Core Workflows are:
 
 * `cherry_picker`_
 * `bedevere`_
