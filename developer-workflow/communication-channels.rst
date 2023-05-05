@@ -250,13 +250,11 @@ order to make open source pleasant for everyone involved.
 Additional Repositories
 =======================
 
-`Python Core Workflow`_ hosts the codebase for tools such as `cherry_picker`_
-and `blurb`_.
+`Python Core Workflow`_ hosts the codebase for tools such as `blurb`_.
 
 Python `Performance Benchmark`_ project is intended to be an authoritative
 source of benchmarks for all Python implementations.
 
 .. _Python Core Workflow: https://github.com/python/core-workflow
-.. _cherry_picker: https://pypi.org/project/cherry_picker/
 .. _blurb: https://pypi.org/project/blurb
 .. _Performance Benchmark: https://github.com/python/pyperformance
