@@ -252,9 +252,24 @@ Additional Repositories
 
 `Python Core Workflow`_ hosts the codebase for tools such as `blurb`_.
 
+Other Core Workflows can be found here:
+
+* `cherry_picker`_
+* `bedevere`_
+* `blurb_it`_
+* `miss-islington`_
+* `cla_bot`_
+* `cpython-emailer-webhook`_
+
 Python `Performance Benchmark`_ project is intended to be an authoritative
 source of benchmarks for all Python implementations.
 
 .. _Python Core Workflow: https://github.com/python/core-workflow
 .. _blurb: https://pypi.org/project/blurb
+.. _cherry_picker: https://pypi.org/project/cherry_picker/
+.. _bedevere: https://github.com/python/bedevere
+.. _blurb_it: https://github.com/python/blurb_it
+.. _miss-islington: https://github.com/python/miss-islington
+.. _cla_bot: https://github.com/ambv/cla-bot
+.. _cpython-emailer-webhook: https://github.com/berkerpeksag/cpython-emailer-webhook
 .. _Performance Benchmark: https://github.com/python/pyperformance
