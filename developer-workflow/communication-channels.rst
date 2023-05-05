@@ -254,7 +254,7 @@ Additional Repositories
 
 Other core workflow tools are:
 
-* `cherry_picker`_
+* `cherry_picker`_ (`PyPI`_)
 * `bedevere`_
 * `blurb_it`_
 * `miss-islington`_
@@ -266,7 +266,8 @@ source of benchmarks for all Python implementations.
 
 .. _Python Core Workflow: https://github.com/python/core-workflow
 .. _blurb: https://pypi.org/project/blurb
-.. _cherry_picker: https://pypi.org/project/cherry_picker/
+.. _cherry_picker: https://github.com/python/cherry-picker
+.. _PyPI: https://pypi.org/project/cherry_picker/
 .. _bedevere: https://github.com/python/bedevere
 .. _blurb_it: https://github.com/python/blurb_it
 .. _miss-islington: https://github.com/python/miss-islington
