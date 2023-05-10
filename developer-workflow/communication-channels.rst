@@ -271,6 +271,6 @@ source of benchmarks for all Python implementations.
 .. _bedevere: https://github.com/python/bedevere
 .. _blurb_it: https://github.com/python/blurb_it
 .. _miss-islington: https://github.com/python/miss-islington
-.. _cla_bot: https://github.com/ambv/cla-bot
+.. _cla-bot: https://github.com/ambv/cla-bot
 .. _cpython-emailer-webhook: https://github.com/berkerpeksag/cpython-emailer-webhook
 .. _Performance Benchmark: https://github.com/python/pyperformance
