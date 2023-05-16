@@ -44,7 +44,7 @@ class Versions:
 
     def write_csv(self) -> None:
         """Output CSV files."""
-        now_str = str(dt.datetime.utcnow())
+        now_str = str(dt.datetime.now(dt.UTC))
 
         versions_by_category = {"branches": {}, "end-of-life": {}}
         headers = None
