@@ -10,7 +10,7 @@
   "3.12": {
     "branch": "3.12",
     "pep": 693,
-    "status": "feature",
+    "status": "bugfix",
     "first_release": "2023-10-02",
     "end_of_life": "2028-10",
     "release_manager": "Thomas Wouters"
