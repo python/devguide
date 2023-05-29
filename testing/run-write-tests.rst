@@ -4,13 +4,13 @@
 =========================
 Running and Writing Tests
 =========================
-
-.. note::
-
-    This document assumes you are working from an
-    :ref:`in-development <indevbranch>` checkout of Python. If you
-    are not then some things presented here may not work as they may depend
-    on new features not available in earlier versions of Python.
+a
+..obs :: aqui 
+a
+    Este documento pressupõe que você esteja trabalhando em umu
+    : ref :` em desenvolvimento <indevbranch> ` checkout do Python. Se vocêt
+    não são então algumas coisas fabricadas aqui podem não funcionar, pois podem dependeri
+    em novos recursos não disponíveis em versões anteriores do Python.
 
 Running
 =======
@@ -22,9 +22,9 @@ from the root directory of your checkout (after you have
     ./python -m test
 
 You may need to change this command as follows throughout this section.
-On :ref:`most <mac-python.exe>` macOS systems, replace :file:`./python`
-with :file:`./python.exe`.  On Windows, use :file:`python.bat`.  If using
-Python 2.7, replace ``test`` with ``test.regrtest``.
+On : ref :` maioria <mac-python.exe> ` sistemas macOS, substitua : file :` ./python `
+com : arquivo :` ./python.exe ` . No Windows, use : file :` python.bat ` . Se estiver usand
+Python 2.7 , substitua ``test`` por ``test.regrtest.
 
 This will run the majority of tests, but exclude a small portion of them; these
 excluded tests use special kinds of resources: for example, accessing the
