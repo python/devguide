@@ -17,13 +17,13 @@ The CPython Developer's Guide
 
 
 This guide covers how to contribute to CPython. It is known by the
-nickname of "the devguide" by the Python core developers.
+nickname of "the devguide" by Python core developers.
 
-The official home of this guide is https://devguide.python.org.
+The official homepage of this guide is https://devguide.python.org.
 
 Compilation
 -----------
 
-For the compilation of the devguide, Python 3.11+ is needed::
+For the compilation of the devguide, Python 3.11 or higher is needed::
 
     make html
