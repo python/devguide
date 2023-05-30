@@ -375,14 +375,14 @@ Adding a new definition to the Limited API
 
   .. code-block:: shell
 
-     ./python ./Tools/scripts/stable_abi.py --generate-all ./Misc/stable_abi.toml
+     ./python ./Tools/build/stable_abi.py --generate-all ./Misc/stable_abi.toml
 
 - Build Python and check the using ``make check-limited-abi``.
   On platforms without ``make``, run this command directly:
 
   .. code-block:: shell
 
-    ./python ./Tools/scripts/stable_abi.py --all ./Misc/stable_abi.toml
+    ./python ./Tools/build/stable_abi.py --all ./Misc/stable_abi.toml
 
 - Add tests -- see below.
 
