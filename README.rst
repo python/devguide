@@ -24,6 +24,6 @@ The official home of this guide is https://devguide.python.org.
 Compilation
 -----------
 
-For the compilation of the devguide, Python 3.11+ is needed::
+For the compilation of the devguide::
 
     make html
