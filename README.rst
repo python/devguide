@@ -21,9 +21,9 @@ nickname of "the devguide" by the Python core developers.
 
 The official home of this guide is https://devguide.python.org.
 
-Compilation
+Render HTML
 -----------
 
-For the compilation of the devguide::
+To render the devguide to HTML under ``_build/html``, run::
 
     make html
