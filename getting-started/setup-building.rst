@@ -465,7 +465,7 @@ And finally, run ``make``::
 
 There will sometimes be optional modules added for a new release which
 won't yet be identified in the OS-level build dependencies. In those cases,
-just ask for assistance in the `Core Development`_ category on `Discourse`_.
+just ask for assistance in the *Core Development* category on :ref:`help-discourse`.
 
 Explaining how to build optional dependencies on a Unix-based system without
 root access is beyond the scope of this guide.
