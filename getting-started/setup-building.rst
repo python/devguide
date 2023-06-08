@@ -423,30 +423,17 @@ Then, for Python 3.11 and newer, run ``configure``::
 
     $ GDBM_CFLAGS="-I$(brew --prefix gdbm)/include" \
       GDBM_LIBS="-L$(brew --prefix gdbm)/lib -lgdbm" \
-      LIBLZMA_CFLAGS="-I$(brew --prefix xz)/include" \
-      LIBLZMA_LIBS="-I$(brew --prefix xz)/lib -llzma" \
-      PKG_CONFIG_PATH="$(brew --prefix tcl-tk)/lib/pkgconfig" \
       ./configure --with-pydebug \
                   --with-openssl="$(brew --prefix openssl@1.1)"
 
-For Python 3.10::
+Or, for Python 3.7 through 3.10::
 
-    $ CFLAGS="-I$(brew --prefix gdbm)/include -I$(brew --prefix xz)/include" \
-      LDFLAGS="-L$(brew --prefix gdbm)/lib -I$(brew --prefix xz)/lib" \
-      PKG_CONFIG_PATH="$(brew --prefix tcl-tk)/lib/pkgconfig" \
-      ./configure --with-pydebug \
-                  --with-openssl="$(brew --prefix openssl@1.1)"
-
-
-Or, for Python 3.7 through 3.9::
-
-    $ export PKG_CONFIG_PATH="$(brew --prefix tcl-tk)/lib/pkgconfig"; \
-      CFLAGS="-I$(brew --prefix gdbm)/include -I$(brew --prefix xz)/include" \
+    $ CPPFLAGS="-I$(brew --prefix gdbm)/include -I$(brew --prefix xz)/include" \
       LDFLAGS="-L$(brew --prefix gdbm)/lib -L$(brew --prefix xz)/lib" \
       ./configure --with-pydebug \
-              --with-openssl="$(brew --prefix openssl@1.1)" \
-              --with-tcltk-libs="$(pkg-config --libs tcl tk)" \
-              --with-tcltk-includes="$(pkg-config --cflags tcl tk)"
+                  --with-openssl="$(brew --prefix openssl@1.1)" \
+                  --with-tcltk-libs="$(pkg-config --libs tcl tk)" \
+                  --with-tcltk-includes="$(pkg-config --cflags tcl tk)"
 
 And finally, run ``make``::
 
@@ -454,21 +441,31 @@ And finally, run ``make``::
 
 Alternatively, with **MacPorts**::
 
-    $ sudo port install pkgconfig openssl xz gdbm
+    $ sudo port install pkgconfig openssl11 xz gdbm tcl tk +quartz
 
-and ``configure``::
+Then, for Python 3.11 and newer, run ``configure``::
 
-    $ CPPFLAGS="-I/opt/local/include" \
-      LDFLAGS="-L/opt/local/lib" \
-      ./configure --with-pydebug
+    $ GDBM_CFLAGS="-I$(dirname $(dirname $(which port)))/include" \
+      GDBM_LIBS="-L$(dirname $(dirname $(which port)))/lib -lgdbm" \
+      ./configure --with-pydebug \
+                  --with-openssl="$(dirname $(dirname $(which port)))/libexec/openssl11"
 
-and ``make``::
+Or, for Python 3.7 through 3.10::
+
+    $ CPPFLAGS="-I$(dirname $(dirname $(which port)))/include" \
+      LDFLAGS="-L$(dirname $(dirname $(which port)))/lib" \
+      ./configure --with-pydebug \
+                  --with-openssl="$(dirname $(dirname $(which port)))/libexec/openssl11" \
+                  --with-tcltk-libs="$(pkg-config --libs tcl tk)" \
+                  --with-tcltk-includes="$(pkg-config --cflags tcl tk)"
+
+And finally, run ``make``::
 
     $ make -s -j2
 
 There will sometimes be optional modules added for a new release which
 won't yet be identified in the OS-level build dependencies. In those cases,
-just ask for assistance on the core-mentorship list.
+just ask for assistance in the `Core Development`_ category on `Discourse`_.
 
 Explaining how to build optional dependencies on a Unix-based system without
 root access is beyond the scope of this guide.
