@@ -490,7 +490,7 @@ using GNU Autoconf.
 After editing :file:`configure.ac`, run ``make regen-configure`` to generate
 :file:`configure`, :file:`pyconfig.h.in`, and :file:`aclocal.m4`.
 When submitting a patch with changes made to :file:`configure.ac`,
-you must also those generated files.
+you must also regenerate these files.
 
 The recommended and by far the easiest way to regenerate :file:`configure` is::
 
