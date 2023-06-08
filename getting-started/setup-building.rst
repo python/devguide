@@ -487,7 +487,7 @@ functionality (such as using a new system call), it is necessary to update the
 Python's :file:`configure` script is generated from :file:`configure.ac`
 using GNU Autoconf.
 
-After editing :file:`configure.ac`, run :program:`autoreconf` to regenerate
+After editing :file:`configure.ac`, run ``make regen-configure`` to generate
 :file:`configure`, :file:`pyconfig.h.in`, and :file:`aclocal.m4`.
 When submitting a patch with changes made to :file:`configure.ac`,
 you must also those generated files.
