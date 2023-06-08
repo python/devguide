@@ -541,6 +541,10 @@ validate if the change can be made or not.
    with native extensions and other tools that interact with the Python interpreter.
    See the documentation about the :ref:`release candidate <rc>` phase.
 
+When the PR check fails, the associated run will have the updated ABI file
+attached as an artifact. After release manager approval, you can download and
+add this file into your PR to pass the check.
+
 You can regenerate the ABI file by yourself by invoking the ``regen abidump``
 Make target. Note that for doing this you need to regenerate the ABI file in
 the same environment that the GitHub CI uses to check for it. This is because
@@ -587,6 +591,7 @@ support.
 For editors and tools which the core developers have felt some special comment
 is needed for coding *in* Python, see :ref:`resources`.
 
+.. _build-directory-structure:
 
 Directory structure
 ===================

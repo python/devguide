@@ -191,7 +191,8 @@ Seeing active branches
 If you use ``git branch``, then you will see a :ref:`list of branches
 <branchstatus>`. The only branch that receives new features is
 ``main``, the in-development branch. The other branches receive only
-bug fixes or security fixes.
+bug fixes or security fixes. In almost all cases the fixes should first
+originate on ``main`` and then be ported back to older branches.
 
 
 .. _branch-merge:

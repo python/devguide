@@ -1,6 +1,8 @@
+import hashlib
 import os
 import sys
 import time
+from pathlib import Path
 
 # Location of custom extensions.
 sys.path.insert(0, os.path.abspath(".") + "/_extensions")
@@ -32,6 +34,14 @@ exclude_patterns = [
     '.github',
 ]
 
+def _asset_hash(path: os.PathLike[str]) -> str:
+    """Append a `?digest=` to an url based on the file content."""
+    full_path = (Path(html_static_path[0]) / path).resolve()
+    digest = hashlib.sha1(full_path.read_bytes()).hexdigest()
+
+    return f"{path}?digest={digest}"
+
+
 html_theme = 'furo'
 html_theme_options = {
     "source_repository": "https://github.com/python/devguide",
@@ -39,7 +49,7 @@ html_theme_options = {
 }
 html_static_path = ['_static']
 html_css_files = [
-    'devguide_overrides.css',
+    _asset_hash('devguide_overrides.css'),
 ]
 html_logo = "_static/python-logo.svg"
 html_favicon = "_static/favicon.png"

@@ -61,15 +61,12 @@ aifc                  bitdancer
 argparse
 array
 ast                   benjaminp, pablogsal, isidentical
-asynchat              josiahcarlson, giampaolo*, stutzbach^
-asyncio               1st1, asvetlov, gvanrossum, graingert, kumaraditya303
-asyncore              josiahcarlson, giampaolo*, stutzbach^
+asyncio               1st1, asvetlov, gvanrossum, graingert, kumaraditya303, willingc
 atexit
 audioop               serhiy-storchaka
 base64
 bdb
 binascii
-binhex
 bisect                rhettinger*
 builtins
 bz2
@@ -85,7 +82,7 @@ codeop
 collections           rhettinger*
 collections.abc       rhettinger*, stutzbach^
 colorsys
-compileall
+compileall            carljm
 concurrent.futures    pitrou, brianquinlan, gpshead*
 configparser          ambv*
 contextlib            ncoghlan, 1st1
@@ -97,7 +94,7 @@ crypt                 jafo^*
 csv                   smontanaro (inactive)
 ctypes                theller (inactive), abalkin, amauryfa, meadori
 curses                Yhg1s
-dataclasses           ericvsmith*
+dataclasses           ericvsmith*, carljm
 datetime              abalkin, pganssle
 dbm
 decimal               facundobatista, rhettinger, mdickinson
@@ -115,7 +112,6 @@ fcntl                 Yhg1s
 filecmp
 fileinput
 fnmatch
-formatter
 fractions             mdickinson
 ftplib                giampaolo*
 functools             rhettinger*
@@ -135,7 +131,6 @@ idlelib               kbkaiser (inactive), terryjreedy*, serwy (inactive),
                       taleinat
 imaplib
 imghdr
-imp
 importlib             brettcannon
 inspect               1st1
 io                    benjaminp, stutzbach^
@@ -168,7 +163,7 @@ optparse              mitsuhiko
 os
 os.path               serhiy-storchaka
 ossaudiodev
-parser                benjaminp, pablogsal
+parser                pablogsal
 pathlib               barneygale*
 pdb
 pickle                avassalotti
@@ -184,7 +179,7 @@ profile
 pstats
 pty                   Yhg1s*
 pwd
-py_compile
+py_compile            carljm
 pyclbr                isidentical
 pydoc
 queue                 rhettinger*
@@ -205,7 +200,6 @@ shlex
 shutil                tarekziade, giampaolo
 signal                gpshead
 site
-smtpd                 giampaolo
 smtplib
 sndhdr
 socket                gpshead
@@ -220,7 +214,6 @@ stringprep
 struct                mdickinson, meadori
 subprocess            astrand^ (inactive), giampaolo, gpshead*
 sunau
-symbol
 symtable              benjaminp
 sys
 sysconfig             FFY00
@@ -245,7 +238,7 @@ tracemalloc           vstinner
 tty                   Yhg1s*
 turtle                gregorlingl^, willingc
 types                 1st1
-typing                gvanrossum, Fidget-Spinner, JelleZijlstra*, AlexWaygood*
+typing                gvanrossum, Fidget-Spinner, JelleZijlstra*, AlexWaygood*, carljm
 unicodedata           malemburg, ezio-melotti
 unittest              voidspace*, ezio-melotti, rbtcollins, gpshead
 unittest.mock         voidspace*
@@ -297,6 +290,7 @@ Platforms
 Platform              Maintainers
 ===================   ===========
 AIX                   David.Edelsohn^
+Android
 Cygwin                jlt63^, stutzbach^
 FreeBSD
 HP-UX
@@ -318,12 +312,12 @@ Interest Area       Maintainers
 ==================  ==========================================================
 algorithms          rhettinger*
 argument clinic     larryhastings
-ast/compiler        benjaminp, 1st1, pablogsal, markshannon, isidentical, brandtbucher
+ast/compiler        benjaminp, 1st1, pablogsal, markshannon, isidentical, brandtbucher, carljm
 autoconf/makefiles  Yhg1s*
 bsd
 issue tracker       ezio-melotti
 buildbots           zware, pablogsal
-bytecode            benjaminp, 1st1, markshannon, brandtbucher
+bytecode            benjaminp, 1st1, markshannon, brandtbucher, carljm
 context managers    ncoghlan
 core workflow       Mariatta, ezio-melotti, hugovk
 coverity scan       tiran, Yhg1s
@@ -350,12 +344,13 @@ object model        benjaminp, Yhg1s
 packaging           tarekziade, malemburg, alexis^, merwok, dstufft, pfmoore
 pattern matching    brandtbucher*
 peg parser          gvanrossum, pablogsal, lysnikolaou
-performance         vstinner, serhiy-storchaka, 1st1, rhettinger, markshannon, brandtbucher
+performance         vstinner, serhiy-storchaka, 1st1, rhettinger, markshannon, brandtbucher, carljm
 pip                 ncoghlan, dstufft, pfmoore, Marcus.Smith^, pradyunsg
 py3 transition      benjaminp
 release management  tarekziade, malemburg, benjaminp, warsaw,
                     gvanrossum, anthonybaxter^, merwok, ned-deily,
                     birkenfeld, JulienPalard
+runtime lifecycle   ericsnowcurrently, kumaraditya303, zooba
 str.format          ericvsmith*
 subinterpreters     ericsnowcurrently, kumaraditya303
 testing             voidspace, ezio-melotti

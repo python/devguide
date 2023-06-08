@@ -402,6 +402,9 @@ on how to properly add the co-author info.
 
 See also :ref:`Applying a Patch to Git <git_from_patch>`.
 
+
+.. _reviewing-prs:
+
 Reviewing
 =========
 
@@ -426,7 +429,6 @@ pull request to address these comments, and the review process will
 thus iterate until a satisfactory solution has emerged.
 
 .. _how-to-review-a-pull-request:
-
 
 How to Review a Pull Request
 ----------------------------

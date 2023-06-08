@@ -5,7 +5,7 @@
 Status of Python Versions
 =========================
 
-The main branch is currently the future Python 3.12, and is the only
+The ``main`` branch is currently the future Python 3.13, and is the only
 branch that accepts new features.  The latest release for each Python
 version can be found on the `download page <https://www.python.org/downloads/>`_.
 
@@ -23,7 +23,7 @@ Dates shown in *italic* are scheduled and can be adjusted.
 
 .. csv-table::
    :header-rows: 1
-   :widths: 5, 5, 15, 15, 12, 40
+   :width: 100%
    :file: include/branches.csv
 
 .. Remember to update main branch in the paragraph above too
@@ -34,7 +34,7 @@ Unsupported Versions
 
 .. csv-table::
    :header-rows: 1
-   :widths: 5, 5, 15, 15, 12, 40
+   :width: 100%
    :file: include/end-of-life.csv
 
 

@@ -30,6 +30,8 @@ external links          ```Link text <https://example.com>`_``      :ref:`hyperl
 roles w/ custom text    ``:role:`custom text <target>```            :ref:`roles`
 roles w/ only last part ``:role:`~hidden.hidden.visible```          :ref:`roles`
 roles w/o link          ``:role:`!target```                         :ref:`roles`
+issues                  ``:gh:`ID```, ``:issue:`ID```               :ref:`roles`
+CPython source          ``:source:`PATH```                          :ref:`roles`
 comments                ``.. a comment``                            :ref:`comments`
 ======================= =========================================== ====================
 
@@ -81,7 +83,7 @@ Be aware of some restrictions of this markup:
 
 These restrictions may be lifted in future versions of the docutils.
 
-reST also allows for custom "interpreted text roles"', which signify that the
+reST also allows for custom "interpreted text roles", which signify that the
 enclosed text should be interpreted in a specific way.  Sphinx uses this to
 provide semantic markup and cross-referencing of identifiers, as described in
 the appropriate section.  The general syntax is ``:rolename:`content```.
@@ -681,6 +683,12 @@ where simpler markup should be used:
 
 * ``*arg*`` (rendered as *arg*) for function and method arguments.
 * ````True````/````False````/````None```` for ``True``/``False``/``None``.
+
+In addition, the CPython documentation defines a few custom roles:
+
+* ``:gh:`ID```: creates a link to a GitHub issue.
+* ``:issue:`ID```: creates a link to a bugs.python.com issue.
+* ``:source:`PATH```: creates a link to a source file on GitHub.
 
 There are some additional facilities that make cross-referencing roles more
 versatile:

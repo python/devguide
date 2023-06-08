@@ -24,9 +24,22 @@ Checklist for Triaging
 * If the issue is clearly invalid (unrelated to CPython, duplicate, spam, etc),
   you can close it as "not planned".
 
-.. Remove note once python/core-workflow#460 is implemented
+Assignees
+---------
 
-.. note:: Some of these fields can only be set/edited by core developers.
+This field indicates who is expected to take the next step in resolving
+the issue.
+
+It is acceptable to assign an issue to someone if the issue cannot move
+forward without their help; e.g., they need to make a technical decision on
+how to proceed. Also consult the :ref:`experts` as certain
+stdlib modules should always be assigned to a specific person.
+
+Note that in order to assign an issue to someone, that person **must** be
+a team member, likely a triager or a core developer.
+
+.. The Assignees subsection was copied from the labels.rst page in #930.
+   For consistency, the other fields mentioned above should be documented too.
 
 
 .. _helptriage:

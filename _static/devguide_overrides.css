@@ -69,6 +69,11 @@
     stroke: #008844;
 }
 
+.release-cycle-chart .release-cycle-blob.release-cycle-blob-prerelease {
+    fill: teal;
+    stroke: darkgreen;
+}
+
 .release-cycle-chart .release-cycle-blob.release-cycle-blob-feature {
     fill: #2222EE;
     stroke: #008888;

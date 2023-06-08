@@ -461,37 +461,68 @@ Accepting and Merging a Pull Request
 ------------------------------------
 
 Pull requests can be accepted and merged by a Python Core Developer.
+You can read more about what to look for before accepting a change
+:ref:`here <committing>`.
 
-1. At the bottom of the pull request page, click the ``Squash and merge``
-   button.
+All pull requests have required checks that need to pass before a change
+can be merged. At any point, a core developer can schedule an automatic merge
+of the change by
+clicking the gray ``Enable auto-merge (squash)`` button. You will find
+it at the bottom of the pull request page. The auto-merge will only
+happen if all the required checks pass, but the PR does not need to have been
+approved for a successful auto-merge to take place.
 
-2. Replace the reference to GitHub pull request ``#NNNN`` with ``GH-NNNN``.
-   If the title is too long, the pull request number can be added to the
-   message body.
+If all required checks are already finished on a PR you're reviewing,
+in place of the gray ``Enable auto-merge`` button you will find a green
+``Squash and merge`` button.
 
-3. Adjust and clean up the commit message.
+In either case, adjust and clean up the commit message.
 
-   Example of good commit message::
+Here's an example of a **good** commit message::
 
-      gh-12345: Improve the spam module (GH-777)
+   gh-12345: Improve the spam module (GH-777)
 
-      * Add method A to the spam module
-      * Update the documentation of the spam module
+   * Add method A to the spam module
+   * Update the documentation of the spam module
 
-   Example of bad commit message::
+Here's an example of a **bad** commit message::
 
-      gh-12345: Improve the spam module (#777)
+   gh-12345: Improve the spam module (#777)
 
-      * Improve the spam module
-      * merge from main
-      * adjust code based on review comment
-      * rebased
+   * Improve the spam module
+   * merge from main
+   * adjust code based on review comment
+   * rebased
 
-   .. note::
-      `How to Write a Git Commit Message <https://cbea.ms/git-commit/>`_
-      is a nice article describing how to write a good commit message.
+The bad example contains bullet points that are a direct effect of the
+PR life cycle, while being irrelevant to the final change.
 
-4. Press the ``Confirm squash and merge`` button.
+.. note::
+   `How to Write a Git Commit Message <https://cbea.ms/git-commit/>`_
+   is a nice article describing how to write a good commit message.
+
+Finally, press the ``Confirm squash and merge`` button.
+
+Cancelling an Automatic Merge
+-----------------------------
+
+If you notice a problem with a pull request that was accepted and where
+auto-merge was enabled, you can still cancel the workflow before GitHub
+automatically merges the change.
+
+Press the gray "Disable auto-merge" button on the bottom of the
+pull request page to disable automatic merging entirely. This is the
+recommended approach.
+
+To pause automatic merging, apply the "DO-NOT-MERGE" label to the PR or
+submit a review requesting changes. The latter will put an "awaiting
+changes" label on the PR, which pauses the auto-merge similarly to
+"DO-NOT-MERGE". After the author submits a fix and re-requests review, you can
+resume the auto-merge process either by submitting an approving review or by
+dismissing your previous review that requested changes.
+
+Note that pushing new changes after the auto-merge flow was enabled
+does **NOT** stop it.
 
 Backporting Merged Changes
 --------------------------
