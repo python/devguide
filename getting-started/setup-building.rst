@@ -483,24 +483,30 @@ Regenerate ``configure``
 
 If a change is made to Python which relies on some POSIX system-specific
 functionality (such as using a new system call), it is necessary to update the
-:file:`configure` script to test for availability of the functionality.
-Python's :file:`configure` script is generated from :file:`configure.ac`
+:cpy-file:`configure` script to test for availability of the functionality.
+Python's :file:`configure` script is generated from :cpy-file:`configure.ac`
 using GNU Autoconf.
 
 After editing :file:`configure.ac`, run ``make regen-configure`` to generate
-:file:`configure`, :file:`pyconfig.h.in`, and :file:`aclocal.m4`.
+:file:`configure`, :cpy-file:`pyconfig.h.in`, and :cpy-file:`aclocal.m4`.
 When submitting a patch with changes made to :file:`configure.ac`,
 you must also regenerate these files.
 
-The recommended and by far the easiest way to regenerate :file:`configure` is::
+The recommended and by far the easiest way to regenerate :file:`configure` is:
+
+.. code-block:: bash
 
    $ make regen-configure
 
-This Make target will run a Podman or Docker container (depending on your
-environment); you only need to commit the changes.
-Behind the scenes this Make target runs one of the following container images::
+If you are regenerating :file:`configure` in a clean repo,
+run one of the following containers instead:
+
+.. code-block:: bash
 
    $ podman run --rm --pull=always -v $(pwd):/src:Z quay.io/tiran/cpython_autoconf:271
+
+.. code-block:: bash
+
    $ docker run --rm --pull=always -v $(pwd):/src quay.io/tiran/cpython_autoconf:271
 
 Notice that the images are tagged with ``271``.
@@ -513,7 +519,9 @@ For GNU Autoconf v2.69, change the ``:271`` tag to ``:269``.
 If you cannot, or don't want to use the ``cpython_autoconf`` containers,
 install the :program:`autoconf-archive` and :program:`pkg-config` utilities,
 and make sure the :file:`pkg.m4` macro file located in the appropriate
-:program:`alocal` location::
+:program:`alocal` location:
+
+.. code-block:: bash
 
    $ ls $(aclocal --print-ac-dir) | grep pkg.m4
 
