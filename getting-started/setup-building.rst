@@ -483,31 +483,47 @@ Regenerate ``configure``
 
 If a change is made to Python which relies on some POSIX system-specific
 functionality (such as using a new system call), it is necessary to update the
-``configure`` script to test for availability of the functionality.
+:file:`configure` script to test for availability of the functionality.
+Python's :file:`configure` script is generated from :file:`configure.ac`
+using GNU Autoconf.
 
-Python's ``configure`` script is generated from ``configure.ac`` using Autoconf.
-Instead of editing ``configure``, edit ``configure.ac`` and then run
-``autoreconf`` to regenerate ``configure`` and a number of other files (such as
-``pyconfig.h``).
+After editing :file:`configure.ac`, run :program:`autoreconf` to regenerate
+:file:`configure`, :file:`pyconfig.h.in`, and :file:`aclocal.m4`.
+When submitting a patch with changes made to :file:`configure.ac`,
+you must also those generated files.
 
-When submitting a patch with changes made to ``configure.ac``, you should also
-include the generated files.
+The recommended and by far the easiest way to regenerate :file:`configure` is::
 
-Note that running ``autoreconf`` is not the same as running ``autoconf``. For
-example, ``autoconf`` by itself will not regenerate ``pyconfig.h.in``.
-``autoreconf`` runs ``autoconf`` and a number of other tools repeatedly as is
-appropriate.
+   $ make regen-configure
 
-Python's ``configure.ac`` script typically requires a specific version of
-Autoconf.  At the moment, this reads: ``AC_PREREQ(2.69)``. It also requires
-to have the ``autoconf-archive`` and ``pkg-config`` utilities installed in
-the system and the ``pkg.m4`` macro file located in the appropriate ``alocal``
-location. You can easily check if this is correctly configured by running::
+This Make target will run a Podman or Docker container (depending on your
+environment); you only need to commit the changes.
+Behind the scenes this Make target runs one of the following container images::
+
+   $ podman run --rm --pull=always -v $(pwd):/src:Z quay.io/tiran/cpython_autoconf:271
+   $ docker run --rm --pull=always -v $(pwd):/src quay.io/tiran/cpython_autoconf:271
+
+Notice that the images are tagged with ``271``.
+Python's :file:`configure.ac` script requires a specific version of
+GNU Autoconf.
+For Python 3.12 and newer, GNU Autoconf v2.71 is required.
+For Python 3.11 and earlier, GNU Autoconf v2.69 is required.
+For GNU Autoconf v2.69, change the ``:271`` tag to ``:269``.
+
+If you cannot, or don't want to use the ``cpython_autoconf`` containers,
+install the :program:`autoconf-archive` and :program:`pkg-config` utilities,
+and make sure the :file:`pkg.m4` macro file located in the appropriate
+:program:`alocal` location::
 
    $ ls $(aclocal --print-ac-dir) | grep pkg.m4
 
-If the system copy of Autoconf does not match this version, you will need to
-install your own copy of Autoconf.
+.. note::
+
+   Running :program:`autoreconf` is not the same as running :program:`autoconf`.
+   For example, running :program:`autoconf` by itself will not regenerate
+   :file:`pyconfig.h.in`.
+   :program:`autoreconf` runs :program:`autoconf` and a number of other tools
+   repeatedly as is appropriate.
 
 .. _build_troubleshooting:
 
