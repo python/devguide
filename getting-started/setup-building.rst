@@ -417,21 +417,21 @@ for the header and library files to your ``configure`` command.
 
 For example, with **Homebrew**, install the dependencies::
 
-    $ brew install pkg-config openssl@1.1 xz gdbm tcl-tk
+    $ brew install pkg-config openssl@3.0 xz gdbm tcl-tk
 
 Then, for Python 3.11 and newer, run ``configure``::
 
     $ GDBM_CFLAGS="-I$(brew --prefix gdbm)/include" \
       GDBM_LIBS="-L$(brew --prefix gdbm)/lib -lgdbm" \
       ./configure --with-pydebug \
-                  --with-openssl="$(brew --prefix openssl@1.1)"
+                  --with-openssl="$(brew --prefix openssl@3.0)"
 
-Or, for Python 3.7 through 3.10::
+Or, for Python 3.8 through 3.10::
 
     $ CPPFLAGS="-I$(brew --prefix gdbm)/include -I$(brew --prefix xz)/include" \
       LDFLAGS="-L$(brew --prefix gdbm)/lib -L$(brew --prefix xz)/lib" \
       ./configure --with-pydebug \
-                  --with-openssl="$(brew --prefix openssl@1.1)" \
+                  --with-openssl="$(brew --prefix openssl@3.0)" \
                   --with-tcltk-libs="$(pkg-config --libs tcl tk)" \
                   --with-tcltk-includes="$(pkg-config --cflags tcl tk)"
 
@@ -441,23 +441,13 @@ And finally, run ``make``::
 
 Alternatively, with **MacPorts**::
 
-    $ sudo port install pkgconfig openssl11 xz gdbm tcl tk +quartz
+    $ sudo port install pkgconfig openssl xz gdbm tcl tk +quartz
 
 Then, for Python 3.11 and newer, run ``configure``::
 
     $ GDBM_CFLAGS="-I$(dirname $(dirname $(which port)))/include" \
       GDBM_LIBS="-L$(dirname $(dirname $(which port)))/lib -lgdbm" \
-      ./configure --with-pydebug \
-                  --with-openssl="$(dirname $(dirname $(which port)))/libexec/openssl11"
-
-Or, for Python 3.7 through 3.10::
-
-    $ CPPFLAGS="-I$(dirname $(dirname $(which port)))/include" \
-      LDFLAGS="-L$(dirname $(dirname $(which port)))/lib" \
-      ./configure --with-pydebug \
-                  --with-openssl="$(dirname $(dirname $(which port)))/libexec/openssl11" \
-                  --with-tcltk-libs="$(pkg-config --libs tcl tk)" \
-                  --with-tcltk-includes="$(pkg-config --cflags tcl tk)"
+      ./configure --with-pydebug
 
 And finally, run ``make``::
 
