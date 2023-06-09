@@ -183,20 +183,17 @@ passed into the ``-j`` flag to match the number of cores you have (or if your
 version of Make supports it, you can use ``-j`` without a number and Make
 will not limit the number of steps that can run simultaneously.).
 
-At the end of the build you should see a success message, possibly followed
+At the end of the build you should see a success message, followed
 by a list of extension modules that haven't been built because their
 dependencies were missing:
 
 .. code-block:: none
 
-   Python build finished successfully!
    The necessary bits to build these optional modules were not found:
-   _bz2                  _dbm                  _gdbm
-   _lzma                 _sqlite3              _ssl
-   _tkinter              _uuid                 readline
-   zlib
-   To find the necessary bits, look in setup.py in detect_modules()
-   for the module's name.
+   _gdbm
+   To find the necessary bits, look in configure.ac and config.log.
+
+   Checked 106 modules (31 built-in, 74 shared, 0 n/a on macosx-13.4-arm64, 0 disabled, 1 missing, 0 failed on import)
 
 If the build failed and you are using a C89 or C99-compliant compiler,
 please open a bug report on the `issue tracker`_.
