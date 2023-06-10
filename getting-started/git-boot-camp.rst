@@ -185,7 +185,7 @@ created before the rename, you should visit the GitHub page for your fork to
 rename the branch there. You only have to do this once. GitHub should
 provide you with a dialog for this. If it doesn't (or the dialog was already
 dismissed), you can rename the branch in your fork manually `by following
-these GitHub instructions <https://github.com/github/renaming#renaming-existing-branches>`__
+these GitHub instructions <https://github.com/github/renaming#renaming-existing-branches>`__.
 
 After renaming the branch in your fork, you need to update any local clones
 as well. This only has to be done once per clone::
@@ -350,7 +350,7 @@ Solution::
    git push origin main
 
 .. note:: For the above commands to work, please follow the instructions found
-          in the :ref:`checkout` section
+          in the :ref:`checkout` section.
 
 Another scenario:
 
