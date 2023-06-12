@@ -37,9 +37,10 @@ The in-development and recent maintenance branches are rebuilt once per day.
 
 If you would like to be more involved with documentation, consider subscribing
 to the `Documentation category on the Python Discourse
-<https://discuss.python.org/c/documentation/26>`_ and the `docs@python.org <https://mail.python.org/mailman3/lists/docs.python.org/>`_
+<https://discuss.python.org/c/documentation/26>`_ and the
+`docs@python.org <https://mail.python.org/mailman3/lists/docs.python.org/>`_
 mailing list where user issues are raised and documentation toolchain,
-projects, and standards are discussed.  
+projects, and standards are discussed.
 
 
 Helping with documentation issues
