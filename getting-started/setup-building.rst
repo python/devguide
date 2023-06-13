@@ -644,8 +644,7 @@ every rule.
 
 ``Programs``
      Source code for C executables, including the main function for the
-     CPython interpreter (in versions prior to Python 3.5, these files are
-     in the Modules directory).
+     CPython interpreter.
 
 ``Python``
      The code that makes up the core CPython runtime. This includes the
