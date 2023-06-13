@@ -22,8 +22,8 @@ in production; others are works in progress.
 | spoken in       |                               |                            |
 | India (bn_IN)   |                               |                            |
 +-----------------+-------------------------------+----------------------------+
-| French (fr)     | `Julien Palard (@JulienPalard)| `GitHub <github_fr_>`_     |
-|                 | <gh_mdk_>`_                   |                            |
+| `French (fr)    | `Julien Palard (@JulienPalard)| `GitHub <github_fr_>`_     |
+| <doc_fr_>`_     | <gh_mdk_>`_                   |                            |
 +-----------------+-------------------------------+----------------------------+
 | Hindi as spoken |                               | `GitHub <github_hi_in_>`_  |
 | in India (hi_IN)|                               |                            |
@@ -35,15 +35,15 @@ in production; others are works in progress.
 +-----------------+-------------------------------+----------------------------+
 | Italian (it)    |                               | `mail <mail_it_>`_         |
 +-----------------+-------------------------------+----------------------------+
-| Japanese (ja)   | `Kinebuchi Tomohiko           | `GitHub <github_ja_>`_     |
-|                 | (@cocoatomo)                  | `Doc <doc_ja_>`_           |
+| `Japanese (ja)  | `Kinebuchi Tomohiko           | `GitHub <github_ja_>`_     |
+| <doc_ja_>`_     | (@cocoatomo)                  |                            |
 |                 | <gh_cocoatomo_>`_,            |                            |
 |                 | `Atsuo Ishimoto               |                            |
 |                 | (@atsuoishimoto)              |                            |
 |                 | <gh_atsuoishimoto_>`_         |                            |
 +-----------------+-------------------------------+----------------------------+
-| Korean (ko)     |                               | `GitHub <github_ko_>`_     |
-|                 |                               | `Doc <doc_ko_>`_           |
+| `Korean (ko)    |                               | `GitHub <github_ko_>`_     |
+| <doc_ko_>`_     |                               |                            |
 +-----------------+-------------------------------+----------------------------+
 | Marathi (mr)    | `Sanket Garade                | `GitHub <github_mr_>`_     |
 |                 | <email_garade_>`_             |                            |
@@ -55,31 +55,33 @@ in production; others are works in progress.
 +-----------------+-------------------------------+----------------------------+
 | Polish (pl)     | `Maciej Olko (@m-aciek)       | `GitHub <github_pl_>`_     |
 |                 | <gh_maciek_>`_                | `Translations <tx_pl_>`_   |
-|                 |                               | `Doc <doc_pl_>`_           |
 |                 |                               | `mail <mail_pl_>`_         |
 +-----------------+-------------------------------+----------------------------+
 | Portuguese (pt) | Gustavo Toffo                 |                            |
 +-----------------+-------------------------------+----------------------------+
-| Portuguese      | Marco Rougeth                 | `GitHub <github_pt_br_>`_  |
+| `Portuguese     | Marco Rougeth                 | `GitHub <github_pt_br_>`_  |
 | as spoken       |                               | `Wiki <wiki_pt_br_>`_      |
 | in Brasil       |                               | `Telegram <chat_pt_br_>`_  |
 | (pt-br)         |                               | `article <article_pt_br_>`_|
+| <doc_pt-br_>`_  |                               |                            |
 +-----------------+-------------------------------+----------------------------+
 | Russian (ru)    |                               | `mail <mail_ru_>`_         |
 +-----------------+-------------------------------+----------------------------+
-| Simplified      | `Shengjing Zhu <gh_zhsj_>`_   | `Transifex <tx_zh_cn_>`_   |
+| `Simplified     | `Shengjing Zhu <gh_zhsj_>`_   | `Transifex <tx_zh_cn_>`_   |
 | Chinese         |                               | `GitHub <github_zh_cn_>`_  |
-| (zh-cn)         |                               | `Doc <doc_zh_cn_>`_        |
+| (zh-cn)         |                               |                            |
+| <doc_zh_cn_>`_  |                               |                            |
 +-----------------+-------------------------------+----------------------------+
-| Spanish (es)    | Raúl Cumplido                 | `GitHub <github_es_>`_     |
+| `Spanish (es)   | Raúl Cumplido                 | `GitHub <github_es_>`_     |
+| <doc_es_>`_     |                               |                            |
 +-----------------+-------------------------------+----------------------------+
-| Traditional     | `王威翔 Matt Wang             | `GitHub <github_zh_tw_>`_  |
-| Chinese         | <gh_mattwang44_>`_,           | `Doc <doc_zh_tw_>`_        |
+| `Traditional    | `王威翔 Matt Wang             | `GitHub <github_zh_tw_>`_  |
+| Chinese         | <gh_mattwang44_>`_,           |                            |
 | (zh-tw)         | Josix Wang                    |                            |
+| <doc_zh_tw_>`_  |                               |                            |
 +-----------------+-------------------------------+----------------------------+
-| Turkish (tr)    | `Ege Akman (@egeakman)        | `GitHub <github_tr_>`_     |
-|                 | <gh_egeakman_>`_              | `GH-Pages <gh_pages_tr_>`_ |
-|                 |                               | `Doc <doc_tr_>`_           |
+| `Turkish (tr)   | `Ege Akman (@egeakman)        | `GitHub <github_tr_>`_     |
+| <doc_tr_>`_     | <gh_egeakman_>`_              | `GH-Pages <gh_pages_tr_>`_ |
 +-----------------+-------------------------------+----------------------------+
 | Ukrainian (uk)  | `Dmytro Kazanzhy (@kazanzhy)  | `GitHub <github_uk_>`_     |
 |                 | <email_kazanzhy_>`_           | `Translations <tx_uk_>`_   |
@@ -101,9 +103,11 @@ in production; others are works in progress.
 .. _email_garade: mailto:garade@pm.me
 .. _email_kazanzhy: mailto:dkazanzhy@gmail.com
 .. _chat_pt_br: https://t.me/pybr_i18n
+.. _doc_fr: https://docs.python.org/fr/
+.. _doc_es: https://docs.python.org/es/
+.. _doc_pt-br: https://docs.python.org/pt-br/
 .. _doc_ja: https://docs.python.org/ja/
 .. _doc_ko: https://docs.python.org/ko/
-.. _doc_pl: https://docs.python.org/pl/
 .. _doc_tr: https://docs.python.org/tr/
 .. _doc_zh_cn: https://docs.python.org/zh-cn/
 .. _doc_zh_tw: https://docs.python.org/zh-tw/
