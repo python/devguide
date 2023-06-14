@@ -50,7 +50,7 @@ in production; others are works in progress.
 | Marathi (mr)    | `Sanket Garade                | `GitHub <github_mr_>`_     |
 |                 | <email_garade_>`_             |                            |
 +-----------------+-------------------------------+----------------------------+
-| Lithuanian (lt) | `Albertas Gimbutas <emailag>`_| `Original <mail_lt_>`_     |
+| Lithuanian (lt) | `Albertas Gimbutas <emailag>`_| `Original mail <mail_lt_>`_|
 +-----------------+-------------------------------+----------------------------+
 | Persian (fa)    | Komeil Parseh (`@mmdbalkhi    | `GitHub <github_fa_>`_     |
 |                 | <gh_mmdbalkhi_>`_)            |                            |
@@ -77,7 +77,7 @@ in production; others are works in progress.
 | `Spanish (es)   | Raúl Cumplido                 | `GitHub <github_es_>`_     |
 | <doc_es_>`_     |                               |                            |
 +-----------------+-------------------------------+----------------------------+
-| `Traditional    | 王威翔 Matt Wang(`@mattwang44 | `GitHub <github_zh_tw_>`_  |
+| `Traditional    | 王威翔 Matt Wang (`@mattwang44| `GitHub <github_zh_tw_>`_  |
 | Chinese         | <gh_mattwang44_>`_),          |                            |
 | (zh-tw)         | Josix Wang                    |                            |
 | <doc_zh_tw_>`_  |                               |                            |
@@ -86,7 +86,7 @@ in production; others are works in progress.
 | <doc_tr_>`_     | <gh_egeakman_>`_)             | `RTD <rtd_tr_>`_           |
 +-----------------+-------------------------------+----------------------------+
 | Ukrainian (uk)  | Dmytro Kazanzhy (`@kazanzhy   | `GitHub <github_uk_>`_,    |
-|                 | <gh_kazanzhy_>`_ )            | `Transifix <tx_>`_         |
+|                 | <gh_kazanzhy_>`_)             | `Transifix <tx_>`_         |
 +-----------------+-------------------------------+----------------------------+
 
 .. _article_pt_br: https://rgth.co/blog/python-ptbr-cenario-atual/
