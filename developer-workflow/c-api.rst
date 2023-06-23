@@ -124,6 +124,10 @@ Guidelines for expanding/changing the public API
 
 Please start a public discussion if these guidelines won't work for your API.
 
+.. note::
+
+   With *return value*, we mean the value returned by the *C return statement*.
+
 C API Tests
 -----------
 
