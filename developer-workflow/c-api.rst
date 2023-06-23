@@ -109,7 +109,7 @@ Guidelines for expanding/changing the public API
 - Make sure the ownership rules and lifetimes of all applicable struct
   fields, arguments and return values are well defined.
 
-- Functions returning ``PyObject *`` must return a valid pointer on success
+- Functions returning ``PyObject *`` must return a valid pointer on success,
   and ``NULL`` with an exception raised on error.
   Most other API must return ``-1`` with an exception raised on error,
   and ``0`` on success.
@@ -126,7 +126,7 @@ Please start a public discussion if these guidelines won't work for your API.
 
 .. note::
 
-   With *return value*, we mean the value returned by the *C return statement*.
+   By *return value*, we mean the value returned by the *C return statement*.
 
 C API Tests
 -----------
