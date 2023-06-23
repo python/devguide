@@ -93,7 +93,10 @@ CPython's public C API is available when ``Python.h`` is included normally
 It should be defined in ``Include/cpython/`` (unless part of the Limited API,
 see below).
 
-Guidelines for expanding/changing the public API:
+.. _public-api-guidelines:
+
+Guidelines for expanding/changing the public API
+------------------------------------------------
 
 - Make sure the new API follows reference counting conventions.
   (Following them makes the API easier to reason about, and easier use
@@ -106,6 +109,20 @@ Guidelines for expanding/changing the public API:
 - Make sure the ownership rules and lifetimes of all applicable struct
   fields, arguments and return values are well defined.
 
+- Functions that return a ``PyObject *`` pointer must return a valid pointer
+  on success and ``NULL`` with an exception raised on error.
+  Most other API must return ``-1`` with an exception raised on error,
+  and ``0`` on success.
+
+- APIs with lesser and greater results must return ``0`` for the lesser result,
+  and ``1`` for the greater result.
+  Consider a lookup function with a three-way return:
+
+  - ``return -1``: internal error or API misuse; exception raised
+  - ``return 0``: lookup succeeded; no item was found
+  - ``return 1``: lookup succeeded; item was found
+
+Please start a public discussion if these guidelines won't work for your API.
 
 C API Tests
 -----------
@@ -292,10 +309,13 @@ It is possible to remove items marked as part of the Stable ABI, but only
 if there was no way to use them in any past version of the Limited API.
 
 
+.. _limited-api-guidelines:
+
 Guidelines for adding to the Limited API
 ----------------------------------------
 
 - Guidelines for the general :ref:`public-capi` apply.
+  See :ref:`public-api-guidelines`.
 
 - New Limited API should only be defined if ``Py_LIMITED_API`` is set
   to the version the API was added in or higher.
