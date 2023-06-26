@@ -132,14 +132,17 @@ Guidelines for expanding/changing the public API
      {
          PyObject *value;
          int rc = foo_bar(&value);
+         // Error case
          if (rc < 0) {
              *out = NULL;
              return -1;
          }
+         // Not found (lesser result)
          if (rc == 0) {
              *out = NULL;
              return 0;
          }
+         // Found (greater result)
          *out = Py_NewRef(value);
          return 1;
      }
