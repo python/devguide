@@ -123,7 +123,7 @@ Guidelines for expanding/changing the public API
   - ``return 1``: lookup succeeded; item was found
 
 - APIs with output parameters should ensure that each output parameter is
-  initialised for all code paths.
+  initialized for all code paths.
   Example:
 
   .. code-block:: c
