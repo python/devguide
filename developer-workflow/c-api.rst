@@ -133,14 +133,14 @@ Guidelines for expanding/changing the public API
          PyObject *value;
          int rc = foo_bar(&value);
          if (rc < 0) {
-             out = NULL;
+             *out = NULL;
              return -1;
          }
          if (rc == 0) {
-             out = NULL;
+             *out = NULL;
              return 0;
          }
-         out = Py_NewRef(value);
+         *out = Py_NewRef(value);
          return 1;
      }
 
