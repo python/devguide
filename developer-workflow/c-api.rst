@@ -122,8 +122,9 @@ Guidelines for expanding/changing the public API
   - ``return 0``: lookup succeeded; no item was found
   - ``return 1``: lookup succeeded; item was found
 
-- APIs with output parameters should ensure that each output parameter has a
-  valid value, no matter the return value of the API. Example:
+- APIs with output parameters should ensure that each output parameter is
+  initialised for all code paths.
+  Example:
 
   .. code-block:: c
 
