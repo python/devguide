@@ -122,6 +122,28 @@ Guidelines for expanding/changing the public API
   - ``return 0``: lookup succeeded; no item was found
   - ``return 1``: lookup succeeded; item was found
 
+- APIs with output parameters should ensure that each output parameter has a
+  valid value, no matter the return value of the API. Example::
+
+  .. code-block:: c
+
+     int
+     PyFoo_Bar(PyObject **out)
+     {
+         PyObject *value;
+         int rc = foo_bar(&value);
+         if (rc < 0) {
+             out = NULL;
+             return -1;
+         }
+         if (rc == 0) {
+             out = NULL;
+             return 0;
+         }
+         out = Py_NewRef(value);
+         return 1;
+     }
+
 Please start a public discussion if these guidelines won't work for your API.
 
 .. note::
