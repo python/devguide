@@ -50,7 +50,7 @@
   "3.7": {
     "branch": "3.7",
     "pep": 537,
-    "status": "security",
+    "status": "end-of-life",
     "first_release": "2018-06-27",
     "end_of_life": "2023-06-27",
     "release_manager": "Ned Deily"
