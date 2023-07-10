@@ -3,7 +3,7 @@
     "branch": "main",
     "pep": 719,
     "status": "feature",
-    "first_release": "2024-10-07",
+    "first_release": "2024-10-01",
     "end_of_life": "2029-10",
     "release_manager": "Thomas Wouters"
   },
