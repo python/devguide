@@ -70,7 +70,7 @@ instructions please see the :ref:`setup guide <setup>`.
    news entry can be created by using `blurb-it <https://blurb-it.herokuapp.com/>`_,
    or the `blurb <https://pypi.org/project/blurb/>`_ tool and its ``blurb add``
    command. Please read more about ``blurb`` in its
-   `repository <https://github.com/python/core-workflow/tree/main/blurb>`.
+   `repository <https://github.com/python/core-workflow/tree/main/blurb>`_.
 
 .. note::
 
