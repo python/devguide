@@ -69,7 +69,8 @@ instructions please see the :ref:`setup guide <setup>`.
 8. Add a News entry into the ``Misc/NEWS.d`` directory as individual file. The
    news entry can be created by using `blurb-it <https://blurb-it.herokuapp.com/>`_,
    or the `blurb <https://pypi.org/project/blurb/>`_ tool and its ``blurb add``
-   command. Please read more about ``blurb`` in :ref:`documentation <documenting>`.
+   command. Please read more about ``blurb`` in its
+   `repository <https://github.com/python/core-workflow/tree/main/blurb>`.
 
 .. note::
 
