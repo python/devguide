@@ -8,5 +8,6 @@ Getting Started
    setup-building
    fixing-issues
    git-boot-camp
+   using-codespaces
    pull-request-lifecycle
    getting-help
