@@ -32,7 +32,8 @@ Then you will need to:
 4. VS Code will open inside of your web browser, already linked up with your code and a terminal to the remote codespace.
 5. Use the terminal with the usual git commands to create a new branch, commit and push your changes once you're ready!
 
-If you close your repository and come back later you can always resume your codespace by navigating to the CPython repo and selecting the codespaces tab and selecting your most recent codespaces session. 
+If you close your repository and come back later you can always resume your codespace by navigating to the CPython repo, selecting the codespaces tab and selecting your most recent codespaces session. 
+You should then be able to pick up from where you left off! 
 
 .. _codespaces-use-locally:
 
