@@ -659,8 +659,8 @@ every rule.
 
 .. _using-codespaces:
 
-Contribute Using Github Codespaces
-===================================
+Contribute Using GitHub Codespaces
+==================================
 
 .. _codespaces-whats-codespaces:
 
