@@ -684,7 +684,7 @@ You first need to navigate to the `CPython repo <https://github.com/python/cpyth
 Then you will need to:
 
 1. Click the green :guilabel:`Code` button and choose the ``codespaces`` tab.
-2. Press the green :guilabel:`create a new codespace on main` button.
+2. Press the green :guilabel:`Create codespace on main` button.
 3. A screen should appear that lets you know your codespace is being set up. (Note: Since the CPython devcontainer is provided codespaces will use the configurations it specifies.)
 4. VS Code will open inside of your web browser, already linked up with your code and a terminal to the remote codespace.
 5. Use the terminal with the usual git commands to create a new branch, commit and push your changes once you're ready!
