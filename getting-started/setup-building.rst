@@ -698,7 +698,7 @@ Use Codespaces Locally
 ----------------------
 
 On the bottom left side of the codespace screen you will see a green or grey square that says :guilabel:`Codespaces`.
-You can click on this for additional options. If you prefer working on a locally installed copy of VS Code you can select the option ``Open in VS Code``.
+You can click this for additional options. If you prefer working in a locally installed copy of VS Code you can select the option ``Open in VS Code``.
 You will still be working on the remote codespace instance, thus utilising the remote instance compute power.
 The compute power may be a much higher spec than your local machine which can be helpful.
 
