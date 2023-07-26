@@ -695,7 +695,7 @@ You should then be able to pick up from where you left off!
 .. _codespaces-use-locally:
 
 Use Codespaces Locally
------------------------
+----------------------
 
 On the bottom left side of the codespace screen you will see a green or grey square that says :guilabel:`Codespaces`.
 You can click on this for additional options. If you prefer working on a locally installed copy of VS Code you can select the option ``Open in VS Code``.
