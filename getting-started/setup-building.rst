@@ -675,7 +675,7 @@ It also contains a Dockerfile that allows you to set up the same environment but
 
 .. _codespaces-create-a-codespace:
 
-Create A CPython Codespace
+Create a CPython codespace
 --------------------------
 
 Here are the basic steps needed to contribute a patch using Codespaces.
