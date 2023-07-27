@@ -664,8 +664,8 @@ Contribute using GitHub Codespaces
 
 .. _codespaces-whats-codespaces:
 
-What is Github Codespaces
--------------------------
+What is GitHub Codespaces?
+--------------------------
 
 If you'd like to start contributing to CPython without needing to set up a local developer environment, you can use `GitHub Codespaces <https://github.com/features/codespaces>`_.
 Codespaces is a cloud-based development environment offered by GitHub that allows developers to write, build, test, and debug code directly within their web browser or in Visual Studio Code (VS Code).
