@@ -74,8 +74,8 @@ to enter the public source tree. Ask yourself the following questions:
    be added as well. Changes that affect only documentation generally do not
    require a ``NEWS`` entry. (See the following section for more information.)
 
-
 .. _news-entry:
+.. _what-s-new-and-news-entries:
 
 Updating NEWS and What's New in Python
 --------------------------------------
@@ -120,8 +120,8 @@ for what was affected (e.g. ``Misc/NEWS.d/next/Library`` for changes relating
 to the standard library). The file name itself should be in the format
 ``<datetime>.gh-issue-<issue-number>.<nonce>.rst``:
 
-* ``<datetime>`` is today's date joined with a hyphen (``-``) to the current
-  time, in the ``YYYY-MM-DD-hh-mm-ss`` format (e.g. ``2017-05-27-16-46-23``).
+* ``<datetime>`` is today's date joined with a hyphen (``-``) to your current
+  local time, in the ``YYYY-MM-DD-hh-mm-ss`` format (e.g. ``2017-05-27-16-46-23``).
 * ``<issue-number>`` is the issue number the change is for (e.g. ``12345``
   for ``gh-issue-12345``).
 * ``<nonce>`` is a unique string to guarantee that the file name is
@@ -191,7 +191,8 @@ Seeing active branches
 If you use ``git branch``, then you will see a :ref:`list of branches
 <branchstatus>`. The only branch that receives new features is
 ``main``, the in-development branch. The other branches receive only
-bug fixes or security fixes.
+bug fixes or security fixes. In almost all cases the fixes should first
+originate on ``main`` and then be ported back to older branches.
 
 
 .. _branch-merge:

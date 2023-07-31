@@ -13,6 +13,13 @@ The CPython 3.11 bytecode interpreter (a.k.a. virtual machine) has a number of i
 We describe the inner workings of the 3.11 interpreter here, with an emphasis on understanding not just the code but its design.
 While the interpreter is forever evolving, and the 3.12 design will undoubtedly be different again, knowing the 3.11 design will help you understand future improvements to the interpreter.
 
+Other sources
+-------------
+
+* Brandt Bucher's talk about the specializing interpreter at PyCon US 2023.
+  `Slides <https://github.com/brandtbucher/brandtbucher/blob/master/2023/04/21/inside_cpython_311s_new_specializing_adaptive_interpreter.pdf>`_
+  `Video <https://www.youtube.com/watch?v=PGZPSWZSkJI&t=1470s>`_
+
 Introduction
 ============
 

@@ -183,20 +183,17 @@ passed into the ``-j`` flag to match the number of cores you have (or if your
 version of Make supports it, you can use ``-j`` without a number and Make
 will not limit the number of steps that can run simultaneously.).
 
-At the end of the build you should see a success message, possibly followed
+At the end of the build you should see a success message, followed
 by a list of extension modules that haven't been built because their
 dependencies were missing:
 
 .. code-block:: none
 
-   Python build finished successfully!
    The necessary bits to build these optional modules were not found:
-   _bz2                  _dbm                  _gdbm
-   _lzma                 _sqlite3              _ssl
-   _tkinter              _uuid                 readline
-   zlib
-   To find the necessary bits, look in setup.py in detect_modules()
-   for the module's name.
+   _gdbm
+   To find the necessary bits, look in configure.ac and config.log.
+
+   Checked 106 modules (31 built-in, 74 shared, 0 n/a on macosx-13.4-arm64, 0 disabled, 1 missing, 0 failed on import)
 
 If the build failed and you are using a C89 or C99-compliant compiler,
 please open a bug report on the `issue tracker`_.
@@ -314,7 +311,7 @@ You can run the build of Python you've compiled with:
 See the `PCBuild readme`_ for more details on what other software is necessary
 and how to build.
 
-.. _Victor Stinner's guide: https://cpython-core-tutorial.readthedocs.io/en/latest/build_cpython_windows.html
+.. _Victor Stinner's guide: https://web.archive.org/web/20220907075854/https://cpython-core-tutorial.readthedocs.io/en/latest/build_cpython_windows.html
 .. _Visual Studio: https://visualstudio.microsoft.com/
 .. _PCBuild readme: https://github.com/python/cpython/blob/main/PCbuild/readme.txt
 .. _Git for Windows download from the official Git website: https://git-scm.com/download/win
@@ -413,52 +410,49 @@ Apple no longer provides header files for the deprecated system version of
 OpenSSL which means that you will not be able to build the ``_ssl`` extension.
 One solution is to install these libraries from a third-party package
 manager, like Homebrew_ or MacPorts_, and then add the appropriate paths
-for the header and library files to your ``configure`` command.  For example,
+for the header and library files to your ``configure`` command.
 
-with **Homebrew**::
+For example, with **Homebrew**, install the dependencies::
 
-    $ brew install pkg-config openssl@1.1 xz gdbm tcl-tk
+    $ brew install pkg-config openssl@3.0 xz gdbm tcl-tk
 
-For Python 3.10 and newer::
+Then, for Python 3.11 and newer, run ``configure``::
 
-    $ CFLAGS="-I$(brew --prefix gdbm)/include -I$(brew --prefix xz)/include" \
-      LDFLAGS="-L$(brew --prefix gdbm)/lib -I$(brew --prefix xz)/lib" \
-      PKG_CONFIG_PATH="$(brew --prefix tcl-tk)/lib/pkgconfig" \
+    $ GDBM_CFLAGS="-I$(brew --prefix gdbm)/include" \
+      GDBM_LIBS="-L$(brew --prefix gdbm)/lib -lgdbm" \
       ./configure --with-pydebug \
-                  --with-openssl=$(brew --prefix openssl)
+                  --with-openssl="$(brew --prefix openssl@3.0)"
 
+Or, for Python 3.8 through 3.10::
 
-For Python versions 3.9 through 3.7::
-
-    $ CFLAGS="-I$(brew --prefix gdbm)/include -I$(brew --prefix xz)/include" \
+    $ CPPFLAGS="-I$(brew --prefix gdbm)/include -I$(brew --prefix xz)/include" \
       LDFLAGS="-L$(brew --prefix gdbm)/lib -L$(brew --prefix xz)/lib" \
-      PKG_CONFIG_PATH="$(brew --prefix tcl-tk)/lib/pkgconfig" \
       ./configure --with-pydebug \
-              --with-openssl=$(brew --prefix openssl@1.1) \
-              --with-tcltk-libs="$(pkg-config --libs tcl tk)" \
-              --with-tcltk-includes="$(pkg-config --cflags tcl tk)"
+                  --with-openssl="$(brew --prefix openssl@3.0)" \
+                  --with-tcltk-libs="$(pkg-config --libs tcl tk)" \
+                  --with-tcltk-includes="$(pkg-config --cflags tcl tk)"
 
-and ``make``::
+And finally, run ``make``::
 
     $ make -s -j2
 
-or **MacPorts**::
+Alternatively, with **MacPorts**::
 
-    $ sudo port install pkgconfig openssl xz gdbm
+    $ sudo port install pkgconfig openssl xz gdbm tcl tk +quartz
 
-and ``configure``::
+Then, for Python 3.11 and newer, run ``configure``::
 
-    $ CPPFLAGS="-I/opt/local/include" \
-      LDFLAGS="-L/opt/local/lib" \
+    $ GDBM_CFLAGS="-I$(dirname $(dirname $(which port)))/include" \
+      GDBM_LIBS="-L$(dirname $(dirname $(which port)))/lib -lgdbm" \
       ./configure --with-pydebug
 
-and ``make``::
+And finally, run ``make``::
 
     $ make -s -j2
 
 There will sometimes be optional modules added for a new release which
 won't yet be identified in the OS-level build dependencies. In those cases,
-just ask for assistance on the core-mentorship list.
+just ask for assistance in the *Core Development* category on :ref:`help-discourse`.
 
 Explaining how to build optional dependencies on a Unix-based system without
 root access is beyond the scope of this guide.
@@ -483,31 +477,49 @@ Regenerate ``configure``
 
 If a change is made to Python which relies on some POSIX system-specific
 functionality (such as using a new system call), it is necessary to update the
-``configure`` script to test for availability of the functionality.
+:cpy-file:`configure` script to test for availability of the functionality.
+Python's :file:`configure` script is generated from :cpy-file:`configure.ac`
+using `GNU Autoconf <https://www.gnu.org/software/autoconf/>`_.
 
-Python's ``configure`` script is generated from ``configure.ac`` using Autoconf.
-Instead of editing ``configure``, edit ``configure.ac`` and then run
-``autoreconf`` to regenerate ``configure`` and a number of other files (such as
-``pyconfig.h``).
+After editing :file:`configure.ac`, run ``make regen-configure`` to generate
+:file:`configure`, :cpy-file:`pyconfig.h.in`, and :cpy-file:`aclocal.m4`.
+When submitting a pull request with changes made to :file:`configure.ac`,
+make sure you also commit the changes in the generated files.
 
-When submitting a patch with changes made to ``configure.ac``, you should also
-include the generated files.
+The recommended and by far the easiest way to regenerate :file:`configure` is::
 
-Note that running ``autoreconf`` is not the same as running ``autoconf``. For
-example, ``autoconf`` by itself will not regenerate ``pyconfig.h.in``.
-``autoreconf`` runs ``autoconf`` and a number of other tools repeatedly as is
-appropriate.
+   $ make regen-configure
 
-Python's ``configure.ac`` script typically requires a specific version of
-Autoconf.  At the moment, this reads: ``AC_PREREQ(2.69)``. It also requires
-to have the ``autoconf-archive`` and ``pkg-config`` utilities installed in
-the system and the ``pkg.m4`` macro file located in the appropriate ``alocal``
-location. You can easily check if this is correctly configured by running::
+If you are regenerating :file:`configure` in a clean repo,
+run one of the following containers instead::
+
+   $ podman run --rm --pull=always -v $(pwd):/src:Z quay.io/tiran/cpython_autoconf:271
+
+::
+
+   $ docker run --rm --pull=always -v $(pwd):/src quay.io/tiran/cpython_autoconf:271
+
+Notice that the images are tagged with ``271``.
+Python's :file:`configure.ac` script requires a specific version of
+GNU Autoconf.
+For Python 3.12 and newer, GNU Autoconf v2.71 is required.
+For Python 3.11 and earlier, GNU Autoconf v2.69 is required.
+For GNU Autoconf v2.69, change the ``:271`` tag to ``:269``.
+
+If you cannot (or don't want to) use the ``cpython_autoconf`` containers,
+install the :program:`autoconf-archive` and :program:`pkg-config` utilities,
+and make sure the :file:`pkg.m4` macro file located in the appropriate
+:program:`aclocal` location::
 
    $ ls $(aclocal --print-ac-dir) | grep pkg.m4
 
-If the system copy of Autoconf does not match this version, you will need to
-install your own copy of Autoconf.
+.. note::
+
+   Running :program:`autoreconf` is not the same as running :program:`autoconf`.
+   For example, running :program:`autoconf` by itself will not regenerate
+   :file:`pyconfig.h.in`.
+   :program:`autoreconf` runs :program:`autoconf` and a number of other tools
+   repeatedly as appropriate.
 
 .. _build_troubleshooting:
 
@@ -530,6 +542,10 @@ validate if the change can be made or not.
    candidate, all further releases must have the same ABI for ensuring compatibility
    with native extensions and other tools that interact with the Python interpreter.
    See the documentation about the :ref:`release candidate <rc>` phase.
+
+When the PR check fails, the associated run will have the updated ABI file
+attached as an artifact. After release manager approval, you can download and
+add this file into your PR to pass the check.
 
 You can regenerate the ABI file by yourself by invoking the ``regen abidump``
 Make target. Note that for doing this you need to regenerate the ABI file in
@@ -577,6 +593,7 @@ support.
 For editors and tools which the core developers have felt some special comment
 is needed for coding *in* Python, see :ref:`resources`.
 
+.. _build-directory-structure:
 
 Directory structure
 ===================
@@ -627,8 +644,7 @@ every rule.
 
 ``Programs``
      Source code for C executables, including the main function for the
-     CPython interpreter (in versions prior to Python 3.5, these files are
-     in the Modules directory).
+     CPython interpreter.
 
 ``Python``
      The code that makes up the core CPython runtime. This includes the

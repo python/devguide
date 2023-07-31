@@ -36,7 +36,11 @@ in production; others are works in progress.
 | Italian (it)    |                               | `mail <mail_it_>`_         |
 +-----------------+-------------------------------+----------------------------+
 | Japanese (ja)   | `Kinebuchi Tomohiko           | `GitHub <github_ja_>`_     |
-|                 | (@cocoatomo) <gh_cocoatomo_>`_| `Doc <doc_ja_>`_           |
+|                 | (@cocoatomo)                  | `Doc <doc_ja_>`_           |
+|                 | <gh_cocoatomo_>`_,            |                            |
+|                 | `Atsuo Ishimoto               |                            |
+|                 | (@atsuoishimoto)              |                            |
+|                 | <gh_atsuoishimoto_>`_         |                            |
 +-----------------+-------------------------------+----------------------------+
 | Korean (ko)     |                               | `GitHub <github_ko_>`_     |
 |                 |                               | `Doc <doc_ko_>`_           |
@@ -74,7 +78,7 @@ in production; others are works in progress.
 | (zh-tw)         | Josix Wang                    |                            |
 +-----------------+-------------------------------+----------------------------+
 | Turkish (tr)    | `Ege Akman (@egeakman)        | `GitHub <github_tr_>`_     |
-|                 | <gh_egeakman_>`_              | `GH-Pages <gh_pages_tr_>`_ |
+|                 | <gh_egeakman_>`_              | `RTD <rtd_tr_>`_           |
 |                 |                               | `Doc <doc_tr_>`_           |
 +-----------------+-------------------------------+----------------------------+
 | Ukrainian (uk)  | `Dmytro Kazanzhy (@kazanzhy)  | `GitHub <github_uk_>`_     |
@@ -83,6 +87,7 @@ in production; others are works in progress.
 
 .. _article_pt_br: https://rgth.co/blog/python-ptbr-cenario-atual/
 .. _gh_cocoatomo: https://github.com/cocoatomo
+.. _gh_atsuoishimoto: https://github.com/atsuoishimoto
 .. _gh_gbtami: https://github.com/gbtami
 .. _gh_kushal: https://github.com/Kushal997-das
 .. _gh_maciek: https://github.com/m-aciek
@@ -102,7 +107,6 @@ in production; others are works in progress.
 .. _doc_tr: https://docs.python.org/tr/
 .. _doc_zh_cn: https://docs.python.org/zh-cn/
 .. _doc_zh_tw: https://docs.python.org/zh-tw/
-.. _gh_pages_tr: https://python.github.io/python-docs-tr/
 .. _github_ar: https://github.com/Abdur-rahmaanJ/python-docs-ar
 .. _github_bn_in: https://github.com/python/python-docs-bn-in
 .. _github_es: https://github.com/python/python-docs-es
@@ -125,6 +129,7 @@ in production; others are works in progress.
 .. _mail_lt: https://mail.python.org/pipermail/doc-sig/2019-July/004138.html
 .. _mail_pl: https://mail.python.org/pipermail/doc-sig/2019-April/004106.html
 .. _mail_ru: https://mail.python.org/pipermail/doc-sig/2019-May/004131.html
+.. _rtd_tr: https://python-docs-tr.readthedocs.io/
 .. _tx_pl: https://explore.transifex.com/python-doc/python-newest/
 .. _tx_uk: https://explore.transifex.com/python-doc/python-newest/
 .. _tx_zh_cn: https://explore.transifex.com/python-doc/python-newest/

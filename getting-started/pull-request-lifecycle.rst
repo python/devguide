@@ -402,6 +402,9 @@ on how to properly add the co-author info.
 
 See also :ref:`Applying a Patch to Git <git_from_patch>`.
 
+
+.. _reviewing-prs:
+
 Reviewing
 =========
 
@@ -413,7 +416,7 @@ request (we cannot force anyone to review pull requests and no one is
 employed to look at pull requests). If your pull request has not
 received any notice from reviewers (i.e., no comment made) after one
 month, first "ping" the issue on the `issue tracker`_ to remind the
-nosy list that the pull request needs a review.
+subscribers that the pull request needs a review.
 If you don't get a response within a week after pinging the issue,
 you can post on the `Core Development Discourse category`_
 to ask for someone to review your pull request.
@@ -426,7 +429,6 @@ pull request to address these comments, and the review process will
 thus iterate until a satisfactory solution has emerged.
 
 .. _how-to-review-a-pull-request:
-
 
 How to Review a Pull Request
 ----------------------------
