@@ -34,6 +34,7 @@ exclude_patterns = [
     '.github',
 ]
 
+
 def _asset_hash(path: os.PathLike[str]) -> str:
     """Append a `?digest=` to an url based on the file content."""
     full_path = (Path(html_static_path[0]) / path).resolve()
