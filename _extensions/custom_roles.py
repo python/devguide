@@ -35,8 +35,9 @@ def autolink(pattern):
         if text.startswith('!'):
             node = nodes.literal(rawtext, text[1:])
         else:
-            node = nodes.reference(rawtext, '', nodes.literal(rawtext, text),
-                                   refuri=url, internal=False)
+            node = nodes.reference(
+                rawtext, '', nodes.literal(rawtext, text), refuri=url, internal=False
+            )
         return [node], []
 
     return role
