@@ -671,7 +671,7 @@ If you'd like to start contributing to CPython without needing to set up a local
 Codespaces is a cloud-based development environment offered by GitHub that allows developers to write, build, test, and debug code directly within their web browser or in Visual Studio Code (VS Code).
 
 To help you get started, CPython contains a `devcontainer folder <https://github.com/python/cpython/tree/main/.devcontainer>`_ with a JSON configuration file that provides consistent and versioned codespace configurations for all users of the project.
-It also contains a Dockerfile that allows you to set up the same environment but locally in a Docker container if you'd prefer.
+It also contains a Dockerfile that allows you to set up the same environment but locally in a Docker container if you'd prefer to use that directly.
 
 .. _codespaces-create-a-codespace:
 
