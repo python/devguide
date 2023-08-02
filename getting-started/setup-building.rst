@@ -666,12 +666,20 @@ Contribute using GitHub Codespaces
 
 What is GitHub Codespaces?
 --------------------------
+set up the same environment but locally in a docker container if you'd prefer th
+If you'd like to start contributing to CPython without needing to set up a local
+developer environment, you can use
+`GitHub Codespaces <https://github.com/features/codespaces>`_.
+Codespaces is a cloud-based development environment offered by GitHub that
+allows developers to write, build, test, and debug code directly within their
+web browser or in Visual Studio Code (VS Code).
 
-If you'd like to start contributing to CPython without needing to set up a local developer environment, you can use `GitHub Codespaces <https://github.com/features/codespaces>`_.
-Codespaces is a cloud-based development environment offered by GitHub that allows developers to write, build, test, and debug code directly within their web browser or in Visual Studio Code (VS Code).
-
-To help you get started, CPython contains a `devcontainer folder <https://github.com/python/cpython/tree/main/.devcontainer>`_ with a JSON configuration file that provides consistent and versioned codespace configurations for all users of the project.
-It also contains a Dockerfile that allows you to set up the same environment but locally in a Docker container if you'd prefer to use that directly.
+To help you get started, CPython contains a
+`devcontainer folder <https://github.com/python/cpython/tree/main/.devcontainer>`_
+with a JSON configuration file that provides consistent and versioned codespace
+configurations for all users of the project. It also contains a Dockerfile that
+allows you to set up the same environment but locally in a Docker container if
+you'd prefer to use that directly.
 
 .. _codespaces-create-a-codespace:
 
@@ -679,27 +687,40 @@ Create a CPython codespace
 --------------------------
 
 Here are the basic steps needed to contribute a patch using Codespaces.
-You first need to navigate to the `CPython repo <https://github.com/python/cpython>`_ hosted on GitHub.
+You first need to navigate to the
+`CPython repo <https://github.com/python/cpython>`_ hosted on GitHub.
 
 Then you will need to:
 
-1. Press the ``,`` key to launch the codespace setup screen for the current branch (alternatively, click the green :guilabel:`Code` button and choose the ``codespaces`` tab and then press the green :guilabel:`Create codespace on main` button).
-3. A screen should appear that lets you know your codespace is being set up. (Note: Since the CPython devcontainer is provided, codespaces will use the configuration it specifies.)
-4. A `web version of VS Code <https://vscode.dev/>`_ will open inside your web browser, already linked up with your code and a terminal to the remote codespace where CPython and its documentation have already been built.
-5. Use the terminal with the usual Git commands to create a new branch, commit and push your changes once you're ready!
+1. Press the ``,`` key to launch the codespace setup screen for the current
+   branch (alternatively, click the green :guilabel:`Code` button and choose
+   the ``codespaces`` tab and then press the
+   green :guilabel:`Create codespace on main` button).
+2. A screen should appear that lets you know your codespace is being set up.
+   (Note: Since the CPython devcontainer is provided, codespaces will use the
+   configuration it specifies.)
+3. A `web version of VS Code <https://vscode.dev/>`_ will open inside your web
+   browser, already linked up with your code and a terminal to the remote
+   codespace where CPython and its documentation have already been built.
+4. Use the terminal with the usual Git commands to create a new branch, commit
+   and push your changes once you're ready!
 
-If you close your repository and come back later you can always resume your codespace by navigating to the CPython repo, selecting the codespaces tab and selecting your most recent codespaces session.
-You should then be able to pick up from where you left off!
+If you close your repository and come back later you can always resume your
+codespace by navigating to the CPython repo, selecting the codespaces tab and
+selecting your most recent codespaces session. You should then be able to pick
+up from where you left off!
 
 .. _codespaces-use-locally:
 
 Use Codespaces Locally
 ----------------------
 
-On the bottom left side of the codespace screen you will see a green or grey square that says :guilabel:`Codespaces`.
-You can click this for additional options. If you prefer working in a locally installed copy of VS Code you can select the option ``Open in VS Code``.
-You will still be working on the remote codespace instance, thus using the remote instance's compute power.
-The compute power may be a much higher spec than your local machine which can be helpful.
+On the bottom left side of the codespace screen you will see a green or grey
+square that says :guilabel:`Codespaces`. You can click this for additional
+options. If you prefer working in a locally installed copy of VS Code you can
+select the option ``Open in VS Code``. You will still be working on the remote
+codespace instance, thus using the remote instance's compute power. The compute
+power may be a much higher spec than your local machine which can be helpful.
 
 
 .. TODO: add docker instructions
