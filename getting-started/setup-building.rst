@@ -666,7 +666,7 @@ Contribute using GitHub Codespaces
 
 What is GitHub Codespaces?
 --------------------------
-set up the same environment but locally in a docker container if you'd prefer th
+
 If you'd like to start contributing to CPython without needing to set up a local
 developer environment, you can use
 `GitHub Codespaces <https://github.com/features/codespaces>`_.
