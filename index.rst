@@ -249,7 +249,7 @@ Full Table of Contents
    testing/index
    core-developers/index
    internals/index
-   advanced-tools/index
+   development-tools/index
    versions
 
 .. _Buildbot status: https://www.python.org/dev/buildbot/

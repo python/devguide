@@ -108,9 +108,9 @@ linkcheck_ignore = [
 ]
 
 rediraffe_redirects = {
-    "clang.rst": "advanced-tools/clang.rst",
-    "coverity.rst": "advanced-tools/coverity.rst",
-    "gdb.rst": "advanced-tools/gdb.rst",
+    "clang.rst": "development-tools/clang.rst",
+    "coverity.rst": "development-tools/coverity.rst",
+    "gdb.rst": "development-tools/gdb.rst",
     "coredev.rst": "core-developers/become-core-developer.rst",
     "committing.rst": "core-developers/committing.rst",
     "developers.rst": "core-developers/developer-log.rst",
