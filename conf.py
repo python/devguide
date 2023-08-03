@@ -108,17 +108,21 @@ linkcheck_ignore = [
 ]
 
 rediraffe_redirects = {
+    # Development Tools
     "clang.rst": "development-tools/clang.rst",
-    "advanced-tools/clang.rst": "development-tools/clang.rst",
     "coverity.rst": "development-tools/coverity.rst",
-    "advanced-tools/coverity.rst": "development-tools/coverity.rst",
     "gdb.rst": "development-tools/gdb.rst",
+    # Advanced Tools was renamed Development Tools in gh-1149
+    "advanced-tools/clang.rst": "development-tools/clang.rst",
+    "advanced-tools/coverity.rst": "development-tools/coverity.rst",
     "advanced-tools/gdb.rst": "development-tools/gdb.rst",
+    # Core Developers
     "coredev.rst": "core-developers/become-core-developer.rst",
     "committing.rst": "core-developers/committing.rst",
     "developers.rst": "core-developers/developer-log.rst",
     "experts.rst": "core-developers/experts.rst",
     "motivations.rst": "core-developers/motivations.rst",
+    # Developer Workflow
     "c-api.rst": "developer-workflow/c-api.rst",
     "communication.rst": "developer-workflow/communication-channels.rst",
     "devcycle.rst": "developer-workflow/development-cycle.rst",
@@ -127,22 +131,27 @@ rediraffe_redirects = {
     "langchanges.rst": "developer-workflow/lang-changes.rst",
     "porting.rst": "developer-workflow/porting.rst",
     "stdlibchanges.rst": "developer-workflow/stdlib.rst",
+    # Documentation
     "docquality.rst": "documentation/help-documenting.rst",
     "documenting.rst": "documentation/start-documenting.rst",
+    # Getting Started
     "fixingissues.rst": "getting-started/fixing-issues.rst",
     "help.rst": "getting-started/getting-help.rst",
     "gitbootcamp.rst": "getting-started/git-boot-camp.rst",
     "pullrequest.rst": "getting-started/pull-request-lifecycle.rst",
     "setup.rst": "getting-started/setup-building.rst",
+    # CPython Internals
     "compiler.rst": "internals/compiler.rst",
     "exploring.rst": "internals/exploring.rst",
     "garbage_collector.rst": "internals/garbage-collector.rst",
     "parser.rst": "internals/parser.rst",
+    # Testing and Buildbots
     "buildbots.rst": "testing/buildbots.rst",
     "coverage.rst": "testing/coverage.rst",
     "buildworker.rst": "testing/new-buildbot-worker.rst",
     "runtests.rst": "testing/run-write-tests.rst",
     "silencewarnings.rst": "testing/silence-warnings.rst",
+    # Issues and Triaging
     "gh-faq.rst": "triage/github-bpo-faq.rst",
     "tracker.rst": "triage/issue-tracker.rst",
     "gh-labels.rst": "triage/labels.rst",
