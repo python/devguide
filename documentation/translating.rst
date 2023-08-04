@@ -67,8 +67,8 @@ in production; others are works in progress.
 +-----------------+-------------------------------+----------------------------+
 | Russian (ru)    |                               | `mail <mail_ru_>`_         |
 +-----------------+-------------------------------+----------------------------+
-| Simplified      | `Shengjing Zhu <gh_zhsj_>`_   | `Transifex <tx_zh_cn_>`_   |
-| Chinese         |                               | `GitHub <github_zh_cn_>`_  |
+| Simplified      | `Shengjing Zhu <gh_zhsj_>`_,  | `Transifex <tx_zh_cn_>`_   |
+| Chinese         | `Du, Meng <gh_dumeng_>`_      | `GitHub <github_zh_cn_>`_  |
 | (zh-cn)         |                               | `Doc <doc_zh_cn_>`_        |
 +-----------------+-------------------------------+----------------------------+
 | Spanish (es)    | Raúl Cumplido                 | `GitHub <github_es_>`_     |
@@ -96,6 +96,7 @@ in production; others are works in progress.
 .. _gh_oonid: https://github.com/oonid
 .. _gh_osdotsystem: https://github.com/Abdur-rahmaanJ
 .. _gh_zhsj: https://github.com/zhsj
+.. _gh_dumeng: https://github.com/dumeng
 .. _gh_mattwang44: https://github.com/mattwang44
 .. _gh_egeakman: https://github.com/egeakman
 .. _email_garade: mailto:garade@pm.me
