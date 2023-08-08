@@ -247,9 +247,9 @@ Full Table of Contents
    triage/index
    documentation/index
    testing/index
+   development-tools/index
    core-developers/index
    internals/index
-   advanced-tools/index
    versions
 
 .. _Buildbot status: https://www.python.org/dev/buildbot/
