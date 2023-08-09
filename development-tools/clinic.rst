@@ -1,32 +1,26 @@
 .. highlight:: c
 
-.. _howto-clinic:
+.. _clinic:
 
-**********************
-Argument Clinic How-To
-**********************
+***************
+Argument Clinic
+***************
 
 :author: Larry Hastings
 
-**Source code:** :source:`Tools/clinic/clinic.py`.
+**Source code:** :cpy-file:`Tools/clinic/clinic.py`.
 
-.. topic:: Abstract
+Argument Clinic is a preprocessor for CPython C files.
+It was introduced in Python 3.4 with :pep:`436`,
+in order to provide introspection signatures,
+and to generate performant and tailor-made boilerplate code
+for argument parsing in CPython builtins, module level functions, and class methods.
+This document is divided in four major sections:
 
-  Argument Clinic is a preprocessor for CPython C files.
-  It was introduced in Python 3.4 with :pep:`436`,
-  in order to provide introspection signatures,
-  and to generate performant and tailor-made boilerplate code
-  for argument parsing in CPython builtins,
-  module level functions, and class methods.
-  This document is divided in four major sections:
-
-  * :ref:`clinic-background` talks about the basic concepts and goals of
-    Argument Clinic.
-  * :ref:`clinic-reference` describes the command-line interface and Argument
-    Clinic terminology.
-  * :ref:`clinic-tutorial` guides you through all the steps required to
-    adapt an existing C function to Argument Clinic.
-  * :ref:`clinic-howtos` details how to handle specific tasks.
+* :ref:`clinic-background` talks about the basic concepts and goals of Argument Clinic.
+* :ref:`clinic-reference` describes the command-line interface and Argument Clinic terminology.
+* :ref:`clinic-tutorial` guides you through all the steps required to adapt an existing C function to Argument Clinic.
+* :ref:`clinic-howtos` details how to handle specific tasks.
 
 
 .. note::
@@ -749,7 +743,7 @@ While functions using this approach can often be converted to
 use :c:func:`!PyArg_ParseTupleAndKeywords`, optional arguments, and default values,
 it's not always possible.  Some of these legacy functions have
 behaviors :c:func:`!PyArg_ParseTupleAndKeywords` doesn't directly support.
-The most obvious example is the builtin function :py:func:`range`, which has
+The most obvious example is the builtin function :py:func:`!range`, which has
 an optional argument on the *left* side of its required argument!
 Another example is :py:meth:`curses.window.addch`, which has a group of two
 arguments that must always be specified together.  (The arguments are
@@ -1358,7 +1352,7 @@ module level state.  Use :c:func:`PyType_FromModuleAndSpec` to associate a new
 heap type with a module.  You can now use :c:func:`PyType_GetModuleState` on
 the defining class to fetch the module state, for example from a module method.
 
-Example from :source:`Modules/zlibmodule.c`.
+Example from :cpy-file:`Modules/zlibmodule.c`.
 First, ``defining_class`` is added to the clinic input::
 
     /*[clinic input]
@@ -1399,7 +1393,7 @@ It is not possible to use ``defining_class`` with slot methods.  In order to
 fetch the module state from such methods, use :c:func:`PyType_GetModuleByDef`
 to look up the module and then :c:func:`PyModule_GetState` to fetch the module
 state.  Example from the ``setattro`` slot method in
-:source:`Modules/_threadmodule.c`::
+:cpy-file:`Modules/_threadmodule.c`::
 
     static int
     local_setattro(localobject *self, PyObject *name, PyObject *v)
@@ -1437,7 +1431,7 @@ will be passed along to your :py:meth:`!converter_init` method.
 See :py:class:`CConverter` for a list of members you may wish to specify in
 your subclass.
 
-Here's the simplest example of a custom converter, from :source:`Modules/zlibmodule.c`::
+Here's the simplest example of a custom converter, from :cpy-file:`Modules/zlibmodule.c`::
 
     /*[python input]
 
@@ -1470,7 +1464,7 @@ converters are themselves much simpler.
 Return converters must subclass :py:class:`!CReturnConverter`.
 There are no examples yet of custom return converters,
 because they are not widely used yet.  If you wish to
-write your own return converter, please read :source:`Tools/clinic/clinic.py`,
+write your own return converter, please read :cpy-file:`Tools/clinic/clinic.py`,
 specifically the implementation of :py:class:`!CReturnConverter` and
 all its subclasses.
 
@@ -1917,7 +1911,7 @@ The ``@text_signature`` directive takes one argument:
 the custom signature as a string.
 The provided signature is copied verbatim to the generated docstring.
 
-Example from :source:`Objects/codeobject.c`::
+Example from :cpy-file:`Objects/codeobject.c`::
 
    /*[clinic input]
    @text_signature "($self, /, **changes)"
