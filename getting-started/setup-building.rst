@@ -240,7 +240,8 @@ still build properly).
 Optimization
 '''''
 
-To get an optimized build of Python, ``configure --enable-optimizations``. This sets the default make targets up to enable Profile Guided Optimization (PGO) and may be used to auto-enable Link Time Optimization (LTO) on some platforms. Note that configuration including this option takes time to configure::
+To get an optimized build of Python, ``configure --enable-optimizations``. This sets the default make targets up to enable Profile Guided Optimization (PGO) and may be used to auto-enable Link Time Optimization (LTO) on some platforms. Note that configuration including this option takes time to configure. If you want to learn more about these options, please  see [configure options > Performance options ](https://docs.python.org/3/using/configure.html?highlight=lto#performance-options)
+::
 
    $ ./configure --enable-optimizations --with-lto
 
