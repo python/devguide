@@ -237,6 +237,16 @@ build the :py:mod:`ctypes` module (without the flag the rest of CPython will
 still build properly).
 
 
+Optimization
+'''''
+
+To get an optimized build of Python, ``configure --enable-optimizations``. This sets the default make targets up to enable Profile Guided Optimization (PGO) and may be used to auto-enable Link Time Optimization (LTO) on some platforms. Note that configuration including this option takes time to configure.
+
+```sh
+./configure --enable-optimizations --with-lto
+```
+
+
 .. _windows-compiling:
 
 Windows
