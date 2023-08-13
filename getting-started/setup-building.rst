@@ -248,7 +248,7 @@ optimization.
 
 For an optimized build of Python, use
 ``configure --enable-optimizations --with-lto``.
-This sets the default make targets up to enable Profile Guided Optimization(PGO)
+This sets the default make targets up to enable Profile Guided Optimization (PGO)
 and may be used to auto-enable Link Time Optimization (LTO) on some platforms.
 If you want to learn more about these options,
 please  see :ref:`Configure options <python:configure-options>`.
