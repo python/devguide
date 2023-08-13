@@ -240,7 +240,7 @@ still build properly).
 Optimization
 ''''''''''''
 
-If you are trying to improve the performance of Python, you will probably want
+If you are trying to improve CPython's performance, you will probably want
 to use an optimized build of CPython. It can take a lot longer to build CPython
 with optimizations enabled, and it's usually not necessary to do so. However,
 it's essential if you want accurate benchmark results for a proposed performance
