@@ -244,7 +244,9 @@ If you are trying to improve the performance of Python, you will probably want
 to use an optimized build of CPython. It can take a lot longer to build CPython
 with optimizations enabled, and it's usually not necessary to do so. However,
 it's essential if you want accurate benchmark results for a proposed performance
-optimization. To get an optimized build of Python,
+optimization.
+
+For an optimized build of Python, use
 ``configure --enable-optimizations --with-lto``.
 This sets the default make targets up to enable Profile Guided Optimization(PGO)
 and may be used to auto-enable Link Time Optimization (LTO) on some platforms.
