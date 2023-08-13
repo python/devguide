@@ -237,6 +237,27 @@ build the :py:mod:`ctypes` module (without the flag the rest of CPython will
 still build properly).
 
 
+Optimization
+''''''''''''
+
+If you are trying to improve CPython's performance, you will probably want
+to use an optimized build of CPython. It can take a lot longer to build CPython
+with optimizations enabled, and it's usually not necessary to do so. However,
+it's essential if you want accurate benchmark results for a proposed performance
+optimization.
+
+For an optimized build of Python, use
+``configure --enable-optimizations --with-lto``.
+This sets the default make targets up to enable Profile Guided Optimization (PGO)
+and may be used to auto-enable Link Time Optimization (LTO) on some platforms.
+See :option:`python:--enable-optimizations` and :option:`python:--with-lto`
+to learn more about these options.
+
+.. code:: console
+
+   $ ./configure --enable-optimizations --with-lto
+
+
 .. _windows-compiling:
 
 Windows
