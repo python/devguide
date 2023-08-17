@@ -460,15 +460,13 @@ not as simple as just suddenly introducing new bytecode in the AST ->
 bytecode step of the compiler.  Several pieces of code throughout Python depend
 on having correct information about what bytecode exists.
 
-First, you must choose a name and a unique identifier number.  The official
-list of bytecode can be found in :cpy-file:`Lib/opcode.py`.  If the opcode is to
-take an argument, it must be given a unique number greater than that assigned to
-``HAVE_ARGUMENT`` (as found in :cpy-file:`Lib/opcode.py`).
-
-Once the name/number pair has been chosen and entered in :cpy-file:`Lib/opcode.py`,
-you must also enter it into :cpy-file:`Doc/library/dis.rst`, and regenerate
-:cpy-file:`Include/opcode.h` and :cpy-file:`Python/opcode_targets.h` by running
-``make regen-opcode regen-opcode-targets``.
+First, you must choose a name, implement the bytecode in
+:cpy-file:`Python/bytecodes.c`, and add a documentation entry in
+:cpy-file:`Doc/library/dis.rst`. Then run ``make regen-cases`` to
+assign a number for it (see :cpy-file:`Include/opcode_ids.h`) and
+regenerate a number of files with the actual implementation of the
+bytecodes (:cpy-file:`Python/generated_cases.c.h`) and additional
+files with metadata about them.
 
 With a new bytecode you must also change what is called the magic number for
 .pyc files.  The variable ``MAGIC_NUMBER`` in
@@ -478,23 +476,21 @@ to be recompiled by the interpreter on import.  Whenever ``MAGIC_NUMBER`` is
 changed, the ranges in the ``magic_values`` array in :cpy-file:`PC/launcher.c`
 must also be updated.  Changes to :cpy-file:`Lib/importlib/_bootstrap_external.py`
 will take effect only after running ``make regen-importlib``. Running this
-command before adding the new bytecode target to :cpy-file:`Python/ceval.c` will
-result in an error. You should only run ``make regen-importlib`` after the new
-bytecode target has been added.
+command before adding the new bytecode target to :cpy-file:`Python/bytecodes.c`
+(followed by ``make regen-cases``) will result in an error. You should only run
+``make regen-importlib`` after the new bytecode target has been added.
 
 .. note:: On Windows, running the ``./build.bat`` script will automatically
    regenerate the required files without requiring additional arguments.
 
 Finally, you need to introduce the use of the new bytecode.  Altering
-:cpy-file:`Python/compile.c` and :cpy-file:`Python/ceval.c` will be the primary
-places to change. You must add the case for a new opcode into the 'switch'
-statement in the ``stack_effect()`` function in :cpy-file:`Python/compile.c`.
-If the new opcode has a jump target, you will need to update macros and
-'switch' statements in :cpy-file:`Python/compile.c`.  If it affects a control
-flow or the block stack, you may have to update the ``frame_setlineno()``
-function in :cpy-file:`Objects/frameobject.c`.  :cpy-file:`Lib/dis.py` may need
-an update if the new opcode interprets its argument in a special way (like
-``FORMAT_VALUE`` or ``MAKE_FUNCTION``).
+:cpy-file:`Python/compile.c`, :cpy-file:`Python/bytecodes.c` will be the
+primary places to change. Optimizations in :cpy-file:`Python/flowgraph.c`
+may also need to be updated.
+If the new opcode affects a control flow or the block stack, you may have
+to update the ``frame_setlineno()`` function in :cpy-file:`Objects/frameobject.c`.
+:cpy-file:`Lib/dis.py` may need an update if the new opcode interprets its
+argument in a special way (like ``FORMAT_VALUE`` or ``MAKE_FUNCTION``).
 
 If you make a change here that can affect the output of bytecode that
 is already in existence and you do not change the magic number constantly, make
