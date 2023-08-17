@@ -14,8 +14,9 @@ In CPython, the compilation from source code to bytecode involves several steps:
 1. Tokenize the source code (:cpy-file:`Parser/tokenizer.c`)
 2. Parse the stream of tokens into an Abstract Syntax Tree
    (:cpy-file:`Parser/parser.c`)
-3. Transform AST into a Control Flow Graph (:cpy-file:`Python/compile.c`)
-4. Emit bytecode based on the Control Flow Graph (:cpy-file:`Python/compile.c`)
+3. Transform AST into an instruction sequence (:cpy-file:`Python/compile.c`)
+4. Construct a Control Flow Graph and apply optimizations to it (:cpy-file:`Python/flowgraph.c`)
+5. Emit bytecode based on the Control Flow Graph (:cpy-file:`Python/assemble.c`)
 
 The purpose of this document is to outline how these steps of the process work.
 
@@ -432,18 +433,6 @@ the variable.
 
 As for handling the line number on which a statement is defined, this is
 handled by ``compiler_visit_stmt()`` and thus is not a worry.
-
-In addition to emitting bytecode based on the AST node, handling the
-creation of basic blocks must be done.  Below are the macros and
-functions used for managing basic blocks:
-
-``NEXT_BLOCK(struct compiler *)``
-    create an implicit jump from the current block
-    to the new block
-``compiler_new_block(struct compiler *)``
-    create a block but don't use it (used for generating jumps)
-``compiler_use_next_block(struct compiler *, basicblock *block)``
-    set a previously created block as a current block
 
 Once the CFG is created, it must be flattened and then final emission of
 bytecode occurs.  Flattening is handled using a post-order depth-first
