@@ -2,7 +2,7 @@ Sphinx==7.2.3
 furo>=2022.6.4
 jinja2
 sphinx-lint==0.6.8
-sphinx-notfound-page>=1.0.0rc1
+sphinx-notfound-page>=1.0.0
 sphinx_copybutton>=0.3.3
 sphinxext-opengraph>=0.7.1
 sphinxext-rediraffe
