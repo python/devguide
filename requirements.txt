@@ -1,4 +1,4 @@
-Sphinx==7.2.3
+Sphinx~=7.2.4
 furo>=2022.6.4
 jinja2
 sphinx-lint==0.6.8
