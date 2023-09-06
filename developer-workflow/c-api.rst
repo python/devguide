@@ -113,8 +113,8 @@ Guidelines for expanding/changing the public API
   and ``NULL`` if and only if an exception is raised.
   Other API must return ``0`` on success,
   and a negative value if and only if an exception is raised.
-  Unless there is need to distinguish between error types,
-  ``-1`` should be used as the error value.
+  ``-1`` should be used as the error value;
+  the caller should use the C idiom ``if (func() < 0)`` to check for errors.
 
 - APIs with lesser and greater results must return ``0`` for the lesser result,
   and ``1`` for the greater result.
