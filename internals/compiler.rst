@@ -613,9 +613,6 @@ Important Files
      (named ``MAGIC_NUMBER``) for bytecode versioning.
 
 
-Known Compiler-related Experiments
-==================================
-
 This section lists known experiments involving the compiler (including
 bytecode).
 
