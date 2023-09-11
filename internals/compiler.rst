@@ -441,8 +441,7 @@ flattening and then a ``PyCodeObject`` is created.  All of this is
 handled by calling ``assemble()``.
 
 
-Introducing New Bytecode
-========================
+
 
 Sometimes a new feature requires a new opcode.  But adding new bytecode is
 not as simple as just suddenly introducing new bytecode in the AST ->
