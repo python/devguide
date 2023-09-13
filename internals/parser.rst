@@ -570,7 +570,7 @@ Pegen has some special grammatical elements and rules:
 
 * Strings with single quotes (') (e.g. ``'class'``) denote KEYWORDS.
 * Strings with double quotes (") (e.g. ``"match"``) denote SOFT KEYWORDS.
-* Upper case names (e.g. ``NAME``) denote tokens in the :cpy-file:`Grammar/Tokens` file.
+* Uppercase names (e.g. ``NAME``) denote tokens in the :cpy-file:`Grammar/Tokens` file.
 * Rule names starting with ``invalid_`` are used for specialized syntax errors.
 
   - These rules are NOT used in the first pass of the parser.
