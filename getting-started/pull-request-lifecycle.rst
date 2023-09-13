@@ -132,7 +132,7 @@ You should have already :ref:`set up your system <setup>`,
      git pull origin <branch-name>  # pull = fetch + merge
 
     If you have made local changes that have not been pushed to your fork and
-    there are merge conflicts, git will warn you about this and enter conflict
+    there are merge conflicts, Git will warn you about this and enter conflict
     resolution mode. See :ref:`resolving-merge-conflicts` below.
 
 * If time passes and there are merge conflicts with the main branch, GitHub
@@ -165,14 +165,14 @@ resolved as follows:
       git status
 
 #. Edit the affected files and bring them to their intended final state.
-   Make sure to remove the special "conflict markers" inserted by git.
+   Make sure to remove the special "conflict markers" inserted by Git.
 
 #. Commit the affected files::
 
       git add <filenames>
       git merge --continue
 
-When running the final command, git may open an editor for writing a commit
+When running the final command, Git may open an editor for writing a commit
 message. It is usually okay to leave that as-is and close the editor.
 
 See `the merge command's documentation <https://git-scm.com/docs/git-merge>`_
@@ -303,7 +303,7 @@ to explain in proper depth what has happened (detail should be good enough
 that a core developer reading the commit message understands the
 justification for the change).
 
-Check :ref:`the git bootcamp <accepting-and-merging-a-pr>` for further
+Check :ref:`the Git bootcamp <accepting-and-merging-a-pr>` for further
 instructions on how the commit message should look like when merging a pull
 request.
 

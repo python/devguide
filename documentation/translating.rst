@@ -151,7 +151,7 @@ The important steps look like this:
 - Create the GitHub repo (anywhere) with the right hierarchy (using the
   cookiecutter).
 - Gather people to help you translate. You can't do it alone.
-- You can use any tool to translate, as long as you can synchronize with git.
+- You can use any tool to translate, as long as you can synchronize with Git.
   Some use Transifex, and some use only GitHub. You can choose another
   way if you like; it's up to you.
 - Ensure we update this page to reflect your work and progress, either via a
@@ -211,7 +211,7 @@ Here's what we're using:
   from one file to others.
 - `pospell <https://pypi.org/project/pospell/>`__ to check for typos in ``.po`` files.
 - `powrap <https://pypi.org/project/powrap/>`__ to rewrap the ``.po`` files
-  before committing. This helps keep git diffs short.
+  before committing. This helps keep Git diffs short.
 - `potodo <https://pypi.org/project/potodo/>`__ to list what needs to be translated.
 
 
@@ -240,7 +240,7 @@ Ask on the `translation mailing list <translation_ml_>`_, or better, make a PR o
 <https://github.com/python/devguide/>`__.
 
 
-I have a translation, but it's not in git. What should I do?
+I have a translation, but it's not in Git. What should I do?
 ------------------------------------------------------------
 
 You can ask for help on the `translation mailing list <translation_ml_>`_, and
@@ -248,7 +248,7 @@ the team will help you create an appropriate repository. You can still use tools
 if you like.
 
 
-My git hierarchy does not match yours. Can I keep it?
+My Git hierarchy does not match yours. Can I keep it?
 -----------------------------------------------------
 
 No, inside the ``github.com/python`` organization we’ll all have the
