@@ -26,7 +26,7 @@ contribute a buildbot but have questions.
 
 As for what kind of buildbot to run...take a look at our `current fleet
 <https://buildbot.python.org/all/>`_.  Pretty much anything that isn't
-on that list would be interesting: different Linux/UNIX distributions,
+on that list would be interesting: different Linux/Unix distributions,
 different versions of the various OSes, other OSes if you or someone are
 prepared to make the test suite actually pass on that new OS.  Even if you only
 want to run an OS that's already on our list there may be utility in setting it
