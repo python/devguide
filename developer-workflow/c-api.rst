@@ -213,7 +213,7 @@ use this API reliably:
   we shouldn't break it *unnecessarily*.
 
 
-Moving an API from the public tier to unstable
+Moving an API from the public tier to Unstable
 ----------------------------------------------
 
 * Expose the API under its new name, with the ``PyUnstable_`` prefix.
