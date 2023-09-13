@@ -118,7 +118,7 @@ Contributors             Documentarians      Triagers                Core Develo
 :ref:`pullrequest`       :ref:`style-guide`  :ref:`helptriage`       :ref:`committing`
 :ref:`runtests`          :ref:`rst-primer`   :ref:`experts`          :ref:`devcycle`
 :ref:`fixingissues`      :ref:`translating`  :ref:`labels`           :ref:`motivations`
-:ref:`communication`                         :ref:`gh-faq`           :ref:`office hour`
+:ref:`communication`     :ref:`devguide`     :ref:`gh-faq`           :ref:`office hour`
 :ref:`gitbootcamp`                           :ref:`triage-team`      :ref:`experts`
 :ref:`devcycle`
 ======================== =================== ======================= =======================
