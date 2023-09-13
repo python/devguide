@@ -166,7 +166,7 @@ participating in the CPython core development process:
    business started declining) to being a full time independent consultant,
    David started contributing directly to CPython development.  He became a
    committer in 2009.  He subsequently took over primary maintenance of the
-   email package from Barry Warsaw, and contributed the unicode oriented API.
+   email package from Barry Warsaw, and contributed the Unicode oriented API.
    David is also active in mentoring new contributors and, when time is
    available, working on the infrastructure that supports CPython development,
    specifically the Roundup-based bug tracker and the buildbot system.
@@ -175,7 +175,7 @@ participating in the CPython core development process:
    primarily in Python, through the company in which he is a partner, `Murray &
    Walker, Inc <https://www.murrayandwalker.com>`_.  He has done contract work
    focused specifically on CPython development both through the PSF (the
-   kickstart of the email unicode API development) and directly funded by
+   kickstart of the email Unicode API development) and directly funded by
    interested corporations (additional development work on email funded by
    QNX, and work on CPython ICC support funded by Intel).  He would like to
    spend more of his (and his company's) time on open source work, and so is

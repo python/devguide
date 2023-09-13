@@ -10,11 +10,11 @@ Git Bootcamp and Cheat Sheet
 
    This section provides instructions on common tasks in CPython's
    workflow. It's designed to assist new contributors who have
-   some familiarity with git and GitHub.
+   some familiarity with Git and GitHub.
 
-   If you are new to git and GitHub, please become comfortable with
+   If you are new to Git and GitHub, please become comfortable with
    these instructions before submitting a pull request. As there are several
-   ways to accomplish these tasks using git and GitHub, this section reflects
+   ways to accomplish these tasks using Git and GitHub, this section reflects
    one method suitable for new contributors. Experienced contributors may
    desire a different approach.
 
@@ -23,9 +23,9 @@ In this section, we will go over some commonly used Git commands that are
 relevant to CPython's workflow.
 
 .. note::
-   Setting up git aliases for common tasks can be useful to you. You can
+   Setting up Git aliases for common tasks can be useful to you. You can
    get more information about that in
-   `git documentation <https://git-scm.com/book/en/v2/Git-Basics-Git-Aliases>`_
+   `Git documentation <https://git-scm.com/book/en/v2/Git-Basics-Git-Aliases>`_
 
 .. _fork-cpython:
 
@@ -544,7 +544,7 @@ page.  Find the event that says something like::
 
 By following the link to ``<commit_sha1>``, you will get the full commit hash.
 
-Alternatively, the commit hash can also be obtained by the following git
+Alternatively, the commit hash can also be obtained by the following Git
 commands:
 
 .. code-block:: bash

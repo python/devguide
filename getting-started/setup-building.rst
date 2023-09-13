@@ -15,28 +15,28 @@ directory structure of the CPython source code.
 Alternatively, if you have `Docker <https://www.docker.com/>`_ installed you
 might want to use `our official images
 <https://gitlab.com/python-devs/ci-images/blob/main/README.md>`_.  These
-contain the latest releases of several Python versions, along with git head,
+contain the latest releases of several Python versions, along with Git head,
 and are provided for development and testing purposes only.
 
 .. seealso::
 
    The :ref:`quick-reference` gives brief summary of the process from
-   installing git to submitting a pull request.
+   installing Git to submitting a pull request.
 
 .. _vcsetup:
 
-Install ``git``
-===============
+Install Git
+===========
 
-CPython is developed using `git <https://git-scm.com>`_ for version control. The git
-command line program is named ``git``; this is also used to refer to git
-itself. git is easily available for all common operating systems.
+CPython is developed using `Git <https://git-scm.com>`_ for version control. The Git
+command line program is named ``git``; this is also used to refer to Git
+itself. Git is easily available for all common operating systems.
 
 - **Install**
 
   As the CPython repo is hosted on GitHub, please refer to either the
   `GitHub setup instructions <https://docs.github.com/en/get-started/quickstart/set-up-git>`_
-  or the `git project instructions <https://git-scm.com>`_ for step-by-step
+  or the `Git project instructions <https://git-scm.com>`_ for step-by-step
   installation directions. You may also want to consider a graphical client
   such as `TortoiseGit <https://tortoisegit.org/>`_ or
   `GitHub Desktop <https://desktop.github.com/>`_.

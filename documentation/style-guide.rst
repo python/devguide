@@ -56,7 +56,7 @@ sections are in title case, you can either convert all titles to
 sentence case or use the dominant style in the new section title.
 
 Sentences that start with a word for which specific rules require
-starting it with a lower case letter should be avoided.
+starting it with a lowercase letter should be avoided.
 
 .. note::
 
@@ -92,7 +92,7 @@ Python
 reST
    For "reStructuredText," an easy to read, plaintext markup syntax
    used to produce Python documentation.  When spelled out, it is
-   always one word and both forms start with a lower case 'r'.
+   always one word and both forms start with a lowercase 'r'.
 
 Unicode
    The name of a character coding system. This is always written
