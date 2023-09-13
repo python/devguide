@@ -111,7 +111,7 @@ Guidelines for expanding/changing the public API
 
 - Functions returning ``PyObject *`` must return a valid pointer on success,
   and ``NULL`` if and only if an exception is raised.
-  Other API must return ``0`` on success,
+  Other API must return an ``int``: return ``0`` on success,
   and a negative value if and only if an exception is raised.
   ``-1`` should be used as the error value;
   the caller should use the C idiom ``if (func() < 0)`` to check for errors.
