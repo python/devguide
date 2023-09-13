@@ -1,6 +1,6 @@
 .. _committing:
 
-Accepting Pull Requests
+Accepting pull requests
 =======================
 
 .. highlight:: none

@@ -11,7 +11,7 @@ community that maintains Python.  We welcome your contributions to Python!
 
 .. _quick-reference:
 
-Quick Reference
+Quick reference
 ---------------
 
 Here are the basic steps needed to get set up and contribute a patch.
@@ -78,7 +78,7 @@ instructions please see the :ref:`setup guide <setup>`.
    Agreement (CLA) as described in the :ref:`Licensing <cla>` section of
    this guide.
 
-Quick Links
+Quick links
 -----------
 
 Here are some links that you probably will reference frequently while
@@ -148,7 +148,7 @@ happen and that process is also described as part of this guide:
 * :ref:`langchanges`
 
 
-Other Interpreter Implementations
+Other interpreter implementations
 ---------------------------------
 
 This guide is specifically for contributing to the Python reference interpreter,
@@ -176,7 +176,7 @@ developers to work on them.  Some major examples that may be of interest are:
   and learning to code on low-cost microcontroller boards.
 
 
-Key Resources
+Key resources
 -------------
 
 * Coding style guides
@@ -195,7 +195,7 @@ Key Resources
 
 .. _resources:
 
-Additional Resources
+Additional resources
 --------------------
 
 * Anyone can clone the sources for this guide.  See
@@ -217,7 +217,7 @@ Additional Resources
 * :ref:`Search this guide <search>`
 
 
-Code of Conduct
+Code of conduct
 ---------------
 Please note that all interactions on
 `Python Software Foundation <https://www.python.org/psf-landing/>`__-supported
@@ -236,7 +236,7 @@ Moved to :ref:`versions`
 
 .. _contents:
 
-Full Table of Contents
+Full table of contents
 ----------------------
 
 .. toctree::

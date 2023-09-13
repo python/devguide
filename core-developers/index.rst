@@ -1,5 +1,5 @@
 ===============
-Core Developers
+Core developers
 ===============
 
 .. toctree::

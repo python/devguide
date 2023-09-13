@@ -1,5 +1,5 @@
 =================
-Development Tools
+Development tools
 =================
 
 .. toctree::

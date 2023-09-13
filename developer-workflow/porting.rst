@@ -1,7 +1,7 @@
 .. _porting:
 
 =========================
-Porting to a New Platform
+Porting to a new platform
 =========================
 
 The first step is to familiarize yourself with the development toolchain on

@@ -58,7 +58,7 @@ When in doubt, new internal C functions should be defined in
 ``Include/internal`` using the ``extern`` keyword.
 
 Private names
---------------
+-------------
 
 Any API named with a leading underscore is also considered internal.
 There is currently only one main use case for using such names rather than
@@ -74,7 +74,7 @@ the :ref:`unstable-capi`:
 * APIs for very specialized uses like JIT compilers.
 
 
-Internal API Tests
+Internal API tests
 ------------------
 
 C tests for the internal C API live in ``Modules/_testinternalcapi.c``.
@@ -128,7 +128,7 @@ Please start a public discussion if these guidelines won't work for your API.
 
    By *return value*, we mean the value returned by the *C return statement*.
 
-C API Tests
+C API tests
 -----------
 
 Tests for the public C API live in the ``_testcapi`` module.
@@ -213,7 +213,7 @@ use this API reliably:
   we shouldn't break it *unnecessarily*.
 
 
-Moving an API from the public tier to Unstable
+Moving an API from the public tier to unstable
 ----------------------------------------------
 
 * Expose the API under its new name, with the ``PyUnstable_`` prefix.
@@ -411,7 +411,7 @@ Adding a new definition to the Limited API
 - Add tests -- see below.
 
 
-Limited API Tests
+Limited API tests
 -----------------
 
 Since Limited API is a subset of the C API, there's no need to test the

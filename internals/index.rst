@@ -1,5 +1,5 @@
 ===================
-CPython's Internals
+CPython's internals
 ===================
 
 .. toctree::

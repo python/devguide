@@ -2,7 +2,7 @@
 .. _gh-labels:
 
 =============
-GitHub Labels
+Github labels
 =============
 
 Triagers, core developers and bots can add labels on GitHub

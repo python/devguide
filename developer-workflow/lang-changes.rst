@@ -1,7 +1,7 @@
 .. _lang-changes:
 .. _langchanges:
 
-Changing the Python Language
+Changing the Python language
 ============================
 On occasion people come up with an idea on how to change or improve Python as a
 programming language. This document is meant to explain exactly what changes
@@ -9,7 +9,7 @@ have a reasonable chance of being considered and what the process is to propose
 changes to the language.
 
 
-What Qualifies
+What qualifies
 --------------
 First and foremost, it must be understood that changes to the Python
 programming language are difficult to make. When the language changes,
@@ -66,7 +66,7 @@ see `Justifying Python Language Changes`_.
 
 .. _lang-changes-pep-process:
 
-PEP Process
+PEP process
 -----------
 
 Once you are certain you have a language change proposal

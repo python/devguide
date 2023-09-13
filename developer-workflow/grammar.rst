@@ -1,7 +1,7 @@
 .. _grammar:
 
 ==========================
-Changing CPython's Grammar
+Changing CPython's grammar
 ==========================
 
 Abstract

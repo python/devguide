@@ -2,7 +2,7 @@
 .. _communication:
 
 ==============================
-Following Python's Development
+Following Python's development
 ==============================
 
 Python's development is communicated through a myriad of ways,
@@ -24,7 +24,7 @@ in return.
 
 .. _mailinglists:
 
-Mailing Lists
+Mailing lists
 =============
 
 .. note:: Some mailing lists have been supplanted by categories in the
@@ -95,7 +95,7 @@ It is also the designated venue for the core developer promotion votes
 (as the Discourse equivalent of the `python-committers`_ mailing list).
 
 Tutorials for new users
--------------------------
+-----------------------
 
 To start a topic or participate in any discussions in the forum, sign up and
 create an account using an email address or GitHub account. You can do so by
@@ -138,7 +138,7 @@ bottom progress bar to expand it.
 Notifications
 -------------
 
-Following categories (Category notifications)
+Following categories (category notifications)
 '''''''''''''''''''''''''''''''''''''''''''''
 
 Notifications can be set for individual categories and topics. To change any of these
@@ -151,7 +151,7 @@ different options: Watching, Tracking, Watching First Post, Normal, and Muted.
 All categories are set by default in Normal mode where you will only be notified
 if someone mentions your @name or replies to you.
 
-Following individual threads (Topic notifications)
+Following individual threads (topic notifications)
 ''''''''''''''''''''''''''''''''''''''''''''''''''
 
 To follow any individual topics or threads, you can adjust your notifications
@@ -239,7 +239,7 @@ that way. You can find their blogs (and various other developers who use Python)
 at https://planetpython.org/.
 
 
-Setting Expectations for Open Source Participation
+Setting expectations for open source participation
 ==================================================
 
 Burn-out is common in open source due to a misunderstanding of what users, contributors,
@@ -247,7 +247,7 @@ and maintainers should expect from each other. Brett Cannon gave a `talk <https:
 about this topic that sets out to help everyone set reasonable expectations of each other in
 order to make open source pleasant for everyone involved.
 
-Additional Repositories
+Additional repositories
 =======================
 
 `Python Core Workflow`_ hosts the codebase for tools such as `blurb`_.

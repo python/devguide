@@ -2,7 +2,7 @@
 .. _runtests:
 
 =========================
-Running and Writing Tests
+Running and writing tests
 =========================
 
 .. note::
@@ -97,7 +97,7 @@ you want the most thorough tests you should use the strenuous approach shown
 above.
 
 
-Unexpected Skips
+Unexpected skips
 ----------------
 
 Sometimes when running the test suite, you will see "unexpected skips"

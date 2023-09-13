@@ -1,7 +1,7 @@
 .. _git-boot-camp:
 .. _gitbootcamp:
 
-Git Bootcamp and Cheat Sheet
+Git bootcamp and cheat sheet
 ============================
 
 .. highlight:: console
@@ -29,7 +29,7 @@ relevant to CPython's workflow.
 
 .. _fork-cpython:
 
-Forking CPython GitHub Repository
+Forking CPython GitHub repository
 ---------------------------------
 
 You will only need to do this once.
@@ -44,7 +44,7 @@ You will only need to do this once.
 
 .. _clone-your-fork:
 
-Cloning a Forked CPython Repository
+Cloning a forked CPython repository
 -----------------------------------
 
 You will only need to do this once per machine.  From your command line::
@@ -58,7 +58,7 @@ It is also recommended to configure an ``upstream`` remote repository::
 
 You can also use SSH-based or HTTPS-based URLs.
 
-Configure the Remotes
+Configure the remotes
 ---------------------
 
 .. These steps are duplicated in setup-building in step 6 and 7.
@@ -73,7 +73,7 @@ Since one should never attempt to push to ``upstream``, configure
 
    git remote set-url --push upstream git@github.com:<username>/cpython.git
 
-Listing the Remote Repositories
+Listing the remote repositories
 -------------------------------
 
 To list the remote repositories that are configured, along with their URLs::
@@ -98,7 +98,7 @@ It should emit ``upstream``, indicating to track/pull changes for ``main`` from 
 
 .. _set-up-name-email:
 
-Setting Up Your Name and Email Address
+Setting up your name and email address
 --------------------------------------
 
 .. code-block:: bash
@@ -120,7 +120,7 @@ will reject all changesets having the wrong line endings::
 
     git config --global core.autocrlf input
 
-Creating and Switching Branches
+Creating and switching branches
 -------------------------------
 
 .. important::
@@ -159,7 +159,7 @@ on the 2.7 release from the ``upstream`` remote::
 
 .. _deleting_branches:
 
-Deleting Branches
+Deleting branches
 -----------------
 
 To delete a **local** branch that you no longer need::
@@ -174,7 +174,7 @@ To delete a **remote** branch::
 You may specify more than one branch for deletion.
 
 
-Renaming Branch
+Renaming branch
 ---------------
 
 The CPython repository's default branch was renamed from ``master`` to
@@ -209,7 +209,7 @@ rename your local branch as follows::
 
 .. _commit-changes:
 
-Staging and Committing Files
+Staging and committing files
 ----------------------------
 
 1. To show the current changes::
@@ -227,7 +227,7 @@ Staging and Committing Files
 
       git commit -m "This is the commit message."
 
-Reverting Changes
+Reverting changes
 -----------------
 
 To revert changes to a file that has not been committed yet::
@@ -239,7 +239,7 @@ the origin is at::
 
    git reset --hard HEAD
 
-Stashing Changes
+Stashing changes
 ----------------
 
 To stash away changes that are not ready to be committed yet::
@@ -252,7 +252,7 @@ To re-apply the last stashed change::
 
 .. _diff-changes:
 
-Comparing Changes
+Comparing changes
 -----------------
 
 View all non-commited changes::
@@ -278,7 +278,7 @@ defined in :cpy-file:`.gitattributes`, found in the repository root.
 
 .. _push-changes:
 
-Pushing Changes
+Pushing changes
 ---------------
 
 Once your changes are ready for a review or a pull request, you will need to push
@@ -289,7 +289,7 @@ them to the remote repository.
    git switch <branch-name>
    git push origin <branch-name>
 
-Creating a Pull Request
+Creating a pull request
 -----------------------
 
 1. Go to https://github.com/python/cpython.
@@ -308,7 +308,7 @@ Creating a Pull Request
 You should include the issue number in the title of the PR,
 in the format ``gh-NNNNN: <PR Title>``.
 
-Linking to Issues and Pull Requests
+Linking to issues and pull requests
 -----------------------------------
 
 You can link to issues and pull requests using ``gh-NNNNN`` (this form is
@@ -327,7 +327,7 @@ you know for sure that a single PR is enough to address and close the issue.
 .. _bedevere: https://github.com/python/bedevere
 .. _special keywords: https://docs.github.com/en/issues/tracking-your-work-with-issues/linking-a-pull-request-to-an-issue#linking-a-pull-request-to-an-issue-using-a-keyword
 
-Updating your CPython Fork
+Updating your CPython fork
 --------------------------
 
 Scenario:
@@ -378,7 +378,7 @@ When it happens, you need to resolve conflict.  See these articles about resolvi
 
 .. _git_from_patch:
 
-Applying a Patch to Git
+Applying a patch to Git
 -----------------------
 
 Scenario:
@@ -421,7 +421,7 @@ Solution:
 
 .. _git_pr:
 
-Downloading Other's Patches
+Downloading other's patches
 ---------------------------
 
 Scenario:
@@ -457,7 +457,7 @@ local copy of a pull request as follows::
 
 .. _accepting-and-merging-a-pr:
 
-Accepting and Merging a Pull Request
+Accepting and merging a pull request
 ------------------------------------
 
 Pull requests can be accepted and merged by a Python Core Developer.
@@ -503,7 +503,7 @@ PR life cycle, while being irrelevant to the final change.
 
 Finally, press the ``Confirm squash and merge`` button.
 
-Cancelling an Automatic Merge
+Cancelling an automatic merge
 -----------------------------
 
 If you notice a problem with a pull request that was accepted and where
@@ -524,7 +524,7 @@ dismissing your previous review that requested changes.
 Note that pushing new changes after the auto-merge flow was enabled
 does **NOT** stop it.
 
-Backporting Merged Changes
+Backporting merged changes
 --------------------------
 
 A pull request may need to be backported into one of the maintenance branches
@@ -574,7 +574,7 @@ Example of bad backport commit message::
     * Add method A to the spam module
     * Update the documentation of the spam module
 
-Editing a Pull Request Prior to Merging
+Editing a pull request prior to merging
 ---------------------------------------
 
 When a pull request submitter has enabled the `Allow edits from maintainers`_

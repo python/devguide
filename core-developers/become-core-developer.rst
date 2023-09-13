@@ -2,10 +2,10 @@
 .. _coredev:
 
 ==============================
-How to Become a Core Developer
+How to become a core developer
 ==============================
 
-What it Takes
+What it takes
 =============
 
 When you have consistently contributed patches which meet quality standards
@@ -22,7 +22,7 @@ an official offer. How core developers come to that agreement are outlined in
 :pep:`13`.
 
 
-Gaining Commit Privileges
+Gaining commit privileges
 =========================
 
 After a candidate has demonstrated consistent contributions, commit privileges

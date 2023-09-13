@@ -1,7 +1,7 @@
 .. _development-cycle:
 .. _devcycle:
 
-Development Cycle
+Development cycle
 =================
 
 The responsibilities of a core developer shift based on what kind of branch of
@@ -207,13 +207,13 @@ changes to the branch.  After the final release is published, the full
 :ref:`development cycle <stages>` starts again for the next minor version.
 
 
-Repository Administration
+Repository administration
 '''''''''''''''''''''''''
 
 The source code is currently hosted on `GitHub
 <https://github.com/python/cpython>`_ in the `Python organization <https://github.com/python/>`_.
 
-Organization Repository Policy
+Organization repository policy
 ------------------------------
 
 Within the `GitHub Python organization <https://github.com/python/>`_,
@@ -254,7 +254,7 @@ specifically want to “bless” one implementation (as with e.g.
 `pythoncapi-compat <https://github.com/python/pythoncapi-compat>`_).
 
 
-Organization Owner Policy
+Organization owner policy
 -------------------------
 
 The GitHub Organization Owner role allows for full management of all aspects of
@@ -281,7 +281,7 @@ Owner of the Python Organization.
 
 .. _current owners:
 
-Current Owners
+Current owners
 --------------
 
 +----------------------+--------------------------------+-----------------+
@@ -307,7 +307,7 @@ mentioned to request assistance from an organization owner.
 
 .. _be performed: https://docs.github.com/en/organizations/managing-peoples-access-to-your-organization-with-roles/roles-in-an-organization#permissions-for-organization-roles
 
-Repository Administrator Role Policy
+Repository administrator role policy
 ------------------------------------
 
 The Administrator role on the repository allows for managing all aspects
@@ -328,7 +328,7 @@ who no longer necessitate this level of access will be removed with notice.
 Multi-Factor Authentication must be enabled by the user in order to remain an
 Administrator of the repository.
 
-Current Administrators
+Current administrators
 ----------------------
 
 +-------------------+----------------------------------------------------------+-----------------+
@@ -353,7 +353,7 @@ Current Administrators
 | Mariatta Wijaya   | Maintainer of bedevere, blurb_it and miss-islington      | Mariatta        |
 +-------------------+----------------------------------------------------------+-----------------+
 
-Repository Release Manager Role Policy
+Repository release manager role policy
 --------------------------------------
 
 Release Managers for :ref:`in-development <indevbranch>`, :ref:`maintenance
