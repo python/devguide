@@ -1,7 +1,7 @@
 .. _stdlib:
 .. _stdlibchanges:
 
-Adding to the Stdlib
+Adding to the stdlib
 ====================
 
 While the stdlib contains a great amount of useful code, sometimes you want
@@ -61,7 +61,7 @@ over other available solutions. All of this means that additions to the stdlib
 are not taken lightly.
 
 
-Acceptable Types of Modules
+Acceptable types of modules
 '''''''''''''''''''''''''''
 Typically two types of modules get added to the stdlib. One type is a module
 which implements something that is difficult to get right. A good example of
@@ -120,7 +120,7 @@ also helps to make sure that the overall design of the module continues to be
 uniform.
 
 
-Proposal Process
+Proposal process
 ''''''''''''''''
 
 If the module you want to propose adding to the stdlib meets the requirements,

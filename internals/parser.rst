@@ -1,7 +1,7 @@
 .. _parser:
 
 ===================
-Guide to the Parser
+Guide to the parser
 ===================
 
 :Author: Pablo Galindo Salgado
@@ -24,7 +24,7 @@ outputs the parser. The way the Python language is changed is therefore by
 modifying the grammar file and developers rarely need to interact with the
 parser generator itself other than use it to generate the parser.
 
-How PEG Parsers Work
+How PEG parsers work
 ====================
 
 .. _how-peg-parsers-work:
@@ -159,7 +159,7 @@ the rule: ::
 If the return type is omitted, then a ``void *`` is returned in C and an
 ``Any`` in Python.
 
-Grammar Expressions
+Grammar expressions
 -------------------
 
 ``# comment``
@@ -306,7 +306,7 @@ and "hidden left-recursion" like::
 
   rule: 'optional'? rule '@' some_other_rule
 
-Variables in the Grammar
+Variables in the grammar
 ------------------------
 
 A sub-expression can be named by preceding it with an identifier and an
@@ -641,7 +641,7 @@ when writing actions. In the C parser, some of these automatic variable names ar
   which is normally used to create AST nodes as almost all constructors need these attributes to be provided. All of the
   location variables are taken from the location information of the current token.
 
-Hard and Soft keywords
+Hard and soft keywords
 ----------------------
 
 .. note::
@@ -722,7 +722,7 @@ error messages.
     tokenizer errors such as unclosed parenthesis will be reported only after the
     parser finishes without returning anything.
 
-How Syntax errors are reported
+How syntax errors are reported
 ------------------------------
 
 As described previously in the :ref:`how PEG parsers work section

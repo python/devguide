@@ -2,7 +2,7 @@
 .. _buildworker:
 
 ====================
-New Buildbot Workers
+New buildbot workers
 ====================
 
 .. highlight:: bash
@@ -274,7 +274,7 @@ or, if possible, providing ssh access to a committer to run experiments to try
 to resolve the issue.
 
 
-Required Ports
+Required ports
 ==============
 
 The worker operates as a *client* to the *buildmaster*.  This means that
@@ -304,7 +304,7 @@ Many tests will also create local TCP sockets and connect to them, usually
 using either ``localhost`` or ``127.0.0.1``.
 
 
-Required Resources
+Required resources
 ==================
 
 Based on the last time we did a `survey
@@ -322,7 +322,7 @@ that Python compiles correctly on the platform and can run the rest of the test
 suite.
 
 
-Security Considerations
+Security considerations
 =======================
 
 We only allow builds to be triggered against commits to the

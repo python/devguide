@@ -1,5 +1,5 @@
 ====================
-Development Workflow
+Development workflow
 ====================
 
 .. toctree::

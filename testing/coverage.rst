@@ -1,7 +1,7 @@
 .. _coverage:
 
 ======================
-Increase Test Coverage
+Increase test coverage
 ======================
 
 Python development follows a practice that all semantic changes and additions
@@ -36,7 +36,7 @@ explicit coverage of the module is from its own set of tests instead of from
 implicit testing by other code that happens to use the module.
 
 
-Common Gotchas
+Common gotchas
 ==============
 
 Please realize that coverage reports on modules already imported before coverage
@@ -54,7 +54,7 @@ prefer that other types of tests not be used (e.g., blackbox). When in doubt,
 stick with whitebox testing in order to properly exercise the code.
 
 
-Measuring Coverage
+Measuring coverage
 ==================
 
 It should be noted that a quirk of running coverage over Python's own stdlib is
@@ -79,7 +79,7 @@ provided by the stdlib then you can :ref:`use test.regrtest
 
 .. _install_coverage:
 
-Install Coverage
+Install coverage
 ''''''''''''''''
 
 By default, pip will not install into the in-development version of Python you
@@ -122,7 +122,7 @@ it. For this, you will again need to use the full path to that installation.
 
 .. _coverage_usage:
 
-Basic Usage
+Basic usage
 '''''''''''
 
 The following command will tell you if your copy of coverage works (substitute
@@ -176,7 +176,7 @@ with pages that visibly show what lines of code were or were not executed.
 
 .. _branch_coverage:
 
-Branch Coverage
+Branch coverage
 '''''''''''''''
 
 For the truly daring, you can use another powerful feature of coverage.py:
@@ -193,7 +193,7 @@ This will lead to the report stating not only what lines were not covered, but
 also what branch paths were not executed.
 
 
-Coverage Results For Modules Imported Early On
+Coverage results for modules imported early on
 ''''''''''''''''''''''''''''''''''''''''''''''
 
 For the *truly truly* daring, you can use a hack to get coverage.py to include
@@ -256,7 +256,7 @@ files for each executed module along with which lines were executed how many
 times.
 
 
-Filing the Issue
+Filing the issue
 ================
 Once you have increased coverage,
 you need to create an issue on the `issue tracker`_ and

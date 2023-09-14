@@ -1,7 +1,7 @@
 .. _motivations:
 
 ============================
-Motivations and Affiliations
+Motivations and affiliations
 ============================
 
 CPython core developers participate in the core development process for a

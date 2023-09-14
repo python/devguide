@@ -1,7 +1,7 @@
 .. _compiler:
 
 ===============
-Compiler Design
+Compiler design
 ===============
 
 .. highlight:: none
@@ -40,7 +40,7 @@ Various C files, including :cpy-file:`Parser/parser.c` are generated from
 these (see :ref:`grammar`).
 
 
-Abstract Syntax Trees (AST)
+Abstract syntax trees (AST)
 ===========================
 
 .. _compiler-ast-trees:
@@ -129,7 +129,7 @@ this case) a ``stmt_ty`` struct with the appropriate initialization.  The
 initializes the *name*, *args*, *body*, and *attributes* fields.
 
 
-Memory Management
+Memory management
 =================
 
 Before discussing the actual implementation of the compiler, a discussion of
@@ -163,7 +163,7 @@ are very rare.  However, if you've allocated a PyObject, you must tell
 the arena about it by calling ``PyArena_AddPyObject()``.
 
 
-Source Code to AST
+Source code to AST
 ==================
 
 The AST is generated from source code using the function
@@ -290,7 +290,7 @@ number is passed as the last parameter to each ``stmt_ty`` function.
 .. seealso:: :pep:`617` (PEP 617 -- New PEG parser for CPython)
 
 
-Control Flow Graphs
+Control flow graphs
 ===================
 
 A *control flow graph* (often referenced by its acronym, CFG) is a
@@ -336,7 +336,7 @@ output order) by doing a post-order depth-first search on the CFG
 following the edges.
 
 
-AST to CFG to Bytecode
+AST to CFG to bytecode
 ======================
 
 With the AST created, the next step is to create the CFG. The first step
@@ -441,7 +441,7 @@ flattening and then a ``PyCodeObject`` is created.  All of this is
 handled by calling ``assemble()``.
 
 
-Introducing New Bytecode
+Introducing new bytecode
 ========================
 
 Sometimes a new feature requires a new opcode.  But adding new bytecode is
@@ -495,7 +495,7 @@ bytecode of frozen importlib files.  You have to run ``make`` again after this
 for recompiling generated C files.
 
 
-Code Objects
+Code objects
 ============
 
 The result of ``PyAST_CompileObject()`` is a ``PyCodeObject`` which is defined in
@@ -507,7 +507,7 @@ will also need a new case statement for the new opcode in the big switch
 statement in ``_PyEval_EvalFrameDefault()``.
 
 
-Important Files
+Important files
 ===============
 
 * :cpy-file:`Parser/`
@@ -614,7 +614,7 @@ Important Files
      (named ``MAGIC_NUMBER``) for bytecode versioning.
 
 
-Known Compiler-related Experiments
+Known compiler-related experiments
 ==================================
 
 This section lists known experiments involving the compiler (including

@@ -1,7 +1,7 @@
 .. _markup:
 
 =======================
-reStructuredText Markup
+reStructuredText markup
 =======================
 
 .. highlight::  rest
@@ -10,7 +10,7 @@ This document describes the custom reStructuredText markup introduced by Sphinx
 to support Python documentation and how it should be used.
 
 
-Quick Reference
+Quick reference
 ===============
 
 This table summarizes which markup should be used for some commonly used
@@ -38,7 +38,7 @@ comments                ``.. a comment``                            :ref:`commen
 
 .. _rst-primer:
 
-reStructuredText Primer
+reStructuredText primer
 =======================
 
 This section is a brief introduction to reStructuredText (reST) concepts and
@@ -89,7 +89,7 @@ provide semantic markup and cross-referencing of identifiers, as described in
 the appropriate section.  The general syntax is ``:rolename:`content```.
 
 
-Lists and Quotes
+Lists and quotes
 ----------------
 
 List markup is natural: just place an asterisk at the start of a paragraph and
@@ -133,7 +133,7 @@ Paragraphs are quoted by just indenting them more than the surrounding
 paragraphs.
 
 
-Source Code
+Source code
 -----------
 
 Literal code blocks are introduced by ending a paragraph with the special marker
@@ -200,7 +200,7 @@ Python documentation, here is a suggested convention:
 * ``"``, for paragraphs
 
 
-Explicit Markup
+Explicit markup
 ---------------
 
 "Explicit markup" is used in reST for most constructs that need special
@@ -291,7 +291,7 @@ There are some problems one commonly runs into while authoring reST documents:
 
 .. _additional-markup-constructs:
 
-Additional Markup Constructs
+Additional markup constructs
 ============================
 
 Sphinx adds a lot of new directives and interpreted text roles to standard reST

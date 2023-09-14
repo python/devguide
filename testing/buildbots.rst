@@ -1,7 +1,7 @@
 .. _buildbots:
 
 ======================
-Working with Buildbots
+Working with buildbots
 ======================
 
 .. highlight:: bash
@@ -36,7 +36,7 @@ need assistance with the buildbots, a good way to get help is to either:
   worker owners are subscribed; or
 * contact the release manager of the branch you have issues with.
 
-Buildbot failures on Pull Requests
+Buildbot failures on pull requests
 ==================================
 
 The ``bedevere-bot`` on GitHub will put a message on your merged Pull Request

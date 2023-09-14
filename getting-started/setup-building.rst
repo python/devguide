@@ -2,7 +2,7 @@
 .. _setup:
 
 ==================
-Setup and Building
+Setup and building
 ==================
 
 .. highlight:: console
@@ -604,7 +604,7 @@ To overcome this problem, auto-generated files are also checked into the
 Git repository. So if you don't touch the auto-generation scripts, there's
 no real need to auto-generate anything.
 
-Editors and Tools
+Editors and tools
 =================
 
 Python is used widely enough that practically all code editors have some form
@@ -733,7 +733,7 @@ up from where you left off!
 
 .. _codespaces-use-locally:
 
-Use Codespaces Locally
+Use Codespaces locally
 ----------------------
 
 On the bottom left side of the codespace screen you will see a green or grey

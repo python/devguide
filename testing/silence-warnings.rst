@@ -2,7 +2,7 @@
 .. _silencewarnings:
 
 ====================================
-Silence Warnings From the Test Suite
+Silence warnings from the test suite
 ====================================
 
 When running Python's test suite, no warnings should result when you run it

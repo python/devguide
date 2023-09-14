@@ -1,7 +1,7 @@
 .. _experts:
 
 =============
-Experts Index
+Experts index
 =============
 
 This document has tables that list Python Modules, Tools, Platforms and
@@ -362,7 +362,7 @@ version control     merwok, ezio-melotti
 ==================  ==========================================================
 
 
-Documentation Translations
+Documentation translations
 ==========================
 
 For a list of translators, see :ref:`this table about translations <translating>`.

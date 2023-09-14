@@ -2,11 +2,11 @@
 .. _tracker:
 
 =============
-Issue Tracker
+Issue tracker
 =============
 
 
-Using the Issue Tracker
+Using the issue tracker
 =======================
 
 If you think you have found a bug in Python, you can report it to the
@@ -124,7 +124,7 @@ By writing :samp:`Duplicate of #{NNN}` in a comment, you can
 `mark issues and PRs as duplicates <duplicates_>`_.
 
 
-Disagreement With a Resolution on the Issue Tracker
+Disagreement with a resolution on the issue tracker
 ===================================================
 
 As humans, we will have differences of opinions from time to time. First and

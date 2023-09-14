@@ -3,7 +3,7 @@
 .. _garbage_collector:
 
 ========================
-Garbage Collector Design
+Garbage collector design
 ========================
 
 :Author: Pablo Galindo Salgado

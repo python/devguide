@@ -3,7 +3,7 @@
 .. _pullrequest:
 
 ===========================
-Lifecycle of a Pull Request
+Lifecycle of a pull request
 ===========================
 
 .. highlight:: bash
@@ -19,7 +19,7 @@ the official CPython repository (``upstream``).
 
 .. _pullrequest-quickguide:
 
-Quick Guide
+Quick guide
 ===========
 
 `Clear communication`_ is key to contributing to any project, especially an
@@ -70,7 +70,7 @@ Here is a quick overview of how you can contribute to CPython:
 
 .. _pullrequest-steps:
 
-Step-by-step Guide
+Step-by-step guide
 ==================
 
 You should have already :ref:`set up your system <setup>`,
@@ -152,7 +152,7 @@ You should have already :ref:`set up your system <setup>`,
 
 .. _resolving-merge-conflicts:
 
-Resolving Merge Conflicts
+Resolving merge conflicts
 -------------------------
 
 When merging changes from different branches (or variants of a branch on
@@ -181,7 +181,7 @@ for a detailed technical explanation.
 
 .. _good-prs:
 
-Making Good PRs
+Making good PRs
 ===============
 
 When creating a pull request for submission, there are several things that you
@@ -274,7 +274,7 @@ making a complete patch.
 
 .. _good-commits:
 
-Making Good Commits
+Making good commits
 ===================
 
 Each feature or bugfix should be addressed by a single pull request,
@@ -386,7 +386,7 @@ another so they can easily verify whether their comments have been addressed.
 The commits will be squashed when the pull request is merged.
 
 
-Converting an Existing Patch from b.p.o to GitHub
+Converting an existing patch from b.p.o to GitHub
 =================================================
 
 When a patch exists in the `issue tracker`_ that should be converted into a
@@ -430,7 +430,7 @@ thus iterate until a satisfactory solution has emerged.
 
 .. _how-to-review-a-pull-request:
 
-How to Review a Pull Request
+How to review a pull request
 ----------------------------
 
 One of the bottlenecks in the Python development
@@ -471,7 +471,7 @@ code and leave comments in the pull request or issue tracker.
    However, please be aware that if you are recommending a pull request as
    'merge-ready', you should always make sure the entire test suite passes.
 
-Leaving a Pull Request Review on GitHub
+Leaving a pull request review on GitHub
 =======================================
 
 When you review a pull request, you should provide additional details and context
@@ -487,7 +487,7 @@ Instead of simply "approving" the pull request, leave comments.  For example:
 #. Comment on what is "good" about the pull request, not just the "bad". Doing
    so will make it easier for the PR author to find the good in your comments.
 
-Dismissing Review from Another Core Developer
+Dismissing review from another core developer
 =============================================
 
 A core developer can dismiss another core developer's review if they confirmed
@@ -496,7 +496,7 @@ the PR to themselves, then it is a sign that they are actively looking after
 the PR, and their review should not be dismissed.
 
 
-Committing/Rejecting
+Committing/rejecting
 ====================
 
 Once your pull request has reached an acceptable state (and thus considered

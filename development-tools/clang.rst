@@ -1,7 +1,7 @@
 .. _clang:
 
 ===========================
-Dynamic Analysis with Clang
+Dynamic analysis with Clang
 ===========================
 
 .. highlight:: bash
@@ -25,7 +25,7 @@ front-end provides access to LLVM's optimizer and code generator. The
 sanitizers - or checkers - are hooks into the code generation phase to
 instrument compiled code so suspicious behavior is flagged.
 
-What are Sanitizers?
+What are sanitizers?
 ====================
 
 Clang sanitizers are runtime checkers used to identify suspicious and undefined
@@ -52,7 +52,7 @@ the war chest to uncovering bugs and improving code quality. Clang should be
 used to compliment other methods, including Code Reviews, Valgrind, Coverity,
 etc.
 
-Clang/LLVM Setup
+Clang/LLVM setup
 ================
 
 This portion of the document covers downloading, building and installing Clang
@@ -62,7 +62,7 @@ compiler, the compiler front end and the compiler runtime library.
 In preparation you should create a scratch directory. Also ensure you are using
 Python 2 and not Python 3. Python 3 will cause the build to fail.
 
-Download, Build and Install
+Download, build and install
 ---------------------------
 
 Perform the following to download, build and install the Clang/LLVM 3.4. ::
@@ -148,7 +148,7 @@ example, you might want to run a ``scan-build`` or examine the results with
     things work as expected. If a library is missing, then you should search for
     it in the Clang/LLVM build directory.
 
-Python Build Setup
+Python build setup
 ==================
 
 This portion of the document covers invoking Clang and LLVM with the options
@@ -306,7 +306,7 @@ compile (formatting added for clarity):
     If its not installed, then look in the Clang/LLVM build directory for it and
     copy it to ``/usr/local/bin``.
 
-Blacklisting (Ignoring) Findings
+Blacklisting (ignoring) findings
 --------------------------------
 
 .. highlight:: none

@@ -2,7 +2,7 @@
 .. _documenting:
 
 ===============
-Getting Started
+Getting started
 ===============
 
 .. highlight::  rest
@@ -169,13 +169,13 @@ replace ``html`` above with the desired builder ``name``.
 .. _venv-create: https://packaging.python.org/en/latest/guides/installing-using-pip-and-virtual-environments/#creating-a-virtual-environment
 
 
-Style Guide
+Style guide
 ===========
 
-Moved to :doc:`style-guide`
+Moved to :doc:`style-guide`.
 
 
 Translating
 ===========
 
-Moved to :doc:`translating`
+Moved to :doc:`translating`.

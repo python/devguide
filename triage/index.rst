@@ -1,5 +1,5 @@
 ===================
-Issues and Triaging
+Issues and triaging
 ===================
 
 .. toctree::

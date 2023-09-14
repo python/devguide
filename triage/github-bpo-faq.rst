@@ -2,7 +2,7 @@
 .. _gh-faq:
 
 ===========================
-GitHub Issues for BPO Users
+GitHub issues for BPO users
 ===========================
 
 Here are some frequently asked questions about how to do things in
@@ -82,7 +82,7 @@ automatically mark a task as complete if the other referenced issue is
 closed. More details in the `official GitHub documentation
 <https://docs.github.com/en/get-started/writing-on-github/working-with-advanced-formatting/about-task-lists>`_.
 
-What on Earth is a "mannequin"?
+What on earth is a "mannequin"?
 ===============================
 
 For issues migrated to GitHub from `bpo`_ where the authors or commenters
@@ -97,12 +97,12 @@ that happened in the issue. In case the user did share their GitHub account
 name in their `bpo`_ profile, we use that. Otherwise, their classic `bpo`_
 username is used instead.
 
-Where did the "Resolution" field go?
+Where did the "resolution" field go?
 ====================================
 
 Based on historical data we found it not being used very often.
 
-Where did the "Low", "High", and "Critical" priorities go?
+Where did the "low", "high", and "critical" priorities go?
 ==========================================================
 
 Based on historical data we found those not being used very often.
