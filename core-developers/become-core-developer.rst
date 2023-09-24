@@ -29,8 +29,7 @@ After a candidate has demonstrated consistent contributions, commit privileges
 are granted through these steps:
 
 #. A core developer (submitter, usually the mentor) starts a poll in the
-   `Committers category`_ on the `Python Discourse`_ and cross-posts it to
-   the `python-committers mailing list`_.
+   `Committers category`_ on the `Python Discourse`_.
 
    - Open for 7 days
    - Results shown upon close
@@ -45,8 +44,6 @@ are granted through these steps:
 
    - A request for account details as required by
      `🔒 python/voters <https://github.com/python/voters>`_
-   - A request for the committer's preferred address for subscription to
-     the `python-committers mailing list`_
    - A reminder about the `Code of Conduct`_ and guidance on reporting issues
      to the PSF Conduct WG
 
@@ -62,4 +59,3 @@ are granted through these steps:
 .. _Code of Conduct: https://www.python.org/psf/conduct/
 .. _Committers category: https://discuss.python.org/c/committers/5
 .. _Python Discourse: https://discuss.python.org
-.. _python-committers mailing list: https://mail.python.org/mailman3/lists/python-committers.python.org/
