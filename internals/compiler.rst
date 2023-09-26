@@ -440,34 +440,6 @@ search.  Once flattened, jump offsets are backpatched based on the
 flattening and then a ``PyCodeObject`` is created.  All of this is
 handled by calling ``assemble()``.
 
-
-
-
-Sometimes a new feature requires a new opcode.  But adding new bytecode is
-not as simple as just suddenly introducing new bytecode in the AST ->
-bytecode step of the compiler.  Several pieces of code throughout Python depend
-on having correct information about what bytecode exists.
-
-First, you must choose a name, implement the bytecode in
-:cpy-file:`Python/bytecodes.c`, and add a documentation entry in
-:cpy-file:`Doc/library/dis.rst`. Then run ``make regen-cases`` to
-assign a number for it (see :cpy-file:`Include/opcode_ids.h`) and
-regenerate a number of files with the actual implementation of the
-bytecodes (:cpy-file:`Python/generated_cases.c.h`) and additional
-files with metadata about them.
-
-With a new bytecode you must also change what is called the magic number for
-.pyc files.  The variable ``MAGIC_NUMBER`` in
-:cpy-file:`Lib/importlib/_bootstrap_external.py` contains the number.
-Changing this number will lead to all .pyc files with the old ``MAGIC_NUMBER``
-to be recompiled by the interpreter on import.  Whenever ``MAGIC_NUMBER`` is
-changed, the ranges in the ``magic_values`` array in :cpy-file:`PC/launcher.c`
-must also be updated.  Changes to :cpy-file:`Lib/importlib/_bootstrap_external.py`
-will take effect only after running ``make regen-importlib``. Running this
-command before adding the new bytecode target to :cpy-file:`Python/bytecodes.c`
-(followed by ``make regen-cases``) will result in an error. You should only run
-``make regen-importlib`` after the new bytecode target has been added.
-
 .. note:: On Windows, running the ``./build.bat`` script will automatically
    regenerate the required files without requiring additional arguments.
 
