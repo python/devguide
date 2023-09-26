@@ -578,12 +578,12 @@ Important Files
 
 * :cpy-file:`Lib/`
    * :cpy-file:`Lib/opcode.py`: Master list of bytecode; if this file is
-     modified you must modify several other files accordingly
-     (see "`Introducing New Bytecode`_")
+     modified you must modify several other files accordingly.
 
    * :cpy-file:`Lib/importlib/_bootstrap_external.py`: Home of the magic number
      (named ``MAGIC_NUMBER``) for bytecode versioning.
-     
+
+
 References
 ==========
 
@@ -595,11 +595,4 @@ References
 .. _The Zephyr Abstract Syntax Description Language.:
    https://www.cs.princeton.edu/research/techreps/TR-554-97
 
-.. [#skip-peephole] Skip Montanaro's Peephole Optimizer Paper
-   (https://legacy.python.org/workshops/1998-11/proceedings/papers/montanaro/montanaro.html)
 
-.. [#Bytecodehacks] Bytecodehacks Project
-   (https://bytecodehacks.sourceforge.net/bch-docs/bch/index.html)
-
-.. [#CALL_ATTR] CALL_ATTR opcode
-   (https://bugs.python.org/issue709744)
