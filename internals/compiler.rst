@@ -583,25 +583,7 @@ Important Files
 
    * :cpy-file:`Lib/importlib/_bootstrap_external.py`: Home of the magic number
      (named ``MAGIC_NUMBER``) for bytecode versioning.
-
-
-This section lists known experiments involving the compiler (including
-bytecode).
-
-Skip Montanaro presented a paper at a Python workshop on a peephole optimizer
-[#skip-peephole]_.
-
-Michael Hudson has a non-active SourceForge project named Bytecodehacks
-[#Bytecodehacks]_ that provides functionality for playing with bytecode
-directly.
-
-An opcode to combine the functionality of ``LOAD_ATTR``/``CALL_FUNCTION`` was
-created named ``CALL_ATTR`` [#CALL_ATTR]_.  Currently only works for classic
-classes and for new-style classes rough benchmarking showed an actual slowdown
-thanks to having to support both classic and new-style classes.
-
-
-
+     
 References
 ==========
 
