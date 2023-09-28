@@ -77,11 +77,10 @@ releases; the terms are used interchangeably. These releases have a
 **micro version** number greater than zero.
 
 The only changes allowed to occur in a maintenance branch without debate are
-bug fixes. Also, a general rule for maintenance branches is that compatibility
-must not be broken at any point between sibling micro releases (3.5.1, 3.5.2,
-etc.). For both rules, only rare exceptions are accepted and **must** be
-discussed first. Among the rare exceptions to the rules of bug fixes and compatibility,
-backporting of documentation and tests is encouraged.
+bug fixes and the backporting of documentation and tests.  Also, a general rule
+for maintenance branches is that compatibility must not be broken at any point
+between sibling micro releases (3.5.1, 3.5.2, etc.). For both rules,
+only rare exceptions are accepted and **must** be discussed first.
 
 Backporting serves dual purposes. First, it increases the visibility of
 documentation changes since most users refer to stable versions at
