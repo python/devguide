@@ -77,10 +77,21 @@ releases; the terms are used interchangeably. These releases have a
 **micro version** number greater than zero.
 
 The only changes allowed to occur in a maintenance branch without debate are
-bug fixes.  Also, a general rule for maintenance branches is that compatibility
+bug fixes. Also, a general rule for maintenance branches is that compatibility
 must not be broken at any point between sibling micro releases (3.5.1, 3.5.2,
-etc.).  For both rules, only rare exceptions are accepted and **must** be
-discussed first.
+etc.). For both rules, only rare exceptions are accepted and **must** be
+discussed first. Among the rare exceptions to the rules of bug fixes and compatibility,
+backporting of documentation and tests is encouraged.
+
+Backporting serves dual purposes. First, it increases the visibility of
+documentation changes since most users refer to stable versions at
+`docs.python.org/3/ <https://docs.python.org/3/>`_ rather
+than the `docs.python.org/dev/ <https://docs.python.org/dev/>`_ documentation.
+Second, it minimizes conflicts for future bugfix backports.
+
+Backporting should target enhancements in documentation and tests for
+currently **stable** versions, specifically branches in a **bugfix** release cycle
+or higher.
 
 A new maintenance branch is normally created when the next feature release
 cycle reaches feature freeze, i.e. at its first beta pre-release.
