@@ -32,6 +32,8 @@ exclude_patterns = [
     '.github',
 ]
 
+nitpicky = True
+
 
 html_theme = 'furo'
 html_theme_options = {
