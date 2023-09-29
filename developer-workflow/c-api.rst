@@ -217,6 +217,8 @@ Moving an API from the public tier to Unstable
 ----------------------------------------------
 
 * Expose the API under its new name, with the ``PyUnstable_`` prefix.
+  The ``PyUnstable_`` prefix must be used for all symbols (functions, macros,
+  variables, etc.).
 * Make the old name an alias (e.g. a ``static inline`` function calling the
   new function).
 * Deprecate the old name, typically using :c:macro:`Py_DEPRECATED`.
