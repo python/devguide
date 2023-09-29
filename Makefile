@@ -5,7 +5,7 @@
 PYTHON        = python3
 VENVDIR       = ./venv
 BUILDDIR      = _build
-SPHINXOPTS    = -W --keep-going -n
+SPHINXOPTS    = -W --keep-going
 SPHINXBUILD   = $(VENVDIR)/bin/sphinx-build
 SPHINXLINT    = $(VENVDIR)/bin/sphinx-lint
 PAPER         =
