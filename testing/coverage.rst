@@ -193,43 +193,6 @@ This will lead to the report stating not only what lines were not covered, but
 also what branch paths were not executed.
 
 
-Coverage results for modules imported early on
-''''''''''''''''''''''''''''''''''''''''''''''
-
-For the *truly truly* daring, you can use a hack to get coverage.py to include
-coverage for modules that are imported early on during CPython's startup (e.g.
-the encodings module). Do not worry if you can't get this to work or it doesn't
-make any sense; it's entirely optional and only important for a small number of
-modules.
-
-If you still choose to try this, the first step is to make sure coverage.py's
-C extension is installed. You can check this with::
-
-  ./python COVERAGEDIR --version
-
-If it says 'without C extension', then you will need to build the C extension.
-Assuming that coverage.py's clone is at ``COVERAGEDIR`` and your clone of CPython
-is at ``CPYTHONDIR``, you can do this by executing the following in your coverage.py
-clone::
-
-  CPPFLAGS="-I CPYTHONDIR -I CPYTHONDIR/Include" CPYTHONDIR/python setup.py build_ext --inplace
-
-This will build coverage.py's C extension code in-place, allowing the previous
-instructions on how to gather coverage to continue to work.
-
-To get coverage.py to be able to gather the most accurate coverage data on as
-many modules as possible
-**with a HORRIBLE HACK that you should NEVER use in your own code**, run the
-following from your CPython clone::
-
-  PYTHONPATH=COVERAGEDIR/coverage/fullcoverage ./python COVERAGEDIR run --pylib Lib/test/regrtest.py
-
-This will give you the most complete coverage possible for CPython's standard
-library.
-
-.. _coverage.py: https://coverage.readthedocs.io/en/latest/
-
-
 .. _coverage_by_regrtest:
 
 Using test.regrtest
@@ -293,3 +256,4 @@ about 20 to 30 minutes on a modern computer.
 .. _issue tracker: https://github.com/python/cpython/issues
 .. _gcov: https://gcc.gnu.org/onlinedocs/gcc/Gcov.html
 .. _lcov: https://ltp.sourceforge.net/coverage/lcov.php
+.. _coverage.py: https://coverage.readthedocs.io/en/latest/
