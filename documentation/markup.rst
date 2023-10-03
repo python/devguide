@@ -575,12 +575,12 @@ The directives are:
 
    Describes a Python :term:`bytecode` instruction.
 
-.. describe:: cmdoption
+.. describe:: option
 
    Describes a Python command line option or switch.  Option argument names
    should be enclosed in angle brackets.  Example::
 
-      .. cmdoption:: -m <module>
+      .. option:: -m <module>
 
          Run a module as a script.
 
