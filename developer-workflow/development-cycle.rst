@@ -83,15 +83,10 @@ must not be broken at any point between sibling micro releases (3.5.1, 3.5.2,
 etc.).  For both rules, only rare exceptions are accepted and **must** be
 discussed first.
 
-Backporting serves dual purposes. First, it increases the visibility of
-documentation changes since most users refer to stable versions at
-`docs.python.org/3/ <https://docs.python.org/3/>`_ rather
-than the `docs.python.org/dev/ <https://docs.python.org/dev/>`_ documentation.
-Second, it minimizes conflicts for future bugfix backports.
-
-Backporting should target enhancements in documentation and tests for
-currently **stable** versions, specifically branches in a **bugfix** release cycle
-or higher.
+Back-porting changes reduces the risk of future conflicts.
+For documentation, it increases the visibility of improvements,
+since most readers access the `stable documentation <https://docs.python.org/3/>`__
+rather than the `development documentation <https://docs.python.org/dev/>`__.
 
 A new maintenance branch is normally created when the next feature release
 cycle reaches feature freeze, i.e. at its first beta pre-release.
