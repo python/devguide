@@ -78,7 +78,7 @@ releases; the terms are used interchangeably. These releases have a
 
 The only changes allowed to occur in a maintenance branch without debate are
 bug fixes, test improvements, and edits to the documentation.
-Also, a general rule for maintenance branches is that compatibility 
+Also, a general rule for maintenance branches is that compatibility
 must not be broken at any point between sibling micro releases (3.5.1, 3.5.2,
 etc.).  For both rules, only rare exceptions are accepted and **must** be
 discussed first.
