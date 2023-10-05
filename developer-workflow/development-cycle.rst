@@ -83,7 +83,7 @@ must not be broken at any point between sibling micro releases (3.5.1, 3.5.2,
 etc.).  For both rules, only rare exceptions are accepted and **must** be
 discussed first.
 
-Back-porting changes reduces the risk of future conflicts.
+Backporting changes reduces the risk of future conflicts.
 For documentation, it increases the visibility of improvements,
 since most readers access the `stable documentation <https://docs.python.org/3/>`__
 rather than the `development documentation <https://docs.python.org/dev/>`__.
