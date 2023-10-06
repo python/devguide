@@ -102,6 +102,44 @@ Unix
    The name of the operating system developed at AT&T Bell Labs in the early
    1970s.
 
+Diátaxis
+========
+
+Python's documentation follows the `Diátaxis <https://diataxis.fr//>`_
+framework. This means adapting the writing style according to the nature of
+the documentation that is being written. The framework splits documentation
+into four distinct types: tutorials, how-to guides, reference, and
+explanation.
+
+`Python tutorials <https://docs.python.org/3/tutorial/index.html>`_ should be
+beginner-friendly, explicit, and avoid making assumptions about the reader's
+knowledge. The goal of a tutorial is to get the user writing Python code as
+quickly as possible with clear logical steps. Explanations and abstract
+concepts should be avoided.
+
+`Python how-to guides <https://docs.python.org/3/howto/index.html>`_ are
+similar but distinct from tutorials and the two are often conflated. Both
+tutorials and how-to guides are instructional rather than explanatory
+and should provide clear, logical steps on how to complete a task. However,
+how-to guides make more assumptions about the user's knoweldge and place
+greater emphasis on the user finding the best way to complete the task.
+
+`Python references <https://docs.python.org/3/library/index.html>`_ should
+be factual, concise, and clear. The purpose of reference documentation is
+to describe rather than explain. Accuracy and consistency are imperative as
+this type of documentation should be seen as an authoritative source.
+:ref:`Code-examples` can be a useful way of achieving these
+objectives.
+
+`Python explanations <https://docs.python.org/3/glossary.htmll>`_ provide
+a deeper level of understanding and are naturally more discursive. They aim
+to deepen the reader's understanding and answer 'why' questions. They should
+provide context, make connections between topics, and discuss alternative
+opinions.
+
+Please consult the Diátaxis guide `here <https://diataxis.fr//>`_ for more
+detail.
+
 Affirmative tone
 ================
 
@@ -158,6 +196,8 @@ Similarly, if there is a common error that affects many interfaces in a
 module (e.g. OS level pipe buffers filling up and stalling child processes),
 these can be documented in a "Common Errors" section and cross-referenced
 rather than repeated for every affected interface.
+
+.. _code-examples:
 
 Code examples
 =============
