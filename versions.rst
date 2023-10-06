@@ -50,7 +50,7 @@ Status key
     but new source-only versions can be released
 :end-of-life: release cycle is frozen; no further changes can be pushed to it.
 
-See also the :ref:`devcycle` page for more information about branches.
+See also the :ref:`devcycle` page for more information about branches and backporting.
 
 By default, the end-of-life is scheduled 5 years after the first release,
 but can be adjusted by the release manager of each branch.  All Python 2
