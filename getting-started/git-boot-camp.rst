@@ -430,9 +430,9 @@ Scenario:
 - Before merging it, you want to be able to test their changes locally.
 
 If you've got `GitHub CLI <https://cli.github.com>`_ or
-`hub <https://hub.github.com>`_ installed, you can simply do::
+`hub <https://hub.github.com>`_ installed, you can do::
 
-   $ gh pr checkout <pr_number>   # GitHub CLI
+   $ gh co <pr_number>  # GitHub CLI
    $ hub pr checkout <pr_number>  # hub
 
 Both of these tools will configure a remote URL for the branch, so you can
@@ -637,7 +637,7 @@ Examples of useful commands:
 
 * Check out another PR::
 
-      gh pr checkout <pr-id>
+      gh co <pr-id>
 
 * Set ``ssh`` as the Git protocol::
 
