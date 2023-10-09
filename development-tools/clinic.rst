@@ -290,14 +290,14 @@ For this tutorial, we'll be using
 If the call to the :c:func:`!PyArg_Parse*` function uses any of the
 following format units...:
 
-   .. code-block:: none
+.. code-block:: none
 
-       O&
-       O!
-       es
-       es#
-       et
-       et#
+   O&
+   O!
+   es
+   es#
+   et
+   et#
 
 ... or if it has multiple calls to :c:func:`PyArg_ParseTuple`,
 you should choose a different function.
@@ -861,61 +861,61 @@ the same converters.
 All arguments to Argument Clinic converters are keyword-only.
 All Argument Clinic converters accept the following arguments:
 
-  *c_default*
-    The default value for this parameter when defined in C.
-    Specifically, this will be the initializer for the variable declared
-    in the "parse function".  See :ref:`the section on default values <default_values>`
-    for how to use this.
-    Specified as a string.
+*c_default*
+   The default value for this parameter when defined in C.
+   Specifically, this will be the initializer for the variable declared
+   in the "parse function".  See :ref:`the section on default values <default_values>`
+   for how to use this.
+   Specified as a string.
 
-  *annotation*
-    The annotation value for this parameter.  Not currently supported,
-    because :pep:`8` mandates that the Python library may not use
-    annotations.
+*annotation*
+   The annotation value for this parameter.  Not currently supported,
+   because :pep:`8` mandates that the Python library may not use
+   annotations.
 
-  *unused*
-    Wrap the argument with :c:macro:`Py_UNUSED` in the impl function signature.
+*unused*
+   Wrap the argument with :c:macro:`Py_UNUSED` in the impl function signature.
 
 In addition, some converters accept additional arguments.  Here is a list
 of these arguments, along with their meanings:
 
-  *accept*
-    A set of Python types (and possibly pseudo-types);
-    this restricts the allowable Python argument to values of these types.
-    (This is not a general-purpose facility; as a rule it only supports
-    specific lists of types as shown in the legacy converter table.)
+*accept*
+   A set of Python types (and possibly pseudo-types);
+   this restricts the allowable Python argument to values of these types.
+   (This is not a general-purpose facility; as a rule it only supports
+   specific lists of types as shown in the legacy converter table.)
 
-    To accept ``None``, add ``NoneType`` to this set.
+   To accept ``None``, add ``NoneType`` to this set.
 
-  *bitwise*
-    Only supported for unsigned integers.  The native integer value of this
-    Python argument will be written to the parameter without any range checking,
-    even for negative values.
+*bitwise*
+   Only supported for unsigned integers.  The native integer value of this
+   Python argument will be written to the parameter without any range checking,
+   even for negative values.
 
-  *converter*
-    Only supported by the ``object`` converter.  Specifies the name of a
-    :ref:`C "converter function" <o_ampersand>`
-    to use to convert this object to a native type.
+*converter*
+   Only supported by the ``object`` converter.  Specifies the name of a
+   :ref:`C "converter function" <o_ampersand>`
+   to use to convert this object to a native type.
 
-  *encoding*
-    Only supported for strings.  Specifies the encoding to use when converting
-    this string from a Python str (Unicode) value into a C ``char *`` value.
+*encoding*
+   Only supported for strings.  Specifies the encoding to use when converting
+   this string from a Python str (Unicode) value into a C ``char *`` value.
 
 
-  *subclass_of*
-    Only supported for the ``object`` converter.  Requires that the Python
-    value be a subclass of a Python type, as expressed in C.
+*subclass_of*
+   Only supported for the ``object`` converter.  Requires that the Python
+   value be a subclass of a Python type, as expressed in C.
 
-  *type*
-    Only supported for the ``object`` and ``self`` converters.  Specifies
-    the C type that will be used to declare the variable.  Default value is
-    ``"PyObject *"``.
+*type*
+   Only supported for the ``object`` and ``self`` converters.  Specifies
+   the C type that will be used to declare the variable.  Default value is
+   ``"PyObject *"``.
 
-  *zeroes*
-    Only supported for strings.  If true, embedded NUL bytes (``'\\0'``) are
-    permitted inside the value.  The length of the string will be passed in
-    to the impl function, just after the string parameter, as a parameter named
-    ``<parameter_name>_length``.
+*zeroes*
+   Only supported for strings.  If true, embedded NUL bytes (``'\\0'``) are
+   permitted inside the value.  The length of the string will be passed in
+   to the impl function, just after the string parameter, as a parameter named
+   ``<parameter_name>_length``.
 
 Please note, not every possible combination of arguments will work.
 Usually these arguments are implemented by specific :c:func:`PyArg_ParseTuple`
@@ -1643,63 +1643,63 @@ previous configuration.
 ``output preset`` sets Clinic's output to one of several built-in
 preset configurations, as follows:
 
-  ``block``
-    Clinic's original starting configuration.  Writes everything
-    immediately after the input block.
+``block``
+   Clinic's original starting configuration.  Writes everything
+   immediately after the input block.
 
-    Suppress the ``parser_prototype``
-    and ``docstring_prototype``, write everything else to ``block``.
+   Suppress the ``parser_prototype``
+   and ``docstring_prototype``, write everything else to ``block``.
 
-  ``file``
-    Designed to write everything to the "clinic file" that it can.
-    You then ``#include`` this file near the top of your file.
-    You may need to rearrange your file to make this work, though
-    usually this just means creating forward declarations for various
-    ``typedef`` and ``PyTypeObject`` definitions.
+``file``
+   Designed to write everything to the "clinic file" that it can.
+   You then ``#include`` this file near the top of your file.
+   You may need to rearrange your file to make this work, though
+   usually this just means creating forward declarations for various
+   ``typedef`` and ``PyTypeObject`` definitions.
 
-    Suppress the ``parser_prototype``
-    and ``docstring_prototype``, write the ``impl_definition`` to
-    ``block``, and write everything else to ``file``.
+   Suppress the ``parser_prototype``
+   and ``docstring_prototype``, write the ``impl_definition`` to
+   ``block``, and write everything else to ``file``.
 
-    The default filename is ``"{dirname}/clinic/{basename}.h"``.
+   The default filename is ``"{dirname}/clinic/{basename}.h"``.
 
-  ``buffer``
-    Save up most of the output from Clinic, to be written into
-    your file near the end.  For Python files implementing modules
-    or builtin types, it's recommended that you dump the buffer
-    just above the static structures for your module or
-    builtin type; these are normally very near the end.  Using
-    ``buffer`` may require even more editing than ``file``, if
-    your file has static ``PyMethodDef`` arrays defined in the
-    middle of the file.
+``buffer``
+   Save up most of the output from Clinic, to be written into
+   your file near the end.  For Python files implementing modules
+   or builtin types, it's recommended that you dump the buffer
+   just above the static structures for your module or
+   builtin type; these are normally very near the end.  Using
+   ``buffer`` may require even more editing than ``file``, if
+   your file has static ``PyMethodDef`` arrays defined in the
+   middle of the file.
 
-    Suppress the ``parser_prototype``, ``impl_prototype``,
-    and ``docstring_prototype``, write the ``impl_definition`` to
-    ``block``, and write everything else to ``file``.
+   Suppress the ``parser_prototype``, ``impl_prototype``,
+   and ``docstring_prototype``, write the ``impl_definition`` to
+   ``block``, and write everything else to ``file``.
 
-  ``two-pass``
-    Similar to the ``buffer`` preset, but writes forward declarations to
-    the ``two-pass`` buffer, and definitions to the ``buffer``.
-    This is similar to the ``buffer`` preset, but may require
-    less editing than ``buffer``.  Dump the ``two-pass`` buffer
-    near the top of your file, and dump the ``buffer`` near
-    the end just like you would when using the ``buffer`` preset.
+``two-pass``
+   Similar to the ``buffer`` preset, but writes forward declarations to
+   the ``two-pass`` buffer, and definitions to the ``buffer``.
+   This is similar to the ``buffer`` preset, but may require
+   less editing than ``buffer``.  Dump the ``two-pass`` buffer
+   near the top of your file, and dump the ``buffer`` near
+   the end just like you would when using the ``buffer`` preset.
 
-    Suppresses the ``impl_prototype``, write the ``impl_definition``
-    to ``block``, write ``docstring_prototype``, ``methoddef_define``,
-    and ``parser_prototype`` to ``two-pass``, write everything else
-    to ``buffer``.
+   Suppresses the ``impl_prototype``, write the ``impl_definition``
+   to ``block``, write ``docstring_prototype``, ``methoddef_define``,
+   and ``parser_prototype`` to ``two-pass``, write everything else
+   to ``buffer``.
 
-  ``partial-buffer``
-    Similar to the ``buffer`` preset, but writes more things to ``block``,
-    only writing the really big chunks of generated code to ``buffer``.
-    This avoids the definition-before-use problem of ``buffer`` completely,
-    at the small cost of having slightly more stuff in the block's output.
-    Dump the ``buffer`` near the end, just like you would when using
-    the ``buffer`` preset.
+``partial-buffer``
+   Similar to the ``buffer`` preset, but writes more things to ``block``,
+   only writing the really big chunks of generated code to ``buffer``.
+   This avoids the definition-before-use problem of ``buffer`` completely,
+   at the small cost of having slightly more stuff in the block's output.
+   Dump the ``buffer`` near the end, just like you would when using
+   the ``buffer`` preset.
 
-    Suppresses the ``impl_prototype``, write the ``docstring_definition``
-    and ``parser_definition`` to ``buffer``, write everything else to ``block``.
+   Suppresses the ``impl_prototype``, write the ``docstring_definition``
+   and ``parser_definition`` to ``buffer``, write everything else to ``block``.
 
 The third new directive is ``destination``:
 
@@ -1721,44 +1721,44 @@ This creates a new destination with name ``<name>`` and type ``<type>``.
 
 There are five destination types:
 
-    ``suppress``
-        Throws the text away.
+``suppress``
+   Throws the text away.
 
-    ``block``
-        Writes the text to the current block.  This is what Clinic
-        originally did.
+``block``
+   Writes the text to the current block.  This is what Clinic
+   originally did.
 
-    ``buffer``
-        A simple text buffer, like the "buffer" builtin destination above.
+``buffer``
+   A simple text buffer, like the "buffer" builtin destination above.
 
-    ``file``
-        A text file.  The file destination takes an extra argument,
-        a template to use for building the filename, like so:
+``file``
+   A text file.  The file destination takes an extra argument,
+   a template to use for building the filename, like so::
 
-            destination <name> new <type> <file_template>
+      destination <name> new <type> <file_template>
 
-        The template can use three strings internally that will be replaced
-        by bits of the filename:
+   The template can use three strings internally that will be replaced
+   by bits of the filename:
 
-            {path}
-                The full path to the file, including directory and full filename.
-            {dirname}
-                The name of the directory the file is in.
-            {basename}
-                Just the name of the file, not including the directory.
-            {basename_root}
-                Basename with the extension clipped off
-                (everything up to but not including the last '.').
-            {basename_extension}
-                The last '.' and everything after it.  If the basename
-                does not contain a period, this will be the empty string.
+   ``{path}``
+      The full path to the file, including directory and full filename.
+   ``{dirname}``
+      The name of the directory the file is in.
+   ``{basename}``
+      Just the name of the file, not including the directory.
+   ``{basename_root}``
+      Basename with the extension clipped off
+      (everything up to but not including the last '.').
+   ``{basename_extension}``
+      The last '.' and everything after it.  If the basename
+      does not contain a period, this will be the empty string.
 
-        If there are no periods in the filename, {basename} and {filename}
-        are the same, and {extension} is empty.  "{basename}{extension}"
-        is always exactly the same as "{filename}"."
+   If there are no periods in the filename, ``{basename}`` and ``{filename}``
+   are the same, and ``{extension}`` is empty.  ``{basename}{extension}``
+   is always exactly the same as ``{filename}``.
 
-    ``two-pass``
-        A two-pass buffer, like the "two-pass" builtin destination above.
+``two-pass``
+   A two-pass buffer, like the "two-pass" builtin destination above.
 
 
 The ``clear`` subcommand works like this:
@@ -1784,11 +1784,11 @@ The fourth new directive is ``set``:
 
 Both of these support two format strings:
 
-  ``{block comment start}``
-    Turns into the string ``/*``, the start-comment text sequence for C files.
+``{block comment start}``
+   Turns into the string ``/*``, the start-comment text sequence for C files.
 
-  ``{block comment end}``
-    Turns into the string ``*/``, the end-comment text sequence for C files.
+``{block comment end}``
+   Turns into the string ``*/``, the end-comment text sequence for C files.
 
 The final new directive is one you shouldn't need to use directly,
 called ``preserve``:
