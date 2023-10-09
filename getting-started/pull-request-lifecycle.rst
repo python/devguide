@@ -241,15 +241,15 @@ should do to help ensure that your pull request is accepted.
 ``patchcheck`` is a simple automated patch checklist that guides a developer
 through the common patch generation checks. To run ``patchcheck``:
 
-   On *Unix* (including macOS)::
+On *Unix* (including macOS)::
 
-      make patchcheck
+   make patchcheck
 
-   On *Windows* (after any successful build):
+On *Windows* (after any successful build):
 
-   .. code-block:: dosbatch
+.. code-block:: dosbatch
 
-      python.bat Tools\patchcheck\patchcheck.py
+   python.bat Tools\patchcheck\patchcheck.py
 
 The automated patch checklist runs through:
 
