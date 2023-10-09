@@ -890,7 +890,7 @@ To activate verbose mode you can add the ``-d`` flag when executing Python:
     $ python -d file_to_test.py
 
 This will print **a lot** of output to ``stderr`` so is probably better to dump it to a file for further analysis. The output
-consists of trace lines with the following structure:
+consists of trace lines with the following structure::
 
     <indentation> ('>'|'-'|'+'|'!') <rule_name>[<token_location>]: <alternative> ...
 
@@ -902,9 +902,10 @@ character marks the type of the trace:
 * ``+`` indicates that a rule has been parsed correctly.
 * ``!`` indicates that an exception or an error has been detected and the parser is unwinding.
 
-The <token_location> part indicates the current index in the token array, the
-<rule_name> part indicates what rule is being parsed and the <alternative> part
-indicates what alternative within that rule is being attempted.
+The ``<token_location>`` part indicates the current index in the token array,
+the ``<rule_name>`` part indicates what rule is being parsed and
+the ``<alternative>`` part indicates what alternative within that rule
+is being attempted.
 
 
 References
