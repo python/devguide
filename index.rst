@@ -180,14 +180,20 @@ Key resources
 -------------
 
 * Coding style guides
-    * :PEP:`7` (Style Guide for C Code)
-    * :PEP:`8` (Style Guide for Python Code)
+
+  * :PEP:`7` (Style Guide for C Code)
+  * :PEP:`8` (Style Guide for Python Code)
+
 * `Issue tracker`_
-    * :ref:`experts`
+
+  * :ref:`experts`
+
 * `Buildbot status`_
 * Source code
-    * `Browse online <https://github.com/python/cpython/>`_
-    * `Snapshot of the *main* branch <https://github.com/python/cpython/archive/main.zip>`_
+
+  * `Browse online <https://github.com/python/cpython/>`_
+  * `Snapshot of the *main* branch <https://github.com/python/cpython/archive/main.zip>`_
+
 * PEPs_ (Python Enhancement Proposals)
 * :ref:`help`
 * :ref:`developers`
@@ -198,22 +204,24 @@ Key resources
 Additional resources
 --------------------
 
-* Anyone can clone the sources for this guide.  See
-  :ref:`devguide`.
+* Anyone can clone the sources for this guide.  See :ref:`devguide`.
 * Help with ...
-    * :ref:`exploring`
-    * :ref:`grammar`
-    * :ref:`parser`
-    * :ref:`compiler`
-    * :ref:`garbage_collector`
-* Tool support
-    * :ref:`gdb`
-    * :ref:`clang`
-    * Various tools with configuration files as found in the `Misc directory`_
-    * Information about editors and their configurations can be found in the
-      `wiki <https://wiki.python.org/moin/PythonEditors>`_
-* `python.org maintenance`_
 
+  * :ref:`exploring`
+  * :ref:`grammar`
+  * :ref:`parser`
+  * :ref:`compiler`
+  * :ref:`garbage_collector`
+
+* Tool support
+
+  * :ref:`gdb`
+  * :ref:`clang`
+  * Various tools with configuration files as found in the `Misc directory`_
+  * Information about editors and their configurations can be found in the
+    `wiki <https://wiki.python.org/moin/PythonEditors>`_
+
+* `python.org maintenance`_
 * :ref:`Search this guide <search>`
 
 
