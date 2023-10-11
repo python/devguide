@@ -101,20 +101,22 @@ participating in the CPython core development process:
    * Microsoft (Software Developer)
    * Python Software Foundation (Fellow)
 
-.. topic:: Nick Coghlan (Australia)
+.. topic:: Alyssa Coghlan (Australia)
 
    * Personal site: `Curious Efficiency <https://www.curiousefficiency.org/>`_
    * `Extended bio <https://www.curiousefficiency.org/pages/about>`__
-   * `Tritium <https://tritiumcharging.com/>`__ (Software Developer)
    * Python Software Foundation (Fellow, Packaging Working Group)
 
-   Nick began using Python as a testing and prototyping language while working
+   Alyssa began using Python as a testing and prototyping language while working
    for Boeing Defence Australia, and continues to use it for that purpose today.
 
-   As a core developer, he is primarily interested in helping to ensure Python's
+   As a core developer, she is primarily interested in helping to ensure Python's
    continued suitability for educational, testing and data analysis use cases,
    as well as in encouraging good architectural practices when assembling Python
    applications and test harnesses from open source components.
+
+   Note: prior to August 2023, Alyssa used her birth name (Nick Coghlan). Some records
+   (e.g. mailing list archives, version control history) will still reference that name.
 
 .. topic:: Steve Dower (United States/Australia)
 
