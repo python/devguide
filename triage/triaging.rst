@@ -22,7 +22,7 @@ Checklist for triaging
 * You might also leave a brief comment about the proposed next action needed.
   If there is a long message list, a summary can be very helpful.
 * If the issue is clearly invalid (unrelated to CPython, duplicate, spam, etc),
-  you can close it as "not planned".
+  you can use GitHub's "Close as not planned" option.
 
 Assignees
 ---------
