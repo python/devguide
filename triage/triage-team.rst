@@ -35,9 +35,10 @@ following:
 * PRs proposing solely cosmetic changes
 * PRs proposing changes to deprecated modules
 * PRs that are no longer relevant. This includes:
-    - PRs proposing fixes for bugs that can no longer be reproduced
-    - PRs proposing changes that have been rejected by Python core developers
-      elsewhere (e.g. in an issue or a PEP rejection notice)
+
+  - PRs proposing fixes for bugs that can no longer be reproduced
+  - PRs proposing changes that have been rejected by Python core developers
+    elsewhere (e.g. in an issue or a PEP rejection notice)
 
 If a triager has any doubt about whether to close a PR,
 they should consult a core developer before taking any action.
