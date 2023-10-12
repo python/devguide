@@ -105,12 +105,12 @@ unavailable, the test is skipped or runs in the dry-run mode.
 Additional locales that you may find helpful to set up on developer's machines
 or buildbots include:
 
-* ``en_US`` (``en_US.utf8``, ``en_US.iso88591``) -- the standard default
+* ``en_US`` (``en_US.utf8``, ``en_US.iso88591``) --- the standard default
 * ``de_DE`` (``de_DE.UTF-8``) or ``fr_FR`` (``fr_FR.utf8``, ``fr_FR.iso88591``,
-  ``fr_FR.iso885915@euro``) -- common non-English locales
-* ``tr_TR`` (``tr_TR.iso88599``) -- Turkish has different rules for upper/lower
+  ``fr_FR.iso885915@euro``) --- common non-English locales
+* ``tr_TR`` (``tr_TR.iso88599``) --- Turkish has different rules for upper/lower
   cases of "i" and "I".
-* ``ps_AF`` -- used in ``test_decimal``
+* ``ps_AF`` --- used in ``test_decimal``
 
 Unexpected skips
 ----------------
