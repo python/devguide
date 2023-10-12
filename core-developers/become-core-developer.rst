@@ -55,7 +55,8 @@ are granted through these steps:
      `🔒 python/voters <https://github.com/python/voters>`_.
    - Update the devguide to publicly list the new committer's team membership
      at :ref:`developers`.
-   - Send an announcement email to the Committers Discourse category.
+   - Send an announcement email to the `Committers Discourse category
+     <https://discuss.python.org/c/committers/5>`_.
 
 .. _Code of Conduct: https://www.python.org/psf/conduct/
 .. _Committers category: https://discuss.python.org/c/committers/5
