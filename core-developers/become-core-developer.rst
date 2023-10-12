@@ -50,10 +50,9 @@ are granted through these steps:
 #. Once the candidate has provided the pertinent details, the approver will:
 
    - Enable the various new privileges.
-   - Remove from triage team, if applicable.
-   - Add the new committer's details to
-     `🔒 python/voters <https://github.com/python/voters>`_.
-   - Update the devguide to publicly list the new committer's team membership
+   - Remove the new committer from the triage team, if applicable.
+   - Add their details to `🔒 python/voters <https://github.com/python/voters>`_.
+   - Update the devguide to publicly list their team membership
      at :ref:`developers`.
    - Send an announcement email to the `Committers Discourse category
      <https://discuss.python.org/c/committers/5>`_.
