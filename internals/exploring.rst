@@ -1,61 +1,56 @@
 .. _exploring:
 
-========================
-Exploring the internals
-========================
+===================
+CPython source code
+===================
 
-This is a quick guide for people who are interested in learning more about
-CPython's internals. It provides a summary of the source code structure
-and contains references to resources providing a more in-depth view.
+This section gives an overview of CPython's code structure and provides
+a summary of file locations for modules and built-ins.
 
 
-CPython source code layout
-==========================
+Source code layout
+==================
 
-This guide gives an overview of CPython's code structure.
-It serves as a summary of file locations for modules and builtins.
-
-For Python modules, the typical layout is:
+For a Python :term:`module`, the typical layout is:
 
 * :file:`Lib/{<module>}.py`
 * :file:`Modules/_{<module>}.c` (if there's also a C accelerator module)
 * :file:`Lib/test/test_{<module>}.py`
 * :file:`Doc/library/{<module>}.rst`
 
-For extension-only modules, the typical layout is:
+For an :term:`extension module`, the typical layout is:
 
 * :file:`Modules/{<module>}module.c`
 * :file:`Lib/test/test_{<module>}.py`
 * :file:`Doc/library/{<module>}.rst`
 
-For builtin types, the typical layout is:
+For :ref:`bltin-types`, the typical layout is:
 
 * :file:`Objects/{<builtin>}object.c`
 * :file:`Lib/test/test_{<builtin>}.py`
 * :cpy-file:`Doc/library/stdtypes.rst`
 
-For builtin functions, the typical layout is:
+For :ref:`built-in-funcs`, the typical layout is:
 
 * :cpy-file:`Python/bltinmodule.c`
 * :cpy-file:`Lib/test/test_builtin.py`
 * :cpy-file:`Doc/library/functions.rst`
 
-Some exceptions:
+Some exceptions to these layouts are:
 
-* builtin type ``int`` is at :cpy-file:`Objects/longobject.c`
-* builtin type ``str`` is at :cpy-file:`Objects/unicodeobject.c`
-* builtin module ``sys`` is at :cpy-file:`Python/sysmodule.c`
-* builtin module ``marshal`` is at :cpy-file:`Python/marshal.c`
+* built-in type ``int`` is at :cpy-file:`Objects/longobject.c`
+* built-in type ``str`` is at :cpy-file:`Objects/unicodeobject.c`
+* built-in module ``sys`` is at :cpy-file:`Python/sysmodule.c`
+* built-in module ``marshal`` is at :cpy-file:`Python/marshal.c`
 * Windows-only module ``winreg`` is at :cpy-file:`PC/winreg.c`
 
 
 Additional references
 =====================
 
-For over 20 years the CPython code base has been changing and evolving.
-Here's a sample of resources about the architecture of CPython aimed at
-building your understanding of both the 2.x and 3.x versions of CPython:
-
+For over 30 years, the CPython code base has been changing and evolving.
+Here's a sample of references about CPython's architecture aimed at
+building your understanding of CPython internals and its evolution:
 
 .. csv-table:: **Current references**
    :header: "Title", "Brief", "Author", "Version"
