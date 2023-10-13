@@ -318,9 +318,8 @@ Introducing new bytecode
 ========================
 
 .. note::
-    
-   This section is relevant if you are adding a new bytecode to the
-   interpreter.
+
+   This section is relevant if you are adding a new bytecode to the interpreter.
 
 
 Sometimes a new feature requires a new opcode.  But adding new bytecode is
