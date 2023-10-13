@@ -23,7 +23,7 @@ This document outlines how these steps of the process work.
 This document only describes parsing in enough depth to explain what is needed
 for understanding compilation.  This document provides a detailed, though not
 exhaustive, view of the how the entire system works.  You will most likely need
-to read some source to have an exact understanding of all details.
+to read some source code to have an exact understanding of all details.
 
 
 Parsing
