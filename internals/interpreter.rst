@@ -315,9 +315,13 @@ Other topics
 
 
 Introducing new bytecode
-------------------------
+========================
 
-(Moved from compiler file)
+.. note::
+    
+   This section is relevant if you are adding a new bytecode to the
+   interpreter.
+
 
 Sometimes a new feature requires a new opcode.  But adding new bytecode is
 not as simple as just suddenly introducing new bytecode in the AST ->
