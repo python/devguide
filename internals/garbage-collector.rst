@@ -6,8 +6,6 @@
 Garbage collector design
 ========================
 
-:Author: Pablo Galindo Salgado
-
 .. highlight:: none
 
 Abstract
@@ -497,3 +495,9 @@ tracking status of the object.
       False
       >>> gc.is_tracked({"a": []})
       True
+
+
+.. admonition:: Document History
+   :class: note
+
+   Pablo Galindo Salgado - Original Author
