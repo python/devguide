@@ -11,33 +11,40 @@ Abstract
 
 In CPython, the compilation from source code to bytecode involves several steps:
 
-1. Tokenize the source code (:cpy-file:`Parser/tokenizer.c`)
+1. Tokenize the source code (:cpy-file:`Parser/tokenizer.c`).
 2. Parse the stream of tokens into an Abstract Syntax Tree
-   (:cpy-file:`Parser/parser.c`)
-3. Transform AST into an instruction sequence (:cpy-file:`Python/compile.c`)
-4. Construct a Control Flow Graph and apply optimizations to it (:cpy-file:`Python/flowgraph.c`)
-5. Emit bytecode based on the Control Flow Graph (:cpy-file:`Python/assemble.c`)
+   (:cpy-file:`Parser/parser.c`).
+3. Transform AST into an instruction sequence (:cpy-file:`Python/compile.c`).
+4. Construct a Control Flow Graph and apply optimizations to it (:cpy-file:`Python/flowgraph.c`).
+5. Emit bytecode based on the Control Flow Graph (:cpy-file:`Python/assemble.c`).
 
-The purpose of this document is to outline how these steps of the process work.
+This document outlines how these steps of the process work.
 
-This document does not touch on how parsing works beyond what is needed
-to explain what is needed for compilation.  It is also not exhaustive
-in terms of the how the entire system works.  You will most likely need
-to read some source to have an exact understanding of all details.
+This document only describes parsing in enough depth to explain what is needed
+for understanding compilation.  This document provides a detailed, though not
+exhaustive, view of the how the entire system works.  You will most likely need
+to read some source code to have an exact understanding of all details.
 
 
 Parsing
 =======
 
 As of Python 3.9, Python's parser is a PEG parser of a somewhat
-unusual design (since its input is a stream of tokens rather than a
-stream of characters as is more common with PEG parsers).
+unusual design. It is unusual in the sense that the parser's input is a stream
+of tokens rather than a stream of characters which is more common with PEG
+parsers.
 
 The grammar file for Python can be found in
 :cpy-file:`Grammar/python.gram`.  The definitions for literal tokens
 (such as ``:``, numbers, etc.) can be found in :cpy-file:`Grammar/Tokens`.
 Various C files, including :cpy-file:`Parser/parser.c` are generated from
-these (see :ref:`grammar`).
+these.
+
+.. seealso::
+
+  :ref:`parser` for a detailed description of the parser.
+
+  :ref:`grammar` for a detailed description of the grammar.
 
 
 Abstract syntax trees (AST)
@@ -133,9 +140,9 @@ Memory management
 =================
 
 Before discussing the actual implementation of the compiler, a discussion of
-how memory is handled is in order.  To make memory management simple, an arena
-is used.  This means that a memory is pooled in a single location for easy
-allocation and removal.  What this gives us is the removal of explicit memory
+how memory is handled is in order.  To make memory management simple, an **arena**
+is used that pools memory in a single location for easy
+allocation and removal.  This enables the removal of explicit memory
 deallocation.  Because memory allocation for all needed memory in the compiler
 registers that memory with the arena, a single call to free the arena is all
 that is needed to completely free all memory used by the compiler.
@@ -153,8 +160,8 @@ used. That freeing is done with ``PyArena_Free()``.  This only needs to be
 called in strategic areas where the compiler exits.
 
 As stated above, in general you should not have to worry about memory
-management when working on the compiler.  The technical details have been
-designed to be hidden from you for most cases.
+management when working on the compiler.  The technical details of memory
+management have been designed to be hidden from you for most cases.
 
 The only exception comes about when managing a PyObject.  Since the rest
 of Python uses reference counting, there is extra support added
@@ -173,7 +180,7 @@ The AST is generated from source code using the function
 After some checks, a helper function in :cpy-file:`Parser/parser.c` begins applying
 production rules on the source code it receives; converting source code to
 tokens and matching these tokens recursively to their corresponding rule.  The
-rule's corresponding rule function is called on every match.  These rule
+production rule's corresponding rule function is called on every match.  These rule
 functions follow the format :samp:`xx_rule`.  Where *xx* is the grammar rule
 that the function handles and is automatically derived from
 :cpy-file:`Grammar/python.gram`
@@ -293,7 +300,7 @@ number is passed as the last parameter to each ``stmt_ty`` function.
 Control flow graphs
 ===================
 
-A *control flow graph* (often referenced by its acronym, CFG) is a
+A **control flow graph** (often referenced by its acronym, **CFG**) is a
 directed graph that models the flow of a program.  A node of a CFG is
 not an individual bytecode instruction, but instead represents a
 sequence of bytecode instructions that always execute sequentially.
@@ -441,60 +448,6 @@ flattening and then a ``PyCodeObject`` is created.  All of this is
 handled by calling ``assemble()``.
 
 
-Introducing new bytecode
-========================
-
-Sometimes a new feature requires a new opcode.  But adding new bytecode is
-not as simple as just suddenly introducing new bytecode in the AST ->
-bytecode step of the compiler.  Several pieces of code throughout Python depend
-on having correct information about what bytecode exists.
-
-First, you must choose a name, implement the bytecode in
-:cpy-file:`Python/bytecodes.c`, and add a documentation entry in
-:cpy-file:`Doc/library/dis.rst`. Then run ``make regen-cases`` to
-assign a number for it (see :cpy-file:`Include/opcode_ids.h`) and
-regenerate a number of files with the actual implementation of the
-bytecodes (:cpy-file:`Python/generated_cases.c.h`) and additional
-files with metadata about them.
-
-With a new bytecode you must also change what is called the magic number for
-.pyc files.  The variable ``MAGIC_NUMBER`` in
-:cpy-file:`Lib/importlib/_bootstrap_external.py` contains the number.
-Changing this number will lead to all .pyc files with the old ``MAGIC_NUMBER``
-to be recompiled by the interpreter on import.  Whenever ``MAGIC_NUMBER`` is
-changed, the ranges in the ``magic_values`` array in :cpy-file:`PC/launcher.c`
-must also be updated.  Changes to :cpy-file:`Lib/importlib/_bootstrap_external.py`
-will take effect only after running ``make regen-importlib``. Running this
-command before adding the new bytecode target to :cpy-file:`Python/bytecodes.c`
-(followed by ``make regen-cases``) will result in an error. You should only run
-``make regen-importlib`` after the new bytecode target has been added.
-
-.. note:: On Windows, running the ``./build.bat`` script will automatically
-   regenerate the required files without requiring additional arguments.
-
-Finally, you need to introduce the use of the new bytecode.  Altering
-:cpy-file:`Python/compile.c`, :cpy-file:`Python/bytecodes.c` will be the
-primary places to change. Optimizations in :cpy-file:`Python/flowgraph.c`
-may also need to be updated.
-If the new opcode affects a control flow or the block stack, you may have
-to update the ``frame_setlineno()`` function in :cpy-file:`Objects/frameobject.c`.
-:cpy-file:`Lib/dis.py` may need an update if the new opcode interprets its
-argument in a special way (like ``FORMAT_VALUE`` or ``MAKE_FUNCTION``).
-
-If you make a change here that can affect the output of bytecode that
-is already in existence and you do not change the magic number constantly, make
-sure to delete your old .py(c|o) files!  Even though you will end up changing
-the magic number if you change the bytecode, while you are debugging your work
-you will be changing the bytecode output without constantly bumping up the
-magic number.  This means you end up with stale .pyc files that will not be
-recreated.
-Running ``find . -name '*.py[co]' -exec rm -f '{}' +`` should delete all .pyc
-files you have, forcing new ones to be created and thus allow you test out your
-new bytecode properly.  Run ``make regen-importlib`` for updating the
-bytecode of frozen importlib files.  You have to run ``make`` again after this
-for recompiling generated C files.
-
-
 Code objects
 ============
 
@@ -613,10 +566,28 @@ Important files
 
   * :cpy-file:`Lib/opcode.py`: Master list of bytecode; if this file is
     modified you must modify several other files accordingly
-    (see "`Introducing New Bytecode`_")
 
   * :cpy-file:`Lib/importlib/_bootstrap_external.py`: Home of the magic number
     (named ``MAGIC_NUMBER``) for bytecode versioning.
+
+
+Objects
+=======
+
+* :cpy-file:`Objects/locations.md`: Describes the location table
+* :cpy-file:`Objects/frame_layout.md`: Describes the frame stack
+* :cpy-file:`Objects/object_layout.md`: Descibes object layout for 3.11 and later
+* :cpy-file:`Objects/exception_handling_notes.txt`: Exception handling notes
+
+
+Specializing Adaptive Interpreter
+=================================
+
+Adding a specializing, adaptive interpreter to CPython will bring significant
+performance improvements. These documents provide more information:
+
+* :pep:`659`: Specializing Adaptive Interpreter
+* :cpy-file:`Python/adaptive.md`: Adding or extending a family of adaptive instructions
 
 
 References
