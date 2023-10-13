@@ -112,6 +112,10 @@ or buildbots include:
   cases of "i" and "I".
 * ``ps_AF`` --- used in ``test_decimal``
 
+On Linux and macOS, the ``locale`` command can be used to list available
+locales and change the settings. Environment variables ``LANG`` and those
+prefixed with ``LC_`` can be used to set the locale.
+
 Unexpected skips
 ----------------
 
