@@ -48,7 +48,7 @@ Some exceptions to these layouts are:
 Additional references
 =====================
 
-For over 30 years, the CPython code base has been changing and evolving.
+The CPython code base is constantly changing and evolving.
 Here's a sample of references about CPython's architecture aimed at
 building your understanding of CPython internals and its evolution:
 
