@@ -142,7 +142,7 @@ Memory management
 Before discussing the actual implementation of the compiler, a discussion of
 how memory is handled is in order.  To make memory management simple, an **arena**
 is used that pools memory in a single location for easy
-allocation and removal.  This benefits us in the removal of explicit memory
+allocation and removal.  This enables the removal of explicit memory
 deallocation.  Because memory allocation for all needed memory in the compiler
 registers that memory with the arena, a single call to free the arena is all
 that is needed to completely free all memory used by the compiler.
