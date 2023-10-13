@@ -3,7 +3,7 @@
 .. _garbage_collector:
 
 ========================
-Garbage Collector Design
+Garbage collector design
 ========================
 
 :Author: Pablo Galindo Salgado
@@ -131,15 +131,15 @@ class instances, classes in extension modules, etc. One could think that
 cycles are uncommon but the truth is that many internal references needed by
 the interpreter create cycles everywhere. Some notable examples:
 
-    * Exceptions contain traceback objects that contain a list of frames that
-      contain the exception itself.
-    * Module-level functions reference the module's dict (which is needed to resolve globals),
-      which in turn contains entries for the module-level functions.
-    * Instances have references to their class which itself references its module, and the module
-      contains references to everything that is inside (and maybe other modules)
-      and this can lead back to the original instance.
-    * When representing data structures like graphs, it is very typical for them to
-      have internal links to themselves.
+* Exceptions contain traceback objects that contain a list of frames that
+  contain the exception itself.
+* Module-level functions reference the module's dict (which is needed to resolve globals),
+  which in turn contains entries for the module-level functions.
+* Instances have references to their class which itself references its module, and the module
+  contains references to everything that is inside (and maybe other modules)
+  and this can lead back to the original instance.
+* When representing data structures like graphs, it is very typical for them to
+  have internal links to themselves.
 
 To correctly dispose of these objects once they become unreachable, they need to be
 identified first.  Inside the function that identifies cycles, two doubly linked
@@ -417,13 +417,13 @@ word-aligned addresses end in ``000``, leaving the last 3 bits available.
 The CPython GC makes use of two fat pointers that correspond to the extra fields
 of ``PyGC_Head`` discussed in the `Memory layout and object structure`_ section:
 
-  .. warning::
+.. warning::
 
-      Because the presence of extra information, "tagged" or "fat" pointers cannot be
-      dereferenced directly and the extra information must be stripped off before
-      obtaining the real memory address. Special care needs to be taken with
-      functions that directly manipulate the linked lists, as these functions
-      normally assume the pointers inside the lists are in a consistent state.
+   Because the presence of extra information, "tagged" or "fat" pointers cannot be
+   dereferenced directly and the extra information must be stripped off before
+   obtaining the real memory address. Special care needs to be taken with
+   functions that directly manipulate the linked lists, as these functions
+   normally assume the pointers inside the lists are in a consistent state.
 
 
 * The ``_gc_prev`` field is normally used as the "previous" pointer to maintain the

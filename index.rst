@@ -11,7 +11,7 @@ community that maintains Python.  We welcome your contributions to Python!
 
 .. _quick-reference:
 
-Quick Reference
+Quick reference
 ---------------
 
 Here are the basic steps needed to get set up and contribute a patch.
@@ -27,7 +27,7 @@ instructions please see the :ref:`setup guide <setup>`.
       git clone https://github.com/<your_username>/cpython
       cd cpython
 
-3. Build Python, on UNIX and macOS use::
+3. Build Python, on Unix and macOS use::
 
       ./configure --with-pydebug && make -j
 
@@ -39,7 +39,7 @@ instructions please see the :ref:`setup guide <setup>`.
 
    See also :ref:`more detailed instructions <compiling>`,
    :ref:`how to install and build dependencies <build-dependencies>`,
-   and the platform-specific pages for :ref:`UNIX <unix-compiling>`,
+   and the platform-specific pages for :ref:`Unix <unix-compiling>`,
    :ref:`macOS`, and :ref:`Windows <windows-compiling>`.
 
 4. :ref:`Run the tests <runtests>`::
@@ -78,7 +78,7 @@ instructions please see the :ref:`setup guide <setup>`.
    Agreement (CLA) as described in the :ref:`Licensing <cla>` section of
    this guide.
 
-Quick Links
+Quick links
 -----------
 
 Here are some links that you probably will reference frequently while
@@ -118,7 +118,7 @@ Contributors             Documentarians      Triagers                Core Develo
 :ref:`pullrequest`       :ref:`style-guide`  :ref:`helptriage`       :ref:`committing`
 :ref:`runtests`          :ref:`rst-primer`   :ref:`experts`          :ref:`devcycle`
 :ref:`fixingissues`      :ref:`translating`  :ref:`labels`           :ref:`motivations`
-:ref:`communication`                         :ref:`gh-faq`           :ref:`office hour`
+:ref:`communication`     :ref:`devguide`     :ref:`gh-faq`           :ref:`office hour`
 :ref:`gitbootcamp`                           :ref:`triage-team`      :ref:`experts`
 :ref:`devcycle`
 ======================== =================== ======================= =======================
@@ -148,7 +148,7 @@ happen and that process is also described as part of this guide:
 * :ref:`langchanges`
 
 
-Other Interpreter Implementations
+Other interpreter implementations
 ---------------------------------
 
 This guide is specifically for contributing to the Python reference interpreter,
@@ -176,18 +176,24 @@ developers to work on them.  Some major examples that may be of interest are:
   and learning to code on low-cost microcontroller boards.
 
 
-Key Resources
+Key resources
 -------------
 
 * Coding style guides
-    * :PEP:`7` (Style Guide for C Code)
-    * :PEP:`8` (Style Guide for Python Code)
+
+  * :PEP:`7` (Style Guide for C Code)
+  * :PEP:`8` (Style Guide for Python Code)
+
 * `Issue tracker`_
-    * :ref:`experts`
+
+  * :ref:`experts`
+
 * `Buildbot status`_
 * Source code
-    * `Browse online <https://github.com/python/cpython/>`_
-    * `Snapshot of the *main* branch <https://github.com/python/cpython/archive/main.zip>`_
+
+  * `Browse online <https://github.com/python/cpython/>`_
+  * `Snapshot of the *main* branch <https://github.com/python/cpython/archive/main.zip>`_
+
 * PEPs_ (Python Enhancement Proposals)
 * :ref:`help`
 * :ref:`developers`
@@ -195,29 +201,31 @@ Key Resources
 
 .. _resources:
 
-Additional Resources
+Additional resources
 --------------------
 
-* Anyone can clone the sources for this guide.  See
-  :ref:`devguide`.
+* Anyone can clone the sources for this guide.  See :ref:`devguide`.
 * Help with ...
-    * :ref:`exploring`
-    * :ref:`grammar`
-    * :ref:`parser`
-    * :ref:`compiler`
-    * :ref:`garbage_collector`
-* Tool support
-    * :ref:`gdb`
-    * :ref:`clang`
-    * Various tools with configuration files as found in the `Misc directory`_
-    * Information about editors and their configurations can be found in the
-      `wiki <https://wiki.python.org/moin/PythonEditors>`_
-* `python.org maintenance`_
 
+  * :ref:`exploring`
+  * :ref:`grammar`
+  * :ref:`parser`
+  * :ref:`compiler`
+  * :ref:`garbage_collector`
+
+* Tool support
+
+  * :ref:`gdb`
+  * :ref:`clang`
+  * Various tools with configuration files as found in the `Misc directory`_
+  * Information about editors and their configurations can be found in the
+    `wiki <https://wiki.python.org/moin/PythonEditors>`_
+
+* `python.org maintenance`_
 * :ref:`Search this guide <search>`
 
 
-Code of Conduct
+Code of conduct
 ---------------
 Please note that all interactions on
 `Python Software Foundation <https://www.python.org/psf-landing/>`__-supported
@@ -236,7 +244,7 @@ Moved to :ref:`versions`
 
 .. _contents:
 
-Full Table of Contents
+Full table of contents
 ----------------------
 
 .. toctree::

@@ -1,7 +1,7 @@
 .. _coverage:
 
 ======================
-Increase Test Coverage
+Increase test coverage
 ======================
 
 Python development follows a practice that all semantic changes and additions
@@ -36,7 +36,7 @@ explicit coverage of the module is from its own set of tests instead of from
 implicit testing by other code that happens to use the module.
 
 
-Common Gotchas
+Common gotchas
 ==============
 
 Please realize that coverage reports on modules already imported before coverage
@@ -54,7 +54,7 @@ prefer that other types of tests not be used (e.g., blackbox). When in doubt,
 stick with whitebox testing in order to properly exercise the code.
 
 
-Measuring Coverage
+Measuring coverage
 ==================
 
 It should be noted that a quirk of running coverage over Python's own stdlib is
@@ -79,7 +79,7 @@ provided by the stdlib then you can :ref:`use test.regrtest
 
 .. _install_coverage:
 
-Install Coverage
+Install coverage
 ''''''''''''''''
 
 By default, pip will not install into the in-development version of Python you
@@ -111,7 +111,7 @@ long as your venv is activated. For more info on venv see `Virtual Environment
 
 If this does not work for you for some reason, you should try using the
 in-development version of coverage.py to see if it has been updated as needed.
-To do this you should clone/check out the development version of coverage.py:
+To do this you should clone/check out the development version of coverage.py::
 
     git clone https://github.com/nedbat/coveragepy
 
@@ -122,7 +122,7 @@ it. For this, you will again need to use the full path to that installation.
 
 .. _coverage_usage:
 
-Basic Usage
+Basic usage
 '''''''''''
 
 The following command will tell you if your copy of coverage works (substitute
@@ -176,7 +176,7 @@ with pages that visibly show what lines of code were or were not executed.
 
 .. _branch_coverage:
 
-Branch Coverage
+Branch coverage
 '''''''''''''''
 
 For the truly daring, you can use another powerful feature of coverage.py:
@@ -191,43 +191,6 @@ If you decide you want to try to improve branch coverage, simply add the
 
 This will lead to the report stating not only what lines were not covered, but
 also what branch paths were not executed.
-
-
-Coverage Results For Modules Imported Early On
-''''''''''''''''''''''''''''''''''''''''''''''
-
-For the *truly truly* daring, you can use a hack to get coverage.py to include
-coverage for modules that are imported early on during CPython's startup (e.g.
-the encodings module). Do not worry if you can't get this to work or it doesn't
-make any sense; it's entirely optional and only important for a small number of
-modules.
-
-If you still choose to try this, the first step is to make sure coverage.py's
-C extension is installed. You can check this with::
-
-  ./python COVERAGEDIR --version
-
-If it says 'without C extension', then you will need to build the C extension.
-Assuming that coverage.py's clone is at ``COVERAGEDIR`` and your clone of CPython
-is at ``CPYTHONDIR``, you can do this by executing the following in your coverage.py
-clone::
-
-  CPPFLAGS="-I CPYTHONDIR -I CPYTHONDIR/Include" CPYTHONDIR/python setup.py build_ext --inplace
-
-This will build coverage.py's C extension code in-place, allowing the previous
-instructions on how to gather coverage to continue to work.
-
-To get coverage.py to be able to gather the most accurate coverage data on as
-many modules as possible
-**with a HORRIBLE HACK that you should NEVER use in your own code**, run the
-following from your CPython clone::
-
-  PYTHONPATH=COVERAGEDIR/coverage/fullcoverage ./python COVERAGEDIR run --pylib Lib/test/regrtest.py
-
-This will give you the most complete coverage possible for CPython's standard
-library.
-
-.. _coverage.py: https://coverage.readthedocs.io/en/latest/
 
 
 .. _coverage_by_regrtest:
@@ -256,7 +219,7 @@ files for each executed module along with which lines were executed how many
 times.
 
 
-Filing the Issue
+Filing the issue
 ================
 Once you have increased coverage,
 you need to create an issue on the `issue tracker`_ and
@@ -293,3 +256,4 @@ about 20 to 30 minutes on a modern computer.
 .. _issue tracker: https://github.com/python/cpython/issues
 .. _gcov: https://gcc.gnu.org/onlinedocs/gcc/Gcov.html
 .. _lcov: https://ltp.sourceforge.net/coverage/lcov.php
+.. _coverage.py: https://coverage.readthedocs.io/en/latest/

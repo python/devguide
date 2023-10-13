@@ -2,7 +2,7 @@
 .. _extensions:
 
 ==================================
-Standard Library Extension Modules
+Standard library extension modules
 ==================================
 
 In this section, we could explain how to write a CPython extension with the C language, but the topic can take a complete book.

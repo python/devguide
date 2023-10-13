@@ -1,7 +1,7 @@
 .. _style-guide:
 
 ===========
-Style Guide
+Style guide
 ===========
 
 .. highlight::  rest
@@ -56,7 +56,7 @@ sections are in title case, you can either convert all titles to
 sentence case or use the dominant style in the new section title.
 
 Sentences that start with a word for which specific rules require
-starting it with a lower case letter should be avoided.
+starting it with a lowercase letter should be avoided.
 
 .. note::
 
@@ -92,7 +92,7 @@ Python
 reST
    For "reStructuredText," an easy to read, plaintext markup syntax
    used to produce Python documentation.  When spelled out, it is
-   always one word and both forms start with a lower case 'r'.
+   always one word and both forms start with a lowercase 'r'.
 
 Unicode
    The name of a character coding system. This is always written
@@ -102,7 +102,7 @@ Unix
    The name of the operating system developed at AT&T Bell Labs in the early
    1970s.
 
-Affirmative Tone
+Affirmative tone
 ================
 
 The documentation focuses on affirmatively stating what the language does and
@@ -127,7 +127,7 @@ language):
     achieve the same effect.  This assures that files are flushed and file
     descriptor resources are released in a timely manner.
 
-Economy of Expression
+Economy of expression
 =====================
 
 More documentation is not necessarily better documentation.  Err on the side
@@ -138,7 +138,7 @@ to understanding and can result in even more ways to misread or misinterpret the
 text.  Long descriptions full of corner cases and caveats can create the
 impression that a function is more complex or harder to use than it actually is.
 
-Security Considerations (and Other Concerns)
+Security considerations (and other concerns)
 ============================================
 
 Some modules provided with Python are inherently exposed to security issues
@@ -159,7 +159,7 @@ module (e.g. OS level pipe buffers filling up and stalling child processes),
 these can be documented in a "Common Errors" section and cross-referenced
 rather than repeated for every affected interface.
 
-Code Examples
+Code examples
 =============
 
 Short code examples can be a useful adjunct to understanding.  Readers can often
@@ -177,7 +177,7 @@ lines and output lines.  Besides contributing visual clutter, it makes it
 difficult for readers to cut-and-paste examples so they can experiment with
 variations.
 
-Code Equivalents
+Code equivalents
 ================
 
 Giving pure Python code equivalents (or approximate equivalents) can be a useful

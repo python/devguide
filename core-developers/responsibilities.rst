@@ -44,7 +44,7 @@ making design and development decisions in different areas (as documented
 in the :ref:`experts` and :ref:`developers`).
 
 
-Communication Channels and Bug Notifications
+Communication channels and bug notifications
 ============================================
 
 Mailing lists have generally been replaced by the
@@ -59,7 +59,7 @@ follow the link and click on the :guilabel:`Watch` button to set your notificati
 
 .. _contributor_agreement:
 
-Sign a Contributor Agreement
+Sign a contributor agreement
 ============================
 
 Submitting a `contributor form for Python`_ licenses any code you contribute to
@@ -77,7 +77,7 @@ username into your details on the issue tracker.
 .. _contributor form for Python: https://www.python.org/psf/contrib/
 
 
-Pull Request merging
+Pull request merging
 ====================
 
 Once you have your commit privileges on GitHub you will be able to accept

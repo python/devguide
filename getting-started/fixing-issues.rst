@@ -2,7 +2,7 @@
 .. _fixingissues:
 
 =================================
-Fixing "easy" Issues (and Beyond)
+Fixing "easy" issues (and beyond)
 =================================
 
 When you feel comfortable enough to want to help tackle issues by trying to

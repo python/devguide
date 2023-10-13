@@ -1,14 +1,14 @@
 .. _triaging:
 
 =================
-Triaging an Issue
+Triaging an issue
 =================
 
 This section of the devguide documents the :ref:`issue tracker <tracker>` for
 users and developers.
 
 
-Checklist for Triaging
+Checklist for triaging
 ======================
 
 * Read the initial message and the comments.
@@ -22,7 +22,7 @@ Checklist for Triaging
 * You might also leave a brief comment about the proposed next action needed.
   If there is a long message list, a summary can be very helpful.
 * If the issue is clearly invalid (unrelated to CPython, duplicate, spam, etc),
-  you can close it as "not planned".
+  you can use GitHub's "Close as not planned" option.
 
 Assignees
 ---------
@@ -44,7 +44,7 @@ a team member, likely a triager or a core developer.
 
 .. _helptriage:
 
-Helping Triage Issues
+Helping triage issues
 =====================
 
 Once you know your way around how Python's source files are
@@ -56,7 +56,7 @@ Around the clock, new issues are being opened on the :ref:`issue tracker
 <tracker>` and existing issues are being updated. Every issue needs to be
 triaged to make sure everything runs smoothly.
 
-Classifying Reports
+Classifying reports
 -------------------
 
 For bugs, an issue needs to:
@@ -81,7 +81,7 @@ This is all helpful as it allows members of the :ref:`triage team <triage-team>`
 to properly classify an issue so it can be handled by the right core developers
 in a timely fashion.
 
-Reviewing Pull Requests
+Reviewing pull requests
 -----------------------
 
 If an issue has a linked pull request that has not been reviewed,
@@ -101,7 +101,7 @@ experience working on Python's code base will notice.
 
 See also :ref:`committing`.
 
-Finding an Issue You Can Help With
+Finding an issue you can help with
 ----------------------------------
 
 If you want to help with triaging, you might also want to search for issues

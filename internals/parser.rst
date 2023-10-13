@@ -1,7 +1,7 @@
 .. _parser:
 
 ===================
-Guide to the Parser
+Guide to the parser
 ===================
 
 :Author: Pablo Galindo Salgado
@@ -24,7 +24,7 @@ outputs the parser. The way the Python language is changed is therefore by
 modifying the grammar file and developers rarely need to interact with the
 parser generator itself other than use it to generate the parser.
 
-How PEG Parsers Work
+How PEG parsers work
 ====================
 
 .. _how-peg-parsers-work:
@@ -159,7 +159,7 @@ the rule: ::
 If the return type is omitted, then a ``void *`` is returned in C and an
 ``Any`` in Python.
 
-Grammar Expressions
+Grammar expressions
 -------------------
 
 ``# comment``
@@ -306,7 +306,7 @@ and "hidden left-recursion" like::
 
   rule: 'optional'? rule '@' some_other_rule
 
-Variables in the Grammar
+Variables in the grammar
 ------------------------
 
 A sub-expression can be named by preceding it with an identifier and an
@@ -570,7 +570,7 @@ Pegen has some special grammatical elements and rules:
 
 * Strings with single quotes (') (e.g. ``'class'``) denote KEYWORDS.
 * Strings with double quotes (") (e.g. ``"match"``) denote SOFT KEYWORDS.
-* Upper case names (e.g. ``NAME``) denote tokens in the :cpy-file:`Grammar/Tokens` file.
+* Uppercase names (e.g. ``NAME``) denote tokens in the :cpy-file:`Grammar/Tokens` file.
 * Rule names starting with ``invalid_`` are used for specialized syntax errors.
 
   - These rules are NOT used in the first pass of the parser.
@@ -641,7 +641,7 @@ when writing actions. In the C parser, some of these automatic variable names ar
   which is normally used to create AST nodes as almost all constructors need these attributes to be provided. All of the
   location variables are taken from the location information of the current token.
 
-Hard and Soft keywords
+Hard and soft keywords
 ----------------------
 
 .. note::
@@ -722,7 +722,7 @@ error messages.
     tokenizer errors such as unclosed parenthesis will be reported only after the
     parser finishes without returning anything.
 
-How Syntax errors are reported
+How syntax errors are reported
 ------------------------------
 
 As described previously in the :ref:`how PEG parsers work section
@@ -890,7 +890,7 @@ To activate verbose mode you can add the ``-d`` flag when executing Python:
     $ python -d file_to_test.py
 
 This will print **a lot** of output to ``stderr`` so is probably better to dump it to a file for further analysis. The output
-consists of trace lines with the following structure:
+consists of trace lines with the following structure::
 
     <indentation> ('>'|'-'|'+'|'!') <rule_name>[<token_location>]: <alternative> ...
 
@@ -902,9 +902,10 @@ character marks the type of the trace:
 * ``+`` indicates that a rule has been parsed correctly.
 * ``!`` indicates that an exception or an error has been detected and the parser is unwinding.
 
-The <token_location> part indicates the current index in the token array, the
-<rule_name> part indicates what rule is being parsed and the <alternative> part
-indicates what alternative within that rule is being attempted.
+The ``<token_location>`` part indicates the current index in the token array,
+the ``<rule_name>`` part indicates what rule is being parsed and
+the ``<alternative>`` part indicates what alternative within that rule
+is being attempted.
 
 
 References

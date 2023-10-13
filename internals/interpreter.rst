@@ -1,7 +1,7 @@
 .. _interpreter:
 
 ===============================
-The Bytecode Interpreter (3.11)
+The bytecode interpreter (3.11)
 ===============================
 
 .. highlight:: c

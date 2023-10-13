@@ -2,10 +2,10 @@
 .. _coredev:
 
 ==============================
-How to Become a Core Developer
+How to become a core developer
 ==============================
 
-What it Takes
+What it takes
 =============
 
 When you have consistently contributed patches which meet quality standards
@@ -22,18 +22,17 @@ an official offer. How core developers come to that agreement are outlined in
 :pep:`13`.
 
 
-Gaining Commit Privileges
+Gaining commit privileges
 =========================
 
 After a candidate has demonstrated consistent contributions, commit privileges
 are granted through these steps:
 
 #. A core developer (submitter, usually the mentor) starts a poll in the
-   `Committers category`_ on the `Python Discourse`_ and cross-posts it to
-   the `python-committers mailing list`_.
+   `Committers category`_ on the `Python Discourse`_.
 
-   - Open for 7 days
-   - Results shown upon close
+   - open for 7 days
+   - results shown upon close
 
 #. If the candidate receives at least two-thirds positive votes when the poll closes
    (as per :pep:`13`), the submitter `emails the steering council
@@ -44,22 +43,20 @@ are granted through these steps:
    (approver) will email the candidate:
 
    - A request for account details as required by
-     `🔒 python/voters <https://github.com/python/voters>`_
-   - A request for the committer's preferred address for subscription to
-     the `python-committers mailing list`_
+     `🔒 python/voters <https://github.com/python/voters>`_.
    - A reminder about the `Code of Conduct`_ and guidance on reporting issues
-     to the PSF Conduct WG
+     to the PSF Conduct WG.
 
 #. Once the candidate has provided the pertinent details, the approver will:
 
-   - enable the various new privileges;
-   - add the new committer's details to
-     `🔒 python/voters <https://github.com/python/voters>`_;
-   - update the devguide to publicly list the new committer's team membership
-     at :ref:`developers`;
-   - send an announcement email to the Committers Discourse category.
+   - Enable the various new privileges.
+   - Remove the new committer from the triage team, if applicable.
+   - Add their details to `🔒 python/voters <https://github.com/python/voters>`_.
+   - Update the devguide to publicly list their team membership
+     at :ref:`developers`.
+   - Send an announcement email to the `Committers Discourse category
+     <https://discuss.python.org/c/committers/5>`_.
 
 .. _Code of Conduct: https://www.python.org/psf/conduct/
 .. _Committers category: https://discuss.python.org/c/committers/5
 .. _Python Discourse: https://discuss.python.org
-.. _python-committers mailing list: https://mail.python.org/mailman3/lists/python-committers.python.org/

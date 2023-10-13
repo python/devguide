@@ -3,7 +3,7 @@
 .. _pullrequest:
 
 ===========================
-Lifecycle of a Pull Request
+Lifecycle of a pull request
 ===========================
 
 .. highlight:: bash
@@ -19,7 +19,7 @@ the official CPython repository (``upstream``).
 
 .. _pullrequest-quickguide:
 
-Quick Guide
+Quick guide
 ===========
 
 `Clear communication`_ is key to contributing to any project, especially an
@@ -70,7 +70,7 @@ Here is a quick overview of how you can contribute to CPython:
 
 .. _pullrequest-steps:
 
-Step-by-step Guide
+Step-by-step guide
 ==================
 
 You should have already :ref:`set up your system <setup>`,
@@ -132,7 +132,7 @@ You should have already :ref:`set up your system <setup>`,
      git pull origin <branch-name>  # pull = fetch + merge
 
     If you have made local changes that have not been pushed to your fork and
-    there are merge conflicts, git will warn you about this and enter conflict
+    there are merge conflicts, Git will warn you about this and enter conflict
     resolution mode. See :ref:`resolving-merge-conflicts` below.
 
 * If time passes and there are merge conflicts with the main branch, GitHub
@@ -152,7 +152,7 @@ You should have already :ref:`set up your system <setup>`,
 
 .. _resolving-merge-conflicts:
 
-Resolving Merge Conflicts
+Resolving merge conflicts
 -------------------------
 
 When merging changes from different branches (or variants of a branch on
@@ -165,14 +165,14 @@ resolved as follows:
       git status
 
 #. Edit the affected files and bring them to their intended final state.
-   Make sure to remove the special "conflict markers" inserted by git.
+   Make sure to remove the special "conflict markers" inserted by Git.
 
 #. Commit the affected files::
 
       git add <filenames>
       git merge --continue
 
-When running the final command, git may open an editor for writing a commit
+When running the final command, Git may open an editor for writing a commit
 message. It is usually okay to leave that as-is and close the editor.
 
 See `the merge command's documentation <https://git-scm.com/docs/git-merge>`_
@@ -181,7 +181,7 @@ for a detailed technical explanation.
 
 .. _good-prs:
 
-Making Good PRs
+Making good PRs
 ===============
 
 When creating a pull request for submission, there are several things that you
@@ -241,15 +241,15 @@ should do to help ensure that your pull request is accepted.
 ``patchcheck`` is a simple automated patch checklist that guides a developer
 through the common patch generation checks. To run ``patchcheck``:
 
-   On *UNIX* (including macOS)::
+On *Unix* (including macOS)::
 
-      make patchcheck
+   make patchcheck
 
-   On *Windows* (after any successful build):
+On *Windows* (after any successful build):
 
-   .. code-block:: dosbatch
+.. code-block:: dosbatch
 
-      python.bat Tools\patchcheck\patchcheck.py
+   python.bat Tools\patchcheck\patchcheck.py
 
 The automated patch checklist runs through:
 
@@ -274,7 +274,7 @@ making a complete patch.
 
 .. _good-commits:
 
-Making Good Commits
+Making good commits
 ===================
 
 Each feature or bugfix should be addressed by a single pull request,
@@ -303,7 +303,7 @@ to explain in proper depth what has happened (detail should be good enough
 that a core developer reading the commit message understands the
 justification for the change).
 
-Check :ref:`the git bootcamp <accepting-and-merging-a-pr>` for further
+Check :ref:`the Git bootcamp <accepting-and-merging-a-pr>` for further
 instructions on how the commit message should look like when merging a pull
 request.
 
@@ -386,7 +386,7 @@ another so they can easily verify whether their comments have been addressed.
 The commits will be squashed when the pull request is merged.
 
 
-Converting an Existing Patch from b.p.o to GitHub
+Converting an existing patch from b.p.o to GitHub
 =================================================
 
 When a patch exists in the `issue tracker`_ that should be converted into a
@@ -430,7 +430,7 @@ thus iterate until a satisfactory solution has emerged.
 
 .. _how-to-review-a-pull-request:
 
-How to Review a Pull Request
+How to review a pull request
 ----------------------------
 
 One of the bottlenecks in the Python development
@@ -471,7 +471,7 @@ code and leave comments in the pull request or issue tracker.
    However, please be aware that if you are recommending a pull request as
    'merge-ready', you should always make sure the entire test suite passes.
 
-Leaving a Pull Request Review on GitHub
+Leaving a pull request review on GitHub
 =======================================
 
 When you review a pull request, you should provide additional details and context
@@ -487,7 +487,7 @@ Instead of simply "approving" the pull request, leave comments.  For example:
 #. Comment on what is "good" about the pull request, not just the "bad". Doing
    so will make it easier for the PR author to find the good in your comments.
 
-Dismissing Review from Another Core Developer
+Dismissing review from another core developer
 =============================================
 
 A core developer can dismiss another core developer's review if they confirmed
@@ -496,7 +496,7 @@ the PR to themselves, then it is a sign that they are actively looking after
 the PR, and their review should not be dismissed.
 
 
-Committing/Rejecting
+Committing/rejecting
 ====================
 
 Once your pull request has reached an acceptable state (and thus considered

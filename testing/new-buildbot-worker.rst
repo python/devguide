@@ -2,7 +2,7 @@
 .. _buildworker:
 
 ====================
-New Buildbot Workers
+New buildbot workers
 ====================
 
 .. highlight:: bash
@@ -26,7 +26,7 @@ contribute a buildbot but have questions.
 
 As for what kind of buildbot to run...take a look at our `current fleet
 <https://buildbot.python.org/all/>`_.  Pretty much anything that isn't
-on that list would be interesting: different Linux/UNIX distributions,
+on that list would be interesting: different Linux/Unix distributions,
 different versions of the various OSes, other OSes if you or someone are
 prepared to make the test suite actually pass on that new OS.  Even if you only
 want to run an OS that's already on our list there may be utility in setting it
@@ -70,28 +70,28 @@ if you choose that path.
 
 For Linux:
 
-    * If your package manager provides the buildbot worker software, that is
-      probably the best way to install it; it may create the buildbot user for
-      you, in which case you can skip that step.  Otherwise, do ``pip install
-      buildbot-worker``.
-    * Create a ``buildbot`` user (using, eg: ``useradd``) if necessary.
-    * Log in as the buildbot user.
+* If your package manager provides the buildbot worker software, that is
+  probably the best way to install it; it may create the buildbot user for
+  you, in which case you can skip that step.  Otherwise, do ``pip install
+  buildbot-worker``.
+* Create a ``buildbot`` user (using, eg: ``useradd``) if necessary.
+* Log in as the buildbot user.
 
 For Mac:
 
-    * Create a buildbot user using the OS/X control panel user admin.  It
-      should be a "standard" user.
-    * Log in as the buildbot user.
-    * Install the buildbot worker [#]_ by running ``pip install buildbot-worker``.
+* Create a buildbot user using the OS/X control panel user admin.  It
+  should be a "standard" user.
+* Log in as the buildbot user.
+* Install the buildbot worker [#]_ by running ``pip install buildbot-worker``.
 
 For Windows:
 
-    * Create a buildbot user as a "standard" user.
-    * Install the latest version of Python from python.org.
-    * Open a Command Prompt.
-    * Execute ``python -m pip install pypiwin32 buildbot-worker`` (note that
-      ``python.exe`` is not added to ``PATH`` by default, making the
-      ``python`` command accessible is left as an exercise for the user).
+* Create a buildbot user as a "standard" user.
+* Install the latest version of Python from python.org.
+* Open a Command Prompt.
+* Execute ``python -m pip install pypiwin32 buildbot-worker`` (note that
+  ``python.exe`` is not added to ``PATH`` by default, making the
+  ``python`` command accessible is left as an exercise for the user).
 
 In a terminal window for the buildbot user, issue the following commands (you
 can put the ``buildarea`` wherever you want to)::
@@ -113,73 +113,73 @@ machine reboots:
 
 For Linux:
 
-    * Add the following line to ``/etc/crontab``::
+* Add the following line to ``/etc/crontab``::
 
-          @reboot buildbot-worker restart /path/to/buildarea
+      @reboot buildbot-worker restart /path/to/buildarea
 
-      Note that we use ``restart`` rather than ``start`` in case a crash has
-      left a ``twistd.pid`` file behind.
+  Note that we use ``restart`` rather than ``start`` in case a crash has
+  left a ``twistd.pid`` file behind.
 
 For OSX:
 
-    * Create a bin directory for your buildbot user::
+* Create a bin directory for your buildbot user::
 
-          mkdir bin
+      mkdir bin
 
-    * Place the following script, named ``run_worker.sh``, into that directory::
+* Place the following script, named ``run_worker.sh``, into that directory::
 
-          #!/bin/bash
-          export PATH=/usr/local/bin:/Library/Frameworks/Python.framework/Versions/2.7/bin:$PATH
-          export LC_CTYPE=en_US.utf-8
-          cd /Users/buildbot/buildarea
-          twistd --nodaemon --python=buildbot.tac --logfile=buildbot.log --prefix=worker
+      #!/bin/bash
+      export PATH=/usr/local/bin:/Library/Frameworks/Python.framework/Versions/2.7/bin:$PATH
+      export LC_CTYPE=en_US.utf-8
+      cd /Users/buildbot/buildarea
+      twistd --nodaemon --python=buildbot.tac --logfile=buildbot.log --prefix=worker
 
-      If you use pip with Apple's system python, add '/System' to the front of
-      the path to the Python bin directory.
+  If you use pip with Apple's system python, add '/System' to the front of
+  the path to the Python bin directory.
 
-   *  Place a file with the following contents into ``/Library/LaunchDaemons``:
+*  Place a file with the following contents into ``/Library/LaunchDaemons``:
 
-      .. code-block:: xml
+   .. code-block:: xml
 
-          <?xml version="1.0" encoding="UTF-8"?>
-          <!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN"
-                "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
-          <plist version="1.0">
-          <dict>
-                <key>Label</key>
-                <string>net.buildbot.worker</string>
-                <key>UserName</key>
-                <string>buildbot</string>
-                <key>WorkingDirectory</key>
-                <string>/Users/buildbot/buildarea</string>
-                <key>ProgramArguments</key>
-                <array>
-                        <string>/Users/buildbot/bin/run_worker.sh</string>
-                </array>
-                <key>StandardOutPath</key>
-                <string>twistd.log</string>
-                <key>StandardErrorPath</key>
-                <string>twistd.log</string>
-                <key>KeepAlive</key>
-                <true/>
-                <key>SessionCreate</key>
-                <true/>
-          </dict>
-          </plist>
+      <?xml version="1.0" encoding="UTF-8"?>
+      <!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN"
+            "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+      <plist version="1.0">
+      <dict>
+            <key>Label</key>
+            <string>net.buildbot.worker</string>
+            <key>UserName</key>
+            <string>buildbot</string>
+            <key>WorkingDirectory</key>
+            <string>/Users/buildbot/buildarea</string>
+            <key>ProgramArguments</key>
+            <array>
+                    <string>/Users/buildbot/bin/run_worker.sh</string>
+            </array>
+            <key>StandardOutPath</key>
+            <string>twistd.log</string>
+            <key>StandardErrorPath</key>
+            <string>twistd.log</string>
+            <key>KeepAlive</key>
+            <true/>
+            <key>SessionCreate</key>
+            <true/>
+      </dict>
+      </plist>
 
-      The recommended name for the file is ``net.buildbot.worker``.
+   The recommended name for the file is ``net.buildbot.worker``.
 
 For Windows:
 
-    * Add a Scheduled Task to run ``buildbot-worker start buildarea`` as the
-      buildbot user "when the computer starts up".  It is best to provide
-      absolute paths to the ``buildbot-worker`` command and the :file:`buildarea`
-      directory.  It is also recommended to set the task to run in the
-      directory that contains the :file:`buildarea` directory.
+* Add a Scheduled Task to run ``buildbot-worker start buildarea`` as the
+  buildbot user "when the computer starts up".  It is best to provide
+  absolute paths to the ``buildbot-worker`` command and the :file:`buildarea`
+  directory.  It is also recommended to set the task to run in the
+  directory that contains the :file:`buildarea` directory.
 
-    * Alternatively (note: don't do both!), set up the worker
-      service as described in the `buildbot documentation
-      <https://docs.buildbot.net/current/manual/installation/requirements.html#windows-support>`_.
+* Alternatively (note: don't do both!), set up the worker
+  service as described in the `buildbot documentation
+  <https://docs.buildbot.net/current/manual/installation/requirements.html#windows-support>`_.
 
 To start the worker running for your initial testing, you can do::
 
@@ -203,20 +203,20 @@ We also support running `latent workers
 <http://docs.buildbot.net/current/manual/configuration/workers.html#latent-workers>`_
 on the AWS EC2 service.  To set up such a worker:
 
-    * Start an instance of your chosen base AMI and set it up as a
-      conventional worker.
-    * After the instance is fully set up as a conventional worker (including
-      worker name and password, and admin and host information), create an AMI
-      from the instance and stop the instance.
-    * Contact the buildmaster administrator who gave you your worker
-      name and password and give them the following information:
+* Start an instance of your chosen base AMI and set it up as a
+  conventional worker.
+* After the instance is fully set up as a conventional worker (including
+  worker name and password, and admin and host information), create an AMI
+  from the instance and stop the instance.
+* Contact the buildmaster administrator who gave you your worker
+  name and password and give them the following information:
 
-      * Instance size (such as ``m4.large``)
-      * Full region specification (such as ``us-west-2``)
-      * AMI ID (such as ``ami-1234beef``)
-      * An Access Key ID and Access Key.  It is recommended to set up
-        a separate IAM user with full access to EC2 and provide the access key
-        information for that user rather than for your main account.
+  * Instance size (such as ``m4.large``)
+  * Full region specification (such as ``us-west-2``)
+  * AMI ID (such as ``ami-1234beef``)
+  * An Access Key ID and Access Key.  It is recommended to set up
+    a separate IAM user with full access to EC2 and provide the access key
+    information for that user rather than for your main account.
 
 The buildmaster cannot guarantee that it will always shut down your
 instance(s), so it is recommended to periodically check and make sure
@@ -231,13 +231,13 @@ or other software updates, but when to do such maintenance is largely up to you
 as the worker owner.  There are a couple different options for doing such
 updates:
 
-    * Start an instance from your existing AMI, do updates on that instance,
-      and save a new AMI from the updated instance.  Note that (especially for
-      Windows workers) you should do at least one restart of the instance after
-      doing updates to be sure that any post-reboot update work is done before
-      creating the new AMI.
-    * Create an entirely new setup from a newer base AMI using your existing
-      worker name and password.
+* Start an instance from your existing AMI, do updates on that instance,
+  and save a new AMI from the updated instance.  Note that (especially for
+  Windows workers) you should do at least one restart of the instance after
+  doing updates to be sure that any post-reboot update work is done before
+  creating the new AMI.
+* Create an entirely new setup from a newer base AMI using your existing
+  worker name and password.
 
 Whichever way you choose to update your AMI, you'll need to provide the
 buildmaster administrators with the new AMI ID.
@@ -274,7 +274,7 @@ or, if possible, providing ssh access to a committer to run experiments to try
 to resolve the issue.
 
 
-Required Ports
+Required ports
 ==============
 
 The worker operates as a *client* to the *buildmaster*.  This means that
@@ -304,7 +304,7 @@ Many tests will also create local TCP sockets and connect to them, usually
 using either ``localhost`` or ``127.0.0.1``.
 
 
-Required Resources
+Required resources
 ==================
 
 Based on the last time we did a `survey
@@ -312,9 +312,9 @@ Based on the last time we did a `survey
 buildbot requirements, the recommended resource allocations for a python
 buildbot are at least:
 
-    * 2 CPUs
-    * 512 MB RAM
-    * 30 GB free disk space
+* 2 CPUs
+* 512 MB RAM
+* 30 GB free disk space
 
 The bigmem tests won't run in this configuration, since they require
 substantially more memory, but these resources should be sufficient to ensure
@@ -322,7 +322,7 @@ that Python compiles correctly on the platform and can run the rest of the test
 suite.
 
 
-Security Considerations
+Security considerations
 =======================
 
 We only allow builds to be triggered against commits to the

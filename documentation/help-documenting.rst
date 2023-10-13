@@ -2,7 +2,7 @@
 .. _docquality:
 
 ==========================
-Helping with Documentation
+Helping with documentation
 ==========================
 
 Python is known for having well-written documentation. Maintaining the
@@ -20,7 +20,7 @@ You will find extensive and detailed information on how to write documentation
 and submit changes on the :ref:`Documenting Python <documenting>` page.
 
 
-Python Documentation
+Python documentation
 ====================
 
 The :ref:`Documenting Python <documenting>` section covers the details of how
