@@ -619,26 +619,6 @@ Important files
     (named ``MAGIC_NUMBER``) for bytecode versioning.
 
 
-Known compiler-related experiments
-==================================
-
-This section lists known experiments involving the compiler (including
-bytecode).
-
-Skip Montanaro presented a paper at a Python workshop on a peephole optimizer
-[#skip-peephole]_.
-
-Michael Hudson has a non-active SourceForge project named Bytecodehacks
-[#Bytecodehacks]_ that provides functionality for playing with bytecode
-directly.
-
-An opcode to combine the functionality of ``LOAD_ATTR``/``CALL_FUNCTION`` was
-created named ``CALL_ATTR`` [#CALL_ATTR]_.  Currently only works for classic
-classes and for new-style classes rough benchmarking showed an actual slowdown
-thanks to having to support both classic and new-style classes.
-
-
-
 References
 ==========
 
@@ -649,12 +629,3 @@ References
 
 .. _The Zephyr Abstract Syntax Description Language.:
    https://www.cs.princeton.edu/research/techreps/TR-554-97
-
-.. [#skip-peephole] Skip Montanaro's Peephole Optimizer Paper
-   (https://legacy.python.org/workshops/1998-11/proceedings/papers/montanaro/montanaro.html)
-
-.. [#Bytecodehacks] Bytecodehacks Project
-   (https://bytecodehacks.sourceforge.net/bch-docs/bch/index.html)
-
-.. [#CALL_ATTR] CALL_ATTR opcode
-   (https://bugs.python.org/issue709744)
