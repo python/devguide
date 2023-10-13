@@ -4,8 +4,6 @@
 Guide to the parser
 ===================
 
-:Author: Pablo Galindo Salgado
-
 .. highlight:: none
 
 Abstract
@@ -919,3 +917,9 @@ References
 
 .. [3] Warth et al.
    http://web.cs.ucla.edu/~todd/research/pepm08.pdf
+
+
+.. admonition:: Document history
+   :class: note
+
+   Pablo Galindo Salgado - Original author
