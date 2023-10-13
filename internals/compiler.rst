@@ -571,6 +571,25 @@ Important files
     (named ``MAGIC_NUMBER``) for bytecode versioning.
 
 
+Objects
+=======
+
+* :cpy-file:`Objects/locations.md`: Describes the location table
+* :cpy-file:`Objects/frame_layout.md`: Describes the frame stack
+* :cpy-file:`Objects/object_layout.md`: Descibes object layout for 3.11 and later
+* :cpy-file:`Objects/exception_handling_notes.txt`: Exception handling notes
+
+
+Specializing Adaptive Interpreter
+=================================
+
+Adding a specializing, adaptive interpreter to CPython will bring significant
+performance improvements. These documents provide more information:
+
+* :pep:`659`
+* :cpy-file:`Python/adaptive.md`: Adding or extending a family of adaptive instructions
+
+
 References
 ==========
 
