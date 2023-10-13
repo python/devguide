@@ -31,8 +31,8 @@ are granted through these steps:
 #. A core developer (submitter, usually the mentor) starts a poll in the
    `Committers category`_ on the `Python Discourse`_.
 
-   - Open for 7 days.
-   - Results shown upon close.
+   - open for 7 days
+   - results shown upon close
 
 #. If the candidate receives at least two-thirds positive votes when the poll closes
    (as per :pep:`13`), the submitter `emails the steering council
