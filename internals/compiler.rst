@@ -586,7 +586,7 @@ Specializing Adaptive Interpreter
 Adding a specializing, adaptive interpreter to CPython will bring significant
 performance improvements. These documents provide more information:
 
-* :pep:`659`
+* :pep:`659`: Specializing Adaptive Interpreter
 * :cpy-file:`Python/adaptive.md`: Adding or extending a family of adaptive instructions
 
 
