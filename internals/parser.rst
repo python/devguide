@@ -919,7 +919,7 @@ References
    http://web.cs.ucla.edu/~todd/research/pepm08.pdf
 
 
-.. admonition:: Document History
+.. admonition:: Document history
    :class: note
 
-   Pablo Galindo Salgado - Original Author
+   Pablo Galindo Salgado - Original author
