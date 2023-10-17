@@ -58,7 +58,7 @@ instructions please see the :ref:`setup guide <setup>`.
    not require any issue to be created.
 
 6. Once you fixed the issue, run the tests, run ``make patchcheck``, and if
-   everything is ok, commit.
+   everything is ok, commit. On windows run ``.\python.bat Tools\patchcheck\patchcheck.py``
 
 7. Push the branch on your fork on GitHub and :ref:`create a pull request
    <pullrequest>`.  Include the issue number using ``gh-NNNN`` in the
