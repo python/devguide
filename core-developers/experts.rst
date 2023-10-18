@@ -100,7 +100,6 @@ dbm
 decimal               facundobatista, rhettinger, mdickinson
 difflib               tim-one (inactive)
 dis                   1st1
-distutils             merwok, dstufft
 doctest               tim-one (inactive)
 email                 warsaw, bitdancer*, maxking
 encodings             malemburg
