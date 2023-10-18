@@ -181,7 +181,7 @@ pty                   Yhg1s*
 pwd
 py_compile            carljm
 pyclbr                isidentical
-pydoc
+pydoc                 AA-Turner
 queue                 rhettinger*
 quopri
 random                rhettinger, mdickinson
@@ -319,13 +319,15 @@ issue tracker       ezio-melotti
 buildbots           zware, pablogsal
 bytecode            benjaminp, 1st1, markshannon, brandtbucher, carljm
 context managers    ncoghlan
-core workflow       Mariatta, ezio-melotti, hugovk
+core workflow       Mariatta, ezio-melotti, hugovk, AA-Turner
 coverity scan       tiran, Yhg1s
 cryptography        gpshead, dstufft
 data formats        mdickinson
 database            malemburg
-devguide            merwok, ezio-melotti, willingc, Mariatta, hugovk
-documentation       ezio-melotti, merwok, JulienPalard, willingc, hugovk
+devguide            merwok, ezio-melotti, willingc, Mariatta, hugovk,
+                    AA-Turner
+documentation       ezio-melotti, merwok, JulienPalard, willingc, hugovk,
+                    AA-Turner
 emoji               Mariatta
 extension modules   encukou, ncoghlan
 filesystem          giampaolo
