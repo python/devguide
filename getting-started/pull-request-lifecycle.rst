@@ -249,7 +249,7 @@ On *Windows* (after any successful build):
 
 .. code-block:: dosbatch
 
-   python.bat Tools\patchcheck\patchcheck.py
+   .\python.bat Tools\patchcheck\patchcheck.py
 
 The automated patch checklist runs through:
 
