@@ -25,7 +25,7 @@ most of which are open for all users to read and post.
 Those particularly relevant for help contributing to Python itself include:
 
 * `Core Development`_ for most general questions and help
-* `Ideas`_ to discuss new ideas for the Python
+* `Ideas`_ to discuss new ideas for the Python language
 * `Core Workflow`_ for questions about the dev infrastructure and bots
 
 .. seealso::
