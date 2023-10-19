@@ -12,12 +12,12 @@ if "%PYTHON%" == "" (
 
 if not defined SPHINXLINT (
     %PYTHON% -c "import sphinxlint" > nul 2> nul
-    if errorlevel 1 (
-        echo Installing sphinx-lint with %PYTHON%
-        rem Should have been installed with Sphinx earlier
-        %PYTHON% -m pip install "sphinx-lint<1"
-        if errorlevel 1 exit /B
-    )
+@REM     if errorlevel 1 (
+@REM         echo Installing sphinx-lint with %PYTHON%
+@REM         rem Should have been installed with Sphinx earlier
+@REM         python -m pip install "sphinx-lint<1"
+@REM         if errorlevel 1 exit /B
+@REM     )
     set SPHINXLINT=%PYTHON% -m sphinxlint
 )
 
