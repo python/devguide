@@ -57,8 +57,19 @@ instructions please see the :ref:`setup guide <setup>`.
    <https://github.com/python/cpython/issues>`_.  Trivial issues (e.g. typo fixes) do
    not require any issue to be created.
 
-6. Once you fixed the issue, run the tests, run ``make patchcheck``, and if
-   everything is ok, commit.
+6. Once you fixed the issue, run the tests, and the patchcheck.
+
+   On Unix and macOS use::
+
+      make patchcheck
+
+   and on Windows:
+
+   .. code-block:: dosbatch
+
+      .\python.bat Tools\patchcheck\patchcheck.py
+
+   If everything is ok, commit.
 
 7. Push the branch on your fork on GitHub and :ref:`create a pull request
    <pullrequest>`.  Include the issue number using ``gh-NNNN`` in the
