@@ -65,7 +65,7 @@ Sandro Tosi,sandrotosi,2011-08-01,,
 Alex Gaynor,alex,2011-07-18,,For PyPy compatibility (since expanded scope)
 Charles-François Natali,,2011-05-19,2017-02-10,Did not make GitHub transition
 Nadeem Vawda,,2011-04-10,2017-02-10,Did not make GitHub transition
-Carl Friedrich Bolz-Tereick,cfbolz,2011-03-21,2017-02-10,for stdlib compatibility work for PyPy; did not make GitHub transition
+Carl Friedrich Bolz-Tereick,cfbolz,2011-03-21,,for stdlib compatibility work for PyPy
 Jason R. Coombs,jaraco,2011-03-14,,For sprinting on distutils2
 Ross Lagerwall,,2011-03-13,2017-02-10,Did not make GitHub transition
 Eli Bendersky,eliben,2011-01-11,2020-11-26,
