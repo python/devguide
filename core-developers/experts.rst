@@ -311,12 +311,12 @@ Interest Area       Maintainers
 ==================  ==========================================================
 algorithms          rhettinger*
 argument clinic     larryhastings
-ast/compiler        benjaminp, 1st1, pablogsal, markshannon, isidentical, brandtbucher, carljm
+ast/compiler        benjaminp, 1st1, pablogsal, markshannon, isidentical, brandtbucher, carljm, iritkatriel
 autoconf/makefiles  Yhg1s*
 bsd
 issue tracker       ezio-melotti
 buildbots           zware, pablogsal
-bytecode            benjaminp, 1st1, markshannon, brandtbucher, carljm
+bytecode            benjaminp, 1st1, markshannon, brandtbucher, carljm, iritkatriel
 context managers    ncoghlan
 core workflow       Mariatta, ezio-melotti, hugovk, AA-Turner
 coverity scan       tiran, Yhg1s
