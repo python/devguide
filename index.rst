@@ -91,7 +91,7 @@ instructions please see the :ref:`setup guide <setup>`.
       .. code-block:: shell
 
          make patchcheck
-      
+
    .. tab:: macOS
 
       .. code-block:: shell
