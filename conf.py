@@ -13,6 +13,7 @@ extensions = [
     'sphinx_copybutton',
     'sphinxext.opengraph',
     'sphinxext.rediraffe',
+    'sphinx_inline_tabs',
 ]
 
 # The master toctree document.
