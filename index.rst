@@ -27,7 +27,7 @@ instructions please see the :ref:`setup guide <setup>`.
       git clone https://github.com/<your_username>/cpython
       cd cpython
 
-3. Build Python, on Unix and macOS use:
+3. Build Python:
 
    .. tab:: Unix
 
