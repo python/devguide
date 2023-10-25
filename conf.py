@@ -11,9 +11,9 @@ extensions = [
     'sphinx.ext.intersphinx',
     'sphinx.ext.todo',
     'sphinx_copybutton',
+    'sphinx_inline_tabs',
     'sphinxext.opengraph',
     'sphinxext.rediraffe',
-    'sphinx_inline_tabs',
 ]
 
 # The master toctree document.
