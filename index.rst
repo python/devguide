@@ -66,15 +66,15 @@ instructions please see the :ref:`setup guide <setup>`.
 
          ./python.exe -m test -j3
 
+      Note: :ref:`Most <mac-python.exe>` macOS systems use
+      :file:`./python.exe` in order to avoid filename conflicts with
+      the ``Python`` directory.
+
    .. tab:: Windows
 
       .. code-block:: dosbatch
 
          .\python.bat -m test -j3
-
-   Note: :ref:`Most <mac-python.exe>` macOS systems use
-   :file:`./python.exe` in order to avoid filename conflicts with
-   the ``Python`` directory.
 
 5. Create a new branch where your work for the issue will go, e.g.::
 
