@@ -1,6 +1,7 @@
 Sphinx~=7.2.6
 furo>=2022.6.4
 jinja2
+sphinx-inline-tabs>=2023.4.21
 sphinx-lint==0.6.8
 sphinx-notfound-page>=1.0.0
 sphinx_copybutton>=0.3.3

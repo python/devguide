@@ -27,27 +27,54 @@ instructions please see the :ref:`setup guide <setup>`.
       git clone https://github.com/<your_username>/cpython
       cd cpython
 
-3. Build Python, on Unix and macOS use::
+3. Build Python:
 
-      ./configure --with-pydebug && make -j
+   .. tab:: Unix
 
-   and on Windows use:
+      .. code-block:: shell
 
-   .. code-block:: dosbatch
+         ./configure --with-pydebug && make -j
 
-      PCbuild\build.bat -e -d
+   .. tab:: macOS
+
+      .. code-block:: shell
+
+         ./configure --with-pydebug && make -j
+
+   .. tab:: Windows
+
+      .. code-block:: dosbatch
+
+         PCbuild\build.bat -e -d
 
    See also :ref:`more detailed instructions <compiling>`,
    :ref:`how to install and build dependencies <build-dependencies>`,
    and the platform-specific pages for :ref:`Unix <unix-compiling>`,
    :ref:`macOS`, and :ref:`Windows <windows-compiling>`.
 
-4. :ref:`Run the tests <runtests>`::
+4. :ref:`Run the tests <runtests>`:
 
-      ./python -m test -j3
+   .. tab:: Unix
 
-   On :ref:`most <mac-python.exe>` macOS systems, replace :file:`./python`
-   with :file:`./python.exe`.  On Windows, use :file:`python.bat`.
+      .. code-block:: shell
+
+         ./python -m test -j3
+
+   .. tab:: macOS
+
+      .. code-block:: shell
+
+         ./python.exe -m test -j3
+
+      Note: :ref:`Most <mac-python.exe>` macOS systems use
+      :file:`./python.exe` in order to avoid filename conflicts with
+      the ``Python`` directory.
+
+   .. tab:: Windows
+
+      .. code-block:: dosbatch
+
+         .\python.bat -m test -j3
 
 5. Create a new branch where your work for the issue will go, e.g.::
 
@@ -57,17 +84,25 @@ instructions please see the :ref:`setup guide <setup>`.
    <https://github.com/python/cpython/issues>`_.  Trivial issues (e.g. typo fixes) do
    not require any issue to be created.
 
-6. Once you fixed the issue, run the tests, and the patchcheck.
+6. Once you fixed the issue, run the tests, and the patchcheck:
 
-   On Unix and macOS use::
+   .. tab:: Unix
 
-      make patchcheck
+      .. code-block:: shell
 
-   and on Windows:
+         make patchcheck
 
-   .. code-block:: dosbatch
+   .. tab:: macOS
 
-      .\python.bat Tools\patchcheck\patchcheck.py
+      .. code-block:: shell
+
+         make patchcheck
+
+   .. tab:: Windows
+
+      .. code-block:: dosbatch
+
+         .\python.bat Tools\patchcheck\patchcheck.py
 
    If everything is ok, commit.
 
