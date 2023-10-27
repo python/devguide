@@ -39,8 +39,6 @@ from the root directory of your checkout (after you have
 
         .\python.bat -m test
 
-If using Python 2.7, replace ``test`` with ``test.regrtest``.
-
 This will run the majority of tests, but exclude a small portion of them; these
 excluded tests use special kinds of resources: for example, accessing the
 Internet, or trying to play a sound or to display a graphical interface on
