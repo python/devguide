@@ -16,7 +16,8 @@ PAPEROPT_a4     = -D latex_paper_size=a4
 PAPEROPT_letter = -D latex_paper_size=letter
 ALLSPHINXOPTS   = -b $(BUILDER) \
                   -d $(BUILDDIR)/doctrees \
-                  $(PAPEROPT_$(PAPER)) $(SPHINXOPTS) . $(BUILDDIR)/$(BUILDER)
+                  $(PAPEROPT_$(PAPER)) $(SPHINXOPTS) \
+                  . $(BUILDDIR)/$(BUILDER)
 
 .PHONY: help
 help:
