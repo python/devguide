@@ -21,6 +21,7 @@ help:
 	@echo "  venv       to create a venv with necessary tools"
 	@echo "  html       to make standalone HTML files"
 	@echo "  htmlview   to open the index page built by the html target in your browser"
+	@echo "  autobuild  to rebuild and reload HTML files in your browser"
 	@echo "  clean      to remove the venv and build files"
 	@echo "  dirhtml    to make HTML files named index.html in directories"
 	@echo "  singlehtml to make a single large HTML file"
@@ -178,6 +179,11 @@ doctest: ensure-venv
 .PHONY: htmlview
 htmlview: html
 	$(PYTHON) -c "import os, webbrowser; webbrowser.open('file://' + os.path.realpath('_build/html/index.html'))"
+
+.PHONY: autobuild
+autobuild: SPHINXBUILD = $(VENVDIR)/bin/sphinx-autobuild
+autobuild: SPHINXOPTS =  # sphinx-autobuild has no "--keep-going"
+autobuild: html
 
 .PHONY: check
 check: ensure-venv
