@@ -182,7 +182,7 @@ htmlview: html
 
 .PHONY: autobuild
 autobuild: SPHINXBUILD = $(VENVDIR)/bin/sphinx-autobuild
-autobuild: SPHINXOPTS =  # sphinx-autobuild has no "--keep-going"
+autobuild: SPHINXOPTS = --re-ignore="/\.idea/|/venv/"
 autobuild: html
 
 .PHONY: check
