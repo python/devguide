@@ -237,7 +237,7 @@ tracemalloc           vstinner
 tty                   Yhg1s*
 turtle                gregorlingl^, willingc
 types                 1st1
-typing                gvanrossum, Fidget-Spinner, JelleZijlstra*, AlexWaygood*, carljm
+typing                gvanrossum, JelleZijlstra*, AlexWaygood*, carljm
 unicodedata           malemburg, ezio-melotti
 unittest              voidspace*, ezio-melotti, rbtcollins, gpshead
 unittest.mock         voidspace*
@@ -345,7 +345,7 @@ object model        benjaminp, Yhg1s
 packaging           tarekziade, malemburg, alexis^, merwok, dstufft, pfmoore
 pattern matching    brandtbucher*
 peg parser          gvanrossum, pablogsal, lysnikolaou
-performance         vstinner, serhiy-storchaka, 1st1, rhettinger, markshannon, brandtbucher, carljm
+performance         vstinner, serhiy-storchaka, 1st1, rhettinger, markshannon, brandtbucher, carljm, Fidget-Spinner
 pip                 ncoghlan, dstufft, pfmoore, Marcus.Smith^, pradyunsg
 py3 transition      benjaminp
 release management  tarekziade, malemburg, benjaminp, warsaw,
