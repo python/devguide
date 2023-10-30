@@ -7,13 +7,17 @@ VENVDIR       = ./venv
 BUILDDIR      = _build
 SPHINXOPTS    = -W --keep-going
 SPHINXBUILD   = $(VENVDIR)/bin/sphinx-build
+BUILDER       = html
 SPHINXLINT    = $(VENVDIR)/bin/sphinx-lint
 PAPER         =
 
 # Internal variables.
 PAPEROPT_a4     = -D latex_paper_size=a4
 PAPEROPT_letter = -D latex_paper_size=letter
-ALLSPHINXOPTS   = -d $(BUILDDIR)/doctrees $(PAPEROPT_$(PAPER)) $(SPHINXOPTS) .
+ALLSPHINXOPTS   = -b $(BUILDER) \
+                  -d $(BUILDDIR)/doctrees \
+                  $(PAPEROPT_$(PAPER)) $(SPHINXOPTS) \
+                  . $(BUILDDIR)/$(BUILDER)
 
 .PHONY: help
 help:
@@ -69,111 +73,86 @@ ensure-venv:
 
 .PHONY: html
 html: ensure-venv versions
-	$(SPHINXBUILD) -b html $(ALLSPHINXOPTS) $(BUILDDIR)/html
-	@echo
-	@echo "Build finished. The HTML pages are in $(BUILDDIR)/html."
+	$(SPHINXBUILD) $(ALLSPHINXOPTS)
 
 .PHONY: dirhtml
-dirhtml: ensure-venv versions
-	$(SPHINXBUILD) -b dirhtml $(ALLSPHINXOPTS) $(BUILDDIR)/dirhtml
-	@echo
-	@echo "Build finished. The HTML pages are in $(BUILDDIR)/dirhtml."
+dirhtml: BUILDER = dirhtml
+dirhtml: html
 
 .PHONY: singlehtml
-singlehtml: ensure-venv
-	$(SPHINXBUILD) -b singlehtml $(ALLSPHINXOPTS) $(BUILDDIR)/singlehtml
-	@echo
-	@echo "Build finished. The HTML page is in $(BUILDDIR)/singlehtml."
+singlehtml: BUILDER = singlehtml
+singlehtml: html
 
 .PHONY: pickle
-pickle: ensure-venv
-	$(SPHINXBUILD) -b pickle $(ALLSPHINXOPTS) $(BUILDDIR)/pickle
+pickle: BUILDER = pickle
+pickle: html
 	@echo
 	@echo "Build finished; now you can process the pickle files."
 
 .PHONY: json
-json: ensure-venv
-	$(SPHINXBUILD) -b json $(ALLSPHINXOPTS) $(BUILDDIR)/json
+json: BUILDER = json
+json: html
 	@echo
 	@echo "Build finished; now you can process the JSON files."
 
 .PHONY: htmlhelp
-htmlhelp: ensure-venv
-	$(SPHINXBUILD) -b htmlhelp $(ALLSPHINXOPTS) $(BUILDDIR)/htmlhelp
+htmlhelp: BUILDER = htmlhelp
+htmlhelp: html
 	@echo
 	@echo "Build finished; now you can run HTML Help Workshop with the" \
-	      ".hhp project file in $(BUILDDIR)/htmlhelp."
+	      ".hhp project file in $(BUILDDIR)/$(BUILDER)."
 
 .PHONY: qthelp
-qthelp: ensure-venv
-	$(SPHINXBUILD) -b qthelp $(ALLSPHINXOPTS) $(BUILDDIR)/qthelp
-	@echo
-	@echo "Build finished; now you can run "qcollectiongenerator" with the" \
-	      ".qhcp project file in $(BUILDDIR)/qthelp, like this:"
-	@echo "# qcollectiongenerator $(BUILDDIR)/qthelp/PythonDevelopersGuide.qhcp"
-	@echo "To view the help file:"
-	@echo "# assistant -collectionFile $(BUILDDIR)/qthelp/PythonDevelopersGuide.qhc"
+qthelp: BUILDER = qthelp
+qthelp: html
 
 .PHONY: devhelp
-devhelp: ensure-venv
-	$(SPHINXBUILD) -b devhelp $(ALLSPHINXOPTS) $(BUILDDIR)/devhelp
-	@echo
-	@echo "Build finished."
-	@echo "To view the help file:"
-	@echo "# mkdir -p $$HOME/.local/share/devhelp/PythonDevelopersGuide"
-	@echo "# ln -s $(BUILDDIR)/devhelp $$HOME/.local/share/devhelp/PythonDevelopersGuide"
-	@echo "# devhelp"
+devhelp: BUILDER = devhelp
+devhelp: html
 
 .PHONY: epub
-epub: ensure-venv
-	$(SPHINXBUILD) -b epub $(ALLSPHINXOPTS) $(BUILDDIR)/epub
+epub: BUILDER = epub
+epub: html
 	@echo
-	@echo "Build finished. The epub file is in $(BUILDDIR)/epub."
+	@echo "Build finished. The epub file is in $(BUILDDIR)/$(BUILDER)."
 
 .PHONY: latex
-latex: ensure-venv
-	$(SPHINXBUILD) -b latex $(ALLSPHINXOPTS) $(BUILDDIR)/latex
-	@echo
-	@echo "Build finished; the LaTeX files are in $(BUILDDIR)/latex."
-	@echo "Run \`make' in that directory to run these through (pdf)latex" \
-	      "(use \`make latexpdf' here to do that automatically)."
+latex: BUILDER = latex
+latex: html
 
 .PHONY: latexpdf
-latexpdf: ensure-venv
-	$(SPHINXBUILD) -b latex $(ALLSPHINXOPTS) $(BUILDDIR)/latex
+latexpdf: BUILDER = latex
+latexpdf: html
 	@echo "Running LaTeX files through pdflatex..."
 	make -C $(BUILDDIR)/latex all-pdf
-	@echo "pdflatex finished; the PDF files are in $(BUILDDIR)/latex."
+	@echo "pdflatex finished; the PDF files are in $(BUILDDIR)/$(BUILDER)."
 
 .PHONY: text
-text: ensure-venv
-	$(SPHINXBUILD) -b text $(ALLSPHINXOPTS) $(BUILDDIR)/text
-	@echo
-	@echo "Build finished. The text files are in $(BUILDDIR)/text."
+text: BUILDER = text
+text: html
 
 .PHONY: man
-man: ensure-venv
-	$(SPHINXBUILD) -b man $(ALLSPHINXOPTS) $(BUILDDIR)/man
+man: BUILDER = man
+man: html
 	@echo
-	@echo "Build finished. The manual pages are in $(BUILDDIR)/man."
+	@echo "Build finished. The manual pages are in $(BUILDDIR)/$(BUILDER)."
 
 .PHONY: changes
-changes: ensure-venv
-	$(SPHINXBUILD) -b changes $(ALLSPHINXOPTS) $(BUILDDIR)/changes
-	@echo
-	@echo "The overview file is in $(BUILDDIR)/changes."
+changes: BUILDER = changes
+changes: html
 
-linkcheck: ensure-venv
-	$(SPHINXBUILD) -b linkcheck $(ALLSPHINXOPTS) $(BUILDDIR)/linkcheck
+.PHONY: linkcheck
+linkcheck: BUILDER = linkcheck
+linkcheck: html
 	@echo
 	@echo "Link check complete; look for any errors in the above output " \
-	      "or in $(BUILDDIR)/linkcheck/output.txt."
+	      "or in $(BUILDDIR)/$(BUILDER)/output.txt."
 
 .PHONY: doctest
-doctest: ensure-venv
-	$(SPHINXBUILD) -b doctest $(ALLSPHINXOPTS) $(BUILDDIR)/doctest
+doctest: BUILDER = doctest
+doctest: html
 	@echo "Testing of doctests in the sources finished, look at the " \
-	      "results in $(BUILDDIR)/doctest/output.txt."
+	      "results in $(BUILDDIR)/$(BUILDER)/output.txt."
 
 .PHONY: htmlview
 htmlview: html
