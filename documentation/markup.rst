@@ -618,7 +618,6 @@ an "unused" primary prompt; this is an example of what *not* to do:
 
    >>> 1 + 1
    2
-   >>>
 
 Syntax highlighting is handled in a smart way:
 
