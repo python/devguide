@@ -154,7 +154,7 @@ reason either as ``complete`` or ``not planned``.
 .. _issue tracker: https://github.com/python/cpython/issues
 .. _advanced search: https://github.com/search/advanced
 .. _devguide repo: https://github.com/python/devguide/issues
-.. _Roundup: https://roundup.sourceforge.io/
+.. _Roundup: https://www.roundup-tracker.org/
 .. _Python Discourse: https://discuss.python.org/
 .. _autolinks: https://docs.github.com/en/get-started/writing-on-github/working-with-advanced-formatting/autolinked-references-and-urls
 .. _checklists: https://docs.github.com/en/get-started/writing-on-github/working-with-advanced-formatting/about-task-lists
