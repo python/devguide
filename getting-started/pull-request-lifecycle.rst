@@ -41,8 +41,8 @@ Here is a quick overview of how you can contribute to CPython:
 
 #. `Create Pull Request`_ on GitHub to merge a branch from your fork
 
-#. Make sure the continuous integration checks on your Pull Request
-   are green (i.e. successful)
+#. Make sure the :ref:`continuous integration checks on your Pull Request
+   are green <keeping-ci-green>` (i.e. successful)
 
 #. Review and address `comments on your Pull Request`_
 
@@ -472,7 +472,7 @@ code and leave comments in the pull request or issue tracker.
    'merge-ready', you should always make sure the entire test suite passes.
 
 Leaving a pull request review on GitHub
-=======================================
+---------------------------------------
 
 When you review a pull request, you should provide additional details and context
 of your review process.
@@ -487,14 +487,55 @@ Instead of simply "approving" the pull request, leave comments.  For example:
 #. Comment on what is "good" about the pull request, not just the "bad". Doing
    so will make it easier for the PR author to find the good in your comments.
 
+#. Look at any failures in CI on the current PR. See :ref:`"Keeping CI green"
+   <keeping-ci-green>` below for simple things you can do to help move the PR forward.
+
 Dismissing review from another core developer
-=============================================
+---------------------------------------------
 
 A core developer can dismiss another core developer's review if they confirmed
 that the requested changes have been made.  When a core developer has assigned
 the PR to themselves, then it is a sign that they are actively looking after
 the PR, and their review should not be dismissed.
 
+.. _keeping-ci-green:
+
+Keeping Continuous Integration green
+====================================
+
+Our change management workflows generally won't allow merging PRs with
+failures on them. Therefore, if you see a CI failure on a PR, have a look
+what it is about.
+
+Usually the failure will be directly related to the changes in the current
+PR. If you happen to have any insight into the failure, let the author know
+in a review comment. CI runs sometimes generate thousands of lines of output.
+Even something as simple as finding the traceback and putting it in the
+comment will be helpful to the PR author.
+
+If the failure doesn't look related to the change you're looking at, check
+if it's not present on the `Release Status`_ Buildbot dashboard as well.
+If so, that means the failure was introduced in a prior change. Using Buildbot's
+UI you can find which PR introduced the issue and comment there that it
+affects other PRs.
+
+If you still don't see where the failure originates from, check for
+an "This branch is out-of-date with the base branch" sign next to the
+list of executed checks. Clicking "Update branch" next to this message
+will merge in the latest changes from the base branch into the PR.
+
+If this still doesn't help with the failure on the PR, you can try
+to re-run that particular failed check. Go to the red GitHub Action job,
+and find a button on the top right called "Re-run jobs". Select
+"Re-run failed jobs". The button will only be present when all other jobs
+finished running.
+
+Re-running failed jobs shouldn't be your first instinct but it is occasionally
+helpful because distributed systems can have intermittent failures, and
+some of our unit tests are sensitive to overloaded virtual machines.
+If you identify such flaky behavior, look for an issue in the `issue tracker`_
+that describes this particular flakiness. Create a new issue if you can't
+find one.
 
 Committing/rejecting
 ====================
@@ -522,3 +563,4 @@ accepts your pull request.
 
 .. _issue tracker: https://github.com/python/cpython/issues
 .. _Core Development Discourse category: https://discuss.python.org/c/core-dev/23
+.. _Release Status: https://buildbot.python.org/all/#/release_status
