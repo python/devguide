@@ -611,14 +611,13 @@ preceding paragraph and delimited by indentation.
 
 Representing an interactive session requires including the prompts and output
 along with the Python code.  No special markup is required for interactive
-sessions.  After the last line of input or output presented, there should not be
-an "unused" primary prompt; this is an example of what *not* to do:
+sessions. After the last line of input or output is presented, there should
+be no trailing prompt. An example of correct usage is:
 
 .. code-block:: python
 
    >>> 1 + 1
    2
-   >>>
 
 Syntax highlighting is handled in a smart way:
 
