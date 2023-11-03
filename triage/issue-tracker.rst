@@ -20,7 +20,7 @@ If you would like to file an issue about this devguide, please do so at the
     Prior to moving the issue tracker to GitHub,
     Python used to use a dedicated `Roundup`_ instance as its issue tracker.
     That `old bug tracker`_ was hosted under the domain ``bugs.python.org``
-    (sometimes called ``bpo`` for short). Currently a read-only version is still
+    (sometimes called ``bpo`` for short). A read-only version is
     available on that domain for historical purposes. All ``bpo`` data has been
     migrated to the current `issue tracker`_ on GitHub.
 
