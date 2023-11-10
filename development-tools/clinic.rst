@@ -1955,6 +1955,47 @@ The generated docstring ends up looking like this:
    Return a copy of the code object with new values for the specified fields.
 
 
+.. _clinic-howto-critical-sections:
+
+How to use critical sections with Argument Clinic
+-------------------------------------------------
+
+You can use the ``@critical_section`` directive to instruct Argument Clinic to
+wrap the call to the "impl" function in a Python critical section.  In
+``--disable-gil`` builds of CPython, the critical section will acquire the
+per-object lock of the first argument.  Python critical sections are no-ops in
+builds of CPython with the GIL.
+
+See :cpy-file:`Include/internal/pycore_critical_section.h` and :pep:`703` for
+more details about critical sections.
+
+Example from :cpy-file:`Modules/_io/bufferedio.c`::
+
+   /*[clinic input]
+   @critical_section
+   _io._Buffered.close
+   [clinic start generated code]*/
+
+The generated glue code looks like this:
+
+.. code-block:: c
+
+   static PyObject *
+   _io__Buffered_close(buffered *self, PyObject *Py_UNUSED(ignored))
+   {
+      PyObject *return_value = NULL;
+
+      Py_BEGIN_CRITICAL_SECTION(self);
+      return_value = _io__Buffered_close_impl(self);
+      Py_END_CRITICAL_SECTION();
+
+      return return_value;
+   }
+
+
+.. versionadded:: 3.13
+
+
 .. _clinic-howto-deprecate-positional:
 .. _clinic-howto-deprecate-keyword:
 
