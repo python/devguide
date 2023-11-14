@@ -45,6 +45,9 @@ html_static_path = ['_static']
 html_css_files = [
     'devguide_overrides.css',
 ]
+html_js_files = [
+    "activate_tab.js",
+]
 html_logo = "_static/python-logo.svg"
 html_favicon = "_static/favicon.png"
 

@@ -5,6 +5,14 @@
 Running and writing tests
 =========================
 
+.. raw:: html
+
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      activateTab(getOS());
+    });
+    </script>
+
 .. note::
 
     This document assumes you are working from an

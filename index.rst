@@ -2,6 +2,14 @@
 Python Developer's Guide
 ========================
 
+.. raw:: html
+
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      activateTab(getOS());
+    });
+    </script>
+
 .. highlight:: bash
 
 This guide is a comprehensive resource for :ref:`contributing <contributing>`
