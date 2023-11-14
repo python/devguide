@@ -1961,10 +1961,10 @@ How to use critical sections with Argument Clinic
 -------------------------------------------------
 
 You can use the ``@critical_section`` directive to instruct Argument Clinic to
-wrap the call to the "impl" function in a Python critical section.  In
-``--disable-gil`` builds of CPython, the critical section will acquire the
-per-object lock of the first argument.  Python critical sections are no-ops in
-builds of CPython with the GIL.
+wrap the call to the "impl" function in a Python critical section.
+In ``--disable-gil`` builds of CPython,
+the critical section will acquire the per-object lock of the first argument.
+Python critical sections are no-ops in builds of CPython with the GIL.
 
 See :cpy-file:`Include/internal/pycore_critical_section.h` and :pep:`703` for
 more details about critical sections.
