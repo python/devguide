@@ -122,8 +122,11 @@ To build the docs as HTML, run::
 
    make html
 
-.. tip:: Substitute ``htmlview`` for ``html`` to open the docs in a web browser
-         once the build completes.
+.. tip:: * Substitute ``htmlview`` for ``html`` to open the docs in a web browser
+           once the build completes.
+         * Substitute ``htmllive`` (Unix only) for ``html`` to automatically
+           rebuild the docs, start a local server, and reload the page in your
+           browser after you save reST files.
 
 To check the docs for common errors with `Sphinx Lint`_
 (which is run on all :ref:`pull requests <pullrequest>`), use::

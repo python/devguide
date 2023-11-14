@@ -42,9 +42,15 @@ in the checkout directory.  On Windows use:
 
    > .\make html
 
-You will find the generated files in ``_build/html`` or, if you use
-``make htmlview``, the docs will be opened in a browser once the build
-completes.  Note that ``make check`` runs automatically when you submit
+You will find the generated files in ``_build/html``.
+
+.. tip:: * Substitute ``htmlview`` for ``html`` to open the docs in a web browser
+           once the build completes.
+         * Substitute ``htmllive`` (Unix only) for ``html`` to automatically
+           rebuild the docs, start a local server, and reload the page in your
+           browser after you save reST files.
+
+Note that ``make check`` runs automatically when you submit
 a :ref:`pull request <pullrequest>`.  You may wish to run ``make check``
 and ``make linkcheck`` to make sure that it runs without errors.
 
