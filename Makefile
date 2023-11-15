@@ -4,19 +4,21 @@
 # You can set these variables from the command line.
 PYTHON        = python3
 VENVDIR       = ./venv
-BUILDDIR      = _build
-SPHINXOPTS    = -W --keep-going
 SPHINXBUILD   = $(VENVDIR)/bin/sphinx-build
+SPHINXOPTS    = -W --keep-going
+BUILDDIR      = _build
 BUILDER       = html
-SPHINXLINT    = $(VENVDIR)/bin/sphinx-lint
+JOBS          = auto
 PAPER         =
+SPHINXLINT    = $(VENVDIR)/bin/sphinx-lint
 
 # Internal variables.
 PAPEROPT_a4     = -D latex_paper_size=a4
 PAPEROPT_letter = -D latex_paper_size=letter
 ALLSPHINXOPTS   = -b $(BUILDER) \
                   -d $(BUILDDIR)/doctrees \
-                  $(PAPEROPT_$(PAPER)) $(SPHINXOPTS) \
+                  $(PAPEROPT_$(PAPER)) \
+                  -j $(JOBS) $(SPHINXOPTS) \
                   . $(BUILDDIR)/$(BUILDER)
 
 .PHONY: help
