@@ -44,11 +44,11 @@ in the checkout directory.  On Windows use:
 
 You will find the generated files in ``_build/html``.
 
-.. tip:: * Substitute ``htmlview`` for ``html`` to open the docs in a web browser
+.. tip:: * Replace ``html`` with ``htmlview`` to open the docs in a web browser
            once the build completes.
-         * Substitute ``htmllive`` (Unix only) for ``html`` to automatically
-           rebuild the docs, start a local server, and reload the page in your
-           browser after you save reST files.
+         * Replace ``html`` with ``htmllive`` to rebuild the docs,
+           start a local server, and automatically reload the page in your
+           browser when you make changes to reST files (Unix only).
 
 Note that ``make check`` runs automatically when you submit
 a :ref:`pull request <pullrequest>`.  You may wish to run ``make check``
