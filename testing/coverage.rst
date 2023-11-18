@@ -87,23 +87,31 @@ just built, and this built version of Python will not see packages installed
 into your default version of Python. One option is to use a virtual environment
 to install coverage.
 
-On Unix run::
+.. tab:: Unix
 
-    ./python -m venv ../cpython-venv
-    source ../cpython-venv/bin/activate
-    pip install coverage
+    .. code-block:: shell
 
-On :ref:`most <mac-python.exe>` macOS systems run::
+        ./python -m venv ../cpython-venv
+        source ../cpython-venv/bin/activate
+        pip install coverage
 
-    ./python.exe -m venv ../cpython-venv
-    source ../cpython-venv/bin/activate
-    pip install coverage
+.. tab:: macOS
 
-On Windows run::
+    On :ref:`most <mac-python.exe>` macOS systems run:
 
-    python.bat -m venv ..\\cpython-venv
-    ..\\cpython-venv\\Scripts\\activate.bat
-    pip install coverage
+    .. code-block:: shell
+
+        ./python.exe -m venv ../cpython-venv
+        source ../cpython-venv/bin/activate
+        pip install coverage
+
+.. tab:: Windows
+
+    .. code-block:: dosbatch
+
+        python.bat -m venv ..\\cpython-venv
+        ..\\cpython-venv\\Scripts\\activate.bat
+        pip install coverage
 
 You can now use python without the ./ for the rest of these instructions, as
 long as your venv is activated. For more info on venv see `Virtual Environment
