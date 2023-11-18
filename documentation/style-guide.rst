@@ -76,7 +76,7 @@ be used to ensure consistency throughout the documentation:
 
 C API
   Python's `API <https://docs.python.org/3/c-api/>`_ used by C programmers
-  to write extension modules. Capitalized and unhyphenated.
+  to write extension modules. All caps and unhyphenated.
 
 CPU
    For "central processing unit." Many style guides say this should be
