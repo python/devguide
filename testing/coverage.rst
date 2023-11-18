@@ -89,6 +89,8 @@ to install coverage.
 
 .. tab:: Unix
 
+    Run:
+
     .. code-block:: shell
 
         ./python -m venv ../cpython-venv
@@ -106,6 +108,8 @@ to install coverage.
         pip install coverage
 
 .. tab:: Windows
+
+    Run:
 
     .. code-block:: dosbatch
 
