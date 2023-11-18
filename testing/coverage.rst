@@ -4,6 +4,14 @@
 Increase test coverage
 ======================
 
+.. raw:: html
+
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      activateTab(getOS());
+    });
+    </script>
+
 Python development follows a practice that all semantic changes and additions
 to the language and :abbr:`stdlib (standard library)` are accompanied by
 appropriate unit tests. Unfortunately Python was in existence for a long time
