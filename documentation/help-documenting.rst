@@ -84,4 +84,12 @@ a pull request directly. It's best to avoid filing a single issue for an entire
 section containing multiple problems; instead, file several issues so that it
 is easier to break the work up for multiple people and more efficient review.
 
+For help with the finer points of English technical writing, mention the
+`@python/proofreaders <https://github.com/orgs/python/teams/proofreaders>`__
+team in your issue or pull request in any `@python <https://github.com/python/>`__
+repo. If you'd like to join the team,
+`open a core-workflow issue <https://github.com/python/core-workflow/issues/new/choose>`__
+similar to
+`python/core-workflow#461 <https://github.com/python/core-workflow/issues/461>`__.
+
 .. _issue tracker: https://github.com/python/cpython/issues
