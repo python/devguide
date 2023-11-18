@@ -153,9 +153,9 @@ To switch to a different branch::
    git switch <another-branch-name>
 
 Other releases are just branches in the repository.  For example, to work
-on the 2.7 release from the ``upstream`` remote::
+on the 3.12 release from the ``upstream`` remote::
 
-   git switch -c 2.7 upstream/2.7
+   git switch -c 3.12 upstream/3.12
 
 .. _deleting_branches:
 

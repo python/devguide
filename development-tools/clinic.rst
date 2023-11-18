@@ -834,8 +834,7 @@ To save time, and to minimize how much you need to learn
 to achieve your first port to Argument Clinic, the walkthrough above tells
 you to use "legacy converters".  "Legacy converters" are a convenience,
 designed explicitly to make porting existing code to Argument Clinic
-easier.  And to be clear, their use is acceptable when porting code for
-Python 3.4.
+easier.
 
 However, in the long term we probably want all our blocks to
 use Argument Clinic's real syntax for converters.  Why?  A couple
