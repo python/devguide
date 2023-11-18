@@ -711,7 +711,7 @@ When a pegen-generated parser detects that an exception is raised, it will
 is and it will unwind the stack and report the exception. This means that if a
 :ref:`rule action <peg-grammar-actions>` raises an exception all parsing will
 stop at that exact point. This is done to allow to correctly propagate any
-exception set by calling Python C-API functions. This also includes :exc:`SyntaxError`
+exception set by calling Python's C API functions. This also includes :exc:`SyntaxError`
 exceptions and this is the main mechanism the parser uses to report custom syntax
 error messages.
 
