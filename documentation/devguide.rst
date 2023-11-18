@@ -4,6 +4,14 @@
 Helping with the Developer's Guide
 ==================================
 
+.. raw:: html
+
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      activateTab(getOS());
+    });
+    </script>
+
 .. highlight:: console
 
 The Developer's Guide (what you're reading now) uses the same process as the
