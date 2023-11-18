@@ -449,13 +449,7 @@ when creating the pull request.
 
 If you don't have GitHub CLI or hub installed, you can set up a git alias:
 
-.. tab:: Unix
-
-   .. code-block:: shell
-
-      $ git config --global alias.pr '!sh -c "git fetch upstream pull/${1}/head:pr_${1} && git checkout pr_${1}" -'
-
-.. tab:: macOS
+.. tab:: Unix/macOS
 
    .. code-block:: shell
 
