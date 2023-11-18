@@ -5,6 +5,14 @@
 Getting started
 ===============
 
+.. raw:: html
+
+   <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      activateTab(getOS());
+    });
+    </script>
+
 .. highlight::  rest
 
 The Python language has a substantial body of documentation, much of it
