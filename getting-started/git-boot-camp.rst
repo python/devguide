@@ -4,6 +4,14 @@
 Git bootcamp and cheat sheet
 ============================
 
+.. raw:: html
+
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      activateTab(getOS());
+    });
+    </script>
+
 .. highlight:: console
 
 .. note::
