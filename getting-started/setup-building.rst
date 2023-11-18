@@ -350,7 +350,7 @@ This section explains how to install additional extensions (e.g. ``zlib``)
 on :ref:`Linux <deps-on-linux>` and :ref:`macOS`.  On Windows,
 extensions are already included and built automatically.
 
-.. tab:: Linux
+.. tab:: Unix
 
    .. _deps-on-linux:
 
