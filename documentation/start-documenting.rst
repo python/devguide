@@ -81,22 +81,33 @@ Create a virtual environment
 ----------------------------
 
 .. _doc-create-venv-unix:
-
-**On Unix platforms** that support :program:`make`
-(including Linux, macOS and BSD),
-you can create a new :mod:`venv` with the required dependencies using::
-
-   make venv
-
-Building the docs with :program:`make` will automatically use this environment
-without you having to activate it.
-
 .. _doc-create-venv-windows:
 
-**On Windows**, or if not using :program:`make`,
-`create a new virtual environment <venv-create_>`__ manually.
-Always be sure to `activate this environment <venv-activate_>`__
-before building the documentation.
+You can create a new :mod:`venv` with the required dependencies using:
+
+.. tab:: Unix
+
+   .. code-block:: shell
+
+      make venv
+
+   Building the docs with :program:`make` will automatically use this environment
+   without you having to activate it.
+
+.. tab:: macOS
+
+   .. code-block:: shell
+
+      make venv
+
+   Building the docs with :program:`make` will automatically use this environment
+   without you having to activate it.
+
+.. tab:: Windows
+
+   `Create a new virtual environment <venv-create_>`__ manually.
+   Always be sure to `activate this environment <venv-activate_>`__
+   before building the documentation.
 
 
 .. _building-using-make:
