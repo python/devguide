@@ -497,6 +497,10 @@ extensions are already included and built automatically.
       written completely in Python: as of this writing, CPython contains slightly
       more Python code than C.
 
+.. tab:: Windows
+
+   On Windows, extensions are already included and built automatically.
+
 
 .. _regenerate_configure:
 
