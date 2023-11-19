@@ -251,19 +251,49 @@ Measuring coverage of C code with gcov and lcov
 
 It's also possible to measure the function, line and branch coverage of
 Python's C code. Right now only GCC with `gcov`_ is supported. In order to
-create an instrumented build of Python with gcov, run::
+create an instrumented build of Python with gcov, run:
 
-    make coverage
+.. tab:: Unix/macOS
+
+    .. code-block:: shell
+
+        make coverage
+
+.. tab:: Windows
+
+    .. code-block:: dosbatch
+
+        .\make coverage
 
 Then run some code and gather coverage data with the ``gcov`` command. In
-order to create a HTML report you can install `lcov`_. The command::
+order to create a HTML report you can install `lcov`_. The command:
 
-    make coverage-lcov
+.. tab:: Unix/macOS
+
+    .. code-block:: shell
+
+        make coverage-lcov
+
+.. tab:: Windows
+
+    .. code-block:: dosbatch
+
+        .\make coverage-lcov
 
 assembles coverage data, removes 3rd party and system libraries and finally
-creates a report. You can skip both steps and just run::
+creates a report. You can skip both steps and just run:
 
-    make coverage-report
+.. tab:: Unix/macOS
+
+    .. code-block:: shell
+
+        make coverage-report
+
+.. tab:: Windows
+
+    .. code-block:: dosbatch
+
+        .\make coverage-report
 
 if you like to generate a coverage report for Python's stdlib tests. It takes
 about 20 to 30 minutes on a modern computer.
