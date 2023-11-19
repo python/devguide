@@ -44,15 +44,7 @@ you*.
 
 To build the devguide from the checkout directory:
 
-.. tab:: Unix
-
-   .. code-block:: shell
-
-      make html
-
-.. tab:: macOS
-
-   .. code-block:: shell
+.. tab:: Unix/macOS
 
       make html
 
