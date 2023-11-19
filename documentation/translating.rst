@@ -213,6 +213,8 @@ Here's what we're using:
 - `powrap <https://pypi.org/project/powrap/>`__ to rewrap the ``.po`` files
   before committing. This helps keep Git diffs short.
 - `potodo <https://pypi.org/project/potodo/>`__ to list what needs to be translated.
+- `sphinx-lint <https://pypi.org/project/sphinx-lint/>`__ to validate reST syntax in
+  translation files.
 
 
 How is a coordinator elected?
