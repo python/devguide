@@ -4,6 +4,14 @@
 Helping with the Developer's Guide
 ==================================
 
+.. raw:: html
+
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      activateTab(getOS());
+    });
+    </script>
+
 .. highlight:: console
 
 The Developer's Guide (what you're reading now) uses the same process as the
@@ -32,15 +40,21 @@ To build the devguide, some additional dependencies are required (most
 importantly, `Sphinx`_), and the standard way to install dependencies in
 Python projects is to create a virtualenv, and then install dependencies from
 a ``requirements.txt`` file. For your convenience, this is all *automated for
-you*. To build the devguide on a Unix-like system use::
+you*.
 
-   $ make html
+To build the devguide from the checkout directory:
 
-in the checkout directory.  On Windows use:
+.. tab:: Unix/macOS
 
-.. code-block:: doscon
+   .. code-block:: shell
 
-   > .\make html
+      make html
+
+.. tab:: Windows
+
+   .. code-block:: dosbatch
+
+      .\make html
 
 You will find the generated files in ``_build/html``.
 
