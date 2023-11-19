@@ -46,6 +46,8 @@ To build the devguide from the checkout directory:
 
 .. tab:: Unix/macOS
 
+   .. code-block:: shell
+
       make html
 
 .. tab:: Windows
