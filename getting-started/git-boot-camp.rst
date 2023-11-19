@@ -4,6 +4,14 @@
 Git bootcamp and cheat sheet
 ============================
 
+.. raw:: html
+
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      activateTab(getOS());
+    });
+    </script>
+
 .. highlight:: console
 
 .. note::
@@ -439,16 +447,19 @@ Both of these tools will configure a remote URL for the branch, so you can
 ``git push`` if the pull request author checked "Allow edits from maintainers"
 when creating the pull request.
 
-If you don't have GitHub CLI or hub installed, you can set up a git alias. On
-Unix and macOS::
+If you don't have GitHub CLI or hub installed, you can set up a git alias:
 
-   $ git config --global alias.pr '!sh -c "git fetch upstream pull/${1}/head:pr_${1} && git checkout pr_${1}" -'
+.. tab:: Unix/macOS
 
-On Windows, reverse the single (``'``) and double (``"``) quotes:
+   .. code-block:: shell
 
-.. code-block:: bash
+      $ git config --global alias.pr '!sh -c "git fetch upstream pull/${1}/head:pr_${1} && git checkout pr_${1}" -'
 
-   git config --global alias.pr "!sh -c 'git fetch upstream pull/${1}/head:pr_${1} && git checkout pr_${1}' -"
+.. tab:: Windows
+
+   .. code-block:: dosbatch
+
+      git config --global alias.pr "!sh -c 'git fetch upstream pull/${1}/head:pr_${1} && git checkout pr_${1}' -"
 
 The alias only needs to be done once.  After the alias is set up, you can get a
 local copy of a pull request as follows::
