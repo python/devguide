@@ -143,202 +143,198 @@ checks that one should not skip.
 .. seealso:: The effects of various configure and build flags are documented in
    the `Python configure docs <https://docs.python.org/dev/using/configure.html>`_.
 
-.. tab:: Unix/macOS
+.. _unix-compiling:
 
-   .. _unix-compiling:
+Unix
+----
 
-   Unix
-   ----
+The core CPython interpreter only needs a C compiler to be built,
+however, some of the extension modules will need development headers
+for additional libraries (such as the ``zlib`` library for compression).
+Depending on what you intend to work on, you might need to install these
+additional requirements so that the compiled interpreter supports the
+desired features.
 
-   The core CPython interpreter only needs a C compiler to be built,
-   however, some of the extension modules will need development headers
-   for additional libraries (such as the ``zlib`` library for compression).
-   Depending on what you intend to work on, you might need to install these
-   additional requirements so that the compiled interpreter supports the
-   desired features.
+If you want to install these optional dependencies, consult the
+:ref:`build-dependencies` section below.
 
-   If you want to install these optional dependencies, consult the
-   :ref:`build-dependencies` section below.
+If you don't need to install them, the basic steps for building Python
+for development is to configure it and then compile it.
 
-   If you don't need to install them, the basic steps for building Python
-   for development is to configure it and then compile it.
+Configuration is typically::
 
-   Configuration is typically::
+   $ ./configure --with-pydebug
 
-      $ ./configure --with-pydebug
+More flags are available to ``configure``, but this is the minimum you should
+do to get a pydebug build of CPython.
 
-   More flags are available to ``configure``, but this is the minimum you should
-   do to get a pydebug build of CPython.
+.. note::
+   You might need to run ``make clean`` before or after re-running ``configure``
+   in a particular build directory.
 
-   .. note::
-      You might need to run ``make clean`` before or after re-running ``configure``
-      in a particular build directory.
+Once ``configure`` is done, you can then compile CPython with::
 
-   Once ``configure`` is done, you can then compile CPython with::
+   $ make -s -j2
 
-      $ make -s -j2
+This will build CPython with only warnings and errors being printed to
+stderr and utilize up to 2 CPU cores. If you are using a multi-core machine
+with more than 2 cores (or a single-core machine), you can adjust the number
+passed into the ``-j`` flag to match the number of cores you have (or if your
+version of Make supports it, you can use ``-j`` without a number and Make
+will not limit the number of steps that can run simultaneously.).
 
-   This will build CPython with only warnings and errors being printed to
-   stderr and utilize up to 2 CPU cores. If you are using a multi-core machine
-   with more than 2 cores (or a single-core machine), you can adjust the number
-   passed into the ``-j`` flag to match the number of cores you have (or if your
-   version of Make supports it, you can use ``-j`` without a number and Make
-   will not limit the number of steps that can run simultaneously.).
+At the end of the build you should see a success message, followed
+by a list of extension modules that haven't been built because their
+dependencies were missing:
 
-   At the end of the build you should see a success message, followed
-   by a list of extension modules that haven't been built because their
-   dependencies were missing:
+.. code-block:: none
 
-   .. code-block:: none
+   The necessary bits to build these optional modules were not found:
+   _gdbm
+   To find the necessary bits, look in configure.ac and config.log.
 
-      The necessary bits to build these optional modules were not found:
-      _gdbm
-      To find the necessary bits, look in configure.ac and config.log.
+   Checked 106 modules (31 built-in, 74 shared, 0 n/a on macosx-13.4-arm64, 0 disabled, 1 missing, 0 failed on import)
 
-      Checked 106 modules (31 built-in, 74 shared, 0 n/a on macosx-13.4-arm64, 0 disabled, 1 missing, 0 failed on import)
+If the build failed and you are using a C89 or C99-compliant compiler,
+please open a bug report on the `issue tracker`_.
 
-   If the build failed and you are using a C89 or C99-compliant compiler,
-   please open a bug report on the `issue tracker`_.
+If you decide to :ref:`build-dependencies`, you will need to re-run both
+``configure`` and ``make``.
 
-   If you decide to :ref:`build-dependencies`, you will need to re-run both
-   ``configure`` and ``make``.
+.. _mac-python.exe:
 
-   .. _mac-python.exe:
-
-   Once CPython is done building you will then have a working build
-   that can be run in-place; ``./python`` on most machines (and what is used in
-   all examples), ``./python.exe`` wherever a case-insensitive filesystem is used
-   (e.g. on macOS by default), in order to avoid conflicts with the ``Python``
-   directory. There is normally no need to install your built copy
-   of Python! The interpreter will realize where it is being run from
-   and thus use the files found in the working copy.  If you are worried
-   you might accidentally install your working copy build, you can add
-   ``--prefix=/tmp/python`` to the configuration step.  When running from your
-   working directory, it is best to avoid using the ``--enable-shared`` flag
-   to ``configure``; unless you are very careful, you may accidentally run
-   with code from an older, installed shared Python library rather than from
-   the interpreter you just built.
+Once CPython is done building you will then have a working build
+that can be run in-place; ``./python`` on most machines (and what is used in
+all examples), ``./python.exe`` wherever a case-insensitive filesystem is used
+(e.g. on macOS by default), in order to avoid conflicts with the ``Python``
+directory. There is normally no need to install your built copy
+of Python! The interpreter will realize where it is being run from
+and thus use the files found in the working copy.  If you are worried
+you might accidentally install your working copy build, you can add
+``--prefix=/tmp/python`` to the configuration step.  When running from your
+working directory, it is best to avoid using the ``--enable-shared`` flag
+to ``configure``; unless you are very careful, you may accidentally run
+with code from an older, installed shared Python library rather than from
+the interpreter you just built.
 
 
-   Clang
-   '''''
+Clang
+'''''
 
-   If you are using clang_ to build CPython, some flags you might want to set to
-   quiet some standard warnings which are specifically superfluous to CPython are
-   ``-Wno-unused-value -Wno-empty-body -Qunused-arguments``. You can set your
-   ``CFLAGS`` environment variable to these flags when running ``configure``.
+If you are using clang_ to build CPython, some flags you might want to set to
+quiet some standard warnings which are specifically superfluous to CPython are
+``-Wno-unused-value -Wno-empty-body -Qunused-arguments``. You can set your
+``CFLAGS`` environment variable to these flags when running ``configure``.
 
-   If you are using clang_ with ccache_, turn off the noisy
-   ``parentheses-equality`` warnings with the ``-Wno-parentheses-equality`` flag.
-   These warnings are caused by clang not  having enough information to detect
-   that extraneous parentheses in expanded macros are valid, because the
-   preprocessing is done separately by ccache.
+If you are using clang_ with ccache_, turn off the noisy
+``parentheses-equality`` warnings with the ``-Wno-parentheses-equality`` flag.
+These warnings are caused by clang not  having enough information to detect
+that extraneous parentheses in expanded macros are valid, because the
+preprocessing is done separately by ccache.
 
-   If you are using LLVM 2.8, also use the ``-no-integrated-as`` flag in order to
-   build the :py:mod:`ctypes` module (without the flag the rest of CPython will
-   still build properly).
+If you are using LLVM 2.8, also use the ``-no-integrated-as`` flag in order to
+build the :py:mod:`ctypes` module (without the flag the rest of CPython will
+still build properly).
 
 
-   Optimization
-   ''''''''''''
+Optimization
+''''''''''''
 
-   If you are trying to improve CPython's performance, you will probably want
-   to use an optimized build of CPython. It can take a lot longer to build CPython
-   with optimizations enabled, and it's usually not necessary to do so. However,
-   it's essential if you want accurate benchmark results for a proposed performance
-   optimization.
+If you are trying to improve CPython's performance, you will probably want
+to use an optimized build of CPython. It can take a lot longer to build CPython
+with optimizations enabled, and it's usually not necessary to do so. However,
+it's essential if you want accurate benchmark results for a proposed performance
+optimization.
 
-   For an optimized build of Python, use
-   ``configure --enable-optimizations --with-lto``.
-   This sets the default make targets up to enable Profile Guided Optimization (PGO)
-   and may be used to auto-enable Link Time Optimization (LTO) on some platforms.
-   See :option:`python:--enable-optimizations` and :option:`python:--with-lto`
-   to learn more about these options.
+For an optimized build of Python, use
+``configure --enable-optimizations --with-lto``.
+This sets the default make targets up to enable Profile Guided Optimization (PGO)
+and may be used to auto-enable Link Time Optimization (LTO) on some platforms.
+See :option:`python:--enable-optimizations` and :option:`python:--with-lto`
+to learn more about these options.
 
-   .. code:: console
+.. code:: console
 
-      $ ./configure --enable-optimizations --with-lto
+   $ ./configure --enable-optimizations --with-lto
 
-.. tab:: Windows
+.. _windows-compiling:
 
-   .. _windows-compiling:
+Windows
+-------
 
-   Windows
-   -------
+.. note:: If you are using the Windows Subsystem for Linux (WSL),
+   :ref:`clone the repository <checkout>` from a native Windows shell program
+   like PowerShell or the ``cmd.exe`` command prompt,
+   and use a build of Git targeted for Windows,
+   e.g. the `Git for Windows download from the official Git website`_.
+   Otherwise, Visual Studio will not be able to find all the project's files
+   and will fail the build.
 
-   .. note:: If you are using the Windows Subsystem for Linux (WSL),
-      :ref:`clone the repository <checkout>` from a native Windows shell program
-      like PowerShell or the ``cmd.exe`` command prompt,
-      and use a build of Git targeted for Windows,
-      e.g. the `Git for Windows download from the official Git website`_.
-      Otherwise, Visual Studio will not be able to find all the project's files
-      and will fail the build.
+For a concise step by step summary of building Python on Windows,
+you can read `Victor Stinner's guide`_.
 
-   For a concise step by step summary of building Python on Windows,
-   you can read `Victor Stinner's guide`_.
+All supported versions of Python can be built
+using Microsoft Visual Studio 2017 or later.
+You can download and use any of the free or paid versions of `Visual Studio`_.
 
-   All supported versions of Python can be built
-   using Microsoft Visual Studio 2017 or later.
-   You can download and use any of the free or paid versions of `Visual Studio`_.
+When installing it, select the :guilabel:`Python development` workload
+and the optional :guilabel:`Python native development tools` component
+to obtain all of the necessary build tools.
+You can find Git for Windows on the :guilabel:`Individual components` tab
+if you don't already have it installed.
 
-   When installing it, select the :guilabel:`Python development` workload
-   and the optional :guilabel:`Python native development tools` component
-   to obtain all of the necessary build tools.
-   You can find Git for Windows on the :guilabel:`Individual components` tab
-   if you don't already have it installed.
+.. note:: If you want to build MSI installers, be aware that the build toolchain
+   for them has a dependency on the Microsoft .NET Framework Version 3.5
+   (which may not be included on recent versions of Windows, such as Windows 10).
+   If you are building on a recent Windows version, use the Control Panel
+   (:menuselection:`Programs --> Programs and Features --> Turn Windows Features on or off`)
+   and ensure that the entry
+   :guilabel:`.NET Framework 3.5 (includes .NET 2.0 and 3.0)` is enabled.
 
-   .. note:: If you want to build MSI installers, be aware that the build toolchain
-      for them has a dependency on the Microsoft .NET Framework Version 3.5
-      (which may not be included on recent versions of Windows, such as Windows 10).
-      If you are building on a recent Windows version, use the Control Panel
-      (:menuselection:`Programs --> Programs and Features --> Turn Windows Features on or off`)
-      and ensure that the entry
-      :guilabel:`.NET Framework 3.5 (includes .NET 2.0 and 3.0)` is enabled.
+Your first build should use the command line to ensure any external dependencies
+are downloaded:
 
-   Your first build should use the command line to ensure any external dependencies
-   are downloaded:
+.. code-block:: batch
 
-   .. code-block:: batch
+   PCbuild\build.bat -c Debug
 
-      PCbuild\build.bat -c Debug
+The above command line build uses the ``-c Debug`` argument
+to build in the ``Debug`` configuration,
+which enables checks and assertions helpful for developing Python.
+By default, it builds in the ``Release`` configuration
+and for the 64-bit ``x64`` platform rather than 32-bit ``Win32``;
+use ``-c`` and ``-p`` to control build config and platform, respectively.
 
-   The above command line build uses the ``-c Debug`` argument
-   to build in the ``Debug`` configuration,
-   which enables checks and assertions helpful for developing Python.
-   By default, it builds in the ``Release`` configuration
-   and for the 64-bit ``x64`` platform rather than 32-bit ``Win32``;
-   use ``-c`` and ``-p`` to control build config and platform, respectively.
+After this build succeeds, you can open the ``PCbuild\pcbuild.sln`` solution
+in the Visual Studio IDE to continue development, if you prefer.
+When building in Visual Studio,
+make sure to select build settings that match what you used with the script
+(the :guilabel:`Debug` configuration and the :guilabel:`x64` platform)
+from the dropdown menus in the toolbar.
 
-   After this build succeeds, you can open the ``PCbuild\pcbuild.sln`` solution
-   in the Visual Studio IDE to continue development, if you prefer.
-   When building in Visual Studio,
-   make sure to select build settings that match what you used with the script
-   (the :guilabel:`Debug` configuration and the :guilabel:`x64` platform)
-   from the dropdown menus in the toolbar.
+.. note::
 
-   .. note::
+   If you need to change the build configuration or platform,
+   build once with the ``build.bat`` script set to those options first
+   before building with them in VS to ensure all files are rebuilt properly,
+   or you may encounter errors when loading modules that were not rebuilt.
 
-      If you need to change the build configuration or platform,
-      build once with the ``build.bat`` script set to those options first
-      before building with them in VS to ensure all files are rebuilt properly,
-      or you may encounter errors when loading modules that were not rebuilt.
+   Avoid selecting the ``PGInstrument`` and ``PGUpdate`` configurations,
+   as these are intended for PGO builds and not for normal development.
 
-      Avoid selecting the ``PGInstrument`` and ``PGUpdate`` configurations,
-      as these are intended for PGO builds and not for normal development.
+You can run the build of Python you've compiled with:
 
-   You can run the build of Python you've compiled with:
+.. code-block:: batch
 
-   .. code-block:: batch
+   PCbuild\amd64\python_d.exe
 
-      PCbuild\amd64\python_d.exe
+See the `PCBuild readme`_ for more details on what other software is necessary
+and how to build.
 
-   See the `PCBuild readme`_ for more details on what other software is necessary
-   and how to build.
-
-   .. _Victor Stinner's guide: https://web.archive.org/web/20220907075854/https://cpython-core-tutorial.readthedocs.io/en/latest/build_cpython_windows.html
-   .. _Visual Studio: https://visualstudio.microsoft.com/
-   .. _PCBuild readme: https://github.com/python/cpython/blob/main/PCbuild/readme.txt
-   .. _Git for Windows download from the official Git website: https://git-scm.com/download/win
+.. _Victor Stinner's guide: https://web.archive.org/web/20220907075854/https://cpython-core-tutorial.readthedocs.io/en/latest/build_cpython_windows.html
+.. _Visual Studio: https://visualstudio.microsoft.com/
+.. _PCBuild readme: https://github.com/python/cpython/blob/main/PCbuild/readme.txt
+.. _Git for Windows download from the official Git website: https://git-scm.com/download/win
 
 
 .. _build-dependencies:
