@@ -5,6 +5,14 @@
 Setup and building
 ==================
 
+.. raw:: html
+
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      activateTab(getOS());
+    });
+    </script>
+
 .. highlight:: console
 
 These instructions cover how to get a working copy of the source code and a
