@@ -116,17 +116,22 @@ You can create a new :mod:`venv` with the required dependencies using:
 Build using make / make.bat
 ---------------------------
 
-A Unix ``Makefile`` is provided, :cpy-file:`Doc/Makefile`,
-along with a :cpy-file:`Doc/make.bat` batch file for Windows
-that attempts to emulate it as closely as practical.
+.. tab:: Unix/macOS
 
-.. important::
+   A Unix ``Makefile`` is provided, :cpy-file:`Doc/Makefile`.
 
-   The Windows ``make.bat`` batch file lacks a ``make venv`` target.
-   Instead, it automatically installs any missing dependencies
-   into the currently activated environment (or the base Python, if none).
-   Make sure the environment you :ref:`created above <doc-create-venv-windows>`
-   is `activated <venv-activate_>`__ before running ``make.bat``.
+.. tab:: Windows
+
+   A Windows ``make.bat`` is provided, :cpy-file:`Doc/make.bat`, which
+   attempts to emulate the Unix ``Makefile`` as closely as practical.
+
+   .. important::
+
+      The Windows ``make.bat`` batch file lacks a ``make venv`` target.
+      Instead, it automatically installs any missing dependencies
+      into the currently activated environment (or the base Python, if none).
+      Make sure the environment you :ref:`created above <doc-create-venv-windows>`
+      is `activated <venv-activate_>`__ before running ``make.bat``.
 
 To build the docs as HTML, run:
 
