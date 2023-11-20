@@ -342,6 +342,9 @@ checks that one should not skip.
 
 
 .. _build-dependencies:
+.. _deps-on-linux:
+.. _macOS and OS X:
+.. _macOS:
 
 Install dependencies
 ====================
@@ -350,12 +353,7 @@ This section explains how to install additional extensions (e.g. ``zlib``)
 on :ref:`Linux <deps-on-linux>` and :ref:`macOS`.  On Windows,
 extensions are already included and built automatically.
 
-.. tab:: Unix
-
-   .. _deps-on-linux:
-
-   Linux
-   -----
+.. tab:: Linux
 
    For Unix-based systems, we try to use system libraries whenever available.
    This means optional components will only build if the relevant system headers
@@ -409,12 +407,6 @@ extensions are already included and built automatically.
 
 
 .. tab:: macOS
-
-   .. _macOS and OS X:
-   .. _macOS:
-
-   macOS
-   -----
 
    For **macOS systems** (versions 10.9+),
    the Developer Tools can be downloaded and installed automatically;
