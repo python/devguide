@@ -128,9 +128,19 @@ that attempts to emulate it as closely as practical.
    Make sure the environment you :ref:`created above <doc-create-venv-windows>`
    is `activated <venv-activate_>`__ before running ``make.bat``.
 
-To build the docs as HTML, run::
+To build the docs as HTML, run:
 
-   make html
+.. tab:: Unix/macOS
+
+   .. code-block:: shell
+
+      make html
+
+.. tab:: Windows
+
+   .. code-block:: dosbatch
+
+      .\make html
 
 .. tip:: * Replace ``html`` with ``htmlview`` to open the docs in a web browser
            once the build completes.
@@ -139,13 +149,33 @@ To build the docs as HTML, run::
            browser when you make changes to reST files (Unix only).
 
 To check the docs for common errors with `Sphinx Lint`_
-(which is run on all :ref:`pull requests <pullrequest>`), use::
+(which is run on all :ref:`pull requests <pullrequest>`), use:
 
-   make check
+.. tab:: Unix/macOS
 
-To list other supported :program:`make` targets, run::
+   .. code-block:: shell
 
-   make help
+      make check
+
+.. tab:: Windows
+
+   .. code-block:: dosbatch
+
+      .\make check
+
+To list other supported :program:`make` targets, run:
+
+.. tab:: Unix/macOS
+
+   .. code-block:: shell
+
+      make help
+
+.. tab:: Windows
+
+   .. code-block:: dosbatch
+
+      .\make help
 
 See :cpy-file:`Doc/README.rst` for more information.
 
