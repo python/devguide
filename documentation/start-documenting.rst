@@ -93,16 +93,7 @@ Create a virtual environment
 
 You can create a new :mod:`venv` with the required dependencies using:
 
-.. tab:: Unix
-
-   .. code-block:: shell
-
-      make venv
-
-   Building the docs with :program:`make` will automatically use this environment
-   without you having to activate it.
-
-.. tab:: macOS
+.. tab:: Unix/macOS
 
    .. code-block:: shell
 
