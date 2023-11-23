@@ -5,6 +5,14 @@
 Getting started
 ===============
 
+.. raw:: html
+
+   <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      activateTab(getOS());
+    });
+    </script>
+
 .. highlight::  rest
 
 The Python language has a substantial body of documentation, much of it
@@ -81,22 +89,24 @@ Create a virtual environment
 ----------------------------
 
 .. _doc-create-venv-unix:
-
-**On Unix platforms** that support :program:`make`
-(including Linux, macOS and BSD),
-you can create a new :mod:`venv` with the required dependencies using::
-
-   make venv
-
-Building the docs with :program:`make` will automatically use this environment
-without you having to activate it.
-
 .. _doc-create-venv-windows:
 
-**On Windows**, or if not using :program:`make`,
-`create a new virtual environment <venv-create_>`__ manually.
-Always be sure to `activate this environment <venv-activate_>`__
-before building the documentation.
+You can create a new :mod:`venv` with the required dependencies using:
+
+.. tab:: Unix/macOS
+
+   .. code-block:: shell
+
+      make venv
+
+   Building the docs with :program:`make` will automatically use this environment
+   without you having to activate it.
+
+.. tab:: Windows
+
+   `Create a new virtual environment <venv-create_>`__ manually.
+   Always be sure to `activate this environment <venv-activate_>`__
+   before building the documentation.
 
 
 .. _building-using-make:
@@ -106,21 +116,36 @@ before building the documentation.
 Build using make / make.bat
 ---------------------------
 
-A Unix ``Makefile`` is provided, :cpy-file:`Doc/Makefile`,
-along with a :cpy-file:`Doc/make.bat` batch file for Windows
-that attempts to emulate it as closely as practical.
+.. tab:: Unix/macOS
 
-.. important::
+   A Unix ``Makefile`` is provided, :cpy-file:`Doc/Makefile`.
 
-   The Windows ``make.bat`` batch file lacks a ``make venv`` target.
-   Instead, it automatically installs any missing dependencies
-   into the currently activated environment (or the base Python, if none).
-   Make sure the environment you :ref:`created above <doc-create-venv-windows>`
-   is `activated <venv-activate_>`__ before running ``make.bat``.
+.. tab:: Windows
 
-To build the docs as HTML, run::
+   A Windows ``make.bat`` is provided, :cpy-file:`Doc/make.bat`, which
+   attempts to emulate the Unix ``Makefile`` as closely as practical.
 
-   make html
+   .. important::
+
+      The Windows ``make.bat`` batch file lacks a ``make venv`` target.
+      Instead, it automatically installs any missing dependencies
+      into the currently activated environment (or the base Python, if none).
+      Make sure the environment you :ref:`created above <doc-create-venv-windows>`
+      is `activated <venv-activate_>`__ before running ``make.bat``.
+
+To build the docs as HTML, run:
+
+.. tab:: Unix/macOS
+
+   .. code-block:: shell
+
+      make html
+
+.. tab:: Windows
+
+   .. code-block:: dosbatch
+
+      .\make html
 
 .. tip:: * Replace ``html`` with ``htmlview`` to open the docs in a web browser
            once the build completes.
@@ -129,13 +154,33 @@ To build the docs as HTML, run::
            browser when you make changes to reST files (Unix only).
 
 To check the docs for common errors with `Sphinx Lint`_
-(which is run on all :ref:`pull requests <pullrequest>`), use::
+(which is run on all :ref:`pull requests <pullrequest>`), use:
 
-   make check
+.. tab:: Unix/macOS
 
-To list other supported :program:`make` targets, run::
+   .. code-block:: shell
 
-   make help
+      make check
+
+.. tab:: Windows
+
+   .. code-block:: dosbatch
+
+      .\make check
+
+To list other supported :program:`make` targets, run:
+
+.. tab:: Unix/macOS
+
+   .. code-block:: shell
+
+      make help
+
+.. tab:: Windows
+
+   .. code-block:: dosbatch
+
+      .\make help
 
 See :cpy-file:`Doc/README.rst` for more information.
 
