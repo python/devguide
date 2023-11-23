@@ -5,6 +5,14 @@
 Setup and building
 ==================
 
+.. raw:: html
+
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      activateTab(getOS());
+    });
+    </script>
+
 .. highlight:: console
 
 These instructions cover how to get a working copy of the source code and a
@@ -257,7 +265,6 @@ to learn more about these options.
 
    $ ./configure --enable-optimizations --with-lto
 
-
 .. _windows-compiling:
 
 Windows
@@ -339,156 +346,155 @@ and how to build.
 
 
 .. _build-dependencies:
+.. _deps-on-linux:
+.. _macOS and OS X:
+.. _macOS:
 
 Install dependencies
 ====================
 
 This section explains how to install additional extensions (e.g. ``zlib``)
-on :ref:`Linux <deps-on-linux>` and :ref:`macOS`.  On Windows,
-extensions are already included and built automatically.
+on :ref:`Linux <deps-on-linux>` and :ref:`macOS`.
 
-.. _deps-on-linux:
+.. tab:: Linux
 
-Linux
------
+   For Unix-based systems, we try to use system libraries whenever available.
+   This means optional components will only build if the relevant system headers
+   are available. The best way to obtain the appropriate headers will vary by
+   distribution, but the appropriate commands for some popular distributions
+   are below.
 
-For Unix-based systems, we try to use system libraries whenever available.
-This means optional components will only build if the relevant system headers
-are available. The best way to obtain the appropriate headers will vary by
-distribution, but the appropriate commands for some popular distributions
-are below.
+   On **Fedora**, **Red Hat Enterprise Linux** and other ``yum`` based systems::
 
-On **Fedora**, **Red Hat Enterprise Linux** and other ``yum`` based systems::
+      $ sudo yum install yum-utils
+      $ sudo yum-builddep python3
 
-   $ sudo yum install yum-utils
-   $ sudo yum-builddep python3
+   On **Fedora** and other ``DNF`` based systems::
 
-On **Fedora** and other ``DNF`` based systems::
+      $ sudo dnf install dnf-plugins-core  # install this to use 'dnf builddep'
+      $ sudo dnf builddep python3
 
-   $ sudo dnf install dnf-plugins-core  # install this to use 'dnf builddep'
-   $ sudo dnf builddep python3
+   On **Debian**, **Ubuntu**, and other ``apt`` based systems, try to get the
+   dependencies for the Python you're working on by using the ``apt`` command.
 
-On **Debian**, **Ubuntu**, and other ``apt`` based systems, try to get the
-dependencies for the Python you're working on by using the ``apt`` command.
+   First, make sure you have enabled the source packages in the sources list.
+   You can do this by adding the location of the source packages, including
+   URL, distribution name and component name, to ``/etc/apt/sources.list``.
+   Take Ubuntu 22.04 LTS (Jammy Jellyfish) for example::
 
-First, make sure you have enabled the source packages in the sources list.
-You can do this by adding the location of the source packages, including
-URL, distribution name and component name, to ``/etc/apt/sources.list``.
-Take Ubuntu 22.04 LTS (Jammy Jellyfish) for example::
+      deb-src http://archive.ubuntu.com/ubuntu/ jammy main
 
-   deb-src http://archive.ubuntu.com/ubuntu/ jammy main
+   Alternatively, uncomment lines with ``deb-src`` using an editor, e.g.::
 
-Alternatively, uncomment lines with ``deb-src`` using an editor, e.g.::
+      sudo nano /etc/apt/sources.list
 
-   sudo nano /etc/apt/sources.list
+   For other distributions, like Debian, change the URL and names to correspond
+   with the specific distribution.
 
-For other distributions, like Debian, change the URL and names to correspond
-with the specific distribution.
+   Then you should update the packages index::
 
-Then you should update the packages index::
+      $ sudo apt-get update
 
-   $ sudo apt-get update
+   Now you can install the build dependencies via ``apt``::
 
-Now you can install the build dependencies via ``apt``::
+      $ sudo apt-get build-dep python3
+      $ sudo apt-get install pkg-config
 
-   $ sudo apt-get build-dep python3
-   $ sudo apt-get install pkg-config
+   If you want to build all optional modules, install the following packages and
+   their dependencies::
 
-If you want to build all optional modules, install the following packages and
-their dependencies::
-
-   $ sudo apt-get install build-essential gdb lcov pkg-config \
-         libbz2-dev libffi-dev libgdbm-dev libgdbm-compat-dev liblzma-dev \
-         libncurses5-dev libreadline6-dev libsqlite3-dev libssl-dev \
-         lzma lzma-dev tk-dev uuid-dev zlib1g-dev
+      $ sudo apt-get install build-essential gdb lcov pkg-config \
+            libbz2-dev libffi-dev libgdbm-dev libgdbm-compat-dev liblzma-dev \
+            libncurses5-dev libreadline6-dev libsqlite3-dev libssl-dev \
+            lzma lzma-dev tk-dev uuid-dev zlib1g-dev
 
 
-.. _macOS and OS X:
-.. _macOS:
+.. tab:: macOS
 
-macOS
------
+   For **macOS systems** (versions 10.9+),
+   the Developer Tools can be downloaded and installed automatically;
+   you do not need to download the complete Xcode application.
 
-For **macOS systems** (versions 10.9+),
-the Developer Tools can be downloaded and installed automatically;
-you do not need to download the complete Xcode application.
+   If necessary, run the following::
 
-If necessary, run the following::
+      $ xcode-select --install
 
-    $ xcode-select --install
+   This will also ensure that the system header files are installed into
+   ``/usr/include``.
 
-This will also ensure that the system header files are installed into
-``/usr/include``.
+   .. _Homebrew: https://brew.sh
 
-.. _Homebrew: https://brew.sh
+   .. _MacPorts: https://www.macports.org
 
-.. _MacPorts: https://www.macports.org
+   Also note that macOS does not include several libraries used by the Python
+   standard library, including ``libzma``, so expect to see some extension module
+   build failures unless you install local copies of them.  As of OS X 10.11,
+   Apple no longer provides header files for the deprecated system version of
+   OpenSSL which means that you will not be able to build the ``_ssl`` extension.
+   One solution is to install these libraries from a third-party package
+   manager, like Homebrew_ or MacPorts_, and then add the appropriate paths
+   for the header and library files to your ``configure`` command.
 
-Also note that macOS does not include several libraries used by the Python
-standard library, including ``libzma``, so expect to see some extension module
-build failures unless you install local copies of them.  As of OS X 10.11,
-Apple no longer provides header files for the deprecated system version of
-OpenSSL which means that you will not be able to build the ``_ssl`` extension.
-One solution is to install these libraries from a third-party package
-manager, like Homebrew_ or MacPorts_, and then add the appropriate paths
-for the header and library files to your ``configure`` command.
+   For example, with **Homebrew**, install the dependencies::
 
-For example, with **Homebrew**, install the dependencies::
+      $ brew install pkg-config openssl@3.0 xz gdbm tcl-tk
 
-    $ brew install pkg-config openssl@3.0 xz gdbm tcl-tk
+   Then, for Python 3.11 and newer, run ``configure``::
 
-Then, for Python 3.11 and newer, run ``configure``::
+      $ GDBM_CFLAGS="-I$(brew --prefix gdbm)/include" \
+         GDBM_LIBS="-L$(brew --prefix gdbm)/lib -lgdbm" \
+         ./configure --with-pydebug \
+                     --with-openssl="$(brew --prefix openssl@3.0)"
 
-    $ GDBM_CFLAGS="-I$(brew --prefix gdbm)/include" \
-      GDBM_LIBS="-L$(brew --prefix gdbm)/lib -lgdbm" \
-      ./configure --with-pydebug \
-                  --with-openssl="$(brew --prefix openssl@3.0)"
+   Or, for Python 3.8 through 3.10::
 
-Or, for Python 3.8 through 3.10::
+      $ CPPFLAGS="-I$(brew --prefix gdbm)/include -I$(brew --prefix xz)/include" \
+         LDFLAGS="-L$(brew --prefix gdbm)/lib -L$(brew --prefix xz)/lib" \
+         ./configure --with-pydebug \
+                     --with-openssl="$(brew --prefix openssl@3.0)" \
+                     --with-tcltk-libs="$(pkg-config --libs tcl tk)" \
+                     --with-tcltk-includes="$(pkg-config --cflags tcl tk)"
 
-    $ CPPFLAGS="-I$(brew --prefix gdbm)/include -I$(brew --prefix xz)/include" \
-      LDFLAGS="-L$(brew --prefix gdbm)/lib -L$(brew --prefix xz)/lib" \
-      ./configure --with-pydebug \
-                  --with-openssl="$(brew --prefix openssl@3.0)" \
-                  --with-tcltk-libs="$(pkg-config --libs tcl tk)" \
-                  --with-tcltk-includes="$(pkg-config --cflags tcl tk)"
+   And finally, run ``make``::
 
-And finally, run ``make``::
+      $ make -s -j2
 
-    $ make -s -j2
+   Alternatively, with **MacPorts**::
 
-Alternatively, with **MacPorts**::
+      $ sudo port install pkgconfig openssl xz gdbm tcl tk +quartz
 
-    $ sudo port install pkgconfig openssl xz gdbm tcl tk +quartz
+   Then, for Python 3.11 and newer, run ``configure``::
 
-Then, for Python 3.11 and newer, run ``configure``::
+      $ GDBM_CFLAGS="-I$(dirname $(dirname $(which port)))/include" \
+         GDBM_LIBS="-L$(dirname $(dirname $(which port)))/lib -lgdbm" \
+         ./configure --with-pydebug
 
-    $ GDBM_CFLAGS="-I$(dirname $(dirname $(which port)))/include" \
-      GDBM_LIBS="-L$(dirname $(dirname $(which port)))/lib -lgdbm" \
-      ./configure --with-pydebug
+   And finally, run ``make``::
 
-And finally, run ``make``::
+      $ make -s -j2
 
-    $ make -s -j2
+   There will sometimes be optional modules added for a new release which
+   won't yet be identified in the OS-level build dependencies. In those cases,
+   just ask for assistance in the *Core Development* category on :ref:`help-discourse`.
 
-There will sometimes be optional modules added for a new release which
-won't yet be identified in the OS-level build dependencies. In those cases,
-just ask for assistance in the *Core Development* category on :ref:`help-discourse`.
+   Explaining how to build optional dependencies on a Unix-based system without
+   root access is beyond the scope of this guide.
 
-Explaining how to build optional dependencies on a Unix-based system without
-root access is beyond the scope of this guide.
+   For more details on various options and considerations for building, refer
+   to the `macOS README
+   <https://github.com/python/cpython/blob/main/Mac/README.rst>`_.
 
-For more details on various options and considerations for building, refer
-to the `macOS README
-<https://github.com/python/cpython/blob/main/Mac/README.rst>`_.
+   .. _clang: https://clang.llvm.org/
+   .. _ccache: https://ccache.dev/
 
-.. _clang: https://clang.llvm.org/
-.. _ccache: https://ccache.dev/
+   .. note:: While you need a C compiler to build CPython, you don't need any
+      knowledge of the C language to contribute!  Vast areas of CPython are
+      written completely in Python: as of this writing, CPython contains slightly
+      more Python code than C.
 
-.. note:: While you need a C compiler to build CPython, you don't need any
-   knowledge of the C language to contribute!  Vast areas of CPython are
-   written completely in Python: as of this writing, CPython contains slightly
-   more Python code than C.
+.. tab:: Windows
+
+   On Windows, extensions are already included and built automatically.
 
 
 .. _regenerate_configure:
