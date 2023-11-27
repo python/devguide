@@ -2003,11 +2003,11 @@ The generated glue code looks like this:
 
 .. _clinic-howto-getter:
 
-How to generate getter with Argument Clinic
---------------------------------------------
+How to generate a getter
+------------------------
 
-You can use ``@getter`` directive to generate "impl" function
-to defining getter.
+You can use the ``@getter`` directive to generate an "impl" function
+to define a getter.
 
 Example from :cpy-file:`Modules/_io/bufferedio.c`::
 
@@ -2017,8 +2017,8 @@ Example from :cpy-file:`Modules/_io/bufferedio.c`::
     _io._Buffered.closed
     [clinic start generated code]*/
 
-The generate glue code looks like this.
-Note that this example is mixture usage with ``@critical_section`` directive
+The generated glue code looks like this.
+Note that this example is a mixture using the ``@critical_section`` directive
 to achieve thread safety without causing deadlocks between threads:
 
 .. code-block:: c
