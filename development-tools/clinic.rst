@@ -2001,6 +2001,43 @@ The generated glue code looks like this:
 .. versionadded:: 3.13
 
 
+.. _clinic-howto-getter:
+
+How to generate getter with Argument Clinic
+--------------------------------------------
+
+You can use ``@getter`` directive to generate "impl" function
+to defining getter.
+
+Example from :cpy-file:`Modules/_io/bufferedio.c`::
+
+    /*[clinic input]
+    @critical_section
+    @getter
+    _io._Buffered.closed
+    [clinic start generated code]*/
+
+The generate glue code looks like this.
+Note that this example is mixture usage with ``@critical_section`` directive
+to achieve thread safety without causing deadlocks between threads:
+
+.. code-block:: c
+
+    static PyObject *
+    _io__Buffered_closed_get(buffered *self, void *context)
+    {
+        PyObject *return_value = NULL;
+
+        Py_BEGIN_CRITICAL_SECTION(self);
+        return_value = _io__Buffered_closed_get_impl(self);
+        Py_END_CRITICAL_SECTION();
+
+        return return_value;
+    }
+
+.. versionadded:: 3.13
+
+
 .. _clinic-howto-deprecate-positional:
 .. _clinic-howto-deprecate-keyword:
 
