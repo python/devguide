@@ -2011,15 +2011,16 @@ to define a `getter <https://docs.python.org/3/c-api/structures.html#c.PyGetSetD
 
 Example from :cpy-file:`Modules/_io/bufferedio.c`::
 
+Note that this example is a mixture using the :ref:`@critical_section <clinic-howto-critical-sections>` directive
+to achieve thread safety without causing deadlocks between threads
+
     /*[clinic input]
     @critical_section
     @getter
     _io._Buffered.closed
     [clinic start generated code]*/
 
-The generated glue code looks like this.
-Note that this example is a mixture using the ``@critical_section`` directive
-to achieve thread safety without causing deadlocks between threads:
+The generated glue code looks like this.:
 
 .. code-block:: c
 
