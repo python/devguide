@@ -2010,7 +2010,6 @@ You can use the ``@getter`` directive to generate an "impl" function
 to define a `getter <https://docs.python.org/3/c-api/structures.html#c.PyGetSetDef>`_.
 
 Example from :cpy-file:`Modules/_io/bufferedio.c`::
-
 Note that this example is a mixture using the :ref:`@critical_section <clinic-howto-critical-sections>` directive
 to achieve thread safety without causing deadlocks between threads
 
