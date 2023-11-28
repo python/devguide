@@ -2007,7 +2007,7 @@ How to generate a getter
 ------------------------
 
 You can use the ``@getter`` directive to generate an "impl" function
-to define a `getter <https://docs.python.org/3/c-api/structures.html#c.PyGetSetDef.get>`_.
+to define a `getter <https://docs.python.org/3/c-api/structures.html#c.PyGetSetDef>`_.
 
 Example from :cpy-file:`Modules/_io/bufferedio.c`::
 
