@@ -161,7 +161,7 @@ htmlview: html
 
 .PHONY: htmllive
 htmllive: SPHINXBUILD = $(VENVDIR)/bin/sphinx-autobuild
-htmllive: SPHINXOPTS = --re-ignore="/\.idea/|/venv/"
+htmllive: SPHINXOPTS = --re-ignore="/\.idea/|/venv/" --open-browser --delay 0
 htmllive: html
 
 .PHONY: check
