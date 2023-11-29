@@ -2007,11 +2007,12 @@ How to generate a getter
 ------------------------
 
 You can use the ``@getter`` directive to generate an "impl" function
-to define a `getter <https://docs.python.org/3/c-api/structures.html#c.PyGetSetDef>`_.
+that defines a `getter <https://docs.python.org/3/c-api/structures.html#c.PyGetSetDef>`_.
 
-Example from :cpy-file:`Modules/_io/bufferedio.c`::
-Note that this example is a mixture using the :ref:`@critical_section <clinic-howto-critical-sections>` directive
-to achieve thread safety without causing deadlocks between threads
+This example --- taken from :cpy-file:`Modules/_io/bufferedio.c` ---
+shows the use of ``@getter`` in combination with
+the :ref:`@critical_section <clinic-howto-critical-sections>` directive
+(which achieves thread safety without causing deadlocks between threads)::
 
     /*[clinic input]
     @critical_section
@@ -2019,7 +2020,7 @@ to achieve thread safety without causing deadlocks between threads
     _io._Buffered.closed
     [clinic start generated code]*/
 
-The generated glue code looks like this.:
+The generated glue code looks like this:
 
 .. code-block:: c
 
