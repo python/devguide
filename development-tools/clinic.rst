@@ -2037,7 +2037,7 @@ The generated glue code looks like this:
     }
 
 And then the implementation will work the same as the Python method which is
-decorated by `property <https://docs.python.org/3/library/funtions.html#property>`_.
+decorated by `property <https://docs.python.org/3/library/functions.html#property>`_.
 
 .. code-block:: python
 
