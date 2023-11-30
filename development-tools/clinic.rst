@@ -2006,8 +2006,9 @@ The generated glue code looks like this:
 How to generate a getter
 ------------------------
 
-You can use the ``@getter`` directive to generate an "impl" function
-that defines a :c:type:`getter <PyGetSetDef>`.
+"Getters" are C functions that facilitate property-like access for a type.
+See :c:type:`getter <PyGetSetDef>` for details.
+You can use the ``@getter`` directive to generate an "impl" function for a getter.
 
 This example --- taken from :cpy-file:`Modules/_io/bufferedio.c` ---
 shows the use of ``@getter`` in combination with
@@ -2037,9 +2038,9 @@ The generated glue code looks like this:
     }
 
 And then the implementation will work the same as the Python method which is
-decorated by `property <https://docs.python.org/3/library/functions.html#property>`_.
+decorated by :py:func:`property`.
 
-.. code-block:: python
+.. code-block:: pycon
 
    >>> import _io
    >>> a = _io._BufferedIOBase()
