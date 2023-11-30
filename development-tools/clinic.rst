@@ -2006,11 +2006,12 @@ The generated glue code looks like this:
 How to generate a getter
 ------------------------
 
-"Getters" are C functions that facilitate property-like access for a type.
+"Getters" are C functions that facilitate property-like access for a class.
 See :c:type:`getter <PyGetSetDef>` for details.
-You can use the ``@getter`` directive to generate an "impl" function for a getter.
+You can use the ``@getter`` directive to generate an "impl" function for a
+getter using Argument Clinic.
 
-This example --- taken from :cpy-file:`Modules/_io/bufferedio.c` ---
+This example -- taken from :cpy-file:`Modules/_io/bufferedio.c` --
 shows the use of ``@getter`` in combination with
 the :ref:`@critical_section <clinic-howto-critical-sections>` directive
 (which achieves thread safety without causing deadlocks between threads)::
