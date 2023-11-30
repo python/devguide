@@ -2038,7 +2038,7 @@ The generated glue code looks like this:
     }
 
 And then the implementation will work the same as the Python method which is
-decorated by :py:func:`property`.
+decorated by :py:class:`property`.
 
 .. code-block:: pycon
 
