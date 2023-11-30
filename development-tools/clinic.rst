@@ -2038,7 +2038,7 @@ The generated glue code looks like this:
         return return_value;
     }
 
-And then the implementation will work the same as the Python method which is
+And then the implementation will work the same as a Python method which is
 decorated by :py:class:`property`.
 
 .. code-block:: pycon
