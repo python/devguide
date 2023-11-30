@@ -2007,7 +2007,7 @@ How to generate a getter
 ------------------------
 
 You can use the ``@getter`` directive to generate an "impl" function
-that defines a `getter <https://docs.python.org/3/c-api/structures.html#c.PyGetSetDef>`_.
+that defines a :c:func:`getter <PyGetSetDef>`.
 
 This example --- taken from :cpy-file:`Modules/_io/bufferedio.c` ---
 shows the use of ``@getter`` in combination with
@@ -2035,6 +2035,15 @@ The generated glue code looks like this:
 
         return return_value;
     }
+
+And then the implementation will work the same as the Python method which is
+decorated by :py:meth:`property.getter`.
+
+.. code-block:: python
+   >>> import _io
+   >>> a = _io._BufferedIOBase()
+   >>> a.closed
+   False
 
 .. versionadded:: 3.13
 
