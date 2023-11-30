@@ -2037,9 +2037,10 @@ The generated glue code looks like this:
     }
 
 And then the implementation will work the same as the Python method which is
-decorated by :py:meth:`property.getter`.
+decorated by :meth:`property.getter`.
 
 .. code-block:: python
+
    >>> import _io
    >>> a = _io._BufferedIOBase()
    >>> a.closed
