@@ -57,12 +57,12 @@ Cloning a forked CPython repository
 
 You will only need to do this once per machine.  From your command line::
 
-   git clone git@github.com:<username>/cpython.git
+   $ git clone git@github.com:<username>/cpython.git
 
 It is also recommended to configure an ``upstream`` remote repository::
 
-   cd cpython
-   git remote add upstream https://github.com/python/cpython
+   $ cd cpython
+   $ git remote add upstream https://github.com/python/cpython
 
 You can also use SSH-based or HTTPS-based URLs.
 
@@ -74,22 +74,24 @@ Configure the remotes
 
 Configure ``git`` to pull ``main`` from the ``upstream`` remote::
 
-   git config --local branch.main.remote upstream
+   $ git config --local branch.main.remote upstream
 
 Since one should never attempt to push to ``upstream``, configure
 ``git`` to push always to ``origin``::
 
-   git remote set-url --push upstream git@github.com:<username>/cpython.git
+   $ git remote set-url --push upstream git@github.com:<username>/cpython.git
 
 Listing the remote repositories
 -------------------------------
 
 To list the remote repositories that are configured, along with their URLs::
 
-   git remote -v
+   $ git remote -v
 
 You should have two remote repositories: ``origin`` pointing to your forked CPython repository,
-and ``upstream`` pointing to the official CPython repository::
+and ``upstream`` pointing to the official CPython repository:
+
+.. code-block:: text
 
    origin  git@github.com:<username>/cpython.git (fetch)
    origin  git@github.com:<username>/cpython.git (push)
@@ -98,7 +100,7 @@ and ``upstream`` pointing to the official CPython repository::
 
 To verify the upstream for ``main``::
 
-   git config branch.main.remote
+   $ git config branch.main.remote
 
 It should emit ``upstream``, indicating to track/pull changes for ``main`` from the
 ``upstream`` remote.
@@ -109,10 +111,10 @@ It should emit ``upstream``, indicating to track/pull changes for ``main`` from 
 Setting up your name and email address
 --------------------------------------
 
-.. code-block:: bash
+::
 
-   git config --global user.name "Your Name"
-   git config --global user.email your.email@example.com
+   $ git config --global user.name "Your Name"
+   $ git config --global user.email your.email@example.com
 
 The ``--global`` flag sets these parameters globally while
 the ``--local`` flag sets them only for the current project.
@@ -126,7 +128,7 @@ The ``autocrlf`` option will fix automatically any Windows-specific line endings
 This should be enabled on Windows, since the public repository has a hook which
 will reject all changesets having the wrong line endings::
 
-    git config --global core.autocrlf input
+    $ git config --global core.autocrlf input
 
 Creating and switching branches
 -------------------------------
@@ -136,34 +138,34 @@ Creating and switching branches
 
 Create a new branch from ``main`` and switch to it::
 
-   git switch -c <branch-name> main
+   $ git switch -c <branch-name> main
 
 This is equivalent to::
 
-   # create a new branch from main
-   git branch <branch-name> main
-   # switch to the new branch
-   git switch <branch-name>
+   $ # create a new branch from main
+   $ git branch <branch-name> main
+   $ # switch to the new branch
+   $ git switch <branch-name>
 
 To find the branch you are currently on::
 
-   git branch
+   $ git branch
 
 The current branch will have an asterisk next to the branch name.  Note, this
 will only list all of your local branches.
 
 To list all the branches, including the remote branches::
 
-   git branch -a
+   $ git branch -a
 
 To switch to a different branch::
 
-   git switch <another-branch-name>
+   $ git switch <another-branch-name>
 
 Other releases are just branches in the repository.  For example, to work
 on the 2.7 release from the ``upstream`` remote::
 
-   git switch -c 2.7 upstream/2.7
+   $ git switch -c 2.7 upstream/2.7
 
 .. _deleting_branches:
 
@@ -172,12 +174,12 @@ Deleting branches
 
 To delete a **local** branch that you no longer need::
 
-   git switch main
-   git branch -D <branch-name>
+   $ git switch main
+   $ git branch -D <branch-name>
 
 To delete a **remote** branch::
 
-   git push origin -d <branch-name>
+   $ git push origin -d <branch-name>
 
 You may specify more than one branch for deletion.
 
@@ -198,10 +200,10 @@ these GitHub instructions <https://github.com/github/renaming#renaming-existing-
 After renaming the branch in your fork, you need to update any local clones
 as well. This only has to be done once per clone::
 
-    git branch -m master main
-    git fetch origin
-    git branch -u origin/main main
-    git remote set-head origin -a
+    $ git branch -m master main
+    $ git fetch origin
+    $ git branch -u origin/main main
+    $ git remote set-head origin -a
 
 (GitHub also provides these instructions after you rename the branch.)
 
@@ -210,9 +212,9 @@ repo created before the branch rename, you still have to update your local
 clones. This still only has to be done once per clone. In that case, you can
 rename your local branch as follows::
 
-    git branch -m master main
-    git fetch upstream
-    git branch -u upstream/main main
+    $ git branch -m master main
+    $ git fetch upstream
+    $ git branch -u upstream/main main
 
 
 .. _commit-changes:
@@ -222,12 +224,12 @@ Staging and committing files
 
 1. To show the current changes::
 
-      git status
+      $ git status
 
 2. To stage the files to be included in your commit::
 
-      git add -p  # to review and add changes to existing files
-      git add <filename1> <filename2>  # to add new files
+      $ git add -p  # to review and add changes to existing files
+      $ git add <filename1> <filename2>  # to add new files
 
 3. To commit the files that have been staged (done in step 2):
 
@@ -240,23 +242,23 @@ Reverting changes
 
 To revert changes to a file that has not been committed yet::
 
-   git checkout <filename>
+   $ git checkout <filename>
 
 If the change has been committed, and now you want to reset it to whatever
 the origin is at::
 
-   git reset --hard HEAD
+   $ git reset --hard HEAD
 
 Stashing changes
 ----------------
 
 To stash away changes that are not ready to be committed yet::
 
-   git stash
+   $ git stash
 
 To re-apply the last stashed change::
 
-   git stash pop
+   $ git stash pop
 
 .. _diff-changes:
 
@@ -265,21 +267,21 @@ Comparing changes
 
 View all non-commited changes::
 
-   git diff
+   $ git diff
 
 Compare to the ``main`` branch::
 
-   git diff main
+   $ git diff main
 
 Exclude generated files from diff using an ``attr``
 `pathspec <https://git-scm.com/docs/gitglossary#def_pathspec>`_ (note the
 single quotes)::
 
-   git diff main ':(attr:!generated)'
+   $ git diff main ':(attr:!generated)'
 
 Exclude generated files from diff by default::
 
-   git config diff.generated.binary true
+   $ git config diff.generated.binary true
 
 The ``generated`` `attribute <https://git-scm.com/docs/gitattributes>`_ is
 defined in :cpy-file:`.gitattributes`, found in the repository root.
@@ -294,8 +296,8 @@ them to the remote repository.
 
 ::
 
-   git switch <branch-name>
-   git push origin <branch-name>
+   $ git switch <branch-name>
+   $ git push origin <branch-name>
 
 Creating a pull request
 -----------------------
@@ -353,9 +355,9 @@ get notified unnecessarily.
 
 Solution::
 
-   git switch main
-   git pull upstream main
-   git push origin main
+   $ git switch main
+   $ git pull upstream main
+   $ git push origin main
 
 .. note:: For the above commands to work, please follow the instructions found
           in the :ref:`checkout` section.
@@ -371,10 +373,10 @@ Another scenario:
 
 Solution::
 
-   git switch some-branch
-   git fetch upstream
-   git merge upstream/main
-   git push origin some-branch
+   $ git switch some-branch
+   $ git fetch upstream
+   $ git merge upstream/main
+   $ git push origin some-branch
 
 You may see error messages like "CONFLICT" and "Automatic merge failed;" when
 you run ``git merge upstream/main``.
@@ -402,12 +404,10 @@ Solution:
        git apply /path/to/patch.diff
 
    If there are errors, update to a revision from when the patch was
-   created and then try the ``git apply`` again:
+   created and then try the ``git apply`` again::
 
-   .. code-block:: bash
-
-       git checkout $(git rev-list -n 1 --before="yyyy-mm-dd hh:mm:ss" main)
-       git apply /path/to/patch.diff
+       $ git checkout $(git rev-list -n 1 --before="yyyy-mm-dd hh:mm:ss" main)
+       $ git apply /path/to/patch.diff
 
    If the patch still won't apply, then a patch tool will not be able to
    apply the patch and it will need to be re-implemented manually.
@@ -419,8 +419,8 @@ Solution:
 5. If the patch was applied to an old revision, it needs to be updated and
    merge conflicts need to be resolved::
 
-       git rebase main
-       git mergetool
+       $ git rebase main
+       $ git mergetool
 
    For very old changes, ``git merge --no-ff`` may be easier than a rebase,
    with regards to resolving conflicts.
@@ -464,7 +464,7 @@ If you don't have GitHub CLI or hub installed, you can set up a git alias:
 The alias only needs to be done once.  After the alias is set up, you can get a
 local copy of a pull request as follows::
 
-   git pr <pr_number>
+   $ git pr <pr_number>
 
 .. _accepting-and-merging-a-pr:
 
@@ -489,14 +489,18 @@ in place of the gray ``Enable auto-merge`` button you will find a green
 
 In either case, adjust and clean up the commit message.
 
-Here's an example of a **good** commit message::
+Here's an example of a **good** commit message:
+
+.. code-block:: text
 
    gh-12345: Improve the spam module (GH-777)
 
    * Add method A to the spam module
    * Update the documentation of the spam module
 
-Here's an example of a **bad** commit message::
+Here's an example of a **bad** commit message:
+
+.. code-block:: text
 
    gh-12345: Improve the spam module (#777)
 
@@ -549,19 +553,19 @@ repository to backport the commit.
 
 The commit hash for backporting is the squashed commit that was merged to
 the ``main`` branch.  On the merged pull request, scroll to the bottom of the
-page.  Find the event that says something like::
+page.  Find the event that says something like:
+
+.. code-block:: text
 
    <core_developer> merged commit <commit_sha1> into python:main <sometime> ago.
 
 By following the link to ``<commit_sha1>``, you will get the full commit hash.
 
 Alternatively, the commit hash can also be obtained by the following Git
-commands:
+commands::
 
-.. code-block:: bash
-
-   git fetch upstream
-   git rev-parse ":/gh-12345"
+   $ git fetch upstream
+   $ git rev-parse ":/gh-12345"
 
 The above commands will print out the hash of the commit containing
 ``"gh-12345"`` as part of the commit message.
@@ -569,7 +573,9 @@ The above commands will print out the hash of the commit containing
 When formatting the commit message for a backport commit: leave the original
 one as is and delete the number of the backport pull request.
 
-Example of good backport commit message::
+Example of good backport commit message:
+
+.. code-block:: text
 
     gh-12345: Improve the spam module (GH-777)
 
@@ -578,7 +584,9 @@ Example of good backport commit message::
 
     (cherry picked from commit 62adc55)
 
-Example of bad backport commit message::
+Example of bad backport commit message:
+
+.. code-block:: text
 
     gh-12345: Improve the spam module (GH-777) (#888)
 
@@ -599,30 +607,30 @@ items like updating ``Misc/ACKS``.
 To edit an open pull request that targets ``main``:
 
 1. In the pull request page, under the description, there is some information
-   about the contributor's forked CPython repository and branch name that will be useful later::
+   about the contributor's forked CPython repository and branch name that will be useful later:
+
+.. code-block:: text
 
       <contributor> wants to merge 1 commit into python:main from <contributor>:<branch_name>
 
 2. Fetch the pull request, using the :ref:`git pr <git_pr>` alias::
 
-      git pr <pr_number>
+      $ git pr <pr_number>
 
    This will checkout the contributor's branch at ``<pr_number>``.
 
 3. Make and commit your changes on the branch.  For example, merge in changes
    made to ``main`` since the PR was submitted (any merge commits will be
-   removed by the later ``Squash and Merge`` when accepting the change):
+   removed by the later ``Squash and Merge`` when accepting the change)::
 
-   .. code-block:: bash
-
-      git fetch upstream
-      git merge upstream/main
-      git add <filename>
-      git commit -m "<message>"
+      $ git fetch upstream
+      $ git merge upstream/main
+      $ git add <filename>
+      $ git commit -m "<message>"
 
 4. Push the changes back to the contributor's PR branch::
 
-      git push git@github.com:<contributor>/cpython <pr_number>:<branch_name>
+      $ git push git@github.com:<contributor>/cpython <pr_number>:<branch_name>
 
 5. Optionally, :ref:`delete the PR branch <deleting_branches>`.
 
@@ -638,22 +646,22 @@ You can install GitHub CLI `by following these instructions
 <https://github.com/cli/cli#installation>`_. After installing,
 you need to authenticate::
 
-    gh auth login
+    $ gh auth login
 
 Examples of useful commands:
 
 * Create a PR::
 
-      gh pr create
+      $ gh pr create
 
 * Check out another PR::
 
-      gh co <pr-id>
+      $ gh co <pr-id>
 
 * Set ``ssh`` as the Git protocol::
 
-      gh config set git_protocol ssh
+      $ gh config set git_protocol ssh
 
 * Set the browser::
 
-      gh config set browser <browser-path>
+      $ gh config set browser <browser-path>
