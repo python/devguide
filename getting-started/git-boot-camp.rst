@@ -401,7 +401,7 @@ Solution:
 
 2. Apply the patch::
 
-       git apply /path/to/patch.diff
+       $ git apply /path/to/patch.diff
 
    If there are errors, update to a revision from when the patch was
    created and then try the ``git apply`` again::
@@ -489,7 +489,7 @@ in place of the gray ``Enable auto-merge`` button you will find a green
 
 In either case, adjust and clean up the commit message.
 
-Here's an example of a **good** commit message:
+✅ Here's an example of a **good** commit message:
 
 .. code-block:: text
 
@@ -498,7 +498,7 @@ Here's an example of a **good** commit message:
    * Add method A to the spam module
    * Update the documentation of the spam module
 
-Here's an example of a **bad** commit message:
+❌ Here's an example of a **bad** commit message:
 
 .. code-block:: text
 
@@ -573,7 +573,7 @@ The above commands will print out the hash of the commit containing
 When formatting the commit message for a backport commit: leave the original
 one as is and delete the number of the backport pull request.
 
-Example of good backport commit message:
+✅ Example of good backport commit message:
 
 .. code-block:: text
 
@@ -584,7 +584,7 @@ Example of good backport commit message:
 
     (cherry picked from commit 62adc55)
 
-Example of bad backport commit message:
+❌ Example of bad backport commit message:
 
 .. code-block:: text
 
