@@ -401,7 +401,7 @@ Solution:
 
 2. Apply the patch::
 
-       git apply /path/to/patch.diff
+       $ git apply /path/to/patch.diff
 
    If there are errors, update to a revision from when the patch was
    created and then try the ``git apply`` again::
