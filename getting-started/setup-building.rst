@@ -513,27 +513,19 @@ After editing :file:`configure.ac`, run ``make regen-configure`` to generate
 When submitting a pull request with changes made to :file:`configure.ac`,
 make sure you also commit the changes in the generated files.
 
-The recommended and by far the easiest way to regenerate :file:`configure` is::
-
-   $ make regen-configure
-
-If you are regenerating :file:`configure` in a clean repo,
-run one of the following containers instead::
-
-   $ podman run --rm --pull=always -v $(pwd):/src:Z quay.io/tiran/cpython_autoconf:271
-
-::
-
-   $ docker run --rm --pull=always -v $(pwd):/src quay.io/tiran/cpython_autoconf:271
-
-Notice that the images are tagged with ``271``.
 Python's :file:`configure.ac` script requires a specific version of
 GNU Autoconf.
 For Python 3.12 and newer, GNU Autoconf v2.71 is required.
 For Python 3.11 and earlier, GNU Autoconf v2.69 is required.
-For GNU Autoconf v2.69, change the ``:271`` tag to ``:269``.
 
-If you cannot (or don't want to) use the ``cpython_autoconf`` containers,
+The recommended and by far the easiest way to regenerate :file:`configure` is::
+
+   $ make regen-configure
+
+This will use Podman or Docker to do the regeneration with the proper version
+of GNU Autoconf.
+
+If you cannot (or don't want to) use ``make regen-configure``,
 install the :program:`autoconf-archive` and :program:`pkg-config` utilities,
 and make sure the :file:`pkg.m4` macro file located in the appropriate
 :program:`aclocal` location::
