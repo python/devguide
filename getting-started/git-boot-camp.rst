@@ -492,6 +492,7 @@ In either case, adjust and clean up the commit message.
 ✅ Here's an example of a **good** commit message:
 
 .. code-block:: text
+   :class: good
 
    gh-12345: Improve the spam module (GH-777)
 
@@ -501,6 +502,7 @@ In either case, adjust and clean up the commit message.
 ❌ Here's an example of a **bad** commit message:
 
 .. code-block:: text
+   :class: bad
 
    gh-12345: Improve the spam module (#777)
 
@@ -576,6 +578,7 @@ one as is and delete the number of the backport pull request.
 ✅ Example of good backport commit message:
 
 .. code-block:: text
+   :class: good
 
     gh-12345: Improve the spam module (GH-777)
 
@@ -587,6 +590,7 @@ one as is and delete the number of the backport pull request.
 ❌ Example of bad backport commit message:
 
 .. code-block:: text
+   :class: bad
 
     gh-12345: Improve the spam module (GH-777) (#888)
 
