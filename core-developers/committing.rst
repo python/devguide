@@ -186,7 +186,7 @@ clone.
 .. _committing-active-branches:
 
 Seeing active branches
-''''''''''''''''''''''
+^^^^^^^^^^^^^^^^^^^^^^
 
 If you use ``git branch``, then you will see a :ref:`list of branches
 <branchstatus>`. The only branch that receives new features is
@@ -198,7 +198,7 @@ originate on ``main`` and then be ported back to older branches.
 .. _branch-merge:
 
 Backporting changes to an older version
-'''''''''''''''''''''''''''''''''''''''
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 If it is determined that a pull request needs to be backported into one or
 more of the maintenance branches, then a core developer can apply the label
@@ -236,7 +236,7 @@ can apply labels to GitHub pull requests).
 
 
 Reverting a merged pull request
-'''''''''''''''''''''''''''''''
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 To revert a merged pull request, press the ``Revert`` button at the
 bottom of the pull request. That will bring up the page to create a

@@ -34,7 +34,7 @@ and *null* for final releases), and ``N`` is the release serial number.
 Some examples of release tags: ``v3.7.0a1``, ``v3.6.3``, ``v2.7.14rc1``.
 
 Branches
-''''''''
+^^^^^^^^
 
 There is a branch for each *feature version*, whether released or not (e.g.
 3.7, 3.8).
@@ -141,7 +141,7 @@ The latest release for each Python version can be found on the `download page
 .. _stages:
 
 Stages
-''''''
+^^^^^^
 
 Based on what stage the :ref:`in-development <indevbranch>` version of Python
 is in, the responsibilities of a core developer change in regards to commits
@@ -214,7 +214,7 @@ changes to the branch.  After the final release is published, the full
 
 
 Repository administration
-'''''''''''''''''''''''''
+^^^^^^^^^^^^^^^^^^^^^^^^^
 
 The source code is currently hosted on `GitHub
 <https://github.com/python/cpython>`_ in the `Python organization <https://github.com/python/>`_.

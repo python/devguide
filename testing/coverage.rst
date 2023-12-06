@@ -88,7 +88,7 @@ provided by the stdlib then you can :ref:`use test.regrtest
 .. _install_coverage:
 
 Install coverage
-''''''''''''''''
+^^^^^^^^^^^^^^^^
 
 By default, pip will not install into the in-development version of Python you
 just built, and this built version of Python will not see packages installed
@@ -143,7 +143,7 @@ it. For this, you will again need to use the full path to that installation.
 .. _coverage_usage:
 
 Basic usage
-'''''''''''
+^^^^^^^^^^^
 
 The following command will tell you if your copy of coverage works (substitute
 ``COVERAGEDIR`` with the directory where your clone exists, e.g.
@@ -197,7 +197,7 @@ with pages that visibly show what lines of code were or were not executed.
 .. _branch_coverage:
 
 Branch coverage
-'''''''''''''''
+^^^^^^^^^^^^^^^
 
 For the truly daring, you can use another powerful feature of coverage.py:
 branch coverage. Testing every possible branch path through code, while a great
