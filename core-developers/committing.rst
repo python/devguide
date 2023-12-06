@@ -83,7 +83,7 @@ Updating NEWS and What's New in Python
 Changes that require NEWS entries
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Most changes made to the code base deserve an entry in :cpy-file:`Misc/NEWS.d`,
+Most changes made to the codebase deserve an entry in :cpy-file:`Misc/NEWS.d`,
 except for the following:
 
 * documentation changes
