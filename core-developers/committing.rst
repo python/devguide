@@ -83,7 +83,7 @@ Updating NEWS and What's New in Python
 Changes that require NEWS entries
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Almost all changes made to the code base deserve an entry in ``Misc/NEWS.d``.
+Almost all changes made to the codebase deserve an entry in ``Misc/NEWS.d``.
 There are two notable exceptions to this general principle, and they
 both relate to changes that already have a ``NEWS`` entry,
 or changes that have not yet been included in any formal release
@@ -105,16 +105,16 @@ Changes that require "What's New in Python" entries
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 If a change is particularly interesting for end users (e.g. new features,
-significant improvements, or backwards-incompatible changes), an entry in
-the ``What's New in Python`` document (in :cpy-file:`Doc/whatsnew/`) should be added
+significant improvements, or backwards-incompatible changes), add an entry in
+the "What's New in Python" document (in :cpy-file:`Doc/whatsnew/`)
 in addition to the ``NEWS`` entry.
 
 In most cases, it is sufficient to reuse the wording from the ``NEWS`` entry
-in the ``What's New in Python`` entry.
+in the "What's New in Python" entry.
 
 .. note::
 
-    A change that needs an entry in ``What's New in Python``,
+    A change that needs an entry in "What's New in Python",
     is very likely not suitable for inclusion in a maintenance release.
 
 How to add a NEWS entry
