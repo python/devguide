@@ -86,14 +86,14 @@ Changes that require NEWS entries
 Most changes made to the code base deserve an entry in :cpy-file:`Misc/NEWS.d`,
 except for the following:
 
-* documentation changes in general
-* test changes in general
+* documentation changes
+* test changes
 * strictly internal changes with no user-visible effects
 * changes that already have a ``NEWS`` entry
 * changes that have not yet been included in any formal release
   (including alpha and beta releases)
 
-For the latter two exceptions, note the following:
+For the last two, note the following:
 
 #. **If a change is reverted prior to release**, then the corresponding
    entry is simply removed. Otherwise, a new entry must be added noting
@@ -103,9 +103,6 @@ For the latter two exceptions, note the following:
 #. **If a change is a fix (or other adjustment) to an earlier unreleased
    change and the original** ``NEWS`` **entry remains valid**, then no additional
    entry is needed.
-
-Other changes that generally do not require ``NEWS`` entries are documentation changes,
-test changes, and strictly internal changes with no user-visible effects.
 
 Changes that require "What's New in Python" entries
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
