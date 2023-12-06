@@ -90,7 +90,7 @@ except for the following:
 * test changes
 * strictly internal changes with no user-visible effects
 * changes that already have a ``NEWS`` entry
-* changes that have not yet been included in any formal release
+* reverts that have not yet been included in any formal release
   (including alpha and beta releases)
 
 For the last two, note the following:
