@@ -80,21 +80,14 @@ to enter the public source tree. Ask yourself the following questions:
 Updating NEWS and What's New in Python
 --------------------------------------
 
+Changes that entail NEWS entries
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
 Almost all changes made to the code base deserve an entry in ``Misc/NEWS.d``.
-If the change is particularly interesting for end users (e.g. new features,
-significant improvements, or backwards-incompatible changes), then an entry in
-the ``What's New in Python`` document (in ``Doc/whatsnew/``) should be added
-as well. Changes that affect documentation only generally do not require
-a ``NEWS`` entry.
-
 There are two notable exceptions to this general principle, and they
-both relate to changes that:
-
-* Already have a ``NEWS`` entry
-* Have not yet been included in any formal release (including alpha
-  and beta releases)
-
-These are the two exceptions:
+both relate to changes that already have a ``NEWS`` entry,
+or changes that have not yet been included in any formal release
+(including alpha and beta releases):
 
 #. **If a change is reverted prior to release**, then the corresponding
    entry is simply removed. Otherwise, a new entry must be added noting
@@ -105,8 +98,27 @@ These are the two exceptions:
    change and the original** ``NEWS`` **entry remains valid**, then no additional
    entry is needed.
 
-If a change needs an entry in ``What's New in Python``, then it is very
-likely not suitable for including in a maintenance release.
+Other changes that generally do not require ``NEWS`` entries are documentation changes,
+test changes, and strictly internal changes with no user-visible effects.
+
+Changes that entail What's New in Python entries
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+If a change is particularly interesting for end users (e.g. new features,
+significant improvements, or backwards-incompatible changes), an entry in
+the ``What's New in Python`` document (in ``Doc/whatsnew/``) should be added
+in addition to the ``NEWS`` entry.
+
+In most cases, it is sufficient to reuse the wording from the ``NEWS`` entry
+in the ``What's New in Python`` entry.
+
+.. note::
+
+    A change that needs an entry in ``What's New in Python``,
+    is very likely not suitable for inclusion in a maintenance release.
+
+How to add a NEWS entry
+^^^^^^^^^^^^^^^^^^^^^^^
 
 ``NEWS`` entries go into the ``Misc/NEWS.d`` directory as individual files. The
 ``NEWS`` entry can be created by using `blurb-it <https://blurb-it.herokuapp.com/>`_,
@@ -132,6 +144,17 @@ to the standard library). The file name itself should be in the format
 As a result, a file name can look something like
 ``Misc/NEWS.d/next/Library/2017-05-27-16-46-23.gh-issue-12345.Yl4gI2.rst``.
 
+How to write a NEWS entry
+^^^^^^^^^^^^^^^^^^^^^^^^^
+
+All ``NEWS`` entries end up being part of the changelog.
+The changelog contains *a lot* of entries,
+and its intended audience is mainly users, not core devs and contributors.
+Take this into consideration when wording your ``NEWS`` entry.
+Describe the user-visible effects of your change succinctly and accurately;
+avoid long technical elaborations, digressions, and do not expect or require
+the reader to have read the actuall diff for the change.
+
 The contents of a ``NEWS`` file should be valid reStructuredText. An 80 character
 column width should be used. There is no indentation or leading marker in the
 file (e.g. ``-``). There is also no need to start the entry with the issue
@@ -145,9 +168,6 @@ entry::
 The inline Sphinx roles like ``:func:`` can be used help readers
 find more information. You can build HTML and verify that the
 link target is appropriate by using :ref:`make html <building-using-make>`.
-
-While Sphinx roles can be beneficial to readers, they are not required.
-Inline ````code blocks```` can be used instead.
 
 
 Working with Git_
