@@ -227,7 +227,7 @@ the interpreter you just built.
 
 
 Clang
-'''''
+^^^^^
 
 If you are using clang_ to build CPython, some flags you might want to set to
 quiet some standard warnings which are specifically superfluous to CPython are
@@ -246,7 +246,7 @@ still build properly).
 
 
 Optimization
-''''''''''''
+^^^^^^^^^^^^
 
 If you are trying to improve CPython's performance, you will probably want
 to use an optimized build of CPython. It can take a lot longer to build CPython
