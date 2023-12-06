@@ -34,7 +34,7 @@ and *null* for final releases), and ``N`` is the release serial number.
 Some examples of release tags: ``v3.7.0a1``, ``v3.6.3``, ``v2.7.14rc1``.
 
 Branches
-''''''''
+--------
 
 There is a branch for each *feature version*, whether released or not (e.g.
 3.7, 3.8).
@@ -43,7 +43,7 @@ There is a branch for each *feature version*, whether released or not (e.g.
 .. _indevbranch:
 
 In-development (main) branch
-----------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 The ``main`` branch is the branch for the next feature release; it is
 under active development for all kinds of changes: new features, semantic
@@ -65,7 +65,7 @@ for release 3.n.
 .. _maintbranch:
 
 Maintenance branches
---------------------
+^^^^^^^^^^^^^^^^^^^^
 
 A branch for a previous feature release, currently being maintained for bug
 fixes, or for the next feature release in its
@@ -104,7 +104,7 @@ which followed the release of 3.5.1.
 .. _secbranch:
 
 Security branches
------------------
+^^^^^^^^^^^^^^^^^
 
 A branch less than 5 years old but no longer in bugfix mode is a security
 branch.
@@ -126,7 +126,7 @@ security patches have been applied to the branch. These releases have a
 .. _eolbranch:
 
 End-of-life branches
---------------------
+^^^^^^^^^^^^^^^^^^^^
 
 The code base for a release cycle which has reached end-of-life status
 is frozen and no longer has a branch in the repo.  The final state of
@@ -141,7 +141,7 @@ The latest release for each Python version can be found on the `download page
 .. _stages:
 
 Stages
-''''''
+------
 
 Based on what stage the :ref:`in-development <indevbranch>` version of Python
 is in, the responsibilities of a core developer change in regards to commits
@@ -149,7 +149,7 @@ to the :abbr:`VCS (version control system)`.
 
 
 Pre-alpha
----------
+^^^^^^^^^
 
 The branch is in this stage when no official release has been done since
 the latest final release.  There are no special restrictions placed on
@@ -159,7 +159,7 @@ breaking the buildbots).
 .. _alpha:
 
 Alpha
------
+^^^^^
 
 Alpha releases typically serve as a reminder to core developers that they
 need to start getting in changes that change semantics or add something to
@@ -169,7 +169,7 @@ restrictions are in place while in alpha.
 .. _beta:
 
 Beta
-----
+^^^^
 
 After a first beta release is published, no new features are accepted.  Only
 bug fixes and improvements to documentation and tests can now be committed.
@@ -187,7 +187,7 @@ new information about the creation of the 3.5 maintenance branch during beta.
 .. _rc:
 
 Release Candidate (RC)
-----------------------
+^^^^^^^^^^^^^^^^^^^^^^
 
 A branch preparing for an RC release can only have bugfixes applied that have
 been reviewed by other core developers.  Generally, these issues must be
@@ -206,7 +206,7 @@ a core developer.
 .. _final:
 
 Final
------
+^^^^^
 
 When a final release is being cut, only the release manager (RM) can make
 changes to the branch.  After the final release is published, the full
@@ -214,13 +214,13 @@ changes to the branch.  After the final release is published, the full
 
 
 Repository administration
-'''''''''''''''''''''''''
+-------------------------
 
 The source code is currently hosted on `GitHub
 <https://github.com/python/cpython>`_ in the `Python organization <https://github.com/python/>`_.
 
 Organization repository policy
-------------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Within the `GitHub Python organization <https://github.com/python/>`_,
 repositories are expected to relate to the Python language, the CPython
@@ -261,7 +261,7 @@ specifically want to “bless” one implementation (as with e.g.
 
 
 Organization owner policy
--------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^
 
 The GitHub Organization Owner role allows for full management of all aspects of
 the Python organization. Allowing for visibility and management of all aspects
@@ -288,7 +288,7 @@ Owner of the Python Organization.
 .. _current owners:
 
 Current owners
---------------
+^^^^^^^^^^^^^^
 
 +----------------------+--------------------------------+-----------------+
 | Name                 | Role                           | GitHub Username |
@@ -314,7 +314,7 @@ mentioned to request assistance from an organization owner.
 .. _be performed: https://docs.github.com/en/organizations/managing-peoples-access-to-your-organization-with-roles/roles-in-an-organization#permissions-for-organization-roles
 
 Repository administrator role policy
-------------------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 The Administrator role on the repository allows for managing all aspects
 including collaborators, access control, integrations, webhooks, and branch
@@ -335,7 +335,7 @@ Multi-Factor Authentication must be enabled by the user in order to remain an
 Administrator of the repository.
 
 Current administrators
-----------------------
+^^^^^^^^^^^^^^^^^^^^^^
 
 +-------------------+----------------------------------------------------------+-----------------+
 | Name              | Role                                                     | GitHub Username |
@@ -360,7 +360,7 @@ Current administrators
 +-------------------+----------------------------------------------------------+-----------------+
 
 Repository release manager role policy
---------------------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Release Managers for :ref:`in-development <indevbranch>`, :ref:`maintenance
 <maintbranch>`, and :ref:`security mode <secbranch>` Python releases are

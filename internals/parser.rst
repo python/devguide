@@ -161,12 +161,12 @@ Grammar expressions
 -------------------
 
 ``# comment``
-'''''''''''''
+^^^^^^^^^^^^^
 
 Python-style comments.
 
 ``e1 e2``
-'''''''''
+^^^^^^^^^
 
 Match ``e1``, then match ``e2``.
 
@@ -175,7 +175,7 @@ Match ``e1``, then match ``e2``.
     rule_name: first_rule second_rule
 
 ``e1 | e2``
-'''''''''''
+^^^^^^^^^^^
 
 Match ``e1`` or ``e2``.
 
@@ -190,7 +190,7 @@ first alternative, like so:
         | second_alt
 
 ``( e )``
-'''''''''
+^^^^^^^^^
 
 Match ``e``.
 
@@ -206,7 +206,7 @@ operator together with the repeat operators:
     rule_name: (e1 e2)*
 
 ``[ e ] or e?``
-'''''''''''''''
+^^^^^^^^^^^^^^^
 
 Optionally match ``e``.
 
@@ -222,7 +222,7 @@ optional:
     rule_name: e (',' e)* [',']
 
 ``e*``
-''''''
+^^^^^^
 
 Match zero or more occurrences of ``e``.
 
@@ -231,7 +231,7 @@ Match zero or more occurrences of ``e``.
     rule_name: (e1 e2)*
 
 ``e+``
-''''''
+^^^^^^
 
 Match one or more occurrences of ``e``.
 
@@ -240,7 +240,7 @@ Match one or more occurrences of ``e``.
     rule_name: (e1 e2)+
 
 ``s.e+``
-''''''''
+^^^^^^^^
 
 Match one or more occurrences of ``e``, separated by ``s``. The generated parse
 tree does not include the separator. This is otherwise identical to
@@ -251,14 +251,14 @@ tree does not include the separator. This is otherwise identical to
     rule_name: ','.e+
 
 ``&e``
-''''''
+^^^^^^
 
 .. _peg-positive-lookahead:
 
 Succeed if ``e`` can be parsed, without consuming any input.
 
 ``!e``
-''''''
+^^^^^^
 
 .. _peg-negative-lookahead:
 
@@ -273,7 +273,7 @@ consists of an atom, which is not followed by a ``.`` or a ``(`` or a
     primary: atom !'.' !'(' !'['
 
 ``~``
-''''''
+^^^^^
 
 Commit to the current alternative, even if it fails to parse (this is called
 the "cut").

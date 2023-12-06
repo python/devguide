@@ -165,14 +165,14 @@ Hyperlinks
 ----------
 
 External links
-''''''''''''''
+^^^^^^^^^^^^^^
 
 Use ```Link text <http://target>`_`` for inline web links.  If the link text
 should be the web address, you don't need special markup at all, the parser
 finds links and mail addresses in ordinary text.
 
 Internal links
-''''''''''''''
+^^^^^^^^^^^^^^
 
 Internal linking is done via a special reST role, see the section on specific
 markup, :ref:`doc-ref-role`.
