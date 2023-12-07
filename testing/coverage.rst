@@ -4,6 +4,14 @@
 Increase test coverage
 ======================
 
+.. raw:: html
+
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      activateTab(getOS());
+    });
+    </script>
+
 Python development follows a practice that all semantic changes and additions
 to the language and :abbr:`stdlib (standard library)` are accompanied by
 appropriate unit tests. Unfortunately Python was in existence for a long time
@@ -80,30 +88,42 @@ provided by the stdlib then you can :ref:`use test.regrtest
 .. _install_coverage:
 
 Install coverage
-''''''''''''''''
+^^^^^^^^^^^^^^^^
 
 By default, pip will not install into the in-development version of Python you
 just built, and this built version of Python will not see packages installed
 into your default version of Python. One option is to use a virtual environment
 to install coverage.
 
-On Unix run::
+.. tab:: Unix
 
-    ./python -m venv ../cpython-venv
-    source ../cpython-venv/bin/activate
-    pip install coverage
+    Run:
 
-On :ref:`most <mac-python.exe>` macOS systems run::
+    .. code-block:: shell
 
-    ./python.exe -m venv ../cpython-venv
-    source ../cpython-venv/bin/activate
-    pip install coverage
+        ./python -m venv ../cpython-venv
+        source ../cpython-venv/bin/activate
+        pip install coverage
 
-On Windows run::
+.. tab:: macOS
 
-    python.bat -m venv ..\\cpython-venv
-    ..\\cpython-venv\\Scripts\\activate.bat
-    pip install coverage
+    On :ref:`most <mac-python.exe>` macOS systems run:
+
+    .. code-block:: shell
+
+        ./python.exe -m venv ../cpython-venv
+        source ../cpython-venv/bin/activate
+        pip install coverage
+
+.. tab:: Windows
+
+    Run:
+
+    .. code-block:: dosbatch
+
+        python.bat -m venv ..\\cpython-venv
+        ..\\cpython-venv\\Scripts\\activate.bat
+        pip install coverage
 
 You can now use python without the ./ for the rest of these instructions, as
 long as your venv is activated. For more info on venv see `Virtual Environment
@@ -123,7 +143,7 @@ it. For this, you will again need to use the full path to that installation.
 .. _coverage_usage:
 
 Basic usage
-'''''''''''
+^^^^^^^^^^^
 
 The following command will tell you if your copy of coverage works (substitute
 ``COVERAGEDIR`` with the directory where your clone exists, e.g.
@@ -177,7 +197,7 @@ with pages that visibly show what lines of code were or were not executed.
 .. _branch_coverage:
 
 Branch coverage
-'''''''''''''''
+^^^^^^^^^^^^^^^
 
 For the truly daring, you can use another powerful feature of coverage.py:
 branch coverage. Testing every possible branch path through code, while a great
@@ -231,19 +251,49 @@ Measuring coverage of C code with gcov and lcov
 
 It's also possible to measure the function, line and branch coverage of
 Python's C code. Right now only GCC with `gcov`_ is supported. In order to
-create an instrumented build of Python with gcov, run::
+create an instrumented build of Python with gcov, run:
 
-    make coverage
+.. tab:: Unix/macOS
+
+    .. code-block:: shell
+
+        make coverage
+
+.. tab:: Windows
+
+    .. code-block:: dosbatch
+
+        .\make coverage
 
 Then run some code and gather coverage data with the ``gcov`` command. In
-order to create a HTML report you can install `lcov`_. The command::
+order to create a HTML report you can install `lcov`_. The command:
 
-    make coverage-lcov
+.. tab:: Unix/macOS
+
+    .. code-block:: shell
+
+        make coverage-lcov
+
+.. tab:: Windows
+
+    .. code-block:: dosbatch
+
+        .\make coverage-lcov
 
 assembles coverage data, removes 3rd party and system libraries and finally
-creates a report. You can skip both steps and just run::
+creates a report. You can skip both steps and just run:
 
-    make coverage-report
+.. tab:: Unix/macOS
+
+    .. code-block:: shell
+
+        make coverage-report
+
+.. tab:: Windows
+
+    .. code-block:: dosbatch
+
+        .\make coverage-report
 
 if you like to generate a coverage report for Python's stdlib tests. It takes
 about 20 to 30 minutes on a modern computer.

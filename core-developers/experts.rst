@@ -103,7 +103,7 @@ dis                   1st1
 doctest               tim-one (inactive)
 email                 warsaw, bitdancer*, maxking
 encodings             malemburg
-ensurepip             ncoghlan, dstufft, pradyunsg
+ensurepip             ncoghlan, dstufft, pradyunsg, pfmoore
 enum                  eliben*, warsaw, ethanfurman*
 errno                 Yhg1s
 faulthandler          vstinner, gpshead
@@ -276,7 +276,7 @@ Tools
 ==================  ===========
 Tool                Maintainers
 ==================  ===========
-Argument Clinic     larryhastings
+Argument Clinic     larryhastings, AlexWaygood*, erlend-aasland
 Deepfreeze          gvanrossum, kumaraditya303
 PEG Generator       gvanrossum, pablogsal, lysnikolaou
 ==================  ===========
@@ -310,7 +310,7 @@ Miscellaneous
 Interest Area       Maintainers
 ==================  ==========================================================
 algorithms          rhettinger*
-argument clinic     larryhastings
+argument clinic     larryhastings, AlexWaygood*, erlend-aasland
 ast/compiler        benjaminp, 1st1, pablogsal, markshannon, isidentical, brandtbucher, carljm, iritkatriel
 autoconf/makefiles  Yhg1s*
 bsd
@@ -326,7 +326,7 @@ database            malemburg
 devguide            merwok, ezio-melotti, willingc, Mariatta, hugovk,
                     AA-Turner
 documentation       ezio-melotti, merwok, JulienPalard, willingc, hugovk,
-                    AA-Turner
+                    AA-Turner, AlexWaygood*
 emoji               Mariatta
 extension modules   encukou, ncoghlan
 filesystem          giampaolo
@@ -345,7 +345,8 @@ object model        benjaminp, Yhg1s
 packaging           tarekziade, malemburg, alexis^, merwok, dstufft, pfmoore
 pattern matching    brandtbucher*
 peg parser          gvanrossum, pablogsal, lysnikolaou
-performance         vstinner, serhiy-storchaka, 1st1, rhettinger, markshannon, brandtbucher, carljm, Fidget-Spinner
+performance         vstinner, serhiy-storchaka, 1st1, rhettinger, markshannon, brandtbucher, carljm, Fidget-Spinner,
+                    AlexWaygood*
 pip                 ncoghlan, dstufft, pfmoore, Marcus.Smith^, pradyunsg
 py3 transition      benjaminp
 release management  tarekziade, malemburg, benjaminp, warsaw,

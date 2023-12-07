@@ -116,7 +116,9 @@ instructions please see the :ref:`setup guide <setup>`.
 
 7. Push the branch on your fork on GitHub and :ref:`create a pull request
    <pullrequest>`.  Include the issue number using ``gh-NNNN`` in the
-   pull request description.  For example::
+   pull request description.  For example:
+
+   .. code-block:: text
 
       gh-12345: Fix some bug in spam module
 

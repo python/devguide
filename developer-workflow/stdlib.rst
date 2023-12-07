@@ -62,7 +62,8 @@ are not taken lightly.
 
 
 Acceptable types of modules
-'''''''''''''''''''''''''''
+^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
 Typically two types of modules get added to the stdlib. One type is a module
 which implements something that is difficult to get right. A good example of
 this is the :py:mod:`multiprocessing` package. Working out the various OS
@@ -83,7 +84,8 @@ it.
 
 
 Requirements
-''''''''''''
+^^^^^^^^^^^^
+
 In order for a module to even be considered for inclusion into the stdlib, a
 couple of requirements must be met.
 
@@ -121,7 +123,7 @@ uniform.
 
 
 Proposal process
-''''''''''''''''
+^^^^^^^^^^^^^^^^
 
 If the module you want to propose adding to the stdlib meets the requirements,
 you may propose its inclusion

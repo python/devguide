@@ -138,7 +138,7 @@ Notifications
 -------------
 
 Following categories (category notifications)
-'''''''''''''''''''''''''''''''''''''''''''''
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Notifications can be set for individual categories and topics. To change any of these
 defaults, you can either go to your user preferences, or visit the category
@@ -151,7 +151,7 @@ All categories are set by default in Normal mode where you will only be notified
 if someone mentions your @name or replies to you.
 
 Following individual threads (topic notifications)
-''''''''''''''''''''''''''''''''''''''''''''''''''
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 To follow any individual topics or threads, you can adjust your notifications
 through the notification button 🔔 found on the right of the topic at the end
@@ -160,7 +160,7 @@ Select "Watching" and you will be notified when there is any new updated reply
 from that particular thread.
 
 Customising notifications on user preference
-''''''''''''''''''''''''''''''''''''''''''''
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 To get a bird's eye view of all your customised notifications, you can
 go to `Preferences of your account <https://discuss.python.org/my/preferences/categories>`_.
