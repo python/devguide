@@ -78,3 +78,10 @@
     fill: #2222EE;
     stroke: #008888;
 }
+
+.good pre {
+  border-left: 3px solid rgba(74, 182, 93, 1);
+}
+.bad pre {
+  border-left: 3px solid rgb(244, 76, 78);
+}
