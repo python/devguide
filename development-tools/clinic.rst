@@ -2010,7 +2010,7 @@ See :c:type:`getter <PyGetSetDef>` and :c:type:`setter <PyGetSetDef>` for detail
 You can use the ``@getter`` and ``@setter`` directive to generate an "impl" function for a
 getter using Argument Clinic.
 
-This examples -- taken from :cpy-file:`Modules/_io/textio.c` --
+This example -- taken from :cpy-file:`Modules/_io/textio.c` --
 shows the use of ``@getter`` and ``@setter`` in combination with
 the :ref:`@critical_section <clinic-howto-critical-sections>` directive
 (which achieves thread safety without causing deadlocks between threads)::
