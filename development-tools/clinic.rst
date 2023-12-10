@@ -2006,7 +2006,7 @@ How to generate a getter
 ------------------------
 
 "Getters" and "Setters" are C functions that facilitate property-like access for a class.
-See :c:type:`getter <PyGetSetDef>` for details.
+See :c:type:`getter <PyGetSetDef>` and :c:type:`setter <PyGetSetDef>` for details.
 You can use the ``@getter`` and ``@setter`` directive to generate an "impl" function for a
 getter using Argument Clinic.
 
