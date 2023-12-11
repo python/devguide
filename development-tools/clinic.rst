@@ -2000,11 +2000,10 @@ The generated glue code looks like this:
 .. versionadded:: 3.13
 
 
-.. _clinic-howto-getter:
-.. _clinic-howto-getter-setter:
+.. _clinic-howto-PyGetSetDef:
 
-How to generate a getter
-------------------------
+How to declare PyGetSetDef functions
+------------------------------------
 
 "Getters" and "setters" are C functions that facilitate property-like access for a class.
 See :c:type:`getter <PyGetSetDef>` and :c:type:`setter <PyGetSetDef>` for details.
