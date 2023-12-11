@@ -2000,12 +2000,13 @@ The generated glue code looks like this:
 .. versionadded:: 3.13
 
 
+.. _clinic-howto-getter:
 .. _clinic-howto-getter-setter:
 
 How to generate a getter
 ------------------------
 
-"Getters" and "Setters" are C functions that facilitate property-like access for a class.
+"Getters" and "setters" are C functions that facilitate property-like access for a class.
 See :c:type:`getter <PyGetSetDef>` and :c:type:`setter <PyGetSetDef>` for details.
 You can use the ``@getter`` and ``@setter`` directive to generate an "impl" function for a
 getter using Argument Clinic.
@@ -2053,7 +2054,7 @@ The generated glue code looks like this:
         return return_value;
     }
 
-Note that each of ``@getter`` and ``@setter`` should be declared at separated definitions.
+Note that each of ``@getter`` and ``@setter`` should be declared in separated definitions.
 And then the implementation will work the same as a Python method which is
 decorated by :py:class:`property`.
 
