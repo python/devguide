@@ -2000,7 +2000,7 @@ The generated glue code looks like this:
 .. versionadded:: 3.13
 
 
-.. _clinic-howto-PyGetSetDef:
+.. _clinic-howto-pygetsetdef:
 
 How to declare PyGetSetDef functions
 ------------------------------------
