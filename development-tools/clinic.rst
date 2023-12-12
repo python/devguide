@@ -1996,7 +1996,7 @@ The generated glue code looks like this:
       return return_value;
    }
 
-If you want to specify a target object to lock then you can use a target directive for
+If you want to specify a target object to be locked then you can use a target directive for
 ``@critical_section``. Since the ``@critical_section`` locks the object which is located
 as the first argument implicitly, you will need this feature when the ``@critical_section``
 locks an unwanted target object. Note that explicit target declaration only supports up to 2 objects.
