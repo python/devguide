@@ -1996,12 +1996,11 @@ The generated glue code looks like this:
       return return_value;
    }
 
-If you want to specify a target object to be locked then you can use a target directive for
-``@critical_section``. Since the ``@critical_section`` locks the object which is located
-as the first argument implicitly, you will need this feature when the ``@critical_section``
-locks an unwanted target object. Note that explicit target declaration only supports up to 2 objects.
-
-Example from :cpy-file:`Modules/_weakref.c`::
+You can lock up to two additional objects
+by supplying their C variable names as arguments
+to the ``@critical_section`` directive.
+This example from :cpy-file:`Modules/_weakref.c` takes
+one additional argument (a C variable named ``object``)::
 
    /*[clinic input]
    @critical_section object
