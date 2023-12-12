@@ -1996,6 +1996,36 @@ The generated glue code looks like this:
       return return_value;
    }
 
+You can lock one or two additional objects
+by supplying their C variable names as arguments
+to the ``@critical_section`` directive.
+This example from :cpy-file:`Modules/_weakref.c` takes
+one additional argument (a C variable named ``object``)::
+
+   /*[clinic input]
+   @critical_section object
+   _weakref.getweakrefcount -> Py_ssize_t
+
+   object: object
+   /
+   Return the number of weak references to 'object'.
+   [clinic start generated code]*/
+
+The generated glue code looks like this:
+
+.. code-block:: c
+
+   static PyObject *
+   _weakref_getweakrefs(PyObject *module, PyObject *object)
+   {
+     PyObject *return_value = NULL;
+
+     Py_BEGIN_CRITICAL_SECTION(object);
+     return_value = _weakref_getweakrefs_impl(module, object);
+     Py_END_CRITICAL_SECTION();
+
+     return return_value;
+   }
 
 .. versionadded:: 3.13
 
