@@ -1996,7 +1996,7 @@ The generated glue code looks like this:
       return return_value;
    }
 
-You can lock up to two additional objects
+You can lock one or two additional objects
 by supplying their C variable names as arguments
 to the ``@critical_section`` directive.
 This example from :cpy-file:`Modules/_weakref.c` takes
