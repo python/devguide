@@ -1996,6 +1996,37 @@ The generated glue code looks like this:
       return return_value;
    }
 
+If you want to specify a target object to lock then you can use a target directive for
+``@critical_section``. Since the ``@critical_section`` locks the object which is located
+as the first argument implicitly, you will need this feature when the ``@critical_section``
+locks an unwanted target object. Note that explicit target declaration only supports up to 2 objects.
+
+Example from :cpy-file:`Modules/_weakref.c`::
+
+   /*[clinic input]
+   @critical_section object
+   _weakref.getweakrefcount -> Py_ssize_t
+
+   object: object
+   /
+   Return the number of weak references to 'object'.
+   [clinic start generated code]*/
+
+The generated glue code looks like this:
+
+.. code-block:: c
+
+   static PyObject *
+   _weakref_getweakrefs(PyObject *module, PyObject *object)
+   {
+     PyObject *return_value = NULL;
+
+     Py_BEGIN_CRITICAL_SECTION(object);
+     return_value = _weakref_getweakrefs_impl(module, object);
+     Py_END_CRITICAL_SECTION();
+
+     return return_value;
+   }
 
 .. versionadded:: 3.13
 
