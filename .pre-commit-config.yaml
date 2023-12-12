@@ -1,18 +1,18 @@
 repos:
   - repo: https://github.com/asottile/pyupgrade
-    rev: v3.10.1
+    rev: v3.15.0
     hooks:
       - id: pyupgrade
         args: [--py38-plus]
 
-  - repo: https://github.com/psf/black
-    rev: 23.7.0
+  - repo: https://github.com/psf/black-pre-commit-mirror
+    rev: 23.12.0
     hooks:
       - id: black
         args: [--skip-string-normalization]
 
   - repo: https://github.com/PyCQA/isort
-    rev: 5.12.0
+    rev: 5.13.1
     hooks:
       - id: isort
         args: [--profile=black]
@@ -24,7 +24,7 @@ repos:
         additional_dependencies: [flake8-2020]
 
   - repo: https://github.com/sphinx-contrib/sphinx-lint
-    rev: v0.6.7
+    rev: v0.9.1
     hooks:
       - id: sphinx-lint
         args: ["--enable=default-role"]
@@ -35,7 +35,7 @@ repos:
       - id: python-check-blanket-noqa
 
   - repo: https://github.com/pre-commit/pre-commit-hooks
-    rev: v4.4.0
+    rev: v4.5.0
     hooks:
       - id: check-json
       - id: check-merge-conflict
