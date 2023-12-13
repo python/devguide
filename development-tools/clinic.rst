@@ -2058,6 +2058,9 @@ The generated glue code looks like this:
    Getters and setters must be declared as separate functions.
    The *value* parameter for a "setter" is added implicitly by Argument Clinic.
 
+And then the implementation will work the same as a Python method which is
+decorated by :py:class:`property`:
+
 .. code-block:: pycon
 
    >>> import sys, _io
