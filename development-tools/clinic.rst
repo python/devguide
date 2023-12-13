@@ -2002,11 +2002,11 @@ The generated glue code looks like this:
 
 .. _clinic-howto-pygetsetdef:
 
-How to declare PyGetSetDef functions
-------------------------------------
+How to declare ``PyGetSetDef`` functions
+----------------------------------------
 
-"Getters" and "setters" are C functions that facilitate property-like access for a class.
-See :c:type:`getter <PyGetSetDef>` and :c:type:`setter <PyGetSetDef>` for details.
+"Getters" and "setters" are C functions defined in a :c:type:`PyGetSetDef` struct
+ that facilitate property-like access for a class.
 You can use the ``@getter`` and ``@setter`` directives to generate
 "impl" functions for these.
 
@@ -2056,7 +2056,7 @@ The generated glue code looks like this:
 .. note::
 
    Getters and setters must be declared as separate functions.
-   The "value" parameter for a "setter" is added implicitly by Argument Clinic.
+   The *value* parameter for a "setter" is added implicitly by Argument Clinic.
 
 .. code-block:: pycon
 
