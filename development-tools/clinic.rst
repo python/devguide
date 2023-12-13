@@ -2030,25 +2030,31 @@ The generated glue code looks like this:
 .. versionadded:: 3.13
 
 
-.. _clinic-howto-getter:
+.. _clinic-howto-pygetsetdef:
 
-How to generate a getter
-------------------------
+How to declare ``PyGetSetDef`` ("getter/setter") functions
+----------------------------------------------------------
 
-"Getters" are C functions that facilitate property-like access for a class.
-See :c:type:`getter <PyGetSetDef>` for details.
-You can use the ``@getter`` directive to generate an "impl" function for a
-getter using Argument Clinic.
+"Getters" and "setters" are C functions defined in a :c:type:`PyGetSetDef` struct
+that facilitate :py:class:`property`-like access for a class.
+You can use the ``@getter`` and ``@setter`` directives to generate
+"impl" functions using Argument Clinic.
 
-This example -- taken from :cpy-file:`Modules/_io/bufferedio.c` --
-shows the use of ``@getter`` in combination with
+This example --- taken from :cpy-file:`Modules/_io/textio.c` ---
+shows the use of ``@getter`` and ``@setter`` in combination with
 the :ref:`@critical_section <clinic-howto-critical-sections>` directive
 (which achieves thread safety without causing deadlocks between threads)::
 
     /*[clinic input]
     @critical_section
     @getter
-    _io._Buffered.closed
+    _io.TextIOWrapper._CHUNK_SIZE
+    [clinic start generated code]*/
+
+    /*[clinic input]
+    @critical_section
+    @setter
+    _io.TextIOWrapper._CHUNK_SIZE
     [clinic start generated code]*/
 
 The generated glue code looks like this:
@@ -2056,26 +2062,44 @@ The generated glue code looks like this:
 .. code-block:: c
 
     static PyObject *
-    _io__Buffered_closed_get(buffered *self, void *context)
+    _io_TextIOWrapper__CHUNK_SIZE_get(textio *self, void *Py_UNUSED(context))
     {
         PyObject *return_value = NULL;
 
         Py_BEGIN_CRITICAL_SECTION(self);
-        return_value = _io__Buffered_closed_get_impl(self);
+        return_value = _io_TextIOWrapper__CHUNK_SIZE_get_impl(self);
         Py_END_CRITICAL_SECTION();
 
         return return_value;
     }
 
+    static int
+    _io_TextIOWrapper__CHUNK_SIZE_set(textio *self, PyObject *value, void *Py_UNUSED(context))
+    {
+        int return_value;
+        Py_BEGIN_CRITICAL_SECTION(self);
+        return_value = _io_TextIOWrapper__CHUNK_SIZE_set_impl(self, value);
+        Py_END_CRITICAL_SECTION();
+        return return_value;
+    }
+
+.. note::
+
+   Getters and setters must be declared as separate functions.
+   The *value* parameter for a "setter" is added implicitly by Argument Clinic.
+
 And then the implementation will work the same as a Python method which is
-decorated by :py:class:`property`.
+decorated by :py:class:`property`:
 
 .. code-block:: pycon
 
-   >>> import _io
-   >>> a = _io._BufferedIOBase()
-   >>> a.closed
-   False
+   >>> import sys, _io
+   >>> a = _io.TextIOWrapper(sys.stdout)
+   >>> a._CHUNK_SIZE
+   8192
+   >>> a._CHUNK_SIZE = 30
+   >>> a._CHUNK_SIZE
+   30
 
 .. versionadded:: 3.13
 
