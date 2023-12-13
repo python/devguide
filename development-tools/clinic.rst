@@ -2008,7 +2008,7 @@ How to declare ``PyGetSetDef`` ("getter/setter") functions
 "Getters" and "setters" are C functions defined in a :c:type:`PyGetSetDef` struct
 that facilitate :py:class:`property`-like access for a class.
 You can use the ``@getter`` and ``@setter`` directives to generate
-"impl" functions for using Argument Clinic.
+"impl" functions using Argument Clinic.
 
 This example --- taken from :cpy-file:`Modules/_io/textio.c` ---
 shows the use of ``@getter`` and ``@setter`` in combination with
