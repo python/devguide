@@ -2002,11 +2002,11 @@ The generated glue code looks like this:
 
 .. _clinic-howto-pygetsetdef:
 
-How to declare ``PyGetSetDef`` functions
-----------------------------------------
+How to declare ``PyGetSetDef`` ("getter/setter") functions
+----------------------------------------------------------
 
 "Getters" and "setters" are C functions defined in a :c:type:`PyGetSetDef` struct
-that facilitate property-like access for a class.
+that facilitate :py:class:`property`-like access for a class.
 You can use the ``@getter`` and ``@setter`` directives to generate
 "impl" functions for these.
 
