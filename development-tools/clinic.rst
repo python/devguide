@@ -2087,6 +2087,8 @@ The generated glue code looks like this:
 
    Getters and setters must be declared as separate functions.
    The *value* parameter for a "setter" is added implicitly by Argument Clinic.
+   The docstring is also supported for :c:type:`PyGetSetDef` functions like other
+   but it must be declared at ``@getter``.
 
 And then the implementation will work the same as a Python method which is
 decorated by :py:class:`property`:
