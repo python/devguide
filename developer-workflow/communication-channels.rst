@@ -45,7 +45,7 @@ Mailing lists
      should go to the python-list_ or python-help_ mailing lists, or the
      `Python Help`_ category on Discourse.
 
-Existing threads on the python-dev_, python-committers_, and python-ideas_ mailing lists
+Existing threads on the python-core-dev_, python-committers_, and python-ideas_ mailing lists
 can be accessed through the `online archive <web gateway_>`__.
 
 General Python questions should go to `python-list`_ or `tutor`_
@@ -64,7 +64,7 @@ ways, including via web browsers, NNTP newsreaders, and RSS feed readers.
 
 .. _issue tracker: https://github.com/python/cpython/issues
 .. _python-committers: https://mail.python.org/mailman3/lists/python-committers.python.org/
-.. _python-dev: https://mail.python.org/mailman3/lists/python-dev.python.org/
+.. _python-core-dev: https://discuss.python.org/c/core-dev/23
 .. _python-help: https://mail.python.org/mailman/listinfo/python-help
 .. _python-ideas: https://mail.python.org/mailman3/lists/python-ideas.python.org
 .. _python-list: https://mail.python.org/mailman/listinfo/python-list
@@ -80,7 +80,7 @@ Discourse (discuss.python.org web forum)
 ========================================
 
 We have our own `Discourse`_ forum for both developers and users. This forum
-complements the `python-dev`_, `python-ideas`_, `python-help`_, and
+complements the `python-core-dev`_, `python-ideas`_, `python-help`_, and
 `python-list`_ mailing lists.
 
 This forum has different categories and most core development discussions
