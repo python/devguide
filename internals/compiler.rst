@@ -11,7 +11,7 @@ Abstract
 
 In CPython, the compilation from source code to bytecode involves several steps:
 
-1. Tokenize the source code (:cpy-file:`Parser/tokenizer.c`).
+1. Tokenize the source code (:cpy-file:`Parser/lexer/` & :cpy-file:`Parser/tokenizer/`).
 2. Parse the stream of tokens into an Abstract Syntax Tree
    (:cpy-file:`Parser/parser.c`).
 3. Transform AST into an instruction sequence (:cpy-file:`Python/compile.c`).
