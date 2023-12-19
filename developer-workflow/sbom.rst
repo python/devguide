@@ -65,7 +65,7 @@ After gathering this information:
    auto-format your manually written JSON. The fields to fill out include:
 
    * ``name`` for the project name.
-   * ``SPDXID`` which will be ``"SPDXRef-PACKAGE-{name}"``
+   * ``SPDXID`` which will be ``"SPDXRef-PACKAGE-{name}"``.
    * ``licenseConcluded`` for the SPDX license identifier of the project license.
    * ``versionInfo`` for the version of the project.
    * ``downloadLocation`` should be an HTTPS URL for the project download as an archive.
