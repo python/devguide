@@ -599,8 +599,9 @@ If you are on Windows you can use the Visual Studio project files to regenerate 
 
     ./PCbuild/build.bat --regen
 
-How tokens are generated and the rules governing this is completely up to the tokenizer (:cpy-file:`Parser/tokenizer.c`)
-and the parser just receives tokens from it.
+How tokens are generated and the rules governing this are completely up to the tokenizer
+(:cpy-file:`Parser/lexer/` and :cpy-file:`Parser/tokenizer/`);
+the parser just receives tokens from it.
 
 Memoization
 -----------

@@ -42,7 +42,7 @@ Note: sometimes things mysteriously don't work.  Before giving up, try ``make cl
   Then run ``make regen-ast`` to regenerate
   :cpy-file:`Include/internal/pycore_ast.h` and :cpy-file:`Python/Python-ast.c`.
 
-* :cpy-file:`Parser/tokenizer.c` contains the tokenization code.
+* :cpy-file:`Parser/lexer/` contains the tokenization code.
   This is where you would add a new type of comment or string literal, for example.
 
 * :cpy-file:`Python/ast.c` will need changes to validate AST objects
