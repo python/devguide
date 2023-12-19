@@ -38,7 +38,7 @@ The recommended workflow is:
    update the embedded version within URLs and project identifiers.
    Don't update any information in ``files`` and ``relationships`` as this will
    be generated automatically by the SBOM tool.
-4. Run ``make regen-sbom`` or `` python Tools/build/generate_sbom.py``.
+4. Run ``make regen-sbom`` or ``python Tools/build/generate_sbom.py``.
    Ensure that this doesn't fail with validation errors.
 5. Run ``git diff Misc/sbom.spdx.json`` and check the diff matches the
    expected changes.
