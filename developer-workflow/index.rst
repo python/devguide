@@ -13,3 +13,4 @@ Development workflow
    lang-changes
    grammar
    porting
+   sbom
