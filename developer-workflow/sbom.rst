@@ -38,9 +38,9 @@ The recommended workflow is:
    update the embedded version within URLs and project identifiers.
    Don't update any information in ``files`` and ``relationships`` as this will
    be generated automatically by the SBOM tool.
-4. Run ``$ make regen-sbom`` or :cpy-file:`Tools/build/generate_sbom.py`.
+4. Run ``make regen-sbom`` or `` python Tools/build/generate_sbom.py``.
    Ensure that this doesn't fail with validation errors.
-5. Run ``$ git diff Misc/sbom.spdx.json`` and check the diff matches the
+5. Run ``git diff Misc/sbom.spdx.json`` and check the diff matches the
    expected changes.
 6. Commit the changes to :cpy-file:`Misc/sbom.spdx.json` along with the
    update to the dependency code.
@@ -56,7 +56,7 @@ When adding a dependency it's important to have the following information:
   (`CPE <https://nvd.nist.gov/products/cpe>`_ and
   `Package URLs <https://github.com/package-url/purl-spec/blob/master/PURL-SPECIFICATION.rst>`_
   or "PURLs")
-* Path(s) to include and exclude in the CPython source tree corresponding to this dependency.
+* Paths to include and exclude in the CPython source tree corresponding to this dependency
 
 After gathering this information:
 
@@ -86,7 +86,7 @@ After gathering this information:
    ``SPDXRef-PACKAGE-*`` prefix) in :cpy-file:`Tools/build/generate_sbom.py`.
 4. Run the tool with ``make regen-sbom`` or ``python Tools/build/generate_sbom.py``.
    Ensure that the tool doesn't fail with any validation errors.
-5. Compare the changes to :cpy-file:`Misc/sbom.spdx.json` with ``$ git diff``, check
+5. Compare the changes to :cpy-file:`Misc/sbom.spdx.json` with ``git diff``, check
    that all information appears correct.
 6. Commit the changes to :cpy-file:`Misc/sbom.spdx.json` and
    :cpy-file:`Tools/build/generate_sbom.py`.
@@ -103,7 +103,7 @@ When removing a dependency:
 2. Remove the corresponding ``PackageFiles`` entry in :cpy-file:`Tools/build/generate_sbom.py`
 3. Run the tool with ``make regen-sbom`` or ``python Tools/build/generate_sbom.py``.
    Ensure that the tool doesn't fail with any validation errors.
-4. Compare the changes to :cpy-file:`Misc/sbom.spdx.json` with ``$ git diff``, check
+4. Compare the changes to :cpy-file:`Misc/sbom.spdx.json` with ``git diff``, check
    that correct package is removed from the SBOM.
 5. Commit the changes to :cpy-file:`Misc/sbom.spdx.json` and
    :cpy-file:`Tools/build/generate_sbom.py`.
