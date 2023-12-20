@@ -2087,6 +2087,8 @@ The generated glue code looks like this:
 
    Getters and setters must be declared as separate functions.
    The *value* parameter for a "setter" is added implicitly by Argument Clinic.
+   It is possible to create a docstring for the property by adding it to
+   the ``@getter``.
 
 And then the implementation will work the same as a Python method which is
 decorated by :py:class:`property`:
