@@ -105,39 +105,40 @@ Unix
 Diátaxis
 ========
 
-Python's documentation follows the `Diátaxis <https://diataxis.fr//>`_
+Python's documentation strives to follow the :ref:`diataxis:diataxis`
 framework. This means adapting the writing style according to the nature of
-the documentation that is being written. The framework splits documentation
-into four distinct types: tutorials, how-to guides, reference, and
+the documentation that is being written. The framework splits
+documentation into four distinct types: tutorials, how-to guides, reference, and
 explanation.
 
-`Python tutorials <https://docs.python.org/3/tutorial/index.html>`_ should be
-beginner-friendly, explicit, and avoid making assumptions about the reader's
-knowledge. The goal of a tutorial is to get the user writing Python code as
-quickly as possible with clear logical steps. Explanations and abstract
-concepts should be avoided.
+* :ref:`python:tutorial-index` should
+  be explicit and avoid making assumptions about the
+  reader's knowledge. The goal of a tutorial is to get the user writing
+  Python code as quickly as possible with clear logical steps. Explanations
+  and abstract concepts should be avoided.
 
-`Python how-to guides <https://docs.python.org/3/howto/index.html>`_ are
-similar but distinct from tutorials and the two are often conflated. Both
-tutorials and how-to guides are instructional rather than explanatory
-and should provide clear, logical steps on how to complete a task. However,
-how-to guides make more assumptions about the user's knoweldge and place
-greater emphasis on the user finding the best way to complete the task.
+* `Python how-to guides <https://docs.python.org/3/howto/index.html>`_ are
+  designed to guide a user through a problem-field.
+  Both tutorials and how-to guides are instructional rather than explanatory
+  and should provide logical steps on how to complete a task. However,
+  how-to guides make more assumptions about the user's knoweldge and
+  focus on the user finding the best way to solve their own
+  particular problem.
 
-`Python references <https://docs.python.org/3/library/index.html>`_ should
-be factual, concise, and clear. The purpose of reference documentation is
-to describe rather than explain. Accuracy and consistency are imperative as
-this type of documentation should be seen as an authoritative source.
-:ref:`Code-examples` can be a useful way of achieving these
-objectives.
+* `Python references <https://docs.python.org/3/library/index.html>`_ should
+  be factual and succinct. The purpose of reference documentation is
+  to describe rather than to explain. Accuracy and consistency are key as
+  this type of documentation should be seen as an authoritative source.
+  :ref:`Code-examples` can be a useful way of achieving these
+  objectives.
 
-`Python explanations <https://docs.python.org/3/glossary.htmll>`_ provide
-a deeper level of understanding and are naturally more discursive. They aim
-to deepen the reader's understanding and answer 'why' questions. They should
-provide context, make connections between topics, and discuss alternative
-opinions.
+* `Python explanations <https://docs.python.org/3/glossary.htmll>`_ provide
+  a deeper level of understanding and are naturally more discursive. They aim
+  to deepen the reader's understanding and answer 'why' questions. They should
+  provide context, make connections between topics, and discuss alternative
+  opinions.
 
-Please consult the Diátaxis guide `here <https://diataxis.fr//>`_ for more
+Please consult the :ref:`diataxis:diataxis` guide for more
 detail.
 
 Affirmative tone

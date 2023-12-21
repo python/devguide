@@ -152,6 +152,7 @@ rediraffe_redirects = {
 
 intersphinx_mapping = {
     'python': ('https://docs.python.org/3', None),
+    'diataxis': ('https://diataxis.fr/', None),
 }
 
 todo_include_todos = True
