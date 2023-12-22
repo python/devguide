@@ -125,18 +125,20 @@ explanation.
   focus on the user finding the best way to solve their own
   particular problem.
 
-* `Python references <https://docs.python.org/3/library/index.html>`_ should
+* :ref:`python:reference-index` should
   be factual and succinct. The purpose of reference documentation is
   to describe rather than to explain. Accuracy and consistency are key as
   this type of documentation should be seen as an authoritative source.
   :ref:`Code-examples` can be a useful way of achieving these
   objectives.
 
-* `Python explanations <https://docs.python.org/3/glossary.htmll>`_ provide
+* Python explanations provide
   a deeper level of understanding and are naturally more discursive. They aim
   to deepen the reader's understanding and answer 'why' questions. They should
   provide context, make connections between topics, and discuss alternative
-  opinions.
+  opinions. There is no section dedicated to explanations but these can be
+  found throughout Python's documentation, for example the
+  :ref:`python:unicode-howto`
 
 Please consult the :ref:`diataxis:diataxis` guide for more
 detail.
