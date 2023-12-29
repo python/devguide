@@ -65,7 +65,7 @@ in production; others are works in progress.
 | in Brasil       |                               | `Telegram <chat_pt_br_>`_  |
 | (pt-br)         |                               | `article <article_pt_br_>`_|
 +-----------------+-------------------------------+----------------------------+
-| Russian (ru)    |                               | `GitHub <github_ru>`_      |
+| Russian (ru)    |                               | `GitHub <github_ru_>`_     |
 |                 |                               | `mail <mail_ru_>`_         |
 +-----------------+-------------------------------+----------------------------+
 | Simplified      | `Shengjing Zhu <gh_zhsj_>`_,  | `Transifex <tx_zh_cn_>`_   |
