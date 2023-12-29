@@ -65,7 +65,8 @@ in production; others are works in progress.
 | in Brasil       |                               | `Telegram <chat_pt_br_>`_  |
 | (pt-br)         |                               | `article <article_pt_br_>`_|
 +-----------------+-------------------------------+----------------------------+
-| Russian (ru)    |                               | `mail <mail_ru_>`_         |
+| Russian (ru)    |                               | `GitHub <github_ru>`_      |
+|                 |                               | `mail <mail_ru_>`_         |
 +-----------------+-------------------------------+----------------------------+
 | Simplified      | `Shengjing Zhu <gh_zhsj_>`_,  | `Transifex <tx_zh_cn_>`_   |
 | Chinese         | `Du, Meng <gh_dumeng_>`_      | `GitHub <github_zh_cn_>`_  |
@@ -125,6 +126,7 @@ in production; others are works in progress.
 .. _github_uk: https://github.com/python/python-docs-uk
 .. _github_zh_cn: https://github.com/python/python-docs-zh-cn
 .. _github_zh_tw: https://github.com/python/python-docs-zh-tw
+.. _github_ru: https://github.com/MLGRussianXP/python-docs-ru
 .. _list_hu: https://mail.python.org/pipermail/python-hu
 .. _mail_it: https://mail.python.org/pipermail/doc-sig/2019-April/004114.html
 .. _mail_lt: https://mail.python.org/pipermail/doc-sig/2019-July/004138.html
