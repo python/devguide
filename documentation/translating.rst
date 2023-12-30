@@ -111,7 +111,7 @@ in production; others are works in progress.
 .. _github_ar: https://github.com/Abdur-rahmaanJ/python-docs-ar
 .. _github_bn_in: https://github.com/python/python-docs-bn-in
 .. _github_es: https://github.com/python/python-docs-es
-.. _github_fa: https://github.com/ftg-iran/python-docs-fa
+.. _github_fa: https://github.com/mmdbalkhi/python-docs-fa
 .. _github_fr: https://github.com/python/python-docs-fr
 .. _github_hi_in: https://github.com/CuriousLearner/python-docs-hi-in
 .. _github_hu: https://github.com/python/python-docs-hu
