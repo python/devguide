@@ -21,7 +21,7 @@ GDB 7 and later
 ===============
 
 In gdb 7, support for `extending gdb with Python
-<https://sourceware.org/gdb/onlinedocs/gdb/Python.html>`_ was
+<https://sourceware.org/gdb/current/onlinedocs/gdb.html/Python.html>`_ was
 added. When CPython is built you will notice a ``python-gdb.py`` file in the
 root directory of your checkout. Read the module docstring for details on how
 to use the file to enhance gdb for easier debugging of a CPython process.
@@ -355,7 +355,7 @@ this approach is less helpful when debugging the runtime virtual
 machine, since the main interpreter loop function,
 ``_PyEval_EvalFrameDefault``, is well over 4,000 lines long as of Python 3.12.
 Fortunately, among the `many ways to set breakpoints
-<https://sourceware.org/gdb/onlinedocs/gdb/Location-Specifications.html>`_,
+<https://sourceware.org/gdb/current/onlinedocs/gdb.html/Location-Specifications.html>`_,
 you can break at C labels, such as those generated for computed gotos.
 If you are debugging an interpreter compiled with computed goto support
 (generally true, certainly when using GCC), each instruction will be

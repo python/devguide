@@ -145,7 +145,7 @@ participating in the CPython core development process:
    * Works as a `Software Engineer <https://www.linkedin.com/in/mariatta/>`_
      in Vancouver, helps organize `Vancouver PyLadies
      <https://www.meetup.com/PyLadies-Vancouver/>`_ meetup on the side, and
-     sometimes `speaks <https://mariatta.ca/pages/talk-chronology.html#talk-chronology>`_
+     sometimes `speaks <https://mariatta.ca/posts/talks/>`_
      at conferences.
    * Email address: mariatta@python.org
    * `Sponsor Mariatta on GitHub <https://github.com/sponsors/Mariatta>`_
@@ -157,7 +157,7 @@ participating in the CPython core development process:
 
 .. topic:: R. David Murray (United States)
 
-   * Personal site: `bitdance.com <http://www.bitdance.com>`_
+   * Personal site: `bitdance.com <https://www.bitdance.com>`_
    * Available for `Python and Internet Services Consulting
      and Python contract programming <https://www.murrayandwalker.com/>`_
 
@@ -238,7 +238,7 @@ participating in the CPython core development process:
    is both an Ubuntu and a `Debian <https://www.debian.org/>`_ uploading
    developer.  Barry has served as Python's postmaster, webmaster, release
    manager, Language Summit co-chair, `Jython <https://www.jython.org/>`_
-   project leader, `GNU Mailman <http://www.list.org/>`_ project leader, and
+   project leader, `GNU Mailman <https://www.list.org/>`_ project leader, and
    probably lots of other things he shouldn't admit to.
 
 .. topic:: Eric Snow (United States)
@@ -327,7 +327,7 @@ on institutional sponsors allowing them to spend some or all of their work
 time contributing to CPython development.
 
 .. _issue metrics: https://bugs.python.org/issue?@template=stats
-.. _OpenHub: https://www.openhub.net/p/python/contributors
+.. _OpenHub: https://openhub.net/p/python/contributors
 .. _core mentorship program: https://www.python.org/dev/core-mentorship/
 .. _internships: https://www.outreachy.org/
 .. _Summer of Code: https://wiki.python.org/moin/SummerOfCode/2016

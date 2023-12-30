@@ -63,7 +63,10 @@ linkcheck_allowed_redirects = {
     r"https://docs.python.org/[a-z-]+/": r"https://docs.python.org/[a-z-]+/3/",
     # Personal /my/ links redirect to login page
     r"https://discuss.python.org/my/.*": r"https://discuss.python.org/login-preferences",  # noqa: E501
+    # Category number URL to full slug
+    r"https://discuss.python.org/c/\d+": r"https://discuss.python.org/c/.*",
     # Login page
+    r"https://github.com/python/buildmaster-config/issues/new.*": r"https://github.com/login.*",  # noqa: E501
     r"https://github.com/python/core-workflow/issues/new.*": r"https://github.com/login.*",  # noqa: E501
     # Archive redirect
     r"https://github.com/python/cpython/archive/main.zip": r"https://codeload.github.com/python/cpython/zip/refs/heads/main",  # noqa: E501
@@ -72,10 +75,11 @@ linkcheck_allowed_redirects = {
     # HackMD shortcuts
     r"https://hackmd.io/s/.*": r"https://hackmd.io/@.*",
     # Read the Docs
+    r"https://python-docs-tr.readthedocs.io/": r"https://python-docs-tr.readthedocs.io/tr/.*",  # noqa: E501
     r"https://virtualenv.pypa.io/": r"https://virtualenv.pypa.io/en/latest/",
     r"https://www.sphinx-doc.org/": r"https://www.sphinx-doc.org/en/master/",
     # Cookie consent
-    r"https://www.youtube.com/playlist.*": r"https://consent.youtube.com/ml.*",
+    r"https://www.youtube.com/playlist.*": r"https://consent.youtube.com/.*",
 }
 
 # ignore linkcheck anchors for /#/$ANCHOR since it is used for
@@ -99,6 +103,9 @@ linkcheck_ignore = [
     r'https://github.com.+?#L\d+',
     r'https://github.com/cli/cli#installation',
     r'https://github.com/github/renaming#renaming-existing-branches',
+    r'https://github.com/python/bedevere/#pr-state-machine',
+    # "Anchor not found":
+    r'https://packaging.python.org/.*#',
     # Discord doesn't allow robot crawlers: "403 Client Error: Forbidden"
     r'https://support.discord.com/hc/en-us/articles/219070107-Server-Nicknames',
 ]
