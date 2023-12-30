@@ -720,10 +720,11 @@ List your worktrees, for example::
 Change into a directory to work from that branch. For example::
 
    $ cd ../3.12
-   $ git checkout my-3.12-bugfix-branch
-   ...
-   $ cd ../main
-   $ git checkout my-feature-branch
+   $ git switch -c my-3.12-bugfix-branch  # create new branch
+   $ # make changes, test them, commit
+   $ git push origin my-3.12-bugfix-branch
+   $ # create PR
+   $ git switch 3.12  # switch back to the 3.12 branch
    ...
 
 .. seealso::
