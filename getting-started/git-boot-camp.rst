@@ -674,8 +674,12 @@ Examples of useful commands:
 Git worktree
 ------------
 
-When working on several version branches at once, experienced Git users can
-take advantage of Git's worktree to check out several branches at once.
+With Git worktrees, you can have multiple isolated working trees
+associated with a single repository (the `.git` directory).
+This allows you to work simultaneously on different version
+branches, eliminating the need for multiple independent clones 
+that need to be maintained and updated separately.
+In addition, it reduces cloning overhead and saves disk space.
 
 Setting up Git worktree
 ^^^^^^^^^^^^^^^^^^^^^^^
