@@ -669,3 +669,70 @@ Examples of useful commands:
 * Set the browser::
 
       $ gh config set browser <browser-path>
+
+
+Git worktree
+------------
+
+With Git worktrees, you can have multiple isolated working trees
+associated with a single repository (the ``.git`` directory).
+This allows you to work simultaneously on different version
+branches, eliminating the need for multiple independent clones
+that need to be maintained and updated separately.
+In addition, it reduces cloning overhead and saves disk space.
+
+Setting up Git worktree
+^^^^^^^^^^^^^^^^^^^^^^^
+
+With an existing CPython clone (see :ref:`clone-your-fork`), rename the
+``cpython`` directory to ``main`` and move it into a new ``cpython``
+directory, so we have a structure like:
+
+.. Generated with: tree -L 1 -d cpython
+
+.. code-block:: text
+
+   cpython
+   └── main (.git is here)
+
+Next, create worktrees for the other branches::
+
+   $ cd cpython/main
+   $ git worktree add -b 3.11 ../3.11 upstream/3.11
+   $ git worktree add -b 3.12 ../3.12 upstream/3.12
+
+This gives a structure like this, with the code for each branch checked out in
+its own directory:
+
+.. code-block:: text
+
+   cpython
+   ├── 3.11
+   ├── 3.12
+   └── main
+
+Using Git worktree
+^^^^^^^^^^^^^^^^^^
+
+List your worktrees, for example::
+
+   $ git worktree list
+   /Users/my-name/cpython/main  b3d24c40df [main]
+   /Users/my-name/cpython/3.11  da1736b06a [3.11]
+   /Users/my-name/cpython/3.12  cf29a2f25e [3.12]
+
+Change into a directory to work from that branch. For example::
+
+   $ cd ../3.12
+   $ git switch -c my-3.12-bugfix-branch  # create new branch
+   $ # make changes, test them, commit
+   $ git push origin my-3.12-bugfix-branch
+   $ # create PR
+   $ git switch 3.12  # switch back to the 3.12 branch
+   ...
+
+.. seealso::
+
+   * `Git Reference Manual <https://git-scm.com/docs/git-worktree>`_
+   * `"Experiment on your code freely with Git worktree"
+     <https://opensource.com/article/21/4/git-worktree>`_
