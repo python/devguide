@@ -675,7 +675,7 @@ Git worktree
 ------------
 
 With Git worktrees, you can have multiple isolated working trees
-associated with a single repository (the `.git` directory).
+associated with a single repository (the ``.git`` directory).
 This allows you to work simultaneously on different version
 branches, eliminating the need for multiple independent clones
 that need to be maintained and updated separately.
