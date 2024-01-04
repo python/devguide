@@ -105,7 +105,7 @@ Unix
 Diátaxis
 ========
 
-Python's documentation strives to follow the :ref:`diataxis:diataxis`
+Python's documentation strives to follow the `Diátaxis <https://diataxis.fr/>`_
 framework. This means adapting the writing style according to the nature of
 the documentation that is being written. The framework splits
 documentation into four distinct types: tutorials, how-to guides, reference, and
@@ -115,7 +115,8 @@ explanation.
   be explicit and avoid making assumptions about the
   reader's knowledge. The goal of a tutorial is to get the user writing
   Python code as quickly as possible with clear logical steps. Explanations
-  and abstract concepts should be avoided.
+  and abstract concepts should be avoided. Please consult the Diátaxis guide on
+  :ref:`diataxis:tutorials` for more detail.
 
 * `Python how-to guides <https://docs.python.org/3/howto/index.html>`_ are
   designed to guide a user through a problem-field.
@@ -140,7 +141,7 @@ explanation.
   found throughout Python's documentation, for example the
   :ref:`python:unicode-howto`
 
-Please consult the :ref:`diataxis:diataxis` guide for more
+Please consult the `Diátaxis <https://diataxis.fr/>`_ guide for more
 detail.
 
 Affirmative tone
