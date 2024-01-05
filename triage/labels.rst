@@ -26,6 +26,8 @@ These labels are used to specify the type of issue:
 * :gh-label:`type-crash`: for hard crashes of the interpreter, possibly with a
   core dump.
 * :gh-label:`type-feature`: for feature requests or enhancements.
+  Feature requests do not need :ref:`Version labels`;
+  it is implicit that features are added to the ``main`` branch only.
   The `Ideas Discourse category`_ can be used to discuss enhancements
   before filing an issue.
 * :gh-label:`type-security`: for security issues.
@@ -80,6 +82,8 @@ this might also automatically add the issue to a GitHub project.
 You can see the `full list of topic labels on GitHub
 <https://github.com/python/cpython/labels?q=topic>`_.
 
+
+.. _Version labels:
 
 Version labels
 ==============
