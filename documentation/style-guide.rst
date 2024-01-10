@@ -234,6 +234,7 @@ Big *O* notation is used to describe the performance of algorithms.
 Use italics for the big *O* and variables. For example:
 
 .. list-table::
+   :header-rows: 1
 
    * - reStructuredText
      - Rendered
