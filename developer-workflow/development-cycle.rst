@@ -373,7 +373,7 @@ Multi-Factor Authentication must be enabled by the user in order to retain
 access as a Release Manager of the branch.
 
 Governance
-==========
+----------
 
 The Python Steering Council has overall authority over Python and has delegated
 some of its responsibilities to other groups.
