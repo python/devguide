@@ -225,3 +225,20 @@ errors ("I made a mistake, therefore the docs must be wrong ...").  Typically,
 the documentation wasn't consulted until after the error was made.  It is
 unfortunate, but typically no documentation edit would have saved the user from
 making false assumptions about the language ("I was surprised by ...").
+
+Big *O* notation
+================
+
+Big *O* notation is used to describe the performance of algorithms.
+
+Use italics for the big *O* and variables. For example:
+
+======================== ====================
+reStructuredText         Rendered
+======================== ====================
+``*O*\ (1)``             *O*\ (1)
+``*O*\ (log *n*)``       *O*\ (log *n*)
+``*O*\ (*n*)``           *O*\ (*n*)
+``*O*\ (*n* log *n*)``   *O*\ (*n* log *n*)
+``*O*\ (*n*\ :sup:`2`)`` *O*\ (*n*\ :sup:`2`)
+======================== ====================
