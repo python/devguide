@@ -6,7 +6,7 @@ Coverity Scan
 
 Coverity Scan is a free service for static code analysis of Open Source
 projects. It is based on Coverity's commercial product and is able to analyze
-C, C++ and Java code.
+C, C++, and Java code.
 
 Coverity's static code analysis doesn't run the code. Instead of that it uses
 abstract interpretation to gain information about the code's control flow and
