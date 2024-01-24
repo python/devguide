@@ -53,8 +53,23 @@ is needed to clean these reference cycles between objects once they become
 unreachable. This is the cyclic garbage collector, usually called just Garbage
 Collector (GC), even though reference counting is also a form of garbage collection.
 
+CPython contains two GC implementations starting in version 3.13. One implementation
+is used in the default build and relies on the global interpreter lock for
+thread-safety. The other implementation is used in the free-threaded build. Both
+implementations use the same basic algorithms, but operate on different data
+structures.
+
+
 Memory layout and object structure
 ==================================
+
+The garbage collector requires additional fields in Python objects to support
+garbage collection.  These extra fields are different in the default and the
+free-threaded builds.
+
+
+GC for the default build
+------------------------
 
 Normally the C structure supporting a regular Python object looks as follows:
 
@@ -107,6 +122,38 @@ isn't running at all!), and merging partitions, all with a small constant number
 With care, they also support iterating over a partition while objects are being added to - and
 removed from - it, which is frequently required while GC is running.
 
+GC for the free-threaded build
+------------------------------
+
+In the free-threaded build, Python objects contain a 1-byte field
+``ob_gc_bits`` that is used to track garbage collection related state. The
+field exists in all objects, including ones that do not support cyclic
+garbage collection.  The field is used to identify objects that are tracked
+by the collector, ensure that finalizers are called only once per object,
+and, during garbage collection, differentiate reachable vs. unreachable objects.
+
+.. code-block:: none
+
+    object -----> +--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+ \
+                  |                     ob_tid                    | |
+                  +--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+ |
+                  | pad | ob_mutex | ob_gc_bits |  ob_ref_local   | |
+                  +--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+ | PyObject_HEAD
+                  |                  ob_ref_shared                | |
+                  +--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+ |
+                  |                    *ob_type                   | |
+                  +--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+ /
+                  |                      ...                      |
+
+
+The garbage collector also temporarily repurposes the ``ob_tid`` (thread ID)
+and ``ob_ref_local`` (local reference count) fields temporarily for other
+purposes during collections.
+
+
+C APIs
+------
+
 Specific APIs are offered to allocate, deallocate, initialize, track, and untrack
 objects with GC support. These APIs can be found in the `Garbage Collector C API
 documentation <https://docs.python.org/3.8/c-api/gcsupport.html>`_.
@@ -139,14 +186,11 @@ the interpreter create cycles everywhere. Some notable examples:
 * When representing data structures like graphs, it is very typical for them to
   have internal links to themselves.
 
-To correctly dispose of these objects once they become unreachable, they need to be
-identified first.  Inside the function that identifies cycles, two doubly linked
-lists are maintained: one list contains all objects to be scanned, and the other will
-contain all objects "tentatively" unreachable.
-
-To understand how the algorithm works, let’s take the case of a circular linked list
-which has one link referenced by a variable ``A``, and one self-referencing object which
-is completely unreachable:
+To correctly dispose of these objects once they become unreachable, they need
+to be identified first.  To understand how the algorithm works, let’s take
+the case of a circular linked list which has one link referenced by a
+variable ``A``, and one self-referencing object which is completely
+unreachable:
 
 .. code-block:: python
 
@@ -171,10 +215,17 @@ is completely unreachable:
     >>> gc.collect()
     2
 
-When the GC starts, it has all the container objects it wants to scan
-on the first linked list. The objective is to move all the unreachable
-objects. Since most objects turn out to be reachable, it is much more
-efficient to move the unreachable as this involves fewer pointer updates.
+The GC starts with a set of candidate objects it wants to scan.  In the
+default build, theese "objects to scan" might be all container objects or a
+smaller subset (or "generation").  In the free-threaded build, the collector
+always operates scans all container objects.
+
+The objective is to identify all the unreachable objects.  The collector does
+this by identifying reachable objects; the remaining objects must be
+unreachable.  The first step is to identify all of the "to scan" objects that
+are **directly** reachable from outside the set of candidate objects.  These
+objects have a refcount larger than the number of incoming references from
+within the candidate set.
 
 Every object that supports garbage collection will have an extra reference
 count field initialized to the reference count (``gc_ref`` in the figures)
@@ -273,23 +324,20 @@ Once the GC knows the list of unreachable objects, a very delicate process start
 with the objective of completely destroying these objects. Roughly, the process
 follows these steps in order:
 
-1. Handle and clean weak references (if any). If an object that is in the unreachable
-   set is going to be destroyed and has weak references with callbacks, these
-   callbacks need to be honored. This process is **very** delicate as any error can
-   cause objects that will be in an inconsistent state to be resurrected or reached
-   by some Python functions invoked from the callbacks. In addition, weak references
-   that also are part of the unreachable set (the object and its weak reference
-   are in cycles that are unreachable) need to be cleaned
-   immediately, without executing the callback. Otherwise it will be triggered later,
-   when the ``tp_clear`` slot is called, causing havoc. Ignoring the weak reference's
-   callback is fine because both the object and the weakref are going away, so it's
-   legitimate to say the weak reference is going away first.
-
-2. If an object has legacy finalizers (``tp_del`` slot) move them to the
+1. Handle and clear weak references (if any). Weak references to unreachable objects
+   are set to ``None``. If the weak reference has an associated callback, the callback
+   is enqueued to be called once the clearing of weak references is finished.  We only
+   invoke callbacks for weak references that are themselves reachable. If both the weak
+   reference and the pointed-to object are unreachable we do not execute the callback.
+   This is partly for historical reasons: the callback could resurrect an unreachable
+   object and support for weak references predates support for object resurrection.
+   Ignoring the weak reference's callback is fine because both the object and the weakref
+   are going away, so it's legitimate to say the weak reference is going away first.
+2. If an object has legacy finalizers (``tp_del`` slot) move it to the
    ``gc.garbage`` list.
 3. Call the finalizers (``tp_finalize`` slot) and mark the objects as already
-   finalized to avoid calling them twice if they resurrect or if other finalizers
-   have removed the object first.
+   finalized to avoid calling finalizers twice if the objects are resurrected or
+   if other finalizers have removed the object first.
 4. Deal with resurrected objects. If some objects have been resurrected, the GC
    finds the new subset of objects that are still unreachable by running the cycle
    detection algorithm again and continues with them.
@@ -300,12 +348,12 @@ follows these steps in order:
 Optimization: generations
 =========================
 
-In order to limit the time each garbage collection takes, the GC uses a popular
-optimization: generations. The main idea behind this concept is the assumption that
-most objects have a very short lifespan and can thus be collected shortly after their
-creation. This has proven to be very close to the reality of many Python programs as
-many temporary objects are created and destroyed very fast. The older an object is
-the less likely it is that it will become unreachable.
+In order to limit the time each garbage collection takes, the GC
+implementation for the default build uses a popular optimization:
+generations. The main idea behind this concept is the assumption that most
+objects have a very short lifespan and can thus be collected soon after their
+creation. This has proven to be very close to the reality of many Python
+programs as many temporary objects are created and destroyed very quickly.
 
 To take advantage of this fact, all container objects are segregated into
 three spaces/generations. Every new
@@ -316,6 +364,9 @@ survives a collection of its generation it will be moved to the next one
 the same object survives another GC round in this new generation (generation 1)
 it will be moved to the last generation (generation 2) where it will be
 surveyed the least often.
+
+The GC implementation for the free-threaded build does not use multiple
+generations.  Every collection operates on the entire heap.
 
 In order to decide when to run, the collector keeps track of the number of object
 allocations and deallocations since the last collection. When the number of
