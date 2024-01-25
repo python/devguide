@@ -53,11 +53,16 @@ is needed to clean these reference cycles between objects once they become
 unreachable. This is the cyclic garbage collector, usually called just Garbage
 Collector (GC), even though reference counting is also a form of garbage collection.
 
-CPython contains two GC implementations starting in version 3.13. One implementation
-is used in the default build and relies on the global interpreter lock for
-thread-safety. The other implementation is used in the free-threaded build. Both
-implementations use the same basic algorithms, but operate on different data
-structures.
+Starting in version 3.13, CPython contains two GC implementations:
+
+* The default build implementation relies on the :term:`global interpreter
+  lock` for thread safety.
+* The free-threaded build implementation pauses other executing threads when
+  performing a collection for thread safety.
+
+Both implementations use the same basic algorithms, but operate on different
+data structures.  The :ref:`gc-differences` section summarizes the
+differences between the two GC implementations.
 
 
 Memory layout and object structure
@@ -144,6 +149,12 @@ and, during garbage collection, differentiate reachable vs. unreachable objects.
                   |                    *ob_type                   | |
                   +--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+ /
                   |                      ...                      |
+
+
+Note that not all fields are to scale. ``pad`` is two bytes, ``ob_mutex`` and
+``ob_gc_bits`` are each one byte, and ``ob_ref_local`` is four bytes. The
+other fields, ``ob_tid``, ``ob_ref_shared``, and ``ob_type``, are all
+pointer-sized (i.e., eight bytes on a 64-bit platform).
 
 
 The garbage collector also temporarily repurposes the ``ob_tid`` (thread ID)
@@ -546,6 +557,45 @@ tracking status of the object.
       False
       >>> gc.is_tracked({"a": []})
       True
+
+
+.. _gc-differences:
+
+Differences between GC implementations
+======================================
+
+This section summarizes the differences between the GC implementation in the
+default build and the implementation in the free-threaded build.
+
+The default build implementation makes extensive use of the ``PyGC_Head`` data
+structure, while the free-threaded build implementation does not use that
+data structure.
+
+* The default build implementation stores all tracked objects in a doubly
+  linked list using ``PyGC_Head``.  The free-threaded build implementation
+  instead relies on the embedded mimalloc memory allocator to scan the heap
+  for tracked objects.
+* The default build implementation uses ``PyGC_Head`` for the unreachable
+  object list.  The free-threaded build implementation repurposes the
+  ``ob_tid`` field to store a unreachable objects linked list.
+* The default build implementation stores flags in the ``_gc_prev`` field of
+  ``PyGC_Head``.  The free-threaded build implementation stores these flags
+  in ``ob_gc_bits``.
+
+
+The default build implementation relies on the :term:`global interpreter lock`
+for thread safety.  The free-threaded build implementation has two "stop the
+world" pauses, in which all other executing threads are temporarily paused so
+that the GC can safely access reference counts and object attributes.
+
+The default build implementation is a generational collector.  The
+free-threaded build is non-generational; each collection scans the entire
+heap.
+
+* Keeping track of object generations is simple and inexpensive in the default
+  build.  The free-threaded build relies on mimalloc for finding tracked
+  objects; identifying "young" objects without scanning the entire heap would
+  be more difficult.
 
 
 .. admonition:: Document History
