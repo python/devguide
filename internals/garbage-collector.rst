@@ -147,8 +147,8 @@ and, during garbage collection, differentiate reachable vs. unreachable objects.
 
 
 The garbage collector also temporarily repurposes the ``ob_tid`` (thread ID)
-and ``ob_ref_local`` (local reference count) fields temporarily for other
-purposes during collections.
+and ``ob_ref_local`` (local reference count) fields for other purposes during
+collections.
 
 
 C APIs
@@ -216,7 +216,7 @@ unreachable:
     2
 
 The GC starts with a set of candidate objects it wants to scan.  In the
-default build, theese "objects to scan" might be all container objects or a
+default build, these "objects to scan" might be all container objects or a
 smaller subset (or "generation").  In the free-threaded build, the collector
 always operates scans all container objects.
 
