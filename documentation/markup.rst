@@ -373,6 +373,8 @@ As you can see, the module-specific markup consists of two directives, the
    in overview files.
 
 
+.. _information-units:
+
 Information units
 -----------------
 
@@ -1019,13 +1021,20 @@ units as well as normal text:
    feature, or a part of it, to the library or C API.  When this applies to an
    entire module, it should be placed at the top of the module section before
    any prose.
+   When adding a new API :ref:`with a directive <information-units>`
+   (``class``, ``attribute``, ``function``, ``method``, ``c:type``, etc),
+   a ``versionadded`` should be included at the end of its description block.
 
    The first argument must be given and is the version in question.  The second
    argument is optional and can be used to describe the details of the feature.
 
    Example::
 
-      .. versionadded:: 3.5
+      .. function:: func()
+
+         Return foo and bar.
+
+         .. versionadded:: 3.5
 
 .. describe:: versionchanged
 
@@ -1035,8 +1044,12 @@ units as well as normal text:
 
    Example::
 
-      .. versionchanged:: 3.1
-         The *spam* parameter was added.
+      .. function:: func(spam=False)
+
+         Return foo and bar, optionally with *spam* applied.
+
+         .. versionchanged:: 3.6
+            Added the *spam* parameter.
 
    Note that there should be no blank line between the directive head and the
    explanation; this is to make these blocks visually continuous in the markup.
