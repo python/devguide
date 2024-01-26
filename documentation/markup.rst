@@ -373,6 +373,8 @@ As you can see, the module-specific markup consists of two directives, the
    in overview files.
 
 
+.. _information-units:
+
 Information units
 -----------------
 
