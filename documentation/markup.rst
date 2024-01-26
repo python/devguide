@@ -1042,9 +1042,9 @@ units as well as normal text:
 
    Example::
 
-      .. function:: func(spam)
+      .. function:: func(spam=False)
 
-         Return foo and bar with *spam* applied.
+         Return foo and bar, optionally with *spam* applied.
 
          .. versionchanged:: 3.6
             Added the *spam* parameter.
