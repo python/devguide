@@ -1019,13 +1019,19 @@ units as well as normal text:
    feature, or a part of it, to the library or C API.  When this applies to an
    entire module, it should be placed at the top of the module section before
    any prose.
+   When a new attribute, function, or method is added, make sure a
+   ``versionadded`` directive is added.
 
    The first argument must be given and is the version in question.  The second
    argument is optional and can be used to describe the details of the feature.
 
    Example::
 
-      .. versionadded:: 3.5
+      .. function:: func()
+
+         Return foo and bar.
+
+         .. versionadded:: 3.5
 
 .. describe:: versionchanged
 
@@ -1035,8 +1041,12 @@ units as well as normal text:
 
    Example::
 
-      .. versionchanged:: 3.1
-         The *spam* parameter was added.
+      .. function:: func(spam)
+
+         Return foo and bar with *spam* applied.
+
+         .. versionchanged:: 3.6
+            Added the *spam* parameter.
 
    Note that there should be no blank line between the directive head and the
    explanation; this is to make these blocks visually continuous in the markup.
