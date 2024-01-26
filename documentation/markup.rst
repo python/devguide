@@ -1019,9 +1019,9 @@ units as well as normal text:
    feature, or a part of it, to the library or C API.  When this applies to an
    entire module, it should be placed at the top of the module section before
    any prose.
-   When a new attribute, function, or method is added, a
-   ``versionadded`` directive should be present at the end of its
-   documentation block.
+   When adding a new API :ref:`with a directive <information-units>`
+   (``class``, ``attribute``, ``function``, ``method``, ``c:type``, etc),
+   a ``versionadded`` should be included at the end of its description block.
 
    The first argument must be given and is the version in question.  The second
    argument is optional and can be used to describe the details of the feature.
