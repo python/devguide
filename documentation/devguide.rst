@@ -14,16 +14,7 @@ Helping with the Developer's Guide
 
 .. highlight:: console
 
-The Developer's Guide (what you're reading now) uses the same process as the
-main Python documentation, except for some small differences.  The source
-lives in a `separate repository`_ and bug reports should be submitted to the
-`devguide GitHub tracker`_.
-
-Our devguide workflow uses continuous integration and deployment so changes to
-the devguide are normally published when the pull request is merged. Changes
-to CPython documentation follow the workflow of a CPython release and are
-published in the release.
-
+# deleted the retired ML in the devguide
 
 Developer's Guide workflow
 ==========================
