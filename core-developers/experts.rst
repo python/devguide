@@ -336,6 +336,7 @@ GUI
 i18n                malemburg, merwok
 import machinery    brettcannon, ncoghlan, ericsnowcurrently
 io                  benjaminp, stutzbach^, gpshead
+JIT                 brandtbucher*
 locale              malemburg
 mathematics         mdickinson, malemburg, stutzbach^, rhettinger
 memory management   tim-one, malemburg, Yhg1s
