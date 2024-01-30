@@ -8,6 +8,7 @@ sys.path.insert(0, os.path.abspath(".") + "/_extensions")
 extensions = [
     'custom_roles',
     'notfound.extension',
+    'sphinx.ext.extlinks',
     'sphinx.ext.intersphinx',
     'sphinx.ext.todo',
     'sphinx_copybutton',
@@ -169,6 +170,14 @@ todo_include_todos = True
 
 # sphinx-notfound-page
 notfound_urls_prefix = "/"
+
+# sphinx.ext.extlinks
+# This config is a dictionary of external sites,
+# mapping unique short aliases to a base URL and a prefix.
+# https://www.sphinx-doc.org/en/master/usage/extensions/extlinks.html
+extlinks = {
+    "github": ("https://github.com/%s/", "%s"),
+}
 
 # sphinxext-opengraph config
 ogp_site_url = "https://devguide.python.org/"

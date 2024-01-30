@@ -371,3 +371,35 @@ administrators) to merge changes to that branch.
 
 Multi-Factor Authentication must be enabled by the user in order to retain
 access as a Release Manager of the branch.
+
+Governance
+----------
+
+The Python Steering Council has overall authority over Python and has delegated
+some of its responsibilities to other groups.
+
+This table lists the PEPs defining each group's responsibilities,
+and the repository where you can open an issue to ask for a decision.
+
+.. list-table::
+   :header-rows: 1
+
+   * - Name
+     - PEP
+     - Contact repo
+   * - Steering Council
+     - :pep:`13`
+     - :github:`python/steering-council`
+   * - C API Working Group
+     - :pep:`731`
+     - :github:`capi-workgroup/decisions`
+   * - Documentation Editorial Board
+     - :pep:`732`
+     - :github:`python/editorial-board`
+   * - Typing Council
+     - :pep:`729`
+     - :github:`python/typing-council`
+
+.. seealso::
+
+   All governance PEPs: https://peps.python.org/topic/governance/
