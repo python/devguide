@@ -286,11 +286,12 @@ Platforms
 =========
 
 ===================   ===========
-Platform              Maintainers
+Platform              Maintainers/Community Support
 ===================   ===========
 AIX                   David.Edelsohn^
 Android
 Cygwin                jlt63^, stutzbach^
+Emscripten            hoodmane, pmp-p, rdb, rth, ryanking13
 FreeBSD
 HP-UX
 Linux
@@ -298,6 +299,7 @@ macOS                 ronaldoussoren, ned-deily
 NetBSD1
 OS2/EMX               aimacintyre^
 Solaris/OpenIndiana   jcea
+Wasi                  brettcannon, rdb, pmp-p
 Windows               tjguk, zware, zooba, pfmoore
 JVM/Java              frank.wierzbicki^
 ===================   ===========
