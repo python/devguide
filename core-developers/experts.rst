@@ -299,7 +299,7 @@ macOS                 ronaldoussoren, ned-deily
 NetBSD1
 OS2/EMX               aimacintyre^
 Solaris/OpenIndiana   jcea
-Wasi                  brettcannon, rdb, pmp-p
+Wasi                  brettcannon, pmp-p, rdb
 Windows               tjguk, zware, zooba, pfmoore
 JVM/Java              frank.wierzbicki^
 ===================   ===========
