@@ -291,6 +291,7 @@ Platform              Maintainers
 AIX                   David.Edelsohn^
 Android
 Cygwin                jlt63^, stutzbach^
+Emscripten            hoodmane, pmp-p, rdb, rth, ryanking13
 FreeBSD
 HP-UX
 Linux
