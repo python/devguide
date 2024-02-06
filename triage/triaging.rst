@@ -94,6 +94,7 @@ you can help by making sure the pull request:
 * includes a :ref:`NEWS entry <news-entry>` (if needed)
 * includes the author in ``Misc/ACKS``, either already or the patch adds them
 * doesn't have conflicts with the ``main`` branch
+* :ref:`doesn't have failing CI checks <keeping-ci-green>`
 
 Doing all of this allows core developers and :ref:`triagers <triage-team>`
 to more quickly look for subtle issues that only people with extensive

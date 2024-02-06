@@ -476,9 +476,11 @@ You can read more about what to look for before accepting a change
 :ref:`here <committing>`.
 
 All pull requests have required checks that need to pass before a change
-can be merged. At any point, a core developer can schedule an automatic merge
-of the change by
-clicking the gray ``Enable auto-merge (squash)`` button. You will find
+can be merged. See :ref:`"Keeping CI green" <keeping-ci-green>` for some
+simple things you can do to help the checks turn green.
+
+At any point, a core developer can schedule an automatic merge of the change
+by clicking the gray ``Enable auto-merge (squash)`` button. You will find
 it at the bottom of the pull request page. The auto-merge will only
 happen if all the required checks pass, but the PR does not need to have been
 approved for a successful auto-merge to take place.
