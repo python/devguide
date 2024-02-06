@@ -413,7 +413,7 @@ run just the e.g. ``make-host`` step after making code change.
 
 Once everything is complete, there will be a
 ``cross-build/wasm32-wasi/python.sh`` helper file which you can use to run the
-``python.wasm`` file (see the output from the `configure-host` subcommand):
+``python.wasm`` file (see the output from the ``configure-host`` subcommand):
 
 .. code-block:: shell
 
