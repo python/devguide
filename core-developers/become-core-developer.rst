@@ -54,8 +54,10 @@ are granted through these steps:
    - Add their details to `🔒 python/voters <https://github.com/python/voters>`_.
    - Update the devguide to publicly list their team membership
      at :ref:`developers`.
-   - Send an announcement email to the `Committers Discourse category
-     <https://discuss.python.org/c/committers/5>`_.
+   - Post an announcement in the `Committers Discourse category
+     <https://discuss.python.org/c/committers/5>`_.  The past few announcements
+     were in the form of a separate post on the already open topic with
+     the poll.
 
 .. _Code of Conduct: https://www.python.org/psf/conduct/
 .. _Committers category: https://discuss.python.org/c/committers/5
