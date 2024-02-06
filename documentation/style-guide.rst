@@ -106,6 +106,48 @@ Unix
    The name of the operating system developed at AT&T Bell Labs in the early
    1970s.
 
+Diátaxis
+========
+
+Python's documentation strives to follow the `Diátaxis <https://diataxis.fr/>`_
+framework. This means adapting the writing style according to the nature of
+the documentation that is being written. The framework splits
+documentation into four distinct types: tutorials, how-to guides, reference, and
+explanation.
+
+* :ref:`python:tutorial-index` should
+  be explicit and avoid making assumptions about the
+  reader's knowledge. The goal of a tutorial is to get the user writing
+  Python code as quickly as possible with clear logical steps. Explanations
+  and abstract concepts should be avoided. Please consult the Diátaxis guide on
+  :ref:`diataxis:tutorials` for more detail.
+
+* `Python how-to guides <https://docs.python.org/3/howto/index.html>`_ are
+  designed to guide a user through a problem-field.
+  Both tutorials and how-to guides are instructional rather than explanatory
+  and should provide logical steps on how to complete a task. However,
+  how-to guides make more assumptions about the user's knoweldge and
+  focus on the user finding the best way to solve their own
+  particular problem.
+
+* :ref:`python:reference-index` should
+  be factual and succinct. The purpose of reference documentation is
+  to describe rather than to explain. Accuracy and consistency are key as
+  this type of documentation should be seen as an authoritative source.
+  :ref:`Code-examples` can be a useful way of achieving these
+  objectives.
+
+* Python explanations provide
+  a deeper level of understanding and are naturally more discursive. They aim
+  to deepen the reader's understanding and answer 'why' questions. They should
+  provide context, make connections between topics, and discuss alternative
+  opinions. There is no section dedicated to explanations but these can be
+  found throughout Python's documentation, for example the
+  :ref:`python:unicode-howto`
+
+Please consult the `Diátaxis <https://diataxis.fr/>`_ guide for more
+detail.
+
 Affirmative tone
 ================
 
@@ -162,6 +204,8 @@ Similarly, if there is a common error that affects many interfaces in a
 module (e.g. OS level pipe buffers filling up and stalling child processes),
 these can be documented in a "Common Errors" section and cross-referenced
 rather than repeated for every affected interface.
+
+.. _code-examples:
 
 Code examples
 =============
