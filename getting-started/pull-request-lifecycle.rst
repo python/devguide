@@ -500,11 +500,11 @@ the PR, and their review should not be dismissed.
 
 .. _keeping-ci-green:
 
-Keeping Continuous Integration green
+Keeping continuous integration green
 ====================================
 
 Our change management workflows generally won't allow merging PRs with
-failures on them. Therefore, if you see a CI failure on a PR, have a look
+failures. Therefore, if you see a CI failure on a PR, have a look
 what it is about.
 
 Usually the failure will be directly related to the changes in the current
@@ -516,17 +516,17 @@ comment will be helpful to the PR author.
 If the failure doesn't look related to the change you're looking at, check
 if it's not present on the `Release Status`_ Buildbot dashboard as well.
 If so, that means the failure was introduced in a prior change. Using Buildbot's
-UI you can find which PR introduced the issue and comment there that it
+UI you can find which PR introduced the issue and comment that it
 affects other PRs.
 
 If you still don't see where the failure originates from, check for
-an "This branch is out-of-date with the base branch" sign next to the
+a "This branch is out-of-date with the base branch" sign next to the
 list of executed checks. Clicking "Update branch" next to this message
 will merge in the latest changes from the base branch into the PR.
 
 If this still doesn't help with the failure on the PR, you can try
 to re-run that particular failed check. Go to the red GitHub Action job,
-and find a button on the top right called "Re-run jobs". Select
+click on the "Re-run jobs" button on the top right, and select
 "Re-run failed jobs". The button will only be present when all other jobs
 finished running.
 
