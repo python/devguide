@@ -364,7 +364,7 @@ To build for WASI, you will need to cross-compile CPython. This requires a C
 compiler just like building for :ref:`Unix <unix-compiling>` as well as:
 
 1. A C compiler that can target WebAssembly (e.g. `WASI-SDK`_)
-2. A WASI host/runtime (e.g. wasmtime_)
+2. A WASI host/runtime (e.g. Wasmtime_)
 
 All of this is provided in the :ref:`devcontainer <using-codespaces>`. You can
 also use what's installed in the container as a reference of what versions of
@@ -394,7 +394,7 @@ WASI build in ``cross-build/build`` and ``cross-build/wasm32-wasi``,
 respectively.
 
 You can also do each configuration and build step separately; the command above
-is just a convenience wrapper around the following commands:
+is a convenience wrapper around the following commands:
 
 .. code-block:: shell
 
@@ -408,8 +408,8 @@ is just a convenience wrapper around the following commands:
    The ``configure-host`` command infers the use of ``--with-pydebug`` from the
    build Python.
 
-Running the separate commands after ``wasi.py build`` is useful if you want to
-run just the e.g. ``make-host`` step after making code change.
+Running the separate commands after ``wasi.py build`` is useful if you, for example, only want to
+run the ``make-host`` step after making code changes.
 
 Once everything is complete, there will be a
 ``cross-build/wasm32-wasi/python.sh`` helper file which you can use to run the
@@ -430,8 +430,8 @@ used in ``python.sh``:
 .. note::
 
    WASI uses a *capability-based* security model. This means that the WASI host
-   does not give full access to your machine unless you tell it to. What this
-   also means is things like files can end up being mapped to a different path
+   does not give full access to your machine unless you tell it to. This
+   also means things like files can end up being mapped to a different path
    inside the WASI host. So, if you try passing a file path to
    ``python.wasm``/ ``python.sh``, it needs to match the path **inside** the
    WASI host, not the path on your machine (much like using a container).
