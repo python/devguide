@@ -380,14 +380,18 @@ these tools are known to work.
 Building for WASI requires doing a cross-build where you have a *build* Python
 to help produce a WASI build of CPython (technically it's a "host x host"
 cross-build because the build Python is also the target Python while the host
-build is the WASI build). This means you effectively build CPython twice.
+build is the WASI build). This means you effectively build CPython twice: once
+to have a version of Python for the build system to use and another that's the
+build you ultimately care about (i.e. the build Python is not meant for use by
+you directly, only the build system).
 
 The easiest way to get a debug build of CPython for WASI is to use the
-``Tools/wasm/wasi.py build`` command:
+``Tools/wasm/wasi.py build`` command (which should be run w/ a recent version of
+Python you have installed on your machine):
 
 .. code-block:: shell
 
-   $ python Tools/wasm/wasi.py build --quiet -- --config-cache --with-pydebug
+   $ python3 Tools/wasm/wasi.py build --quiet -- --config-cache --with-pydebug
 
 That single command will configure and build both the build Python and the
 WASI build in ``cross-build/build`` and ``cross-build/wasm32-wasi``,
