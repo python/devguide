@@ -363,7 +363,7 @@ host/runtime as a *guest*.
 To build for WASI, you will need to cross-compile CPython. This requires a C
 compiler just like building for :ref:`Unix <unix-compiling>` as well as:
 
-1. A C compiler that can target WebAssembly (e.g. `WASI-SDK`_)
+1. A C compiler that can target WebAssembly (e.g. `WASI SDK`_)
 2. A WASI host/runtime (e.g. Wasmtime_)
 
 All of this is provided in the :ref:`devcontainer <using-codespaces>`. You can
@@ -442,7 +442,7 @@ used in ``python.sh``:
 
 .. _WASI: https://wasi.dev
 .. _wasi-libc: https://github.com/WebAssembly/wasi-libc
-.. _WASI-SDK: https://github.com/WebAssembly/wasi-sdk
+.. _WASI SDK: https://github.com/WebAssembly/wasi-sdk
 .. _wasmtime: https://wasmtime.dev
 .. _WebAssembly: https://webassembly.org
 
