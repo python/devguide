@@ -345,6 +345,107 @@ and how to build.
 .. _Git for Windows download from the official Git website: https://git-scm.com/download/win
 
 
+.. _wasi-compiling:
+
+WASI
+----
+
+WASI_ is a system interface standard for WebAssembly_. Through a combination of
+C compilers that can target WebAssembly and `wasi-libc`_ providing
+POSIX-compatible shims for WASI, it's possible for CPython to run on a WASI
+host/runtime as a *guest*.
+
+.. note::
+
+   The instructions below assume a Unix-based OS due to cross-compilation for
+   CPython being designed for ``./configure`` / ``make``.
+
+To build for WASI, you will need to cross-compile CPython. This requires a C
+compiler just like building for :ref:`Unix <unix-compiling>` as well as:
+
+1. A C compiler that can target WebAssembly (e.g. `WASI SDK`_)
+2. A WASI host/runtime (e.g. Wasmtime_)
+
+All of this is provided in the :ref:`devcontainer <using-codespaces>`. You can
+also use what's installed in the container as a reference of what versions of
+these tools are known to work.
+
+.. note::
+
+   CPython has only been verified with the above tools for WASI. Using
+   other compilers, hosts, or WASI versions *should* work, but the above tools
+   and their versions specified in the container are tested via a
+   :ref:`buildbot <buildbots>`.
+
+Building for WASI requires doing a cross-build where you have a *build* Python
+to help produce a WASI build of CPython (technically it's a "host x host"
+cross-build because the build Python is also the target Python while the host
+build is the WASI build). This means you effectively build CPython twice: once
+to have a version of Python for the build system to use and another that's the
+build you ultimately care about (i.e. the build Python is not meant for use by
+you directly, only the build system).
+
+The easiest way to get a debug build of CPython for WASI is to use the
+``Tools/wasm/wasi.py build`` command (which should be run w/ a recent version of
+Python you have installed on your machine):
+
+.. code-block:: shell
+
+   $ python3 Tools/wasm/wasi.py build --quiet -- --config-cache --with-pydebug
+
+That single command will configure and build both the build Python and the
+WASI build in ``cross-build/build`` and ``cross-build/wasm32-wasi``,
+respectively.
+
+You can also do each configuration and build step separately; the command above
+is a convenience wrapper around the following commands:
+
+.. code-block:: shell
+
+   $ python Tools/wasm/wasi.py configure-build-python --quiet -- --config-cache --with-pydebug
+   $ python Tools/wasm/wasi.py make-build-python --quiet
+   $ python Tools/wasm/wasi.py configure-host --quiet -- --config-cache
+   $ python Tools/wasm/wasi.py make-host --quiet
+
+.. note::
+
+   The ``configure-host`` command infers the use of ``--with-pydebug`` from the
+   build Python.
+
+Running the separate commands after ``wasi.py build`` is useful if you, for example, only want to
+run the ``make-host`` step after making code changes.
+
+Once everything is complete, there will be a
+``cross-build/wasm32-wasi/python.sh`` helper file which you can use to run the
+``python.wasm`` file (see the output from the ``configure-host`` subcommand):
+
+.. code-block:: shell
+
+   $ cross-build/wasm32-wasi/python.sh --version
+
+You can also use ``Makefile`` targets and they will work as expected thanks to
+the ``HOSTRUNNER`` environment variable having been set to a similar value as
+used in ``python.sh``:
+
+.. code-block:: shell
+
+   $ make -C cross-build/wasm32-wasi test
+
+.. note::
+
+   WASI uses a *capability-based* security model. This means that the WASI host
+   does not give full access to your machine unless you tell it to. This
+   also means things like files can end up being mapped to a different path
+   inside the WASI host. So, if you try passing a file path to
+   ``python.wasm``/ ``python.sh``, it needs to match the path **inside** the
+   WASI host, not the path on your machine (much like using a container).
+
+.. _WASI: https://wasi.dev
+.. _wasi-libc: https://github.com/WebAssembly/wasi-libc
+.. _WASI SDK: https://github.com/WebAssembly/wasi-sdk
+.. _wasmtime: https://wasmtime.dev
+.. _WebAssembly: https://webassembly.org
+
 .. _build-dependencies:
 .. _deps-on-linux:
 .. _macOS and OS X:
