@@ -552,8 +552,7 @@ by the label ``needs backport to X.Y`` on the pull request itself.
 
 Use the utility script
 `cherry_picker.py <https://github.com/python/cherry-picker>`_
-from the `core-workflow  <https://github.com/python/core-workflow>`_
-repository to backport the commit.
+to backport the commit.
 
 The commit hash for backporting is the squashed commit that was merged to
 the ``main`` branch.  On the merged pull request, scroll to the bottom of the
