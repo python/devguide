@@ -232,7 +232,8 @@ you want the coverage data to end up it will go somewhere you don't expect.
     If you are running coverage over the entire test suite, make sure to
     add ``-x test_importlib test_runpy test_trace`` to exclude those tests as
     they trigger exceptions during coverage; see
-    https://bugs.python.org/issue10541 and https://bugs.python.org/issue10991.
+    `python/cpython#54750 <https://github.com/python/cpython/issues/54750>`__ and
+    `python/cpython#55200 <https://github.com/python/cpython/issues/55200>`__.
 
 Once the tests are done you will find the directory you specified contains
 files for each executed module along with which lines were executed how many
