@@ -1495,6 +1495,27 @@ You can still use a self converter, a return converter, and specify
 a *type* argument to the object converter for :c:macro:`METH_O`.
 
 
+How to convert var-positional parameter functions
+-------------------------------------------------
+
+To convert a var-positional parameter function,
+prepending the parameter name with ``*`` ,
+and the parameter should use the ``object`` converter::
+
+   /*[clinic input]
+   var_positional_sample
+
+       foo: int
+       *args: object
+   [clinic start generated code]*/
+
+The implementation function will receive var-positional arguments
+as *args* array.
+
+.. versionadded:: 3.11
+.. versionchanged:: 3.14
+
+
 How to convert ``tp_new`` and ``tp_init`` functions
 ---------------------------------------------------
 
