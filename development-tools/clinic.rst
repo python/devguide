@@ -2213,3 +2213,23 @@ and update your unit tests to reflect the new behaviour.
    If you forget to update your input block during the alpha and beta phases,
    the compiler warning will turn into a compiler error when the
    release candidate phase begins.
+
+
+How to convert variadic arguments functions
+-------------------------------------------
+
+Some functions can be called with an arbitrary number of arguments.
+These arguments will be wrapped up in a tuple.
+
+To convert a function to accept variadic arguments,
+add a ``*`` in front of the parameter name just like Python,
+and the parameter should use the ``object`` converter::
+
+   /*[clinic input]
+   vararg_sample
+
+       foo: int
+       *args: object
+   [clinic start generated code]*/
+
+.. versionadded:: 3.11
