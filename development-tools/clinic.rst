@@ -1495,18 +1495,15 @@ You can still use a self converter, a return converter, and specify
 a *type* argument to the object converter for :c:macro:`METH_O`.
 
 
-How to convert variadic arguments functions
--------------------------------------------
+How to convert var-positional parameter functions
+-------------------------------------------------
 
-Some functions can be called with an arbitrary number of arguments.
-These arguments will be wrapped up in a tuple.
-
-To convert a function to accept variadic arguments,
-add a ``*`` in front of the parameter name just like Python,
+To convert a :term:`var-positional` parameter function,
+prepending the parameter name with ``*`` ,
 and the parameter should use the ``object`` converter::
 
    /*[clinic input]
-   vararg_sample
+   var_positional_sample
 
        foo: int
        *args: object
