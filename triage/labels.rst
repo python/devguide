@@ -61,9 +61,14 @@ OS labels
 
 These labels are used to specify which operating systems are affected.
 Since most issues either affect all systems or are specific to Unix,
-the only available labels are :gh-label:`OS-windows`, :gh-label:`OS-mac`,
-and :gh-label:`OS-freebsd`.
+we don't have a dedicated Unix label.
+Use :gh-label:`OS-windows`, :gh-label:`OS-mac`, and :gh-label:`OS-freebsd`.
 
+Use the :gh-label:`OS-unsupported` label for issues on platforms outside the
+support tiers defined in :pep:`11`. Applying this label adds the issue to
+`a project <https://github.com/orgs/python/projects/27/views/1>`_ where
+it can be categorized further.
+See also the :ref:`Platform experts list <platform-experts>`.
 
 .. _Expert labels:
 .. _Topic labels:
