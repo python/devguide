@@ -282,14 +282,21 @@ PEG Generator       gvanrossum, pablogsal, lysnikolaou
 ==================  ===========
 
 
+.. _platform-experts:
+
 Platforms
 =========
+
+For official contacts for supported platforms, see :pep:`11`.
+
+Platforms listed here are not necessarily supported by CPython.
+Some of the experts listed here maintain and distribute Python
+for “their” platform as a third-party project.
 
 ===================   ===========
 Platform              Maintainers
 ===================   ===========
 AIX                   David.Edelsohn^
-Android
 Cygwin                jlt63^, stutzbach^
 Emscripten            hoodmane, pmp-p, rdb, rth, ryanking13
 FreeBSD
