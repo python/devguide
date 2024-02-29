@@ -455,7 +455,7 @@ Install dependencies
 ====================
 
 This section explains how to install additional extensions (e.g. ``zlib``)
-on :ref:`Linux <deps-on-linux>` and :ref:`macOS`.
+on Linux and macOS.
 
 .. tab:: Linux
 
