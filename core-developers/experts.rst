@@ -289,8 +289,9 @@ Platforms
 
 For official contacts for supported platforms, see :pep:`11`.
 
-Platforms listed here are not necessarily supported by CPython, and
-the maintainers are not necessarily core CPython developers.
+Platforms listed here are not necessarily supported by CPython.
+Some of the experts listed here maintain and distribute Python
+for “their” platform as a third-party project.
 
 ===================   ===========
 Platform              Maintainers

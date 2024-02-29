@@ -66,7 +66,7 @@ Use :gh-label:`OS-windows`, :gh-label:`OS-mac`, and :gh-label:`OS-freebsd`.
 
 Use the :gh-label:`OS-unsupported` label for issues on platforms outside the
 support tiers defined in :pep:`11`. Applying this label adds the issue to
-`a project <https://github.com/orgs/python/projects/27/views/1>`_ where
+`a GitHub project <https://github.com/orgs/python/projects/27/views/1>`_ where
 it can be categorized further.
 See also the :ref:`Platform experts list <platform-experts>`.
 
