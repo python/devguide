@@ -58,7 +58,7 @@ instructions please see the :ref:`setup guide <setup>`.
    See also :ref:`more detailed instructions <compiling>`,
    :ref:`how to install and build dependencies <build-dependencies>`,
    and the platform-specific pages for :ref:`Unix <unix-compiling>`,
-   :ref:`macOS`, and :ref:`Windows <windows-compiling>`.
+   :ref:`macOS <macOS>`, and :ref:`Windows <windows-compiling>`.
 
 4. :ref:`Run the tests <runtests>`:
 
