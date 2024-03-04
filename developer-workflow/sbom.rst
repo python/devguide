@@ -111,6 +111,13 @@ When removing a dependency:
 Updating external dependencies (``cpython-source-deps``)
 --------------------------------------------------------
 
+ .. note::
+   Only core developers can push to the ``cpython-source-deps`` repository.
+   Pull requests are not accepted because the sources must be verified for
+   integrity. Contributors should create an issue requesting the updated
+   version and then wait for a core developer to prepare the new version
+   before proceeding with the next steps below.
+
 Dependencies for Windows CPython builds are `stored in a separate repository
 <https://github.com/python/cpython-source-deps>`_ and then fetched during
 builds of CPython for Windows in the script :cpy-file:`PCbuild/get_externals.bat`.
