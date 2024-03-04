@@ -108,8 +108,8 @@ When removing a dependency:
 5. Commit the changes to :cpy-file:`Misc/sbom.spdx.json` and
    :cpy-file:`Tools/build/generate_sbom.py`.
 
-Updating external dependencies (cpython-source-deps)
-----------------------------------------------------
+Updating external dependencies (``cpython-source-deps``)
+--------------------------------------------------------
 
 Dependencies for Windows CPython builds are `stored in a separate repository
 <https://github.com/python/cpython-source-deps>`_ and then fetched during
