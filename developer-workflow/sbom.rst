@@ -111,17 +111,22 @@ When removing a dependency:
 Updating external dependencies (cpython-source-deps)
 ----------------------------------------------------
 
-Dependencies for Windows CPython builds are `stored in a separate repository <https://github.com/python/cpython-source-deps>`_
-and then fetched during builds of CPython for Windows in the script :cpy-file:`PCbuild/get_externals.bat`.
+Dependencies for Windows CPython builds are `stored in a separate repository
+<https://github.com/python/cpython-source-deps>`_ and then fetched during
+builds of CPython for Windows in the script :cpy-file:`PCbuild/get_externals.bat`.
 
-In this script the libraries to fetch are designated by ``{name}-{version}`` Git refs being added to the ``libraries`` variable.
-SBOM tooling in the CPython repository matches these Git refs in order to build the :cpy-file:`Misc/externals.spdx.json`
-SBOM file.
+In this script the libraries to fetch are designated by ``{name}-{version}``
+Git refs being added to the ``libraries`` variable.
+SBOM tooling in the CPython repository matches these Git refs in order
+to build the :cpy-file:`Misc/externals.spdx.json` SBOM file.
 
 When updating external dependencies for a CPython branch:
 
-1. Push the update to the ``cpython-source-deps`` repository and create a new Git tag.
+1. Push the update to the ``cpython-source-deps`` repository and
+   create a new Git tag.
 2. Update the entry for the project in ``get_externals.bat``.
-3. Run ``make regen-sbom`` or ``PCbuild/build.bat --regen`` in the CPython source repository.
-4. Verify the metadata (like version, download location) in ``externals.spdx.json`` SBOM is updated as expected with ``git diff``.
+3. Run ``make regen-sbom`` or ``PCbuild/build.bat --regen``
+   in the CPython source repository.
+4. Use ``git diff`` to verify that the metadata (like version, download location)
+   in ``externals.spdx.json`` SBOM is updated as expected.
 5. Commit the changes and have them merged together.
