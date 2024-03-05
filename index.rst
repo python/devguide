@@ -72,10 +72,10 @@ instructions please see the :ref:`setup guide <setup>`.
 
       .. code-block:: shell
 
-         ./python.exe -m test -j3
+         ./python -m test -j3
 
-      Note: :ref:`Most <mac-python.exe>` macOS systems use
-      :file:`./python.exe` in order to avoid filename conflicts with
+      Note: :ref:`Most <mac-python>` macOS systems use
+      :file:`./python` in order to avoid filename conflicts with
       the ``Python`` directory.
 
    .. tab:: Windows
