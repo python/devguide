@@ -74,7 +74,7 @@ instructions please see the :ref:`setup guide <setup>`.
 
          ./python -m test -j3
 
-      Note: :ref:`Most <mac-python>` macOS systems use
+      Note: Most :ref:`macOS <macOS>` systems use
       :file:`./python` in order to avoid filename conflicts with
       the ``Python`` directory.
 
