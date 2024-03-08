@@ -82,8 +82,6 @@ You will only need to execute these steps once per machine:
 
       $ git clone git@github.com:<username>/cpython.git
 
-   (You can use both SSH-based or HTTPS-based URLs.)
-
 .. Step 6 and 7 are are duplicated in bootcamp as well.
    Please update these steps in both places.
 
