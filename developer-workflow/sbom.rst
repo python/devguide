@@ -113,8 +113,10 @@ Updating external dependencies (``cpython-source-deps``)
 
  .. note::
    Only core developers can push to the ``cpython-source-deps`` repository.
-   Pull requests are not accepted because the sources must be verified for
-   integrity. Contributors should create an issue requesting the updated
+
+   For this repo to maintain integrity, pull requests from contributors are not accepted. Instead of a pull request,
+   contributors should
+   create an issue requesting the updated
    version and then wait for a core developer to prepare the new version
    before proceeding with the next steps below.
 
@@ -122,7 +124,7 @@ Dependencies for Windows CPython builds are `stored in a separate repository
 <https://github.com/python/cpython-source-deps>`_ and then fetched during
 builds of CPython for Windows in the script :cpy-file:`PCbuild/get_externals.bat`.
 
-In this script the libraries to fetch are designated by ``{name}-{version}``
+In this :cpy-file:`PCbuild/get_externals.bat`, the libraries to fetch are designated by ``{name}-{version}``
 Git refs being added to the ``libraries`` variable.
 SBOM tooling in the CPython repository matches these Git refs in order
 to build the :cpy-file:`Misc/externals.spdx.json` SBOM file.
