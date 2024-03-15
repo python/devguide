@@ -79,12 +79,7 @@ C API
   to write extension modules. All caps and unhyphenated.
 
 CPU
-   For "central processing unit." Many style guides say this should be
-   spelled out on the first use (and if you must use it, do so!). For
-   the Python documentation, this abbreviation should be avoided since
-   there's no reasonable way to predict which occurrence will be the
-   first seen by the reader. It is better to use the word "processor"
-   instead.
+   Central processing unit. No need to spell out.
 
 POSIX
    The name assigned to a particular group of standards. This is always
