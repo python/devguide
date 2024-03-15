@@ -78,6 +78,9 @@ C API
   Python's `API <https://docs.python.org/3/c-api/>`_ used by C programmers
   to write extension modules. All caps and unhyphenated.
 
+CPU
+   Central processing unit. No need to spell out.
+
 POSIX
    The name assigned to a particular group of standards. This is always
    uppercase.
