@@ -69,6 +69,7 @@ venv:
 .PHONY: ensure-venv
 ensure-venv:
 	@if [ ! -d $(VENVDIR) ] ; then \
+		echo "Creating venv in $(VENVDIR)"; \
 		$(PYTHON) -m venv $(VENVDIR); \
 		$(VENVDIR)/bin/python3 -m pip install --upgrade pip; \
 		$(VENVDIR)/bin/python3 -m pip install -r requirements.txt; \
