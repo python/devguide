@@ -4,25 +4,11 @@
 Style guide
 ===========
 
-.. highlight::  rest
+.. highlight:: rest
 
-This document describes the style guide for our documentation.
+This page describes the linguistic style guide for our documentation.
+For markup details in reST files, see :ref:`markup`.
 
-
-Use of whitespace
-=================
-
-All reST files use an indentation of 3 spaces; no tabs are allowed.  The
-maximum line length is 80 characters for normal text, but tables, deeply
-indented code samples and long links may extend beyond that.  Code example
-bodies should use normal Python 4-space indentation.
-
-Make generous use of blank lines where applicable; they help group things
-together.
-
-A sentence-ending period may be followed by one or two spaces; while reST
-ignores the second space, it is customarily put in by some users, for example
-to aid Emacs' auto-fill mode.
 
 Footnotes
 =========
@@ -264,20 +250,3 @@ errors ("I made a mistake, therefore the docs must be wrong ...").  Typically,
 the documentation wasn't consulted until after the error was made.  It is
 unfortunate, but typically no documentation edit would have saved the user from
 making false assumptions about the language ("I was surprised by ...").
-
-Big *O* notation
-================
-
-Big *O* notation is used to describe the performance of algorithms.
-
-Use italics for the big *O* and variables. For example:
-
-======================== ====================
-reStructuredText         Rendered
-======================== ====================
-``*O*\ (1)``             *O*\ (1)
-``*O*\ (log *n*)``       *O*\ (log *n*)
-``*O*\ (*n*)``           *O*\ (*n*)
-``*O*\ (*n* log *n*)``   *O*\ (*n* log *n*)
-``*O*\ (*n*\ :sup:`2`)`` *O*\ (*n*\ :sup:`2`)
-======================== ====================
