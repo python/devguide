@@ -661,13 +661,20 @@ Syntax highlighting is handled in a smart way:
 
 Longer displays of verbatim text may be included by storing the example text in
 an external file containing only plain text.  The file may be included using the
-``literalinclude`` directive. [1]_ For example, to include the Python source
+``literalinclude`` directive. For example, to include the Python source
 file :file:`example.py`, use::
 
    .. literalinclude:: example.py
 
 The file name is relative to the current file's path.  Documentation-specific
 include files should be placed in the ``Doc/includes`` subdirectory.
+
+.. note::
+
+   There is a standard ``include`` directive, but it raises errors if the
+   file is not found.  ``literalinclude`` is preferred because it only emits a
+   warning instead of raising an error.
+
 
 .. _rest-inline-markup:
 .. _roles:
@@ -1288,9 +1295,3 @@ default. They are set in the build configuration file :file:`conf.py`.
 
    Replaced by either today's date, or the date set in the build configuration
    file.  Normally has the format ``April 14, 2007``.
-
-
-.. rubric:: Footnotes
-
-.. [1] There is a standard ``include`` directive, but it raises errors if the
-       file is not found.  This one only emits a warning.
