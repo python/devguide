@@ -30,10 +30,20 @@ external links          ```Link text <https://example.com>`_``      :ref:`hyperl
 roles w/ custom text    ``:role:`custom text <target>```            :ref:`roles`
 roles w/ only last part ``:role:`~hidden.hidden.visible```          :ref:`roles`
 roles w/o link          ``:role:`!target```                         :ref:`roles`
+roles w/o link, short   ``:role:`!visible``` (Note 1)               :ref:`roles`
 issues                  ``:gh:`ID```, ``:issue:`ID```               :ref:`roles`
 CPython source          ``:source:`PATH```                          :ref:`roles`
 comments                ``.. a comment``                            :ref:`comments`
 ======================= =========================================== ====================
+
+Notes:
+
+(1)
+   For an only-last-part reference with a suppressed link,
+   ``:role:`~!hidden.visible``` makes more semantic sense, but it causes
+   a warning as Sphinx tries to look up the reference ``!hidden.visible``
+   which does not exist.  The shorter form ``:role:`!visible`` renders as
+   desired and will build successfully.
 
 
 .. _rst-primer:
