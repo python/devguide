@@ -52,6 +52,22 @@ language, this will not take too long.
     Documentation <https://docutils.sourceforge.io/rst.html>`_.
 
 
+Use of whitespace
+-----------------
+
+All reST files use an indentation of 3 spaces; no tabs are allowed.  The
+maximum line length is 80 characters for normal text, but tables, deeply
+indented code samples and long links may extend beyond that.  Code example
+bodies should use normal Python 4-space indentation.
+
+Make use of multiple blank lines where applicable to clarify the structure of
+the reST file.  Extra blank lines help group sections together to make the
+organization of the file clearer.
+
+A sentence-ending period may be followed by one or two spaces. While reST
+ignores the second space, it is customarily put in by some users, for example
+to aid Emacs' auto-fill mode.
+
 Paragraphs
 ----------
 
@@ -288,6 +304,28 @@ There are some problems one commonly runs into while authoring reST documents:
 * **Separation of inline markup:** As said above, inline markup spans must be
   separated from the surrounding text by non-word characters, you have to use
   an escaped space to get around that.
+
+
+Typographic conventions
+=======================
+
+Big *O* notation
+----------------
+
+Big *O* notation is used to describe the performance of algorithms.
+
+Use italics for the big *O* and variables. For example:
+
+======================== ====================
+reStructuredText         Rendered
+======================== ====================
+``*O*\ (1)``             *O*\ (1)
+``*O*\ (log *n*)``       *O*\ (log *n*)
+``*O*\ (*n*)``           *O*\ (*n*)
+``*O*\ (*n* log *n*)``   *O*\ (*n* log *n*)
+``*O*\ (*n*\ :sup:`2`)`` *O*\ (*n*\ :sup:`2`)
+======================== ====================
+
 
 .. _additional-markup-constructs:
 
