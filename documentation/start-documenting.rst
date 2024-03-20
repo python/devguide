@@ -215,15 +215,3 @@ replace ``html`` above with the desired builder ``name``.
 .. _Sphinx Lint: https://github.com/sphinx-contrib/sphinx-lint
 .. _venv-activate: https://packaging.python.org/en/latest/guides/installing-using-pip-and-virtual-environments/#activating-a-virtual-environment
 .. _venv-create: https://packaging.python.org/en/latest/guides/installing-using-pip-and-virtual-environments/#creating-a-virtual-environment
-
-
-Style guide
-===========
-
-Moved to :doc:`style-guide`.
-
-
-Translating
-===========
-
-Moved to :doc:`translating`.
