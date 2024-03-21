@@ -40,7 +40,7 @@ Notes:
 
 (1)
    For an only-last-part reference with a suppressed link,
-   ``:role:`~!hidden.visible``` makes more semantic sense, but it causes
+   ``:role:`~!hidden.visible``` makes more sense, but it causes
    a warning as Sphinx tries to look up the reference ``!hidden.visible``
    which does not exist.  The shorter form ``:role:`!visible`` renders as
    desired and will build successfully.
