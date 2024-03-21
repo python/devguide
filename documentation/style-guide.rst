@@ -132,9 +132,9 @@ detail.
 Links
 =====
 
-Linking words to more information about those words is a powerful tool for
-helping people navigate documentation, but links can be over-used.
-Links should be used only if they help the reader.
+Links are a powerful tool for helping people navigate documentation and find
+more information, but links can be over-used.  Links should be used only if
+they help the reader.
 
 Generally, a link should be provided for the first use of a term in a unit,
 such as a section or paragraph. This is not a hard and fast rule.  Sometimes
@@ -155,7 +155,7 @@ Sphinx provides ways to automatically add links to references, and a way to
 suppress the link.  Using roles like ``:func:`map``` will link to the
 documentation for ``map``.  You can suppress the link while keeping the
 semantic presentation of the function name by adding an exclamation point
-prefix: ``:func:`!map```.
+prefix: ``:func:`!map```.  See :ref:`roles` for more details.
 
 Affirmative tone
 ================
