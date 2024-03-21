@@ -456,7 +456,7 @@ major release out of date, or your Xcode version is more than a couple of minor
 versions out of date, you'll likely encounter difficulties. It is not possible
 to compile for iOS using Windows or Linux as a build machine.
 
-A complete build for Python on iOS requires compiling CPython 4 times: once for
+A complete build for Python on iOS requires compiling CPython four times: once for
 macOS; then once for each of the three underlying platforms used by iOS:
 
 * An ARM64 device (an iPhone or iPad);
@@ -490,7 +490,7 @@ how to obtain these dependencies. These dependencies are all strictly optional,
 however, including libFFI is *highly* recommended, as it is required by the
 :py:mod:`ctypes` module which is used on iOS to support accessing native system APIs.
 
-.. tab:: ARM64 Device
+.. tab:: ARM64 device
 
    .. code-block:: console
 
@@ -511,7 +511,7 @@ however, including libFFI is *highly* recommended, as it is required by the
       $ make -j4 all
       $ make install
 
-.. tab:: ARM64 Simulator
+.. tab:: ARM64 simulator
 
    .. code-block:: console
 
@@ -532,7 +532,7 @@ however, including libFFI is *highly* recommended, as it is required by the
       $ make -j4 all
       $ make install
 
-.. tab:: x86-64 Simulator
+.. tab:: x86-64 simulator
 
    .. code-block:: console
 
@@ -746,9 +746,9 @@ on Linux, macOS and iOS.
 
    As with CPython itself, the dependencies for CPython must be compiled for
    each of the hardware architectures that iOS supports. Consult the
-   documentation for `XZ <https://xz.tukaani.org/xz-utils/>`__, `BZip2
+   documentation for `XZ <https://xz.tukaani.org/xz-utils/>`__, `bzip2
    <https://sourceware.org/bzip2/>`__, `OpenSSL <https://www.openssl.org>`__ and
-   `libFFI <https://github.com/libffi/libffi>`__ for details on how to configure
+   `libffi <https://github.com/libffi/libffi>`__ for details on how to configure
    the project for cross-platform iOS builds.
 
    Alternatively, the `BeeWare Project <https://beeware.org>`__ maintains a
