@@ -467,13 +467,11 @@ The macOS build is required because building Python involves running some Python
 code. On a normal desktop build of Python, you can compile a Python interpreter
 and then use that interpreter to run Python code. However, the binaries produced
 for iOS won't run on macOS, so you need to provide an external Python
-interpreter. From the root of a CPython code checkout, run the following:
+interpreter. From the root of a CPython code checkout, run the following::
 
-.. code-block:: shell
-
-    $ ./configure --prefix=$(pwd)/cross-build/macOS
-    $ make -j4 all
-    $ make install
+   $ ./configure --prefix=$(pwd)/cross-build/macOS
+   $ make -j4 all
+   $ make install
 
 This will build and install Python for macOS into the ``cross-build/macOS``
 directory.
@@ -488,13 +486,13 @@ The following instructions will build CPython for iOS with all extensions
 enabled, provided you have installed the build dependencies XZ, BZip2, OpenSSL
 and libFFI in subfolders of the ``cross-build`` folder. See :ref:`the iOS
 section on installing build dependencies <build-dependencies>` for details on
-how to obtain these dependencies. These dependencies are all strictly optional -
+how to obtain these dependencies. These dependencies are all strictly optional,
 however, including libFFI is *highly* recommended, as it is required by the
 :py:mod:`ctypes` module which is used on iOS to support accessing native system APIs.
 
 .. tab:: ARM64 Device
 
-   .. code-block:: shell
+   .. code-block:: console
 
       $ export PATH="$(pwd)/iOS/Resources/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Library/Apple/usr/bin"
       $ ./configure \
@@ -515,7 +513,7 @@ however, including libFFI is *highly* recommended, as it is required by the
 
 .. tab:: ARM64 Simulator
 
-   .. code-block:: shell
+   .. code-block:: console
 
       $ export PATH="$(pwd)/iOS/Resources/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Library/Apple/usr/bin"
       $ ./configure \
@@ -536,7 +534,7 @@ however, including libFFI is *highly* recommended, as it is required by the
 
 .. tab:: x86-64 Simulator
 
-   .. code-block:: shell
+   .. code-block:: console
 
       $ export PATH="$(pwd)/iOS/Resources/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Library/Apple/usr/bin"
       $ ./configure \
@@ -561,7 +559,7 @@ accidentally linked into your iOS build. This is especially common when Homebrew
 is present on the build system. The most reliable way to avoid this problem is
 to remove any potential source of other libraries from your ``PATH``.
 
-However, the ``PATH`` is not completely bare - it includes the
+However, the ``PATH`` is not completely bare --- it includes the
 ``iOS/Resources/bin`` folder. This folder contains a collection of scripts that
 wrap the invocation of the Xcode :program:`xcrun` tool, removing user- and
 version-specific paths from the values encoded in the :py:mod:`sysconfig`
@@ -571,11 +569,9 @@ Once this build completes, the ``iOS/Frameworks`` folder will contain a
 ``Python.framework`` that can be used for testing.
 
 To run the test suite on iOS, complete a build for a *simulator* platform,
-ensure the path modifications from the build are still in effect, and run:
+ensure the path modifications from the build are still in effect, and run::
 
-.. code-block:: shell
-
-    $ make testios
+   $ make testios
 
 The full test suite takes approximately 12 minutes to run on a 2022 M1 MacBook
 Pro, plus a couple of extra minutes to build the testbed application and boot
