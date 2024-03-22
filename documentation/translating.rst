@@ -27,7 +27,7 @@ in production; others are works in progress.
 +-----------------+-------------------------------+----------------------------+
 | Greek (gr)      | `Lysandros Nikolaou           | `GitHub <github_gr_>`_     |
 |                 | (@lysnikolaou)                |                            |
-|                 | <gh_lysnikolaou>`_,           |                            |
+|                 | <gh_lysnikolaou_>`_,          |                            |
 |                 | `Fanis Petkos (@thepetk)      |                            |
 |                 | <gh_thepetk_>`_               |                            |
 +-----------------+-------------------------------+----------------------------+
