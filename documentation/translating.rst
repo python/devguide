@@ -25,6 +25,12 @@ in production; others are works in progress.
 | French (fr)     | `Julien Palard (@JulienPalard)| `GitHub <github_fr_>`_     |
 |                 | <gh_mdk_>`_                   |                            |
 +-----------------+-------------------------------+----------------------------+
+| Greek (gr)      | `Lysandros Nikolaou           | `GitHub <github_gr_>`_     |
+|                 | (@lysnikolaou)                |                            |
+|                 | <gh_lysnikolaou>`_,           |                            |
+|                 | `Fanis Petkos (@thepetk)      |                            |
+|                 | <gh_thepetk_>`_               |                            |
++-----------------+-------------------------------+----------------------------+
 | Hindi as spoken |                               | `GitHub <github_hi_in_>`_  |
 | in India (hi_IN)|                               |                            |
 +-----------------+-------------------------------+----------------------------+
@@ -100,6 +106,8 @@ in production; others are works in progress.
 .. _gh_dumeng: https://github.com/dumeng
 .. _gh_mattwang44: https://github.com/mattwang44
 .. _gh_egeakman: https://github.com/egeakman
+.. _gh_lysnikolaou: https://github.com/lysnikolaou
+.. _gh_thepetk: https://github.com/thepetk
 .. _email_garade: mailto:garade@pm.me
 .. _email_kazanzhy: mailto:dkazanzhy@gmail.com
 .. _chat_pt_br: https://t.me/pybr_i18n
@@ -127,6 +135,7 @@ in production; others are works in progress.
 .. _github_zh_cn: https://github.com/python/python-docs-zh-cn
 .. _github_zh_tw: https://github.com/python/python-docs-zh-tw
 .. _github_ru: https://github.com/MLGRussianXP/python-docs-ru
+.. _github_gr: https://github.com/pygreece/python-docs-gr
 .. _list_hu: https://mail.python.org/pipermail/python-hu
 .. _mail_it: https://mail.python.org/pipermail/doc-sig/2019-April/004114.html
 .. _mail_lt: https://mail.python.org/pipermail/doc-sig/2019-July/004138.html
