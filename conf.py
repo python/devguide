@@ -1,12 +1,6 @@
-import os
-import sys
 import time
 
-# Location of custom extensions.
-sys.path.insert(0, os.path.abspath(".") + "/_extensions")
-
 extensions = [
-    'custom_roles',
     'notfound.extension',
     'sphinx.ext.extlinks',
     'sphinx.ext.intersphinx',
@@ -15,6 +9,7 @@ extensions = [
     'sphinx_inline_tabs',
     'sphinxext.opengraph',
     'sphinxext.rediraffe',
+    'sphinxnotes.comboroles',
 ]
 
 # The master toctree document.
@@ -178,6 +173,10 @@ notfound_urls_prefix = "/"
 # https://www.sphinx-doc.org/en/master/usage/extensions/extlinks.html
 extlinks = {
     "github": ("https://github.com/%s/", "%s"),
+
+    # Not used directly in document, see sphinxnotes-comborole config.
+    "_cpy-file": ("https://github.com/python/cpython/blob/main/%s", "%s"),
+    "_gh-label": ("https://github.com/python/cpython/labels/%s", "%s"),
 }
 
 # sphinxext-opengraph config
@@ -195,3 +194,10 @@ ogp_custom_meta_tags = [
 copybutton_prompt_text = "$ "
 # https://sphinx-copybutton.readthedocs.io/en/latest/use.html#honor-line-continuation-characters-when-copying-multline-snippets
 copybutton_line_continuation_character = "\\"
+
+# sphinxnotes-comboroles config.
+comboroles_roles = {
+    # Add literal formatting for extlink roles.
+    "cpy-file": ["literal", "_cpy-file"],
+    "gh-label": ["literal", "_gh-label"],
+}
