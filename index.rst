@@ -1,4 +1,38 @@
-========================
+from telegram.ext import Updater, CommandHandler
+
+# Telegram botunuzun token'ını buraya yapıştırın
+TOKEN = '6813470845:AAGdIjj3CwQ1ukuUKchYvQoFOuMKRz4pSEQ'
+# /start komutunu işleyen bir fonksiyon
+def start(update, context):
+    update.message.reply_text('Salam! Bu basit bir al-sat botudur.')
+
+# /al komutunu işleyen bir fonksiyon
+def buy(update, context):
+    update.message.reply_text('Al-sat işlemi gerçekleştirildi.')
+
+# /sat komutunu işleyen bir fonksiyon
+def sell(update, context):
+    update.message.reply_text('Al-sat işlemi gerçekleştirildi.')
+
+def main():
+    # Updater obyekti yaradır və token ilə bağlantı qurur
+    updater = Updater(TOKEN, use_context=True)
+
+    # CommandHandler obyektini yaradır və uyğun komandaları işləyir
+    dp = updater.dispatcher
+    dp.add_handler(CommandHandler("start", start))
+    dp.add_handler(CommandHandler("al", buy))
+    dp.add_handler(CommandHandler("sat", sell))
+
+    # Botu işə salır
+    updater.start_polling()
+
+    # Botu dayandırır
+    updater.idle()
+
+if __name__ == '__main__':
+    main()
+=======================
 Python Developer's Guide
 ========================
 
