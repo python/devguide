@@ -173,7 +173,6 @@ notfound_urls_prefix = "/"
 # https://www.sphinx-doc.org/en/master/usage/extensions/extlinks.html
 extlinks = {
     "github": ("https://github.com/%s/", "%s"),
-
     # Not used directly in document, see sphinxnotes-comborole config.
     "_cpy-file": ("https://github.com/python/cpython/blob/main/%s", "%s"),
     "_gh-label": ("https://github.com/python/cpython/labels/%s", "%s"),
