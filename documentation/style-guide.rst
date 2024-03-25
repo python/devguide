@@ -87,6 +87,9 @@ Unix
    The name of the operating system developed at AT&T Bell Labs in the early
    1970s.
 
+
+.. index:: diataxis
+
 Diátaxis
 ========
 
