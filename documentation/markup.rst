@@ -754,7 +754,7 @@ versatile:
   tool-tip on mouse-hover) will always be the full target name.
 
 * Combining ``~`` and ``!`` (for example, ``:meth:`~!Queue.Queue.get```) is not
-  supported.  You can obtain the same result by simply using `!` and the last
+  supported.  You can obtain the same result by simply using ``!`` and the last
   component of the target (for example, ``:meth:`!get```).
 
 The following roles refer to objects in modules and are possibly hyperlinked if
