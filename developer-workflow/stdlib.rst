@@ -139,8 +139,8 @@ once the authors of the module sign
 
 .. _issue tracker: https://github.com/python/cpython/issues
 
-Adding a new env var
---------------------
+Adding a new environment variable
+---------------------------------
 
 From Python 3.13 onwards, name environment variables with underscores for
 readability and accessibility.
@@ -150,5 +150,5 @@ For example, use ``PYTHON_CPU_COUNT`` instead of ``PYTHONCPUCOUNT``.
 See also:
 
 * :ref:`python:using-on-envvars`
-* `Discourse discussion
+* `"Change environment variable style" Discourse discussion
   <https://discuss.python.org/t/change-environment-variable-style/35180>`__
