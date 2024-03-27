@@ -446,6 +446,148 @@ used in ``python.sh``:
 .. _wasmtime: https://wasmtime.dev
 .. _WebAssembly: https://webassembly.org
 
+iOS
+---
+
+Compiling Python for iOS requires a macOS machine, on a recent version of macOS,
+running a recent version of Xcode. Apple expects developers to keep their
+operating systems and tools up-to-date; if your macOS version is more than one
+major release out of date, or your Xcode version is more than a couple of minor
+versions out of date, you'll likely encounter difficulties. It is not possible
+to compile for iOS using Windows or Linux as a build machine.
+
+A complete build for Python on iOS requires compiling CPython four times: once for
+macOS; then once for each of the three underlying platforms used by iOS:
+
+* An ARM64 device (an iPhone or iPad);
+* An ARM64 simulator running on a recent macOS machine; and
+* An x86_64 simulator running on older macOS machine.
+
+The macOS build is required because building Python involves running some Python
+code. On a normal desktop build of Python, you can compile a Python interpreter
+and then use that interpreter to run Python code. However, the binaries produced
+for iOS won't run on macOS, so you need to provide an external Python
+interpreter. From the root of a CPython code checkout, run the following::
+
+   $ ./configure --prefix=$(pwd)/cross-build/macOS
+   $ make -j4 all
+   $ make install
+
+This will build and install Python for macOS into the ``cross-build/macOS``
+directory.
+
+The CPython build system can compile a single platform at a time. It is possible
+to *test* a single platform at a time; however, for distribution purposes, you
+must compile all three, and merge the results. See the `iOS README
+<https://github.com/python/cpython/blob/main/iOS/README.rst#merge-thin-frameworks-into-fat-frameworks>`__
+for details on this merging process.
+
+The following instructions will build CPython for iOS with all extensions
+enabled, provided you have installed the build dependencies XZ, BZip2, OpenSSL
+and libFFI in subfolders of the ``cross-build`` folder. See :ref:`the iOS
+section on installing build dependencies <build-dependencies>` for details on
+how to obtain these dependencies. These dependencies are all strictly optional,
+however, including libFFI is *highly* recommended, as it is required by the
+:py:mod:`ctypes` module which is used on iOS to support accessing native system APIs.
+
+.. tab:: ARM64 device
+
+   .. code-block:: console
+
+      $ export PATH="$(pwd)/iOS/Resources/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Library/Apple/usr/bin"
+      $ ./configure \
+            LIBLZMA_CFLAGS="-I$(pwd)/cross-build/iphoneos.arm64/xz/include" \
+            LIBLZMA_LIBS="-L$(pwd)/cross-build/iphoneos.arm64/xz/lib -llzma" \
+            BZIP2_CFLAGS="-I$(pwd)/cross-build/iphoneos.arm64/bzip2/include" \
+            BZIP2_LIBS="-L$(pwd)/cross-build/iphoneos.arm64/bzip2/lib -lbz2" \
+            LIBFFI_CFLAGS="-I$(pwd)/cross-build/iphoneos.arm64/libffi/include" \
+            LIBFFI_LIBS="-L$(pwd)/cross-build/iphoneos.arm64/libffi/lib -lffi" \
+            --with-openssl="$(pwd)/cross-build/iphoneos.arm64/openssl" \
+            --host=arm64-apple-ios12.0 \
+            --build=arm64-apple-darwin \
+            --with-build-python=$(pwd)/cross-build/macOS/bin/python3.13 \
+            --enable-framework
+      $ make -j4 all
+      $ make install
+
+.. tab:: ARM64 simulator
+
+   .. code-block:: console
+
+      $ export PATH="$(pwd)/iOS/Resources/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Library/Apple/usr/bin"
+      $ ./configure \
+            LIBLZMA_CFLAGS="-I$(pwd)/cross-build/iphonesimulator.arm64/xz/include" \
+            LIBLZMA_LIBS="-L$(pwd)/cross-build/iphonesimulator.arm64/xz/lib -llzma" \
+            BZIP2_CFLAGS="-I$(pwd)/cross-build/iphonesimulator.arm64/bzip2/include" \
+            BZIP2_LIBS="-L$(pwd)/cross-build/iphonesimulator.arm64/bzip2/lib -lbz2" \
+            LIBFFI_CFLAGS="-I$(pwd)/cross-build/iphonesimulator.arm64/libffi/include" \
+            LIBFFI_LIBS="-L$(pwd)/cross-build/iphonesimulator.arm64/libffi/lib -lffi" \
+            --with-openssl="$(pwd)/cross-build/iphonesimulator.arm64/openssl" \
+            --host=arm64-apple-ios12.0-simulator \
+            --build=arm64-apple-darwin \
+            --with-build-python=$(pwd)/cross-build/macOS/bin/python3.13 \
+            --enable-framework
+      $ make -j4 all
+      $ make install
+
+.. tab:: x86-64 simulator
+
+   .. code-block:: console
+
+      $ export PATH="$(pwd)/iOS/Resources/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Library/Apple/usr/bin"
+      $ ./configure \
+            LIBLZMA_CFLAGS="-I$(pwd)/cross-build/iphonesimulator.x86_64/xz/include" \
+            LIBLZMA_LIBS="-L$(pwd)/cross-build/iphonesimulator.x86_64/xz/lib -llzma" \
+            BZIP2_CFLAGS="-I$(pwd)/cross-build/iphonesimulator.x86_64/bzip2/include" \
+            BZIP2_LIBS="-L$(pwd)/cross-build/iphonesimulator.x86_64/bzip2/lib -lbz2" \
+            LIBFFI_CFLAGS="-I$(pwd)/cross-build/iphonesimulator.x86_64/libffi/include" \
+            LIBFFI_LIBS="-L$(pwd)/cross-build/iphonesimulator.x86_64/libffi/lib -lffi" \
+            --with-openssl="$(pwd)/cross-build/iphonesimulator.x86_64/openssl" \
+            --host=x86_64-apple-ios12.0-simulator \
+            --build=arm64-apple-darwin \
+            --with-build-python=$(pwd)/cross-build/macOS/bin/python3.13 \
+            --enable-framework
+      $ make -j4 all
+      $ make install
+
+These instructions modify your ``PATH`` before the build. As iOS and macOS share
+a hardware architecture (ARM64), it is easy for a macOS ARM64 binary to be
+accidentally linked into your iOS build. This is especially common when Homebrew
+is present on the build system. The most reliable way to avoid this problem is
+to remove any potential source of other libraries from your ``PATH``.
+
+However, the ``PATH`` is not completely bare --- it includes the
+``iOS/Resources/bin`` folder. This folder contains a collection of scripts that
+wrap the invocation of the Xcode :program:`xcrun` tool, removing user- and
+version-specific paths from the values encoded in the :py:mod:`sysconfig`
+module. Copies of these scripts are included in the final build products.
+
+Once this build completes, the ``iOS/Frameworks`` folder will contain a
+``Python.framework`` that can be used for testing.
+
+To run the test suite on iOS, complete a build for a *simulator* platform,
+ensure the path modifications from the build are still in effect, and run::
+
+   $ make testios
+
+The full test suite takes approximately 12 minutes to run on a 2022 M1 MacBook
+Pro, plus a couple of extra minutes to build the testbed application and boot
+the simulator. There will be an initial burst of console output while the Xcode
+test project is compiled; however, while the test suite is running, there is no
+console output or progress. This is a side effect of how Xcode operates when
+executed at the command line. You should see an iOS simulator appear during the
+testing process; the simulator will booth to an iOS landing screen, the testbed
+app will be installed, and then started. The screen of the simulator will be
+black while the test suite is running. When the test suite completes, success or
+failure will be reported at the command line. In the case of failure, you will
+see the full log of CPython test suite output.
+
+You can also run the test suite in Xcode itself. This is required if you want to
+run on a physical device; it is also the easiest approach if you need to run a
+single test, or a subset of tests. See the `iOS README
+<https://github.com/python/cpython/blob/main/iOS/README.rst#debugging-test-failures>`__
+for details.
+
 .. _build-dependencies:
 .. _deps-on-linux:
 .. _macOS and OS X:
@@ -455,7 +597,7 @@ Install dependencies
 ====================
 
 This section explains how to install additional extensions (e.g. ``zlib``)
-on Linux and macOS.
+on Linux, macOS and iOS.
 
 .. tab:: Linux
 
@@ -597,6 +739,24 @@ on Linux and macOS.
 
    On Windows, extensions are already included and built automatically.
 
+.. tab:: iOS
+
+   As with CPython itself, the dependencies for CPython must be compiled for
+   each of the hardware architectures that iOS supports. Consult the
+   documentation for `XZ <https://xz.tukaani.org/xz-utils/>`__, `bzip2
+   <https://sourceware.org/bzip2/>`__, `OpenSSL <https://www.openssl.org>`__ and
+   `libffi <https://github.com/libffi/libffi>`__ for details on how to configure
+   the project for cross-platform iOS builds.
+
+   Alternatively, the `BeeWare Project <https://beeware.org>`__ maintains a
+   `project for building iOS dependencies
+   <https://github.com/beeware/cpython-apple-source-deps>`__, and distributes
+   `pre-compiled binaries
+   <https://github.com/beeware/cpython-apple-source-deps/releases>`__ for each
+   of the dependencies. If you use this project to build the dependencies
+   yourself, the subfolders of the ``install`` folder can be used to configure
+   CPython. If you use the pre-compiled binaries, you should unpack each tarball
+   into a separate folder, and use that folder as the configuration target.
 
 .. _regenerate_configure:
 
