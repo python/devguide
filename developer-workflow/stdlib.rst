@@ -142,8 +142,8 @@ once the authors of the module sign
 Adding a new environment variable
 ---------------------------------
 
-From Python 3.13 onwards, name environment variables with underscores for
-readability and accessibility.
+Names of environment variables should be uppercase and, from Python 3.13
+onwards, use underscores for readability and accessibility.
 
 For example, use ``PYTHON_CPU_COUNT`` instead of ``PYTHONCPUCOUNT``.
 
