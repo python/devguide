@@ -127,10 +127,38 @@ explanation.
   provide context, make connections between topics, and discuss alternative
   opinions. There is no section dedicated to explanations but these can be
   found throughout Python's documentation, for example the
-  :ref:`python:unicode-howto`
+  :ref:`python:unicode-howto`.
 
 Please consult the `Diátaxis <https://diataxis.fr/>`_ guide for more
 detail.
+
+Links
+=====
+
+Links are a powerful tool for helping people navigate documentation and find
+more information, but links can be over-used.  Links should be used only if
+they help the reader.
+
+Generally, a link should be provided for the first use of a term in a unit,
+such as a section or paragraph. This is not a hard and fast rule.  Sometimes
+the second mention is more appropriate for a link.  Some units are long enough
+to have a few repeated links.  Use judgement to decide when a link will help
+the reader.
+
+Do not use a link when the link would point to the current unit.  It's natural
+to use the name of a function in the documentation for the function, but a link
+on that function name that simply reloads the section the user is already
+reading is useless and distracting.
+
+Do not use links in section headers.  They distract from the title of the
+section.  The term will be mentioned in the paragraph text and can be linked
+from there.
+
+Sphinx provides ways to automatically add links to references, and a way to
+suppress the link.  Using roles like ``:func:`map``` will link to the
+documentation for ``map``.  You can suppress the link while keeping the
+semantic presentation of the function name by adding an exclamation point
+prefix: ``:func:`!map```.  See :ref:`roles` for more details.
 
 Affirmative tone
 ================
