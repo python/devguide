@@ -506,7 +506,6 @@ however, including libFFI is *highly* recommended, as it is required by the
             --host=arm64-apple-ios12.0 \
             --build=arm64-apple-darwin \
             --with-build-python=$(pwd)/cross-build/macOS/bin/python3.13 \
-            --without-ensurepip \
             --enable-framework
       $ make -j4 all
       $ make install
@@ -527,7 +526,6 @@ however, including libFFI is *highly* recommended, as it is required by the
             --host=arm64-apple-ios12.0-simulator \
             --build=arm64-apple-darwin \
             --with-build-python=$(pwd)/cross-build/macOS/bin/python3.13 \
-            --without-ensurepip \
             --enable-framework
       $ make -j4 all
       $ make install
@@ -548,7 +546,6 @@ however, including libFFI is *highly* recommended, as it is required by the
             --host=x86_64-apple-ios12.0-simulator \
             --build=arm64-apple-darwin \
             --with-build-python=$(pwd)/cross-build/macOS/bin/python3.13 \
-            --without-ensurepip \
             --enable-framework
       $ make -j4 all
       $ make install
