@@ -18,7 +18,7 @@
   "3.11": {
     "branch": "3.11",
     "pep": 664,
-    "status": "bugfix",
+    "status": "security",
     "first_release": "2022-10-24",
     "end_of_life": "2027-10",
     "release_manager": "Pablo Galindo Salgado"
