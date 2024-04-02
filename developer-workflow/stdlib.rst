@@ -52,6 +52,7 @@ useful.
 
 Adding a new module
 -------------------
+
 It must be stated upfront that getting a new module into the stdlib is very
 difficult. Adding any significant amount of code to the stdlib increases the
 burden placed upon core developers. It also means that the module somewhat
@@ -137,3 +138,17 @@ once the authors of the module sign
 :ref:`contributor agreements <contributor_agreement>`.
 
 .. _issue tracker: https://github.com/python/cpython/issues
+
+Adding a new environment variable
+---------------------------------
+
+Names of environment variables should be uppercase and, from Python 3.13
+onwards, use underscores for readability and accessibility.
+
+For example, use ``PYTHON_CPU_COUNT`` instead of ``PYTHONCPUCOUNT``.
+
+See also:
+
+* :ref:`python:using-on-envvars`
+* `"Change environment variable style" Discourse discussion
+  <https://discuss.python.org/t/change-environment-variable-style/35180>`__
