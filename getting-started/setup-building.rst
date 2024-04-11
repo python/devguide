@@ -136,10 +136,10 @@ Install pre-commit as a Git hook
 --------------------------------
 
 To make sure your code is linted correctly, we recommend setting up
-`pre-commit <https://pre-commit.com#installation>`_ as a Git hook:
+`pre-commit <https://pre-commit.com#installation>`_ as a Git hook::
 
-     $ pre-commit install --allow-missing-config
-     pre-commit installed at .git/hooks/pre-commit
+   $ pre-commit install --allow-missing-config
+   pre-commit installed at .git/hooks/pre-commit
 
 Now pre-commit will run automatically on ``git commit``.
 
