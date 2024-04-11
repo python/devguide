@@ -66,11 +66,9 @@ Install pre-commit
 To make sure your code is formatted correctly, we recommend installing
 `pre-commit <https://pre-commit.com>`_ and setting it up as a Git hook:
 
-1. Go to https://pre-commit.com#installation.
+1. `Install pre-commit <https://pre-commit.com#installation>`__.
 
-2. Run the install command for your global package manager.
-
-3. Install the Git hook::
+2. Install the Git hook::
 
       $ pre-commit install
       pre-commit installed at .git/hooks/pre-commit
