@@ -72,7 +72,7 @@ You will only need to execute these steps once per machine:
 
 2. Run the install command for your global package manager.
 
-3. Install the git hook scripts::
+3. Install the Git hook::
 
       $ pre-commit install
       pre-commit installed at .git/hooks/pre-commit
