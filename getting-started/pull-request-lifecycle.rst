@@ -109,7 +109,7 @@ You should have already :ref:`set up your system <setup>`,
   (Learn more about :ref:`good-commits`)
 
 * If your code isn't linted correctly, :ref:`pre-commit <install-pre-commit>`
-  will block the commit with an appropriate error message, e.g.::
+  will block the commit with an error message, for example::
 
      Doc/library/stdtypes.rst:5718: No newline at end of file. (missing-final-newline)
 
