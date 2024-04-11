@@ -58,6 +58,7 @@ itself. Git is easily available for all common operating systems.
   ``git push``, or ``git fetch``.  On Windows, you should also
   :ref:`enable autocrlf <autocrlf>`.
 
+
 .. _checkout:
 
 Get the source code
