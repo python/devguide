@@ -58,6 +58,26 @@ itself. Git is easily available for all common operating systems.
   ``git push``, or ``git fetch``.  On Windows, you should also
   :ref:`enable autocrlf <autocrlf>`.
 
+.. _pre-commit:
+
+Install pre-commit
+------------------
+
+To make sure your code is formatted correctly, we recommend to install
+`pre-commit <https://pre-commit.com>`_, and set it up as a git hook.
+
+You will only need to execute these steps once per machine:
+
+1. Go to https://pre-commit.com#installation.
+
+2. Run the install command for your global package manager.
+
+3. Install the git hook scripts::
+
+      $ pre-commit install
+      pre-commit installed at .git/hooks/pre-commit
+
+   (now ``pre-commit`` will run automatically on ``git commit``!)
 
 .. _checkout:
 

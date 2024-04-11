@@ -101,11 +101,6 @@ You should have already :ref:`set up your system <setup>`,
 
   (Learn more about :ref:`patchcheck` and about :ref:`runtests`)
 
-* To make sure your code is formatted correctly, we recommend to install
-  `pre-commit <https://pre-commit.com#installation>`_, and set it up as a git hook::
-
-     pre-commit install
-
 * Once you are satisfied with the changes, add the files and commit them::
 
      git add <filenames>
@@ -113,8 +108,8 @@ You should have already :ref:`set up your system <setup>`,
 
   (Learn more about :ref:`good-commits`)
 
-* When your code isn't formatted correctly, the commit will fail with an appropriate
-  error message. e.g.::
+* When your code isn't formatted correctly, :ref:`pre-commit` will block
+  the commit with an appropriate error message. e.g.::
 
      Misc/NEWS.d/3.5.0.rst:8: No newline at end of file. (missing-final-newline)
 
