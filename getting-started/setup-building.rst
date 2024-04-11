@@ -58,23 +58,6 @@ itself. Git is easily available for all common operating systems.
   ``git push``, or ``git fetch``.  On Windows, you should also
   :ref:`enable autocrlf <autocrlf>`.
 
-.. _install-pre-commit:
-
-Install pre-commit
-------------------
-
-To make sure your code is linted correctly, we recommend installing
-`pre-commit <https://pre-commit.com>`_ and setting it up as a Git hook:
-
-1. `Install pre-commit <https://pre-commit.com#installation>`__.
-
-2. Install the Git hook::
-
-      $ pre-commit install
-      pre-commit installed at .git/hooks/pre-commit
-
-   Now pre-commit will run automatically on ``git commit``.
-
 .. _checkout:
 
 Get the source code
@@ -146,6 +129,18 @@ affected files as described below.)
 Patches for the documentation can be made from the same repository; see
 :ref:`documenting`.
 
+.. _install-pre-commit:
+
+Install pre-commit as a Git hook
+--------------------------------
+
+To make sure your code is linted correctly, we recommend setting up
+`pre-commit <https://pre-commit.com#installation>`_ as a Git hook:
+
+      $ pre-commit install --allow-missing-config
+      pre-commit installed at .git/hooks/pre-commit
+
+   Now pre-commit will run automatically on ``git commit``.
 
 .. _compiling:
 
