@@ -63,8 +63,8 @@ itself. Git is easily available for all common operating systems.
 Install pre-commit
 ------------------
 
-To make sure your code is formatted correctly, we recommend to install
-`pre-commit <https://pre-commit.com>`_, and set it up as a git hook.
+To make sure your code is formatted correctly, we recommend installing
+`pre-commit <https://pre-commit.com>`_, and set it up as a Git hook.
 
 You will only need to execute these steps once per machine:
 
