@@ -75,7 +75,7 @@ To make sure your code is formatted correctly, we recommend installing
       $ pre-commit install
       pre-commit installed at .git/hooks/pre-commit
 
-   (now ``pre-commit`` will run automatically on ``git commit``!)
+   Now pre-commit will run automatically on ``git commit``.
 
 .. _checkout:
 
