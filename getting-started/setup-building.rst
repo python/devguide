@@ -64,9 +64,7 @@ Install pre-commit
 ------------------
 
 To make sure your code is formatted correctly, we recommend installing
-`pre-commit <https://pre-commit.com>`_, and set it up as a Git hook.
-
-You will only need to execute these steps once per machine:
+`pre-commit <https://pre-commit.com>`_ and setting it up as a Git hook:
 
 1. Go to https://pre-commit.com#installation.
 
