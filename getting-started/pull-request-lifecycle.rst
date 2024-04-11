@@ -111,7 +111,7 @@ You should have already :ref:`set up your system <setup>`,
 * If your code isn't linted correctly, :ref:`pre-commit <install-pre-commit>`
   will block the commit with an appropriate error message, e.g.::
 
-     Misc/NEWS.d/3.5.0.rst:8: No newline at end of file. (missing-final-newline)
+     Doc/library/stdtypes.rst:5718: No newline at end of file. (missing-final-newline)
 
 * Once all linting errors have been fixed, you can push your work to your GitHub fork::
 
