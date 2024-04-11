@@ -58,7 +58,7 @@ itself. Git is easily available for all common operating systems.
   ``git push``, or ``git fetch``.  On Windows, you should also
   :ref:`enable autocrlf <autocrlf>`.
 
-.. _pre-commit:
+.. _install-pre-commit:
 
 Install pre-commit
 ------------------
