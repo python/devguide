@@ -108,7 +108,12 @@ You should have already :ref:`set up your system <setup>`,
 
   (Learn more about :ref:`good-commits`)
 
-* Then push your work to your GitHub fork::
+* If your code isn't linted correctly, :ref:`pre-commit <install-pre-commit>`
+  will block the commit with an error message, for example::
+
+     Doc/library/stdtypes.rst:5718: No newline at end of file. (missing-final-newline)
+
+* Once all linting errors have been fixed, you can push your work to your GitHub fork::
 
      git push origin <branch-name>
 
