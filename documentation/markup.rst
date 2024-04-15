@@ -732,9 +732,12 @@ where simpler markup should be used:
 
 In addition, the CPython documentation defines a few custom roles:
 
-* ``:gh:`ID```: creates a link to a GitHub issue.
-* ``:issue:`ID```: creates a link to a bugs.python.com issue.
-* ``:source:`PATH```: creates a link to a source file on GitHub.
+* ``:cve:`YYYY-NNNNN```: link to a Common Vulnerabilities and Exposures entry.
+* ``:cwe:`NNN```: link to a Common Weakness Enumeration entry.
+* ``:gh:`ID```: link to a GitHub issue.
+* ``:issue:`ID```: link to a bugs.python.com issue.
+* ``:pypi:`NAME```: link to a project on PyPI.
+* ``:source:`PATH```: link to a source file on GitHub.
 
 There are some additional facilities that make cross-referencing roles more
 versatile:
