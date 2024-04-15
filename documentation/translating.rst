@@ -209,8 +209,7 @@ Which version of the Python documentation should be translated?
 ---------------------------------------------------------------
 
 Consensus is to work on current stable. You can then propagate your
-translation from one branch to another using `pomerge
-<https://pypi.org/project/pomerge/>`__.
+translation from one branch to another using :pypi:`pomerge`.
 
 
 Are there some tools to help in managing the repo?
@@ -218,14 +217,12 @@ Are there some tools to help in managing the repo?
 
 Here's what we're using:
 
-- `pomerge <https://pypi.org/project/pomerge/>`__ to propagate translations
-  from one file to others.
-- `pospell <https://pypi.org/project/pospell/>`__ to check for typos in ``.po`` files.
-- `powrap <https://pypi.org/project/powrap/>`__ to rewrap the ``.po`` files
+- :pypi:`pomerge` to propagate translations from one file to others.
+- :pypi:`pospell` to check for typos in ``.po`` files.
+- :pypi:`powrap` to rewrap the ``.po`` files
   before committing. This helps keep Git diffs short.
-- `potodo <https://pypi.org/project/potodo/>`__ to list what needs to be translated.
-- `sphinx-lint <https://pypi.org/project/sphinx-lint/>`__ to validate reST syntax in
-  translation files.
+- :pypi:`potodo` to list what needs to be translated.
+- :pypi:`sphinx-lint` to validate reST syntax in translation files.
 
 
 How is a coordinator elected?

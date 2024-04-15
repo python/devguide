@@ -125,8 +125,7 @@ How to add a NEWS entry
 
 ``NEWS`` entries go into the ``Misc/NEWS.d`` directory as individual files. The
 ``NEWS`` entry can be created by using `blurb-it <https://blurb-it.herokuapp.com/>`_,
-or the `blurb <https://pypi.org/project/blurb/>`_ tool and its ``blurb add``
-command.
+or the :pypi:`blurb` tool and its ``blurb add`` command.
 
 If you are unable to use the tool, then you can create the ``NEWS`` entry file
 manually. The ``Misc/NEWS.d`` directory contains a sub-directory named
