@@ -564,6 +564,16 @@ The directives are:
          .. attribute:: ham
 
             Description of the attribute.
+   
+   This directive should be used for defining attributes.::
+
+      .. attribute:: my-attr
+         This attribute `my-attr` should be defined with this directive.
+
+   When referring to an attribute, use the ``:attr:`my-attr``` role::
+      
+      :attr:`my-attr`
+         Use this role to refer to the attribute `my-attr`
 
    If is also possible to document an attribute outside of a class directive,
    for example if the documentation for different attributes and methods is
