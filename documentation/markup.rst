@@ -564,14 +564,14 @@ The directives are:
          .. attribute:: ham
 
             Description of the attribute.
-   
+
    This directive should be used for defining attributes.::
 
       .. attribute:: my-attr
          This attribute `my-attr` should be defined with this directive.
 
    When referring to an attribute, use the ``:attr:`my-attr``` role::
-      
+
       :attr:`my-attr`
          Use this role to refer to the attribute `my-attr`
 
