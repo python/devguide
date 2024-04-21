@@ -25,7 +25,7 @@ True/False/None         ````True````, ````False````, ````None````   :ref:`inline
 functions definitions   ``.. function:: print(*args)``              :ref:`directives`
 functions references    ``:func:`print```                           :ref:`roles`
 attribute definitions   ``.. attribute: `attr-name```               :ref:`directives`
-attribute references    ``:attr:`attr-name```                       :ref:`roles`                       
+attribute references    ``:attr:`attr-name```                       :ref:`roles`
 reference labels        ``.. _label-name:``                         :ref:`doc-ref-role`
 internal references     ``:ref:`label-name```                       :ref:`doc-ref-role`
 external links          ```Link text <https://example.com>`_``      :ref:`hyperlinks`
