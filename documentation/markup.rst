@@ -570,11 +570,9 @@ The directives are:
       .. attribute:: my-attr
          This attribute `my-attr` should be defined with this directive.
 
-   When referring to an attribute, use the ``:attr:`my-attr``` role::
+   Refer to attributes with ``:attr:`` role::
 
-      :attr:`my-attr`
-         Use this role to refer to the attribute `my-attr`
-
+      Use the :attr:`ham` attribute to spam the eggs.
    If is also possible to document an attribute outside of a class directive,
    for example if the documentation for different attributes and methods is
    split in multiple sections.  The class name should then be included
