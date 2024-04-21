@@ -565,11 +565,6 @@ The directives are:
 
             Description of the attribute.
 
-   This directive should be used for defining attributes.::
-
-      .. attribute:: my-attr
-         This attribute `my-attr` should be defined with this directive.
-
    Refer to attributes with ``:attr:`` role::
 
       Use the :attr:`ham` attribute to spam the eggs.
