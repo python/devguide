@@ -570,7 +570,6 @@ The directives are:
 
    Refer to an attribute, use the ``:attr:`` role::
 
-
       Use the :attr:`ham` attribute to spam the eggs.
 
    If is also possible to document an attribute outside of a class directive,
