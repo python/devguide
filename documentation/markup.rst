@@ -567,8 +567,7 @@ The directives are:
 
             Description of the attribute.
 
-
-   Refer to an attribute, use the ``:attr:`` role::
+   Refer to an attribute using the ``:attr:`` role::
 
       Use the :attr:`ham` attribute to spam the eggs.
 
