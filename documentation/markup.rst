@@ -24,6 +24,8 @@ variables/literals/code ````foo````, ````42````, ````len(s) - 1```` :ref:`inline
 True/False/None         ````True````, ````False````, ````None````   :ref:`inline-markup`
 functions definitions   ``.. function:: print(*args)``              :ref:`directives`
 functions references    ``:func:`print```                           :ref:`roles`
+attribute definitions   ``.. attribute: `attr-name```               :ref:`information-units`
+attribute references    ``:attr:`attr-name```                       :ref:`roles`
 reference labels        ``.. _label-name:``                         :ref:`doc-ref-role`
 internal references     ``:ref:`label-name```                       :ref:`doc-ref-role`
 external links          ```Link text <https://example.com>`_``      :ref:`hyperlinks`
@@ -564,6 +566,10 @@ The directives are:
          .. attribute:: ham
 
             Description of the attribute.
+
+   Refer to an attribute using the ``:attr:`` role::
+
+      Use the :attr:`ham` attribute to spam the eggs.
 
    If is also possible to document an attribute outside of a class directive,
    for example if the documentation for different attributes and methods is
