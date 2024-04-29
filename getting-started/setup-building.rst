@@ -692,9 +692,17 @@ on Linux, macOS and iOS.
 
    For example, with **Homebrew**, install the dependencies::
 
-      $ brew install pkg-config openssl@3.0 xz gdbm tcl-tk
+      $ brew install pkg-config openssl@3.0 xz gdbm tcl-tk mpdecimal
 
-   Then, for Python 3.11 and newer, run ``configure``::
+   Then, for Python 3.13 and newer, run ``configure``::
+
+      $ GDBM_CFLAGS="-I$(brew --prefix gdbm)/include" \
+         GDBM_LIBS="-L$(brew --prefix gdbm)/lib -lgdbm" \
+         ./configure --with-pydebug \
+                     --with-system-libmpdec \
+                     --with-openssl="$(brew --prefix openssl@3.0)"
+
+   For Python 3.11 and 3.12::
 
       $ GDBM_CFLAGS="-I$(brew --prefix gdbm)/include" \
          GDBM_LIBS="-L$(brew --prefix gdbm)/lib -lgdbm" \
