@@ -79,7 +79,8 @@ in production; others are works in progress.
      - :github:`GitHub <MLGRussianXP/python-docs-ru>`,
        `mail <https://mail.python.org/pipermail/doc-sig/2019-May/004131.html>`__
    * - `Simplified Chinese (zh-cn) <https://docs.python.org/zh-cn/>`__
-     - Shengjing Zhu (:github-user:`zhsj`)
+     - Shengjing Zhu (:github-user:`zhsj`),
+       Du, Meng (:github-user:`dumeng`)
      -  :github:`GitHub <python/python-docs-zh-cn>`,
         `Transifex <tx_>`_
    * - `Spanish (es) <https://docs.python.org/es/>`__
