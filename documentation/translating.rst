@@ -99,7 +99,6 @@ in production; others are works in progress.
      - :github:`GitHub <python/python-docs-uk>`,
        `Transifex <tx_>`_
 
-.. _gh_dumeng: https://github.com/dumeng
 .. _tx: https://explore.transifex.com/python-doc/python-newest/
 
 Starting a new translation
