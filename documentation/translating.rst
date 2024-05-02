@@ -38,7 +38,7 @@ in production; others are works in progress.
      - Tamás Bajusz (:github-user:`gbtami`)
      - :github:`GitHub <python/python-docs-hu>`,
        `mailing list <https://mail.python.org/pipermail/python-hu>`__
-   * - Indonesian (id)
+   * - `Indonesian (id) <https://docs.python.org/id/>`__
      - Oon Arfiandwi (:github-user:`oonid`)
      - :github:`GitHub <python/python-docs-id>`
    * - Italian (it)
@@ -94,7 +94,7 @@ in production; others are works in progress.
      - Ege Akman (:github-user:`egeakman`)
      - :github:`GitHub <python/python-docs-tr>`,
        `RTD <https://python-docs-tr.readthedocs.io/>`__
-   * - Ukrainian (uk)
+   * - `Ukrainian (uk) <https://docs.python.org/uk/>`__
      - Dmytro Kazanzhy (:github-user:`kazanzhy`, `email <mailto:dkazanzhy@gmail.com>`__)
      - :github:`GitHub <python/python-docs-uk>`,
        `Transifex <tx_>`_
