@@ -724,9 +724,16 @@ on Linux, macOS and iOS.
 
    Alternatively, with **MacPorts**::
 
-      $ sudo port install pkgconfig openssl xz gdbm tcl tk +quartz
+      $ sudo port install pkgconfig openssl xz gdbm tcl tk +quartz mpdecimal
 
-   Then, for Python 3.11 and newer, run ``configure``::
+   Then, for Python 3.13 and newer, run ``configure``::
+
+      $ GDBM_CFLAGS="-I$(dirname $(dirname $(which port)))/include" \
+         GDBM_LIBS="-L$(dirname $(dirname $(which port)))/lib -lgdbm" \
+         ./configure --with-pydebug \
+                     --with-system-libmpdec
+
+   Or, for Python 3.11 and 3.12, run ``configure``::
 
       $ GDBM_CFLAGS="-I$(dirname $(dirname $(which port)))/include" \
          GDBM_LIBS="-L$(dirname $(dirname $(which port)))/lib -lgdbm" \
