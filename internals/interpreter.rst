@@ -1,7 +1,7 @@
 .. _interpreter:
 
 ===============================
-The Bytecode Interpreter (3.11)
+The bytecode interpreter (3.11)
 ===============================
 
 .. highlight:: c
@@ -312,3 +312,62 @@ Other topics
 - Tracing
 - Setting the current lineno (debugger-induced jumps)
 - Specialization, inline caches etc.
+
+
+Introducing new bytecode
+========================
+
+.. note::
+
+   This section is relevant if you are adding a new bytecode to the interpreter.
+
+
+Sometimes a new feature requires a new opcode.  But adding new bytecode is
+not as simple as just suddenly introducing new bytecode in the AST ->
+bytecode step of the compiler.  Several pieces of code throughout Python depend
+on having correct information about what bytecode exists.
+
+First, you must choose a name, implement the bytecode in
+:cpy-file:`Python/bytecodes.c`, and add a documentation entry in
+:cpy-file:`Doc/library/dis.rst`. Then run ``make regen-cases`` to
+assign a number for it (see :cpy-file:`Include/opcode_ids.h`) and
+regenerate a number of files with the actual implementation of the
+bytecodes (:cpy-file:`Python/generated_cases.c.h`) and additional
+files with metadata about them.
+
+With a new bytecode you must also change what is called the magic number for
+.pyc files.  The variable ``MAGIC_NUMBER`` in
+:cpy-file:`Lib/importlib/_bootstrap_external.py` contains the number.
+Changing this number will lead to all .pyc files with the old ``MAGIC_NUMBER``
+to be recompiled by the interpreter on import.  Whenever ``MAGIC_NUMBER`` is
+changed, the ranges in the ``magic_values`` array in :cpy-file:`PC/launcher.c`
+must also be updated.  Changes to :cpy-file:`Lib/importlib/_bootstrap_external.py`
+will take effect only after running ``make regen-importlib``. Running this
+command before adding the new bytecode target to :cpy-file:`Python/bytecodes.c`
+(followed by ``make regen-cases``) will result in an error. You should only run
+``make regen-importlib`` after the new bytecode target has been added.
+
+.. note:: On Windows, running the ``./build.bat`` script will automatically
+   regenerate the required files without requiring additional arguments.
+
+Finally, you need to introduce the use of the new bytecode.  Altering
+:cpy-file:`Python/compile.c`, :cpy-file:`Python/bytecodes.c` will be the
+primary places to change. Optimizations in :cpy-file:`Python/flowgraph.c`
+may also need to be updated.
+If the new opcode affects a control flow or the block stack, you may have
+to update the ``frame_setlineno()`` function in :cpy-file:`Objects/frameobject.c`.
+:cpy-file:`Lib/dis.py` may need an update if the new opcode interprets its
+argument in a special way (like ``FORMAT_VALUE`` or ``MAKE_FUNCTION``).
+
+If you make a change here that can affect the output of bytecode that
+is already in existence and you do not change the magic number constantly, make
+sure to delete your old .py(c|o) files!  Even though you will end up changing
+the magic number if you change the bytecode, while you are debugging your work
+you will be changing the bytecode output without constantly bumping up the
+magic number.  This means you end up with stale .pyc files that will not be
+recreated.
+Running ``find . -name '*.py[co]' -exec rm -f '{}' +`` should delete all .pyc
+files you have, forcing new ones to be created and thus allow you test out your
+new bytecode properly.  Run ``make regen-importlib`` for updating the
+bytecode of frozen importlib files.  You have to run ``make`` again after this
+for recompiling generated C files.

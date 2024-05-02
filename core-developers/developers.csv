@@ -1,3 +1,6 @@
+Sam Gross,colesbury,2024-02-06,,
+Nikita Sobolev,sobolevn,2024-02-06,,
+Adam Turner,AA-Turner,2023-10-10,,
 C.A.M. Gerlach,CAM-Gerlach,2023-04-19,,
 Barney Gale,barneygale,2023-03-21,,
 Carl Meyer,carljm,2023-02-28,,
@@ -17,7 +20,7 @@ Batuhan Taskaya,isidentical,2020-11-08,,
 Brandt Bucher,brandtbucher,2020-09-14,,
 Lysandros Nikolaou,lysnikolaou,2020-06-29,,
 Kyle Stanley,aeros,2020-04-14,,
-Dong-hee Na,corona10,2020-04-08,,
+Donghee Na,corona10,2020-04-08,,
 Karthikeyan Singaravelan,tirkarthi,2019-12-31,,
 Joannah Nanjekye,nanjekyejoannah,2019-09-23,,
 Abhilash Raj,maxking,2019-08-06,,
@@ -64,6 +67,7 @@ Sandro Tosi,sandrotosi,2011-08-01,,
 Alex Gaynor,alex,2011-07-18,,For PyPy compatibility (since expanded scope)
 Charles-François Natali,,2011-05-19,2017-02-10,Did not make GitHub transition
 Nadeem Vawda,,2011-04-10,2017-02-10,Did not make GitHub transition
+Carl Friedrich Bolz-Tereick,cfbolz,2011-03-21,,for stdlib compatibility work for PyPy
 Jason R. Coombs,jaraco,2011-03-14,,For sprinting on distutils2
 Ross Lagerwall,,2011-03-13,2017-02-10,Did not make GitHub transition
 Eli Bendersky,eliben,2011-01-11,2020-11-26,
@@ -121,7 +125,7 @@ Steven Bethard,,2006-04-27,2017-02-10,For PEP access and SourceForge maintenance
 Gerhard Häring,,2006-04-23,2017-02-10,Did not make the GitHub transition
 George Yoshida,,2006-04-17,2017-02-10,For tracker administration; did not make GitHub transition
 Ronald Oussoren,ronaldoussoren,2006-03-03,,For Mac-related work
-Nick Coghlan,ncoghlan,2005-10-16,,
+Alyssa Coghlan,ncoghlan,2005-10-16,,Also contributed as Nick Coghlan (prior to 2023-08-04)
 Georg Brandl,birkenfeld,2005-05-28,,
 Terry Jan Reedy,terryjreedy,2005-04-07,,
 Bob Ippolito,etrepum,2005-03-02,2017-02-10,For Mac-related work

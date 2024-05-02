@@ -1,8 +1,16 @@
 .. _git-boot-camp:
 .. _gitbootcamp:
 
-Git Bootcamp and Cheat Sheet
+Git bootcamp and cheat sheet
 ============================
+
+.. raw:: html
+
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      activateTab(getOS());
+    });
+    </script>
 
 .. highlight:: console
 
@@ -10,11 +18,11 @@ Git Bootcamp and Cheat Sheet
 
    This section provides instructions on common tasks in CPython's
    workflow. It's designed to assist new contributors who have
-   some familiarity with git and GitHub.
+   some familiarity with Git and GitHub.
 
-   If you are new to git and GitHub, please become comfortable with
+   If you are new to Git and GitHub, please become comfortable with
    these instructions before submitting a pull request. As there are several
-   ways to accomplish these tasks using git and GitHub, this section reflects
+   ways to accomplish these tasks using Git and GitHub, this section reflects
    one method suitable for new contributors. Experienced contributors may
    desire a different approach.
 
@@ -23,13 +31,13 @@ In this section, we will go over some commonly used Git commands that are
 relevant to CPython's workflow.
 
 .. note::
-   Setting up git aliases for common tasks can be useful to you. You can
+   Setting up Git aliases for common tasks can be useful to you. You can
    get more information about that in
-   `git documentation <https://git-scm.com/book/en/v2/Git-Basics-Git-Aliases>`_
+   `Git documentation <https://git-scm.com/book/en/v2/Git-Basics-Git-Aliases>`_
 
 .. _fork-cpython:
 
-Forking CPython GitHub Repository
+Forking CPython GitHub repository
 ---------------------------------
 
 You will only need to do this once.
@@ -44,21 +52,21 @@ You will only need to do this once.
 
 .. _clone-your-fork:
 
-Cloning a Forked CPython Repository
+Cloning a forked CPython repository
 -----------------------------------
 
 You will only need to do this once per machine.  From your command line::
 
-   git clone git@github.com:<username>/cpython.git
+   $ git clone git@github.com:<username>/cpython.git
 
 It is also recommended to configure an ``upstream`` remote repository::
 
-   cd cpython
-   git remote add upstream https://github.com/python/cpython
+   $ cd cpython
+   $ git remote add upstream https://github.com/python/cpython
 
 You can also use SSH-based or HTTPS-based URLs.
 
-Configure the Remotes
+Configure the remotes
 ---------------------
 
 .. These steps are duplicated in setup-building in step 6 and 7.
@@ -66,22 +74,24 @@ Configure the Remotes
 
 Configure ``git`` to pull ``main`` from the ``upstream`` remote::
 
-   git config --local branch.main.remote upstream
+   $ git config --local branch.main.remote upstream
 
 Since one should never attempt to push to ``upstream``, configure
 ``git`` to push always to ``origin``::
 
-   git remote set-url --push upstream git@github.com:<username>/cpython.git
+   $ git remote set-url --push upstream git@github.com:<username>/cpython.git
 
-Listing the Remote Repositories
+Listing the remote repositories
 -------------------------------
 
 To list the remote repositories that are configured, along with their URLs::
 
-   git remote -v
+   $ git remote -v
 
 You should have two remote repositories: ``origin`` pointing to your forked CPython repository,
-and ``upstream`` pointing to the official CPython repository::
+and ``upstream`` pointing to the official CPython repository:
+
+.. code-block:: text
 
    origin  git@github.com:<username>/cpython.git (fetch)
    origin  git@github.com:<username>/cpython.git (push)
@@ -90,7 +100,7 @@ and ``upstream`` pointing to the official CPython repository::
 
 To verify the upstream for ``main``::
 
-   git config branch.main.remote
+   $ git config branch.main.remote
 
 It should emit ``upstream``, indicating to track/pull changes for ``main`` from the
 ``upstream`` remote.
@@ -98,13 +108,13 @@ It should emit ``upstream``, indicating to track/pull changes for ``main`` from 
 
 .. _set-up-name-email:
 
-Setting Up Your Name and Email Address
+Setting up your name and email address
 --------------------------------------
 
-.. code-block:: bash
+::
 
-   git config --global user.name "Your Name"
-   git config --global user.email your.email@example.com
+   $ git config --global user.name "Your Name"
+   $ git config --global user.email your.email@example.com
 
 The ``--global`` flag sets these parameters globally while
 the ``--local`` flag sets them only for the current project.
@@ -118,9 +128,9 @@ The ``autocrlf`` option will fix automatically any Windows-specific line endings
 This should be enabled on Windows, since the public repository has a hook which
 will reject all changesets having the wrong line endings::
 
-    git config --global core.autocrlf input
+    $ git config --global core.autocrlf input
 
-Creating and Switching Branches
+Creating and switching branches
 -------------------------------
 
 .. important::
@@ -128,53 +138,53 @@ Creating and Switching Branches
 
 Create a new branch from ``main`` and switch to it::
 
-   git switch -c <branch-name> main
+   $ git switch -c <branch-name> main
 
 This is equivalent to::
 
-   # create a new branch from main
-   git branch <branch-name> main
-   # switch to the new branch
-   git switch <branch-name>
+   $ # create a new branch from main
+   $ git branch <branch-name> main
+   $ # switch to the new branch
+   $ git switch <branch-name>
 
 To find the branch you are currently on::
 
-   git branch
+   $ git branch
 
 The current branch will have an asterisk next to the branch name.  Note, this
 will only list all of your local branches.
 
 To list all the branches, including the remote branches::
 
-   git branch -a
+   $ git branch -a
 
 To switch to a different branch::
 
-   git switch <another-branch-name>
+   $ git switch <another-branch-name>
 
 Other releases are just branches in the repository.  For example, to work
-on the 2.7 release from the ``upstream`` remote::
+on the 3.12 release from the ``upstream`` remote::
 
-   git switch -c 2.7 upstream/2.7
+   $ git switch -c 3.12 upstream/3.12
 
 .. _deleting_branches:
 
-Deleting Branches
+Deleting branches
 -----------------
 
 To delete a **local** branch that you no longer need::
 
-   git switch main
-   git branch -D <branch-name>
+   $ git switch main
+   $ git branch -D <branch-name>
 
 To delete a **remote** branch::
 
-   git push origin -d <branch-name>
+   $ git push origin -d <branch-name>
 
 You may specify more than one branch for deletion.
 
 
-Renaming Branch
+Renaming branch
 ---------------
 
 The CPython repository's default branch was renamed from ``master`` to
@@ -190,10 +200,10 @@ these GitHub instructions <https://github.com/github/renaming#renaming-existing-
 After renaming the branch in your fork, you need to update any local clones
 as well. This only has to be done once per clone::
 
-    git branch -m master main
-    git fetch origin
-    git branch -u origin/main main
-    git remote set-head origin -a
+    $ git branch -m master main
+    $ git fetch origin
+    $ git branch -u origin/main main
+    $ git remote set-head origin -a
 
 (GitHub also provides these instructions after you rename the branch.)
 
@@ -202,24 +212,24 @@ repo created before the branch rename, you still have to update your local
 clones. This still only has to be done once per clone. In that case, you can
 rename your local branch as follows::
 
-    git branch -m master main
-    git fetch upstream
-    git branch -u upstream/main main
+    $ git branch -m master main
+    $ git fetch upstream
+    $ git branch -u upstream/main main
 
 
 .. _commit-changes:
 
-Staging and Committing Files
+Staging and committing files
 ----------------------------
 
 1. To show the current changes::
 
-      git status
+      $ git status
 
 2. To stage the files to be included in your commit::
 
-      git add -p  # to review and add changes to existing files
-      git add <filename1> <filename2>  # to add new files
+      $ git add -p  # to review and add changes to existing files
+      $ git add <filename1> <filename2>  # to add new files
 
 3. To commit the files that have been staged (done in step 2):
 
@@ -227,58 +237,58 @@ Staging and Committing Files
 
       git commit -m "This is the commit message."
 
-Reverting Changes
+Reverting changes
 -----------------
 
 To revert changes to a file that has not been committed yet::
 
-   git checkout <filename>
+   $ git checkout <filename>
 
 If the change has been committed, and now you want to reset it to whatever
 the origin is at::
 
-   git reset --hard HEAD
+   $ git reset --hard HEAD
 
-Stashing Changes
+Stashing changes
 ----------------
 
 To stash away changes that are not ready to be committed yet::
 
-   git stash
+   $ git stash
 
 To re-apply the last stashed change::
 
-   git stash pop
+   $ git stash pop
 
 .. _diff-changes:
 
-Comparing Changes
+Comparing changes
 -----------------
 
 View all non-commited changes::
 
-   git diff
+   $ git diff
 
 Compare to the ``main`` branch::
 
-   git diff main
+   $ git diff main
 
 Exclude generated files from diff using an ``attr``
 `pathspec <https://git-scm.com/docs/gitglossary#def_pathspec>`_ (note the
 single quotes)::
 
-   git diff main ':(attr:!generated)'
+   $ git diff main ':(attr:!generated)'
 
 Exclude generated files from diff by default::
 
-   git config diff.generated.binary true
+   $ git config diff.generated.binary true
 
 The ``generated`` `attribute <https://git-scm.com/docs/gitattributes>`_ is
 defined in :cpy-file:`.gitattributes`, found in the repository root.
 
 .. _push-changes:
 
-Pushing Changes
+Pushing changes
 ---------------
 
 Once your changes are ready for a review or a pull request, you will need to push
@@ -286,10 +296,10 @@ them to the remote repository.
 
 ::
 
-   git switch <branch-name>
-   git push origin <branch-name>
+   $ git switch <branch-name>
+   $ git push origin <branch-name>
 
-Creating a Pull Request
+Creating a pull request
 -----------------------
 
 1. Go to https://github.com/python/cpython.
@@ -308,7 +318,7 @@ Creating a Pull Request
 You should include the issue number in the title of the PR,
 in the format ``gh-NNNNN: <PR Title>``.
 
-Linking to Issues and Pull Requests
+Linking to issues and pull requests
 -----------------------------------
 
 You can link to issues and pull requests using ``gh-NNNNN`` (this form is
@@ -327,7 +337,7 @@ you know for sure that a single PR is enough to address and close the issue.
 .. _bedevere: https://github.com/python/bedevere
 .. _special keywords: https://docs.github.com/en/issues/tracking-your-work-with-issues/linking-a-pull-request-to-an-issue#linking-a-pull-request-to-an-issue-using-a-keyword
 
-Updating your CPython Fork
+Updating your CPython fork
 --------------------------
 
 Scenario:
@@ -345,9 +355,9 @@ get notified unnecessarily.
 
 Solution::
 
-   git switch main
-   git pull upstream main
-   git push origin main
+   $ git switch main
+   $ git pull upstream main
+   $ git push origin main
 
 .. note:: For the above commands to work, please follow the instructions found
           in the :ref:`checkout` section.
@@ -363,10 +373,10 @@ Another scenario:
 
 Solution::
 
-   git switch some-branch
-   git fetch upstream
-   git merge upstream/main
-   git push origin some-branch
+   $ git switch some-branch
+   $ git fetch upstream
+   $ git merge upstream/main
+   $ git push origin some-branch
 
 You may see error messages like "CONFLICT" and "Automatic merge failed;" when
 you run ``git merge upstream/main``.
@@ -378,7 +388,7 @@ When it happens, you need to resolve conflict.  See these articles about resolvi
 
 .. _git_from_patch:
 
-Applying a Patch to Git
+Applying a patch to Git
 -----------------------
 
 Scenario:
@@ -391,15 +401,13 @@ Solution:
 
 2. Apply the patch::
 
-       git apply /path/to/patch.diff
+       $ git apply /path/to/patch.diff
 
    If there are errors, update to a revision from when the patch was
-   created and then try the ``git apply`` again:
+   created and then try the ``git apply`` again::
 
-   .. code-block:: bash
-
-       git checkout $(git rev-list -n 1 --before="yyyy-mm-dd hh:mm:ss" main)
-       git apply /path/to/patch.diff
+       $ git checkout $(git rev-list -n 1 --before="yyyy-mm-dd hh:mm:ss" main)
+       $ git apply /path/to/patch.diff
 
    If the patch still won't apply, then a patch tool will not be able to
    apply the patch and it will need to be re-implemented manually.
@@ -411,8 +419,8 @@ Solution:
 5. If the patch was applied to an old revision, it needs to be updated and
    merge conflicts need to be resolved::
 
-       git rebase main
-       git mergetool
+       $ git rebase main
+       $ git mergetool
 
    For very old changes, ``git merge --no-ff`` may be easier than a rebase,
    with regards to resolving conflicts.
@@ -421,7 +429,7 @@ Solution:
 
 .. _git_pr:
 
-Downloading Other's Patches
+Downloading other's patches
 ---------------------------
 
 Scenario:
@@ -430,34 +438,37 @@ Scenario:
 - Before merging it, you want to be able to test their changes locally.
 
 If you've got `GitHub CLI <https://cli.github.com>`_ or
-`hub <https://hub.github.com>`_ installed, you can simply do::
+`hub <https://hub.github.com>`_ installed, you can do::
 
-   $ gh pr checkout <pr_number>   # GitHub CLI
+   $ gh co <pr_number>  # GitHub CLI
    $ hub pr checkout <pr_number>  # hub
 
 Both of these tools will configure a remote URL for the branch, so you can
 ``git push`` if the pull request author checked "Allow edits from maintainers"
 when creating the pull request.
 
-If you don't have GitHub CLI or hub installed, you can set up a git alias. On
-Unix and macOS::
+If you don't have GitHub CLI or hub installed, you can set up a git alias:
 
-   $ git config --global alias.pr '!sh -c "git fetch upstream pull/${1}/head:pr_${1} && git checkout pr_${1}" -'
+.. tab:: Unix/macOS
 
-On Windows, reverse the single (``'``) and double (``"``) quotes:
+   .. code-block:: shell
 
-.. code-block:: bash
+      $ git config --global alias.pr '!sh -c "git fetch upstream pull/${1}/head:pr_${1} && git checkout pr_${1}" -'
 
-   git config --global alias.pr "!sh -c 'git fetch upstream pull/${1}/head:pr_${1} && git checkout pr_${1}' -"
+.. tab:: Windows
+
+   .. code-block:: dosbatch
+
+      git config --global alias.pr "!sh -c 'git fetch upstream pull/${1}/head:pr_${1} && git checkout pr_${1}' -"
 
 The alias only needs to be done once.  After the alias is set up, you can get a
 local copy of a pull request as follows::
 
-   git pr <pr_number>
+   $ git pr <pr_number>
 
 .. _accepting-and-merging-a-pr:
 
-Accepting and Merging a Pull Request
+Accepting and merging a pull request
 ------------------------------------
 
 Pull requests can be accepted and merged by a Python Core Developer.
@@ -465,9 +476,11 @@ You can read more about what to look for before accepting a change
 :ref:`here <committing>`.
 
 All pull requests have required checks that need to pass before a change
-can be merged. At any point, a core developer can schedule an automatic merge
-of the change by
-clicking the gray ``Enable auto-merge (squash)`` button. You will find
+can be merged. See :ref:`"Keeping CI green" <keeping-ci-green>` for some
+simple things you can do to help the checks turn green.
+
+At any point, a core developer can schedule an automatic merge of the change
+by clicking the gray ``Enable auto-merge (squash)`` button. You will find
 it at the bottom of the pull request page. The auto-merge will only
 happen if all the required checks pass, but the PR does not need to have been
 approved for a successful auto-merge to take place.
@@ -478,14 +491,20 @@ in place of the gray ``Enable auto-merge`` button you will find a green
 
 In either case, adjust and clean up the commit message.
 
-Here's an example of a **good** commit message::
+✅ Here's an example of a **good** commit message:
+
+.. code-block:: text
+   :class: good
 
    gh-12345: Improve the spam module (GH-777)
 
    * Add method A to the spam module
    * Update the documentation of the spam module
 
-Here's an example of a **bad** commit message::
+❌ Here's an example of a **bad** commit message:
+
+.. code-block:: text
+   :class: bad
 
    gh-12345: Improve the spam module (#777)
 
@@ -503,7 +522,7 @@ PR life cycle, while being irrelevant to the final change.
 
 Finally, press the ``Confirm squash and merge`` button.
 
-Cancelling an Automatic Merge
+Cancelling an automatic merge
 -----------------------------
 
 If you notice a problem with a pull request that was accepted and where
@@ -524,7 +543,7 @@ dismissing your previous review that requested changes.
 Note that pushing new changes after the auto-merge flow was enabled
 does **NOT** stop it.
 
-Backporting Merged Changes
+Backporting merged changes
 --------------------------
 
 A pull request may need to be backported into one of the maintenance branches
@@ -533,24 +552,23 @@ by the label ``needs backport to X.Y`` on the pull request itself.
 
 Use the utility script
 `cherry_picker.py <https://github.com/python/cherry-picker>`_
-from the `core-workflow  <https://github.com/python/core-workflow>`_
-repository to backport the commit.
+to backport the commit.
 
 The commit hash for backporting is the squashed commit that was merged to
 the ``main`` branch.  On the merged pull request, scroll to the bottom of the
-page.  Find the event that says something like::
+page.  Find the event that says something like:
+
+.. code-block:: text
 
    <core_developer> merged commit <commit_sha1> into python:main <sometime> ago.
 
 By following the link to ``<commit_sha1>``, you will get the full commit hash.
 
-Alternatively, the commit hash can also be obtained by the following git
-commands:
+Alternatively, the commit hash can also be obtained by the following Git
+commands::
 
-.. code-block:: bash
-
-   git fetch upstream
-   git rev-parse ":/gh-12345"
+   $ git fetch upstream
+   $ git rev-parse ":/gh-12345"
 
 The above commands will print out the hash of the commit containing
 ``"gh-12345"`` as part of the commit message.
@@ -558,7 +576,10 @@ The above commands will print out the hash of the commit containing
 When formatting the commit message for a backport commit: leave the original
 one as is and delete the number of the backport pull request.
 
-Example of good backport commit message::
+✅ Example of good backport commit message:
+
+.. code-block:: text
+   :class: good
 
     gh-12345: Improve the spam module (GH-777)
 
@@ -567,14 +588,17 @@ Example of good backport commit message::
 
     (cherry picked from commit 62adc55)
 
-Example of bad backport commit message::
+❌ Example of bad backport commit message:
+
+.. code-block:: text
+   :class: bad
 
     gh-12345: Improve the spam module (GH-777) (#888)
 
     * Add method A to the spam module
     * Update the documentation of the spam module
 
-Editing a Pull Request Prior to Merging
+Editing a pull request prior to merging
 ---------------------------------------
 
 When a pull request submitter has enabled the `Allow edits from maintainers`_
@@ -588,30 +612,30 @@ items like updating ``Misc/ACKS``.
 To edit an open pull request that targets ``main``:
 
 1. In the pull request page, under the description, there is some information
-   about the contributor's forked CPython repository and branch name that will be useful later::
+   about the contributor's forked CPython repository and branch name that will be useful later:
+
+.. code-block:: text
 
       <contributor> wants to merge 1 commit into python:main from <contributor>:<branch_name>
 
 2. Fetch the pull request, using the :ref:`git pr <git_pr>` alias::
 
-      git pr <pr_number>
+      $ git pr <pr_number>
 
    This will checkout the contributor's branch at ``<pr_number>``.
 
 3. Make and commit your changes on the branch.  For example, merge in changes
    made to ``main`` since the PR was submitted (any merge commits will be
-   removed by the later ``Squash and Merge`` when accepting the change):
+   removed by the later ``Squash and Merge`` when accepting the change)::
 
-   .. code-block:: bash
-
-      git fetch upstream
-      git merge upstream/main
-      git add <filename>
-      git commit -m "<message>"
+      $ git fetch upstream
+      $ git merge upstream/main
+      $ git add <filename>
+      $ git commit -m "<message>"
 
 4. Push the changes back to the contributor's PR branch::
 
-      git push git@github.com:<contributor>/cpython <pr_number>:<branch_name>
+      $ git push git@github.com:<contributor>/cpython <pr_number>:<branch_name>
 
 5. Optionally, :ref:`delete the PR branch <deleting_branches>`.
 
@@ -627,22 +651,89 @@ You can install GitHub CLI `by following these instructions
 <https://github.com/cli/cli#installation>`_. After installing,
 you need to authenticate::
 
-    gh auth login
+    $ gh auth login
 
 Examples of useful commands:
 
 * Create a PR::
 
-      gh pr create
+      $ gh pr create
 
 * Check out another PR::
 
-      gh pr checkout <pr-id>
+      $ gh co <pr-id>
 
 * Set ``ssh`` as the Git protocol::
 
-      gh config set git_protocol ssh
+      $ gh config set git_protocol ssh
 
 * Set the browser::
 
-      gh config set browser <browser-path>
+      $ gh config set browser <browser-path>
+
+
+Git worktree
+------------
+
+With Git worktrees, you can have multiple isolated working trees
+associated with a single repository (the ``.git`` directory).
+This allows you to work simultaneously on different version
+branches, eliminating the need for multiple independent clones
+that need to be maintained and updated separately.
+In addition, it reduces cloning overhead and saves disk space.
+
+Setting up Git worktree
+^^^^^^^^^^^^^^^^^^^^^^^
+
+With an existing CPython clone (see :ref:`clone-your-fork`), rename the
+``cpython`` directory to ``main`` and move it into a new ``cpython``
+directory, so we have a structure like:
+
+.. Generated with: tree -L 1 -d cpython
+
+.. code-block:: text
+
+   cpython
+   └── main (.git is here)
+
+Next, create worktrees for the other branches::
+
+   $ cd cpython/main
+   $ git worktree add -b 3.11 ../3.11 upstream/3.11
+   $ git worktree add -b 3.12 ../3.12 upstream/3.12
+
+This gives a structure like this, with the code for each branch checked out in
+its own directory:
+
+.. code-block:: text
+
+   cpython
+   ├── 3.11
+   ├── 3.12
+   └── main
+
+Using Git worktree
+^^^^^^^^^^^^^^^^^^
+
+List your worktrees, for example::
+
+   $ git worktree list
+   /Users/my-name/cpython/main  b3d24c40df [main]
+   /Users/my-name/cpython/3.11  da1736b06a [3.11]
+   /Users/my-name/cpython/3.12  cf29a2f25e [3.12]
+
+Change into a directory to work from that branch. For example::
+
+   $ cd ../3.12
+   $ git switch -c my-3.12-bugfix-branch  # create new branch
+   $ # make changes, test them, commit
+   $ git push origin my-3.12-bugfix-branch
+   $ # create PR
+   $ git switch 3.12  # switch back to the 3.12 branch
+   ...
+
+.. seealso::
+
+   * `Git Reference Manual <https://git-scm.com/docs/git-worktree>`_
+   * `"Experiment on your code freely with Git worktree"
+     <https://opensource.com/article/21/4/git-worktree>`_

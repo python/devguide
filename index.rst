@@ -2,6 +2,14 @@
 Python Developer's Guide
 ========================
 
+.. raw:: html
+
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      activateTab(getOS());
+    });
+    </script>
+
 .. highlight:: bash
 
 This guide is a comprehensive resource for :ref:`contributing <contributing>`
@@ -11,7 +19,7 @@ community that maintains Python.  We welcome your contributions to Python!
 
 .. _quick-reference:
 
-Quick Reference
+Quick reference
 ---------------
 
 Here are the basic steps needed to get set up and contribute a patch.
@@ -27,27 +35,54 @@ instructions please see the :ref:`setup guide <setup>`.
       git clone https://github.com/<your_username>/cpython
       cd cpython
 
-3. Build Python, on UNIX and macOS use::
+3. Build Python:
 
-      ./configure --with-pydebug && make -j
+   .. tab:: Unix
 
-   and on Windows use:
+      .. code-block:: shell
 
-   .. code-block:: dosbatch
+         ./configure --with-pydebug && make -j
 
-      PCbuild\build.bat -e -d
+   .. tab:: macOS
+
+      .. code-block:: shell
+
+         ./configure --with-pydebug && make -j
+
+   .. tab:: Windows
+
+      .. code-block:: dosbatch
+
+         PCbuild\build.bat -e -d
 
    See also :ref:`more detailed instructions <compiling>`,
    :ref:`how to install and build dependencies <build-dependencies>`,
-   and the platform-specific pages for :ref:`UNIX <unix-compiling>`,
-   :ref:`macOS`, and :ref:`Windows <windows-compiling>`.
+   and the platform-specific pages for :ref:`Unix <unix-compiling>`,
+   :ref:`macOS <macOS>`, and :ref:`Windows <windows-compiling>`.
 
-4. :ref:`Run the tests <runtests>`::
+4. :ref:`Run the tests <runtests>`:
 
-      ./python -m test -j3
+   .. tab:: Unix
 
-   On :ref:`most <mac-python.exe>` macOS systems, replace :file:`./python`
-   with :file:`./python.exe`.  On Windows, use :file:`python.bat`.
+      .. code-block:: shell
+
+         ./python -m test -j3
+
+   .. tab:: macOS
+
+      .. code-block:: shell
+
+         ./python.exe -m test -j3
+
+      Note: :ref:`Most <mac-python.exe>` macOS systems use
+      :file:`./python.exe` in order to avoid filename conflicts with
+      the ``Python`` directory.
+
+   .. tab:: Windows
+
+      .. code-block:: dosbatch
+
+         .\python.bat -m test -j3
 
 5. Create a new branch where your work for the issue will go, e.g.::
 
@@ -57,19 +92,41 @@ instructions please see the :ref:`setup guide <setup>`.
    <https://github.com/python/cpython/issues>`_.  Trivial issues (e.g. typo fixes) do
    not require any issue to be created.
 
-6. Once you fixed the issue, run the tests, run ``make patchcheck``, and if
-   everything is ok, commit.
+6. Once you fixed the issue, run the tests, and the patchcheck:
+
+   .. tab:: Unix
+
+      .. code-block:: shell
+
+         make patchcheck
+
+   .. tab:: macOS
+
+      .. code-block:: shell
+
+         make patchcheck
+
+   .. tab:: Windows
+
+      .. code-block:: dosbatch
+
+         .\python.bat Tools\patchcheck\patchcheck.py
+
+   If everything is ok, commit.
 
 7. Push the branch on your fork on GitHub and :ref:`create a pull request
    <pullrequest>`.  Include the issue number using ``gh-NNNN`` in the
-   pull request description.  For example::
+   pull request description.  For example:
+
+   .. code-block:: text
 
       gh-12345: Fix some bug in spam module
 
 8. Add a News entry into the ``Misc/NEWS.d`` directory as individual file. The
    news entry can be created by using `blurb-it <https://blurb-it.herokuapp.com/>`_,
-   or the `blurb <https://pypi.org/project/blurb/>`_ tool and its ``blurb add``
-   command. Please read more about ``blurb`` in :ref:`documentation <documenting>`.
+   or the :pypi:`blurb` tool and its ``blurb add``
+   command. Please read more about ``blurb`` in its
+   `repository <https://github.com/python/blurb>`_.
 
 .. note::
 
@@ -77,7 +134,7 @@ instructions please see the :ref:`setup guide <setup>`.
    Agreement (CLA) as described in the :ref:`Licensing <cla>` section of
    this guide.
 
-Quick Links
+Quick links
 -----------
 
 Here are some links that you probably will reference frequently while
@@ -117,7 +174,7 @@ Contributors             Documentarians      Triagers                Core Develo
 :ref:`pullrequest`       :ref:`style-guide`  :ref:`helptriage`       :ref:`committing`
 :ref:`runtests`          :ref:`rst-primer`   :ref:`experts`          :ref:`devcycle`
 :ref:`fixingissues`      :ref:`translating`  :ref:`labels`           :ref:`motivations`
-:ref:`communication`                         :ref:`gh-faq`           :ref:`office hour`
+:ref:`communication`     :ref:`devguide`     :ref:`gh-faq`           :ref:`office hour`
 :ref:`gitbootcamp`                           :ref:`triage-team`      :ref:`experts`
 :ref:`devcycle`
 ======================== =================== ======================= =======================
@@ -147,7 +204,7 @@ happen and that process is also described as part of this guide:
 * :ref:`langchanges`
 
 
-Other Interpreter Implementations
+Other interpreter implementations
 ---------------------------------
 
 This guide is specifically for contributing to the Python reference interpreter,
@@ -175,18 +232,24 @@ developers to work on them.  Some major examples that may be of interest are:
   and learning to code on low-cost microcontroller boards.
 
 
-Key Resources
+Key resources
 -------------
 
 * Coding style guides
-    * :PEP:`7` (Style Guide for C Code)
-    * :PEP:`8` (Style Guide for Python Code)
+
+  * :PEP:`7` (Style Guide for C Code)
+  * :PEP:`8` (Style Guide for Python Code)
+
 * `Issue tracker`_
-    * :ref:`experts`
+
+  * :ref:`experts`
+
 * `Buildbot status`_
 * Source code
-    * `Browse online <https://github.com/python/cpython/>`_
-    * `Snapshot of the *main* branch <https://github.com/python/cpython/archive/main.zip>`_
+
+  * `Browse online <https://github.com/python/cpython/>`_
+  * `Snapshot of the *main* branch <https://github.com/python/cpython/archive/main.zip>`_
+
 * PEPs_ (Python Enhancement Proposals)
 * :ref:`help`
 * :ref:`developers`
@@ -194,29 +257,31 @@ Key Resources
 
 .. _resources:
 
-Additional Resources
+Additional resources
 --------------------
 
-* Anyone can clone the sources for this guide.  See
-  :ref:`devguide`.
+* Anyone can clone the sources for this guide.  See :ref:`devguide`.
 * Help with ...
-    * :ref:`exploring`
-    * :ref:`grammar`
-    * :ref:`parser`
-    * :ref:`compiler`
-    * :ref:`garbage_collector`
-* Tool support
-    * :ref:`gdb`
-    * :ref:`clang`
-    * Various tools with configuration files as found in the `Misc directory`_
-    * Information about editors and their configurations can be found in the
-      `wiki <https://wiki.python.org/moin/PythonEditors>`_
-* `python.org maintenance`_
 
+  * :ref:`exploring`
+  * :ref:`grammar`
+  * :ref:`parser`
+  * :ref:`compiler`
+  * :ref:`garbage_collector`
+
+* Tool support
+
+  * :ref:`gdb`
+  * :ref:`clang`
+  * Various tools with configuration files as found in the `Misc directory`_
+  * Information about editors and their configurations can be found in the
+    `wiki <https://wiki.python.org/moin/PythonEditors>`_
+
+* `python.org maintenance`_
 * :ref:`Search this guide <search>`
 
 
-Code of Conduct
+Code of conduct
 ---------------
 Please note that all interactions on
 `Python Software Foundation <https://www.python.org/psf-landing/>`__-supported
@@ -235,7 +300,7 @@ Moved to :ref:`versions`
 
 .. _contents:
 
-Full Table of Contents
+Full table of contents
 ----------------------
 
 .. toctree::
@@ -246,9 +311,9 @@ Full Table of Contents
    triage/index
    documentation/index
    testing/index
+   development-tools/index
    core-developers/index
    internals/index
-   advanced-tools/index
    versions
 
 .. _Buildbot status: https://www.python.org/dev/buildbot/

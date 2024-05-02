@@ -2,8 +2,16 @@
 .. _runtests:
 
 =========================
-Running and Writing Tests
+Running and writing tests
 =========================
+
+.. raw:: html
+
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      activateTab(getOS());
+    });
+    </script>
 
 .. note::
 
@@ -17,14 +25,27 @@ Running
 
 The shortest, simplest way of running the test suite is the following command
 from the root directory of your checkout (after you have
-:ref:`built Python <compiling>`)::
+:ref:`built Python <compiling>`):
 
-    ./python -m test
+.. tab:: Unix
 
-You may need to change this command as follows throughout this section.
-On :ref:`most <mac-python.exe>` macOS systems, replace :file:`./python`
-with :file:`./python.exe`.  On Windows, use :file:`python.bat`.  If using
-Python 2.7, replace ``test`` with ``test.regrtest``.
+    .. code-block:: shell
+
+        ./python -m test
+
+.. tab:: macOS
+
+    .. code-block:: shell
+
+        ./python.exe -m test
+
+    This works on :ref:`most <mac-python.exe>` macOS systems.
+
+.. tab:: Windows
+
+    .. code-block:: dosbatch
+
+        .\python.bat -m test
 
 This will run the majority of tests, but exclude a small portion of them; these
 excluded tests use special kinds of resources: for example, accessing the
@@ -32,25 +53,89 @@ Internet, or trying to play a sound or to display a graphical interface on
 your desktop.  They are disabled by default so that running the test suite
 is not too intrusive.  To enable some of these additional tests (and for
 other flags which can help debug various issues such as reference leaks), read
-the help text::
+the help text:
 
-    ./python -m test -h
+.. tab:: Unix
+
+    .. code-block:: shell
+
+        ./python -m test -h
+
+.. tab:: macOS
+
+    .. code-block:: shell
+
+        ./python.exe -m test -h
+
+.. tab:: Windows
+
+    .. code-block:: dosbatch
+
+        .\python.bat -m test -h
 
 If you want to run a single test file, simply specify the test file name
 (without the extension) as an argument.  You also probably want to enable
-verbose mode (using ``-v``), so that individual failures are detailed::
+verbose mode (using ``-v``), so that individual failures are detailed:
 
-    ./python -m test -v test_abc
+.. tab:: Unix
+
+    .. code-block:: shell
+
+        ./python -m test -v test_abc
+
+.. tab:: macOS
+
+    .. code-block:: shell
+
+        ./python.exe -m test -v test_abc
+
+.. tab:: Windows
+
+    .. code-block:: dosbatch
+
+        .\python.bat -m test -v test_abc
 
 To run a single test case, use the ``unittest`` module, providing the import
-path to the test case::
+path to the test case:
 
-   ./python -m unittest -v test.test_abc.TestABC_Py
+.. tab:: Unix
+
+    .. code-block:: shell
+
+        ./python -m unittest -v test.test_abc.TestABC_Py
+
+.. tab:: macOS
+
+    .. code-block:: shell
+
+        ./python.exe -m unittest -v test.test_abc.TestABC_Py
+
+.. tab:: Windows
+
+    .. code-block:: dosbatch
+
+        .\python.bat -m unittest -v test.test_abc.TestABC_Py
 
 Some test modules also support direct invocation,
-which might be useful for IDEs and local debugging::
+which might be useful for IDEs and local debugging:
 
-   ./python Lib/test/test_typing.py
+.. tab:: Unix
+
+    .. code-block:: shell
+
+        ./python Lib/test/test_typing.py
+
+.. tab:: macOS
+
+    .. code-block:: shell
+
+        ./python.exe Lib/test/test_typing.py
+
+.. tab:: Windows
+
+    .. code-block:: dosbatch
+
+        .\python.bat Lib/test/test_typing.py
 
 But, there are several important notes:
 
@@ -61,19 +146,48 @@ But, there are several important notes:
    most likely it does not support direct invocation.
 
 If you have a multi-core or multi-CPU machine, you can enable parallel testing
-using several Python processes so as to speed up things::
+using several Python processes so as to speed up things:
 
-   ./python -m test -j0
+.. tab:: Unix
 
-If you are running a version of Python prior to 3.3 you must specify the number
-of processes to run simultaneously (e.g. ``-j2``).
+    .. code-block:: shell
+
+        ./python -m test -j0
+
+.. tab:: macOS
+
+    .. code-block:: shell
+
+        ./python.exe -m test -j0
+
+.. tab:: Windows
+
+    .. code-block:: dosbatch
+
+        .\python.bat -m test -j0
 
 .. _strenuous_testing:
 
 Finally, if you want to run tests under a more strenuous set of settings, you
-can run ``test`` as::
+can run ``test`` as:
 
-    ./python -bb -E -Wd -m test -r -w -uall
+.. tab:: Unix
+
+    .. code-block:: shell
+
+        ./python -bb -E -Wd -m test -r -w -uall
+
+.. tab:: macOS
+
+    .. code-block:: shell
+
+        ./python.exe -bb -E -Wd -m test -r -w -uall
+
+.. tab:: Windows
+
+    .. code-block:: dosbatch
+
+        .\python.bat -bb -E -Wd -m test -r -w -uall
 
 The various extra flags passed to Python cause it to be much stricter about
 various things (the ``-Wd`` flag should be ``-W error`` at some point, but the
@@ -96,8 +210,27 @@ CPython checkout. The script tries to balance speed with thoroughness. But if
 you want the most thorough tests you should use the strenuous approach shown
 above.
 
+Locale support
+--------------
 
-Unexpected Skips
+Some tests require specific locales to run successfully. These locales are
+often non-default, non-English, non-UTF-8 locales. If a necessary locale is
+unavailable, the test is skipped or runs in the dry-run mode.
+Additional locales that you may find helpful to set up on developer's machines
+or buildbots include:
+
+* ``en_US`` (``en_US.utf8``, ``en_US.iso88591``) --- the standard default
+* ``de_DE`` (``de_DE.UTF-8``) or ``fr_FR`` (``fr_FR.utf8``, ``fr_FR.iso88591``,
+  ``fr_FR.iso885915@euro``) --- common non-English locales
+* ``tr_TR`` (``tr_TR.iso88599``) --- Turkish has different rules for upper/lower
+  cases of "i" and "I".
+* ``ps_AF`` --- used in ``test_decimal``
+
+On Linux and macOS, the ``locale`` command can be used to list available
+locales and change the settings. Environment variables ``LANG`` and those
+prefixed with ``LC_`` can be used to set the locale.
+
+Unexpected skips
 ----------------
 
 Sometimes when running the test suite, you will see "unexpected skips"

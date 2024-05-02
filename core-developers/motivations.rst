@@ -1,7 +1,7 @@
 .. _motivations:
 
 ============================
-Motivations and Affiliations
+Motivations and affiliations
 ============================
 
 CPython core developers participate in the core development process for a
@@ -89,9 +89,9 @@ participating in the CPython core development process:
    If there's a kind of link you'd like to include in your entry that isn't
    already covered by the categories mentioned above, please start a discussion
    about that on the Committers category on the Python Discourse
-   (discuss.python.org) or the python-committers mailing list.
+   (discuss.python.org).
 
-   The Committers Discourse category or the python-committers mailing list
+   The Committers Discourse category
    is also the appropriate point of contact for any other
    questions or suggestions relating to this page.
 
@@ -101,20 +101,22 @@ participating in the CPython core development process:
    * Microsoft (Software Developer)
    * Python Software Foundation (Fellow)
 
-.. topic:: Nick Coghlan (Australia)
+.. topic:: Alyssa Coghlan (Australia)
 
    * Personal site: `Curious Efficiency <https://www.curiousefficiency.org/>`_
    * `Extended bio <https://www.curiousefficiency.org/pages/about>`__
-   * `Tritium <https://tritiumcharging.com/>`__ (Software Developer)
    * Python Software Foundation (Fellow, Packaging Working Group)
 
-   Nick began using Python as a testing and prototyping language while working
+   Alyssa began using Python as a testing and prototyping language while working
    for Boeing Defence Australia, and continues to use it for that purpose today.
 
-   As a core developer, he is primarily interested in helping to ensure Python's
+   As a core developer, she is primarily interested in helping to ensure Python's
    continued suitability for educational, testing and data analysis use cases,
    as well as in encouraging good architectural practices when assembling Python
    applications and test harnesses from open source components.
+
+   Note: prior to August 2023, Alyssa used her birth name (Nick Coghlan). Some records
+   (e.g. mailing list archives, version control history) will still reference that name.
 
 .. topic:: Steve Dower (United States/Australia)
 
@@ -143,7 +145,7 @@ participating in the CPython core development process:
    * Works as a `Software Engineer <https://www.linkedin.com/in/mariatta/>`_
      in Vancouver, helps organize `Vancouver PyLadies
      <https://www.meetup.com/PyLadies-Vancouver/>`_ meetup on the side, and
-     sometimes `speaks <https://mariatta.ca/pages/talk-chronology.html#talk-chronology>`_
+     sometimes `speaks <https://mariatta.ca/posts/talks/>`_
      at conferences.
    * Email address: mariatta@python.org
    * `Sponsor Mariatta on GitHub <https://github.com/sponsors/Mariatta>`_
@@ -155,7 +157,7 @@ participating in the CPython core development process:
 
 .. topic:: R. David Murray (United States)
 
-   * Personal site: `bitdance.com <http://www.bitdance.com>`_
+   * Personal site: `bitdance.com <https://www.bitdance.com>`_
    * Available for `Python and Internet Services Consulting
      and Python contract programming <https://www.murrayandwalker.com/>`_
 
@@ -166,7 +168,7 @@ participating in the CPython core development process:
    business started declining) to being a full time independent consultant,
    David started contributing directly to CPython development.  He became a
    committer in 2009.  He subsequently took over primary maintenance of the
-   email package from Barry Warsaw, and contributed the unicode oriented API.
+   email package from Barry Warsaw, and contributed the Unicode oriented API.
    David is also active in mentoring new contributors and, when time is
    available, working on the infrastructure that supports CPython development,
    specifically the Roundup-based bug tracker and the buildbot system.
@@ -175,7 +177,7 @@ participating in the CPython core development process:
    primarily in Python, through the company in which he is a partner, `Murray &
    Walker, Inc <https://www.murrayandwalker.com>`_.  He has done contract work
    focused specifically on CPython development both through the PSF (the
-   kickstart of the email unicode API development) and directly funded by
+   kickstart of the email Unicode API development) and directly funded by
    interested corporations (additional development work on email funded by
    QNX, and work on CPython ICC support funded by Intel).  He would like to
    spend more of his (and his company's) time on open source work, and so is
@@ -236,7 +238,7 @@ participating in the CPython core development process:
    is both an Ubuntu and a `Debian <https://www.debian.org/>`_ uploading
    developer.  Barry has served as Python's postmaster, webmaster, release
    manager, Language Summit co-chair, `Jython <https://www.jython.org/>`_
-   project leader, `GNU Mailman <http://www.list.org/>`_ project leader, and
+   project leader, `GNU Mailman <https://www.list.org/>`_ project leader, and
    probably lots of other things he shouldn't admit to.
 
 .. topic:: Eric Snow (United States)
@@ -325,7 +327,7 @@ on institutional sponsors allowing them to spend some or all of their work
 time contributing to CPython development.
 
 .. _issue metrics: https://bugs.python.org/issue?@template=stats
-.. _OpenHub: https://www.openhub.net/p/python/contributors
+.. _OpenHub: https://openhub.net/p/python/contributors
 .. _core mentorship program: https://www.python.org/dev/core-mentorship/
 .. _internships: https://www.outreachy.org/
 .. _Summer of Code: https://wiki.python.org/moin/SummerOfCode/2016

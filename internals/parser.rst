@@ -1,10 +1,8 @@
 .. _parser:
 
 ===================
-Guide to the Parser
+Guide to the parser
 ===================
-
-:Author: Pablo Galindo Salgado
 
 .. highlight:: none
 
@@ -24,7 +22,7 @@ outputs the parser. The way the Python language is changed is therefore by
 modifying the grammar file and developers rarely need to interact with the
 parser generator itself other than use it to generate the parser.
 
-How PEG Parsers Work
+How PEG parsers work
 ====================
 
 .. _how-peg-parsers-work:
@@ -159,16 +157,16 @@ the rule: ::
 If the return type is omitted, then a ``void *`` is returned in C and an
 ``Any`` in Python.
 
-Grammar Expressions
+Grammar expressions
 -------------------
 
 ``# comment``
-'''''''''''''
+^^^^^^^^^^^^^
 
 Python-style comments.
 
 ``e1 e2``
-'''''''''
+^^^^^^^^^
 
 Match ``e1``, then match ``e2``.
 
@@ -177,7 +175,7 @@ Match ``e1``, then match ``e2``.
     rule_name: first_rule second_rule
 
 ``e1 | e2``
-'''''''''''
+^^^^^^^^^^^
 
 Match ``e1`` or ``e2``.
 
@@ -192,7 +190,7 @@ first alternative, like so:
         | second_alt
 
 ``( e )``
-'''''''''
+^^^^^^^^^
 
 Match ``e``.
 
@@ -208,7 +206,7 @@ operator together with the repeat operators:
     rule_name: (e1 e2)*
 
 ``[ e ] or e?``
-'''''''''''''''
+^^^^^^^^^^^^^^^
 
 Optionally match ``e``.
 
@@ -224,7 +222,7 @@ optional:
     rule_name: e (',' e)* [',']
 
 ``e*``
-''''''
+^^^^^^
 
 Match zero or more occurrences of ``e``.
 
@@ -233,7 +231,7 @@ Match zero or more occurrences of ``e``.
     rule_name: (e1 e2)*
 
 ``e+``
-''''''
+^^^^^^
 
 Match one or more occurrences of ``e``.
 
@@ -242,7 +240,7 @@ Match one or more occurrences of ``e``.
     rule_name: (e1 e2)+
 
 ``s.e+``
-''''''''
+^^^^^^^^
 
 Match one or more occurrences of ``e``, separated by ``s``. The generated parse
 tree does not include the separator. This is otherwise identical to
@@ -253,14 +251,14 @@ tree does not include the separator. This is otherwise identical to
     rule_name: ','.e+
 
 ``&e``
-''''''
+^^^^^^
 
 .. _peg-positive-lookahead:
 
 Succeed if ``e`` can be parsed, without consuming any input.
 
 ``!e``
-''''''
+^^^^^^
 
 .. _peg-negative-lookahead:
 
@@ -275,7 +273,7 @@ consists of an atom, which is not followed by a ``.`` or a ``(`` or a
     primary: atom !'.' !'(' !'['
 
 ``~``
-''''''
+^^^^^
 
 Commit to the current alternative, even if it fails to parse (this is called
 the "cut").
@@ -306,7 +304,7 @@ and "hidden left-recursion" like::
 
   rule: 'optional'? rule '@' some_other_rule
 
-Variables in the Grammar
+Variables in the grammar
 ------------------------
 
 A sub-expression can be named by preceding it with an identifier and an
@@ -570,7 +568,7 @@ Pegen has some special grammatical elements and rules:
 
 * Strings with single quotes (') (e.g. ``'class'``) denote KEYWORDS.
 * Strings with double quotes (") (e.g. ``"match"``) denote SOFT KEYWORDS.
-* Upper case names (e.g. ``NAME``) denote tokens in the :cpy-file:`Grammar/Tokens` file.
+* Uppercase names (e.g. ``NAME``) denote tokens in the :cpy-file:`Grammar/Tokens` file.
 * Rule names starting with ``invalid_`` are used for specialized syntax errors.
 
   - These rules are NOT used in the first pass of the parser.
@@ -601,8 +599,9 @@ If you are on Windows you can use the Visual Studio project files to regenerate 
 
     ./PCbuild/build.bat --regen
 
-How tokens are generated and the rules governing this is completely up to the tokenizer (:cpy-file:`Parser/tokenizer.c`)
-and the parser just receives tokens from it.
+How tokens are generated and the rules governing this are completely up to the tokenizer
+(:cpy-file:`Parser/lexer/` and :cpy-file:`Parser/tokenizer/`);
+the parser just receives tokens from it.
 
 Memoization
 -----------
@@ -641,7 +640,7 @@ when writing actions. In the C parser, some of these automatic variable names ar
   which is normally used to create AST nodes as almost all constructors need these attributes to be provided. All of the
   location variables are taken from the location information of the current token.
 
-Hard and Soft keywords
+Hard and soft keywords
 ----------------------
 
 .. note::
@@ -713,7 +712,7 @@ When a pegen-generated parser detects that an exception is raised, it will
 is and it will unwind the stack and report the exception. This means that if a
 :ref:`rule action <peg-grammar-actions>` raises an exception all parsing will
 stop at that exact point. This is done to allow to correctly propagate any
-exception set by calling Python C-API functions. This also includes :exc:`SyntaxError`
+exception set by calling Python's C API functions. This also includes :exc:`SyntaxError`
 exceptions and this is the main mechanism the parser uses to report custom syntax
 error messages.
 
@@ -722,7 +721,7 @@ error messages.
     tokenizer errors such as unclosed parenthesis will be reported only after the
     parser finishes without returning anything.
 
-How Syntax errors are reported
+How syntax errors are reported
 ------------------------------
 
 As described previously in the :ref:`how PEG parsers work section
@@ -890,7 +889,7 @@ To activate verbose mode you can add the ``-d`` flag when executing Python:
     $ python -d file_to_test.py
 
 This will print **a lot** of output to ``stderr`` so is probably better to dump it to a file for further analysis. The output
-consists of trace lines with the following structure:
+consists of trace lines with the following structure::
 
     <indentation> ('>'|'-'|'+'|'!') <rule_name>[<token_location>]: <alternative> ...
 
@@ -902,9 +901,10 @@ character marks the type of the trace:
 * ``+`` indicates that a rule has been parsed correctly.
 * ``!`` indicates that an exception or an error has been detected and the parser is unwinding.
 
-The <token_location> part indicates the current index in the token array, the
-<rule_name> part indicates what rule is being parsed and the <alternative> part
-indicates what alternative within that rule is being attempted.
+The ``<token_location>`` part indicates the current index in the token array,
+the ``<rule_name>`` part indicates what rule is being parsed and
+the ``<alternative>`` part indicates what alternative within that rule
+is being attempted.
 
 
 References
@@ -918,3 +918,9 @@ References
 
 .. [3] Warth et al.
    http://web.cs.ucla.edu/~todd/research/pepm08.pdf
+
+
+.. admonition:: Document history
+   :class: note
+
+   Pablo Galindo Salgado - Original author

@@ -1,16 +1,16 @@
 {
   "3.13": {
     "branch": "main",
-    "pep": 693,
+    "pep": 719,
     "status": "feature",
-    "first_release": "2024-10-07",
+    "first_release": "2024-10-01",
     "end_of_life": "2029-10",
     "release_manager": "Thomas Wouters"
   },
   "3.12": {
     "branch": "3.12",
     "pep": 693,
-    "status": "prerelease",
+    "status": "bugfix",
     "first_release": "2023-10-02",
     "end_of_life": "2028-10",
     "release_manager": "Thomas Wouters"
@@ -18,7 +18,7 @@
   "3.11": {
     "branch": "3.11",
     "pep": 664,
-    "status": "bugfix",
+    "status": "security",
     "first_release": "2022-10-24",
     "end_of_life": "2027-10",
     "release_manager": "Pablo Galindo Salgado"
@@ -50,7 +50,7 @@
   "3.7": {
     "branch": "3.7",
     "pep": 537,
-    "status": "security",
+    "status": "end-of-life",
     "first_release": "2018-06-27",
     "end_of_life": "2023-06-27",
     "release_manager": "Ned Deily"

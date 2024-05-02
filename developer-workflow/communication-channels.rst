@@ -2,7 +2,7 @@
 .. _communication:
 
 ==============================
-Following Python's Development
+Following Python's development
 ==============================
 
 Python's development is communicated through a myriad of ways,
@@ -24,7 +24,7 @@ in return.
 
 .. _mailinglists:
 
-Mailing Lists
+Mailing lists
 =============
 
 .. note:: Some mailing lists have been supplanted by categories in the
@@ -91,11 +91,10 @@ the `Committers`_ category, where posting is restricted to the `CPython
 <https://github.com/python/cpython>`_ core developers.
 
 The Committers category is often used for announcements and notifications.
-It is also the designated venue for the core developer promotion votes
-(as the Discourse equivalent of the `python-committers`_ mailing list).
+It is also the designated venue for the core developer promotion votes.
 
 Tutorials for new users
--------------------------
+-----------------------
 
 To start a topic or participate in any discussions in the forum, sign up and
 create an account using an email address or GitHub account. You can do so by
@@ -138,8 +137,8 @@ bottom progress bar to expand it.
 Notifications
 -------------
 
-Following categories (Category notifications)
-'''''''''''''''''''''''''''''''''''''''''''''
+Following categories (category notifications)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Notifications can be set for individual categories and topics. To change any of these
 defaults, you can either go to your user preferences, or visit the category
@@ -151,8 +150,8 @@ different options: Watching, Tracking, Watching First Post, Normal, and Muted.
 All categories are set by default in Normal mode where you will only be notified
 if someone mentions your @name or replies to you.
 
-Following individual threads (Topic notifications)
-''''''''''''''''''''''''''''''''''''''''''''''''''
+Following individual threads (topic notifications)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 To follow any individual topics or threads, you can adjust your notifications
 through the notification button 🔔 found on the right of the topic at the end
@@ -161,7 +160,7 @@ Select "Watching" and you will be notified when there is any new updated reply
 from that particular thread.
 
 Customising notifications on user preference
-''''''''''''''''''''''''''''''''''''''''''''
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 To get a bird's eye view of all your customised notifications, you can
 go to `Preferences of your account <https://discuss.python.org/my/preferences/categories>`_.
@@ -239,7 +238,7 @@ that way. You can find their blogs (and various other developers who use Python)
 at https://planetpython.org/.
 
 
-Setting Expectations for Open Source Participation
+Setting expectations for open source participation
 ==================================================
 
 Burn-out is common in open source due to a misunderstanding of what users, contributors,
@@ -247,14 +246,14 @@ and maintainers should expect from each other. Brett Cannon gave a `talk <https:
 about this topic that sets out to help everyone set reasonable expectations of each other in
 order to make open source pleasant for everyone involved.
 
-Additional Repositories
+Additional repositories
 =======================
 
-`Python Core Workflow`_ hosts the codebase for tools such as `blurb`_.
+`Python Core Workflow`_ hosts the codebase for tools such as :pypi:`blurb`.
 
 Other core workflow tools are:
 
-* `cherry_picker`_ (`PyPI`_)
+* `cherry_picker`_ (:pypi:`PyPI <cherry_picker>`)
 * `bedevere`_
 * `blurb_it`_
 * `miss-islington`_
@@ -265,9 +264,7 @@ Python `Performance Benchmark`_ project is intended to be an authoritative
 source of benchmarks for all Python implementations.
 
 .. _Python Core Workflow: https://github.com/python/core-workflow
-.. _blurb: https://pypi.org/project/blurb
 .. _cherry_picker: https://github.com/python/cherry-picker
-.. _PyPI: https://pypi.org/project/cherry_picker/
 .. _bedevere: https://github.com/python/bedevere
 .. _blurb_it: https://github.com/python/blurb_it
 .. _miss-islington: https://github.com/python/miss-islington

@@ -4,6 +4,14 @@
 Helping with the Developer's Guide
 ==================================
 
+.. raw:: html
+
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      activateTab(getOS());
+    });
+    </script>
+
 .. highlight:: console
 
 The Developer's Guide (what you're reading now) uses the same process as the
@@ -32,19 +40,31 @@ To build the devguide, some additional dependencies are required (most
 importantly, `Sphinx`_), and the standard way to install dependencies in
 Python projects is to create a virtualenv, and then install dependencies from
 a ``requirements.txt`` file. For your convenience, this is all *automated for
-you*. To build the devguide on a Unix-like system use::
+you*.
 
-   $ make html
+To build the devguide from the checkout directory:
 
-in the checkout directory.  On Windows use:
+.. tab:: Unix/macOS
 
-.. code-block:: doscon
+   .. code-block:: shell
 
-   > .\make html
+      make html
 
-You will find the generated files in ``_build/html`` or, if you use
-``make htmlview``, the docs will be opened in a browser once the build
-completes.  Note that ``make check`` runs automatically when you submit
+.. tab:: Windows
+
+   .. code-block:: dosbatch
+
+      .\make html
+
+You will find the generated files in ``_build/html``.
+
+.. tip:: * Replace ``html`` with ``htmlview`` to open the docs in a web browser
+           once the build completes.
+         * Replace ``html`` with ``htmllive`` to rebuild the docs,
+           start a local server, and automatically reload the page in your
+           browser when you make changes to reST files (Unix only).
+
+Note that ``make check`` runs automatically when you submit
 a :ref:`pull request <pullrequest>`.  You may wish to run ``make check``
 and ``make linkcheck`` to make sure that it runs without errors.
 

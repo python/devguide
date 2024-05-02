@@ -4,16 +4,23 @@
 # You can set these variables from the command line.
 PYTHON        = python3
 VENVDIR       = ./venv
-BUILDDIR      = _build
-SPHINXOPTS    = -W --keep-going -n
 SPHINXBUILD   = $(VENVDIR)/bin/sphinx-build
-SPHINXLINT    = $(VENVDIR)/bin/sphinx-lint
+SPHINXOPTS    = -W --keep-going
+BUILDDIR      = _build
+BUILDER       = html
+JOBS          = auto
 PAPER         =
+SPHINXLINT    = $(VENVDIR)/bin/sphinx-lint
 
 # Internal variables.
 PAPEROPT_a4     = -D latex_paper_size=a4
 PAPEROPT_letter = -D latex_paper_size=letter
-ALLSPHINXOPTS   = -d $(BUILDDIR)/doctrees $(PAPEROPT_$(PAPER)) $(SPHINXOPTS) .
+ALLSPHINXOPTS   = -b $(BUILDER) \
+                  -d $(BUILDDIR)/doctrees \
+                  -j $(JOBS) \
+                  $(PAPEROPT_$(PAPER)) \
+                  $(SPHINXOPTS) \
+                  . $(BUILDDIR)/$(BUILDER)
 
 .PHONY: help
 help:
@@ -21,6 +28,7 @@ help:
 	@echo "  venv       to create a venv with necessary tools"
 	@echo "  html       to make standalone HTML files"
 	@echo "  htmlview   to open the index page built by the html target in your browser"
+	@echo "  htmllive   to rebuild and reload HTML files in your browser"
 	@echo "  clean      to remove the venv and build files"
 	@echo "  dirhtml    to make HTML files named index.html in directories"
 	@echo "  singlehtml to make a single large HTML file"
@@ -38,6 +46,7 @@ help:
 	@echo "  linkcheck  to check all external links for integrity"
 	@echo "  doctest    to run all doctests embedded in the documentation (if enabled)"
 	@echo "  check      to run a check for frequent markup errors"
+	@echo "  lint       to lint all the files"
 	@echo "  versions   to update release cycle after changing release-cycle.json"
 
 .PHONY: clean
@@ -60,6 +69,7 @@ venv:
 .PHONY: ensure-venv
 ensure-venv:
 	@if [ ! -d $(VENVDIR) ] ; then \
+		echo "Creating venv in $(VENVDIR)"; \
 		$(PYTHON) -m venv $(VENVDIR); \
 		$(VENVDIR)/bin/python3 -m pip install --upgrade pip; \
 		$(VENVDIR)/bin/python3 -m pip install -r requirements.txt; \
@@ -68,120 +78,105 @@ ensure-venv:
 
 .PHONY: html
 html: ensure-venv versions
-	$(SPHINXBUILD) -b html $(ALLSPHINXOPTS) $(BUILDDIR)/html
-	@echo
-	@echo "Build finished. The HTML pages are in $(BUILDDIR)/html."
+	$(SPHINXBUILD) $(ALLSPHINXOPTS)
 
 .PHONY: dirhtml
-dirhtml: ensure-venv versions
-	$(SPHINXBUILD) -b dirhtml $(ALLSPHINXOPTS) $(BUILDDIR)/dirhtml
-	@echo
-	@echo "Build finished. The HTML pages are in $(BUILDDIR)/dirhtml."
+dirhtml: BUILDER = dirhtml
+dirhtml: html
 
 .PHONY: singlehtml
-singlehtml: ensure-venv
-	$(SPHINXBUILD) -b singlehtml $(ALLSPHINXOPTS) $(BUILDDIR)/singlehtml
-	@echo
-	@echo "Build finished. The HTML page is in $(BUILDDIR)/singlehtml."
+singlehtml: BUILDER = singlehtml
+singlehtml: html
 
 .PHONY: pickle
-pickle: ensure-venv
-	$(SPHINXBUILD) -b pickle $(ALLSPHINXOPTS) $(BUILDDIR)/pickle
+pickle: BUILDER = pickle
+pickle: html
 	@echo
 	@echo "Build finished; now you can process the pickle files."
 
 .PHONY: json
-json: ensure-venv
-	$(SPHINXBUILD) -b json $(ALLSPHINXOPTS) $(BUILDDIR)/json
+json: BUILDER = json
+json: html
 	@echo
 	@echo "Build finished; now you can process the JSON files."
 
 .PHONY: htmlhelp
-htmlhelp: ensure-venv
-	$(SPHINXBUILD) -b htmlhelp $(ALLSPHINXOPTS) $(BUILDDIR)/htmlhelp
+htmlhelp: BUILDER = htmlhelp
+htmlhelp: html
 	@echo
 	@echo "Build finished; now you can run HTML Help Workshop with the" \
-	      ".hhp project file in $(BUILDDIR)/htmlhelp."
+	      ".hhp project file in $(BUILDDIR)/$(BUILDER)."
 
 .PHONY: qthelp
-qthelp: ensure-venv
-	$(SPHINXBUILD) -b qthelp $(ALLSPHINXOPTS) $(BUILDDIR)/qthelp
-	@echo
-	@echo "Build finished; now you can run "qcollectiongenerator" with the" \
-	      ".qhcp project file in $(BUILDDIR)/qthelp, like this:"
-	@echo "# qcollectiongenerator $(BUILDDIR)/qthelp/PythonDevelopersGuide.qhcp"
-	@echo "To view the help file:"
-	@echo "# assistant -collectionFile $(BUILDDIR)/qthelp/PythonDevelopersGuide.qhc"
+qthelp: BUILDER = qthelp
+qthelp: html
 
 .PHONY: devhelp
-devhelp: ensure-venv
-	$(SPHINXBUILD) -b devhelp $(ALLSPHINXOPTS) $(BUILDDIR)/devhelp
-	@echo
-	@echo "Build finished."
-	@echo "To view the help file:"
-	@echo "# mkdir -p $$HOME/.local/share/devhelp/PythonDevelopersGuide"
-	@echo "# ln -s $(BUILDDIR)/devhelp $$HOME/.local/share/devhelp/PythonDevelopersGuide"
-	@echo "# devhelp"
+devhelp: BUILDER = devhelp
+devhelp: html
 
 .PHONY: epub
-epub: ensure-venv
-	$(SPHINXBUILD) -b epub $(ALLSPHINXOPTS) $(BUILDDIR)/epub
+epub: BUILDER = epub
+epub: html
 	@echo
-	@echo "Build finished. The epub file is in $(BUILDDIR)/epub."
+	@echo "Build finished. The epub file is in $(BUILDDIR)/$(BUILDER)."
 
 .PHONY: latex
-latex: ensure-venv
-	$(SPHINXBUILD) -b latex $(ALLSPHINXOPTS) $(BUILDDIR)/latex
-	@echo
-	@echo "Build finished; the LaTeX files are in $(BUILDDIR)/latex."
-	@echo "Run \`make' in that directory to run these through (pdf)latex" \
-	      "(use \`make latexpdf' here to do that automatically)."
+latex: BUILDER = latex
+latex: html
 
 .PHONY: latexpdf
-latexpdf: ensure-venv
-	$(SPHINXBUILD) -b latex $(ALLSPHINXOPTS) $(BUILDDIR)/latex
+latexpdf: BUILDER = latex
+latexpdf: html
 	@echo "Running LaTeX files through pdflatex..."
 	make -C $(BUILDDIR)/latex all-pdf
-	@echo "pdflatex finished; the PDF files are in $(BUILDDIR)/latex."
+	@echo "pdflatex finished; the PDF files are in $(BUILDDIR)/$(BUILDER)."
 
 .PHONY: text
-text: ensure-venv
-	$(SPHINXBUILD) -b text $(ALLSPHINXOPTS) $(BUILDDIR)/text
-	@echo
-	@echo "Build finished. The text files are in $(BUILDDIR)/text."
+text: BUILDER = text
+text: html
 
 .PHONY: man
-man: ensure-venv
-	$(SPHINXBUILD) -b man $(ALLSPHINXOPTS) $(BUILDDIR)/man
+man: BUILDER = man
+man: html
 	@echo
-	@echo "Build finished. The manual pages are in $(BUILDDIR)/man."
+	@echo "Build finished. The manual pages are in $(BUILDDIR)/$(BUILDER)."
 
 .PHONY: changes
-changes: ensure-venv
-	$(SPHINXBUILD) -b changes $(ALLSPHINXOPTS) $(BUILDDIR)/changes
-	@echo
-	@echo "The overview file is in $(BUILDDIR)/changes."
+changes: BUILDER = changes
+changes: html
 
-linkcheck: ensure-venv
-	$(SPHINXBUILD) -b linkcheck $(ALLSPHINXOPTS) $(BUILDDIR)/linkcheck
+.PHONY: linkcheck
+linkcheck: BUILDER = linkcheck
+linkcheck: html
 	@echo
 	@echo "Link check complete; look for any errors in the above output " \
-	      "or in $(BUILDDIR)/linkcheck/output.txt."
+	      "or in $(BUILDDIR)/$(BUILDER)/output.txt."
 
 .PHONY: doctest
-doctest: ensure-venv
-	$(SPHINXBUILD) -b doctest $(ALLSPHINXOPTS) $(BUILDDIR)/doctest
+doctest: BUILDER = doctest
+doctest: html
 	@echo "Testing of doctests in the sources finished, look at the " \
-	      "results in $(BUILDDIR)/doctest/output.txt."
+	      "results in $(BUILDDIR)/$(BUILDER)/output.txt."
 
 .PHONY: htmlview
 htmlview: html
 	$(PYTHON) -c "import os, webbrowser; webbrowser.open('file://' + os.path.realpath('_build/html/index.html'))"
 
+.PHONY: htmllive
+htmllive: SPHINXBUILD = $(VENVDIR)/bin/sphinx-autobuild
+htmllive: SPHINXOPTS = --re-ignore="/\.idea/|/venv/" --open-browser --delay 0
+htmllive: html
+
 .PHONY: check
 check: ensure-venv
 	# Ignore the tools and venv dirs and check that the default role is not used.
 	$(SPHINXLINT) -i tools -i $(VENVDIR) --enable default-role
+
+.PHONY: lint
+lint: venv
+	$(VENVDIR)/bin/python3 -m pre_commit --version > /dev/null || $(VENVDIR)/bin/python3 -m pip install pre-commit
+	$(VENVDIR)/bin/python3 -m pre_commit run --all-files
 
 .PHONY: serve
 serve:

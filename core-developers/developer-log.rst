@@ -1,7 +1,7 @@
 .. _developer-log:
 .. _developers:
 
-Developer Log
+Developer log
 =============
 
 This page lists the historical members of the Python development team. (The
@@ -13,7 +13,7 @@ information.)
    :file: developers.csv
    :encoding: "utf-8"
 
-Procedure for Granting or Dropping Access
+Procedure for granting or dropping access
 -----------------------------------------
 
 To be granted the ability to manage who is a committer, you must be a

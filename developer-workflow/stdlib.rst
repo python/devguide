@@ -1,7 +1,7 @@
 .. _stdlib:
 .. _stdlibchanges:
 
-Adding to the Stdlib
+Adding to the stdlib
 ====================
 
 While the stdlib contains a great amount of useful code, sometimes you want
@@ -52,6 +52,7 @@ useful.
 
 Adding a new module
 -------------------
+
 It must be stated upfront that getting a new module into the stdlib is very
 difficult. Adding any significant amount of code to the stdlib increases the
 burden placed upon core developers. It also means that the module somewhat
@@ -61,8 +62,9 @@ over other available solutions. All of this means that additions to the stdlib
 are not taken lightly.
 
 
-Acceptable Types of Modules
-'''''''''''''''''''''''''''
+Acceptable types of modules
+^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
 Typically two types of modules get added to the stdlib. One type is a module
 which implements something that is difficult to get right. A good example of
 this is the :py:mod:`multiprocessing` package. Working out the various OS
@@ -83,7 +85,8 @@ it.
 
 
 Requirements
-''''''''''''
+^^^^^^^^^^^^
+
 In order for a module to even be considered for inclusion into the stdlib, a
 couple of requirements must be met.
 
@@ -120,8 +123,8 @@ also helps to make sure that the overall design of the module continues to be
 uniform.
 
 
-Proposal Process
-''''''''''''''''
+Proposal process
+^^^^^^^^^^^^^^^^
 
 If the module you want to propose adding to the stdlib meets the requirements,
 you may propose its inclusion
@@ -135,3 +138,17 @@ once the authors of the module sign
 :ref:`contributor agreements <contributor_agreement>`.
 
 .. _issue tracker: https://github.com/python/cpython/issues
+
+Adding a new environment variable
+---------------------------------
+
+Names of environment variables should be uppercase and, from Python 3.13
+onwards, use underscores for readability and accessibility.
+
+For example, use ``PYTHON_CPU_COUNT`` instead of ``PYTHONCPUCOUNT``.
+
+See also:
+
+* :ref:`python:using-on-envvars`
+* `"Change environment variable style" Discourse discussion
+  <https://discuss.python.org/t/change-environment-variable-style/35180>`__

@@ -26,8 +26,15 @@ in production; others are works in progress.
 | `French (fr)    | Julien Palard (`@JulienPalard | `GitHub <github_fr_>`_     |
 | <doc_fr_>`_     | <gh_mdk_>`_)                  |                            |
 +-----------------+-------------------------------+----------------------------+
+| Greek (gr)      | `Lysandros Nikolaou           | `GitHub <github_gr_>`_     |
+|                 | (@lysnikolaou)                |                            |
+|                 | <gh_lysnikolaou_>`_,          |                            |
+|                 | `Fanis Petkos (@thepetk)      |                            |
+|                 | <gh_thepetk_>`_               |                            |
++-----------------+-------------------------------+----------------------------+
 | Hindi as spoken | Sanyam Khurana                | `GitHub <github_hi_in_>`_  |
-| in India (hi_IN)| (`@CuriousLearner <gh_cl_>`_) |                            |
+| in India (hi_IN)| (`@CuriousLearner             |                            |
+|                  | <gh_curiouslearner_>`_)      |                            |
 +-----------------+-------------------------------+----------------------------+
 | Hungarian (hu)  | Tamás Bajusz (`@gbtami        | `GitHub <github_hu_>`_,    |
 |                 | <gh_gbtami_>`_)               | `Mailing List <list_hu_>`_ |
@@ -67,7 +74,8 @@ in production; others are works in progress.
 | (pt-br)         |                               | `Article <article_pt_br_>`_|
 | <doc_pt-br_>`_  |                               |                            |
 +-----------------+-------------------------------+----------------------------+
-| Russian (ru)    | `Кристина Миронова <emailk_>`_| `Original mail <mail_ru_>`_|
+| Russian (ru)    | `Кристина Миронова <emailk_>`_| `GitHub <github_ru_>`_     |
+|                 |                               | `mail <mail_ru_>`_         |
 +-----------------+-------------------------------+----------------------------+
 | `Simplified     | Shengjing Zhu                 | `Transifex <tx_>`_,        |
 | Chinese         | (`@zhsj <gh_zhsj_>`_)         | `GitHub <github_zh_cn_>`_  |
@@ -100,10 +108,13 @@ in production; others are works in progress.
 .. _gh_oonid: https://github.com/oonid
 .. _gh_osdotsystem: https://github.com/Abdur-rahmaanJ
 .. _gh_zhsj: https://github.com/zhsj
+.. _gh_dumeng: https://github.com/dumeng
 .. _gh_mattwang44: https://github.com/mattwang44
 .. _gh_egeakman: https://github.com/egeakman
-.. _gh_cl: https://github.com/CuriousLearner
+.. _gh_curiouslearner: https://github.com/CuriousLearner
 .. _gh_kazanzhy: mailto:dkazanzhy@gmail.com
+.. _gh_lysnikolaou: https://github.com/lysnikolaou
+.. _gh_thepetk: https://github.com/thepetk
 .. _email_garade: mailto:garade@pm.me
 .. _emailac: mailto:alessandro.cucci@gmail.com
 .. _emailag: mailto:albertasgim@gmail.com
@@ -120,7 +131,7 @@ in production; others are works in progress.
 .. _github_ar: https://github.com/Abdur-rahmaanJ/python-docs-ar
 .. _github_bn_in: https://github.com/python/python-docs-bn-in
 .. _github_es: https://github.com/python/python-docs-es
-.. _github_fa: https://github.com/ftg-iran/python-docs-fa
+.. _github_fa: https://github.com/mmdbalkhi/python-docs-fa
 .. _github_fr: https://github.com/python/python-docs-fr
 .. _github_hi_in: https://github.com/CuriousLearner/python-docs-hi-in
 .. _github_hu: https://github.com/python/python-docs-hu
@@ -134,6 +145,8 @@ in production; others are works in progress.
 .. _github_uk: https://github.com/python/python-docs-uk
 .. _github_zh_cn: https://github.com/python/python-docs-zh-cn
 .. _github_zh_tw: https://github.com/python/python-docs-zh-tw
+.. _github_ru: https://github.com/MLGRussianXP/python-docs-ru
+.. _github_gr: https://github.com/pygreece/python-docs-gr
 .. _list_hu: https://mail.python.org/pipermail/python-hu
 .. _mail_it: https://mail.python.org/pipermail/doc-sig/2019-April/004114.html
 .. _mail_lt: https://mail.python.org/pipermail/doc-sig/2019-July/004138.html
@@ -158,7 +171,7 @@ The important steps look like this:
 - Create the GitHub repo (anywhere) with the right hierarchy (using the
   cookiecutter).
 - Gather people to help you translate. You can't do it alone.
-- You can use any tool to translate, as long as you can synchronize with git.
+- You can use any tool to translate, as long as you can synchronize with Git.
   Some use Transifex, and some use only GitHub. You can choose another
   way if you like; it's up to you.
 - Ensure we update this page to reflect your work and progress, either via a
@@ -205,8 +218,7 @@ Which version of the Python documentation should be translated?
 ---------------------------------------------------------------
 
 Consensus is to work on current stable. You can then propagate your
-translation from one branch to another using `pomerge
-<https://pypi.org/project/pomerge/>`__.
+translation from one branch to another using :pypi:`pomerge`.
 
 
 Are there some tools to help in managing the repo?
@@ -214,12 +226,12 @@ Are there some tools to help in managing the repo?
 
 Here's what we're using:
 
-- `pomerge <https://pypi.org/project/pomerge/>`__ to propagate translations
-  from one file to others.
-- `pospell <https://pypi.org/project/pospell/>`__ to check for typos in ``.po`` files.
-- `powrap <https://pypi.org/project/powrap/>`__ to rewrap the ``.po`` files
-  before committing. This helps keep git diffs short.
-- `potodo <https://pypi.org/project/potodo/>`__ to list what needs to be translated.
+- :pypi:`pomerge` to propagate translations from one file to others.
+- :pypi:`pospell` to check for typos in ``.po`` files.
+- :pypi:`powrap` to rewrap the ``.po`` files
+  before committing. This helps keep Git diffs short.
+- :pypi:`potodo` to list what needs to be translated.
+- :pypi:`sphinx-lint` to validate reST syntax in translation files.
 
 
 How is a coordinator elected?
@@ -247,7 +259,7 @@ Ask on the `translation mailing list <translation_ml_>`_, or better, make a PR o
 <https://github.com/python/devguide/>`__.
 
 
-I have a translation, but it's not in git. What should I do?
+I have a translation, but it's not in Git. What should I do?
 ------------------------------------------------------------
 
 You can ask for help on the `translation mailing list <translation_ml_>`_, and
@@ -255,7 +267,7 @@ the team will help you create an appropriate repository. You can still use tools
 if you like.
 
 
-My git hierarchy does not match yours. Can I keep it?
+My Git hierarchy does not match yours. Can I keep it?
 -----------------------------------------------------
 
 No, inside the ``github.com/python`` organization we’ll all have the

@@ -2,7 +2,7 @@
 .. _docquality:
 
 ==========================
-Helping with Documentation
+Helping with documentation
 ==========================
 
 Python is known for having well-written documentation. Maintaining the
@@ -20,7 +20,7 @@ You will find extensive and detailed information on how to write documentation
 and submit changes on the :ref:`Documenting Python <documenting>` page.
 
 
-Python Documentation
+Python documentation
 ====================
 
 The :ref:`Documenting Python <documenting>` section covers the details of how
@@ -36,9 +36,9 @@ and :ref:`maintenance <maintbranch>` branches at https://docs.python.org/dev/.
 The in-development and recent maintenance branches are rebuilt once per day.
 
 If you would like to be more involved with documentation, consider subscribing
-to the `docs@python.org <https://mail.python.org/mailman3/lists/docs.python.org/>`_
-mailing list and the `Documentation category on the Python Discourse
-<https://discuss.python.org/c/documentation/26>`_,
+to the `Documentation category on the Python Discourse
+<https://discuss.python.org/c/documentation/26>`_ and the
+`docs@python.org <https://mail.python.org/mailman3/lists/docs.python.org/>`_ mailing list
 where user issues are raised and documentation toolchain, projects, and standards
 are discussed.
 
@@ -83,5 +83,13 @@ you find. Simple typos don't require issues of their own, but, instead, submit
 a pull request directly. It's best to avoid filing a single issue for an entire
 section containing multiple problems; instead, file several issues so that it
 is easier to break the work up for multiple people and more efficient review.
+
+For help with the finer points of English technical writing, mention the
+`@python/proofreaders <https://github.com/orgs/python/teams/proofreaders>`__
+team in your issue or pull request in any `@python <https://github.com/python/>`__
+repo. If you'd like to join the team,
+`open a core-workflow issue <https://github.com/python/core-workflow/issues/new/choose>`__
+similar to
+`python/core-workflow#461 <https://github.com/python/core-workflow/issues/461>`__.
 
 .. _issue tracker: https://github.com/python/cpython/issues

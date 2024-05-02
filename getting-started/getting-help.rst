@@ -1,7 +1,7 @@
 .. _getting-help:
 .. _help:
 
-Where to Get Help
+Where to get help
 =================
 
 If you are working on Python it is very possible you will come across an issue
@@ -25,7 +25,7 @@ most of which are open for all users to read and post.
 Those particularly relevant for help contributing to Python itself include:
 
 * `Core Development`_ for most general questions and help
-* `Ideas`_ to discuss new ideas for the Python
+* `Ideas`_ to discuss new ideas for the Python language
 * `Core Workflow`_ for questions about the dev infrastructure and bots
 
 .. seealso::
@@ -39,7 +39,7 @@ Those particularly relevant for help contributing to Python itself include:
 
 .. _help-mailing-lists:
 
-Mailing Lists
+Mailing lists
 -------------
 
 Further options for seeking assistance include the
@@ -73,7 +73,7 @@ whereas ``#python`` is for questions concerning development *with* Python.
 
 .. _Libera.Chat: https://libera.chat/
 
-Core Mentorship
+Core mentorship
 ---------------
 
 If you are interested in improving Python and contributing to its development,
@@ -88,7 +88,7 @@ welcomed and encouraged to contribute.
 
 .. _office hour:
 
-Core Developers Office Hours
+Core developers office hours
 ----------------------------
 
 Several core developers have set aside time to host mentorship office hours.
@@ -105,7 +105,7 @@ during office hours.
 | Zachary Ware     | See details link              | Schedule at https://calendly.com/zware         |
 +------------------+-------------------------------+------------------------------------------------+
 
-File a Bug
+File a bug
 ----------
 
 If you strongly suspect you have stumbled on a bug (be it in the build

@@ -2,7 +2,7 @@
 .. _gh-labels:
 
 =============
-GitHub Labels
+GitHub labels
 =============
 
 Triagers, core developers and bots can add labels on GitHub
@@ -26,6 +26,8 @@ These labels are used to specify the type of issue:
 * :gh-label:`type-crash`: for hard crashes of the interpreter, possibly with a
   core dump.
 * :gh-label:`type-feature`: for feature requests or enhancements.
+  Feature requests do not need :ref:`version labels <Version labels>`;
+  it is implicit that features are added to the ``main`` branch only.
   The `Ideas Discourse category`_ can be used to discuss enhancements
   before filing an issue.
 * :gh-label:`type-security`: for security issues.
@@ -59,9 +61,14 @@ OS labels
 
 These labels are used to specify which operating systems are affected.
 Since most issues either affect all systems or are specific to Unix,
-the only available labels are :gh-label:`OS-windows`, :gh-label:`OS-mac`,
-and :gh-label:`OS-freebsd`.
+we don't have a dedicated Unix label.
+Use :gh-label:`OS-windows`, :gh-label:`OS-mac`, and :gh-label:`OS-freebsd`.
 
+Use the :gh-label:`OS-unsupported` label for issues on platforms outside the
+support tiers defined in :pep:`11`. Applying this label adds the issue to
+`a GitHub project <https://github.com/orgs/python/projects/27/views/1>`_ where
+it can be categorized further.
+See also the :ref:`Platform experts list <platform-experts>`.
 
 .. _Expert labels:
 .. _Topic labels:
@@ -80,6 +87,8 @@ this might also automatically add the issue to a GitHub project.
 You can see the `full list of topic labels on GitHub
 <https://github.com/python/cpython/labels?q=topic>`_.
 
+
+.. _Version labels:
 
 Version labels
 ==============

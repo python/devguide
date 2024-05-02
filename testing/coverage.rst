@@ -1,8 +1,16 @@
 .. _coverage:
 
 ======================
-Increase Test Coverage
+Increase test coverage
 ======================
+
+.. raw:: html
+
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      activateTab(getOS());
+    });
+    </script>
 
 Python development follows a practice that all semantic changes and additions
 to the language and :abbr:`stdlib (standard library)` are accompanied by
@@ -36,7 +44,7 @@ explicit coverage of the module is from its own set of tests instead of from
 implicit testing by other code that happens to use the module.
 
 
-Common Gotchas
+Common gotchas
 ==============
 
 Please realize that coverage reports on modules already imported before coverage
@@ -54,7 +62,7 @@ prefer that other types of tests not be used (e.g., blackbox). When in doubt,
 stick with whitebox testing in order to properly exercise the code.
 
 
-Measuring Coverage
+Measuring coverage
 ==================
 
 It should be noted that a quirk of running coverage over Python's own stdlib is
@@ -79,31 +87,43 @@ provided by the stdlib then you can :ref:`use test.regrtest
 
 .. _install_coverage:
 
-Install Coverage
-''''''''''''''''
+Install coverage
+^^^^^^^^^^^^^^^^
 
 By default, pip will not install into the in-development version of Python you
 just built, and this built version of Python will not see packages installed
 into your default version of Python. One option is to use a virtual environment
 to install coverage.
 
-On Unix run::
+.. tab:: Unix
 
-    ./python -m venv ../cpython-venv
-    source ../cpython-venv/bin/activate
-    pip install coverage
+    Run:
 
-On :ref:`most <mac-python.exe>` macOS systems run::
+    .. code-block:: shell
 
-    ./python.exe -m venv ../cpython-venv
-    source ../cpython-venv/bin/activate
-    pip install coverage
+        ./python -m venv ../cpython-venv
+        source ../cpython-venv/bin/activate
+        pip install coverage
 
-On Windows run::
+.. tab:: macOS
 
-    python.bat -m venv ..\\cpython-venv
-    ..\\cpython-venv\\Scripts\\activate.bat
-    pip install coverage
+    On :ref:`most <mac-python.exe>` macOS systems run:
+
+    .. code-block:: shell
+
+        ./python.exe -m venv ../cpython-venv
+        source ../cpython-venv/bin/activate
+        pip install coverage
+
+.. tab:: Windows
+
+    Run:
+
+    .. code-block:: dosbatch
+
+        python.bat -m venv ..\\cpython-venv
+        ..\\cpython-venv\\Scripts\\activate.bat
+        pip install coverage
 
 You can now use python without the ./ for the rest of these instructions, as
 long as your venv is activated. For more info on venv see `Virtual Environment
@@ -111,7 +131,7 @@ long as your venv is activated. For more info on venv see `Virtual Environment
 
 If this does not work for you for some reason, you should try using the
 in-development version of coverage.py to see if it has been updated as needed.
-To do this you should clone/check out the development version of coverage.py:
+To do this you should clone/check out the development version of coverage.py::
 
     git clone https://github.com/nedbat/coveragepy
 
@@ -122,8 +142,8 @@ it. For this, you will again need to use the full path to that installation.
 
 .. _coverage_usage:
 
-Basic Usage
-'''''''''''
+Basic usage
+^^^^^^^^^^^
 
 The following command will tell you if your copy of coverage works (substitute
 ``COVERAGEDIR`` with the directory where your clone exists, e.g.
@@ -176,8 +196,8 @@ with pages that visibly show what lines of code were or were not executed.
 
 .. _branch_coverage:
 
-Branch Coverage
-'''''''''''''''
+Branch coverage
+^^^^^^^^^^^^^^^
 
 For the truly daring, you can use another powerful feature of coverage.py:
 branch coverage. Testing every possible branch path through code, while a great
@@ -191,43 +211,6 @@ If you decide you want to try to improve branch coverage, simply add the
 
 This will lead to the report stating not only what lines were not covered, but
 also what branch paths were not executed.
-
-
-Coverage Results For Modules Imported Early On
-''''''''''''''''''''''''''''''''''''''''''''''
-
-For the *truly truly* daring, you can use a hack to get coverage.py to include
-coverage for modules that are imported early on during CPython's startup (e.g.
-the encodings module). Do not worry if you can't get this to work or it doesn't
-make any sense; it's entirely optional and only important for a small number of
-modules.
-
-If you still choose to try this, the first step is to make sure coverage.py's
-C extension is installed. You can check this with::
-
-  ./python COVERAGEDIR --version
-
-If it says 'without C extension', then you will need to build the C extension.
-Assuming that coverage.py's clone is at ``COVERAGEDIR`` and your clone of CPython
-is at ``CPYTHONDIR``, you can do this by executing the following in your coverage.py
-clone::
-
-  CPPFLAGS="-I CPYTHONDIR -I CPYTHONDIR/Include" CPYTHONDIR/python setup.py build_ext --inplace
-
-This will build coverage.py's C extension code in-place, allowing the previous
-instructions on how to gather coverage to continue to work.
-
-To get coverage.py to be able to gather the most accurate coverage data on as
-many modules as possible
-**with a HORRIBLE HACK that you should NEVER use in your own code**, run the
-following from your CPython clone::
-
-  PYTHONPATH=COVERAGEDIR/coverage/fullcoverage ./python COVERAGEDIR run --pylib Lib/test/regrtest.py
-
-This will give you the most complete coverage possible for CPython's standard
-library.
-
-.. _coverage.py: https://coverage.readthedocs.io/en/latest/
 
 
 .. _coverage_by_regrtest:
@@ -249,14 +232,15 @@ you want the coverage data to end up it will go somewhere you don't expect.
     If you are running coverage over the entire test suite, make sure to
     add ``-x test_importlib test_runpy test_trace`` to exclude those tests as
     they trigger exceptions during coverage; see
-    https://bugs.python.org/issue10541 and https://bugs.python.org/issue10991.
+    `python/cpython#54750 <https://github.com/python/cpython/issues/54750>`__ and
+    `python/cpython#55200 <https://github.com/python/cpython/issues/55200>`__.
 
 Once the tests are done you will find the directory you specified contains
 files for each executed module along with which lines were executed how many
 times.
 
 
-Filing the Issue
+Filing the issue
 ================
 Once you have increased coverage,
 you need to create an issue on the `issue tracker`_ and
@@ -268,19 +252,49 @@ Measuring coverage of C code with gcov and lcov
 
 It's also possible to measure the function, line and branch coverage of
 Python's C code. Right now only GCC with `gcov`_ is supported. In order to
-create an instrumented build of Python with gcov, run::
+create an instrumented build of Python with gcov, run:
 
-    make coverage
+.. tab:: Unix/macOS
+
+    .. code-block:: shell
+
+        make coverage
+
+.. tab:: Windows
+
+    .. code-block:: dosbatch
+
+        .\make coverage
 
 Then run some code and gather coverage data with the ``gcov`` command. In
-order to create a HTML report you can install `lcov`_. The command::
+order to create a HTML report you can install `lcov`_. The command:
 
-    make coverage-lcov
+.. tab:: Unix/macOS
+
+    .. code-block:: shell
+
+        make coverage-lcov
+
+.. tab:: Windows
+
+    .. code-block:: dosbatch
+
+        .\make coverage-lcov
 
 assembles coverage data, removes 3rd party and system libraries and finally
-creates a report. You can skip both steps and just run::
+creates a report. You can skip both steps and just run:
 
-    make coverage-report
+.. tab:: Unix/macOS
+
+    .. code-block:: shell
+
+        make coverage-report
+
+.. tab:: Windows
+
+    .. code-block:: dosbatch
+
+        .\make coverage-report
 
 if you like to generate a coverage report for Python's stdlib tests. It takes
 about 20 to 30 minutes on a modern computer.
@@ -293,3 +307,4 @@ about 20 to 30 minutes on a modern computer.
 .. _issue tracker: https://github.com/python/cpython/issues
 .. _gcov: https://gcc.gnu.org/onlinedocs/gcc/Gcov.html
 .. _lcov: https://ltp.sourceforge.net/coverage/lcov.php
+.. _coverage.py: https://coverage.readthedocs.io/en/latest/

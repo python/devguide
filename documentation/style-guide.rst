@@ -1,28 +1,14 @@
 .. _style-guide:
 
 ===========
-Style Guide
+Style guide
 ===========
 
-.. highlight::  rest
+.. highlight:: rest
 
-This document describes the style guide for our documentation.
+This page describes the linguistic style guide for our documentation.
+For markup details in reST files, see :ref:`markup`.
 
-
-Use of whitespace
-=================
-
-All reST files use an indentation of 3 spaces; no tabs are allowed.  The
-maximum line length is 80 characters for normal text, but tables, deeply
-indented code samples and long links may extend beyond that.  Code example
-bodies should use normal Python 4-space indentation.
-
-Make generous use of blank lines where applicable; they help group things
-together.
-
-A sentence-ending period may be followed by one or two spaces; while reST
-ignores the second space, it is customarily put in by some users, for example
-to aid Emacs' auto-fill mode.
 
 Footnotes
 =========
@@ -56,7 +42,7 @@ sections are in title case, you can either convert all titles to
 sentence case or use the dominant style in the new section title.
 
 Sentences that start with a word for which specific rules require
-starting it with a lower case letter should be avoided.
+starting it with a lowercase letter should be avoided.
 
 .. note::
 
@@ -74,13 +60,12 @@ presentation in the Python documentation.
 Other terms and words deserve special mention as well; these conventions should
 be used to ensure consistency throughout the documentation:
 
+C API
+  Python's `API <https://docs.python.org/3/c-api/>`_ used by C programmers
+  to write extension modules. All caps and unhyphenated.
+
 CPU
-   For "central processing unit." Many style guides say this should be
-   spelled out on the first use (and if you must use it, do so!). For
-   the Python documentation, this abbreviation should be avoided since
-   there's no reasonable way to predict which occurrence will be the
-   first seen by the reader. It is better to use the word "processor"
-   instead.
+   Central processing unit. No need to spell out.
 
 POSIX
    The name assigned to a particular group of standards. This is always
@@ -92,7 +77,7 @@ Python
 reST
    For "reStructuredText," an easy to read, plaintext markup syntax
    used to produce Python documentation.  When spelled out, it is
-   always one word and both forms start with a lower case 'r'.
+   always one word and both forms start with a lowercase 'r'.
 
 Unicode
    The name of a character coding system. This is always written
@@ -102,7 +87,80 @@ Unix
    The name of the operating system developed at AT&T Bell Labs in the early
    1970s.
 
-Affirmative Tone
+
+.. index:: diataxis
+
+Diátaxis
+========
+
+Python's documentation strives to follow the `Diátaxis <https://diataxis.fr/>`_
+framework. This means adapting the writing style according to the nature of
+the documentation that is being written. The framework splits
+documentation into four distinct types: tutorials, how-to guides, reference, and
+explanation.
+
+* :ref:`python:tutorial-index` should
+  be explicit and avoid making assumptions about the
+  reader's knowledge. The goal of a tutorial is to get the user writing
+  Python code as quickly as possible with clear logical steps. Explanations
+  and abstract concepts should be avoided. Please consult the Diátaxis guide on
+  :ref:`diataxis:tutorials` for more detail.
+
+* `Python how-to guides <https://docs.python.org/3/howto/index.html>`_ are
+  designed to guide a user through a problem-field.
+  Both tutorials and how-to guides are instructional rather than explanatory
+  and should provide logical steps on how to complete a task. However,
+  how-to guides make more assumptions about the user's knoweldge and
+  focus on the user finding the best way to solve their own
+  particular problem.
+
+* :ref:`python:reference-index` should
+  be factual and succinct. The purpose of reference documentation is
+  to describe rather than to explain. Accuracy and consistency are key as
+  this type of documentation should be seen as an authoritative source.
+  :ref:`Code-examples` can be a useful way of achieving these
+  objectives.
+
+* Python explanations provide
+  a deeper level of understanding and are naturally more discursive. They aim
+  to deepen the reader's understanding and answer 'why' questions. They should
+  provide context, make connections between topics, and discuss alternative
+  opinions. There is no section dedicated to explanations but these can be
+  found throughout Python's documentation, for example the
+  :ref:`python:unicode-howto`.
+
+Please consult the `Diátaxis <https://diataxis.fr/>`_ guide for more
+detail.
+
+Links
+=====
+
+Links are a powerful tool for helping people navigate documentation and find
+more information, but links can be over-used.  Links should be used only if
+they help the reader.
+
+Generally, a link should be provided for the first use of a term in a unit,
+such as a section or paragraph. This is not a hard and fast rule.  Sometimes
+the second mention is more appropriate for a link.  Some units are long enough
+to have a few repeated links.  Use judgement to decide when a link will help
+the reader.
+
+Do not use a link when the link would point to the current unit.  It's natural
+to use the name of a function in the documentation for the function, but a link
+on that function name that simply reloads the section the user is already
+reading is useless and distracting.
+
+Do not use links in section headers.  They distract from the title of the
+section.  The term will be mentioned in the paragraph text and can be linked
+from there.
+
+Sphinx provides ways to automatically add links to references, and a way to
+suppress the link.  Using roles like ``:func:`map``` will link to the
+documentation for ``map``.  You can suppress the link while keeping the
+semantic presentation of the function name by adding an exclamation point
+prefix: ``:func:`!map```.  See :ref:`roles` for more details.
+
+Affirmative tone
 ================
 
 The documentation focuses on affirmatively stating what the language does and
@@ -127,7 +185,7 @@ language):
     achieve the same effect.  This assures that files are flushed and file
     descriptor resources are released in a timely manner.
 
-Economy of Expression
+Economy of expression
 =====================
 
 More documentation is not necessarily better documentation.  Err on the side
@@ -138,7 +196,7 @@ to understanding and can result in even more ways to misread or misinterpret the
 text.  Long descriptions full of corner cases and caveats can create the
 impression that a function is more complex or harder to use than it actually is.
 
-Security Considerations (and Other Concerns)
+Security considerations (and other concerns)
 ============================================
 
 Some modules provided with Python are inherently exposed to security issues
@@ -159,7 +217,9 @@ module (e.g. OS level pipe buffers filling up and stalling child processes),
 these can be documented in a "Common Errors" section and cross-referenced
 rather than repeated for every affected interface.
 
-Code Examples
+.. _code-examples:
+
+Code examples
 =============
 
 Short code examples can be a useful adjunct to understanding.  Readers can often
@@ -177,7 +237,7 @@ lines and output lines.  Besides contributing visual clutter, it makes it
 difficult for readers to cut-and-paste examples so they can experiment with
 variations.
 
-Code Equivalents
+Code equivalents
 ================
 
 Giving pure Python code equivalents (or approximate equivalents) can be a useful

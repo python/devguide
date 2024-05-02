@@ -1,7 +1,7 @@
 .. _development-cycle:
 .. _devcycle:
 
-Development Cycle
+Development cycle
 =================
 
 The responsibilities of a core developer shift based on what kind of branch of
@@ -34,7 +34,7 @@ and *null* for final releases), and ``N`` is the release serial number.
 Some examples of release tags: ``v3.7.0a1``, ``v3.6.3``, ``v2.7.14rc1``.
 
 Branches
-''''''''
+--------
 
 There is a branch for each *feature version*, whether released or not (e.g.
 3.7, 3.8).
@@ -43,7 +43,7 @@ There is a branch for each *feature version*, whether released or not (e.g.
 .. _indevbranch:
 
 In-development (main) branch
-----------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 The ``main`` branch is the branch for the next feature release; it is
 under active development for all kinds of changes: new features, semantic
@@ -65,7 +65,7 @@ for release 3.n.
 .. _maintbranch:
 
 Maintenance branches
---------------------
+^^^^^^^^^^^^^^^^^^^^
 
 A branch for a previous feature release, currently being maintained for bug
 fixes, or for the next feature release in its
@@ -77,10 +77,16 @@ releases; the terms are used interchangeably. These releases have a
 **micro version** number greater than zero.
 
 The only changes allowed to occur in a maintenance branch without debate are
-bug fixes.  Also, a general rule for maintenance branches is that compatibility
+bug fixes, test improvements, and edits to the documentation.
+Also, a general rule for maintenance branches is that compatibility
 must not be broken at any point between sibling micro releases (3.5.1, 3.5.2,
 etc.).  For both rules, only rare exceptions are accepted and **must** be
 discussed first.
+
+Backporting changes reduces the risk of future conflicts.
+For documentation, it increases the visibility of improvements,
+since most readers access the `stable documentation <https://docs.python.org/3/>`__
+rather than the `development documentation <https://docs.python.org/dev/>`__.
 
 A new maintenance branch is normally created when the next feature release
 cycle reaches feature freeze, i.e. at its first beta pre-release.
@@ -98,7 +104,7 @@ which followed the release of 3.5.1.
 .. _secbranch:
 
 Security branches
------------------
+^^^^^^^^^^^^^^^^^
 
 A branch less than 5 years old but no longer in bugfix mode is a security
 branch.
@@ -120,7 +126,7 @@ security patches have been applied to the branch. These releases have a
 .. _eolbranch:
 
 End-of-life branches
---------------------
+^^^^^^^^^^^^^^^^^^^^
 
 The code base for a release cycle which has reached end-of-life status
 is frozen and no longer has a branch in the repo.  The final state of
@@ -135,7 +141,7 @@ The latest release for each Python version can be found on the `download page
 .. _stages:
 
 Stages
-''''''
+------
 
 Based on what stage the :ref:`in-development <indevbranch>` version of Python
 is in, the responsibilities of a core developer change in regards to commits
@@ -143,7 +149,7 @@ to the :abbr:`VCS (version control system)`.
 
 
 Pre-alpha
----------
+^^^^^^^^^
 
 The branch is in this stage when no official release has been done since
 the latest final release.  There are no special restrictions placed on
@@ -153,7 +159,7 @@ breaking the buildbots).
 .. _alpha:
 
 Alpha
------
+^^^^^
 
 Alpha releases typically serve as a reminder to core developers that they
 need to start getting in changes that change semantics or add something to
@@ -163,7 +169,7 @@ restrictions are in place while in alpha.
 .. _beta:
 
 Beta
-----
+^^^^
 
 After a first beta release is published, no new features are accepted.  Only
 bug fixes and improvements to documentation and tests can now be committed.
@@ -181,7 +187,7 @@ new information about the creation of the 3.5 maintenance branch during beta.
 .. _rc:
 
 Release Candidate (RC)
-----------------------
+^^^^^^^^^^^^^^^^^^^^^^
 
 A branch preparing for an RC release can only have bugfixes applied that have
 been reviewed by other core developers.  Generally, these issues must be
@@ -200,21 +206,21 @@ a core developer.
 .. _final:
 
 Final
------
+^^^^^
 
 When a final release is being cut, only the release manager (RM) can make
 changes to the branch.  After the final release is published, the full
 :ref:`development cycle <stages>` starts again for the next minor version.
 
 
-Repository Administration
-'''''''''''''''''''''''''
+Repository administration
+-------------------------
 
 The source code is currently hosted on `GitHub
 <https://github.com/python/cpython>`_ in the `Python organization <https://github.com/python/>`_.
 
-Organization Repository Policy
-------------------------------
+Organization repository policy
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Within the `GitHub Python organization <https://github.com/python/>`_,
 repositories are expected to relate to the Python language, the CPython
@@ -254,8 +260,8 @@ specifically want to “bless” one implementation (as with e.g.
 `pythoncapi-compat <https://github.com/python/pythoncapi-compat>`_).
 
 
-Organization Owner Policy
--------------------------
+Organization owner policy
+^^^^^^^^^^^^^^^^^^^^^^^^^
 
 The GitHub Organization Owner role allows for full management of all aspects of
 the Python organization. Allowing for visibility and management of all aspects
@@ -281,8 +287,8 @@ Owner of the Python Organization.
 
 .. _current owners:
 
-Current Owners
---------------
+Current owners
+^^^^^^^^^^^^^^
 
 +----------------------+--------------------------------+-----------------+
 | Name                 | Role                           | GitHub Username |
@@ -307,8 +313,8 @@ mentioned to request assistance from an organization owner.
 
 .. _be performed: https://docs.github.com/en/organizations/managing-peoples-access-to-your-organization-with-roles/roles-in-an-organization#permissions-for-organization-roles
 
-Repository Administrator Role Policy
-------------------------------------
+Repository administrator role policy
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 The Administrator role on the repository allows for managing all aspects
 including collaborators, access control, integrations, webhooks, and branch
@@ -328,8 +334,8 @@ who no longer necessitate this level of access will be removed with notice.
 Multi-Factor Authentication must be enabled by the user in order to remain an
 Administrator of the repository.
 
-Current Administrators
-----------------------
+Current administrators
+^^^^^^^^^^^^^^^^^^^^^^
 
 +-------------------+----------------------------------------------------------+-----------------+
 | Name              | Role                                                     | GitHub Username |
@@ -353,8 +359,8 @@ Current Administrators
 | Mariatta Wijaya   | Maintainer of bedevere, blurb_it and miss-islington      | Mariatta        |
 +-------------------+----------------------------------------------------------+-----------------+
 
-Repository Release Manager Role Policy
---------------------------------------
+Repository release manager role policy
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Release Managers for :ref:`in-development <indevbranch>`, :ref:`maintenance
 <maintbranch>`, and :ref:`security mode <secbranch>` Python releases are
@@ -365,3 +371,35 @@ administrators) to merge changes to that branch.
 
 Multi-Factor Authentication must be enabled by the user in order to retain
 access as a Release Manager of the branch.
+
+Governance
+----------
+
+The Python Steering Council has overall authority over Python and has delegated
+some of its responsibilities to other groups.
+
+This table lists the PEPs defining each group's responsibilities,
+and the repository where you can open an issue to ask for a decision.
+
+.. list-table::
+   :header-rows: 1
+
+   * - Name
+     - PEP
+     - Contact repo
+   * - Steering Council
+     - :pep:`13`
+     - :github:`python/steering-council`
+   * - C API Working Group
+     - :pep:`731`
+     - :github:`capi-workgroup/decisions`
+   * - Documentation Editorial Board
+     - :pep:`732`
+     - :github:`python/editorial-board`
+   * - Typing Council
+     - :pep:`729`
+     - :github:`python/typing-council`
+
+.. seealso::
+
+   All governance PEPs: https://peps.python.org/topic/governance/

@@ -1,7 +1,7 @@
 .. _compiler:
 
 ===============
-Compiler Design
+Compiler design
 ===============
 
 .. highlight:: none
@@ -11,35 +11,43 @@ Abstract
 
 In CPython, the compilation from source code to bytecode involves several steps:
 
-1. Tokenize the source code (:cpy-file:`Parser/tokenizer.c`)
+1. Tokenize the source code (:cpy-file:`Parser/lexer/` and :cpy-file:`Parser/tokenizer/`).
 2. Parse the stream of tokens into an Abstract Syntax Tree
-   (:cpy-file:`Parser/parser.c`)
-3. Transform AST into a Control Flow Graph (:cpy-file:`Python/compile.c`)
-4. Emit bytecode based on the Control Flow Graph (:cpy-file:`Python/compile.c`)
+   (:cpy-file:`Parser/parser.c`).
+3. Transform AST into an instruction sequence (:cpy-file:`Python/compile.c`).
+4. Construct a Control Flow Graph and apply optimizations to it (:cpy-file:`Python/flowgraph.c`).
+5. Emit bytecode based on the Control Flow Graph (:cpy-file:`Python/assemble.c`).
 
-The purpose of this document is to outline how these steps of the process work.
+This document outlines how these steps of the process work.
 
-This document does not touch on how parsing works beyond what is needed
-to explain what is needed for compilation.  It is also not exhaustive
-in terms of the how the entire system works.  You will most likely need
-to read some source to have an exact understanding of all details.
+This document only describes parsing in enough depth to explain what is needed
+for understanding compilation.  This document provides a detailed, though not
+exhaustive, view of the how the entire system works.  You will most likely need
+to read some source code to have an exact understanding of all details.
 
 
 Parsing
 =======
 
 As of Python 3.9, Python's parser is a PEG parser of a somewhat
-unusual design (since its input is a stream of tokens rather than a
-stream of characters as is more common with PEG parsers).
+unusual design. It is unusual in the sense that the parser's input is a stream
+of tokens rather than a stream of characters which is more common with PEG
+parsers.
 
 The grammar file for Python can be found in
 :cpy-file:`Grammar/python.gram`.  The definitions for literal tokens
 (such as ``:``, numbers, etc.) can be found in :cpy-file:`Grammar/Tokens`.
 Various C files, including :cpy-file:`Parser/parser.c` are generated from
-these (see :ref:`grammar`).
+these.
+
+.. seealso::
+
+  :ref:`parser` for a detailed description of the parser.
+
+  :ref:`grammar` for a detailed description of the grammar.
 
 
-Abstract Syntax Trees (AST)
+Abstract syntax trees (AST)
 ===========================
 
 .. _compiler-ast-trees:
@@ -128,13 +136,13 @@ this case) a ``stmt_ty`` struct with the appropriate initialization.  The
 initializes the *name*, *args*, *body*, and *attributes* fields.
 
 
-Memory Management
+Memory management
 =================
 
 Before discussing the actual implementation of the compiler, a discussion of
-how memory is handled is in order.  To make memory management simple, an arena
-is used.  This means that a memory is pooled in a single location for easy
-allocation and removal.  What this gives us is the removal of explicit memory
+how memory is handled is in order.  To make memory management simple, an **arena**
+is used that pools memory in a single location for easy
+allocation and removal.  This enables the removal of explicit memory
 deallocation.  Because memory allocation for all needed memory in the compiler
 registers that memory with the arena, a single call to free the arena is all
 that is needed to completely free all memory used by the compiler.
@@ -152,8 +160,8 @@ used. That freeing is done with ``PyArena_Free()``.  This only needs to be
 called in strategic areas where the compiler exits.
 
 As stated above, in general you should not have to worry about memory
-management when working on the compiler.  The technical details have been
-designed to be hidden from you for most cases.
+management when working on the compiler.  The technical details of memory
+management have been designed to be hidden from you for most cases.
 
 The only exception comes about when managing a PyObject.  Since the rest
 of Python uses reference counting, there is extra support added
@@ -162,7 +170,7 @@ are very rare.  However, if you've allocated a PyObject, you must tell
 the arena about it by calling ``PyArena_AddPyObject()``.
 
 
-Source Code to AST
+Source code to AST
 ==================
 
 The AST is generated from source code using the function
@@ -172,7 +180,7 @@ The AST is generated from source code using the function
 After some checks, a helper function in :cpy-file:`Parser/parser.c` begins applying
 production rules on the source code it receives; converting source code to
 tokens and matching these tokens recursively to their corresponding rule.  The
-rule's corresponding rule function is called on every match.  These rule
+production rule's corresponding rule function is called on every match.  These rule
 functions follow the format :samp:`xx_rule`.  Where *xx* is the grammar rule
 that the function handles and is automatically derived from
 :cpy-file:`Grammar/python.gram`
@@ -289,10 +297,10 @@ number is passed as the last parameter to each ``stmt_ty`` function.
 .. seealso:: :pep:`617` (PEP 617 -- New PEG parser for CPython)
 
 
-Control Flow Graphs
+Control flow graphs
 ===================
 
-A *control flow graph* (often referenced by its acronym, CFG) is a
+A **control flow graph** (often referenced by its acronym, **CFG**) is a
 directed graph that models the flow of a program.  A node of a CFG is
 not an individual bytecode instruction, but instead represents a
 sequence of bytecode instructions that always execute sequentially.
@@ -335,7 +343,7 @@ output order) by doing a post-order depth-first search on the CFG
 following the edges.
 
 
-AST to CFG to Bytecode
+AST to CFG to bytecode
 ======================
 
 With the AST created, the next step is to create the CFG. The first step
@@ -433,18 +441,6 @@ the variable.
 As for handling the line number on which a statement is defined, this is
 handled by ``compiler_visit_stmt()`` and thus is not a worry.
 
-In addition to emitting bytecode based on the AST node, handling the
-creation of basic blocks must be done.  Below are the macros and
-functions used for managing basic blocks:
-
-``NEXT_BLOCK(struct compiler *)``
-    create an implicit jump from the current block
-    to the new block
-``compiler_new_block(struct compiler *)``
-    create a block but don't use it (used for generating jumps)
-``compiler_use_next_block(struct compiler *, basicblock *block)``
-    set a previously created block as a current block
-
 Once the CFG is created, it must be flattened and then final emission of
 bytecode occurs.  Flattening is handled using a post-order depth-first
 search.  Once flattened, jump offsets are backpatched based on the
@@ -452,65 +448,7 @@ flattening and then a ``PyCodeObject`` is created.  All of this is
 handled by calling ``assemble()``.
 
 
-Introducing New Bytecode
-========================
-
-Sometimes a new feature requires a new opcode.  But adding new bytecode is
-not as simple as just suddenly introducing new bytecode in the AST ->
-bytecode step of the compiler.  Several pieces of code throughout Python depend
-on having correct information about what bytecode exists.
-
-First, you must choose a name and a unique identifier number.  The official
-list of bytecode can be found in :cpy-file:`Lib/opcode.py`.  If the opcode is to
-take an argument, it must be given a unique number greater than that assigned to
-``HAVE_ARGUMENT`` (as found in :cpy-file:`Lib/opcode.py`).
-
-Once the name/number pair has been chosen and entered in :cpy-file:`Lib/opcode.py`,
-you must also enter it into :cpy-file:`Doc/library/dis.rst`, and regenerate
-:cpy-file:`Include/opcode.h` and :cpy-file:`Python/opcode_targets.h` by running
-``make regen-opcode regen-opcode-targets``.
-
-With a new bytecode you must also change what is called the magic number for
-.pyc files.  The variable ``MAGIC_NUMBER`` in
-:cpy-file:`Lib/importlib/_bootstrap_external.py` contains the number.
-Changing this number will lead to all .pyc files with the old ``MAGIC_NUMBER``
-to be recompiled by the interpreter on import.  Whenever ``MAGIC_NUMBER`` is
-changed, the ranges in the ``magic_values`` array in :cpy-file:`PC/launcher.c`
-must also be updated.  Changes to :cpy-file:`Lib/importlib/_bootstrap_external.py`
-will take effect only after running ``make regen-importlib``. Running this
-command before adding the new bytecode target to :cpy-file:`Python/ceval.c` will
-result in an error. You should only run ``make regen-importlib`` after the new
-bytecode target has been added.
-
-.. note:: On Windows, running the ``./build.bat`` script will automatically
-   regenerate the required files without requiring additional arguments.
-
-Finally, you need to introduce the use of the new bytecode.  Altering
-:cpy-file:`Python/compile.c` and :cpy-file:`Python/ceval.c` will be the primary
-places to change. You must add the case for a new opcode into the 'switch'
-statement in the ``stack_effect()`` function in :cpy-file:`Python/compile.c`.
-If the new opcode has a jump target, you will need to update macros and
-'switch' statements in :cpy-file:`Python/compile.c`.  If it affects a control
-flow or the block stack, you may have to update the ``frame_setlineno()``
-function in :cpy-file:`Objects/frameobject.c`.  :cpy-file:`Lib/dis.py` may need
-an update if the new opcode interprets its argument in a special way (like
-``FORMAT_VALUE`` or ``MAKE_FUNCTION``).
-
-If you make a change here that can affect the output of bytecode that
-is already in existence and you do not change the magic number constantly, make
-sure to delete your old .py(c|o) files!  Even though you will end up changing
-the magic number if you change the bytecode, while you are debugging your work
-you will be changing the bytecode output without constantly bumping up the
-magic number.  This means you end up with stale .pyc files that will not be
-recreated.
-Running ``find . -name '*.py[co]' -exec rm -f '{}' +`` should delete all .pyc
-files you have, forcing new ones to be created and thus allow you test out your
-new bytecode properly.  Run ``make regen-importlib`` for updating the
-bytecode of frozen importlib files.  You have to run ``make`` again after this
-for recompiling generated C files.
-
-
-Code Objects
+Code objects
 ============
 
 The result of ``PyAST_CompileObject()`` is a ``PyCodeObject`` which is defined in
@@ -522,131 +460,134 @@ will also need a new case statement for the new opcode in the big switch
 statement in ``_PyEval_EvalFrameDefault()``.
 
 
-Important Files
+Important files
 ===============
 
 * :cpy-file:`Parser/`
-   * :cpy-file:`Parser/Python.asdl`: ASDL syntax file.
 
-   * :cpy-file:`Parser/asdl.py`: Parser for ASDL definition files.
-     Reads in an ASDL description and parses it into an AST that describes it.
+  * :cpy-file:`Parser/Python.asdl`: ASDL syntax file.
 
-   * :cpy-file:`Parser/asdl_c.py`: Generate C code from an ASDL description.
-     Generates :cpy-file:`Python/Python-ast.c` and
-     :cpy-file:`Include/internal/pycore_ast.h`.
+  * :cpy-file:`Parser/asdl.py`: Parser for ASDL definition files.
+    Reads in an ASDL description and parses it into an AST that describes it.
 
-   * :cpy-file:`Parser/parser.c`: The new PEG parser introduced in Python 3.9.
-     Generated by :cpy-file:`Tools/peg_generator/pegen/c_generator.py`
-     from the grammar :cpy-file:`Grammar/python.gram`.  Creates the AST from
-     source code.  Rule functions for their corresponding production rules
-     are found here.
+  * :cpy-file:`Parser/asdl_c.py`: Generate C code from an ASDL description.
+    Generates :cpy-file:`Python/Python-ast.c` and
+    :cpy-file:`Include/internal/pycore_ast.h`.
 
-   * :cpy-file:`Parser/peg_api.c`: Contains high-level functions which are
-     used by the interpreter to create an AST from source code.
+  * :cpy-file:`Parser/parser.c`: The new PEG parser introduced in Python 3.9.
+    Generated by :cpy-file:`Tools/peg_generator/pegen/c_generator.py`
+    from the grammar :cpy-file:`Grammar/python.gram`.  Creates the AST from
+    source code.  Rule functions for their corresponding production rules
+    are found here.
 
-   * :cpy-file:`Parser/pegen.c`: Contains helper functions which are used
-     by functions in :cpy-file:`Parser/parser.c` to construct the AST.
-     Also contains helper functions which help raise better error messages
-     when parsing source code.
+  * :cpy-file:`Parser/peg_api.c`: Contains high-level functions which are
+    used by the interpreter to create an AST from source code.
 
-   * :cpy-file:`Parser/pegen.h`: Header file for the corresponding
-     :cpy-file:`Parser/pegen.c`. Also contains definitions of the ``Parser``
-     and ``Token`` structs.
+  * :cpy-file:`Parser/pegen.c`: Contains helper functions which are used
+    by functions in :cpy-file:`Parser/parser.c` to construct the AST.
+    Also contains helper functions which help raise better error messages
+    when parsing source code.
+
+  * :cpy-file:`Parser/pegen.h`: Header file for the corresponding
+    :cpy-file:`Parser/pegen.c`. Also contains definitions of the ``Parser``
+    and ``Token`` structs.
 
 * :cpy-file:`Python/`
-   * :cpy-file:`Python/Python-ast.c`: Creates C structs corresponding to
-     the ASDL types.  Also contains code for marshalling AST nodes (core
-     ASDL types have marshalling code in :cpy-file:`Python/asdl.c`).
-     "File automatically generated by :cpy-file:`Parser/asdl_c.py`".
-     This file must be committed separately after every grammar change
-     is committed since the ``__version__`` value is set to the latest
-     grammar change revision number.
 
-   * :cpy-file:`Python/asdl.c`: Contains code to handle the ASDL sequence type.
-     Also has code to handle marshalling the core ASDL types, such as number
-     and identifier.  Used by :cpy-file:`Python/Python-ast.c` for marshalling
-     AST nodes.
+  * :cpy-file:`Python/Python-ast.c`: Creates C structs corresponding to
+    the ASDL types.  Also contains code for marshalling AST nodes (core
+    ASDL types have marshalling code in :cpy-file:`Python/asdl.c`).
+    "File automatically generated by :cpy-file:`Parser/asdl_c.py`".
+    This file must be committed separately after every grammar change
+    is committed since the ``__version__`` value is set to the latest
+    grammar change revision number.
 
-   * :cpy-file:`Python/ast.c`: Used for validating the AST.
+  * :cpy-file:`Python/asdl.c`: Contains code to handle the ASDL sequence type.
+    Also has code to handle marshalling the core ASDL types, such as number
+    and identifier.  Used by :cpy-file:`Python/Python-ast.c` for marshalling
+    AST nodes.
 
-   * :cpy-file:`Python/ast_opt.c`: Optimizes the AST.
+  * :cpy-file:`Python/ast.c`: Used for validating the AST.
 
-   * :cpy-file:`Python/ast_unparse.c`: Converts the AST expression node
-     back into a string (for string annotations).
+  * :cpy-file:`Python/ast_opt.c`: Optimizes the AST.
 
-   * :cpy-file:`Python/ceval.c`: Executes byte code (aka, eval loop).
+  * :cpy-file:`Python/ast_unparse.c`: Converts the AST expression node
+    back into a string (for string annotations).
 
-   * :cpy-file:`Python/compile.c`: Emits bytecode based on the AST.
+  * :cpy-file:`Python/ceval.c`: Executes byte code (aka, eval loop).
 
-   * :cpy-file:`Python/symtable.c`: Generates a symbol table from AST.
+  * :cpy-file:`Python/compile.c`: Emits bytecode based on the AST.
 
-   * :cpy-file:`Python/pyarena.c`: Implementation of the arena memory manager.
+  * :cpy-file:`Python/symtable.c`: Generates a symbol table from AST.
 
-   * :cpy-file:`Python/opcode_targets.h`: One of the files that must be
-     modified if :cpy-file:`Lib/opcode.py` is.
+  * :cpy-file:`Python/pyarena.c`: Implementation of the arena memory manager.
+
+  * :cpy-file:`Python/opcode_targets.h`: One of the files that must be
+    modified if :cpy-file:`Lib/opcode.py` is.
 
 * :cpy-file:`Include/`
-   * :cpy-file:`Include/cpython/code.h`: Header file for
-     :cpy-file:`Objects/codeobject.c`; contains definition of ``PyCodeObject``.
 
-   * :cpy-file:`Include/opcode.h`: One of the files that must be modified if
-     :cpy-file:`Lib/opcode.py` is.
+  * :cpy-file:`Include/cpython/code.h`: Header file for
+    :cpy-file:`Objects/codeobject.c`; contains definition of ``PyCodeObject``.
 
-   * :cpy-file:`Include/internal/pycore_ast.h`: Contains the actual definitions
-     of the C structs as generated by :cpy-file:`Python/Python-ast.c`.
-     "Automatically generated by :cpy-file:`Parser/asdl_c.py`".
+  * :cpy-file:`Include/opcode.h`: One of the files that must be modified if
+    :cpy-file:`Lib/opcode.py` is.
 
-   * :cpy-file:`Include/internal/pycore_asdl.h`: Header for the corresponding
-     :cpy-file:`Python/ast.c`.
+  * :cpy-file:`Include/internal/pycore_ast.h`: Contains the actual definitions
+    of the C structs as generated by :cpy-file:`Python/Python-ast.c`.
+    "Automatically generated by :cpy-file:`Parser/asdl_c.py`".
 
-   * :cpy-file:`Include/internal/pycore_ast.h`: Declares ``_PyAST_Validate()``
-     external (from :cpy-file:`Python/ast.c`).
+  * :cpy-file:`Include/internal/pycore_asdl.h`: Header for the corresponding
+    :cpy-file:`Python/ast.c`.
 
-   * :cpy-file:`Include/internal/pycore_symtable.h`: Header for
-     :cpy-file:`Python/symtable.c`.  ``struct symtable`` and ``PySTEntryObject``
-     are defined here.
+  * :cpy-file:`Include/internal/pycore_ast.h`: Declares ``_PyAST_Validate()``
+    external (from :cpy-file:`Python/ast.c`).
 
-   * :cpy-file:`Include/internal/pycore_parser.h`: Header for the
-     corresponding :cpy-file:`Parser/peg_api.c`.
+  * :cpy-file:`Include/internal/pycore_symtable.h`: Header for
+    :cpy-file:`Python/symtable.c`.  ``struct symtable`` and ``PySTEntryObject``
+    are defined here.
 
-   * :cpy-file:`Include/internal/pycore_pyarena.h`: Header file for the
-     corresponding :cpy-file:`Python/pyarena.c`.
+  * :cpy-file:`Include/internal/pycore_parser.h`: Header for the
+    corresponding :cpy-file:`Parser/peg_api.c`.
+
+  * :cpy-file:`Include/internal/pycore_pyarena.h`: Header file for the
+    corresponding :cpy-file:`Python/pyarena.c`.
 
 * :cpy-file:`Objects/`
-   * :cpy-file:`Objects/codeobject.c`: Contains PyCodeObject-related code
-     (originally in :cpy-file:`Python/compile.c`).
 
-   * :cpy-file:`Objects/frameobject.c`: Contains the ``frame_setlineno()``
-     function which should determine whether it is allowed to make a jump
-     between two points in a bytecode.
+  * :cpy-file:`Objects/codeobject.c`: Contains PyCodeObject-related code
+    (originally in :cpy-file:`Python/compile.c`).
+
+  * :cpy-file:`Objects/frameobject.c`: Contains the ``frame_setlineno()``
+    function which should determine whether it is allowed to make a jump
+    between two points in a bytecode.
 
 * :cpy-file:`Lib/`
-   * :cpy-file:`Lib/opcode.py`: Master list of bytecode; if this file is
-     modified you must modify several other files accordingly
-     (see "`Introducing New Bytecode`_")
 
-   * :cpy-file:`Lib/importlib/_bootstrap_external.py`: Home of the magic number
-     (named ``MAGIC_NUMBER``) for bytecode versioning.
+  * :cpy-file:`Lib/opcode.py`: Master list of bytecode; if this file is
+    modified you must modify several other files accordingly
+
+  * :cpy-file:`Lib/importlib/_bootstrap_external.py`: Home of the magic number
+    (named ``MAGIC_NUMBER``) for bytecode versioning.
 
 
-Known Compiler-related Experiments
-==================================
+Objects
+=======
 
-This section lists known experiments involving the compiler (including
-bytecode).
+* :cpy-file:`Objects/locations.md`: Describes the location table
+* :cpy-file:`Objects/frame_layout.md`: Describes the frame stack
+* :cpy-file:`Objects/object_layout.md`: Descibes object layout for 3.11 and later
+* :cpy-file:`Objects/exception_handling_notes.txt`: Exception handling notes
 
-Skip Montanaro presented a paper at a Python workshop on a peephole optimizer
-[#skip-peephole]_.
 
-Michael Hudson has a non-active SourceForge project named Bytecodehacks
-[#Bytecodehacks]_ that provides functionality for playing with bytecode
-directly.
+Specializing Adaptive Interpreter
+=================================
 
-An opcode to combine the functionality of ``LOAD_ATTR``/``CALL_FUNCTION`` was
-created named ``CALL_ATTR`` [#CALL_ATTR]_.  Currently only works for classic
-classes and for new-style classes rough benchmarking showed an actual slowdown
-thanks to having to support both classic and new-style classes.
+Adding a specializing, adaptive interpreter to CPython will bring significant
+performance improvements. These documents provide more information:
 
+* :pep:`659`: Specializing Adaptive Interpreter
+* :cpy-file:`Python/adaptive.md`: Adding or extending a family of adaptive instructions
 
 
 References
@@ -659,12 +600,3 @@ References
 
 .. _The Zephyr Abstract Syntax Description Language.:
    https://www.cs.princeton.edu/research/techreps/TR-554-97
-
-.. [#skip-peephole] Skip Montanaro's Peephole Optimizer Paper
-   (https://legacy.python.org/workshops/1998-11/proceedings/papers/montanaro/montanaro.html)
-
-.. [#Bytecodehacks] Bytecodehacks Project
-   (https://bytecodehacks.sourceforge.net/bch-docs/bch/index.html)
-
-.. [#CALL_ATTR] CALL_ATTR opcode
-   (https://bugs.python.org/issue709744)
