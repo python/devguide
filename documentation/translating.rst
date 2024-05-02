@@ -34,7 +34,7 @@ in production; others are works in progress.
 +-----------------+-------------------------------+----------------------------+
 | Hindi as spoken | Sanyam Khurana                | `GitHub <github_hi_in_>`_  |
 | in India (hi_IN)| (`@CuriousLearner             |                            |
-|                  | <gh_curiouslearner_>`_)      |                            |
+|                 |  <gh_curiouslearner_>`_)      |                            |
 +-----------------+-------------------------------+----------------------------+
 | Hungarian (hu)  | Tamás Bajusz (`@gbtami        | `GitHub <github_hu_>`_,    |
 |                 | <gh_gbtami_>`_)               | `Mailing List <list_hu_>`_ |
