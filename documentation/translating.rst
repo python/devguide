@@ -81,8 +81,8 @@ in production; others are works in progress.
    * - `Simplified Chinese (zh-cn) <https://docs.python.org/zh-cn/>`__
      - Shengjing Zhu (:github-user:`zhsj`),
        Du, Meng (:github-user:`dumeng`)
-     -  :github:`GitHub <python/python-docs-zh-cn>`,
-        `Transifex <tx_>`_
+     - :github:`GitHub <python/python-docs-zh-cn>`,
+       `Transifex <tx_>`_
    * - `Spanish (es) <https://docs.python.org/es/>`__
      - Raúl Cumplido
      - :github:`GitHub <python/python-docs-es>`
