@@ -75,7 +75,7 @@ in production; others are works in progress.
        `Telegram <https://t.me/pybr_i18n>`__,
        `article <https://rgth.co/blog/python-ptbr-cenario-atual/>`__
    * - Russian (ru)
-     - Кристина Миронова (`email <mailto:abckristinaa@gmail.com>`__)
+     - Daniil Kolesnikov (:github-user:`MLGRussianXP`, `email <mailto:mlgrussianxp@gmail.com>`__)
      - :github:`GitHub <MLGRussianXP/python-docs-ru>`,
        `mail <https://mail.python.org/pipermail/doc-sig/2019-May/004131.html>`__
    * - `Simplified Chinese (zh-cn) <https://docs.python.org/zh-cn/>`__
