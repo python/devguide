@@ -178,6 +178,7 @@ notfound_urls_prefix = "/"
 # https://www.sphinx-doc.org/en/master/usage/extensions/extlinks.html
 extlinks = {
     "github": ("https://github.com/%s/", "%s"),
+    "github-user": ("https://github.com/%s", "@%s"),
     "pypi": ("https://pypi.org/project/%s/", "%s"),
 }
 
