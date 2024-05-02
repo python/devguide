@@ -55,7 +55,7 @@ in production; others are works in progress.
      - Sanket Garade (:github-user:`sanketgarade`, `email <mailto:garade@pm.me>`__)
      - :github:`GitHub <sanketgarade/python-doc-mr>`
    * - Lithuanian (lt)
-     - Albertas Gimbutas (`email <mailto:albertasgim@gmail.com>`__)
+     - Albertas Gimbutas (:github-user:`albertas`, `email <mailto:albertasgim@gmail.com>`__)
      - `Original mail <https://mail.python.org/pipermail/doc-sig/2019-July/004138.html>`__
    * - Persian (fa)
      - Komeil Parseh (:github-user:`mmdbalkhi`)
