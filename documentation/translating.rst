@@ -95,7 +95,7 @@ in production; others are works in progress.
      - :github:`GitHub <python/python-docs-tr>`,
        `RTD <https://python-docs-tr.readthedocs.io/>`__
    * - Ukrainian (uk)
-     - Dmytro Kazanzhy (:github-user:`kazanzhy`, `email <mailto:mailto:dkazanzhy@gmail.com>`__)
+     - Dmytro Kazanzhy (:github-user:`kazanzhy`, `email <mailto:dkazanzhy@gmail.com>`__)
      - :github:`GitHub <python/python-docs-uk>`,
        `Transifex <tx_>`_
 
