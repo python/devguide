@@ -49,7 +49,7 @@ in production; others are works in progress.
        Atsuo Ishimoto (:github-user:`atsuoishimoto`)
      - :github:`GitHub <python/python-docs-ja>`
    * - `Korean (ko) <https://docs.python.org/ko/>`__
-     -
+     - 오동권 (:github-user:`flowdas`)
      - :github:`GitHub <python/python-docs-ko>`
    * - Marathi (mr)
      - Sanket Garade (:github-user:`sanketgarade`, `email <mailto:garade@pm.me>`__)
