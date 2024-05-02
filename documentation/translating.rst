@@ -60,7 +60,7 @@ in production; others are works in progress.
    * - Persian (fa)
      - Komeil Parseh (:github-user:`mmdbalkhi`)
      - :github:`GitHub <mmdbalkhi/python-docs-fa>`
-   * - Polish (pl)
+   * - `Polish (pl) <https://docs.python.org/pl/>`__
      - Maciej Olko (:github-user:`m-aciek`)
      - :github:`GitHub <python/python-docs-pl>`,
        `Transifex <tx_>`_,
