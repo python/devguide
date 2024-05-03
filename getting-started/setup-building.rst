@@ -661,7 +661,7 @@ on Linux, macOS and iOS.
       $ sudo apt-get install build-essential gdb lcov pkg-config \
             libbz2-dev libffi-dev libgdbm-dev libgdbm-compat-dev liblzma-dev \
             libncurses5-dev libreadline6-dev libsqlite3-dev libssl-dev \
-            lzma lzma-dev tk-dev uuid-dev zlib1g-dev
+            lzma lzma-dev tk-dev uuid-dev zlib1g-dev libmpdec-dev
 
 
 .. tab:: macOS
@@ -692,9 +692,17 @@ on Linux, macOS and iOS.
 
    For example, with **Homebrew**, install the dependencies::
 
-      $ brew install pkg-config openssl@3.0 xz gdbm tcl-tk
+      $ brew install pkg-config openssl@3.0 xz gdbm tcl-tk mpdecimal
 
-   Then, for Python 3.11 and newer, run ``configure``::
+   Then, for Python 3.13 and newer, run ``configure``::
+
+      $ GDBM_CFLAGS="-I$(brew --prefix gdbm)/include" \
+         GDBM_LIBS="-L$(brew --prefix gdbm)/lib -lgdbm" \
+         ./configure --with-pydebug \
+                     --with-system-libmpdec \
+                     --with-openssl="$(brew --prefix openssl@3.0)"
+
+   For Python 3.11 and 3.12::
 
       $ GDBM_CFLAGS="-I$(brew --prefix gdbm)/include" \
          GDBM_LIBS="-L$(brew --prefix gdbm)/lib -lgdbm" \
@@ -716,9 +724,16 @@ on Linux, macOS and iOS.
 
    Alternatively, with **MacPorts**::
 
-      $ sudo port install pkgconfig openssl xz gdbm tcl tk +quartz
+      $ sudo port install pkgconfig openssl xz gdbm tcl tk +quartz mpdecimal
 
-   Then, for Python 3.11 and newer, run ``configure``::
+   Then, for Python 3.13 and newer, run ``configure``::
+
+      $ GDBM_CFLAGS="-I$(dirname $(dirname $(which port)))/include" \
+         GDBM_LIBS="-L$(dirname $(dirname $(which port)))/lib -lgdbm" \
+         ./configure --with-pydebug \
+                     --with-system-libmpdec
+
+   Or, for Python 3.11 and 3.12, run ``configure``::
 
       $ GDBM_CFLAGS="-I$(dirname $(dirname $(which port)))/include" \
          GDBM_LIBS="-L$(dirname $(dirname $(which port)))/lib -lgdbm" \
