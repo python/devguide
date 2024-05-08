@@ -643,11 +643,11 @@ on Linux, macOS and iOS.
       URL, distribution name and component name, to ``/etc/apt/sources.list``.
       Take Ubuntu 22.04 LTS (Jammy Jellyfish) for example::
 
-         deb-src http://archive.ubuntu.com/ubuntu/ jammy main
+         $ deb-src http://archive.ubuntu.com/ubuntu/ jammy main
 
       Alternatively, uncomment lines with ``deb-src`` using an editor, e.g.::
 
-         sudo nano /etc/apt/sources.list
+         $ sudo nano /etc/apt/sources.list
 
       For other distributions, like Debian, change the URL and names to correspond
       with the specific distribution.
