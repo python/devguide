@@ -619,49 +619,55 @@ on Linux, macOS and iOS.
    distribution, but the appropriate commands for some popular distributions
    are below.
 
-   On **Fedora**, **Red Hat Enterprise Linux** and other ``yum`` based systems::
+   .. tab:: ``yum``
 
-      $ sudo yum install yum-utils
-      $ sudo yum-builddep python3
+      On **Fedora**, **Red Hat Enterprise Linux** and other ``yum`` based systems::
 
-   On **Fedora** and other ``DNF`` based systems::
+         $ sudo yum install yum-utils
+         $ sudo yum-builddep python3
 
-      $ sudo dnf install dnf-plugins-core  # install this to use 'dnf builddep'
-      $ sudo dnf builddep python3
+   .. tab:: ``DNF``
 
-   On **Debian**, **Ubuntu**, and other ``apt`` based systems, try to get the
-   dependencies for the Python you're working on by using the ``apt`` command.
+      On **Fedora** and other ``DNF`` based systems::
 
-   First, make sure you have enabled the source packages in the sources list.
-   You can do this by adding the location of the source packages, including
-   URL, distribution name and component name, to ``/etc/apt/sources.list``.
-   Take Ubuntu 22.04 LTS (Jammy Jellyfish) for example::
+         $ sudo dnf install dnf-plugins-core  # install this to use 'dnf builddep'
+         $ sudo dnf builddep python3
 
-      deb-src http://archive.ubuntu.com/ubuntu/ jammy main
+   .. tab:: ``apt``
 
-   Alternatively, uncomment lines with ``deb-src`` using an editor, e.g.::
+      On **Debian**, **Ubuntu**, and other ``apt`` based systems, try to get the
+      dependencies for the Python you're working on by using the ``apt`` command.
 
-      sudo nano /etc/apt/sources.list
+      First, make sure you have enabled the source packages in the sources list.
+      You can do this by adding the location of the source packages, including
+      URL, distribution name and component name, to ``/etc/apt/sources.list``.
+      Take Ubuntu 22.04 LTS (Jammy Jellyfish) for example::
 
-   For other distributions, like Debian, change the URL and names to correspond
-   with the specific distribution.
+         deb-src http://archive.ubuntu.com/ubuntu/ jammy main
 
-   Then you should update the packages index::
+      Alternatively, uncomment lines with ``deb-src`` using an editor, e.g.::
 
-      $ sudo apt-get update
+         sudo nano /etc/apt/sources.list
 
-   Now you can install the build dependencies via ``apt``::
+      For other distributions, like Debian, change the URL and names to correspond
+      with the specific distribution.
 
-      $ sudo apt-get build-dep python3
-      $ sudo apt-get install pkg-config
+      Then you should update the packages index::
 
-   If you want to build all optional modules, install the following packages and
-   their dependencies::
+         $ sudo apt-get update
 
-      $ sudo apt-get install build-essential gdb lcov pkg-config \
-            libbz2-dev libffi-dev libgdbm-dev libgdbm-compat-dev liblzma-dev \
-            libncurses5-dev libreadline6-dev libsqlite3-dev libssl-dev \
-            lzma lzma-dev tk-dev uuid-dev zlib1g-dev libmpdec-dev
+      Now you can install the build dependencies via ``apt``::
+
+         $ sudo apt-get build-dep python3
+         $ sudo apt-get install pkg-config
+
+      If you want to build all optional modules, install the following packages and
+      their dependencies::
+
+         $ sudo apt-get install build-essential gdb lcov pkg-config \
+               libbz2-dev libffi-dev libgdbm-dev libgdbm-compat-dev liblzma-dev \
+               libncurses5-dev libreadline6-dev libsqlite3-dev libssl-dev \
+               lzma lzma-dev tk-dev uuid-dev zlib1g-dev libmpdec-dev
 
 
 .. tab:: macOS
