@@ -690,54 +690,64 @@ on Linux, macOS and iOS.
    manager, like Homebrew_ or MacPorts_, and then add the appropriate paths
    for the header and library files to your ``configure`` command.
 
-   For example, with **Homebrew**, install the dependencies::
+   .. tab:: Homebrew
 
-      $ brew install pkg-config openssl@3.0 xz gdbm tcl-tk mpdecimal
+      For example, with **Homebrew**, install the dependencies::
 
-   Then, for Python 3.13 and newer, run ``configure``::
+         $ brew install pkg-config openssl@3.0 xz gdbm tcl-tk mpdecimal
 
-      $ GDBM_CFLAGS="-I$(brew --prefix gdbm)/include" \
-         GDBM_LIBS="-L$(brew --prefix gdbm)/lib -lgdbm" \
-         ./configure --with-pydebug \
-                     --with-system-libmpdec \
-                     --with-openssl="$(brew --prefix openssl@3.0)"
+      .. tab:: Python 3.13+
 
-   For Python 3.11 and 3.12::
+         Then, for Python 3.13 and newer, run ``configure``::
 
-      $ GDBM_CFLAGS="-I$(brew --prefix gdbm)/include" \
-         GDBM_LIBS="-L$(brew --prefix gdbm)/lib -lgdbm" \
-         ./configure --with-pydebug \
-                     --with-openssl="$(brew --prefix openssl@3.0)"
+            $ GDBM_CFLAGS="-I$(brew --prefix gdbm)/include" \
+               GDBM_LIBS="-L$(brew --prefix gdbm)/lib -lgdbm" \
+               ./configure --with-pydebug \
+                           --with-system-libmpdec \
+                        --with-openssl="$(brew --prefix openssl@3.0)"
 
-   Or, for Python 3.8 through 3.10::
+      .. tab:: Python 3.11-3.12
 
-      $ CPPFLAGS="-I$(brew --prefix gdbm)/include -I$(brew --prefix xz)/include" \
-         LDFLAGS="-L$(brew --prefix gdbm)/lib -L$(brew --prefix xz)/lib" \
-         ./configure --with-pydebug \
-                     --with-openssl="$(brew --prefix openssl@3.0)" \
-                     --with-tcltk-libs="$(pkg-config --libs tcl tk)" \
-                     --with-tcltk-includes="$(pkg-config --cflags tcl tk)"
+         For Python 3.11 and 3.12::
 
-   And finally, run ``make``::
+            $ GDBM_CFLAGS="-I$(brew --prefix gdbm)/include" \
+               GDBM_LIBS="-L$(brew --prefix gdbm)/lib -lgdbm" \
+               ./configure --with-pydebug \
+                        --with-openssl="$(brew --prefix openssl@3.0)"
 
-      $ make -s -j2
+      .. tab:: Python 3.8-3.10
 
-   Alternatively, with **MacPorts**::
+         Or, for Python 3.8 through 3.10::
 
-      $ sudo port install pkgconfig openssl xz gdbm tcl tk +quartz mpdecimal
+            $ CPPFLAGS="-I$(brew --prefix gdbm)/include -I$(brew --prefix xz)/include" \
+               LDFLAGS="-L$(brew --prefix gdbm)/lib -L$(brew --prefix xz)/lib" \
+               ./configure --with-pydebug \
+                           --with-openssl="$(brew --prefix openssl@3.0)" \
+                           --with-tcltk-libs="$(pkg-config --libs tcl tk)" \
+                           --with-tcltk-includes="$(pkg-config --cflags tcl tk)"
 
-   Then, for Python 3.13 and newer, run ``configure``::
+   .. tab:: MacPorts
 
-      $ GDBM_CFLAGS="-I$(dirname $(dirname $(which port)))/include" \
-         GDBM_LIBS="-L$(dirname $(dirname $(which port)))/lib -lgdbm" \
-         ./configure --with-pydebug \
-                     --with-system-libmpdec
+      Alternatively, with **MacPorts**::
 
-   Or, for Python 3.11 and 3.12, run ``configure``::
+         $ sudo port install pkgconfig openssl xz gdbm tcl tk +quartz mpdecimal
 
-      $ GDBM_CFLAGS="-I$(dirname $(dirname $(which port)))/include" \
-         GDBM_LIBS="-L$(dirname $(dirname $(which port)))/lib -lgdbm" \
-         ./configure --with-pydebug
+      .. tab:: Python 3.13+
+
+         Then, for Python 3.13 and newer, run ``configure``::
+
+            $ GDBM_CFLAGS="-I$(dirname $(dirname $(which port)))/include" \
+               GDBM_LIBS="-L$(dirname $(dirname $(which port)))/lib -lgdbm" \
+               ./configure --with-pydebug \
+                           --with-system-libmpdec
+
+      .. tab:: Python 3.11-3.12
+
+         Or, Python 3.11 and 3.12, run ``configure``::
+
+            $ GDBM_CFLAGS="-I$(dirname $(dirname $(which port)))/include" \
+               GDBM_LIBS="-L$(dirname $(dirname $(which port)))/lib -lgdbm" \
+               ./configure --with-pydebug
 
    And finally, run ``make``::
 
