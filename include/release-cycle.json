@@ -1,8 +1,16 @@
 {
-  "3.13": {
+  "3.14": {
     "branch": "main",
-    "pep": 719,
+    "pep": 745,
     "status": "feature",
+    "first_release": "2025-10-01",
+    "end_of_life": "2030-10",
+    "release_manager": "Hugo van Kemenade"
+  },
+  "3.13": {
+    "branch": "3.13",
+    "pep": 719,
+    "status": "prerelease",
     "first_release": "2024-10-01",
     "end_of_life": "2029-10",
     "release_manager": "Thomas Wouters"
