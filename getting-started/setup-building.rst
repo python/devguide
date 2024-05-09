@@ -692,13 +692,13 @@ on Linux, macOS and iOS.
 
    .. tab:: Homebrew
 
-      For example, with **Homebrew**, install the dependencies::
+      For **Homebrew**, install dependencies using ``brew``::
 
          $ brew install pkg-config openssl@3.0 xz gdbm tcl-tk mpdecimal
 
       .. tab:: Python 3.13+
 
-         Then, for Python 3.13 and newer, run ``configure``::
+         For Python 3.13 and newer::
 
             $ GDBM_CFLAGS="-I$(brew --prefix gdbm)/include" \
                GDBM_LIBS="-L$(brew --prefix gdbm)/lib -lgdbm" \
@@ -717,7 +717,7 @@ on Linux, macOS and iOS.
 
       .. tab:: Python 3.8-3.10
 
-         Or, for Python 3.8 through 3.10::
+         For Python 3.8 through 3.10::
 
             $ CPPFLAGS="-I$(brew --prefix gdbm)/include -I$(brew --prefix xz)/include" \
                LDFLAGS="-L$(brew --prefix gdbm)/lib -L$(brew --prefix xz)/lib" \
@@ -728,13 +728,13 @@ on Linux, macOS and iOS.
 
    .. tab:: MacPorts
 
-      Alternatively, with **MacPorts**::
+      For **MacPorts**, install dependencies using ``port``::
 
          $ sudo port install pkgconfig openssl xz gdbm tcl tk +quartz mpdecimal
 
       .. tab:: Python 3.13+
 
-         Then, for Python 3.13 and newer, run ``configure``::
+         For Python 3.13 and newer::
 
             $ GDBM_CFLAGS="-I$(dirname $(dirname $(which port)))/include" \
                GDBM_LIBS="-L$(dirname $(dirname $(which port)))/lib -lgdbm" \
@@ -743,7 +743,7 @@ on Linux, macOS and iOS.
 
       .. tab:: Python 3.11-3.12
 
-         Or, Python 3.11 and 3.12, run ``configure``::
+         For Python 3.11 and 3.12::
 
             $ GDBM_CFLAGS="-I$(dirname $(dirname $(which port)))/include" \
                GDBM_LIBS="-L$(dirname $(dirname $(which port)))/lib -lgdbm" \
