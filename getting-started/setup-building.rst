@@ -628,14 +628,14 @@ on Linux, macOS and iOS.
 
    .. tab:: ``DNF``
 
-      On **Fedora** and other ``DNF`` based systems::
+      On **Fedora** and other ``dnf``-based systems::
 
          $ sudo dnf install dnf-plugins-core  # install this to use 'dnf builddep'
          $ sudo dnf builddep python3
 
    .. tab:: ``apt``
 
-      On **Debian**, **Ubuntu**, and other ``apt`` based systems, try to get the
+      On **Debian**, **Ubuntu**, and other ``apt``-based systems, try to get the
       dependencies for the Python you're working on by using the ``apt`` command.
 
       First, make sure you have enabled the source packages in the sources list.
