@@ -704,7 +704,7 @@ on Linux, macOS and iOS.
                GDBM_LIBS="-L$(brew --prefix gdbm)/lib -lgdbm" \
                ./configure --with-pydebug \
                            --with-system-libmpdec \
-                        --with-openssl="$(brew --prefix openssl@3.0)"
+                           --with-openssl="$(brew --prefix openssl@3.0)"
 
       .. tab:: Python 3.11-3.12
 
@@ -713,11 +713,11 @@ on Linux, macOS and iOS.
             $ GDBM_CFLAGS="-I$(brew --prefix gdbm)/include" \
                GDBM_LIBS="-L$(brew --prefix gdbm)/lib -lgdbm" \
                ./configure --with-pydebug \
-                        --with-openssl="$(brew --prefix openssl@3.0)"
+                           --with-openssl="$(brew --prefix openssl@3.0)"
 
       .. tab:: Python 3.8-3.10
 
-         For Python 3.8 through 3.10::
+         For Python 3.8, 3.9, and 3.10::
 
             $ CPPFLAGS="-I$(brew --prefix gdbm)/include -I$(brew --prefix xz)/include" \
                LDFLAGS="-L$(brew --prefix gdbm)/lib -L$(brew --prefix xz)/lib" \
