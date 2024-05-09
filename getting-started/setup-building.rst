@@ -619,13 +619,6 @@ on Linux, macOS and iOS.
    distribution, but the appropriate commands for some popular distributions
    are below.
 
-   .. tab:: ``yum``
-
-      On **Fedora**, **Red Hat Enterprise Linux** and other ``yum`` based systems::
-
-         $ sudo yum install yum-utils
-         $ sudo yum-builddep python3
-
    .. tab:: ``DNF``
 
       On **Fedora** and other ``dnf``-based systems::
