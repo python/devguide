@@ -619,14 +619,14 @@ on Linux, macOS and iOS.
    distribution, but the appropriate commands for some popular distributions
    are below.
 
-   .. tab:: ``DNF``
+   .. tab:: Fedora
 
       On **Fedora** and other ``dnf``-based systems::
 
          $ sudo dnf install dnf-plugins-core  # install this to use 'dnf builddep'
          $ sudo dnf builddep python3
 
-   .. tab:: ``apt``
+   .. tab:: Debian & Ubuntu
 
       On **Debian**, **Ubuntu**, and other ``apt``-based systems, try to get the
       dependencies for the Python you're working on by using the ``apt`` command.
