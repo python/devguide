@@ -619,48 +619,45 @@ on Linux, macOS and iOS.
    distribution, but the appropriate commands for some popular distributions
    are below.
 
-   .. tab:: Fedora
+   On **Fedora** and other ``dnf``-based systems::
 
-      On **Fedora** and other ``dnf``-based systems::
+      $ sudo dnf install dnf-plugins-core  # install this to use 'dnf builddep'
+      $ sudo dnf builddep python3
 
-         $ sudo dnf install dnf-plugins-core  # install this to use 'dnf builddep'
-         $ sudo dnf builddep python3
 
-   .. tab:: Debian & Ubuntu
+   On **Debian**, **Ubuntu**, and other ``apt``-based systems, try to get the
+   dependencies for the Python you're working on by using the ``apt`` command.
 
-      On **Debian**, **Ubuntu**, and other ``apt``-based systems, try to get the
-      dependencies for the Python you're working on by using the ``apt`` command.
+   First, make sure you have enabled the source packages in the sources list.
+   You can do this by adding the location of the source packages, including
+   URL, distribution name and component name, to ``/etc/apt/sources.list``.
+   Take Ubuntu 22.04 LTS (Jammy Jellyfish) for example::
 
-      First, make sure you have enabled the source packages in the sources list.
-      You can do this by adding the location of the source packages, including
-      URL, distribution name and component name, to ``/etc/apt/sources.list``.
-      Take Ubuntu 22.04 LTS (Jammy Jellyfish) for example::
+      $ deb-src http://archive.ubuntu.com/ubuntu/ jammy main
 
-         $ deb-src http://archive.ubuntu.com/ubuntu/ jammy main
+   Alternatively, uncomment lines with ``deb-src`` using an editor, e.g.::
 
-      Alternatively, uncomment lines with ``deb-src`` using an editor, e.g.::
+      $ sudo nano /etc/apt/sources.list
 
-         $ sudo nano /etc/apt/sources.list
+   For other distributions, like Debian, change the URL and names to correspond
+   with the specific distribution.
 
-      For other distributions, like Debian, change the URL and names to correspond
-      with the specific distribution.
+   Then you should update the packages index::
 
-      Then you should update the packages index::
+      $ sudo apt-get update
 
-         $ sudo apt-get update
+   Now you can install the build dependencies via ``apt``::
 
-      Now you can install the build dependencies via ``apt``::
+      $ sudo apt-get build-dep python3
+      $ sudo apt-get install pkg-config
 
-         $ sudo apt-get build-dep python3
-         $ sudo apt-get install pkg-config
+   If you want to build all optional modules, install the following packages and
+   their dependencies::
 
-      If you want to build all optional modules, install the following packages and
-      their dependencies::
-
-         $ sudo apt-get install build-essential gdb lcov pkg-config \
-               libbz2-dev libffi-dev libgdbm-dev libgdbm-compat-dev liblzma-dev \
-               libncurses5-dev libreadline6-dev libsqlite3-dev libssl-dev \
-               lzma lzma-dev tk-dev uuid-dev zlib1g-dev libmpdec-dev
+      $ sudo apt-get install build-essential gdb lcov pkg-config \
+            libbz2-dev libffi-dev libgdbm-dev libgdbm-compat-dev liblzma-dev \
+            libncurses5-dev libreadline6-dev libsqlite3-dev libssl-dev \
+            lzma lzma-dev tk-dev uuid-dev zlib1g-dev libmpdec-dev
 
 
 .. tab:: macOS
