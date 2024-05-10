@@ -619,7 +619,7 @@ on Linux, macOS and iOS.
    distribution, but the appropriate commands for some popular distributions
    are below.
 
-   On **Fedora** and other ``dnf``-based systems::
+   On **Fedora**, **RHEL**, **CentOS** and other ``dnf``-based systems::
 
       $ sudo dnf install dnf-plugins-core  # install this to use 'dnf builddep'
       $ sudo dnf builddep python3
