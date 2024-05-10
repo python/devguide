@@ -619,17 +619,13 @@ on Linux, macOS and iOS.
    distribution, but the appropriate commands for some popular distributions
    are below.
 
-   On **Fedora**, **Red Hat Enterprise Linux** and other ``yum`` based systems::
-
-      $ sudo yum install yum-utils
-      $ sudo yum-builddep python3
-
-   On **Fedora** and other ``DNF`` based systems::
+   On **Fedora**, **RHEL**, **CentOS** and other ``dnf``-based systems::
 
       $ sudo dnf install dnf-plugins-core  # install this to use 'dnf builddep'
       $ sudo dnf builddep python3
 
-   On **Debian**, **Ubuntu**, and other ``apt`` based systems, try to get the
+
+   On **Debian**, **Ubuntu**, and other ``apt``-based systems, try to get the
    dependencies for the Python you're working on by using the ``apt`` command.
 
    First, make sure you have enabled the source packages in the sources list.
@@ -637,11 +633,11 @@ on Linux, macOS and iOS.
    URL, distribution name and component name, to ``/etc/apt/sources.list``.
    Take Ubuntu 22.04 LTS (Jammy Jellyfish) for example::
 
-      deb-src http://archive.ubuntu.com/ubuntu/ jammy main
+      $ deb-src http://archive.ubuntu.com/ubuntu/ jammy main
 
    Alternatively, uncomment lines with ``deb-src`` using an editor, e.g.::
 
-      sudo nano /etc/apt/sources.list
+      $ sudo nano /etc/apt/sources.list
 
    For other distributions, like Debian, change the URL and names to correspond
    with the specific distribution.
