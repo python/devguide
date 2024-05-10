@@ -70,9 +70,14 @@ venv:
 ensure-venv:
 	@if [ ! -d $(VENVDIR) ] ; then \
 		echo "Creating venv in $(VENVDIR)"; \
-		$(PYTHON) -m venv $(VENVDIR); \
-		$(VENVDIR)/bin/python3 -m pip install --upgrade pip; \
-		$(VENVDIR)/bin/python3 -m pip install -r requirements.txt; \
+		if uv --version > /dev/null; then \
+			uv venv $(VENVDIR); \
+			VIRTUAL_ENV=$(VENVDIR) uv pip install -r requirements.txt; \
+		else \
+			$(PYTHON) -m venv $(VENVDIR); \
+			$(VENVDIR)/bin/python3 -m pip install --upgrade pip; \
+			$(VENVDIR)/bin/python3 -m pip install -r requirements.txt; \
+		fi; \
 		echo "The venv has been created in the $(VENVDIR) directory"; \
 	fi
 
@@ -175,7 +180,11 @@ check: ensure-venv
 
 .PHONY: lint
 lint: venv
-	$(VENVDIR)/bin/python3 -m pre_commit --version > /dev/null || $(VENVDIR)/bin/python3 -m pip install pre-commit
+	if uv --version > /dev/null; then \
+		$(VENVDIR)/bin/python3 -m pre_commit --version > /dev/null || VIRTUAL_ENV=$(VENVDIR) uv pip install pre-commit; \
+	else \
+		$(VENVDIR)/bin/python3 -m pre_commit --version > /dev/null || $(VENVDIR)/bin/python3 -m pip install pre-commit; \
+	fi;
 	$(VENVDIR)/bin/python3 -m pre_commit run --all-files
 
 .PHONY: serve
