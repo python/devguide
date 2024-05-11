@@ -246,14 +246,16 @@ directives.)  Looking at this example,
 
 ::
 
-   .. function:: foo(x)
-                 foo(y, z)
+   .. function:: remove(path, *, dir_fd=None)
+                 unlink(path, *, dir_fd=None)
       :bar: no
 
-      Return a line of text input from the user.
+      Remove (delete) the file *path*.
 
 ``function`` is the directive name.  It is given two arguments here, the
 remainder of the first line and the second line, as well as one option ``bar``
+By providing multiple arguments, the definitions will be grouped instead of
+separated by a empty line.
 (as you can see, options are given in the lines immediately following the
 arguments and indicated by the colons).
 
@@ -377,7 +379,7 @@ file might start like this::
       :platform: Unix, Windows
       :synopsis: Analyze and reanimate dead parrots.
    .. moduleauthor:: Eric Cleese <eric@python.invalid>
-   .. moduleauthor:: John Idle <john@python.invalid>
+                     John Idle <john@python.invalid>
 
 As you can see, the module-specific markup consists of two directives, the
 ``module`` directive and the ``moduleauthor`` directive.
