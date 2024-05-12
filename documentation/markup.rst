@@ -246,16 +246,17 @@ directives.)  Looking at this example,
 
 ::
 
-   .. function:: remove(path, *, dir_fd=None)
-                 unlink(path, *, dir_fd=None)
+   .. function:: foo(x)
+                 foo(y, z)
       :bar: no
 
-      Remove (delete) the file *path*.
+      Return a line of text input from the user.
 
 ``function`` is the directive name.  It is given two arguments here, the
 remainder of the first line and the second line, as well as one option ``bar``
-By providing multiple lines, the definitions will be grouped instead of
-separated by a empty line.
+By providing multiple lines, the signatures will be grouped instead of
+separated by a empty line. You can also use this for definitions with a
+different name.
 (as you can see, options are given in the lines immediately following the
 arguments and indicated by the colons).
 
@@ -431,7 +432,7 @@ following example shows all of the features of this directive type::
                   ham(eggs)
        :noindex:
 
-       Spam or ham the foo.
+       Spam or ham the eggs.
 
 The signatures of object methods or data attributes should not include the
 class name, but be nested in a class directive.  The generated files will
