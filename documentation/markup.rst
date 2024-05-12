@@ -255,7 +255,7 @@ directives.)  Looking at this example,
 ``function`` is the directive name.  It is given two arguments here, the
 remainder of the first line and the second line, as well as one option ``bar``
 By providing multiple lines, the signatures will be grouped instead of
-separated by a empty line. You can also use this for definitions with a
+separated by an empty line. You can also use this for definitions with a
 different name.
 (as you can see, options are given in the lines immediately following the
 arguments and indicated by the colons).
