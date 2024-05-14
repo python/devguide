@@ -86,25 +86,6 @@ welcomed and encouraged to contribute.
 .. _Python Mentors: https://www.python.org/dev/core-mentorship/
 
 
-.. _office hour:
-
-Core developers office hours
-----------------------------
-
-Several core developers have set aside time to host mentorship office hours.
-During the office hour, core developers are available to help contributors with
-our process, answer questions, and help lower the barrier of contributing and
-becoming Python core developers.
-
-The PSF's code of conduct applies for interactions with core developers
-during office hours.
-
-+------------------+-------------------------------+------------------------------------------------+
-| Core Developer   | Schedule                      | Details                                        |
-+==================+===============================+================================================+
-| Zachary Ware     | See details link              | Schedule at https://calendly.com/zware         |
-+------------------+-------------------------------+------------------------------------------------+
-
 File a bug
 ----------
 
