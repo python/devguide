@@ -432,7 +432,7 @@ following example shows all of the features of this directive type::
                   ham(eggs)
        :noindex:
 
-       Spam or ham the eggs.
+       Spam or ham the foo.
 
 The signatures of object methods or data attributes should not include the
 class name, but be nested in a class directive.  The generated files will
