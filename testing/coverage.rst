@@ -158,6 +158,12 @@ such as by venv)::
 
     ./python -m coverage
 
+(If you get the error
+
+    ImportError: No module named _sqlite3
+
+rerun ``configure`` with the ``--enable-loadable-sqlite-extensions`` flag.)
+
 The rest of the examples on how to use coverage.py will assume you are using a
 cloned copy, but you can substitute the above and all instructions should still
 be valid.
