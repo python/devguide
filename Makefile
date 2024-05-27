@@ -5,7 +5,7 @@
 PYTHON        = python3
 VENVDIR       = ./venv
 SPHINXBUILD   = $(VENVDIR)/bin/sphinx-build
-SPHINXOPTS    = -W --keep-going
+SPHINXOPTS    = --fail-on-warning --keep-going
 BUILDDIR      = _build
 BUILDER       = html
 JOBS          = auto
@@ -13,11 +13,11 @@ PAPER         =
 SPHINXLINT    = $(VENVDIR)/bin/sphinx-lint
 
 # Internal variables.
-PAPEROPT_a4     = -D latex_paper_size=a4
-PAPEROPT_letter = -D latex_paper_size=letter
-ALLSPHINXOPTS   = -b $(BUILDER) \
-                  -d $(BUILDDIR)/doctrees \
-                  -j $(JOBS) \
+PAPEROPT_a4     = --define latex_paper_size=a4
+PAPEROPT_letter = --define latex_paper_size=letter
+ALLSPHINXOPTS   = --builder $(BUILDER) \
+                  --doctree-dir $(BUILDDIR)/doctrees \
+                  --jobs $(JOBS) \
                   $(PAPEROPT_$(PAPER)) \
                   $(SPHINXOPTS) \
                   . $(BUILDDIR)/$(BUILDER)
@@ -170,7 +170,9 @@ htmlview: html
 
 .PHONY: htmllive
 htmllive: SPHINXBUILD = $(VENVDIR)/bin/sphinx-autobuild
-htmllive: SPHINXOPTS = --re-ignore="/\.idea/|/venv/" --open-browser --delay 0
+# Arbitrarily selected ephemeral port between 49152–65535
+# to avoid conflicts with other processes:
+htmllive: SPHINXOPTS = --re-ignore="/\.idea/|/venv/" --open-browser --delay 0 --port 55301
 htmllive: html
 
 .PHONY: check
