@@ -170,7 +170,8 @@ htmlview: html
 
 .PHONY: htmllive
 htmllive: SPHINXBUILD = $(VENVDIR)/bin/sphinx-autobuild
-# Arbitrarily selected ephemeral port between 49152–65535:
+# Arbitrarily selected ephemeral port between 49152–65535
+# to avoid conflicts with other processes:
 htmllive: SPHINXOPTS = --re-ignore="/\.idea/|/venv/" --open-browser --delay 0 --port 55301
 htmllive: html
 
