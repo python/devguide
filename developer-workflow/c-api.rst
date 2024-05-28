@@ -174,7 +174,7 @@ Unstable C API
 
 The unstable C API tier is meant for extensions that need tight integration
 with the interpreter, like debuggers and JIT compilers.
-Users of this tier may need to change their code with every minor release.
+Users of this tier may need to change their code with every feature release.
 
 In many ways, this tier is like the general C API:
 
@@ -189,7 +189,7 @@ The differences are:
 
 - Names of functions structs, macros, etc. start with the ``PyUnstable_``
   prefix. This defines what's in the unstable tier.
-- The unstable API can change in minor versions, without any deprecation
+- The unstable API can change in feature releases, without any deprecation
   period.
 - A stability note appears in the docs.
   This happens automatically, based on the name
@@ -198,7 +198,7 @@ The differences are:
 Despite being “unstable”, there are rules to make sure third-party code can
 use this API reliably:
 
-* Changes and removals can be done in minor releases
+* Changes and removals can be done in feature releases
   (:samp:`3.{x}.0`, including Alphas and Betas for :samp:`3.{x}.0`).
 * Adding a new unstable API *for an existing feature* is allowed even after
   Beta feature freeze, up until the first Release Candidate.
