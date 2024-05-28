@@ -553,7 +553,7 @@ Python is tricky and we simply cannot accept everyone's contributions.
 
 But if your pull request is merged it will then go into Python's
 :abbr:`VCS (version control system)` to be released
-with the next major release of Python. It may also be backported to older
+with the next feature release of Python. It may also be backported to older
 versions of Python as a bugfix if the core developer doing the merge believes
 it is warranted.
 

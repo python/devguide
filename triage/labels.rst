@@ -95,7 +95,7 @@ Version labels
 
 These labels are used to indicate which versions of Python are affected.
 The available version labels (with the form :samp:`3.{N}`) are updated
-whenever new major releases are created or retired.
+whenever new feature releases are created or retired.
 
 See also :ref:`the branch status page <branchstatus>`
 for a list of active branches.
