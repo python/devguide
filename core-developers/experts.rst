@@ -297,12 +297,14 @@ for “their” platform as a third-party project.
 Platform              Maintainers
 ===================   ===========
 AIX                   David.Edelsohn^
+Android               mhsmith, encukou
 Cygwin                jlt63^, stutzbach^
 Emscripten            hoodmane, pmp-p, rdb, rth, ryanking13
 FreeBSD
 HP-UX
+iOS                   freakboy3742, ned-deily
 Linux
-macOS                 ronaldoussoren, ned-deily
+macOS                 ronaldoussoren, ned-deily, freakboy3742
 NetBSD1
 OS2/EMX               aimacintyre^
 Solaris/OpenIndiana   jcea
