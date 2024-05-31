@@ -297,7 +297,7 @@ for “their” platform as a third-party project.
 Platform              Maintainers
 ===================   ===========
 AIX                   David.Edelsohn^
-Android               mhsmith, encukou
+Android               mhsmith
 Cygwin                jlt63^, stutzbach^
 Emscripten            hoodmane, pmp-p, rdb, rth, ryanking13
 FreeBSD
