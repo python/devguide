@@ -55,15 +55,12 @@ Module                Maintainers
 __future__
 __main__              gvanrossum, ncoghlan
 _thread
-_testbuffer
 abc
-aifc                  bitdancer
 argparse
 array
-ast                   benjaminp, pablogsal, isidentical
+ast                   benjaminp, pablogsal, isidentical, JelleZijlstra
 asyncio               1st1, asvetlov, gvanrossum, graingert, kumaraditya303, willingc
 atexit
-audioop               serhiy-storchaka
 base64
 bdb
 binascii
@@ -71,9 +68,6 @@ bisect                rhettinger*
 builtins
 bz2
 calendar
-cgi                   ethanfurman*
-cgitb                 ethanfurman*
-chunk
 cmath                 mdickinson
 cmd
 code
@@ -90,7 +84,6 @@ contextvars
 copy                  avassalotti
 copyreg               avassalotti
 cProfile
-crypt                 jafo^*
 csv                   smontanaro (inactive)
 ctypes                theller (inactive), abalkin, amauryfa, meadori
 curses                Yhg1s
@@ -137,14 +130,12 @@ ipaddress             pmoody^
 itertools             rhettinger*
 json                  etrepum (inactive), ezio-melotti, rhettinger
 keyword
-lib2to3               benjaminp
 libmpdec
 linecache
 locale                malemburg
 logging               vsajip
 lzma
 mailbox
-mailcap
 marshal
 math                  mdickinson, rhettinger, stutzbach^
 mimetypes
@@ -164,7 +155,7 @@ os.path               serhiy-storchaka
 ossaudiodev
 parser                pablogsal
 pathlib               barneygale*
-pdb
+pdb                   gaogaotiantian
 pickle                avassalotti
 pickletools           avassalotti
 pipes
@@ -212,14 +203,12 @@ string
 stringprep
 struct                mdickinson, meadori
 subprocess            astrand^ (inactive), giampaolo, gpshead*
-sunau
 symtable              benjaminp
 sys
 sysconfig             FFY00
 syslog                jafo^*
 tabnanny              tim-one (inactive)
 tarfile               gustaebel
-telnetlib
 tempfile
 termios               Yhg1s
 test                  ezio-melotti
@@ -366,6 +355,7 @@ release management  tarekziade, malemburg, benjaminp, warsaw,
 runtime lifecycle   ericsnowcurrently, kumaraditya303, zooba
 str.format          ericvsmith*
 subinterpreters     ericsnowcurrently, kumaraditya303
+symbol table        JelleZijlstra
 testing             voidspace, ezio-melotti
 test coverage
 threads             gpshead
