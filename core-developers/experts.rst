@@ -355,7 +355,7 @@ release management  tarekziade, malemburg, benjaminp, warsaw,
 runtime lifecycle   ericsnowcurrently, kumaraditya303, zooba
 str.format          ericvsmith*
 subinterpreters     ericsnowcurrently, kumaraditya303
-symbol table        JelleZijlstra
+symbol table        JelleZijlstra, carljm
 testing             voidspace, ezio-melotti
 test coverage
 threads             gpshead
