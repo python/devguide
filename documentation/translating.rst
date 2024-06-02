@@ -44,7 +44,7 @@ in production; others are works in progress.
    * - Italian (it)
      - Alessandro Cucci (`email <mailto:alessandro.cucci@gmail.com>`__)
      - :github:`GitHub <python/python-docs-it>`,
-      `original mail <https://mail.python.org/pipermail/doc-sig/2019-April/004114.html>`__
+       `original mail <https://mail.python.org/pipermail/doc-sig/2019-April/004114.html>`__
    * - `Japanese (ja) <https://docs.python.org/ja/>`__
      - Kinebuchi Tomohiko (:github-user:`cocoatomo`),
        Atsuo Ishimoto (:github-user:`atsuoishimoto`)
