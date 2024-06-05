@@ -179,7 +179,8 @@ Then the interpreter function (``_PyEval_EvalFrameDefault()``) returns ``NULL``.
 However, if an exception is raised in a ``try`` block, the interpreter must jump to the corresponding ``except`` or ``finally`` block.
 In 3.10 and before, there was a separate "block stack" which was used to keep track of nesting ``try`` blocks.
 In 3.11, this mechanism has been replaced by a statically generated table, ``code->co_exceptiontable``,
-which is described in detail in the :cpy-file:`internals documentation <InternalDocs/exception_handling.md>`.
+which is described in detail in the `internals documentation
+<https://github.com/python/cpython/blob/main/InternalDocs/exception_handling.md>`_.
 
 The locations table
 -------------------
