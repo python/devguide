@@ -398,7 +398,7 @@ Emission of bytecode is handled by the following macros:
     add a specified opcode
 ``ADDOP_NOLINE(struct compiler *, int)``
     like ``ADDOP`` without a line number; used for artificial opcodes without
-    no corresponding token in the source code
+    a corresponding token in the source code
 ``ADDOP_IN_SCOPE(struct compiler *, int)``
     like ``ADDOP``, but also exits current scope; used for adding return value
     opcodes in lambdas and closures
@@ -421,17 +421,17 @@ Emission of bytecode is handled by the following macros:
     add the ``LOAD_CONST`` opcode with the proper argument based on the
     position of the specified PyObject in the consts table.
 ``ADDOP_LOAD_CONST_NEW(struct compiler *, PyObject *)``
-    just like ``ADDOP_LOAD_CONST_NEW``, but steals a reference to PyObject
+    just like ``ADDOP_LOAD_CONST``, but steals a reference to PyObject
 ``ADDOP_JUMP(struct compiler *, int, basicblock *)``
     create a jump to a basic block
 ``ADDOP_JUMP_NOLINE(struct compiler *, int, basicblock *)``
     like ``ADDOP_JUMP`` without a line number; used for artificial jumps
-    without no corresponding token in the source code.
+    without a corresponding token in the source code.
 ``ADDOP_JUMP_COMPARE(struct compiler *, cmpop_ty)``
     depending on the second argument, add an ``ADDOP_I`` with either an
     ``IS_OP``, ``CONTAINS_OP``, or ``COMPARE_OP`` opcode.
 
-Several helper functions that will emit bytecode and are named
+Several helper functions that will emit bytecode are named
 :samp:`compiler_{xx}()` where *xx* is what the function helps with (``list``,
 ``boolop``, etc.).  A rather useful one is ``compiler_nameop()``.
 This function looks up the scope of a variable and, based on the
