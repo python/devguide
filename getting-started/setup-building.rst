@@ -334,7 +334,6 @@ on Linux, macOS and iOS.
    CPython. If you use the pre-compiled binaries, you should unpack each tarball
    into a separate folder, and use that folder as the configuration target.
 
-
 .. _compiling:
 
 Compile and build
