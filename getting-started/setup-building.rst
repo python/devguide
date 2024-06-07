@@ -367,7 +367,7 @@ additional requirements so that the compiled interpreter supports the
 desired features.
 
 If you want to install these optional dependencies, consult the
-:ref:`build-dependencies` section below.
+:ref:`build-dependencies` section above.
 
 If you don't need to install them, the basic steps for building Python
 for development is to configure it and then compile it.
