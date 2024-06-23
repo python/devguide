@@ -348,7 +348,7 @@ Current administrators
 |                   | Maintainer of buildbot.python.org                        |                 |
 +-------------------+----------------------------------------------------------+-----------------+
 | Łukasz Langa      | Python 3.8 and 3.9 Release Manager,                      | ambv            |
-|                   | PSF CPython Developer in Residence 2021-2022             |                 |
+|                   | PSF CPython Developer in Residence 2021-present          |                 |
 +-------------------+----------------------------------------------------------+-----------------+
 | Brett Cannon      |                                                          | brettcannon     |
 +-------------------+----------------------------------------------------------+-----------------+
