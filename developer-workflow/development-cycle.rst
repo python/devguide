@@ -340,17 +340,15 @@ Current administrators
 +-------------------+----------------------------------------------------------+-----------------+
 | Name              | Role                                                     | GitHub Username |
 +===================+==========================================================+=================+
+| Hugo van Kemenade | Python 3.14 and 3.15 Release Manager                     | hugovk          |
++-------------------+----------------------------------------------------------+-----------------+
+| Thomas Wouters    | Python 3.12 and 3.13 Release Manager                     | Yhg1s           |
++-------------------+----------------------------------------------------------+-----------------+
 | Pablo Galindo     | Python 3.10 and 3.11 Release Manager,                    | pablogsal       |
 |                   | Maintainer of buildbot.python.org                        |                 |
 +-------------------+----------------------------------------------------------+-----------------+
 | Łukasz Langa      | Python 3.8 and 3.9 Release Manager,                      | ambv            |
-|                   | PSF CPython Developer in Residence 2021-2022             |                 |
-+-------------------+----------------------------------------------------------+-----------------+
-| Ned Deily         | Python 3.6 and 3.7 Release Manager                       | ned-deily       |
-+-------------------+----------------------------------------------------------+-----------------+
-| Larry Hastings    | Retired Release Manager (for Python 3.4 and 3.5)         | larryhastings   |
-+-------------------+----------------------------------------------------------+-----------------+
-| Berker Peksag     | Maintainer of bpo-linkify and cpython-emailer-webhook    | berkerpeksag    |
+|                   | PSF CPython Developer in Residence 2021-present          |                 |
 +-------------------+----------------------------------------------------------+-----------------+
 | Brett Cannon      |                                                          | brettcannon     |
 +-------------------+----------------------------------------------------------+-----------------+
