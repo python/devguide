@@ -301,7 +301,7 @@ Current owners
 +----------------------+--------------------------------+-----------------+
 | Ee Durbin            | PSF Director of Infrastructure | ewdurbin        |
 +----------------------+--------------------------------+-----------------+
-| Van Lindberg         | PSF General Counsel            | VanL            |
+| Jacob Coffee         | PSF Infrastructure Engineer    | JacobCoffee     |
 +----------------------+--------------------------------+-----------------+
 | Łukasz Langa         | CPython Developer in Residence | ambv            |
 +----------------------+--------------------------------+-----------------+
