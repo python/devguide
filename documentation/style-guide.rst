@@ -291,3 +291,13 @@ errors ("I made a mistake, therefore the docs must be wrong ...").  Typically,
 the documentation wasn't consulted until after the error was made.  It is
 unfortunate, but typically no documentation edit would have saved the user from
 making false assumptions about the language ("I was surprised by ...").
+
+Function signatures
+===================
+
+These are the evolving guidelines for how to include function signatures in the docs:
+
+- If a function accepts positional-only or keyword-only arguments, include the
+  slash and the star in the signature as appropriate::
+
+   .. function:: some_function(pos1, pos2, /, pos_or_kwd, *, kwd1, kwd2):
