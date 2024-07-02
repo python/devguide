@@ -566,9 +566,9 @@ Grammatical elements and rules
 
 Pegen has some special grammatical elements and rules:
 
-* Strings with single quotes (') (e.g. ``'class'``) denote KEYWORDS.
-* Strings with double quotes (") (e.g. ``"match"``) denote SOFT KEYWORDS.
-* Uppercase names (e.g. ``NAME``) denote tokens in the :cpy-file:`Grammar/Tokens` file.
+* Strings with single quotes (') (for example, ``'class'``) denote KEYWORDS.
+* Strings with double quotes (") (for example, ``"match"``) denote SOFT KEYWORDS.
+* Uppercase names (for example, ``NAME``) denote tokens in the :cpy-file:`Grammar/Tokens` file.
 * Rule names starting with ``invalid_`` are used for specialized syntax errors.
 
   - These rules are NOT used in the first pass of the parser.
@@ -644,12 +644,12 @@ Hard and soft keywords
 ----------------------
 
 .. note::
-    In the grammar files, keywords are defined using **single quotes** (e.g. ``'class'``) while soft
-    keywords are defined using **double quotes** (e.g. ``"match"``).
+    In the grammar files, keywords are defined using **single quotes** (for example, ``'class'``) while soft
+    keywords are defined using **double quotes** (for example, ``"match"``).
 
 There are two kinds of keywords allowed in pegen grammars: *hard* and *soft*
 keywords. The difference between hard and soft keywords is that hard keywords
-are always reserved words, even in positions where they make no sense (e.g. ``x = class + 1``),
+are always reserved words, even in positions where they make no sense (for example, ``x = class + 1``),
 while soft keywords only get a special meaning in context. Trying to use a hard
 keyword as a variable will always fail:
 

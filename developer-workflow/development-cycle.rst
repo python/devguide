@@ -36,8 +36,8 @@ Some examples of release tags: ``v3.7.0a1``, ``v3.6.3``, ``v2.7.14rc1``.
 Branches
 --------
 
-There is a branch for each *feature version*, whether released or not (e.g.
-3.7, 3.8).
+There is a branch for each *feature version*, whether released or not (for
+example, 3.7, 3.8).
 
 
 .. _indevbranch:
@@ -57,7 +57,7 @@ For versions 3.4 and before, this was conventionally done when the final
 release was cut (for example, 3.4.0 final).
 
 Starting with the 3.5 release, we create the release maintenance branch
-(e.g. 3.5) at the time we enter beta (3.5.0 beta 1).  This allows
+(``3.5``) at the time we enter beta (3.5.0 beta 1).  This allows
 feature development for the release 3.n+1 to occur within the main
 branch alongside the beta and release candidate stabilization periods
 for release 3.n.
@@ -89,7 +89,7 @@ since most readers access the `stable documentation <https://docs.python.org/3/>
 rather than the `development documentation <https://docs.python.org/dev/>`__.
 
 A new maintenance branch is normally created when the next feature release
-cycle reaches feature freeze, i.e. at its first beta pre-release.
+cycle reaches feature freeze, that is, at its first beta pre-release.
 From that point on, changes intended for remaining pre-releases, the final
 release (3.x.0), and subsequent bugfix releases are merged to
 that maintenance branch.
@@ -131,7 +131,7 @@ End-of-life branches
 The code base for a release cycle which has reached end-of-life status
 is frozen and no longer has a branch in the repo.  The final state of
 the end-of-lifed branch is recorded as a tag with the same name as the
-former branch, e.g. ``3.3`` or ``2.6``.
+former branch, for example, ``3.3`` or ``2.6``.
 
 The :ref:`versions` page contains list of active and end-of-life branches.
 
@@ -191,7 +191,7 @@ Release Candidate (RC)
 
 A branch preparing for an RC release can only have bugfixes applied that have
 been reviewed by other core developers.  Generally, these issues must be
-severe enough (e.g. crashes) that they deserve fixing before the final release.
+severe enough (for example, crashes) that they deserve fixing before the final release.
 All other issues should be deferred to the next development cycle, since
 stability is the strongest concern at this point.
 
@@ -227,13 +227,13 @@ repositories are expected to relate to the Python language, the CPython
 reference implementation, their documentation and their development workflow.
 This includes, for example:
 
-* The reference implementation of Python and related repositories (i.e. `CPython <https://github.com/python/cpython>`_)
-* Tooling and support around CPython development (e.g. `pyperformance <https://github.com/python/pyperformance>`_, `Bedevere <https://github.com/python/bedevere>`_)
-* Helpers and backports for Python/CPython features (e.g. `typing_extensions <https://github.com/python/typing_extensions>`_, `typeshed <https://github.com/python/typeshed>`_, `tzdata <https://github.com/python/tzdata>`_, `pythoncapi-compat <https://github.com/python/pythoncapi-compat>`_)
-* Organization-related repositories (e.g. the `Code of Conduct <https://github.com/python/pycon-code-of-conduct>`_, `.github <https://github.com/python/.github>`_)
-* Documentation and websites for all the above (e.g. `python.org repository <https://github.com/python/pythondotorg>`_, `PEPs <https://github.com/python/peps>`_, `Devguide <https://github.com/python/devguide>`_, docs translations)
-* Infrastructure for all the above (e.g. `docsbuild-scripts <https://github.com/python/docsbuild-scripts>`_, `buildmaster-config <https://github.com/python/buildmaster-config>`_)
-* Discussions and notes around official development-related processes and events (e.g. `steering-council <https://github.com/python/steering-council>`_, `core-sprint <https://github.com/python/core-sprint>`_)
+* The reference implementation of Python and related repositories: `CPython <https://github.com/python/cpython>`_.
+* Tooling and support around CPython development: `pyperformance <https://github.com/python/pyperformance>`_, `Bedevere <https://github.com/python/bedevere>`_.
+* Helpers and backports for Python/CPython features: `typing_extensions <https://github.com/python/typing_extensions>`_, `typeshed <https://github.com/python/typeshed>`_, `tzdata <https://github.com/python/tzdata>`_, `pythoncapi-compat <https://github.com/python/pythoncapi-compat>`_.
+* Organization-related repositories: the `Code of Conduct <https://github.com/python/pycon-code-of-conduct>`_, `.github <https://github.com/python/.github>`_.
+* Documentation and websites for all the above: `python.org repository <https://github.com/python/pythondotorg>`_, `PEPs <https://github.com/python/peps>`_, `Devguide <https://github.com/python/devguide>`_, docs translations.
+* Infrastructure for all the above: `docsbuild-scripts <https://github.com/python/docsbuild-scripts>`_, `buildmaster-config <https://github.com/python/buildmaster-config>`_.
+* Discussions and notes around official development-related processes and events: `steering-council <https://github.com/python/steering-council>`_, `core-sprint <https://github.com/python/core-sprint>`_.
 
 Before adding a new repository to the organization, open a discussion to seek consensus
 in the `Committers Discourse category <https://discuss.python.org/c/committers/5>`_.
@@ -248,13 +248,13 @@ accounts or other GitHub orgs. It is relatively easy to move a repository to
 the organization once it is mature. For example, this would now apply to
 experimental features like `asyncio <https://github.com/python/asyncio>`_,
 `exceptiongroups <https://github.com/python/exceptiongroups>`_,
-and drafts of new guides and other documentation (e.g. `redistributor-guide
+and drafts of new guides and other documentation (for example, `redistributor-guide
 <https://github.com/python/redistributor-guide>`_).
 
-General-use tools and libraries (e.g. `mypy <https://github.com/python/mypy>`_
+General-use tools and libraries (for example, `mypy <https://github.com/python/mypy>`_
 or `Black <https://github.com/psf/black>`_) should also be developed outside
 the ``python`` organization, unless core devs (as represented by the SC)
-specifically want to “bless” one implementation (as with e.g.
+specifically want to “bless” one implementation (as with
 `typeshed <https://github.com/python/typeshed>`_,
 `tzdata <https://github.com/python/tzdata>`_, or
 `pythoncapi-compat <https://github.com/python/pythoncapi-compat>`_).

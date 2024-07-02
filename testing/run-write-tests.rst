@@ -198,7 +198,7 @@ a more random order which helps to check that the various tests do not interfere
 with each other.  The ``-w`` flag causes failing tests to be run again to see
 if the failures are transient or consistent.
 The ``-uall`` flag allows the use of all available
-resources so as to not skip tests requiring, e.g., Internet access.
+resources so as to not skip tests requiring, for example, Internet access.
 
 To check for reference leaks (only needed if you modified C code), use the
 ``-R`` flag.  For example, ``-R 3:2`` will first run the test 3 times to settle

@@ -29,7 +29,7 @@ our workflow that are not covered by a bot or status check are:
 
 ## Setting Expectations
 
-Due to the fact that this project is entirely volunteer-run (i.e. no one is paid
+Due to the fact that this project is entirely volunteer-run (that is, no one is paid
 to work on Python full-time), we unfortunately can make no guarantees as to if
 or when a core developer will get around to reviewing your pull request.
 If no core developer has done a review or responded to changes made because of a

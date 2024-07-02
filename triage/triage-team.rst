@@ -38,7 +38,7 @@ following:
 
   - PRs proposing fixes for bugs that can no longer be reproduced
   - PRs proposing changes that have been rejected by Python core developers
-    elsewhere (e.g. in an issue or a PEP rejection notice)
+    elsewhere (for example, in an issue or a PEP rejection notice)
 
 If a triager has any doubt about whether to close a PR,
 they should consult a core developer before taking any action.

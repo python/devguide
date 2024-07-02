@@ -120,7 +120,7 @@ Doubly linked lists are used because they efficiently support most frequently re
 general, the collection of all objects tracked by GC are partitioned into disjoint sets, each in its own
 doubly linked list.  Between collections, objects are partitioned into "generations", reflecting how
 often they've survived collection attempts.  During collections, the generation(s) being collected
-are further partitioned into, e.g., sets of reachable and unreachable objects.  Doubly linked lists
+are further partitioned into, for example, sets of reachable and unreachable objects.  Doubly linked lists
 support moving an object from one partition to another, adding a new object,  removing an object
 entirely (objects tracked by GC are most often reclaimed by the refcounting system when GC
 isn't running at all!), and merging partitions, all with a small constant number of pointer updates.
@@ -154,7 +154,7 @@ and, during garbage collection, differentiate reachable vs. unreachable objects.
 Note that not all fields are to scale. ``pad`` is two bytes, ``ob_mutex`` and
 ``ob_gc_bits`` are each one byte, and ``ob_ref_local`` is four bytes. The
 other fields, ``ob_tid``, ``ob_ref_shared``, and ``ob_type``, are all
-pointer-sized (i.e., eight bytes on a 64-bit platform).
+pointer-sized (that is, eight bytes on a 64-bit platform).
 
 
 The garbage collector also temporarily repurposes the ``ob_tid`` (thread ID)
@@ -181,7 +181,7 @@ Identifying reference cycles
 
 The algorithm that CPython uses to detect those reference cycles is
 implemented in the ``gc`` module. The garbage collector **only focuses**
-on cleaning container objects (i.e. objects that can contain a reference
+on cleaning container objects (that is, objects that can contain a reference
 to one or more objects). These can be arrays, dictionaries, lists, custom
 class instances, classes in extension modules, etc. One could think that
 cycles are uncommon but the truth is that many internal references needed by
@@ -442,13 +442,13 @@ Collecting the oldest generation
 In addition to the various configurable thresholds, the GC only triggers a full
 collection of the oldest generation if the ratio ``long_lived_pending / long_lived_total``
 is above a given value (hardwired to 25%). The reason is that, while "non-full"
-collections (i.e., collections of the young and middle generations) will always
+collections (that is, collections of the young and middle generations) will always
 examine roughly the same number of objects (determined by the aforementioned
 thresholds) the cost of a full collection is proportional to the total
 number of long-lived objects, which is virtually unbounded.  Indeed, it has
 been remarked that doing a full collection every <constant number> of object
 creations entails a dramatic performance degradation in workloads which consist
-of creating and storing lots of long-lived objects (e.g. building a large list
+of creating and storing lots of long-lived objects (for example, building a large list
 of GC-tracked objects would show quadratic performance, instead of linear as
 expected). Using the above ratio, instead, yields amortized linear performance
 in the total number of objects (the effect of which can be summarized thusly:
@@ -468,7 +468,7 @@ to the size of the data, often a word or multiple thereof. This discrepancy
 leaves a few of the least significant bits of the pointer unused, which can be
 used for tags or to keep other information – most often as a bit field (each
 bit a separate tag) – as long as code that uses the pointer masks out these
-bits before accessing memory.  E.g., on a 32-bit architecture (for both
+bits before accessing memory.  For example, on a 32-bit architecture (for both
 addresses and word size), a word is 32 bits = 4 bytes, so word-aligned
 addresses are always a multiple of 4, hence end in ``00``, leaving the last 2 bits
 available; while on a 64-bit architecture, a word is 64 bits = 8 bytes, so

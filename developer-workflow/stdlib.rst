@@ -108,7 +108,7 @@ year, a module needs to have established itself as (one of) the top choices by
 the community for solving the problem the module is intended for.
 
 The development of the module must move into Python's
-infrastructure (i.e., the module is no longer directly maintained outside of
+infrastructure (that is, the module is no longer directly maintained outside of
 Python). This prevents a divergence between the code that is included in the
 stdlib and that which is released outside the stdlib (typically done to provide
 the module to older versions of Python). It also removes the burden of forcing

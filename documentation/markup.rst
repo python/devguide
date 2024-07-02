@@ -385,7 +385,7 @@ As you can see, the module-specific markup consists of two directives, the
 .. describe:: module
 
    This directive marks the beginning of the description of a module, package,
-   or submodule. The name should be fully qualified (i.e. including the
+   or submodule. The name should be fully qualified (that is, including the
    package name for submodules).
 
    The ``platform`` option, if present, is a comma-separated list of the
@@ -443,7 +443,7 @@ The directives are:
 
 .. describe:: c:function
 
-   Describes a C function. The signature should be given as in C, e.g.::
+   Describes a C function. The signature should be given as in C, for example::
 
       .. c:function:: PyObject* PyType_GenericAlloc(PyTypeObject *type, Py_ssize_t nitems)
 
@@ -683,7 +683,7 @@ Syntax highlighting is handled in a smart way:
   encountered.
 
 * The ``code-block`` directive can be used to specify the highlight language
-  of a single code block, e.g.::
+  of a single code block, for example::
 
      .. code-block:: c
 
@@ -759,7 +759,7 @@ versatile:
   ``:meth:`~Queue.Queue.get``` will refer to ``Queue.Queue.get`` but only
   display ``get`` as the link text.
 
-  In HTML output, the link's ``title`` attribute (that is e.g. shown as a
+  In HTML output, the link's ``title`` attribute (that might be shown as a
   tool-tip on mouse-hover) will always be the full target name.
 
 * Combining ``~`` and ``!`` (for example, ``:meth:`~!Queue.Queue.get```) is not
@@ -949,7 +949,7 @@ in a different style:
 .. describe:: manpage
 
    A reference to a Unix manual page including the section,
-   e.g. ``:manpage:`ls(1)```.
+   for example, ``:manpage:`ls(1)```.
 
 .. describe:: menuselection
 
@@ -1138,7 +1138,7 @@ units as well as normal text:
 .. describe:: impl-detail
 
    This directive is used to mark CPython-specific information.  Use either with
-   a block content or a single sentence as an argument, i.e. either ::
+   a block content or a single sentence as an argument, that is, either ::
 
       .. impl-detail::
 
@@ -1304,7 +1304,7 @@ the definition of the symbol.  There is this directive:
    Blank lines are not allowed within ``productionlist`` directive arguments.
 
    The definition can contain token names which are marked as interpreted text
-   (e.g. ``unaryneg ::= "-" `integer```) -- this generates cross-references
+   (for example, ``unaryneg ::= "-" `integer```) -- this generates cross-references
    to the productions of these tokens.
 
    Note that no further reST parsing is done in the production, so that you
@@ -1334,12 +1334,12 @@ default. They are set in the build configuration file :file:`conf.py`.
 .. describe:: |release|
 
    Replaced by the Python release the documentation refers to.  This is the full
-   version string including alpha/beta/release candidate tags, e.g. ``2.5.2b3``.
+   version string including alpha/beta/release candidate tags, for example, ``2.5.2b3``.
 
 .. describe:: |version|
 
    Replaced by the Python version the documentation refers to. This consists
-   only of the major and minor version parts, e.g. ``2.5``, even for version
+   only of the major and minor version parts, for example, ``2.5``, even for version
    2.5.1.
 
 .. describe:: |today|
