@@ -94,7 +94,8 @@ Use simple language
 Avoid esoteric phrasing where possible.  Our audience is world-wide and may not
 be native English speakers.
 
-Don't use Latin abbreviations like "e.g." or "i.e." where English words will do.
+Don't use Latin abbreviations like "e.g." or "i.e." where English words will do,
+such as "for example" or "that is."
 
 
 .. index:: diataxis
