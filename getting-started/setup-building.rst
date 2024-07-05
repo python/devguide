@@ -115,7 +115,7 @@ in the ``cpython`` directory and two remotes that refer to your own GitHub fork
 .. XXX move the text below in pullrequest
 
 If you want a working copy of an already-released version of Python,
-i.e., a version in :ref:`maintenance mode <maintbranch>`, you can checkout
+that is, a version in :ref:`maintenance mode <maintbranch>`, you can checkout
 a release branch. For instance, to checkout a working copy of Python 3.8,
 do ``git switch 3.8``.
 
@@ -226,7 +226,7 @@ If you decide to :ref:`build-dependencies`, you will need to re-run both
 Once CPython is done building you will then have a working build
 that can be run in-place; ``./python`` on most machines (and what is used in
 all examples), ``./python.exe`` wherever a case-insensitive filesystem is used
-(e.g. on macOS by default), in order to avoid conflicts with the ``Python``
+(for example, on macOS by default), in order to avoid conflicts with the ``Python``
 directory. There is normally no need to install your built copy
 of Python! The interpreter will realize where it is being run from
 and thus use the files found in the working copy.  If you are worried
@@ -286,7 +286,7 @@ Windows
    :ref:`clone the repository <checkout>` from a native Windows shell program
    like PowerShell or the ``cmd.exe`` command prompt,
    and use a build of Git targeted for Windows,
-   e.g. the `Git for Windows download from the official Git website`_.
+   for example, the `Git for Windows download from the official Git website`_.
    Otherwise, Visual Studio will not be able to find all the project's files
    and will fail the build.
 
@@ -375,8 +375,8 @@ host/runtime as a *guest*.
 To build for WASI, you will need to cross-compile CPython. This requires a C
 compiler just like building for :ref:`Unix <unix-compiling>` as well as:
 
-1. A C compiler that can target WebAssembly (e.g. `WASI SDK`_)
-2. A WASI host/runtime (e.g. Wasmtime_)
+1. A C compiler that can target WebAssembly (for example, `WASI SDK`_)
+2. A WASI host/runtime (for example, Wasmtime_)
 
 All of this is provided in the :ref:`devcontainer <using-codespaces>`. You can
 also use what's installed in the container as a reference of what versions of
@@ -394,7 +394,7 @@ to help produce a WASI build of CPython (technically it's a "host x host"
 cross-build because the build Python is also the target Python while the host
 build is the WASI build). This means you effectively build CPython twice: once
 to have a version of Python for the build system to use and another that's the
-build you ultimately care about (i.e. the build Python is not meant for use by
+build you ultimately care about (that is, the build Python is not meant for use by
 you directly, only the build system).
 
 The easiest way to get a debug build of CPython for WASI is to use the
@@ -608,7 +608,7 @@ for details.
 Install dependencies
 ====================
 
-This section explains how to install additional extensions (e.g. ``zlib``)
+This section explains how to install additional extensions (for example, ``zlib``)
 on Linux, macOS and iOS.
 
 .. tab:: Linux
@@ -635,7 +635,8 @@ on Linux, macOS and iOS.
 
       $ deb-src http://archive.ubuntu.com/ubuntu/ jammy main
 
-   Alternatively, uncomment lines with ``deb-src`` using an editor, e.g.::
+   Alternatively, uncomment lines with ``deb-src`` using an editor, for
+   example::
 
       $ sudo nano /etc/apt/sources.list
 
@@ -931,7 +932,7 @@ every rule.
      The part of the standard library implemented in pure Python.
 
 ``Mac``
-     Mac-specific code (e.g., using IDLE as a macOS application).
+     Mac-specific code (for example, using IDLE as a macOS application).
 
 ``Misc``
      Things that do not belong elsewhere. Typically this is varying kinds of

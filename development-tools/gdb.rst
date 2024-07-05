@@ -33,7 +33,7 @@ Fortunately, among the `many ways to set breakpoints
 you can break at C labels, such as those generated for computed gotos.
 If you are debugging an interpreter compiled with computed goto support
 (generally true, certainly when using GCC), each instruction will be
-prefaced with a label named ``TARGET_<instruction>``, e.g.,
+prefaced with a label named ``TARGET_<instruction>``, for example,
 ``TARGET_LOAD_CONST``.  You can then set a breakpoint with a command
 like::
 

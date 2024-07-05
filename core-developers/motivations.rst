@@ -80,7 +80,7 @@ participating in the CPython core development process:
    country of residence.
 
    Include a "Crowdfunding" bullet point with a link if you'd like to highlight
-   crowdfunding services (e.g. Patreon) that folks can use to support your core
+   crowdfunding services (for example, Patreon) that folks can use to support your core
    development work.
 
    Include additional bullet points (without links) for any other affiliations
@@ -116,7 +116,7 @@ participating in the CPython core development process:
    applications and test harnesses from open source components.
 
    Note: prior to August 2023, Alyssa used her birth name (Nick Coghlan). Some records
-   (e.g. mailing list archives, version control history) will still reference that name.
+   (for example, mailing list archives, version control history) will still reference that name.
 
 .. topic:: Steve Dower (United States/Australia)
 

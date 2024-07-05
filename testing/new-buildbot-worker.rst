@@ -199,7 +199,7 @@ idea.
    If your buildbot worker is disconnecting regularly, it may be a symptom of the
    default ``keepalive`` value (``600`` for 10 minutes) being `set
    <https://docs.buildbot.net/latest/manual/installation/worker.html#cmdoption-buildbot-worker-create-worker-keepalive>`_
-   too high. You can change it to a lower value (e.g. ``180`` for 3 minutes)
+   too high. You can change it to a lower value (for example, ``180`` for 3 minutes)
    in the ``buildbot.tac`` file found in your build area.
 
 

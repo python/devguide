@@ -32,9 +32,9 @@ Per :pep:`523`, this function is configurable by setting ``interp->eval_frame``;
 (This function's signature has evolved and no longer matches what PEP 523 specifies; the thread state argument is added and the stack frame argument is no longer an object.)
 
 The interpreter finds the code object by looking in the stack frame (``frame->f_code``).
-Various other items needed by the interpreter (e.g. globals and builtins) are also accessed via the stack frame.
+Various other items needed by the interpreter (for example, globals and builtins) are also accessed via the stack frame.
 The thread state stores exception information and a variety of other information, such as the recursion depth.
-The thread state is also used to access per-interpreter state (``tstate->interp``) and per-runtime (i.e., truly global) state (``tstate->interp->runtime``).
+The thread state is also used to access per-interpreter state (``tstate->interp``) and per-runtime (that is, truly global) state (``tstate->interp->runtime``).
 
 Note the slightly confusing terminology here.
 "Interpreter" refers to the bytecode interpreter, a recursive function.
@@ -66,7 +66,7 @@ Bytecode is stored as an array of 16-bit code units (``_Py_CODEUNIT``).
 Each code unit contains an 8-bit ``opcode`` and an 8-bit argument (``oparg``), both unsigned.
 In order to make the bytecode format independent of the machine byte order when stored on disk, ``opcode`` is always the first byte and ``oparg`` is always the second byte.
 Macros are used to extract the ``opcode`` and ``oparg`` from a code unit (``_Py_OPCODE(word)`` and ``_Py_OPARG(word)``).
-Some instructions (e.g. ``NOP`` or ``POP_TOP``) have no argument -- in this case we ignore ``oparg``.
+Some instructions (for example, ``NOP`` or ``POP_TOP``) have no argument -- in this case we ignore ``oparg``.
 
 A simple instruction decoding loop would look like this:
 
@@ -92,7 +92,7 @@ For example, this sequence of code units::
     EXTENDED_ARG  0
     LOAD_CONST    2
 
-would set ``opcode`` to ``LOAD_CONST`` and ``oparg`` to ``65538`` (i.e., ``0x1_00_02``).
+would set ``opcode`` to ``LOAD_CONST`` and ``oparg`` to ``65538`` (that is, ``0x1_00_02``).
 The compiler should limit itself to at most three ``EXTENDED_ARG`` prefixes, to allow the resulting ``oparg`` to fit in 32 bits, but the interpreter does not check this.
 A series of code units starting with zero to three ``EXTENDED_ARG`` opcodes followed by a primary opcode is called a complete instruction, to distinguish it from a single code unit, which is always two bytes.
 The following loop, to be inserted just above the ``switch`` statement, will make the above snippet decode a complete instruction:
@@ -125,7 +125,7 @@ Inline cache entries
 Some (specialized or specializable) instructions have an associated "inline cache".
 The inline cache consists of one or more two-byte entries included in the bytecode array as additional words following the ``opcode`` /``oparg`` pair.
 The size of the inline cache for a particular instruction is fixed by its ``opcode`` alone.
-Moreover, the inline cache size for a family of specialized/specializable instructions (e.g., ``LOAD_ATTR``, ``LOAD_ATTR_SLOT``, ``LOAD_ATTR_MODULE``) must all be the same.
+Moreover, the inline cache size for a family of specialized/specializable instructions (for example, ``LOAD_ATTR``, ``LOAD_ATTR_SLOT``, ``LOAD_ATTR_MODULE``) must all be the same.
 Cache entries are reserved by the compiler and initialized with zeros.
 If an instruction has an inline cache, the layout of its cache can be described by a ``struct`` definition and the address of the cache is given by casting ``next_instr`` to a pointer to the cache ``struct``.
 The size of such a ``struct`` must be independent of the machine architecture, word size and alignment requirements.
@@ -133,7 +133,7 @@ For 32-bit fields, the ``struct`` should use ``_Py_CODEUNIT field[2]``.
 Even though inline cache entries are represented by code units, they do not have to conform to the ``opcode`` / ``oparg`` format.
 
 The instruction implementation is responsible for advancing ``next_instr`` past the inline cache.
-For example, if an instruction's inline cache is four bytes (i.e., two code units) in size, the code for the instruction must contain ``next_instr += 2;``.
+For example, if an instruction's inline cache is four bytes (that is, two code units) in size, the code for the instruction must contain ``next_instr += 2;``.
 This is equivalent to a relative forward jump by that many code units.
 (The proper way to code this is ``JUMPBY(n)``, where ``n`` is the number of code units to jump, typically given as a named constant.)
 

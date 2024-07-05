@@ -32,7 +32,7 @@ Here is a quick overview of how you can contribute to CPython:
 #. :ref:`Create a new branch in Git <pullrequest-steps>` from the
    ``main`` branch
 
-#. Work on changes (e.g. fix a bug or add a new feature)
+#. Work on changes: fix a bug or add a new feature
 
 #. :ref:`Run tests <runtests>` and ``make patchcheck``
 
@@ -42,7 +42,7 @@ Here is a quick overview of how you can contribute to CPython:
 #. `Create Pull Request`_ on GitHub to merge a branch from your fork
 
 #. Make sure the :ref:`continuous integration checks on your Pull Request
-   are green <keeping-ci-green>` (i.e. successful)
+   are green <keeping-ci-green>` (successful)
 
 #. Review and address `comments on your Pull Request`_
 
@@ -51,7 +51,7 @@ Here is a quick overview of how you can contribute to CPython:
 
 #. Celebrate contributing to CPython! :)
 
-.. [*] If an issue is trivial (e.g. typo fixes), or if an issue already exists,
+.. [*] If an issue is trivial (for example, typo fixes), or if an issue already exists,
        you can skip this step.
 
 .. note::
@@ -358,7 +358,7 @@ changes to your branch. In general you can run ``git commit -a`` and
 that will commit everything. You can always run ``git status`` to see
 what changes are outstanding.
 
-When all of your changes are committed (i.e. ``git status`` doesn't
+When all of your changes are committed (that is, ``git status`` doesn't
 list anything), you will want to push your branch to your fork::
 
   git push origin <branch name>
@@ -379,7 +379,7 @@ relevant detail as possible to prevent reviewers from having to delay
 reviewing your pull request because of lack of information.
 
 If this issue is so simple that there's no need for an issue to track
-any discussion of what the pull request is trying to solve (e.g. fixing a
+any discussion of what the pull request is trying to solve (for example, fixing a
 spelling mistake), then the pull request needs to have the "skip issue" label
 added to it by someone with commit access.
 
@@ -419,7 +419,7 @@ your pull request. Getting your pull request reviewed requires a
 reviewer to have the spare time and motivation to look at your pull
 request (we cannot force anyone to review pull requests and no one is
 employed to look at pull requests). If your pull request has not
-received any notice from reviewers (i.e., no comment made) after one
+received any notice from reviewers (that is, no comment made) after one
 month, first "ping" the issue on the `issue tracker`_ to remind the
 subscribers that the pull request needs a review.
 If you don't get a response within a week after pinging the issue,

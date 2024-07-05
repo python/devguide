@@ -84,12 +84,12 @@ instructions please see the :ref:`setup guide <setup>`.
 
          .\python.bat -m test -j3
 
-5. Create a new branch where your work for the issue will go, e.g.::
+5. Create a new branch where your work for the issue will go, for example::
 
       git checkout -b fix-issue-12345 main
 
    If an issue does not already exist, please `create it
-   <https://github.com/python/cpython/issues>`_.  Trivial issues (e.g. typo fixes) do
+   <https://github.com/python/cpython/issues>`_.  Trivial issues (for example, typo fixes) do
    not require any issue to be created.
 
 6. Once you fixed the issue, run the tests, and the patchcheck:
@@ -289,7 +289,7 @@ infrastructure is `covered
 <https://www.python.org/psf/records/board/minutes/2014-01-06/#management-of-the-psfs-web-properties>`__
 by the `PSF Code of Conduct <https://www.python.org/psf/conduct/>`__,
 which includes all infrastructure used in the development of Python itself
-(e.g. mailing lists, issue trackers, GitHub, etc.).
+(for example, mailing lists, issue trackers, GitHub, etc.).
 In general this means everyone is expected to be open, considerate, and
 respectful of others no matter what their position is within the project.
 
