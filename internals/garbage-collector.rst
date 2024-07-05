@@ -229,7 +229,7 @@ unreachable:
 The GC starts with a set of candidate objects it wants to scan.  In the
 default build, these "objects to scan" might be all container objects or a
 smaller subset (or "generation").  In the free-threaded build, the collector
-always operates scans all container objects.
+always scans all container objects.
 
 The objective is to identify all the unreachable objects.  The collector does
 this by identifying reachable objects; the remaining objects must be
