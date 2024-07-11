@@ -14,7 +14,7 @@ of GitHub Security Advisories.
 
 For reports sent to ``security@python.org``, a PSRT admin
 will triage the report and if the report seems plausible
-(ie, not spam and for the correct project) will reply with
+(i.e., not spam and for the correct project) will reply with
 instructions on how to report the vulnerability on GitHub.
 
 If the reporter doesn't want to use GitHub's Security Advisories feature
@@ -95,7 +95,7 @@ please feel free adapt them as needed for the current context.
 
 **Directing to GitHub Security Advisories:**
 
- .. code-block::
+::
 
    Thanks for submitting this report.
    We now use GitHub Security Advisories for triaging vulnerability reports,
@@ -109,7 +109,7 @@ please feel free adapt them as needed for the current context.
 
 **Rejecting a vulnerability report:**
 
- .. code-block::
+::
 
    Thanks for your report. We've determined that
    the report doesn't constitute a vulnerability.
@@ -118,7 +118,7 @@ please feel free adapt them as needed for the current context.
 
 **Accepting a vulnerability report:**
 
- .. code-block::
+::
 
    Thanks for your report. We've determined that the report
    is a vulnerability. We've assigned {CVE-YYYY-XXXX} and determined
@@ -133,7 +133,7 @@ please feel free adapt them as needed for the current context.
 
 **Advisory email:**
 
- .. code-block::
+::
 
    Title: [{CVE-YYYY-XXXX}] {title}
 
