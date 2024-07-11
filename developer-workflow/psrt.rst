@@ -1,0 +1,148 @@
+Python Security Response Team (PSRT)
+====================================
+
+The Python Security Response Team (PSRT) is responsible for handling
+vulnerability reports for CPython and pip.
+
+Vulnerability report triage
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Vulnerability reports are sent to one of two locations,
+the long-standing ``security@python.org`` mailing list
+or using the private vulnerability reporting feature
+of GitHub Security Advisories.
+
+For reports sent to ``security@python.org``, a PSRT admin
+will triage the report and if the report seems plausible
+(ie, not spam and for the correct project) will reply with
+instructions on how to report the vulnerability on GitHub.
+
+If the reporter doesn't want to use GitHub's Security Advisories feature
+then the PSRT admins can create a draft report on behalf of the reporter.
+
+Coordinating a vulnerability report
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Each report will have a member of the PSRT assigned as the "coordinator".
+The coordinator will be responsible for following the below process and
+will be publicly credited on vulnerability records post-publication.
+
+If a coordinator can't complete the process for any reason (time obligation,
+vacation, etc) they must find a replacement coordinator in the PSRT
+and reassign the vulnerability report appropriately.
+
+Coordinators are expected to collaborate with other PSRT members and core developers
+when needed for guidance on affect-ness, severity, advisory text, and fixes.
+
+**The vulnerability coordination process is:**
+
+* Determine whether the report constitutes a vulnerability. If the report isn't a vulnerability,
+  the reporter should be notified appropriately. Close the GHSA report, the report can be reopened if
+  sufficient evidence that the report is a vulnerability is later obtained.
+
+* After a vulnerability report is accepted, a CVE ID must be assigned. If this is not done
+  automatically, then a CVE ID can be obtained by sending an email to ``cna@python.org``.
+  No details about the vulnerability report need to be shared with the PSF CNA for a CVE ID to be reserved.
+
+* Once a CVE ID is assigned, the CVE ID and acceptance can be shared with the reporter.
+  Use this CVE ID for referencing the vulnerability. Ask the reporter
+  if they'd like to be credited publicly for the report and if so, how they'd like to be credited.
+  Add this information to the GitHub Security Advisory.
+
+* If the report is a vulnerability, determine the severity of the vulnerability. Severity is one of:
+  **Low**, **Medium**, **High**, and **Critical**. Coordinators can use their knowledge of the code, how the code is likely used,
+  or another mechanism like CVSS for determining a severity. Add this information to the GitHub Security Advisory.
+
+* Author the vulnerability advisory text. The advisory must include the following information:
+
+  * Title should be a brief description of the vulnerability and affected component (e.g "Buffer over-read in SSLContext.set_npn_protocols()")
+
+  * Short description of the vulnerability, impact, and the conditions where the affected component is vulnerable, if applicable.
+
+  * Affected versions. This could be "all versions", but if the vulnerability exists in a new feature
+    or removed feature then this could be different. Include versions that are end-of-life in this calculation.
+    (e.g. "Python 3.9 and earlier", "Python 3.10 and later", "all versions of Python")
+
+  * Affected components and APIs. The module, function, class, or method must be specified so users can
+    search their codebase for usage. For issues affecting the entire project, this can be omitted.
+
+  * Mitigations for the vulnerability beyond upgrading to a patched version, if applicable.
+
+  This can all be done within the GitHub Security Advisory UI for easier collaboration between reporter and coordinator.
+
+* Determine the fix approach and who will provide a patch. Some reporters are willing to provide or collaborate to create a
+  patch, otherwise relevant core developers can be invited to collaborate.
+
+* For **Low** and **Medium** severity vulnerabilities it is acceptable to develop a patch in public.
+  The pull request must be marked with the ``security`` and ``release-blocker`` labels so that a release
+  is not created without including the patch.
+
+* For **High** and **Critical** severity vulnerabilities the patch must be developed privately using GitHub Security Advisories'
+  "Private Forks" feature. Core developers can be added to the GitHub Security Advisory via "collaborators" to work
+  on the fix together. Once a patch is approved privately and tested, a public issue and pull request can be created
+  with the ``security`` and ``release-blocker`` labels.
+
+* Once the pull request is merged the advisory can be published. Send an advisory email to ``security-announce@python.org``
+  using the below template. Backport labels must be added as appropriate. After the advisory is published a CVE record
+  can be created.
+
+Template responses
+~~~~~~~~~~~~~~~~~~
+
+These template responses should be used as guidance for messaging
+in various points in the process above. They're not required to be sent as-is,
+please feel free adapt them as needed for the current context.
+
+**Directing to GitHub Security Advisories:**
+
+ .. code-block::
+
+   Thanks for submitting this report.
+   We now use GitHub Security Advisories for triaging vulnerability reports,
+   are you able to submit your report directly to GitHub?
+
+   https://github.com/python/cpython/security/advisories/new
+
+   If you're unable to submit a report to GitHub (due to not having a GitHub account or something else)
+   let me know and I'll create a GitHub Security Advisory on your behalf,
+   although you won't be able to participate directly in discussions.
+
+**Rejecting a vulnerability report:**
+
+ .. code-block::
+
+   Thanks for your report. We've determined that
+   the report doesn't constitute a vulnerability.
+   Let us know if you disagree with this determination. If you're
+   interested in working on this further, you can optionally open a public issue on GitHub.
+
+**Accepting a vulnerability report:**
+
+ .. code-block::
+
+   Thanks for your report. We've determined that the report
+   is a vulnerability. We've assigned {CVE-YYYY-XXXX} and determined
+   a severity of {Low,Medium,High,Critical}. Let us know if you disagree
+   with the determined severity.
+
+   If you'd like to be publicly credited for this vulnerability as the reporter,
+   please indicate that along with how you'd like to be credited (ie, name or organization).
+
+   Please keep this vulnerability report private until we've published
+   an advisory to ``security-announce@python.org``.
+
+**Advisory email:**
+
+ .. code-block::
+
+   Title: [{CVE-YYYY-XXXX}] {title}
+
+   There is a new vulnerability affecting {project}.
+   The severity of this vulnerability is: {LOW, MEDIUM, HIGH, CRITICAL}.
+
+   {description}
+
+   Please see the linked CVE ID for the latest information on affected versions:
+
+   * https://www.cve.org/CVERecord?id={CVE-YYYY-XXXX}
+   * {pull request URL}
