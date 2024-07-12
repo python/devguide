@@ -98,7 +98,7 @@ please feel free to adapt them as needed for the current context.
 
 .. highlight:: none
 
-..
+::
 
    Thanks for submitting this report.
    We now use GitHub Security Advisories for triaging vulnerability reports,
@@ -113,7 +113,7 @@ please feel free to adapt them as needed for the current context.
 
 **Rejecting a vulnerability report:**
 
-..
+::
 
    Thanks for your report. We've determined that the report doesn't constitute
    a vulnerability. Let us know if you disagree with this determination.
@@ -122,7 +122,7 @@ please feel free to adapt them as needed for the current context.
 
 **Accepting a vulnerability report:**
 
-..
+::
 
    Thanks for your report. We've determined that the report
    is a vulnerability. We've assigned {CVE-YYYY-XXXX} and determined
@@ -138,7 +138,7 @@ please feel free to adapt them as needed for the current context.
 
 **Advisory email:**
 
-..
+::
 
    Title: [{CVE-YYYY-XXXX}] {title}
 
