@@ -14,7 +14,7 @@ of GitHub Security Advisories.
 
 For reports sent to ``security@python.org``, a PSRT admin
 will triage the report and if the report seems plausible
-(i.e., not spam and for the correct project) will reply with
+(that is, not spam and for the correct project) will reply with
 instructions on how to report the vulnerability on GitHub.
 
 If the reporter doesn't want to use GitHub's Security Advisories feature
@@ -28,7 +28,7 @@ The coordinator will be responsible for following the below process and
 will be publicly credited on vulnerability records post-publication.
 
 If a coordinator can't complete the process for any reason (time obligation,
-vacation, etc) they must find a replacement coordinator in the PSRT
+vacation, etc.) they must find a replacement coordinator in the PSRT
 and reassign the vulnerability report appropriately.
 
 Coordinators are expected to collaborate with other PSRT members and core developers
@@ -55,13 +55,14 @@ when needed for guidance on affect-ness, severity, advisory text, and fixes.
 
 * Author the vulnerability advisory text. The advisory must include the following information:
 
-  * Title should be a brief description of the vulnerability and affected component (e.g "Buffer over-read in SSLContext.set_npn_protocols()")
+  * Title should be a brief description of the vulnerability and affected component
+    (for example, "Buffer over-read in SSLContext.set_npn_protocols()")
 
   * Short description of the vulnerability, impact, and the conditions where the affected component is vulnerable, if applicable.
 
   * Affected versions. This could be "all versions", but if the vulnerability exists in a new feature
     or removed feature then this could be different. Include versions that are end-of-life in this calculation.
-    (e.g. "Python 3.9 and earlier", "Python 3.10 and later", "all versions of Python")
+    (for example, "Python 3.9 and earlier", "Python 3.10 and later", "all versions of Python")
 
   * Affected components and APIs. The module, function, class, or method must be specified so users can
     search their codebase for usage. For issues affecting the entire project, this can be omitted.
@@ -91,7 +92,7 @@ Template responses
 
 These template responses should be used as guidance for messaging
 in various points in the process above. They're not required to be sent as-is,
-please feel free adapt them as needed for the current context.
+please feel free to adapt them as needed for the current context.
 
 **Directing to GitHub Security Advisories:**
 
@@ -126,7 +127,7 @@ please feel free adapt them as needed for the current context.
    with the determined severity.
 
    If you'd like to be publicly credited for this vulnerability as the reporter,
-   please indicate that along with how you'd like to be credited (ie, name or organization).
+   please indicate that, along with how you would like to be credited (name or organization).
 
    Please keep this vulnerability report private until we've published
    an advisory to ``security-announce@python.org``.
@@ -137,8 +138,7 @@ please feel free adapt them as needed for the current context.
 
    Title: [{CVE-YYYY-XXXX}] {title}
 
-   There is a new vulnerability affecting {project}.
-   The severity of this vulnerability is: {LOW, MEDIUM, HIGH, CRITICAL}.
+   There is a {LOW, MEDIUM, HIGH, CRITICAL} severity vulnerability affecting {project}.
 
    {description}
 
