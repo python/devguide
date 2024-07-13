@@ -167,8 +167,8 @@ The actual implementation of the module is in the corresponding ``.c`` file:
        .m_methods = foomodule_methods,
        .m_slots = foomodule_slots,
        .m_traverse = foomodule_traverse,  // or NULL if the state is trivial
-       .m_clear = foomodule_clear,	      // or NULL if the state is trivial
-       .m_free = foomodule_free,		  // or NULL if the state is trivial
+       .m_clear = foomodule_clear,        // or NULL if the state is trivial
+       .m_free = foomodule_free,          // or NULL if the state is trivial
    };
 
    PyMODINIT_FUNC
@@ -204,28 +204,25 @@ too trivial.
 Now that we have our files, we need to update the ``Makefile.pre.in`` file.
 First, define the following the variables:
 
-```makefile
-FOO_H = Modules/foo/foomodule.h
-
-FOO_OBJS =	\
-	Modules/foo/foomodule.o \
-	Modules/foo/helper.o
-```
+.. code-block:: makefile
+   
+   FOO_H = Modules/foo/foomodule.h
+   FOO_OBJS = Modules/foo/foomodule.o Modules/foo/helper.o
 
 and place them somewhere in the file (usually where other variables of the
 same kind are).
 
 Then, add the following rule in the '# Special rules for object files' section:
 
-```makefile
-$(FOO_OBJS): $(FOO_H)
-```
+.. code-block:: makefile
+
+   $(FOO_OBJS): $(FOO_H)
 
 and the following rule in the dependencies section:
 
-```makefile
-MODULE_FOO_DEPS=$(srcdir)/Modules/foo/foomodule.h
-```
+.. code-block:: makefile
+   
+   MODULE_FOO_DEPS=$(srcdir)/Modules/foo/foomodule.h
 
 .. note::
 
