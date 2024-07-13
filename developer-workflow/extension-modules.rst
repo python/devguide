@@ -20,9 +20,8 @@ Read the following references:
 * :pep:`399`
 * https://pythonextensionpatterns.readthedocs.io/en/latest/
 
-=====================================
 Adding an extension module to CPython
-=====================================
+-------------------------------------
 
 In this section, we assume that the extension module to be added
 does not rely on external dependencies and is not a frozen module.
@@ -200,7 +199,7 @@ not needed. Here, we wanted to illustrate a simple example without making it
 too trivial.
 
 Make the CPython project compile
---------------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Now that we have our files, we need to update the ``Makefile.pre.in`` file.
 First, define the following the variables:
@@ -242,14 +241,14 @@ Finally, we need to modify the configuration for Windows platforms:
   and the entry ``{"foo", PyInit_foo}`` to ``_PyImport_Inittab``.
 
 - Open ``PCbuild/pythoncore.vcxproj`` and add the following line to
-  the ``ItemGroup`` containing the ``..\Modules\*.h`` files:
+  the ``<ItemGroup>`` containing the ``..\Modules\*.h`` files:
 
   .. code-block:: xml
 
      <ClInclude Include="..\Modules\foo\foomodule.h" />
 
-  In addition, add the following lines to the ``ItemGroup`` containing
-  the ``..\Modules\*.c`` files:
+  In addition, add the following lines to the ``<ItemGroup>``
+  containing the ``..\Modules\*.c`` files:
 
   .. code-block:: xml
 
@@ -281,7 +280,7 @@ Observe that ``.h`` files use ``<ClInclude ...>`` whereas ``.c`` files
 use ``<ClCompile ...>`` tags.
 
 Compile the CPython project
----------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Now that everything is in place, it remains to compile everything. To that
 end, run the following commands:
@@ -311,7 +310,7 @@ You can now compile the entire project by running the following commands:
    make
 
 Troubleshooting: ``make regen-configure`` does not work!
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+........................................................
 
 Since this rule requires Docker to be running and a Docker instance,
 the following can be done on Linux platforms (systemctl-based):
@@ -324,4 +323,4 @@ the following can be done on Linux platforms (systemctl-based):
 
 If docker complains about missing permissions, the following StackOverflow post
 could be useful in solving the issue: `How to fix docker: permission denied
-<https://stackoverflow.com/q/48957195/9579194>`_
+<https://stackoverflow.com/q/48957195/9579194>`_.
