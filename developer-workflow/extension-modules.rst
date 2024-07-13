@@ -199,7 +199,8 @@ One could imagine having more ``.h`` files, or no ``helper.c`` file if it is
 not needed. Here, we wanted to illustrate a simple example without making it
 too trivial.
 
-### Make the CPython project compile
+Make the CPython project compile
+--------------------------------
 
 Now that we have our files, we need to update the ``Makefile.pre.in`` file.
 First, define the following the variables:
@@ -279,7 +280,8 @@ Finally, we need to modify the configuration for Windows platforms:
 Observe that ``.h`` files use ``<ClInclude ...>`` whereas ``.c`` files
 use ``<ClCompile ...>`` tags.
 
-### Compile the CPython project
+Compile the CPython project
+---------------------------
 
 Now that everything is in place, it remains to compile everything. To that
 end, run the following commands:
@@ -308,7 +310,8 @@ You can now compile the entire project by running the following commands:
    ./configure --with-pydebug
    make
 
-#### Troubleshooting: ``make regen-configure`` does not work!
+Troubleshooting: ``make regen-configure`` does not work!
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Since this rule requires Docker to be running and a Docker instance,
 the following can be done on Linux platforms (systemctl-based):
