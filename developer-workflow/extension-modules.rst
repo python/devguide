@@ -309,8 +309,11 @@ You can now compile the entire project by running the following commands:
    ./configure --with-pydebug
    make
 
-Troubleshooting: ``make regen-configure`` does not work!
-........................................................
+Troubleshooting
+^^^^^^^^^^^^^^^
+
+``make regen-configure`` does not work!
+.......................................
 
 Since this rule requires Docker to be running and a Docker instance,
 the following can be done on Linux platforms (systemctl-based):
