@@ -691,7 +691,7 @@ on Linux, macOS and iOS.
 
       For **Homebrew**, install dependencies using ``brew``::
 
-         $ brew install pkg-config openssl@3.0 xz gdbm tcl-tk mpdecimal
+         $ brew install pkg-config openssl@3 xz gdbm tcl-tk mpdecimal
 
       .. tab:: Python 3.13+
 
@@ -701,7 +701,7 @@ on Linux, macOS and iOS.
                GDBM_LIBS="-L$(brew --prefix gdbm)/lib -lgdbm" \
                ./configure --with-pydebug \
                            --with-system-libmpdec \
-                           --with-openssl="$(brew --prefix openssl@3.0)"
+                           --with-openssl="$(brew --prefix openssl@3)"
 
       .. tab:: Python 3.11-3.12
 
@@ -710,7 +710,7 @@ on Linux, macOS and iOS.
             $ GDBM_CFLAGS="-I$(brew --prefix gdbm)/include" \
                GDBM_LIBS="-L$(brew --prefix gdbm)/lib -lgdbm" \
                ./configure --with-pydebug \
-                           --with-openssl="$(brew --prefix openssl@3.0)"
+                           --with-openssl="$(brew --prefix openssl@3)"
 
       .. tab:: Python 3.8-3.10
 
@@ -719,7 +719,7 @@ on Linux, macOS and iOS.
             $ CPPFLAGS="-I$(brew --prefix gdbm)/include -I$(brew --prefix xz)/include" \
                LDFLAGS="-L$(brew --prefix gdbm)/lib -L$(brew --prefix xz)/lib" \
                ./configure --with-pydebug \
-                           --with-openssl="$(brew --prefix openssl@3.0)" \
+                           --with-openssl="$(brew --prefix openssl@3)" \
                            --with-tcltk-libs="$(pkg-config --libs tcl tk)" \
                            --with-tcltk-includes="$(pkg-config --cflags tcl tk)"
 
