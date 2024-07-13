@@ -205,7 +205,7 @@ Now that we have our files, we need to update the ``Makefile.pre.in`` file.
 First, define the following the variables:
 
 .. code-block:: makefile
-   
+
    FOO_H = Modules/foo/foomodule.h
    FOO_OBJS = Modules/foo/foomodule.o Modules/foo/helper.o
 
@@ -221,7 +221,7 @@ Then, add the following rule in the '# Special rules for object files' section:
 and the following rule in the dependencies section:
 
 .. code-block:: makefile
-   
+
    MODULE_FOO_DEPS=$(srcdir)/Modules/foo/foomodule.h
 
 .. note::
