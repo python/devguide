@@ -35,8 +35,8 @@ which contains some function :func:`!foo.bar`:
        return "Hello World!"
 
 Instead of using the Python implementation of :func:`!foo.bar`, we want to
-use its C implementation that we would have written somewhere else. Ideally,
-we want to modify ``foo.py`` as follows:
+use its corresponding C implementation exposed as the :mod:`!_foo` module.
+Ideally, we want to modify ``foo.py`` as follows:
 
 .. code-block:: python
 
@@ -49,25 +49,37 @@ we want to modify ``foo.py`` as follows:
            return "Hello World!"
 
 Some modules in the standard library are implemented both in C and in Python,
-such as :mod:`functools` or :mod:`io`, and the C implementation should offer
-improved performances when available (such modules are usually referred to as
+such as :class:`decimal` or :class:`io`, and the C implementation is expected
+to improve performance when available (such modules are usually referred to as 
 *accelerator modules*). In our example, we need to
 
 - determine where the extension module is to be placed;
 - determine which files to modify in order to compile the project;
 - determine which Makefile rules to invoke in the end.
 
-In general, accelerator modules are added in the ``Modules/`` directory
-of the CPython project. If more than one file is needed for the extension
-module, it is convenient to create a sub-directory in ``Modules/`` and place
-the files inside it. For instance,
+Usually, accelerator modules are added in the ``Modules/`` directory of
+the CPython project. If more than one file is needed for the extension
+module, it is convenient to create a sub-directory in ``Modules/``, and
+place the files inside it. In our example, we will assume that we have
+the following structure:
+
+- ``Modules/foo/foomodule.h`` -- the shared prototypes for our mini-project.
+- ``Modules/foo/foomodule.c`` -- the actual module's implementation.
+- ``Modules/foo/helper.c``    -- some helper's implementation.
+
+.. note::
+
+   If ``Modules/foo/foomodule.c`` contains some Argument Clinic directives,
+   the corresponding header file is written to ``Modules/clinic/foomodule.c.h``.
+
+The following code snippets illustrate the possible contents of the above files:
 
 .. code-block:: c
 
-   // Modules/foo/foomodule.h: file containing shared prototypes
+   // Modules/foo/foomodule.h
 
-   #ifndef FOOMODULE_H
-   #define FOOMODULE_H
+   #ifndef FOO_FOOMODULE_H
+   #define FOO_FOOMODULE_H
 
    #include "Python.h"
 
@@ -86,7 +98,7 @@ the files inside it. For instance,
    /* helper implemented somewhere else */
    extern PyObject *_Py_fast_bar();
 
-   #endif // FOOMODULE_H
+   #endif // FOO_FOOMODULE_H
 
 The actual implementation of the module is in the corresponding ``.c`` file:
 
@@ -147,12 +159,14 @@ The actual implementation of the module is in the corresponding ``.c`` file:
    /* Exported module's data */
 
    static PyMethodDef foomodule_methods[] = {
-       FOO_BAR_METHODDEF  // this becomes available after running 'make clinic'
+       // the following macro is available in 'Modules/foo/clinic/foomodule.c.h'
+       // after running 'make clinic'
+       FOO_BAR_METHODDEF
        {NULL, NULL}
    };
 
    static struct PyModuleDef_Slot foomodule_slots[] = {
-       {Py_mod_exec, foomodule_exec}, // foomodule_exec may be NULL if the state is trivial
+       {Py_mod_exec, foomodule_exec}, // 'foomodule_exec' may be NULL if the state is trivial
        {Py_mod_multiple_interpreters, Py_MOD_PER_INTERPRETER_GIL_SUPPORTED},
        {Py_mod_gil, Py_MOD_GIL_NOT_USED},
        {0, NULL},
@@ -160,7 +174,7 @@ The actual implementation of the module is in the corresponding ``.c`` file:
 
    static struct PyModuleDef foomodule = {
        PyModuleDef_HEAD_INIT,
-       .m_name = "_foo",
+       .m_name = "_foo",                  // name to use in 'import' statements
        .m_doc = "some doc",               // or NULL if not needed
        .m_size = sizeof(foomodule_state),
        .m_methods = foomodule_methods,
@@ -188,12 +202,6 @@ In a separate file, we would have the implementation of ``Py_fast_bar``:
        return PyUnicode_FromString("Hello World!");
    }
 
-Now, to summarize, we have the following files:
-
-- ``Modules/foo/foomodule.h`` -- the shared prototypes for our mini-project.
-- ``Modules/foo/foomodule.c`` -- the actual module's implementation.
-- ``Modules/foo/helper.c``    -- some helper's implementation.
-
 One could imagine having more ``.h`` files, or no ``helper.c`` file if it is
 not needed. Here, we wanted to illustrate a simple example without making it
 too trivial.
@@ -201,7 +209,8 @@ too trivial.
 Make the CPython project compile
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Now that we have our files, we need to update the ``Makefile.pre.in`` file.
+Now that we have our files, we need to update the ``Makefile.pre.in`` file. 
+
 First, define the following the variables:
 
 .. code-block:: makefile
@@ -209,16 +218,15 @@ First, define the following the variables:
    FOO_H = Modules/foo/foomodule.h
    FOO_OBJS = Modules/foo/foomodule.o Modules/foo/helper.o
 
-and place them somewhere in the file (usually where other variables of the
-same kind are).
-
-Then, add the following rule in the '# Special rules for object files' section:
+and place them in the **Modules** section where other pre-defined objects live such
+as ``MODULE_OBJS`` and ``IO_OBJS``. Then, add the following rule in the section for 
+**Special rules for object files**:
 
 .. code-block:: makefile
 
    $(FOO_OBJS): $(FOO_H)
 
-and the following rule in the dependencies section:
+and the following rule in the section for **Module dependencies and platform-specific files**:
 
 .. code-block:: makefile
 
@@ -228,7 +236,7 @@ and the following rule in the dependencies section:
 
    The ``FOO_OBJS`` and ``FOO_H`` are not necessarily needed and the rule
    ``$(FOO_OBJS): $(FOO_H)`` could be hard-coded. Using Makefile variables
-   is generally better if more than multiple files need to be compiled.
+   is generally better if multiple files need to be compiled.
 
 Finally, we need to modify the configuration for Windows platforms:
 
@@ -282,16 +290,13 @@ use ``<ClCompile ...>`` tags.
 Compile the CPython project
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Now that everything is in place, it remains to compile everything. To that
-end, run the following commands:
+Now that everything is in place, it remains to compile the project:
 
 .. code-block:: shell
 
-   make regen-configure
-   make regen-all
-   make regen-stdlib-module-names
-
-.. tip:: Use ``make -j12`` to speed-up the compilation.
+   $ make regen-configure
+   $ make regen-all
+   $ make regen-stdlib-module-names
 
 - The ``make regen-configure`` step regenerates the configure script.
 
@@ -306,11 +311,15 @@ You can now compile the entire project by running the following commands:
 
 .. code-block:: shell
 
-   ./configure --with-pydebug
-   make
+   $ ./configure --with-pydebug
+   $ make
+
+.. tip:: Use ``make -j12`` to speed-up the compilation if you have enough CPU cores.
 
 Troubleshooting
 ^^^^^^^^^^^^^^^
+
+This section addresses common issues that developers may face when following this tutorial.
 
 ``make regen-configure`` does not work!
 .......................................
