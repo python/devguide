@@ -57,9 +57,9 @@ to improve performance when available (such modules are usually referred to as
 - determine which files to modify in order to compile the project;
 - determine which Makefile rules to invoke in the end.
 
-Usually, accelerator modules are added in the ``Modules/`` directory of
+Usually, accelerator modules are added in the :cpy-file:`Modules` directory of
 the CPython project. If more than one file is needed for the extension
-module, it is convenient to create a sub-directory in ``Modules/``, and
+module, it is convenient to create a sub-directory in :cpy-file:`Modules`, and
 place the files inside it. In our example, we will assume that we have
 the following structure:
 
@@ -70,7 +70,7 @@ the following structure:
 .. note::
 
    If ``Modules/foo/foomodule.c`` contains some Argument Clinic directives,
-   the corresponding header file is written to ``Modules/clinic/foomodule.c.h``.
+   the corresponding header file is written to ``Modules/foo/clinic/foomodule.c.h``.
 
 The following code snippets illustrate the possible contents of the above files:
 
@@ -209,7 +209,7 @@ too trivial.
 Make the CPython project compile
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Now that we have our files, we need to update the ``Makefile.pre.in`` file.
+Now that we have our files, we need to update the :cpy-file:`Makefile.pre.in` file.
 First, define the following the variables:
 
 .. code-block:: makefile
@@ -239,7 +239,7 @@ and the following rule in the section for **Module dependencies and platform-spe
 
 Finally, we need to modify the configuration for Windows platforms:
 
-- Open ``PC/config.c`` and add the prototype:
+- Open :cpy-file:`PC/config.c` and add the prototype:
 
   .. code-block:: c
 
@@ -247,23 +247,23 @@ Finally, we need to modify the configuration for Windows platforms:
 
   and the entry ``{"foo", PyInit_foo}`` to ``_PyImport_Inittab``.
 
-- Open ``PCbuild/pythoncore.vcxproj`` and add the following line to
-  the ``<ItemGroup>`` containing the ``..\Modules\*.h`` files:
+- Open :cpy-file:`PCbuild/pythoncore.vcxproj` and add the following line to
+  the ``<ItemGroup>`` containing the other ``..\Modules\*.h`` files:
 
   .. code-block:: xml
 
      <ClInclude Include="..\Modules\foo\foomodule.h" />
 
   In addition, add the following lines to the ``<ItemGroup>``
-  containing the ``..\Modules\*.c`` files:
+  containing the the other ``..\Modules\*.c`` files:
 
   .. code-block:: xml
 
      <ClCompile Include="..\Modules\foo\foomodule.c" />
      <ClCompile Include="..\Modules\foo\helper.c" />
 
-- Open ``PCbuild/pythoncore.vcxproj.filters`` and add the following line to
-  the ``ItemGroup`` containing the ``..\Modules\*.h`` files:
+- Open :cpy-file:`PCbuild/pythoncore.vcxproj.filters` and add the following line to
+  the ``ItemGroup`` containing the the other ``..\Modules\*.h`` files:
 
   .. code-block:: xml
 
@@ -272,7 +272,7 @@ Finally, we need to modify the configuration for Windows platforms:
      </ClInclude>
 
   In addition, add the following lines to the ``ItemGroup`` containing
-  the ``..\Modules\*.c`` files:
+  the the other ``..\Modules\*.c`` files:
 
   .. code-block:: xml
 
@@ -304,7 +304,7 @@ Now that everything is in place, it remains to compile the project:
   know which files should be updated.
 
 - The ``regen-stdlib-module-names`` updates the standard module names,
-  making ``_foo`` discoverable and importable via ``import _foo``!
+  making ``_foo`` discoverable and importable via ``import _foo``.
 
 You can now compile the entire project by running the following commands:
 
@@ -332,6 +332,6 @@ the following can be done on Linux platforms (systemctl-based):
    $ sudo systemctl start docker    # start it if not!
    $ sudo systemctl restart docker  # or restart it!
 
-If docker complains about missing permissions, the following StackOverflow post
+If Docker complains about missing permissions, the following StackOverflow post
 could be useful in solving the issue: `How to fix docker: permission denied
 <https://stackoverflow.com/q/48957195/9579194>`_.
