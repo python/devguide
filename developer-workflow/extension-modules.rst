@@ -49,9 +49,9 @@ Ideally, we want to modify ``foo.py`` as follows:
            return "Hello World!"
 
 Some modules in the standard library are implemented both in C and in Python,
-such as :class:`decimal` or :class:`io`, and the C implementation is expected
-to improve performance when available (such modules are usually referred to as 
-*accelerator modules*). In our example, we need to
+such as :mod:`decimal` or :mod:`io`, and the C implementation is expected
+to improve performance when available (such modules are usually referred to as
+*accelerator modules*). In our example, we need to:
 
 - determine where the extension module is to be placed;
 - determine which files to modify in order to compile the project;
@@ -209,8 +209,7 @@ too trivial.
 Make the CPython project compile
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Now that we have our files, we need to update the ``Makefile.pre.in`` file. 
-
+Now that we have our files, we need to update the ``Makefile.pre.in`` file.
 First, define the following the variables:
 
 .. code-block:: makefile
@@ -219,7 +218,7 @@ First, define the following the variables:
    FOO_OBJS = Modules/foo/foomodule.o Modules/foo/helper.o
 
 and place them in the **Modules** section where other pre-defined objects live such
-as ``MODULE_OBJS`` and ``IO_OBJS``. Then, add the following rule in the section for 
+as ``MODULE_OBJS`` and ``IO_OBJS``. Then, add the following rule in the section for
 **Special rules for object files**:
 
 .. code-block:: makefile
