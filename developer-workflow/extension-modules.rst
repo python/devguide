@@ -95,7 +95,7 @@ The following code snippets illustrate the possible contents of the above files:
        return (foomodule_state *)state;
    }
 
-   /* helper implemented somewhere else */
+   /* Helper implemented somewhere else. */
    extern PyObject *_Py_fast_bar();
 
    #endif // FOO_FOOMODULE_H
@@ -190,7 +190,7 @@ The actual implementation of the module is in the corresponding ``.c`` file:
        return PyModuleDef_Init(&_foomodule);
    }
 
-In a separate file, we would have the implementation of ``Py_fast_bar``:
+In a separate file, we would have the implementation of ``_Py_fast_bar``:
 
 .. code-block:: c
 
@@ -201,6 +201,11 @@ In a separate file, we would have the implementation of ``Py_fast_bar``:
    PyObject *_Py_fast_bar() {
        return PyUnicode_FromString("Hello World!");
    }
+
+.. tip::
+
+   Do not forget that symbols exported by libpython must start
+   with "Py" or "_Py", which is verified via ``make smelly``.
 
 One could imagine having more ``.h`` files, or no ``helper.c`` file if it is
 not needed. Here, we wanted to illustrate a simple example without making it
