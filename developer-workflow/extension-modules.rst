@@ -21,11 +21,8 @@ where you can read good documentation:
 Adding an extension module to CPython
 -------------------------------------
 
-In this section, we assume that the extension module to be added
-does not rely on external dependencies and is not a frozen module.
-
-Let us assume that the standard library has the :mod:`!foo` module
-which contains some function :func:`!foo.bar`:
+Assume that the standard library contains the module :mod:`!foo`
+together with some :func:`!foo.bar` function:
 
 .. code-block:: python
 
@@ -48,8 +45,8 @@ Ideally, we want to modify ``foo.py`` as follows:
 
 Some modules in the standard library are implemented both in C and in Python,
 such as :mod:`decimal` or :mod:`io`, and the C implementation is expected
-to improve performance when available (such modules are usually referred to as
-*accelerator modules*). In our example, we need to:
+to improve performance when available (such modules are commonly referred
+to as *accelerator modules*). In our example, we need to:
 
 - determine where to place the extension module;
 - determine which files to modify in order to compile the project;
@@ -58,8 +55,9 @@ to improve performance when available (such modules are usually referred to as
 Usually, accelerator modules are added in the :cpy-file:`Modules` directory of
 the CPython project. If more than one file is needed for the extension
 module, it is convenient to create a sub-directory in :cpy-file:`Modules`, and
-place the files inside it. In our example, we will assume that we have
-the following structure:
+place the files inside it. 
+
+For our extension, we will create the following files:
 
 - ``Modules/foo/foomodule.h`` -- the shared prototypes for our mini-project.
 - ``Modules/foo/foomodule.c`` -- the actual module's implementation.
@@ -70,7 +68,9 @@ the following structure:
    If ``Modules/foo/foomodule.c`` contains some Argument Clinic directives,
    the corresponding header file is written to ``Modules/foo/clinic/foomodule.c.h``.
 
-The following code snippets illustrate the possible contents of the above files:
+For simplicity, we assume that the extension module does not rely on external dependencies
+and is not a frozen module. The following code snippets illustrate the possible contents of
+the above files:
 
 .. code-block:: c
 
