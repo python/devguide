@@ -55,7 +55,7 @@ to as *accelerator modules*). In our example, we need to:
 Usually, accelerator modules are added in the :cpy-file:`Modules` directory of
 the CPython project. If more than one file is needed for the extension
 module, it is convenient to create a sub-directory in :cpy-file:`Modules`, and
-place the files inside it. 
+place the files inside it.
 
 For our extension, we will create the following files:
 
