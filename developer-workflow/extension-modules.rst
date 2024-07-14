@@ -7,13 +7,11 @@ Standard library extension modules
 
 In this section, we could explain how to write a CPython extension with the
 C language, but the topic can take a complete book. We will however explain
-how to add a new extension module to the standard library, e.g., a module
-responsible for accelerating some parts of the library.
+how to add a new extension module to the standard library, for instance, a
+module responsible for accelerating some parts of the library.
 
 For writing a CPython extension itself, we prefer to give you some links
-where you can read a very good documentation.
-
-Read the following references:
+where you can read good documentation:
 
 * https://docs.python.org/dev/c-api/
 * https://docs.python.org/dev/extending/
@@ -53,9 +51,9 @@ such as :mod:`decimal` or :mod:`io`, and the C implementation is expected
 to improve performance when available (such modules are usually referred to as
 *accelerator modules*). In our example, we need to:
 
-- determine where the extension module is to be placed;
+- determine where to place the extension module;
 - determine which files to modify in order to compile the project;
-- determine which Makefile rules to invoke in the end.
+- determine which ``Makefile`` rules to invoke at the end.
 
 Usually, accelerator modules are added in the :cpy-file:`Modules` directory of
 the CPython project. If more than one file is needed for the extension
@@ -204,8 +202,8 @@ In a separate file, we would have the implementation of ``_Py_fast_bar``:
 
 .. tip::
 
-   Do not forget that symbols exported by libpython must start
-   with "Py" or "_Py", which is verified via ``make smelly``.
+   Do not forget that symbols exported by ``libpython`` must start
+   with ``Py`` or ``_Py``, which is verified via ``make smelly``.
 
 One could imagine having more ``.h`` files, or no ``helper.c`` file if it is
 not needed. Here, we wanted to illustrate a simple example without making it
@@ -298,9 +296,9 @@ Now that everything is in place, it remains to compile the project:
 
 .. code-block:: shell
 
-   $ make regen-configure
-   $ make regen-all
-   $ make regen-stdlib-module-names
+   make regen-configure
+   make regen-all
+   make regen-stdlib-module-names
 
 - The ``make regen-configure`` step regenerates the configure script.
 
@@ -315,28 +313,28 @@ You can now compile the entire project by running the following commands:
 
 .. code-block:: shell
 
-   $ ./configure --with-pydebug
-   $ make
+   ./configure --with-pydebug
+   make
 
-.. tip:: Use ``make -j12`` to speed-up the compilation if you have enough CPU cores.
+.. tip:: Use ``make -j12`` to speed-up compilation if you have enough CPU cores.
 
 Troubleshooting
 ^^^^^^^^^^^^^^^
 
-This section addresses common issues that developers may face when following this tutorial.
+This section addresses common issues that you may face when following this tutorial.
 
 ``make regen-configure`` does not work!
 .......................................
 
 Since this rule requires Docker to be running and a Docker instance,
-the following can be done on Linux platforms (systemctl-based):
+the following can be done on Linux platforms (``systemctl``-based):
 
 .. code-block:: shell
 
-   $ systemctl status docker        # is the docker service running?
-   $ sudo systemctl start docker    # start it if not!
-   $ sudo systemctl restart docker  # or restart it!
+   systemctl status docker         # is the docker service running?
+   sudo systemctl start docker     # start it if not!
+   sudo systemctl restart docker   # or restart it!
 
-If Docker complains about missing permissions, the following StackOverflow post
+If Docker complains about missing permissions, this Stack Overflow post
 could be useful in solving the issue: `How to fix docker: permission denied
 <https://stackoverflow.com/q/48957195/9579194>`_.
