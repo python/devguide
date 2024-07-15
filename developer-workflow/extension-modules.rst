@@ -49,7 +49,7 @@ to as *accelerator modules*). In our example, we need to determine:
 
 - where to place the extension module source code in the CPython project tree;
 - which files to modify in order to compile the CPython project;
-- which :cpy-file:`!Makefile` rules to invoke at the end.
+- which ``Makefile`` rules to invoke at the end.
 
 Updating the CPython project tree
 ---------------------------------
@@ -227,13 +227,13 @@ Extension Modules Types
 
 Extension modules can be classified into the following types:
 
-- A *built-in* extension module is a module built and shipped with
+* A *built-in* extension module is a module built and shipped with
   the Python interpreter. A built-in module is *statically* linked
   into the interpreter, thereby lacking a :attr:`__file__` attribute.
 
   .. seealso:: :data:`sys.builtin_module_names`
 
-- A *dynamic* (or *shared*) extension module is built as a *dynamic* library,
+* A *dynamic* (or *shared*) extension module is built as a *dynamic* library,
   and is *dynamically* linked into the Python interpreter.
 
   In particular, the corresponding ``.so`` or ``.dll`` file is described by the
@@ -275,9 +275,9 @@ Updating :cpy-file:`configure.ac`
 
   The ``PY_STDLIB_MOD_SIMPLE`` macro takes as arguments:
 
-  - the module name as specified by :c:member:`PyModuleDef.m_name`,
-  - the compiler flags (CFLAGS), and
-  - the linker flags (LDFLAGS).
+  * the module name as specified by :c:member:`PyModuleDef.m_name`,
+  * the compiler flags (CFLAGS), and
+  * the linker flags (LDFLAGS).
 
 Updating :cpy-file:`Makefile.pre.in`
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -368,24 +368,22 @@ case the extension can be built-in or dynamic).
    but optional extension modules should have one in case the shared
    library is not present on the system.
 
-.. rubric:: For required extension modules (built-in)
+* For **required** extension modules (built-in), add the following
+  line to :cpy-file:`Modules/Setup.bootstrap.in`:
 
-Open :cpy-file:`Modules/Setup.bootstrap.in` and add the following line:
+  .. code-block:: text
 
-.. code-block:: text
+     fastfoo cfoo/foomodule.c cfoo/helper.c
 
-   fastfoo cfoo/foomodule.c cfoo/helper.c
+* For optional extension modules, add the following
+  line to :cpy-file:`Modules/Setup.stdlib.in`:
 
-.. rubric:: For optional extension modules
+  .. code-block:: text
 
-Open :cpy-file:`Modules/Setup.stdlib.in` and add the following line:
+     @MODULE_FASTFOO_TRUE@fastfoo cfoo/foomodule.c cfoo/helper.c
 
-.. code-block:: text
-
-   @MODULE_FASTFOO_TRUE@fastfoo cfoo/foomodule.c cfoo/helper.c
-
-The ``@MODULE_<NAME>_TRUE@<name>`` marker requires ``<NAME>``
-to be the upper case form of the module name ``<name>``.
+  The ``@MODULE_<NAME>_TRUE@<name>`` marker requires ``<NAME>``
+  to be the upper case form of the module name ``<name>``.
 
 Compile the CPython project
 ---------------------------
@@ -394,7 +392,7 @@ Now that everything is in place, it remains to compile the project:
 
 .. code-block:: shell
 
-   ./Tools/build/regen-configure.sh
+   make regen-configure
    ./configure --with-pydebug
    make regen-all
    make regen-stdlib-module-names
@@ -404,29 +402,18 @@ Now that everything is in place, it remains to compile the project:
 
    Use ``make -j12`` to speed-up compilation if you have enough CPU cores.
 
-- Since the shipped version of :cpy-file:`configure` may not be up-to-date for
-  the new extension module, ``./Tools/build/regen-configure.sh`` should always
-  be executed first. This is equivalent to run ``make regen-configure`` but does
-  not require to create a ``Makefile`` first.
+* ``make regen-configure`` updates the :cpy-file:`configure` script.
 
-  Alternatively, :cpy-file:`configure` can be regenerated as follows:
+* ``./configure --with-pydebug`` updates the ``Makefile``.
 
-  .. code-block:: shell
+* ``make regen-all`` is responsible for regenerating header files and
+  invoking other scripts, such as :ref:`Arguments Clinic <clinic>`.
+  It is useful to run when you do not know which files should be updated.
 
-     ./configure            # for creating a Makefile
-     make regen-configure   # for updating 'configure'
-     ./configure            # for updating the Makefile
+* ``regen-stdlib-module-names`` updates the standard module names, making
+  :mod:`!fastfoo` discoverable and importable via ``import fastfoo``.
 
-- The ``./configure --with-pydebug`` step generates the new Makefile.
-
-- The ``make regen-all`` is responsible for running Arguments Clinic,
-  regenerating global objects, etc. It is useful to run when you do not
-  know which files should be updated.
-
-- The ``regen-stdlib-module-names`` updates the standard module names,
-  making ``fastfoo`` discoverable and importable via ``import fastfoo``.
-
-- The final ``make`` step is generally not needed since ``make regen-all``
+* The final ``make`` step is generally not needed since ``make regen-all``
   and ``make regen-stdlib-module-names`` may completely rebuild the project,
   but it could be needed in some specific cases.
 
@@ -434,6 +421,19 @@ Troubleshooting
 ---------------
 
 This section addresses common issues that you may face when following this tutorial.
+
+No rule to make target `regen-configure`
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+This usually happens after running ``make distclean`` since this removes
+the local ``Makefile``. The solution is to regenerate :cpy-file:`configure`
+as follows:
+
+.. code-block:: shell
+
+   ./configure            # for creating a Makefile
+   make regen-configure   # for updating 'configure'
+   ./configure            # for updating the Makefile
 
 ``make regen-configure`` does not work!
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
