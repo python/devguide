@@ -20,7 +20,7 @@ where you can read good documentation:
 Adding an extension module to CPython
 =====================================
 
-Assume that the standard library contains a pure Python module :mod:`foo`
+Assume that the standard library contains a pure Python module :mod:`!foo`
 together with the following :func:`!foo.greet` function:
 
 .. code-block:: python
@@ -197,7 +197,7 @@ The actual implementation of the module is in the corresponding ``.c`` file:
 .. tip::
 
    Recall that the ``PyInit_<MODNAME>`` function must be suffixed by the same
-   module name as defined by :c:member:`PyModuleDef.m_mod` (here, ``fastfoo``).
+   module name as defined by :c:member:`PyModuleDef.m_name` (here, ``fastfoo``).
    The other identifiers or functions do not have such naming requirements.
 
 In a separate file, we put the implementation of ``_Py_greet_fast``:
@@ -254,7 +254,7 @@ Now that we have our files, we first update :cpy-file:`configure.ac`:
 
 1. Add a line ``Modules/cfoo`` in
 
-   .. code-block:: configure
+   .. code-block:: text
 
       AC_SUBST([SRCDIRS])
       SRCDIRS="\
@@ -270,13 +270,13 @@ Now that we have our files, we first update :cpy-file:`configure.ac`:
 2. Find the section containing ``PY_STDLIB_MOD_SIMPLE`` usages and
    add the following line:
 
-   .. code-block:: configure
+   .. code-block:: text
 
       PY_STDLIB_MOD_SIMPLE([fastfoo], [-I\$(srcdir)/Modules/cfoo], [])
 
    The ``PY_STDLIB_MOD_SIMPLE`` macro takes as arguments:
 
-   - the module name as specified by :c:member:`PyModuleDef.m_mod`,
+   - the module name as specified by :c:member:`PyModuleDef.m_name`,
    - the compiler flags (CFLAGS), and
    - the linker flags (LDFLAGS).
 
