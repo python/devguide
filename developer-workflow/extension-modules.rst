@@ -76,8 +76,7 @@ or its C implementation) to highlight the differences in configuration files.
 The following code snippets illustrate the possible contents of the above files:
 
 .. code-block:: c
-
-   // Modules/cfoo/foomodule.h
+   :caption: Modules/cfoo/foomodule.h
 
    #ifndef CFOO_FOOMODULE_H
    #define CFOO_FOOMODULE_H
@@ -99,7 +98,7 @@ The following code snippets illustrate the possible contents of the above files:
    /* Helper used in Modules/cfoo/foomodule.c
     * but implemented in Modules/cfoo/helper.c.
     */
-   extern PyObject *_Py_greet_fast();
+   extern PyObject *_Py_greet_fast(void);
 
    #endif // CFOO_FOOMODULE_H
 
@@ -107,8 +106,7 @@ The following code snippets illustrate the possible contents of the above files:
 The actual implementation of the module is in the corresponding ``.c`` file:
 
 .. code-block:: c
-
-   // Modules/cfoo/foomodule.c
+   :caption: Modules/cfoo/foomodule.c
 
    #include "foomodule.h"
    #include "clinic/foomodule.c.h"
@@ -200,27 +198,26 @@ The actual implementation of the module is in the corresponding ``.c`` file:
    module name as defined by :c:member:`PyModuleDef.m_name` (here, ``fastfoo``).
    The other identifiers or functions do not have such naming requirements.
 
-In a separate file, we put the implementation of ``_Py_greet_fast``:
+In a separate file, we put the implementation of :c:func:`!_Py_greet_fast`:
 
 .. code-block:: c
-
-   // Modules/cfoo/helper.c
+   :caption: Modules/cfoo/helper.c
 
    #include "foomodule.h"
 
-   PyObject *_Py_greet_fast() {
+   PyObject *_Py_greet_fast(void) {
        return PyUnicode_FromString("Hello World!");
    }
 
 .. tip::
 
    Do not forget that symbols exported by ``libpython`` must start
-   with ``Py`` or ``_Py``, which is verified via ``make smelly``.
+   with ``Py`` or ``_Py``, which can be verified by ``make smelly``.
 
-One could imagine having more ``.h`` files, or no ``helper.c`` file if it is
-not needed. Here, we wanted to illustrate a simple example without making it
-too trivial. If the extension module does not require additional files, it
-may directly be placed in :cpy-file:`Modules` as ``Modules/foomodule.c``.
+One could imagine having more ``.h`` files, or no ``helper.c`` file. Here,
+we wanted to illustrate a simple example without making it too trivial. If
+the extension module does not require additional files, it may directly be
+placed in :cpy-file:`Modules` as ``Modules/foomodule.c``.
 
 Extension Modules Types
 -----------------------
@@ -231,7 +228,7 @@ Extension modules can be classified into the following types:
   the Python interpreter. A built-in module is *statically* linked
   into the interpreter, thereby lacking a :attr:`__file__` attribute.
 
-  .. seealso:: :data:`sys.builtin_module_names`
+  .. seealso:: :data:`sys.builtin_module_names` --- names of built-in modules.
 
 * A *dynamic* (or *shared*) extension module is built as a *dynamic* library,
   and is *dynamically* linked into the Python interpreter.
@@ -240,20 +237,21 @@ Extension modules can be classified into the following types:
   module's :attr:`__file__` attribute.
 
 Built-in extension modules are part of the interpreter, while dynamic extension
-modules might be supplied or overridden externally. The latter should provide
-a pure Python implementation in case of missing ``.so`` or ``.dll`` files.
+modules might be supplied or overridden externally.
 
 Make the CPython project compile
 --------------------------------
 
-Once we have our files, we will need to update some configuration files.
+Once we have our files, we need to update some configuration files.
 
 Updating :cpy-file:`configure.ac`
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-* Add a line ``Modules/cfoo`` in
+* Locate the ``SRCDIRS`` variable and add the following line:
 
   .. code-block:: text
+     :caption: :cpy-file:`configure.ac`
+     :emphasize-lines: 4
 
      AC_SUBST([SRCDIRS])
      SRCDIRS="\
@@ -270,8 +268,13 @@ Updating :cpy-file:`configure.ac`
   add the following line:
 
   .. code-block:: text
+     :caption: :cpy-file:`configure.ac`
+     :emphasize-lines: 3
 
+     dnl always enabled extension modules
+     ...
      PY_STDLIB_MOD_SIMPLE([fastfoo], [-I\$(srcdir)/Modules/cfoo], [])
+     ...
 
   The ``PY_STDLIB_MOD_SIMPLE`` macro takes as arguments:
 
@@ -282,76 +285,96 @@ Updating :cpy-file:`configure.ac`
 Updating :cpy-file:`Makefile.pre.in`
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-.. code-block:: makefile
+If needed, add the following line to the section for module dependencies:
+
+.. code-block:: text
+   :caption: :cpy-file:`Makefile.pre.in`
+   :emphasize-lines: 4
 
    ##########################################################################
    # Module dependencies and platform-specific files
-   # ...
+   ...
    MODULE_FASTFOO_DEPS=$(srcdir)/Modules/cfoo/foomodule.h
-   # ...
+   ...
 
-Updating Windows configuration files
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Updating MSVC project files
+^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-We describe the minimal steps to build our extension on Windows platforms:
+The minimal steps for cross-compiling on platforms using MSVC instead of
+GCC/Clang are listed below. More steps may be needed depending on the
+complexity of the extension module:
 
-* Open :cpy-file:`PC/config.c` and add the prototype:
+* Update :cpy-file:`PC/config.c`:
 
   .. code-block:: c
+     :caption: :cpy-file:`PC/config.c`
+     :emphasize-lines: 3, 8
 
+     ...
+     // add the entry point prototype
      extern PyObject* PyInit_fastfoo(void);
-
-  and update the :c:data:`!_PyImport_Inittab`:
-
-  .. code-block:: c
-
+     ...
+     // update the entry points table
      struct _inittab _PyImport_Inittab[] = {
         ...
         {"fastfoo", PyInit_fastfoo},
         ...
         {0, 0}
      };
+     ...
 
-* Open :cpy-file:`PCbuild/pythoncore.vcxproj` and add the following line to
-  the ``<ItemGroup>`` containing the other ``..\Modules\*.h`` files:
-
-  .. code-block:: xml
-
-     <ClInclude Include="..\Modules\cfoo\foomodule.h" />
-
-  In addition, add the following lines to the ``<ItemGroup>``
-  containing the other ``..\Modules\*.c`` files:
+* Update :cpy-file:`PCbuild/pythoncore.vcxproj`:
 
   .. code-block:: xml
+     :caption: :cpy-file:`PCbuild/pythoncore.vcxproj`
+     :emphasize-lines: 4, 11-12
 
-     <ClCompile Include="..\Modules\cfoo\foomodule.c" />
-     <ClCompile Include="..\Modules\cfoo\helper.c" />
+     <!-- group with header files ..\Modules\<MODULE>.h -->
+     <ItemGroup>
+       ...
+       <ClInclude Include="..\Modules\cfoo\foomodule.h" />
+       ...
+     </ItemGroup>
 
-* Open :cpy-file:`PCbuild/pythoncore.vcxproj.filters` and add the following
-  line to the ``ItemGroup`` containing the other ``..\Modules\*.h`` files:
+     <!-- group with source files ..\Modules\<MODULE>.c -->
+     <ItemGroup>
+       ...
+       <ClCompile Include="..\Modules\cfoo\foomodule.c" />
+       <ClCompile Include="..\Modules\cfoo\helper.c" />
+       ...
+     </ItemGroup>
+
+* Update :cpy-file:`PCbuild/pythoncore.vcxproj.filters`:
 
   .. code-block:: xml
+     :caption: :cpy-file:`PCbuild/pythoncore.vcxproj.filters`
+     :emphasize-lines: 4-6, 13-18
 
-     <ClInclude Include="..\Modules\cfoo\foomodule.h">
-       <Filter>Modules\cfoo</Filter>
-     </ClInclude>
+     <!-- group with header files ..\Modules\<MODULE>.h -->
+     <ItemGroup>
+       ...
+       <ClInclude Include="..\Modules\cfoo\foomodule.h">
+         <Filter>Modules\cfoo</Filter>
+       </ClInclude>
+       ...
+     </ItemGroup>
 
-  In addition, add the following lines to the ``ItemGroup`` containing
-  the other ``..\Modules\*.c`` files:
-
-  .. code-block:: xml
-
-     <ClCompile Include="..\Modules\cfoo\foomodule.c">
-       <Filter>Modules\cfoo</Filter>
-     </ClCompile>
-     <ClCompile Include="..\Modules\cfoo\helper.c">
-       <Filter>Modules\cfoo</Filter>
-     </ClCompile>
+     <!-- group with source files ..\Modules\<MODULE>.c -->
+     <ItemGroup>
+       ...
+       <ClCompile Include="..\Modules\cfoo\foomodule.c">
+         <Filter>Modules\cfoo</Filter>
+       </ClCompile>
+       <ClCompile Include="..\Modules\cfoo\helper.c">
+         <Filter>Modules\cfoo</Filter>
+       </ClCompile>
+       ...
+     <ItemGroup>
 
 .. tip::
 
-   Observe that ``.h`` files use ``<ClInclude ...>`` whereas ``.c`` files
-   use ``<ClCompile ...>`` tags.
+   Header files use ``<ClInclude>`` tags, whereas
+   source files use ``<ClCompile>`` tags.
 
 Updating :cpy-file:`!Modules/Setup.{bootstrap,stdlib}.in`
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -368,9 +391,10 @@ built-in and statically linked.
    library is not present on the system.
 
 For required extension modules, update :cpy-file:`Modules/Setup.bootstrap.in`
-by adding the following line after the ``*static*`` marker.
+by adding the following line after the ``*static*`` marker:
 
 .. code-block:: text
+   :emphasize-lines: 3
 
    *static*
    ...
@@ -382,6 +406,7 @@ by adding the following line after the ``*@MODULE_BUILDTYPE@*`` marker
 but before the ``*shared*`` marker:
 
 .. code-block:: text
+   :emphasize-lines: 3
 
    *@MODULE_BUILDTYPE@*
    ...
@@ -390,12 +415,14 @@ but before the ``*shared*`` marker:
    *shared*
 
 The ``@MODULE_<NAME>_TRUE@<name>`` marker expects ``<NAME>`` to be the
-upper-cased module name ``<name>``. If the extension module requires to
-be built as a *shared* module, the additional line must be put after the
-``*shared*`` marker:
+upper-cased module name ``<name>``. If the extension module must be built
+as a *shared* module, put the ``@MODULE_FASTFOO_TRUE@fastfoo`` line after
+the ``*shared*`` marker:
 
 .. code-block:: text
+   :emphasize-lines: 4
 
+   ...
    *shared*
    ...
    @MODULE_FASTFOO_TRUE@fastfoo cfoo/foomodule.c cfoo/helper.c
@@ -420,8 +447,8 @@ Now that everything is in place, it remains to compile the project:
 * ``make regen-configure`` updates the :cpy-file:`configure` script.
 
 * ``make regen-all`` is responsible for regenerating header files and
-  invoking other scripts, such as :ref:`Arguments Clinic <clinic>`.
-  It is useful to run when you do not know which files should be updated.
+  invoking other scripts, such as :ref:`Argument Clinic <clinic>`.
+  Execute this rule if you do not know which files should be updated.
 
 * ``regen-stdlib-module-names`` updates the standard module names, making
   :mod:`!fastfoo` discoverable and importable via ``import fastfoo``.
@@ -438,9 +465,8 @@ This section addresses common issues that you may face when following this tutor
 No rule to make target ``regen-configure``
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-This usually happens after running ``make distclean`` since this removes
-the local ``Makefile``. The solution is to regenerate :cpy-file:`configure`
-as follows:
+This usually happens after running ``make distclean`` (which removes
+the ``Makefile``). The solution is to regenerate :cpy-file:`configure`:
 
 .. code-block:: shell
 
@@ -451,23 +477,23 @@ as follows:
 ``make regen-configure`` does not work!
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Since this rule requires Docker to be running and a Docker instance,
-the following can be done on Linux platforms (``systemctl``-based):
+Since this rule requires `Docker <https://docs.docker.com/desktop>`_ to be
+running, the following can be done on Linux platforms (``systemctl``-based):
 
 .. code-block:: shell
 
-   systemctl status docker          # is the docker service running?
-   sudo systemctl start docker      # start it if not!
-   sudo systemctl restart docker    # or restart it!
+   systemctl status docker          # is the Docker service running?
+   sudo systemctl start docker      # start it if it is not
+   sudo systemctl restart docker    # or restart it if the issue persists
 
 If Docker complains about missing permissions, this Stack Overflow post
 could be useful in solving the issue: `How to fix docker: permission denied
 <https://stackoverflow.com/q/48957195/9579194>`_.
 
-Once the Docker service is running, check if you have an `Ubuntu 22.04 image
+Once the Docker service is running, check that you have an `Ubuntu 22.04 image
 <https://hub.docker.com/_/ubuntu>`_, or pull it if it is not case:
 
 .. code-block:: shell
 
    docker images ubuntu:22.04       # check for the Docker image presence
-   docker image pull ubuntu:22.04   # or pull the image if it does not exist!
+   docker image pull ubuntu:22.04   # or pull the image if needed
