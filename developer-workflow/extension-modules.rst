@@ -393,7 +393,7 @@ Now that everything is in place, it remains to compile the project:
 .. code-block:: shell
 
    make regen-configure
-   ./configure --with-pydebug
+   ./configure
    make regen-all
    make regen-stdlib-module-names
    make
@@ -403,8 +403,6 @@ Now that everything is in place, it remains to compile the project:
    Use ``make -j12`` to speed-up compilation if you have enough CPU cores.
 
 * ``make regen-configure`` updates the :cpy-file:`configure` script.
-
-* ``./configure --with-pydebug`` updates the ``Makefile``.
 
 * ``make regen-all`` is responsible for regenerating header files and
   invoking other scripts, such as :ref:`Arguments Clinic <clinic>`.
