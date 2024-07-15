@@ -228,12 +228,8 @@ Extension Modules Types
 Extension modules can be classified into the following types:
 
 - A *built-in* extension module is a module built and shipped with
-  the Python interpreter.
-
-  .. note::
-
-     A built-in module is *statically* linked into the interpreter,
-     and thereby lacks a :attr:`__file__` attribute.
+  the Python interpreter. A built-in module is *statically* linked
+  into the interpreter, thereby lacking a :attr:`__file__` attribute.
 
   .. seealso:: :data:`sys.builtin_module_names`
 
@@ -244,52 +240,62 @@ Extension modules can be classified into the following types:
   module's :attr:`__file__` attribute.
 
 Built-in extension modules are part of the interpreter, while dynamic extension
-modules might be supplied or overridden externally. In particular, the latter
-provide a pure Python implementation in case of missing ``.so/.dll`` files.
+modules might be supplied or overridden externally. The latter should provide
+a pure Python implementation in case of missing ``.so`` or ``.dll`` files.
 
 Make the CPython project compile
 --------------------------------
 
-Now that we have our files, we first update :cpy-file:`configure.ac`:
+Once we have our files, we will need to update some configuration files.
 
-1. Add a line ``Modules/cfoo`` in
+Updating :cpy-file:`configure.ac`
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-   .. code-block:: text
+* Add a line ``Modules/cfoo`` in
 
-      AC_SUBST([SRCDIRS])
-      SRCDIRS="\
-      ...
-      Modules/cfoo \
-      ..."
+  .. code-block:: text
 
-   .. note::
+     AC_SUBST([SRCDIRS])
+     SRCDIRS="\
+     ...
+     Modules/cfoo \
+     ..."
 
-      This step is only needed when adding new source directories to
-      the CPython project.
+  .. note::
 
-2. Find the section containing ``PY_STDLIB_MOD_SIMPLE`` usages and
-   add the following line:
+     This step is only needed when adding new source directories to
+     the CPython project.
 
-   .. code-block:: text
+* Find the section containing ``PY_STDLIB_MOD_SIMPLE`` usages and
+  add the following line:
 
-      PY_STDLIB_MOD_SIMPLE([fastfoo], [-I\$(srcdir)/Modules/cfoo], [])
+  .. code-block:: text
 
-   The ``PY_STDLIB_MOD_SIMPLE`` macro takes as arguments:
+     PY_STDLIB_MOD_SIMPLE([fastfoo], [-I\$(srcdir)/Modules/cfoo], [])
 
-   - the module name as specified by :c:member:`PyModuleDef.m_name`,
-   - the compiler flags (CFLAGS), and
-   - the linker flags (LDFLAGS).
+  The ``PY_STDLIB_MOD_SIMPLE`` macro takes as arguments:
 
-Then, we update :cpy-file:`Makefile.pre.in` by adding to the
-section **Module dependencies and platform-specific files**:
+  - the module name as specified by :c:member:`PyModuleDef.m_name`,
+  - the compiler flags (CFLAGS), and
+  - the linker flags (LDFLAGS).
 
-   .. code-block:: makefile
+Updating :cpy-file:`Makefile.pre.in`
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-      MODULE_FASTFOO_DEPS=$(srcdir)/Modules/cfoo/foomodule.h
+.. code-block:: makefile
 
-Additionally, we update the configuration files for Windows platforms:
+   ##########################################################################
+   # Module dependencies and platform-specific files
+   ...
+   MODULE_FASTFOO_DEPS=$(srcdir)/Modules/cfoo/foomodule.h
+   ...
 
-- Open :cpy-file:`PC/config.c` and add the prototype:
+Updating Windows configuration files
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+We describe the minimal steps to build our extension on Windows platforms:
+
+* Open :cpy-file:`PC/config.c` and add the prototype:
 
   .. code-block:: c
 
@@ -307,7 +313,7 @@ Additionally, we update the configuration files for Windows platforms:
      };
      extern PyObject* PyInit_fastfoo(void);
 
-- Open :cpy-file:`PCbuild/pythoncore.vcxproj` and add the following line to
+* Open :cpy-file:`PCbuild/pythoncore.vcxproj` and add the following line to
   the ``<ItemGroup>`` containing the other ``..\Modules\*.h`` files:
 
   .. code-block:: xml
@@ -322,7 +328,7 @@ Additionally, we update the configuration files for Windows platforms:
      <ClCompile Include="..\Modules\cfoo\foomodule.c" />
      <ClCompile Include="..\Modules\cfoo\helper.c" />
 
-- Open :cpy-file:`PCbuild/pythoncore.vcxproj.filters` and add the following
+* Open :cpy-file:`PCbuild/pythoncore.vcxproj.filters` and add the following
   line to the ``ItemGroup`` containing the other ``..\Modules\*.h`` files:
 
   .. code-block:: xml
@@ -343,13 +349,18 @@ Additionally, we update the configuration files for Windows platforms:
        <Filter>Modules\cfoo</Filter>
      </ClCompile>
 
-Observe that ``.h`` files use ``<ClInclude ...>`` whereas ``.c`` files
-use ``<ClCompile ...>`` tags.
+.. tip::
 
-It remains to update :cpy-file:`Modules/Setup.bootstrap.in` if the module is
-required to get a functioning interpreter (such module is *always* a built-in
-module) or :cpy-file:`Modules/Setup.stdlib.in` otherwise (such module can be
-built-in or dynamic).
+   Observe that ``.h`` files use ``<ClInclude ...>`` whereas ``.c`` files
+   use ``<ClCompile ...>`` tags.
+
+Update :cpy-file:`!Modules/Setup.*.in`
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Depending on whether the module is required to required to get a functioning
+interpreter, we update :cpy-file:`Modules/Setup.bootstrap.in` (in which case
+the extension is built-in) or :cpy-file:`Modules/Setup.stdlib.in`, (in which
+case the extension can be built-in or dynamic).
 
 .. note::
 
