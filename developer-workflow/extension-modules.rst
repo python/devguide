@@ -311,7 +311,6 @@ We describe the minimal steps to build our extension on Windows platforms:
         ...
         {0, 0}
      };
-     extern PyObject* PyInit_fastfoo(void);
 
 * Open :cpy-file:`PCbuild/pythoncore.vcxproj` and add the following line to
   the ``<ItemGroup>`` containing the other ``..\Modules\*.h`` files:
@@ -334,7 +333,7 @@ We describe the minimal steps to build our extension on Windows platforms:
   .. code-block:: xml
 
      <ClInclude Include="..\Modules\cfoo\foomodule.h">
-         <Filter>Modules\cfoo</Filter>
+       <Filter>Modules\cfoo</Filter>
      </ClInclude>
 
   In addition, add the following lines to the ``ItemGroup`` containing
@@ -357,10 +356,10 @@ We describe the minimal steps to build our extension on Windows platforms:
 Updating :cpy-file:`!Modules/Setup.{bootstrap,stdlib}.in`
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Depending on whether the module is required to required to get a functioning
-interpreter, we update :cpy-file:`Modules/Setup.bootstrap.in` (in which case
-the extension is built-in) or :cpy-file:`Modules/Setup.stdlib.in`, (in which
-case the extension can be built-in or dynamic).
+Depending on whether the extension module is required to get a functioning
+interpreter or not, we update :cpy-file:`Modules/Setup.bootstrap.in` or
+:cpy-file:`Modules/Setup.stdlib.in`. In the former case, the module is
+built-in and statically linked.
 
 .. note::
 
@@ -368,22 +367,38 @@ case the extension can be built-in or dynamic).
    but optional extension modules should have one in case the shared
    library is not present on the system.
 
-* For **required** extension modules (built-in), add the following
-  line to :cpy-file:`Modules/Setup.bootstrap.in`:
+For required extension modules, update :cpy-file:`Modules/Setup.bootstrap.in`
+by adding the following line after the ``*static*`` marker.
 
-  .. code-block:: text
+.. code-block:: text
 
-     fastfoo cfoo/foomodule.c cfoo/helper.c
+   *static*
+   ...
+   fastfoo cfoo/foomodule.c cfoo/helper.c
+   ...
 
-* For optional extension modules, add the following
-  line to :cpy-file:`Modules/Setup.stdlib.in`:
+For other extension modules, update :cpy-file:`Modules/Setup.stdlib.in`
+by adding the following line after the ``*@MODULE_BUILDTYPE@*`` marker
+but before the ``*shared*`` marker:
 
-  .. code-block:: text
+.. code-block:: text
 
-     @MODULE_FASTFOO_TRUE@fastfoo cfoo/foomodule.c cfoo/helper.c
+   *@MODULE_BUILDTYPE@*
+   ...
+   @MODULE_FASTFOO_TRUE@fastfoo cfoo/foomodule.c cfoo/helper.c
+   ...
+   *shared*
 
-  The ``@MODULE_<NAME>_TRUE@<name>`` marker requires ``<NAME>``
-  to be the upper case form of the module name ``<name>``.
+The ``@MODULE_<NAME>_TRUE@<name>`` marker expects ``<NAME>`` to be the
+upper-cased module name ``<name>``. If the extension module requires to
+be built as a *shared* module, the additional line must be put after the
+``*shared*`` marker:
+
+.. code-block:: text
+
+   *shared*
+   ...
+   @MODULE_FASTFOO_TRUE@fastfoo cfoo/foomodule.c cfoo/helper.c
 
 Compile the CPython project
 ---------------------------
