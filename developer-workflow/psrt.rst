@@ -32,7 +32,8 @@ vacation, etc.) they must find a replacement coordinator in the PSRT
 and reassign the vulnerability report appropriately.
 
 Coordinators are expected to collaborate with other PSRT members and core developers
-when needed for guidance on affect-ness, severity, advisory text, and fixes.
+when needed for guidance on whether the report is an actual vulnerability,
+severity, advisory text, and fixes.
 
 **The vulnerability coordination process is:**
 
