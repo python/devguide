@@ -102,9 +102,6 @@ The following code snippets illustrate the possible contents of the above files:
 
    #endif // CFOO_FOOMODULE_H
 
-
-The actual implementation of the module is in the corresponding ``.c`` file:
-
 .. code-block:: c
    :caption: Modules/cfoo/foomodule.c
 
@@ -198,8 +195,6 @@ The actual implementation of the module is in the corresponding ``.c`` file:
    module name as defined by :c:member:`PyModuleDef.m_name` (here, ``fastfoo``).
    The other identifiers or functions do not have such naming requirements.
 
-In a separate file, we put the implementation of :c:func:`!_Py_greet_fast`:
-
 .. code-block:: c
    :caption: Modules/cfoo/helper.c
 
@@ -230,14 +225,18 @@ Extension modules can be classified into the following types:
 
   .. seealso:: :data:`sys.builtin_module_names` --- names of built-in modules.
 
-* A *dynamic* (or *shared*) extension module is built as a *dynamic* library,
-  and is *dynamically* linked into the Python interpreter.
+* A *dynamic* (or *shared*) extension module is built as a *dynamic* library
+  (``.so`` or ``.dll`` file) and is dynamically linked into the interpreter.
 
-  In particular, the corresponding ``.so`` or ``.dll`` file is described by the
-  module's :attr:`__file__` attribute.
+  In particular, the module's :attr:`__file__` attribute contains the path
+  to the ``.so`` or ``.dll`` file.
 
 Built-in extension modules are part of the interpreter, while dynamic extension
 modules might be supplied or overridden externally.
+
+In particular, built-in extension modules do not need to have a pure Python
+implementation but shared extension modules should have one in case the shared
+library is not present on the system.
 
 Make the CPython project compile
 --------------------------------
@@ -382,18 +381,13 @@ Updating :cpy-file:`!Modules/Setup.{bootstrap,stdlib}.in`
 Depending on whether the extension module is required to get a functioning
 interpreter or not, we update :cpy-file:`Modules/Setup.bootstrap.in` or
 :cpy-file:`Modules/Setup.stdlib.in`. In the former case, the module is
-built-in and statically linked.
+necessarily built as a built-in module.
 
-.. note::
-
-   Built-in modules do not need to have a pure Python implementation
-   but optional extension modules should have one in case the shared
-   library is not present on the system.
-
-For required extension modules, update :cpy-file:`Modules/Setup.bootstrap.in`
+For built-in extension modules, update :cpy-file:`Modules/Setup.bootstrap.in`
 by adding the following line after the ``*static*`` marker:
 
 .. code-block:: text
+   :caption: :cpy-file:`Modules/Setup.bootstrap.in`
    :emphasize-lines: 3
 
    *static*
@@ -406,6 +400,7 @@ by adding the following line after the ``*@MODULE_BUILDTYPE@*`` marker
 but before the ``*shared*`` marker:
 
 .. code-block:: text
+   :caption: :cpy-file:`Modules/Setup.stdlib.in`
    :emphasize-lines: 3
 
    *@MODULE_BUILDTYPE@*
@@ -420,6 +415,7 @@ as a *shared* module, put the ``@MODULE_FASTFOO_TRUE@fastfoo`` line after
 the ``*shared*`` marker:
 
 .. code-block:: text
+   :caption: :cpy-file:`Modules/Setup.stdlib.in`
    :emphasize-lines: 4
 
    ...
