@@ -354,8 +354,8 @@ We describe the minimal steps to build our extension on Windows platforms:
    Observe that ``.h`` files use ``<ClInclude ...>`` whereas ``.c`` files
    use ``<ClCompile ...>`` tags.
 
-Update :cpy-file:`!Modules/Setup.*.in`
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Updating :cpy-file:`!Modules/Setup.{bootstrap,stdlib}.in`
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Depending on whether the module is required to required to get a functioning
 interpreter, we update :cpy-file:`Modules/Setup.bootstrap.in` (in which case
