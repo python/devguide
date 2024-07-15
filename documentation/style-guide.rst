@@ -54,10 +54,15 @@ starting it with a lowercase letter should be avoided.
 Many special names are used in the Python documentation, including the names of
 operating systems, programming languages, standards bodies, and the like. Most
 of these entities are not assigned any special markup, but the preferred
-spellings are given here to aid authors in maintaining the consistency of
-presentation in the Python documentation.
+spellings are given in :ref:`glossary` to aid authors in maintaining the
+consistency of presentation in the Python documentation.
 
-Other terms and words deserve special mention as well; these conventions should
+.. _glossary:
+
+Specific words
+==============
+
+Some terms and words deserve special mention. These conventions should
 be used to ensure consistency throughout the documentation:
 
 C API
@@ -78,6 +83,11 @@ reST
    For "reStructuredText," an easy to read, plaintext markup syntax
    used to produce Python documentation.  When spelled out, it is
    always one word and both forms start with a lowercase 'r'.
+
+time zone
+   Spell out as two words when talking about the real-world concept.
+   Only spell as one word when referring to a Python term like a module,
+   class, or argument.
 
 Unicode
    The name of a character coding system. This is always written
