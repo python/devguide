@@ -5,12 +5,11 @@
 Standard library extension modules
 ==================================
 
-In this section, we could explain how to write a CPython extension with the
-C language, but the topic can take a complete book. We will however explain
-how to add a new extension module to the standard library, for instance, a
-module responsible for accelerating some parts of the library.
+In this section, we are interested in extending the CPython project with
+an :term:`extension module`. We will not explain how to write the module
+in C but rather explain how to configure the project and make it compile.
 
-For writing a CPython extension itself, we prefer to give you some links
+For writing an extension module in C, we prefer to give you some links
 where you can read good documentation:
 
 * https://docs.python.org/dev/c-api/
@@ -19,65 +18,69 @@ where you can read good documentation:
 * https://pythonextensionpatterns.readthedocs.io/en/latest/
 
 Adding an extension module to CPython
--------------------------------------
+=====================================
 
-Assume that the standard library contains the module :mod:`!foo`
-together with some :func:`!foo.bar` function:
+Assume that the standard library contains a pure Python module :mod:`foo`
+together with the following :func:`!foo.greet` function:
 
 .. code-block:: python
 
-   def bar():
+   def greet():
        return "Hello World!"
 
-Instead of using the Python implementation of :func:`!foo.bar`, we want to
-use its corresponding C implementation exposed as the :mod:`!_foo` module.
-Ideally, we want to modify ``foo.py`` as follows:
+Instead of using the Python implementation of :func:`!foo.greet`, we want to
+use its corresponding C implementation exposed in some :mod:`!fastfoo` module
+written in C. Ideally, we want to modify ``foo.py`` as follows:
 
 .. code-block:: python
 
    try:
        # use the C implementation if possible
-       from _foo import bar
+       from fastfoo import greet
    except ImportError:
        # fallback to the pure Python implementation
-       def bar():
+       def greet():
            return "Hello World!"
 
 Some modules in the standard library are implemented both in C and in Python,
-such as :mod:`decimal` or :mod:`io`, and the C implementation is expected
+such as :mod:`decimal` or :mod:`itertools`, and the C implementation is expected
 to improve performance when available (such modules are commonly referred
-to as *accelerator modules*). In our example, we need to:
+to as *accelerator modules*). In our example, we need to determine:
 
-- determine where to place the extension module;
-- determine which files to modify in order to compile the project;
-- determine which ``Makefile`` rules to invoke at the end.
+- where to place the extension module source code in the CPython project tree;
+- which files to modify in order to compile the CPython project;
+- which :cpy-file:`!Makefile` rules to invoke at the end.
+
+Updating the CPython project tree
+---------------------------------
 
 Usually, accelerator modules are added in the :cpy-file:`Modules` directory of
-the CPython project. If more than one file is needed for the extension
-module, it is convenient to create a sub-directory in :cpy-file:`Modules`, and
-place the files inside it.
+the CPython project. If more than one file is needed for the extension module,
+it is more convenient to create a sub-directory in :cpy-file:`Modules`.
 
 For our extension, we will create the following files:
 
-- ``Modules/foo/foomodule.h`` -- the shared prototypes for our mini-project.
-- ``Modules/foo/foomodule.c`` -- the actual module's implementation.
-- ``Modules/foo/helper.c``    -- some helper's implementation.
+- ``Modules/cfoo/foomodule.h`` --- the shared prototypes for our mini-project.
+- ``Modules/cfoo/foomodule.c`` --- the actual module's implementation.
+- ``Modules/cfoo/helper.c`` --- helpers implementation.
+
+We deliberately named the mini-project directory and files with names distinct
+from the actual Python module to import (whether it is the pure Python module
+or its C implementation) to highlight the differences in configuration files.
 
 .. note::
 
-   If ``Modules/foo/foomodule.c`` contains some Argument Clinic directives,
-   the corresponding header file is written to ``Modules/foo/clinic/foomodule.c.h``.
+   If ``Modules/cfoo/foomodule.c`` contains Argument Clinic directives,
+   ``make clinic`` creates the file ``Modules/cfoo/clinic/foomodule.c.h``.
 
-For simplicity, we assume that the extension module does not rely on external dependencies
-and is not a frozen module. The following code snippets illustrate the possible contents of
-the above files:
+The following code snippets illustrate the possible contents of the above files:
 
 .. code-block:: c
 
-   // Modules/foo/foomodule.h
+   // Modules/cfoo/foomodule.h
 
-   #ifndef FOO_FOOMODULE_H
-   #define FOO_FOOMODULE_H
+   #ifndef CFOO_FOOMODULE_H
+   #define CFOO_FOOMODULE_H
 
    #include "Python.h"
 
@@ -93,16 +96,19 @@ the above files:
        return (foomodule_state *)state;
    }
 
-   /* Helper implemented somewhere else. */
-   extern PyObject *_Py_fast_bar();
+   /* Helper used in Modules/cfoo/foomodule.c
+    * but implemented in Modules/cfoo/helper.c.
+    */
+   extern PyObject *_Py_greet_fast();
 
-   #endif // FOO_FOOMODULE_H
+   #endif // CFOO_FOOMODULE_H
+
 
 The actual implementation of the module is in the corresponding ``.c`` file:
 
 .. code-block:: c
 
-   // Modules/foo/foomodule.c
+   // Modules/cfoo/foomodule.c
 
    #include "foomodule.h"
    #include "clinic/foomodule.c.h"
@@ -136,7 +142,7 @@ The actual implementation of the module is in the corresponding ``.c`` file:
        (void)foomodule_clear((PyObject *)m);
    }
 
-   /* Implementation of publicly exported functions */
+   /* Implementation of publicly exported functions. */
 
    /*[clinic input]
    module foo
@@ -144,27 +150,27 @@ The actual implementation of the module is in the corresponding ``.c`` file:
    /*[clinic end generated code: output=... input=...]*/
 
    /*[clinic input]
-   foo.bar -> object
+   foo.greet -> object
 
    [clinic start generated code]*/
    static PyObject *
-   foo_bar_impl(PyObject *module)
+   foo_greet(PyObject *module)
    /*[clinic end generated code: output=... input=...]*/
    {
-       return _Py_fast_bar();
+       return _Py_greet_fast();
    }
 
    /* Exported module's data */
 
    static PyMethodDef foomodule_methods[] = {
-       // the following macro is available in 'Modules/foo/clinic/foomodule.c.h'
-       // after running 'make clinic'
-       FOO_BAR_METHODDEF
+       // macro available in 'clinic/foomodule.c.h' after running 'make clinic'
+       FOO_GREET_METHODDEF
        {NULL, NULL}
    };
 
    static struct PyModuleDef_Slot foomodule_slots[] = {
-       {Py_mod_exec, foomodule_exec}, // 'foomodule_exec' may be NULL if the state is trivial
+       // 'foomodule_exec' may be NULL if the state is trivial
+       {Py_mod_exec, foomodule_exec},
        {Py_mod_multiple_interpreters, Py_MOD_PER_INTERPRETER_GIL_SUPPORTED},
        {Py_mod_gil, Py_MOD_GIL_NOT_USED},
        {0, NULL},
@@ -172,7 +178,7 @@ The actual implementation of the module is in the corresponding ``.c`` file:
 
    static struct PyModuleDef foomodule = {
        PyModuleDef_HEAD_INIT,
-       .m_name = "_foo",                  // name to use in 'import' statements
+       .m_name = "fastfoo",               // name to use in 'import' statements
        .m_doc = "some doc",               // or NULL if not needed
        .m_size = sizeof(foomodule_state),
        .m_methods = foomodule_methods,
@@ -183,20 +189,26 @@ The actual implementation of the module is in the corresponding ``.c`` file:
    };
 
    PyMODINIT_FUNC
-   PyInit_foo(void)
+   PyInit_fastfoo(void)
    {
-       return PyModuleDef_Init(&_foomodule);
+       return PyModuleDef_Init(&foomodule);
    }
 
-In a separate file, we would have the implementation of ``_Py_fast_bar``:
+.. tip::
+
+   Recall that the ``PyInit_<MODNAME>`` function must be suffixed by the same
+   module name as defined by :c:member:`PyModuleDef.m_mod` (here, ``fastfoo``).
+   The other identifiers or functions do not have such naming requirements.
+
+In a separate file, we put the implementation of ``_Py_greet_fast``:
 
 .. code-block:: c
 
-   // Modules/foo/helper.c
+   // Modules/cfoo/helper.c
 
    #include "foomodule.h"
 
-   PyObject *_Py_fast_bar() {
+   PyObject *_Py_greet_fast() {
        return PyUnicode_FromString("Hello World!");
    }
 
@@ -207,134 +219,231 @@ In a separate file, we would have the implementation of ``_Py_fast_bar``:
 
 One could imagine having more ``.h`` files, or no ``helper.c`` file if it is
 not needed. Here, we wanted to illustrate a simple example without making it
-too trivial.
+too trivial. If the extension module does not require additional files, it
+may directly be placed in :cpy-file:`Modules` as ``Modules/foomodule.c``.
+
+Extension Modules Types
+-----------------------
+
+Extension modules can be classified into the following types:
+
+- A *built-in* extension module is a module built and shipped with
+  the Python interpreter.
+
+  .. note::
+
+     A built-in module is *statically* linked into the interpreter,
+     and thereby lacks a :attr:`__file__` attribute.
+
+  .. seealso:: :data:`sys.builtin_module_names`
+
+- A *dynamic* (or *shared*) extension module is built as a *dynamic* library,
+  and is *dynamically* linked into the Python interpreter.
+
+  In particular, the corresponding ``.so`` or ``.dll`` file is described by the
+  module's :attr:`__file__` attribute.
+
+Built-in extension modules are part of the interpreter, while dynamic extension
+modules might be supplied or overridden externally. In particular, the latter
+provide a pure Python implementation in case of missing ``.so/.dll`` files.
 
 Make the CPython project compile
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+--------------------------------
 
-Now that we have our files, we need to update the :cpy-file:`Makefile.pre.in` file.
-First, define the following the variables:
+Now that we have our files, we first update :cpy-file:`configure.ac`:
 
-.. code-block:: makefile
+1. Add a line ``Modules/cfoo`` in
 
-   FOO_H = Modules/foo/foomodule.h
-   FOO_OBJS = Modules/foo/foomodule.o Modules/foo/helper.o
+   .. code-block:: configure
 
-and place them in the **Modules** section where other pre-defined objects live such
-as ``MODULE_OBJS`` and ``IO_OBJS``. Then, add the following rule in the section for
-**Special rules for object files**:
+      AC_SUBST([SRCDIRS])
+      SRCDIRS="\
+      ...
+      Modules/cfoo \
+      ..."
 
-.. code-block:: makefile
+   .. note::
 
-   $(FOO_OBJS): $(FOO_H)
+      This step is only needed when adding new source directories to
+      the CPython project.
 
-and the following rule in the section for **Module dependencies and platform-specific files**:
+2. Find the section containing ``PY_STDLIB_MOD_SIMPLE`` usages and
+   add the following line:
 
-.. code-block:: makefile
+   .. code-block:: configure
 
-   MODULE_FOO_DEPS=$(srcdir)/Modules/foo/foomodule.h
+      PY_STDLIB_MOD_SIMPLE([fastfoo], [-I\$(srcdir)/Modules/cfoo], [])
 
-.. note::
+   The ``PY_STDLIB_MOD_SIMPLE`` macro takes as arguments:
 
-   The ``FOO_OBJS`` and ``FOO_H`` are not necessarily needed and the rule
-   ``$(FOO_OBJS): $(FOO_H)`` could be hard-coded. Using Makefile variables
-   is generally better if multiple files need to be compiled.
+   - the module name as specified by :c:member:`PyModuleDef.m_mod`,
+   - the compiler flags (CFLAGS), and
+   - the linker flags (LDFLAGS).
 
-Finally, we need to modify the configuration for Windows platforms:
+Then, we update :cpy-file:`Makefile.pre.in` by adding to the
+section **Module dependencies and platform-specific files**:
+
+   .. code-block:: makefile
+
+      MODULE_FASTFOO_DEPS=$(srcdir)/Modules/cfoo/foomodule.h
+
+Additionally, we update the configuration files for Windows platforms:
 
 - Open :cpy-file:`PC/config.c` and add the prototype:
 
   .. code-block:: c
 
-     extern PyObject* PyInit_foo(void);
+     extern PyObject* PyInit_fastfoo(void);
 
-  and the entry ``{"foo", PyInit_foo}`` to ``_PyImport_Inittab``.
+  and update the :c:data:`!_PyImport_Inittab`:
+
+  .. code-block:: c
+
+     struct _inittab _PyImport_Inittab[] = {
+        ...
+        {"fastfoo", PyInit_fastfoo},
+        ...
+        {0, 0}
+     };
+     extern PyObject* PyInit_fastfoo(void);
 
 - Open :cpy-file:`PCbuild/pythoncore.vcxproj` and add the following line to
   the ``<ItemGroup>`` containing the other ``..\Modules\*.h`` files:
 
   .. code-block:: xml
 
-     <ClInclude Include="..\Modules\foo\foomodule.h" />
+     <ClInclude Include="..\Modules\cfoo\foomodule.h" />
 
   In addition, add the following lines to the ``<ItemGroup>``
-  containing the the other ``..\Modules\*.c`` files:
+  containing the other ``..\Modules\*.c`` files:
 
   .. code-block:: xml
 
-     <ClCompile Include="..\Modules\foo\foomodule.c" />
-     <ClCompile Include="..\Modules\foo\helper.c" />
+     <ClCompile Include="..\Modules\cfoo\foomodule.c" />
+     <ClCompile Include="..\Modules\cfoo\helper.c" />
 
-- Open :cpy-file:`PCbuild/pythoncore.vcxproj.filters` and add the following line to
-  the ``ItemGroup`` containing the the other ``..\Modules\*.h`` files:
+- Open :cpy-file:`PCbuild/pythoncore.vcxproj.filters` and add the following
+  line to the ``ItemGroup`` containing the other ``..\Modules\*.h`` files:
 
   .. code-block:: xml
 
-     <ClInclude Include="..\Modules\foo\foomodule.h">
-         <Filter>Modules\foo</Filter>
+     <ClInclude Include="..\Modules\cfoo\foomodule.h">
+         <Filter>Modules\cfoo</Filter>
      </ClInclude>
 
   In addition, add the following lines to the ``ItemGroup`` containing
-  the the other ``..\Modules\*.c`` files:
+  the other ``..\Modules\*.c`` files:
 
   .. code-block:: xml
 
-     <ClCompile Include="..\Modules\foo\foomodule.c">
-       <Filter>Modules\foo</Filter>
+     <ClCompile Include="..\Modules\cfoo\foomodule.c">
+       <Filter>Modules\cfoo</Filter>
      </ClCompile>
-     <ClCompile Include="..\Modules\foo\helper.c">
-       <Filter>Modules\foo</Filter>
+     <ClCompile Include="..\Modules\cfoo\helper.c">
+       <Filter>Modules\cfoo</Filter>
      </ClCompile>
 
 Observe that ``.h`` files use ``<ClInclude ...>`` whereas ``.c`` files
 use ``<ClCompile ...>`` tags.
 
+It remains to update :cpy-file:`Modules/Setup.bootstrap.in` if the module is
+required to get a functioning interpreter (such module is *always* a built-in
+module) or :cpy-file:`Modules/Setup.stdlib.in` otherwise (such module can be
+built-in or dynamic).
+
+.. note::
+
+   Built-in modules do not need to have a pure Python implementation
+   but optional extension modules should have one in case the shared
+   library is not present on the system.
+
+.. rubric:: For required extension modules (built-in)
+
+   Open :cpy-file:`Modules/Setup.bootstrap.in` and add the following line:
+
+   .. code-block:: text
+
+      fastfoo cfoo/foomodule.c cfoo/helper.c
+
+.. rubric:: For optional extension modules
+
+   Open :cpy-file:`Modules/Setup.stdlib.in` and add the following line:
+
+   .. code-block:: text
+
+      @MODULE_FASTFOO_TRUE@fastfoo cfoo/foomodule.c cfoo/helper.c
+
+   The ``@MODULE_<NAME>_TRUE@<name>`` marker requires ``<NAME>``
+   to be the upper case form of the module name ``<name>``.
+
 Compile the CPython project
-^^^^^^^^^^^^^^^^^^^^^^^^^^^
+---------------------------
 
 Now that everything is in place, it remains to compile the project:
 
 .. code-block:: shell
 
-   make regen-configure
+   ./Tools/build/regen-configure.sh
+   ./configure --with-pydebug
    make regen-all
    make regen-stdlib-module-names
+   make
 
-- The ``make regen-configure`` step regenerates the configure script.
+.. tip::
+
+   Use ``make -j12`` to speed-up compilation if you have enough CPU cores.
+
+- Since the shipped version of :cpy-file:`configure` may not be up-to-date for
+  the new extension module, ``./Tools/build/regen-configure.sh`` should always
+  be executed first. This is equivalent to run ``make regen-configure`` but does
+  not require to create a ``Makefile`` first.
+
+  Alternatively, :cpy-file:`configure` can be regenerated as follows:
+
+  .. code-block:: shell
+
+     ./configure            # for creating a Makefile
+     make regen-configure   # for updating 'configure'
+     ./configure            # for updating the Makefile
+
+- The ``./configure --with-pydebug`` step generates the new Makefile.
 
 - The ``make regen-all`` is responsible for running Arguments Clinic,
   regenerating global objects, etc. It is useful to run when you do not
   know which files should be updated.
 
 - The ``regen-stdlib-module-names`` updates the standard module names,
-  making ``_foo`` discoverable and importable via ``import _foo``.
+  making ``fastfoo`` discoverable and importable via ``import fastfoo``.
 
-You can now compile the entire project by running the following commands:
-
-.. code-block:: shell
-
-   ./configure --with-pydebug
-   make
-
-.. tip:: Use ``make -j12`` to speed-up compilation if you have enough CPU cores.
+- The final ``make`` step is generally not needed since ``make regen-all``
+  and ``make regen-stdlib-module-names`` may completely rebuild the project,
+  but it could be needed in some specific cases.
 
 Troubleshooting
-^^^^^^^^^^^^^^^
+---------------
 
 This section addresses common issues that you may face when following this tutorial.
 
 ``make regen-configure`` does not work!
-.......................................
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Since this rule requires Docker to be running and a Docker instance,
 the following can be done on Linux platforms (``systemctl``-based):
 
 .. code-block:: shell
 
-   systemctl status docker         # is the docker service running?
-   sudo systemctl start docker     # start it if not!
-   sudo systemctl restart docker   # or restart it!
+   systemctl status docker          # is the docker service running?
+   sudo systemctl start docker      # start it if not!
+   sudo systemctl restart docker    # or restart it!
 
 If Docker complains about missing permissions, this Stack Overflow post
 could be useful in solving the issue: `How to fix docker: permission denied
 <https://stackoverflow.com/q/48957195/9579194>`_.
+
+Once the Docker service is running, check if you have an `Ubuntu 22.04 image
+<https://hub.docker.com/_/ubuntu>`_, or pull it if it is not case:
+
+.. code-block:: shell
+
+   docker images ubuntu:22.04       # check for the Docker image presence
+   docker image pull ubuntu:22.04   # or pull the image if it does not exist!
