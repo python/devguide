@@ -359,22 +359,22 @@ built-in or dynamic).
 
 .. rubric:: For required extension modules (built-in)
 
-   Open :cpy-file:`Modules/Setup.bootstrap.in` and add the following line:
+Open :cpy-file:`Modules/Setup.bootstrap.in` and add the following line:
 
-   .. code-block:: text
+.. code-block:: text
 
-      fastfoo cfoo/foomodule.c cfoo/helper.c
+  fastfoo cfoo/foomodule.c cfoo/helper.c
 
 .. rubric:: For optional extension modules
 
-   Open :cpy-file:`Modules/Setup.stdlib.in` and add the following line:
+Open :cpy-file:`Modules/Setup.stdlib.in` and add the following line:
 
-   .. code-block:: text
+.. code-block:: text
 
-      @MODULE_FASTFOO_TRUE@fastfoo cfoo/foomodule.c cfoo/helper.c
+  @MODULE_FASTFOO_TRUE@fastfoo cfoo/foomodule.c cfoo/helper.c
 
-   The ``@MODULE_<NAME>_TRUE@<name>`` marker requires ``<NAME>``
-   to be the upper case form of the module name ``<name>``.
+The ``@MODULE_<NAME>_TRUE@<name>`` marker requires ``<NAME>``
+to be the upper case form of the module name ``<name>``.
 
 Compile the CPython project
 ---------------------------
