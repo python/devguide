@@ -422,8 +422,8 @@ Troubleshooting
 
 This section addresses common issues that you may face when following this tutorial.
 
-No rule to make target `regen-configure`
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+No rule to make target ``regen-configure``
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 This usually happens after running ``make distclean`` since this removes
 the local ``Makefile``. The solution is to regenerate :cpy-file:`configure`
