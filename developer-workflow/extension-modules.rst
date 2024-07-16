@@ -299,9 +299,7 @@ If needed, add the following line to the section for module dependencies:
 Updating MSVC project files
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-The minimal steps for cross-compiling on platforms using MSVC instead of
-GCC/Clang are listed below. More steps may be needed depending on the
-complexity of the extension module:
+We describe the minimal steps for compiling on Windows using MSVC.
 
 * Update :cpy-file:`PC/config.c`:
 
