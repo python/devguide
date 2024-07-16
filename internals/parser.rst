@@ -537,7 +537,7 @@ parser (the one used by the interpreter) just execute: ::
 
     make regen-pegen
 
-using the :cpy-file:`!Makefile` in the main directory.  If you are on Windows you can
+using the ``Makefile`` in the main directory.  If you are on Windows you can
 use the Visual Studio project files to regenerate the parser or to execute: ::
 
     ./PCbuild/build.bat --regen

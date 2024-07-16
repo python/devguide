@@ -1,12 +1,6 @@
-import os
-import sys
 import time
 
-# Location of custom extensions.
-sys.path.insert(0, os.path.abspath(".") + "/_extensions")
-
 extensions = [
-    'custom_roles',
     'notfound.extension',
     'sphinx.ext.extlinks',
     'sphinx.ext.intersphinx',
@@ -176,7 +170,10 @@ notfound_urls_prefix = "/"
 # This config is a dictionary of external sites,
 # mapping unique short aliases to a base URL and a prefix.
 # https://www.sphinx-doc.org/en/master/usage/extensions/extlinks.html
+_repo = "https://github.com/python/cpython"
 extlinks = {
+    "cpy-file": (f"{_repo}/blob/main/%s", "%s"),
+    "gh-label": (f"{_repo}/labels/%s", "%s"),
     "github": ("https://github.com/%s", "%s"),
     "github-user": ("https://github.com/%s", "@%s"),
     "pypi": ("https://pypi.org/project/%s/", "%s"),
