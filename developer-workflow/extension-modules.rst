@@ -310,15 +310,15 @@ Updating :cpy-file:`configure.ac`
 
   More generally, the status of the extension is determined as follows:
 
-      +-----------+-----------------+----------+
-      | Enabled   | Supported       | Status   |
-      +===========+=================+==========+
-      | true      | true            | yes      |
-      +-----------+-----------------+----------+
-      | true      | false           | missing  |
-      +-----------+-----------------+----------+
-      | false     | true or false   | disabled |
-      +-----------+-----------------+----------+
+  +-----------+-----------------+----------+
+  | Enabled   | Supported       | Status   |
+  +===========+=================+==========+
+  | true      | true            | yes      |
+  +-----------+-----------------+----------+
+  | true      | false           | missing  |
+  +-----------+-----------------+----------+
+  | false     | true or false   | disabled |
+  +-----------+-----------------+----------+
 
   The extension status is ``n/a`` if the extension is marked unavailable
   via the ``PY_STDLIB_MOD_SET_NA`` macro. To add an unavailable extension,
