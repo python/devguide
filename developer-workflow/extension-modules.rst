@@ -148,8 +148,9 @@ The following code snippets illustrate the possible contents of the above files:
    foo.greet -> object
 
    [clinic start generated code]*/
+
    static PyObject *
-   foo_greet(PyObject *module)
+   foo_greet_impl(PyObject *module)
    /*[clinic end generated code: output=... input=...]*/
    {
        return _Py_greet_fast();
@@ -288,7 +289,8 @@ Updating :cpy-file:`configure.ac`
   * the linker flags (LDFLAGS).
 
   If the extension module may not be enabled or supported depending on the
-  host configuration. use ``PY_STDLIB_MOD`` which takes as arguments:
+  host configuration, use the ``PY_STDLIB_MOD`` macro instead, which takes
+  as arguments:
 
   * the module name as specified by :c:member:`PyModuleDef.m_name`,
   * a boolean indicating whether the extension is **enabled** or not,
@@ -296,8 +298,8 @@ Updating :cpy-file:`configure.ac`
   * the compiler flags (CFLAGS), and
   * the linker flags (LDFLAGS).
 
-  For instance, enabling the ``fastfoo`` extension on Linux systems, but
-  only providing support for 32-bit architecture is achieved as follows:
+  For instance, enabling the ``fastfoo`` extension on Linux platforms, but
+  only providing support for 32-bit architecture, is achieved as follows:
 
   .. code-block:: text
      :caption: :cpy-file:`configure.ac`
