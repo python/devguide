@@ -60,9 +60,9 @@ it is more convenient to create a sub-directory in :cpy-file:`Modules`.
 
 For our extension, we will create the following files:
 
-- ``Modules/cfoo/foomodule.h`` --- the shared prototypes for our mini-project.
-- ``Modules/cfoo/foomodule.c`` --- the actual module's implementation.
-- ``Modules/cfoo/helper.c`` --- helpers implementation.
+- ``Modules/_foo/_foomodule.h`` --- the shared prototypes for our mini-project.
+- ``Modules/_foo/_foomodule.c`` --- the actual module's implementation.
+- ``Modules/_foo/helper.c`` --- helpers implementation.
 
 We deliberately named the mini-project directory and files with names distinct
 from the actual Python module to import (whether it is the pure Python module
@@ -70,16 +70,16 @@ or its C implementation) to highlight the differences in configuration files.
 
 .. note::
 
-   If ``Modules/cfoo/foomodule.c`` contains Argument Clinic directives,
-   ``make clinic`` creates the file ``Modules/cfoo/clinic/foomodule.c.h``.
+   If ``Modules/_foo/_foomodule.c`` contains Argument Clinic directives,
+   ``make clinic`` creates the file ``Modules/_foo/clinic/_foomodule.c.h``.
 
 The following code snippets illustrate the possible contents of the above files:
 
 .. code-block:: c
-   :caption: Modules/cfoo/foomodule.h
+   :caption: Modules/_foo/_foomodule.h
 
-   #ifndef CFOO_FOOMODULE_H
-   #define CFOO_FOOMODULE_H
+   #ifndef _FOO__FOOMODULE_H
+   #define _FOO__FOOMODULE_H
 
    #include "Python.h"
 
@@ -95,18 +95,18 @@ The following code snippets illustrate the possible contents of the above files:
        return (foomodule_state *)state;
    }
 
-   /* Helper used in Modules/cfoo/foomodule.c
-    * but implemented in Modules/cfoo/helper.c.
+   /* Helper used in Modules/_foo/_foomodule.c
+    * but implemented in Modules/_foo/helper.c.
     */
    extern PyObject *_Py_greet_fast(void);
 
-   #endif // CFOO_FOOMODULE_H
+   #endif // _FOO__FOOMODULE_H
 
 .. code-block:: c
-   :caption: Modules/cfoo/foomodule.c
+   :caption: Modules/_foo/_foomodule.c
 
-   #include "foomodule.h"
-   #include "clinic/foomodule.c.h"
+   #include "_foomodule.h"
+   #include "clinic/_foomodule.c.h"
 
    /* Functions for the module's state */
    static int
@@ -158,7 +158,7 @@ The following code snippets illustrate the possible contents of the above files:
    /* Exported module's data */
 
    static PyMethodDef foomodule_methods[] = {
-       // macro available in 'clinic/foomodule.c.h' after running 'make clinic'
+       // macro available in 'clinic/_foomodule.c.h' after running 'make clinic'
        FOO_GREET_METHODDEF
        {NULL, NULL}
    };
@@ -191,14 +191,15 @@ The following code snippets illustrate the possible contents of the above files:
 
 .. tip::
 
-   Recall that the ``PyInit_<MODNAME>`` function must be suffixed by the same
-   module name as defined by :c:member:`PyModuleDef.m_name` (here, ``fastfoo``).
-   The other identifiers or functions do not have such naming requirements.
+   Recall that the ``PyInit_<MODNAME>`` function must be suffixed by the *same*
+   module name as that of :c:member:`PyModuleDef.m_name` (here, ``fastfoo``).
+   The other identifiers or functions such as those used in Argument Clinic
+   inputs or as local variables do not have such naming requirements.
 
 .. code-block:: c
-   :caption: Modules/cfoo/helper.c
+   :caption: Modules/_foo/helper.c
 
-   #include "foomodule.h"
+   #include "_foomodule.h"
 
    PyObject *_Py_greet_fast(void) {
        return PyUnicode_FromString("Hello World!");
@@ -212,7 +213,7 @@ The following code snippets illustrate the possible contents of the above files:
 One could imagine having more ``.h`` files, or no ``helper.c`` file. Here,
 we wanted to illustrate a simple example without making it too trivial. If
 the extension module does not require additional files, it may directly be
-placed in :cpy-file:`Modules` as ``Modules/foomodule.c``.
+placed in :cpy-file:`Modules` as ``Modules/_foomodule.c`` for instance.
 
 Extension Modules Types
 -----------------------
@@ -225,18 +226,23 @@ Extension modules can be classified into the following types:
 
   .. seealso:: :data:`sys.builtin_module_names` --- names of built-in modules.
 
-* A *dynamic* (or *shared*) extension module is built as a *dynamic* library
-  (``.so`` or ``.dll`` file) and is dynamically linked into the interpreter.
+* A *shared* (or *dynamic*) extension module is built as a shared library
+  (``.so`` or ``.dll`` file) and is *dynamically* linked into the interpreter.
 
   In particular, the module's :attr:`__file__` attribute contains the path
   to the ``.so`` or ``.dll`` file.
 
-Built-in extension modules are part of the interpreter, while dynamic extension
+Built-in extension modules are part of the interpreter, while shared extension
 modules might be supplied or overridden externally.
 
 In particular, built-in extension modules do not need to have a pure Python
 implementation but shared extension modules should have one in case the shared
 library is not present on the system.
+
+.. note::
+
+   Usually, accelerator modules are built as *shared* extension modules,
+   especially if they already have a pure Python implementation.
 
 Make the CPython project compile
 --------------------------------
@@ -255,7 +261,7 @@ Updating :cpy-file:`configure.ac`
      AC_SUBST([SRCDIRS])
      SRCDIRS="\
      ...
-     Modules/cfoo \
+     Modules/_foo \
      ..."
 
   .. note::
@@ -263,8 +269,8 @@ Updating :cpy-file:`configure.ac`
      This step is only needed when adding new source directories to
      the CPython project.
 
-* Find the section containing ``PY_STDLIB_MOD_SIMPLE`` usages and
-  add the following line:
+* Find the section containing ``PY_STDLIB_MOD`` and ``PY_STDLIB_MOD_SIMPLE``
+  usages and add the following line:
 
   .. code-block:: text
      :caption: :cpy-file:`configure.ac`
@@ -272,7 +278,7 @@ Updating :cpy-file:`configure.ac`
 
      dnl always enabled extension modules
      ...
-     PY_STDLIB_MOD_SIMPLE([fastfoo], [-I\$(srcdir)/Modules/cfoo], [])
+     PY_STDLIB_MOD_SIMPLE([fastfoo], [-I\$(srcdir)/Modules/_foo], [])
      ...
 
   The ``PY_STDLIB_MOD_SIMPLE`` macro takes as arguments:
@@ -280,6 +286,55 @@ Updating :cpy-file:`configure.ac`
   * the module name as specified by :c:member:`PyModuleDef.m_name`,
   * the compiler flags (CFLAGS), and
   * the linker flags (LDFLAGS).
+
+  If the extension module may not be enabled or supported depending on the
+  host configuration. use ``PY_STDLIB_MOD`` which takes as arguments:
+
+  * the module name as specified by :c:member:`PyModuleDef.m_name`,
+  * a boolean indicating whether the extension is **enabled** or not,
+  * a boolean indicating whether the extension is **supported** or not,
+  * the compiler flags (CFLAGS), and
+  * the linker flags (LDFLAGS).
+
+  For instance, enabling the ``fastfoo`` extension on Linux systems, but
+  only providing support for 32-bit architecture is achieved as follows:
+
+  .. code-block:: text
+     :caption: :cpy-file:`configure.ac`
+     :emphasize-lines: 2, 3
+
+     PY_STDLIB_MOD([fastfoo],
+                   [test "$ac_sys_system" = "Linux"],
+                   [test "$ARCH_RUN_32BIT" = "true"],
+                   [-I\$(srcdir)/Modules/_foo], [])
+
+  More generally, the status of the extension is determined as follows:
+
+      +-----------+-----------------+----------+
+      | Enabled   | Supported       | Status   |
+      +===========+=================+==========+
+      | true      | true            | yes      |
+      +-----------+-----------------+----------+
+      | true      | false           | missing  |
+      +-----------+-----------------+----------+
+      | false     | true or false   | disabled |
+      +-----------+-----------------+----------+
+
+  The extension status is ``n/a`` if the extension is marked unavailable
+  via the ``PY_STDLIB_MOD_SET_NA`` macro. To add an unavailable extension,
+  find the usage of ``PY_STDLIB_MOD_SET_NA`` in :cpy-file:`configure.ac`
+  and add the following line:
+
+  .. code-block:: text
+     :caption: :cpy-file:`configure.ac`
+     :emphasize-lines: 4
+
+     dnl Modules that are not available on some platforms
+     AS_CASE([$ac_sys_system],
+         ...
+         [PLATFORM_NAME], [PY_STDLIB_MOD_SET_NA([fastfoo])],
+         ...
+     )
 
 Updating :cpy-file:`Makefile.pre.in`
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -293,7 +348,7 @@ If needed, add the following line to the section for module dependencies:
    ##########################################################################
    # Module dependencies and platform-specific files
    ...
-   MODULE_FASTFOO_DEPS=$(srcdir)/Modules/cfoo/foomodule.h
+   MODULE_FASTFOO_DEPS=$(srcdir)/Modules/_foo/_foomodule.h
    ...
 
 Updating MSVC project files
@@ -329,15 +384,15 @@ We describe the minimal steps for compiling on Windows using MSVC.
      <!-- group with header files ..\Modules\<MODULE>.h -->
      <ItemGroup>
        ...
-       <ClInclude Include="..\Modules\cfoo\foomodule.h" />
+       <ClInclude Include="..\Modules\_foo\_foomodule.h" />
        ...
      </ItemGroup>
 
      <!-- group with source files ..\Modules\<MODULE>.c -->
      <ItemGroup>
        ...
-       <ClCompile Include="..\Modules\cfoo\foomodule.c" />
-       <ClCompile Include="..\Modules\cfoo\helper.c" />
+       <ClCompile Include="..\Modules\_foo\_foomodule.c" />
+       <ClCompile Include="..\Modules\_foo\helper.c" />
        ...
      </ItemGroup>
 
@@ -350,8 +405,8 @@ We describe the minimal steps for compiling on Windows using MSVC.
      <!-- group with header files ..\Modules\<MODULE>.h -->
      <ItemGroup>
        ...
-       <ClInclude Include="..\Modules\cfoo\foomodule.h">
-         <Filter>Modules\cfoo</Filter>
+       <ClInclude Include="..\Modules\_foo\_foomodule.h">
+         <Filter>Modules\_foo</Filter>
        </ClInclude>
        ...
      </ItemGroup>
@@ -359,11 +414,11 @@ We describe the minimal steps for compiling on Windows using MSVC.
      <!-- group with source files ..\Modules\<MODULE>.c -->
      <ItemGroup>
        ...
-       <ClCompile Include="..\Modules\cfoo\foomodule.c">
-         <Filter>Modules\cfoo</Filter>
+       <ClCompile Include="..\Modules\_foo\_foomodule.c">
+         <Filter>Modules\_foo</Filter>
        </ClCompile>
-       <ClCompile Include="..\Modules\cfoo\helper.c">
-         <Filter>Modules\cfoo</Filter>
+       <ClCompile Include="..\Modules\_foo\helper.c">
+         <Filter>Modules\_foo</Filter>
        </ClCompile>
        ...
      <ItemGroup>
@@ -381,6 +436,11 @@ interpreter or not, we update :cpy-file:`Modules/Setup.bootstrap.in` or
 :cpy-file:`Modules/Setup.stdlib.in`. In the former case, the module is
 necessarily built as a built-in module.
 
+.. tip::
+
+   For accelerator modules, :cpy-file:`Modules/Setup.stdlib.in` should be
+   preferred over :cpy-file:`Modules/Setup.bootstrap.in`.
+
 For built-in extension modules, update :cpy-file:`Modules/Setup.bootstrap.in`
 by adding the following line after the ``*static*`` marker:
 
@@ -390,7 +450,7 @@ by adding the following line after the ``*static*`` marker:
 
    *static*
    ...
-   fastfoo cfoo/foomodule.c cfoo/helper.c
+   fastfoo _foo/_foomodule.c _foo/helper.c
    ...
 
 For other extension modules, update :cpy-file:`Modules/Setup.stdlib.in`
@@ -403,7 +463,7 @@ but before the ``*shared*`` marker:
 
    *@MODULE_BUILDTYPE@*
    ...
-   @MODULE_FASTFOO_TRUE@fastfoo cfoo/foomodule.c cfoo/helper.c
+   @MODULE_FASTFOO_TRUE@fastfoo _foo/_foomodule.c _foo/helper.c
    ...
    *shared*
 
@@ -419,7 +479,7 @@ the ``*shared*`` marker:
    ...
    *shared*
    ...
-   @MODULE_FASTFOO_TRUE@fastfoo cfoo/foomodule.c cfoo/helper.c
+   @MODULE_FASTFOO_TRUE@fastfoo _foo/_foomodule.c _foo/helper.c
 
 Compile the CPython project
 ---------------------------
