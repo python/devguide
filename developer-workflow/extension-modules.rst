@@ -70,8 +70,8 @@ or its C implementation) to highlight the differences in configuration files.
 
 .. note::
 
-   If ``Modules/_foo/_foomodule.c`` contains Argument Clinic directives,
-   ``make clinic`` creates the file ``Modules/_foo/clinic/_foomodule.c.h``.
+   If ``Modules/_foo/_foomodule.c`` contains :ref:`Argument Clinic <clinic>`
+   directives, ``make clinic`` creates ``Modules/_foo/clinic/_foomodule.c.h``.
 
 The following code snippets illustrate the possible contents of the above files:
 
@@ -193,8 +193,8 @@ The following code snippets illustrate the possible contents of the above files:
 
    Recall that the ``PyInit_<MODNAME>`` function must be suffixed by the *same*
    module name as that of :c:member:`PyModuleDef.m_name` (here, ``fastfoo``).
-   The other identifiers or functions such as those used in Argument Clinic
-   inputs or as local variables do not have such naming requirements.
+   Other identifiers such as those used in :ref:`Argument Clinic <clinic>`
+   inputs do not have such naming requirements.
 
 .. code-block:: c
    :caption: Modules/_foo/helper.c
