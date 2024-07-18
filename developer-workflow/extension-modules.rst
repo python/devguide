@@ -298,8 +298,9 @@ by adding the following line after the ``*static*`` marker:
    _foo _foo/_foomodule.c _foo/helper.c
    ...
 
-The syntax is ``<NAME> SOURCE [SOURCE ...]`` where ``<NAME>`` is the
-name of the module used in :keyword:`import` statements.
+The syntax is ``<NAME> <SOURCES>`` where ``<NAME>`` is the name of the
+module used in :keyword:`import` statements and ``<SOURCES>`` is the list
+of space-separated source files.
 
 For other extension modules, update :cpy-file:`Modules/Setup.stdlib.in`
 by adding the following line after the ``*@MODULE_BUILDTYPE@*`` marker
@@ -315,9 +316,10 @@ but before the ``*shared*`` marker:
    ...
    *shared*
 
-The ``@MODULE_<NAME_UPPER>_TRUE@<NAME>`` marker expexts ``<NAME_UPPER>`` to
-be the upper-cased form of ``<NAME>``. In our case, ``_FOO`` and ``_foo``
-respectively.
+The ``@MODULE_<NAME_UPPER>_TRUE@<NAME>`` marker expects ``<NAME_UPPER>`` to
+be the upper-cased form of ``<NAME>``, where ``<NAME>`` has the same meaning
+as before (in our case, ``<NAME_UPPER>`` and ``<NAME>`` are ``_FOO`` and
+``_foo`` respectively). The marker is followed by the list of source files.
 
 If the extension module must be built as a *shared* module, put the
 ``@MODULE__FOO_TRUE@_foo`` line after the ``*shared*`` marker:
