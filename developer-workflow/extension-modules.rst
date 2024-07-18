@@ -26,7 +26,7 @@ where you can read good documentation:
 * :pep:`399`
 * https://pythonextensionpatterns.readthedocs.io/en/latest/
 
-Classifying Extension Modules
+Classifying extension modules
 =============================
 
 Extension modules can be classified into two categories:
