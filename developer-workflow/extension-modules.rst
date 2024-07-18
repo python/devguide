@@ -573,3 +573,8 @@ Once the Docker service is running, check that you have an `Ubuntu 22.04 image
 
    docker images ubuntu:22.04       # check for the Docker image presence
    docker image pull ubuntu:22.04   # or pull the image if needed
+
+.. tip::
+
+   If the issue persists, you may try `podman <https://podman.io/>`_.
+   The commands for listing or pulling an image are the same as ``docker``.
