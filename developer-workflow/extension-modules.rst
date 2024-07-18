@@ -57,11 +57,6 @@ tested pure Python implementation, unless a special dispensation is given.
 Please ask the :github:`Steering Council <python/steering-council>` if such
 dispensation is needed.
 
-While new built-in extension modules could be considered exceptions to that
-rule, shared extension modules must provide a Python implementation, not only
-because of the guidelines, but also as a fallback if the corresponding shared
-library is not be present on the system.
-
 Adding an extension module to CPython
 =====================================
 
@@ -546,9 +541,17 @@ script as follows:
 
 .. code-block:: shell
 
-   ./configure            # for creating a Makefile
-   make regen-configure   # for updating 'configure'
-   ./configure            # for updating the Makefile
+   ./configure            # for creating the 'Makefile' file
+   make regen-configure   # for updating the 'configure' script
+   ./configure            # for updating the 'Makefile' file
+
+If missing, the :cpy-file:`configure` script can be regenerated
+by executing :cpy-file:`Tools/build/regen-configure.sh`:
+
+.. code-block:: shell
+
+   ./Tools/build/regen-configure.sh     # create an up-to-date 'configure'
+   ./configure                          # create an up-to-date 'Makefile'
 
 ``make regen-configure`` and missing permissions
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
