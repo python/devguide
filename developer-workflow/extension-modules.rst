@@ -42,10 +42,25 @@ written in C. Ideally, we want to modify ``foo.py`` as follows:
        def greet():
            return "Hello World!"
 
-Some modules in the standard library are implemented both in C and in Python,
-such as :mod:`decimal` or :mod:`itertools`, and the C implementation is expected
-to improve performance when available (such modules are commonly referred
-to as *accelerator modules*). In our example, we need to determine:
+Some modules in the standard library, such as :mod:`datetime` or :mod:`pickle`,
+have identical implementations in C and Python; the C implementation, when
+available, is typically expected to improve performance (such modules are
+commonly referred to as *accelerator modules*).
+
+Other modules mainly implemented in Python may import a C helper extension
+providing implementation details (for instance, the :mod:`csv` module uses
+the internal :mod:`!_csv` module defined in :cpy-file:`Modules/_csv.c`).
+
+.. note::
+
+   According to :pep:`399` guidelines, *new* modules must have a working
+   and tested implementation in pure Python, unless a special dispensation
+   is given.
+
+   Please ask the :github:`Steering Council <python/steering-council>` if
+   such dispensation is needed.
+
+In our example, we need to determine:
 
 - where to place the extension module source code in the CPython project tree;
 - which files to modify in order to compile the CPython project;
@@ -208,8 +223,12 @@ The following code snippets illustrate the possible contents of the above files:
 
 .. tip::
 
-   Do not forget that symbols exported by ``libpython`` must start
-   with ``Py`` or ``_Py``, which can be verified by ``make smelly``.
+   Functions or data that do not need to be shared across different C source
+   files should be declared ``static`` to avoid exporting the symbols from
+   ``libpython``.
+
+   If symbols need to be exported, their names must start with ``Py`` or
+   ``_Py``. This can be verified by ``make smelly``.
 
 One could imagine having more ``.h`` files, or no ``helper.c`` file. Here,
 we wanted to illustrate a simple example without making it too trivial. If
@@ -236,9 +255,11 @@ Extension modules can be classified into the following types:
 Built-in extension modules are part of the interpreter, while shared extension
 modules might be supplied or overridden externally.
 
-In particular, built-in extension modules do not need to have a pure Python
-implementation but shared extension modules should have one in case the shared
-library is not present on the system.
+New built-in extension modules could be considered exceptions to :pep:`399`,
+but please ask the Steering Council for confirmation. Nevertheless, besides
+respecting :pep:`399`, shared extension modules MUST provide a working and
+tested Python implementation since the corresponding shared library might
+not be present on the system.
 
 .. note::
 
