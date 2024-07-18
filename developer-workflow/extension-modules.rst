@@ -9,6 +9,15 @@ In this section, we are interested in extending the CPython project with
 an :term:`extension module`. We will not explain how to write the module
 in C but rather explain how to configure the project and make it compile.
 
+Some modules in the standard library, such as :mod:`datetime` or :mod:`pickle`,
+have identical implementations in C and Python; the C implementation, when
+available, is expected to improve performance (such extension modules are
+commonly referred to as *accelerator modules*).
+
+Other modules mainly implemented in Python may import a C helper extension
+providing implementation details (for instance, the :mod:`csv` module uses
+the internal :mod:`!_csv` module defined in :cpy-file:`Modules/_csv.c`).
+
 For writing an extension module in C, we prefer to give you some links
 where you can read good documentation:
 
@@ -17,6 +26,42 @@ where you can read good documentation:
 * :pep:`399`
 * https://pythonextensionpatterns.readthedocs.io/en/latest/
 
+Classifying Extension Modules
+=============================
+
+Extension modules can be classified into two categories:
+
+* A *built-in* extension module is a module built and shipped with
+  the Python interpreter. A built-in module is *statically* linked
+  into the interpreter, thereby lacking a :attr:`__file__` attribute.
+
+  .. seealso:: :data:`sys.builtin_module_names` --- names of built-in modules.
+
+* A *shared* (or *dynamic*) extension module is built as a shared library
+  (``.so`` or ``.dll`` file) and is *dynamically* linked into the interpreter.
+
+  In particular, the module's :attr:`__file__` attribute contains the path
+  to the ``.so`` or ``.dll`` file.
+
+.. note::
+
+   Informally, built-in extension modules can be regarded as *required*
+   while shared extension modules are *optional* in the sense that they
+   might be supplied, overridden or disabled externally.
+
+   Usually, accelerator modules are built as *shared* extension modules,
+   especially if they already have a pure Python implementation.
+
+According to :pep:`399`, *new* extension modules MUST provide a working and
+tested pure Python implementation, unless a special dispensation is given.
+Please ask the :github:`Steering Council <python/steering-council>` if such
+dispensation is needed.
+
+While new built-in extension modules could be considered exceptions to that
+rule, shared extension modules must provide a Python implementation, not only
+because of the guidelines, but also as a fallback if the corresponding shared
+library is not be present on the system.
+
 Adding an extension module to CPython
 =====================================
 
@@ -24,6 +69,7 @@ Assume that the standard library contains a pure Python module :mod:`!foo`
 together with the following :func:`!foo.greet` function:
 
 .. code-block:: python
+   :caption: Lib/foo.py
 
    def greet():
        return "Hello World!"
@@ -33,6 +79,7 @@ use its corresponding C implementation exposed in some :mod:`!fastfoo` module
 written in C. Ideally, we want to modify ``foo.py`` as follows:
 
 .. code-block:: python
+   :caption: Lib/foo.py
 
    try:
        # use the C implementation if possible
@@ -41,24 +88,6 @@ written in C. Ideally, we want to modify ``foo.py`` as follows:
        # fallback to the pure Python implementation
        def greet():
            return "Hello World!"
-
-Some modules in the standard library, such as :mod:`datetime` or :mod:`pickle`,
-have identical implementations in C and Python; the C implementation, when
-available, is typically expected to improve performance (such modules are
-commonly referred to as *accelerator modules*).
-
-Other modules mainly implemented in Python may import a C helper extension
-providing implementation details (for instance, the :mod:`csv` module uses
-the internal :mod:`!_csv` module defined in :cpy-file:`Modules/_csv.c`).
-
-.. note::
-
-   According to :pep:`399` guidelines, *new* modules must have a working
-   and tested implementation in pure Python, unless a special dispensation
-   is given.
-
-   Please ask the :github:`Steering Council <python/steering-council>` if
-   such dispensation is needed.
 
 In our example, we need to determine:
 
@@ -73,25 +102,24 @@ Usually, accelerator modules are added in the :cpy-file:`Modules` directory of
 the CPython project. If more than one file is needed for the extension module,
 it is more convenient to create a sub-directory in :cpy-file:`Modules`.
 
-For our extension, we will create the following files:
+For our extension module ``fastfoo``, we consider the following working tree:
 
-- ``Modules/_foo/_foomodule.h`` --- the shared prototypes for our mini-project.
-- ``Modules/_foo/_foomodule.c`` --- the actual module's implementation.
-- ``Modules/_foo/helper.c`` --- helpers implementation.
+- :ref:`Modules/_foo/_foomodule.h` --- the extension module shared prototypes.
+- :ref:`Modules/_foo/_foomodule.c` --- the extension module implementation.
+- :ref:`Modules/_foo/helper.c` --- the extension helpers implementation.
 
-We deliberately named the mini-project directory and files with names distinct
+We deliberately named the working tree directory and files with names distinct
 from the actual Python module to import (whether it is the pure Python module
 or its C implementation) to highlight the differences in configuration files.
 
-.. note::
-
-   If ``Modules/_foo/_foomodule.c`` contains :ref:`Argument Clinic <clinic>`
-   directives, ``make clinic`` creates ``Modules/_foo/clinic/_foomodule.c.h``.
-
-The following code snippets illustrate the possible contents of the above files:
+One could imagine having more ``.h`` files, or no ``helper.c`` file. Here,
+we wanted to illustrate a simple example without making it too trivial. If
+the extension module does not require additional files, it may directly be
+placed in :cpy-file:`Modules` as ``Modules/_foomodule.c`` for instance.
 
 .. code-block:: c
    :caption: Modules/_foo/_foomodule.h
+   :name: Modules/_foo/_foomodule.h
 
    #ifndef _FOO__FOOMODULE_H
    #define _FOO__FOOMODULE_H
@@ -119,11 +147,12 @@ The following code snippets illustrate the possible contents of the above files:
 
 .. code-block:: c
    :caption: Modules/_foo/_foomodule.c
+   :name: Modules/_foo/_foomodule.c
 
    #include "_foomodule.h"
    #include "clinic/_foomodule.c.h"
 
-   /* Functions for the module's state */
+   /* Functions for the extension module's state */
    static int
    foomodule_exec(PyObject *module)
    {
@@ -174,7 +203,7 @@ The following code snippets illustrate the possible contents of the above files:
    /* Exported module's data */
 
    static PyMethodDef foomodule_methods[] = {
-       // macro available in 'clinic/_foomodule.c.h' after running 'make clinic'
+       // macro in 'clinic/_foomodule.c.h' after running 'make clinic'
        FOO_GREET_METHODDEF
        {NULL, NULL}
    };
@@ -214,6 +243,7 @@ The following code snippets illustrate the possible contents of the above files:
 
 .. code-block:: c
    :caption: Modules/_foo/helper.c
+   :name: Modules/_foo/helper.c
 
    #include "_foomodule.h"
 
@@ -224,55 +254,23 @@ The following code snippets illustrate the possible contents of the above files:
 .. tip::
 
    Functions or data that do not need to be shared across different C source
-   files should be declared ``static`` to avoid exporting the symbols from
+   files should be declared ``static`` to avoid exporting their symbols from
    ``libpython``.
 
    If symbols need to be exported, their names must start with ``Py`` or
    ``_Py``. This can be verified by ``make smelly``.
 
-One could imagine having more ``.h`` files, or no ``helper.c`` file. Here,
-we wanted to illustrate a simple example without making it too trivial. If
-the extension module does not require additional files, it may directly be
-placed in :cpy-file:`Modules` as ``Modules/_foomodule.c`` for instance.
+Configuring the CPython project
+-------------------------------
 
-Extension Modules Types
------------------------
-
-Extension modules can be classified into the following types:
-
-* A *built-in* extension module is a module built and shipped with
-  the Python interpreter. A built-in module is *statically* linked
-  into the interpreter, thereby lacking a :attr:`__file__` attribute.
-
-  .. seealso:: :data:`sys.builtin_module_names` --- names of built-in modules.
-
-* A *shared* (or *dynamic*) extension module is built as a shared library
-  (``.so`` or ``.dll`` file) and is *dynamically* linked into the interpreter.
-
-  In particular, the module's :attr:`__file__` attribute contains the path
-  to the ``.so`` or ``.dll`` file.
-
-Built-in extension modules are part of the interpreter, while shared extension
-modules might be supplied or overridden externally.
-
-New built-in extension modules could be considered exceptions to :pep:`399`,
-but please ask the Steering Council for confirmation. Nevertheless, besides
-respecting :pep:`399`, shared extension modules MUST provide a working and
-tested Python implementation since the corresponding shared library might
-not be present on the system.
-
-.. note::
-
-   Usually, accelerator modules are built as *shared* extension modules,
-   especially if they already have a pure Python implementation.
-
-Make the CPython project compile
---------------------------------
-
-Once we have our files, we need to update some configuration files.
+Now that we have implemented our extension module, we need to update some
+configuration files in order to compile the CPython project on different
+platforms.
 
 Updating :cpy-file:`configure.ac`
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. add section about configuration variable afterwards
 
 * Locate the ``SRCDIRS`` variable and add the following line:
 
@@ -344,9 +342,9 @@ Updating :cpy-file:`configure.ac`
   +-----------+-----------------+----------+
 
   The extension status is ``n/a`` if the extension is marked unavailable
-  via the ``PY_STDLIB_MOD_SET_NA`` macro. To add an unavailable extension,
-  find the usage of ``PY_STDLIB_MOD_SET_NA`` in :cpy-file:`configure.ac`
-  and add the following line:
+  by the ``PY_STDLIB_MOD_SET_NA`` macro. To mark an extension as unavailable,
+  find the usages of ``PY_STDLIB_MOD_SET_NA`` in :cpy-file:`configure.ac` and
+  add the following line:
 
   .. code-block:: text
      :caption: :cpy-file:`configure.ac`
@@ -456,8 +454,8 @@ Updating :cpy-file:`!Modules/Setup.{bootstrap,stdlib}.in`
 
 Depending on whether the extension module is required to get a functioning
 interpreter or not, we update :cpy-file:`Modules/Setup.bootstrap.in` or
-:cpy-file:`Modules/Setup.stdlib.in`. In the former case, the module is
-necessarily built as a built-in module.
+:cpy-file:`Modules/Setup.stdlib.in`. In the former case, the extension
+module is necessarily built as a built-in extension module.
 
 .. tip::
 
@@ -504,8 +502,8 @@ the ``*shared*`` marker:
    ...
    @MODULE_FASTFOO_TRUE@fastfoo _foo/_foomodule.c _foo/helper.c
 
-Compile the CPython project
----------------------------
+Compiling the CPython project
+-----------------------------
 
 Now that everything is in place, it remains to compile the project:
 
@@ -527,12 +525,12 @@ Now that everything is in place, it remains to compile the project:
   invoking other scripts, such as :ref:`Argument Clinic <clinic>`.
   Execute this rule if you do not know which files should be updated.
 
-* ``regen-stdlib-module-names`` updates the standard module names, making
+* ``make regen-stdlib-module-names`` updates the standard module names, making
   :mod:`!fastfoo` discoverable and importable via ``import fastfoo``.
 
-* The final ``make`` step is generally not needed since ``make regen-all``
-  and ``make regen-stdlib-module-names`` may completely rebuild the project,
-  but it could be needed in some specific cases.
+* The final ``make`` step is generally not needed since the previous ``make``
+  invokations may completely rebuild the project, but it could be needed in
+  some specific cases.
 
 Troubleshooting
 ---------------
@@ -543,7 +541,8 @@ No rule to make target ``regen-configure``
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 This usually happens after running ``make distclean`` (which removes
-the ``Makefile``). The solution is to regenerate :cpy-file:`configure`:
+the ``Makefile``). The solution is to regenerate the :cpy-file:`configure`
+script as follows:
 
 .. code-block:: shell
 
@@ -551,8 +550,8 @@ the ``Makefile``). The solution is to regenerate :cpy-file:`configure`:
    make regen-configure   # for updating 'configure'
    ./configure            # for updating the Makefile
 
-``make regen-configure`` does not work!
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+``make regen-configure`` and missing permissions
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Since this rule requires `Docker <https://docs.docker.com/desktop>`_ to be
 running, the following can be done on Linux platforms (``systemctl``-based):
