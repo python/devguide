@@ -85,9 +85,10 @@ reST
    always one word and both forms start with a lowercase 'r'.
 
 time zone
-   Spell out as two words when talking about the real-world concept.
-   Only spell as one word when referring to a Python term like a module,
-   class, or argument.
+   When referring to a Python term like a module, class, or argument spell it
+   as one word with appropriate markup (for example, ``:mod:`timezone```).
+   When talking about the real-world concept spell it as two words with no
+   markup.
 
 Unicode
    The name of a character coding system. This is always written
