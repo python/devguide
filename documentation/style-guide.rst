@@ -54,10 +54,10 @@ starting it with a lowercase letter should be avoided.
 Many special names are used in the Python documentation, including the names of
 operating systems, programming languages, standards bodies, and the like. Most
 of these entities are not assigned any special markup, but the preferred
-spellings are given in :ref:`glossary` to aid authors in maintaining the
+spellings are given in :ref:`specific words` to aid authors in maintaining the
 consistency of presentation in the Python documentation.
 
-.. _glossary:
+.. _specific words:
 
 Specific words
 ==============
