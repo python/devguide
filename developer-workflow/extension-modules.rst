@@ -70,24 +70,30 @@ together with the following :func:`!foo.greet` function:
        return "Hello World!"
 
 Instead of using the Python implementation of :func:`!foo.greet`, we want to
-use its corresponding C implementation exposed in some :mod:`!fastfoo` module
-written in C. Ideally, we want to modify ``foo.py`` as follows:
+use its corresponding C implementation exposed in some :mod:`!_foo` module
+written in C. Ideally, we want to modify :cpy-file:`!Lib/foo.py` as follows:
 
 .. code-block:: python
    :caption: Lib/foo.py
 
    try:
        # use the C implementation if possible
-       from fastfoo import greet
+       from _foo import greet
    except ImportError:
        # fallback to the pure Python implementation
        def greet():
            return "Hello World!"
 
-In our example, we need to determine:
+.. note::
 
-- where to place the extension module source code in the CPython project tree;
-- which files to modify in order to compile the CPython project;
+   Accelerator modules should *never* be imported directly, whence the
+   convention is to mark them as private implementation details with the
+   underscore prefix (namely, :mod:`!_foo` in this example).
+
+In order to incorporate the accelerator module, we need to determine:
+
+- where to place the extension module source code in the CPython project tree,
+- which files to modify in order to compile the CPython project, and
 - which ``Makefile`` rules to invoke at the end.
 
 Updating the CPython project tree
@@ -97,27 +103,28 @@ Usually, accelerator modules are added in the :cpy-file:`Modules` directory of
 the CPython project. If more than one file is needed for the extension module,
 it is more convenient to create a sub-directory in :cpy-file:`Modules`.
 
-For our extension module ``fastfoo``, we consider the following working tree:
+For our extension module :mod:`!_foo`, we consider the following working tree:
 
-- :ref:`Modules/_foo/_foomodule.h` --- the extension module shared prototypes.
 - :ref:`Modules/_foo/_foomodule.c` --- the extension module implementation.
-- :ref:`Modules/_foo/helper.c` --- the extension helpers implementation.
+- :ref:`Modules/_foo/helper.h` --- the extension helpers declarations.
+- :ref:`Modules/_foo/helper.c` --- the extension helpers implementations.
 
-We deliberately named the working tree directory and files with names distinct
-from the actual Python module to import (whether it is the pure Python module
-or its C implementation) to highlight the differences in configuration files.
+By convention, the source file containing the extension module implementation
+is called ``<NAME>module.c``, where ``<NAME>`` is the name of the module that
+will be later imported (in our case :mod:`!_foo`). In addition, the directory
+containing the implementation should also be named similarly.
 
-One could imagine having more ``.h`` files, or no ``helper.c`` file. Here,
+One could imagine having more files, or no helper files at all. Here,
 we wanted to illustrate a simple example without making it too trivial. If
 the extension module does not require additional files, it may directly be
-placed in :cpy-file:`Modules` as ``Modules/_foomodule.c`` for instance.
+placed in :cpy-file:`Modules` as ``Modules/_foomodule.c``.
 
 .. code-block:: c
-   :caption: Modules/_foo/_foomodule.h
-   :name: Modules/_foo/_foomodule.h
+   :caption: Modules/_foo/helper.h
+   :name: Modules/_foo/helper.h
 
-   #ifndef _FOO__FOOMODULE_H
-   #define _FOO__FOOMODULE_H
+   #ifndef _FOO_HELPER_H
+   #define _FOO_HELPER_H
 
    #include "Python.h"
 
@@ -136,15 +143,36 @@ placed in :cpy-file:`Modules` as ``Modules/_foomodule.c`` for instance.
    /* Helper used in Modules/_foo/_foomodule.c
     * but implemented in Modules/_foo/helper.c.
     */
-   extern PyObject *_Py_greet_fast(void);
+   extern PyObject *
+   _Py_greet_fast(void);
 
-   #endif // _FOO__FOOMODULE_H
+   #endif // _FOO_HELPER_H
+
+.. tip::
+
+   Functions or data that do not need to be shared across different C source
+   files should be declared ``static`` to avoid exporting their symbols from
+   ``libpython``.
+
+   If symbols need to be exported, their names must start with ``Py`` or
+   ``_Py``. This can be verified by ``make smelly``. For more details,
+   please refer to the section on :ref:`Changing Python's C API <c-api>`.
+
+.. code-block:: c
+   :caption: Modules/_foo/helper.c
+   :name: Modules/_foo/helper.c
+
+   #include "_foomodule.h"
+
+   PyObject *_Py_greet_fast(void) {
+       return PyUnicode_FromString("Hello World!");
+   }
 
 .. code-block:: c
    :caption: Modules/_foo/_foomodule.c
    :name: Modules/_foo/_foomodule.c
 
-   #include "_foomodule.h"
+   #include "helper.h"
    #include "clinic/_foomodule.c.h"
 
    /* Functions for the extension module's state */
@@ -213,7 +241,7 @@ placed in :cpy-file:`Modules` as ``Modules/_foomodule.c`` for instance.
 
    static struct PyModuleDef foomodule = {
        PyModuleDef_HEAD_INIT,
-       .m_name = "fastfoo",               // name to use in 'import' statements
+       .m_name = "_foo",
        .m_doc = "some doc",               // or NULL if not needed
        .m_size = sizeof(foomodule_state),
        .m_methods = foomodule_methods,
@@ -224,36 +252,19 @@ placed in :cpy-file:`Modules` as ``Modules/_foomodule.c`` for instance.
    };
 
    PyMODINIT_FUNC
-   PyInit_fastfoo(void)
+   PyInit__foo(void)
    {
        return PyModuleDef_Init(&foomodule);
    }
 
 .. tip::
 
-   Recall that the ``PyInit_<MODNAME>`` function must be suffixed by the *same*
-   module name as that of :c:member:`PyModuleDef.m_name` (here, ``fastfoo``).
+   Recall that the ``PyInit_<NAME>`` function must be suffixed by the
+   module name ``<NAME>`` used in import statements (here ``_foo``),
+   and which usually coincides with :c:member:`PyModuleDef.m_name`.
+
    Other identifiers such as those used in :ref:`Argument Clinic <clinic>`
    inputs do not have such naming requirements.
-
-.. code-block:: c
-   :caption: Modules/_foo/helper.c
-   :name: Modules/_foo/helper.c
-
-   #include "_foomodule.h"
-
-   PyObject *_Py_greet_fast(void) {
-       return PyUnicode_FromString("Hello World!");
-   }
-
-.. tip::
-
-   Functions or data that do not need to be shared across different C source
-   files should be declared ``static`` to avoid exporting their symbols from
-   ``libpython``.
-
-   If symbols need to be exported, their names must start with ``Py`` or
-   ``_Py``. This can be verified by ``make smelly``.
 
 Configuring the CPython project
 -------------------------------
@@ -261,6 +272,64 @@ Configuring the CPython project
 Now that we have implemented our extension module, we need to update some
 configuration files in order to compile the CPython project on different
 platforms.
+
+Updating :cpy-file:`!Modules/Setup.{bootstrap,stdlib}.in`
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Depending on whether the extension module is required to get a functioning
+interpreter or not, we update :cpy-file:`Modules/Setup.bootstrap.in` or
+:cpy-file:`Modules/Setup.stdlib.in`. In the former case, the extension
+module is necessarily built as a built-in extension module.
+
+.. tip::
+
+   For accelerator modules, :cpy-file:`Modules/Setup.stdlib.in` should be
+   preferred over :cpy-file:`Modules/Setup.bootstrap.in`.
+
+For built-in extension modules, update :cpy-file:`Modules/Setup.bootstrap.in`
+by adding the following line after the ``*static*`` marker:
+
+.. code-block:: text
+   :caption: :cpy-file:`Modules/Setup.bootstrap.in`
+   :emphasize-lines: 3
+
+   *static*
+   ...
+   _foo _foo/_foomodule.c _foo/helper.c
+   ...
+
+The syntax is ``<NAME> SOURCE [SOURCE ...]`` where ``<NAME>`` is the
+name of the module used in :keyword:`import` statements.
+
+For other extension modules, update :cpy-file:`Modules/Setup.stdlib.in`
+by adding the following line after the ``*@MODULE_BUILDTYPE@*`` marker
+but before the ``*shared*`` marker:
+
+.. code-block:: text
+   :caption: :cpy-file:`Modules/Setup.stdlib.in`
+   :emphasize-lines: 3
+
+   *@MODULE_BUILDTYPE@*
+   ...
+   @MODULE__FOO_TRUE@_foo _foo/_foomodule.c _foo/helper.c
+   ...
+   *shared*
+
+The ``@MODULE_<NAME_UPPER>_TRUE@<NAME>`` marker expexts ``<NAME_UPPER>`` to
+be the upper-cased form of ``<NAME>``. In our case, ``_FOO`` and ``_foo``
+respectively.
+
+If the extension module must be built as a *shared* module, put the
+``@MODULE__FOO_TRUE@_foo`` line after the ``*shared*`` marker:
+
+.. code-block:: text
+   :caption: :cpy-file:`Modules/Setup.stdlib.in`
+   :emphasize-lines: 4
+
+   ...
+   *shared*
+   ...
+   @MODULE__FOO_TRUE@_foo _foo/_foomodule.c _foo/helper.c
 
 Updating :cpy-file:`configure.ac`
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -293,12 +362,12 @@ Updating :cpy-file:`configure.ac`
 
      dnl always enabled extension modules
      ...
-     PY_STDLIB_MOD_SIMPLE([fastfoo], [-I\$(srcdir)/Modules/_foo], [])
+     PY_STDLIB_MOD_SIMPLE([_foo], [-I\$(srcdir)/Modules/_foo], [])
      ...
 
   The ``PY_STDLIB_MOD_SIMPLE`` macro takes as arguments:
 
-  * the module name as specified by :c:member:`PyModuleDef.m_name`,
+  * the module name ``<NAME>`` used in :keyword:`import` statements,
   * the compiler flags (CFLAGS), and
   * the linker flags (LDFLAGS).
 
@@ -306,20 +375,20 @@ Updating :cpy-file:`configure.ac`
   host configuration, use the ``PY_STDLIB_MOD`` macro instead, which takes
   as arguments:
 
-  * the module name as specified by :c:member:`PyModuleDef.m_name`,
+  * the module name ``<NAME>`` used in :keyword:`import` statements,
   * a boolean indicating whether the extension is **enabled** or not,
   * a boolean indicating whether the extension is **supported** or not,
   * the compiler flags (CFLAGS), and
   * the linker flags (LDFLAGS).
 
-  For instance, enabling the ``fastfoo`` extension on Linux platforms, but
+  For instance, enabling the :mod:`!_foo` extension on Linux platforms, but
   only providing support for 32-bit architecture, is achieved as follows:
 
   .. code-block:: text
      :caption: :cpy-file:`configure.ac`
      :emphasize-lines: 2, 3
 
-     PY_STDLIB_MOD([fastfoo],
+     PY_STDLIB_MOD([_foo],
                    [test "$ac_sys_system" = "Linux"],
                    [test "$ARCH_RUN_32BIT" = "true"],
                    [-I\$(srcdir)/Modules/_foo], [])
@@ -348,9 +417,15 @@ Updating :cpy-file:`configure.ac`
      dnl Modules that are not available on some platforms
      AS_CASE([$ac_sys_system],
          ...
-         [PLATFORM_NAME], [PY_STDLIB_MOD_SET_NA([fastfoo])],
+         [PLATFORM_NAME], [PY_STDLIB_MOD_SET_NA([_foo])],
          ...
      )
+
+.. tip::
+
+   Consider reading the comments and configurations for existing modules
+   in :cpy-file:`configure.ac` for guidance on adding new external build
+   dependencies for extension modules that need them.
 
 Updating :cpy-file:`Makefile.pre.in`
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -364,8 +439,11 @@ If needed, add the following line to the section for module dependencies:
    ##########################################################################
    # Module dependencies and platform-specific files
    ...
-   MODULE_FASTFOO_DEPS=$(srcdir)/Modules/_foo/_foomodule.h
+   MODULE__FOO_DEPS=$(srcdir)/Modules/_foo/helper.h
    ...
+
+The ``MODULE_<NAME_UPPER>_DEPS`` variable follows the same naming
+requirements as the ``@MODULE_<NAME_UPPER>_TRUE@<NAME>`` marker.
 
 Updating MSVC project files
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -380,16 +458,20 @@ We describe the minimal steps for compiling on Windows using MSVC.
 
      ...
      // add the entry point prototype
-     extern PyObject* PyInit_fastfoo(void);
+     extern PyObject* PyInit__foo(void);
      ...
      // update the entry points table
      struct _inittab _PyImport_Inittab[] = {
         ...
-        {"fastfoo", PyInit_fastfoo},
+        {"_foo", PyInit__foo},
         ...
         {0, 0}
      };
      ...
+
+  Each item in ``_PyImport_Inittab`` consists of the module name to import,
+  here :mod:`!_foo`, together with the corresponding ``PyInit_*`` function
+  correctly suffixed.
 
 * Update :cpy-file:`PCbuild/pythoncore.vcxproj`:
 
@@ -400,7 +482,7 @@ We describe the minimal steps for compiling on Windows using MSVC.
      <!-- group with header files ..\Modules\<MODULE>.h -->
      <ItemGroup>
        ...
-       <ClInclude Include="..\Modules\_foo\_foomodule.h" />
+       <ClInclude Include="..\Modules\_foo\helper.h" />
        ...
      </ItemGroup>
 
@@ -421,7 +503,7 @@ We describe the minimal steps for compiling on Windows using MSVC.
      <!-- group with header files ..\Modules\<MODULE>.h -->
      <ItemGroup>
        ...
-       <ClInclude Include="..\Modules\_foo\_foomodule.h">
+       <ClInclude Include="..\Modules\_foo\helper.h">
          <Filter>Modules\_foo</Filter>
        </ClInclude>
        ...
@@ -444,58 +526,6 @@ We describe the minimal steps for compiling on Windows using MSVC.
    Header files use ``<ClInclude>`` tags, whereas
    source files use ``<ClCompile>`` tags.
 
-Updating :cpy-file:`!Modules/Setup.{bootstrap,stdlib}.in`
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-Depending on whether the extension module is required to get a functioning
-interpreter or not, we update :cpy-file:`Modules/Setup.bootstrap.in` or
-:cpy-file:`Modules/Setup.stdlib.in`. In the former case, the extension
-module is necessarily built as a built-in extension module.
-
-.. tip::
-
-   For accelerator modules, :cpy-file:`Modules/Setup.stdlib.in` should be
-   preferred over :cpy-file:`Modules/Setup.bootstrap.in`.
-
-For built-in extension modules, update :cpy-file:`Modules/Setup.bootstrap.in`
-by adding the following line after the ``*static*`` marker:
-
-.. code-block:: text
-   :caption: :cpy-file:`Modules/Setup.bootstrap.in`
-   :emphasize-lines: 3
-
-   *static*
-   ...
-   fastfoo _foo/_foomodule.c _foo/helper.c
-   ...
-
-For other extension modules, update :cpy-file:`Modules/Setup.stdlib.in`
-by adding the following line after the ``*@MODULE_BUILDTYPE@*`` marker
-but before the ``*shared*`` marker:
-
-.. code-block:: text
-   :caption: :cpy-file:`Modules/Setup.stdlib.in`
-   :emphasize-lines: 3
-
-   *@MODULE_BUILDTYPE@*
-   ...
-   @MODULE_FASTFOO_TRUE@fastfoo _foo/_foomodule.c _foo/helper.c
-   ...
-   *shared*
-
-The ``@MODULE_<NAME>_TRUE@<name>`` marker expects ``<NAME>`` to be the
-upper-cased module name ``<name>``. If the extension module must be built
-as a *shared* module, put the ``@MODULE_FASTFOO_TRUE@fastfoo`` line after
-the ``*shared*`` marker:
-
-.. code-block:: text
-   :caption: :cpy-file:`Modules/Setup.stdlib.in`
-   :emphasize-lines: 4
-
-   ...
-   *shared*
-   ...
-   @MODULE_FASTFOO_TRUE@fastfoo _foo/_foomodule.c _foo/helper.c
 
 Compiling the CPython project
 -----------------------------
@@ -512,7 +542,8 @@ Now that everything is in place, it remains to compile the project:
 
 .. tip::
 
-   Use ``make -j12`` to speed-up compilation if you have enough CPU cores.
+   Use ``make -j`` to speed-up compilation by utilizing as many CPU cores
+   as possible or ``make -jN`` to allow at most *N* concurrent jobs.
 
 * ``make regen-configure`` updates the :cpy-file:`configure` script.
 
@@ -521,7 +552,7 @@ Now that everything is in place, it remains to compile the project:
   Execute this rule if you do not know which files should be updated.
 
 * ``make regen-stdlib-module-names`` updates the standard module names, making
-  :mod:`!fastfoo` discoverable and importable via ``import fastfoo``.
+  :mod:`!_foo` discoverable and importable via ``import _foo``.
 
 * The final ``make`` step is generally not needed since the previous ``make``
   invokations may completely rebuild the project, but it could be needed in
@@ -530,7 +561,8 @@ Now that everything is in place, it remains to compile the project:
 Troubleshooting
 ---------------
 
-This section addresses common issues that you may face when following this tutorial.
+This section addresses common issues that you may face when following
+this tutorial.
 
 No rule to make target ``regen-configure``
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
