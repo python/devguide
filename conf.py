@@ -1,4 +1,7 @@
+import sys
 import time
+
+sys.path.insert(0, '_extensions')
 
 extensions = [
     'ubuntu_version',
