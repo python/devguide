@@ -2,15 +2,17 @@
 #
 
 # You can set these variables from the command line.
-PYTHON        = python3
-VENVDIR       = ./venv
-SPHINXBUILD   = $(VENVDIR)/bin/sphinx-build
-SPHINXOPTS    = --fail-on-warning --keep-going
-BUILDDIR      = _build
-BUILDER       = html
-JOBS          = auto
-PAPER         =
-SPHINXLINT    = $(VENVDIR)/bin/sphinx-lint
+PYTHON       = python3
+VENVDIR      = ./venv
+UV           = uv
+SPHINXBUILD  = $(VENVDIR)/bin/sphinx-build
+SPHINXOPTS   = --fail-on-warning --keep-going
+BUILDDIR     = _build
+BUILDER      = html
+JOBS         = auto
+PAPER        =
+SPHINXLINT   = $(VENVDIR)/bin/sphinx-lint
+REQUIREMENTS = requirements.txt
 
 # Internal variables.
 PAPEROPT_a4     = --define latex_paper_size=a4
@@ -70,13 +72,13 @@ venv:
 ensure-venv:
 	@if [ ! -d $(VENVDIR) ] ; then \
 		echo "Creating venv in $(VENVDIR)"; \
-		if uv --version > /dev/null; then \
-			uv venv $(VENVDIR); \
-			VIRTUAL_ENV=$(VENVDIR) uv pip install -r requirements.txt; \
+		if $(UV) --version >/dev/null 2>&1; then \
+			$(UV) venv $(VENVDIR); \
+			VIRTUAL_ENV=$(VENVDIR) $(UV) pip install -r $(REQUIREMENTS); \
 		else \
 			$(PYTHON) -m venv $(VENVDIR); \
 			$(VENVDIR)/bin/python3 -m pip install --upgrade pip; \
-			$(VENVDIR)/bin/python3 -m pip install -r requirements.txt; \
+			$(VENVDIR)/bin/python3 -m pip install -r $(REQUIREMENTS); \
 		fi; \
 		echo "The venv has been created in the $(VENVDIR) directory"; \
 	fi
@@ -180,13 +182,20 @@ check: ensure-venv
 	# Ignore the tools and venv dirs and check that the default role is not used.
 	$(SPHINXLINT) -i tools -i $(VENVDIR) --enable default-role
 
-.PHONY: lint
-lint: venv
-	if uv --version > /dev/null; then \
-		$(VENVDIR)/bin/python3 -m pre_commit --version > /dev/null || VIRTUAL_ENV=$(VENVDIR) uv pip install pre-commit; \
+.PHONY: _ensure-package
+_ensure-package: venv
+	if $(UV) --version >/dev/null 2>&1; then \
+		VIRTUAL_ENV=$(VENVDIR) $(UV) pip install $(PACKAGE); \
 	else \
-		$(VENVDIR)/bin/python3 -m pre_commit --version > /dev/null || $(VENVDIR)/bin/python3 -m pip install pre-commit; \
-	fi;
+		$(VENVDIR)/bin/python3 -m pip install $(PACKAGE); \
+	fi
+
+.PHONY: _ensure-pre-commit
+_ensure-pre-commit:
+	make _ensure-package PACKAGE=pre-commit
+
+.PHONY: lint
+lint: _ensure-pre-commit
 	$(VENVDIR)/bin/python3 -m pre_commit run --all-files
 
 .PHONY: serve
