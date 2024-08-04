@@ -7,6 +7,7 @@ sys.path.insert(0, os.path.abspath(".") + "/_extensions")
 
 extensions = [
     'custom_roles',
+    'ubuntu_version',
     'notfound.extension',
     'sphinx.ext.extlinks',
     'sphinx.ext.intersphinx',
@@ -197,3 +198,5 @@ ogp_custom_meta_tags = [
 copybutton_prompt_text = "$ "
 # https://sphinx-copybutton.readthedocs.io/en/latest/use.html#honor-line-continuation-characters-when-copying-multline-snippets
 copybutton_line_continuation_character = "\\"
+
+configure_ubuntu_version = '22.04'

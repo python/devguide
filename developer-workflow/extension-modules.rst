@@ -610,13 +610,16 @@ If Docker complains about missing permissions, this Stack Overflow post
 could be useful in solving the issue: `How to fix docker: permission denied
 <https://stackoverflow.com/q/48957195/9579194>`_.
 
-Once the Docker service is running, check that you have an `Ubuntu 22.04 image
-<https://hub.docker.com/_/ubuntu>`_, or pull it if it is not case:
+Once the Docker service is running, check that you have an `Ubuntu
+$CONFIGURE_UBUNTU_VERSION$ image <https://hub.docker.com/_/ubuntu>`_,
+or pull it if it is not case:
 
 .. code-block:: shell
 
-   docker images ubuntu:22.04       # check for the Docker image presence
-   docker image pull ubuntu:22.04   # or pull the image if needed
+   # check for the Docker image presence
+   docker images ubuntu:$CONFIGURE_UBUNTU_VERSION$
+   # pull the Docker image if needed
+   docker image pull ubuntu:$CONFIGURE_UBUNTU_VERSION$
 
 .. tip::
 
