@@ -198,11 +198,6 @@ _ensure-pre-commit:
 lint: _ensure-pre-commit
 	$(VENVDIR)/bin/python3 -m pre_commit run --all-files
 
-.PHONY: serve
-serve:
-	@echo "The 'serve' target was removed, use 'htmlview' instead" \
-	      "(see https://github.com/python/cpython/issues/80510)"
-
 include/branches.csv: include/release-cycle.json
 	$(VENVDIR)/bin/python3 _tools/generate_release_cycle.py
 
