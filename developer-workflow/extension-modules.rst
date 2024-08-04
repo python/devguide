@@ -37,11 +37,18 @@ Extension modules can be classified into two categories:
 
   .. seealso:: :data:`sys.builtin_module_names` --- names of built-in modules.
 
+  Built-in modules are built with the :c:macro:`!Py_BUILD_CORE_BUILTIN`
+  macro defined.
+
 * A *shared* (or *dynamic*) extension module is built as a shared library
   (``.so`` or ``.dll`` file) and is *dynamically* linked into the interpreter.
 
   In particular, the module's :attr:`__file__` attribute contains the path
   to the ``.so`` or ``.dll`` file.
+
+  Shared modules are built with the :c:macro:`!Py_BUILD_CORE_MODULE`
+  macro defined. Using the :c:macro:`!Py_BUILD_CORE_BUILTIN` macro
+  instead causes an :exc:`ImportError` when importing the module.
 
 .. note::
 
@@ -615,3 +622,59 @@ Once the Docker service is running, check that you have an `Ubuntu 22.04 image
 
    If the issue persists, you may try `podman <https://podman.io/>`_.
    The commands for listing or pulling an image are the same as ``docker``.
+
+Missing ``Py_BUILD_CORE`` define when using internal headers
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+By default, the CPython :ref:`Stable ABI <stable-abi>` is exposed via
+:code:`#include "Python.h"`. In some cases, this may be insufficient
+and internal headers from :cpy-file:`Include/internal` are needed;
+in particular, those headers require the :c:macro:`!Py_BUILD_CORE`
+macro to be defined.
+
+To that end, one should define the :c:macro:`!Py_BUILD_CORE_BUILTIN`
+or the :c:macro:`!Py_BUILD_CORE_MODULE` macro depending on whether the
+extension module is built-in or shared. Using either of the two macros
+implies :c:macro:`!Py_BUILD_CORE` and gives access to CPython internals:
+
+.. code-block:: c
+   :caption: Definition of :c:macro:`!Py_BUILD_CORE_BUILTIN`
+
+   #ifndef Py_BUILD_CORE_MODULE
+   #  define Py_BUILD_CORE_BUILTIN 1
+   #endif
+
+.. code-block:: c
+   :caption: Definition of :c:macro:`!Py_BUILD_CORE_MODULE`
+
+   #ifndef Py_BUILD_CORE_BUILTIN
+   #  define Py_BUILD_CORE_MODULE 1
+   #endif
+
+Tips
+----
+
+In this section, we give some tips for improving the quality of
+extension modules meant to be included in the standard library.
+
+Restricting to the Limited API
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+In order for non-CPython implementations to benefit from new extension modules,
+it is recommended to use the :ref:`Limited API <limited-c-api>`. Instead of
+exposing the entire Stable ABI, define the :c:macro:`Py_LIMITED_API` macro
+*before* the :code:`#include "Python.h"` directive:
+
+.. code-block:: c
+   :caption: Using the 3.13 Limited API.
+   :emphasize-lines: 3, 6
+
+   #include "pyconfig.h"    // Py_GIL_DISABLED
+   #ifndef Py_GIL_DISABLED
+   #  define Py_LIMITED_API 0x030d0000
+   #endif
+
+   #include "Python.h"
+
+This makes the extension module non-CPython implementation-friendly by
+removing the dependencies to CPython internals.
