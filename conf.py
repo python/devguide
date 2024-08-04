@@ -1,7 +1,6 @@
 import time
 
 extensions = [
-    'custom_roles',
     'ubuntu_version',
     'notfound.extension',
     'sphinx.ext.extlinks',
