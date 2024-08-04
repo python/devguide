@@ -38,7 +38,7 @@
 
 .release-cycle-chart .release-cycle-blob {
     stroke-width: 1.6px;
-    /* default colours, overriden below for individual statuses */
+    /* default colours, overridden below for individual statuses */
     fill: var(--color-background-primary);
     stroke: var(--color-foreground-primary);
 }
@@ -84,4 +84,13 @@
 }
 .bad pre {
   border-left: 3px solid rgb(244, 76, 78);
+}
+
+.extlink-cpy-file,
+.extlink-gh-label {
+  border: 1px solid var(--color-background-border);
+  border-radius: .2em;
+  font-family: var(--font-stack--monospace);
+  font-size: var(--font-size--small--2);
+  padding: .1em .2em;
 }

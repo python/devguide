@@ -11,5 +11,5 @@ indent_size = 4
 [*.rst]
 indent_size = 3
 
-[*.yml]
+[*.{css,yml}]
 indent_size = 2
