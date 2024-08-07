@@ -47,7 +47,7 @@ compiler output type to see a list of unique warnings.
 .. _warning-check-failure:
 
 What to do if a warning check fails GitHub CI
--------------------------------------------
+---------------------------------------------
 
 The warning check tooling will fail if the compiler generates more or less
 warnings than expected for a given source file as defined in the
