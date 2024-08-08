@@ -114,7 +114,6 @@ rediraffe_redirects = {
     "advanced-tools/clang.rst": "development-tools/clang.rst",
     "advanced-tools/coverity.rst": "development-tools/coverity.rst",
     "advanced-tools/gdb.rst": "development-tools/gdb.rst",
-    "advanced-tools/warnings.rst": "development-tools/warnings.rst",
     # Core Developers
     "coredev.rst": "core-developers/become-core-developer.rst",
     "committing.rst": "core-developers/committing.rst",
