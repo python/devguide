@@ -47,7 +47,7 @@ If a warning check fails with:
       reasonable to ignore and add the warning to the platform-specific
       warning ignore file. If the file exists in the warning ignore file
       increment the count by the number of newly introduced warnings.
-* Unexpected Improvements (less warnings)
+* Unexpected improvements (less warnings)
     * Document in the PR that the change reduces the number of compiler
       warnings. Decrement the count in the platform-specific warning
       ignore file or remove the file if the count is now zero.
