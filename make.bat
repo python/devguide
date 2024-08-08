@@ -218,11 +218,6 @@ rem Ignore the tools and venv dirs and check that the default role is not used.
 cmd /S /C "%SPHINXLINT% -i tools -i venv --enable default-role"
 goto end
 
-:serve
-	echo.The serve target was removed, use htmlview instead ^
-(see https://github.com/python/cpython/issues/80510)
-goto end
-
 if "%1" == "versions" (
 	%PYTHON% _tools/generate_release_cycle.py
 	if errorlevel 1 exit /b 1
