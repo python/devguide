@@ -9,3 +9,4 @@ Development tools
    gdb
    clang
    coverity
+   warnings
