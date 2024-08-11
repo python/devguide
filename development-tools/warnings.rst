@@ -14,6 +14,7 @@ a Python script which is ran by the following GitHub workflows:
 
 You can check the documentation for the :cpy-file:`Tools/build/check_warnings.py` tool
 by running::
+
    python Tools/build/check_warnings.py --help
 
 The script can be run locally by providing the compiler output and the
