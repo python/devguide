@@ -132,7 +132,7 @@ explanation.
   designed to guide a user through a problem-field.
   Both tutorials and how-to guides are instructional rather than explanatory
   and should provide logical steps on how to complete a task. However,
-  how-to guides make more assumptions about the user's knoweldge and
+  how-to guides make more assumptions about the user's knowledge and
   focus on the user finding the best way to solve their own
   particular problem.
 
