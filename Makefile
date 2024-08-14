@@ -114,5 +114,5 @@ versions: venv include/branches.csv include/end-of-life.csv include/release-cycl
 # Catch-all target: route all unknown targets to Sphinx using the new
 # "make mode" option.
 .PHONY: Makefile
-%: Makefile ensure-venv versions
+%:: Makefile ensure-venv versions
 	$(SPHINXBUILD) -M $@ "." "$(BUILDDIR)" $(ALLSPHINXOPTS)
