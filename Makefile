@@ -110,4 +110,4 @@ $(_RELEASE_CYCLE): include/release-cycle.json
 # "make mode" option.
 .PHONY: Makefile
 %: Makefile ensure-venv $(_RELEASE_CYCLE)
-	$(SPHINXBUILD) -M $@ "." "$(BUILDDIR)" $(_ALL_SPHINX_OPTS) -q
+	$(SPHINXBUILD) -M $@ "." "$(BUILDDIR)" $(_ALL_SPHINX_OPTS)
