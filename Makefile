@@ -30,7 +30,6 @@ help:
 	@echo "  clean      to remove the venv and build files"
 	@echo "  check      to run a check for frequent markup errors"
 	@echo "  lint       to lint all the files"
-	@echo "  versions   to update release cycle after changing release-cycle.json"
 
 .PHONY: clean
 clean: clean-venv
