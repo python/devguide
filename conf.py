@@ -201,4 +201,4 @@ copybutton_line_continuation_character = "\\"
 
 # Must be synchronized with the Ubuntu image version in
 # https://github.com/python/cpython/blob/main/Tools/build/regen-configure.sh
-configure_ubuntu_version = '22.04'
+configure_ubuntu_version = "22.04"
