@@ -20,6 +20,9 @@ PAPEROPT_letter = --define latex_paper_size=letter
 ALLSPHINXOPTS   = --jobs $(JOBS) \
                   $(PAPEROPT_$(PAPER)) \
                   $(SPHINXOPTS)
+RELEASE_CYCLE   = include/branches.csv \
+                  include/end-of-life.csv \
+                  include/release-cycle.svg
 
 .PHONY: help
 help:
@@ -37,6 +40,7 @@ help:
 .PHONY: clean
 clean: clean-venv
 	-rm -rf $(BUILDDIR)/*
+	-rm -rf $(RELEASE_CYCLE)
 
 .PHONY: clean-venv
 clean-venv:
@@ -98,13 +102,17 @@ _ensure-pre-commit:
 lint: _ensure-pre-commit
 	$(VENVDIR)/bin/python3 -m pre_commit run --all-files
 
-.PHONY: versions include/release-cycle.json
-versions: venv include/release-cycle.json
+# Defined so that "include/release-cycle.json"
+# doesn't fall through to the catch-all target.
+include/release-cycle.json:
+	@exit
+
+$(RELEASE_CYCLE): include/release-cycle.json
 	$(VENVDIR)/bin/python3 _tools/generate_release_cycle.py
 	@echo Release cycle data generated.
 
 # Catch-all target: route all unknown targets to Sphinx using the new
 # "make mode" option.
 .PHONY: Makefile
-%: Makefile ensure-venv versions
-	$(SPHINXBUILD) -M $@ "." "$(BUILDDIR)" $(ALLSPHINXOPTS)
+%: Makefile ensure-venv $(RELEASE_CYCLE)
+	$(SPHINXBUILD) -M $@ "." "$(BUILDDIR)" $(ALLSPHINXOPTS) -q
