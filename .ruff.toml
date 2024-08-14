@@ -1,4 +1,4 @@
-target-version = "py312"
+target-version = "py311"
 fix = true
 output-format = "full"
 line-length = 88
@@ -23,6 +23,7 @@ select = [
     "TCH",   # flake8-type-checking
     "UP",    # pyupgrade
     "W",     # pycodestyle
+    "YTT",   # flake8-2020
 ]
 ignore = [
     "E501",  # Ignore line length errors (we use auto-formatting)
