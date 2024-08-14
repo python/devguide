@@ -10,19 +10,14 @@ SPHINXOPTS   = --fail-on-warning --keep-going
 BUILDDIR     = _build
 BUILDER      = html
 JOBS         = auto
-PAPER        =
 SPHINXLINT   = $(VENVDIR)/bin/sphinx-lint
 REQUIREMENTS = requirements.txt
 
 # Internal variables.
-PAPEROPT_a4     = --define latex_paper_size=a4
-PAPEROPT_letter = --define latex_paper_size=letter
-ALLSPHINXOPTS   = --jobs $(JOBS) \
-                  $(PAPEROPT_$(PAPER)) \
-                  $(SPHINXOPTS)
-RELEASE_CYCLE   = include/branches.csv \
-                  include/end-of-life.csv \
-                  include/release-cycle.svg
+_ALL_SPHINX_OPTS = --jobs $(JOBS) $(SPHINXOPTS)
+_RELEASE_CYCLE   = include/branches.csv \
+                   include/end-of-life.csv \
+                   include/release-cycle.svg
 
 .PHONY: help
 help:
@@ -40,7 +35,7 @@ help:
 .PHONY: clean
 clean: clean-venv
 	-rm -rf $(BUILDDIR)/*
-	-rm -rf $(RELEASE_CYCLE)
+	-rm -rf $(_RELEASE_CYCLE)
 
 .PHONY: clean-venv
 clean-venv:
@@ -107,12 +102,12 @@ lint: _ensure-pre-commit
 include/release-cycle.json:
 	@exit
 
-$(RELEASE_CYCLE): include/release-cycle.json
+$(_RELEASE_CYCLE): include/release-cycle.json
 	$(VENVDIR)/bin/python3 _tools/generate_release_cycle.py
 	@echo Release cycle data generated.
 
 # Catch-all target: route all unknown targets to Sphinx using the new
 # "make mode" option.
 .PHONY: Makefile
-%: Makefile ensure-venv $(RELEASE_CYCLE)
-	$(SPHINXBUILD) -M $@ "." "$(BUILDDIR)" $(ALLSPHINXOPTS) -q
+%: Makefile ensure-venv $(_RELEASE_CYCLE)
+	$(SPHINXBUILD) -M $@ "." "$(BUILDDIR)" $(_ALL_SPHINX_OPTS) -q
