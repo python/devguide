@@ -98,21 +98,13 @@ _ensure-pre-commit:
 lint: _ensure-pre-commit
 	$(VENVDIR)/bin/python3 -m pre_commit run --all-files
 
-include/branches.csv: include/release-cycle.json
+.PHONY: versions include/release-cycle.json
+versions: venv include/release-cycle.json
 	$(VENVDIR)/bin/python3 _tools/generate_release_cycle.py
-
-include/end-of-life.csv: include/release-cycle.json
-	$(VENVDIR)/bin/python3 _tools/generate_release_cycle.py
-
-include/release-cycle.svg: include/release-cycle.json
-	$(VENVDIR)/bin/python3 _tools/generate_release_cycle.py
-
-.PHONY: versions
-versions: venv include/branches.csv include/end-of-life.csv include/release-cycle.svg
 	@echo Release cycle data generated.
 
 # Catch-all target: route all unknown targets to Sphinx using the new
 # "make mode" option.
 .PHONY: Makefile
-%:: Makefile ensure-venv versions
+%: Makefile ensure-venv versions
 	$(SPHINXBUILD) -M $@ "." "$(BUILDDIR)" $(ALLSPHINXOPTS)
