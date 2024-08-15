@@ -86,6 +86,7 @@ if "%1" == "htmllive" (
     if errorlevel 1 exit /b 1
     goto end
 )
+
 %SPHINXBUILD% -M %1 "." %BUILDDIR% %_ALL_SPHINX_OPTS%
 goto end
 
