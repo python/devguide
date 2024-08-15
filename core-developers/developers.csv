@@ -1,6 +1,6 @@
 Ned Batchelder,nedbat,2024-07-16,,
-Michael Droetboom,mdboom,2024-06-06,,
 Tian Gao,gaogaotiantian,2024-06-06,,
+Michael Droettboom,mdboom,2024-06-06,,
 Russell Keith-Magee,freakboy3742,2024-05-30,,
 Sam Gross,colesbury,2024-02-06,,
 Nikita Sobolev,sobolevn,2024-02-06,,
@@ -111,7 +111,7 @@ Jeroen Ruigrok van der Werven,,2008-04-12,2017-02-10,For documentation; did not 
 Benjamin Peterson,benjaminp,2008-03-25,,For bug triage
 David Wolever,wolever,2008-03-17,2020-11-21,For 2to3 module
 Trent Nelson,tpn,2008-03-17,2020-11-26,
-Mark Dickinson,mdickinson,2008-01-06,,For maths-related work
+Mark Dickinson,mdickinson,2008-01-06,2024-08-13,For maths-related work
 Amaury Forgeot d'Arc,amauryfa,2007-11-09,2020-11-26,
 Christian Heimes,tiran,2007-10-31,,
 Bill Janssen,,2007-08-28,2017-02-10,For ssl module; did not make GitHub transition
@@ -188,7 +188,7 @@ Just van Rossum,,1999-01-22,2017-02-10,Did not make GitHub transition
 Greg Ward,,1998-12-18,2017-02-10,Did not make GitHub transition
 Andrew Kuchling,akuchling,1998-04-09,,
 Ken Manheimer,,1998-03-03,2005-04-08,Privileges relinquished on 2005-04-08
-Jeremy Hylton,jeremyhylton,1997-08-13,2020-11-26,
+Jeremy Hylton,jeremyhylton,1997-08-13,,
 Roger E. Masse,,1996-12-09,2017-02-10,Did not make GitHub transition
 Fred Drake,freddrake,1996-07-23,,
 Barry Warsaw,warsaw,1994-07-25,,

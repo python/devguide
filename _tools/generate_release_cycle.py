@@ -1,11 +1,11 @@
 """Read in a JSON and generate two CSVs and an SVG file."""
+
 from __future__ import annotations
 
 import argparse
 import csv
 import datetime as dt
 import json
-import sys
 
 import jinja2
 
@@ -45,10 +45,7 @@ class Versions:
 
     def write_csv(self) -> None:
         """Output CSV files."""
-        if sys.version_info >= (3, 11):
-            now_str = str(dt.datetime.now(dt.UTC))
-        else:
-            now_str = str(dt.datetime.utcnow())
+        now_str = str(dt.datetime.now(dt.UTC))
 
         versions_by_category = {"branches": {}, "end-of-life": {}}
         headers = None
