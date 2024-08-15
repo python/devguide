@@ -10,23 +10,9 @@ if "%PYTHON%" == "" (
 	set PYTHON=py -3
 )
 
-if not defined SPHINXLINT (
-    %PYTHON% -c "import sphinxlint" > nul 2> nul
-    if errorlevel 1 (
-        echo Installing sphinx-lint with %PYTHON%
-        rem Should have been installed with Sphinx earlier
-        %PYTHON% -m pip install "sphinx-lint<1"
-        if errorlevel 1 exit /B
-    )
-    set SPHINXLINT=%PYTHON% -m sphinxlint
-)
-
 set BUILDDIR=_build
-set SPHINXOPTS=-W --keep-going --nitpicky
-set ALLSPHINXOPTS=--doctree-dir %BUILDDIR%/doctrees %SPHINXOPTS% .
-if NOT "%PAPER%" == "" (
-	set ALLSPHINXOPTS=-D latex_paper_size=%PAPER% %ALLSPHINXOPTS%
-)
+set SPHINXOPTS=--fail-on-warning --keep-going
+set _ALL_SPHINX_OPTS=%SPHINXOPTS%
 
 if "%1" == "check" goto check
 
@@ -60,6 +46,14 @@ if "%1" == "clean" (
 	goto end
 )
 
+if "%1" == "versions" (
+	%PYTHON% _tools/generate_release_cycle.py
+	if errorlevel 1 exit /b 1
+	echo.
+	echo Release cycle data generated.
+	goto end
+)
+
 rem Targets other than "clean", "check", "help", or "" need the
 rem Sphinx build command, which the user may define via SPHINXBUILD.
 
@@ -75,156 +69,36 @@ if not defined SPHINXBUILD (
 	set SPHINXBUILD=venv\Scripts\sphinx-build
 )
 
-if "%1" == "html" (
-	%SPHINXBUILD% --builder html %ALLSPHINXOPTS% %BUILDDIR%/html
-	if errorlevel 1 exit /b 1
-	echo.
-	echo.Build finished. The HTML pages are in %BUILDDIR%/html.
-	goto end
-)
-
 if "%1" == "htmlview" (
-    cmd /C %this% html
+	cmd /C %this% html
 
-    if EXIST "%BUILDDIR%\html\index.html" (
-        echo.Opening "%BUILDDIR%\html\index.html" in the default web browser...
-        start "" "%BUILDDIR%\html\index.html"
-    )
+	if EXIST "%BUILDDIR%\html\index.html" (
+		echo.Opening "%BUILDDIR%\html\index.html" in the default web browser...
+		start "" "%BUILDDIR%\html\index.html"
+	)
 
-    goto end
-)
-
-if "%1" == "dirhtml" (
-	%SPHINXBUILD% --builder dirhtml %ALLSPHINXOPTS% %BUILDDIR%/dirhtml
-	if errorlevel 1 exit /b 1
-	echo.
-	echo.Build finished. The HTML pages are in %BUILDDIR%/dirhtml.
 	goto end
 )
 
-if "%1" == "singlehtml" (
-	%SPHINXBUILD% --builder singlehtml %ALLSPHINXOPTS% %BUILDDIR%/singlehtml
-	if errorlevel 1 exit /b 1
-	echo.
-	echo.Build finished. The HTML pages are in %BUILDDIR%/singlehtml.
-	goto end
-)
-
-if "%1" == "pickle" (
-	%SPHINXBUILD% --builder pickle %ALLSPHINXOPTS% %BUILDDIR%/pickle
-	if errorlevel 1 exit /b 1
-	echo.
-	echo.Build finished; now you can process the pickle files.
-	goto end
-)
-
-if "%1" == "json" (
-	%SPHINXBUILD% --builder json %ALLSPHINXOPTS% %BUILDDIR%/json
-	if errorlevel 1 exit /b 1
-	echo.
-	echo.Build finished; now you can process the JSON files.
-	goto end
-)
-
-if "%1" == "htmlhelp" (
-	%SPHINXBUILD% --builder htmlhelp %ALLSPHINXOPTS% %BUILDDIR%/htmlhelp
-	if errorlevel 1 exit /b 1
-	echo.
-	echo.Build finished; now you can run HTML Help Workshop with the ^
-.hhp project file in %BUILDDIR%/htmlhelp.
-	goto end
-)
-
-if "%1" == "qthelp" (
-	%SPHINXBUILD% --builder qthelp %ALLSPHINXOPTS% %BUILDDIR%/qthelp
-	if errorlevel 1 exit /b 1
-	echo.
-	echo.Build finished; now you can run "qcollectiongenerator" with the ^
-.qhcp project file in %BUILDDIR%/qthelp, like this:
-	echo.^> qcollectiongenerator %BUILDDIR%\qthelp\PythonDevelopersGuide.qhcp
-	echo.To view the help file:
-	echo.^> assistant -collectionFile %BUILDDIR%\qthelp\PythonDevelopersGuide.ghc
-	goto end
-)
-
-if "%1" == "devhelp" (
-	%SPHINXBUILD% --builder devhelp %ALLSPHINXOPTS% %BUILDDIR%/devhelp
-	if errorlevel 1 exit /b 1
-	echo.
-	echo.Build finished.
-	goto end
-)
-
-if "%1" == "epub" (
-	%SPHINXBUILD% --builder epub %ALLSPHINXOPTS% %BUILDDIR%/epub
-	if errorlevel 1 exit /b 1
-	echo.
-	echo.Build finished. The epub file is in %BUILDDIR%/epub.
-	goto end
-)
-
-if "%1" == "latex" (
-	%SPHINXBUILD% --builder latex %ALLSPHINXOPTS% %BUILDDIR%/latex
-	if errorlevel 1 exit /b 1
-	echo.
-	echo.Build finished; the LaTeX files are in %BUILDDIR%/latex.
-	goto end
-)
-
-if "%1" == "text" (
-	%SPHINXBUILD% --builder text %ALLSPHINXOPTS% %BUILDDIR%/text
-	if errorlevel 1 exit /b 1
-	echo.
-	echo.Build finished. The text files are in %BUILDDIR%/text.
-	goto end
-)
-
-if "%1" == "man" (
-	%SPHINXBUILD% --builder man %ALLSPHINXOPTS% %BUILDDIR%/man
-	if errorlevel 1 exit /b 1
-	echo.
-	echo.Build finished. The manual pages are in %BUILDDIR%/man.
-	goto end
-)
-
-if "%1" == "changes" (
-	%SPHINXBUILD% --builder changes %ALLSPHINXOPTS% %BUILDDIR%/changes
-	if errorlevel 1 exit /b 1
-	echo.
-	echo.The overview file is in %BUILDDIR%/changes.
-	goto end
-)
-
-if "%1" == "linkcheck" (
-	%SPHINXBUILD% --builder linkcheck %ALLSPHINXOPTS% %BUILDDIR%/linkcheck
-	if errorlevel 1 exit /b 1
-	echo.
-	echo.Link check complete; look for any errors in the above output ^
-or in %BUILDDIR%/linkcheck/output.txt.
-	goto end
-)
-
-if "%1" == "doctest" (
-	%SPHINXBUILD% --builder doctest %ALLSPHINXOPTS% %BUILDDIR%/doctest
-	if errorlevel 1 exit /b 1
-	echo.
-	echo.Testing of doctests in the sources finished, look at the ^
-results in %BUILDDIR%/doctest/output.txt.
-	goto end
-)
+%SPHINXBUILD% -M %1 "." %BUILDDIR% %_ALL_SPHINX_OPTS%
+goto end
 
 :check
+if not defined SPHINXLINT (
+	rem If it is not defined, we build in a virtual environment
+	if not exist venv (
+		echo.    Setting up the virtual environment
+		%PYTHON% -m venv venv
+		echo.    Installing requirements
+		venv\Scripts\python -m pip install -r requirements.txt
+	)
+	set PYTHON=venv\Scripts\python
+	set SPHINXLINT=%PYTHON% -m sphinxlint
+)
+
 rem Ignore the tools and venv dirs and check that the default role is not used.
 cmd /S /C "%SPHINXLINT% -i tools -i venv --enable default-role"
 goto end
-
-if "%1" == "versions" (
-	%PYTHON% _tools/generate_release_cycle.py
-	if errorlevel 1 exit /b 1
-	echo.
-	echo Release cycle data generated.
-	goto end
-)
 
 :end
 popd
