@@ -44,11 +44,14 @@ You will only need to do this once.
 
 1. Go to https://github.com/python/cpython.
 
-2. Press ``Fork`` on the top right.
+2. Press ``Fork`` located near the top right of the page.
 
-3. When asked where to fork the repository, choose to fork it to your username.
+   * The required fields ``Owner`` and ``Repository name`` should already be pre-populated with your username and the original repository name "cpython".
+   * Uncheck the "Copy the ``main`` branch only" button.
 
-4. Your forked CPython repository will be created at https://github.com/<username>/cpython.
+3. Press the ``Create fork`` button.
+
+4. Your forked CPython repository will be created at ``https://github.com/<username>/cpython``.
 
 .. _clone-your-fork:
 
@@ -104,6 +107,10 @@ To verify the upstream for ``main``::
 
 It should emit ``upstream``, indicating to track/pull changes for ``main`` from the
 ``upstream`` remote.
+
+Once this is verified, update your local repository with the upstream branches::
+
+   $ git fetch upstream
 
 
 .. _set-up-name-email:
