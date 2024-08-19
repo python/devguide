@@ -108,7 +108,7 @@ To verify the upstream for ``main``::
 It should emit ``upstream``, indicating to track/pull changes for ``main`` from the
 ``upstream`` remote.
 
-Once this is verified, update your local repository with the upstream branches::
+Once this is verified, update your local clone with the upstream branches::
 
    $ git fetch upstream
 
