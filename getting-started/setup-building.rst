@@ -660,9 +660,8 @@ on Linux, macOS and iOS.
             libncurses5-dev libreadline6-dev libsqlite3-dev libssl-dev \
             lzma lzma-dev tk-dev uuid-dev zlib1g-dev libmpdec-dev
 
-   Note that recent Debian distributions do not have the ``libmpdec-dev`` package.
-   You can safely remove it from the install list above and the Python build will
-   use a bundled version.
+   Note that Debian 12 and Ubuntu 24.04 do not have the ``libmpdec-dev`` package.  You can safely
+   remove it from the install list above and the Python build will use a bundled version.
 
 .. tab:: macOS
 
