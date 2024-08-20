@@ -46,7 +46,6 @@ You will only need to do this once.
 
 2. Press ``Fork`` located near the top right of the page.
 
-   * The required fields ``Owner`` and ``Repository name`` should already be pre-populated with your username and the original repository name "cpython".
    * Uncheck the "Copy the ``main`` branch only" button.
 
 3. Press the ``Create fork`` button.
