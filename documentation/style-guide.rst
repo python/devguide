@@ -26,6 +26,7 @@ the footnote reference.
 
 Footnotes may appear in the middle of sentences where appropriate.
 
+
 Capitalization
 ==============
 
@@ -154,6 +155,7 @@ explanation.
 Please consult the `Diátaxis <https://diataxis.fr/>`_ guide for more
 detail.
 
+
 Links
 =====
 
@@ -182,6 +184,7 @@ documentation for ``map``.  You can suppress the link while keeping the
 semantic presentation of the function name by adding an exclamation point
 prefix: ``:func:`!map```.  See :ref:`roles` for more details.
 
+
 Affirmative tone
 ================
 
@@ -207,6 +210,34 @@ language):
     achieve the same effect.  This assures that files are flushed and file
     descriptor resources are released in a timely manner.
 
+
+Bylines
+=======
+
+For new documentation, do not use bylines. They tend to discourage other users
+from updating community documentation.
+
+Existing documentation with bylines will not be changed unless the author
+decides to do so. This is subject to change in the future.
+
+
+First-person language
+=====================
+
+Avoid first-person language.  Our documentation is owned and maintained by a
+community.  First-person language mistakenly implies a single author.
+
+
+Pronunciation of dunders
+========================
+
+"Dunder methods" like ``__init__`` can be awkward in running prose: is it "an
+__init__" or "a __init__"?  A `quick poll`__ indicates we should use
+"an __init__."
+
+__ https://hachyderm.io/@nedbat/112129685322594689
+
+
 Economy of expression
 =====================
 
@@ -217,6 +248,7 @@ It is an unfortunate fact that making documentation longer can be an impediment
 to understanding and can result in even more ways to misread or misinterpret the
 text.  Long descriptions full of corner cases and caveats can create the
 impression that a function is more complex or harder to use than it actually is.
+
 
 Security considerations (and other concerns)
 ============================================
@@ -239,6 +271,7 @@ module (for example, OS level pipe buffers filling up and stalling child process
 these can be documented in a "Common Errors" section and cross-referenced
 rather than repeated for every affected interface.
 
+
 .. _code-examples:
 
 Code examples
@@ -258,6 +291,7 @@ be used sparingly, where it is necessary to clearly differentiate between input
 lines and output lines.  Besides contributing visual clutter, it makes it
 difficult for readers to cut-and-paste examples so they can experiment with
 variations.
+
 
 Code equivalents
 ================
@@ -283,6 +317,7 @@ An example of when not to use a code equivalent is for the :func:`oct` function.
 The exact steps in converting a number to octal doesn't add value for a user
 trying to learn what the function does.
 
+
 Audience
 ========
 
@@ -303,6 +338,7 @@ errors ("I made a mistake, therefore the docs must be wrong ...").  Typically,
 the documentation wasn't consulted until after the error was made.  It is
 unfortunate, but typically no documentation edit would have saved the user from
 making false assumptions about the language ("I was surprised by ...").
+
 
 Function signatures
 ===================
