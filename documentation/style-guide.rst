@@ -229,12 +229,13 @@ Avoid first-person language.  Our documentation is owned and maintained by a
 community.  First-person language mistakenly implies a single author.
 
 
-Pronunciation of dunders
-========================
+Pronunciation of dunder names
+=============================
 
-"Dunder methods" like ``__init__`` can be awkward in running prose: is it "an
-__init__" or "a __init__"?  A `quick poll`__ indicates we should use
-"an __init__."
+"Dunder names" like ``__init__`` can be awkward in running prose: is it "an
+init" or "a dunder init"?  Our recommendation is to ignore the underscores and
+use the article that is appropriate for the word in the name.  A `quick poll`__
+backs this up: "an __init__."
 
 __ https://hachyderm.io/@nedbat/112129685322594689
 
