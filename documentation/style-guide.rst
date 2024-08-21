@@ -211,11 +211,12 @@ language):
     descriptor resources are released in a timely manner.
 
 
-Bylines
-=======
+Author attribution
+==================
 
-For new documentation, do not use bylines. They tend to discourage other users
-from updating community documentation.
+For new documentation, do not use a byline (naming the author of the document).
+Explicit attribution tends to discourage other users from updating community
+documentation.
 
 Existing documentation with bylines will not be changed unless the author
 decides to do so. This is subject to change in the future.
