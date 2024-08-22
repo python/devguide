@@ -62,13 +62,15 @@ Clang/LLVM setup
 
 Pre-built Clang builds are available for most platforms:
 
-- On macOS, Clang is the default compiler
-- For mainstream Linux distros, you can install a ``clang`` package
+- On macOS, Clang is the default compiler.
+- For mainstream Linux distros, you can install a ``clang`` package.
+  In some cases, you also need to install ``llvm`` separately, otherwise
+  some tools are not available.
 - On Windows, the installer for Visual Studio (not Code)
-  includes the "C++ clang tools for windows" feature
+  includes the "C++ clang tools for windows" feature.
 
-You can also from source; refer to
-`the clang documentation <https://clang.llvm.org/>`_ for installa
+You can also build `clang` from source; refer to
+`the clang documentation <https://clang.llvm.org/>`_ for details.
 
 The installer does not install all the components needed on occasion. For
 example, you might want to run a ``scan-build`` or examine the results with
