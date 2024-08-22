@@ -211,13 +211,6 @@ Existing documentation with bylines will not be changed unless the author
 decides to do so. This is subject to change in the future.
 
 
-First-person language
-=====================
-
-Avoid first-person language.  Our documentation is owned and maintained by a
-community.  First-person language mistakenly implies a single author.
-
-
 Pronunciation of dunder names
 =============================
 
