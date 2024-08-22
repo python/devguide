@@ -69,13 +69,13 @@ Pre-built Clang builds are available for most platforms:
 - On Windows, the installer for Visual Studio (not Code)
   includes the "C++ clang tools for windows" feature.
 
-You can also build `clang` from source; refer to
+You can also build ``clang`` from source; refer to
 `the clang documentation <https://clang.llvm.org/>`_ for details.
 
 The installer does not install all the components needed on occasion. For
 example, you might want to run a ``scan-build`` or examine the results with
 ``scan-view``. If this is your case, you can build Clang from source and
-copy tools from ``tools/clang/tools`` to a directory on your PATH.
+copy tools from ``tools/clang/tools`` to a directory on your ``PATH``.
 
 
 Python build setup
@@ -132,7 +132,7 @@ Or: ::
     export CC="clang -fsanitize=undefined"
     export CXX="clang++ -fsanitize=undefined -fno-sanitize=vptr"
 
-Its OK to specify both sanitizers.
+It's OK to specify both sanitizers.
 
 After this, run ``./configure``, ``make`` and ``make test`` as usual.
 
