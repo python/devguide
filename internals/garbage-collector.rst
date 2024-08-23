@@ -356,37 +356,68 @@ follows these steps in order:
    the reference counts fall to 0, triggering the destruction of all unreachable
    objects.
 
-Optimization: generations
-=========================
+Optimization: incremental collection
+====================================
 
 In order to limit the time each garbage collection takes, the GC
-implementation for the default build uses a popular optimization:
-generations. The main idea behind this concept is the assumption that most
-objects have a very short lifespan and can thus be collected soon after their
-creation. This has proven to be very close to the reality of many Python
+implementation for the default build uses incremental collection with two
+generations.
+
+The purpose of generations is to take advantage of what is known as the weak
+generational hypothesis: Most objects die young.
+This has proven to be very close to the reality of many Python
 programs as many temporary objects are created and destroyed very quickly.
 
 To take advantage of this fact, all container objects are segregated into
-three spaces/generations. Every new
-object starts in the first generation (generation 0). The previous algorithm is
-executed only over the objects of a particular generation and if an object
-survives a collection of its generation it will be moved to the next one
-(generation 1), where it will be surveyed for collection less often. If
-the same object survives another GC round in this new generation (generation 1)
-it will be moved to the last generation (generation 2) where it will be
-surveyed the least often.
+two generations: young and old. Every new object starts in the young generation.
 
-The GC implementation for the free-threaded build does not use multiple
-generations.  Every collection operates on the entire heap.
+
+To collect all unreachable cycles in the heap, the garbage collector must scan the
+whole heap. This whole heap scan is called a cycle.
+
+In order to limit the time each garbage collection takes, the previous algorithm
+is executed only on a portion of the heap called an increment. For each cycle,
+the increments will cover the whole heap.
+
+Each increment, the portion of the heap scanned by a single collection is made up
+of three parts:
+
+* The young generation
+* The oldest fraction of the old generation
+* All any objects reachable from those objects that have not yet been scanned this cycle.
+
+Any objects surviving this collection are moved to the old generation.
+ollection from cycles.
+
+When a cycle starts, no objects in the heap are considered to have been scanned.
+When all objects in the heap have been scanned a cycle ends, and all objects are
+considered unscanned again.
+
+In order to collect all unreachable cycles, each increment must contain all of
+an unreachable cycle, or none of it.
+In order to make sure that the whole of any unreachable cycle is contained in an
+increment,  all unscanned objects reachable from any object in the increment must
+be included in the increment.
+Thus, to form a complete increment we perform a transitive closure ove reachable, unscanned
+objects from the initial increment.
+We can exclude scanned objects, as they must have been reachable when scanned.
+If a scanned object becomes part of an unreachable cycle after being scanned, it
+will not be collected this cycle, but it will be collected next cycle.
+
+The GC implementation for the free-threaded build does not use incremental collection.
+Every collection operates on the entire heap.
 
 In order to decide when to run, the collector keeps track of the number of object
 allocations and deallocations since the last collection. When the number of
 allocations minus the number of deallocations exceeds ``threshold_0``,
-collection starts. Initially only generation 0 is examined. If generation 0 has
-been examined more than ``threshold_1`` times since generation 1 has been
-examined, then generation 1 is examined as well. With generation 2,
-things are a bit more complicated; see :ref:`gc-oldest-generation` for
-more information. These thresholds can be examined using the
+collection starts. ``threshold_1`` determines the fraction of the old
+collection that is included in the increment.
+The fraction is inversely proportional to ``threshold_1``,
+as historically a larger ``threshold_1`` meant that old generation
+collections were performed less frequency.
+``threshold2`` is ignored.
+
+These thresholds can be examined using the
 :func:`gc.get_threshold` function:
 
 .. code-block:: python
@@ -399,6 +430,10 @@ more information. These thresholds can be examined using the
 The content of these generations can be examined using the
 ``gc.get_objects(generation=NUM)`` function and collections can be triggered
 specifically in a generation by calling ``gc.collect(generation=NUM)``.
+Prior to 3.13, there we three generations. For that reason the
+young generation is generation 0, but the old generation is generation 2.
+
+For compatibility, ``gc.get_objects()`` pretends there is a generation 1, but it is always empty.
 
 .. code-block:: python
 
@@ -407,8 +442,8 @@ specifically in a generation by calling ``gc.collect(generation=NUM)``.
     ...     pass
     ...
 
-    # Move everything to the last generation so it's easier to inspect
-    # the younger generations.
+    # Move everything to the old generation so it's easier to inspect
+    # the young generations.
 
     >>> gc.collect()
     0
@@ -418,42 +453,23 @@ specifically in a generation by calling ``gc.collect(generation=NUM)``.
     >>> x = MyObj()
     >>> x.self = x
 
-    # Initially the object is in the youngest generation.
+    # Initially the object is in the young generation.
 
     >>> gc.get_objects(generation=0)
     [..., <__main__.MyObj object at 0x7fbcc12a3400>, ...]
 
     # After a collection of the youngest generation the object
-    # moves to the next generation.
+    # moves to the old generation.
 
     >>> gc.collect(generation=0)
     0
     >>> gc.get_objects(generation=0)
     []
     >>> gc.get_objects(generation=1)
+    []
+    >>> gc.get_objects(generation=2)
     [..., <__main__.MyObj object at 0x7fbcc12a3400>, ...]
 
-
-.. _gc-oldest-generation:
-
-Collecting the oldest generation
---------------------------------
-
-In addition to the various configurable thresholds, the GC only triggers a full
-collection of the oldest generation if the ratio ``long_lived_pending / long_lived_total``
-is above a given value (hardwired to 25%). The reason is that, while "non-full"
-collections (that is, collections of the young and middle generations) will always
-examine roughly the same number of objects (determined by the aforementioned
-thresholds) the cost of a full collection is proportional to the total
-number of long-lived objects, which is virtually unbounded.  Indeed, it has
-been remarked that doing a full collection every <constant number> of object
-creations entails a dramatic performance degradation in workloads which consist
-of creating and storing lots of long-lived objects (for example, building a large list
-of GC-tracked objects would show quadratic performance, instead of linear as
-expected). Using the above ratio, instead, yields amortized linear performance
-in the total number of objects (the effect of which can be summarized thusly:
-"each full garbage collection is more and more costly as the number of objects
-grows, but we do fewer and fewer of them").
 
 Optimization: reusing fields to save memory
 ===========================================
