@@ -77,6 +77,10 @@ example, you might want to run a ``scan-build`` or examine the results with
 ``scan-view``. If this is your case, you can build Clang from source and
 copy tools from ``tools/clang/tools`` to a directory on your ``PATH``.
 
+Another reason to build from source is to get the latest version of Clang/LLVM,
+if your platform's channels don't provide it yet.
+Newer versions of Clang/LLVM introduce new sanitizer checks.
+
 
 Python build setup
 ==================
