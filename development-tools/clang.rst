@@ -102,7 +102,8 @@ Then, run ``./configure`` with the relevant flags:
 It is OK to specify both sanitizers.
 
 After that, run ``make`` and ``make test`` as usual.
-Note that ``make`` itself may fail.
+Note that ``make`` itself may fail with a sanitizer failure,
+since the just-compiled Python runs during later stages of the build.
 
 
 Thorough build setup
