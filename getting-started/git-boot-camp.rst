@@ -46,11 +46,11 @@ You will only need to do this once.
 
 2. Press ``Fork`` located near the top right of the page.
 
-4. Uncheck the "Copy the ``main`` branch only" button.
+3. Uncheck the "Copy the ``main`` branch only" button.
 
-3. Press the ``Create fork`` button.
+4. Press the ``Create fork`` button.
 
-4. Your forked CPython repository will be created at ``https://github.com/<username>/cpython``.
+5. Your forked CPython repository will be created at ``https://github.com/<username>/cpython``.
 
 .. _clone-your-fork:
 
