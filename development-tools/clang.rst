@@ -106,28 +106,24 @@ Note that ``make`` itself may fail with a sanitizer failure,
 since the just-compiled Python runs during later stages of the build.
 
 
-Thorough build setup
---------------------
+Build setup for enabling sanitizers for all code
+------------------------------------------------
 
-Because the sanitizers are runtime checkers, its best to have as many positive
-and negative self tests as possible. You can never have enough self tests.
+Some parts of Python (for example, ``_testembed``, ``_freeze_importlib``,
+``test_cppext``) may not use the variables set by ``configure``,
+and with the above settings they'll be compiled without sanitization.
 
-The general idea is to compile and link with the sanitizer flags. At link time,
-Clang will include the needed runtime libraries.
+As a workaround, you can pass the sanitizer options by way of the *compilers*,
+``CC`` (for C) and ``CXX`` (for C++). This is used below.
+Passing the options through ``LDFLAGS`` is also reported to work.
 
-However, some makefile rules (for example, for ``BUILDPYTHON``, ``_testembed``,
-``_freeze_importlib``, ``test_cppext``) may not use the variables
-set by ``configure``.
-
-As a workaround, you can pass the sanitizer options by way of the compilers,
-``CC`` (for C) and ``CXX`` (for C++). This is used below, but passing them
-through ``LDFLAGS`` is also reported to work::
+For ASan, use::
 
     # ASan
     export CC="clang -fsanitize=address"
     export CXX="clang++ -fsanitize=address -fno-sanitize=vptr"
 
-Or: ::
+And for UBSan::
 
     # UBSan
     export CC="clang -fsanitize=undefined"
