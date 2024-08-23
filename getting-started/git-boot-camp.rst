@@ -46,7 +46,7 @@ You will only need to do this once.
 
 2. Press ``Fork`` located near the top right of the page.
 
-   * Uncheck the "Copy the ``main`` branch only" button.
+4. Uncheck the "Copy the ``main`` branch only" button.
 
 3. Press the ``Create fork`` button.
 
