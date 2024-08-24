@@ -17,17 +17,14 @@ by running::
 
    python Tools/build/check_warnings.py --help
 
-The script can be run locally by providing the compiler output and the
-compiler output type to see a list of unique warnings.
+The script can be run locally by providing the compiler output file
+(where the output is saved) and the compiler output type
+(either ``json`` or ``clang``) to see a list of unique warnings::
 
-::
+   python Tools/build/check_warnings.py --compiler-output-file-path=compiler_output.txt --compiler-output-type=json
 
-        $ python Tools/build/check_warnings.py -c <compiler_output_file> -t <compiler_output_type>
-
-..
-
-    Note: `-fdiagnostics-format=json` flag is required when compiling with GCC
-           for the script to properly parse the compiler output.
+.. note:: The ``-fdiagnostics-format=json`` flag is required when compiling with GCC
+          for the script to properly parse the compiler output.
 
 .. _warning-check-failure:
 
