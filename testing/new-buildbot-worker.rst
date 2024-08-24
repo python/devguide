@@ -207,7 +207,7 @@ Latent workers
 --------------
 
 We also support running `latent workers
-<http://docs.buildbot.net/current/manual/configuration/workers.html#latent-workers>`_
+<https://docs.buildbot.net/current/manual/configuration/workers.html#latent-workers>`_
 on the AWS EC2 service.  To set up such a worker:
 
 * Start an instance of your chosen base AMI and set it up as a

@@ -59,6 +59,6 @@ are granted through these steps:
      were in the form of a separate post on the already open topic with
      the poll.
 
-.. _Code of Conduct: https://www.python.org/psf/conduct/
+.. _Code of Conduct: https://policies.python.org/python.org/code-of-conduct/
 .. _Committers category: https://discuss.python.org/c/committers/5
 .. _Python Discourse: https://discuss.python.org

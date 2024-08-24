@@ -914,7 +914,7 @@ References
    https://pdos.csail.mit.edu/~baford/packrat/thesis/
 
 .. [2] Medeiros et al.
-   https://arxiv.org/pdf/1207.0443.pdf
+   https://arxiv.org/pdf/1207.0443
 
 .. [3] Warth et al.
    http://web.cs.ucla.edu/~todd/research/pepm08.pdf

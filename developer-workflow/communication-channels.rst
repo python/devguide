@@ -181,7 +181,7 @@ mailing list mode" and save changes.
 .. _Core Development: https://discuss.python.org/c/core-dev/23
 .. _Committers: https://discuss.python.org/c/committers/5
 .. _Ideas: https://discuss.python.org/c/ideas/6
-.. _Python Help: https://discuss.python.org/c/users/7
+.. _Python Help: https://discuss.python.org/c/help/7
 
 
 Discord (private chat server)
