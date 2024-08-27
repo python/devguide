@@ -359,11 +359,10 @@ follows these steps in order:
 Optimization: incremental collection
 ====================================
 
-In order to limit the time each garbage collection takes, the GC
-implementation for the default build uses incremental collection with two
-generations.
+In order to limit the time each garbage collection takes, the GC implementation
+for the default build uses incremental collection with two generations.
 
-The purpose of generations is to take advantage of what is known as the weak
+Generational garbage collection takes advantage of what is known as the weak
 generational hypothesis: Most objects die young.
 This has proven to be very close to the reality of many Python
 programs as many temporary objects are created and destroyed very quickly.
@@ -371,23 +370,26 @@ programs as many temporary objects are created and destroyed very quickly.
 To take advantage of this fact, all container objects are segregated into
 two generations: young and old. Every new object starts in the young generation.
 
+To detect and collect all unreachable cycles in the heap, the garbage collector
+must scan the whole heap. This whole heap scan is called a full scavenge.
 
-To collect all unreachable cycles in the heap, the garbage collector must scan the
-whole heap. This whole heap scan is called a cycle.
-
-In order to limit the time each garbage collection takes, the previous algorithm
-is executed only on a portion of the heap called an increment. For each cycle,
-the increments will cover the whole heap.
+To limit the time each garbage collection takes, the detection and collection
+algorithm is executed only on a portion of the heap called an increment.
+For each full scavenge, the increments will cover the whole heap.
 
 Each increment, the portion of the heap scanned by a single collection is made up
 of three parts:
 
 * The young generation
-* The oldest fraction of the old generation
-* All any objects reachable from those objects that have not yet been scanned this cycle.
+* The least recently scanned fraction of the old generation.
+* All objects reachable from those objects that have not yet been scanned this cycle.
 
 Any objects surviving this collection are moved to the old generation.
-ollection from cycles.
+The old generation is composed of two lists, scanned and unscanned.
+(The implementation refers to the unscanned part as ``pending`` and the scanned part
+as ``visited``).
+Survivors are moved to the back of the scanned list. The old part of increment is taken
+from the front of the unscanned list.
 
 When a cycle starts, no objects in the heap are considered to have been scanned.
 When all objects in the heap have been scanned a cycle ends, and all objects are
@@ -398,8 +400,8 @@ an unreachable cycle, or none of it.
 In order to make sure that the whole of any unreachable cycle is contained in an
 increment,  all unscanned objects reachable from any object in the increment must
 be included in the increment.
-Thus, to form a complete increment we perform a transitive closure ove reachable, unscanned
-objects from the initial increment.
+Thus, to form a complete increment we perform a transitive closure over reachable,
+unscanned objects from the initial increment.
 We can exclude scanned objects, as they must have been reachable when scanned.
 If a scanned object becomes part of an unreachable cycle after being scanned, it
 will not be collected this cycle, but it will be collected next cycle.
