@@ -287,7 +287,7 @@ Please note that all interactions on
 `Python Software Foundation <https://www.python.org/psf-landing/>`__-supported
 infrastructure is `covered
 <https://www.python.org/psf/records/board/minutes/2014-01-06/#management-of-the-psfs-web-properties>`__
-by the `PSF Code of Conduct <https://www.python.org/psf/conduct/>`__,
+by the `PSF Code of Conduct <https://policies.python.org/python.org/code-of-conduct/>`__,
 which includes all infrastructure used in the development of Python itself
 (for example, mailing lists, issue trackers, GitHub, etc.).
 In general this means everyone is expected to be open, considerate, and
@@ -322,7 +322,7 @@ Full table of contents
 .. _python.org maintenance: https://pythondotorg.readthedocs.io/
 .. _Python: https://www.python.org/
 .. _Core Python Mentorship: https://www.python.org/dev/core-mentorship/
-.. _PyPy: https://www.pypy.org
+.. _PyPy: https://pypy.org
 .. _Jython: https://www.jython.org/
 .. _IronPython: https://ironpython.net/
 .. _Stackless: https://github.com/stackless-dev/stackless/wiki/

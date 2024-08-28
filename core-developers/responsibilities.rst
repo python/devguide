@@ -127,4 +127,4 @@ And finally, enjoy yourself! Contributing to open source software should be fun
 (overall). If you find yourself no longer enjoying the work then either take a
 break or figure out what you need to do to make it enjoyable again.
 
-.. _PSF Code of Conduct: https://www.python.org/psf/conduct/
+.. _PSF Code of Conduct: https://policies.python.org/python.org/code-of-conduct/

@@ -190,7 +190,7 @@ The ``tb_lineno`` field of a traceback entry is (lazily) set to the line number 
 This field is computed from the locations table, ``co_linetable`` (this name is an understatement), using :c:func:`PyCode_Addr2Line`.
 This table has an entry for every instruction rather than for every ``try`` block, so a compact format is very important.
 
-The full design of the 3.11 locations table is written up in :cpy-file:`Objects/locations.md`.
+The full design of the 3.11 locations table is written up in :cpy-file:`InternalDocs/locations.md`.
 While there are rumors that this file is slightly out of date, it is still the best reference we have.
 Don't be confused by :cpy-file:`Objects/lnotab_notes.txt`, which describes the 3.10 format.
 For backwards compatibility this format is still supported by the ``co_lnotab`` property.
