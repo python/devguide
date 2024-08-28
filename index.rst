@@ -322,7 +322,7 @@ Full table of contents
 .. _python.org maintenance: https://pythondotorg.readthedocs.io/
 .. _Python: https://www.python.org/
 .. _Core Python Mentorship: https://www.python.org/dev/core-mentorship/
-.. _PyPy: https://pypy.org/
+.. _PyPy: https://pypy.org
 .. _Jython: https://www.jython.org/
 .. _IronPython: https://ironpython.net/
 .. _Stackless: https://github.com/stackless-dev/stackless/wiki/
