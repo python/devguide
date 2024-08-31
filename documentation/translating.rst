@@ -230,5 +230,13 @@ As for every project, we have a *branch* per version.  We store ``.po``
 files in the root of the repository using the ``gettext_compact=0``
 style.
 
+
+How should I translate code examples?
+-------------------------------------
+
+Translate values in code examples (i.e. string literals) and comments.
+Don't translate keywords or names,
+including variable, function, class, argument, and attribute names.
+
 .. _translation_wg: https://wiki.python.org/psf/TranslationWG/Charter
 .. _translation_ml: https://mail.python.org/mailman3/lists/translation.python.org/
