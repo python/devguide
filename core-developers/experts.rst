@@ -225,6 +225,7 @@ traceback             iritkatriel
 tracemalloc           vstinner
 tty                   Yhg1s*
 turtle                gregorlingl^, willingc
+turtledemo            terryjreedy*
 types                 1st1
 typing                gvanrossum, JelleZijlstra*, AlexWaygood*, carljm, sobolevn*
 unicodedata           malemburg, ezio-melotti
