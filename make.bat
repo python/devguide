@@ -67,6 +67,7 @@ if not defined SPHINXBUILD (
 	)
 	set PYTHON=venv\Scripts\python
 	set SPHINXBUILD=venv\Scripts\sphinx-build
+	set SPHINXAUTOBUILD=venv\Scripts\sphinx-autobuild
 )
 
 if "%1" == "htmlview" (
@@ -78,6 +79,12 @@ if "%1" == "htmlview" (
 	)
 
 	goto end
+)
+
+if "%1" == "htmllive" (
+    %SPHINXAUTOBUILD% --re-ignore="/\.idea/|/venv/" --open-browser --delay 0 --port 55301 . %BUILDDIR%/html
+    if errorlevel 1 exit /b 1
+    goto end
 )
 
 %SPHINXBUILD% -M %1 "." %BUILDDIR% %_ALL_SPHINX_OPTS%
