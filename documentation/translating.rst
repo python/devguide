@@ -29,7 +29,8 @@ in production; others are works in progress.
      - :github:`GitHub <python/python-docs-fr>`
    * - Greek (gr)
      - Lysandros Nikolaou (:github-user:`lysnikolaou`),
-       Fanis Petkos (:github-user:`thepetk`)
+       Fanis Petkos (:github-user:`thepetk`),
+       Panagiotis Skias (:github-user:`skpanagiotis`)
      - :github:`GitHub <pygreece/python-docs-gr>`
    * - Hindi as spoken in India (hi_IN)
      - Sanyam Khurana (:github-user:`CuriousLearner`)
