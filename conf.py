@@ -166,6 +166,12 @@ todo_include_todos = True
 # sphinx-notfound-page
 notfound_urls_prefix = "/"
 
+# prolog and epilogs
+rst_prolog = """
+.. |draft| replace:: **Draft** of Python Contributor's Guide
+.. |purpose| replace:: See more info about the contributor guide in Discourse. Questions? Ask the docs editorial board.
+"""
+
 # sphinx.ext.extlinks
 # This config is a dictionary of external sites,
 # mapping unique short aliases to a base URL and a prefix.

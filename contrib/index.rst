@@ -1,8 +1,29 @@
-==========================
-Python Contributor's Guide
-==========================
+==================================
+Python Contributor's Guide (draft)
+==================================
+
+.. important::
+
+   |draft|
+
+   |purpose|
+
 
 This guide is a comprehensive resource for contributing to Python.
+
+.. toctree::
+   :maxdepth: 2
+
+   intro
+   project
+   get-started
+   code
+   doc
+   translation
+   user-success
+   security
+   outreach
+
 
 .. _proposed_contents:
 
@@ -69,6 +90,5 @@ Proposed Contents
 * Accessibility and user success
 * Security and infrastructure
     * Core Team Resources (from the devguide
-
-
-
+* Outreach
+    * Sprints
