@@ -531,9 +531,9 @@ will merge in the latest changes from the base branch into the PR.
 
 If this still doesn't help with the failure on the PR, you can try
 to re-run that particular failed check. Go to the red GitHub Action job,
-click on the "Re-run jobs" button on the top right, and select
-"Re-run failed jobs". The button will only be present when all other jobs
-finished running.
+click on the :guilabel:`Re-run jobs` button on the top right, and select
+:guilabel:`Re-run failed jobs`. The button will only be present when all other
+jobs finished running.
 
 Re-running failed jobs shouldn't be your first instinct but it is occasionally
 helpful because distributed systems can have intermittent failures, and

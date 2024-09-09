@@ -57,12 +57,12 @@ Where is the "nosy list"?
 Subscribe another person to the issue by tagging them in the comment with
 ``@username``.
 
-If you want to subscribe yourself to an issue, click the *🔔 Subscribe*
-button in the sidebar.
+If you want to subscribe yourself to an issue, click the
+:guilabel:`🔔 Subscribe` button in the sidebar.
 
 Similarly, if you were tagged by somebody else but
-decided this issue is not for you, you might click the *🔕 Unsubscribe*
-button in the sidebar.
+decided this issue is not for you, you might click the
+:guilabel:`🔕 Unsubscribe` button in the sidebar.
 
 There is no exact equivalent of the "nosy list" feature, so to preserve
 this information during the transfer, we list the previous members of
