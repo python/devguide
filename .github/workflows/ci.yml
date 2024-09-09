@@ -17,7 +17,7 @@ jobs:
         with:
           python-version: "3"
       - name: Install uv
-        uses: hynek/setup-cached-uv@v2
+        uses: hynek/setup-cached-uv@5d471f055d5fc47ffc5df8d2e23485eab18e25e5
       - name: Build docs
         run: make html
       - name: Link check
