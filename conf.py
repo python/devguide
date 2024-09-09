@@ -178,7 +178,7 @@ notfound_urls_prefix = "/"
 # prolog and epilogs
 rst_prolog = """
 .. |draft| replace:: **Draft** of Python Contributor's Guide
-.. |purpose| replace:: See more info about the contributor guide in Discourse. Questions? Ask the docs editorial board.
+.. |purpose| replace:: See more info about the contributor guide at https://discuss.python.org/t/refactoring-the-devguide-into-a-contribution-guide/63409. Questions? Ask the docs editorial board.
 """
 
 # sphinx.ext.extlinks
