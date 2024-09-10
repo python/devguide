@@ -50,7 +50,7 @@ Reporting an issue
 ------------------
 
 If the problem you're reporting is not already in the `issue tracker`_, you
-can report it using the green "New issue" button on the right of the search
+can report it using the green :guilabel:`New issue` button on the right of the search
 box above the list of bugs. If you're not already signed in to GitHub, it
 will ask you to do so now.
 

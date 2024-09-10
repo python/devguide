@@ -98,8 +98,8 @@ Tutorials for new users
 
 To start a topic or participate in any discussions in the forum, sign up and
 create an account using an email address or GitHub account. You can do so by
-clicking the "Sign Up" button on the top right hand corner of the `Discourse`_
-main page.
+clicking the :guilabel:`Sign Up` button on the top right hand corner of the
+`Discourse`_ main page.
 
 The Python Discourse `Quick Start <https://discuss.python.org/t/python-discourse-quick-start/116>`_
 compiled by `Carol Willing <https://discuss.python.org/u/willingc/>`_ gives you
@@ -110,15 +110,18 @@ These tutorials can be activated by replying to a welcome message from "discours
 Greetings!" received under Notifications and Messages in your user account.
 
 * Click on your personal account found on the top right hand corner of the page.
-* The dropdown menu will show four different icons: 🔔 (Notifications),
-  🔖 (Bookmarks), ✉️ (Messages), and 👤 (Preferences).
+* The dropdown menu will show four different icons:
+  :guilabel:`🔔` (Notifications),
+  :guilabel:`🔖` (Bookmarks),
+  :guilabel:`✉️` (Messages), and
+  :guilabel:`👤` (Preferences).
 * Select either Notifications or Messages.
 * Open the "Greetings!" message sent by Discobot to start the tutorial.
 
 Ensure that you read through the `Python Code of Conduct <https://discuss.python.org/faq>`_.
 We are to be open, considerate and respectful to all users in the community.
 You can report messages that don't respect the CoC by clicking on the three
-dots under the message and then on the ⚐ icon.  You can also mention the
+dots under the message and then on the :guilabel:`⚐` icon.  You can also mention the
 `@staff <https://discuss.python.org/groups/staff>`_,
 `@moderators <https://discuss.python.org/groups/moderators>`_, or
 `@admins <https://discuss.python.org/groups/admins>`_ groups in a message.
@@ -126,7 +129,8 @@ dots under the message and then on the ⚐ icon.  You can also mention the
 
 
 Reading topics
------------------
+--------------
+
 Click a topic title and read down the list of replies in chronological order,
 following links or previewing replies and quotes as you go. Use your mouse to
 scroll the screen, or use the timeline scroll bar on the right which also shows
@@ -142,10 +146,11 @@ Following categories (category notifications)
 
 Notifications can be set for individual categories and topics. To change any of these
 defaults, you can either go to your user preferences, or visit the category
-page, and use the notification button 🔔 above the topic list,
-on the top right hand corner of the category page beside the "+ New Topic" button.
+page, and use the notification button :guilabel:`🔔` above the topic list,
+on the top right hand corner of the category page beside the
+:guilabel:`+ New Topic` button.
 
-Clicking on the Notification control 🔔 will show a drop-down panel with 5
+Clicking on the notification control :guilabel:`🔔` will show a drop-down panel with 5
 different options: Watching, Tracking, Watching First Post, Normal, and Muted.
 All categories are set by default in Normal mode where you will only be notified
 if someone mentions your @name or replies to you.
@@ -154,7 +159,7 @@ Following individual threads (topic notifications)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 To follow any individual topics or threads, you can adjust your notifications
-through the notification button 🔔 found on the right of the topic at the end
+through the notification button :guilabel:`🔔` found on the right of the topic at the end
 of the timeline. You can also do so at the bottom of each topic.
 Select "Watching" and you will be notified when there is any new updated reply
 from that particular thread.
@@ -235,7 +240,7 @@ Blogs
 
 Several core developers are active bloggers and discuss Python's development
 that way. You can find their blogs (and various other developers who use Python)
-at https://planetpython.org/.
+at `Planet Python <https://planetpython.org/>`__.
 
 
 Setting expectations for open source participation
