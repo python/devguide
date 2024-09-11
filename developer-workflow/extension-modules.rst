@@ -275,8 +275,8 @@ Now that we have added our extension module to the CPython source tree,
 we need to update some configuration files in order to compile the CPython
 project on different platforms.
 
-Updating :cpy-file:`!Modules/Setup.{bootstrap,stdlib}.in`
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Updating ``Modules/Setup.{bootstrap,stdlib}.in``
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Depending on whether the extension module is required to get a functioning
 interpreter or not, we update :cpy-file:`Modules/Setup.bootstrap.in` or
