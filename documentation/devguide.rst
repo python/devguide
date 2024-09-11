@@ -20,7 +20,9 @@ lives in a `separate repository`_ and bug reports should be submitted to the
 `devguide GitHub tracker`_.
 
 Our devguide follows a continuous integration and deployment workflow, with changes published when pull requests are merged.
-CPython documentation, on the other hand, is updated daily and aligns with the CPython release workflow, with changes being included in each release.
+CPython documentation is updated regularly, typically within a day or two, depending on the build process.
+The documentation is versioned for each CPython release, and updates are continuosly incorporated, though with some delay due the build time.
+Aditionally, each CPython release includes a corresponding version of the documentation, which may also be used by redistributors.
 
 
 Developer's Guide workflow
