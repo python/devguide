@@ -5,9 +5,15 @@
 Standard library extension modules
 ==================================
 
-In this section, we are interested in extending the CPython project with
-an :term:`extension module`. We will not explain how to write the module
-in C but rather explain how to configure the project and make it compile.
+In this section, we explain how to configure and compile the CPython project
+with a C :term:`extension module`. We will not explain how to write a C
+extension module and prefer to give you some links where you can read good
+documentation:
+
+* https://docs.python.org/dev/c-api/
+* https://docs.python.org/dev/extending/
+* :pep:`399`
+* https://pythonextensionpatterns.readthedocs.io/en/latest/
 
 Some modules in the standard library, such as :mod:`datetime` or :mod:`pickle`,
 have identical implementations in C and Python; the C implementation, when
@@ -17,14 +23,6 @@ commonly referred to as *accelerator modules*).
 Other modules mainly implemented in Python may import a C helper extension
 providing implementation details (for instance, the :mod:`csv` module uses
 the internal :mod:`!_csv` module defined in :cpy-file:`Modules/_csv.c`).
-
-For writing an extension module in C, we prefer to give you some links
-where you can read good documentation:
-
-* https://docs.python.org/dev/c-api/
-* https://docs.python.org/dev/extending/
-* :pep:`399`
-* https://pythonextensionpatterns.readthedocs.io/en/latest/
 
 Classifying extension modules
 =============================
@@ -60,15 +58,14 @@ Extension modules can be classified into two categories:
    especially if they already have a pure Python implementation.
 
 According to :pep:`399`, *new* extension modules MUST provide a working and
-tested pure Python implementation, unless a special dispensation is given.
-Please ask the :github:`Steering Council <python/steering-council>` if such
-dispensation is needed.
+tested pure Python implementation, unless a special dispensation from
+the :github:`Steering Council <python/steering-council>` is given.
 
 Adding an extension module to CPython
 =====================================
 
 Assume that the standard library contains a pure Python module :mod:`!foo`
-together with the following :func:`!foo.greet` function:
+with the following :func:`!foo.greet` function:
 
 .. code-block:: python
    :caption: Lib/foo.py
@@ -77,8 +74,8 @@ together with the following :func:`!foo.greet` function:
        return "Hello World!"
 
 Instead of using the Python implementation of :func:`!foo.greet`, we want to
-use its corresponding C implementation exposed in some :mod:`!_foo` module
-written in C. Ideally, we want to modify :cpy-file:`!Lib/foo.py` as follows:
+use its corresponding C extension implementation exposed in the :mod:`!_foo`
+module. Ideally, we want to modify :cpy-file:`!Lib/foo.py` as follows:
 
 .. code-block:: python
    :caption: Lib/foo.py
@@ -93,14 +90,14 @@ written in C. Ideally, we want to modify :cpy-file:`!Lib/foo.py` as follows:
 
 .. note::
 
-   Accelerator modules should *never* be imported directly, whence the
-   convention is to mark them as private implementation details with the
-   underscore prefix (namely, :mod:`!_foo` in this example).
+   Accelerator modules should *never* be imported directly. The convention is
+   to mark them as private implementation details with the underscore prefix
+   (namely, :mod:`!_foo` in this example).
 
 In order to incorporate the accelerator module, we need to determine:
 
-- where to place the extension module source code in the CPython project tree,
-- which files to modify in order to compile the CPython project, and
+- where to update the CPython project tree with the extension module source code,
+- which files to modify to configure and compile the CPython project, and
 - which ``Makefile`` rules to invoke at the end.
 
 Updating the CPython project tree
@@ -110,7 +107,10 @@ Usually, accelerator modules are added in the :cpy-file:`Modules` directory of
 the CPython project. If more than one file is needed for the extension module,
 it is more convenient to create a sub-directory in :cpy-file:`Modules`.
 
-For our extension module :mod:`!_foo`, we consider the following working tree:
+In the simplest example where the extension module consists of one file, it may
+be placed in :cpy-file:`Modules` as ``Modules/_foomodule.c``. For a non-trivial
+example of the extension module :mod:`!_foo`, we consider the following working
+tree:
 
 - :ref:`Modules/_foo/_foomodule.c` --- the extension module implementation.
 - :ref:`Modules/_foo/helper.h` --- the extension helpers declarations.
@@ -120,11 +120,6 @@ By convention, the source file containing the extension module implementation
 is called ``<NAME>module.c``, where ``<NAME>`` is the name of the module that
 will be later imported (in our case :mod:`!_foo`). In addition, the directory
 containing the implementation should also be named similarly.
-
-One could imagine having more files, or no helper files at all. Here,
-we wanted to illustrate a simple example without making it too trivial. If
-the extension module does not require additional files, it may directly be
-placed in :cpy-file:`Modules` as ``Modules/_foomodule.c``.
 
 .. code-block:: c
    :caption: Modules/_foo/helper.h
@@ -276,9 +271,9 @@ placed in :cpy-file:`Modules` as ``Modules/_foomodule.c``.
 Configuring the CPython project
 -------------------------------
 
-Now that we have implemented our extension module, we need to update some
-configuration files in order to compile the CPython project on different
-platforms.
+Now that we have added our extension module to the CPython source tree,
+we need to update some configuration files in order to compile the CPython
+project on different platforms.
 
 Updating :cpy-file:`!Modules/Setup.{bootstrap,stdlib}.in`
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -402,7 +397,8 @@ Updating :cpy-file:`configure.ac`
                    [test "$ARCH_RUN_32BIT" = "true"],
                    [-I\$(srcdir)/Modules/_foo], [])
 
-  More generally, the status of the extension is determined as follows:
+  More generally, the host's configuration status of the extension is
+  determined as follows:
 
   +-----------+-----------------+----------+
   | Enabled   | Supported       | Status   |
@@ -479,8 +475,8 @@ We describe the minimal steps for compiling on Windows using MSVC.
      ...
 
   Each item in ``_PyImport_Inittab`` consists of the module name to import,
-  here :mod:`!_foo`, together with the corresponding ``PyInit_*`` function
-  correctly suffixed.
+  here :mod:`!_foo`, with the corresponding ``PyInit_*`` function correctly
+  suffixed.
 
 * Update :cpy-file:`PCbuild/pythoncore.vcxproj`:
 
@@ -539,7 +535,7 @@ We describe the minimal steps for compiling on Windows using MSVC.
 Compiling the CPython project
 -----------------------------
 
-Now that everything is in place, it remains to compile the project:
+Now that the configuration is in place, it remains to compile the project:
 
 .. code-block:: shell
 
@@ -571,7 +567,7 @@ Troubleshooting
 ---------------
 
 This section addresses common issues that you may face when following
-this tutorial.
+this example of adding an extension module.
 
 No rule to make target ``regen-configure``
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
