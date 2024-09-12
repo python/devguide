@@ -28,11 +28,12 @@ Gaining commit privileges
 After a candidate has demonstrated consistent contributions, commit privileges
 are granted through these steps:
 
-#. A core developer (submitter, usually the mentor) starts a poll in the
-   `Committers category`_ on the `Python Discourse`_.
+#. A core developer (submitter, usually the mentor) starts a poll
+   (see the :ref:`template <coredev-template>` below) in
+   the `Committers category`_ on the `Python Discourse`_.
 
    - open for 7 days
-   - results shown upon close
+   - results shown only upon closing
 
 #. If the candidate receives at least two-thirds positive votes when the poll closes
    (as per :pep:`13`), the submitter `emails the steering council
@@ -58,6 +59,41 @@ are granted through these steps:
      <https://discuss.python.org/c/committers/5>`_.  The past few announcements
      were in the form of a separate post on the already open topic with
      the poll.
+
+Poll template
+=============
+
+.. _coredev-template:
+
+While Discourse uses Markdown for formatting, the poll functionality is
+custom and somewhat resembles BBcode. There's a creator for polls in the
+UI (click the Cog icon in the edit box toolbar and choose "Build Poll").
+Make sure to choose "Show Results... When the poll is closed".
+
+Alternatively, here is a template for a poll that you can copy:
+
+.. code-block:: bbcode
+
+   [poll type=regular results=on_close public=false chartType=bar groups=committers close=2024-07-15T21:15:00.000Z]
+   * Promote Basil Fawlty
+   * Do not promote
+   [/poll]
+
+.. raw:: html
+
+    <script>
+    for (let span of document.querySelectorAll('span')) {
+      console.log(span.textContent);
+      if (span.textContent === '2024-07-15T21:15:00.000Z') {
+         const nextWeek= new Date();
+         nextWeek.setDate(nextWeek.getDate() + 7);
+         nextWeek.setMinutes(0);
+         nextWeek.setSeconds(0);
+         nextWeek.setMilliseconds(0);
+         span.textContent = nextWeek.toISOString();
+      }
+    }
+    </script>
 
 .. _Code of Conduct: https://policies.python.org/python.org/code-of-conduct/
 .. _Committers category: https://discuss.python.org/c/committers/5
