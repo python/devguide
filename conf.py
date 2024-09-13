@@ -105,8 +105,10 @@ linkcheck_ignore = [
     r'https://github.com/python/bedevere/#pr-state-machine',
     # "Anchor not found":
     r'https://packaging.python.org/.*#',
+    # "-rate limited-", causing a timeout
+    r'https://stackoverflow.com/.*',
     # Discord doesn't allow robot crawlers: "403 Client Error: Forbidden"
-    r'https://support.discord.com/hc/en-us/articles/219070107-Server-Nicknames',
+    'https://support.discord.com/hc/en-us/articles/219070107-Server-Nicknames',
 ]
 
 rediraffe_redirects = {
