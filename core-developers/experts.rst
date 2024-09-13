@@ -68,7 +68,7 @@ bisect                rhettinger*
 builtins
 bz2
 calendar
-cmath                 mdickinson
+cmath
 cmd
 code
 codecs                malemburg, doerwalter
@@ -90,7 +90,7 @@ curses                Yhg1s
 dataclasses           ericvsmith*, carljm
 datetime              abalkin, pganssle
 dbm
-decimal               facundobatista, rhettinger, mdickinson
+decimal               facundobatista, rhettinger
 difflib               tim-one (inactive)
 dis                   1st1
 doctest               tim-one (inactive)
@@ -104,7 +104,7 @@ fcntl                 Yhg1s
 filecmp
 fileinput
 fnmatch
-fractions             mdickinson
+fractions
 ftplib                giampaolo*
 functools             rhettinger*
 gc                    pitrou, pablogsal
@@ -137,7 +137,7 @@ logging               vsajip
 lzma
 mailbox
 marshal
-math                  mdickinson, rhettinger, stutzbach^
+math                  rhettinger, stutzbach^
 mimetypes
 mmap                  Yhg1s
 modulefinder          theller (inactive), jvr^
@@ -174,7 +174,7 @@ pyclbr                isidentical
 pydoc                 AA-Turner
 queue                 rhettinger*
 quopri
-random                rhettinger, mdickinson
+random                rhettinger
 re                    ezio-melotti, serhiy-storchaka
 readline              Yhg1s
 reprlib
@@ -201,7 +201,7 @@ stat                  tiran
 statistics            stevendaprano, rhettinger
 string
 stringprep
-struct                mdickinson, meadori
+struct                meadori
 subprocess            astrand^ (inactive), giampaolo, gpshead*
 symtable              benjaminp
 sys
@@ -321,7 +321,7 @@ context managers    ncoghlan
 core workflow       Mariatta, ezio-melotti, hugovk, AA-Turner
 coverity scan       tiran, Yhg1s
 cryptography        gpshead, dstufft
-data formats        mdickinson
+data formats
 database            malemburg
 devguide            merwok, ezio-melotti, willingc, Mariatta, hugovk,
                     AA-Turner
@@ -338,7 +338,7 @@ import machinery    brettcannon, ncoghlan, ericsnowcurrently
 io                  benjaminp, stutzbach^, gpshead
 JIT                 brandtbucher*
 locale              malemburg
-mathematics         mdickinson, malemburg, stutzbach^, rhettinger
+mathematics         malemburg, stutzbach^, rhettinger
 memory management   tim-one, malemburg, Yhg1s
 memoryview
 networking          giampaolo, gpshead
