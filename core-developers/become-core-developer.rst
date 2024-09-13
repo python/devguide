@@ -67,7 +67,7 @@ Poll template
 
 While Discourse uses Markdown for formatting, the poll functionality is
 custom and somewhat resembles BBcode. There's a creator for polls in the
-UI (click the Cog icon in the edit box toolbar and choose "Build Poll").
+UI (click the cog icon in the edit box toolbar and choose "Build Poll").
 Make sure to choose "Show Results... When the poll is closed".
 
 Alternatively, here is a template for a poll that you can copy:
@@ -83,14 +83,13 @@ Alternatively, here is a template for a poll that you can copy:
 
     <script>
     for (let span of document.querySelectorAll('span')) {
-      console.log(span.textContent);
       if (span.textContent === '2024-07-15T21:15:00.000Z') {
-         const nextWeek= new Date();
+         const nextWeek = new Date();
          nextWeek.setDate(nextWeek.getDate() + 7);
-         nextWeek.setMinutes(0);
          nextWeek.setSeconds(0);
          nextWeek.setMilliseconds(0);
          span.textContent = nextWeek.toISOString();
+         break;
       }
     }
     </script>
