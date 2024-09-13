@@ -779,7 +779,7 @@ on Linux, macOS and iOS.
 
    As with CPython itself, the dependencies for CPython must be compiled for
    each of the hardware architectures that iOS supports. Consult the
-   documentation for `XZ <https://xz.tukaani.org/xz-utils/>`__, `bzip2
+   documentation for `XZ <https://tukaani.org/xz/>`__, `bzip2
    <https://sourceware.org/bzip2/>`__, `OpenSSL <https://www.openssl.org>`__ and
    `libffi <https://github.com/libffi/libffi>`__ for details on how to configure
    the project for cross-platform iOS builds.
