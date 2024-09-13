@@ -68,9 +68,7 @@ Poll template
 While Discourse uses Markdown for formatting, the poll functionality is
 custom and somewhat resembles BBcode. There's a creator for polls in the
 UI (click the cog icon in the edit box toolbar and choose "Build Poll").
-Make sure to choose "Show Results... When the poll is closed".
-
-Alternatively, here is a template for a poll that you can copy:
+Here's what it outputs, you can copy and paste it for your poll:
 
 .. code-block:: bbcode
 
@@ -78,6 +76,12 @@ Alternatively, here is a template for a poll that you can copy:
    * Promote Basil Fawlty
    * Do not promote
    [/poll]
+
+The important options in the poll builder set to get this result:
+ - Show who voted: **disabled** (`public=false`)
+ - Limit voting to these groups: **committers** (`groups=committers`)
+ - Automatically close poll: **in 7 days** (`close=...`)
+ - Show results: **When poll is closed** (`results=on_close`)
 
 .. raw:: html
 
