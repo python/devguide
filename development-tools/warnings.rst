@@ -19,12 +19,9 @@ by running::
 
 The script can be run locally by providing the compiler output file
 (where the output is saved) and the compiler output type
-(either ``json`` or ``clang``) to see a list of unique warnings::
+(either ``gcc`` or ``clang``) to see a list of unique warnings::
 
-   python Tools/build/check_warnings.py --compiler-output-file-path=compiler_output.txt --compiler-output-type=json
-
-.. note:: The ``-fdiagnostics-format=json`` flag is required when compiling with GCC
-          for the script to properly parse the compiler output.
+   python Tools/build/check_warnings.py --compiler-output-file-path=compiler_output.txt --compiler-output-type=gcc
 
 .. _warning-check-failure:
 
@@ -49,3 +46,18 @@ If a warning check fails with:
     * Document in the PR that the change reduces the number of compiler
       warnings. Decrement the count in the platform-specific warning
       ignore file or remove the file if the count is now zero.
+
+.. _updating-warning-ignore-file:
+Updating the warning ignore file
+--------------------------
+The warning ignore files can be found in the :cpy-file:`Tools/build/` directory.
+Both files and directories can be added to the ignore file. Files can have an explicit warning count or a wildcard count.
+Directories must be followed by a wildcard count. Wildcards indicate that 0 or more warnings will be ignored.
+The following is an example of the warning ignore file format::
+    Modules/_ctypes/_ctypes_test_generated.c.h *
+    Objects/longobject.c 46
+    Objects/methodobject.c 1
+    Objects/mimalloc/ *
+
+Using wildcards is reserved for code that is not maintained by CPython, or code that is for tests.
+Keep lines in warning ignore files sorted lexicographically.
