@@ -48,12 +48,15 @@ If a warning check fails with:
       ignore file or remove the file if the count is now zero.
 
 .. _updating-warning-ignore-file:
+
 Updating the warning ignore file
---------------------------
+--------------------------------
+
 The warning ignore files can be found in the :cpy-file:`Tools/build/` directory.
 Both files and directories can be added to the ignore file. Files can have an explicit warning count or a wildcard count.
 Directories must be followed by a wildcard count. Wildcards indicate that 0 or more warnings will be ignored.
 The following is an example of the warning ignore file format::
+    
     Modules/_ctypes/_ctypes_test_generated.c.h *
     Objects/longobject.c 46
     Objects/methodobject.c 1
