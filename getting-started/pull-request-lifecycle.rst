@@ -542,6 +542,22 @@ If you identify such flaky behavior, look for an issue in the `issue tracker`_
 that describes this particular flakiness. Create a new issue if you can't
 find one.
 
+:guilabel:`Update branch` button
+================================
+
+You can click on the :guilabel:`Update branch` button to merge the latest
+changes from the base branch (usually ``main``) into the PR.
+This is useful to :ref:`keep the CI green <keeping-ci-green>` for old PRs,
+or to check if a CI failure has been fixed in the base branch.
+
+If the PR is very old, it may be useful to update the branch before merging to
+ensure that the PR does not fail any CI checks that were added or changed since
+CI last ran.
+
+Do not click :guilabel:`Update branch` without a good reason because it notifies
+everyone watching the PR that there are new changes, when there are not,
+and it uses up limited CI resources.
+
 Committing/rejecting
 ====================
 
