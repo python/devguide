@@ -58,7 +58,7 @@ _thread
 abc
 argparse
 array
-ast                   benjaminp, pablogsal, isidentical, JelleZijlstra
+ast                   benjaminp, pablogsal, isidentical, JelleZijlstra, eclips4
 asyncio               1st1, asvetlov, gvanrossum, graingert, kumaraditya303, willingc
 atexit
 base64
