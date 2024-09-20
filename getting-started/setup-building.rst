@@ -458,6 +458,12 @@ used in ``python.sh``:
 .. _wasmtime: https://wasmtime.dev
 .. _WebAssembly: https://webassembly.org
 
+Android
+-------
+
+Build and test instructions for Android are maintained in the CPython repository
+at Android/README.md.
+
 iOS
 ---
 
@@ -608,8 +614,8 @@ for details.
 Install dependencies
 ====================
 
-This section explains how to install additional extensions (for example, ``zlib``)
-on Linux, macOS and iOS.
+This section explains how to install libraries which are needed to compile
+some of CPython's modules (for example, ``zlib``).
 
 .. tab:: Linux
 
@@ -774,6 +780,15 @@ on Linux, macOS and iOS.
 .. tab:: Windows
 
    On Windows, extensions are already included and built automatically.
+
+.. tab:: Android
+
+   The BeeWare project maintains `scripts for building Android dependencies
+   <https://github.com/beeware/cpython-android-source-deps>`__, and distributes
+   `pre-compiled binaries
+   <https://github.com/beeware/cpython-android-source-deps/releases>`__ for each
+   of them. These binaries are automatically downloaded and used by the CPython
+   build script at Android/android.py.
 
 .. tab:: iOS
 
