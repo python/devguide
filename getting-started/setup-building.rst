@@ -462,7 +462,7 @@ Android
 -------
 
 Build and test instructions for Android are maintained in the CPython repository
-at Android/README.md.
+at :cpy-file:`Android/README.md`.
 
 iOS
 ---
@@ -788,7 +788,7 @@ some of CPython's modules (for example, ``zlib``).
    `pre-compiled binaries
    <https://github.com/beeware/cpython-android-source-deps/releases>`__ for each
    of them. These binaries are automatically downloaded and used by the CPython
-   build script at Android/android.py.
+   build script at :cpy-file:`Android/android.py`.
 
 .. tab:: iOS
 
