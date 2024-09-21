@@ -783,12 +783,13 @@ some of CPython's modules (for example, ``zlib``).
 
 .. tab:: Android
 
-   The BeeWare project maintains `scripts for building Android dependencies
-   <https://github.com/beeware/cpython-android-source-deps>`__, and distributes
-   `pre-compiled binaries
-   <https://github.com/beeware/cpython-android-source-deps/releases>`__ for each
-   of them. These binaries are automatically downloaded and used by the CPython
+   The BeeWare project maintains `scripts for building Android dependencies`_,
+   and distributes `pre-compiled binaries`_ for each of them.
+   These binaries are automatically downloaded and used by the CPython
    build script at :cpy-file:`Android/android.py`.
+
+   .. _scripts for building Android dependencies: https://github.com/beeware/cpython-android-source-deps
+   .. _pre-compiled binaries: https://github.com/beeware/cpython-android-source-deps/releases
 
 .. tab:: iOS
 
