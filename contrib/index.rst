@@ -41,16 +41,15 @@ Proposed Contents
         * Standard for communication
         * Enforcement details
     * Roles
-        * Core teamdevelopers (from devguide)
-        * (SC?) (EB?)
+        * Core team (from devguide)
         * Triager
         * Contributors
-            * types of contributions, role of each contributors
+            * types of contributions
     * Governance
         * (SC?) (EB?)
         * Other WG? Typing council? C-API WG?
     * GitHub
-        * Main CPython rRepos
+        * Main CPython repos
         * Core workflow repos
         * Infrastructure repos
     * Communication channels
@@ -67,7 +66,6 @@ Proposed Contents
     * (Reviewing)
         * How? Etiquette?
         * How to request a review?
-    * Where to get help
 * Getting started
     * Basic setup
     * Git bootcamp (simplified for everyone to use)
@@ -89,6 +87,6 @@ Proposed Contents
     * Need details
 * Accessibility and user success
 * Security and infrastructure
-    * Core Team Resources (from the devguide
+    * Core Team Resources (from the devguide)
 * Outreach
     * Sprints

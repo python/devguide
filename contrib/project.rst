@@ -14,16 +14,15 @@ The CPython project
     * Standard for communication
     * Enforcement details
 * Roles
-    * Core teamdevelopers (from devguide)
-    * (SC?) (EB?)
+    * Core team (from devguide)
     * Triager
     * Contributors
-        * types of contributions, role of each contributors
+        * types of contributions
 * Governance
     * (SC?) (EB?)
     * Other WG? Typing council? C-API WG?
 * GitHub
-    * Main CPython rRepos
+    * Main CPython repos
     * Core workflow repos
     * Infrastructure repos
 * Communication channels
@@ -40,4 +39,3 @@ The CPython project
 * (Reviewing)
     * How? Etiquette?
     * How to request a review?
-* Where to get help
