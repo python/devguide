@@ -54,7 +54,7 @@ A complete list of sanitizers can be found at `Controlling Code Generation
 
 Clang and its sanitizers have strengths (and weaknesses). Its just one tool in
 the war chest to uncovering bugs and improving code quality. Clang should be
-used to complement other methods, including Code Reviews, Valgrind,
+used to complement other methods, including Code Reviews, `Valgrind`_,
 etc.
 
 Clang/LLVM setup
@@ -281,3 +281,5 @@ Unfortunately, you won't know what to ignorelist until you run the sanitizer.
 
 The documentation is available at `Sanitizer special case list
 <https://clang.llvm.org/docs/SanitizerSpecialCaseList.html>`_.
+
+.. _Valgrind: https: https://github.com/python/cpython/blob/main/Misc/README.valgrind
