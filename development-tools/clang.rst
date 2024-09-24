@@ -282,4 +282,4 @@ Unfortunately, you won't know what to ignorelist until you run the sanitizer.
 The documentation is available at `Sanitizer special case list
 <https://clang.llvm.org/docs/SanitizerSpecialCaseList.html>`_.
 
-.. _Valgrind: https: https://github.com/python/cpython/blob/main/Misc/README.valgrind
+.. _Valgrind: https://github.com/python/cpython/blob/main/Misc/README.valgrind
