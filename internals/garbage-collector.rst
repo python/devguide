@@ -369,8 +369,11 @@ programs as many temporary objects are created and destroyed very quickly.
 
 To take advantage of this fact, all container objects are segregated into
 two generations: young and old. Every new object starts in the young generation.
+In order to keep pause times down, scanning of the old generation of the heap
+occurs in increments. To keep track of what has been scanned,
+the old generation contains two lists: scanned and unscanned heap.
 
-To detect and collect all unreachable cycles in the heap, the garbage collector
+To detect and collect all unreachable objects in the heap, the garbage collector
 must scan the whole heap. This whole heap scan is called a full scavenge.
 
 To limit the time each garbage collection takes, the detection and collection
@@ -381,17 +384,18 @@ Each increment, the portion of the heap scanned by a single collection is made u
 of three parts:
 
 * The young generation
-* The least recently scanned fraction of the old generation.
-* All objects reachable from those objects that have not yet been scanned this cycle.
+* The old generation's least recently objects
+* All objects reachable from those objects that have not yet been scanned this full scavenge
 
-Any objects surviving this collection are moved to the old generation.
-The old generation is composed of two lists, scanned and unscanned.
+Any young generation objects surviving this collection are moved to the old generation,
+and reachable objects in the old generation remain in the old generation.
+The old generation is composed of two lists: scanned and unscanned.
 (The implementation refers to the unscanned part as ``pending`` and the scanned part
 as ``visited``).
 Survivors are moved to the back of the scanned list. The old part of increment is taken
 from the front of the unscanned list.
 
-When a cycle starts, no objects in the heap are considered to have been scanned.
+When a full scavenge starts, no objects in the heap are considered to have been scanned.
 When all objects in the heap have been scanned a cycle ends, and all objects are
 considered unscanned again.
 
@@ -400,22 +404,25 @@ an unreachable cycle, or none of it.
 In order to make sure that the whole of any unreachable cycle is contained in an
 increment,  all unscanned objects reachable from any object in the increment must
 be included in the increment.
-Thus, to form a complete increment we perform a transitive closure over reachable,
-unscanned objects from the initial increment.
+Thus, to form a complete increment we perform a 
+`transitive closure <https://en.wikipedia.org/wiki/Transitive_closure>`_
+over reachable, unscanned objects from the initial increment.
 We can exclude scanned objects, as they must have been reachable when scanned.
 If a scanned object becomes part of an unreachable cycle after being scanned, it
-will not be collected this cycle, but it will be collected next cycle.
+will not be collected this cycle, but it will be collected next full scavenge.
 
-The GC implementation for the free-threaded build does not use incremental collection.
-Every collection operates on the entire heap.
+.. note::
+
+   The GC implementation for the free-threaded build does not use incremental collection.
+   Every collection operates on the entire heap.
 
 In order to decide when to run, the collector keeps track of the number of object
 allocations and deallocations since the last collection. When the number of
-allocations minus the number of deallocations exceeds ``threshold_0``,
-collection starts. ``threshold_1`` determines the fraction of the old
+allocations minus the number of deallocations exceeds ``threshold0``,
+collection starts. ``threshold1`` determines the fraction of the old
 collection that is included in the increment.
-The fraction is inversely proportional to ``threshold_1``,
-as historically a larger ``threshold_1`` meant that old generation
+The fraction is inversely proportional to ``threshold1``,
+as historically a larger ``threshold1`` meant that old generation
 collections were performed less frequency.
 ``threshold2`` is ignored.
 
