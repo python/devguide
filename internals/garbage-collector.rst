@@ -404,7 +404,7 @@ an unreachable cycle, or none of it.
 In order to make sure that the whole of any unreachable cycle is contained in an
 increment,  all unscanned objects reachable from any object in the increment must
 be included in the increment.
-Thus, to form a complete increment we perform a 
+Thus, to form a complete increment we perform a
 `transitive closure <https://en.wikipedia.org/wiki/Transitive_closure>`_
 over reachable, unscanned objects from the initial increment.
 We can exclude scanned objects, as they must have been reachable when scanned.
