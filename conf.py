@@ -114,11 +114,9 @@ linkcheck_ignore = [
 rediraffe_redirects = {
     # Development Tools
     "clang.rst": "development-tools/clang.rst",
-    "coverity.rst": "development-tools/coverity.rst",
     "gdb.rst": "development-tools/gdb.rst",
     # Advanced Tools was renamed Development Tools in gh-1149
     "advanced-tools/clang.rst": "development-tools/clang.rst",
-    "advanced-tools/coverity.rst": "development-tools/coverity.rst",
     "advanced-tools/gdb.rst": "development-tools/gdb.rst",
     # Core Developers
     "coredev.rst": "core-developers/become-core-developer.rst",
