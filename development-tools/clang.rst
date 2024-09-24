@@ -54,7 +54,7 @@ A complete list of sanitizers can be found at `Controlling Code Generation
 
 Clang and its sanitizers have strengths (and weaknesses). Its just one tool in
 the war chest to uncovering bugs and improving code quality. Clang should be
-used to complement other methods, including Code Reviews, Valgrind, Coverity,
+used to complement other methods, including Code Reviews, Valgrind,
 etc.
 
 Clang/LLVM setup

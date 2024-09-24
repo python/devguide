@@ -8,5 +8,4 @@ Development tools
    clinic
    gdb
    clang
-   coverity
    warnings
