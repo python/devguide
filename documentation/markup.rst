@@ -1083,8 +1083,11 @@ units as well as normal text:
    (``class``, ``attribute``, ``function``, ``method``, ``c:type``, etc),
    a ``versionadded`` should be included at the end of its description block.
 
-   The first argument must be given and is the version in question.  The second
-   argument is optional and can be used to describe the details of the feature.
+   The first argument must be given and is the version in question.
+   Instead of a specific version number, you can---and should---use
+   the word ``next``, indicating that the API will first appear in the
+   upcoming release.
+   The second argument is optional and can be used to describe the details of the feature.
 
    Example::
 
@@ -1092,7 +1095,30 @@ units as well as normal text:
 
          Return foo and bar.
 
-         .. versionadded:: 3.5
+         .. versionadded:: next
+
+   When a release is made, the release manager will change the ``next`` to
+   the just-released version. For example, if ``func`` in the above example is
+   released in 3.14, the snippet will be changed to::
+
+      .. function:: func()
+
+         Return foo and bar.
+
+         .. versionadded:: 3.14
+
+   The tool to do this replacement is `update_version_next.py`_
+   in the release-tools repository.
+
+   .. _update_version_next.py: https://github.com/python/release-tools/blob/master/update_version_next.py
+
+   When backporting to versions before 3.14, check if ``Doc/tools/extensions/pyspecific.py``
+   contains the function ``expand_version_arg``. If it's not there,
+   use a specific version instead of ``next``.
+
+   When adding documentation for a function that existed in a past version,
+   but wasn't documented yet, use the version number where the function was
+   added instead of ``next``.
 
 .. describe:: versionchanged
 
@@ -1106,7 +1132,7 @@ units as well as normal text:
 
          Return foo and bar, optionally with *spam* applied.
 
-         .. versionchanged:: 3.6
+         .. versionchanged:: next
             Added the *spam* parameter.
 
    Note that there should be no blank line between the directive head and the
@@ -1118,10 +1144,12 @@ units as well as normal text:
 
    There is one required argument: the version from which the feature is
    deprecated.
+   Similarly to ``versionadded``, you should use the word ``next`` to indicate
+   the API will be first deprecated in the upcoming release.
 
    Example::
 
-      .. deprecated:: 3.8
+      .. deprecated:: next
 
 .. describe:: deprecated-removed
 
@@ -1129,11 +1157,12 @@ units as well as normal text:
    removed.
 
    There are two required arguments: the version from which the feature is
-   deprecated, and the version in which the feature is removed.
+   deprecated (usually ``next``), and the version in which the feature
+   is removed, which must be a specific version number (*not* ``next``).
 
    Example::
 
-      .. deprecated-removed:: 3.8 4.0
+      .. deprecated-removed:: next 4.0
 
 .. describe:: impl-detail
 
