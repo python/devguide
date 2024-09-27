@@ -102,6 +102,18 @@ can put the ``buildarea`` wherever you want to)::
 (Note that on Windows, the ``buildbot-worker`` command will be in the
 :file:`Scripts` directory of your Python installation.)
 
+On Windows, `the maximum length for a path is limited
+<https://learn.microsoft.com/en-us/windows/win32/fileio/maximum-file-path-limitation>`_.
+This might cause some tests to fail, unless long paths support is enabled.
+
+Use this PowerShell command to check whether long paths are enabled::
+
+      Get-ItemProperty -Path "HKLM:\SYSTEM\CurrentControlSet\Control\FileSystem" -Name "LongPathsEnabled"
+
+If the value is not "1", you can enable long paths using this PowerShell command::
+
+      New-ItemProperty -Path "HKLM:\SYSTEM\CurrentControlSet\Control\FileSystem" -Name "LongPathsEnabled" -Value 1 -PropertyType DWORD -Force
+
 Once this initial worker setup completes, you should edit the files
 ``buildarea/info/admin`` and ``buildarea/info/host`` to provide your contact
 info and information on the host configuration, respectively.  This information
