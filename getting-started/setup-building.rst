@@ -627,8 +627,18 @@ some of CPython's modules (for example, ``zlib``).
 
    On **Fedora**, **RHEL**, **CentOS** and other ``dnf``-based systems::
 
+      $ sudo dnf install git pkg-config
       $ sudo dnf install dnf-plugins-core  # install this to use 'dnf builddep'
       $ sudo dnf builddep python3
+
+   Some optional development dependencies are not included in the above.
+   To install some additional dependencies for optional build and test components::
+
+      $ sudo dnf install \
+            gcc gcc-c++ gdb lzma glibc-devel libstdc++-devel openssl-devel \
+            readline-devel zlib-devel libffi-devel bzip2-devel xz-devel \
+            sqlite sqlite-devel sqlite-libs libuuid-devel gdbm-libs perf \
+            expat expat-devel mpdecimal python3-pip
 
 
    On **Debian**, **Ubuntu**, and other ``apt``-based systems, try to get the
