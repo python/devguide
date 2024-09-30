@@ -14,11 +14,11 @@ This guide is a comprehensive resource for contributing to Python.
 .. toctree::
    :maxdepth: 2
 
-   intro
-   project
-   get-started
-   code
-   doc
+   intro/index
+   project/index
+   get-started/index
+   code/index
+   doc/index
    translation
    user-success
    security
