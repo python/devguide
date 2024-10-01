@@ -9,28 +9,17 @@ The CPython project
    |purpose|
 
 
+[Give the reader an understanding of the project as a whole.  What are the
+moving parts, who is involved, how do they interact?]
+
 * Structure
-* CoC
-    * Standard for communication
-    * Enforcement details
-* Roles
-    * Core team (from devguide)
-    * Triager
-    * Contributors
-        * types of contributions
-* Governance
-    * (SC?) (EB?)
-    * Other WG? Typing council? C-API WG?
-* GitHub
-    * Main CPython repos
-    * Core workflow repos
-    * Infrastructure repos
-* Communication channels
-    * Repos
-    * Discourse
-    * Discord
-    * Mailing lists (deprioritize)
-    * Where to get help
-* (Reviewing)
-    * How? Etiquette?
-    * How to request a review?
+
+.. toctree::
+   :maxdepth: 5
+
+   conduct
+   roles
+   core-team/index
+   governance
+   github
+   channels
