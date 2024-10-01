@@ -180,6 +180,10 @@ rst_prolog = """
 .. |draft| replace::
     This is part of a **Draft** of the Python Contributor's Guide.
     Text in square brackets are notes about content to fill in.
+    Currently, the devguide and this new Contributor's Guide co-exist in the
+    repo. We are using Sphinx include directives to demonstrate the re-organization.
+    The final Contributor's Guide will replace the devguide with content in only one
+    place.
     We welcome help with this!
 
 .. |purpose| replace::
