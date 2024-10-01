@@ -31,11 +31,6 @@ The CPython project
     * Discord
     * Mailing lists (deprioritize)
     * Where to get help
-* Issue triaging
-    * (How exactly? Guidelines? Is it just about applying labels?)
-    * Easy issues
-    * (should triagers assign reviewers?)
-    * (should triagers close issues?)
 * (Reviewing)
     * How? Etiquette?
     * How to request a review?
