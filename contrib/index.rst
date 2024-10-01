@@ -17,6 +17,7 @@ This guide is a comprehensive resource for contributing to Python.
    intro/index
    project/index
    get-started/index
+   triage/index
    code/index
    doc/index
    translation
