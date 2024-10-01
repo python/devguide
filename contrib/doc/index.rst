@@ -13,3 +13,6 @@ Documentation contributions
 * (pull in Documentation sections from devguide)
 * Rst/Sphinx bootcamp
 * Editorial Style Guide
+* Translation
+   - How to add a new language
+   - Tools and workflow

@@ -20,7 +20,6 @@ This guide is a comprehensive resource for contributing to Python.
    triage/index
    code/index
    doc/index
-   translation
    user-success
    security
    outreach
