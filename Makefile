@@ -6,7 +6,12 @@ PYTHON       = python3
 VENVDIR      = ./venv
 UV           = uv
 SPHINXBUILD  = $(VENVDIR)/bin/sphinx-build
-SPHINXOPTS   = --fail-on-warning --keep-going
+# Temporary: while we are using ..include:: to show the reorganization,
+# there are duplicate labels.  These cause warnings, which prevent the
+# build from finishing.  Turn off --fail-on-warning so we can see the
+# finished results.
+#SPHINXOPTS   = --fail-on-warning --keep-going
+SPHINXOPTS   = --keep-going
 BUILDDIR     = _build
 BUILDER      = html
 JOBS         = auto
