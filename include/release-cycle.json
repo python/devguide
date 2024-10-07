@@ -10,7 +10,7 @@
   "3.13": {
     "branch": "3.13",
     "pep": 719,
-    "status": "prerelease",
+    "status": "bugfix",
     "first_release": "2024-10-07",
     "end_of_life": "2029-10",
     "release_manager": "Thomas Wouters"
