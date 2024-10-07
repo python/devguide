@@ -50,9 +50,9 @@
   "3.8": {
     "branch": "3.8",
     "pep": 569,
-    "status": "security",
+    "status": "end-of-life",
     "first_release": "2019-10-14",
-    "end_of_life": "2024-10",
+    "end_of_life": "2024-10-07",
     "release_manager": "Łukasz Langa"
   },
   "3.7": {
