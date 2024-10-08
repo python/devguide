@@ -1,0 +1,14 @@
+blank_issues_enabled: false
+contact_links:
+  - name: CPython Documentation
+    url: https://docs.python.org/
+    about: Official CPython documentation - please check here before opening an issue.
+  - name: Python Website
+    url: https://python.org/
+    about: For all things Python
+  - name: PyPI Issues / Support
+    url: https://github.com/pypi/support
+    about: For issues with PyPI itself, PyPI accounts, or with packages hosted on PyPI.
+  - name: CPython Issues
+    url: https://github.com/python/cpython/issues
+    about: For issues with the CPython interpreter itself.
