@@ -109,23 +109,23 @@ for a list of active branches.
 Other labels
 ============
 
-* :gh-label:`triaged`: for issue has been accepted as valid by a triager.
-* :gh-label:`easy`: for issues that are considered easy.
 * :gh-label:`build`/:gh-label:`performance`: for issues related
   to the build process or performance, respectively.
-* :gh-label:`release-blocker`/:gh-label:`deferred-blocker`: for issues/PRs
-  that, unless fixed, will hold the current or next release respectively.
-  Triagers may set these labels for issues that must be fixed before a release,
-  and the :ref:`branch's release manager <branchstatus>`
-  will review them and determine if they indeed qualify,
-  removing or retaining the label as appropriate.
-* :gh-label:`pending`: for issues/PRs that will be closed unless further
-  feedback is provided.
-* :gh-label:`stale`: for issues/PRs that have been inactive for a while.
-* :gh-label:`sprint`: for easier filtering of issues/PRs being worked on
-  during official sprints.
+* :gh-label:`easy`: for issues that are considered easy.
 * :gh-label:`infra`: for issues related to the infrastructure of the
   project (e.g., GitHub Actions, dependabot, the buildbots, etc.).
+* :gh-label:`pending`: for issues/PRs that will be closed unless further
+  feedback is provided.
+* :gh-label:`release-blocker`/:gh-label:`deferred-blocker`: for issues/PRs
+  and the :ref:`branch's release manager <branchstatus>`
+  removing or retaining the label as appropriate.
+  that, unless fixed, will hold the current or next release respectively.
+  Triagers may set these labels for issues that must be fixed before a release,
+  will review them and determine if they indeed qualify,
+* :gh-label:`sprint`: for easier filtering of issues/PRs being worked on
+  during official sprints.
+* :gh-label:`stale`: for issues/PRs that have been inactive for a while.
+* :gh-label:`triaged`: for issue has been accepted as valid by a triager.
 
 
 .. _GitHub Labels for PRs:
