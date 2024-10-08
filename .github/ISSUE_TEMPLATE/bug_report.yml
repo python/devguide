@@ -18,15 +18,7 @@ body:
     id: bug_description
     attributes:
       label: "Describe the bug"
-      description: A clear and concise description of what the bug is.
-    validations:
-      required: true
-
-  - type: textarea
-    id: expected_behavior
-    attributes:
-      label: "Expected behavior"
-      description: A clear and concise description of what you expected to happen.
+      description: A clear and concise description of what the bug is and, optionally, what you expected to happen.
     validations:
       required: true
 
