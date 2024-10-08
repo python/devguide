@@ -113,7 +113,7 @@ Other labels
   to the build process or performance, respectively.
 * :gh-label:`easy`: for issues that are considered easy.
 * :gh-label:`infra`: for issues related to the infrastructure of the
-  project (e.g., GitHub Actions, dependabot, the buildbots, etc.).
+  project (for example, GitHub Actions, dependabot, the buildbots).
 * :gh-label:`pending`: for issues/PRs that will be closed unless further
   feedback is provided.
 * :gh-label:`release-blocker`/:gh-label:`deferred-blocker`: for issues/PRs
