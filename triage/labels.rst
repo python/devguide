@@ -124,6 +124,8 @@ Other labels
 * :gh-label:`stale`: for issues/PRs that have been inactive for a while.
 * :gh-label:`sprint`: for easier filtering of issues/PRs being worked on
   during official sprints.
+* :gh-label:`infra`: for issues related to the infrastructure of the
+  project (e.g., GitHub Actions, dependabot, the buildbots, etc.).
 
 
 .. _GitHub Labels for PRs:
