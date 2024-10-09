@@ -223,37 +223,5 @@ and unpredictable, the issue should be reported on the bug tracker; even
 better if it can be diagnosed and suppressed by fixing the test's
 implementation, or by making its parameters - such as a timeout - more robust.
 
-
-Custom builders
-===============
-
-.. highlight:: console
-
-When working on a platform-specific issue, you may want to test your changes on
-the buildbot fleet rather than just on GitHub Actions and Azure Pipelines.  To do so, you can
-make use of the `custom builders
-<https://buildbot.python.org/all/#/builders?tags=%2Bcustom>`_.
-These builders track the ``buildbot-custom`` short-lived branch of the
-``python/cpython`` repository, which is only accessible to core developers.
-
-To start a build on the custom builders, push the commit you want to test to
-the ``buildbot-custom`` branch::
-
-   $ git push upstream <local_branch_name>:buildbot-custom
-
-You may run into conflicts if another developer is currently using the custom
-builders or forgot to delete the branch when they finished.  In that case, make
-sure the other developer is finished and either delete the branch or force-push
-(add the ``-f`` option) over it.
-
-When you have gotten the results of your tests, delete the branch::
-
-   $ git push upstream :buildbot-custom     # or use the GitHub UI
-
-If you are interested in the results of a specific test file only, we
-recommend you change (temporarily, of course) the contents of the
-``buildbottest`` clause in ``Makefile.pre.in``; or, for Windows builders,
-the ``Tools/buildbot/test.bat`` script.
-
 .. seealso::
    :ref:`buildworker`
