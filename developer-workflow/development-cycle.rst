@@ -345,7 +345,7 @@ Current administrators
 | Pablo Galindo     | Python 3.10 and 3.11 Release Manager,                    | pablogsal       |
 |                   | Maintainer of buildbot.python.org                        |                 |
 +-------------------+----------------------------------------------------------+-----------------+
-| Łukasz Langa      | Python 3.8 and 3.9 Release Manager,                      | ambv            |
+| Łukasz Langa      | Python 3.9 Release Manager,                              | ambv            |
 |                   | PSF CPython Developer in Residence 2021-present          |                 |
 +-------------------+----------------------------------------------------------+-----------------+
 | Brett Cannon      |                                                          | brettcannon     |
