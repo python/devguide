@@ -1,4 +1,4 @@
-target-version = "py311"
+target-version = "py310"
 fix = true
 output-format = "full"
 line-length = 88
