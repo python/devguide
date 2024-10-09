@@ -116,8 +116,8 @@ in the ``cpython`` directory and two remotes that refer to your own GitHub fork
 
 If you want a working copy of an already-released version of Python,
 that is, a version in :ref:`maintenance mode <maintbranch>`, you can checkout
-a release branch. For instance, to checkout a working copy of Python 3.8,
-do ``git switch 3.8``.
+a release branch. For instance, to checkout a working copy of Python 3.13,
+do ``git switch 3.13``.
 
 You will need to re-compile CPython when you do such an update.
 

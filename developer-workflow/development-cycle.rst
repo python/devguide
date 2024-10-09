@@ -37,7 +37,7 @@ Branches
 --------
 
 There is a branch for each *feature version*, whether released or not (for
-example, 3.7, 3.8).
+example, 3.12, 3.13).
 
 
 .. _indevbranch:
@@ -51,7 +51,8 @@ changes, performance improvements, bug fixes.
 
 At some point during the life-cycle of a release, a
 new :ref:`maintenance branch <maintbranch>` is created to host all bug fixing
-activity for further micro versions in a feature version (3.8.1, 3.8.2, etc.).
+activity for further micro versions in a feature version (3.12.1, 3.12.2, and so
+on).
 
 For versions 3.4 and before, this was conventionally done when the final
 release was cut (for example, 3.4.0 final).
@@ -79,7 +80,7 @@ releases; the terms are used interchangeably. These releases have a
 The only changes allowed to occur in a maintenance branch without debate are
 bug fixes, test improvements, and edits to the documentation.
 Also, a general rule for maintenance branches is that compatibility
-must not be broken at any point between sibling micro releases (3.5.1, 3.5.2,
+must not be broken at any point between sibling micro releases (3.12.1, 3.12.2,
 etc.).  For both rules, only rare exceptions are accepted and **must** be
 discussed first.
 
@@ -97,9 +98,9 @@ that maintenance branch.
 Sometime following the final release (3.x.0), the maintenance branch for
 the previous minor version will go into :ref:`security mode <secbranch>`,
 usually after at least one more bugfix release at the discretion of the
-release manager.  For example, the 3.4 maintenance branch was put into
-:ref:`security mode <secbranch>` after the 3.4.4 bugfix release
-which followed the release of 3.5.1.
+release manager.  For example, the 3.11 maintenance branch was put into
+:ref:`security mode <secbranch>` after the 3.11.9 bugfix release
+which followed the release of 3.12.2.
 
 .. _secbranch:
 
@@ -131,7 +132,7 @@ End-of-life branches
 The code base for a release cycle which has reached end-of-life status
 is frozen and no longer has a branch in the repo.  The final state of
 the end-of-lifed branch is recorded as a tag with the same name as the
-former branch, for example, ``3.3`` or ``2.6``.
+former branch, for example, ``3.8`` or ``2.7``.
 
 The :ref:`versions` page contains list of active and end-of-life branches.
 
