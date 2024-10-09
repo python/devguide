@@ -75,7 +75,7 @@ with the following :func:`!foo.greet` function:
 
 Instead of using the Python implementation of :func:`!foo.greet`, we want to
 use its corresponding C extension implementation exposed in the :mod:`!_foo`
-module. Ideally, we want to modify :cpy-file:`!Lib/foo.py` as follows:
+module. Ideally, we want to modify ``Lib/foo.py`` as follows:
 
 .. code-block:: python
    :caption: Lib/foo.py
