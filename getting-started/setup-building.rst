@@ -739,7 +739,12 @@ some of CPython's modules (for example, ``zlib``).
                ./configure --with-pydebug \
                            --with-openssl="$(brew --prefix openssl@3)" \
                            --with-tcltk-libs="$(pkg-config --libs tcl tk)" \
-                           --with-tcltk-includes="$(pkg-config --cflags tcl tk)"
+                           --with-tcltk-includes="$(pkg-config --cflags tcl tk)" \
+                           --with-dbmliborder=gdbm:ndbm
+
+         (``--with-dbmliborder`` is a workaround for a Homebrew-specific change
+         to ``gdbm``; see `#89452 <https://github.com/python/cpython/issues/89452>`_
+         for details.)
 
    .. tab:: MacPorts
 
