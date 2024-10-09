@@ -47,7 +47,7 @@ itself. Git is easily available for all common operating systems.
   or the `Git project instructions <https://git-scm.com>`_ for step-by-step
   installation directions. You may also want to consider a graphical client
   such as `TortoiseGit <https://tortoisegit.org/>`_ or
-  `GitHub Desktop <https://desktop.github.com/>`_.
+  `GitHub Desktop <https://github.com/apps/desktop>`_.
 
 - **Configure**
 
