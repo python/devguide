@@ -54,11 +54,8 @@ new :ref:`maintenance branch <maintbranch>` is created to host all bug fixing
 activity for further micro versions in a feature version (3.12.1, 3.12.2, and so
 on).
 
-For versions 3.4 and before, this was conventionally done when the final
-release was cut (for example, 3.4.0 final).
-
-Starting with the 3.5 release, we create the release maintenance branch
-(``3.5``) at the time we enter beta (3.5.0 beta 1).  This allows
+We create the release maintenance branch
+(``3.14``) at the time we enter beta (3.14.0 beta 1).  This allows
 feature development for the release 3.n+1 to occur within the main
 branch alongside the beta and release candidate stabilization periods
 for release 3.n.
