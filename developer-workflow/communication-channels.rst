@@ -263,7 +263,7 @@ Other core workflow tools are:
 * `blurb_it`_
 * `miss-islington`_
 * `cla-bot`_
-* `cpython-emailer-webhook`_
+* `webhook-mailer`_
 
 Python `Performance Benchmark`_ project is intended to be an authoritative
 source of benchmarks for all Python implementations.
@@ -274,5 +274,5 @@ source of benchmarks for all Python implementations.
 .. _blurb_it: https://github.com/python/blurb_it
 .. _miss-islington: https://github.com/python/miss-islington
 .. _cla-bot: https://github.com/ambv/cla-bot
-.. _cpython-emailer-webhook: https://github.com/berkerpeksag/cpython-emailer-webhook
+.. _webhook-mailer: https://github.com/python/webhook-mailer
 .. _Performance Benchmark: https://github.com/python/pyperformance
