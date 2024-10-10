@@ -45,7 +45,7 @@ The `Ideas Discourse category`_
 is specifically intended for discussion of new features and language changes.
 Please don't be disappointed if your idea isn't met with universal approval:
 as the :pep:`long list of Withdrawn and Rejected PEPs
-<0#abandoned-withdrawn-and-rejected-peps>`
+<0#rejected-superseded-and-withdrawn-peps>`
 in the :pep:`PEP Index <0>` attests,
 and as befits a reasonably mature programming language,
 getting significant changes into Python isn't a simple task.

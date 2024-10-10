@@ -341,7 +341,7 @@ example, backports to other branches), so this features is only useful if
 you know for sure that a single PR is enough to address and close the issue.
 
 .. _bedevere: https://github.com/python/bedevere
-.. _special keywords: https://docs.github.com/en/issues/tracking-your-work-with-issues/linking-a-pull-request-to-an-issue#linking-a-pull-request-to-an-issue-using-a-keyword
+.. _special keywords: https://docs.github.com/en/issues/tracking-your-work-with-issues/using-issues/linking-a-pull-request-to-an-issue#linking-a-pull-request-to-an-issue-using-a-keyword
 
 Updating your CPython fork
 --------------------------

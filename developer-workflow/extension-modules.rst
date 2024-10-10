@@ -31,7 +31,7 @@ Extension modules can be classified into two categories:
 
 * A *built-in* extension module is a module built and shipped with
   the Python interpreter. A built-in module is *statically* linked
-  into the interpreter, thereby lacking a :attr:`__file__` attribute.
+  into the interpreter, thereby lacking a :attr:`!__file__` attribute.
 
   .. seealso:: :data:`sys.builtin_module_names` --- names of built-in modules.
 
@@ -41,7 +41,7 @@ Extension modules can be classified into two categories:
 * A *shared* (or *dynamic*) extension module is built as a shared library
   (``.so`` or ``.dll`` file) and is *dynamically* linked into the interpreter.
 
-  In particular, the module's :attr:`__file__` attribute contains the path
+  In particular, the module's :attr:`!__file__` attribute contains the path
   to the ``.so`` or ``.dll`` file.
 
   Shared modules are built with the :c:macro:`!Py_BUILD_CORE_MODULE`
@@ -75,7 +75,7 @@ with the following :func:`!foo.greet` function:
 
 Instead of using the Python implementation of :func:`!foo.greet`, we want to
 use its corresponding C extension implementation exposed in the :mod:`!_foo`
-module. Ideally, we want to modify :cpy-file:`!Lib/foo.py` as follows:
+module. Ideally, we want to modify ``Lib/foo.py`` as follows:
 
 .. code-block:: python
    :caption: Lib/foo.py

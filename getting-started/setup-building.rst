@@ -47,7 +47,7 @@ itself. Git is easily available for all common operating systems.
   or the `Git project instructions <https://git-scm.com>`_ for step-by-step
   installation directions. You may also want to consider a graphical client
   such as `TortoiseGit <https://tortoisegit.org/>`_ or
-  `GitHub Desktop <https://desktop.github.com/>`_.
+  `GitHub Desktop <https://github.com/apps/desktop>`_.
 
 - **Configure**
 
@@ -116,8 +116,8 @@ in the ``cpython`` directory and two remotes that refer to your own GitHub fork
 
 If you want a working copy of an already-released version of Python,
 that is, a version in :ref:`maintenance mode <maintbranch>`, you can checkout
-a release branch. For instance, to checkout a working copy of Python 3.8,
-do ``git switch 3.8``.
+a release branch. For instance, to checkout a working copy of Python 3.13,
+do ``git switch 3.13``.
 
 You will need to re-compile CPython when you do such an update.
 
@@ -730,9 +730,9 @@ some of CPython's modules (for example, ``zlib``).
                ./configure --with-pydebug \
                            --with-openssl="$(brew --prefix openssl@3)"
 
-      .. tab:: Python 3.8-3.10
+      .. tab:: Python 3.9-3.10
 
-         For Python 3.8, 3.9, and 3.10::
+         For Python 3.9 and 3.10::
 
             $ CPPFLAGS="-I$(brew --prefix gdbm)/include -I$(brew --prefix xz)/include" \
                LDFLAGS="-L$(brew --prefix gdbm)/lib -L$(brew --prefix xz)/lib" \
