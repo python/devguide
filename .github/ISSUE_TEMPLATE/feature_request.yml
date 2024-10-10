@@ -9,7 +9,7 @@ body:
     attributes:
       value: |
         > [!NOTE]
-        > This repo is for the [Python devguide](https://devguide.python.org/).
+        > This repo is for the [Python developer's guide](https://devguide.python.org/).
         > If you are requesting an enhancement for the Python language or
         > CPython interpreter, then use the
         > [CPython issue tracker](https://github.com/python/cpython/issues) instead.
