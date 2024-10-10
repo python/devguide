@@ -55,18 +55,11 @@ box above the list of bugs. If you're not already signed in to GitHub, it
 will ask you to do so now.
 
 First you need to select what kind of problem you want to report. The
-available choices are:
+available choices include, for example:
 
-* **Bug report**: an existing feature isn't working as expected;
-* **Documentation**: there is missing, invalid, or misleading documentation;
-* **Enhancement**: suggest a new feature for Python;
-* **Performance**: something should work faster;
-* **Security**: there is a specific kind of weakness open to exploitation
-  through the points of vulnerability;
-* **Tests**: something is wrong with CPython's suite of regression tests;
-* **Discuss**: you'd like to learn more about Python, discuss ideas for
-  possible changes to future Python versions, track core development
-  discussions, or join a specific special-interest group.
+ * **Bug report**: an existing feature isn't working as expected.
+ * **Documentation**: there is missing, invalid, or misleading documentation.
+ * **Feature or enhancement**: suggest a new feature for Python.
 
 Depending on your choice, a dedicated form template will appear.
 In particular, you'll notice that the last button actually takes you to
