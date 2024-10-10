@@ -261,7 +261,7 @@ participating in the CPython core development process:
 
 .. topic:: Carol Willing (United States)
 
-   * Noteable: `<https://noteable.io/about-us/>`__ (VP Engineering)
+   * Noteable (VP Engineering)
    * Personal site: `Willing Consulting <https://www.willingconsulting.com/>`_
    * `Extended bio <https://www.willingconsulting.com/about/>`__
    * Project Jupyter (Software Council, Core Team for JupyterHub/Binder)

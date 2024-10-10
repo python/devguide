@@ -147,9 +147,10 @@ to trigger specific bot behaviors.
   by these labels.
   See also :ref:`the status of the Python branches <branchstatus>` for a list
   of branches and the type of PRs that can be backported to them.
-* :gh-label:`skip issue`: for trivial changes (such as typo fixes, comment
+* :gh-label:`skip issue <skip%20issue>`: for trivial changes (such as
+  typo fixes, comment
   changes, and section rephrases) that don't require a corresponding issue.
-* :gh-label:`skip news`: for PRs that don't need a NEWS entry.
+* :gh-label:`skip news <skip%20news>`: for PRs that don't need a NEWS entry.
   The :ref:`news-entry` section covers in details in which cases the NEWS entry
   can be skipped.
 * :gh-label:`test-with-buildbots`: used to test the latest commit with
