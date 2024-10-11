@@ -60,6 +60,7 @@ available choices include, for example:
  * **Bug report**: an existing feature isn't working as expected.
  * **Documentation**: there is missing, invalid, or misleading documentation.
  * **Feature or enhancement**: suggest a new feature for Python.
+ * **Report a security vulnerability**: privately report a security vulnerability.
 
 Depending on your choice, a dedicated form template will appear.
 In particular, you'll notice that the last button actually takes you to
