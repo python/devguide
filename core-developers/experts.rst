@@ -286,7 +286,7 @@ for “their” platform as a third-party project.
 ===================   ===========
 Platform              Maintainers
 ===================   ===========
-AIX                   edelsohn
+AIX                   edelsohn, ayappanec
 Android               mhsmith
 Cygwin                jlt63^, stutzbach^
 Emscripten            hoodmane, pmp-p, rdb, rth, ryanking13
@@ -319,7 +319,6 @@ buildbots           zware, pablogsal
 bytecode            benjaminp, 1st1, markshannon, brandtbucher, carljm, iritkatriel
 context managers    ncoghlan
 core workflow       Mariatta, ezio-melotti, hugovk, AA-Turner
-coverity scan       tiran, Yhg1s
 cryptography        gpshead, dstufft
 data formats
 database            malemburg

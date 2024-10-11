@@ -67,6 +67,7 @@ linkcheck_allowed_redirects = {
     # Login page
     r"https://github.com/python/buildmaster-config/issues/new.*": r"https://github.com/login.*",  # noqa: E501
     r"https://github.com/python/core-workflow/issues/new.*": r"https://github.com/login.*",  # noqa: E501
+    r"https://github.com/orgs/python/teams.*": r"https://github.com/login.*",  # noqa: E501
     # Archive redirect
     r"https://github.com/python/cpython/archive/main.zip": r"https://codeload.github.com/python/cpython/zip/refs/heads/main",  # noqa: E501
     # Blob to tree
@@ -89,6 +90,13 @@ linkcheck_anchors_ignore = [
     r'\/.*',
 ]
 
+# Check the link itself, but ignore anchors that are added by JS
+# https://www.sphinx-doc.org/en/master/usage/configuration.html#confval-linkcheck_anchors_ignore_for_url
+linkcheck_anchors_ignore_for_url = [
+    # GitHub
+    r'https://github.com/.*',
+]
+
 linkcheck_ignore = [
     # The voters repo is private and appears as a 404
     'https://github.com/python/voters',
@@ -98,27 +106,22 @@ linkcheck_ignore = [
     'https://discuss.python.org/groups/staff',
     'https://discuss.python.org/groups/moderators',
     'https://discuss.python.org/groups/admins',
-    # The crawler gets "Anchor not found" for GitHub anchors
-    r'https://github.com.+?#L\d+',
-    r'https://github.com/cli/cli#installation',
-    r'https://github.com/github/renaming#renaming-existing-branches',
-    r'https://github.com/python/bedevere/#pr-state-machine',
     # "Anchor not found":
     r'https://packaging.python.org/.*#',
     # "-rate limited-", causing a timeout
     r'https://stackoverflow.com/.*',
     # Discord doesn't allow robot crawlers: "403 Client Error: Forbidden"
-    'https://support.discord.com/hc/en-us/articles/219070107-Server-Nicknames',
+    r'https://support.discord.com/hc/en-us/articles/219070107-Server-Nicknames',
+    # Patreon also gives 403 to the GHA linkcheck runner
+    r'https://www.patreon.com/.*',
 ]
 
 rediraffe_redirects = {
     # Development Tools
     "clang.rst": "development-tools/clang.rst",
-    "coverity.rst": "development-tools/coverity.rst",
     "gdb.rst": "development-tools/gdb.rst",
     # Advanced Tools was renamed Development Tools in gh-1149
     "advanced-tools/clang.rst": "development-tools/clang.rst",
-    "advanced-tools/coverity.rst": "development-tools/coverity.rst",
     "advanced-tools/gdb.rst": "development-tools/gdb.rst",
     # Core Developers
     "coredev.rst": "core-developers/become-core-developer.rst",

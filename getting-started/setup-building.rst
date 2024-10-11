@@ -47,7 +47,7 @@ itself. Git is easily available for all common operating systems.
   or the `Git project instructions <https://git-scm.com>`_ for step-by-step
   installation directions. You may also want to consider a graphical client
   such as `TortoiseGit <https://tortoisegit.org/>`_ or
-  `GitHub Desktop <https://desktop.github.com/>`_.
+  `GitHub Desktop <https://github.com/apps/desktop>`_.
 
 - **Configure**
 
@@ -116,8 +116,8 @@ in the ``cpython`` directory and two remotes that refer to your own GitHub fork
 
 If you want a working copy of an already-released version of Python,
 that is, a version in :ref:`maintenance mode <maintbranch>`, you can checkout
-a release branch. For instance, to checkout a working copy of Python 3.8,
-do ``git switch 3.8``.
+a release branch. For instance, to checkout a working copy of Python 3.13,
+do ``git switch 3.13``.
 
 You will need to re-compile CPython when you do such an update.
 
@@ -458,6 +458,12 @@ used in ``python.sh``:
 .. _wasmtime: https://wasmtime.dev
 .. _WebAssembly: https://webassembly.org
 
+Android
+-------
+
+Build and test instructions for Android are maintained in the CPython repository
+at :cpy-file:`Android/README.md`.
+
 iOS
 ---
 
@@ -608,8 +614,8 @@ for details.
 Install dependencies
 ====================
 
-This section explains how to install additional extensions (for example, ``zlib``)
-on Linux, macOS and iOS.
+This section explains how to install libraries which are needed to compile
+some of CPython's modules (for example, ``zlib``).
 
 .. tab:: Linux
 
@@ -621,8 +627,18 @@ on Linux, macOS and iOS.
 
    On **Fedora**, **RHEL**, **CentOS** and other ``dnf``-based systems::
 
+      $ sudo dnf install git pkg-config
       $ sudo dnf install dnf-plugins-core  # install this to use 'dnf builddep'
       $ sudo dnf builddep python3
+
+   Some optional development dependencies are not included in the above.
+   To install some additional dependencies for optional build and test components::
+
+      $ sudo dnf install \
+            gcc gcc-c++ gdb lzma glibc-devel libstdc++-devel openssl-devel \
+            readline-devel zlib-devel libffi-devel bzip2-devel xz-devel \
+            sqlite sqlite-devel sqlite-libs libuuid-devel gdbm-libs perf \
+            expat expat-devel mpdecimal python3-pip
 
 
    On **Debian**, **Ubuntu**, and other ``apt``-based systems, try to get the
@@ -714,16 +730,21 @@ on Linux, macOS and iOS.
                ./configure --with-pydebug \
                            --with-openssl="$(brew --prefix openssl@3)"
 
-      .. tab:: Python 3.8-3.10
+      .. tab:: Python 3.9-3.10
 
-         For Python 3.8, 3.9, and 3.10::
+         For Python 3.9 and 3.10::
 
             $ CPPFLAGS="-I$(brew --prefix gdbm)/include -I$(brew --prefix xz)/include" \
                LDFLAGS="-L$(brew --prefix gdbm)/lib -L$(brew --prefix xz)/lib" \
                ./configure --with-pydebug \
                            --with-openssl="$(brew --prefix openssl@3)" \
                            --with-tcltk-libs="$(pkg-config --libs tcl tk)" \
-                           --with-tcltk-includes="$(pkg-config --cflags tcl tk)"
+                           --with-tcltk-includes="$(pkg-config --cflags tcl tk)" \
+                           --with-dbmliborder=gdbm:ndbm
+
+         (``--with-dbmliborder`` is a workaround for a Homebrew-specific change
+         to ``gdbm``; see `#89452 <https://github.com/python/cpython/issues/89452>`_
+         for details.)
 
    .. tab:: MacPorts
 
@@ -774,6 +795,16 @@ on Linux, macOS and iOS.
 .. tab:: Windows
 
    On Windows, extensions are already included and built automatically.
+
+.. tab:: Android
+
+   The BeeWare project maintains `scripts for building Android dependencies`_,
+   and distributes `pre-compiled binaries`_ for each of them.
+   These binaries are automatically downloaded and used by the CPython
+   build script at :cpy-file:`Android/android.py`.
+
+   .. _scripts for building Android dependencies: https://github.com/beeware/cpython-android-source-deps
+   .. _pre-compiled binaries: https://github.com/beeware/cpython-android-source-deps/releases
 
 .. tab:: iOS
 

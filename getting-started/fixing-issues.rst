@@ -23,5 +23,3 @@ you can also always provide useful comments if you do attempt a fix, successful
 or not.
 
 .. _"easy" issues: https://github.com/python/cpython/issues?q=is%3Aissue+is%3Aopen+label%3Aeasy
-
-.. TODO: add something about no active core developer for the area?

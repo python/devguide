@@ -171,15 +171,7 @@ Do not confuse the evaluation stack with the call stack, which is used to implem
 Error handling
 ==============
 
-When an instruction like ``BINARY_OP`` encounters an error, an exception is raised.
-At this point, a traceback entry is added to the exception (by ``PyTraceBack_Here()``) and cleanup is performed.
-In the simplest case (absent any ``try`` blocks), this results in the remaining objects being popped off the evaluation stack and their reference count decremented (if not ``NULL``) .
-Then the interpreter function (``_PyEval_EvalFrameDefault()``) returns ``NULL``.
-
-However, if an exception is raised in a ``try`` block, the interpreter must jump to the corresponding ``except`` or ``finally`` block.
-In 3.10 and before, there was a separate "block stack" which was used to keep track of nesting ``try`` blocks.
-In 3.11, this mechanism has been replaced by a statically generated table, ``code->co_exceptiontable``,
-which is described in detail in the `internals documentation
+See the `internals documentation
 <https://github.com/python/cpython/blob/main/InternalDocs/exception_handling.md>`_.
 
 The locations table
@@ -205,18 +197,6 @@ From C code, you have to call :c:func:`PyCode_Addr2Location`.
 
 Fortunately, the locations table is only consulted by exception handling (to set ``tb_lineno``) and by tracing (to pass the line number to the tracing function).
 In order to reduce the overhead during tracing, the mapping from instruction offset to line number is cached in the ``_co_linearray`` field.
-
-Exception chaining
-------------------
-
-When an exception is raised during exception handling, the new exception is chained to the old one.
-This is done by making the ``__context__`` field of the new exception point to the old one.
-This is the responsibility of ``_PyErr_SetObject()`` in :cpy-file:`Python/errors.c` (which is ultimately called by all ``PyErr_Set*()`` functions).
-Separately, if a statement of the form :samp:`raise {X} from {Y}` is executed, the ``__cause__`` field of the raised exception (:samp:`{X}`) is set to :samp:`{Y}`.
-This is done by :c:func:`PyException_SetCause`, called in response to all ``RAISE_VARARGS`` instructions.
-A special case is :samp:`raise {X} from None`, which sets the ``__cause__`` field to ``None`` (at the C level, it sets ``cause`` to ``NULL``).
-
-(TODO: Other exception details.)
 
 Python-to-Python calls
 ======================
