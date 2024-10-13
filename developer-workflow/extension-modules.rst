@@ -593,34 +593,14 @@ by executing :cpy-file:`Tools/build/regen-configure.sh`:
 ``make regen-configure`` and missing permissions
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Since this rule requires `Docker <https://docs.docker.com/desktop>`_ to be
-running, the following can be done on Linux platforms (``systemctl``-based):
-
-.. code-block:: shell
-
-   systemctl status docker          # is the Docker service running?
-   sudo systemctl start docker      # start it if it is not
-   sudo systemctl restart docker    # or restart it if the issue persists
-
 If Docker complains about missing permissions, this Stack Overflow post
 could be useful in solving the issue: `How to fix docker: permission denied
 <https://stackoverflow.com/q/48957195/9579194>`_.
 
-Once the Docker service is running, check that you have an `Ubuntu
-$CONFIGURE_UBUNTU_VERSION$ image <https://hub.docker.com/_/ubuntu>`_,
-or pull it if it is not case:
-
-.. code-block:: shell
-
-   # check for the Docker image presence
-   docker images ubuntu:$CONFIGURE_UBUNTU_VERSION$
-   # pull the Docker image if needed
-   docker image pull ubuntu:$CONFIGURE_UBUNTU_VERSION$
-
-.. tip::
-
-   If the issue persists, you may try `podman <https://podman.io/>`_.
-   The commands for listing or pulling an image are the same as ``docker``.
+We also recommend using `podman <https://podman.io/docs/installation>`_
+instead of ``docker`` since the former does not require a background
+service, or does not create files owned by the ``root`` user in some
+cases.
 
 Missing ``Py_BUILD_CORE`` define when using internal headers
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
