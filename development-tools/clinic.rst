@@ -1510,8 +1510,7 @@ and the parameter should use the ``object`` converter::
    [clinic start generated code]*/
 
 The implementation function will receive var-positional arguments
-as a tuple, you can either use the tuple directly
-or parsing them into C types using :c:func:`!PyArg_Parse*` functions.
+as a tuple.
 
 .. versionadded:: 3.11
 
