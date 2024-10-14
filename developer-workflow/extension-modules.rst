@@ -606,7 +606,8 @@ by executing :cpy-file:`Tools/build/regen-configure.sh`:
 
 If Docker complains about missing permissions, this Stack Overflow post
 could be useful in solving the issue: `How to fix docker: permission denied
-<https://stackoverflow.com/q/48957195/9579194>`_.
+<https://stackoverflow.com/q/48957195/9579194>`_. Alternatively, you may try
+using `Podman <https://podman.io/docs/installation>`_.
 
 Missing ``Py_BUILD_CORE`` define when using internal headers
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
