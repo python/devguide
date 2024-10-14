@@ -552,6 +552,17 @@ Now that the configuration is in place, it remains to compile the project:
 
 * ``make regen-configure`` updates the :cpy-file:`configure` script.
 
+   The :cpy-file:`configure` script must be generated using a specific version
+   of ``autoconf``. To that end, the :cpy-file:`Tools/build/regen-configure.sh`
+   script which the ``regen-configure`` rule is based on either requires Docker
+   or Podman, the latter being assumed by default.
+
+   .. tip::
+
+      We recommend installing `Podman <https://podman.io/docs/installation>`_
+      instead of Docker since the former does not require a background service
+      and avoids creating files owned by the ``root`` user in some cases.
+
 * ``make regen-all`` is responsible for regenerating header files and
   invoking other scripts, such as :ref:`Argument Clinic <clinic>`.
   Execute this rule if you do not know which files should be updated.
@@ -590,37 +601,13 @@ by executing :cpy-file:`Tools/build/regen-configure.sh`:
    ./Tools/build/regen-configure.sh     # create an up-to-date 'configure'
    ./configure                          # create an up-to-date 'Makefile'
 
-``make regen-configure`` and missing permissions
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-Since this rule requires `Docker <https://docs.docker.com/desktop>`_ to be
-running, the following can be done on Linux platforms (``systemctl``-based):
-
-.. code-block:: shell
-
-   systemctl status docker          # is the Docker service running?
-   sudo systemctl start docker      # start it if it is not
-   sudo systemctl restart docker    # or restart it if the issue persists
+``make regen-configure`` and missing permissions with Docker
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 If Docker complains about missing permissions, this Stack Overflow post
 could be useful in solving the issue: `How to fix docker: permission denied
-<https://stackoverflow.com/q/48957195/9579194>`_.
-
-Once the Docker service is running, check that you have an `Ubuntu
-$CONFIGURE_UBUNTU_VERSION$ image <https://hub.docker.com/_/ubuntu>`_,
-or pull it if it is not case:
-
-.. code-block:: shell
-
-   # check for the Docker image presence
-   docker images ubuntu:$CONFIGURE_UBUNTU_VERSION$
-   # pull the Docker image if needed
-   docker image pull ubuntu:$CONFIGURE_UBUNTU_VERSION$
-
-.. tip::
-
-   If the issue persists, you may try `podman <https://podman.io/>`_.
-   The commands for listing or pulling an image are the same as ``docker``.
+<https://stackoverflow.com/q/48957195/9579194>`_. Alternatively, you may try
+using `Podman <https://podman.io/docs/installation>`_.
 
 Missing ``Py_BUILD_CORE`` define when using internal headers
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
