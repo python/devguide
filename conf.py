@@ -187,11 +187,11 @@ rst_prolog = """
     We welcome help with this!
 
 .. |purpose| replace::
-    See more info about the Contributor Guide in the discussion forum: `Refactoring the DevGuide`_.
-    Questions? Ask the `Docs Editorial Board`_.
+    The :ref:`contrib-plan` page has more details about the current state of this draft
+    and **how you can help**.  See more info about the Contributor Guide in the
+    discussion forum: `Refactoring the DevGuide`_.
 
 .. _Refactoring the DevGuide: https://discuss.python.org/t/refactoring-the-devguide-into-a-contribution-guide/63409
-.. _Docs Editorial Board: https://python.github.io/editorial-board/
 
 """
 
