@@ -638,7 +638,7 @@ some of CPython's modules (for example, ``zlib``).
             gcc gcc-c++ gdb lzma glibc-devel libstdc++-devel openssl-devel \
             readline-devel zlib-devel libffi-devel bzip2-devel xz-devel \
             sqlite sqlite-devel sqlite-libs libuuid-devel gdbm-libs perf \
-            expat expat-devel mpdecimal python3-pip
+            expat expat-devel mpdecimal python3-pip libnsl2-devel
 
 
    On **Debian**, **Ubuntu**, and other ``apt``-based systems, try to get the
@@ -674,7 +674,7 @@ some of CPython's modules (for example, ``zlib``).
       $ sudo apt-get install build-essential gdb lcov pkg-config \
             libbz2-dev libffi-dev libgdbm-dev libgdbm-compat-dev liblzma-dev \
             libncurses5-dev libreadline6-dev libsqlite3-dev libssl-dev \
-            lzma lzma-dev tk-dev uuid-dev zlib1g-dev libmpdec-dev
+            lzma lzma-dev tk-dev uuid-dev zlib1g-dev libmpdec-dev libnsl-dev
 
    Note that Debian 12 and Ubuntu 24.04 do not have the ``libmpdec-dev`` package.  You can safely
    remove it from the install list above and the Python build will use a bundled version.
