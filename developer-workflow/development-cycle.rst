@@ -151,8 +151,8 @@ Pre-alpha
 
 The branch is in this stage when no official release has been done since
 the latest final release.  There are no special restrictions placed on
-commits, although the usual advice applies (getting pull requests reviewed, avoiding
-breaking the buildbots).
+commits, although the usual advice applies (getting pull requests reviewed,
+avoiding breaking the buildbots).
 
 .. _alpha:
 
