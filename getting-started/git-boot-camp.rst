@@ -435,8 +435,8 @@ Solution:
 
 .. _git_pr:
 
-Downloading other's pull requests
----------------------------------
+Checking out others' pull requests
+----------------------------------
 
 Scenario:
 

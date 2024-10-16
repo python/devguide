@@ -242,8 +242,8 @@ should do to help ensure that your pull request is accepted.
 ``patchcheck``
 ==============
 
-``patchcheck`` is a simple automated checklist for pull requests that guides a developer
-through common checks. To run ``patchcheck``:
+``patchcheck`` is a simple automated checklist for changes in progress that
+guides a developer through common checks. To run ``patchcheck``:
 
 On *Unix* (including macOS)::
 
