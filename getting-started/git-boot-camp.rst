@@ -132,7 +132,7 @@ Enabling ``autocrlf`` on Windows
 
 The ``autocrlf`` option will fix automatically any Windows-specific line endings.
 This should be enabled on Windows, since the public repository has a hook which
-will reject all changesets having the wrong line endings::
+will reject all commits having the wrong line endings::
 
     $ git config --global core.autocrlf input
 

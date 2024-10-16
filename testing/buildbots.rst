@@ -16,7 +16,7 @@ will schedule a new build to be run as soon as possible.
 
 The build steps run by the buildbots are the following:
 
-* Check out the source tree for the changeset which triggered the build
+* Check out the source tree for the pull request which triggered the build
 * Compile Python
 * Run the test suite using :ref:`strenuous settings <strenuous_testing>`
 * Clean up the build tree
@@ -56,7 +56,7 @@ There are three ways of visualizing recent build results:
 * The Web interface for each branch at https://www.python.org/dev/buildbot/,
   where the so-called "waterfall" view presents a vertical rundown of recent
   builds for each builder.  When interested in one build, you'll have to
-  click on it to know which changesets it corresponds to.  Note that
+  click on it to know which commits it corresponds to.  Note that
   the buildbot web pages are often slow to load, be patient.
 
 * The command-line ``bbreport.py`` client, which you can get from
@@ -78,16 +78,16 @@ There are three ways of visualizing recent build results:
 If you like IRC, having an IRC client open to the #python-dev-notifs channel on
 irc.libera.chat is useful.  Any time a builder changes state (last build
 passed and this one didn't, or vice versa), a message is posted to the channel.
-Keeping an eye on the channel after pushing a changeset is a simple way to get
+Keeping an eye on the channel after pushing a commits is a simple way to get
 notified that there is something you should look in to.
 
 Some buildbots are much faster than others.  Over time, you will learn which
 ones produce the quickest results after a build, and which ones take the
 longest time.
 
-Also, when several changesets are pushed in a quick succession in the same
+Also, when several commits are pushed in a quick succession in the same
 branch, it often happens that a single build is scheduled for all these
-changesets.
+commits.
 
 Stability
 =========
