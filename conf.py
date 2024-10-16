@@ -171,6 +171,26 @@ todo_include_todos = True
 # sphinx-notfound-page
 notfound_urls_prefix = "/"
 
+# prolog and epilogs
+rst_prolog = """
+.. |draft| replace::
+    This is part of a **Draft** of the Python Contributor's Guide.
+    Text in square brackets are notes about content to fill in.
+    Currently, the devguide and this new Contributor's Guide co-exist in the
+    repo. We are using Sphinx include directives to demonstrate the re-organization.
+    The final Contributor's Guide will replace the devguide with content in only one
+    place.
+    We welcome help with this!
+
+.. |purpose| replace::
+    The :ref:`contrib-plan` page has more details about the current state of this draft
+    and **how you can help**.  See more info about the Contributor Guide in the
+    discussion forum: `Refactoring the DevGuide`_.
+
+.. _Refactoring the DevGuide: https://discuss.python.org/t/refactoring-the-devguide-into-a-contribution-guide/63409
+
+"""
+
 # sphinx.ext.extlinks
 # This config is a dictionary of external sites,
 # mapping unique short aliases to a base URL and a prefix.
