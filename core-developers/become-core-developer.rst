@@ -8,7 +8,7 @@ How to become a core developer
 What it takes
 =============
 
-When you have consistently contributed patches which meet quality standards
+When you have consistently made contributions which meet quality standards
 without requiring extensive rewrites prior to being committed,
 you may qualify for commit privileges and become a core developer of Python.
 You must also work well with other core developers (and people in general)

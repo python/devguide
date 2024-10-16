@@ -31,11 +31,11 @@ to enter the public source tree. Ask yourself the following questions:
 * **Do the checks on the pull request show that the test suite passes?**
    Make sure that all of the status checks are passing.
 
-* **Is the patch in a good state?**
-   Check :ref:`patch` and :ref:`helptriage` to review what is expected of
-   a patch.
+* **Is the pull request in a good state?**
+   Check :ref:`pull-request-lifecycle` and :ref:`helptriage` to review what
+   is expected of a pull request.
 
-* **Does the patch break backwards-compatibility without a strong reason?**
+* **Does the change break backwards-compatibility without a strong reason?**
    :ref:`Run the entire test suite <runtests>` to make sure that everything
    still passes. If there is a change to the semantics, then there needs to
    be a strong reason, because it will cause some peoples' code to break.
@@ -165,7 +165,7 @@ number since it is part of the file name. You can use
 entry::
 
    Fix warning message when :func:`os.chdir` fails inside
-   :func:`test.support.temp_cwd`. Patch by Chris Jerdonek.
+   :func:`test.support.temp_cwd`. Contributed by Chris Jerdonek.
 
 The inline Sphinx roles like ``:func:`` can be used help readers
 find more information. You can build HTML and verify that the
@@ -182,7 +182,7 @@ As a core developer, you have the ability to push changes to the official
 Python repositories, so you need to be careful with your workflow:
 
 * **You should not push new branches to the main repository.**  You can
-  still use them in the fork that you use for the development of patches.
+  still use them in the fork that you use for your own development.
   You can also push these branches to a separate public repository
   for maintenance work before it is integrated into the main repository.
 

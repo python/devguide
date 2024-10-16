@@ -356,7 +356,7 @@ Scenario:
   the upstream CPython repository.
 
 Please do not try to solve this by creating a pull request from
-``python:main`` to ``<username>:main`` as the authors of the patches will
+``python:main`` to ``<username>:main`` as the authors of the pull requests will
 get notified unnecessarily.
 
 Solution::
@@ -435,8 +435,8 @@ Solution:
 
 .. _git_pr:
 
-Downloading other's patches
----------------------------
+Downloading other's pull requests
+---------------------------------
 
 Scenario:
 

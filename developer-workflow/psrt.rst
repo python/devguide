@@ -68,24 +68,24 @@ severity, advisory text, and fixes.
   * Affected components and APIs. The module, function, class, or method must be specified so users can
     search their codebase for usage. For issues affecting the entire project, this can be omitted.
 
-  * Mitigations for the vulnerability beyond upgrading to a patched version, if applicable.
+  * Mitigations for the vulnerability beyond upgrading to a fixed version, if applicable.
 
   This can all be done within the GitHub Security Advisory UI for easier collaboration between reporter and coordinator.
 
-* The coordinator determines the fix approach and who will provide a patch.
-  Some reporters are willing to provide or collaborate to create a patch,
+* The coordinator determines the fix approach and who will provide a fix.
+  Some reporters are willing to provide or collaborate to create a fix,
   otherwise relevant core developers can be invited to collaborate by
   the coordinator.
 
   * For **Low** and **Medium** severity vulnerabilities it is acceptable
-    to develop a patch in public.
+    to develop a fix in public.
     The pull request must be marked with the ``security`` and ``release-blocker``
-    labels so that a release is not created without including the patch.
+    labels so that a release is not created without including the fix.
 
-  * For **High** and **Critical** severity vulnerabilities the patch must be
+  * For **High** and **Critical** severity vulnerabilities the fix must be
     developed privately using GitHub Security Advisories' "Private Forks" feature.
     Core developers can be added to the GitHub Security Advisory via "collaborators"
-    to work on the fix together. Once a patch is approved privately and tested,
+    to work on the fix together. Once a fix is approved privately and tested,
     a public issue and pull request can be created with
     the ``security`` and ``release-blocker`` labels.
 

@@ -22,7 +22,7 @@ community that maintains Python.  We welcome your contributions to Python!
 Quick reference
 ---------------
 
-Here are the basic steps needed to get set up and contribute a patch.
+Here are the basic steps needed to get set up and contribute a pull request.
 This is meant as a checklist, once you know the basics. For complete
 instructions please see the :ref:`setup guide <setup>`.
 

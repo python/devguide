@@ -36,7 +36,7 @@ You have a several options for this:
 
 If you have found general acceptance and usefulness for your code from people,
 you can open an issue on the `issue tracker`_ with the code attached as a
-:ref:`pull request <patch>`. If possible, also submit a
+:ref:`pull request <pullrequest>`. If possible, also submit a
 :ref:`contributor agreement <contributor_agreement>`.
 
 If a core developer decides that your code would be useful to the general
@@ -91,7 +91,7 @@ In order for a module to even be considered for inclusion into the stdlib, a
 couple of requirements must be met.
 
 The most basic is that the code must meet
-:ref:`standard patch requirements <patch>`. For code that has
+:ref:`standard pull request requirements <pullrequest>`. For code that has
 been developed outside the stdlib typically this means making sure the coding
 style guides are followed and that the proper tests have been written.
 
@@ -112,7 +112,7 @@ infrastructure (that is, the module is no longer directly maintained outside of
 Python). This prevents a divergence between the code that is included in the
 stdlib and that which is released outside the stdlib (typically done to provide
 the module to older versions of Python). It also removes the burden of forcing
-core developers to have to redirect bug reports or patches to an external issue
+core developers to have to redirect bug reports or changes to an external issue
 tracker and :abbr:`VCS (version control system)`.
 
 Someone involved with the development of the
