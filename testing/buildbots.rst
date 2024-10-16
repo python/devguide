@@ -16,7 +16,7 @@ will schedule a new build to be run as soon as possible.
 
 The build steps run by the buildbots are the following:
 
-* Check out the source tree for the pull request which triggered the build
+* Check out the source tree for the change which triggered the build
 * Compile Python
 * Run the test suite using :ref:`strenuous settings <strenuous_testing>`
 * Clean up the build tree
