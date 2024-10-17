@@ -243,8 +243,8 @@ should do to help ensure that your pull request is accepted.
 ``patchcheck``
 ==============
 
-``patchcheck`` is a simple automated patch checklist that guides a developer
-through the common patch generation checks. To run ``patchcheck``:
+``patchcheck`` is a simple automated checklist for changes in progress that
+guides a developer through common checks. To run ``patchcheck``:
 
 On *Unix* (including macOS)::
 
@@ -256,7 +256,7 @@ On *Windows* (after any successful build):
 
    .\python.bat Tools\patchcheck\patchcheck.py
 
-The automated patch checklist runs through:
+The automated checklist runs through:
 
 * Are there any whitespace problems in Python files?
   (using :cpy-file:`Tools/patchcheck/reindent.py`)
@@ -271,10 +271,10 @@ The automated patch checklist runs through:
 * Has ``configure`` been regenerated, if necessary?
 * Has ``pyconfig.h.in`` been regenerated, if necessary?
 
-The automated patch check doesn't actually *answer* all of these
+The automated checks don't actually *answer* all of these
 questions. Aside from the whitespace checks, the tool is
 a memory aid for the various elements that can go into
-making a complete patch.
+making a complete pull request.
 
 
 .. _good-commits:

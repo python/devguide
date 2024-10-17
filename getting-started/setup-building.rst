@@ -127,7 +127,7 @@ changes to Python code will be picked up by the interpreter for immediate
 use and testing.  (If you change C code, you will need to recompile the
 affected files as described below.)
 
-Patches for the documentation can be made from the same repository; see
+Changes for the documentation can be made from the same repository; see
 :ref:`documenting`.
 
 .. _install-pre-commit:
@@ -1033,7 +1033,7 @@ you'd prefer to use that directly.
 Create a CPython codespace
 --------------------------
 
-Here are the basic steps needed to contribute a patch using Codespaces.
+Here are the basic steps needed to contribute a pull request using Codespaces.
 You first need to navigate to the
 `CPython repo <https://github.com/python/cpython>`_ hosted on GitHub.
 

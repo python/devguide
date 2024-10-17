@@ -118,7 +118,7 @@ Commits to security branches are to be coordinated with the release manager
 for the corresponding feature version, as listed in the :ref:`branchstatus`.
 Merging of pull requests to security branches is restricted to release managers.
 Any release made from a security branch is source-only and done only when actual
-security patches have been applied to the branch. These releases have a
+security fixes have been applied to the branch. These releases have a
 **micro version** number greater than the last **bugfix** release.
 
 .. _eolbranch:
@@ -151,8 +151,8 @@ Pre-alpha
 
 The branch is in this stage when no official release has been done since
 the latest final release.  There are no special restrictions placed on
-commits, although the usual advice applies (getting patches reviewed, avoiding
-breaking the buildbots).
+commits, although the usual advice applies (getting pull requests reviewed,
+avoiding breaking the buildbots).
 
 .. _alpha:
 

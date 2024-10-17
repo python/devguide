@@ -279,11 +279,11 @@ Goals of this page
 
 The `issue metrics`_ automatically collected by the CPython issue tracker
 strongly suggest that the current core development process is bottlenecked on
-core developer time - this is most clearly indicated in the first metrics graph,
-which shows both the number of open issues and the number of patches awaiting
+core developer time. This is most clearly indicated in the first metrics graph,
+which shows both the number of open issues and the number of pull requests awaiting
 review growing steadily over time, despite CPython being one of the most
 active open source projects in the world. This bottleneck then impacts not only
-resolving open issues and applying submitted patches, but also the process of
+resolving open issues and accepting submitted pull requests, but also the process of
 identifying, nominating and mentoring new core developers.
 
 The core commit statistics monitored by sites like `OpenHub`_ provide a good

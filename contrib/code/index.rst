@@ -9,7 +9,7 @@ Code contributions
    |purpose|
 
 * Code setup and building (more complex stuff, delta from basic setup above)
-* More git bootcamp (patches, etc)
+* More Git bootcamp (pull requests, etc)
 * Lifecycle of a code pull request
 * Development workflow (from devguide)
 * Testing and buildbots (from devguide)
