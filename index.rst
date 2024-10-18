@@ -1,3 +1,5 @@
+.. _devguide-main:
+
 ========================
 Python Developer's Guide
 ========================
