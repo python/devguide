@@ -1,8 +1,8 @@
 .. _contrib-plan:
 
-================================
-Plan for the Contributor's Guide
-================================
+==================================
+[Plan for the Contributor's Guide]
+==================================
 
 .. important::
 
