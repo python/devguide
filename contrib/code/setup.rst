@@ -1,5 +1,5 @@
 ==================
-Setup and Building
+Setup and building
 ==================
 
 .. important::
