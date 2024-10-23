@@ -22,6 +22,7 @@ migrated into the Python repo.]
 
    setup
    git
+   pull-request-lifecycle
    developer-workflow
    testing
    development-tools

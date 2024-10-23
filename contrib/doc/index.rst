@@ -9,10 +9,19 @@ Documentation contributions
    |purpose|
 
 
-* Lifecycle of a docs pull request
-* (pull in Documentation sections from devguide)
-* Rst/Sphinx bootcamp
-* Editorial Style Guide
-* Translation
-   - How to add a new language
-   - Tools and workflow
+[The main page for documentation contributors.]
+
+[We'll include docs-focused content from the :ref:`main devguide page <devguide-main>`: Quick
+reference, Quick links, and so on.]
+
+
+.. toctree::
+   :maxdepth: 5
+
+   start-documenting
+   help-documenting
+   style-guide
+   markup
+   pull-request-lifecycle
+   translating
+   devguide
