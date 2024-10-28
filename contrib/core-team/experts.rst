@@ -8,4 +8,4 @@
 [This is the existing core developers :ref:`experts` page from the devguide.  We'll
 adjust "core developer" to "core team" where appropriate.]
 
-.. include:: ../../../core-developers/experts.rst
+.. include:: ../../core-developers/experts.rst
