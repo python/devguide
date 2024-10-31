@@ -106,9 +106,11 @@ participating in the CPython core development process:
    * Personal site: `Curious Efficiency <https://www.curiousefficiency.org/>`_
    * `Extended bio <https://www.curiousefficiency.org/pages/about>`__
    * Python Software Foundation (Fellow, Packaging Working Group)
+   * Element Labs/LM Studio (Python deployment engineer)
 
    Alyssa began using Python as a testing and prototyping language while working
-   for Boeing Defence Australia, and continues to use it for that purpose today.
+   for Boeing Defence Australia. She now primarily uses it as the lead project
+   maintainer for the open source ``venvstacks`` Python deployment utility.
 
    As a core developer, she is primarily interested in helping to ensure Python's
    continued suitability for educational, testing and data analysis use cases,
