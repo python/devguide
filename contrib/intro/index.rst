@@ -32,7 +32,7 @@ Anyone will find the following guides useful:
 * `Building Welcoming Communities <https://opensource.guide/building-community/>`_
 
 
-Healthy Collaboration
+Healthy collaboration
 =====================
 
 [Importance of healthy inclusive collaboration]
@@ -41,13 +41,13 @@ Healthy Collaboration
 
 [We respect the individual skills people bring to the project and strive to create and maintain a culture of inclusion.]
 
-About this Guide
+About this guide
 ================
 
-Types of Contribution
+Types of contribution
 =====================
 
 [Pathways for contributors]
 
-Helping with this Guide
+Helping with this guide
 =======================

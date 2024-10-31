@@ -105,12 +105,9 @@ major section at the top of each column.]*
        * :ref:`gitbootcamp`
        * :ref:`devcycle`
 
-[The contents had been listed below here. It was very long, and I don't think
-it was helpful.  The left sidebar has the contents.]
 
 .. toctree::
-   :maxdepth: 1
-   :hidden:
+   :maxdepth: 3
 
    contrib-plan
    intro/index
