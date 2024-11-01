@@ -7,4 +7,4 @@ sphinx-notfound-page>=1.0.0
 sphinx_copybutton>=0.3.3
 sphinxext-opengraph>=0.7.1
 sphinxext-rediraffe
-Sphinx~=8.0.2
+Sphinx~=8.1.3
