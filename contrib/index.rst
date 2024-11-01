@@ -11,9 +11,6 @@ Python Contributor's Guide (draft)
       activateTab(getOS());
     });
     </script>
-    <style>
-      table.docutils td { vertical-align: top; }
-    </style>
 
 
 .. important::
@@ -71,12 +68,10 @@ major section at the top of each column.]*
    :widths: 10 10 10
    :header-rows: 1
 
-   * - Triaging
-     - Documentation
-     - Code
+   * - :ref:`Triaging <c_triage>`
+     - :ref:`Documentation <c_docs>`
+     - :ref:`Code <c_code>`
    * -
-       :ref:`c_triage`
-
        * :ref:`tracker`
        * :ref:`triaging`
        * :ref:`helptriage`
@@ -85,8 +80,6 @@ major section at the top of each column.]*
        * :ref:`gh-faq`
        * :ref:`triage-team`
      -
-       :ref:`c_docs`
-
        * :ref:`docquality`
        * :ref:`documenting`
        * :ref:`style-guide`
@@ -94,8 +87,6 @@ major section at the top of each column.]*
        * :ref:`translating`
        * :ref:`devguide`
      -
-       :ref:`c_code`
-
        * :ref:`setup`
        * :ref:`help`
        * :ref:`pullrequest`
