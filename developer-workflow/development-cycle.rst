@@ -355,7 +355,7 @@ Current administrators
 | Mariatta Wijaya   | Maintainer of bedevere, blurb_it and miss-islington      | Mariatta        |
 +-------------------+----------------------------------------------------------+-----------------+
 | Seth Larson       | PSF Security Developer-in-Residence                      | sethmlarson     |
-+-------------------+----------------------------------------------------------------------------+
++-------------------+----------------------------------------------------------+-----------------+
 
 Repository release manager role policy
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
