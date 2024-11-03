@@ -1,3 +1,5 @@
+.. _c_project:
+
 ===================
 The CPython project
 ===================
@@ -19,7 +21,8 @@ moving parts, who is involved, how do they interact?]
 
    conduct
    roles
-   core-team/index
    governance
+   generative-ai.rst
    github
    channels
+   outreach

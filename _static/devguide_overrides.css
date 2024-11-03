@@ -94,3 +94,9 @@
   font-size: var(--font-size--small--2);
   padding: .1em .2em;
 }
+
+/* Table cells should always top-align */
+
+table.docutils td {
+  vertical-align: top;
+}

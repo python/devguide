@@ -12,5 +12,5 @@ adjust "core developer" to "core team" where appropriate.]
 How to join the core team
 =========================
 
-.. include:: ../../../core-developers/become-core-developer.rst
+.. include:: ../../core-developers/become-core-developer.rst
    :start-line: 7

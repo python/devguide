@@ -1,3 +1,5 @@
+.. _c_gettingstarted:
+
 ===============
 Getting started
 ===============
