@@ -96,6 +96,10 @@ major section at the top of each column.]*
        * :ref:`gitbootcamp`
        * :ref:`devcycle`
 
+Core team members will find guidance in the :ref:`c_coreteam` section.
+
+Contents
+========
 
 .. toctree::
    :maxdepth: 3
@@ -105,8 +109,8 @@ major section at the top of each column.]*
    project/index
    get-started/index
    triage/index
-   code/index
    doc/index
+   code/index
    core-team/index
    user-success
    security
