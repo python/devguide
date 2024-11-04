@@ -784,9 +784,6 @@ some of CPython's modules (for example, ``zlib``).
    to the `macOS README
    <https://github.com/python/cpython/blob/main/Mac/README.rst>`_.
 
-   .. _clang: https://clang.llvm.org/
-   .. _ccache: https://ccache.dev/
-
    .. note:: While you need a C compiler to build CPython, you don't need any
       knowledge of the C language to contribute!  Vast areas of CPython are
       written completely in Python: as of this writing, CPython contains slightly
@@ -1001,8 +998,6 @@ every rule.
      Various tools that are (or have been) used to maintain Python.
 
 
-.. _issue tracker: https://github.com/python/cpython/issues
-
 
 .. _using-codespaces:
 
@@ -1071,3 +1066,6 @@ power may be a much higher spec than your local machine which can be helpful.
 
 
 .. TODO: add docker instructions
+
+
+.. include:: ../links.rst
