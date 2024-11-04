@@ -11,4 +11,3 @@ Development tools
    gdb
    clang
    warnings
-   clinic-directive-reference
