@@ -52,7 +52,6 @@ these common sections:
 
 * :ref:`c_intro`
 * :ref:`c_project`
-* :ref:`c_gettingstarted`
 
 Then choose a path based on your type of activity:
 
@@ -107,13 +106,13 @@ Contents
    contrib-plan
    intro/index
    project/index
-   get-started/index
    triage/index
    doc/index
    code/index
    core-team/index
    user-success
    security
+   workflows/index
 
 
 .. _Python: https://www.python.org/

@@ -41,7 +41,7 @@ Component labels
 ================
 
 These labels are mostly used to specify which :ref:`part of the codebase
-<build-directory-structure>` is affected by the issue/PR:
+<build_directory_structure>` is affected by the issue/PR:
 
 * :gh-label:`stdlib`: for standard library modules in the :cpy-file:`Lib`
   directory (written in Python).
