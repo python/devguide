@@ -2450,8 +2450,8 @@ destination Directive
 The ``destination`` directive allows for operations on output destinations.
 
 **Parameters**:
-   - The ``destination`` directive takes in two arguments ``(destination [arg1] [arg2])``.
-   - Where ``arg1`` is the ``name`` of the output destination and ``arg2`` is the ``command`` on the output destination.
+- The ``destination`` directive takes in two arguments ``(destination [arg1] [arg2])``.
+- Where ``arg1`` is the ``name`` of the output destination and ``arg2`` is the ``command`` on the output destination.
 
 .. code-block:: none
 
