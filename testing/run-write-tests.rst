@@ -86,10 +86,16 @@ if the failures are transient or consistent.
 The ``-uall`` flag allows the use of all available
 resources so as to not skip tests requiring, e.g., Internet access.
 
-To check for reference leaks (only needed if you modified C code), use the
-``-R`` flag.  For example, ``-R 3:2`` will first run the test 3 times to settle
-down the reference count, and then run it 2 more times to verify if there are
-any leaks.
+To check for reference leaks (only needed if you modified C code), 
+you can enable reference leak checking during testing using the ``-R`` flag.  
+For example, using the command::
+
+    python -m test <test_name> -R <warmups>:<repeats>
+
+This enables the refleak checker option, allowing you to perform warm-up runs
+to stabilize reference counts followed by additional runs to verify any leaks.
+For instance, ``-R 3:2`` will first run the test 3 times to settle down the
+reference count, and then run it 2 more times to check for leaks.
 
 You can also execute the ``Tools/scripts/run_tests.py`` script as  found in a
 CPython checkout. The script tries to balance speed with thoroughness. But if
