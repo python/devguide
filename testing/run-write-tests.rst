@@ -86,8 +86,8 @@ if the failures are transient or consistent.
 The ``-uall`` flag allows the use of all available
 resources so as to not skip tests requiring, e.g., Internet access.
 
-To check for reference leaks (only needed if you modified C code), 
-you can enable reference leak checking during testing using the ``-R`` flag.  
+To check for reference leaks (only needed if you modified C code),
+you can enable reference leak checking during testing using the ``-R`` flag.
 For example, using the command::
 
     python -m test <test_name> -R <warmups>:<repeats>
