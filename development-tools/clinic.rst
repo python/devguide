@@ -2469,11 +2469,11 @@ This creates a new destination with name ``<name>`` and type ``<type>``.
 
 There are five destination types:
 
-   - ``suppress``: Discards the output.
-   - ``block``: Writes to the current block.
-   - ``buffer``: A simple text buffer.
-   - ``file``: A text file (requires a filename template).
-   - ``two-pass``: A two-pass buffer.
+- ``suppress``: Discards the output.
+- ``block``: Writes to the current block.
+- ``buffer``: A simple text buffer.
+- ``file``: A text file (requires a filename template).
+- ``two-pass``: A two-pass buffer.
 
 
 The ``clear`` subcommand works like this:
