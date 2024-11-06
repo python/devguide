@@ -90,6 +90,14 @@ To check for reference leaks (only needed if you modified C code),
 you can enable reference leak checking during testing using the ``-R`` flag.
 For example, using the command::
 
+    python -m test <test_name> -R :
+
+This default setting performs a few initial warm-up runs to stabilize the reference count,
+followed by additional runs to check for leaks.
+
+If you want more control over the number of runs, you can specify ``warmups`` and ``repeats`` explicitly
+For example::
+
     python -m test <test_name> -R <warmups>:<repeats>
 
 This enables the refleak checker option, allowing you to perform warm-up runs
