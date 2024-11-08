@@ -8,7 +8,7 @@ This document outlines the practical steps required for deprecating a feature, s
 ------------------------------------
 Before proposing deprecation:
 
-* **Assess Usage**: Use tools like GitHub search, `grep`, or PyPI statistics to determine the extent and context of usage.
+* **Assess Usage**: Use tools like GitHub search, ``grep``, or ``PyPI statistics`` to determine the extent and context of usage.
 * **Consider Alternatives**: Ensure there are suitable replacements or upgrades available.
 
 2. Open an Issue
