@@ -4,8 +4,9 @@ Workflow for Deprecating Features in CPython
 Deprecation in CPython is a multi-step process that involves notifying users about deprecated functionality, planning its eventual removal, and providing adequate guidance for migration.
 This document outlines the practical steps required for deprecating a feature, supplementing the policy guidelines defined in :pep:`387`.
 
-1. Identify Features for Deprecation
-------------------------------------
+Check prevalence and consider alternatives
+------------------------------------------
+
 Before proposing deprecation:
 
 * **Assess Usage**: Use tools like GitHub search, ``grep``, or ``PyPI statistics`` to determine the extent and context of usage.
