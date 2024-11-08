@@ -12,8 +12,9 @@ Before proposing deprecation:
 * **Assess Usage**: Use tools like GitHub search, ``grep``, or ``PyPI statistics`` to determine the extent and context of usage.
 * **Consider Alternatives**: Ensure there are suitable replacements or upgrades available.
 
-2. Open an Issue
-----------------
+Open an issue
+-------------
+
 Start by creating a GitHub issue to propose the deprecation:
 
 * Clearly describe the feature and why deprecation is needed.
