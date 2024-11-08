@@ -53,9 +53,10 @@ Track deprecations
 * **Monitor Usage**: After the release, observe community feedback. Deprecations may remain longer than the minimum period if low maintenance overhead is expected or usage is widespread.
 * **Timeline Review**: Use GitHub milestones or specific deprecation tracking issues to manage timelines.
 
-5. Plan Removal
----------------
-After the deprecation period (typically 2+ releases):
+Plan removal
+------------
+
+After the deprecation period (not less than two releases):
 
 * Open a new issue for removal.
 * Follow removal steps:
