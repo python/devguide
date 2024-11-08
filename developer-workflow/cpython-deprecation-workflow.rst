@@ -20,8 +20,9 @@ Start by creating a GitHub issue to propose the deprecation:
 * Clearly describe the feature and why deprecation is needed.
 * Encourage community feedback and suggestions.
 
-3. Deprecation Implementation
------------------------------
+Deprecation implementation
+--------------------------
+
 Once approved:
 
 * **Raise a Warning**: Use :func:`warnings.warn` with :exc:`DeprecationWarning` for typical cases.
