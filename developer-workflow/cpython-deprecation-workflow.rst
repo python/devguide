@@ -64,8 +64,9 @@ After the deprecation period (typically 2+ releases):
   * Update documentation, removing references to the deprecated feature.
   * Include the removal in the "What's New" for the release.
 
-6. PendingDeprecationWarning Workflow
--------------------------------------
+``PendingDeprecationWarning`` workflow
+--------------------------------------
+
 For gradual deprecations:
 
 * **Use Case**: When you want to signal future deprecation but not yet alert end-users.
