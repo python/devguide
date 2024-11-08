@@ -9,8 +9,11 @@ Check prevalence and consider alternatives
 
 Before proposing deprecation:
 
-* **Assess Usage**: Use tools like GitHub search, ``grep``, or ``PyPI statistics`` to determine the extent and context of usage.
+* **Assess Usage**: Use tools like GitHub search, `grep`_, or `PyPI statistics`_ to determine the extent and context of usage.
 * **Consider Alternatives**: Ensure there are suitable replacements or upgrades available.
+
+.. _grep: https://www.gnu.org/software/grep/
+.. _PyPI statistics: https://pypistats.org/
 
 Open an issue
 -------------
@@ -35,7 +38,7 @@ Once approved:
   .. code-block:: python
 
      import warnings
-     warnings.warn(
+     warnings._deprecated(
          "Feature X is deprecated and will be removed in Python 3.Y",
          DeprecationWarning,
          stacklevel=2
