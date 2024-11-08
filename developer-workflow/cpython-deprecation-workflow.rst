@@ -47,8 +47,9 @@ Once approved:
   * Include details in the "Porting" section of the "What's New" documentation.
   * Update the ``pending-removal-in-{version}.rst`` file with the deprecation timeline.
 
-4. Track Deprecations
----------------------
+Track deprecations
+------------------
+
 * **Monitor Usage**: After the release, observe community feedback. Deprecations may remain longer than the minimum period if low maintenance overhead is expected or usage is widespread.
 * **Timeline Review**: Use GitHub milestones or specific deprecation tracking issues to manage timelines.
 
