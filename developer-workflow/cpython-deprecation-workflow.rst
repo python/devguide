@@ -80,7 +80,8 @@ For gradual deprecations:
   * Mention the pending deprecation in “What’s New.”
   * No ``pending-removal-in`` entry is needed during this stage.
 
-7. References and Templates
----------------------------
-* Use ``.. deprecated::`` and ``.. removed::`` Sphinx roles for documentation.
+References and templates
+------------------------
+
+* Use the ``.. deprecated-removed::`` roles for documentation.
 * Add ``See Also`` links to :pep:`387` and DevGuide for policy and process details.
