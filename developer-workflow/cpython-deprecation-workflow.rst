@@ -28,7 +28,7 @@ Deprecation implementation
 
 Once approved:
 
-* **Raise a Warning**: Use :func:`warnings.warn` with :exc:`DeprecationWarning` for typical cases.
+* **Raise a Warning**: Use ``warnings._deprecated`` with :exc:`DeprecationWarning` for typical cases.
   If the feature is in its early deprecation phase:
 
   * Use :exc:`PendingDeprecationWarning` initially, which transitions to :exc:`DeprecationWarning` after a suitable period.
