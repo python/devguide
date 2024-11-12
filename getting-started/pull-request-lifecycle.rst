@@ -238,6 +238,25 @@ should do to help ensure that your pull request is accepted.
 #. Proper :ref:`documentation <documenting>` additions/changes should be included.
 
 
+Copyrights
+==========
+
+Copyright notices are optional and informational, as international treaties
+have abolished the requirement for them to protect copyrights.
+However, they still serve an informative role.
+
+According to the US Copyright Office, valid copyright notices include the year
+of first publication of the work. For example:
+
+   Copyright (C) 2001 Python Software Foundation.
+
+Updating notices to add subsequent years is unnecessary and such PRs will be
+closed.
+
+See also `python/cpython#126133
+<https://github.com/python/cpython/issues/126133#issuecomment-2460824052>`__.
+
+
 .. _patchcheck:
 
 ``patchcheck``
