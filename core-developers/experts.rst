@@ -56,7 +56,7 @@ __future__
 __main__              gvanrossum, ncoghlan
 _thread
 abc
-argparse
+argparse              savannahostrowski*
 array
 ast                   benjaminp, pablogsal, isidentical, JelleZijlstra, eclips4
 asyncio               1st1, asvetlov, gvanrossum, graingert, kumaraditya303, willingc
@@ -335,7 +335,7 @@ GUI
 i18n                malemburg, merwok
 import machinery    brettcannon, ncoghlan, ericsnowcurrently
 io                  benjaminp, stutzbach^, gpshead
-JIT                 brandtbucher*
+JIT                 brandtbucher*, savannahostrowski*
 locale              malemburg
 mathematics         malemburg, stutzbach^, rhettinger
 memory management   tim-one, malemburg, Yhg1s
