@@ -109,8 +109,8 @@ ftplib                giampaolo*
 functools             rhettinger*
 gc                    pitrou, pablogsal
 getopt
-getpass
 getpath               FFY00
+getpass
 gettext
 glob
 grp
