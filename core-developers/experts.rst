@@ -109,6 +109,7 @@ ftplib                giampaolo*
 functools             rhettinger*
 gc                    pitrou, pablogsal
 getopt
+getpath               FFY00
 getpass
 gettext
 glob
@@ -234,7 +235,7 @@ unittest.mock         voidspace*
 urllib                orsenthil
 uu
 uuid
-venv                  vsajip
+venv                  vsajip, FFY00
 warnings
 wave
 weakref               freddrake
@@ -333,7 +334,8 @@ frozen modules      ericsnowcurrently, gvanrossum, kumaraditya303
 f-strings           ericvsmith*
 GUI
 i18n                malemburg, merwok
-import machinery    brettcannon, ncoghlan, ericsnowcurrently
+import machinery    brettcannon, ncoghlan, ericsnowcurrently, FFY00
+initialization      FFY00
 io                  benjaminp, stutzbach^, gpshead
 JIT                 brandtbucher*, savannahostrowski*
 locale              malemburg
