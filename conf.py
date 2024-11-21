@@ -1,5 +1,3 @@
-import time
-
 extensions = [
     'notfound.extension',
     'sphinx.ext.extlinks',
@@ -16,7 +14,7 @@ master_doc = 'index'
 
 # General information about the project.
 project = "Python Developer's Guide"
-copyright = f'2011-{time.strftime("%Y")}, Python Software Foundation'
+copyright = '2011 Python Software Foundation'
 
 # List of patterns, relative to source directory, that match files and
 # directories to ignore when looking for source files.
