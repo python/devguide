@@ -1,4 +1,9 @@
-.. _versions:
+.. _versions:Name: Python
+Id: ms-python.python
+Description: Python language support with extension access points for IntelliSense (Pylance), Debugging (Python Debugger), linting, formatting, refactoring, unit tests, and more.
+Version: 2024.20.0
+Publisher: ms-python
+VS Marketplace Link: https://open-vsx.org/vscode/item?itemName=ms-python.python
 .. _branchstatus:
 
 =========================
