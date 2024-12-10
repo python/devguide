@@ -223,25 +223,23 @@ participating in the CPython core development process:
 
 .. topic:: Barry Warsaw (United States)
 
-   * `LinkedIn: <https://www.linkedin.com/in/barry-warsaw/>`_ (Senior Staff
-     Software Engineer - Python Foundation team)
+   * NVIDIA, Principal System Software Engineer, Open Source Python Ecosystem
    * Personal site: `barry.warsaw.us <https://barry.warsaw.us/>`_
    * Blog: `We Fear Change <https://www.wefearchange.org/>`_
+   * `LinkedIn <https://www.linkedin.com/in/barry-warsaw/>`_
+   * `Bluesky <https://bsky.app/profile/pumpichank.bsky.social>`_
    * Email address: barry@python.org
    * Python Software Foundation (Fellow)
 
    Barry has been working in, with, and on Python since 1994.  He attended the
-   first Python workshop at NBS (now `NIST <https://www.nist.gov/>`_) in
-   Gaithersburg, MD in 1994, where he met Guido and several other early Python
-   adopters.  Barry subsequently worked with Guido for 8 years while at `CNRI
-   <http://cnri.reston.va.us/>`_.  From 2007 until 2017, Barry worked for
-   `Canonical <https://canonical.com/>`_, corporate sponsor of `Ubuntu
-   <https://ubuntu.com/>`_ Linux, primarily on the Python ecosystem, and
-   is both an Ubuntu and a `Debian <https://www.debian.org/>`_ uploading
-   developer.  Barry has served as Python's postmaster, webmaster, release
-   manager, Language Summit co-chair, `Jython <https://www.jython.org/>`_
-   project leader, `GNU Mailman <https://www.list.org/>`_ project leader, and
-   probably lots of other things he shouldn't admit to.
+   first Python workshop at `NIST <https://www.nist.gov/>`_ in Gaithersburg,
+   MD in 1994, where he met Guido and several other early Python adopters.
+   Barry subsequently worked with Guido for 8 years while at `CNRI
+   <http://cnri.reston.va.us/>`_.  Barry has served as Python's postmaster,
+   webmaster, release manager, Language Summit co-chair, `Jython
+   <https://www.jython.org/>`_ project leader, `GNU Mailman
+   <https://www.list.org/>`_ project leader, and Python Steering Council
+   member in 2019, 2020, 2021, 2024, and 2025.
 
 .. topic:: Eric Snow (United States)
 
