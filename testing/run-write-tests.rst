@@ -95,13 +95,10 @@ For example, using the command::
 This default setting performs a few initial warm-up runs to stabilize the reference count,
 followed by additional runs to check for leaks.
 
-If you want more control over the number of runs, you can specify ``warmups`` and ``repeats`` explicitly
-For example::
+If you want more control over the number of runs, you can specify ``warmups`` and ``repeats`` explicitly::
 
     python -m test <test_name> -R <warmups>:<repeats>
 
-This enables the refleak checker option, allowing you to perform warm-up runs
-to stabilize reference counts followed by additional runs to verify any leaks.
 For instance, ``-R 3:2`` will first run the test 3 times to settle down the
 reference count, and then run it 2 more times to check for leaks.
 
