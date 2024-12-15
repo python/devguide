@@ -30,9 +30,6 @@ You have a several options for this:
 * Open a new thread in the `Ideas Discourse category`_
   to gather feedback directly from the Python core developers and community.
 * Write a blog post about the code, which may also help gather useful feedback.
-* Post it to the `Python Cookbook`_.
-  Based on feedback and reviews of the recipe,
-  you can see if others find the functionality as useful as you do.
 
 If you have found general acceptance and usefulness for your code from people,
 you can open an issue on the `issue tracker`_ with the code attached as a
@@ -47,7 +44,6 @@ for it you at least can know that others will come across it who may find it
 useful.
 
 .. _Ideas Discourse category: https://discuss.python.org/c/ideas/6
-.. _Python Cookbook: https://code.activestate.com/recipes/langs/python/
 
 
 Adding a new module
