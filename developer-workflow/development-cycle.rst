@@ -370,6 +370,30 @@ administrators) to merge changes to that branch.
 Multi-Factor Authentication must be enabled by the user in order to retain
 access as a Release Manager of the branch.
 
+PyPI organization policy
+^^^^^^^^^^^^^^^^^^^^^^^^
+
+The Python core team owns the :pypi-org:`cpython` and :pypi-org:`python`
+organizations on PyPI for publishing packages.
+The main benefits of adding packages to these organizations:
+
+* Visibility: we can see our packages under a PyPI org page
+* Maintainability: we can share granular PyPI access to improve the bus factor
+
+The general policy on which organization to use:
+
+* :pypi-org:`cpython`:
+  for development tools that are tied fairly closely to CPython development.
+  For example, :pypi:`blurb` and :pypi:`cherry-picker`.
+  Users generally shouldn’t have to care except for developing CPython itself
+  (although that doesn’t mean the tools necessarily have to be unusable for
+  anyone else).
+* :pypi-org:`python`:
+  for general-audience projects that are maintained by the Python core team.
+  For example, :pypi:`pyperformance`, :pypi:`python-docs-theme` and
+  :pypi:`tzdata`.
+
+
 Governance
 ----------
 
