@@ -200,6 +200,7 @@ extlinks = {
     "github": ("https://github.com/%s", "%s"),
     "github-user": ("https://github.com/%s", "@%s"),
     "pypi": ("https://pypi.org/project/%s/", "%s"),
+    "pypi-org": ("https://pypi.org/org/%s/", "%s"),
 }
 
 # sphinxext-opengraph config
