@@ -363,9 +363,9 @@ Repository release manager role policy
 Release Managers for :ref:`in-development <indevbranch>`, :ref:`maintenance
 <maintbranch>`, and :ref:`security mode <secbranch>` Python releases are
 granted Administrator privileges on the repository. Once a release branch has
-entered :ref:`end-of-life <eolbranch>`, the Release Manager for that branch is
-removed as an Administrator and granted sole privileges (out side of repository
-administrators) to merge changes to that branch.
+entered :ref:`end-of-life <eolbranch>`, the Release Manager for that branch
+creates a final tag and deletes the branch. After this, they are
+removed as an Administrator.
 
 Multi-Factor Authentication must be enabled by the user in order to retain
 access as a Release Manager of the branch.
