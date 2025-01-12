@@ -115,9 +115,9 @@ gettext
 glob
 grp
 gzip
-hashlib               tiran, gpshead*
+hashlib               tiran, gpshead*, picnixz
 heapq                 rhettinger*, stutzbach^
-hmac                  tiran, gpshead*
+hmac                  tiran, gpshead*, picnixz
 html                  ezio-melotti*
 http
 idlelib               kbkaiser (inactive), terryjreedy*, serwy (inactive),
@@ -320,7 +320,7 @@ buildbots           zware, pablogsal
 bytecode            benjaminp, 1st1, markshannon, brandtbucher, carljm, iritkatriel
 context managers    ncoghlan
 core workflow       Mariatta, ezio-melotti, hugovk, AA-Turner
-cryptography        gpshead, dstufft
+cryptography        gpshead, dstufft, picnixz
 data formats
 database            malemburg
 devguide            merwok, ezio-melotti, willingc, Mariatta, hugovk,
