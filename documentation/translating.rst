@@ -154,9 +154,9 @@ How to get help
 ===============
 
 Discussions about translations occur on the Python Docs Discord
-#translations channel, `translation mailing list <translation_ml_>`_,
-and there's a `Libera.Chat IRC <https://libera.chat/>`_ channel,
-``#python-doc``.
+`#translations channel <https://discord.gg/h3qDwgyzga>`_, `translation
+mailing list <translation_ml_>`_, and there's a `Libera.Chat IRC
+<https://libera.chat/>`_ channel, ``#python-doc``.
 
 
 Translation FAQ
