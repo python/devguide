@@ -153,7 +153,8 @@ Here are the essential points of :PEP:`545`:
 How to get help
 ===============
 
-Discussions about translations occur on the `translation mailing list <translation_ml_>`_,
+Discussions about translations occur on the Python Docs Discord
+#translations channel, `translation mailing list <translation_ml_>`_,
 and there's a `Libera.Chat IRC <https://libera.chat/>`_ channel,
 ``#python-doc``.
 
