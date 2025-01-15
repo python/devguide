@@ -23,7 +23,7 @@ details.
    * - Arabic (ar)
      - Abdur-Rahmaan Janhangeer (:github-user:`Abdur-rahmaanJ`)
      - :github:`GitHub <Abdur-rahmaanJ/python-docs-ar>`
-   * - Indian Bengali (bn_IN)
+   * - Bengali (bn_IN)
      - Kushal Das (:github-user:`Kushal997-das`)
      - :github:`GitHub <python/python-docs-bn-in>`
    * - `French (fr) <https://docs.python.org/fr/>`__
@@ -34,7 +34,7 @@ details.
        Fanis Petkos (:github-user:`thepetk`),
        Panagiotis Skias (:github-user:`skpanagiotis`)
      - :github:`GitHub <pygreece/python-docs-gr>`
-   * - Indian Hindi (hi_IN)
+   * - Hindi (hi_IN)
      - Sanyam Khurana (:github-user:`CuriousLearner`)
      - :github:`GitHub <CuriousLearner/python-docs-hi-in>`
    * - Hungarian (hu)
