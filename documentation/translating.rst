@@ -127,7 +127,7 @@ The important steps look like this:
   PR or by asking on the `translation mailing list <translation_ml_>`_.
 - When ``bugs.html``, ``tutorial``, and ``library/functions`` are 100%
   completed, ask on the `translation mailing list <translation_ml_>`_ for
-  your language to be added in the language picker on docs.python.org.
+  your language to be added in the language switcher on docs.python.org.
 
 
 PEP 545 summary
@@ -167,12 +167,12 @@ Translation FAQ
 Which version of the Python documentation should be translated?
 ---------------------------------------------------------------
 
-Consensus is to work on current stable. You can then propagate your
+Consensus is to work on the current stable version. You can then propagate your
 translation from one branch to another using :pypi:`pomerge`.
 
 
-Are there some tools to help in managing the repo?
---------------------------------------------------
+Are there tools to help in managing the repo?
+---------------------------------------------
 
 Here's what we're using:
 
