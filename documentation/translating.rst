@@ -72,7 +72,7 @@ details.
    * - Portuguese (pt)
      - Gustavo Toffo
      -
-   * - `Portuguese as spoken in Brasil (pt-br) <https://docs.python.org/pt-br/>`__
+   * - `Brasilian Portuguese (pt-br) <https://docs.python.org/pt-br/>`__
      - Marco Rougeth
      - :github:`GitHub <python/python-docs-pt-br>`,
        `wiki <https://python.org.br/traducao/>`__,
