@@ -14,7 +14,7 @@ master_doc = 'index'
 
 # General information about the project.
 project = "Python Developer's Guide"
-copyright = '2011 Python Software Foundation'
+copyright = '2011-2025, Python Software Foundation'
 
 # List of patterns, relative to source directory, that match files and
 # directories to ignore when looking for source files.
