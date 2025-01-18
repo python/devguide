@@ -60,6 +60,12 @@ are granted through these steps:
      were in the form of a separate post on the already open topic with
      the poll.
 
+Getting a python.org Email Address
+----------------------------------
+
+Members of the core team can get an email address on the python.org domain. For more details, please refer to the `PSF Board Policies on Email Addresses <https://www.python.org/psf/records/board/policies/email/>`_.
+
+
 Poll template
 =============
 
@@ -97,6 +103,7 @@ The important options in the poll builder set to get this result:
       }
     }
     </script>
+
 
 .. _Code of Conduct: https://policies.python.org/python.org/code-of-conduct/
 .. _Committers category: https://discuss.python.org/c/committers/5
