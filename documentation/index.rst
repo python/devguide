@@ -9,5 +9,6 @@ Documentation
    help-documenting
    style-guide
    markup
+   analytics
    translating
    devguide
