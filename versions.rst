@@ -16,7 +16,7 @@ Python release cycle
 .. raw:: html
    :file: include/release-cycle.svg
 
-Another useful source is `endoflife.date/python <https://endoflife.date/python>`_.
+Another useful visualization is `endoflife.date/python <https://endoflife.date/python>`_.
 
 Supported versions
 ==================
