@@ -104,7 +104,6 @@ The important options in the poll builder set to get this result:
     }
     </script>
 
-
 .. _Code of Conduct: https://policies.python.org/python.org/code-of-conduct/
 .. _Committers category: https://discuss.python.org/c/committers/5
 .. _Python Discourse: https://discuss.python.org
