@@ -63,7 +63,9 @@ are granted through these steps:
 Getting a python.org email address
 ----------------------------------
 
-Members of the core team can get an email address on the python.org domain. For more details refer to the `PSF Board Policies on Email Addresses <https://www.python.org/psf/records/board/policies/email/>`_.
+Members of the core team can get an email address on the python.org domain.
+For more details refer to the `python.org email policy
+<https://www.python.org/psf/records/board/policies/email/>`_.
 
 
 Poll template
