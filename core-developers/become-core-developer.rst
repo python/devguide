@@ -60,6 +60,14 @@ are granted through these steps:
      were in the form of a separate post on the already open topic with
      the poll.
 
+Getting a python.org email address
+----------------------------------
+
+Members of the core team can get an email address on the python.org domain.
+For more details refer to the `python.org email policy
+<https://www.python.org/psf/records/board/policies/email/>`_.
+
+
 Poll template
 =============
 
