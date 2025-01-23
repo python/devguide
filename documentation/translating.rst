@@ -73,7 +73,7 @@ details.
      - Gustavo Toffo
      -
    * - `Portuguese as spoken in Brasil (pt-br) <https://docs.python.org/pt-br/>`__
-     - Marco Rougeth
+     - Marco Rougeth (:github-user:`rougeth`)
      - :github:`GitHub <python/python-docs-pt-br>`,
        `wiki <https://python.org.br/traducao/>`__,
        `Telegram <https://t.me/pybr_i18n>`__,
@@ -88,7 +88,7 @@ details.
      - :github:`GitHub <python/python-docs-zh-cn>`,
        `Transifex <tx_>`_
    * - `Spanish (es) <https://docs.python.org/es/>`__
-     - Raúl Cumplido
+     - Raúl Cumplido (:github-user:`raulcd`)
      - :github:`GitHub <python/python-docs-es>`
    * - `Traditional Chinese (zh-tw) <https://docs.python.org/zh-tw/>`__
      - 王威翔 Matt Wang (:github-user:`mattwang44`),
