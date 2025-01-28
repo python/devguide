@@ -5,6 +5,8 @@
    |purpose|
 
 
+.. _c_coreteam:
+
 =========
 Core team
 =========
