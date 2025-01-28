@@ -1112,10 +1112,6 @@ units as well as normal text:
 
    .. _update_version_next.py: https://github.com/python/release-tools/blob/master/update_version_next.py
 
-   When backporting to versions before 3.14, check if ``Doc/tools/extensions/pyspecific.py``
-   contains the function ``expand_version_arg``. If it's not there,
-   use a specific version instead of ``next``.
-
    When adding documentation for a function that existed in a past version,
    but wasn't documented yet, use the version number where the function was
    added instead of ``next``.
