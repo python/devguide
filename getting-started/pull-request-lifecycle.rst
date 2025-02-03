@@ -241,10 +241,10 @@ should do to help ensure that your pull request is accepted.
 .. _what-s-new-and-news-entries:
 
 Updating NEWS and What's New in Python
---------------------------------------
+======================================
 
 Changes that require NEWS entries
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+---------------------------------
 
 Most changes made to the codebase deserve an entry in :cpy-file:`Misc/NEWS.d`,
 except for the following:
@@ -268,7 +268,7 @@ For the last two, note the following:
    entry is needed.
 
 Changes that require "What's New in Python" entries
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+---------------------------------------------------
 
 If a change is particularly interesting for end users (for example, new features,
 significant improvements, or backwards-incompatible changes), add an entry in
@@ -284,7 +284,7 @@ in the "What's New in Python" entry.
     is very likely not suitable for inclusion in a maintenance release.
 
 How to add a NEWS entry
-^^^^^^^^^^^^^^^^^^^^^^^
+-----------------------
 
 ``NEWS`` entries go into the ``Misc/NEWS.d`` directory as individual files. The
 ``NEWS`` entry can be created by using `blurb-it <https://blurb-it.herokuapp.com/>`_,
@@ -310,7 +310,7 @@ As a result, a file name can look something like
 ``Misc/NEWS.d/next/Library/2017-05-27-16-46-23.gh-issue-12345.Yl4gI2.rst``.
 
 How to write a NEWS entry
-^^^^^^^^^^^^^^^^^^^^^^^^^
+-------------------------
 
 All ``NEWS`` entries end up being part of the changelog.
 The changelog contains *a lot* of entries,
