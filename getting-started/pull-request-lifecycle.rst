@@ -237,6 +237,103 @@ should do to help ensure that your pull request is accepted.
 
 #. Proper :ref:`documentation <documenting>` additions/changes should be included.
 
+.. _news-entry:
+.. _what-s-new-and-news-entries:
+
+Updating NEWS and What's New in Python
+--------------------------------------
+
+Changes that require NEWS entries
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Most changes made to the codebase deserve an entry in :cpy-file:`Misc/NEWS.d`,
+except for the following:
+
+* documentation changes
+* test changes
+* strictly internal changes with no user-visible effects
+* changes that already have a ``NEWS`` entry
+* reverts that have not yet been included in any formal release
+  (including alpha and beta releases)
+
+For the last two, note the following:
+
+#. **If a change is reverted prior to release**, then the corresponding
+   entry is simply removed. Otherwise, a new entry must be added noting
+   that the change has been reverted (for example, when a feature is released in
+   an alpha and then cut prior to the first beta).
+
+#. **If a change is a fix (or other adjustment) to an earlier unreleased
+   change and the original** ``NEWS`` **entry remains valid**, then no additional
+   entry is needed.
+
+Changes that require "What's New in Python" entries
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+If a change is particularly interesting for end users (for example, new features,
+significant improvements, or backwards-incompatible changes), add an entry in
+the "What's New in Python" document (in :cpy-file:`Doc/whatsnew/`)
+in addition to the ``NEWS`` entry.
+
+In most cases, it is sufficient to reuse the wording from the ``NEWS`` entry
+in the "What's New in Python" entry.
+
+.. note::
+
+    A change that needs an entry in "What's New in Python",
+    is very likely not suitable for inclusion in a maintenance release.
+
+How to add a NEWS entry
+^^^^^^^^^^^^^^^^^^^^^^^
+
+``NEWS`` entries go into the ``Misc/NEWS.d`` directory as individual files. The
+``NEWS`` entry can be created by using `blurb-it <https://blurb-it.herokuapp.com/>`_,
+or the :pypi:`blurb` tool and its ``blurb add`` command.
+
+If you are unable to use the tool, then you can create the ``NEWS`` entry file
+manually. The ``Misc/NEWS.d`` directory contains a sub-directory named
+``next``, which contains various sub-directories representing classifications
+for what was affected (for example, ``Misc/NEWS.d/next/Library`` for changes relating
+to the standard library). The file name itself should be in the format
+``<datetime>.gh-issue-<issue-number>.<nonce>.rst``:
+
+* ``<datetime>`` is today's date joined with a hyphen (``-``) to your current
+  local time, in the ``YYYY-MM-DD-hh-mm-ss`` format (for example, ``2017-05-27-16-46-23``).
+* ``<issue-number>`` is the issue number the change is for (for example, ``12345``
+  for ``gh-issue-12345``).
+* ``<nonce>`` is a unique string to guarantee that the file name is
+  unique across branches (for example, ``Yl4gI2``). It is typically six characters
+  long, but it can be any length of letters and numbers. Its uniqueness
+  can be satisfied by typing random characters on your keyboard.
+
+As a result, a file name can look something like
+``Misc/NEWS.d/next/Library/2017-05-27-16-46-23.gh-issue-12345.Yl4gI2.rst``.
+
+How to write a NEWS entry
+^^^^^^^^^^^^^^^^^^^^^^^^^
+
+All ``NEWS`` entries end up being part of the changelog.
+The changelog contains *a lot* of entries,
+and its intended audience is mainly users, not core devs and contributors.
+Take this into consideration when wording your ``NEWS`` entry.
+Describe the user-visible effects of your change succinctly and accurately;
+avoid long technical elaborations, digressions, and do not expect or require
+the reader to have read the actual diff for the change.
+
+The contents of a ``NEWS`` file should be valid reStructuredText. An 80 character
+column width should be used. There is no indentation or leading marker in the
+file (for example, ``-``). There is also no need to start the entry with the issue
+number since it is part of the file name. You can use
+:ref:`inline markups <rest-inline-markup>` too. Here is an example of a ``NEWS``
+entry::
+
+   Fix warning message when :func:`os.chdir` fails inside
+   :func:`test.support.temp_cwd`. Contributed by Chris Jerdonek.
+
+The inline Sphinx roles like ``:func:`` can be used help readers
+find more information. You can build HTML and verify that the
+link target is appropriate by using :ref:`make html <building-using-make>`.
+
 
 Copyrights
 ==========
