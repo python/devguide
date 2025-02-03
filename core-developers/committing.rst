@@ -68,6 +68,10 @@ to enter the public source tree. Ask yourself the following questions:
    process, write to contributors@python.org.
 
 * **Were** ``What's New in Python`` **and** ``Misc/NEWS.d/next`` **updated?**
+
+   .. seealso::
+      :ref:`what-s-new-and-news-entries`
+
    If the change is particularly interesting for end users (for example, new features,
    significant improvements, or backwards-incompatible changes), then an
    entry in the ``What's New in Python`` document (in ``Doc/whatsnew/``) should
