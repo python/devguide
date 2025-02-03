@@ -36,8 +36,6 @@ If no core developer has done a review or responded to changes made because of a
 "changes requested" review, please consider seeking assistance through the
 [Core Development Discourse category](https://discuss.python.org/c/core-dev/23).
 
-Please note that the traditional `python-dev` mailing list has been retired.
-
 
 ## Code of Conduct
 
