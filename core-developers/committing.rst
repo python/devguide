@@ -72,7 +72,10 @@ to enter the public source tree. Ask yourself the following questions:
    significant improvements, or backwards-incompatible changes), then an
    entry in the ``What's New in Python`` document (in ``Doc/whatsnew/``) should
    be added as well. Changes that affect only documentation generally do not
-   require a ``NEWS`` entry. (See :ref:`what-s-new-and-news-entries`)
+   require a ``NEWS`` entry.
+
+   .. seealso::
+      :ref:`what-s-new-and-news-entries`
 
 
 Working with Git_
