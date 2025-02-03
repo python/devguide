@@ -79,9 +79,7 @@ ways, including via web browsers, NNTP newsreaders, and RSS feed readers.
 Discourse (discuss.python.org web forum)
 ========================================
 
-We have our own `Discourse`_ forum for both developers and users. This forum
-complements the `python-dev`_, `python-ideas`_, `python-help`_, and
-`python-list`_ mailing lists.
+We have our own `Discourse`_ forum for both developers and users.
 
 This forum has different categories and most core development discussions
 take place in the open forum categories for `PEPs`_ and `Core Development`_
