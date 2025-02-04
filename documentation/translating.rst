@@ -11,7 +11,7 @@ They are built by `docsbuild-scripts
 <https://github.com/python/docsbuild-scripts/>`__ and hosted on
 docs.python.org. There are several documentation translations already
 in production; others are works in progress. See `the dashboard
-<https://m-aciek.github.io/pydocs-translation-dashboard/>`__ for
+<https://python-docs-translations.github.io/dashboard/>`__ for
 details.
 
 .. list-table::
