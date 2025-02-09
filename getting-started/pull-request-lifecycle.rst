@@ -190,81 +190,81 @@ Making Good PRs
 
 When creating a pull request, following best practices ensures your contribution is **clear, maintainable, and easy to review**. A well-structured PR improves collaboration and speeds up the review process.
 
-1. **Use a Clear and Structured PR Title**  
+1. **Use a Clear and Structured PR Title**
 
    PR titles often become commit messages, making them **critical for maintainability and searchability**. Follow these guidelines:
 
-    **Do:**  
-   
-   - Clearly summarize the change in a concise manner.  
-   - Use the **imperative mood** (e.g., "Fix crash in parser" instead of "Fixed a crash in parser").  
-   - Be specific about what is being changed (avoid vague words like "Update" or "Fix").  
+    **Do:**
 
-    **Avoid:**  
+   - Clearly summarize the change in a concise manner.
+   - Use the **imperative mood** (e.g., "Fix crash in parser" instead of "Fixed a crash in parser").
+   - Be specific about what is being changed (avoid vague words like "Update" or "Fix").
 
-   - "Bug fix" → Too vague. What bug was fixed?  
-   - "Update README" → What was updated? Be precise.  
-   - "Refactoring" → Explain what was refactored and why.  
+    **Avoid:**
 
-   **Example of a good PR title:**  
+   - "Bug fix" → Too vague. What bug was fixed?
+   - "Update README" → What was updated? Be precise.
+   - "Refactoring" → Explain what was refactored and why.
+
+   **Example of a good PR title:**
 
    ``Improve error handling in JSON parser to prevent crashes``
 
-2. **Write a Meaningful PR Description**  
+2. **Write a Meaningful PR Description**
 
-   Your PR description should provide **clear context** for reviewers. Answer the following questions:  
+   Your PR description should provide **clear context** for reviewers. Answer the following questions:
 
-   - **What does this PR do?**  
-   - **Why is this change necessary?**  
-   - **Are there any breaking changes?**  
-   - **Does this PR fix any open issues?** (Reference issue numbers if applicable)  
+   - **What does this PR do?**
+   - **Why is this change necessary?**
+   - **Are there any breaking changes?**
+   - **Does this PR fix any open issues?** (Reference issue numbers if applicable)
 
    Providing detailed descriptions makes the review process **faster and more efficient**.
 
-3. **Make Your Change Against the Right Branch**  
+3. **Make Your Change Against the Right Branch**
 
-   Ensure your PR is based on the correct branch:  
+   Ensure your PR is based on the correct branch:
 
-   - **New changes should target the** ``main`` **branch unless they are specific to an older version.**  
-   - If a change affects older versions, it will be **backported** after merging.  
-   - Only use **maintenance branches** when the change does not apply to ``main`` or requires a different approach.  
+   - **New changes should target the** ``main`` **branch unless they are specific to an older version.**
+   - If a change affects older versions, it will be **backported** after merging.
+   - Only use **maintenance branches** when the change does not apply to ``main`` or requires a different approach.
 
    Refer to :ref:`branch-merge` for more details on how backporting works.
 
-4. **Follow Python's Style Guidelines**  
+4. **Follow Python's Style Guidelines**
 
-   - Python code should follow :PEP:`8`, and C code should follow :PEP:`7`.  
-   - Maintainers may **fix minor style issues**, but major deviations can **delay or block merging**.  
-   - PRs with **only style changes** are usually rejected unless they fix a formatting error.  
+   - Python code should follow :PEP:`8`, and C code should follow :PEP:`7`.
+   - Maintainers may **fix minor style issues**, but major deviations can **delay or block merging**.
+   - PRs with **only style changes** are usually rejected unless they fix a formatting error.
 
-   .. note::  
-      Fixes for typos and grammar errors in documentation and docstrings are always welcome.  
+   .. note::
+      Fixes for typos and grammar errors in documentation and docstrings are always welcome.
 
-5. **Consider Backward Compatibility**  
+5. **Consider Backward Compatibility**
 
-   - Changes should **not break existing code** unless absolutely necessary.  
-   - When introducing **new arguments**, provide **default values** to maintain existing behavior.  
-   - If unsure, refer to :PEP:`387` or discuss the issue with experienced maintainers in :ref:`communication`.  
+   - Changes should **not break existing code** unless absolutely necessary.
+   - When introducing **new arguments**, provide **default values** to maintain existing behavior.
+   - If unsure, refer to :PEP:`387` or discuss the issue with experienced maintainers in :ref:`communication`.
 
    Think about how your change affects existing users before submitting your PR.
 
-6. **Ensure Proper Testing**  
+6. **Ensure Proper Testing**
 
-   - Every PR should include **appropriate test cases** to validate the changes.  
-   - PRs without tests **will not be accepted** unless they are purely documentation changes.  
-   - Tests should **cover edge cases** and expected behaviors.  
-   - For bug fixes, add a test that **fails without the fix** and **passes after applying it**.  
+   - Every PR should include **appropriate test cases** to validate the changes.
+   - PRs without tests **will not be accepted** unless they are purely documentation changes.
+   - Tests should **cover edge cases** and expected behaviors.
+   - For bug fixes, add a test that **fails without the fix** and **passes after applying it**.
 
-7. **Make Sure All Tests Pass**  
+7. **Make Sure All Tests Pass**
 
-   - The entire test suite must **run without failures** before submission.  
-   - Run ``make test`` or refer to :ref:`runtests` to check for test failures.  
-   - Do not submit PRs with failing tests unless the failure is **directly related** to your change.  
+   - The entire test suite must **run without failures** before submission.
+   - Run ``make test`` or refer to :ref:`runtests` to check for test failures.
+   - Do not submit PRs with failing tests unless the failure is **directly related** to your change.
 
-8. **Keep Documentation Up to Date**  
+8. **Keep Documentation Up to Date**
 
-   - Any change affecting functionality should include relevant **documentation updates**.  
-   - Follow :ref:`documenting` guidelines to ensure consistency in documentation.  
+   - Any change affecting functionality should include relevant **documentation updates**.
+   - Follow :ref:`documenting` guidelines to ensure consistency in documentation.
 
    Keeping documentation updated ensures clarity for future contributors and users.
 
