@@ -62,8 +62,8 @@ details.
      - Albertas Gimbutas (:github-user:`albertas`, `email <mailto:albertasgim@gmail.com>`__)
      - `Original mail <https://mail.python.org/pipermail/doc-sig/2019-July/004138.html>`__
    * - Persian (fa)
-     - Komeil Parseh (:github-user:`mmdbalkhi`)
-     - :github:`GitHub <mmdbalkhi/python-docs-fa>`
+     - Revisto (:github-user:`revisto`)
+     - :github:`GitHub <revisto/python-docs-fa>`
    * - `Polish (pl) <https://docs.python.org/pl/>`__
      - Maciej Olko (:github-user:`m-aciek`)
      - :github:`GitHub <python/python-docs-pl>`,
