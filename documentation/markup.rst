@@ -22,8 +22,8 @@ Element                 Markup                                      See also
 arguments/parameters    ``*arg*``                                   :ref:`inline-markup`
 variables/literals/code ````foo````, ````42````, ````len(s) - 1```` :ref:`inline-markup`
 True/False/None         ````True````, ````False````, ````None````   :ref:`inline-markup`
-function definitions   ``.. function:: print(*args)``              :ref:`directives`
-function references    ``:func:`print```                            :ref:`roles`
+function definitions    ``.. function:: print(*args)``              :ref:`directives`
+function references     ``:func:`print```                           :ref:`roles`
 attribute definitions   ``.. attribute: `attr-name```               :ref:`information-units`
 attribute references    ``:attr:`attr-name```                       :ref:`roles`
 reference labels        ``.. _label-name:``                         :ref:`doc-ref-role`
