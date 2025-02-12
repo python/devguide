@@ -268,7 +268,7 @@ When creating a pull request, following best practices ensures your contribution
 
    Keeping documentation updated ensures clarity for future contributors and users.
 
-By following these best practices, you increase the likelihood of your PR being **quickly reviewed and merged**!
+By following these best practices, you increase the likelihood of your PR being **reviewed and merged**!
 
 
 Copyrights
