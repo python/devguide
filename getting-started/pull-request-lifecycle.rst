@@ -208,7 +208,7 @@ When creating a pull request, following best practices ensures your contribution
 
    **Example of a good PR title:**
 
-   ``Improve error handling in JSON parser to prevent crashes``
+   ``gh-128002: Simplify all_tasks to use PyList_Extend instead of manual iteration``
 
 2. **Write a Meaningful PR Description**
 
