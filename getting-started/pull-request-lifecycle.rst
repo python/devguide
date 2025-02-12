@@ -255,7 +255,7 @@ When creating a pull request, following best practices ensures your contribution
    - Tests should **cover edge cases** and expected behaviors.
    - For bug fixes, add a test that **fails without the fix** and **passes after applying it**.
 
-7. **Make Sure All Tests Pass**
+#. **Ensure all tests pass**
 
    - The entire test suite must **run without failures** before submission.
    - Run ``make test`` or refer to :ref:`runtests` to check for test failures.
