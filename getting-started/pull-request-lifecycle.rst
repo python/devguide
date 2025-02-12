@@ -214,7 +214,7 @@ When creating a pull request, following best practices ensures your contribution
 
    Your PR description should provide **clear context** for reviewers. Answer the following questions:
 
-   - **What does this PR do?**
+   - What does this PR do?
    - **Why is this change necessary?**
    - **Are there any breaking changes?**
    - **Does this PR fix any open issues?** (Reference issue numbers if applicable)
