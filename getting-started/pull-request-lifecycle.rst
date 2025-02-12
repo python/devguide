@@ -271,7 +271,6 @@ When creating a pull request, following best practices ensures your contribution
 By following these best practices, you increase the likelihood of your PR being **quickly reviewed and merged**!
 
 
-
 Copyrights
 ==========
 
