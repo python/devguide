@@ -200,12 +200,6 @@ When creating a pull request, following best practices ensures your contribution
    - Use the **imperative mood** (e.g., "Fix crash in parser" instead of "Fixed a crash in parser").
    - Be specific about what is being changed (avoid vague words like "Update" or "Fix").
 
-    **Avoid:**
-
-   - "Bug fix" → Too vague. What bug was fixed?
-   - "Update README" → What was updated? Be precise.
-   - "Refactoring" → Explain what was refactored and why.
-
    **Example of a good PR title:**
 
    ``gh-128002: Simplify all_tasks to use PyList_Extend instead of manual iteration``
