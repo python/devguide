@@ -210,7 +210,7 @@ When creating a pull request, following best practices ensures your contribution
 
    ``gh-128002: Simplify all_tasks to use PyList_Extend instead of manual iteration``
 
-2. **Write a Meaningful PR Description**
+#. **Write a detailed description**
 
    Your PR description should provide **clear context** for reviewers. Answer the following questions:
 
