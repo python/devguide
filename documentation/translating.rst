@@ -184,7 +184,7 @@ Here's what we're using:
 - :pypi:`potodo` to list what needs to be translated.
 - :pypi:`sphinx-lint` to validate reST syntax in translation files.
 
-Some related tools and projects can be found in
+More related tools and projects can be found in
 `python-docs-translations organisation on GitHub <https://github.com/python-docs-translations>`__.
 
 How is a coordinator elected?
