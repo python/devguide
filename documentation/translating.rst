@@ -112,13 +112,14 @@ First subscribe to the `translation mailing list <translation_ml_>`_,
 and introduce yourself and the translation you're starting. Translations
 fall under the aegis of the `PSF Translation Workgroup <translation_wg_>`_
 
-Then you can bootstrap your new translation by using our `cookiecutter
-<https://github.com/JulienPalard/python-docs-cookiecutter>`__.
+Then you can bootstrap your new translation by using `cookiecutter
+<https://github.com/JulienPalard/python-docs-cookiecutter>`__ or
+`bootstrapper <https://github.com/python-docs-translations/python-docs-bootstrapper>`__.
 
 The important steps look like this:
 
-- Create the GitHub repo (anywhere) with the right hierarchy (using the
-  cookiecutter).
+- Create the GitHub repo (anywhere) with the right hierarchy (using one
+  of bootstrappers).
 - Gather people to help you translate. You can't do it alone.
 - You can use any tool to translate, as long as you can synchronize with Git.
   Some use Transifex, and some use only GitHub. You can choose another
