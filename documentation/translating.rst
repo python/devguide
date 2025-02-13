@@ -126,7 +126,7 @@ The important steps look like this:
   way if you like; it's up to you.
 - Ensure we update this page to reflect your work and progress, either via a
   PR or by asking on the `translation mailing list <translation_ml_>`_.
-- When ``bugs.html``, ``tutorial``, and ``library/functions`` are 100%
+- When ``bugs``, ``tutorial``, and ``library/functions`` are 100%
   completed, ask on the `translation mailing list <translation_ml_>`_ for
   your language to be added in the language switcher on docs.python.org.
 
