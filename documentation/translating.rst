@@ -73,7 +73,8 @@ details.
      - Gustavo Toffo
      -
    * - `Portuguese as spoken in Brasil (pt-br) <https://docs.python.org/pt-br/>`__
-     - Marco Rougeth
+     - Rafael Fontenelle (:github-user:`rffontenelle`),
+       Marco Rougeth (:github-user:`rougeth`)
      - :github:`GitHub <python/python-docs-pt-br>`,
        `wiki <https://python.org.br/traducao/>`__,
        `Telegram <https://t.me/pybr_i18n>`__,
