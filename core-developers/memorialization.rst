@@ -44,10 +44,12 @@ the deceased GitHub user to act as an account successor.
 The general policy regarding deceased users on GitHub is described
 `here <https://docs.github.com/en/site-policy/other-site-policies/github-deceased-user-policy>`_.
 
-CPython repository
-------------------
+Repositories in the organization
+--------------------------------
 
 * The user's GitHub handle is removed from ``/.github/CODEOWNERS``.
+  To see all that need action, perform
+  `this query <https://github.com/search?q=org%3Apython+path%3A**%2F.github%2FCODEOWNERS+USERNAME&type=code>`_.
 * The user is marked as deceased in the private
   `voters/python-core.toml <https://github.com/python/voters/blob/main/python-core.toml>`_
   file with the ``left=`` field set to the day of passing, if known.
