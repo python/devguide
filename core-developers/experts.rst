@@ -231,7 +231,7 @@ types                 1st1
 typing                gvanrossum, JelleZijlstra*, AlexWaygood*, carljm, sobolevn*
 unicodedata           malemburg, ezio-melotti
 unittest              ezio-melotti, rbtcollins, gpshead
-unittest.mock         
+unittest.mock
 urllib                orsenthil
 uu
 uuid
