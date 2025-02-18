@@ -230,8 +230,8 @@ turtledemo            terryjreedy*
 types                 1st1
 typing                gvanrossum, JelleZijlstra*, AlexWaygood*, carljm, sobolevn*
 unicodedata           malemburg, ezio-melotti
-unittest              voidspace*, ezio-melotti, rbtcollins, gpshead
-unittest.mock         voidspace*
+unittest              ezio-melotti, rbtcollins, gpshead
+unittest.mock
 urllib                orsenthil
 uu
 uuid
@@ -358,7 +358,7 @@ runtime lifecycle   ericsnowcurrently, kumaraditya303, zooba
 str.format          ericvsmith*
 subinterpreters     ericsnowcurrently, kumaraditya303
 symbol table        JelleZijlstra, carljm
-testing             voidspace, ezio-melotti
+testing             ezio-melotti
 test coverage
 threads             gpshead
 time and dates      malemburg, abalkin, pganssle
