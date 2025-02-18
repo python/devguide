@@ -47,7 +47,7 @@ The general policy regarding deceased users on GitHub is described
 CPython repository
 ------------------
 
-* The user's GitHub handle is removed from ``/.github/CODE_OWNERS``.
+* The user's GitHub handle is removed from ``/.github/CODEOWNERS``.
 * The user is marked as deceased in the private
   `voters/python-core.toml <https://github.com/python/voters/blob/main/python-core.toml>`_
   file with the ``left=`` field set to the day of passing, if known.
@@ -64,7 +64,7 @@ discuss.python.org
   login method, are all disconnected;
 * The user's API keys are revoked;
 * The user's admin or moderator right is revoked;
-* The user's primary email address is reset to ``username@in-memoriam.invalid`` and
+* The user's primary email address is reset to ``USERNAME@in-memoriam.invalid`` and
   secondary email addresses are removed (this step requires the administrator
   to contact Discourse.org staff via ``team@discourse.org``)
 
