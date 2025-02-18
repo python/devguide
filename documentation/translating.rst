@@ -119,7 +119,7 @@ Then you can bootstrap your new translation by using `cookiecutter
 The important steps look like this:
 
 - Create the GitHub repo (anywhere) with the right hierarchy (using one
-  of bootstrappers).
+  of the bootstrappers).
 - Gather people to help you translate. You can't do it alone.
 - You can use any tool to translate, as long as you can synchronize with Git.
   Some use Transifex, and some use only GitHub. You can choose another
