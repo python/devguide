@@ -120,11 +120,23 @@ is still up for historical purposes.
 * the user's password is reset to a long random string;
 * the PSF staff member removes any active login sessions from Postgres.
 
-SSH server access
------------------
+Other PSF-related infrastructure
+--------------------------------
+
+* The PSF staff member notifies administrators of the Python Core Devs
+  Discord server to remove the user from the server. The PSF staff
+  does not follow up with Discord with regards to Discord account
+  cancellation. The general policy regarding deceased users on Discord
+  is available `here <https://support.discord.com/hc/en-us/articles/19872987802263--Deceased-or-Incapacitated-Users>`_.
 
 * The user is removed from Salt configuration for the PSF infrastructure
-  in `/pillar/base/users <https://github.com/python/psf-salt/tree/main/pillar/base/users>`_.
+  in `/pillar/base/users <https://github.com/python/psf-salt/tree/main/pillar/base/users>`_
+  that allows SSH access to PSF-controlled servers.
+
+* The user might have ran a buildbot worker. The PSF staff member will
+  look for that in the
+  `buildmaster-config <https://github.com/search?q=repo%3Apython%2Fbuildmaster-config%20USERNAME&type=code>`_
+  repository.
 
 PyPI
 ----
