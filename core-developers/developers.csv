@@ -105,7 +105,7 @@ R\. David Murray,bitdancer,2009-03-30,,
 Chris Withers,cjw296,2009-03-08,,
 Tarek Ziadé,tarekziade,2008-12-21,2017-02-10,For distutils module
 Hirokazu Yamamoto,,2008-08-12,2017-02-10,For Windows build; did not make GitHub transition
-Armin Ronacher,mitsuhiko,2008-07-23,2020-11-26,For documentation toolset and ast module
+Armin Ronacher,mitsuhiko,2008-07-23,,For documentation toolset and ast module
 Antoine Pitrou,pitrou,2008-07-16,,
 Senthil Kumaran,orsenthil,2008-06-16,,
 Jesse Noller,,2008-06-16,2017-02-10,For multiprocessing module; did not make GitHub transition
