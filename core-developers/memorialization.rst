@@ -129,6 +129,6 @@ SSH server access
 PyPI
 ----
 
-* The PSF staff member notifies PyPI admins to mark the user as inactive,
-  remove their email addresses, prohibit their password resets, and
-  revoke all API keys.
+* The PSF staff member notifies PyPI admins by emailing them at
+  ``admin@pypi.org`` to mark the user as inactive, remove their email
+  addresses, prohibit their password resets, and revoke all API keys.
