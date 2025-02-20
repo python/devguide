@@ -59,16 +59,19 @@ discuss.python.org
 
 * The user's "custom status" is set to 🕊 ``in memoriam``;
 * The user's "about me" is amended with ``$firstname passed away on $date. [In memoriam.]($in_memoriam_post_url)``;
-* In the user's security "recently used devices" the staff member chooses "Log out all";
+* In the user's security "recently used devices" the staff member
+  chooses "Log out all";
 * In the user's permissions the staff member chooses "Deactivate account";
-* The user's trust level is reset to ``1: basic user`` (trust level 0 doesn't allow links in "About Me");
-* The user's "associated accounts" (like GitHub) that provide an alternative
-  login method, are all disconnected;
+* The user's trust level is reset to ``1: basic user`` (trust level 0
+  doesn't allow links in "About Me");
+* The user's "associated accounts" (like GitHub) that provide an
+  alternative login method, are all disconnected;
 * The user's API keys are revoked;
 * The user's admin or moderator right is revoked;
-* The user's primary email address is reset to ``USERNAME@in-memoriam.invalid`` and
-  secondary email addresses are removed (this step requires the administrator
-  to contact Discourse.org staff via ``team@discourse.org``)
+* The user's primary email address is reset to
+  ``USERNAME@in-memoriam.invalid`` and secondary email addresses are
+  removed (this step requires the administrator to contact Discourse.org
+  staff via ``team@discourse.org``).
 
 The "in memoriam" Discourse topic mentioned above is best created by
 a community member close to the deceased.
@@ -84,10 +87,15 @@ administrator to:
 
 * remove SMTP access from ``USERNAME@python.org``;
 * reset the password to POP3/IMAP for ``USERNAME@python.org``;
-* disable email forwarding, if set up, for ``USERNAME@python.org``;
+* disable email forwarding, if set up, for ``USERNAME@python.org`` and
+  leave a record permanently as "in memoriam" to avoid future account
+  name reuse;
 * remove this email from all mailing lists under ``@python.org``;
-* remove any known alternate emails for the same user from all mailing lists
-  under ``@python.org``.
+* remove any known alternate emails for the same user from all mailing
+  lists under ``@python.org``.
+
+In case the email shutdown causes issues for the estate executors, the
+PSF will reasonably try to help if contacted directly.
 
 python.org admin
 ----------------
@@ -95,8 +103,8 @@ python.org admin
 * The user's account (``/admin/users/user``) is deactivated (NOT deleted)
   and their staff and superuser status is unchecked;
 * The user's password is reset to a long random string;
-* The user's primary email address is set to ``USERNAME@in-memoriam.invalid``
-  and set as unverified;
+* The user's primary email address is set to
+  ``USERNAME@in-memoriam.invalid`` and set as unverified;
 * The user's secondary email addresses are deleted;
 * The user's API keys (both on the account and ``tastypie``) are deleted;
 * The user's "I would like to be a PSF Voting Member" field is cleared.
