@@ -2213,3 +2213,90 @@ and update your unit tests to reflect the new behaviour.
    If you forget to update your input block during the alpha and beta phases,
    the compiler warning will turn into a compiler error when the
    release candidate phase begins.
+
+How to add a new bytecode specialization
+----------------------------------------
+
+Bytecode specialization is a performance optimization technique in CPython.
+It involves dynamically replacing general-purpose bytecode instructions with
+specialized versions tailored to specific runtime contexts. This guide explains
+how to add a new bytecode specialization, using ``CONTAINS_OP`` as an example.
+
+Steps:
+
+1. Update ``Python/bytecodes.c``
+
+   - Convert ``CONTAINS_OP`` to a micro-operation (uop) by renaming
+     it to ``_CONTAINS_OP`` and changing the instruction definition
+     from ``inst`` to ``op``.
+
+     .. code-block:: c
+
+        // Before
+        inst(CONTAINS_OP, ...);
+
+        // After
+        op(_CONTAINS_OP, ...);
+
+   - Add a uop that calls the specializing function
+     ``_SPECIALIZE_CONTAINS_OP``.
+
+     .. code-block:: c
+
+        specializing op(_SPECIALIZE_CONTAINS_OP, (counter/1, left, right -- left, right)) {
+            #if ENABLE_SPECIALIZATION
+            if (ADAPTIVE_COUNTER_IS_ZERO(counter)) {
+                next_instr = this_instr;
+                _Py_Specialize_ContainsOp(right, next_instr);
+                DISPATCH_SAME_OPARG();
+            }
+            STAT_INC(CONTAINS_OP, deferred);
+            DECREMENT_ADAPTIVE_COUNTER(this_instr[1].cache);
+            #endif  /* ENABLE_SPECIALIZATION */
+        }
+
+   - The original ``CONTAINS_OP`` is now a new macro consisting of
+      ``_SPECIALIZE_CONTAINS_OP`` and ``_CONTAINS_OP``.
+
+2. Define the cache structure
+
+   - In ``Include/internal/pycore_code.h``, define a cache structure with
+     at least a 16-bit counter.
+
+     .. code-block:: c
+
+        typedef struct {
+            uint16_t counter;
+        } _PyContainsOpCache;
+
+3. Write the specializing function
+
+   - Implement the specializing function in ``Python/specialize.c``.
+     Refer to existing functions in the file for the standard format.
+   - Update operation stats by calling ``add_stat_dict`` in
+     ``Python/specialize.c``.
+
+4. Add the cache layout to ``Lib/opcode.py``
+
+   - Define the cache layout in ``Lib/opcode.py`` so that Python's ``dis``
+     module correctly represents the specialization.
+
+5. Bump the magic number
+
+   - Update ``Include/internal/pycore_magic_number.h`` to bump the magic
+     number so the interpreter recognizes the new bytecode format.
+
+6. Regenerate build artifacts
+
+   - Run the appropriate build regeneration commands:
+
+   - *Unix/macOS:*
+      ``make regen-all``
+   - *Windows:*
+      ``build.bat --regen``
+
+
+Additional Resources:
+
+- :pep:`659`
+- `Reference PR for CONTAINS_OP <https://github.com/python/cpython/pull/116385/files>`_
