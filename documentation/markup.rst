@@ -1215,6 +1215,9 @@ units as well as normal text:
 Table-of-contents markup
 ------------------------
 
+.. TODO: This is a copy of the Sphinx description of the toctree directive.
+   Why duplicate it here?
+
 Since reST does not have facilities to interconnect several documents, or split
 documents into multiple output files, Sphinx uses a custom directive to add
 relations between the single files the documentation is made of, as well as
