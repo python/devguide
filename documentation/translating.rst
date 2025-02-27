@@ -11,7 +11,7 @@ They are built by `docsbuild-scripts
 <https://github.com/python/docsbuild-scripts/>`__ and hosted on
 docs.python.org. There are several documentation translations already
 in production; others are works in progress. See `the dashboard
-<https://m-aciek.github.io/pydocs-translation-dashboard/>`__ for
+<https://python-docs-translations.github.io/dashboard/>`__ for
 details.
 
 .. list-table::
@@ -113,20 +113,21 @@ First subscribe to the `translation mailing list <translation_ml_>`_,
 and introduce yourself and the translation you're starting. Translations
 fall under the aegis of the `PSF Translation Workgroup <translation_wg_>`_
 
-Then you can bootstrap your new translation by using our `cookiecutter
-<https://github.com/JulienPalard/python-docs-cookiecutter>`__.
+Then you can bootstrap your new translation by using `cookiecutter
+<https://github.com/JulienPalard/python-docs-cookiecutter>`__ or
+`bootstrapper <https://github.com/python-docs-translations/python-docs-bootstrapper>`__.
 
 The important steps look like this:
 
-- Create the GitHub repo (anywhere) with the right hierarchy (using the
-  cookiecutter).
+- Create the GitHub repo (anywhere) with the right hierarchy (using one
+  of the bootstrappers).
 - Gather people to help you translate. You can't do it alone.
 - You can use any tool to translate, as long as you can synchronize with Git.
   Some use Transifex, and some use only GitHub. You can choose another
   way if you like; it's up to you.
 - Ensure we update this page to reflect your work and progress, either via a
   PR or by asking on the `translation mailing list <translation_ml_>`_.
-- When ``bugs.html``, ``tutorial``, and ``library/functions`` are 100%
+- When ``bugs``, ``tutorial``, and ``library/functions`` are 100%
   completed, ask on the `translation mailing list <translation_ml_>`_ for
   your language to be added in the language switcher on docs.python.org.
 
@@ -184,6 +185,10 @@ Here's what we're using:
 - :pypi:`potodo` to list what needs to be translated.
 - :pypi:`sphinx-lint` to validate reST syntax in translation files.
 
+More related tools and projects can be found in the
+`python-docs-translations`__ organisation on GitHub.
+
+__ https://github.com/python-docs-translations
 
 How is a coordinator elected?
 -----------------------------
