@@ -21,7 +21,7 @@ when you add or change definitions in it.
 
 The public backwards compatibility guarantees for public C API are explained
 in the user documentation, ``Doc/c-api/stable.rst`` (:ref:`python:stable`).
-C language compatibility guarantees are is in ``Doc/c-api/intro.rst``
+C language compatibility guarantees are in ``Doc/c-api/intro.rst``
 (:ref:`python:api-intro`).
 
 Internally, we need to be more careful about compatibility than what we promise
