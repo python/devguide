@@ -55,10 +55,10 @@ statements have been covered. In these instances you can ignore the global
 statement coverage and simply focus on the local statement coverage.
 
 When writing new tests to increase coverage, do take note of the style of tests
-already provided for a module (e.g., whitebox, blackbox, etc.). As
+already provided for a module (for example, whitebox, blackbox, etc.). As
 some modules are primarily maintained by a single core developer they may have
-a specific preference as to what kind of test is used (e.g., whitebox) and
-prefer that other types of tests not be used (e.g., blackbox). When in doubt,
+a specific preference as to what kind of test is used (for example, whitebox) and
+prefer that other types of tests not be used (for example, blackbox). When in doubt,
 stick with whitebox testing in order to properly exercise the code.
 
 
@@ -68,9 +68,9 @@ Measuring coverage
 It should be noted that a quirk of running coverage over Python's own stdlib is
 that certain modules are imported as part of interpreter startup. Those modules
 required by Python itself will not be viewed as executed by the coverage tools
-and thus look like they have very poor coverage (e.g., the :py:mod:`stat`
+and thus look like they have very poor coverage (for example, the :py:mod:`stat`
 module). In these instances the module will appear to not have any coverage of
-global statements but will have proper coverage of local statements (e.g.,
+global statements but will have proper coverage of local statements (for example,
 function definitions will not be traced, but the function bodies will).
 Calculating the coverage of modules in this situation will simply require
 manually looking at what local statements were not executed.
@@ -146,7 +146,7 @@ Basic usage
 ^^^^^^^^^^^
 
 The following command will tell you if your copy of coverage works (substitute
-``COVERAGEDIR`` with the directory where your clone exists, e.g.
+``COVERAGEDIR`` with the directory where your clone exists, for example,
 ``../coveragepy``)::
 
     ./python COVERAGEDIR
@@ -189,7 +189,7 @@ you visually see what lines of code were not tested::
 
 This will generate an HTML report in a directory named ``htmlcov`` which
 ignores any errors that may arise and ignores modules for which test coverage is
-unimportant (e.g. tests, temp files, etc.). You can then open the
+unimportant (for example, tests, temp files, etc.). You can then open the
 ``htmlcov/index.html`` file in a web browser to view the coverage results along
 with pages that visibly show what lines of code were or were not executed.
 
@@ -306,5 +306,5 @@ about 20 to 30 minutes on a modern computer.
 
 .. _issue tracker: https://github.com/python/cpython/issues
 .. _gcov: https://gcc.gnu.org/onlinedocs/gcc/Gcov.html
-.. _lcov: https://ltp.sourceforge.net/coverage/lcov.php
+.. _lcov: https://github.com/linux-test-project/lcov
 .. _coverage.py: https://coverage.readthedocs.io/en/latest/

@@ -7,8 +7,8 @@ Responsibilities
 As contributors to the CPython project, our shared responsibility is to
 collaborate constructively with other contributors, including core developers.
 This responsibility covers all forms of contribution, whether that's submitting
-patches to the implementation or documentation, reviewing other peoples'
-patches, triaging issues on the issue tracker, or discussing design and
+pull requests to the implementation or documentation, reviewing other peoples'
+pull requests, triaging issues on the issue tracker, or discussing design and
 development ideas on the core
 :ref:`communication channels <communication-channels>`.
 
@@ -68,7 +68,7 @@ the ability to license your code means it can be put under the PSF license so
 it can be legally distributed with Python.
 
 This is a very important step! Hopefully you have already submitted a
-contributor agreement if you have been submitting patches. But if you have not
+contributor agreement if you have been submitting pull requests. But if you have not
 done this yet, it is best to do this ASAP, probably before you even do your
 first commit so as to not forget. Also do not forget to enter your GitHub
 username into your details on the issue tracker.
@@ -127,4 +127,4 @@ And finally, enjoy yourself! Contributing to open source software should be fun
 (overall). If you find yourself no longer enjoying the work then either take a
 break or figure out what you need to do to make it enjoyable again.
 
-.. _PSF Code of Conduct: https://www.python.org/psf/conduct/
+.. _PSF Code of Conduct: https://policies.python.org/python.org/code-of-conduct/

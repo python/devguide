@@ -10,7 +10,9 @@ Python documentation translations are governed by :PEP:`545`.
 They are built by `docsbuild-scripts
 <https://github.com/python/docsbuild-scripts/>`__ and hosted on
 docs.python.org. There are several documentation translations already
-in production; others are works in progress.
+in production; others are works in progress. See `the dashboard
+<https://python-docs-translations.github.io/dashboard/>`__ for
+details.
 
 .. list-table::
    :header-rows: 1
@@ -29,7 +31,8 @@ in production; others are works in progress.
      - :github:`GitHub <python/python-docs-fr>`
    * - Greek (gr)
      - Lysandros Nikolaou (:github-user:`lysnikolaou`),
-       Fanis Petkos (:github-user:`thepetk`)
+       Fanis Petkos (:github-user:`thepetk`),
+       Panagiotis Skias (:github-user:`skpanagiotis`)
      - :github:`GitHub <pygreece/python-docs-gr>`
    * - Hindi as spoken in India (hi_IN)
      - Sanyam Khurana (:github-user:`CuriousLearner`)
@@ -43,7 +46,8 @@ in production; others are works in progress.
      - :github:`GitHub <python/python-docs-id>`
    * - Italian (it)
      - Alessandro Cucci (`email <mailto:alessandro.cucci@gmail.com>`__)
-     - `Original mail <https://mail.python.org/pipermail/doc-sig/2019-April/004114.html>`__
+     - :github:`GitHub <python/python-docs-it>`,
+       `original mail <https://mail.python.org/pipermail/doc-sig/2019-April/004114.html>`__
    * - `Japanese (ja) <https://docs.python.org/ja/>`__
      - Kinebuchi Tomohiko (:github-user:`cocoatomo`),
        Atsuo Ishimoto (:github-user:`atsuoishimoto`)
@@ -58,8 +62,8 @@ in production; others are works in progress.
      - Albertas Gimbutas (:github-user:`albertas`, `email <mailto:albertasgim@gmail.com>`__)
      - `Original mail <https://mail.python.org/pipermail/doc-sig/2019-July/004138.html>`__
    * - Persian (fa)
-     - Komeil Parseh (:github-user:`mmdbalkhi`)
-     - :github:`GitHub <mmdbalkhi/python-docs-fa>`
+     - Alireza Shabani (:github-user:`revisto`)
+     - :github:`GitHub <revisto/python-docs-fa>`
    * - `Polish (pl) <https://docs.python.org/pl/>`__
      - Maciej Olko (:github-user:`m-aciek`)
      - :github:`GitHub <python/python-docs-pl>`,
@@ -69,7 +73,8 @@ in production; others are works in progress.
      - Gustavo Toffo
      -
    * - `Portuguese as spoken in Brasil (pt-br) <https://docs.python.org/pt-br/>`__
-     - Marco Rougeth
+     - Rafael Fontenelle (:github-user:`rffontenelle`),
+       Marco Rougeth (:github-user:`rougeth`)
      - :github:`GitHub <python/python-docs-pt-br>`,
        `wiki <https://python.org.br/traducao/>`__,
        `Telegram <https://t.me/pybr_i18n>`__,
@@ -108,22 +113,23 @@ First subscribe to the `translation mailing list <translation_ml_>`_,
 and introduce yourself and the translation you're starting. Translations
 fall under the aegis of the `PSF Translation Workgroup <translation_wg_>`_
 
-Then you can bootstrap your new translation by using our `cookiecutter
-<https://github.com/JulienPalard/python-docs-cookiecutter>`__.
+Then you can bootstrap your new translation by using `cookiecutter
+<https://github.com/JulienPalard/python-docs-cookiecutter>`__ or
+`bootstrapper <https://github.com/python-docs-translations/python-docs-bootstrapper>`__.
 
 The important steps look like this:
 
-- Create the GitHub repo (anywhere) with the right hierarchy (using the
-  cookiecutter).
+- Create the GitHub repo (anywhere) with the right hierarchy (using one
+  of the bootstrappers).
 - Gather people to help you translate. You can't do it alone.
 - You can use any tool to translate, as long as you can synchronize with Git.
   Some use Transifex, and some use only GitHub. You can choose another
   way if you like; it's up to you.
 - Ensure we update this page to reflect your work and progress, either via a
   PR or by asking on the `translation mailing list <translation_ml_>`_.
-- When ``bugs.html``, ``tutorial``, and ``library/functions`` are 100%
+- When ``bugs``, ``tutorial``, and ``library/functions`` are 100%
   completed, ask on the `translation mailing list <translation_ml_>`_ for
-  your language to be added in the language picker on docs.python.org.
+  your language to be added in the language switcher on docs.python.org.
 
 
 PEP 545 summary
@@ -151,9 +157,10 @@ Here are the essential points of :PEP:`545`:
 How to get help
 ===============
 
-Discussions about translations occur on the `translation mailing list <translation_ml_>`_,
-and there's a `Libera.Chat IRC <https://libera.chat/>`_ channel,
-``#python-doc``.
+Discussions about translations occur on the Python Docs Discord
+`#translations channel <https://discord.gg/h3qDwgyzga>`_, `translation
+mailing list <translation_ml_>`_, and there's a `Libera.Chat IRC
+<https://libera.chat/>`_ channel, ``#python-doc``.
 
 
 Translation FAQ
@@ -162,12 +169,12 @@ Translation FAQ
 Which version of the Python documentation should be translated?
 ---------------------------------------------------------------
 
-Consensus is to work on current stable. You can then propagate your
+Consensus is to work on the current stable version. You can then propagate your
 translation from one branch to another using :pypi:`pomerge`.
 
 
-Are there some tools to help in managing the repo?
---------------------------------------------------
+Are there tools to help in managing the repo?
+---------------------------------------------
 
 Here's what we're using:
 
@@ -178,6 +185,10 @@ Here's what we're using:
 - :pypi:`potodo` to list what needs to be translated.
 - :pypi:`sphinx-lint` to validate reST syntax in translation files.
 
+More related tools and projects can be found in the
+`python-docs-translations`__ organisation on GitHub.
+
+__ https://github.com/python-docs-translations
 
 How is a coordinator elected?
 -----------------------------
@@ -228,6 +239,14 @@ What hierarchy should I use in my GitHub repository?
 As for every project, we have a *branch* per version.  We store ``.po``
 files in the root of the repository using the ``gettext_compact=0``
 style.
+
+
+How should I translate code examples?
+-------------------------------------
+
+Translate values in code examples (i.e. string literals) and comments.
+Don't translate keywords or names,
+including variable, function, class, argument, and attribute names.
 
 .. _translation_wg: https://wiki.python.org/psf/TranslationWG/Charter
 .. _translation_ml: https://mail.python.org/mailman3/lists/translation.python.org/

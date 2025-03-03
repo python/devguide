@@ -31,7 +31,7 @@ This field indicates who is expected to take the next step in resolving
 the issue.
 
 It is acceptable to assign an issue to someone if the issue cannot move
-forward without their help; e.g., they need to make a technical decision on
+forward without their help; for example, they need to make a technical decision on
 how to proceed. Also consult the :ref:`experts` as certain
 stdlib modules should always be assigned to a specific person.
 
@@ -92,7 +92,7 @@ you can help by making sure the pull request:
 * includes proper tests
 * includes proper documentation changes
 * includes a :ref:`NEWS entry <news-entry>` (if needed)
-* includes the author in ``Misc/ACKS``, either already or the patch adds them
+* includes the author in ``Misc/ACKS``, either already or the pull request adds them
 * doesn't have conflicts with the ``main`` branch
 * :ref:`doesn't have failing CI checks <keeping-ci-green>`
 

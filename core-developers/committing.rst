@@ -31,11 +31,11 @@ to enter the public source tree. Ask yourself the following questions:
 * **Do the checks on the pull request show that the test suite passes?**
    Make sure that all of the status checks are passing.
 
-* **Is the patch in a good state?**
-   Check :ref:`patch` and :ref:`helptriage` to review what is expected of
-   a patch.
+* **Is the pull request in a good state?**
+   Check :ref:`pull-request-lifecycle` and :ref:`helptriage` to review what
+   is expected of a pull request.
 
-* **Does the patch break backwards-compatibility without a strong reason?**
+* **Does the change break backwards-compatibility without a strong reason?**
    :ref:`Run the entire test suite <runtests>` to make sure that everything
    still passes. If there is a change to the semantics, then there needs to
    be a strong reason, because it will cause some peoples' code to break.
@@ -44,7 +44,7 @@ to enter the public source tree. Ask yourself the following questions:
    <https://discuss.python.org/c/core-dev/23>`__.
 
 * **Does documentation need to be updated?**
-   If the pull request introduces backwards-incompatible changes (e.g.
+   If the pull request introduces backwards-incompatible changes (for example,
    deprecating or removing a feature), then make sure that those changes
    are reflected in the documentation before you merge the pull request.
 
@@ -61,14 +61,14 @@ to enter the public source tree. Ask yourself the following questions:
    Make sure that the contributor has signed a `Contributor
    Licensing Agreement <https://www.python.org/psf/contrib/contrib-form/>`_
    (CLA), unless their change has no possible intellectual property
-   associated with it (e.g. fixing a spelling mistake in documentation).
+   associated with it (for example, fixing a spelling mistake in documentation).
    The `CPython CLA Bot <https://github.com/apps/cpython-cla-bot/>`_
    checks whether the author has signed the CLA, and replies in the PR
    if they haven't. For further questions about the CLA
    process, write to contributors@python.org.
 
 * **Were** ``What's New in Python`` **and** ``Misc/NEWS.d/next`` **updated?**
-   If the change is particularly interesting for end users (e.g. new features,
+   If the change is particularly interesting for end users (for example, new features,
    significant improvements, or backwards-incompatible changes), then an
    entry in the ``What's New in Python`` document (in ``Doc/whatsnew/``) should
    be added as well. Changes that affect only documentation generally do not
@@ -97,7 +97,7 @@ For the last two, note the following:
 
 #. **If a change is reverted prior to release**, then the corresponding
    entry is simply removed. Otherwise, a new entry must be added noting
-   that the change has been reverted (e.g. when a feature is released in
+   that the change has been reverted (for example, when a feature is released in
    an alpha and then cut prior to the first beta).
 
 #. **If a change is a fix (or other adjustment) to an earlier unreleased
@@ -107,7 +107,7 @@ For the last two, note the following:
 Changes that require "What's New in Python" entries
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-If a change is particularly interesting for end users (e.g. new features,
+If a change is particularly interesting for end users (for example, new features,
 significant improvements, or backwards-incompatible changes), add an entry in
 the "What's New in Python" document (in :cpy-file:`Doc/whatsnew/`)
 in addition to the ``NEWS`` entry.
@@ -130,16 +130,16 @@ or the :pypi:`blurb` tool and its ``blurb add`` command.
 If you are unable to use the tool, then you can create the ``NEWS`` entry file
 manually. The ``Misc/NEWS.d`` directory contains a sub-directory named
 ``next``, which contains various sub-directories representing classifications
-for what was affected (e.g. ``Misc/NEWS.d/next/Library`` for changes relating
+for what was affected (for example, ``Misc/NEWS.d/next/Library`` for changes relating
 to the standard library). The file name itself should be in the format
 ``<datetime>.gh-issue-<issue-number>.<nonce>.rst``:
 
 * ``<datetime>`` is today's date joined with a hyphen (``-``) to your current
-  local time, in the ``YYYY-MM-DD-hh-mm-ss`` format (e.g. ``2017-05-27-16-46-23``).
-* ``<issue-number>`` is the issue number the change is for (e.g. ``12345``
+  local time, in the ``YYYY-MM-DD-hh-mm-ss`` format (for example, ``2017-05-27-16-46-23``).
+* ``<issue-number>`` is the issue number the change is for (for example, ``12345``
   for ``gh-issue-12345``).
 * ``<nonce>`` is a unique string to guarantee that the file name is
-  unique across branches (e.g. ``Yl4gI2``). It is typically six characters
+  unique across branches (for example, ``Yl4gI2``). It is typically six characters
   long, but it can be any length of letters and numbers. Its uniqueness
   can be satisfied by typing random characters on your keyboard.
 
@@ -159,13 +159,13 @@ the reader to have read the actual diff for the change.
 
 The contents of a ``NEWS`` file should be valid reStructuredText. An 80 character
 column width should be used. There is no indentation or leading marker in the
-file (e.g. ``-``). There is also no need to start the entry with the issue
+file (for example, ``-``). There is also no need to start the entry with the issue
 number since it is part of the file name. You can use
 :ref:`inline markups <rest-inline-markup>` too. Here is an example of a ``NEWS``
 entry::
 
    Fix warning message when :func:`os.chdir` fails inside
-   :func:`test.support.temp_cwd`. Patch by Chris Jerdonek.
+   :func:`test.support.temp_cwd`. Contributed by Chris Jerdonek.
 
 The inline Sphinx roles like ``:func:`` can be used help readers
 find more information. You can build HTML and verify that the
@@ -182,7 +182,7 @@ As a core developer, you have the ability to push changes to the official
 Python repositories, so you need to be careful with your workflow:
 
 * **You should not push new branches to the main repository.**  You can
-  still use them in the fork that you use for the development of patches.
+  still use them in the fork that you use for your own development.
   You can also push these branches to a separate public repository
   for maintenance work before it is integrated into the main repository.
 
@@ -260,7 +260,7 @@ can apply labels to GitHub pull requests).
 Reverting a merged pull request
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-To revert a merged pull request, press the ``Revert`` button at the
+To revert a merged pull request, press the :guilabel:`Revert` button at the
 bottom of the pull request. That will bring up the page to create a
 new pull request where the commit can be reverted. It will also create
 a new branch on the main CPython repository. Delete the branch once

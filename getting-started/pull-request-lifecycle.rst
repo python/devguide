@@ -32,7 +32,7 @@ Here is a quick overview of how you can contribute to CPython:
 #. :ref:`Create a new branch in Git <pullrequest-steps>` from the
    ``main`` branch
 
-#. Work on changes (e.g. fix a bug or add a new feature)
+#. Work on changes: fix a bug or add a new feature
 
 #. :ref:`Run tests <runtests>` and ``make patchcheck``
 
@@ -42,7 +42,7 @@ Here is a quick overview of how you can contribute to CPython:
 #. `Create Pull Request`_ on GitHub to merge a branch from your fork
 
 #. Make sure the :ref:`continuous integration checks on your Pull Request
-   are green <keeping-ci-green>` (i.e. successful)
+   are green <keeping-ci-green>` (successful)
 
 #. Review and address `comments on your Pull Request`_
 
@@ -51,7 +51,7 @@ Here is a quick overview of how you can contribute to CPython:
 
 #. Celebrate contributing to CPython! :)
 
-.. [*] If an issue is trivial (e.g. typo fixes), or if an issue already exists,
+.. [*] If an issue is trivial (for example, typo fixes), or if an issue already exists,
        you can skip this step.
 
 .. note::
@@ -238,13 +238,32 @@ should do to help ensure that your pull request is accepted.
 #. Proper :ref:`documentation <documenting>` additions/changes should be included.
 
 
+Copyrights
+==========
+
+Copyright notices are optional and informational, as international treaties
+have abolished the requirement for them to protect copyrights.
+However, they still serve an informative role.
+
+According to the US Copyright Office, valid copyright notices include the year
+of first publication of the work. For example:
+
+   Copyright (C) 2001 Python Software Foundation.
+
+Updating notices to add subsequent years is unnecessary and such PRs will be
+closed.
+
+See also `python/cpython#126133
+<https://github.com/python/cpython/issues/126133#issuecomment-2460824052>`__.
+
+
 .. _patchcheck:
 
 ``patchcheck``
 ==============
 
-``patchcheck`` is a simple automated patch checklist that guides a developer
-through the common patch generation checks. To run ``patchcheck``:
+``patchcheck`` is a simple automated checklist for changes in progress that
+guides a developer through common checks. To run ``patchcheck``:
 
 On *Unix* (including macOS)::
 
@@ -256,7 +275,7 @@ On *Windows* (after any successful build):
 
    .\python.bat Tools\patchcheck\patchcheck.py
 
-The automated patch checklist runs through:
+The automated checklist runs through:
 
 * Are there any whitespace problems in Python files?
   (using :cpy-file:`Tools/patchcheck/reindent.py`)
@@ -271,10 +290,10 @@ The automated patch checklist runs through:
 * Has ``configure`` been regenerated, if necessary?
 * Has ``pyconfig.h.in`` been regenerated, if necessary?
 
-The automated patch check doesn't actually *answer* all of these
+The automated checks don't actually *answer* all of these
 questions. Aside from the whitespace checks, the tool is
 a memory aid for the various elements that can go into
-making a complete patch.
+making a complete pull request.
 
 
 .. _good-commits:
@@ -358,7 +377,7 @@ changes to your branch. In general you can run ``git commit -a`` and
 that will commit everything. You can always run ``git status`` to see
 what changes are outstanding.
 
-When all of your changes are committed (i.e. ``git status`` doesn't
+When all of your changes are committed (that is, ``git status`` doesn't
 list anything), you will want to push your branch to your fork::
 
   git push origin <branch name>
@@ -379,7 +398,7 @@ relevant detail as possible to prevent reviewers from having to delay
 reviewing your pull request because of lack of information.
 
 If this issue is so simple that there's no need for an issue to track
-any discussion of what the pull request is trying to solve (e.g. fixing a
+any discussion of what the pull request is trying to solve (for example, fixing a
 spelling mistake), then the pull request needs to have the "skip issue" label
 added to it by someone with commit access.
 
@@ -419,7 +438,7 @@ your pull request. Getting your pull request reviewed requires a
 reviewer to have the spare time and motivation to look at your pull
 request (we cannot force anyone to review pull requests and no one is
 employed to look at pull requests). If your pull request has not
-received any notice from reviewers (i.e., no comment made) after one
+received any notice from reviewers (that is, no comment made) after one
 month, first "ping" the issue on the `issue tracker`_ to remind the
 subscribers that the pull request needs a review.
 If you don't get a response within a week after pinging the issue,
@@ -531,9 +550,9 @@ will merge in the latest changes from the base branch into the PR.
 
 If this still doesn't help with the failure on the PR, you can try
 to re-run that particular failed check. Go to the red GitHub Action job,
-click on the "Re-run jobs" button on the top right, and select
-"Re-run failed jobs". The button will only be present when all other jobs
-finished running.
+click on the :guilabel:`Re-run jobs` button on the top right, and select
+:guilabel:`Re-run failed jobs`. The button will only be present when all other
+jobs finished running.
 
 Re-running failed jobs shouldn't be your first instinct but it is occasionally
 helpful because distributed systems can have intermittent failures, and
@@ -541,6 +560,22 @@ some of our unit tests are sensitive to overloaded virtual machines.
 If you identify such flaky behavior, look for an issue in the `issue tracker`_
 that describes this particular flakiness. Create a new issue if you can't
 find one.
+
+:guilabel:`Update branch` button
+================================
+
+You can click on the :guilabel:`Update branch` button to merge the latest
+changes from the base branch (usually ``main``) into the PR.
+This is useful to :ref:`keep the CI green <keeping-ci-green>` for old PRs,
+or to check if a CI failure has been fixed in the base branch.
+
+If the PR is very old, it may be useful to update the branch before merging to
+ensure that the PR does not fail any CI checks that were added or changed since
+CI last ran.
+
+Do not click :guilabel:`Update branch` without a good reason because it notifies
+everyone watching the PR that there are new changes, when there are not,
+and it uses up limited CI resources.
 
 Committing/rejecting
 ====================
@@ -553,7 +588,7 @@ Python is tricky and we simply cannot accept everyone's contributions.
 
 But if your pull request is merged it will then go into Python's
 :abbr:`VCS (version control system)` to be released
-with the next major release of Python. It may also be backported to older
+with the next feature release of Python. It may also be backported to older
 versions of Python as a bugfix if the core developer doing the merge believes
 it is warranted.
 

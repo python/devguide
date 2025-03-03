@@ -5,7 +5,7 @@
 Status of Python versions
 =========================
 
-The ``main`` branch is currently the future Python 3.13, and is the only
+The ``main`` branch is currently the future Python 3.14, and is the only
 branch that accepts new features.  The latest release for each Python
 version can be found on the `download page <https://www.python.org/downloads/>`_.
 
@@ -15,6 +15,8 @@ Python release cycle
 
 .. raw:: html
    :file: include/release-cycle.svg
+
+Another useful visualization is `endoflife.date/python <https://endoflife.date/python>`_.
 
 Supported versions
 ==================

@@ -80,7 +80,7 @@ participating in the CPython core development process:
    country of residence.
 
    Include a "Crowdfunding" bullet point with a link if you'd like to highlight
-   crowdfunding services (e.g. Patreon) that folks can use to support your core
+   crowdfunding services (for example, Patreon) that folks can use to support your core
    development work.
 
    Include additional bullet points (without links) for any other affiliations
@@ -106,9 +106,11 @@ participating in the CPython core development process:
    * Personal site: `Curious Efficiency <https://www.curiousefficiency.org/>`_
    * `Extended bio <https://www.curiousefficiency.org/pages/about>`__
    * Python Software Foundation (Fellow, Packaging Working Group)
+   * Element Labs/LM Studio (Python deployment engineer)
 
    Alyssa began using Python as a testing and prototyping language while working
-   for Boeing Defence Australia, and continues to use it for that purpose today.
+   for Boeing Defence Australia. She now primarily uses it as the lead project
+   maintainer for the open source ``venvstacks`` Python deployment utility.
 
    As a core developer, she is primarily interested in helping to ensure Python's
    continued suitability for educational, testing and data analysis use cases,
@@ -116,7 +118,7 @@ participating in the CPython core development process:
    applications and test harnesses from open source components.
 
    Note: prior to August 2023, Alyssa used her birth name (Nick Coghlan). Some records
-   (e.g. mailing list archives, version control history) will still reference that name.
+   (for example, mailing list archives, version control history) will still reference that name.
 
 .. topic:: Steve Dower (United States/Australia)
 
@@ -186,7 +188,7 @@ participating in the CPython core development process:
 .. topic:: Antoine Pitrou (France)
 
    * LinkedIn: `<https://www.linkedin.com/in/pitrou/>`_ (Senior Software Engineer)
-   * Voltron Data
+   * QuantStack
    * Python Software Foundation (Fellow)
    * Email address: antoine@python.org
 
@@ -197,12 +199,12 @@ participating in the CPython core development process:
    world, and by the concrete roadblocks he was hitting in professional
    settings.  Topics of choice have included interpreter optimizations,
    garbage collection, network programming, system programming and
-   concurrent programming (such as maintaining ``multiprocessing``).
+   concurrent programming.
 
    As a professional, Antoine has been first specializing in network
    programming, and more lately in open source data science infrastructure.
-   He is currently working full time on Apache Arrow as a technical leader
-   for Voltron Data.
+   He has made numerous contributions to Numba, Dask and is currently working
+   full time on Apache Arrow as a technical leader at QuantStack.
 
 .. topic:: Victor Stinner (France)
 
@@ -221,25 +223,23 @@ participating in the CPython core development process:
 
 .. topic:: Barry Warsaw (United States)
 
-   * `LinkedIn: <https://www.linkedin.com/in/barry-warsaw/>`_ (Senior Staff
-     Software Engineer - Python Foundation team)
+   * NVIDIA, Principal System Software Engineer, Open Source Python Ecosystem
    * Personal site: `barry.warsaw.us <https://barry.warsaw.us/>`_
    * Blog: `We Fear Change <https://www.wefearchange.org/>`_
+   * `LinkedIn <https://www.linkedin.com/in/barry-warsaw/>`_
+   * `Bluesky <https://bsky.app/profile/pumpichank.bsky.social>`_
    * Email address: barry@python.org
    * Python Software Foundation (Fellow)
 
    Barry has been working in, with, and on Python since 1994.  He attended the
-   first Python workshop at NBS (now `NIST <https://www.nist.gov/>`_) in
-   Gaithersburg, MD in 1994, where he met Guido and several other early Python
-   adopters.  Barry subsequently worked with Guido for 8 years while at `CNRI
-   <http://cnri.reston.va.us/>`_.  From 2007 until 2017, Barry worked for
-   `Canonical <https://canonical.com/>`_, corporate sponsor of `Ubuntu
-   <https://ubuntu.com/>`_ Linux, primarily on the Python ecosystem, and
-   is both an Ubuntu and a `Debian <https://www.debian.org/>`_ uploading
-   developer.  Barry has served as Python's postmaster, webmaster, release
-   manager, Language Summit co-chair, `Jython <https://www.jython.org/>`_
-   project leader, `GNU Mailman <https://www.list.org/>`_ project leader, and
-   probably lots of other things he shouldn't admit to.
+   first Python workshop at `NIST <https://www.nist.gov/>`_ in Gaithersburg,
+   MD in 1994, where he met Guido and several other early Python adopters.
+   Barry subsequently worked with Guido for 8 years while at `CNRI
+   <http://cnri.reston.va.us/>`_.  Barry has served as Python's postmaster,
+   webmaster, release manager, Language Summit co-chair, `Jython
+   <https://www.jython.org/>`_ project leader, `GNU Mailman
+   <https://www.list.org/>`_ project leader, and Python Steering Council
+   member in 2019, 2020, 2021, 2024, and 2025.
 
 .. topic:: Eric Snow (United States)
 
@@ -261,7 +261,7 @@ participating in the CPython core development process:
 
 .. topic:: Carol Willing (United States)
 
-   * Noteable: `<https://noteable.io/about-us/>`__ (VP Engineering)
+   * Noteable (VP Engineering)
    * Personal site: `Willing Consulting <https://www.willingconsulting.com/>`_
    * `Extended bio <https://www.willingconsulting.com/about/>`__
    * Project Jupyter (Software Council, Core Team for JupyterHub/Binder)
@@ -279,11 +279,11 @@ Goals of this page
 
 The `issue metrics`_ automatically collected by the CPython issue tracker
 strongly suggest that the current core development process is bottlenecked on
-core developer time - this is most clearly indicated in the first metrics graph,
-which shows both the number of open issues and the number of patches awaiting
+core developer time. This is most clearly indicated in the first metrics graph,
+which shows both the number of open issues and the number of pull requests awaiting
 review growing steadily over time, despite CPython being one of the most
 active open source projects in the world. This bottleneck then impacts not only
-resolving open issues and applying submitted patches, but also the process of
+resolving open issues and accepting submitted pull requests, but also the process of
 identifying, nominating and mentoring new core developers.
 
 The core commit statistics monitored by sites like `OpenHub`_ provide a good

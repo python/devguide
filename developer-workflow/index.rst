@@ -1,3 +1,5 @@
+.. _dev-workflow:
+
 ====================
 Development workflow
 ====================
@@ -14,3 +16,4 @@ Development workflow
    grammar
    porting
    sbom
+   psrt

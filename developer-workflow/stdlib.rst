@@ -30,13 +30,10 @@ You have a several options for this:
 * Open a new thread in the `Ideas Discourse category`_
   to gather feedback directly from the Python core developers and community.
 * Write a blog post about the code, which may also help gather useful feedback.
-* Post it to the `Python Cookbook`_.
-  Based on feedback and reviews of the recipe,
-  you can see if others find the functionality as useful as you do.
 
 If you have found general acceptance and usefulness for your code from people,
 you can open an issue on the `issue tracker`_ with the code attached as a
-:ref:`pull request <patch>`. If possible, also submit a
+:ref:`pull request <pullrequest>`. If possible, also submit a
 :ref:`contributor agreement <contributor_agreement>`.
 
 If a core developer decides that your code would be useful to the general
@@ -47,7 +44,6 @@ for it you at least can know that others will come across it who may find it
 useful.
 
 .. _Ideas Discourse category: https://discuss.python.org/c/ideas/6
-.. _Python Cookbook: https://code.activestate.com/recipes/langs/python/
 
 
 Adding a new module
@@ -91,7 +87,7 @@ In order for a module to even be considered for inclusion into the stdlib, a
 couple of requirements must be met.
 
 The most basic is that the code must meet
-:ref:`standard patch requirements <patch>`. For code that has
+:ref:`standard pull request requirements <pullrequest>`. For code that has
 been developed outside the stdlib typically this means making sure the coding
 style guides are followed and that the proper tests have been written.
 
@@ -108,11 +104,11 @@ year, a module needs to have established itself as (one of) the top choices by
 the community for solving the problem the module is intended for.
 
 The development of the module must move into Python's
-infrastructure (i.e., the module is no longer directly maintained outside of
+infrastructure (that is, the module is no longer directly maintained outside of
 Python). This prevents a divergence between the code that is included in the
 stdlib and that which is released outside the stdlib (typically done to provide
 the module to older versions of Python). It also removes the burden of forcing
-core developers to have to redirect bug reports or patches to an external issue
+core developers to have to redirect bug reports or changes to an external issue
 tracker and :abbr:`VCS (version control system)`.
 
 Someone involved with the development of the

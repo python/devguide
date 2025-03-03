@@ -1,3 +1,5 @@
+.. _core-dev:
+
 ===============
 Core developers
 ===============
@@ -11,3 +13,4 @@ Core developers
    developer-log
    motivations
    become-core-developer
+   memorialization

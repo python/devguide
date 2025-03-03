@@ -55,15 +55,12 @@ Module                Maintainers
 __future__
 __main__              gvanrossum, ncoghlan
 _thread
-_testbuffer
 abc
-aifc                  bitdancer
-argparse
+argparse              savannahostrowski*
 array
-ast                   benjaminp, pablogsal, isidentical
+ast                   benjaminp, pablogsal, isidentical, JelleZijlstra, eclips4
 asyncio               1st1, asvetlov, gvanrossum, graingert, kumaraditya303, willingc
 atexit
-audioop               serhiy-storchaka
 base64
 bdb
 binascii
@@ -71,10 +68,7 @@ bisect                rhettinger*
 builtins
 bz2
 calendar
-cgi                   ethanfurman*
-cgitb                 ethanfurman*
-chunk
-cmath                 mdickinson
+cmath
 cmd
 code
 codecs                malemburg, doerwalter
@@ -90,14 +84,13 @@ contextvars
 copy                  avassalotti
 copyreg               avassalotti
 cProfile
-crypt                 jafo^*
 csv                   smontanaro (inactive)
 ctypes                theller (inactive), abalkin, amauryfa, meadori
 curses                Yhg1s
 dataclasses           ericvsmith*, carljm
 datetime              abalkin, pganssle
 dbm
-decimal               facundobatista, rhettinger, mdickinson
+decimal               facundobatista, rhettinger
 difflib               tim-one (inactive)
 dis                   1st1
 doctest               tim-one (inactive)
@@ -111,19 +104,20 @@ fcntl                 Yhg1s
 filecmp
 fileinput
 fnmatch
-fractions             mdickinson
+fractions
 ftplib                giampaolo*
 functools             rhettinger*
 gc                    pitrou, pablogsal
 getopt
+getpath               FFY00
 getpass
 gettext
 glob
 grp
 gzip
-hashlib               tiran, gpshead*
+hashlib               tiran, gpshead*, picnixz
 heapq                 rhettinger*, stutzbach^
-hmac                  tiran, gpshead*
+hmac                  tiran, gpshead*, picnixz
 html                  ezio-melotti*
 http
 idlelib               kbkaiser (inactive), terryjreedy*, serwy (inactive),
@@ -137,16 +131,14 @@ ipaddress             pmoody^
 itertools             rhettinger*
 json                  etrepum (inactive), ezio-melotti, rhettinger
 keyword
-lib2to3               benjaminp
 libmpdec
 linecache
 locale                malemburg
 logging               vsajip
 lzma
 mailbox
-mailcap
 marshal
-math                  mdickinson, rhettinger, stutzbach^
+math                  rhettinger, stutzbach^
 mimetypes
 mmap                  Yhg1s
 modulefinder          theller (inactive), jvr^
@@ -164,7 +156,7 @@ os.path               serhiy-storchaka
 ossaudiodev
 parser                pablogsal
 pathlib               barneygale*
-pdb
+pdb                   gaogaotiantian
 pickle                avassalotti
 pickletools           avassalotti
 pipes
@@ -183,7 +175,7 @@ pyclbr                isidentical
 pydoc                 AA-Turner
 queue                 rhettinger*
 quopri
-random                rhettinger, mdickinson
+random                rhettinger
 re                    ezio-melotti, serhiy-storchaka
 readline              Yhg1s
 reprlib
@@ -210,16 +202,14 @@ stat                  tiran
 statistics            stevendaprano, rhettinger
 string
 stringprep
-struct                mdickinson, meadori
+struct                meadori
 subprocess            astrand^ (inactive), giampaolo, gpshead*
-sunau
 symtable              benjaminp
 sys
 sysconfig             FFY00
 syslog                jafo^*
 tabnanny              tim-one (inactive)
 tarfile               gustaebel
-telnetlib
 tempfile
 termios               Yhg1s
 test                  ezio-melotti
@@ -236,15 +226,16 @@ traceback             iritkatriel
 tracemalloc           vstinner
 tty                   Yhg1s*
 turtle                gregorlingl^, willingc
+turtledemo            terryjreedy*
 types                 1st1
 typing                gvanrossum, JelleZijlstra*, AlexWaygood*, carljm, sobolevn*
 unicodedata           malemburg, ezio-melotti
-unittest              voidspace*, ezio-melotti, rbtcollins, gpshead
-unittest.mock         voidspace*
+unittest              ezio-melotti, rbtcollins, gpshead
+unittest.mock
 urllib                orsenthil
 uu
 uuid
-venv                  vsajip
+venv                  vsajip, FFY00
 warnings
 wave
 weakref               freddrake
@@ -296,16 +287,18 @@ for “their” platform as a third-party project.
 ===================   ===========
 Platform              Maintainers
 ===================   ===========
-AIX                   David.Edelsohn^
+AIX                   edelsohn, ayappanec
+Android               mhsmith
 Cygwin                jlt63^, stutzbach^
 Emscripten            hoodmane, pmp-p, rdb, rth, ryanking13
 FreeBSD
 HP-UX
+iOS                   freakboy3742, ned-deily
 Linux
-macOS                 ronaldoussoren, ned-deily
+macOS                 ronaldoussoren, ned-deily, freakboy3742
 NetBSD1
 OS2/EMX               aimacintyre^
-Solaris/OpenIndiana   jcea
+Solaris/OpenIndiana   jcea, kulikjak
 Windows               tjguk, zware, zooba, pfmoore
 JVM/Java              frank.wierzbicki^
 ===================   ===========
@@ -327,9 +320,8 @@ buildbots           zware, pablogsal
 bytecode            benjaminp, 1st1, markshannon, brandtbucher, carljm, iritkatriel
 context managers    ncoghlan
 core workflow       Mariatta, ezio-melotti, hugovk, AA-Turner
-coverity scan       tiran, Yhg1s
-cryptography        gpshead, dstufft
-data formats        mdickinson
+cryptography        gpshead, dstufft, picnixz
+data formats
 database            malemburg
 devguide            merwok, ezio-melotti, willingc, Mariatta, hugovk,
                     AA-Turner
@@ -342,11 +334,12 @@ frozen modules      ericsnowcurrently, gvanrossum, kumaraditya303
 f-strings           ericvsmith*
 GUI
 i18n                malemburg, merwok
-import machinery    brettcannon, ncoghlan, ericsnowcurrently
+import machinery    brettcannon, ncoghlan, ericsnowcurrently, FFY00
+initialization      FFY00
 io                  benjaminp, stutzbach^, gpshead
-JIT                 brandtbucher*
+JIT                 brandtbucher*, savannahostrowski*
 locale              malemburg
-mathematics         mdickinson, malemburg, stutzbach^, rhettinger
+mathematics         malemburg, stutzbach^, rhettinger
 memory management   tim-one, malemburg, Yhg1s
 memoryview
 networking          giampaolo, gpshead
@@ -364,7 +357,8 @@ release management  tarekziade, malemburg, benjaminp, warsaw,
 runtime lifecycle   ericsnowcurrently, kumaraditya303, zooba
 str.format          ericvsmith*
 subinterpreters     ericsnowcurrently, kumaraditya303
-testing             voidspace, ezio-melotti
+symbol table        JelleZijlstra, carljm
+testing             ezio-melotti
 test coverage
 threads             gpshead
 time and dates      malemburg, abalkin, pganssle

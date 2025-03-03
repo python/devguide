@@ -43,11 +43,11 @@ itself. Git is easily available for all common operating systems.
 - **Install**
 
   As the CPython repo is hosted on GitHub, please refer to either the
-  `GitHub setup instructions <https://docs.github.com/en/get-started/quickstart/set-up-git>`_
+  `GitHub setup instructions <https://docs.github.com/en/get-started/getting-started-with-git/set-up-git>`_
   or the `Git project instructions <https://git-scm.com>`_ for step-by-step
   installation directions. You may also want to consider a graphical client
   such as `TortoiseGit <https://tortoisegit.org/>`_ or
-  `GitHub Desktop <https://desktop.github.com/>`_.
+  `GitHub Desktop <https://github.com/apps/desktop>`_.
 
 - **Configure**
 
@@ -115,9 +115,9 @@ in the ``cpython`` directory and two remotes that refer to your own GitHub fork
 .. XXX move the text below in pullrequest
 
 If you want a working copy of an already-released version of Python,
-i.e., a version in :ref:`maintenance mode <maintbranch>`, you can checkout
-a release branch. For instance, to checkout a working copy of Python 3.8,
-do ``git switch 3.8``.
+that is, a version in :ref:`maintenance mode <maintbranch>`, you can checkout
+a release branch. For instance, to checkout a working copy of Python 3.13,
+do ``git switch 3.13``.
 
 You will need to re-compile CPython when you do such an update.
 
@@ -127,7 +127,7 @@ changes to Python code will be picked up by the interpreter for immediate
 use and testing.  (If you change C code, you will need to recompile the
 affected files as described below.)
 
-Patches for the documentation can be made from the same repository; see
+Changes for the documentation can be made from the same repository; see
 :ref:`documenting`.
 
 .. _install-pre-commit:
@@ -226,7 +226,7 @@ If you decide to :ref:`build-dependencies`, you will need to re-run both
 Once CPython is done building you will then have a working build
 that can be run in-place; ``./python`` on most machines (and what is used in
 all examples), ``./python.exe`` wherever a case-insensitive filesystem is used
-(e.g. on macOS by default), in order to avoid conflicts with the ``Python``
+(for example, on macOS by default), in order to avoid conflicts with the ``Python``
 directory. There is normally no need to install your built copy
 of Python! The interpreter will realize where it is being run from
 and thus use the files found in the working copy.  If you are worried
@@ -286,7 +286,7 @@ Windows
    :ref:`clone the repository <checkout>` from a native Windows shell program
    like PowerShell or the ``cmd.exe`` command prompt,
    and use a build of Git targeted for Windows,
-   e.g. the `Git for Windows download from the official Git website`_.
+   for example, the `Git for Windows download from the official Git website`_.
    Otherwise, Visual Studio will not be able to find all the project's files
    and will fail the build.
 
@@ -375,8 +375,8 @@ host/runtime as a *guest*.
 To build for WASI, you will need to cross-compile CPython. This requires a C
 compiler just like building for :ref:`Unix <unix-compiling>` as well as:
 
-1. A C compiler that can target WebAssembly (e.g. `WASI SDK`_)
-2. A WASI host/runtime (e.g. Wasmtime_)
+1. A C compiler that can target WebAssembly (for example, `WASI SDK`_)
+2. A WASI host/runtime (for example, Wasmtime_)
 
 All of this is provided in the :ref:`devcontainer <using-codespaces>`. You can
 also use what's installed in the container as a reference of what versions of
@@ -394,7 +394,7 @@ to help produce a WASI build of CPython (technically it's a "host x host"
 cross-build because the build Python is also the target Python while the host
 build is the WASI build). This means you effectively build CPython twice: once
 to have a version of Python for the build system to use and another that's the
-build you ultimately care about (i.e. the build Python is not meant for use by
+build you ultimately care about (that is, the build Python is not meant for use by
 you directly, only the build system).
 
 The easiest way to get a debug build of CPython for WASI is to use the
@@ -457,6 +457,12 @@ used in ``python.sh``:
 .. _WASI SDK: https://github.com/WebAssembly/wasi-sdk
 .. _wasmtime: https://wasmtime.dev
 .. _WebAssembly: https://webassembly.org
+
+Android
+-------
+
+Build and test instructions for Android are maintained in the CPython repository
+at :cpy-file:`Android/README.md`.
 
 iOS
 ---
@@ -608,8 +614,8 @@ for details.
 Install dependencies
 ====================
 
-This section explains how to install additional extensions (e.g. ``zlib``)
-on Linux, macOS and iOS.
+This section explains how to install libraries which are needed to compile
+some of CPython's modules (for example, ``zlib``).
 
 .. tab:: Linux
 
@@ -621,8 +627,18 @@ on Linux, macOS and iOS.
 
    On **Fedora**, **RHEL**, **CentOS** and other ``dnf``-based systems::
 
+      $ sudo dnf install git pkg-config
       $ sudo dnf install dnf-plugins-core  # install this to use 'dnf builddep'
       $ sudo dnf builddep python3
+
+   Some optional development dependencies are not included in the above.
+   To install some additional dependencies for optional build and test components::
+
+      $ sudo dnf install \
+            gcc gcc-c++ gdb lzma glibc-devel libstdc++-devel openssl-devel \
+            readline-devel zlib-devel libffi-devel bzip2-devel xz-devel \
+            sqlite sqlite-devel sqlite-libs libuuid-devel gdbm-libs perf \
+            expat expat-devel mpdecimal python3-pip
 
 
    On **Debian**, **Ubuntu**, and other ``apt``-based systems, try to get the
@@ -635,7 +651,8 @@ on Linux, macOS and iOS.
 
       $ deb-src http://archive.ubuntu.com/ubuntu/ jammy main
 
-   Alternatively, uncomment lines with ``deb-src`` using an editor, e.g.::
+   Alternatively, uncomment lines with ``deb-src`` using an editor, for
+   example::
 
       $ sudo nano /etc/apt/sources.list
 
@@ -659,6 +676,8 @@ on Linux, macOS and iOS.
             libncurses5-dev libreadline6-dev libsqlite3-dev libssl-dev \
             lzma lzma-dev tk-dev uuid-dev zlib1g-dev libmpdec-dev
 
+   Note that Debian 12 and Ubuntu 24.04 do not have the ``libmpdec-dev`` package.  You can safely
+   remove it from the install list above and the Python build will use a bundled version.
 
 .. tab:: macOS
 
@@ -690,7 +709,7 @@ on Linux, macOS and iOS.
 
       For **Homebrew**, install dependencies using ``brew``::
 
-         $ brew install pkg-config openssl@3.0 xz gdbm tcl-tk mpdecimal
+         $ brew install pkg-config openssl@3 xz gdbm tcl-tk mpdecimal
 
       .. tab:: Python 3.13+
 
@@ -700,7 +719,7 @@ on Linux, macOS and iOS.
                GDBM_LIBS="-L$(brew --prefix gdbm)/lib -lgdbm" \
                ./configure --with-pydebug \
                            --with-system-libmpdec \
-                           --with-openssl="$(brew --prefix openssl@3.0)"
+                           --with-openssl="$(brew --prefix openssl@3)"
 
       .. tab:: Python 3.11-3.12
 
@@ -709,18 +728,23 @@ on Linux, macOS and iOS.
             $ GDBM_CFLAGS="-I$(brew --prefix gdbm)/include" \
                GDBM_LIBS="-L$(brew --prefix gdbm)/lib -lgdbm" \
                ./configure --with-pydebug \
-                           --with-openssl="$(brew --prefix openssl@3.0)"
+                           --with-openssl="$(brew --prefix openssl@3)"
 
-      .. tab:: Python 3.8-3.10
+      .. tab:: Python 3.9-3.10
 
-         For Python 3.8, 3.9, and 3.10::
+         For Python 3.9 and 3.10::
 
             $ CPPFLAGS="-I$(brew --prefix gdbm)/include -I$(brew --prefix xz)/include" \
                LDFLAGS="-L$(brew --prefix gdbm)/lib -L$(brew --prefix xz)/lib" \
                ./configure --with-pydebug \
-                           --with-openssl="$(brew --prefix openssl@3.0)" \
+                           --with-openssl="$(brew --prefix openssl@3)" \
                            --with-tcltk-libs="$(pkg-config --libs tcl tk)" \
-                           --with-tcltk-includes="$(pkg-config --cflags tcl tk)"
+                           --with-tcltk-includes="$(pkg-config --cflags tcl tk)" \
+                           --with-dbmliborder=gdbm:ndbm
+
+         (``--with-dbmliborder`` is a workaround for a Homebrew-specific change
+         to ``gdbm``; see `#89452 <https://github.com/python/cpython/issues/89452>`_
+         for details.)
 
    .. tab:: MacPorts
 
@@ -772,11 +796,21 @@ on Linux, macOS and iOS.
 
    On Windows, extensions are already included and built automatically.
 
+.. tab:: Android
+
+   The BeeWare project maintains `scripts for building Android dependencies`_,
+   and distributes `pre-compiled binaries`_ for each of them.
+   These binaries are automatically downloaded and used by the CPython
+   build script at :cpy-file:`Android/android.py`.
+
+   .. _scripts for building Android dependencies: https://github.com/beeware/cpython-android-source-deps
+   .. _pre-compiled binaries: https://github.com/beeware/cpython-android-source-deps/releases
+
 .. tab:: iOS
 
    As with CPython itself, the dependencies for CPython must be compiled for
    each of the hardware architectures that iOS supports. Consult the
-   documentation for `XZ <https://xz.tukaani.org/xz-utils/>`__, `bzip2
+   documentation for `XZ <https://tukaani.org/xz/>`__, `bzip2
    <https://sourceware.org/bzip2/>`__, `OpenSSL <https://www.openssl.org>`__ and
    `libffi <https://github.com/libffi/libffi>`__ for details on how to configure
    the project for cross-platform iOS builds.
@@ -931,7 +965,7 @@ every rule.
      The part of the standard library implemented in pure Python.
 
 ``Mac``
-     Mac-specific code (e.g., using IDLE as a macOS application).
+     Mac-specific code (for example, using IDLE as a macOS application).
 
 ``Misc``
      Things that do not belong elsewhere. Typically this is varying kinds of
@@ -999,7 +1033,7 @@ you'd prefer to use that directly.
 Create a CPython codespace
 --------------------------
 
-Here are the basic steps needed to contribute a patch using Codespaces.
+Here are the basic steps needed to contribute a pull request using Codespaces.
 You first need to navigate to the
 `CPython repo <https://github.com/python/cpython>`_ hosted on GitHub.
 

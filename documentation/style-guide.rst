@@ -26,6 +26,7 @@ the footnote reference.
 
 Footnotes may appear in the middle of sentences where appropriate.
 
+
 Capitalization
 ==============
 
@@ -54,10 +55,15 @@ starting it with a lowercase letter should be avoided.
 Many special names are used in the Python documentation, including the names of
 operating systems, programming languages, standards bodies, and the like. Most
 of these entities are not assigned any special markup, but the preferred
-spellings are given here to aid authors in maintaining the consistency of
-presentation in the Python documentation.
+spellings are given in :ref:`specific words` to aid authors in maintaining the
+consistency of presentation in the Python documentation.
 
-Other terms and words deserve special mention as well; these conventions should
+.. _specific words:
+
+Specific words
+==============
+
+Some terms and words deserve special mention. These conventions should
 be used to ensure consistency throughout the documentation:
 
 C API
@@ -79,6 +85,12 @@ reST
    used to produce Python documentation.  When spelled out, it is
    always one word and both forms start with a lowercase 'r'.
 
+time zone
+   When referring to a Python term like a module, class, or argument spell it
+   as one word with appropriate markup (for example, ``:mod:`timezone```).
+   When talking about the real-world concept spell it as two words with no
+   markup.
+
 Unicode
    The name of a character coding system. This is always written
    capitalized.
@@ -88,7 +100,18 @@ Unix
    1970s.
 
 
+Use simple language
+===================
+
+Avoid esoteric phrasing where possible.  Our audience is world-wide and may not
+be native English speakers.
+
+Don't use Latin abbreviations like "e.g." or "i.e." where English words will do,
+such as "for example" or "that is."
+
+
 .. index:: diataxis
+.. _diataxis:
 
 Diátaxis
 ========
@@ -110,7 +133,7 @@ explanation.
   designed to guide a user through a problem-field.
   Both tutorials and how-to guides are instructional rather than explanatory
   and should provide logical steps on how to complete a task. However,
-  how-to guides make more assumptions about the user's knoweldge and
+  how-to guides make more assumptions about the user's knowledge and
   focus on the user finding the best way to solve their own
   particular problem.
 
@@ -131,6 +154,7 @@ explanation.
 
 Please consult the `Diátaxis <https://diataxis.fr/>`_ guide for more
 detail.
+
 
 Links
 =====
@@ -160,6 +184,7 @@ documentation for ``map``.  You can suppress the link while keeping the
 semantic presentation of the function name by adding an exclamation point
 prefix: ``:func:`!map```.  See :ref:`roles` for more details.
 
+
 Affirmative tone
 ================
 
@@ -185,6 +210,29 @@ language):
     achieve the same effect.  This assures that files are flushed and file
     descriptor resources are released in a timely manner.
 
+
+Author attribution
+==================
+
+For new documentation, do not use a byline (naming the author of the document).
+Explicit attribution tends to discourage other users from updating community
+documentation.
+
+Existing documentation with bylines will not be changed unless the author
+decides to do so. This is subject to change in the future.
+
+
+Pronunciation of dunder names
+=============================
+
+"Dunder names" like ``__init__`` can be awkward in running prose: is it "an
+init" or "a dunder init"?  Our recommendation is to ignore the underscores and
+use the article that is appropriate for the word in the name.  A `quick poll`__
+backs this up: "an __init__."
+
+__ https://hachyderm.io/@nedbat/112129685322594689
+
+
 Economy of expression
 =====================
 
@@ -196,12 +244,13 @@ to understanding and can result in even more ways to misread or misinterpret the
 text.  Long descriptions full of corner cases and caveats can create the
 impression that a function is more complex or harder to use than it actually is.
 
+
 Security considerations (and other concerns)
 ============================================
 
 Some modules provided with Python are inherently exposed to security issues
-(e.g. shell injection vulnerabilities) due to the purpose of the module
-(e.g. :mod:`ssl`).  Littering the documentation of these modules with red
+(for example, shell injection vulnerabilities) due to the purpose of the module
+(for example, :mod:`ssl`).  Littering the documentation of these modules with red
 warning boxes for problems that are due to the task at hand, rather than
 specifically to Python's support for that task, doesn't make for a good
 reading experience.
@@ -213,9 +262,10 @@ similar to :samp:`"Please refer to the :ref:\`{security-considerations}\`
 section for important information on how to avoid common mistakes."`.
 
 Similarly, if there is a common error that affects many interfaces in a
-module (e.g. OS level pipe buffers filling up and stalling child processes),
+module (for example, OS level pipe buffers filling up and stalling child processes),
 these can be documented in a "Common Errors" section and cross-referenced
 rather than repeated for every affected interface.
+
 
 .. _code-examples:
 
@@ -236,6 +286,7 @@ be used sparingly, where it is necessary to clearly differentiate between input
 lines and output lines.  Besides contributing visual clutter, it makes it
 difficult for readers to cut-and-paste examples so they can experiment with
 variations.
+
 
 Code equivalents
 ================
@@ -261,6 +312,7 @@ An example of when not to use a code equivalent is for the :func:`oct` function.
 The exact steps in converting a number to octal doesn't add value for a user
 trying to learn what the function does.
 
+
 Audience
 ========
 
@@ -281,3 +333,19 @@ errors ("I made a mistake, therefore the docs must be wrong ...").  Typically,
 the documentation wasn't consulted until after the error was made.  It is
 unfortunate, but typically no documentation edit would have saved the user from
 making false assumptions about the language ("I was surprised by ...").
+
+
+Function signatures
+===================
+
+These are the evolving guidelines for how to include function signatures in the
+reference guide.  As outlined in :ref:`diataxis`, reference material should
+prioritize precision and completeness.
+
+- If a function accepts positional-only or keyword-only arguments, include the
+  slash and the star in the signature as appropriate::
+
+   .. function:: some_function(pos1, pos2, /, pos_or_kwd, *, kwd1, kwd2):
+
+  Although the syntax is terse, it is precise about the allowable ways to call
+  the function and is taken from Python itself.

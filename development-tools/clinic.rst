@@ -213,7 +213,7 @@ Classes for extending Argument Clinic
 
       The C type to use for this variable.
       :attr:`!type` should be a Python string specifying the type,
-      e.g. ``'int'``.
+      for example, ``'int'``.
       If this is a pointer type, the type string should end with ``' *'``.
 
    .. attribute:: default

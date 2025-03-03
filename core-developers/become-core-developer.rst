@@ -8,7 +8,7 @@ How to become a core developer
 What it takes
 =============
 
-When you have consistently contributed patches which meet quality standards
+When you have consistently made contributions which meet quality standards
 without requiring extensive rewrites prior to being committed,
 you may qualify for commit privileges and become a core developer of Python.
 You must also work well with other core developers (and people in general)
@@ -28,11 +28,12 @@ Gaining commit privileges
 After a candidate has demonstrated consistent contributions, commit privileges
 are granted through these steps:
 
-#. A core developer (submitter, usually the mentor) starts a poll in the
-   `Committers category`_ on the `Python Discourse`_.
+#. A core developer (submitter, usually the mentor) starts a poll
+   (see the :ref:`template <coredev-template>` below) in
+   the `Committers category`_ on the `Python Discourse`_.
 
    - open for 7 days
-   - results shown upon close
+   - results shown only upon closing
 
 #. If the candidate receives at least two-thirds positive votes when the poll closes
    (as per :pep:`13`), the submitter `emails the steering council
@@ -59,6 +60,52 @@ are granted through these steps:
      were in the form of a separate post on the already open topic with
      the poll.
 
-.. _Code of Conduct: https://www.python.org/psf/conduct/
+Getting a python.org email address
+----------------------------------
+
+Members of the core team can get an email address on the python.org domain.
+For more details refer to the `python.org email policy
+<https://www.python.org/psf/records/board/policies/email/>`_.
+
+
+Poll template
+=============
+
+.. _coredev-template:
+
+While Discourse uses Markdown for formatting, the poll functionality is
+custom and somewhat resembles BBcode. There's a creator for polls in the
+UI (click the cog icon in the edit box toolbar and choose "Build Poll").
+Here's what it outputs, you can copy and paste it for your poll:
+
+.. code-block:: bbcode
+
+   [poll type=regular results=on_close public=false chartType=bar groups=committers close=2024-07-15T21:15:00.000Z]
+   * Promote Basil Fawlty
+   * Do not promote
+   [/poll]
+
+The important options in the poll builder set to get this result:
+ - Show who voted: **disabled** (``public=false``)
+ - Limit voting to these groups: **committers** (``groups=committers``)
+ - Automatically close poll: **in 7 days** (``close=...``)
+ - Show results: **When poll is closed** (``results=on_close``)
+
+.. raw:: html
+
+    <script>
+    for (let span of document.querySelectorAll('span')) {
+      if (span.textContent === '2024-07-15T21:15:00.000Z') {
+         const nextWeek = new Date();
+         nextWeek.setDate(nextWeek.getDate() + 7);
+         nextWeek.setSeconds(0);
+         nextWeek.setMilliseconds(0);
+         span.textContent = nextWeek.toISOString();
+         break;
+      }
+    }
+    </script>
+
+.. _Code of Conduct: https://policies.python.org/python.org/code-of-conduct/
 .. _Committers category: https://discuss.python.org/c/committers/5
 .. _Python Discourse: https://discuss.python.org

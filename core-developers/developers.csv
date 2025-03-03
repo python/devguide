@@ -1,3 +1,11 @@
+Bénédikt Tran,picnixz,2025-01-10,,
+Savannah Ostrowski,savannahostrowski,2024-11-13,,
+Matt Page,mpage,2024-10-10,,
+Kirill Podoprigora,Eclips4,2024-09-20,,
+Ned Batchelder,nedbat,2024-07-16,,
+Tian Gao,gaogaotiantian,2024-06-06,,
+Michael Droettboom,mdboom,2024-06-06,,
+Russell Keith-Magee,freakboy3742,2024-05-30,,
 Sam Gross,colesbury,2024-02-06,,
 Nikita Sobolev,sobolevn,2024-02-06,,
 Adam Turner,AA-Turner,2023-10-10,,
@@ -23,7 +31,7 @@ Kyle Stanley,aeros,2020-04-14,,
 Donghee Na,corona10,2020-04-08,,
 Karthikeyan Singaravelan,tirkarthi,2019-12-31,,
 Joannah Nanjekye,nanjekyejoannah,2019-09-23,,
-Abhilash Raj,maxking,2019-08-06,,
+Abhilash Raj,maxking,2019-08-06,2022-11-30,"Privileges relinquished on 2022-11-30"
 Paul Ganssle,pganssle,2019-06-15,,
 Stéphane Wirtel,matrixise,2019-04-08,,
 Stefan Behnel,scoder,2019-04-08,,
@@ -44,7 +52,7 @@ Xavier de Gaye,xdegaye,2016-06-03,2018-01-25,Privileges relinquished on 2018-01-
 Davin Potts,applio,2016-03-06,,
 Martin Panter,vadmium,2015-08-10,2020-11-26,
 Paul Moore,pfmoore,2015-03-15,,
-Robert Collins,rbtcollins,2014-10-16,,To work on unittest
+Robert Collins,rbtcollins,2014-10-16,2021-11-30,To work on unittest; privileges relinquished on 2021-11-30
 Berker Peksağ,berkerpeksag,2014-06-26,,
 Steve Dower,zooba,2014-05-10,,
 Kushal Das,kushaldas,2014-04-14,,
@@ -61,7 +69,7 @@ Hynek Schlawack,hynek,2012-05-14,,
 Richard Oudkerk,,2012-04-29,2017-02-10,For multiprocessing module; did not make GitHub transition
 Andrew Svetlov,asvetlov,2012-03-13,,At PyCon sprint
 Petri Lehtinen,akheron,2011-10-22,2020-11-12,
-Meador Inge,meadori,2011-09-19,2020-11-26,
+Meador Inge,meadori,2011-09-19,,
 Jeremy Kloth,jkloth,2011-09-12,,
 Sandro Tosi,sandrotosi,2011-08-01,,
 Alex Gaynor,alex,2011-07-18,,For PyPy compatibility (since expanded scope)
@@ -70,7 +78,7 @@ Nadeem Vawda,,2011-04-10,2017-02-10,Did not make GitHub transition
 Carl Friedrich Bolz-Tereick,cfbolz,2011-03-21,,for stdlib compatibility work for PyPy
 Jason R. Coombs,jaraco,2011-03-14,,For sprinting on distutils2
 Ross Lagerwall,,2011-03-13,2017-02-10,Did not make GitHub transition
-Eli Bendersky,eliben,2011-01-11,2020-11-26,
+Eli Bendersky,eliben,2011-01-11,2020-11-26,Relinquished privileges on 2020-11-26
 Ned Deily,ned-deily,2011-01-09,,
 David Malcolm,davidmalcolm,2010-10-27,2020-11-12,relinquished privileges on 2020-11-12
 Tal Einat,taleinat,2010-10-04,,Initially for IDLE
@@ -92,12 +100,12 @@ Doug Hellmann,dhellmann,2009-09-20,2020-11-11,For documentation; relinquished pr
 Frank Wierzbicki,,2009-08-02,2017-02-10,For Jython compatibility; did not make GitHub transition
 Ezio Melotti,ezio-melotti,2009-06-07,,For documentation
 Philip Jenvey,pjenvey,2009-05-07,2020-11-26,For Jython compatibility
-Michael Foord,voidspace,2009-04-01,,For IronPython compatibility
+Michael Foord,voidspace,2009-04-01,2025-01-24,For IronPython compatibility; deceased
 R\. David Murray,bitdancer,2009-03-30,,
 Chris Withers,cjw296,2009-03-08,,
 Tarek Ziadé,tarekziade,2008-12-21,2017-02-10,For distutils module
 Hirokazu Yamamoto,,2008-08-12,2017-02-10,For Windows build; did not make GitHub transition
-Armin Ronacher,mitsuhiko,2008-07-23,2020-11-26,For documentation toolset and ast module
+Armin Ronacher,mitsuhiko,2008-07-23,,For documentation toolset and ast module
 Antoine Pitrou,pitrou,2008-07-16,,
 Senthil Kumaran,orsenthil,2008-06-16,,
 Jesse Noller,,2008-06-16,2017-02-10,For multiprocessing module; did not make GitHub transition
@@ -106,9 +114,9 @@ Guilherme Polo,,2008-04-24,2017-02-10,Did not make GitHub transition
 Jeroen Ruigrok van der Werven,,2008-04-12,2017-02-10,For documentation; did not make GitHub transition
 Benjamin Peterson,benjaminp,2008-03-25,,For bug triage
 David Wolever,wolever,2008-03-17,2020-11-21,For 2to3 module
-Trent Nelson,tpn,2008-03-17,2020-11-26,
-Mark Dickinson,mdickinson,2008-01-06,,For maths-related work
-Amaury Forgeot d'Arc,amauryfa,2007-11-09,2020-11-26,
+Trent Nelson,tpn,2008-03-17,,
+Mark Dickinson,mdickinson,2008-01-06,2024-08-13,For maths-related work
+Amaury Forgeot d'Arc,amauryfa,2007-11-09,2020-11-26,"Relinquished privileges on 2020-11-26"
 Christian Heimes,tiran,2007-10-31,,
 Bill Janssen,,2007-08-28,2017-02-10,For ssl module; did not make GitHub transition
 Jeffrey Yasskin,,2007-08-09,2017-02-10,Did not make GitHub transition
@@ -134,7 +142,7 @@ Facundo Batista,facundobatista,2004-10-16,,
 Sean Reifschneider,,2004-09-17,2017-02-10,Did not make GitHub transition
 Johannes Gijsbers,,2004-08-14,2005-07-27,Privileges relinquished on 2005-07-27
 Matthias Klose,doko42,2004-08-04,,
-PJ Eby,pjeby,2004-03-24,2020-11-26,
+PJ Eby,pjeby,2004-03-24,2020-11-26,"Relinquished privileges on 2020-11-26"
 Vinay Sajip,vsajip,2004-02-20,,
 Hye-Shik Chang,hyeshik,2003-12-10,,
 Armin Rigo,,2003-10-24,2012-06-01,Privileges relinquished in 2012
@@ -149,7 +157,7 @@ Steve Holden,holdenweb,2002-06-14,2017-02-10,"Relinquished privileges on 2005-04
         but granted again for Need for Speed sprint; did not make GitHub transition"
 Christian Tismer,ctismer,2002-05-17,,For Need for Speed sprint
 Jason Tishler,,2002-05-15,2017-02-10,Did not make GitHub transition
-Walter Dörwald,doerwalter,2002-03-21,,
+Walter Dörwald,doerwalter,2002-03-21,2021-11-16,"Relinquished privileges on 2021-11-16"
 Andrew MacIntyre,,2002-02-17,2016-01-02,Privileges relinquished 2016-01-02
 Gregory P. Smith,gpshead,2002-01-08,,
 Anthony Baxter,,2001-12-21,2017-02-10,Did not make GitHub transition
@@ -182,9 +190,9 @@ Eric S. Raymond,,2000-06-02,2017-02-10,Did not make GitHub transition
 Greg Stein,,1999-11-07,2017-02-10,Did not make GitHub transition
 Just van Rossum,,1999-01-22,2017-02-10,Did not make GitHub transition
 Greg Ward,,1998-12-18,2017-02-10,Did not make GitHub transition
-Andrew Kuchling,akuchling,1998-04-09,,
+Andrew Kuchling,akuchling,1998-04-09,2022-11-09,Privileges relinquished 2022-11-09
 Ken Manheimer,,1998-03-03,2005-04-08,Privileges relinquished on 2005-04-08
-Jeremy Hylton,jeremyhylton,1997-08-13,2020-11-26,
+Jeremy Hylton,jeremyhylton,1997-08-13,,
 Roger E. Masse,,1996-12-09,2017-02-10,Did not make GitHub transition
 Fred Drake,freddrake,1996-07-23,,
 Barry Warsaw,warsaw,1994-07-25,,
