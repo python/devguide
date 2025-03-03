@@ -22,7 +22,7 @@ in production; others are works in progress.
      - Abdur-Rahmaan Janhangeer (:github-user:`Abdur-rahmaanJ`)
      - :github:`GitHub <Abdur-rahmaanJ/python-docs-ar>`
    * - Bengali as spoken in India (bn_IN)
-     - Kushal Das (:github-user:`Kushal997-das`)
+     - Kushal Das (:github-user:`kushaldas`)
      - :github:`GitHub <python/python-docs-bn-in>`
    * - `French (fr) <https://docs.python.org/fr/>`__
      - Julien Palard (:github-user:`JulienPalard`)
