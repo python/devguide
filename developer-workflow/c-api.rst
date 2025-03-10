@@ -19,8 +19,13 @@ The C API is divided into these tiers:
 Each tier has different stability and maintenance requirements to consider
 when you add or change definitions in it.
 
-The compatibility guarantees for public C API are explained in the
-user documentation, ``Doc/c-api/stable.rst`` (:ref:`python:stable`).
+The public backwards compatibility guarantees for public C API are explained
+in the user documentation, ``Doc/c-api/stable.rst`` (:ref:`python:stable`).
+C language compatibility guarantees are in ``Doc/c-api/intro.rst``
+(:ref:`python:api-intro`).
+
+As core developers, we need to be more careful about compatibility than what
+we promise publicly. See :ref:`public-capi` for details.
 
 
 The internal API
@@ -92,6 +97,17 @@ CPython's public C API is available when ``Python.h`` is included normally
 
 It should be defined in ``Include/cpython/`` (unless part of the Limited API,
 see below).
+
+Before adding new public API, please ask in the `decisions repo`_ of
+the :pep:`C API workgroup <731>`.
+This helps us ensure *newly added* API is consistent and maintainable.
+
+Also check with the C API WG before requiring a C feature not present in C99.
+While the *public* docs only promise compatibility with C11, in practice
+we only intruduce C11 features individually as needed.
+
+.. _decisions repo: https://github.com/capi-workgroup/decisions/issues
+
 
 .. _public-api-guidelines:
 
