@@ -24,8 +24,8 @@ in the user documentation, ``Doc/c-api/stable.rst`` (:ref:`python:stable`).
 C language compatibility guarantees are in ``Doc/c-api/intro.rst``
 (:ref:`python:api-intro`).
 
-Internally, we need to be more careful about compatibility than what we promise
-publicly. See :ref:`public-capi` for details.
+As core developers, we need to be more careful about compatibility than what
+we promise publicly. See :ref:`public-capi` for details.
 
 
 The internal API
