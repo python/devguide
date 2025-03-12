@@ -35,7 +35,8 @@ class Versions:
         # Generate a few additional fields
         for key, version in self.versions.items():
             version["key"] = key
-            version["first_release_date"] = parse_date(version["first_release"])
+            version["first_release_date"] = r1 = parse_date(version["first_release"])
+            version["start_security_date"] = r1 + dt.timedelta(days=2 * 365)
             version["end_of_life_date"] = parse_date(version["end_of_life"])
         self.sorted_versions = sorted(
             self.versions.values(),
