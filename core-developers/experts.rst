@@ -230,8 +230,8 @@ turtledemo            terryjreedy*
 types                 1st1
 typing                gvanrossum, JelleZijlstra*, AlexWaygood*, carljm, sobolevn*
 unicodedata           malemburg, ezio-melotti
-unittest              voidspace*, ezio-melotti, rbtcollins, gpshead
-unittest.mock         voidspace*
+unittest              ezio-melotti, rbtcollins, gpshead
+unittest.mock
 urllib                orsenthil
 uu
 uuid
@@ -298,7 +298,7 @@ Linux
 macOS                 ronaldoussoren, ned-deily, freakboy3742
 NetBSD1
 OS2/EMX               aimacintyre^
-Solaris/OpenIndiana   jcea
+Solaris/OpenIndiana   jcea, kulikjak
 Windows               tjguk, zware, zooba, pfmoore
 JVM/Java              frank.wierzbicki^
 ===================   ===========
@@ -358,7 +358,7 @@ runtime lifecycle   ericsnowcurrently, kumaraditya303, zooba
 str.format          ericvsmith*
 subinterpreters     ericsnowcurrently, kumaraditya303
 symbol table        JelleZijlstra, carljm
-testing             voidspace, ezio-melotti
+testing             ezio-melotti
 test coverage
 threads             gpshead
 time and dates      malemburg, abalkin, pganssle

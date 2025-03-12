@@ -27,12 +27,13 @@ in return.
 Mailing lists
 =============
 
-.. note:: Some mailing lists have been supplanted by categories in the
-   Python `Discourse`_. Specifically,
+.. note::
+
+   Mailing lists have generally been replaced by the `Discourse`_ forum.
+   Specifically,
 
    * The python-dev list is superseded by the `Core Development`_
      and `PEPs`_ categories on Discourse.
-
    * The python-ideas list is superseded by posts in the `Ideas`_
      category on Discourse.
 
@@ -42,17 +43,21 @@ Mailing lists
    - Ideas about new functionality should **not** start here, and instead
      should be discussed in `Ideas`_.
    - Technical support questions should also not be asked here, and instead
-     should go to the python-list_ or python-help_ mailing lists, or the
-     `Python Help`_ category on Discourse.
+     should go to the `Python Help`_ category on Discourse or the python-list_.
 
-Existing threads on the python-dev_, python-committers_, and python-ideas_ mailing lists
-can be accessed through the `online archive <web gateway_>`__.
+   Previous threads on the python-dev_, python-committers_, and python-ideas_
+   mailing lists can be accessed through the `online archive
+   <https://mail.python.org/archives/>`__.
+
+   .. _python-committers: https://mail.python.org/mailman3/lists/python-committers.python.org/
+   .. _python-dev: https://mail.python.org/mailman3/lists/python-dev.python.org/
+   .. _python-ideas: https://mail.python.org/mailman3/lists/python-ideas.python.org
 
 General Python questions should go to `python-list`_ or `tutor`_
-or similar resources, such as StackOverflow_ or the ``#python`` IRC channel
+or similar resources, such as `Stack Overflow`_ or the ``#python`` IRC channel
 on Libera.Chat_.
 
-`The core-workflow <https://github.com/python/core-workflow/issues>`_
+The `core-workflow <https://github.com/python/core-workflow/issues>`__
 issue tracker is the place to discuss and work on improvements to the CPython
 core development workflow.
 
@@ -62,16 +67,10 @@ https://mail.python.org/mailman3/ (newer lists, using Mailman3). Some lists may 
 be mirrored at `GMANE <https://gmane.io/>`_ and can be read and posted to in various
 ways, including via web browsers, NNTP newsreaders, and RSS feed readers.
 
-.. _issue tracker: https://github.com/python/cpython/issues
-.. _python-committers: https://mail.python.org/mailman3/lists/python-committers.python.org/
-.. _python-dev: https://mail.python.org/mailman3/lists/python-dev.python.org/
-.. _python-help: https://mail.python.org/mailman/listinfo/python-help
-.. _python-ideas: https://mail.python.org/mailman3/lists/python-ideas.python.org
 .. _python-list: https://mail.python.org/mailman/listinfo/python-list
 .. _tutor: https://mail.python.org/mailman/listinfo/tutor
-.. _StackOverflow: https://stackoverflow.com/
+.. _Stack Overflow: https://stackoverflow.com/
 .. _Libera.Chat: https://libera.chat/
-.. _web gateway: https://mail.python.org/archives/
 
 
 .. _communication-discourse:
@@ -79,11 +78,8 @@ ways, including via web browsers, NNTP newsreaders, and RSS feed readers.
 Discourse (discuss.python.org web forum)
 ========================================
 
-We have our own `Discourse`_ forum for both developers and users. This forum
-complements the `python-dev`_, `python-ideas`_, `python-help`_, and
-`python-list`_ mailing lists.
-
-This forum has different categories and most core development discussions
+We have our own `Discourse`_ forum for both developers and users.
+It has different categories and most core development discussions
 take place in the open forum categories for `PEPs`_ and `Core Development`_
 (these are the Discourse equivalents to the python-dev mailing list).
 All categories are open for users to read and post with the exception of

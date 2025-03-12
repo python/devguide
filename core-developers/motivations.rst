@@ -188,7 +188,7 @@ participating in the CPython core development process:
 .. topic:: Antoine Pitrou (France)
 
    * LinkedIn: `<https://www.linkedin.com/in/pitrou/>`_ (Senior Software Engineer)
-   * Voltron Data
+   * QuantStack
    * Python Software Foundation (Fellow)
    * Email address: antoine@python.org
 
@@ -199,12 +199,12 @@ participating in the CPython core development process:
    world, and by the concrete roadblocks he was hitting in professional
    settings.  Topics of choice have included interpreter optimizations,
    garbage collection, network programming, system programming and
-   concurrent programming (such as maintaining ``multiprocessing``).
+   concurrent programming.
 
    As a professional, Antoine has been first specializing in network
    programming, and more lately in open source data science infrastructure.
-   He is currently working full time on Apache Arrow as a technical leader
-   for Voltron Data.
+   He has made numerous contributions to Numba, Dask and is currently working
+   full time on Apache Arrow as a technical leader at QuantStack.
 
 .. topic:: Victor Stinner (France)
 

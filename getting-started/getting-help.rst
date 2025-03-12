@@ -37,25 +37,6 @@ Those particularly relevant for help contributing to Python itself include:
 .. _Ideas: https://discuss.python.org/c/ideas/6
 
 
-.. _help-mailing-lists:
-
-Mailing lists
--------------
-
-Further options for seeking assistance include the
-`python-ideas`_ and `python-dev`_ mailing lists,
-which correspond to the `Ideas`_ and `Core Development`_
-:ref:`help-discourse` categories, respectively.
-The Discourse categories are generally more active
-and are the preferred venue for new discussions,
-but the mailing lists are still monitored and responded to.
-These mailing lists are for questions involving the
-development *of* Python, **not** for development *with* Python.
-
-.. _python-ideas: https://mail.python.org/mailman3/lists/python-ideas.python.org
-.. _python-dev: https://mail.python.org/mailman3/lists/python-dev.python.org/
-
-
 Ask #python-dev
 ---------------
 

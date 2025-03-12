@@ -62,7 +62,12 @@ OS labels
 These labels are used to specify which operating systems are affected.
 Since most issues either affect all systems or are specific to Unix,
 we don't have a dedicated Unix label.
-Use :gh-label:`OS-windows`, :gh-label:`OS-mac`, and :gh-label:`OS-freebsd`.
+
+* :gh-label:`OS-android`
+* :gh-label:`OS-freebsd`
+* :gh-label:`OS-ios`
+* :gh-label:`OS-linux`
+* :gh-label:`OS-windows`
 
 Use the :gh-label:`OS-unsupported` label for issues on platforms outside the
 support tiers defined in :pep:`11`. Applying this label adds the issue to
