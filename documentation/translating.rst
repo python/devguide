@@ -79,6 +79,9 @@ details.
        `wiki <https://python.org.br/traducao/>`__,
        `Telegram <https://t.me/pybr_i18n>`__,
        `article <https://rgth.co/blog/python-ptbr-cenario-atual/>`__
+   * - Romanian (ro)
+     - Octavian Mustafa (:github-user:`octaG-M`, `email <mailto:octawian@yahoo.com>`__)
+     - :github:`GitHub <octaG-M/python-docs-ro>`
    * - Russian (ru)
      - Daniil Kolesnikov (:github-user:`MLGRussianXP`, `email <mailto:mlgrussianxp@gmail.com>`__)
      - :github:`GitHub <MLGRussianXP/python-docs-ru>`,
