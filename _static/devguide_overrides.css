@@ -45,13 +45,18 @@
 
 .release-cycle-chart .release-cycle-blob-label {
     /* white looks good on both light & dark */
-    fill: var(--color-foreground-primary);
+    fill: white;
 }
 
 .release-cycle-chart .release-cycle-blob-label.release-cycle-status-security,
 .release-cycle-chart .release-cycle-blob-label.release-cycle-status-bugfix {
     /* but use black to improve contrast for lighter backgrounds */
     fill: black;
+}
+
+.release-cycle-chart .release-cycle-blob-label.release-cycle-status-feature {
+    /* and FG when it's not in a pill */
+    fill: var(--color-foreground-primary);
 }
 
 .release-cycle-chart .release-cycle-status-end-of-life {
@@ -93,11 +98,14 @@
 .release-cycle-chart .release-cycle-shade {
     fill: transparent;
     stroke: transparent;
-    opacity: 50%;
 
-    &.release-cycle-status-end-of-life,
+    &.release-cycle-status-end-of-life {
+      fill: #DD2200;
+      stroke: #FF8888;
+    }
     &.release-cycle-status-feature {
         fill: var(--color-background-primary);
+        opacity: 50%;
     }
 }
 

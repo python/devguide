@@ -73,83 +73,33 @@
         {% set recty = (y - 1) * SCALE %}
         {% set radius_value = 0.25 * SCALE %}
 
-        <path
-            class="release-cycle-blob release-cycle-status-bugfix"
-            d="
-                M{{ left_x + radius_value }},{{ recty }}
-                q{{ -radius_value }},0 {{ -radius_value }},{{ radius_value }}
-                v{{ height - 2*radius_value }}
-                Q{{ left_x }},{{ recty + height }} {{ left_x + radius_value }},{{ recty + height }}
-                H{{ middle_x }}
-                V{{ recty }}
-                Z
-            "
-        />
-
-        {% if version.key != "3.0" %}
-        <path
-            class="release-cycle-blob release-cycle-status-security"
-            d="
-                    M{{ right_x }},{{ recty }}
-                    H{{ right_x + right_width - radius_value }}
-                    Q{{ right_x + right_width }},{{ recty }} {{ right_x + right_width }},{{ recty + radius_value }}
-                    V{{ recty + height - radius_value }}
-                    Q{{ right_x + right_width }},{{ recty + height }} {{ right_x + right_width - radius_value }},{{ recty + height }}
+        {% if version.status != "end-of-life" %}
+            <!-- Split the pill -->
+            <path
+                class="release-cycle-blob release-cycle-status-bugfix"
+                d="
+                    M{{ left_x + radius_value }},{{ recty }}
+                    q{{ -radius_value }},0 {{ -radius_value }},{{ radius_value }}
+                    v{{ height - 2*radius_value }}
+                    Q{{ left_x }},{{ recty + height }} {{ left_x + radius_value }},{{ recty + height }}
                     H{{ middle_x }}
                     V{{ recty }}
                     Z
-            "
-        />
-        {% endif %}
-        <rect
-            class="release-cycle-border release-cycle-status-{{ version.status }}"
-            x="{{ start_x * SCALE }}"
-            y="{{ (y - 1) * SCALE }}"
-            width="{{ (end_x - start_x) * SCALE }}"
-            height="{{ 1.25 * SCALE }}"
-            rx="0.25em"
-            ry="0.25em"
-        />
-        {% if version.status == "bugfix" %}
-        <text
-            class="release-cycle-blob-label release-cycle-status-bugfix"
-            x="{{ (start_x + half_x) / 2 * SCALE }}"
-            y="{{ (y - 0.1) * SCALE }}"
-            font-size="{{ SCALE * 0.75 }}"
-            text-anchor="middle"
-        >
-            bugfix
-        </text>
-        {% elif version.status == "security" %}
-        <text
-            class="release-cycle-blob-label release-cycle-status-security"
-            x="{{ (half_x + end_x) / 2 * SCALE }}"
-            y="{{ (y - 0.1) * SCALE }}"
-            font-size="{{ SCALE * 0.75 }}"
-            text-anchor="middle"
-        >
-            security
-        </text>
-        {% elif version.status == "end-of-life" %}
-        <text
-            class="release-cycle-blob-label release-cycle-status-end-of-life"
-            x="{{ (end_x + 0.5) * SCALE }}"
-            y="{{ (y - 0.1) * SCALE }}"
-            font-size="{{ SCALE * 0.75 }}"
-            text-anchor="start"
-        >
-            end-of-life
-        </text>
-        {% elif version.status == "feature" %}
-        <text
-            class="release-cycle-blob-label release-cycle-status-feature"
-            x="{{ (start_x - 0.5) * SCALE }}"
-            y="{{ (y - 0.1) * SCALE }}"
-            font-size="{{ SCALE * 0.75 }}"
-            text-anchor="end"
-        >
-            feature
-        </text>
+                "
+            />
+            <path
+                class="release-cycle-blob release-cycle-status-security"
+                d="
+                        M{{ right_x }},{{ recty }}
+                        H{{ right_x + right_width - radius_value }}
+                        Q{{ right_x + right_width }},{{ recty }} {{ right_x + right_width }},{{ recty + radius_value }}
+                        V{{ recty + height - radius_value }}
+                        Q{{ right_x + right_width }},{{ recty + height }} {{ right_x + right_width - radius_value }},{{ recty + height }}
+                        H{{ middle_x }}
+                        V{{ recty }}
+                        Z
+                "
+            />
         {% endif %}
         <rect
             class="release-cycle-shade release-cycle-status-{{ version.status }}"
@@ -169,6 +119,52 @@
             rx="0.25em"
             ry="0.25em"
         />
+        {% if version.status == "bugfix" %}
+            <text
+                class="release-cycle-blob-label release-cycle-status-bugfix"
+                x="{{ (start_x + half_x) / 2 * SCALE }}"
+                y="{{ (y - 0.1) * SCALE }}"
+                font-size="{{ SCALE * 0.75 }}"
+                text-anchor="middle"
+            >
+                bugfix
+            </text>
+        {% elif version.status == "security" %}
+            <text
+                class="release-cycle-blob-label release-cycle-status-security"
+                x="{{ (half_x + end_x) / 2 * SCALE }}"
+                y="{{ (y - 0.1) * SCALE }}"
+                font-size="{{ SCALE * 0.75 }}"
+                text-anchor="middle"
+            >
+                security
+            </text>
+        {% elif version.status == "end-of-life" %}
+            <text
+                class="release-cycle-blob-label release-cycle-status-end-of-life"
+                {% if version.key != "3.0" %}
+                    x="{{ (start_x + end_x) / 2 * SCALE }}"
+                    text-anchor="middle"
+                {% else %}
+                    x="{{ (end_x + 0.25) * SCALE }}"
+                    text-anchor="start"
+                {% endif %}
+                y="{{ (y - 0.1) * SCALE }}"
+                font-size="{{ SCALE * 0.75 }}"
+            >
+                end-of-life
+            </text>
+        {% elif version.status == "feature" %}
+            <text
+                class="release-cycle-blob-label release-cycle-status-feature"
+                x="{{ (start_x - 0.5) * SCALE }}"
+                y="{{ (y - 0.1) * SCALE }}"
+                font-size="{{ SCALE * 0.75 }}"
+                text-anchor="end"
+            >
+                feature
+            </text>
+        {% endif %}
     {% endfor %}
 
     <!-- A line for today -->
