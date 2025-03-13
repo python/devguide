@@ -129,9 +129,7 @@ class Versions:
             """Format year number for display"""
             return f"'{year % 100:02}"
 
-        with open(
-            out_path, "w", encoding="UTF-8", newline="\n"
-        ) as f:
+        with open(out_path, "w", encoding="UTF-8", newline="\n") as f:
             template.stream(
                 SCALE=SCALE,
                 diagram_width=DIAGRAM_WIDTH,
