@@ -272,8 +272,8 @@ Changes that require "What's New in Python" entries
 
 If a change is particularly interesting for end users (for example, new features,
 significant improvements, or backwards-incompatible changes), add an entry in
-the "What's New in Python" document (in :cpy-file:`Doc/whatsnew/`)
-in addition to the ``NEWS`` entry.
+the "What's New in Python" document (in :cpy-file:`Doc/whatsnew/`, the 3.X.rst
+file where X is the current Python version) in addition to the ``NEWS`` entry.
 
 In most cases, it is sufficient to reuse the wording from the ``NEWS`` entry
 in the "What's New in Python" entry.
