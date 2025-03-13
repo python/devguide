@@ -39,8 +39,10 @@ class Versions:
             version["start_security_date"] = r1 + dt.timedelta(days=2 * 365)
             version["end_of_life_date"] = parse_date(version["end_of_life"])
 
+        self.cutoff = min(ver["first_release_date"] for ver in self.versions.values())
+
         if limit_to_active:
-            cutoff = min(
+            self.cutoff = min(
                 version["first_release_date"]
                 for version in self.versions.values()
                 if version["status"] != 'end-of-life'
@@ -48,14 +50,18 @@ class Versions:
             self.versions = {
                 key: version
                 for key, version in self.versions.items()
-                if version["end_of_life_date"] >= cutoff
+                if version["end_of_life_date"] >= self.cutoff
             }
+            self.id_key='active'
+        else:
+            self.id_key='all'
 
         self.sorted_versions = sorted(
             self.versions.values(),
             key=lambda v: [int(i) for i in v["key"].split(".")],
             reverse=True,
         )
+
 
     def write_csv(self) -> None:
         """Output CSV files."""
@@ -110,7 +116,7 @@ class Versions:
         # some positioning numbers in the template as well.
         LINE_HEIGHT = 1.5
 
-        first_date = min(ver["first_release_date"] for ver in self.sorted_versions)
+        first_date = self.cutoff
         last_date = max(ver["end_of_life_date"] for ver in self.sorted_versions)
 
         def date_to_x(date: dt.date) -> float:
@@ -136,11 +142,14 @@ class Versions:
                 diagram_height=(len(self.sorted_versions) + 2) * LINE_HEIGHT,
                 years=range(first_date.year, last_date.year + 1),
                 LINE_HEIGHT=LINE_HEIGHT,
+                LEGEND_WIDTH=LEGEND_WIDTH,
+                RIGHT_MARGIN=RIGHT_MARGIN,
                 versions=list(reversed(self.sorted_versions)),
                 today=dt.datetime.strptime(today, "%Y-%m-%d").date(),
                 year_to_x=year_to_x,
                 date_to_x=date_to_x,
                 format_year=format_year,
+                id_key=self.id_key,
             ).dump(f)
 
 

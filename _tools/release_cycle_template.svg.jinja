@@ -4,6 +4,12 @@
     class="release-cycle-chart"
     viewBox="0 0 {{ diagram_width * SCALE }} {{ diagram_height * SCALE }}"
 >
+    <defs>
+        <linearGradient id="release-cycle-mask-gradient-{{ id_key }}">
+            <stop stop-color="black" offset="0%" />
+            <stop stop-color="white" offset="100%" />
+        </linearGradient>
+    </defs>
 
     {% for version in versions %}
         {% set y = loop.index * LINE_HEIGHT %}
@@ -42,6 +48,31 @@
         {% endif %}
     {% endfor %}
 
+    <!-- Gradient mask to fade out end-of-life versions -->
+    <mask id="release-cycle-mask-{{ id_key }}">
+        <rect
+            x="0"
+            y="0"
+            width="{{ LEGEND_WIDTH * SCALE }}"
+            height="{{ diagram_height * SCALE }}"
+            fill="black"
+        />
+        <rect
+            x="{{ (LEGEND_WIDTH - RIGHT_MARGIN) * SCALE }}"
+            y="0"
+            width="{{ RIGHT_MARGIN * SCALE }}"
+            height="{{ diagram_height * SCALE }}"
+            fill="url(#release-cycle-mask-gradient-{{ id_key }})"
+        />
+        <rect
+            x="{{ (LEGEND_WIDTH ) * SCALE }}"
+            y="0"
+            width="{{ diagram_width * SCALE }}"
+            height="{{ diagram_height * SCALE }}"
+            fill="white"
+        />
+    </mask>
+
     {% for version in versions %}
         {% set y = loop.index * LINE_HEIGHT %}
 
@@ -74,7 +105,7 @@
         {% set radius_value = 0.25 * SCALE %}
 
         {% if version.status != "end-of-life" %}
-            <!-- Split the pill -->
+            <!-- Split the blob -->
             <path
                 class="release-cycle-blob release-cycle-status-bugfix"
                 d="
@@ -109,6 +140,7 @@
             height="{{ 1.25 * SCALE }}"
             rx="0.25em"
             ry="0.25em"
+            mask="url(#release-cycle-mask-{{ id_key }})"
         />
         <rect
             class="release-cycle-border release-cycle-status-{{ version.status }}"
@@ -118,6 +150,7 @@
             height="{{ 1.25 * SCALE }}"
             rx="0.25em"
             ry="0.25em"
+            mask="url(#release-cycle-mask-{{ id_key }})"
         />
         {% if version.status == "bugfix" %}
             <text
@@ -142,19 +175,14 @@
         {% elif version.status == "end-of-life" %}
             <text
                 class="release-cycle-blob-label release-cycle-status-end-of-life"
-                {% if version.key != "3.0" %}
-                    x="{{ (start_x + end_x) / 2 * SCALE }}"
-                    text-anchor="middle"
-                {% else %}
-                    x="{{ (end_x + 0.25) * SCALE }}"
-                    text-anchor="start"
-                {% endif %}
+                x="{{ (end_x + 0.25) * SCALE }}"
+                text-anchor="start"
                 y="{{ (y - 0.1) * SCALE }}"
                 font-size="{{ SCALE * 0.75 }}"
             >
                 end-of-life
             </text>
-        {% elif version.status == "feature" %}
+        {% else %}
             <text
                 class="release-cycle-blob-label release-cycle-status-feature"
                 x="{{ (start_x - 0.5) * SCALE }}"
@@ -162,7 +190,7 @@
                 font-size="{{ SCALE * 0.75 }}"
                 text-anchor="end"
             >
-                feature
+                {{ version.status }}
             </text>
         {% endif %}
     {% endfor %}
