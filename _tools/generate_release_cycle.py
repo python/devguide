@@ -28,7 +28,7 @@ def parse_date(date_str: str) -> dt.date:
 class Versions:
     """For converting JSON to CSV and SVG."""
 
-    def __init__(self, limit_to_active=False) -> None:
+    def __init__(self, limit_to_active=False, special_py27=False) -> None:
         with open("include/release-cycle.json", encoding="UTF-8") as in_file:
             self.versions = json.load(in_file)
 
@@ -47,10 +47,13 @@ class Versions:
                 for version in self.versions.values()
                 if version["status"] != 'end-of-life'
             )
+            if special_py27:
+                self.cutoff = min(self.cutoff, dt.date(2019, 8, 1))
             self.versions = {
                 key: version
                 for key, version in self.versions.items()
                 if version["end_of_life_date"] >= self.cutoff
+                or (special_py27 and key == '2.7')
             }
             self.id_key='active'
         else:
@@ -61,6 +64,15 @@ class Versions:
             key=lambda v: [int(i) for i in v["key"].split(".")],
             reverse=True,
         )
+
+        # Set the row (y-coordinate) for the chart, to allow a gap between 2.7
+        # and the rest
+        y = len(self.sorted_versions) + (1 if special_py27 else 0)
+        for version in self.sorted_versions:
+            if special_py27 and version["key"] == '2.7':
+                y -= 1
+            version["y"] = y
+            y -= 1
 
 
     def write_csv(self) -> None:
@@ -139,7 +151,7 @@ class Versions:
             template.stream(
                 SCALE=SCALE,
                 diagram_width=DIAGRAM_WIDTH,
-                diagram_height=(len(self.sorted_versions) + 2) * LINE_HEIGHT,
+                diagram_height=(self.sorted_versions[0]["y"] + 2) * LINE_HEIGHT,
                 years=range(first_date.year, last_date.year + 1),
                 LINE_HEIGHT=LINE_HEIGHT,
                 LEGEND_WIDTH=LEGEND_WIDTH,
@@ -171,7 +183,7 @@ def main() -> None:
     versions.write_csv()
     versions.write_svg(args.today, "include/release-cycle-all.svg")
 
-    versions = Versions(limit_to_active=True)
+    versions = Versions(limit_to_active=True, special_py27=True)
     versions.write_svg(args.today, "include/release-cycle.svg")
 
 

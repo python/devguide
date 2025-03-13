@@ -12,9 +12,9 @@
     </defs>
 
     {% for version in versions %}
-        {% set y = loop.index * LINE_HEIGHT %}
+        {% set y = version.y * LINE_HEIGHT %}
 
-        {% if loop.index % 2 %}
+        {% if version.y % 2 %}
             <!-- Row shading -->
             <rect
                 class="release-cycle-row-shade"
@@ -74,7 +74,7 @@
     </mask>
 
     {% for version in versions %}
-        {% set y = loop.index * LINE_HEIGHT %}
+        {% set y = version.y * LINE_HEIGHT %}
 
         <!-- Legend on the left -->
         <text
