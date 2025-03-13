@@ -76,16 +76,6 @@
     {% for version in versions %}
         {% set y = version.y * LINE_HEIGHT %}
 
-        <!-- Legend on the left -->
-        <text
-            class="release-cycle-version-label"
-            x="{{ 0.5 * SCALE }}"
-            y="{{ y * SCALE }}"
-            font-size="{{ SCALE }}"
-        >
-            Python {{ version.key }}
-        </text>
-
         <!-- Colourful blob with a label -->
         {% set start_x = date_to_x(version.first_release_date) %}
         {% set end_x = date_to_x(version.end_of_life_date) %}
@@ -193,6 +183,16 @@
                 {{ version.status }}
             </text>
         {% endif %}
+
+        <!-- Legend on the left -->
+        <text
+            class="release-cycle-version-label"
+            x="{{ 0.5 * SCALE }}"
+            y="{{ y * SCALE }}"
+            font-size="{{ SCALE }}"
+        >
+            Python {{ version.key }}
+        </text>
     {% endfor %}
 
     <!-- A line for today -->
