@@ -10,13 +10,12 @@ branch that accepts new features.  The latest release for each Python
 version can be found on the `download page <https://www.python.org/downloads/>`_.
 
 
-Python release cycle
-====================
-
 .. raw:: html
    :file: include/release-cycle.svg
 
-Another useful visualization is `endoflife.date/python <https://endoflife.date/python>`_.
+(See :ref:`below <versions-chart-all>` for a chart with older versions.
+Another useful visualization is `endoflife.date/python <https://endoflife.date/python>`_.)
+
 
 Supported versions
 ==================
@@ -38,6 +37,15 @@ Unsupported versions
    :header-rows: 1
    :width: 100%
    :file: include/end-of-life.csv
+
+
+.. _versions-chart-all:
+
+Full chart
+==========
+
+.. raw:: html
+   :file: include/release-cycle-all.svg
 
 
 Status key

@@ -22,6 +22,7 @@ REQUIREMENTS = requirements.txt
 _ALL_SPHINX_OPTS = --jobs $(JOBS) $(SPHINXOPTS)
 _RELEASE_CYCLE   = include/branches.csv \
                    include/end-of-life.csv \
+                   include/release-cycle-all.svg \
                    include/release-cycle.svg
 
 .PHONY: help

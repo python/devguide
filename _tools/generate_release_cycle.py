@@ -28,7 +28,7 @@ def parse_date(date_str: str) -> dt.date:
 class Versions:
     """For converting JSON to CSV and SVG."""
 
-    def __init__(self) -> None:
+    def __init__(self, limit_to_active=False) -> None:
         with open("include/release-cycle.json", encoding="UTF-8") as in_file:
             self.versions = json.load(in_file)
 
@@ -38,6 +38,20 @@ class Versions:
             version["first_release_date"] = r1 = parse_date(version["first_release"])
             version["start_security_date"] = r1 + dt.timedelta(days=2 * 365)
             version["end_of_life_date"] = parse_date(version["end_of_life"])
+
+        if limit_to_active:
+            cutoff = min(
+                version["first_release_date"]
+                for version in self.versions.values()
+                if version["status"] != 'end-of-life'
+            )
+            self.versions = {
+                key: version
+                for key, version in self.versions.items()
+                if version["end_of_life_date"] >= cutoff
+            }
+
+
         self.sorted_versions = sorted(
             self.versions.values(),
             key=lambda v: [int(i) for i in v["key"].split(".")],
@@ -69,7 +83,7 @@ class Versions:
                 csv_file.writeheader()
                 csv_file.writerows(versions.values())
 
-    def write_svg(self, today: str) -> None:
+    def write_svg(self, today: str, out_path: str) -> None:
         """Output SVG file."""
         env = jinja2.Environment(
             loader=jinja2.FileSystemLoader("_tools/"),
@@ -117,7 +131,7 @@ class Versions:
             return f"'{year % 100:02}"
 
         with open(
-            "include/release-cycle.svg", "w", encoding="UTF-8", newline="\n"
+            out_path, "w", encoding="UTF-8", newline="\n"
         ) as f:
             template.stream(
                 SCALE=SCALE,
@@ -146,8 +160,13 @@ def main() -> None:
     args = parser.parse_args()
 
     versions = Versions()
+    print(versions.versions.keys())
+    assert len(versions.versions) > 10
     versions.write_csv()
-    versions.write_svg(args.today)
+    versions.write_svg(args.today, "include/release-cycle-all.svg")
+
+    versions = Versions(limit_to_active=True)
+    versions.write_svg(args.today, "include/release-cycle.svg")
 
 
 if __name__ == "__main__":

@@ -91,3 +91,4 @@ celerybeat-schedule
 include/branches.csv
 include/end-of-life.csv
 include/release-cycle.svg
+include/release-cycle-all.svg
