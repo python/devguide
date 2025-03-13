@@ -47,14 +47,14 @@ class Versions:
                 for version in self.versions.values()
                 if version["status"] != 'end-of-life'
             )
-            if special_py27:
-                self.cutoff = min(self.cutoff, dt.date(2019, 8, 1))
             self.versions = {
                 key: version
                 for key, version in self.versions.items()
                 if version["end_of_life_date"] >= self.cutoff
                 or (special_py27 and key == '2.7')
             }
+            if special_py27:
+                self.cutoff = min(self.cutoff, dt.date(2019, 8, 1))
             self.id_key='active'
         else:
             self.id_key='all'
