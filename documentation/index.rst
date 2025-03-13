@@ -11,3 +11,4 @@ Documentation
    markup
    translating
    devguide
+   multicultural-communication
