@@ -51,7 +51,6 @@ class Versions:
                 if version["end_of_life_date"] >= cutoff
             }
 
-
         self.sorted_versions = sorted(
             self.versions.values(),
             key=lambda v: [int(i) for i in v["key"].split(".")],
