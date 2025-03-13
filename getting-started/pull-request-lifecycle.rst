@@ -280,7 +280,7 @@ in the "What's New in Python" entry.
 
 .. note::
 
-    A change that needs an entry in "What's New in Python",
+    A change that needs an entry in "What's New in Python"
     is very likely not suitable for inclusion in a maintenance release.
 
 How to add a NEWS entry
@@ -325,12 +325,14 @@ column width should be used. There is no indentation or leading marker in the
 file (for example, ``-``). There is also no need to start the entry with the issue
 number since it is part of the file name. You can use
 :ref:`inline markups <rest-inline-markup>` too. Here is an example of a ``NEWS``
-entry::
+entry:
+
+.. code-block:: rst
 
    Fix warning message when :func:`os.chdir` fails inside
    :func:`test.support.temp_cwd`. Contributed by Chris Jerdonek.
 
-The inline Sphinx roles like ``:func:`` can be used help readers
+The inline Sphinx roles like :rst:role:`:func: <py:func>` can be used help readers
 find more information. You can build HTML and verify that the
 link target is appropriate by using :ref:`make html <building-using-make>`.
 
