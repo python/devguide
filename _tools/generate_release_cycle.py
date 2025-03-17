@@ -186,7 +186,6 @@ def main() -> None:
     args = parser.parse_args()
 
     versions = Versions()
-    print(versions.versions.keys())
     assert len(versions.versions) > 10
     versions.write_csv()
     versions.write_svg(args.today, "include/release-cycle-all.svg")

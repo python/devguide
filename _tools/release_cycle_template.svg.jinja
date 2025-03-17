@@ -80,8 +80,9 @@
         {% set start_x = date_to_x(version.first_release_date) %}
         {% set end_x = date_to_x(version.end_of_life_date) %}
 
-        <!-- Bugfix status needs a security tail.
+        <!-- bugfix status needs a security tail.
             Draw the rectangle with two path elements instead.
+            Thanks Claude.ai for the conversion.
         -->
         {% set half_x = [end_x, date_to_x(version.start_security_date)]|min %}
         {% set height = 1.25 * SCALE %}
@@ -90,7 +91,7 @@
         {% set left_x = start_x * SCALE %}
         {% set middle_x = half_x * SCALE %}
         {% set right_x = half_x * SCALE %}
-        {% set recty = (y - 1) * SCALE %}
+        {% set rect_y = (y - 1) * SCALE %}
         {% set radius_value = 0.25 * SCALE %}
 
         {% if version.status != "end-of-life" %}
@@ -98,25 +99,25 @@
             <path
                 class="release-cycle-blob release-cycle-status-bugfix"
                 d="
-                    M{{ left_x + radius_value }},{{ recty }}
+                    M{{ left_x + radius_value }},{{ rect_y }}
                     q{{ -radius_value }},0 {{ -radius_value }},{{ radius_value }}
                     v{{ height - 2*radius_value }}
                     q0,{{ radius_value }} {{ radius_value }},{{ radius_value }}
                     H{{ middle_x }}
-                    V{{ recty }}
+                    V{{ rect_y }}
                     Z
                 "
             />
             <path
                 class="release-cycle-blob release-cycle-status-security"
                 d="
-                    M{{ right_x }},{{ recty }}
+                    M{{ right_x }},{{ rect_y }}
                     h{{ right_width - radius_value }}
                     q{{ radius_value }},0 {{ radius_value }},{{ radius_value }}
                     v{{ height - 2*radius_value }}
                     q0,{{ radius_value }} {{ -radius_value }},{{ radius_value }}
                     H{{ middle_x }}
-                    V{{ recty }}
+                    V{{ rect_y }}
                     Z
                 "
             />
