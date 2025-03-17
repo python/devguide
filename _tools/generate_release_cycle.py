@@ -65,7 +65,7 @@ class Versions:
             reverse=True,
         )
 
-        # Set the row (y-coordinate) for the chart, to allow a gap between 2.7
+        # Set the row (Y coordinate) for the chart, to allow a gap between 2.7
         # and the rest
         y = len(self.sorted_versions) + (1 if special_py27 else 0)
         for version in self.sorted_versions:
