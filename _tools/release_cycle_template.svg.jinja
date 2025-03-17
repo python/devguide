@@ -80,9 +80,8 @@
         {% set start_x = date_to_x(version.first_release_date) %}
         {% set end_x = date_to_x(version.end_of_life_date) %}
 
-        <!-- bugfix status needs a security tail.
+        <!-- Bugfix status needs a security tail.
             Draw the rectangle with two path elements instead.
-            Thanks Claude.ai for the conversion.
         -->
         {% set half_x = [end_x, date_to_x(version.start_security_date)]|min %}
         {% set height = 1.25 * SCALE %}

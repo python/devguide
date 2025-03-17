@@ -60,9 +60,9 @@ Python releases go through five phases:
    (including significant changes to new features), bug fixes, and security fixes
    are accepted for the upcoming feature release.
 
-:bugfix: Once a version has been released, bug fixes and security fixes are
+:bugfix: Once a version has been fully released, bug fixes and security fixes are
    accepted. New binaries are built and released. (Also called **maintenance**
-   mode or **stable** release)
+   mode or **stable** release.)
 
 :security: After two years, only security fixes are accepted and no more
    binaries are released.  New source-only versions can be released as needed.

@@ -69,7 +69,7 @@ class Versions:
         # and the rest
         y = len(self.sorted_versions) + (1 if special_py27 else 0)
         for version in self.sorted_versions:
-            if special_py27 and version["key"] == '2.7':
+            if special_py27 and version["key"] == "2.7":
                 y -= 1
             version["y"] = y
             y -= 1
