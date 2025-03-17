@@ -55,9 +55,9 @@ class Versions:
             }
             if special_py27:
                 self.cutoff = min(self.cutoff, dt.date(2019, 8, 1))
-            self.id_key = 'active'
+            self.id_key = "active"
         else:
-            self.id_key = 'all'
+            self.id_key = "all"
 
         self.sorted_versions = sorted(
             self.versions.values(),
