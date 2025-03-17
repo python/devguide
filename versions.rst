@@ -56,9 +56,9 @@ Python releases go through five phases:
 :feature: Before the first beta, the next full release can accept new features,
    bug fixes, and security fixes.
 
-:prerelease: After the first beta, no new features can go in, but feature
-   fixes, bug fixes, and security fixes are accepted for the upcoming feature
-   release.
+:prerelease: After the first beta, no new features can go in, but feature fixes
+   (including significant changes to new features), bug fixes, and security fixes
+   are accepted for the upcoming feature release.
 
 :bugfix: Once a version has been released, bug fixes and security fixes are
    accepted. New binaries are built and released. (Also called **maintenance**
