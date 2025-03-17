@@ -45,7 +45,7 @@ class Versions:
             self.cutoff = min(
                 version["first_release_date"]
                 for version in self.versions.values()
-                if version["status"] != 'end-of-life'
+                if version["status"] != "end-of-life"
             )
             self.versions = {
                 key: version
