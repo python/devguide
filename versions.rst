@@ -64,7 +64,7 @@ Python releases go through five phases:
    accepted. New binaries are built and released. (Also called **maintenance**
    mode or **stable** release.)
 
-:security: After two years, only security fixes are accepted and no more
+:security: After a few years, only security fixes are accepted and no more
    binaries are released.  New source-only versions can be released as needed.
 
 :end-of-life: Five years after a release, support ends. The release cycle is

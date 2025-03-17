@@ -25,6 +25,10 @@ def parse_date(date_str: str) -> dt.date:
     return dt.date.fromisoformat(date_str)
 
 
+def parse_version(ver: str) -> list[int]:
+    return [int(i) for i in ver["key"].split(".")]
+
+
 class Versions:
     """For converting JSON to CSV and SVG."""
 
@@ -35,8 +39,13 @@ class Versions:
         # Generate a few additional fields
         for key, version in self.versions.items():
             version["key"] = key
+            ver_info = parse_version(version)
+            if ver_info >= [3, 13]:
+                full_years = 2
+            else:
+                full_years = 1.5
             version["first_release_date"] = r1 = parse_date(version["first_release"])
-            version["start_security_date"] = r1 + dt.timedelta(days=2 * 365)
+            version["start_security_date"] = r1 + dt.timedelta(days=full_years * 365)
             version["end_of_life_date"] = parse_date(version["end_of_life"])
 
         self.cutoff = min(ver["first_release_date"] for ver in self.versions.values())
@@ -61,7 +70,7 @@ class Versions:
 
         self.sorted_versions = sorted(
             self.versions.values(),
-            key=lambda v: [int(i) for i in v["key"].split(".")],
+            key=parse_version,
             reverse=True,
         )
 
