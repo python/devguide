@@ -28,7 +28,7 @@ def parse_date(date_str: str) -> dt.date:
 class Versions:
     """For converting JSON to CSV and SVG."""
 
-    def __init__(self, limit_to_active=False, special_py27=False) -> None:
+    def __init__(self, *, limit_to_active=False, special_py27=False) -> None:
         with open("include/release-cycle.json", encoding="UTF-8") as in_file:
             self.versions = json.load(in_file)
 
