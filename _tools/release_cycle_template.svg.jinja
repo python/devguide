@@ -127,27 +127,33 @@
                     Z                                   {#- left -#}
                 "
             />
+            <!-- Add a common border -->
+            <rect
+                class="release-cycle-border release-cycle-status-{{ version.status }}"
+                x="{{ start_x }}"
+                y="{{ top_y }}"
+                width="{{ (end_x - start_x) }}"
+                height="{{ height }}"
+                rx="0.25em"
+                ry="0.25em"
+                mask="url(#release-cycle-mask-{{ id_key }})"
+            />
+        {% else %}
+            <!-- For EOL releases, use a single rounded rectangle -->
+            <rect
+                class="release-cycle-blob release-cycle-blob-full
+                       release-cycle-status-{{ version.status }}"
+                x="{{ start_x }}"
+                y="{{ top_y }}"
+                width="{{ (end_x - start_x) }}"
+                height="{{ height }}"
+                rx="0.25em"
+                ry="0.25em"
+                mask="url(#release-cycle-mask-{{ id_key }})"
+            />
         {% endif %}
-        <rect
-            class="release-cycle-shade release-cycle-status-{{ version.status }}"
-            x="{{ start_x }}"
-            y="{{ top_y }}"
-            width="{{ (end_x - start_x) }}"
-            height="{{ height }}"
-            rx="0.25em"
-            ry="0.25em"
-            mask="url(#release-cycle-mask-{{ id_key }})"
-        />
-        <rect
-            class="release-cycle-border release-cycle-status-{{ version.status }}"
-            x="{{ start_x }}"
-            y="{{ top_y }}"
-            width="{{ (end_x - start_x) }}"
-            height="{{ height }}"
-            rx="0.25em"
-            ry="0.25em"
-            mask="url(#release-cycle-mask-{{ id_key }})"
-        />
+
+        <!-- Add text before/after/inside the blob -->
         <text
             class="release-cycle-blob-label release-cycle-status-{{ version.status }}"
             font-size="{{ SCALE * 0.75 }}"
@@ -165,9 +171,9 @@
                 x="{{ start_x - (0.5 * SCALE) }}"
                 text-anchor="end"
             {% endif %}
-            >
-                {{ version.status }}
-            </text>
+        >
+            {{ version.status }}
+        </text>
 
         <!-- Legend on the left -->
         <text

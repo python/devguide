@@ -61,8 +61,8 @@
 }
 
 .release-cycle-chart .release-cycle-status-end-of-life {
-    --status-bg-color: #DD2200;
-    --status-border-color: #FF8888;
+    --status-bg-color: #FF8888;
+    --status-border-color: #DD2200;
 }
 
 .release-cycle-chart .release-cycle-status-security {
@@ -90,24 +90,15 @@
     stroke: transparent;
 }
 
+.release-cycle-chart .release-cycle-blob-full {
+    fill: var(--status-bg-color);
+    stroke: var(--status-border-color);
+}
+
 .release-cycle-chart .release-cycle-border {
     fill: transparent;
     stroke: var(--status-border-color);
     stroke-width: 1.6px;
-}
-
-.release-cycle-chart .release-cycle-shade {
-    fill: transparent;
-    stroke: transparent;
-
-    &.release-cycle-status-end-of-life {
-      fill: #DD2200;
-      stroke: #FF8888;
-    }
-    &.release-cycle-status-feature {
-        fill: var(--color-background-primary);
-        opacity: 50%;
-    }
 }
 
 .good pre {
