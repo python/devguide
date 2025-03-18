@@ -76,6 +76,7 @@
     {% for version in versions %}
         {% set top_y = version.y * line_height - 1 * SCALE %}
         {% set small_text_y = version.y * line_height - 0.1 * SCALE %}
+        {% set height = 1.25 * SCALE %}
 
         <!-- Colourful blob with a label. -->
 
@@ -87,7 +88,6 @@
             Thanks Claude.ai for the initial conversion.
         -->
         {% set middle_x = ([end_x, date_to_x(version.start_security_date)]|min)  %}
-        {% set height = 1.25 * SCALE %}
         {% set left_width = (middle_x - start_x) %}
         {% set right_width = (end_x - middle_x) %}
         {% set radius = 0.25 * SCALE %}
@@ -134,8 +134,8 @@
                 y="{{ top_y }}"
                 width="{{ (end_x - start_x) }}"
                 height="{{ height }}"
-                rx="0.25em"
-                ry="0.25em"
+                rx="{{ radius }}"
+                ry="{{ radius }}"
                 mask="url(#release-cycle-mask-{{ id_key }})"
             />
         {% else %}
@@ -147,8 +147,8 @@
                 y="{{ top_y }}"
                 width="{{ (end_x - start_x) }}"
                 height="{{ height }}"
-                rx="0.25em"
-                ry="0.25em"
+                rx="{{ radius }}"
+                ry="{{ radius }}"
                 mask="url(#release-cycle-mask-{{ id_key }})"
             />
         {% endif %}
