@@ -125,6 +125,8 @@ class Versions:
         # CSS.
         # (Ideally we'd actually use `em` units, but SVG viewBox doesn't take
         # those.)
+
+        # Uppercase sizes are un-scaled
         SCALE = 18
 
         # Width of the drawing and main parts
@@ -145,7 +147,7 @@ class Versions:
             total_days = (last_date - first_date).days
             ratio = num_days / total_days
             x = ratio * (DIAGRAM_WIDTH - LEGEND_WIDTH - RIGHT_MARGIN)
-            return x + LEGEND_WIDTH
+            return (x + LEGEND_WIDTH) * SCALE
 
         def year_to_x(year: int) -> float:
             """Convert year number to an SVG X coordinate of 1st January"""
@@ -158,12 +160,12 @@ class Versions:
         with open(out_path, "w", encoding="UTF-8", newline="\n") as f:
             template.stream(
                 SCALE=SCALE,
-                diagram_width=DIAGRAM_WIDTH,
-                diagram_height=(self.sorted_versions[0]["y"] + 2) * LINE_HEIGHT,
+                diagram_width=DIAGRAM_WIDTH * SCALE,
+                diagram_height=(self.sorted_versions[0]["y"] + 2) * LINE_HEIGHT * SCALE,
                 years=range(first_date.year, last_date.year + 1),
-                LINE_HEIGHT=LINE_HEIGHT,
-                LEGEND_WIDTH=LEGEND_WIDTH,
-                RIGHT_MARGIN=RIGHT_MARGIN,
+                line_height=LINE_HEIGHT * SCALE,
+                legend_width=LEGEND_WIDTH * SCALE,
+                right_margin=RIGHT_MARGIN * SCALE,
                 versions=list(reversed(self.sorted_versions)),
                 today=dt.datetime.strptime(today, "%Y-%m-%d").date(),
                 year_to_x=year_to_x,

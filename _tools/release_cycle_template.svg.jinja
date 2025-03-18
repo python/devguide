@@ -2,7 +2,7 @@
 <svg
     xmlns="http://www.w3.org/2000/svg"
     class="release-cycle-chart"
-    viewBox="0 0 {{ diagram_width * SCALE }} {{ diagram_height * SCALE }}"
+    viewBox="0 0 {{ diagram_width }} {{ diagram_height }}"
 >
     <defs>
         <linearGradient id="release-cycle-mask-gradient-{{ id_key }}">
@@ -12,16 +12,16 @@
     </defs>
 
     {% for version in versions %}
-        {% set y = version.y * LINE_HEIGHT %}
+        {% set y = version.y * line_height %}
 
         {% if version.y % 2 %}
             <!-- Row shading -->
             <rect
                 class="release-cycle-row-shade"
                 x="0em"
-                y="{{ (y - 1.125) * SCALE }}"
-                width="{{ diagram_width * SCALE }}"
-                height="{{ LINE_HEIGHT * SCALE }}"
+                y="{{ y - 1.125 * SCALE }}"
+                width="{{ diagram_width }}"
+                height="{{ line_height }}"
             />
         {% endif %}
     {% endfor %}
@@ -29,8 +29,8 @@
     {% for year in years %}
         <text
             class="release-cycle-year-text"
-            x="{{ (year_to_x(year) + year_to_x(year + 1)) / 2 * SCALE }}"
-            y="{{ (diagram_height - LINE_HEIGHT) * SCALE }}"
+            x="{{ (year_to_x(year) + year_to_x(year + 1)) / 2 }}"
+            y="{{ diagram_height - line_height }}"
             font-size="{{ SCALE * 0.75 }}"
             text-anchor="middle"
         >
@@ -39,10 +39,10 @@
         {% if not loop.last %}
         <line
             class="release-cycle-year-line"
-            x1="{{ year_to_x(year + 1) * SCALE }}"
-            x2="{{ year_to_x(year + 1) * SCALE }}"
+            x1="{{ year_to_x(year + 1) }}"
+            x2="{{ year_to_x(year + 1) }}"
             y1="0"
-            y2="{{ (diagram_height - LINE_HEIGHT) * SCALE }}"
+            y2="{{ diagram_height - line_height }}"
             font-size="{{ SCALE }}"
         />
         {% endif %}
@@ -53,80 +53,86 @@
         <rect
             x="0"
             y="0"
-            width="{{ LEGEND_WIDTH * SCALE }}"
-            height="{{ diagram_height * SCALE }}"
+            width="{{ legend_width }}"
+            height="{{ diagram_height }}"
             fill="black"
         />
         <rect
-            x="{{ (LEGEND_WIDTH - RIGHT_MARGIN) * SCALE }}"
+            x="{{ legend_width - right_margin }}"
             y="0"
-            width="{{ RIGHT_MARGIN * SCALE }}"
-            height="{{ diagram_height * SCALE }}"
+            width="{{ right_margin }}"
+            height="{{ diagram_height }}"
             fill="url(#release-cycle-mask-gradient-{{ id_key }})"
         />
         <rect
-            x="{{ (LEGEND_WIDTH ) * SCALE }}"
+            x="{{ legend_width }}"
             y="0"
-            width="{{ diagram_width * SCALE }}"
-            height="{{ diagram_height * SCALE }}"
+            width="{{ diagram_width }}"
+            height="{{ diagram_height }}"
             fill="white"
         />
     </mask>
 
     {% for version in versions %}
-        {% set y = version.y * LINE_HEIGHT %}
+        {% set top_y = version.y * line_height - 1 * SCALE %}
+        {% set small_text_y = version.y * line_height - 0.1 * SCALE %}
 
-        <!-- Colourful blob with a label -->
+        <!-- Colourful blob with a label. -->
+
         {% set start_x = date_to_x(version.first_release_date) %}
         {% set end_x = date_to_x(version.end_of_life_date) %}
 
-        <!-- bugfix status needs a security tail.
+        <!-- bugfix/security blobs need to be split between the two phases.
             Draw the rectangle with two path elements instead.
-            Thanks Claude.ai for the conversion.
+            Thanks Claude.ai for the initial conversion.
         -->
-        {% set half_x = [end_x, date_to_x(version.start_security_date)]|min %}
+        {% set middle_x = ([end_x, date_to_x(version.start_security_date)]|min)  %}
         {% set height = 1.25 * SCALE %}
-        {% set left_width = (half_x - start_x) * SCALE %}
-        {% set right_width = (end_x - half_x) * SCALE %}
-        {% set left_x = start_x * SCALE %}
-        {% set middle_x = half_x * SCALE %}
-        {% set right_x = half_x * SCALE %}
-        {% set rect_y = (y - 1) * SCALE %}
-        {% set radius_value = 0.25 * SCALE %}
+        {% set left_width = (middle_x - start_x) %}
+        {% set right_width = (end_x - middle_x) %}
+        {% set radius = 0.25 * SCALE %}
 
         {% if version.status != "end-of-life" %}
-            <!-- Split the blob -->
+            <!-- Split the blob using path operations
+                 (Move-to, Vertical/Horizontal, Arc, Z=close shape;
+                  lowercase means relative to the last point.)
+                 We start drawing from the top of the straight boundary
+                 between the half-blobs.
+             -->
             <path
                 class="release-cycle-blob release-cycle-status-bugfix"
                 d="
-                    M{{ left_x + radius_value }},{{ rect_y }}
-                    q{{ -radius_value }},0 {{ -radius_value }},{{ radius_value }}
-                    v{{ height - 2*radius_value }}
-                    q0,{{ radius_value }} {{ radius_value }},{{ radius_value }}
-                    H{{ middle_x }}
-                    V{{ rect_y }}
-                    Z
+                    M{{ middle_x }},{{ top_y }}         {#- start -#}
+                    v{{ height }}                       {#- down -#}
+                    H{{ start_x + radius }}             {#- left -#}
+                    a{{ radius }},{{ radius }} 90 0 1   {#- rounded corner -#}
+                        {{ -radius }} {{ -radius }}
+                    v{{ -height + 2*radius }}           {#- up -#}
+                    a{{ radius }},{{ radius }} 90 0 1   {#- rounded corner -#}
+                      {{ radius }} {{ -radius }}
+                    Z                                   {#- right -#}
                 "
             />
             <path
                 class="release-cycle-blob release-cycle-status-security"
                 d="
-                    M{{ right_x }},{{ rect_y }}
-                    h{{ right_width - radius_value }}
-                    q{{ radius_value }},0 {{ radius_value }},{{ radius_value }}
-                    v{{ height - 2*radius_value }}
-                    q0,{{ radius_value }} {{ -radius_value }},{{ radius_value }}
-                    H{{ middle_x }}
-                    V{{ rect_y }}
-                    Z
+                    M{{ middle_x }},{{ top_y }}         {#- start -#}
+                    v{{ height }}                       {#- down -#}
+                    H{{ end_x - radius }}               {#- right -#}
+                    a{{ radius }},{{ radius }} 90 0 0   {#- rounded corner -#}
+                        {{ radius }} {{ -radius }}
+                    v{{ -height + 2*radius }}           {#- up -#}
+                    a{{ radius }},{{ radius }} 90 0 0   {#- rounded corner -#}
+                        {{ -radius }} {{ -radius }}
+                    Z                                   {#- left -#}
                 "
             />
         {% endif %}
         <rect
             class="release-cycle-shade release-cycle-status-{{ version.status }}"
-            x="{{ start_x * SCALE }}"
-            y="{{ (y - 1) * SCALE }}"
-            width="{{ (end_x - start_x) * SCALE }}"
+            x="{{ start_x }}"
+            y="{{ top_y }}"
+            width="{{ (end_x - start_x) }}"
             height="{{ height }}"
             rx="0.25em"
             ry="0.25em"
@@ -134,61 +140,40 @@
         />
         <rect
             class="release-cycle-border release-cycle-status-{{ version.status }}"
-            x="{{ start_x * SCALE }}"
-            y="{{ (y - 1) * SCALE }}"
-            width="{{ (end_x - start_x) * SCALE }}"
+            x="{{ start_x }}"
+            y="{{ top_y }}"
+            width="{{ (end_x - start_x) }}"
             height="{{ height }}"
             rx="0.25em"
             ry="0.25em"
             mask="url(#release-cycle-mask-{{ id_key }})"
         />
-        {% if version.status == "bugfix" %}
-            <text
-                class="release-cycle-blob-label release-cycle-status-bugfix"
-                x="{{ (start_x + half_x) / 2 * SCALE }}"
-                y="{{ (y - 0.1) * SCALE }}"
-                font-size="{{ SCALE * 0.75 }}"
+        <text
+            class="release-cycle-blob-label release-cycle-status-{{ version.status }}"
+            font-size="{{ SCALE * 0.75 }}"
+            y="{{ small_text_y }}"
+            {% if version.status == "bugfix" %}
+                x="{{ (start_x + middle_x) / 2 }}"
                 text-anchor="middle"
-            >
-                bugfix
-            </text>
-        {% elif version.status == "security" %}
-            <text
-                class="release-cycle-blob-label release-cycle-status-security"
-                x="{{ (half_x + end_x) / 2 * SCALE }}"
-                y="{{ (y - 0.1) * SCALE }}"
-                font-size="{{ SCALE * 0.75 }}"
+            {% elif version.status == "security" %}
+                x="{{ (middle_x + end_x) / 2 }}"
                 text-anchor="middle"
-            >
-                security
-            </text>
-        {% elif version.status == "end-of-life" %}
-            <text
-                class="release-cycle-blob-label release-cycle-status-end-of-life"
-                x="{{ (end_x + 0.25) * SCALE }}"
+            {% elif version.status == "end-of-life" %}
+                x="{{ end_x + (0.25 * SCALE) }}"
                 text-anchor="start"
-                y="{{ (y - 0.1) * SCALE }}"
-                font-size="{{ SCALE * 0.75 }}"
-            >
-                end-of-life
-            </text>
-        {% else %}
-            <text
-                class="release-cycle-blob-label release-cycle-status-feature"
-                x="{{ (start_x - 0.5) * SCALE }}"
-                y="{{ (y - 0.1) * SCALE }}"
-                font-size="{{ SCALE * 0.75 }}"
+            {% else %}
+                x="{{ start_x - (0.5 * SCALE) }}"
                 text-anchor="end"
+            {% endif %}
             >
                 {{ version.status }}
             </text>
-        {% endif %}
 
         <!-- Legend on the left -->
         <text
             class="release-cycle-version-label"
             x="{{ 0.5 * SCALE }}"
-            y="{{ y * SCALE }}"
+            y="{{ version.y * line_height }}"
             font-size="{{ SCALE }}"
         >
             Python {{ version.key }}
@@ -198,10 +183,10 @@
     <!-- A line for today -->
     <line
         class="release-cycle-today-line"
-        x1="{{ date_to_x(today) * SCALE }}"
-        x2="{{ date_to_x(today) * SCALE }}"
+        x1="{{ date_to_x(today) }}"
+        x2="{{ date_to_x(today) }}"
         y1="0"
-        y2="{{ (diagram_height - LINE_HEIGHT) * SCALE }}"
+        y2="{{ diagram_height - line_height }}"
         font-size="{{ SCALE }}"
     />
 </svg>
