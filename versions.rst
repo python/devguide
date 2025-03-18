@@ -13,7 +13,7 @@ version can be found on the `download page <https://www.python.org/downloads/>`_
 .. raw:: html
    :file: include/release-cycle.svg
 
-(See :ref:`below <versions-chart-all>` for a chart with older versions.
+(See :ref:`below <full-chart>` for a chart with older versions.
 Another useful visualization is `endoflife.date/python <https://endoflife.date/python>`_.)
 
 
@@ -39,7 +39,7 @@ Unsupported versions
    :file: include/end-of-life.csv
 
 
-.. _versions-chart-all:
+.. _full-chart:
 
 Full chart
 ==========
