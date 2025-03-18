@@ -51,7 +51,8 @@ Full chart
 Status key
 ==========
 
-Python releases go through five phases:
+Python releases go through five phases, as described in :pep:`602`.  Release
+managers can adjust specific dates as needed.
 
 :feature: Before the first beta, the next full release can accept new features,
    bug fixes, and security fixes.
@@ -61,17 +62,14 @@ Python releases go through five phases:
    are accepted for the upcoming feature release.
 
 :bugfix: Once a version has been fully released, bug fixes and security fixes are
-   accepted. New binaries are built and released. (Also called **maintenance**
-   mode or **stable** release.)
+   accepted. New binaries are built and released roughly every two months. This
+   phase is also called **maintenance** mode or **stable** release.
 
-:security: After a few years, only security fixes are accepted and no more
-   binaries are released.  New source-only versions can be released as needed.
+:security: After two years (18 months for versions before 3.13), only security
+   fixes are accepted and no more binaries are released.  New source-only versions
+   can be released as needed.
 
 :end-of-life: Five years after a release, support ends. The release cycle is
-   frozen; no further changes can be pushed to it.
+   frozen; no further changes are allowed.
 
 See also the :ref:`devcycle` page for more information about branches and backporting.
-
-By default, the end-of-life is scheduled 5 years after the first release,
-but can be adjusted by the release manager of each branch.  All Python 2
-versions have reached end-of-life.
