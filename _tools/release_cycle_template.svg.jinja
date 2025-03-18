@@ -74,14 +74,15 @@
     </mask>
 
     {% for version in versions %}
-        {% set top_y = version.y * line_height - 1 * SCALE %}
-        {% set small_text_y = version.y * line_height - 0.1 * SCALE %}
-        {% set height = 1.25 * SCALE %}
-
         <!-- Colourful blob with a label. -->
 
+        {% set top_y = version.y * line_height - 1 * SCALE %}
+        {% set height = 1.25 * SCALE %}
         {% set start_x = date_to_x(version.first_release_date) %}
         {% set end_x = date_to_x(version.end_of_life_date) %}
+        {% set radius = 0.25 * SCALE %}
+
+        {% set small_text_y = version.y * line_height - 0.1 * SCALE %}
 
         <!-- bugfix/security blobs need to be split between the two phases.
             Draw the rectangle with two path elements instead.
@@ -90,7 +91,6 @@
         {% set middle_x = ([end_x, date_to_x(version.start_security_date)]|min)  %}
         {% set left_width = (middle_x - start_x) %}
         {% set right_width = (end_x - middle_x) %}
-        {% set radius = 0.25 * SCALE %}
 
         {% if version.status != "end-of-life" %}
             <!-- Split the blob using path operations
