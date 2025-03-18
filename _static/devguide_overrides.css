@@ -61,8 +61,8 @@
 }
 
 .release-cycle-chart .release-cycle-status-end-of-life {
-    --status-bg-color: #FF8888;
-    --status-border-color: #DD2200;
+    --status-bg-color: #DD2200;
+    --status-border-color: #FF8888;
 }
 
 .release-cycle-chart .release-cycle-status-security {
