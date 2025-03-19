@@ -42,7 +42,7 @@ cancellation as this action is reserved for next-of-kin or designated by
 the deceased GitHub user to act as an account successor.
 
 The general policy regarding deceased users on GitHub is described on their
-`GitHub Deceased User Policy <https://docs.github.com/en/site-policy/other-site-policies/github-deceased-user-policy>`_
+`Deceased User Policy <https://docs.github.com/en/site-policy/other-site-policies/github-deceased-user-policy>`_
 page.
 
 Repositories in the organization
