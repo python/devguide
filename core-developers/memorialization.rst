@@ -41,8 +41,9 @@ The PSF staff does not follow up with GitHub with regards to GitHub account
 cancellation as this action is reserved for next-of-kin or designated by
 the deceased GitHub user to act as an account successor.
 
-The general policy regarding deceased users on GitHub is described
-`here <https://docs.github.com/en/site-policy/other-site-policies/github-deceased-user-policy>`_.
+The general policy regarding deceased users on GitHub is described on their
+`Deceased User Policy <https://docs.github.com/en/site-policy/other-site-policies/github-deceased-user-policy>`_
+page.
 
 Repositories in the organization
 --------------------------------
@@ -77,7 +78,9 @@ The "in memoriam" Discourse topic mentioned above is best created by
 a community member close to the deceased.
 
 The general best practice for deceased community members on
-Discourse-powered forums is described `here <https://meta.discourse.org/t/best-practices-for-deceased-community-members/146210>`_.
+Discourse-powered forums is described on their
+`Best practices for deceased community members <https://meta.discourse.org/t/best-practices-for-deceased-community-members/146210>`_
+page.
 
 python.org email account
 ------------------------
@@ -135,7 +138,8 @@ Other PSF-related infrastructure
   Discord server to remove the user from the server. The PSF staff
   does not follow up with Discord with regards to Discord account
   cancellation. The general policy regarding deceased users on Discord
-  is available `here <https://support.discord.com/hc/en-us/articles/19872987802263--Deceased-or-Incapacitated-Users>`_.
+  is available on their `Deceased or Incapacitated Users <https://support.discord.com/hc/en-us/articles/19872987802263--Deceased-or-Incapacitated-Users>`_
+  page.
 
 * The user is removed from Salt configuration for the PSF infrastructure
   in `/pillar/base/users <https://github.com/python/psf-salt/tree/main/pillar/base/users>`_
