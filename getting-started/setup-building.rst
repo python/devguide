@@ -541,7 +541,7 @@ used in ``python.sh``:
    $ make -C cross-build/wasm32-emscripten/build/python/ test
 
 
-.. _Emscripten: https://wasi.dev
+.. _Emscripten: https://emscripten.org/
 .. _WebAssembly: https://webassembly.org
 
 
