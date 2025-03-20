@@ -477,6 +477,16 @@ C compiler just like building for :ref:`Unix <unix-compiling>` as well as:
 1. The Emscripten compiler
 2. Node.js
 
+To install the Emscripten compiler we recommend:
+
+.. code-block:: sh
+
+    # Install Emscripten
+    git clone emscripten/emsdk
+    ./emsdk/emsdk install 4.0.5
+    ./emsdk/emsdk activate 4.0.5
+    source ./emsdk/emsdk_env.sh
+
 Building for Emscripten requires doing a cross-build where you have a *build*
 Python to help produce a Emscripten build of CPython. This means you build
 CPython twice: once to have a version of Python for the build system to use and
