@@ -477,7 +477,7 @@ C compiler just like building for :ref:`Unix <unix-compiling>` as well as:
 1. The Emscripten compiler
 2. Node.js
 
-To install the Emscripten compiler we recommend:
+The simplest way to install the Emscripten compiler is as follows:
 
 .. code-block:: sh
 
