@@ -462,7 +462,7 @@ used in ``python.sh``:
 Emscripten
 ----------
 
-Emscripten_ is a complete open source compiler toolchain. It compiles C/C++ code
+Emscripten_ is a complete open-source compiler toolchain. It compiles C/C++ code
 into WebAssembly_/JavaScript executables, for use in JavaScript runtimes,
 including browsers and Node.js.
 
@@ -474,10 +474,10 @@ including browsers and Node.js.
 To build for Emscripten, you will need to cross-compile CPython. This requires a
 C compiler just like building for :ref:`Unix <unix-compiling>` as well as:
 
-1. The Emscripten compiler
-2. Node.js
+* The Emscripten compiler
+* Node.js
 
-The simplest way to install the Emscripten compiler is as follows:
+The simplest way to install the Emscripten compiler is:
 
 .. code-block:: sh
 
@@ -488,7 +488,7 @@ The simplest way to install the Emscripten compiler is as follows:
     source ./emsdk/emsdk_env.sh
 
 Building for Emscripten requires doing a cross-build where you have a *build*
-Python to help produce a Emscripten build of CPython. This means you build
+Python to help produce an Emscripten build of CPython. This means you build
 CPython twice: once to have a version of Python for the build system to use and
 another that's the build you ultimately care about (that is, the build Python is
 not meant for use by you directly, only the build system).
@@ -499,7 +499,7 @@ version of Python you have installed on your machine):
 
 .. code-block:: shell
 
-   $ python3 Tools/wasm/emscripten build --quiet -- --config-cache --with-pydebug
+   python3 Tools/wasm/emscripten build --quiet -- --config-cache --with-pydebug
 
 That single command will configure and build both the build Python and the
 Emscripten build in ``cross-build/build`` and
@@ -510,19 +510,19 @@ is a convenience wrapper around the following commands:
 
 .. code-block:: shell
 
-   $ python Tools/wasm/emscripten configure-build-python --quiet -- --config-cache --with-pydebug
-   $ python Tools/wasm/emscripten make-build-python --quiet
-   $ python Tools/wasm/emscripten make-libffi --quiet
-   $ python Tools/wasm/emscripten configure-host --quiet -- --config-cache
-   $ python Tools/wasm/emscripten make-host --quiet
+   python Tools/wasm/emscripten configure-build-python --quiet -- --config-cache --with-pydebug
+   python Tools/wasm/emscripten make-build-python --quiet
+   python Tools/wasm/emscripten make-libffi --quiet
+   python Tools/wasm/emscripten configure-host --quiet -- --config-cache
+   python Tools/wasm/emscripten make-host --quiet
 
 .. note::
 
    The ``configure-host`` command infers the use of ``--with-pydebug`` from the
    build Python.
 
-Running the separate commands after ``emscripten build`` is useful if you, for example, only want to
-run the ``make-host`` step after making code changes.
+Running the separate commands after ``emscripten build`` is useful if you, for
+example, only want to run the ``make-host`` step after making code changes.
 
 Once everything is complete, there will be a
 ``cross-build/wasm32-emscripten/build/python/python.sh`` helper file which you
@@ -530,7 +530,7 @@ can use to run the ``python.mjs`` file:
 
 .. code-block:: shell
 
-   $ cross-build/wasm32-emscripten/build/python/python.sh --version
+   cross-build/wasm32-emscripten/build/python/python.sh --version
 
 You can also use ``Makefile`` targets and they will work as expected thanks to
 the ``HOSTRUNNER`` environment variable having been set to a similar value as
@@ -538,7 +538,7 @@ used in ``python.sh``:
 
 .. code-block:: shell
 
-   $ make -C cross-build/wasm32-emscripten/build/python/ test
+   make -C cross-build/wasm32-emscripten/build/python/ test
 
 
 .. _Emscripten: https://emscripten.org/
