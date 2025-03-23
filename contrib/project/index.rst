@@ -24,5 +24,6 @@ moving parts, who is involved, how do they interact?]
    governance
    generative-ai.rst
    github
+   directory-structure.rst
    channels
    outreach

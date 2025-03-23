@@ -36,6 +36,8 @@ and are provided for development and testing purposes only.
 Install Git
 ===========
 
+.. c_install_git_start
+
 CPython is developed using `Git <https://git-scm.com>`_ for version control. The Git
 command line program is named ``git``; this is also used to refer to Git
 itself. Git is easily available for all common operating systems.
@@ -58,11 +60,14 @@ itself. Git is easily available for all common operating systems.
   ``git push``, or ``git fetch``.  On Windows, you should also
   :ref:`enable autocrlf <autocrlf>`.
 
+.. c_install_git_end
 
 .. _checkout:
 
 Get the source code
 ===================
+
+.. c_get_source_code_start
 
 The CPython repo is hosted on GitHub. To get a copy of the source code you should
 :ref:`fork the Python repository on GitHub <fork-cpython>`, :ref:`create a local
@@ -143,10 +148,14 @@ To make sure your code is linted correctly, we recommend setting up
 
 Now pre-commit will run automatically on ``git commit``.
 
+.. c_get_source_code_end
+
 .. _compiling:
 
 Compile and build
 =================
+
+.. c_compile_and_build_start
 
 CPython provides several compilation flags which help with debugging various
 things. While all of the known flags can be found in the
@@ -606,6 +615,8 @@ single test, or a subset of tests. See the `iOS README
 <https://github.com/python/cpython/blob/main/iOS/README.rst#debugging-test-failures>`__
 for details.
 
+.. c_compile_and_build_end
+
 .. _build-dependencies:
 .. _deps-on-linux:
 .. _macOS and OS X:
@@ -613,6 +624,8 @@ for details.
 
 Install dependencies
 ====================
+
+.. c_install_dependencies_start
 
 This section explains how to install libraries which are needed to compile
 some of CPython's modules (for example, ``zlib``).
@@ -784,9 +797,6 @@ some of CPython's modules (for example, ``zlib``).
    to the `macOS README
    <https://github.com/python/cpython/blob/main/Mac/README.rst>`_.
 
-   .. _clang: https://clang.llvm.org/
-   .. _ccache: https://ccache.dev/
-
    .. note:: While you need a C compiler to build CPython, you don't need any
       knowledge of the C language to contribute!  Vast areas of CPython are
       written completely in Python: as of this writing, CPython contains slightly
@@ -825,10 +835,14 @@ some of CPython's modules (for example, ``zlib``).
    CPython. If you use the pre-compiled binaries, you should unpack each tarball
    into a separate folder, and use that folder as the configuration target.
 
+.. c_install_dependencies_end
+
 .. _regenerate_configure:
 
 Regenerate ``configure``
 ========================
+
+.. c_regenerate_configure_start
 
 If a change is made to Python which relies on some POSIX system-specific
 functionality (such as using a new system call), it is necessary to update the
@@ -868,19 +882,21 @@ and make sure the :file:`pkg.m4` macro file located in the appropriate
    :program:`autoreconf` runs :program:`autoconf` and a number of other tools
    repeatedly as appropriate.
 
-.. _build_troubleshooting:
+.. c_regenerate_configure_end
 
 Regenerate the ABI dump
 =======================
 
+.. c_regenerate_abi_start
+
 Maintenance branches (not ``main``) have a special file located in
-``Doc/data/pythonX.Y.abi`` that allows us to know if a given Pull Request
+``Doc/data/pythonX.Y.abi`` that allows us to know if a given pull request
 affects the public ABI. This file is used by the GitHub CI in a check
-called ``Check if the ABI has changed`` that will fail if a given Pull Request
+called ``Check if the ABI has changed`` that will fail if a given pull request
 has changes to the ABI and the ABI file is not updated.
 
-This check acts as a fail-safe and **doesn't necessarily mean that the Pull
-Request cannot be merged**. When this check fails you should add the relevant
+This check acts as a fail-safe and **doesn't necessarily mean that the pull
+request cannot be merged**. When this check fails you should add the relevant
 release manager to the PR so that they are aware of the change and they can
 validate if the change can be made or not.
 
@@ -909,8 +925,14 @@ Note that the ``ubuntu`` version used to execute the script matters and
 **must** match the version used by the CI to check the ABI. See the
 ``.github/workflows/build.yml`` file for more information.
 
+.. c_regenerate_abi_end
+
+.. _build_troubleshooting:
+
 Troubleshoot the build
 ======================
+
+.. c_build_troubleshooting_start
 
 This section lists some of the common problems that may arise during the
 compilation of Python, with proposed solutions.
@@ -930,6 +952,8 @@ To overcome this problem, auto-generated files are also checked into the
 Git repository. So if you don't touch the auto-generation scripts, there's
 no real need to auto-generate anything.
 
+.. c_build_troubleshooting_end
+
 Editors and tools
 =================
 
@@ -940,10 +964,12 @@ support.
 For editors and tools which the core developers have felt some special comment
 is needed for coding *in* Python, see :ref:`resources`.
 
-.. _build-directory-structure:
+.. _build_directory_structure:
 
 Directory structure
 ===================
+
+.. c_directory_structure_start
 
 There are several top-level directories in the CPython source tree. Knowing what
 each one is meant to hold will help you find where a certain piece of
@@ -1000,14 +1026,15 @@ every rule.
 ``Tools``
      Various tools that are (or have been) used to maintain Python.
 
-
-.. _issue tracker: https://github.com/python/cpython/issues
+.. c_directory_structure_end
 
 
 .. _using-codespaces:
 
 Contribute using GitHub Codespaces
 ==================================
+
+.. c_codespaces_start
 
 .. _codespaces-whats-codespaces:
 
@@ -1069,5 +1096,10 @@ select the option ``Open in VS Code``. You will still be working on the remote
 codespace instance, thus using the remote instance's compute power. The compute
 power may be a much higher spec than your local machine which can be helpful.
 
-
 .. TODO: add docker instructions
+
+.. c_codespaces_end
+
+
+
+.. include:: ../links.rst
