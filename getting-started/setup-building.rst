@@ -482,7 +482,7 @@ The simplest way to install the Emscripten compiler is:
 .. code-block:: sh
 
     # Install Emscripten
-    git clone emscripten/emsdk
+    git clone https://github.com/emscripten-core/emsdk
     ./emsdk/emsdk install 4.0.5
     ./emsdk/emsdk activate 4.0.5
     source ./emsdk/emsdk_env.sh
