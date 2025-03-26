@@ -489,7 +489,7 @@ The simplest way to install the Emscripten compiler is:
 
 Updating the Emscripten compiler version often causes breakages. For the best
 compatibility, use the Emscripten version suggested in the cpython repository in
-`Tools/wasm/README.md`.
+``Tools/wasm/README.md``.
 
 Building for Emscripten requires doing a cross-build where you have a *build*
 Python to help produce an Emscripten build of CPython. This means you build
