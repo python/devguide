@@ -258,7 +258,7 @@ Other core workflow tools are:
 * `bedevere`_
 * `blurb_it`_
 * `miss-islington`_
-* `cla-bot`_
+* `clabot`_
 * `webhook-mailer`_
 
 Python `Performance Benchmark`_ project is intended to be an authoritative
@@ -269,6 +269,6 @@ source of benchmarks for all Python implementations.
 .. _bedevere: https://github.com/python/bedevere
 .. _blurb_it: https://github.com/python/blurb_it
 .. _miss-islington: https://github.com/python/miss-islington
-.. _cla-bot: https://github.com/ambv/cla-bot
+.. _clabot: https://github.com/psf/clabot
 .. _webhook-mailer: https://github.com/python/webhook-mailer
 .. _Performance Benchmark: https://github.com/python/pyperformance
