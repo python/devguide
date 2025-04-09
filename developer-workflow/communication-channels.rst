@@ -250,12 +250,13 @@ order to make open source pleasant for everyone involved.
 Additional repositories
 =======================
 
-`Python Core Workflow`_ hosts the codebase for tools such as :pypi:`blurb`.
+`Python Core Workflow`_ hosts an issue tracker for workflow discussions.
 
-Other core workflow tools are:
+Some core workflow tools are:
 
 * `cherry_picker`_ (:pypi:`PyPI <cherry_picker>`)
 * `bedevere`_
+* `blurb`_ (:pypi:`PyPI <blurb>`)
 * `blurb_it`_
 * `miss-islington`_
 * `clabot`_
@@ -267,6 +268,7 @@ source of benchmarks for all Python implementations.
 .. _Python Core Workflow: https://github.com/python/core-workflow
 .. _cherry_picker: https://github.com/python/cherry-picker
 .. _bedevere: https://github.com/python/bedevere
+.. _blurb: https://github.com/python/blurb
 .. _blurb_it: https://github.com/python/blurb_it
 .. _miss-islington: https://github.com/python/miss-islington
 .. _clabot: https://github.com/psf/clabot
