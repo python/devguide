@@ -299,7 +299,7 @@ macOS                 ronaldoussoren, ned-deily, freakboy3742
 NetBSD1
 OS2/EMX               aimacintyre^
 Solaris/OpenIndiana   jcea, kulikjak
-Windows               tjguk, zware, zooba, pfmoore
+Windows               tjguk, zooba, pfmoore
 JVM/Java              frank.wierzbicki^
 ===================   ===========
 
