@@ -43,13 +43,13 @@ instructions please see the :ref:`setup guide <setup>`.
 
       .. code-block:: shell
 
-         ./configure --with-pydebug && make -j
+         ./configure --with-pydebug && make -j4
 
    .. tab:: macOS
 
       .. code-block:: shell
 
-         ./configure --with-pydebug && make -j
+         ./configure --with-pydebug && make -j4
 
    .. tab:: Windows
 
