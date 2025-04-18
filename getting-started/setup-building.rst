@@ -203,14 +203,13 @@ do to get a pydebug build of CPython.
 
 Once ``configure`` is done, you can then compile CPython with::
 
-   $ make -s -j2
+   $ make -s -j $(nproc)
 
 This will build CPython with only warnings and errors being printed to
-stderr and utilize up to 2 CPU cores. If you are using a multi-core machine
-with more than 2 cores (or a single-core machine), you can adjust the number
-passed into the ``-j`` flag to match the number of cores you have (or if your
-version of Make supports it, you can use ``-j`` without a number and Make
-will not limit the number of steps that can run simultaneously.).
+stderr. The ``-j`` argument means that :program:`make` will concurrently run
+tasks, limiting the number of parallel jobs to the number of CPU cores in your
+computer. You can adjust the number passed to the ``-j`` flag to change
+the limit on parallel jobs, which can trade RAM usage vs compilation time.
 
 At the end of the build you should see a success message, followed
 by a list of extension modules that haven't been built because their
@@ -875,7 +874,7 @@ some of CPython's modules (for example, ``zlib``).
 
    And finally, run ``make``::
 
-      $ make -s -j2
+      $ make -s -j $(nproc)
 
    There will sometimes be optional modules added for a new release which
    won't yet be identified in the OS-level build dependencies. In those cases,
