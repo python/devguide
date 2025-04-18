@@ -547,8 +547,11 @@ Now that the configuration is in place, it remains to compile the project:
 
 .. tip::
 
-   Use ``make -j $(nproc)`` to speed-up compilation by using as many CPU cores
-   as possible or ``make -jN`` to allow at most *N* concurrent jobs.
+   Use ``make -jN`` to speed-up compilation by utilizing as many CPU cores
+   as possible, where *N* is as many CPU cores you want to spare (and have
+   memory for). Be careful using ``make -j`` with no argument, as this puts
+   no limit on the number of jobs, and compilation can sometimes use up a
+   lot of memory (like when building with LTO).
 
 * ``make regen-configure`` updates the :cpy-file:`configure` script.
 
