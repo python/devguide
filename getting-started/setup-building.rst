@@ -209,7 +209,7 @@ This will build CPython with only warnings and errors being printed to
 stderr. The ``-j`` argument means that :program:`make` will concurrently run
 tasks, limiting the number of parallel jobs to the number of CPU cores in your
 computer. You can adjust the number passed to the ``-j`` flag to change
-the limit on parallel jobs, which can trade RAM usage vs compilation time.
+the limit on parallel jobs, which can trade RAM usage versus compilation time.
 
 At the end of the build you should see a success message, followed
 by a list of extension modules that haven't been built because their
