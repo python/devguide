@@ -10,8 +10,8 @@ SPHINXBUILD  = $(VENVDIR)/bin/sphinx-build
 # there are duplicate labels.  These cause warnings, which prevent the
 # build from finishing.  Turn off --fail-on-warning so we can see the
 # finished results.
-#SPHINXOPTS   = --fail-on-warning --keep-going
-SPHINXOPTS   = --keep-going
+#SPHINXOPTS   = --fail-on-warning
+SPHINXOPTS   =
 BUILDDIR     = _build
 BUILDER      = html
 JOBS         = auto
