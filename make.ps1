@@ -8,7 +8,7 @@ Set-StrictMode -Version 3.0
 $ErrorActionPreference = "Stop"
 
 $BUILDDIR = "_build"
-$SPHINXOPTS = "--fail-on-warning --keep-going"
+$SPHINXOPTS = "--fail-on-warning"
 $_ALL_SPHINX_OPTS = $SPHINXOPTS
 
 $_PYTHON = $Env:PYTHON ?? "py -3"
