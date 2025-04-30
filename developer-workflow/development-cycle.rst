@@ -178,9 +178,6 @@ and beta releases.
 Being in beta can be viewed much like being in RC_ but without the extra
 overhead of needing commit reviews.
 
-Please see the note in the `In-development (main) branch`_ section above for
-new information about the creation of the 3.5 maintenance branch during beta.
-
 
 .. _rc:
 
