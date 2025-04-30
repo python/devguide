@@ -874,7 +874,7 @@ some of CPython's modules (for example, ``zlib``).
 
    And finally, run ``make``::
 
-      $ make -s -j $(nproc)
+      $ make -s -j8
 
    There will sometimes be optional modules added for a new release which
    won't yet be identified in the OS-level build dependencies. In those cases,

@@ -49,7 +49,7 @@ instructions please see the :ref:`setup guide <setup>`.
 
       .. code-block:: shell
 
-         ./configure --with-pydebug && make -j $(nproc)
+         ./configure --with-pydebug && make -j8
 
    .. tab:: Windows
 
@@ -74,7 +74,7 @@ instructions please see the :ref:`setup guide <setup>`.
 
       .. code-block:: shell
 
-         ./python.exe -m test -j3
+         ./python.exe -m test -j8
 
       Note: :ref:`Most <mac-python.exe>` macOS systems use
       :file:`./python.exe` in order to avoid filename conflicts with
