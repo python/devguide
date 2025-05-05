@@ -127,7 +127,6 @@ Other labels
   and the :ref:`branch's release manager <branchstatus>`
   will review them and determine if they indeed qualify,
   removing or retaining the label as appropriate.
-  will review them and determine if they indeed qualify,
 * :gh-label:`sprint`: for easier filtering of issues/PRs being worked on
   during official sprints.
 * :gh-label:`stale`: for issues/PRs that have been inactive for a while.
