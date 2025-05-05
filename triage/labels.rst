@@ -130,7 +130,7 @@ Other labels
 * :gh-label:`sprint`: for easier filtering of issues/PRs being worked on
   during official sprints.
 * :gh-label:`stale`: for issues/PRs that have been inactive for a while.
-* :gh-label:`triaged`: for issue has been accepted as valid by a triager.
+* :gh-label:`triaged`: for issues that have been accepted as valid by a triager.
 
 
 .. _GitHub Labels for PRs:
