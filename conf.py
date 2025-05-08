@@ -95,9 +95,9 @@ linkcheck_ignore = [
     # Checks fail due to rate limits
     r'https://github.com/.*',
     # The voters repo is private and appears as a 404
-    # 'https://github.com/python/voters',
+    'https://github.com/python/voters',
     # The python-core team link is private, redirects to login
-    # 'https://github.com/orgs/python/teams/python-core',
+    'https://github.com/orgs/python/teams/python-core',
     # The Discourse groups are private unless you are logged in
     'https://discuss.python.org/groups/staff',
     'https://discuss.python.org/groups/moderators',
