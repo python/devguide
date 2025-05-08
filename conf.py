@@ -92,7 +92,7 @@ linkcheck_anchors_ignore_for_url = [
 ]
 
 linkcheck_ignore = [
-    # Checks fail due to rate limits 
+    # Checks fail due to rate limits
     r'https://github.com/.*',
     # The voters repo is private and appears as a 404
     # 'https://github.com/python/voters',
