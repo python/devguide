@@ -1050,190 +1050,178 @@ Paragraph-level markup
 These directives create short paragraphs and can be used inside information
 units as well as normal text:
 
-.. _note:
+.. raw:: html
 
-.. describe:: note
+    <style> .green {color:#008000; font-weight:bold; font-size:16px} </style>
 
-   An especially important bit of information about an API that a user should be
-   aware of when using whatever bit of API the note pertains to.  The content of
-   the directive should be written in complete sentences and include all
-   appropriate punctuation.
+.. role:: green
 
-   Example::
+.. glossary::
 
-      .. note::
+   :green:`note`
 
-         This function is not suitable for sending spam e-mails.
+      An especially important bit of information about an API that a user should be
+      aware of when using whatever bit of API the note pertains to.  The content of
+      the directive should be written in complete sentences and include all
+      appropriate punctuation.
 
-.. _warning:
+      Example::
 
-.. describe:: warning
+         .. note::
 
-   An important bit of information about an API that a user should be aware of
-   when using whatever bit of API the warning pertains to.  The content of the
-   directive should be written in complete sentences and include all appropriate
-   punctuation.  In the interest of not scaring users away from pages filled
-   with warnings, this directive should only be chosen over ``note`` for
-   information regarding the possibility of crashes, data loss, or security
-   implications.
+            This function is not suitable for sending spam e-mails.
 
-.. _versionadded:
+   :green:`warning`
 
-.. describe:: versionadded
+      An important bit of information about an API that a user should be aware of
+      when using whatever bit of API the warning pertains to.  The content of the
+      directive should be written in complete sentences and include all appropriate
+      punctuation.  In the interest of not scaring users away from pages filled
+      with warnings, this directive should only be chosen over ``note`` for
+      information regarding the possibility of crashes, data loss, or security
+      implications.
 
-   This directive documents the version of Python which added the described
-   feature, or a part of it, to the library or C API.  When this applies to an
-   entire module, it should be placed at the top of the module section before
-   any prose.
-   When adding a new API :ref:`with a directive <information-units>`
-   (``class``, ``attribute``, ``function``, ``method``, ``c:type``, etc),
-   a ``versionadded`` should be included at the end of its description block.
+   :green:`versionadded`
 
-   The first argument must be given and is the version in question.
-   Instead of a specific version number, you can---and should---use
-   the word ``next``, indicating that the API will first appear in the
-   upcoming release.
-   The second argument is optional and can be used to describe the details of the feature.
+      This directive documents the version of Python which added the described
+      feature, or a part of it, to the library or C API.  When this applies to an
+      entire module, it should be placed at the top of the module section before
+      any prose.
+      When adding a new API :ref:`with a directive <information-units>`
+      (``class``, ``attribute``, ``function``, ``method``, ``c:type``, etc),
+      a ``versionadded`` should be included at the end of its description block.
 
-   Example::
+      The first argument must be given and is the version in question.
+      Instead of a specific version number, you can---and should---use
+      the word ``next``, indicating that the API will first appear in the
+      upcoming release.
+      The second argument is optional and can be used to describe the details of the feature.
 
-      .. function:: func()
+      Example::
 
-         Return foo and bar.
+         .. function:: func()
 
-         .. versionadded:: next
+            Return foo and bar.
 
-   When a release is made, the release manager will change the ``next`` to
-   the just-released version. For example, if ``func`` in the above example is
-   released in 3.14, the snippet will be changed to::
+            .. versionadded:: next
 
-      .. function:: func()
+      When a release is made, the release manager will change the ``next`` to
+      the just-released version. For example, if ``func`` in the above example is
+      released in 3.14, the snippet will be changed to::
 
-         Return foo and bar.
+         .. function:: func()
 
-         .. versionadded:: 3.14
+            Return foo and bar.
 
-   The tool to do this replacement is `update_version_next.py`_
-   in the release-tools repository.
+            .. versionadded:: 3.14
 
-   .. _update_version_next.py: https://github.com/python/release-tools/blob/master/update_version_next.py
+      The tool to do this replacement is `update_version_next.py`_
+      in the release-tools repository.
 
-   When backporting to versions before 3.14, check if ``Doc/tools/extensions/pyspecific.py``
-   contains the function ``expand_version_arg``. If it's not there,
-   use a specific version instead of ``next``.
+      .. _update_version_next.py: https://github.com/python/release-tools/blob/master/update_version_next.py
 
-   When adding documentation for a function that existed in a past version,
-   but wasn't documented yet, use the version number where the function was
-   added instead of ``next``.
+      When backporting to versions before 3.14, check if ``Doc/tools/extensions/pyspecific.py``
+      contains the function ``expand_version_arg``. If it's not there,
+      use a specific version instead of ``next``.
 
-.. _versionchanged:
+      When adding documentation for a function that existed in a past version,
+      but wasn't documented yet, use the version number where the function was
+      added instead of ``next``.
 
-.. describe:: versionchanged
+   :green:`versionchanged`
 
-   Similar to ``versionadded``, but describes when and what changed in the named
-   feature in some way (new parameters, changed side effects, platform support,
-   etc.).  This one *must* have the second argument (explanation of the change).
+      Similar to ``versionadded``, but describes when and what changed in the named
+      feature in some way (new parameters, changed side effects, platform support,
+      etc.).  This one *must* have the second argument (explanation of the change).
 
-   Example::
+      Example::
 
-      .. function:: func(spam=False)
+         .. function:: func(spam=False)
 
-         Return foo and bar, optionally with *spam* applied.
+            Return foo and bar, optionally with *spam* applied.
 
-         .. versionchanged:: next
-            Added the *spam* parameter.
+            .. versionchanged:: next
+               Added the *spam* parameter.
 
-   Note that there should be no blank line between the directive head and the
-   explanation; this is to make these blocks visually continuous in the markup.
+      Note that there should be no blank line between the directive head and the
+      explanation; this is to make these blocks visually continuous in the markup.
 
-.. _deprecated:
+   :green:`deprecated`
 
-.. describe:: deprecated
+      Indicates the version from which the described feature is deprecated.
 
-   Indicates the version from which the described feature is deprecated.
+      There is one required argument: the version from which the feature is
+      deprecated.
+      Similarly to ``versionadded``, you should use the word ``next`` to indicate
+      the API will be first deprecated in the upcoming release.
 
-   There is one required argument: the version from which the feature is
-   deprecated.
-   Similarly to ``versionadded``, you should use the word ``next`` to indicate
-   the API will be first deprecated in the upcoming release.
+      Example::
 
-   Example::
+         .. deprecated:: next
 
-      .. deprecated:: next
+   :green:`deprecated-removed`
 
-.. _deprecated-removed:
+      Like ``deprecated``, but it also indicates in which version the feature is
+      removed.
 
-.. describe:: deprecated-removed
+      There are two required arguments: the version from which the feature is
+      deprecated (usually ``next``), and the version in which the feature
+      is removed, which must be a specific version number (*not* ``next``).
 
-   Like ``deprecated``, but it also indicates in which version the feature is
-   removed.
+      Example::
 
-   There are two required arguments: the version from which the feature is
-   deprecated (usually ``next``), and the version in which the feature
-   is removed, which must be a specific version number (*not* ``next``).
+         .. deprecated-removed:: next 4.0
 
-   Example::
+   :green:`impl-detail`
 
-      .. deprecated-removed:: next 4.0
+      This directive is used to mark CPython-specific information.  Use either with
+      a block content or a single sentence as an argument, that is, either ::
 
-.. _impl-detail:
+         .. impl-detail::
 
-.. describe:: impl-detail
+            This describes some implementation detail.
 
-   This directive is used to mark CPython-specific information.  Use either with
-   a block content or a single sentence as an argument, that is, either ::
+            More explanation.
 
-      .. impl-detail::
+      or ::
 
-         This describes some implementation detail.
+         .. impl-detail:: This shortly mentions an implementation detail.
 
-         More explanation.
+      "\ **CPython implementation detail:**\ " is automatically prepended to the
+      content.
 
-   or ::
+   :green:`seealso`
 
-      .. impl-detail:: This shortly mentions an implementation detail.
+      Many sections include a list of references to module documentation or
+      external documents.  These lists are created using the ``seealso`` directive.
 
-   "\ **CPython implementation detail:**\ " is automatically prepended to the
-   content.
+      The ``seealso`` directive is typically placed in a section just before any
+      sub-sections.  For the HTML output, it is shown boxed off from the main flow
+      of the text.
 
-.. _seealso:
+      The content of the ``seealso`` directive should be a reST definition list.
+      Example::
 
-.. describe:: seealso
+         .. seealso::
 
-   Many sections include a list of references to module documentation or
-   external documents.  These lists are created using the ``seealso`` directive.
+            Module :mod:`zipfile`
+               Documentation of the :mod:`zipfile` standard module.
 
-   The ``seealso`` directive is typically placed in a section just before any
-   sub-sections.  For the HTML output, it is shown boxed off from the main flow
-   of the text.
+            `GNU tar manual, Basic Tar Format <http://link>`_
+               Documentation for tar archive files, including GNU tar extensions.
 
-   The content of the ``seealso`` directive should be a reST definition list.
-   Example::
+   :green:`rubric`
 
-      .. seealso::
+      This directive creates a paragraph heading that is not used to create a
+      table of contents node.  It is currently used for the "Footnotes" caption.
 
-         Module :mod:`zipfile`
-            Documentation of the :mod:`zipfile` standard module.
+   :green:`centered`
 
-         `GNU tar manual, Basic Tar Format <http://link>`_
-            Documentation for tar archive files, including GNU tar extensions.
+      This directive creates a centered boldfaced paragraph.  Use it as follows::
 
-.. _rubric:
+         .. centered::
 
-.. describe:: rubric
-
-   This directive creates a paragraph heading that is not used to create a
-   table of contents node.  It is currently used for the "Footnotes" caption.
-
-.. _centered:
-
-.. describe:: centered
-
-   This directive creates a centered boldfaced paragraph.  Use it as follows::
-
-      .. centered::
-
-         Paragraph contents.
+            Paragraph contents.
 
 
 Table-of-contents markup
