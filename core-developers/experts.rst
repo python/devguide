@@ -77,6 +77,7 @@ collections           rhettinger*
 collections.abc       rhettinger*, stutzbach^
 colorsys
 compileall            carljm
+compression
 concurrent.futures    pitrou, brianquinlan, gpshead*
 configparser          ambv*
 contextlib            ncoghlan, 1st1
@@ -258,6 +259,7 @@ zipapp                pfmoore
 zipfile               alanmcintyre^, serhiy-storchaka, Yhg1s, gpshead
 zipimport             Yhg1s*
 zlib                  Yhg1s, gpshead*
+compression.zstd
 ====================  =============================================
 
 
