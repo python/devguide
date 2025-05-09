@@ -1050,6 +1050,8 @@ Paragraph-level markup
 These directives create short paragraphs and can be used inside information
 units as well as normal text:
 
+.. _note:
+
 .. describe:: note
 
    An especially important bit of information about an API that a user should be
@@ -1063,6 +1065,8 @@ units as well as normal text:
 
          This function is not suitable for sending spam e-mails.
 
+.. _warning:
+
 .. describe:: warning
 
    An important bit of information about an API that a user should be aware of
@@ -1072,6 +1076,8 @@ units as well as normal text:
    with warnings, this directive should only be chosen over ``note`` for
    information regarding the possibility of crashes, data loss, or security
    implications.
+
+.. _versionadded:
 
 .. describe:: versionadded
 
@@ -1120,6 +1126,8 @@ units as well as normal text:
    but wasn't documented yet, use the version number where the function was
    added instead of ``next``.
 
+.. _versionchanged:
+
 .. describe:: versionchanged
 
    Similar to ``versionadded``, but describes when and what changed in the named
@@ -1138,6 +1146,8 @@ units as well as normal text:
    Note that there should be no blank line between the directive head and the
    explanation; this is to make these blocks visually continuous in the markup.
 
+.. _deprecated:
+
 .. describe:: deprecated
 
    Indicates the version from which the described feature is deprecated.
@@ -1151,6 +1161,8 @@ units as well as normal text:
 
       .. deprecated:: next
 
+.. _deprecated-removed:
+
 .. describe:: deprecated-removed
 
    Like ``deprecated``, but it also indicates in which version the feature is
@@ -1163,6 +1175,8 @@ units as well as normal text:
    Example::
 
       .. deprecated-removed:: next 4.0
+
+.. _impl-detail:
 
 .. describe:: impl-detail
 
@@ -1181,6 +1195,8 @@ units as well as normal text:
 
    "\ **CPython implementation detail:**\ " is automatically prepended to the
    content.
+
+.. _seealso:
 
 .. describe:: seealso
 
@@ -1202,10 +1218,14 @@ units as well as normal text:
          `GNU tar manual, Basic Tar Format <http://link>`_
             Documentation for tar archive files, including GNU tar extensions.
 
+.. _rubric:
+
 .. describe:: rubric
 
    This directive creates a paragraph heading that is not used to create a
    table of contents node.  It is currently used for the "Footnotes" caption.
+
+.. _centered:
 
 .. describe:: centered
 
