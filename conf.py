@@ -84,11 +84,6 @@ linkcheck_anchors_ignore = [
     r'\/.*',
 ]
 
-# Check the link itself, but ignore anchors that are added by JS
-# https://www.sphinx-doc.org/en/master/usage/configuration.html#confval-linkcheck_anchors_ignore_for_url
-linkcheck_anchors_ignore_for_url = [
-]
-
 linkcheck_ignore = [
     # Checks fail due to rate limits
     r'https://github.com/.*',
