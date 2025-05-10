@@ -709,7 +709,7 @@ some of CPython's modules (for example, ``zlib``).
 
       For **Homebrew**, install dependencies using ``brew``::
 
-         $ brew install pkg-config openssl@3 xz gdbm tcl-tk mpdecimal
+         $ brew install pkg-config openssl@3 xz gdbm tcl-tk mpdecimal zstd
 
       .. tab:: Python 3.13+
 
@@ -750,7 +750,7 @@ some of CPython's modules (for example, ``zlib``).
 
       For **MacPorts**, install dependencies using ``port``::
 
-         $ sudo port install pkgconfig openssl xz gdbm tcl tk +quartz mpdecimal
+         $ sudo port install pkgconfig openssl xz gdbm tk +quartz mpdecimal zstd
 
       .. tab:: Python 3.13+
 
