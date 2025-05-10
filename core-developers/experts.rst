@@ -66,7 +66,6 @@ bdb
 binascii
 bisect                rhettinger*
 builtins
-bz2
 calendar
 cmath
 cmd
@@ -77,7 +76,10 @@ collections           rhettinger*
 collections.abc       rhettinger*, stutzbach^
 colorsys
 compileall            carljm
-compression
+compression.bz2
+compression.gzip
+compression.lzma
+compression.zlib      Yhg1s, gpshead*
 compression.zstd
 concurrent.futures    pitrou, brianquinlan, gpshead*
 configparser          ambv*
@@ -116,7 +118,6 @@ getpass
 gettext
 glob
 grp
-gzip
 hashlib               tiran, gpshead*, picnixz
 heapq                 rhettinger*, stutzbach^
 hmac                  tiran, gpshead*, picnixz
@@ -137,7 +138,6 @@ libmpdec
 linecache
 locale                malemburg
 logging               vsajip
-lzma
 mailbox
 marshal
 math                  rhettinger, stutzbach^
@@ -259,7 +259,6 @@ xmlrpc
 zipapp                pfmoore
 zipfile               alanmcintyre^, serhiy-storchaka, Yhg1s, gpshead
 zipimport             Yhg1s*
-zlib                  Yhg1s, gpshead*
 ====================  =============================================
 
 
