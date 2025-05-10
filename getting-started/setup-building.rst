@@ -739,9 +739,9 @@ some of CPython's modules (for example, ``zlib``).
 
       $ sudo dnf install \
             gcc gcc-c++ gdb lzma glibc-devel libstdc++-devel openssl-devel \
-            readline-devel zlib-devel libffi-devel bzip2-devel xz-devel \
-            sqlite sqlite-devel sqlite-libs libuuid-devel gdbm-libs perf \
-            expat expat-devel mpdecimal python3-pip
+            readline-devel zlib-devel libzstd-devel libffi-devel bzip2-devel \
+            xz-devel  sqlite sqlite-devel sqlite-libs libuuid-devel gdbm-libs \
+            perf expat expat-devel mpdecimal python3-pip
 
 
    On **Debian**, **Ubuntu**, and other ``apt``-based systems, try to get the
@@ -777,7 +777,7 @@ some of CPython's modules (for example, ``zlib``).
       $ sudo apt-get install build-essential gdb lcov pkg-config \
             libbz2-dev libffi-dev libgdbm-dev libgdbm-compat-dev liblzma-dev \
             libncurses5-dev libreadline6-dev libsqlite3-dev libssl-dev \
-            lzma lzma-dev tk-dev uuid-dev zlib1g-dev libmpdec-dev
+            lzma lzma-dev tk-dev uuid-dev zlib1g-dev libmpdec-dev libzstd-dev
 
    Note that Debian 12 and Ubuntu 24.04 do not have the ``libmpdec-dev`` package.  You can safely
    remove it from the install list above and the Python build will use a bundled version.
@@ -812,7 +812,7 @@ some of CPython's modules (for example, ``zlib``).
 
       For **Homebrew**, install dependencies using ``brew``::
 
-         $ brew install pkg-config openssl@3 xz gdbm tcl-tk mpdecimal
+         $ brew install pkg-config openssl@3 xz gdbm tcl-tk mpdecimal zstd
 
       .. tab:: Python 3.13+
 
@@ -853,7 +853,7 @@ some of CPython's modules (for example, ``zlib``).
 
       For **MacPorts**, install dependencies using ``port``::
 
-         $ sudo port install pkgconfig openssl xz gdbm tcl tk +quartz mpdecimal
+         $ sudo port install pkgconfig openssl xz gdbm tk +quartz mpdecimal zstd
 
       .. tab:: Python 3.13+
 
