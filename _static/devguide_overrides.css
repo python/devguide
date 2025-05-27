@@ -49,13 +49,13 @@
 }
 
 .release-cycle-chart .release-cycle-blob-label.release-cycle-status-security,
-.release-cycle-chart .release-cycle-blob-label.release-cycle-status-prerelease,
 .release-cycle-chart .release-cycle-blob-label.release-cycle-status-bugfix {
     /* but use black to improve contrast for lighter backgrounds */
     fill: black;
 }
 
 .release-cycle-chart .release-cycle-blob-label.release-cycle-status-end-of-life,
+.release-cycle-chart .release-cycle-blob-label.release-cycle-status-prerelease,
 .release-cycle-chart .release-cycle-blob-label.release-cycle-status-feature {
     /* and FG when it's not in a blob */
     fill: var(--color-foreground-primary);
