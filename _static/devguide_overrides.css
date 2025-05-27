@@ -49,6 +49,7 @@
 }
 
 .release-cycle-chart .release-cycle-blob-label.release-cycle-status-security,
+.release-cycle-chart .release-cycle-blob-label.release-cycle-status-prerelease,
 .release-cycle-chart .release-cycle-blob-label.release-cycle-status-bugfix {
     /* but use black to improve contrast for lighter backgrounds */
     fill: black;
