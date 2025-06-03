@@ -42,7 +42,8 @@ details.
      - :github:`GitHub <python/python-docs-hu>`,
        `mailing list <https://mail.python.org/pipermail/python-hu>`__
    * - `Indonesian (id) <https://docs.python.org/id/>`__
-     - Oon Arfiandwi (:github-user:`oonid`)
+     - Oon Arfiandwi (:github-user:`oonid`),
+       Jeff Jacobson (:github-user:`jwjacobson`)
      - :github:`GitHub <python/python-docs-id>`
    * - Italian (it)
      - Alessandro Cucci (`email <mailto:alessandro.cucci@gmail.com>`__)
