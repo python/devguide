@@ -153,6 +153,25 @@ To build the docs as HTML, run:
            start a local server, and automatically reload the page in your
            browser when you make changes to reST files (Unix only).
 
+It is also possible to build only certain pages of the documentation in order
+to save time during the build process. Following is an example for building two
+pages:
+
+.. tab:: Unix/macOS
+
+   .. code-block:: shell
+
+      make html SOURCES="tutorial/classes.rst tutorial/inputoutput.rst"
+
+.. tab:: Windows
+
+   See :ref:`using-sphinx-build`. When invoking ``sphinx-build``, pass the
+   desired pages as the final parameter, like so:
+
+   .. code-block:: dosbatch
+
+      python -m sphinx -b html . build/html tutorial/classes.rst tutorial/inputoutput.rst
+
 To check the docs for common errors with `Sphinx Lint`_
 (which is run on all :ref:`pull requests <pullrequest>`), use:
 
