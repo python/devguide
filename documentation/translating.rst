@@ -42,7 +42,7 @@ details.
      - :github:`GitHub <python/python-docs-hu>`,
        `mailing list <https://mail.python.org/pipermail/python-hu>`__
    * - `Indonesian (id) <https://docs.python.org/id/>`__
-     - Oon Arfiandwi (:github-user:`oonid`),
+     - Irvan Putra (:github-user:`irvan-putra`),
        Jeff Jacobson (:github-user:`jwjacobson`)
      - :github:`GitHub <python/python-docs-id>`
    * - Italian (it)
