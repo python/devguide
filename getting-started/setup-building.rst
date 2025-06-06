@@ -411,7 +411,7 @@ Python you have installed on your machine):
 
 .. code-block:: shell
 
-   $ python3 Tools/wasm/wasi.py build --quiet -- --config-cache --with-pydebug
+   $ python3 Tools/wasm/wasi build --quiet -- --config-cache --with-pydebug
 
 That single command will configure and build both the build Python and the
 WASI build in ``cross-build/build`` and ``cross-build/wasm32-wasi``,
@@ -422,10 +422,10 @@ is a convenience wrapper around the following commands:
 
 .. code-block:: shell
 
-   $ python Tools/wasm/wasi.py configure-build-python --quiet -- --config-cache --with-pydebug
-   $ python Tools/wasm/wasi.py make-build-python --quiet
-   $ python Tools/wasm/wasi.py configure-host --quiet -- --config-cache
-   $ python Tools/wasm/wasi.py make-host --quiet
+   $ python Tools/wasm/wasi configure-build-python --quiet -- --config-cache --with-pydebug
+   $ python Tools/wasm/wasi make-build-python --quiet
+   $ python Tools/wasm/wasi configure-host --quiet -- --config-cache
+   $ python Tools/wasm/wasi make-host --quiet
 
 .. note::
 
