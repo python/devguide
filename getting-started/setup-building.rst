@@ -413,6 +413,8 @@ Python you have installed on your machine):
 
    $ python3 Tools/wasm/wasi build --quiet -- --config-cache --with-pydebug
 
+For Python 3.14 and earlier, use ``Tools/wasm/wasi.py`` instead.
+
 That single command will configure and build both the build Python and the
 WASI build in ``cross-build/build`` and ``cross-build/wasm32-wasi``,
 respectively.
