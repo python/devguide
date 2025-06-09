@@ -313,7 +313,7 @@ Interest Area       Maintainers
 ==================  ==========================================================
 algorithms          rhettinger*
 argument clinic     larryhastings, AlexWaygood*, erlend-aasland
-ast/compiler        benjaminp, 1st1, pablogsal, markshannon, isidentical, brandtbucher, carljm, iritkatriel
+AST/compiler        benjaminp, 1st1, pablogsal, markshannon, isidentical, brandtbucher, carljm, iritkatriel
 autoconf/makefiles  Yhg1s*
 issue tracker       ezio-melotti
 buildbots           zware, pablogsal
@@ -346,7 +346,7 @@ networking          giampaolo, gpshead
 object model        benjaminp, Yhg1s
 packaging           tarekziade, malemburg, alexis^, merwok, dstufft, pfmoore
 pattern matching    brandtbucher*
-peg parser          gvanrossum, pablogsal, lysnikolaou
+PEG parser          gvanrossum, pablogsal, lysnikolaou
 performance         vstinner, serhiy-storchaka, 1st1, rhettinger, markshannon, brandtbucher, carljm, Fidget-Spinner,
                     AlexWaygood*
 pip                 ncoghlan, dstufft, pfmoore, Marcus.Smith^, pradyunsg
@@ -361,7 +361,7 @@ testing             ezio-melotti
 test coverage
 threads             gpshead
 time and dates      malemburg, abalkin, pganssle
-unicode             malemburg, ezio-melotti, benjaminp
+Unicode             malemburg, ezio-melotti, benjaminp
 version control     merwok, ezio-melotti
 ==================  ==========================================================
 
