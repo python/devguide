@@ -354,7 +354,7 @@ pip                 ncoghlan, dstufft, pfmoore, Marcus.Smith^, pradyunsg
 py3 transition      benjaminp
 release management  tarekziade, malemburg, benjaminp, warsaw,
                     gvanrossum, anthonybaxter^, merwok, ned-deily,
-                    birkenfeld, JulienPalard
+                    birkenfeld, JulienPalard, hugovk
 runtime lifecycle   ericsnowcurrently, kumaraditya303, zooba
 str.format          ericvsmith*
 subinterpreters     ericsnowcurrently, kumaraditya303
