@@ -87,6 +87,7 @@ linkcheck_anchors_ignore = [
 linkcheck_ignore = [
     # Checks fail due to rate limits
     r'https://github.com/.*',
+    r'https://www.gnu.org/software/autoconf/',
     # The Discourse groups are private unless you are logged in
     'https://discuss.python.org/groups/staff',
     'https://discuss.python.org/groups/moderators',
