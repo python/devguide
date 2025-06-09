@@ -113,8 +113,8 @@ ftplib                giampaolo*
 functools             rhettinger*
 gc                    pitrou, pablogsal
 getopt
-getpath               FFY00
 getpass
+getpath               FFY00
 gettext
 glob
 grp
@@ -295,13 +295,13 @@ Emscripten            hoodmane, pmp-p, rdb, rth, ryanking13
 FreeBSD
 HP-UX
 iOS                   freakboy3742, ned-deily
+JVM/Java              frank.wierzbicki^
 Linux
 macOS                 ronaldoussoren, ned-deily, freakboy3742
 NetBSD1
 OS2/EMX               aimacintyre^
 Solaris/OpenIndiana   jcea, kulikjak
 Windows               tjguk, zooba, pfmoore
-JVM/Java              frank.wierzbicki^
 ===================   ===========
 
 
