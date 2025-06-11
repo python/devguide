@@ -297,13 +297,13 @@ Emscripten            hoodmane, pmp-p, rdb, rth, ryanking13
 FreeBSD
 HP-UX
 iOS                   freakboy3742, ned-deily
+JVM/Java              frank.wierzbicki^
 Linux
 macOS                 ronaldoussoren, ned-deily, freakboy3742
 NetBSD1
 OS2/EMX               aimacintyre^
 Solaris/OpenIndiana   jcea, kulikjak
 Windows               tjguk, zooba, pfmoore
-JVM/Java              frank.wierzbicki^
 ===================   ===========
 
 
@@ -316,9 +316,8 @@ Interest Area       Maintainers
 algorithms          rhettinger*, serhiy-storchaka
 argument clinic     larryhastings, AlexWaygood*, erlend-aasland,
                     serhiy-storchaka*
-ast/compiler        benjaminp, 1st1, pablogsal, markshannon, isidentical, brandtbucher, carljm, iritkatriel
+AST/compiler        benjaminp, 1st1, pablogsal, markshannon, isidentical, brandtbucher, carljm, iritkatriel
 autoconf/makefiles  Yhg1s*
-bsd
 issue tracker       ezio-melotti
 buildbots           zware, pablogsal
 bytecode            benjaminp, 1st1, markshannon, brandtbucher, carljm, iritkatriel
@@ -350,14 +349,13 @@ networking          giampaolo, gpshead
 object model        benjaminp, Yhg1s
 packaging           tarekziade, malemburg, alexis^, merwok, dstufft, pfmoore
 pattern matching    brandtbucher*
-peg parser          gvanrossum, pablogsal, lysnikolaou
+PEG parser          gvanrossum, pablogsal, lysnikolaou
 performance         vstinner, serhiy-storchaka*, 1st1, rhettinger, markshannon,
                     brandtbucher, carljm, Fidget-Spinner, AlexWaygood*
 pip                 ncoghlan, dstufft, pfmoore, Marcus.Smith^, pradyunsg
-py3 transition      benjaminp
 release management  tarekziade, malemburg, benjaminp, warsaw,
                     gvanrossum, anthonybaxter^, merwok, ned-deily,
-                    birkenfeld, JulienPalard
+                    birkenfeld, JulienPalard, hugovk
 runtime lifecycle   ericsnowcurrently, kumaraditya303, zooba
 str.format          ericvsmith*
 subinterpreters     ericsnowcurrently, kumaraditya303
@@ -366,7 +364,7 @@ testing             ezio-melotti
 test coverage
 threads             gpshead
 time and dates      malemburg, abalkin, pganssle
-unicode             malemburg, ezio-melotti, benjaminp
+Unicode             malemburg, ezio-melotti, benjaminp
 version control     merwok, ezio-melotti
 ==================  ==========================================================
 
