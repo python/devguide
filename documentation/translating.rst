@@ -120,7 +120,7 @@ fall under the aegis of the `PSF Translation Workgroup <translation_wg_>`_
 Then you can bootstrap your new translation by using `cookiecutter
 <https://github.com/JulienPalard/python-docs-cookiecutter>`__ or
 `bootstrapper <https://github.com/python-docs-translations/python-docs-bootstrapper>`__.
-You can also start your translation using `transifex <https://explore.transifex.com/python-doc/python-newest/>`_
+You can also start your translation using `Transifex <https://explore.transifex.com/python-doc/python-newest/>`_
 following this `guide <https://python-docs-transifex-automation.readthedocs.io/commands.html>`_.
 
 The important steps look like this:
