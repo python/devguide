@@ -82,7 +82,7 @@ details.
        `article <https://rgth.co/blog/python-ptbr-cenario-atual/>`__
    * - Romanian (ro)
      - Octavian Mustafa (:github-user:`octaG-M`, `email <mailto:octawian@yahoo.com>`__)
-     - :github:`GitHub <octaG-M/python-docs-ro>`
+     - :github:`GitHub <python/python-docs-ro>`
    * - Russian (ru)
      - Daniil Kolesnikov (:github-user:`MLGRussianXP`, `email <mailto:mlgrussianxp@gmail.com>`__)
      - :github:`GitHub <MLGRussianXP/python-docs-ru>`,
