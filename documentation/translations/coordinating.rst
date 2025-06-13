@@ -118,3 +118,6 @@ The entry for my translation is missing/not up to date on this page
 
 Ask on the `translation mailing list <translation_ml_>`_, or better, make a PR on the `devguide
 <https://github.com/python/devguide/>`__.
+
+.. _translation_wg: https://wiki.python.org/psf/TranslationWG/Charter
+.. _translation_ml: https://mail.python.org/mailman3/lists/translation.python.org/
