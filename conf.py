@@ -127,6 +127,10 @@ rediraffe_redirects = {
     # Documentation
     "docquality.rst": "documentation/help-documenting.rst",
     "documenting.rst": "documentation/start-documenting.rst",
+    # Translating
+    "documentation/translating.rst": "documentation/translations/translating.rst",
+    "translating.rst": "documentation/translations/translating.rst",
+    "coordinating.rst": "documentation/translations/coordinating.rst",
     # Getting Started
     "fixingissues.rst": "getting-started/fixing-issues.rst",
     "help.rst": "getting-started/getting-help.rst",
