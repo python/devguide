@@ -15,13 +15,13 @@ Then you can bootstrap your new translation by using `cookiecutter
 
 The important steps look like this:
 
-- Create the GitHub repo (anywhere) with the right hierarchy (using one
-  of the bootstrappers).
+- Create the GitHub repo (any account) with the correct hierarchy by using one
+  of the bootstrappers.
 - Gather people to help you translate. You can't do it alone.
 - You can use any tool to translate, as long as you can synchronize with Git.
   Some use Transifex, and some use only GitHub. You can choose another
   way if you like; it's up to you.
-- Ensure we update this page to reflect your work and progress, either via a
+- Update :doc:`this page <translating>` to reflect your work and progress, either via a
   PR or by asking on the `translation mailing list <translation_ml_>`_.
 - When ``bugs``, ``tutorial``, and ``library/functions`` are 100%
   completed, ask on the `translation mailing list <translation_ml_>`_ for
@@ -73,19 +73,19 @@ __ https://github.com/python-docs-translations
 How is a coordinator elected?
 -----------------------------
 
-There is no election; each translation has to sort this out.  Here are some suggestions.
+There is no election. Each translation will sort out the number of coordinators. We recommend 2 or 3 coordinators, though you may begin with one.  Here are some general suggestions.
 
 -  Coordinator requests are to be public on the `translation mailing list <translation_ml_>`_.
--  If the given language has a native core dev, the core dev has their
-   say on the choice.
+-  If the given language has a native core dev, the core dev has input
+   on the coordinator request.
 -  Anyone who wants to become coordinator for their native language and shows
    motivation by translating and building a community will be named
    coordinator.
--  In case of concurrency between two persons, no one will sort this out
-   for you.  It is up to you two to organize a local election or whatever is
-   needed to sort this out.
+-  We expect the local community to self-organize coordinators and contributors.
+   If you have questions, please ask on the mailing list or Discourse.
 -  If a coordinator becomes inactive or unreachable for a long
-   period of time, someone else can ask for a takeover on the `translation mailing list <translation_ml_>`_.
+   period of time, someone else can ask to be added as a primary coordinator on the `translation mailing list <translation_ml_>`_.
+   As a community resource, we aim to keep translations up to date with active contributors, including coordinators.
 
 I have a translation, but it's not in Git. What should I do?
 ------------------------------------------------------------
