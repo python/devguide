@@ -12,11 +12,13 @@ fall under the aegis of the `PSF Translation Workgroup <translation_wg_>`_
 Then you can bootstrap your new translation by using `cookiecutter
 <https://github.com/JulienPalard/python-docs-cookiecutter>`__ or
 `bootstrapper <https://github.com/python-docs-translations/python-docs-bootstrapper>`__.
+You can also start your translation using `Transifex <https://explore.transifex.com/python-doc/python-newest/>`_
+following this `guide <https://python-docs-transifex-automation.readthedocs.io/commands.html>`_.
 
 The important steps look like this:
 
 - Create the GitHub repo (any account) with the correct hierarchy by using one
-  of the bootstrappers.
+  of the bootstrappers or Transifex.
 - Gather people to help you translate. You can't do it alone.
 - You can use any tool to translate, as long as you can synchronize with Git.
   Some use Transifex, and some use only GitHub. You can choose another
@@ -58,11 +60,12 @@ Are there tools to help in managing the repo?
 
 Here's what we're using:
 
-- :pypi:`pomerge` to propagate translations from one file to others.
-- :pypi:`pospell` to check for typos in ``.po`` files.
-- :pypi:`powrap` to rewrap the ``.po`` files
-  before committing. This helps keep Git diffs short.
-- :pypi:`potodo` to list what needs to be translated.
+- :pypi:`poutils` which includes:
+   - :pypi:`pomerge` to propagate translations from one file to others.
+   - :pypi:`pospell` to check for typos in ``.po`` files.
+   - :pypi:`powrap` to rewrap the ``.po`` files
+     before committing. This helps keep Git diffs short.
+   - :pypi:`potodo` to list what needs to be translated.
 - :pypi:`sphinx-lint` to validate reST syntax in translation files.
 
 More related tools and projects can be found in the
