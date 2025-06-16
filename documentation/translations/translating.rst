@@ -22,7 +22,7 @@ For more details about translations and their progress, see `the dashboard
    :header-rows: 1
 
    * - Language
-     - Contact
+     - Coordination team
      - Links
    * - Arabic (ar)
      - Abdur-Rahmaan Janhangeer (:github-user:`Abdur-rahmaanJ`)
@@ -32,7 +32,7 @@ For more details about translations and their progress, see `the dashboard
      - :github:`GitHub <python/python-docs-bn-in>`
    * - `French (fr) <https://docs.python.org/fr/>`__
      - Julien Palard (:github-user:`JulienPalard`)
-     - `AFPy/python-docs-fr <https://git.afpy.org/AFPy/python-docs-fr/>`_
+     - `AFPy/python-docs-fr <https://git.afpy.org/AFPy/python-docs-fr/>`_,
        :github:`Mirror <python/python-docs-fr>`
    * - `Greek (gr) <https://docs.python.org/gr/>`__ XXX Should be added soonish
      - | Lysandros Nikolaou (:github-user:`lysnikolaou`),
@@ -224,22 +224,25 @@ translators try to keep files/large sections consistent.
 Transifex
 =========
 
-.. XXX maybe add quickstart?
-
 .. important::
 
-   There are many translations in the `python transifex <tx_>`_, some of which,
-   however, not used anymore or do not have a coordinator, please confirm this
-   is not the case before you begin translating.
+   There are many translations in the `python-doc organization on transifex <tx_>`_,
+   some of which, however, not used anymore or do not have a coordination team,
+   please confirm this is not the case before you begin translating.
 
 Translations on Transifex are carried out via a web interface, similar to Weblate.
-For further information about Transifex, and our guides on getting started, see
-our `documentation <https://python-docs-transifex-automation.readthedocs.io/new-translators.html>`_.
-.. XXX Move stuff here, discuss w Rafael?
+You should translate the **python-newest** project.
+If you are new to Transifex, it is recommended that you take the time to read
+through the following resources from the Transifex documentation:
 
-If you need help from a Transifex administrator, open an issue on the
-`tracker <https://github.com/python-docs-translations/transifex-automations/issues>`_.
-.. XXX explain that it is not same as coordinator
+- `Getting started as a translator <https://help.transifex.com/en/articles/6248698-getting-started-as-a-translator>`_:
+   This covers signing up for an account and joining translation team.
+- `Translating with the Web Editor <https://help.transifex.com/en/articles/6318216-translating-with-the-web-editor>`_:
+   This covers getting to the editor, searching and filtering strings, and translating strings.
+- `Other Tools in the Editor <https://help.transifex.com/en/articles/6318944-other-tools-in-the-editor>`_:
+   This covers the history, glossary, comments, keyboard shortcuts, and more.
+- `Starting with the basics <https://help.transifex.com/en/collections/3441044-starting-with-the-basics>`_:
+   A group of documents with basic information.
 
 
 Translation FAQ
@@ -248,12 +251,13 @@ Translation FAQ
 Which version of the Python documentation should I work on?
 -----------------------------------------------------------
 
-You should work on the latest branch available for you translation, the translations
-should then be propagated by the languages coordinator.
+You should work on the latest branch available to you for translation (this should
+be the latest non-alpha branch), the translations should then be propagated by
+your languages coordination team.
 
 
-The coordinator for my language is inactive, what do I do?
-----------------------------------------------------------
+The coordination team for my language is inactive, what do I do?
+----------------------------------------------------------------
 
 If you would like to coordinate, follow the (necessary) steps outlined in
 :doc:`coordinating` and open an issue in the

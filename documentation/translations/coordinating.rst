@@ -5,16 +5,14 @@ Coordinating
 Python documentation translations are governed by :PEP:`545`.
 They are built by `docsbuild-scripts
 <https://github.com/python/docsbuild-scripts/>`__ and hosted on
-docs.python.org.
+docs.python.org. Translations
+fall under the aegis of the `Editorial Board <EB_>`_
 
 Starting a new translation
 ==========================
 
 First subscribe to the `translation mailing list <translation_ml_>`_,
-and introduce yourself and the translation you're starting. Translations
-fall under the aegis of the `PSF Translation Workgroup <translation_wg_>`_
-
-.. https://github.com/python/editorial-board/issues/32
+and introduce yourself and the translation you're starting.
 
 Then you can bootstrap your new translation by using `cookiecutter
 <https://github.com/JulienPalard/python-docs-cookiecutter>`__ or
@@ -40,7 +38,7 @@ How to get help
 
 Discussions about translations occur on the Python Docs Discord
 `#translations channel <https://discord.gg/h3qDwgyzga>`_, `translation
-mailing list <translation_ml_>`_, and and the
+mailing list <translation_ml_>`_, and the
 `translations subsection <https://discuss.python.org/c/documentation/translations/>`_
 of the Python Discourse.
 
@@ -65,6 +63,13 @@ Here are the essential points of :PEP:`545`:
 - Translations having completed ``tutorial/``, ``library/stdtypes``
   and ``library/functions`` are hosted on
   ``https://docs.python.org/{LANGUAGE_TAG}/{VERSION_TAG}/``.
+
+
+Transifex
+=========
+
+If you need help from a Transifex administrator, open an issue on the
+`tracker <https://github.com/python-docs-translations/transifex-automations/issues>`_.
 
 
 Coordinating FAQ
@@ -155,5 +160,5 @@ There is currently no Weblate instance for use by Python translations because of
 certain limitations, these include word count limits and organization of
 translation source.
 
-.. _translation_wg: https://wiki.python.org/psf/TranslationWG/Charter
+.. _EB: https://python.github.io/editorial-board/
 .. _translation_ml: https://mail.python.org/mailman3/lists/translation.python.org/
