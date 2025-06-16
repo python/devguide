@@ -75,7 +75,7 @@ major section at the top of each column.]*
        * :ref:`documenting`
        * :ref:`style-guide`
        * :ref:`rst-primer`
-       * :ref:`translating`
+       * :doc:`documentation/translations`
        * :ref:`devguide`
      -
        * :ref:`setup`

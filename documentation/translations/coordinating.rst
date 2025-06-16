@@ -2,12 +2,19 @@
 Coordinating
 ============
 
+Python documentation translations are governed by :PEP:`545`.
+They are built by `docsbuild-scripts
+<https://github.com/python/docsbuild-scripts/>`__ and hosted on
+docs.python.org.
+
 Starting a new translation
 ==========================
 
 First subscribe to the `translation mailing list <translation_ml_>`_,
 and introduce yourself and the translation you're starting. Translations
 fall under the aegis of the `PSF Translation Workgroup <translation_wg_>`_
+
+.. https://github.com/python/editorial-board/issues/32
 
 Then you can bootstrap your new translation by using `cookiecutter
 <https://github.com/JulienPalard/python-docs-cookiecutter>`__ or
@@ -26,6 +33,16 @@ The important steps look like this:
 - When ``bugs``, ``tutorial``, and ``library/functions`` are 100%
   completed, ask on the `translation mailing list <translation_ml_>`_ for
   your language to be added in the language switcher on docs.python.org.
+
+
+How to get help
+===============
+
+Discussions about translations occur on the Python Docs Discord
+`#translations channel <https://discord.gg/h3qDwgyzga>`_, `translation
+mailing list <translation_ml_>`_, and and the
+`translations subsection <https://discuss.python.org/c/documentation/translations/>`_
+of the Python Discourse.
 
 
 PEP 545 summary
@@ -73,7 +90,8 @@ __ https://github.com/python-docs-translations
 How is a coordinator elected?
 -----------------------------
 
-There is no election. Each translation will sort out the number of coordinators. We recommend 2 or 3 coordinators, though you may begin with one.  Here are some general suggestions.
+There is no election. Each translation will sort out the number of coordinators.
+We recommend 2 or 3 coordinators, though you may begin with one.  Here are some general suggestions.
 
 -  Coordinator requests are to be public on the `translation mailing list <translation_ml_>`_.
 -  If the given language has a native core dev, the core dev has input
@@ -113,11 +131,29 @@ files in the root of the repository using the ``gettext_compact=0``
 style.
 
 
-The entry for my translation is missing/not up to date on this page
--------------------------------------------------------------------
+.. XXX Explain necessary folder structure
+
+
+Which version of the Python documentation should be translated?
+---------------------------------------------------------------
+
+Consensus is to work on the current stable version. You can then propagate your
+translation from one branch to another using :pypi:`pomerge`.
+
+
+The entry for my translation is missing/not up to date
+------------------------------------------------------
 
 Ask on the `translation mailing list <translation_ml_>`_, or better, make a PR on the `devguide
 <https://github.com/python/devguide/>`__.
+
+
+Is there a Weblate instance we can translate on?
+------------------------------------------------
+
+There is currently no Weblate instance for use by Python translations because of
+certain limitations, these include word count limits and organization of
+translation source.
 
 .. _translation_wg: https://wiki.python.org/psf/TranslationWG/Charter
 .. _translation_ml: https://mail.python.org/mailman3/lists/translation.python.org/

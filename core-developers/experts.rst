@@ -372,4 +372,7 @@ version control     merwok, ezio-melotti
 Documentation translations
 ==========================
 
-For a list of translators, see :ref:`this table about translations <translating>`.
+Translations fall under the aegis of the
+`Editorial Board <https://python.github.io/editorial-board/>`_.
+For a list of translations and their coordinators, see
+:ref:`this table of translations <translation-coordinators>`.
