@@ -5,18 +5,16 @@ Translating
 .. highlight::  rest
 
 There are several documentation translations already
-in production; others are works in progress. To get started read your
-repositories contributing guide, which is generally the ``README``
-file, and this page.
+in production and can be found in the language switcher; others are works in
+progress. To get started read your repository's contributing guide, which is
+generally the ``README`` file, and this page.
 If your language isn’t listed below, feel free to start the translation!
-See :doc:`coordinating` on how to get started.
+See :doc:`coordinating` guide to get started.
 
 For more details about translations and their progress, see `the dashboard
 <https://python-docs-translations.github.io/dashboard/>`__.
 
 .. _translation-coordinators:
-
-.. XXX Add explicit links to README/CONTRIBUTING?
 
 .. list-table::
    :header-rows: 1
@@ -34,14 +32,14 @@ For more details about translations and their progress, see `the dashboard
      - Julien Palard (:github-user:`JulienPalard`)
      - `AFPy/python-docs-fr <https://git.afpy.org/AFPy/python-docs-fr/>`_,
        :github:`Mirror <python/python-docs-fr>`
-   * - `Greek (gr) <https://docs.python.org/gr/>`__ XXX Should be added soonish
+   * - `Greek (gr) <https://docs.python.org/gr/>`__
      - | Lysandros Nikolaou (:github-user:`lysnikolaou`),
        | Fanis Petkos (:github-user:`thepetk`),
        | Panagiotis Skias (:github-user:`skpanagiotis`)
      - :github:`GitHub <pygreece/python-docs-gr>`
-   * - Hindi (hi_IN)
+   * - Hindi (hi-IN)
      - Sanyam Khurana (:github-user:`CuriousLearner`)
-     - :github:`GitHub <CuriousLearner/python-docs-hi-in>` XXX Message user in issue tracker https://github.com/CuriousLearner/python-docs-hi-in/issues/5
+     - :github:`GitHub <CuriousLearner/python-docs-hi-in>`
    * - `Hungarian (hu) <https://docs.python.org/hu/>`__ XXX This should probably be added
      - Tamás Bajusz (:github-user:`gbtami`)
      - :github:`GitHub <python/python-docs-hu>`,
@@ -82,7 +80,7 @@ For more details about translations and their progress, see `the dashboard
      - | Rafael Fontenelle (:github-user:`rffontenelle`),
        | Marco Rougeth (:github-user:`rougeth`)
      - :github:`GitHub <python/python-docs-pt-br>`,
-       `Wiki <https://python.org.br/traducao/>`__,
+       `Guide <https://python.org.br/traducao/>`__,
        `Telegram <https://t.me/pybr_i18n>`__,
        `Article <https://rgth.co/blog/python-ptbr-cenario-atual/>`__
    * - `Romanian (ro)  <https://docs.python.org/ro/>`__
@@ -93,21 +91,21 @@ For more details about translations and their progress, see `the dashboard
      - :github:`GitHub <MLGRussianXP/python-docs-ru>`,
        `Original announcement <https://mail.python.org/pipermail/doc-sig/2019-May/004131.html>`__
    * - `Simplified Chinese (zh-cn) <https://docs.python.org/zh-cn/>`__
-     - Shengjing Zhu (:github-user:`zhsj`),
-       Du, Meng (:github-user:`dumeng`)
+     - | Shengjing Zhu (:github-user:`zhsj`),
+       | Du, Meng (:github-user:`dumeng`)
      - :github:`GitHub <python/python-docs-zh-cn>`,
        `Transifex <tx_>`_
    * - `Spanish (es) <https://docs.python.org/es/>`__
      - Raúl Cumplido
      - :github:`GitHub <python/python-docs-es>`
    * - `Traditional Chinese (zh-tw) <https://docs.python.org/zh-tw/>`__
-     - 王威翔 Matt Wang (:github-user:`mattwang44`),
-       Josix Wang
+     - | 王威翔 Matt Wang (:github-user:`mattwang44`),
+       | Josix Wang
      - :github:`GitHub <python/python-docs-zh-tw>`
    * - `Turkish (tr) <https://docs.python.org/tr/>`__
      - Ege Akman (:github-user:`egeakman`)
      - :github:`GitHub <python/python-docs-tr>`,
-       `RTD <https://python-docs-tr.readthedocs.io/>`__ XXX Why keep this with python build? Ask Ege
+       `RTD <https://python-docs-tr.readthedocs.io/>`__
    * - `Ukrainian (uk) <https://docs.python.org/uk/>`__
      - Dmytro Kazanzhy (:github-user:`kazanzhy`, `email <mailto:dkazanzhy@gmail.com>`__)
      - :github:`GitHub <python/python-docs-uk>`,
@@ -119,7 +117,7 @@ How to get help
 
 If there is already a repository for your language team (there may be links to
 Telegrams/Discords in the ``README``), join and introduce
-yourself, your fellow translators will be more than happy to help! XXX sounds off
+yourself. Your fellow translators will be more than happy to help!
 General discussions about translations occur on the Python Docs Discord
 `#translations channel <https://discord.gg/h3qDwgyzga>`_, `translation
 mailing list <translation_ml_>`_, and the `translations subsection <_discourse>`_
@@ -130,8 +128,23 @@ Style Guide
 ===========
 
 Before translating, you should familiarize yourself with the general
-documentation :doc:`style guide<../style-guide>`. Some translation specific
+documentation :doc:`style guide<../style-guide>`. Some translation-specific
 guidelines are explained below.
+
+
+Translate, don't rewrite
+------------------------
+
+Try to stay as close as possible to the original text. Focus on translating its
+meaning rather than rephrasing or rewriting it.
+
+
+Gender neutrality
+-----------------
+
+Many languages use grammatical gender. When possible and natural, prefer
+gender-neutral or inclusive forms. Aim to reflect the inclusive tone of
+the English documentation.
 
 
 Roles and links
@@ -143,9 +156,8 @@ Leave reStructuredText roles such as ``:func:`print``` or ``:ref:`some-section``
 place, even if they contain section titles, because it will break the link.
 If alternate text (``:role:`text <target>``` is provided, it can be translated.
 
-Links (```text <target>`_``) should be handled similarly.
-
-.. XXX do we want to switch links to target language if possible, ES translation does this (and I do too sometimes...)?
+Links (```text <target>`_``) should be handled similarly. If possible, the target
+should be updated to match the language.
 
 .. seealso::
    :doc:`../markup`
@@ -155,12 +167,6 @@ Code examples
 -------------
 
 Translate values in code examples, that is string literals, and comments.
-These may be lines from Monty Python skits or other references, they are, however,
-sometimes obscure and lose meaning when translated, so do not feel pressured
-to get them perfect.
-
-.. XXX Ask EB can we do this QOL improvement?/Reword too
-
 Don't translate keywords or names, including variable, function, class, argument,
 and attribute names. An example of a translated codeblock from the `tutorial <https://docs.python.org/3/tutorial/controlflow.html#keyword-arguments>`_
 is provided below:
@@ -185,40 +191,39 @@ translating to. Translators should aim for a similar level of quality as that
 of the English documentation.
 
 Avoid relying solely on machine translation. These tools can be useful to speed up
-work, but often produce inaccurate or misleading results and should be reviewed.
-.. XXX ask EB about permission for this section or maybe https://github.com/python/peps/pull/4296/ to ref
+work, but often produce inaccurate or misleading results and should be reviewed
+by a human.
 
 
-Vocabulary
-----------
+Terminology
+-----------
 
 The documentation is full of technical terms, some are common in general
-programming and have translations, whereas others are specific to Python.
-Translations should keep the translations of these terms consistent, which is
-done with glossaries/translation memory.
-
-.. XXX Reword above
-.. XXX note that in coordinating.rst
+programming and have translations, whereas others are specific to Python
+and previous translations are not available (remember to check your languages
+glossary). Translations should keep the translations of these terms consistent,
+which is done with glossaries and or translation memory.
 
 Some general guidelines for deciding on a translation:
 
-.. XXX todo (a lot)
-
-- Use existing community conventions over inventing new terms.
-- Use hybrid form
-- Use English for common terms ... maybe hard to desc this case
+- Avoid neologism when possible, use existing community conventions over
+  inventing new terms.
+- You can use a hybrid English form if users are generally familiar
+  with the English word.
+- For common terms, the English word may be best.
+- Use other translations as a reference as to what they did for the word.
+- Be careful to not translate names.
 - Use your best judgment
-- Use other translations for reference as to what to do
-- Be careful to not translate names
-- Record in glossary to help peers!!!!!!!!!!!!!!!!!
+- When you translate a specific term, record in glossary to help fellow
+  translators and ensure consistency.
 
 
 Dialects
 --------
 
-Some translation receive contributions from people of many different dialects,
+Some translation receive contributions from people of several different dialects,
 understandably the language will differ, it is recommended however that
-translators try to keep files/large sections consistent.
+translators try to keep files and sections consistent.
 
 
 Transifex
@@ -244,6 +249,15 @@ through the following resources from the Transifex documentation:
 - `Starting with the basics <https://help.transifex.com/en/collections/3441044-starting-with-the-basics>`_:
    A group of documents with basic information.
 
+For further information about Transifex see our `documentation <https://python-docs-transifex-automation.readthedocs.io/>`_.
+
+
+Pull requests
+=============
+
+Several translations accept contributions by pull requests. Most have their
+own guide for how to do this, and for general tips see our :ref:`git-boot-camp`.
+
 
 Translation FAQ
 ===============
@@ -259,11 +273,10 @@ your languages coordination team.
 The coordination team for my language is inactive, what do I do?
 ----------------------------------------------------------------
 
-If you would like to coordinate, follow the (necessary) steps outlined in
-:doc:`coordinating` and open an issue in the
-`EB issue tracker <https://github.com/python/editorial-board/issues>`_.
+If you would like to coordinate, open a pull request in the
+`devguide <https://github.com/python/devguide>`_ adding yourself, and ping
+``@python/editorial-board``.
 
-.. XXX Ask EB if this is ok
 
 .. _translation_ml: https://mail.python.org/mailman3/lists/translation.python.org/
 .. _discourse: https://discuss.python.org/c/documentation/translations/

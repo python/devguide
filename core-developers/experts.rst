@@ -372,7 +372,7 @@ version control     merwok, ezio-melotti
 Documentation translations
 ==========================
 
-Translations fall under the aegis of the
+Translations are within the charter of
 `Editorial Board <https://python.github.io/editorial-board/>`_.
 For a list of translations and their coordinators, see
 :ref:`this table of translations <translation-coordinators>`.

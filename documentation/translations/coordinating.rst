@@ -2,7 +2,8 @@
 Coordinating
 ============
 
-Python documentation translations are governed by :PEP:`545`.
+Current information about the Python documentation translation processes is
+found in this devguide, and Process :PEP:`545`, adopted in 2018.
 They are built by `docsbuild-scripts
 <https://github.com/python/docsbuild-scripts/>`__ and hosted on
 docs.python.org. Translations
@@ -95,8 +96,9 @@ __ https://github.com/python-docs-translations
 How is a coordinator elected?
 -----------------------------
 
-There is no election. Each translation will sort out the number of coordinators.
-We recommend 2 or 3 coordinators, though you may begin with one.  Here are some general suggestions.
+Each translation team will decide on the number of coordinators.
+We recommend two or three coordinators, though you may begin with one.
+Here are some general suggestions.
 
 -  Coordinator requests are to be public on the `translation mailing list <translation_ml_>`_.
 -  If the given language has a native core dev, the core dev has input
@@ -142,23 +144,24 @@ style.
 Which version of the Python documentation should be translated?
 ---------------------------------------------------------------
 
-Consensus is to work on the current stable version. You can then propagate your
+It's best to work on Python's current stable version. You can then propagate your
 translation from one branch to another using :pypi:`pomerge`.
 
 
-The entry for my translation is missing/not up to date
-------------------------------------------------------
+The entry for my translation is missing or not up to date
+---------------------------------------------------------
 
-Ask on the `translation mailing list <translation_ml_>`_, or better, make a PR on the `devguide
-<https://github.com/python/devguide/>`__.
+Ask on the `translation mailing list <translation_ml_>`_, or better, make a PR
+on the `devguide <https://github.com/python/devguide/>`__.
 
 
 Is there a Weblate instance we can translate on?
 ------------------------------------------------
 
-There is currently no Weblate instance for use by Python translations because of
-certain limitations, these include word count limits and organization of
-translation source.
+There is currently no Weblate instance for Python translations.
+See this `discourse thread <https://discuss.python.org/t/docs-translation-platform/29940>`_
+for updates.
+
 
 .. _EB: https://python.github.io/editorial-board/
 .. _translation_ml: https://mail.python.org/mailman3/lists/translation.python.org/
