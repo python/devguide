@@ -201,8 +201,8 @@ Terminology
 The documentation is full of technical terms, some are common in general
 programming and have translations, whereas others are specific to Python
 and previous translations are not available (remember to check your languages
-glossary). Translations should keep the translations of these terms consistent,
-which is done with glossaries and or translation memory.
+glossary). Translation teams should keep the translations of these terms
+consistent, which is done with glossaries and or translation memory.
 
 Some general guidelines for deciding on a translation:
 
@@ -231,7 +231,7 @@ Transifex
 
 .. important::
 
-   There are many translations in the `python-doc organization on transifex <tx_>`_,
+   There are many translations in the `python-doc organization on Transifex <tx_>`_,
    some of which, however, not used anymore or do not have a coordination team,
    please confirm this is not the case before you begin translating.
 
