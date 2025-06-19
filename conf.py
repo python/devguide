@@ -167,8 +167,18 @@ todo_include_todos = True
 # sphinx-notfound-page
 notfound_urls_prefix = "/"
 
+# Dynamically expose the Python version associated with the "main" branch.
+# The release cycle data may not be ordered, so choose the numerically highest
+# version key instead of relying on a specific entry's position.
+with open("include/release-cycle.json", encoding="UTF-8") as _f:
+    _cycle = json.load(_f)
+_main_version = max(
+    _cycle,
+    key=lambda v: tuple(int(part) for part in v.split(".")),
+)
+
 # prolog and epilogs
-rst_prolog = """
+rst_prolog = f"""
 .. |draft| replace::
     This is part of a **Draft** of the Python Contributor's Guide.
     Text in square brackets are notes about content to fill in.
@@ -185,18 +195,9 @@ rst_prolog = """
 
 .. _Refactoring the DevGuide: https://discuss.python.org/t/refactoring-the-devguide-into-a-contribution-guide/63409
 
-"""
+.. |mainversion| replace:: {_main_version}
 
-# Dynamically expose the Python version associated with the "main" branch.
-# The release cycle data may not be ordered, so choose the numerically highest
-# version key instead of relying on a specific entry's position.
-with open("include/release-cycle.json", encoding="UTF-8") as _f:
-    _cycle = json.load(_f)
-_main_version = max(
-    _cycle,
-    key=lambda v: tuple(int(part) for part in v.split(".")),
-)
-rst_prolog += f"\n.. |mainversion| replace:: {_main_version}\n"
+"""
 
 # sphinx.ext.extlinks
 # This config is a dictionary of external sites,
