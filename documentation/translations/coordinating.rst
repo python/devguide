@@ -4,7 +4,7 @@ Coordinating
 
 Current information about the Python documentation translation processes is
 found in this devguide, and Process :PEP:`545`, adopted in 2018.
-They are built by `docsbuild-scripts
+Translations are built by `docsbuild-scripts
 <https://github.com/python/docsbuild-scripts/>`__ and hosted on
 docs.python.org. Translations
 fall under the aegis of the `Editorial Board <EB_>`_
