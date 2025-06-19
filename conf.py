@@ -188,10 +188,13 @@ rst_prolog = """
 """
 
 # Dynamically expose the Python version associated with the "main" branch.
+# The release cycle data may not be ordered, so choose the numerically highest
+# version key instead of relying on a specific entry's position.
 with open("include/release-cycle.json", encoding="UTF-8") as _f:
     _cycle = json.load(_f)
-_main_version = next(
-    ver for ver, data in _cycle.items() if data.get("branch") == "main"
+_main_version = max(
+    _cycle,
+    key=lambda v: tuple(int(part) for part in v.split(".")),
 )
 rst_prolog += f"\n.. |mainversion| replace:: {_main_version}\n"
 
