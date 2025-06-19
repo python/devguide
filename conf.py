@@ -168,14 +168,17 @@ todo_include_todos = True
 notfound_urls_prefix = "/"
 
 # Dynamically expose the Python version associated with the "main" branch.
-# The release cycle data may not be ordered, so choose the numerically highest
-# version key instead of relying on a specific entry's position.
+# Exactly one entry in ``release-cycle.json`` should have ``"branch": "main"``.
 with open("include/release-cycle.json", encoding="UTF-8") as _f:
     _cycle = json.load(_f)
-_main_version = max(
-    _cycle,
-    key=lambda v: tuple(int(part) for part in v.split(".")),
-)
+
+_main_entries = [v for v, d in _cycle.items() if d.get("branch") == "main"]
+if len(_main_entries) != 1:
+    raise RuntimeError(
+        "release-cycle.json must contain exactly one entry with 'branch': 'main'"
+    )
+
+_main_version = _main_entries[0]
 
 # prolog and epilogs
 rst_prolog = f"""
