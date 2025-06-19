@@ -115,7 +115,7 @@ gc                    pitrou, pablogsal
 getopt                serhiy-storchaka*
 getpath               FFY00
 getpass
-gettext
+gettext               tomasr8
 glob                  serhiy-storchaka*
 grp
 hashlib               tiran, gpshead*, picnixz
@@ -336,7 +336,7 @@ filesystem          giampaolo
 frozen modules      ericsnowcurrently, gvanrossum, kumaraditya303
 f-strings           ericvsmith*
 GUI
-i18n                malemburg, merwok
+i18n                malemburg, merwok, tomasr8
 import machinery    brettcannon, ncoghlan, ericsnowcurrently, FFY00
 initialization      FFY00
 io                  benjaminp, stutzbach^, gpshead
