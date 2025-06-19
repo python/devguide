@@ -1,3 +1,5 @@
+import json
+
 extensions = [
     'notfound.extension',
     'sphinx.ext.extlinks',
@@ -184,6 +186,14 @@ rst_prolog = """
 .. _Refactoring the DevGuide: https://discuss.python.org/t/refactoring-the-devguide-into-a-contribution-guide/63409
 
 """
+
+# Dynamically expose the Python version associated with the "main" branch.
+with open("include/release-cycle.json", encoding="UTF-8") as _f:
+    _cycle = json.load(_f)
+_main_version = next(
+    ver for ver, data in _cycle.items() if data.get("branch") == "main"
+)
+rst_prolog += f"\n.. |mainversion| replace:: {_main_version}\n"
 
 # sphinx.ext.extlinks
 # This config is a dictionary of external sites,
