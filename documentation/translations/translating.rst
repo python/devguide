@@ -32,7 +32,7 @@ For more details about translations and their progress, see `the dashboard
      - Julien Palard (:github-user:`JulienPalard`)
      - `AFPy/python-docs-fr <https://git.afpy.org/AFPy/python-docs-fr/>`_,
        :github:`mirror <python/python-docs-fr>`
-   * - `Greek (gr) <https://docs.python.org/el/>`__
+   * - `Greek (el) <https://docs.python.org/el/>`__
      - | Lysandros Nikolaou (:github-user:`lysnikolaou`),
        | Fanis Petkos (:github-user:`thepetk`),
        | Panagiotis Skias (:github-user:`skpanagiotis`)
@@ -69,7 +69,7 @@ For more details about translations and their progress, see `the dashboard
      - Alireza Shabani (:github-user:`revisto`)
      - :github:`GitHub <revisto/python-docs-fa>`
    * - `Polish (pl) <https://docs.python.org/pl/>`__
-     - | Maciej Olko (:github-user:`m-aciek`)
+     - | Maciej Olko (:github-user:`m-aciek`),
        | Stan Ulbrych (:github-user:`StanFromIreland`)
      - :github:`GitHub <python/python-docs-pl>`,
        `Transifex <tx_>`_,
