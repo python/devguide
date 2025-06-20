@@ -25,22 +25,22 @@ For more details about translations and their progress, see `the dashboard
    * - Arabic (ar)
      - Abdur-Rahmaan Janhangeer (:github-user:`Abdur-rahmaanJ`)
      - :github:`GitHub <Abdur-rahmaanJ/python-docs-ar>`
-   * - `Bengali (bn_IN) <https://docs.python.org/bn-in/>`__
+   * - `Bengali (bn-IN) <https://docs.python.org/bn-in/>`__
      - Kushal Das (:github-user:`kushaldas`)
      - :github:`GitHub <python/python-docs-bn-in>`
    * - `French (fr) <https://docs.python.org/fr/>`__
      - Julien Palard (:github-user:`JulienPalard`)
      - `AFPy/python-docs-fr <https://git.afpy.org/AFPy/python-docs-fr/>`_,
        :github:`Mirror <python/python-docs-fr>`
-   * - `Greek (gr) <https://docs.python.org/gr/>`__
+   * - `Greek (gr) <https://docs.python.org/el/>`__
      - | Lysandros Nikolaou (:github-user:`lysnikolaou`),
        | Fanis Petkos (:github-user:`thepetk`),
        | Panagiotis Skias (:github-user:`skpanagiotis`)
-     - :github:`GitHub <pygreece/python-docs-gr>`
+     - :github:`GitHub <python/python-docs-el>`
    * - Hindi (hi-IN)
      - Sanyam Khurana (:github-user:`CuriousLearner`)
      - :github:`GitHub <CuriousLearner/python-docs-hi-in>`
-   * - `Hungarian (hu) <https://docs.python.org/hu/>`__ XXX This should probably be added
+   * - Hungarian (hu)
      - Tamás Bajusz (:github-user:`gbtami`)
      - :github:`GitHub <python/python-docs-hu>`,
        `Mailing list <https://mail.python.org/pipermail/python-hu>`__
@@ -69,7 +69,8 @@ For more details about translations and their progress, see `the dashboard
      - Alireza Shabani (:github-user:`revisto`)
      - :github:`GitHub <revisto/python-docs-fa>`
    * - `Polish (pl) <https://docs.python.org/pl/>`__
-     - Maciej Olko (:github-user:`m-aciek`)
+     - | Maciej Olko (:github-user:`m-aciek`)
+       | Stan Ulbrych (:github-user:`StanFromIreland`)
      - :github:`GitHub <python/python-docs-pl>`,
        `Transifex <tx_>`_,
        `Original announcement <https://mail.python.org/pipermail/doc-sig/2019-April/004106.html>`__
@@ -136,7 +137,7 @@ Translate, don't rewrite
 ------------------------
 
 Try to stay as close as possible to the original text. Focus on translating its
-meaning rather than rephrasing or rewriting it.
+meaning in the best possible way, rather than rephrasing or rewriting it.
 
 
 Gender neutrality
@@ -155,12 +156,56 @@ to other parts of the documentation.
 Leave reStructuredText roles such as ``:func:`print``` or ``:ref:`some-section``` in
 place, even if they contain section titles, because it will break the link.
 If alternate text (``:role:`text <target>``` is provided, it can be translated.
+You can also introduce alternate text for translation if the target is not a
+name or term.
 
 Links (```text <target>`_``) should be handled similarly. If possible, the target
 should be updated to match the language.
 
 .. seealso::
    :doc:`../markup`
+
+
+Translation quality
+-------------------
+
+Translators should be proficient in both English and the language they are
+translating to. Translators should aim for a similar level of quality as that
+of the English documentation.
+
+Do not rely solely on machine translation. These tools can be useful to speed up
+work, but often produce inaccurate or misleading results and should be reviewed
+by a human.
+
+
+Terminology
+-----------
+
+The documentation is full of technical terms, some are common in general
+programming and have translations, whereas others are specific to Python
+and previous translations are not available.
+Translation teams should keep the translations of these terms
+consistent, which is done with glossaries.
+
+Some general guidelines for deciding on a translation:
+
+- Use existing community conventions over inventing new terms.
+- You can use a hybrid English form if users are generally familiar
+  with the English word.
+- For common terms, the English word may be best.
+- Use other translations as a reference as to what they did for the word.
+- Be careful to not translate names.
+- Use your best judgment.
+- When you translate a specific term, record in glossary to help fellow
+  translators and ensure consistency.
+
+
+Dialects
+--------
+
+Some translation receive contributions from people of several different dialects,
+understandably the language will differ, it is recommended however that
+translators try to keep files and sections consistent.
 
 
 Code examples
@@ -183,60 +228,18 @@ is provided below:
            print(kw, ":", keywords[kw])
 
 
-Translation quality
--------------------
-
-Translators should be proficient in both English and the language they are
-translating to. Translators should aim for a similar level of quality as that
-of the English documentation.
-
-Avoid relying solely on machine translation. These tools can be useful to speed up
-work, but often produce inaccurate or misleading results and should be reviewed
-by a human.
-
-
-Terminology
------------
-
-The documentation is full of technical terms, some are common in general
-programming and have translations, whereas others are specific to Python
-and previous translations are not available (remember to check your languages
-glossary). Translation teams should keep the translations of these terms
-consistent, which is done with glossaries and or translation memory.
-
-Some general guidelines for deciding on a translation:
-
-- Avoid neologism when possible, use existing community conventions over
-  inventing new terms.
-- You can use a hybrid English form if users are generally familiar
-  with the English word.
-- For common terms, the English word may be best.
-- Use other translations as a reference as to what they did for the word.
-- Be careful to not translate names.
-- Use your best judgment
-- When you translate a specific term, record in glossary to help fellow
-  translators and ensure consistency.
-
-
-Dialects
---------
-
-Some translation receive contributions from people of several different dialects,
-understandably the language will differ, it is recommended however that
-translators try to keep files and sections consistent.
-
-
 Transifex
 =========
 
 .. important::
 
    There are many translations in the `python-doc organization on Transifex <tx_>`_,
-   some of which, however, not used anymore or do not have a coordination team,
+   some of which, however, are not used or do not have a coordination team,
    please confirm this is not the case before you begin translating.
 
+Several language projects use Transifex as their translation interface.
 Translations on Transifex are carried out via a web interface, similar to Weblate.
-You should translate the **python-newest** project.
+You should translate the `python-newest <tx_>`_ project.
 If you are new to Transifex, it is recommended that you take the time to read
 through the following resources from the Transifex documentation:
 

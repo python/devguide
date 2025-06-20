@@ -15,8 +15,8 @@ Starting a new translation
 First subscribe to the `translation mailing list <translation_ml_>`_,
 and introduce yourself and the translation you're starting.
 
-Then you can bootstrap your new translation by using `cookiecutter
-<https://github.com/JulienPalard/python-docs-cookiecutter>`__ or
+Then you can bootstrap your new translation by using the `cookiecutter
+<https://github.com/python-docs-translations/python-docs-cookiecutter>`__ or
 `bootstrapper <https://github.com/python-docs-translations/python-docs-bootstrapper>`__.
 
 The important steps look like this:
@@ -144,8 +144,8 @@ style.
 Which version of the Python documentation should be translated?
 ---------------------------------------------------------------
 
-It's best to work on Python's current stable version. You can then propagate your
-translation from one branch to another using :pypi:`pomerge`.
+It's best to work on Python's current stable or beta version. You can then
+propagate your translation from one branch to another using :pypi:`pomerge`.
 
 
 The entry for my translation is missing or not up to date
