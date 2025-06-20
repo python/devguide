@@ -31,7 +31,7 @@ For more details about translations and their progress, see `the dashboard
    * - `French (fr) <https://docs.python.org/fr/>`__
      - Julien Palard (:github-user:`JulienPalard`)
      - `AFPy/python-docs-fr <https://git.afpy.org/AFPy/python-docs-fr/>`_,
-       :github:`Mirror <python/python-docs-fr>`
+       :github:`mirror <python/python-docs-fr>`
    * - `Greek (gr) <https://docs.python.org/el/>`__
      - | Lysandros Nikolaou (:github-user:`lysnikolaou`),
        | Fanis Petkos (:github-user:`thepetk`),
@@ -43,7 +43,7 @@ For more details about translations and their progress, see `the dashboard
    * - Hungarian (hu)
      - Tamás Bajusz (:github-user:`gbtami`)
      - :github:`GitHub <python/python-docs-hu>`,
-       `Mailing list <https://mail.python.org/pipermail/python-hu>`__
+       `mailing list <https://mail.python.org/pipermail/python-hu>`__
    * - `Indonesian (id) <https://docs.python.org/id/>`__
      - | Irvan Putra (:github-user:`irvan-putra`),
        | Jeff Jacobson (:github-user:`jwjacobson`)
@@ -51,7 +51,7 @@ For more details about translations and their progress, see `the dashboard
    * - `Italian (it) <https://docs.python.org/it/>`__
      - Alessandro Cucci (`email <mailto:alessandro.cucci@gmail.com>`__)
      - :github:`GitHub <python/python-docs-it>`,
-       `Original announcement <https://mail.python.org/pipermail/doc-sig/2019-April/004114.html>`__
+       `original announcement <https://mail.python.org/pipermail/doc-sig/2019-April/004114.html>`__
    * - `Japanese (ja) <https://docs.python.org/ja/>`__
      - | Kinebuchi Tomohiko (:github-user:`cocoatomo`),
        | Atsuo Ishimoto (:github-user:`atsuoishimoto`)
@@ -64,7 +64,7 @@ For more details about translations and their progress, see `the dashboard
      - :github:`GitHub <sanketgarade/python-doc-mr>`
    * - Lithuanian (lt)
      - Albertas Gimbutas (:github-user:`albertas`, `email <mailto:albertasgim@gmail.com>`__)
-     - `Original announcement <https://mail.python.org/pipermail/doc-sig/2019-July/004138.html>`__
+     - `original announcement <https://mail.python.org/pipermail/doc-sig/2019-July/004138.html>`__
    * - Persian (fa)
      - Alireza Shabani (:github-user:`revisto`)
      - :github:`GitHub <revisto/python-docs-fa>`
@@ -73,7 +73,7 @@ For more details about translations and their progress, see `the dashboard
        | Stan Ulbrych (:github-user:`StanFromIreland`)
      - :github:`GitHub <python/python-docs-pl>`,
        `Transifex <tx_>`_,
-       `Original announcement <https://mail.python.org/pipermail/doc-sig/2019-April/004106.html>`__
+       `original announcement <https://mail.python.org/pipermail/doc-sig/2019-April/004106.html>`__
    * - Portuguese (pt)
      - Gustavo Toffo
      -
@@ -81,16 +81,16 @@ For more details about translations and their progress, see `the dashboard
      - | Rafael Fontenelle (:github-user:`rffontenelle`),
        | Marco Rougeth (:github-user:`rougeth`)
      - :github:`GitHub <python/python-docs-pt-br>`,
-       `Guide <https://python.org.br/traducao/>`__,
+       `guide <https://python.org.br/traducao/>`__,
        `Telegram <https://t.me/pybr_i18n>`__,
-       `Article <https://rgth.co/blog/python-ptbr-cenario-atual/>`__
+       `article <https://rgth.co/blog/python-ptbr-cenario-atual/>`__
    * - `Romanian (ro)  <https://docs.python.org/ro/>`__
      - Octavian Mustafa (:github-user:`octaG-M`, `email <mailto:octawian@yahoo.com>`__)
      - :github:`GitHub <python/python-docs-ro>`
    * - Russian (ru)
      - Daniil Kolesnikov (:github-user:`MLGRussianXP`, `email <mailto:mlgrussianxp@gmail.com>`__)
      - :github:`GitHub <MLGRussianXP/python-docs-ru>`,
-       `Original announcement <https://mail.python.org/pipermail/doc-sig/2019-May/004131.html>`__
+       `original announcement <https://mail.python.org/pipermail/doc-sig/2019-May/004131.html>`__
    * - `Simplified Chinese (zh-cn) <https://docs.python.org/zh-cn/>`__
      - | Shengjing Zhu (:github-user:`zhsj`),
        | Du, Meng (:github-user:`dumeng`)
@@ -121,11 +121,11 @@ Telegrams/Discords in the ``README``), join and introduce
 yourself. Your fellow translators will be more than happy to help!
 General discussions about translations occur on the Python Docs Discord
 `#translations channel <https://discord.gg/h3qDwgyzga>`_, `translation
-mailing list <translation_ml_>`_, and the `translations subsection <_discourse>`_
+mailing list <translation_ml_>`_, and the `translations category <_discourse>`_
 of the Python Discourse.
 
 
-Style Guide
+Style guide
 ===========
 
 Before translating, you should familiarize yourself with the general
@@ -133,11 +133,11 @@ documentation :doc:`style guide<../style-guide>`. Some translation-specific
 guidelines are explained below.
 
 
-Translate, don't rewrite
-------------------------
+Translate the meaning
+---------------------
 
 Try to stay as close as possible to the original text. Focus on translating its
-meaning in the best possible way, rather than rephrasing or rewriting it.
+meaning in the best possible way.
 
 
 Gender neutrality
@@ -151,13 +151,13 @@ the English documentation.
 Roles and links
 ---------------
 
-The Python docs contain many roles (``:role:`target```)
-to other parts of the documentation.
-Leave reStructuredText roles such as ``:func:`print``` or ``:ref:`some-section``` in
-place, even if they contain section titles, because it will break the link.
-If alternate text (``:role:`text <target>``` is provided, it can be translated.
-You can also introduce alternate text for translation if the target is not a
-name or term.
+The Python docs contain many roles (``:role:`target```) that link to other parts
+of the documentation.
+Do not translate reStructuredText roles targets, such as ``:func:`print``` or
+``:ref:`some-section``` because it will break the link.
+If alternate text (``:role:`text <target>``` is provided, it generally
+should be translated. You can also introduce alternate text for translation if
+the target is not a name or term.
 
 Links (```text <target>`_``) should be handled similarly. If possible, the target
 should be updated to match the language.
@@ -169,7 +169,7 @@ should be updated to match the language.
 Translation quality
 -------------------
 
-Translators should be proficient in both English and the language they are
+Translators should know both English and the language they are
 translating to. Translators should aim for a similar level of quality as that
 of the English documentation.
 
@@ -196,15 +196,15 @@ Some general guidelines for deciding on a translation:
 - Use other translations as a reference as to what they did for the word.
 - Be careful to not translate names.
 - Use your best judgment.
-- When you translate a specific term, record in glossary to help fellow
-  translators and ensure consistency.
+- When you translate a specific term, record it in your translations glossary to
+  help fellow translators and ensure consistency.
 
 
 Dialects
 --------
 
 Some translation receive contributions from people of several different dialects,
-understandably the language will differ, it is recommended however that
+understandably the language will differ. It is recommended however that
 translators try to keep files and sections consistent.
 
 
@@ -234,8 +234,8 @@ Transifex
 .. important::
 
    There are many translations in the `python-doc organization on Transifex <tx_>`_,
-   some of which, however, are not used or do not have a coordination team,
-   please confirm this is not the case before you begin translating.
+   some of which, however, are not used or do not have a coordination team.
+   Confirm this is not the case before you begin translating.
 
 Several language projects use Transifex as their translation interface.
 Translations on Transifex are carried out via a web interface, similar to Weblate.
@@ -243,13 +243,13 @@ You should translate the `python-newest <tx_>`_ project.
 If you are new to Transifex, it is recommended that you take the time to read
 through the following resources from the Transifex documentation:
 
-- `Getting started as a translator <https://help.transifex.com/en/articles/6248698-getting-started-as-a-translator>`_:
-   This covers signing up for an account and joining translation team.
-- `Translating with the Web Editor <https://help.transifex.com/en/articles/6318216-translating-with-the-web-editor>`_:
+- `Getting started as a translator <https://help.transifex.com/en/articles/6248698-getting-started-as-a-translator>`__:
+   This covers signing up for an account and joining a translation team.
+- `Translating with the Web Editor <https://help.transifex.com/en/articles/6318216-translating-with-the-web-editor>`__:
    This covers getting to the editor, searching and filtering strings, and translating strings.
-- `Other Tools in the Editor <https://help.transifex.com/en/articles/6318944-other-tools-in-the-editor>`_:
+- `Other Tools in the Editor <https://help.transifex.com/en/articles/6318944-other-tools-in-the-editor>`__:
    This covers the history, glossary, comments, keyboard shortcuts, and more.
-- `Starting with the basics <https://help.transifex.com/en/collections/3441044-starting-with-the-basics>`_:
+- `Starting with the basics <https://help.transifex.com/en/collections/3441044-starting-with-the-basics>`__:
    A group of documents with basic information.
 
 For further information about Transifex see our `documentation <https://python-docs-transifex-automation.readthedocs.io/>`_.

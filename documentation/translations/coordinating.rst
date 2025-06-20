@@ -7,7 +7,7 @@ found in this devguide, and Process :PEP:`545`, adopted in 2018.
 Translations are built by `docsbuild-scripts
 <https://github.com/python/docsbuild-scripts/>`__ and hosted on
 docs.python.org. Translations
-fall under the aegis of the `Editorial Board <EB_>`_
+are overseen by the `Editorial Board <EB_>`_
 
 Starting a new translation
 ==========================
@@ -40,7 +40,7 @@ How to get help
 Discussions about translations occur on the Python Docs Discord
 `#translations channel <https://discord.gg/h3qDwgyzga>`_, `translation
 mailing list <translation_ml_>`_, and the
-`translations subsection <https://discuss.python.org/c/documentation/translations/>`_
+`translations category <https://discuss.python.org/c/documentation/translations/>`_
 of the Python Discourse.
 
 
@@ -159,7 +159,7 @@ Is there a Weblate instance we can translate on?
 ------------------------------------------------
 
 There is currently no Weblate instance for Python translations.
-See this `discourse thread <https://discuss.python.org/t/docs-translation-platform/29940>`_
+See this `Discourse thread <https://discuss.python.org/t/docs-translation-platform/29940>`_
 for updates.
 
 
