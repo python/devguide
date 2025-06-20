@@ -1,3 +1,5 @@
+import json
+
 extensions = [
     'notfound.extension',
     'sphinx.ext.extlinks',
@@ -165,8 +167,21 @@ todo_include_todos = True
 # sphinx-notfound-page
 notfound_urls_prefix = "/"
 
+# Dynamically expose the Python version associated with the "main" branch.
+# Exactly one entry in ``release-cycle.json`` should have ``"branch": "main"``.
+with open("include/release-cycle.json", encoding="UTF-8") as _f:
+    _cycle = json.load(_f)
+
+_main_entries = [v for v, d in _cycle.items() if d.get("branch") == "main"]
+if len(_main_entries) != 1:
+    raise RuntimeError(
+        "release-cycle.json must contain exactly one entry with 'branch': 'main'"
+    )
+
+_main_version = _main_entries[0]
+
 # prolog and epilogs
-rst_prolog = """
+rst_prolog = f"""
 .. |draft| replace::
     This is part of a **Draft** of the Python Contributor's Guide.
     Text in square brackets are notes about content to fill in.
@@ -182,6 +197,8 @@ rst_prolog = """
     discussion forum: `Refactoring the DevGuide`_.
 
 .. _Refactoring the DevGuide: https://discuss.python.org/t/refactoring-the-devguide-into-a-contribution-guide/63409
+
+.. |mainversion| replace:: {_main_version}
 
 """
 
