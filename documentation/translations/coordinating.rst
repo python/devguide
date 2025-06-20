@@ -2,8 +2,8 @@
 Coordinating
 ============
 
-Current information about the Python documentation translation processes is
-found in this devguide, and Process :PEP:`545`, adopted in 2018.
+Information about the Python documentation translation processes is
+found in this devguide and :PEP:`545`.
 Translations are built by `docsbuild-scripts
 <https://github.com/python/docsbuild-scripts/>`__ and hosted on
 docs.python.org. Translations
