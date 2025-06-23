@@ -3,47 +3,151 @@ Coordinating
 ============
 
 Information about the Python documentation translation processes is
-found in this devguide and :PEP:`545`.
-Translations are built by `docsbuild-scripts
-<https://github.com/python/docsbuild-scripts/>`__ and hosted on
-docs.python.org. Translations
-are overseen by the `Editorial Board <EB_>`_
+found on this page and in :PEP:`545`. Translations are overseen by the
+`Editorial Board <EB_>`_.
 
-Starting a new translation
-==========================
+.. _translation-help:
 
-First subscribe to the `translation mailing list <translation_ml_>`_,
-and introduce yourself and the translation you're starting.
-
-Then you can bootstrap your new translation by using the `cookiecutter
-<https://github.com/python-docs-translations/python-docs-cookiecutter>`__ or
-`bootstrapper <https://github.com/python-docs-translations/python-docs-bootstrapper>`__.
-You can also start your translation using `Transifex <https://explore.transifex.com/python-doc/python-newest/>`_
-following this `guide <https://python-docs-transifex-automation.readthedocs.io/commands.html>`_.
-
-The important steps look like this:
-
-- Create the GitHub repo (any account) with the correct hierarchy by using one
-  of the bootstrappers or Transifex.
-- Gather people to help you translate. You can't do it alone.
-- You can use any tool to translate, as long as you can synchronize with Git.
-  Some use Transifex, and some use only GitHub. You can choose another
-  way if you like; it's up to you.
-- Update :doc:`this page <translating>` to reflect your work and progress, either via a
-  PR or by asking on the `translation mailing list <translation_ml_>`_.
-- When ``bugs``, ``tutorial``, and ``library/functions`` are 100%
-  completed, ask on the `translation mailing list <translation_ml_>`_ for
-  your language to be added in the language switcher on docs.python.org.
-
-
-How to get help
-===============
+Communication/Help channels
+===========================
 
 Discussions about translations occur on the Python Docs Discord
 `#translations channel <https://discord.gg/h3qDwgyzga>`_, `translation
 mailing list <translation_ml_>`_, and the
-`translations category <https://discuss.python.org/c/documentation/translations/>`_
-of the Python Discourse.
+`translations category <trans_disc_>`_ of the Python Discourse.
+
+For administrative issues, ping ``@python/editorial-board``.
+
+.. XXX May change to @python/translations
+
+
+Starting a new translation
+==========================
+
+Coordination is not a once-off task, it is a long term commitment. Before
+you start your translation, ask carefully consider if you will be able to commit
+to this.
+Every coordinator should be familiar with translating, for this you should see
+:ref:`translating`.
+
+The following sections will guide you through setting up your translation.
+If you have any questions or need help, ask in one of the
+:ref:`help channels <translation-help>`.
+
+
+Announcement
+------------
+
+You should post an announcement introducing yourself and the translation you're
+starting on `Discourse <trans_disc>`_. You should also join the other communication
+channels if possible.
+
+.. XXX Discourse is more read and public nowadays, it is probably a better place
+
+Coordination team
+-----------------
+
+Each translation team will decide on the number of coordinators.
+While initially one person is fine, we recommend expanding to having two or
+three coordinators. You can find more on choosing coordinators in the FAQ below.
+
+.. XXX move stuff from the FAQ?
+
+
+Translation team
+----------------
+
+.. figure:: translator-workload.svg
+   :class: invert-in-dark-mode
+   :align: center
+   :alt: Translator workload chart
+
+.. XXX chart for emphasis?
+
+Gather people to help you translate. You can't do it alone.
+You should update :ref:`this table <translation-coordinators>` via a PR to make
+your translation easier to find. In the entry you can also include links to
+guides or other resources for translators.
+
+
+Repository
+----------
+
+To start your translation you should create a GitHub repository, under any
+account, with the correct git hierarchy and folder structure. This can be done
+in several ways, and will dictate the translation process you use.
+
+The branch name should be the version, for example, ``3.14``, and the files
+should be structured like the source files in `CPython/Doc <https://github.com/python/cpython/tree/main/Doc>`_.
+A correctly set up repository should look like this: `python-docs-pl <https://github.com/python/python-docs-pl/>`_
+
+
+Cookiecutter/Bootstrapper
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Then you can bootstrap your new translation by using the `cookiecutter
+<https://github.com/python-docs-translations/python-docs-cookiecutter>`__ or
+`bootstrapper <https://github.com/python-docs-translations/python-docs-bootstrapper>`__.
+The repository can then be used with a pull-request based translation process.
+
+
+Transifex
+~~~~~~~~~
+
+You can also start your translation using `Transifex <https://explore.transifex.com/python-doc/python-newest/>`_.
+This will automate updating translations, and will allow you to translate via
+the web interface.
+
+This is best done with a workflow that periodically checks for translations,
+a sample one with instructions can be found `here <https://python-docs-transifex-automation.readthedocs.io/workflows.html>`__.
+An in depth guide for manually doing this can also be found `here <https://python-docs-transifex-automation.readthedocs.io/commands.html>`__.
+
+To be added as the coordinator(s) on Transifex for your language, open an issue
+in the `tracker <https://github.com/python-docs-translations/transifex-automations/issues>`__.
+
+
+Others
+~~~~~~
+
+You can choose another way if you like; it’s up to you. Getting it right from
+the start will prevent complications in the future when your translation
+is built. If complications do occur more information about them can be found
+in the FAQ section on this page.
+
+
+Glossary
+--------
+
+Each translation team should have a way to store translations of terms to ensure
+consistency. This is often done with a glossary. More information about the use
+of glossaries can be found in the :ref:`translation-style-guide`.
+
+
+Moving the repo to the python org
+---------------------------------
+
+This will allow you to plug your translation into docsbuild-scripts_, and it
+will be found at ``docs.python.org/LANG/``, but not in the switcher.
+
+This will be done XXX
+
+.. XXX When ...? Discussion needed...
+.. My idea: Time based, e.g. 2 months of activity, showing that they aren't going anywhere
+
+Adding to the language switcher
+-------------------------------
+
+.. XXX https://github.com/python/devguide/issues/1586
+
+Once the following resources have been fully translated on the XXX branch:
+  - ``bugs.po``, with proper links to the language repository issue tracker
+  - all files in the ``tutorial/`` folder
+  - ``library/functions.po``, the page documenting builtins
+The translation can be added to the language switcher. This can be done with a
+pull request to docsbuild-scripts_, like `this commit <https://github.com/python/docsbuild-scripts/commit/e4a8aff9772738a63d0945042777d18c3d926930>`_
+if your translation was previously built but not in the switcher, or like
+`this commit <https://github.com/python/docsbuild-scripts/commit/a601ce67c6c2f3be7fde3376d3e5d3851f19950b>`_
+if this is it's initial addition.
 
 
 PEP 545 summary
@@ -51,31 +155,37 @@ PEP 545 summary
 
 Here are the essential points of :PEP:`545`:
 
-- Each translation is assigned an appropriate lowercased language tag,
-  with an optional region subtag, and joined with a dash, like
-  ``pt-br`` or ``fr``.
+- Each translation is assigned an appropriate lowercase
+  `IETF language tag <https://datatracker.ietf.org/doc/html/rfc5646.html>`_.
+  The tag may have an optional region subtag, joined with a dash.
+  For example, ``pt`` (Portuguese) or ``pt-br`` (Brazilian Portuguese).
 
-- Each translation is under CC0 and marked as such in the README (as in
-  the cookiecutter).
+- Each translation is under CC0 and is marked as such in the README.
 
 - Translation files are hosted on
-  ``https://github.com/python/python-docs-{LANGUAGE_TAG}`` (not
-  mandatory to start a translation, but mandatory to land on
-  ``docs.python.org``).
+  ``https://github.com/python/python-docs-{LANGUAGE_TAG}``
 
-- Translations having completed ``tutorial/``, ``library/stdtypes``
-  and ``library/functions`` are hosted on
-  ``https://docs.python.org/{LANGUAGE_TAG}/{VERSION_TAG}/``.
+.. XXX this is the same as the "Moving the repo to the python org" question
+
+- Translations having completed ``bugs``, ``tutorial/``
+  and ``library/functions`` are added to the language switcher.
 
 
 Transifex
 =========
 
-If you need help from a Transifex administrator, open an issue on the
+`Transifex <https://explore.transifex.com/python-doc/python-newest/>`_ is an
+online translations platform, similar to Weblate. It is currently used by
+several translations.
+
+If you need assistance from a Transifex administrator, open an issue on the
 `tracker <https://github.com/python-docs-translations/transifex-automations/issues>`_.
 
+.. seealso::
 
-Coordinating FAQ
+   `python-docs-transifex-automations: documentation <https://python-docs-transifex-automation.readthedocs.io/index.html>`_
+
+Coordination FAQ
 ================
 
 Are there tools to help in managing the repo?
@@ -96,12 +206,26 @@ More related tools and projects can be found in the
 
 __ https://github.com/python-docs-translations
 
-How is a coordinator elected?
------------------------------
+
+How should I test my translation?
+---------------------------------
+
+The `dashboard <https://python-docs-translations.github.io/dashboard/metadata.html>`_
+tests translations and uploads error logs.
+
+Testing should ideally be set up in your repository, and will help catch errors
+early and ensure translation quality. Testing generally consists of building, and
+linting with :pypi:`sphinx-lint`.
+
+See `this documentation <https://python-docs-transifex-automation.readthedocs.io/workflows.html#test-build-workflow>`_
+for sample workflows with usage guides.
+
+
+How is a coordination team chosen?
+----------------------------------
 
 Each translation team will decide on the number of coordinators.
 We recommend two or three coordinators, though you may begin with one.
-Here are some general suggestions.
 
 -  Coordinator requests are to be public on the `translation mailing list <translation_ml_>`_.
 -  If the given language has a native core dev, the core dev has input
@@ -112,25 +236,28 @@ Here are some general suggestions.
 -  We expect the local community to self-organize coordinators and contributors.
    If you have questions, please ask on the mailing list or Discourse.
 -  If a coordinator becomes inactive or unreachable for a long
-   period of time, someone else can ask to be added as a primary coordinator on the `translation mailing list <translation_ml_>`_.
-   As a community resource, we aim to keep translations up to date with active contributors, including coordinators.
+   period of time, someone else can ask to be added as a primary coordinator on
+   the `translation mailing list <translation_ml_>`_.
+   As a community resource, we aim to keep translations up to date with active
+   contributors, including coordinators.
+
 
 I have a translation, but it's not in Git. What should I do?
 ------------------------------------------------------------
 
-You can ask for help on the `translation mailing list <translation_ml_>`_, and
-the team will help you create an appropriate repository. You can still use tools like transifex,
-if you like.
+You can ask for help in one of the :ref:`translation-help`, and
+the team will help you create an appropriate repository. You can still use tools
+like transifex, if you like.
 
 
 My Git hierarchy does not match yours. Can I keep it?
 -----------------------------------------------------
 
-No, inside the ``github.com/python`` organization we’ll all have the
+No, inside the ``github.com/python`` organization all repositories must have the
 exact same hierarchy so bots will be able to build all of our
-translations. So you may have to convert from one hierarchy to another.
-Ask for help on the `translation mailing list <translation_ml_>`_ if you’re
-not sure on how to do it.
+translations. So, you may have to convert from one hierarchy to another.
+Ask for help in one of the :ref:`translation-help` if you’re not sure on how to
+do it.
 
 
 What hierarchy should I use in my GitHub repository?
@@ -139,9 +266,6 @@ What hierarchy should I use in my GitHub repository?
 As for every project, we have a *branch* per version.  We store ``.po``
 files in the root of the repository using the ``gettext_compact=0``
 style.
-
-
-.. XXX Explain necessary folder structure
 
 
 Which version of the Python documentation should be translated?
@@ -154,8 +278,14 @@ propagate your translation from one branch to another using :pypi:`pomerge`.
 The entry for my translation is missing or not up to date
 ---------------------------------------------------------
 
-Ask on the `translation mailing list <translation_ml_>`_, or better, make a PR
-on the `devguide <https://github.com/python/devguide/>`__.
+Make a PR on the `devguide <https://github.com/python/devguide/>`__ to update it.
+
+
+How are translations built?
+---------------------------
+
+Translations are built by `docsbuild-scripts <https://github.com/python/docsbuild-scripts/>`__
+and hosted on docs.python.org.
 
 
 Is there a Weblate instance we can translate on?
@@ -168,3 +298,5 @@ for updates.
 
 .. _EB: https://python.github.io/editorial-board/
 .. _translation_ml: https://mail.python.org/mailman3/lists/translation.python.org/
+.. _trans_disc: https://discuss.python.org/c/documentation/translations/
+.. _docsbuild-scripts: https://github.com/python/docsbuild-scripts

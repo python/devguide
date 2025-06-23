@@ -1,3 +1,5 @@
+.. _translating:
+
 ===========
 Translating
 ===========
@@ -9,7 +11,7 @@ in production and can be found in the language switcher; others are works in
 progress. To get started read your repository's contributing guide, which is
 generally the ``README`` file, and this page.
 If your language isn’t listed below, feel free to start the translation!
-See :doc:`coordinating` guide to get started.
+See :doc:`coordination <coordinating>` to get started.
 
 For more details about translations and their progress, see `the dashboard
 <https://python-docs-translations.github.io/dashboard/>`__.
@@ -124,12 +126,13 @@ General discussions about translations occur on the Python Docs Discord
 mailing list <translation_ml_>`_, and the `translations category <_discourse>`_
 of the Python Discourse.
 
+.. _translation-style-guide:
 
 Style guide
 ===========
 
 Before translating, you should familiarize yourself with the general
-documentation :doc:`style guide<../style-guide>`. Some translation-specific
+documentation :doc:`style guide <../style-guide>`. Some translation-specific
 guidelines are explained below.
 
 
@@ -277,8 +280,8 @@ The coordination team for my language is inactive, what do I do?
 ----------------------------------------------------------------
 
 If you would like to coordinate, open a pull request in the
-`devguide <https://github.com/python/devguide>`_ adding yourself, and ping
-``@python/editorial-board``.
+`devguide <https://github.com/python/devguide>`_ adding yourself to the table
+at the top of this page, and ping ``@python/editorial-board``.
 
 
 .. _translation_ml: https://mail.python.org/mailman3/lists/translation.python.org/
