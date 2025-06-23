@@ -172,7 +172,7 @@ notfound_urls_prefix = "/"
 with open("include/release-cycle.json", encoding="UTF-8") as _f:
     _cycle = json.load(_f)
 
-main_version = next(version for version, data in _cycle.items() if data.get("branch") == "main")
+_main_version = next(version for version, data in _cycle.items() if data.get("branch") == "main")
 
 # prolog and epilogs
 rst_prolog = f"""
