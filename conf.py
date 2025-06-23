@@ -172,13 +172,7 @@ notfound_urls_prefix = "/"
 with open("include/release-cycle.json", encoding="UTF-8") as _f:
     _cycle = json.load(_f)
 
-_main_entries = [v for v, d in _cycle.items() if d.get("branch") == "main"]
-if len(_main_entries) != 1:
-    raise RuntimeError(
-        "release-cycle.json must contain exactly one entry with 'branch': 'main'"
-    )
-
-_main_version = _main_entries[0]
+main_version = next(version for version, data in _cycle.items() if data.get("branch") == "main")
 
 # prolog and epilogs
 rst_prolog = f"""
