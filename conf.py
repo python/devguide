@@ -192,7 +192,7 @@ rst_prolog = f"""
 
 .. _Refactoring the DevGuide: https://discuss.python.org/t/refactoring-the-devguide-into-a-contribution-guide/63409
 
-.. |mainversion| replace:: {_main_version}
+.. |main_version| replace:: {_main_version}
 
 """
 
