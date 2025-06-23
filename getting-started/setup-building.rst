@@ -1213,14 +1213,6 @@ Using the pre-built container image
 are available from the
 `GitHub Container Registry (GHCR) account for the Python org <https://github.com/orgs/python/packages>`__ .
 
-You can download the latest version of the container image via:
-
-.. code-block:: bash
-
-   docker pull ghcr.io/python/devcontainer:latest
-
-(Substitute ``podman`` for ``docker`` if you use Podman.)
-
 To run the container and launch a Bash shell, run one of the following commands
 in a clone of the CPython repository.
 
