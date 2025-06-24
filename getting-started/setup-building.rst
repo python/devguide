@@ -1188,8 +1188,6 @@ select the option ``Open in VS Code``. You will still be working on the remote
 codespace instance, thus using the remote instance's compute power. The compute
 power may be a much higher spec than your local machine which can be helpful.
 
-.. c_codespaces_end
-
 .. _devcontainer-directly:
 
 Using the dev container directly
