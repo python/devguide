@@ -1222,6 +1222,10 @@ in a clone of the CPython repository.
 
    podman run -it --rm --volume $PWD:/workspace:Z --workdir /workspace ghcr.io/python/devcontainer:latest
 
+Note that the container has read/write access to the working directory.
+You may want to use a separate clone of CPython, or run ``make clean``
+to remove caches and build output generated for your host OS.
+
 .. _devcontainer-build:
 
 Building yourself
