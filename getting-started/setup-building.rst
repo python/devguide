@@ -1209,7 +1209,7 @@ Using the pre-built container image
 
 `Dev container images <https://github.com/python/cpython-devcontainers/pkgs/container/devcontainer>`__
 are available from the
-`GitHub Container Registry (GHCR) account for the Python org <https://github.com/orgs/python/packages>`__ .
+`GitHub Container Registry (GHCR) account for the Python org <https://github.com/orgs/python/packages>`__.
 
 To run the container and launch a Bash shell, run one of the following commands
 in a clone of the CPython repository.
