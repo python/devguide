@@ -18,8 +18,6 @@ mailing list <translation_ml_>`_, and the
 
 For administrative issues, ping ``@python/editorial-board``.
 
-.. XXX May change to @python/translations
-
 
 Starting a new translation
 ==========================
@@ -42,7 +40,6 @@ You should post an announcement introducing yourself and the translation you're
 starting on `Discourse <trans_disc>`_. You should also join the other communication
 channels if possible.
 
-.. XXX Discourse is more read and public nowadays, it is probably a better place
 
 Coordination team
 -----------------
@@ -62,7 +59,6 @@ Translation team
    :align: center
    :alt: Translator workload chart
 
-.. XXX chart for emphasis?
 
 Gather people to help you translate. You can't do it alone.
 You should update :ref:`this table <translation-coordinators>` via a PR to make
@@ -162,10 +158,8 @@ Here are the essential points of :PEP:`545`:
 
 - Each translation is under CC0 and is marked as such in the README.
 
-- Translation files are hosted on
+- Translation files are hosted in repositories under the Python org:
   ``https://github.com/python/python-docs-{LANGUAGE_TAG}``
-
-.. XXX this is the same as the "Moving the repo to the python org" question
 
 - Translations having completed ``bugs``, ``tutorial/``
   and ``library/functions`` are added to the language switcher.
@@ -184,6 +178,7 @@ If you need assistance from a Transifex administrator, open an issue on the
 .. seealso::
 
    `python-docs-transifex-automations: documentation <https://python-docs-transifex-automation.readthedocs.io/index.html>`_
+
 
 Coordination FAQ
 ================
