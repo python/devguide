@@ -1226,6 +1226,7 @@ Note that the container has read/write access to the working directory.
 You may want to use a separate clone of CPython, or run ``make clean``
 to remove caches and build output generated for your host OS.
 
+.. _building-the-container-locally
 .. _devcontainer-build:
 
 Building yourself
