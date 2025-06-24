@@ -32,7 +32,8 @@ These labels are used to specify the type of issue:
   before filing an issue.
 * :gh-label:`type-security`: for security issues.
   See also `Reporting security issues in Python`_.
-
+* :gh-label:`type-refactor`: for code refactoring that has no intended change
+  in behavior.
 
 .. _Component:
 .. _labels-component:
