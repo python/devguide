@@ -30,6 +30,7 @@ These labels are used to specify the type of issue:
   it is implicit that features are added to the ``main`` branch only.
   The `Ideas Discourse category`_ can be used to discuss enhancements
   before filing an issue.
+* :gh-label:`type-refactor`: for internal code refactoring.
 * :gh-label:`type-security`: for security issues.
   See also `Reporting security issues in Python`_.
 
