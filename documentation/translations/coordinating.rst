@@ -23,7 +23,7 @@ Starting a new translation
 ==========================
 
 Coordination is not a once-off task, it is a long term commitment. Before
-you start your translation, ask carefully consider if you will be able to commit
+you start your translation, carefully consider if you will be able to commit
 to this.
 Every coordinator should be familiar with translating, for this you should see
 :ref:`translating`.
@@ -136,13 +136,15 @@ Adding to the language switcher
 .. XXX https://github.com/python/devguide/issues/1586
 
 Once the following resources have been fully translated on the XXX branch:
-  - ``bugs.po``, with proper links to the language repository issue tracker
-  - all files in the ``tutorial/`` folder
-  - ``library/functions.po``, the page documenting builtins
+
+- ``bugs.po``, with proper links to the language repository issue tracker
+- all files in the ``tutorial/`` folder
+- ``library/functions.po``, the page documenting builtins
+
 The translation can be added to the language switcher. This can be done with a
-pull request to docsbuild-scripts_, like `this commit <https://github.com/python/docsbuild-scripts/commit/e4a8aff9772738a63d0945042777d18c3d926930>`_
+pull request to docsbuild-scripts_, like `this commit <https://github.com/python/docsbuild-scripts/commit/e4a8aff9772738a63d0945042777d18c3d926930>`__
 if your translation was previously built but not in the switcher, or like
-`this commit <https://github.com/python/docsbuild-scripts/commit/a601ce67c6c2f3be7fde3376d3e5d3851f19950b>`_
+`this commit <https://github.com/python/docsbuild-scripts/commit/a601ce67c6c2f3be7fde3376d3e5d3851f19950b>`__
 if this is it's initial addition.
 
 
@@ -242,7 +244,7 @@ I have a translation, but it's not in Git. What should I do?
 
 You can ask for help in one of the :ref:`translation-help`, and
 the team will help you create an appropriate repository. You can still use tools
-like transifex, if you like.
+like Transifex, if you like.
 
 
 My Git hierarchy does not match yours. Can I keep it?
