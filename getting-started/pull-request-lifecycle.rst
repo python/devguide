@@ -286,9 +286,8 @@ The automated checklist runs through:
 * Has ``configure`` been regenerated, if necessary?
 * Has ``pyconfig.h.in`` been regenerated, if necessary?
 
-The automated checks don't actually *answer* all of these
-questions. Aside from the whitespace checks, the tool is
-a memory aid for the various elements that can go into
+The automated checks don't actually *answer* these questions.
+The tool is a memory aid for the various elements that can go into
 making a complete pull request.
 
 
