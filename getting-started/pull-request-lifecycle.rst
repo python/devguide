@@ -277,10 +277,6 @@ On *Windows* (after any successful build):
 
 The automated checklist runs through:
 
-* Are there any whitespace problems in Python files?
-  (using :cpy-file:`Tools/patchcheck/reindent.py`)
-* Are there any whitespace problems in C files?
-* Are there any whitespace problems in the documentation?
 * Has the documentation been updated?
 * Has the test suite been updated?
 * Has an entry under ``Misc/NEWS.d/next`` been added?
