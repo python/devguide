@@ -1259,6 +1259,7 @@ in a clone of the CPython repository.
 
 The same caveats outlined above when running from a container image from GHCR
 also apply here.
+
 .. c_codespaces_end
 
 
