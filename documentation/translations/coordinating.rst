@@ -167,6 +167,21 @@ Here are the essential points of :PEP:`545`:
   and ``library/functions`` are added to the language switcher.
 
 
+Translating Sphinx
+==================
+
+Some messages that appear in the docs can not be translated, this is because they
+are either part of the theme, which currently cannot be translated (see this
+`issue <https://github.com/python/python-docs-theme/issues/194>`__) or it is
+part of Sphinx, which requires it to be translated in the
+`sphinx-doc Transifex <https://app.transifex.com/sphinx-doc/>`__.
+Coordinators should direct some translators there, so that the documentation
+is fully translated.
+
+.. Where should this go? Coordinators or Translators
+.. Should we share coordinators?
+
+
 Transifex
 =========
 
