@@ -8,7 +8,7 @@ found on this page and in :PEP:`545`. Translations are overseen by the
 
 .. _translation-help:
 
-Communication/Help channels
+Communication/help channels
 ===========================
 
 Discussions about translations occur on the Python Docs Discord
@@ -22,11 +22,10 @@ For administrative issues, ping ``@python/editorial-board``.
 Starting a new translation
 ==========================
 
-Coordination is not a once-off task, it is a long term commitment. Before
+Coordination is not a one-off task, it is a long-term commitment. Before
 you start your translation, carefully consider if you will be able to commit
 to this.
-Every coordinator should be familiar with translating, for this you should see
-:ref:`translating`.
+Every coordinator should be familiar with translating: see :ref:`translating`.
 
 The following sections will guide you through setting up your translation.
 If you have any questions or need help, ask in one of the
@@ -36,9 +35,9 @@ If you have any questions or need help, ask in one of the
 Announcement
 ------------
 
-You should post an announcement introducing yourself and the translation you're
-starting on `Discourse <trans_disc>`_. You should also join the other communication
-channels if possible.
+Post an announcement introducing yourself and the translation you're
+starting on `Discourse <trans_disc>`_. Also join the other communication
+channels, if possible.
 
 
 Coordination team
@@ -57,11 +56,12 @@ Translation team
 .. figure:: translator-workload.svg
    :class: invert-in-dark-mode
    :align: center
-   :alt: Translator workload chart
+   :alt: An exaggerated chart showing that individual translator workload
+         decreases with the amount of translators.
 
 
 Gather people to help you translate. You can't do it alone.
-You should update :ref:`this table <translation-coordinators>` via a PR to make
+Update :ref:`this table <translation-coordinators>` via a PR to make
 your translation easier to find. In the entry you can also include links to
 guides or other resources for translators.
 
@@ -69,16 +69,16 @@ guides or other resources for translators.
 Repository
 ----------
 
-To start your translation you should create a GitHub repository, under any
-account, with the correct git hierarchy and folder structure. This can be done
+To start your translation create a GitHub repository, under any
+account, with the correct Git hierarchy and folder structure. This can be done
 in several ways, and will dictate the translation process you use.
 
 The branch name should be the version, for example, ``3.14``, and the files
 should be structured like the source files in `CPython/Doc <https://github.com/python/cpython/tree/main/Doc>`_.
-A correctly set up repository should look like this: `python-docs-pl <https://github.com/python/python-docs-pl/>`_
+A correctly set up repository looks like this: `python-docs-pl <https://github.com/python/python-docs-pl/>`_
 
 
-Cookiecutter/Bootstrapper
+Cookiecutter/bootstrapper
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Then you can bootstrap your new translation by using the `cookiecutter
