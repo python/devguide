@@ -73,15 +73,23 @@ To start your translation create a GitHub repository, under any
 account, with the correct Git hierarchy and folder structure. This can be done
 in several ways, and will dictate the translation process you use.
 
-The branch name should be the version, for example, ``3.14``, and the files
-should be structured like the source files in `CPython/Doc <https://github.com/python/cpython/tree/main/Doc>`_.
-A correctly set up repository looks like this: `python-docs-pl <https://github.com/python/python-docs-pl/>`_
+Each translation is assigned an appropriate lowercase
+`IETF language tag <https://datatracker.ietf.org/doc/html/rfc5646.html>`_.
+The tag may have an optional region subtag, joined with a dash.
+For example, ``pt`` (Portuguese) or ``pt-br`` (Brazilian Portuguese).
+The repository name is then: ``python-docs-TAG``
+
+The name of each branch should be the Python version it holds translations
+for, for example, ``3.14``. The files should be structured like the source files
+in `CPython/Doc <https://github.com/python/cpython/tree/main/Doc>`_.
+A correctly set up repository looks like this:
+`python-docs-pl <https://github.com/python/python-docs-pl/>`_
 
 
 Cookiecutter/bootstrapper
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Then you can bootstrap your new translation by using the `cookiecutter
+You can bootstrap your new translation by using the `cookiecutter
 <https://github.com/python-docs-translations/python-docs-cookiecutter>`__ or
 `bootstrapper <https://github.com/python-docs-translations/python-docs-bootstrapper>`__.
 The repository can then be used with a pull-request based translation process.
@@ -90,13 +98,17 @@ The repository can then be used with a pull-request based translation process.
 Transifex
 ~~~~~~~~~
 
-You can also start your translation using `Transifex <https://explore.transifex.com/python-doc/python-newest/>`_.
+You can also start your translation using
+`Transifex <https://explore.transifex.com/python-doc/python-newest/>`_.
 This will automate updating translations, and will allow you to translate via
 the web interface.
 
 This is best done with a workflow that periodically checks for translations,
-a sample one with instructions can be found `here <https://python-docs-transifex-automation.readthedocs.io/workflows.html>`__.
-An in depth guide for manually doing this can also be found `here <https://python-docs-transifex-automation.readthedocs.io/commands.html>`__.
+a sample one with instructions can be found in the
+`python-docs-tx-automations documentation <https://python-docs-transifex-automation.readthedocs.io/workflows.html>`__.
+An in depth guide for manually doing this can also be found
+python-docs-tx-automations documentation's
+`commands page <https://python-docs-transifex-automation.readthedocs.io/commands.html>`__.
 
 To be added as the coordinator(s) on Transifex for your language, open an issue
 in the `tracker <https://github.com/python-docs-translations/transifex-automations/issues>`__.
@@ -119,8 +131,8 @@ consistency. This is often done with a glossary. More information about the use
 of glossaries can be found in the :ref:`translation-style-guide`.
 
 
-Moving the repo to the python org
----------------------------------
+Moving the repo to the ``python`` org
+-------------------------------------
 
 This will allow you to plug your translation into docsbuild-scripts_, and it
 will be found at ``docs.python.org/LANG/``, but not in the switcher.
@@ -194,7 +206,8 @@ If you need assistance from a Transifex administrator, open an issue on the
 
 .. seealso::
 
-   `python-docs-transifex-automations: documentation <https://python-docs-transifex-automation.readthedocs.io/index.html>`_
+   `python-docs-transifex-automations: documentation
+   <https://python-docs-transifex-automation.readthedocs.io/index.html>`_
 
 
 Coordination FAQ

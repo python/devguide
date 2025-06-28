@@ -158,7 +158,7 @@ The Python docs contain many roles (``:role:`target```) that link to other parts
 of the documentation.
 Do not translate reStructuredText roles targets, such as ``:func:`print``` or
 ``:ref:`some-section``` because it will break the link.
-If alternate text (``:role:`text <target>``` is provided, it generally
+If alternate text (``:role:`text <target>```) is provided, it generally
 should be translated. You can also introduce alternate text for translation if
 the target is not a name or term.
 
