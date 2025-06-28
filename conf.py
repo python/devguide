@@ -109,12 +109,18 @@ rediraffe_redirects = {
     # Advanced Tools was renamed Development Tools in gh-1149
     "advanced-tools/clang.rst": "development-tools/clang.rst",
     "advanced-tools/gdb.rst": "development-tools/gdb.rst",
-    # Core Developers
-    "coredev.rst": "core-developers/become-core-developer.rst",
-    "committing.rst": "core-developers/committing.rst",
-    "developers.rst": "core-developers/developer-log.rst",
-    "experts.rst": "core-developers/experts.rst",
-    "motivations.rst": "core-developers/motivations.rst",
+    # Core team
+    "coredev.rst": "core-team/become-core-developer.rst",
+    "committing.rst": "core-team/committing.rst",
+    "developers.rst": "core-team/developer-log.rst",
+    "experts.rst": "core-team/experts.rst",
+    "motivations.rst": "core-team/motivations.rst",
+    # core-developers/ -> core-team/
+    "core-developers/become-core-developer.rst": "core-team/become-core-developer.rst",
+    "core-developers/committing.rst": "core-team/committing.rst",
+    "core-developers/developer-log.rst": "core-team/developer-log.rst",
+    "core-developers/experts.rst": "core-team/experts.rst",
+    "core-developers/motivations.rst": "core-team/motivations.rst",
     # Developer Workflow
     "c-api.rst": "developer-workflow/c-api.rst",
     "communication.rst": "developer-workflow/communication-channels.rst",

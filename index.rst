@@ -314,7 +314,7 @@ Full table of contents
    documentation/index
    testing/index
    development-tools/index
-   core-developers/index
+   core-team/index
    internals/index
    versions
    contrib/index
