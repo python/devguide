@@ -13,5 +13,5 @@ Core team
    experts
    developer-log
    motivations
-   become-core-developer
+   join-team
    memorialization
