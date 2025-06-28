@@ -169,7 +169,7 @@ Core developers and contributors alike will find the following guides useful:
 Guide for contributing to Python:
 
 ======================== =================== ======================= =======================
-Contributors             Documentarians      Triagers                Core Developers
+Contributors             Documentarians      Triagers                Core team
 ======================== =================== ======================= =======================
 :ref:`setup`             :ref:`docquality`   :ref:`tracker`          :ref:`responsibilities`
 :ref:`help`              :ref:`documenting`  :ref:`triaging`         :ref:`developers`

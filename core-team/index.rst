@@ -1,8 +1,9 @@
 .. _core-dev:
+.. _core-team:
 
-===============
-Core developers
-===============
+=========
+Core team
+=========
 
 .. toctree::
    :maxdepth: 5
