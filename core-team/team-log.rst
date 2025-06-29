@@ -11,7 +11,7 @@ information.)
 
 .. csv-table::
    :header: "Name", "GitHub username", "Joined", "Left", "Notes"
-   :file: developers.csv
+   :file: core-team.csv
    :encoding: "utf-8"
 
 Procedure for granting or dropping access
