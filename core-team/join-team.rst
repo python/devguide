@@ -1,9 +1,10 @@
 .. _become-core-developer:
 .. _coredev:
+.. _join-core-team:
 
-==============================
-How to become a core developer
-==============================
+=========================
+How to join the core team
+=========================
 
 What it takes
 =============
