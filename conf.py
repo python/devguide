@@ -112,13 +112,13 @@ rediraffe_redirects = {
     # Core team
     "coredev.rst": "core-team/join-team.rst",
     "committing.rst": "core-team/committing.rst",
-    "developers.rst": "core-team/developer-log.rst",
+    "developers.rst": "core-team/team-log.rst",
     "experts.rst": "core-team/experts.rst",
     "motivations.rst": "core-team/motivations.rst",
     # core-developers/ -> core-team/
     "core-developers/become-core-developer.rst": "core-team/join-team.rst",
     "core-developers/committing.rst": "core-team/committing.rst",
-    "core-developers/developer-log.rst": "core-team/developer-log.rst",
+    "core-developers/developer-log.rst": "core-team/team-log.rst",
     "core-developers/experts.rst": "core-team/experts.rst",
     "core-developers/index.rst": "core-team/index.rst",
     "core-developers/memorialization.rst": "core-team/memorialization.rst",

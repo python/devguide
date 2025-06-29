@@ -1,10 +1,11 @@
 .. _developer-log:
 .. _developers:
+.. _team-log:
 
-Developer log
-=============
+Team log
+========
 
-This page lists the historical members of the Python development team. (The
+This page lists the historical members of the Python core team. (The
 master list is kept in a private repository due to containing sensitive contact
 information.)
 

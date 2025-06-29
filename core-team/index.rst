@@ -11,7 +11,7 @@ Core team
    responsibilities
    committing
    experts
-   developer-log
+   team-log
    motivations
    join-team
    memorialization

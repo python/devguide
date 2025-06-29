@@ -20,6 +20,6 @@ but with "core developer" language changed to "core team" where possible.]
    responsibilities
    committing
    experts
-   developer-log
+   team-log
    motivations
    join-team
