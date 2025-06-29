@@ -120,7 +120,10 @@ rediraffe_redirects = {
     "core-developers/committing.rst": "core-team/committing.rst",
     "core-developers/developer-log.rst": "core-team/developer-log.rst",
     "core-developers/experts.rst": "core-team/experts.rst",
+    "core-developers/index.rst": "core-team/index.rst",
+    "core-developers/memorialization.rst": "core-team/memorialization.rst",
     "core-developers/motivations.rst": "core-team/motivations.rst",
+    "core-developers/responsibilities.rst": "core-team/responsibilities.rst",
     # Developer Workflow
     "c-api.rst": "developer-workflow/c-api.rst",
     "communication.rst": "developer-workflow/communication-channels.rst",
