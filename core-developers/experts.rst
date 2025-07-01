@@ -103,7 +103,7 @@ encodings             malemburg
 ensurepip             ncoghlan, dstufft, pradyunsg, pfmoore
 enum                  eliben*, warsaw, ethanfurman*
 errno                 Yhg1s
-faulthandler          vstinner, gpshead
+faulthandler          vstinner, gpshead, ZeroIntensity*
 fcntl                 Yhg1s
 filecmp
 fileinput
@@ -356,9 +356,9 @@ pip                 ncoghlan, dstufft, pfmoore, Marcus.Smith^, pradyunsg
 release management  tarekziade, malemburg, benjaminp, warsaw,
                     gvanrossum, anthonybaxter^, merwok, ned-deily,
                     birkenfeld, JulienPalard, hugovk
-runtime lifecycle   ericsnowcurrently, kumaraditya303, zooba
+runtime lifecycle   ericsnowcurrently, kumaraditya303, zooba, ZeroIntensity
 str.format          ericvsmith*
-subinterpreters     ericsnowcurrently, kumaraditya303
+subinterpreters     ericsnowcurrently, kumaraditya303, ZeroIntensity*
 symbol table        JelleZijlstra, carljm
 testing             ezio-melotti
 test coverage
