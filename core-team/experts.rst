@@ -56,6 +56,7 @@ __future__
 __main__              gvanrossum, ncoghlan
 _thread
 abc
+annotationlib         JelleZijlstra*
 argparse              savannahostrowski*, serhiy-storchaka*
 array
 ast                   benjaminp, pablogsal, isidentical, JelleZijlstra, eclips4
