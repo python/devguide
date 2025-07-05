@@ -127,7 +127,6 @@ http
 idlelib               kbkaiser (inactive), terryjreedy*, serwy (inactive),
                       taleinat
 imaplib
-imghdr
 importlib             brettcannon
 inspect               1st1
 io                    benjaminp, stutzbach^
@@ -146,24 +145,19 @@ math                  rhettinger, stutzbach^
 mimetypes
 mmap                  Yhg1s
 modulefinder          theller (inactive), jvr^
-msilib
 msvcrt
 multiprocessing       applio*, pitrou, jnoller^ (inactive), sbt^ (inactive), gpshead*
 netrc
-nis
-nntplib
 numbers
 operator
 optparse              mitsuhiko, serhiy-storchaka*
 os
 os.path               serhiy-storchaka*
-ossaudiodev
 parser                pablogsal
 pathlib               barneygale*
 pdb                   gaogaotiantian
 pickle                avassalotti, serhiy-storchaka*
 pickletools           avassalotti, serhiy-storchaka*
-pipes
 pkgutil
 platform              malemburg
 plistlib
@@ -196,10 +190,8 @@ shutil                tarekziade, giampaolo
 signal                gpshead
 site
 smtplib
-sndhdr
 socket                gpshead
 socketserver
-spwd
 sqlite3               ghaering^, erlend-aasland*
 ssl                   jackjansen, tiran, dstufft, alex
 stat                  tiran
@@ -237,7 +229,6 @@ unicodedata           malemburg, ezio-melotti
 unittest              ezio-melotti, rbtcollins, gpshead, serhiy-storchaka*
 unittest.mock
 urllib                orsenthil
-uu
 uuid
 venv                  vsajip, FFY00
 warnings
@@ -247,7 +238,6 @@ webbrowser
 winreg                stutzbach^
 winsound
 wsgiref               pjenvey
-xdrlib
 xml.dom
 xml.dom.minidom
 xml.dom.pulldom
