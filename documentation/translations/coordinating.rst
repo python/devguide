@@ -2,15 +2,21 @@
 Coordinating
 ============
 
+Information about the Python documentation translation processes is
+found in this devguide and :PEP:`545`.
+Translations are built by `docsbuild-scripts
+<https://github.com/python/docsbuild-scripts/>`__ and hosted on
+docs.python.org. Translations
+are overseen by the `Editorial Board <EB_>`_
+
 Starting a new translation
 ==========================
 
 First subscribe to the `translation mailing list <translation_ml_>`_,
-and introduce yourself and the translation you're starting. Translations
-fall under the aegis of the `PSF Translation Workgroup <translation_wg_>`_
+and introduce yourself and the translation you're starting.
 
-Then you can bootstrap your new translation by using `cookiecutter
-<https://github.com/JulienPalard/python-docs-cookiecutter>`__ or
+Then you can bootstrap your new translation by using the `cookiecutter
+<https://github.com/python-docs-translations/python-docs-cookiecutter>`__ or
 `bootstrapper <https://github.com/python-docs-translations/python-docs-bootstrapper>`__.
 You can also start your translation using `Transifex <https://explore.transifex.com/python-doc/python-newest/>`_
 following this `guide <https://python-docs-transifex-automation.readthedocs.io/commands.html>`_.
@@ -28,6 +34,16 @@ The important steps look like this:
 - When ``bugs``, ``tutorial``, and ``library/functions`` are 100%
   completed, ask on the `translation mailing list <translation_ml_>`_ for
   your language to be added in the language switcher on docs.python.org.
+
+
+How to get help
+===============
+
+Discussions about translations occur on the Python Docs Discord
+`#translations channel <https://discord.gg/h3qDwgyzga>`_, `translation
+mailing list <translation_ml_>`_, and the
+`translations category <https://discuss.python.org/c/documentation/translations/>`_
+of the Python Discourse.
 
 
 PEP 545 summary
@@ -50,6 +66,13 @@ Here are the essential points of :PEP:`545`:
 - Translations having completed ``tutorial/``, ``library/stdtypes``
   and ``library/functions`` are hosted on
   ``https://docs.python.org/{LANGUAGE_TAG}/{VERSION_TAG}/``.
+
+
+Transifex
+=========
+
+If you need help from a Transifex administrator, open an issue on the
+`tracker <https://github.com/python-docs-translations/transifex-automations/issues>`_.
 
 
 Coordinating FAQ
@@ -76,7 +99,9 @@ __ https://github.com/python-docs-translations
 How is a coordinator elected?
 -----------------------------
 
-There is no election. Each translation will sort out the number of coordinators. We recommend 2 or 3 coordinators, though you may begin with one.  Here are some general suggestions.
+Each translation team will decide on the number of coordinators.
+We recommend two or three coordinators, though you may begin with one.
+Here are some general suggestions.
 
 -  Coordinator requests are to be public on the `translation mailing list <translation_ml_>`_.
 -  If the given language has a native core dev, the core dev has input
@@ -116,11 +141,30 @@ files in the root of the repository using the ``gettext_compact=0``
 style.
 
 
-The entry for my translation is missing/not up to date on this page
--------------------------------------------------------------------
+.. XXX Explain necessary folder structure
 
-Ask on the `translation mailing list <translation_ml_>`_, or better, make a PR on the `devguide
-<https://github.com/python/devguide/>`__.
 
-.. _translation_wg: https://wiki.python.org/psf/TranslationWG/Charter
+Which version of the Python documentation should be translated?
+---------------------------------------------------------------
+
+It's best to work on Python's current stable or beta version. You can then
+propagate your translation from one branch to another using :pypi:`pomerge`.
+
+
+The entry for my translation is missing or not up to date
+---------------------------------------------------------
+
+Ask on the `translation mailing list <translation_ml_>`_, or better, make a PR
+on the `devguide <https://github.com/python/devguide/>`__.
+
+
+Is there a Weblate instance we can translate on?
+------------------------------------------------
+
+There is currently no Weblate instance for Python translations.
+See this `Discourse thread <https://discuss.python.org/t/docs-translation-platform/29940>`_
+for updates.
+
+
+.. _EB: https://python.github.io/editorial-board/
 .. _translation_ml: https://mail.python.org/mailman3/lists/translation.python.org/
