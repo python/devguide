@@ -1188,19 +1188,52 @@ select the option ``Open in VS Code``. You will still be working on the remote
 codespace instance, thus using the remote instance's compute power. The compute
 power may be a much higher spec than your local machine which can be helpful.
 
+.. _devcontainer-directly:
 
-Building the container locally
-------------------------------
+Using the dev container directly
+================================
 
 If you want more control over the environment, or to work offline,
-you can build the container locally.
+you can use the same container used in
+:ref:`GitHub Codespaces <using-codespaces>` directly.
 This is meant for users who have (or want to get) some experience
 with containers.
-The following instructions are a starting point for
-your own customizations.
-They assume a Unix-like environment, and Docker or Podman installed.
+These instructions assume a Unix-like environment with
+`Docker <https://www.docker.com/>`__ or `Podman <https://podman.io/>`__
+installed.
 
-In a clone of the `cpython-devcontainers repo <https://github.com/python/cpython-devcontainers>`_,
+.. _devcontainer-image:
+
+Using the pre-built container image
+-----------------------------------
+
+`Dev container images <https://github.com/python/cpython-devcontainers/pkgs/container/devcontainer>`__
+are available from the
+`GitHub Container Registry (GHCR) account for the Python org <https://github.com/orgs/python/packages>`__.
+
+To run the container and launch a Bash shell, run one of the following commands
+in a clone of the CPython repository.
+
+.. code-block:: bash
+
+   docker run -it --rm --volume $PWD:/workspace --workdir /workspace ghcr.io/python/devcontainer:latest
+
+.. code-block:: bash
+
+   podman run -it --rm --volume $PWD:/workspace:Z --workdir /workspace ghcr.io/python/devcontainer:latest
+
+Note that the container has read/write access to the working directory.
+You may want to use a separate clone of CPython, or run ``make clean``
+to remove caches and build output generated for your host OS.
+
+.. _building-the-container-locally
+.. _devcontainer-build:
+
+Building yourself
+-----------------
+
+If you prefer, you can build the container image yourself. In a clone of the
+`cpython-devcontainers repo <https://github.com/python/cpython-devcontainers>`_,
 build the container and name it ``cpython-dev``:
 
 .. code-block:: bash
@@ -1213,8 +1246,8 @@ The same command will update any existing ``cpython-dev`` container.
 Run it again from time to time -- especially if the container stops
 working for you.
 
-To run the container, run one of the following commands in a clone of the
-CPython repository.
+To run the container and launch a Bash shell, run one of the following commands
+in a clone of the CPython repository.
 
 .. code-block:: bash
 
@@ -1224,12 +1257,10 @@ CPython repository.
 
    podman run -it --rm --volume $PWD:/workspace:Z --workdir /workspace cpython-dev
 
-Note that the container has read/write access to the working directory.
-You may want to use a separate clone of CPython, or run ``make clean``
-to remove caches and build output generated for your host OS.
+The same caveats outlined above when running from a container image from GHCR
+also apply here.
 
 .. c_codespaces_end
-
 
 
 .. include:: ../links.rst

@@ -56,7 +56,7 @@ __future__
 __main__              gvanrossum, ncoghlan
 _thread
 abc
-argparse              serhiy-storchaka*, savannahostrowski*
+argparse              savannahostrowski*, serhiy-storchaka*
 array
 ast                   benjaminp, pablogsal, isidentical, JelleZijlstra, eclips4
 asyncio               1st1, asvetlov, gvanrossum, graingert, kumaraditya303, willingc
@@ -103,7 +103,7 @@ encodings             malemburg
 ensurepip             ncoghlan, dstufft, pradyunsg, pfmoore
 enum                  eliben*, warsaw, ethanfurman*
 errno                 Yhg1s
-faulthandler          vstinner, gpshead
+faulthandler          vstinner, gpshead, ZeroIntensity*
 fcntl                 Yhg1s
 filecmp
 fileinput
@@ -111,7 +111,7 @@ fnmatch               serhiy-storchaka*
 fractions
 ftplib                giampaolo*
 functools             rhettinger*
-gc                    pitrou, pablogsal
+gc                    pitrou, pablogsal, nascheme
 getopt                serhiy-storchaka*
 getpath               FFY00
 getpass
@@ -241,7 +241,7 @@ uuid
 venv                  vsajip, FFY00
 warnings
 wave
-weakref               freddrake
+weakref               freddrake, nascheme
 webbrowser
 winreg                stutzbach^
 winsound
@@ -343,7 +343,7 @@ io                  benjaminp, stutzbach^, gpshead
 JIT                 brandtbucher*, savannahostrowski*
 locale              malemburg
 mathematics         malemburg, stutzbach^, rhettinger, serhiy-storchaka
-memory management   tim-one, malemburg, Yhg1s
+memory management   tim-one, malemburg, Yhg1s, nascheme
 memoryview
 networking          giampaolo, gpshead
 object model        benjaminp, Yhg1s
@@ -351,14 +351,14 @@ packaging           tarekziade, malemburg, alexis^, merwok, dstufft, pfmoore
 pattern matching    brandtbucher*
 PEG parser          gvanrossum, pablogsal, lysnikolaou
 performance         vstinner, serhiy-storchaka*, 1st1, rhettinger, markshannon,
-                    brandtbucher, carljm, Fidget-Spinner, AlexWaygood*
+                    brandtbucher, carljm, Fidget-Spinner, AlexWaygood*, nascheme
 pip                 ncoghlan, dstufft, pfmoore, Marcus.Smith^, pradyunsg
 release management  tarekziade, malemburg, benjaminp, warsaw,
                     gvanrossum, anthonybaxter^, merwok, ned-deily,
                     birkenfeld, JulienPalard, hugovk
-runtime lifecycle   ericsnowcurrently, kumaraditya303, zooba
+runtime lifecycle   ericsnowcurrently, kumaraditya303, zooba, ZeroIntensity, nascheme
 str.format          ericvsmith*
-subinterpreters     ericsnowcurrently, kumaraditya303
+subinterpreters     ericsnowcurrently, kumaraditya303, ZeroIntensity*
 symbol table        JelleZijlstra, carljm
 testing             ezio-melotti
 test coverage
