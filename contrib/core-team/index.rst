@@ -5,13 +5,13 @@
    |purpose|
 
 
-.. _c_coreteam:
+.. _c_core-team:
 
 =========
 Core team
 =========
 
-[This is mostly re-organized from the :ref:`core-dev` section of the devguide,
+[This is mostly re-organized from the :ref:`core-team` section of the devguide,
 but with "core developer" language changed to "core team" where possible.]
 
 .. toctree::
@@ -20,6 +20,6 @@ but with "core developer" language changed to "core team" where possible.]
    responsibilities
    committing
    experts
-   developer-log
+   team-log
    motivations
    join-team
