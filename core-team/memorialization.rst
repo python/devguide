@@ -115,8 +115,8 @@ python.org admin
 devguide.python.org
 -------------------
 
-* The user is marked as deceased in `developers.csv <https://github.com/python/devguide/blob/main/core-developers/developers.csv>`_;
-* The user is removed from the `Experts Index <https://github.com/python/devguide/blob/main/core-developers/experts.rst>`_.
+* The user is marked as deceased in `core-team.csv <https://github.com/python/devguide/blob/main/core-team/core-team.csv>`_;
+* The user is removed from the `experts index <https://github.com/python/devguide/blob/main/core-team/experts.rst>`_.
 
 bugs.python.org
 ---------------
