@@ -783,7 +783,7 @@ some of CPython's modules (for example, ``zlib``).
 
    Note that Debian 12 and Ubuntu 24.04 do not have the ``libmpdec-dev`` package.  You can safely
    remove it from the install list above and the Python build will use a bundled version.
-   Alternatively, you can install this package from https://deb.sury.org/.
+   Alternatively, you can install this package from https://deb.sury.org.
 
 .. tab:: macOS
 
