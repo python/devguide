@@ -84,11 +84,13 @@ Are there tools to help in managing the repo?
 Here's what we're using:
 
 - :pypi:`poutils` which includes:
-   - :pypi:`pomerge` to propagate translations from one file to others.
-   - :pypi:`pospell` to check for typos in ``.po`` files.
-   - :pypi:`powrap` to rewrap the ``.po`` files
-     before committing. This helps keep Git diffs short.
-   - :pypi:`potodo` to list what needs to be translated.
+
+  - :pypi:`pomerge` to propagate translations from one file to others.
+  - :pypi:`pospell` to check for typos in ``.po`` files.
+  - :pypi:`powrap` to rewrap the ``.po`` files
+    before committing. This helps keep Git diffs short.
+  - :pypi:`potodo` to list what needs to be translated.
+
 - :pypi:`sphinx-lint` to validate reST syntax in translation files.
 
 More related tools and projects can be found in the
