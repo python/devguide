@@ -555,16 +555,16 @@ Now that the configuration is in place, it remains to compile the project:
 
 * ``make regen-configure`` updates the :cpy-file:`configure` script.
 
-   The :cpy-file:`configure` script must be generated using a specific version
-   of ``autoconf``. To that end, the :cpy-file:`Tools/build/regen-configure.sh`
-   script which the ``regen-configure`` rule is based on either requires Docker
-   or Podman, the latter being assumed by default.
+  The :cpy-file:`configure` script must be generated using a specific version
+  of ``autoconf``. To that end, the :cpy-file:`Tools/build/regen-configure.sh`
+  script which the ``regen-configure`` rule is based on either requires Docker
+  or Podman, the latter being assumed by default.
 
-   .. tip::
+  .. tip::
 
-      We recommend installing `Podman <https://podman.io/docs/installation>`_
-      instead of Docker since the former does not require a background service
-      and avoids creating files owned by the ``root`` user in some cases.
+     We recommend installing `Podman <https://podman.io/docs/installation>`_
+     instead of Docker since the former does not require a background service
+     and avoids creating files owned by the ``root`` user in some cases.
 
 * ``make regen-all`` is responsible for regenerating header files and
   invoking other scripts, such as :ref:`Argument Clinic <clinic>`.
