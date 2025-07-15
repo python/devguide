@@ -48,6 +48,26 @@ after each commit. In particular, reference leaks builds take several hours to
 complete so they are done periodically. This is why it's important for you to
 be able to check the results yourself, too.
 
+Triggering a buildbot on a pull request
+=======================================
+
+If you want a pull request tested against a given platform, you can trigger one
+or more build bots by posting a comment that begins with:
+
+.. code-block:: none
+
+   !buildbot regex-matching-target
+
+
+For example to run both the iOS and Android build bot, you can use:
+
+.. code-block:: none
+
+   !buildbot ios|android
+
+If this worked, bedevere-bot will post a comment indicating which build bots, if
+any, were matched. If none were matched, it will tell you that too.
+
 Checking results of automatic builds
 ====================================
 
