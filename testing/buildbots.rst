@@ -64,8 +64,9 @@ For example to run both the iOS and Android build bot, you can use:
 
    !buildbot ios|android
 
-If this worked, bedevere-bot will post a comment indicating which build bots, if
-any, were matched. If none were matched, it will tell you that too.
+bedevere-bot will post a comment indicating which build bots, if
+any, were matched. If none were matched, or you do not have the
+necessary permissions to trigger a request, it will tell you that too.
 
 Checking results of automatic builds
 ====================================
