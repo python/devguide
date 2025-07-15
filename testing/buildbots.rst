@@ -58,7 +58,6 @@ or more build bots by posting a comment that begins with:
 
    !buildbot regex-matching-target
 
-
 For example to run both the iOS and Android build bot, you can use:
 
 .. code-block:: none
