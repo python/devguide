@@ -57,6 +57,7 @@ venv:
 
 .PHONY: ensure-venv
 ensure-venv:
+	set -e;
 	@if [ ! -d $(VENVDIR) ] ; then \
 		echo "Creating venv in $(VENVDIR)"; \
 		if $(UV) --version >/dev/null 2>&1; then \
