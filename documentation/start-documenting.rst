@@ -76,24 +76,22 @@ To build the documentation, follow the steps in one of the sections below.
 You can view the documentation after building the HTML
 by opening the file :file:`Doc/build/html/index.html` in a web browser.
 
-.. _doc-initial-requirements:
-
 Initial requirements
 --------------------
 
-
-Ensure your current working dir is the ``Doc`` subdirectory in your
-:ref:`CPython repository clone <checkout>`.
-
-.. code-block:: shell
-
-  cd Doc
-
-Ensure your Python version is at least 3.11 (Sphinx requirement).
+Ensure your current working directory is the top level ``Doc/`` directory
+inside your :ref:`CPython repository clone <checkout>`.
 
 .. code-block:: shell
 
-  python --version
+   cd Doc
+
+Ensure your Python version is at least 3.11.
+
+.. code-block:: shell
+
+   $ python --version
+   Python 3.13.5
 
 .. _doc-create-venv:
 
