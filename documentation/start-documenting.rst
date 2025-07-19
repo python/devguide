@@ -80,7 +80,8 @@ Initial requirements
 --------------------
 
 Ensure your current working directory is the top level ``Doc/`` directory
-inside your :ref:`CPython repository clone <checkout>`.
+inside your :ref:`CPython repository clone <checkout>`. You can switch to
+it with:
 
 .. code-block:: shell
 
