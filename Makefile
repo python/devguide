@@ -57,8 +57,8 @@ venv:
 
 .PHONY: ensure-venv
 ensure-venv:
-	set -e;
 	@if [ ! -d $(VENVDIR) ] ; then \
+		set -e; \
 		echo "Creating venv in $(VENVDIR)"; \
 		if $(UV) --version >/dev/null 2>&1; then \
 			$(UV) venv --python=$(PYTHON) $(VENVDIR); \
