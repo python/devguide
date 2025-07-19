@@ -87,12 +87,11 @@ it with:
 
    cd Doc
 
-Ensure your Python version is at least 3.11.
+Ensure your Python version is at least 3.11. You can verify it with:
 
 .. code-block:: shell
 
-   $ python --version
-   Python 3.13.5
+   python --version
 
 .. _doc-create-venv:
 
