@@ -11,8 +11,7 @@
 Core team
 =========
 
-[This is mostly re-organized from the :ref:`core-team` section of the devguide,
-but with "core developer" language changed to "core team" where possible.]
+[This is mostly re-organized from the :ref:`core-team` section of the devguide]
 
 .. toctree::
    :maxdepth: 5
