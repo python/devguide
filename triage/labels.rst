@@ -158,7 +158,7 @@ to trigger specific bot behaviors.
 * :gh-label:`skip news <skip%20news>`: for PRs that don't need a NEWS entry.
   The :ref:`news-entry` section covers in details in which cases the NEWS entry
   can be skipped.
-* :gh-label:`test-with-buildbots`: used to test the latest commit with
+* :gh-label:`🔨 test-with-buildbots <%3Ahammer%3A%20test-with-buildbots>`: used to test the latest commit with
   the :ref:`buildbot fleet <buildbots>` whenever more testing is required
   before merging.  This may take multiple hours to complete.
 * :samp:`awaiting {action}`: these labels are applied and used by `bedevere`_
