@@ -5,7 +5,7 @@ Where to get help
 =================
 
 If you are working on Python it is very possible you will come across an issue
-where you need some assistance to solve it (this happens to core developers
+where you need some assistance to solve it (this happens to the core team
 all the time).
 
 Should you require help, there are a :ref:`variety of options available
@@ -42,7 +42,7 @@ Ask #python-dev
 
 If you are comfortable with IRC you can try asking on ``#python-dev`` (on
 the `Libera.Chat`_ network). Typically there are a number of experienced
-developers, ranging from triagers to core developers, who can answer
+developers, ranging from triagers to the core team, who can answer
 questions about developing for Python.  As with the mailing lists,
 ``#python-dev`` is for questions involving the development *of* Python
 whereas ``#python`` is for questions concerning development *with* Python.
@@ -60,7 +60,7 @@ Core mentorship
 If you are interested in improving Python and contributing to its development,
 but don’t yet feel entirely comfortable with the public channels mentioned
 above, `Python Mentors`_ are here to help you.  Python is fortunate to have a
-community of volunteer core developers willing to mentor anyone wishing to
+community of volunteer core team members willing to mentor anyone wishing to
 contribute code, work on bug fixes or improve documentation.  Everyone is
 welcomed and encouraged to contribute.
 
