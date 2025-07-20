@@ -101,7 +101,7 @@ whenever new feature releases are created or retired.
 Triagers may adhere to the following recommendations:
 
 - For security issues, add the :gh-label:`type-security` label and
-  the affected version labels. This makes the issue stands out more.
+  the affected version labels. This makes the issue stand out.
 
 - For non-security issues affecting *all* bugfix branches, only add
   the :gh-label:`type-bug` label as knowing which versions are affected
