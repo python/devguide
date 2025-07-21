@@ -38,7 +38,7 @@ following:
 
   - PRs proposing fixes for bugs that can no longer be reproduced
   - PRs proposing changes that have been rejected by Python core developers
-    elsewhere (e.g. in an issue or a PEP rejection notice)
+    elsewhere (for example, in an issue or a PEP rejection notice)
 
 If a triager has any doubt about whether to close a PR,
 they should consult a core developer before taking any action.
@@ -53,7 +53,7 @@ or a veteran core developer, they're actively choosing to voluntarily donate the
 time towards the improvement of Python. As is the case with any member of
 the Python Software Foundation, always follow the `PSF Code of Conduct`_.
 
-.. _PSF Code of Conduct: https://www.python.org/psf/conduct/
+.. _PSF Code of Conduct: https://policies.python.org/python.org/code-of-conduct/
 
 
 Becoming a member of the Python triage team

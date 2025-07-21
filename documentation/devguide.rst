@@ -19,10 +19,12 @@ main Python documentation, except for some small differences.  The source
 lives in a `separate repository`_ and bug reports should be submitted to the
 `devguide GitHub tracker`_.
 
-Our devguide workflow uses continuous integration and deployment so changes to
-the devguide are normally published when the pull request is merged. Changes
-to CPython documentation follow the workflow of a CPython release and are
-published in the release.
+Changes to the Developer's Guide are published when pull requests are merged.
+
+Changes to the Python documentation are published regularly,
+ususally within 48 hours of the change being committed.
+The documentation is also `published for each release <https://docs.python.org/release/>`_,
+which may also be used by redistributors.
 
 
 Developer's Guide workflow

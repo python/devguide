@@ -2,56 +2,45 @@
 #
 
 # You can set these variables from the command line.
-PYTHON        = python3
-VENVDIR       = ./venv
-SPHINXBUILD   = $(VENVDIR)/bin/sphinx-build
-SPHINXOPTS    = -W --keep-going
-BUILDDIR      = _build
-BUILDER       = html
-JOBS          = auto
-PAPER         =
-SPHINXLINT    = $(VENVDIR)/bin/sphinx-lint
+PYTHON       = python3
+VENVDIR      = ./venv
+UV           = uv
+SPHINXBUILD  = $(VENVDIR)/bin/sphinx-build
+# Temporary: while we are using ..include:: to show the reorganization,
+# there are duplicate labels.  These cause warnings, which prevent the
+# build from finishing.  Turn off --fail-on-warning so we can see the
+# finished results.
+#SPHINXOPTS   = --fail-on-warning
+SPHINXOPTS   =
+BUILDDIR     = _build
+BUILDER      = html
+JOBS         = auto
+SPHINXLINT   = $(VENVDIR)/bin/sphinx-lint
+REQUIREMENTS = requirements.txt
 
 # Internal variables.
-PAPEROPT_a4     = -D latex_paper_size=a4
-PAPEROPT_letter = -D latex_paper_size=letter
-ALLSPHINXOPTS   = -b $(BUILDER) \
-                  -d $(BUILDDIR)/doctrees \
-                  -j $(JOBS) \
-                  $(PAPEROPT_$(PAPER)) \
-                  $(SPHINXOPTS) \
-                  . $(BUILDDIR)/$(BUILDER)
+_ALL_SPHINX_OPTS = --jobs $(JOBS) $(SPHINXOPTS)
+_RELEASE_CYCLE   = include/branches.csv \
+                   include/end-of-life.csv \
+                   include/release-cycle-all.svg \
+                   include/release-cycle.svg
 
 .PHONY: help
 help:
 	@echo "Please use \`make <target>' where <target> is one of"
 	@echo "  venv       to create a venv with necessary tools"
 	@echo "  html       to make standalone HTML files"
+	@echo "  linkcheck  to check all external links for integrity"
 	@echo "  htmlview   to open the index page built by the html target in your browser"
 	@echo "  htmllive   to rebuild and reload HTML files in your browser"
 	@echo "  clean      to remove the venv and build files"
-	@echo "  dirhtml    to make HTML files named index.html in directories"
-	@echo "  singlehtml to make a single large HTML file"
-	@echo "  pickle     to make pickle files"
-	@echo "  json       to make JSON files"
-	@echo "  htmlhelp   to make HTML files and a HTML help project"
-	@echo "  qthelp     to make HTML files and a qthelp project"
-	@echo "  devhelp    to make HTML files and a Devhelp project"
-	@echo "  epub       to make an epub"
-	@echo "  latex      to make LaTeX files, you can set PAPER=a4 or PAPER=letter"
-	@echo "  latexpdf   to make LaTeX files and run them through pdflatex"
-	@echo "  text       to make text files"
-	@echo "  man        to make manual pages"
-	@echo "  changes    to make an overview of all changed/added/deprecated items"
-	@echo "  linkcheck  to check all external links for integrity"
-	@echo "  doctest    to run all doctests embedded in the documentation (if enabled)"
 	@echo "  check      to run a check for frequent markup errors"
 	@echo "  lint       to lint all the files"
-	@echo "  versions   to update release cycle after changing release-cycle.json"
 
 .PHONY: clean
 clean: clean-venv
 	-rm -rf $(BUILDDIR)/*
+	-rm -rf $(_RELEASE_CYCLE)
 
 .PHONY: clean-venv
 clean-venv:
@@ -69,94 +58,18 @@ venv:
 .PHONY: ensure-venv
 ensure-venv:
 	@if [ ! -d $(VENVDIR) ] ; then \
-		$(PYTHON) -m venv $(VENVDIR); \
-		$(VENVDIR)/bin/python3 -m pip install --upgrade pip; \
-		$(VENVDIR)/bin/python3 -m pip install -r requirements.txt; \
+		set -e; \
+		echo "Creating venv in $(VENVDIR)"; \
+		if $(UV) --version >/dev/null 2>&1; then \
+			$(UV) venv --python=$(PYTHON) $(VENVDIR); \
+			VIRTUAL_ENV=$(VENVDIR) $(UV) pip install -r $(REQUIREMENTS); \
+		else \
+			$(PYTHON) -m venv $(VENVDIR); \
+			$(VENVDIR)/bin/python3 -m pip install --upgrade pip; \
+			$(VENVDIR)/bin/python3 -m pip install -r $(REQUIREMENTS); \
+		fi; \
 		echo "The venv has been created in the $(VENVDIR) directory"; \
 	fi
-
-.PHONY: html
-html: ensure-venv versions
-	$(SPHINXBUILD) $(ALLSPHINXOPTS)
-
-.PHONY: dirhtml
-dirhtml: BUILDER = dirhtml
-dirhtml: html
-
-.PHONY: singlehtml
-singlehtml: BUILDER = singlehtml
-singlehtml: html
-
-.PHONY: pickle
-pickle: BUILDER = pickle
-pickle: html
-	@echo
-	@echo "Build finished; now you can process the pickle files."
-
-.PHONY: json
-json: BUILDER = json
-json: html
-	@echo
-	@echo "Build finished; now you can process the JSON files."
-
-.PHONY: htmlhelp
-htmlhelp: BUILDER = htmlhelp
-htmlhelp: html
-	@echo
-	@echo "Build finished; now you can run HTML Help Workshop with the" \
-	      ".hhp project file in $(BUILDDIR)/$(BUILDER)."
-
-.PHONY: qthelp
-qthelp: BUILDER = qthelp
-qthelp: html
-
-.PHONY: devhelp
-devhelp: BUILDER = devhelp
-devhelp: html
-
-.PHONY: epub
-epub: BUILDER = epub
-epub: html
-	@echo
-	@echo "Build finished. The epub file is in $(BUILDDIR)/$(BUILDER)."
-
-.PHONY: latex
-latex: BUILDER = latex
-latex: html
-
-.PHONY: latexpdf
-latexpdf: BUILDER = latex
-latexpdf: html
-	@echo "Running LaTeX files through pdflatex..."
-	make -C $(BUILDDIR)/latex all-pdf
-	@echo "pdflatex finished; the PDF files are in $(BUILDDIR)/$(BUILDER)."
-
-.PHONY: text
-text: BUILDER = text
-text: html
-
-.PHONY: man
-man: BUILDER = man
-man: html
-	@echo
-	@echo "Build finished. The manual pages are in $(BUILDDIR)/$(BUILDER)."
-
-.PHONY: changes
-changes: BUILDER = changes
-changes: html
-
-.PHONY: linkcheck
-linkcheck: BUILDER = linkcheck
-linkcheck: html
-	@echo
-	@echo "Link check complete; look for any errors in the above output " \
-	      "or in $(BUILDDIR)/$(BUILDER)/output.txt."
-
-.PHONY: doctest
-doctest: BUILDER = doctest
-doctest: html
-	@echo "Testing of doctests in the sources finished, look at the " \
-	      "results in $(BUILDDIR)/$(BUILDER)/output.txt."
 
 .PHONY: htmlview
 htmlview: html
@@ -164,7 +77,9 @@ htmlview: html
 
 .PHONY: htmllive
 htmllive: SPHINXBUILD = $(VENVDIR)/bin/sphinx-autobuild
-htmllive: SPHINXOPTS = --re-ignore="/\.idea/|/venv/" --open-browser --delay 0
+# Arbitrarily selected ephemeral port between 49152–65535
+# to avoid conflicts with other processes:
+htmllive: SPHINXOPTS = --open-browser --delay 0 --port 55301
 htmllive: html
 
 .PHONY: check
@@ -172,25 +87,33 @@ check: ensure-venv
 	# Ignore the tools and venv dirs and check that the default role is not used.
 	$(SPHINXLINT) -i tools -i $(VENVDIR) --enable default-role
 
+.PHONY: _ensure-package
+_ensure-package: venv
+	if $(UV) --version >/dev/null 2>&1; then \
+		VIRTUAL_ENV=$(VENVDIR) $(UV) pip install $(PACKAGE); \
+	else \
+		$(VENVDIR)/bin/python3 -m pip install $(PACKAGE); \
+	fi
+
+.PHONY: _ensure-pre-commit
+_ensure-pre-commit:
+	make _ensure-package PACKAGE=pre-commit
+
 .PHONY: lint
-lint: venv
-	$(VENVDIR)/bin/python3 -m pre_commit --version > /dev/null || $(VENVDIR)/bin/python3 -m pip install pre-commit
+lint: _ensure-pre-commit
 	$(VENVDIR)/bin/python3 -m pre_commit run --all-files
 
-.PHONY: serve
-serve:
-	@echo "The 'serve' target was removed, use 'htmlview' instead" \
-	      "(see https://github.com/python/cpython/issues/80510)"
+# Defined so that "include/release-cycle.json"
+# doesn't fall through to the catch-all target.
+include/release-cycle.json:
+	@exit
 
-include/branches.csv: include/release-cycle.json
+$(_RELEASE_CYCLE): include/release-cycle.json
 	$(VENVDIR)/bin/python3 _tools/generate_release_cycle.py
-
-include/end-of-life.csv: include/release-cycle.json
-	$(VENVDIR)/bin/python3 _tools/generate_release_cycle.py
-
-include/release-cycle.svg: include/release-cycle.json
-	$(VENVDIR)/bin/python3 _tools/generate_release_cycle.py
-
-.PHONY: versions
-versions: venv include/branches.csv include/end-of-life.csv include/release-cycle.svg
 	@echo Release cycle data generated.
+
+# Catch-all target: route all unknown targets to Sphinx using the new
+# "make mode" option.
+.PHONY: Makefile
+%: Makefile ensure-venv $(_RELEASE_CYCLE)
+	$(SPHINXBUILD) -M $@ "." "$(BUILDDIR)" $(_ALL_SPHINX_OPTS)

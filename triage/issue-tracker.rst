@@ -50,23 +50,17 @@ Reporting an issue
 ------------------
 
 If the problem you're reporting is not already in the `issue tracker`_, you
-can report it using the green "New issue" button on the right of the search
+can report it using the green :guilabel:`New issue` button on the right of the search
 box above the list of bugs. If you're not already signed in to GitHub, it
 will ask you to do so now.
 
 First you need to select what kind of problem you want to report. The
-available choices are:
+available choices include, for example:
 
-* **Bug report**: an existing feature isn't working as expected;
-* **Documentation**: there is missing, invalid, or misleading documentation;
-* **Enhancement**: suggest a new feature for Python;
-* **Performance**: something should work faster;
-* **Security**: there is a specific kind of weakness open to exploitation
-  through the points of vulnerability;
-* **Tests**: something is wrong with CPython's suite of regression tests;
-* **Discuss**: you'd like to learn more about Python, discuss ideas for
-  possible changes to future Python versions, track core development
-  discussions, or join a specific special-interest group.
+* **Bug report**: an existing feature isn't working as expected.
+* **Documentation**: there is missing, invalid, or misleading documentation.
+* **Feature or enhancement**: suggest a new feature for Python.
+* **Report a security vulnerability**: privately report a security vulnerability.
 
 Depending on your choice, a dedicated form template will appear.
 In particular, you'll notice that the last button actually takes you to
@@ -159,6 +153,6 @@ reason either as ``complete`` or ``not planned``.
 .. _Python Discourse: https://discuss.python.org/
 .. _autolinks: https://docs.github.com/en/get-started/writing-on-github/working-with-advanced-formatting/autolinked-references-and-urls
 .. _checklists: https://docs.github.com/en/get-started/writing-on-github/working-with-advanced-formatting/about-task-lists
-.. _duplicates: https://docs.github.com/en/issues/tracking-your-work-with-issues/marking-issues-or-pull-requests-as-a-duplicate
+.. _duplicates: https://docs.github.com/en/issues/tracking-your-work-with-issues/administering-issues/marking-issues-or-pull-requests-as-a-duplicate
 .. _Core Development Discourse category: https://discuss.python.org/c/core-dev/23
 .. _old bug tracker: https://bugs.python.org/

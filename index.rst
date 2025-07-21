@@ -1,3 +1,5 @@
+.. _devguide-main:
+
 ========================
 Python Developer's Guide
 ========================
@@ -22,7 +24,7 @@ community that maintains Python.  We welcome your contributions to Python!
 Quick reference
 ---------------
 
-Here are the basic steps needed to get set up and contribute a patch.
+Here are the basic steps needed to get set up and contribute a pull request.
 This is meant as a checklist, once you know the basics. For complete
 instructions please see the :ref:`setup guide <setup>`.
 
@@ -41,13 +43,13 @@ instructions please see the :ref:`setup guide <setup>`.
 
       .. code-block:: shell
 
-         ./configure --with-pydebug && make -j
+         ./configure --with-pydebug && make -j $(nproc)
 
    .. tab:: macOS
 
       .. code-block:: shell
 
-         ./configure --with-pydebug && make -j
+         ./configure --with-pydebug && make -j8
 
    .. tab:: Windows
 
@@ -58,7 +60,7 @@ instructions please see the :ref:`setup guide <setup>`.
    See also :ref:`more detailed instructions <compiling>`,
    :ref:`how to install and build dependencies <build-dependencies>`,
    and the platform-specific pages for :ref:`Unix <unix-compiling>`,
-   :ref:`macOS`, and :ref:`Windows <windows-compiling>`.
+   :ref:`macOS <macOS>`, and :ref:`Windows <windows-compiling>`.
 
 4. :ref:`Run the tests <runtests>`:
 
@@ -72,7 +74,7 @@ instructions please see the :ref:`setup guide <setup>`.
 
       .. code-block:: shell
 
-         ./python.exe -m test -j3
+         ./python.exe -m test -j8
 
       Note: :ref:`Most <mac-python.exe>` macOS systems use
       :file:`./python.exe` in order to avoid filename conflicts with
@@ -84,12 +86,12 @@ instructions please see the :ref:`setup guide <setup>`.
 
          .\python.bat -m test -j3
 
-5. Create a new branch where your work for the issue will go, e.g.::
+5. Create a new branch where your work for the issue will go, for example::
 
       git checkout -b fix-issue-12345 main
 
    If an issue does not already exist, please `create it
-   <https://github.com/python/cpython/issues>`_.  Trivial issues (e.g. typo fixes) do
+   <https://github.com/python/cpython/issues>`_.  Trivial issues (for example, typo fixes) do
    not require any issue to be created.
 
 6. Once you fixed the issue, run the tests, and the patchcheck:
@@ -124,9 +126,9 @@ instructions please see the :ref:`setup guide <setup>`.
 
 8. Add a News entry into the ``Misc/NEWS.d`` directory as individual file. The
    news entry can be created by using `blurb-it <https://blurb-it.herokuapp.com/>`_,
-   or the `blurb <https://pypi.org/project/blurb/>`_ tool and its ``blurb add``
+   or the :pypi:`blurb` tool and its ``blurb add``
    command. Please read more about ``blurb`` in its
-   `repository <https://github.com/python/core-workflow/tree/main/blurb>`_.
+   `repository <https://github.com/python/blurb>`_.
 
 .. note::
 
@@ -167,15 +169,15 @@ Core developers and contributors alike will find the following guides useful:
 Guide for contributing to Python:
 
 ======================== =================== ======================= =======================
-Contributors             Documentarians      Triagers                Core Developers
+Contributors             Documentarians      Triagers                Core team
 ======================== =================== ======================= =======================
 :ref:`setup`             :ref:`docquality`   :ref:`tracker`          :ref:`responsibilities`
 :ref:`help`              :ref:`documenting`  :ref:`triaging`         :ref:`developers`
 :ref:`pullrequest`       :ref:`style-guide`  :ref:`helptriage`       :ref:`committing`
 :ref:`runtests`          :ref:`rst-primer`   :ref:`experts`          :ref:`devcycle`
 :ref:`fixingissues`      :ref:`translating`  :ref:`labels`           :ref:`motivations`
-:ref:`communication`     :ref:`devguide`     :ref:`gh-faq`           :ref:`office hour`
-:ref:`gitbootcamp`                           :ref:`triage-team`      :ref:`experts`
+:ref:`communication`     :ref:`devguide`     :ref:`gh-faq`           :ref:`experts`
+:ref:`gitbootcamp`                           :ref:`triage-team`
 :ref:`devcycle`
 ======================== =================== ======================= =======================
 
@@ -287,9 +289,9 @@ Please note that all interactions on
 `Python Software Foundation <https://www.python.org/psf-landing/>`__-supported
 infrastructure is `covered
 <https://www.python.org/psf/records/board/minutes/2014-01-06/#management-of-the-psfs-web-properties>`__
-by the `PSF Code of Conduct <https://www.python.org/psf/conduct/>`__,
+by the `PSF Code of Conduct <https://policies.python.org/python.org/code-of-conduct/>`__,
 which includes all infrastructure used in the development of Python itself
-(e.g. mailing lists, issue trackers, GitHub, etc.).
+(for example, mailing lists, issue trackers, GitHub, etc.).
 In general this means everyone is expected to be open, considerate, and
 respectful of others no matter what their position is within the project.
 
@@ -312,9 +314,10 @@ Full table of contents
    documentation/index
    testing/index
    development-tools/index
-   core-developers/index
+   core-team/index
    internals/index
    versions
+   contrib/index
 
 .. _Buildbot status: https://www.python.org/dev/buildbot/
 .. _Misc directory: https://github.com/python/cpython/tree/main/Misc
@@ -322,7 +325,7 @@ Full table of contents
 .. _python.org maintenance: https://pythondotorg.readthedocs.io/
 .. _Python: https://www.python.org/
 .. _Core Python Mentorship: https://www.python.org/dev/core-mentorship/
-.. _PyPy: https://www.pypy.org
+.. _PyPy: https://pypy.org
 .. _Jython: https://www.jython.org/
 .. _IronPython: https://ironpython.net/
 .. _Stackless: https://github.com/stackless-dev/stackless/wiki/

@@ -22,8 +22,10 @@ Element                 Markup                                      See also
 arguments/parameters    ``*arg*``                                   :ref:`inline-markup`
 variables/literals/code ````foo````, ````42````, ````len(s) - 1```` :ref:`inline-markup`
 True/False/None         ````True````, ````False````, ````None````   :ref:`inline-markup`
-functions definitions   ``.. function:: print(*args)``              :ref:`directives`
-functions references    ``:func:`print```                           :ref:`roles`
+function definitions    ``.. function:: print(*args)``              :ref:`directives`
+function references     ``:func:`print```                           :ref:`roles`
+attribute definitions   ``.. attribute: `attr-name```               :ref:`information-units`
+attribute references    ``:attr:`attr-name```                       :ref:`roles`
 reference labels        ``.. _label-name:``                         :ref:`doc-ref-role`
 internal references     ``:ref:`label-name```                       :ref:`doc-ref-role`
 external links          ```Link text <https://example.com>`_``      :ref:`hyperlinks`
@@ -51,6 +53,22 @@ language, this will not take too long.
     The authoritative `reStructuredText User
     Documentation <https://docutils.sourceforge.io/rst.html>`_.
 
+
+Use of whitespace
+-----------------
+
+All reST files use an indentation of 3 spaces; no tabs are allowed.  The
+maximum line length is 80 characters for normal text, but tables, deeply
+indented code samples and long links may extend beyond that.  Code example
+bodies should use normal Python 4-space indentation.
+
+Make use of multiple blank lines where applicable to clarify the structure of
+the reST file.  Extra blank lines help group sections together to make the
+organization of the file clearer.
+
+A sentence-ending period may be followed by one or two spaces. While reST
+ignores the second space, it is customarily put in by some users, for example
+to aid Emacs' auto-fill mode.
 
 Paragraphs
 ----------
@@ -289,6 +307,28 @@ There are some problems one commonly runs into while authoring reST documents:
   separated from the surrounding text by non-word characters, you have to use
   an escaped space to get around that.
 
+
+Typographic conventions
+=======================
+
+Big *O* notation
+----------------
+
+Big *O* notation is used to describe the performance of algorithms.
+
+Use italics for the big *O* and variables. For example:
+
+======================== ====================
+reStructuredText         Rendered
+======================== ====================
+``*O*\ (1)``             *O*\ (1)
+``*O*\ (log *n*)``       *O*\ (log *n*)
+``*O*\ (*n*)``           *O*\ (*n*)
+``*O*\ (*n* log *n*)``   *O*\ (*n* log *n*)
+``*O*\ (*n*\ :sup:`2`)`` *O*\ (*n*\ :sup:`2`)
+======================== ====================
+
+
 .. _additional-markup-constructs:
 
 Additional markup constructs
@@ -345,7 +385,7 @@ As you can see, the module-specific markup consists of two directives, the
 .. describe:: module
 
    This directive marks the beginning of the description of a module, package,
-   or submodule. The name should be fully qualified (i.e. including the
+   or submodule. The name should be fully qualified (that is, including the
    package name for submodules).
 
    The ``platform`` option, if present, is a comma-separated list of the
@@ -403,7 +443,7 @@ The directives are:
 
 .. describe:: c:function
 
-   Describes a C function. The signature should be given as in C, e.g.::
+   Describes a C function. The signature should be given as in C, for example::
 
       .. c:function:: PyObject* PyType_GenericAlloc(PyTypeObject *type, Py_ssize_t nitems)
 
@@ -527,6 +567,10 @@ The directives are:
 
             Description of the attribute.
 
+   Refer to an attribute using the ``:attr:`` role::
+
+      Use the :attr:`ham` attribute to spam the eggs.
+
    If is also possible to document an attribute outside of a class directive,
    for example if the documentation for different attributes and methods is
    split in multiple sections.  The class name should then be included
@@ -639,7 +683,7 @@ Syntax highlighting is handled in a smart way:
   encountered.
 
 * The ``code-block`` directive can be used to specify the highlight language
-  of a single code block, e.g.::
+  of a single code block, for example::
 
      .. code-block:: c
 
@@ -661,13 +705,20 @@ Syntax highlighting is handled in a smart way:
 
 Longer displays of verbatim text may be included by storing the example text in
 an external file containing only plain text.  The file may be included using the
-``literalinclude`` directive. [1]_ For example, to include the Python source
+``literalinclude`` directive. For example, to include the Python source
 file :file:`example.py`, use::
 
    .. literalinclude:: example.py
 
 The file name is relative to the current file's path.  Documentation-specific
 include files should be placed in the ``Doc/includes`` subdirectory.
+
+.. note::
+
+   There is a standard ``include`` directive, but it raises errors if the
+   file is not found.  ``literalinclude`` is preferred because it only emits a
+   warning instead of raising an error.
+
 
 .. _rest-inline-markup:
 .. _roles:
@@ -687,9 +738,12 @@ where simpler markup should be used:
 
 In addition, the CPython documentation defines a few custom roles:
 
-* ``:gh:`ID```: creates a link to a GitHub issue.
-* ``:issue:`ID```: creates a link to a bugs.python.com issue.
-* ``:source:`PATH```: creates a link to a source file on GitHub.
+* ``:cve:`YYYY-NNNNN```: link to a Common Vulnerabilities and Exposures entry.
+* ``:cwe:`NNN```: link to a Common Weakness Enumeration entry.
+* ``:gh:`ID```: link to a GitHub issue.
+* ``:issue:`ID```: link to a bugs.python.com issue.
+* ``:pypi:`NAME```: link to a project on PyPI.
+* ``:source:`PATH```: link to a source file on GitHub.
 
 There are some additional facilities that make cross-referencing roles more
 versatile:
@@ -705,8 +759,12 @@ versatile:
   ``:meth:`~Queue.Queue.get``` will refer to ``Queue.Queue.get`` but only
   display ``get`` as the link text.
 
-  In HTML output, the link's ``title`` attribute (that is e.g. shown as a
+  In HTML output, the link's ``title`` attribute (that might be shown as a
   tool-tip on mouse-hover) will always be the full target name.
+
+* Combining ``~`` and ``!`` (for example, ``:meth:`~!Queue.Queue.get```) is not
+  supported.  You can obtain the same result by using ``!`` and the last
+  component of the target (for example, ``:meth:`!get```).
 
 The following roles refer to objects in modules and are possibly hyperlinked if
 a matching identifier is found:
@@ -891,7 +949,7 @@ in a different style:
 .. describe:: manpage
 
    A reference to a Unix manual page including the section,
-   e.g. ``:manpage:`ls(1)```.
+   for example, ``:manpage:`ls(1)```.
 
 .. describe:: menuselection
 
@@ -1025,8 +1083,11 @@ units as well as normal text:
    (``class``, ``attribute``, ``function``, ``method``, ``c:type``, etc),
    a ``versionadded`` should be included at the end of its description block.
 
-   The first argument must be given and is the version in question.  The second
-   argument is optional and can be used to describe the details of the feature.
+   The first argument must be given and is the version in question.
+   Instead of a specific version number, you can---and should---use
+   the word ``next``, indicating that the API will first appear in the
+   upcoming release.
+   The second argument is optional and can be used to describe the details of the feature.
 
    Example::
 
@@ -1034,7 +1095,26 @@ units as well as normal text:
 
          Return foo and bar.
 
-         .. versionadded:: 3.5
+         .. versionadded:: next
+
+   When a release is made, the release manager will change the ``next`` to
+   the just-released version. For example, if ``func`` in the above example is
+   released in 3.14, the snippet will be changed to::
+
+      .. function:: func()
+
+         Return foo and bar.
+
+         .. versionadded:: 3.14
+
+   The tool to do this replacement is `update_version_next.py`_
+   in the release-tools repository.
+
+   .. _update_version_next.py: https://github.com/python/release-tools/blob/master/update_version_next.py
+
+   When adding documentation for a function that existed in a past version,
+   but wasn't documented yet, use the version number where the function was
+   added instead of ``next``.
 
 .. describe:: versionchanged
 
@@ -1048,7 +1128,7 @@ units as well as normal text:
 
          Return foo and bar, optionally with *spam* applied.
 
-         .. versionchanged:: 3.6
+         .. versionchanged:: next
             Added the *spam* parameter.
 
    Note that there should be no blank line between the directive head and the
@@ -1060,10 +1140,12 @@ units as well as normal text:
 
    There is one required argument: the version from which the feature is
    deprecated.
+   Similarly to ``versionadded``, you should use the word ``next`` to indicate
+   the API will be first deprecated in the upcoming release.
 
    Example::
 
-      .. deprecated:: 3.8
+      .. deprecated:: next
 
 .. describe:: deprecated-removed
 
@@ -1071,16 +1153,17 @@ units as well as normal text:
    removed.
 
    There are two required arguments: the version from which the feature is
-   deprecated, and the version in which the feature is removed.
+   deprecated (usually ``next``), and the version in which the feature
+   is removed, which must be a specific version number (*not* ``next``).
 
    Example::
 
-      .. deprecated-removed:: 3.8 4.0
+      .. deprecated-removed:: next 4.0
 
 .. describe:: impl-detail
 
    This directive is used to mark CPython-specific information.  Use either with
-   a block content or a single sentence as an argument, i.e. either ::
+   a block content or a single sentence as an argument, that is, either ::
 
       .. impl-detail::
 
@@ -1131,6 +1214,9 @@ units as well as normal text:
 
 Table-of-contents markup
 ------------------------
+
+.. TODO: This is a copy of the Sphinx description of the toctree directive.
+   Why duplicate it here?
 
 Since reST does not have facilities to interconnect several documents, or split
 documents into multiple output files, Sphinx uses a custom directive to add
@@ -1246,7 +1332,7 @@ the definition of the symbol.  There is this directive:
    Blank lines are not allowed within ``productionlist`` directive arguments.
 
    The definition can contain token names which are marked as interpreted text
-   (e.g. ``unaryneg ::= "-" `integer```) -- this generates cross-references
+   (for example, ``unaryneg ::= "-" `integer```) -- this generates cross-references
    to the productions of these tokens.
 
    Note that no further reST parsing is done in the production, so that you
@@ -1276,21 +1362,15 @@ default. They are set in the build configuration file :file:`conf.py`.
 .. describe:: |release|
 
    Replaced by the Python release the documentation refers to.  This is the full
-   version string including alpha/beta/release candidate tags, e.g. ``2.5.2b3``.
+   version string including alpha/beta/release candidate tags, for example, ``2.5.2b3``.
 
 .. describe:: |version|
 
    Replaced by the Python version the documentation refers to. This consists
-   only of the major and minor version parts, e.g. ``2.5``, even for version
+   only of the major and minor version parts, for example, ``2.5``, even for version
    2.5.1.
 
 .. describe:: |today|
 
    Replaced by either today's date, or the date set in the build configuration
    file.  Normally has the format ``April 14, 2007``.
-
-
-.. rubric:: Footnotes
-
-.. [1] There is a standard ``include`` directive, but it raises errors if the
-       file is not found.  This one only emits a warning.

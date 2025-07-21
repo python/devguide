@@ -9,7 +9,7 @@ When running Python's test suite, no warnings should result when you run it
 under :ref:`strenuous testing conditions <strenuous_testing>` (you can ignore
 the extra flags passed to ``test`` that cause randomness and parallel execution
 if you want). Unfortunately new warnings are added to Python on occasion which
-take some time to eliminate (e.g., ``ResourceWarning``). Typically the easy
+take some time to eliminate (for example, ``ResourceWarning``). Typically the easy
 warnings are dealt with quickly, but the more difficult ones that require some
 thought and work do not get fixed immediately.
 

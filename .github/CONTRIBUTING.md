@@ -29,17 +29,17 @@ our workflow that are not covered by a bot or status check are:
 
 ## Setting Expectations
 
-Due to the fact that this project is entirely volunteer-run (i.e. no one is paid
+Due to the fact that this project is entirely volunteer-run (that is, no one is paid
 to work on Python full-time), we unfortunately can make no guarantees as to if
 or when a core developer will get around to reviewing your pull request.
 If no core developer has done a review or responded to changes made because of a
-"changes requested" review, please feel free to email [python-dev](https://mail.python.org/mailman3/lists/python-dev.python.org/) to ask if
-someone could take a look at your pull request.
+"changes requested" review, please consider seeking assistance through the
+[Core Development Discourse category](https://discuss.python.org/c/core-dev/23).
 
 
 ## Code of Conduct
 
 All interactions for this project are covered by the
-[PSF Code of Conduct](https://www.python.org/psf/conduct/). Everyone is
+[PSF Code of Conduct](https://policies.python.org/python.org/code-of-conduct/). Everyone is
 expected to be open, considerate, and respectful of others no matter their
 position within the project.

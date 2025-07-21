@@ -41,7 +41,7 @@ Component labels
 ================
 
 These labels are mostly used to specify which :ref:`part of the codebase
-<build-directory-structure>` is affected by the issue/PR:
+<build_directory_structure>` is affected by the issue/PR:
 
 * :gh-label:`stdlib`: for standard library modules in the :cpy-file:`Lib`
   directory (written in Python).
@@ -61,9 +61,19 @@ OS labels
 
 These labels are used to specify which operating systems are affected.
 Since most issues either affect all systems or are specific to Unix,
-the only available labels are :gh-label:`OS-windows`, :gh-label:`OS-mac`,
-and :gh-label:`OS-freebsd`.
+we don't have a dedicated Unix label.
 
+* :gh-label:`OS-android`
+* :gh-label:`OS-freebsd`
+* :gh-label:`OS-ios`
+* :gh-label:`OS-linux`
+* :gh-label:`OS-windows`
+
+Use the :gh-label:`OS-unsupported` label for issues on platforms outside the
+support tiers defined in :pep:`11`. Applying this label adds the issue to
+`a GitHub project <https://github.com/orgs/python/projects/27/views/1>`_ where
+it can be categorized further.
+See also the :ref:`Platform experts list <platform-experts>`.
 
 .. _Expert labels:
 .. _Topic labels:
@@ -90,7 +100,7 @@ Version labels
 
 These labels are used to indicate which versions of Python are affected.
 The available version labels (with the form :samp:`3.{N}`) are updated
-whenever new major releases are created or retired.
+whenever new feature releases are created or retired.
 
 See also :ref:`the branch status page <branchstatus>`
 for a list of active branches.
@@ -104,21 +114,23 @@ for a list of active branches.
 Other labels
 ============
 
-* :gh-label:`triaged`: for issue has been accepted as valid by a triager.
-* :gh-label:`easy`: for issues that are considered easy.
 * :gh-label:`build`/:gh-label:`performance`: for issues related
   to the build process or performance, respectively.
+* :gh-label:`easy`: for issues that are considered easy.
+* :gh-label:`infra`: for issues related to the infrastructure of the
+  project (for example, GitHub Actions, dependabot, the buildbots).
+* :gh-label:`pending`: for issues/PRs that will be closed unless further
+  feedback is provided.
 * :gh-label:`release-blocker`/:gh-label:`deferred-blocker`: for issues/PRs
   that, unless fixed, will hold the current or next release respectively.
   Triagers may set these labels for issues that must be fixed before a release,
   and the :ref:`branch's release manager <branchstatus>`
   will review them and determine if they indeed qualify,
   removing or retaining the label as appropriate.
-* :gh-label:`pending`: for issues/PRs that will be closed unless further
-  feedback is provided.
-* :gh-label:`stale`: for issues/PRs that have been inactive for a while.
 * :gh-label:`sprint`: for easier filtering of issues/PRs being worked on
   during official sprints.
+* :gh-label:`stale`: for issues/PRs that have been inactive for a while.
+* :gh-label:`triaged`: for issues that have been accepted as valid by a triager.
 
 
 .. _GitHub Labels for PRs:
@@ -140,12 +152,13 @@ to trigger specific bot behaviors.
   by these labels.
   See also :ref:`the status of the Python branches <branchstatus>` for a list
   of branches and the type of PRs that can be backported to them.
-* :gh-label:`skip issue`: for trivial changes (such as typo fixes, comment
+* :gh-label:`skip issue <skip%20issue>`: for trivial changes (such as
+  typo fixes, comment
   changes, and section rephrases) that don't require a corresponding issue.
-* :gh-label:`skip news`: for PRs that don't need a NEWS entry.
+* :gh-label:`skip news <skip%20news>`: for PRs that don't need a NEWS entry.
   The :ref:`news-entry` section covers in details in which cases the NEWS entry
   can be skipped.
-* :gh-label:`test-with-buildbots`: used to test the latest commit with
+* :gh-label:`🔨 test-with-buildbots <%3Ahammer%3A%20test-with-buildbots>`: used to test the latest commit with
   the :ref:`buildbot fleet <buildbots>` whenever more testing is required
   before merging.  This may take multiple hours to complete.
 * :samp:`awaiting {action}`: these labels are applied and used by `bedevere`_
