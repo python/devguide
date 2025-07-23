@@ -48,11 +48,22 @@ after each commit. In particular, reference leaks builds take several hours to
 complete so they are done periodically. This is why it's important for you to
 be able to check the results yourself, too.
 
-Triggering a buildbot on a pull request
-=======================================
+Triggering buildbots on a pull request
+======================================
 
-If you want a pull request tested against a given platform, you can trigger one
-or more build bots by posting a comment that begins with:
+To trigger buildbots on a pull request you need to be a CPython triager or a
+core developer. If you are not, ask someone to trigger them on your behalf.
+
+The simplest way to trigger most buildbots on your PR is with the
+:gh-label:`🔨 test-with-buildbots` and :gh-label:`🔨 test-with-refleak-buildbots`
+labels. (See :ref:`github-pr-labels`.)
+
+These will run buildbots on the most recent commit. If you want to trigger the
+buildbots again on a later commit, you'll have to remove the label and add it
+again.
+
+If you want to test a pull request against specific platforms, you can trigger
+one or more build bots by posting a comment that begins with:
 
 .. code-block:: none
 
@@ -67,6 +78,10 @@ For example to run both the iOS and Android build bot, you can use:
 bedevere-bot will post a comment indicating which build bots, if
 any, were matched. If none were matched, or you do not have the
 necessary permissions to trigger a request, it will tell you that too.
+
+The ``!buildbot`` comment will also only run buildbots on the most recent
+commit. To trigger the buildbots again on a later commit, you will have to
+repeat the comment.
 
 Checking results of automatic builds
 ====================================
