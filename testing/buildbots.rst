@@ -48,8 +48,8 @@ after each commit. In particular, reference leaks builds take several hours to
 complete so they are done periodically. This is why it's important for you to
 be able to check the results yourself, too.
 
-Triggering buildbots on a pull request
-======================================
+Triggering on pull requests
+===========================
 
 To trigger buildbots on a pull request you need to be a CPython triager or a
 core team member. If you are not, ask someone to trigger them on your behalf.
