@@ -218,10 +218,10 @@ developers to work on them.  Some major examples that may be of interest are:
 
 * PyPy_: A Python interpreter focused on high speed (JIT-compiled) operation
   on major platforms.
+* GraalPy_: Another Python interpreter which has first-class support for
+  embedding in Java, built on GraalVM.
 * Jython_: A Python interpreter focused on good integration with the Java
   Virtual Machine (JVM) environment.
-* GraalPy: Another Python interpreter which has first-class support for
-  embedding in Java, built on GraalVM.
 * IronPython_: A Python interpreter focused on good integration with the
   Common Language Runtime (CLR) provided by .NET and Mono.
 * Stackless_: A Python interpreter focused on providing lightweight
@@ -325,6 +325,7 @@ Full table of contents
 .. _Python: https://www.python.org/
 .. _Core Python Mentorship: https://www.python.org/dev/core-mentorship/
 .. _PyPy: https://www.pypy.org
+.. _GraalPy: https://www.graalvm.org/python/
 .. _Jython: https://www.jython.org/
 .. _IronPython: https://ironpython.net/
 .. _Stackless: https://github.com/stackless-dev/stackless/wiki/
