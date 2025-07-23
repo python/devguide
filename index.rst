@@ -218,7 +218,7 @@ developers to work on them.  Some major examples that may be of interest are:
 
 * PyPy_: A Python interpreter focused on high speed (JIT-compiled) operation
   on major platforms.
-* GraalPy_: Another Python interpreter which has first-class support for
+* GraalPy_: A Python interpreter which has first-class support for
   embedding in Java, built on GraalVM.
 * Jython_: A Python interpreter focused on good integration with the Java
   Virtual Machine (JVM) environment.
