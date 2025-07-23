@@ -52,7 +52,7 @@ Triggering buildbots on a pull request
 ======================================
 
 To trigger buildbots on a pull request you need to be a CPython triager or a
-core developer. If you are not, ask someone to trigger them on your behalf.
+core team member. If you are not, ask someone to trigger them on your behalf.
 
 The simplest way to trigger most buildbots on your PR is with the
 :gh-label:`🔨 test-with-buildbots` and :gh-label:`🔨 test-with-refleak-buildbots`
