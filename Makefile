@@ -10,8 +10,8 @@ SPHINXBUILD  = $(VENVDIR)/bin/sphinx-build
 # there are duplicate labels.  These cause warnings, which prevent the
 # build from finishing.  Turn off --fail-on-warning so we can see the
 # finished results.
-#SPHINXOPTS   = --fail-on-warning --keep-going
-SPHINXOPTS   = --keep-going
+#SPHINXOPTS   = --fail-on-warning
+SPHINXOPTS   =
 BUILDDIR     = _build
 BUILDER      = html
 JOBS         = auto
@@ -58,6 +58,7 @@ venv:
 .PHONY: ensure-venv
 ensure-venv:
 	@if [ ! -d $(VENVDIR) ] ; then \
+		set -e; \
 		echo "Creating venv in $(VENVDIR)"; \
 		if $(UV) --version >/dev/null 2>&1; then \
 			$(UV) venv --python=$(PYTHON) $(VENVDIR); \

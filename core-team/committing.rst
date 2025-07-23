@@ -62,7 +62,8 @@ to enter the public source tree. Ask yourself the following questions:
    Licensing Agreement <https://www.python.org/psf/contrib/contrib-form/>`_
    (CLA), unless their change has no possible intellectual property
    associated with it (for example, fixing a spelling mistake in documentation).
-   The `CPython CLA Bot <https://github.com/apps/cpython-cla-bot/>`_
+   The `Python Software Foundation Contributor License Agreement Management Bot
+   <https://github.com/psf/clabot>`_
    checks whether the author has signed the CLA, and replies in the PR
    if they haven't. For further questions about the CLA
    process, write to contributors@python.org.

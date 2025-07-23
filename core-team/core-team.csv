@@ -1,5 +1,8 @@
+Tomas Roun,tomasr8,2025-06-16,,
+Peter Bierma,ZeroIntensity,2025-06-16,,
+Diego Russo,diegorusso,2025-05-13,,
 Bénédikt Tran,picnixz,2025-01-10,,
-Savannah Ostrowski,savannahostrowski,2024-11-13,,
+Savannah Bailey,savannahostrowski,2024-11-13,,
 Matt Page,mpage,2024-10-10,,
 Kirill Podoprigora,Eclips4,2024-09-20,,
 Ned Batchelder,nedbat,2024-07-16,,
@@ -31,7 +34,7 @@ Kyle Stanley,aeros,2020-04-14,,
 Donghee Na,corona10,2020-04-08,,
 Karthikeyan Singaravelan,tirkarthi,2019-12-31,,
 Joannah Nanjekye,nanjekyejoannah,2019-09-23,,
-Abhilash Raj,maxking,2019-08-06,2022-11-30,"Privileges relinquished on 2022-11-30"
+Abhilash Raj,maxking,2019-08-06,2022-11-30,Privileges relinquished on 2022-11-30
 Paul Ganssle,pganssle,2019-06-15,,
 Stéphane Wirtel,matrixise,2019-04-08,,
 Stefan Behnel,scoder,2019-04-08,,
@@ -75,7 +78,7 @@ Sandro Tosi,sandrotosi,2011-08-01,,
 Alex Gaynor,alex,2011-07-18,,For PyPy compatibility (since expanded scope)
 Charles-François Natali,,2011-05-19,2017-02-10,Did not make GitHub transition
 Nadeem Vawda,,2011-04-10,2017-02-10,Did not make GitHub transition
-Carl Friedrich Bolz-Tereick,cfbolz,2011-03-21,,for stdlib compatibility work for PyPy
+CF Bolz-Tereick,cfbolz,2011-03-21,,for stdlib compatibility work for PyPy
 Jason R. Coombs,jaraco,2011-03-14,,For sprinting on distutils2
 Ross Lagerwall,,2011-03-13,2017-02-10,Did not make GitHub transition
 Eli Bendersky,eliben,2011-01-11,2020-11-26,Relinquished privileges on 2020-11-26
@@ -116,7 +119,7 @@ Benjamin Peterson,benjaminp,2008-03-25,,For bug triage
 David Wolever,wolever,2008-03-17,2020-11-21,For 2to3 module
 Trent Nelson,tpn,2008-03-17,,
 Mark Dickinson,mdickinson,2008-01-06,2024-08-13,For maths-related work
-Amaury Forgeot d'Arc,amauryfa,2007-11-09,2020-11-26,"Relinquished privileges on 2020-11-26"
+Amaury Forgeot d'Arc,amauryfa,2007-11-09,2020-11-26,Relinquished privileges on 2020-11-26
 Christian Heimes,tiran,2007-10-31,,
 Bill Janssen,,2007-08-28,2017-02-10,For ssl module; did not make GitHub transition
 Jeffrey Yasskin,,2007-08-09,2017-02-10,Did not make GitHub transition
@@ -142,9 +145,9 @@ Facundo Batista,facundobatista,2004-10-16,,
 Sean Reifschneider,,2004-09-17,2017-02-10,Did not make GitHub transition
 Johannes Gijsbers,,2004-08-14,2005-07-27,Privileges relinquished on 2005-07-27
 Matthias Klose,doko42,2004-08-04,,
-PJ Eby,pjeby,2004-03-24,2020-11-26,"Relinquished privileges on 2020-11-26"
+PJ Eby,pjeby,2004-03-24,2020-11-26,Relinquished privileges on 2020-11-26
 Vinay Sajip,vsajip,2004-02-20,,
-Hye-Shik Chang,hyeshik,2003-12-10,2025-02-28,"Relinquished privileges on 2025-02-28"
+Hye-Shik Chang,hyeshik,2003-12-10,2025-02-28,Privileges relinquished on 2025-02-28
 Armin Rigo,,2003-10-24,2012-06-01,Privileges relinquished in 2012
 Andrew McNamara,,2003-06-09,2017-02-10,Did not make GitHub transition
 Samuele Pedroni,,2003-05-16,2017-02-10,Did not make GitHub transition
@@ -157,7 +160,7 @@ Steve Holden,holdenweb,2002-06-14,2017-02-10,"Relinquished privileges on 2005-04
         but granted again for Need for Speed sprint; did not make GitHub transition"
 Christian Tismer,ctismer,2002-05-17,,For Need for Speed sprint
 Jason Tishler,,2002-05-15,2017-02-10,Did not make GitHub transition
-Walter Dörwald,doerwalter,2002-03-21,2021-11-16,"Relinquished privileges on 2021-11-16"
+Walter Dörwald,doerwalter,2002-03-21,2021-11-16,Relinquished privileges on 2021-11-16
 Andrew MacIntyre,,2002-02-17,2016-01-02,Privileges relinquished 2016-01-02
 Gregory P. Smith,gpshead,2002-01-08,,
 Anthony Baxter,,2001-12-21,2017-02-10,Did not make GitHub transition

@@ -1,3 +1,5 @@
+import json
+
 extensions = [
     'notfound.extension',
     'sphinx.ext.extlinks',
@@ -84,18 +86,10 @@ linkcheck_anchors_ignore = [
     r'\/.*',
 ]
 
-# Check the link itself, but ignore anchors that are added by JS
-# https://www.sphinx-doc.org/en/master/usage/configuration.html#confval-linkcheck_anchors_ignore_for_url
-linkcheck_anchors_ignore_for_url = [
-    # GitHub
-    r'https://github.com/.*',
-]
-
 linkcheck_ignore = [
-    # The voters repo is private and appears as a 404
-    'https://github.com/python/voters',
-    # The python-core team link is private, redirects to login
-    'https://github.com/orgs/python/teams/python-core',
+    # Checks fail due to rate limits
+    r'https://github.com/.*',
+    r'https://www.gnu.org/software/autoconf/',
     # The Discourse groups are private unless you are logged in
     'https://discuss.python.org/groups/staff',
     'https://discuss.python.org/groups/moderators',
@@ -117,12 +111,21 @@ rediraffe_redirects = {
     # Advanced Tools was renamed Development Tools in gh-1149
     "advanced-tools/clang.rst": "development-tools/clang.rst",
     "advanced-tools/gdb.rst": "development-tools/gdb.rst",
-    # Core Developers
-    "coredev.rst": "core-developers/become-core-developer.rst",
-    "committing.rst": "core-developers/committing.rst",
-    "developers.rst": "core-developers/developer-log.rst",
-    "experts.rst": "core-developers/experts.rst",
-    "motivations.rst": "core-developers/motivations.rst",
+    # Core team
+    "coredev.rst": "core-team/join-team.rst",
+    "committing.rst": "core-team/committing.rst",
+    "developers.rst": "core-team/team-log.rst",
+    "experts.rst": "core-team/experts.rst",
+    "motivations.rst": "core-team/motivations.rst",
+    # core-developers/ -> core-team/
+    "core-developers/become-core-developer.rst": "core-team/join-team.rst",
+    "core-developers/committing.rst": "core-team/committing.rst",
+    "core-developers/developer-log.rst": "core-team/team-log.rst",
+    "core-developers/experts.rst": "core-team/experts.rst",
+    "core-developers/index.rst": "core-team/index.rst",
+    "core-developers/memorialization.rst": "core-team/memorialization.rst",
+    "core-developers/motivations.rst": "core-team/motivations.rst",
+    "core-developers/responsibilities.rst": "core-team/responsibilities.rst",
     # Developer Workflow
     "c-api.rst": "developer-workflow/c-api.rst",
     "communication.rst": "developer-workflow/communication-channels.rst",
@@ -135,6 +138,10 @@ rediraffe_redirects = {
     # Documentation
     "docquality.rst": "documentation/help-documenting.rst",
     "documenting.rst": "documentation/start-documenting.rst",
+    # Translating
+    "documentation/translating.rst": "documentation/translations/translating.rst",
+    "translating.rst": "documentation/translations/translating.rst",
+    "coordinating.rst": "documentation/translations/coordinating.rst",
     # Getting Started
     "fixingissues.rst": "getting-started/fixing-issues.rst",
     "help.rst": "getting-started/getting-help.rst",
@@ -169,8 +176,17 @@ todo_include_todos = True
 # sphinx-notfound-page
 notfound_urls_prefix = "/"
 
+# Dynamically expose the Python version associated with the "main" branch.
+# Exactly one entry in ``release-cycle.json`` should have ``"branch": "main"``.
+with open("include/release-cycle.json", encoding="UTF-8") as _f:
+    _cycle = json.load(_f)
+
+_main_version = next(
+    version for version, data in _cycle.items() if data.get("branch") == "main"
+)
+
 # prolog and epilogs
-rst_prolog = """
+rst_prolog = f"""
 .. |draft| replace::
     This is part of a **Draft** of the Python Contributor's Guide.
     Text in square brackets are notes about content to fill in.
@@ -186,6 +202,8 @@ rst_prolog = """
     discussion forum: `Refactoring the DevGuide`_.
 
 .. _Refactoring the DevGuide: https://discuss.python.org/t/refactoring-the-devguide-into-a-contribution-guide/63409
+
+.. |main_version| replace:: {_main_version}
 
 """
 

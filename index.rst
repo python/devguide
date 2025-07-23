@@ -43,13 +43,13 @@ instructions please see the :ref:`setup guide <setup>`.
 
       .. code-block:: shell
 
-         ./configure --with-pydebug && make -j
+         ./configure --with-pydebug && make -j $(nproc)
 
    .. tab:: macOS
 
       .. code-block:: shell
 
-         ./configure --with-pydebug && make -j
+         ./configure --with-pydebug && make -j8
 
    .. tab:: Windows
 
@@ -74,7 +74,7 @@ instructions please see the :ref:`setup guide <setup>`.
 
       .. code-block:: shell
 
-         ./python.exe -m test -j3
+         ./python.exe -m test -j8
 
       Note: :ref:`Most <mac-python.exe>` macOS systems use
       :file:`./python.exe` in order to avoid filename conflicts with
@@ -169,7 +169,7 @@ Core developers and contributors alike will find the following guides useful:
 Guide for contributing to Python:
 
 ======================== =================== ======================= =======================
-Contributors             Documentarians      Triagers                Core Developers
+Contributors             Documentarians      Triagers                Core team
 ======================== =================== ======================= =======================
 :ref:`setup`             :ref:`docquality`   :ref:`tracker`          :ref:`responsibilities`
 :ref:`help`              :ref:`documenting`  :ref:`triaging`         :ref:`developers`
@@ -314,7 +314,7 @@ Full table of contents
    documentation/index
    testing/index
    development-tools/index
-   core-developers/index
+   core-team/index
    internals/index
    versions
    contrib/index

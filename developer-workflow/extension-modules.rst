@@ -547,21 +547,24 @@ Now that the configuration is in place, it remains to compile the project:
 
 .. tip::
 
-   Use ``make -j`` to speed-up compilation by utilizing as many CPU cores
-   as possible or ``make -jN`` to allow at most *N* concurrent jobs.
+   Use ``make -jN`` to speed-up compilation by utilizing as many CPU cores
+   as possible, where *N* is as many CPU cores you want to spare (and have
+   memory for). Be careful using ``make -j`` with no argument, as this puts
+   no limit on the number of jobs, and compilation can sometimes use up a
+   lot of memory (like when building with LTO).
 
 * ``make regen-configure`` updates the :cpy-file:`configure` script.
 
-   The :cpy-file:`configure` script must be generated using a specific version
-   of ``autoconf``. To that end, the :cpy-file:`Tools/build/regen-configure.sh`
-   script which the ``regen-configure`` rule is based on either requires Docker
-   or Podman, the latter being assumed by default.
+  The :cpy-file:`configure` script must be generated using a specific version
+  of ``autoconf``. To that end, the :cpy-file:`Tools/build/regen-configure.sh`
+  script which the ``regen-configure`` rule is based on either requires Docker
+  or Podman, the latter being assumed by default.
 
-   .. tip::
+  .. tip::
 
-      We recommend installing `Podman <https://podman.io/docs/installation>`_
-      instead of Docker since the former does not require a background service
-      and avoids creating files owned by the ``root`` user in some cases.
+     We recommend installing `Podman <https://podman.io/docs/installation>`_
+     instead of Docker since the former does not require a background service
+     and avoids creating files owned by the ``root`` user in some cases.
 
 * ``make regen-all`` is responsible for regenerating header files and
   invoking other scripts, such as :ref:`Argument Clinic <clinic>`.

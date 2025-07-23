@@ -103,6 +103,10 @@ Then, run ``./configure`` with the relevant flags:
 * ASan: ``--with-address-sanitizer --without-pymalloc``
 * UBsan: ``--with-undefined-behavior-sanitizer``
 
+The ``--without-pymalloc`` option is not necessary (tests should pass without it),
+but disabling pymalloc helps ASan uncover more bugs (ASan does not track
+individual allocations done by pymalloc).
+
 It is OK to specify both sanitizers.
 
 After that, run ``make`` and ``make test`` as usual.

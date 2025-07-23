@@ -1,9 +1,10 @@
 .. _become-core-developer:
 .. _coredev:
+.. _join-core-team:
 
-==============================
-How to become a core developer
-==============================
+=========================
+How to join the core team
+=========================
 
 What it takes
 =============
@@ -38,10 +39,12 @@ are granted through these steps:
 #. If the candidate receives at least two-thirds positive votes when the poll closes
    (as per :pep:`13`), the submitter `emails the steering council
    <mailto:steering-council@python.org>`_ with the candidate's email address
-   requesting that the council either accept or reject the proposed membership.
+   requesting that the council either accept or reject the proposed membership.  Technically, the
+   council may only `veto a positive vote <https://peps.python.org/pep-0013/#membership>`_.
 
-#. Assuming the steering council does not object, a member of the council or delegate
-   (approver) will email the candidate:
+#. Assuming the steering council does not veto the positive vote, a member of the council or its
+   delegate (approver, usually in practice a :ref:`Developer-in-Residence <current owners>`) will
+   email the candidate:
 
    - A request for account details as required by
      `🔒 python/voters <https://github.com/python/voters>`_.
@@ -86,10 +89,11 @@ Here's what it outputs, you can copy and paste it for your poll:
    [/poll]
 
 The important options in the poll builder set to get this result:
- - Show who voted: **disabled** (``public=false``)
- - Limit voting to these groups: **committers** (``groups=committers``)
- - Automatically close poll: **in 7 days** (``close=...``)
- - Show results: **When poll is closed** (``results=on_close``)
+
+- Show who voted: **disabled** (``public=false``)
+- Limit voting to these groups: **committers** (``groups=committers``)
+- Automatically close poll: **in 7 days** (``close=...``)
+- Show results: **When poll is closed** (``results=on_close``)
 
 .. raw:: html
 

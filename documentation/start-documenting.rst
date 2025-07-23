@@ -76,12 +76,22 @@ To build the documentation, follow the steps in one of the sections below.
 You can view the documentation after building the HTML
 by opening the file :file:`Doc/build/html/index.html` in a web browser.
 
-.. note::
+Initial requirements
+--------------------
 
-   The following instructions all assume your current working dir is
-   the ``Doc`` subdirectory in your :ref:`CPython repository clone <checkout>`.
-   Make sure to switch to it with ``cd Doc`` if necessary.
+Ensure your current working directory is the top level ``Doc/`` directory
+inside your :ref:`CPython repository clone <checkout>`. You can switch to
+it with:
 
+.. code-block:: shell
+
+   cd Doc
+
+Ensure your Python version is at least 3.11. You can verify it with:
+
+.. code-block:: shell
+
+   python --version
 
 .. _doc-create-venv:
 
@@ -152,6 +162,25 @@ To build the docs as HTML, run:
          * Replace ``html`` with ``htmllive`` to rebuild the docs,
            start a local server, and automatically reload the page in your
            browser when you make changes to reST files (Unix only).
+
+It is also possible to build only certain pages of the documentation in order
+to save time during the build process. Following is an example for building two
+pages:
+
+.. tab:: Unix/macOS
+
+   .. code-block:: shell
+
+      make html SOURCES="tutorial/classes.rst tutorial/inputoutput.rst"
+
+.. tab:: Windows
+
+   See :ref:`using-sphinx-build`. When invoking ``sphinx-build``, pass the
+   desired pages as the final parameter, like so:
+
+   .. code-block:: dosbatch
+
+      python -m sphinx -b html . build/html tutorial/classes.rst tutorial/inputoutput.rst
 
 To check the docs for common errors with `Sphinx Lint`_
 (which is run on all :ref:`pull requests <pullrequest>`), use:
