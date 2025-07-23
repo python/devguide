@@ -135,6 +135,7 @@ Other labels
 
 .. _GitHub Labels for PRs:
 .. _github-pr-labels:
+
 Labels specific to PRs
 ======================
 
