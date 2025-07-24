@@ -31,7 +31,7 @@ If a coordinator can't complete the process for any reason (time obligation,
 vacation, etc.) they must find a replacement coordinator in the PSRT
 and reassign the vulnerability report appropriately.
 
-Coordinators are expected to collaborate with other PSRT members and core developers
+Coordinators are expected to collaborate with other PSRT and core team members
 when needed for guidance on whether the report is an actual vulnerability,
 severity, advisory text, and fixes.
 
@@ -74,7 +74,7 @@ severity, advisory text, and fixes.
 
 * The coordinator determines the fix approach and who will provide a fix.
   Some reporters are willing to provide or collaborate to create a fix,
-  otherwise relevant core developers can be invited to collaborate by
+  otherwise relevant core team members can be invited to collaborate by
   the coordinator.
 
   * For **Low** and **Medium** severity vulnerabilities it is acceptable
@@ -84,7 +84,7 @@ severity, advisory text, and fixes.
 
   * For **High** and **Critical** severity vulnerabilities the fix must be
     developed privately using GitHub Security Advisories' "Private Forks" feature.
-    Core developers can be added to the GitHub Security Advisory via "collaborators"
+    Core team members can be added to the GitHub Security Advisory via "collaborators"
     to work on the fix together. Once a fix is approved privately and tested,
     a public issue and pull request can be created with
     the ``security`` and ``release-blocker`` labels.

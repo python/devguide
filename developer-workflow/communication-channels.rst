@@ -84,10 +84,10 @@ take place in the open forum categories for `PEPs`_ and `Core Development`_
 (these are the Discourse equivalents to the python-dev mailing list).
 All categories are open for users to read and post with the exception of
 the `Committers`_ category, where posting is restricted to the `CPython
-<https://github.com/python/cpython>`_ core developers.
+<https://github.com/python/cpython>`_ core team.
 
 The Committers category is often used for announcements and notifications.
-It is also the designated venue for the core developer promotion votes.
+It is also the designated venue for the core team promotion votes.
 
 Tutorials for new users
 -----------------------
@@ -189,22 +189,22 @@ Discord (private chat server)
 =============================
 
 For more real-time discussions, the core development team have a private Discord
-server available. Core developers, Steering Council members, triagers, and
+server available. Core team members, Steering Council members, triagers, and
 documentarians on the project are eligible to join the server. Joining the
 Discord server is entirely optional, as all essential communications occur on
 the mailing lists and Discourse forums.
 
-For core developers, a long lived multiple use invitation link for this server
-can be found in the private core developer only section of the Discourse forum.
+For core team members, a long-lived multiple-use invitation link for this server
+can be found in the private core team only section of the Discourse forum.
 
 For triagers and documentarians joining the Discord server, a single use invitation
 link should be generated and sent to them directly.
 
 When first joining the server, new users will only have access to the ``#welcome``
 and ``#rules-and-info`` channels. To link their Discord ID with their project
-role, core developers may update their Steering Council 🔒 `voter record`_ with
+role, core team members may update their Steering Council 🔒 `voter record`_ with
 their Discord ID before posting in the ``#welcome`` channel to request access
-to the rest of the server channels. Triagers, documentarians, and core developers
+to the rest of the server channels. Triagers, documentarians, and core team members
 that would prefer not to add their Discord ID to their Steering Council voter
 record may instead be vouched for by an existing member of the Discord server.
 
@@ -225,7 +225,7 @@ set a specific `Server Nickname`_
 IRC
 ===
 
-Some core developers still participate in the ``#python-dev`` IRC channel on
+Some core team members still participate in the ``#python-dev`` IRC channel on
 ``irc.libera.chat``. This is not a place to ask for help with Python, but to
 discuss issues related to Python's own development. See also the
 ``#python-dev-notifs`` channel for bots notifications.
@@ -234,7 +234,7 @@ discuss issues related to Python's own development. See also the
 Blogs
 =====
 
-Several core developers are active bloggers and discuss Python's development
+Several core team members are active bloggers and discuss Python's development
 that way. You can find their blogs (and various other developers who use Python)
 at `Planet Python <https://planetpython.org/>`__.
 

@@ -28,7 +28,7 @@ You have a several options for this:
 * Search the `issue tracker`_ for discussion related to the proposed addition.
   This may turn up an issue that explains why the suggestion wasn't accepted.
 * Open a new thread in the `Ideas Discourse category`_
-  to gather feedback directly from the Python core developers and community.
+  to gather feedback directly from the Python core team and community.
 * Write a blog post about the code, which may also help gather useful feedback.
 
 If you have found general acceptance and usefulness for your code from people,
@@ -36,9 +36,9 @@ you can open an issue on the `issue tracker`_ with the code attached as a
 :ref:`pull request <pullrequest>`. If possible, also submit a
 :ref:`contributor agreement <contributor_agreement>`.
 
-If a core developer decides that your code would be useful to the general
+If a core team member decides that your code would be useful to the general
 Python community, they will then commit your code. If your code is not picked
-up by a core developer and committed then please do not take this personally.
+up by a core team and committed then please do not take this personally.
 Through your public sharing of your code in order to gauge community support
 for it you at least can know that others will come across it who may find it
 useful.
@@ -51,8 +51,8 @@ Adding a new module
 
 It must be stated upfront that getting a new module into the stdlib is very
 difficult. Adding any significant amount of code to the stdlib increases the
-burden placed upon core developers. It also means that the module somewhat
-becomes "sanctioned" by the core developers as a good way to do something,
+burden placed upon the core team. It also means that the module somewhat
+becomes "sanctioned" by the core team as a good way to do something,
 typically leading to the rest of the Python community to using the new module
 over other available solutions. All of this means that additions to the stdlib
 are not taken lightly.
@@ -76,7 +76,7 @@ that the stdlib consists of.
 
 While a new stdlib module does not need to appeal to all users of Python, it
 should be something that a large portion of the community will find useful.
-This makes sure that the developer burden placed upon core developers is worth
+This makes sure that the developer burden placed upon the core team is worth
 it.
 
 
@@ -108,12 +108,12 @@ infrastructure (that is, the module is no longer directly maintained outside of
 Python). This prevents a divergence between the code that is included in the
 stdlib and that which is released outside the stdlib (typically done to provide
 the module to older versions of Python). It also removes the burden of forcing
-core developers to have to redirect bug reports or changes to an external issue
+the core team to have to redirect bug reports or changes to an external issue
 tracker and :abbr:`VCS (version control system)`.
 
 Someone involved with the development of the
 module must promise to help maintain the module in the stdlib for two years.
-This not only helps out other core developers by alleviating workload from bug
+This not only helps out other core team members by alleviating workload from bug
 reports that arrive from the first Python release containing the module, but
 also helps to make sure that the overall design of the module continues to be
 uniform.
