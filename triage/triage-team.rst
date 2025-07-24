@@ -84,8 +84,8 @@ workload for everyone by gaining your help.
 
 Any existing active contributor to the Python repository on GitHub can
 transition into becoming a Python triager. They can request this to any core
-developer, either confidentially via a DM in Discourse, or
-publicly by opening an `issue in the core-workflow repository
+developer confidentially via a DM in Discourse. The only way of becoming a triager is
+to be nominated by any core developer, who will open an `issue in the core-workflow repository
 <https://github.com/python/core-workflow/issues/new?template=triage_membership.md>`_.
 If the core developer decides you are ready to gain the extra privileges on the
 tracker, they will ask a :ref:`Python organization admin <current owners>`
