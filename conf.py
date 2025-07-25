@@ -1,12 +1,6 @@
-import os
-import sys
-import time
-
-# Location of custom extensions.
-sys.path.insert(0, os.path.abspath(".") + "/_extensions")
+import json
 
 extensions = [
-    'custom_roles',
     'notfound.extension',
     'sphinx.ext.extlinks',
     'sphinx.ext.intersphinx',
@@ -22,7 +16,7 @@ master_doc = 'index'
 
 # General information about the project.
 project = "Python Developer's Guide"
-copyright = f'2011-{time.strftime("%Y")}, Python Software Foundation'
+copyright = '2011 Python Software Foundation'
 
 # List of patterns, relative to source directory, that match files and
 # directories to ignore when looking for source files.
@@ -69,6 +63,7 @@ linkcheck_allowed_redirects = {
     # Login page
     r"https://github.com/python/buildmaster-config/issues/new.*": r"https://github.com/login.*",  # noqa: E501
     r"https://github.com/python/core-workflow/issues/new.*": r"https://github.com/login.*",  # noqa: E501
+    r"https://github.com/orgs/python/teams.*": r"https://github.com/login.*",  # noqa: E501
     # Archive redirect
     r"https://github.com/python/cpython/archive/main.zip": r"https://codeload.github.com/python/cpython/zip/refs/heads/main",  # noqa: E501
     # Blob to tree
@@ -92,40 +87,45 @@ linkcheck_anchors_ignore = [
 ]
 
 linkcheck_ignore = [
-    # The voters repo is private and appears as a 404
-    'https://github.com/python/voters',
-    # The python-core team link is private, redirects to login
-    'https://github.com/orgs/python/teams/python-core',
+    # Checks fail due to rate limits
+    r'https://github.com/.*',
+    r'https://www.gnu.org/software/autoconf/',
     # The Discourse groups are private unless you are logged in
     'https://discuss.python.org/groups/staff',
     'https://discuss.python.org/groups/moderators',
     'https://discuss.python.org/groups/admins',
-    # The crawler gets "Anchor not found" for GitHub anchors
-    r'https://github.com.+?#L\d+',
-    r'https://github.com/cli/cli#installation',
-    r'https://github.com/github/renaming#renaming-existing-branches',
-    r'https://github.com/python/bedevere/#pr-state-machine',
     # "Anchor not found":
     r'https://packaging.python.org/.*#',
+    # "-rate limited-", causing a timeout
+    r'https://stackoverflow.com/.*',
     # Discord doesn't allow robot crawlers: "403 Client Error: Forbidden"
     r'https://support.discord.com/hc/en-us/articles/219070107-Server-Nicknames',
+    # Patreon also gives 403 to the GHA linkcheck runner
+    r'https://www.patreon.com/.*',
 ]
 
 rediraffe_redirects = {
     # Development Tools
     "clang.rst": "development-tools/clang.rst",
-    "coverity.rst": "development-tools/coverity.rst",
     "gdb.rst": "development-tools/gdb.rst",
     # Advanced Tools was renamed Development Tools in gh-1149
     "advanced-tools/clang.rst": "development-tools/clang.rst",
-    "advanced-tools/coverity.rst": "development-tools/coverity.rst",
     "advanced-tools/gdb.rst": "development-tools/gdb.rst",
-    # Core Developers
-    "coredev.rst": "core-developers/become-core-developer.rst",
-    "committing.rst": "core-developers/committing.rst",
-    "developers.rst": "core-developers/developer-log.rst",
-    "experts.rst": "core-developers/experts.rst",
-    "motivations.rst": "core-developers/motivations.rst",
+    # Core team
+    "coredev.rst": "core-team/join-team.rst",
+    "committing.rst": "core-team/committing.rst",
+    "developers.rst": "core-team/team-log.rst",
+    "experts.rst": "core-team/experts.rst",
+    "motivations.rst": "core-team/motivations.rst",
+    # core-developers/ -> core-team/
+    "core-developers/become-core-developer.rst": "core-team/join-team.rst",
+    "core-developers/committing.rst": "core-team/committing.rst",
+    "core-developers/developer-log.rst": "core-team/team-log.rst",
+    "core-developers/experts.rst": "core-team/experts.rst",
+    "core-developers/index.rst": "core-team/index.rst",
+    "core-developers/memorialization.rst": "core-team/memorialization.rst",
+    "core-developers/motivations.rst": "core-team/motivations.rst",
+    "core-developers/responsibilities.rst": "core-team/responsibilities.rst",
     # Developer Workflow
     "c-api.rst": "developer-workflow/c-api.rst",
     "communication.rst": "developer-workflow/communication-channels.rst",
@@ -138,6 +138,10 @@ rediraffe_redirects = {
     # Documentation
     "docquality.rst": "documentation/help-documenting.rst",
     "documenting.rst": "documentation/start-documenting.rst",
+    # Translating
+    "documentation/translating.rst": "documentation/translations/translating.rst",
+    "translating.rst": "documentation/translations/translating.rst",
+    "coordinating.rst": "documentation/translations/coordinating.rst",
     # Getting Started
     "fixingissues.rst": "getting-started/fixing-issues.rst",
     "help.rst": "getting-started/getting-help.rst",
@@ -172,12 +176,49 @@ todo_include_todos = True
 # sphinx-notfound-page
 notfound_urls_prefix = "/"
 
+# Dynamically expose the Python version associated with the "main" branch.
+# Exactly one entry in ``release-cycle.json`` should have ``"branch": "main"``.
+with open("include/release-cycle.json", encoding="UTF-8") as _f:
+    _cycle = json.load(_f)
+
+_main_version = next(
+    version for version, data in _cycle.items() if data.get("branch") == "main"
+)
+
+# prolog and epilogs
+rst_prolog = f"""
+.. |draft| replace::
+    This is part of a **Draft** of the Python Contributor's Guide.
+    Text in square brackets are notes about content to fill in.
+    Currently, the devguide and this new Contributor's Guide co-exist in the
+    repo. We are using Sphinx include directives to demonstrate the re-organization.
+    The final Contributor's Guide will replace the devguide with content in only one
+    place.
+    We welcome help with this!
+
+.. |purpose| replace::
+    The :ref:`contrib-plan` page has more details about the current state of this draft
+    and **how you can help**.  See more info about the Contributor Guide in the
+    discussion forum: `Refactoring the DevGuide`_.
+
+.. _Refactoring the DevGuide: https://discuss.python.org/t/refactoring-the-devguide-into-a-contribution-guide/63409
+
+.. |main_version| replace:: {_main_version}
+
+"""
+
 # sphinx.ext.extlinks
 # This config is a dictionary of external sites,
 # mapping unique short aliases to a base URL and a prefix.
 # https://www.sphinx-doc.org/en/master/usage/extensions/extlinks.html
+_repo = "https://github.com/python/cpython"
 extlinks = {
-    "github": ("https://github.com/%s/", "%s"),
+    "cpy-file": (f"{_repo}/blob/main/%s", "%s"),
+    "gh-label": (f"{_repo}/labels/%s", "%s"),
+    "github": ("https://github.com/%s", "%s"),
+    "github-user": ("https://github.com/%s", "@%s"),
+    "pypi": ("https://pypi.org/project/%s/", "%s"),
+    "pypi-org": ("https://pypi.org/org/%s/", "%s"),
 }
 
 # sphinxext-opengraph config

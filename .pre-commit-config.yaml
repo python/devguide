@@ -1,33 +1,13 @@
 repos:
-  - repo: https://github.com/asottile/pyupgrade
-    rev: v3.15.0
+  - repo: https://github.com/astral-sh/ruff-pre-commit
+    rev: v0.5.7
     hooks:
-      - id: pyupgrade
-        args: [--py38-plus]
-
-  - repo: https://github.com/psf/black-pre-commit-mirror
-    rev: 23.12.1
-    hooks:
-      - id: black
-        args: [--skip-string-normalization]
-
-  - repo: https://github.com/PyCQA/isort
-    rev: 5.13.2
-    hooks:
-      - id: isort
-        args: [--profile=black]
-
-  - repo: https://github.com/PyCQA/flake8
-    rev: 6.1.0
-    hooks:
-      - id: flake8
-        additional_dependencies:
-          [flake8-2020, flake8-implicit-str-concat]
-
-  - repo: https://github.com/pre-commit/pygrep-hooks
-    rev: v1.10.0
-    hooks:
-      - id: python-check-blanket-noqa
+      - id: ruff
+        name: Run Ruff (lint)
+        args: [--exit-non-zero-on-fix]
+      - id: ruff-format
+        name: Run Ruff (format)
+        args: [--check]
 
   - repo: https://github.com/pre-commit/pre-commit-hooks
     rev: v4.5.0

@@ -1,3 +1,5 @@
+.. _development-tools:
+
 =================
 Development tools
 =================
@@ -8,4 +10,4 @@ Development tools
    clinic
    gdb
    clang
-   coverity
+   warnings

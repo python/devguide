@@ -36,8 +36,8 @@ Some examples of release tags: ``v3.7.0a1``, ``v3.6.3``, ``v2.7.14rc1``.
 Branches
 --------
 
-There is a branch for each *feature version*, whether released or not (e.g.
-3.7, 3.8).
+There is a branch for each *feature version*, whether released or not (for
+example, 3.12, 3.13).
 
 
 .. _indevbranch:
@@ -51,13 +51,11 @@ changes, performance improvements, bug fixes.
 
 At some point during the life-cycle of a release, a
 new :ref:`maintenance branch <maintbranch>` is created to host all bug fixing
-activity for further micro versions in a feature version (3.8.1, 3.8.2, etc.).
+activity for further micro versions in a feature version (3.12.1, 3.12.2, and so
+on).
 
-For versions 3.4 and before, this was conventionally done when the final
-release was cut (for example, 3.4.0 final).
-
-Starting with the 3.5 release, we create the release maintenance branch
-(e.g. 3.5) at the time we enter beta (3.5.0 beta 1).  This allows
+We create the release maintenance branch
+(``3.14``) at the time we enter beta (3.14.0 beta 1).  This allows
 feature development for the release 3.n+1 to occur within the main
 branch alongside the beta and release candidate stabilization periods
 for release 3.n.
@@ -79,7 +77,7 @@ releases; the terms are used interchangeably. These releases have a
 The only changes allowed to occur in a maintenance branch without debate are
 bug fixes, test improvements, and edits to the documentation.
 Also, a general rule for maintenance branches is that compatibility
-must not be broken at any point between sibling micro releases (3.5.1, 3.5.2,
+must not be broken at any point between sibling micro releases (3.12.1, 3.12.2,
 etc.).  For both rules, only rare exceptions are accepted and **must** be
 discussed first.
 
@@ -89,7 +87,7 @@ since most readers access the `stable documentation <https://docs.python.org/3/>
 rather than the `development documentation <https://docs.python.org/dev/>`__.
 
 A new maintenance branch is normally created when the next feature release
-cycle reaches feature freeze, i.e. at its first beta pre-release.
+cycle reaches feature freeze, that is, at its first beta pre-release.
 From that point on, changes intended for remaining pre-releases, the final
 release (3.x.0), and subsequent bugfix releases are merged to
 that maintenance branch.
@@ -97,9 +95,9 @@ that maintenance branch.
 Sometime following the final release (3.x.0), the maintenance branch for
 the previous minor version will go into :ref:`security mode <secbranch>`,
 usually after at least one more bugfix release at the discretion of the
-release manager.  For example, the 3.4 maintenance branch was put into
-:ref:`security mode <secbranch>` after the 3.4.4 bugfix release
-which followed the release of 3.5.1.
+release manager.  For example, the 3.11 maintenance branch was put into
+:ref:`security mode <secbranch>` after the 3.11.9 bugfix release
+which followed the release of 3.12.2.
 
 .. _secbranch:
 
@@ -120,7 +118,7 @@ Commits to security branches are to be coordinated with the release manager
 for the corresponding feature version, as listed in the :ref:`branchstatus`.
 Merging of pull requests to security branches is restricted to release managers.
 Any release made from a security branch is source-only and done only when actual
-security patches have been applied to the branch. These releases have a
+security fixes have been applied to the branch. These releases have a
 **micro version** number greater than the last **bugfix** release.
 
 .. _eolbranch:
@@ -131,7 +129,7 @@ End-of-life branches
 The code base for a release cycle which has reached end-of-life status
 is frozen and no longer has a branch in the repo.  The final state of
 the end-of-lifed branch is recorded as a tag with the same name as the
-former branch, e.g. ``3.3`` or ``2.6``.
+former branch, for example, ``3.8`` or ``2.7``.
 
 The :ref:`versions` page contains list of active and end-of-life branches.
 
@@ -153,8 +151,8 @@ Pre-alpha
 
 The branch is in this stage when no official release has been done since
 the latest final release.  There are no special restrictions placed on
-commits, although the usual advice applies (getting patches reviewed, avoiding
-breaking the buildbots).
+commits, although the usual advice applies (getting pull requests reviewed,
+avoiding breaking the buildbots).
 
 .. _alpha:
 
@@ -180,9 +178,6 @@ and beta releases.
 Being in beta can be viewed much like being in RC_ but without the extra
 overhead of needing commit reviews.
 
-Please see the note in the `In-development (main) branch`_ section above for
-new information about the creation of the 3.5 maintenance branch during beta.
-
 
 .. _rc:
 
@@ -191,7 +186,7 @@ Release Candidate (RC)
 
 A branch preparing for an RC release can only have bugfixes applied that have
 been reviewed by other core developers.  Generally, these issues must be
-severe enough (e.g. crashes) that they deserve fixing before the final release.
+severe enough (for example, crashes) that they deserve fixing before the final release.
 All other issues should be deferred to the next development cycle, since
 stability is the strongest concern at this point.
 
@@ -227,13 +222,13 @@ repositories are expected to relate to the Python language, the CPython
 reference implementation, their documentation and their development workflow.
 This includes, for example:
 
-* The reference implementation of Python and related repositories (i.e. `CPython <https://github.com/python/cpython>`_)
-* Tooling and support around CPython development (e.g. `pyperformance <https://github.com/python/pyperformance>`_, `Bedevere <https://github.com/python/bedevere>`_)
-* Helpers and backports for Python/CPython features (e.g. `typing_extensions <https://github.com/python/typing_extensions>`_, `typeshed <https://github.com/python/typeshed>`_, `tzdata <https://github.com/python/tzdata>`_, `pythoncapi-compat <https://github.com/python/pythoncapi-compat>`_)
-* Organization-related repositories (e.g. the `Code of Conduct <https://github.com/python/pycon-code-of-conduct>`_, `.github <https://github.com/python/.github>`_)
-* Documentation and websites for all the above (e.g. `python.org repository <https://github.com/python/pythondotorg>`_, `PEPs <https://github.com/python/peps>`_, `Devguide <https://github.com/python/devguide>`_, docs translations)
-* Infrastructure for all the above (e.g. `docsbuild-scripts <https://github.com/python/docsbuild-scripts>`_, `buildmaster-config <https://github.com/python/buildmaster-config>`_)
-* Discussions and notes around official development-related processes and events (e.g. `steering-council <https://github.com/python/steering-council>`_, `core-sprint <https://github.com/python/core-sprint>`_)
+* The reference implementation of Python and related repositories: `CPython <https://github.com/python/cpython>`_.
+* Tooling and support around CPython development: `pyperformance <https://github.com/python/pyperformance>`_, `Bedevere <https://github.com/python/bedevere>`_.
+* Helpers and backports for Python/CPython features: `typing_extensions <https://github.com/python/typing_extensions>`_, `typeshed <https://github.com/python/typeshed>`_, `tzdata <https://github.com/python/tzdata>`_, `pythoncapi-compat <https://github.com/python/pythoncapi-compat>`_.
+* Organization-related repositories: the `Code of Conduct <https://github.com/python/pycon-code-of-conduct>`_, `.github <https://github.com/python/.github>`_.
+* Documentation and websites for all the above: `python.org repository <https://github.com/python/pythondotorg>`_, `PEPs <https://github.com/python/peps>`_, `Devguide <https://github.com/python/devguide>`_, docs translations.
+* Infrastructure for all the above: `docsbuild-scripts <https://github.com/python/docsbuild-scripts>`_, `buildmaster-config <https://github.com/python/buildmaster-config>`_.
+* Discussions and notes around official development-related processes and events: `steering-council <https://github.com/python/steering-council>`_, `core-sprint <https://github.com/python/core-sprint>`_.
 
 Before adding a new repository to the organization, open a discussion to seek consensus
 in the `Committers Discourse category <https://discuss.python.org/c/committers/5>`_.
@@ -248,13 +243,13 @@ accounts or other GitHub orgs. It is relatively easy to move a repository to
 the organization once it is mature. For example, this would now apply to
 experimental features like `asyncio <https://github.com/python/asyncio>`_,
 `exceptiongroups <https://github.com/python/exceptiongroups>`_,
-and drafts of new guides and other documentation (e.g. `redistributor-guide
+and drafts of new guides and other documentation (for example, `redistributor-guide
 <https://github.com/python/redistributor-guide>`_).
 
-General-use tools and libraries (e.g. `mypy <https://github.com/python/mypy>`_
+General-use tools and libraries (for example, `mypy <https://github.com/python/mypy>`_
 or `Black <https://github.com/psf/black>`_) should also be developed outside
 the ``python`` organization, unless core devs (as represented by the SC)
-specifically want to “bless” one implementation (as with e.g.
+specifically want to “bless” one implementation (as with
 `typeshed <https://github.com/python/typeshed>`_,
 `tzdata <https://github.com/python/tzdata>`_, or
 `pythoncapi-compat <https://github.com/python/pythoncapi-compat>`_).
@@ -301,7 +296,7 @@ Current owners
 +----------------------+--------------------------------+-----------------+
 | Ee Durbin            | PSF Director of Infrastructure | ewdurbin        |
 +----------------------+--------------------------------+-----------------+
-| Van Lindberg         | PSF General Counsel            | VanL            |
+| Jacob Coffee         | PSF Infrastructure Engineer    | JacobCoffee     |
 +----------------------+--------------------------------+-----------------+
 | Łukasz Langa         | CPython Developer in Residence | ambv            |
 +----------------------+--------------------------------+-----------------+
@@ -340,23 +335,23 @@ Current administrators
 +-------------------+----------------------------------------------------------+-----------------+
 | Name              | Role                                                     | GitHub Username |
 +===================+==========================================================+=================+
+| Hugo van Kemenade | Python 3.14 and 3.15 Release Manager                     | hugovk          |
++-------------------+----------------------------------------------------------+-----------------+
+| Thomas Wouters    | Python 3.12 and 3.13 Release Manager                     | Yhg1s           |
++-------------------+----------------------------------------------------------+-----------------+
 | Pablo Galindo     | Python 3.10 and 3.11 Release Manager,                    | pablogsal       |
 |                   | Maintainer of buildbot.python.org                        |                 |
 +-------------------+----------------------------------------------------------+-----------------+
-| Łukasz Langa      | Python 3.8 and 3.9 Release Manager,                      | ambv            |
-|                   | PSF CPython Developer in Residence 2021-2022             |                 |
-+-------------------+----------------------------------------------------------+-----------------+
-| Ned Deily         | Python 3.6 and 3.7 Release Manager                       | ned-deily       |
-+-------------------+----------------------------------------------------------+-----------------+
-| Larry Hastings    | Retired Release Manager (for Python 3.4 and 3.5)         | larryhastings   |
-+-------------------+----------------------------------------------------------+-----------------+
-| Berker Peksag     | Maintainer of bpo-linkify and cpython-emailer-webhook    | berkerpeksag    |
+| Łukasz Langa      | Python 3.9 Release Manager,                              | ambv            |
+|                   | PSF CPython Developer in Residence 2021-present          |                 |
 +-------------------+----------------------------------------------------------+-----------------+
 | Brett Cannon      |                                                          | brettcannon     |
 +-------------------+----------------------------------------------------------+-----------------+
 | Ezio Melotti      | Maintainer of bugs.python.org GitHub webhook integration | ezio-melotti    |
 +-------------------+----------------------------------------------------------+-----------------+
 | Mariatta Wijaya   | Maintainer of bedevere, blurb_it and miss-islington      | Mariatta        |
++-------------------+----------------------------------------------------------+-----------------+
+| Seth Larson       | PSF Security Developer-in-Residence                      | sethmlarson     |
 +-------------------+----------------------------------------------------------+-----------------+
 
 Repository release manager role policy
@@ -365,12 +360,36 @@ Repository release manager role policy
 Release Managers for :ref:`in-development <indevbranch>`, :ref:`maintenance
 <maintbranch>`, and :ref:`security mode <secbranch>` Python releases are
 granted Administrator privileges on the repository. Once a release branch has
-entered :ref:`end-of-life <eolbranch>`, the Release Manager for that branch is
-removed as an Administrator and granted sole privileges (out side of repository
-administrators) to merge changes to that branch.
+entered :ref:`end-of-life <eolbranch>`, the Release Manager for that branch
+creates a final tag and deletes the branch. After this, they are
+removed as an Administrator.
 
 Multi-Factor Authentication must be enabled by the user in order to retain
 access as a Release Manager of the branch.
+
+PyPI organization policy
+^^^^^^^^^^^^^^^^^^^^^^^^
+
+The Python core team owns the :pypi-org:`cpython` and :pypi-org:`python`
+organizations on PyPI for publishing packages.
+The main benefits of adding packages to these organizations:
+
+* Visibility: we can see our packages under a PyPI org page
+* Maintainability: we can share granular PyPI access to improve the bus factor
+
+The general policy on which organization to use:
+
+* :pypi-org:`cpython`:
+  for development tools that are tied fairly closely to CPython development.
+  For example, :pypi:`blurb` and :pypi:`cherry-picker`.
+  Users generally shouldn’t have to care except for developing CPython itself
+  (although that doesn’t mean the tools necessarily have to be unusable for
+  anyone else).
+* :pypi-org:`python`:
+  for general-audience projects that are maintained by the Python core team.
+  For example, :pypi:`pyperformance`, :pypi:`python-docs-theme` and
+  :pypi:`tzdata`.
+
 
 Governance
 ----------

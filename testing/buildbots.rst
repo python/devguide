@@ -16,7 +16,7 @@ will schedule a new build to be run as soon as possible.
 
 The build steps run by the buildbots are the following:
 
-* Check out the source tree for the changeset which triggered the build
+* Check out the source tree for the change which triggered the build
 * Compile Python
 * Run the test suite using :ref:`strenuous settings <strenuous_testing>`
 * Clean up the build tree
@@ -48,6 +48,41 @@ after each commit. In particular, reference leaks builds take several hours to
 complete so they are done periodically. This is why it's important for you to
 be able to check the results yourself, too.
 
+Triggering on pull requests
+===========================
+
+To trigger buildbots on a pull request you need to be a CPython triager or a
+core team member. If you are not, ask someone to trigger them on your behalf.
+
+The simplest way to trigger most buildbots on your PR is with the
+:gh-label:`🔨 test-with-buildbots` and :gh-label:`🔨 test-with-refleak-buildbots`
+labels. (See :ref:`github-pr-labels`.)
+
+These will run buildbots on the most recent commit. If you want to trigger the
+buildbots again on a later commit, you'll have to remove the label and add it
+again.
+
+If you want to test a pull request against specific platforms, you can trigger
+one or more build bots by posting a comment that begins with:
+
+.. code-block:: none
+
+   !buildbot regex-matching-target
+
+For example to run both the iOS and Android build bot, you can use:
+
+.. code-block:: none
+
+   !buildbot ios|android
+
+bedevere-bot will post a comment indicating which build bots, if
+any, were matched. If none were matched, or you do not have the
+necessary permissions to trigger a request, it will tell you that too.
+
+The ``!buildbot`` comment will also only run buildbots on the most recent
+commit. To trigger the buildbots again on a later commit, you will have to
+repeat the comment.
+
 Checking results of automatic builds
 ====================================
 
@@ -56,7 +91,7 @@ There are three ways of visualizing recent build results:
 * The Web interface for each branch at https://www.python.org/dev/buildbot/,
   where the so-called "waterfall" view presents a vertical rundown of recent
   builds for each builder.  When interested in one build, you'll have to
-  click on it to know which changesets it corresponds to.  Note that
+  click on it to know which commits it corresponds to.  Note that
   the buildbot web pages are often slow to load, be patient.
 
 * The command-line ``bbreport.py`` client, which you can get from
@@ -78,16 +113,16 @@ There are three ways of visualizing recent build results:
 If you like IRC, having an IRC client open to the #python-dev-notifs channel on
 irc.libera.chat is useful.  Any time a builder changes state (last build
 passed and this one didn't, or vice versa), a message is posted to the channel.
-Keeping an eye on the channel after pushing a changeset is a simple way to get
+Keeping an eye on the channel after pushing a commits is a simple way to get
 notified that there is something you should look in to.
 
 Some buildbots are much faster than others.  Over time, you will learn which
 ones produce the quickest results after a build, and which ones take the
 longest time.
 
-Also, when several changesets are pushed in a quick succession in the same
+Also, when several commits are pushed in a quick succession in the same
 branch, it often happens that a single build is scheduled for all these
-changesets.
+commits.
 
 Stability
 =========
@@ -222,38 +257,6 @@ waiting for the next build.  Still, even if the failure does turn out sporadic
 and unpredictable, the issue should be reported on the bug tracker; even
 better if it can be diagnosed and suppressed by fixing the test's
 implementation, or by making its parameters - such as a timeout - more robust.
-
-
-Custom builders
-===============
-
-.. highlight:: console
-
-When working on a platform-specific issue, you may want to test your changes on
-the buildbot fleet rather than just on GitHub Actions and Azure Pipelines.  To do so, you can
-make use of the `custom builders
-<https://buildbot.python.org/all/#/builders?tags=%2Bcustom>`_.
-These builders track the ``buildbot-custom`` short-lived branch of the
-``python/cpython`` repository, which is only accessible to core developers.
-
-To start a build on the custom builders, push the commit you want to test to
-the ``buildbot-custom`` branch::
-
-   $ git push upstream <local_branch_name>:buildbot-custom
-
-You may run into conflicts if another developer is currently using the custom
-builders or forgot to delete the branch when they finished.  In that case, make
-sure the other developer is finished and either delete the branch or force-push
-(add the ``-f`` option) over it.
-
-When you have gotten the results of your tests, delete the branch::
-
-   $ git push upstream :buildbot-custom     # or use the GitHub UI
-
-If you are interested in the results of a specific test file only, we
-recommend you change (temporarily, of course) the contents of the
-``buildbottest`` clause in ``Makefile.pre.in``; or, for Windows builders,
-the ``Tools/buildbot/test.bat`` script.
 
 .. seealso::
    :ref:`buildworker`

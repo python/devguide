@@ -107,8 +107,8 @@ Terminology
 
    end line
       The line ``[clinic start generated code]*/``.
-      The *end line* marks the _end_ of Argument Clinic :term:`input`,
-      but at the same time marks the _start_ of Argument Clinic :term:`output`,
+      The *end line* marks the *end* of Argument Clinic :term:`input`,
+      but at the same time marks the *start* of Argument Clinic :term:`output`,
       thus the text *"clinic start start generated code"*
       Note that the *end line* closes the C block comment opened
       by the *start line*.
@@ -213,7 +213,7 @@ Classes for extending Argument Clinic
 
       The C type to use for this variable.
       :attr:`!type` should be a Python string specifying the type,
-      e.g. ``'int'``.
+      for example, ``'int'``.
       If this is a pointer type, the type string should end with ``' *'``.
 
    .. attribute:: default

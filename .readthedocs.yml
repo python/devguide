@@ -14,5 +14,8 @@ build:
     python: "3"
 
   commands:
+    - asdf plugin add uv
+    - asdf install uv latest
+    - asdf global uv latest
     - make dirhtml BUILDDIR=_readthedocs
     - mv _readthedocs/dirhtml _readthedocs/html

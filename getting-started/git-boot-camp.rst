@@ -44,11 +44,13 @@ You will only need to do this once.
 
 1. Go to https://github.com/python/cpython.
 
-2. Press ``Fork`` on the top right.
+2. Press :guilabel:`Fork` located near the top right of the page.
 
-3. When asked where to fork the repository, choose to fork it to your username.
+3. Uncheck "Copy the ``main`` branch only".
 
-4. Your forked CPython repository will be created at https://github.com/<username>/cpython.
+4. Press the :guilabel:`Create fork` button.
+
+5. Your forked CPython repository will be created at ``https://github.com/<username>/cpython``.
 
 .. _clone-your-fork:
 
@@ -105,6 +107,10 @@ To verify the upstream for ``main``::
 It should emit ``upstream``, indicating to track/pull changes for ``main`` from the
 ``upstream`` remote.
 
+Once this is verified, update your local clone with the upstream branches::
+
+   $ git fetch upstream
+
 
 .. _set-up-name-email:
 
@@ -126,7 +132,7 @@ Enabling ``autocrlf`` on Windows
 
 The ``autocrlf`` option will fix automatically any Windows-specific line endings.
 This should be enabled on Windows, since the public repository has a hook which
-will reject all changesets having the wrong line endings::
+will reject all commits having the wrong line endings::
 
     $ git config --global core.autocrlf input
 
@@ -304,7 +310,7 @@ Creating a pull request
 
 1. Go to https://github.com/python/cpython.
 
-2. Press the ``New pull request`` button.
+2. Press the :guilabel:`New pull request` button.
 
 3. Click the ``compare across forks`` link.
 
@@ -313,7 +319,7 @@ Creating a pull request
 5. Select the head repository: ``<username>/cpython`` and head branch: the branch
    containing your changes.
 
-6. Press the ``Create pull request`` button.
+6. Press the :guilabel:`Create pull request` button.
 
 You should include the issue number in the title of the PR,
 in the format ``gh-NNNNN: <PR Title>``.
@@ -330,12 +336,12 @@ will automatically add a link to the issue in the first message.
 
 In addition, pull requests support `special keywords`_ that can be used to
 link to an issue and automatically close it when the PR is merged.
-However, issues often require multiple PRs before they can be closed (e.g.
-backports to other branches), so this features is only useful if
+However, issues often require multiple PRs before they can be closed (for
+example, backports to other branches), so this features is only useful if
 you know for sure that a single PR is enough to address and close the issue.
 
 .. _bedevere: https://github.com/python/bedevere
-.. _special keywords: https://docs.github.com/en/issues/tracking-your-work-with-issues/linking-a-pull-request-to-an-issue#linking-a-pull-request-to-an-issue-using-a-keyword
+.. _special keywords: https://docs.github.com/en/issues/tracking-your-work-with-issues/using-issues/linking-a-pull-request-to-an-issue#linking-a-pull-request-to-an-issue-using-a-keyword
 
 Updating your CPython fork
 --------------------------
@@ -350,7 +356,7 @@ Scenario:
   the upstream CPython repository.
 
 Please do not try to solve this by creating a pull request from
-``python:main`` to ``<username>:main`` as the authors of the patches will
+``python:main`` to ``<username>:main`` as the authors of the pull requests will
 get notified unnecessarily.
 
 Solution::
@@ -429,8 +435,8 @@ Solution:
 
 .. _git_pr:
 
-Downloading other's patches
----------------------------
+Checking out others' pull requests
+----------------------------------
 
 Scenario:
 
@@ -480,14 +486,14 @@ can be merged. See :ref:`"Keeping CI green" <keeping-ci-green>` for some
 simple things you can do to help the checks turn green.
 
 At any point, a core developer can schedule an automatic merge of the change
-by clicking the gray ``Enable auto-merge (squash)`` button. You will find
+by clicking the gray :guilabel:`Enable auto-merge (squash)` button. You will find
 it at the bottom of the pull request page. The auto-merge will only
 happen if all the required checks pass, but the PR does not need to have been
 approved for a successful auto-merge to take place.
 
 If all required checks are already finished on a PR you're reviewing,
-in place of the gray ``Enable auto-merge`` button you will find a green
-``Squash and merge`` button.
+in place of the gray :guilabel:`Enable auto-merge` button you will find a green
+:guilabel:`Squash and merge` button.
 
 In either case, adjust and clean up the commit message.
 
@@ -520,7 +526,7 @@ PR life cycle, while being irrelevant to the final change.
    `How to Write a Git Commit Message <https://cbea.ms/git-commit/>`_
    is a nice article describing how to write a good commit message.
 
-Finally, press the ``Confirm squash and merge`` button.
+Finally, press the :guilabel:`Confirm squash and merge` button.
 
 Cancelling an automatic merge
 -----------------------------
@@ -529,7 +535,7 @@ If you notice a problem with a pull request that was accepted and where
 auto-merge was enabled, you can still cancel the workflow before GitHub
 automatically merges the change.
 
-Press the gray "Disable auto-merge" button on the bottom of the
+Press the gray :guilabel:`Disable auto-merge` button on the bottom of the
 pull request page to disable automatic merging entirely. This is the
 recommended approach.
 

@@ -27,12 +27,13 @@ in return.
 Mailing lists
 =============
 
-.. note:: Some mailing lists have been supplanted by categories in the
-   Python `Discourse`_. Specifically,
+.. note::
+
+   Mailing lists have generally been replaced by the `Discourse`_ forum.
+   Specifically,
 
    * The python-dev list is superseded by the `Core Development`_
      and `PEPs`_ categories on Discourse.
-
    * The python-ideas list is superseded by posts in the `Ideas`_
      category on Discourse.
 
@@ -42,17 +43,21 @@ Mailing lists
    - Ideas about new functionality should **not** start here, and instead
      should be discussed in `Ideas`_.
    - Technical support questions should also not be asked here, and instead
-     should go to the python-list_ or python-help_ mailing lists, or the
-     `Python Help`_ category on Discourse.
+     should go to the `Python Help`_ category on Discourse or the python-list_.
 
-Existing threads on the python-dev_, python-committers_, and python-ideas_ mailing lists
-can be accessed through the `online archive <web gateway_>`__.
+   Previous threads on the python-dev_, python-committers_, and python-ideas_
+   mailing lists can be accessed through the `online archive
+   <https://mail.python.org/archives/>`__.
+
+   .. _python-committers: https://mail.python.org/mailman3/lists/python-committers.python.org/
+   .. _python-dev: https://mail.python.org/mailman3/lists/python-dev.python.org/
+   .. _python-ideas: https://mail.python.org/mailman3/lists/python-ideas.python.org
 
 General Python questions should go to `python-list`_ or `tutor`_
-or similar resources, such as StackOverflow_ or the ``#python`` IRC channel
+or similar resources, such as `Stack Overflow`_ or the ``#python`` IRC channel
 on Libera.Chat_.
 
-`The core-workflow <https://github.com/python/core-workflow/issues>`_
+The `core-workflow <https://github.com/python/core-workflow/issues>`__
 issue tracker is the place to discuss and work on improvements to the CPython
 core development workflow.
 
@@ -62,16 +67,10 @@ https://mail.python.org/mailman3/ (newer lists, using Mailman3). Some lists may 
 be mirrored at `GMANE <https://gmane.io/>`_ and can be read and posted to in various
 ways, including via web browsers, NNTP newsreaders, and RSS feed readers.
 
-.. _issue tracker: https://github.com/python/cpython/issues
-.. _python-committers: https://mail.python.org/mailman3/lists/python-committers.python.org/
-.. _python-dev: https://mail.python.org/mailman3/lists/python-dev.python.org/
-.. _python-help: https://mail.python.org/mailman/listinfo/python-help
-.. _python-ideas: https://mail.python.org/mailman3/lists/python-ideas.python.org
 .. _python-list: https://mail.python.org/mailman/listinfo/python-list
 .. _tutor: https://mail.python.org/mailman/listinfo/tutor
-.. _StackOverflow: https://stackoverflow.com/
+.. _Stack Overflow: https://stackoverflow.com/
 .. _Libera.Chat: https://libera.chat/
-.. _web gateway: https://mail.python.org/archives/
 
 
 .. _communication-discourse:
@@ -79,11 +78,8 @@ ways, including via web browsers, NNTP newsreaders, and RSS feed readers.
 Discourse (discuss.python.org web forum)
 ========================================
 
-We have our own `Discourse`_ forum for both developers and users. This forum
-complements the `python-dev`_, `python-ideas`_, `python-help`_, and
-`python-list`_ mailing lists.
-
-This forum has different categories and most core development discussions
+We have our own `Discourse`_ forum for both developers and users.
+It has different categories and most core development discussions
 take place in the open forum categories for `PEPs`_ and `Core Development`_
 (these are the Discourse equivalents to the python-dev mailing list).
 All categories are open for users to read and post with the exception of
@@ -98,8 +94,8 @@ Tutorials for new users
 
 To start a topic or participate in any discussions in the forum, sign up and
 create an account using an email address or GitHub account. You can do so by
-clicking the "Sign Up" button on the top right hand corner of the `Discourse`_
-main page.
+clicking the :guilabel:`Sign Up` button on the top right hand corner of the
+`Discourse`_ main page.
 
 The Python Discourse `Quick Start <https://discuss.python.org/t/python-discourse-quick-start/116>`_
 compiled by `Carol Willing <https://discuss.python.org/u/willingc/>`_ gives you
@@ -110,15 +106,18 @@ These tutorials can be activated by replying to a welcome message from "discours
 Greetings!" received under Notifications and Messages in your user account.
 
 * Click on your personal account found on the top right hand corner of the page.
-* The dropdown menu will show four different icons: 🔔 (Notifications),
-  🔖 (Bookmarks), ✉️ (Messages), and 👤 (Preferences).
+* The dropdown menu will show four different icons:
+  :guilabel:`🔔` (Notifications),
+  :guilabel:`🔖` (Bookmarks),
+  :guilabel:`✉️` (Messages), and
+  :guilabel:`👤` (Preferences).
 * Select either Notifications or Messages.
 * Open the "Greetings!" message sent by Discobot to start the tutorial.
 
 Ensure that you read through the `Python Code of Conduct <https://discuss.python.org/faq>`_.
 We are to be open, considerate and respectful to all users in the community.
 You can report messages that don't respect the CoC by clicking on the three
-dots under the message and then on the ⚐ icon.  You can also mention the
+dots under the message and then on the :guilabel:`⚐` icon.  You can also mention the
 `@staff <https://discuss.python.org/groups/staff>`_,
 `@moderators <https://discuss.python.org/groups/moderators>`_, or
 `@admins <https://discuss.python.org/groups/admins>`_ groups in a message.
@@ -126,7 +125,8 @@ dots under the message and then on the ⚐ icon.  You can also mention the
 
 
 Reading topics
------------------
+--------------
+
 Click a topic title and read down the list of replies in chronological order,
 following links or previewing replies and quotes as you go. Use your mouse to
 scroll the screen, or use the timeline scroll bar on the right which also shows
@@ -142,10 +142,11 @@ Following categories (category notifications)
 
 Notifications can be set for individual categories and topics. To change any of these
 defaults, you can either go to your user preferences, or visit the category
-page, and use the notification button 🔔 above the topic list,
-on the top right hand corner of the category page beside the "+ New Topic" button.
+page, and use the notification button :guilabel:`🔔` above the topic list,
+on the top right hand corner of the category page beside the
+:guilabel:`+ New Topic` button.
 
-Clicking on the Notification control 🔔 will show a drop-down panel with 5
+Clicking on the notification control :guilabel:`🔔` will show a drop-down panel with 5
 different options: Watching, Tracking, Watching First Post, Normal, and Muted.
 All categories are set by default in Normal mode where you will only be notified
 if someone mentions your @name or replies to you.
@@ -154,7 +155,7 @@ Following individual threads (topic notifications)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 To follow any individual topics or threads, you can adjust your notifications
-through the notification button 🔔 found on the right of the topic at the end
+through the notification button :guilabel:`🔔` found on the right of the topic at the end
 of the timeline. You can also do so at the bottom of each topic.
 Select "Watching" and you will be notified when there is any new updated reply
 from that particular thread.
@@ -181,7 +182,7 @@ mailing list mode" and save changes.
 .. _Core Development: https://discuss.python.org/c/core-dev/23
 .. _Committers: https://discuss.python.org/c/committers/5
 .. _Ideas: https://discuss.python.org/c/ideas/6
-.. _Python Help: https://discuss.python.org/c/users/7
+.. _Python Help: https://discuss.python.org/c/help/7
 
 
 Discord (private chat server)
@@ -235,7 +236,7 @@ Blogs
 
 Several core developers are active bloggers and discuss Python's development
 that way. You can find their blogs (and various other developers who use Python)
-at https://planetpython.org/.
+at `Planet Python <https://planetpython.org/>`__.
 
 
 Setting expectations for open source participation
@@ -249,27 +250,27 @@ order to make open source pleasant for everyone involved.
 Additional repositories
 =======================
 
-`Python Core Workflow`_ hosts the codebase for tools such as `blurb`_.
+`Python Core Workflow`_ hosts an issue tracker for workflow discussions.
 
-Other core workflow tools are:
+Some core workflow tools are:
 
-* `cherry_picker`_ (`PyPI`_)
+* `cherry_picker`_ (:pypi:`PyPI <cherry_picker>`)
 * `bedevere`_
+* `blurb`_ (:pypi:`PyPI <blurb>`)
 * `blurb_it`_
 * `miss-islington`_
-* `cla-bot`_
-* `cpython-emailer-webhook`_
+* `clabot`_
+* `webhook-mailer`_
 
 Python `Performance Benchmark`_ project is intended to be an authoritative
 source of benchmarks for all Python implementations.
 
 .. _Python Core Workflow: https://github.com/python/core-workflow
-.. _blurb: https://pypi.org/project/blurb
 .. _cherry_picker: https://github.com/python/cherry-picker
-.. _PyPI: https://pypi.org/project/cherry_picker/
 .. _bedevere: https://github.com/python/bedevere
+.. _blurb: https://github.com/python/blurb
 .. _blurb_it: https://github.com/python/blurb_it
 .. _miss-islington: https://github.com/python/miss-islington
-.. _cla-bot: https://github.com/ambv/cla-bot
-.. _cpython-emailer-webhook: https://github.com/berkerpeksag/cpython-emailer-webhook
+.. _clabot: https://github.com/psf/clabot
+.. _webhook-mailer: https://github.com/python/webhook-mailer
 .. _Performance Benchmark: https://github.com/python/pyperformance

@@ -36,6 +36,8 @@ and are provided for development and testing purposes only.
 Install Git
 ===========
 
+.. c_install_git_start
+
 CPython is developed using `Git <https://git-scm.com>`_ for version control. The Git
 command line program is named ``git``; this is also used to refer to Git
 itself. Git is easily available for all common operating systems.
@@ -43,11 +45,11 @@ itself. Git is easily available for all common operating systems.
 - **Install**
 
   As the CPython repo is hosted on GitHub, please refer to either the
-  `GitHub setup instructions <https://docs.github.com/en/get-started/quickstart/set-up-git>`_
+  `GitHub setup instructions <https://docs.github.com/en/get-started/getting-started-with-git/set-up-git>`_
   or the `Git project instructions <https://git-scm.com>`_ for step-by-step
   installation directions. You may also want to consider a graphical client
   such as `TortoiseGit <https://tortoisegit.org/>`_ or
-  `GitHub Desktop <https://desktop.github.com/>`_.
+  `GitHub Desktop <https://github.com/apps/desktop>`_.
 
 - **Configure**
 
@@ -58,11 +60,14 @@ itself. Git is easily available for all common operating systems.
   ``git push``, or ``git fetch``.  On Windows, you should also
   :ref:`enable autocrlf <autocrlf>`.
 
+.. c_install_git_end
 
 .. _checkout:
 
 Get the source code
 ===================
+
+.. c_get_source_code_start
 
 The CPython repo is hosted on GitHub. To get a copy of the source code you should
 :ref:`fork the Python repository on GitHub <fork-cpython>`, :ref:`create a local
@@ -115,9 +120,9 @@ in the ``cpython`` directory and two remotes that refer to your own GitHub fork
 .. XXX move the text below in pullrequest
 
 If you want a working copy of an already-released version of Python,
-i.e., a version in :ref:`maintenance mode <maintbranch>`, you can checkout
-a release branch. For instance, to checkout a working copy of Python 3.8,
-do ``git switch 3.8``.
+that is, a version in :ref:`maintenance mode <maintbranch>`, you can checkout
+a release branch. For instance, to checkout a working copy of Python 3.13,
+do ``git switch 3.13``.
 
 You will need to re-compile CPython when you do such an update.
 
@@ -127,14 +132,30 @@ changes to Python code will be picked up by the interpreter for immediate
 use and testing.  (If you change C code, you will need to recompile the
 affected files as described below.)
 
-Patches for the documentation can be made from the same repository; see
+Changes for the documentation can be made from the same repository; see
 :ref:`documenting`.
 
+.. _install-pre-commit:
+
+Install pre-commit as a Git hook
+--------------------------------
+
+To make sure your code is linted correctly, we recommend setting up
+`pre-commit <https://pre-commit.com#installation>`_ as a Git hook::
+
+   $ pre-commit install --allow-missing-config
+   pre-commit installed at .git/hooks/pre-commit
+
+Now pre-commit will run automatically on ``git commit``.
+
+.. c_get_source_code_end
 
 .. _compiling:
 
 Compile and build
 =================
+
+.. c_compile_and_build_start
 
 CPython provides several compilation flags which help with debugging various
 things. While all of the known flags can be found in the
@@ -182,14 +203,13 @@ do to get a pydebug build of CPython.
 
 Once ``configure`` is done, you can then compile CPython with::
 
-   $ make -s -j2
+   $ make -s -j $(nproc)
 
 This will build CPython with only warnings and errors being printed to
-stderr and utilize up to 2 CPU cores. If you are using a multi-core machine
-with more than 2 cores (or a single-core machine), you can adjust the number
-passed into the ``-j`` flag to match the number of cores you have (or if your
-version of Make supports it, you can use ``-j`` without a number and Make
-will not limit the number of steps that can run simultaneously.).
+stderr. The ``-j`` argument means that :program:`make` will concurrently run
+tasks, limiting the number of parallel jobs to the number of CPU cores in your
+computer. You can adjust the number passed to the ``-j`` flag to change
+the limit on parallel jobs, which can trade RAM usage versus compilation time.
 
 At the end of the build you should see a success message, followed
 by a list of extension modules that haven't been built because their
@@ -214,7 +234,7 @@ If you decide to :ref:`build-dependencies`, you will need to re-run both
 Once CPython is done building you will then have a working build
 that can be run in-place; ``./python`` on most machines (and what is used in
 all examples), ``./python.exe`` wherever a case-insensitive filesystem is used
-(e.g. on macOS by default), in order to avoid conflicts with the ``Python``
+(for example, on macOS by default), in order to avoid conflicts with the ``Python``
 directory. There is normally no need to install your built copy
 of Python! The interpreter will realize where it is being run from
 and thus use the files found in the working copy.  If you are worried
@@ -274,7 +294,7 @@ Windows
    :ref:`clone the repository <checkout>` from a native Windows shell program
    like PowerShell or the ``cmd.exe`` command prompt,
    and use a build of Git targeted for Windows,
-   e.g. the `Git for Windows download from the official Git website`_.
+   for example, the `Git for Windows download from the official Git website`_.
    Otherwise, Visual Studio will not be able to find all the project's files
    and will fail the build.
 
@@ -363,8 +383,8 @@ host/runtime as a *guest*.
 To build for WASI, you will need to cross-compile CPython. This requires a C
 compiler just like building for :ref:`Unix <unix-compiling>` as well as:
 
-1. A C compiler that can target WebAssembly (e.g. `WASI SDK`_)
-2. A WASI host/runtime (e.g. Wasmtime_)
+1. A C compiler that can target WebAssembly (for example, `WASI SDK`_)
+2. A WASI host/runtime (for example, Wasmtime_)
 
 All of this is provided in the :ref:`devcontainer <using-codespaces>`. You can
 also use what's installed in the container as a reference of what versions of
@@ -382,7 +402,7 @@ to help produce a WASI build of CPython (technically it's a "host x host"
 cross-build because the build Python is also the target Python while the host
 build is the WASI build). This means you effectively build CPython twice: once
 to have a version of Python for the build system to use and another that's the
-build you ultimately care about (i.e. the build Python is not meant for use by
+build you ultimately care about (that is, the build Python is not meant for use by
 you directly, only the build system).
 
 The easiest way to get a debug build of CPython for WASI is to use the
@@ -391,7 +411,9 @@ Python you have installed on your machine):
 
 .. code-block:: shell
 
-   $ python3 Tools/wasm/wasi.py build --quiet -- --config-cache --with-pydebug
+   $ python3 Tools/wasm/wasi build --quiet -- --config-cache --with-pydebug
+
+For Python 3.14 and earlier, use ``Tools/wasm/wasi.py`` instead.
 
 That single command will configure and build both the build Python and the
 WASI build in ``cross-build/build`` and ``cross-build/wasm32-wasi``,
@@ -402,10 +424,10 @@ is a convenience wrapper around the following commands:
 
 .. code-block:: shell
 
-   $ python Tools/wasm/wasi.py configure-build-python --quiet -- --config-cache --with-pydebug
-   $ python Tools/wasm/wasi.py make-build-python --quiet
-   $ python Tools/wasm/wasi.py configure-host --quiet -- --config-cache
-   $ python Tools/wasm/wasi.py make-host --quiet
+   $ python Tools/wasm/wasi configure-build-python --quiet -- --config-cache --with-pydebug
+   $ python Tools/wasm/wasi make-build-python --quiet
+   $ python Tools/wasm/wasi configure-host --quiet -- --config-cache
+   $ python Tools/wasm/wasi make-host --quiet
 
 .. note::
 
@@ -446,6 +468,247 @@ used in ``python.sh``:
 .. _wasmtime: https://wasmtime.dev
 .. _WebAssembly: https://webassembly.org
 
+
+Emscripten
+----------
+
+Emscripten_ is a complete open-source compiler toolchain. It compiles C/C++ code
+into WebAssembly_/JavaScript executables, for use in JavaScript runtimes,
+including browsers and Node.js.
+
+.. note::
+
+   The instructions below assume a Unix-based OS due to cross-compilation for
+   CPython being designed for ``./configure`` / ``make``.
+
+To build for Emscripten, you will need to cross-compile CPython. This requires a
+C compiler just like building for :ref:`Unix <unix-compiling>` as well as:
+
+* The Emscripten compiler
+* Node.js
+
+The simplest way to install the Emscripten compiler is:
+
+.. code-block:: sh
+
+    # Install Emscripten
+    git clone https://github.com/emscripten-core/emsdk
+    ./emsdk/emsdk install 4.0.5
+    ./emsdk/emsdk activate 4.0.5
+    source ./emsdk/emsdk_env.sh
+
+Updating the Emscripten compiler version often causes breakages. For the best
+compatibility, use the Emscripten version suggested in the cpython repository in
+``Tools/wasm/README.md``.
+
+Building for Emscripten requires doing a cross-build where you have a *build*
+Python to help produce an Emscripten build of CPython. This means you build
+CPython twice: once to have a version of Python for the build system to use and
+another that's the build you ultimately care about (that is, the build Python is
+not meant for use by you directly, only the build system).
+
+The easiest way to get a debug build of CPython for Emscripten is to use the
+``Tools/wasm/emscripten build`` command (which should be run with a recent
+version of Python you have installed on your machine):
+
+.. code-block:: shell
+
+   python3 Tools/wasm/emscripten build --quiet -- --config-cache --with-pydebug
+
+That single command will configure and build both the build Python and the
+Emscripten build in ``cross-build/build`` and
+``cross-build/wasm32-emscripten/build/python/``, respectively.
+
+You can also do each configuration and build step separately; the command above
+is a convenience wrapper around the following commands:
+
+.. code-block:: shell
+
+   python Tools/wasm/emscripten configure-build-python --quiet -- --config-cache --with-pydebug
+   python Tools/wasm/emscripten make-build-python --quiet
+   python Tools/wasm/emscripten make-libffi --quiet
+   python Tools/wasm/emscripten configure-host --quiet -- --config-cache
+   python Tools/wasm/emscripten make-host --quiet
+
+.. note::
+
+   The ``configure-host`` command infers the use of ``--with-pydebug`` from the
+   build Python.
+
+Running the separate commands after ``emscripten build`` is useful if you, for
+example, only want to run the ``make-host`` step after making code changes.
+
+Once everything is complete, there will be a
+``cross-build/wasm32-emscripten/build/python/python.sh`` helper file which you
+can use to run the ``python.mjs`` file:
+
+.. code-block:: shell
+
+   cross-build/wasm32-emscripten/build/python/python.sh --version
+
+You can also use ``Makefile`` targets and they will work as expected thanks to
+the ``HOSTRUNNER`` environment variable having been set to a similar value as
+used in ``python.sh``:
+
+.. code-block:: shell
+
+   make -C cross-build/wasm32-emscripten/build/python/ test
+
+
+.. _Emscripten: https://emscripten.org/
+.. _WebAssembly: https://webassembly.org
+
+
+Android
+-------
+
+Build and test instructions for Android are maintained in the CPython repository
+at :cpy-file:`Android/README.md`.
+
+iOS
+---
+
+Compiling Python for iOS requires a macOS machine, on a recent version of macOS,
+running a recent version of Xcode. Apple expects developers to keep their
+operating systems and tools up-to-date; if your macOS version is more than one
+major release out of date, or your Xcode version is more than a couple of minor
+versions out of date, you'll likely encounter difficulties. It is not possible
+to compile for iOS using Windows or Linux as a build machine.
+
+A complete build for Python on iOS requires compiling CPython four times: once for
+macOS; then once for each of the three underlying platforms used by iOS:
+
+* An ARM64 device (an iPhone or iPad);
+* An ARM64 simulator running on a recent macOS machine; and
+* An x86_64 simulator running on older macOS machine.
+
+The macOS build is required because building Python involves running some Python
+code. On a normal desktop build of Python, you can compile a Python interpreter
+and then use that interpreter to run Python code. However, the binaries produced
+for iOS won't run on macOS, so you need to provide an external Python
+interpreter. From the root of a CPython code checkout, run the following::
+
+   $ ./configure --prefix=$(pwd)/cross-build/macOS
+   $ make -j4 all
+   $ make install
+
+This will build and install Python for macOS into the ``cross-build/macOS``
+directory.
+
+The CPython build system can compile a single platform at a time. It is possible
+to *test* a single platform at a time; however, for distribution purposes, you
+must compile all three, and merge the results. See the `iOS README
+<https://github.com/python/cpython/blob/main/iOS/README.rst#merge-thin-frameworks-into-fat-frameworks>`__
+for details on this merging process.
+
+The following instructions will build CPython for iOS with all extensions
+enabled, provided you have installed the build dependencies XZ, BZip2, OpenSSL
+and libFFI in subfolders of the ``cross-build`` folder. See :ref:`the iOS
+section on installing build dependencies <build-dependencies>` for details on
+how to obtain these dependencies. These dependencies are all strictly optional,
+however, including libFFI is *highly* recommended, as it is required by the
+:py:mod:`ctypes` module which is used on iOS to support accessing native system APIs.
+
+.. tab:: ARM64 device
+
+   .. code-block:: console
+
+      $ export PATH="$(pwd)/iOS/Resources/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Library/Apple/usr/bin"
+      $ ./configure \
+            LIBLZMA_CFLAGS="-I$(pwd)/cross-build/iphoneos.arm64/xz/include" \
+            LIBLZMA_LIBS="-L$(pwd)/cross-build/iphoneos.arm64/xz/lib -llzma" \
+            BZIP2_CFLAGS="-I$(pwd)/cross-build/iphoneos.arm64/bzip2/include" \
+            BZIP2_LIBS="-L$(pwd)/cross-build/iphoneos.arm64/bzip2/lib -lbz2" \
+            LIBFFI_CFLAGS="-I$(pwd)/cross-build/iphoneos.arm64/libffi/include" \
+            LIBFFI_LIBS="-L$(pwd)/cross-build/iphoneos.arm64/libffi/lib -lffi" \
+            --with-openssl="$(pwd)/cross-build/iphoneos.arm64/openssl" \
+            --host=arm64-apple-ios12.0 \
+            --build=arm64-apple-darwin \
+            --with-build-python=$(pwd)/cross-build/macOS/bin/python3.13 \
+            --enable-framework
+      $ make -j4 all
+      $ make install
+
+.. tab:: ARM64 simulator
+
+   .. code-block:: console
+
+      $ export PATH="$(pwd)/iOS/Resources/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Library/Apple/usr/bin"
+      $ ./configure \
+            LIBLZMA_CFLAGS="-I$(pwd)/cross-build/iphonesimulator.arm64/xz/include" \
+            LIBLZMA_LIBS="-L$(pwd)/cross-build/iphonesimulator.arm64/xz/lib -llzma" \
+            BZIP2_CFLAGS="-I$(pwd)/cross-build/iphonesimulator.arm64/bzip2/include" \
+            BZIP2_LIBS="-L$(pwd)/cross-build/iphonesimulator.arm64/bzip2/lib -lbz2" \
+            LIBFFI_CFLAGS="-I$(pwd)/cross-build/iphonesimulator.arm64/libffi/include" \
+            LIBFFI_LIBS="-L$(pwd)/cross-build/iphonesimulator.arm64/libffi/lib -lffi" \
+            --with-openssl="$(pwd)/cross-build/iphonesimulator.arm64/openssl" \
+            --host=arm64-apple-ios12.0-simulator \
+            --build=arm64-apple-darwin \
+            --with-build-python=$(pwd)/cross-build/macOS/bin/python3.13 \
+            --enable-framework
+      $ make -j4 all
+      $ make install
+
+.. tab:: x86-64 simulator
+
+   .. code-block:: console
+
+      $ export PATH="$(pwd)/iOS/Resources/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Library/Apple/usr/bin"
+      $ ./configure \
+            LIBLZMA_CFLAGS="-I$(pwd)/cross-build/iphonesimulator.x86_64/xz/include" \
+            LIBLZMA_LIBS="-L$(pwd)/cross-build/iphonesimulator.x86_64/xz/lib -llzma" \
+            BZIP2_CFLAGS="-I$(pwd)/cross-build/iphonesimulator.x86_64/bzip2/include" \
+            BZIP2_LIBS="-L$(pwd)/cross-build/iphonesimulator.x86_64/bzip2/lib -lbz2" \
+            LIBFFI_CFLAGS="-I$(pwd)/cross-build/iphonesimulator.x86_64/libffi/include" \
+            LIBFFI_LIBS="-L$(pwd)/cross-build/iphonesimulator.x86_64/libffi/lib -lffi" \
+            --with-openssl="$(pwd)/cross-build/iphonesimulator.x86_64/openssl" \
+            --host=x86_64-apple-ios12.0-simulator \
+            --build=arm64-apple-darwin \
+            --with-build-python=$(pwd)/cross-build/macOS/bin/python3.13 \
+            --enable-framework
+      $ make -j4 all
+      $ make install
+
+These instructions modify your ``PATH`` before the build. As iOS and macOS share
+a hardware architecture (ARM64), it is easy for a macOS ARM64 binary to be
+accidentally linked into your iOS build. This is especially common when Homebrew
+is present on the build system. The most reliable way to avoid this problem is
+to remove any potential source of other libraries from your ``PATH``.
+
+However, the ``PATH`` is not completely bare --- it includes the
+``iOS/Resources/bin`` folder. This folder contains a collection of scripts that
+wrap the invocation of the Xcode :program:`xcrun` tool, removing user- and
+version-specific paths from the values encoded in the :py:mod:`sysconfig`
+module. Copies of these scripts are included in the final build products.
+
+Once this build completes, the ``iOS/Frameworks`` folder will contain a
+``Python.framework`` that can be used for testing.
+
+To run the test suite on iOS, complete a build for a *simulator* platform,
+ensure the path modifications from the build are still in effect, and run::
+
+   $ make testios
+
+The full test suite takes approximately 12 minutes to run on a 2022 M1 MacBook
+Pro, plus a couple of extra minutes to build the testbed application and boot
+the simulator. There will be an initial burst of console output while the Xcode
+test project is compiled; however, while the test suite is running, there is no
+console output or progress. This is a side effect of how Xcode operates when
+executed at the command line. You should see an iOS simulator appear during the
+testing process; the simulator will booth to an iOS landing screen, the testbed
+app will be installed, and then started. The screen of the simulator will be
+black while the test suite is running. When the test suite completes, success or
+failure will be reported at the command line. In the case of failure, you will
+see the full log of CPython test suite output.
+
+You can also run the test suite in Xcode itself. This is required if you want to
+run on a physical device; it is also the easiest approach if you need to run a
+single test, or a subset of tests. See the `iOS README
+<https://github.com/python/cpython/blob/main/iOS/README.rst#debugging-test-failures>`__
+for details.
+
+.. c_compile_and_build_end
+
 .. _build-dependencies:
 .. _deps-on-linux:
 .. _macOS and OS X:
@@ -454,8 +717,10 @@ used in ``python.sh``:
 Install dependencies
 ====================
 
-This section explains how to install additional extensions (e.g. ``zlib``)
-on :ref:`Linux <deps-on-linux>` and :ref:`macOS`.
+.. c_install_dependencies_start
+
+This section explains how to install libraries which are needed to compile
+some of CPython's modules (for example, ``zlib``).
 
 .. tab:: Linux
 
@@ -465,17 +730,23 @@ on :ref:`Linux <deps-on-linux>` and :ref:`macOS`.
    distribution, but the appropriate commands for some popular distributions
    are below.
 
-   On **Fedora**, **Red Hat Enterprise Linux** and other ``yum`` based systems::
+   On **Fedora**, **RHEL**, **CentOS** and other ``dnf``-based systems::
 
-      $ sudo yum install yum-utils
-      $ sudo yum-builddep python3
-
-   On **Fedora** and other ``DNF`` based systems::
-
+      $ sudo dnf install git pkg-config
       $ sudo dnf install dnf-plugins-core  # install this to use 'dnf builddep'
       $ sudo dnf builddep python3
 
-   On **Debian**, **Ubuntu**, and other ``apt`` based systems, try to get the
+   Some optional development dependencies are not included in the above.
+   To install some additional dependencies for optional build and test components::
+
+      $ sudo dnf install \
+            gcc gcc-c++ gdb lzma glibc-devel libstdc++-devel openssl-devel \
+            readline-devel zlib-devel libzstd-devel libffi-devel bzip2-devel \
+            xz-devel sqlite sqlite-devel sqlite-libs libuuid-devel gdbm-libs \
+            perf expat expat-devel mpdecimal python3-pip
+
+
+   On **Debian**, **Ubuntu**, and other ``apt``-based systems, try to get the
    dependencies for the Python you're working on by using the ``apt`` command.
 
    First, make sure you have enabled the source packages in the sources list.
@@ -483,11 +754,12 @@ on :ref:`Linux <deps-on-linux>` and :ref:`macOS`.
    URL, distribution name and component name, to ``/etc/apt/sources.list``.
    Take Ubuntu 22.04 LTS (Jammy Jellyfish) for example::
 
-      deb-src http://archive.ubuntu.com/ubuntu/ jammy main
+      $ deb-src http://archive.ubuntu.com/ubuntu/ jammy main
 
-   Alternatively, uncomment lines with ``deb-src`` using an editor, e.g.::
+   Alternatively, uncomment lines with ``deb-src`` using an editor, for
+   example::
 
-      sudo nano /etc/apt/sources.list
+      $ sudo nano /etc/apt/sources.list
 
    For other distributions, like Debian, change the URL and names to correspond
    with the specific distribution.
@@ -507,8 +779,10 @@ on :ref:`Linux <deps-on-linux>` and :ref:`macOS`.
       $ sudo apt-get install build-essential gdb lcov pkg-config \
             libbz2-dev libffi-dev libgdbm-dev libgdbm-compat-dev liblzma-dev \
             libncurses5-dev libreadline6-dev libsqlite3-dev libssl-dev \
-            lzma lzma-dev tk-dev uuid-dev zlib1g-dev
+            lzma lzma-dev tk-dev uuid-dev zlib1g-dev libmpdec-dev libzstd-dev
 
+   Note that Debian 12 and Ubuntu 24.04 do not have the ``libmpdec-dev`` package.  You can safely
+   remove it from the install list above and the Python build will use a bundled version.
 
 .. tab:: macOS
 
@@ -536,43 +810,73 @@ on :ref:`Linux <deps-on-linux>` and :ref:`macOS`.
    manager, like Homebrew_ or MacPorts_, and then add the appropriate paths
    for the header and library files to your ``configure`` command.
 
-   For example, with **Homebrew**, install the dependencies::
+   .. tab:: Homebrew
 
-      $ brew install pkg-config openssl@3.0 xz gdbm tcl-tk
+      For **Homebrew**, install dependencies using ``brew``::
 
-   Then, for Python 3.11 and newer, run ``configure``::
+         $ brew install pkg-config openssl@3 xz gdbm tcl-tk mpdecimal zstd
 
-      $ GDBM_CFLAGS="-I$(brew --prefix gdbm)/include" \
-         GDBM_LIBS="-L$(brew --prefix gdbm)/lib -lgdbm" \
-         ./configure --with-pydebug \
-                     --with-openssl="$(brew --prefix openssl@3.0)"
+      .. tab:: Python 3.13+
 
-   Or, for Python 3.8 through 3.10::
+         For Python 3.13 and newer::
 
-      $ CPPFLAGS="-I$(brew --prefix gdbm)/include -I$(brew --prefix xz)/include" \
-         LDFLAGS="-L$(brew --prefix gdbm)/lib -L$(brew --prefix xz)/lib" \
-         ./configure --with-pydebug \
-                     --with-openssl="$(brew --prefix openssl@3.0)" \
-                     --with-tcltk-libs="$(pkg-config --libs tcl tk)" \
-                     --with-tcltk-includes="$(pkg-config --cflags tcl tk)"
+            $ GDBM_CFLAGS="-I$(brew --prefix gdbm)/include" \
+               GDBM_LIBS="-L$(brew --prefix gdbm)/lib -lgdbm" \
+               ./configure --with-pydebug \
+                           --with-system-libmpdec \
+                           --with-openssl="$(brew --prefix openssl@3)"
+
+      .. tab:: Python 3.11-3.12
+
+         For Python 3.11 and 3.12::
+
+            $ GDBM_CFLAGS="-I$(brew --prefix gdbm)/include" \
+               GDBM_LIBS="-L$(brew --prefix gdbm)/lib -lgdbm" \
+               ./configure --with-pydebug \
+                           --with-openssl="$(brew --prefix openssl@3)"
+
+      .. tab:: Python 3.9-3.10
+
+         For Python 3.9 and 3.10::
+
+            $ CPPFLAGS="-I$(brew --prefix gdbm)/include -I$(brew --prefix xz)/include" \
+               LDFLAGS="-L$(brew --prefix gdbm)/lib -L$(brew --prefix xz)/lib" \
+               ./configure --with-pydebug \
+                           --with-openssl="$(brew --prefix openssl@3)" \
+                           --with-tcltk-libs="$(pkg-config --libs tcl tk)" \
+                           --with-tcltk-includes="$(pkg-config --cflags tcl tk)" \
+                           --with-dbmliborder=gdbm:ndbm
+
+         (``--with-dbmliborder`` is a workaround for a Homebrew-specific change
+         to ``gdbm``; see `#89452 <https://github.com/python/cpython/issues/89452>`_
+         for details.)
+
+   .. tab:: MacPorts
+
+      For **MacPorts**, install dependencies using ``port``::
+
+         $ sudo port install pkgconfig openssl xz gdbm tk +quartz mpdecimal zstd
+
+      .. tab:: Python 3.13+
+
+         For Python 3.13 and newer::
+
+            $ GDBM_CFLAGS="-I$(dirname $(dirname $(which port)))/include" \
+               GDBM_LIBS="-L$(dirname $(dirname $(which port)))/lib -lgdbm" \
+               ./configure --with-pydebug \
+                           --with-system-libmpdec
+
+      .. tab:: Python 3.11-3.12
+
+         For Python 3.11 and 3.12::
+
+            $ GDBM_CFLAGS="-I$(dirname $(dirname $(which port)))/include" \
+               GDBM_LIBS="-L$(dirname $(dirname $(which port)))/lib -lgdbm" \
+               ./configure --with-pydebug
 
    And finally, run ``make``::
 
-      $ make -s -j2
-
-   Alternatively, with **MacPorts**::
-
-      $ sudo port install pkgconfig openssl xz gdbm tcl tk +quartz
-
-   Then, for Python 3.11 and newer, run ``configure``::
-
-      $ GDBM_CFLAGS="-I$(dirname $(dirname $(which port)))/include" \
-         GDBM_LIBS="-L$(dirname $(dirname $(which port)))/lib -lgdbm" \
-         ./configure --with-pydebug
-
-   And finally, run ``make``::
-
-      $ make -s -j2
+      $ make -s -j8
 
    There will sometimes be optional modules added for a new release which
    won't yet be identified in the OS-level build dependencies. In those cases,
@@ -585,9 +889,6 @@ on :ref:`Linux <deps-on-linux>` and :ref:`macOS`.
    to the `macOS README
    <https://github.com/python/cpython/blob/main/Mac/README.rst>`_.
 
-   .. _clang: https://clang.llvm.org/
-   .. _ccache: https://ccache.dev/
-
    .. note:: While you need a C compiler to build CPython, you don't need any
       knowledge of the C language to contribute!  Vast areas of CPython are
       written completely in Python: as of this writing, CPython contains slightly
@@ -597,11 +898,43 @@ on :ref:`Linux <deps-on-linux>` and :ref:`macOS`.
 
    On Windows, extensions are already included and built automatically.
 
+.. tab:: Android
+
+   The BeeWare project maintains `scripts for building Android dependencies`_,
+   and distributes `pre-compiled binaries`_ for each of them.
+   These binaries are automatically downloaded and used by the CPython
+   build script at :cpy-file:`Android/android.py`.
+
+   .. _scripts for building Android dependencies: https://github.com/beeware/cpython-android-source-deps
+   .. _pre-compiled binaries: https://github.com/beeware/cpython-android-source-deps/releases
+
+.. tab:: iOS
+
+   As with CPython itself, the dependencies for CPython must be compiled for
+   each of the hardware architectures that iOS supports. Consult the
+   documentation for `XZ <https://tukaani.org/xz/>`__, `bzip2
+   <https://sourceware.org/bzip2/>`__, `OpenSSL <https://www.openssl.org>`__ and
+   `libffi <https://github.com/libffi/libffi>`__ for details on how to configure
+   the project for cross-platform iOS builds.
+
+   Alternatively, the `BeeWare Project <https://beeware.org>`__ maintains a
+   `project for building iOS dependencies
+   <https://github.com/beeware/cpython-apple-source-deps>`__, and distributes
+   `pre-compiled binaries
+   <https://github.com/beeware/cpython-apple-source-deps/releases>`__ for each
+   of the dependencies. If you use this project to build the dependencies
+   yourself, the subfolders of the ``install`` folder can be used to configure
+   CPython. If you use the pre-compiled binaries, you should unpack each tarball
+   into a separate folder, and use that folder as the configuration target.
+
+.. c_install_dependencies_end
 
 .. _regenerate_configure:
 
 Regenerate ``configure``
 ========================
+
+.. c_regenerate_configure_start
 
 If a change is made to Python which relies on some POSIX system-specific
 functionality (such as using a new system call), it is necessary to update the
@@ -641,19 +974,21 @@ and make sure the :file:`pkg.m4` macro file located in the appropriate
    :program:`autoreconf` runs :program:`autoconf` and a number of other tools
    repeatedly as appropriate.
 
-.. _build_troubleshooting:
+.. c_regenerate_configure_end
 
 Regenerate the ABI dump
 =======================
 
+.. c_regenerate_abi_start
+
 Maintenance branches (not ``main``) have a special file located in
-``Doc/data/pythonX.Y.abi`` that allows us to know if a given Pull Request
+``Doc/data/pythonX.Y.abi`` that allows us to know if a given pull request
 affects the public ABI. This file is used by the GitHub CI in a check
-called ``Check if the ABI has changed`` that will fail if a given Pull Request
+called ``Check if the ABI has changed`` that will fail if a given pull request
 has changes to the ABI and the ABI file is not updated.
 
-This check acts as a fail-safe and **doesn't necessarily mean that the Pull
-Request cannot be merged**. When this check fails you should add the relevant
+This check acts as a fail-safe and **doesn't necessarily mean that the pull
+request cannot be merged**. When this check fails you should add the relevant
 release manager to the PR so that they are aware of the change and they can
 validate if the change can be made or not.
 
@@ -682,8 +1017,14 @@ Note that the ``ubuntu`` version used to execute the script matters and
 **must** match the version used by the CI to check the ABI. See the
 ``.github/workflows/build.yml`` file for more information.
 
+.. c_regenerate_abi_end
+
+.. _build_troubleshooting:
+
 Troubleshoot the build
 ======================
+
+.. c_build_troubleshooting_start
 
 This section lists some of the common problems that may arise during the
 compilation of Python, with proposed solutions.
@@ -703,6 +1044,8 @@ To overcome this problem, auto-generated files are also checked into the
 Git repository. So if you don't touch the auto-generation scripts, there's
 no real need to auto-generate anything.
 
+.. c_build_troubleshooting_end
+
 Editors and tools
 =================
 
@@ -713,10 +1056,12 @@ support.
 For editors and tools which the core developers have felt some special comment
 is needed for coding *in* Python, see :ref:`resources`.
 
-.. _build-directory-structure:
+.. _build_directory_structure:
 
 Directory structure
 ===================
+
+.. c_directory_structure_start
 
 There are several top-level directories in the CPython source tree. Knowing what
 each one is meant to hold will help you find where a certain piece of
@@ -738,7 +1083,7 @@ every rule.
      The part of the standard library implemented in pure Python.
 
 ``Mac``
-     Mac-specific code (e.g., using IDLE as a macOS application).
+     Mac-specific code (for example, using IDLE as a macOS application).
 
 ``Misc``
      Things that do not belong elsewhere. Typically this is varying kinds of
@@ -773,14 +1118,15 @@ every rule.
 ``Tools``
      Various tools that are (or have been) used to maintain Python.
 
-
-.. _issue tracker: https://github.com/python/cpython/issues
+.. c_directory_structure_end
 
 
 .. _using-codespaces:
 
 Contribute using GitHub Codespaces
 ==================================
+
+.. c_codespaces_start
 
 .. _codespaces-whats-codespaces:
 
@@ -806,7 +1152,7 @@ you'd prefer to use that directly.
 Create a CPython codespace
 --------------------------
 
-Here are the basic steps needed to contribute a patch using Codespaces.
+Here are the basic steps needed to contribute a pull request using Codespaces.
 You first need to navigate to the
 `CPython repo <https://github.com/python/cpython>`_ hosted on GitHub.
 
@@ -842,5 +1188,78 @@ select the option ``Open in VS Code``. You will still be working on the remote
 codespace instance, thus using the remote instance's compute power. The compute
 power may be a much higher spec than your local machine which can be helpful.
 
+.. _devcontainer-directly:
 
-.. TODO: add docker instructions
+Using the dev container directly
+================================
+
+If you want more control over the environment, or to work offline,
+you can use the same container used in
+:ref:`GitHub Codespaces <using-codespaces>` directly.
+This is meant for users who have (or want to get) some experience
+with containers.
+These instructions assume a Unix-like environment with
+`Docker <https://www.docker.com/>`__ or `Podman <https://podman.io/>`__
+installed.
+
+.. _devcontainer-image:
+
+Using the pre-built container image
+-----------------------------------
+
+`Dev container images <https://github.com/python/cpython-devcontainers/pkgs/container/devcontainer>`__
+are available from the
+`GitHub Container Registry (GHCR) account for the Python org <https://github.com/orgs/python/packages>`__.
+
+To run the container and launch a Bash shell, run one of the following commands
+in a clone of the CPython repository.
+
+.. code-block:: bash
+
+   docker run -it --rm --volume $PWD:/workspace --workdir /workspace ghcr.io/python/devcontainer:latest
+
+.. code-block:: bash
+
+   podman run -it --rm --volume $PWD:/workspace:Z --workdir /workspace ghcr.io/python/devcontainer:latest
+
+Note that the container has read/write access to the working directory.
+You may want to use a separate clone of CPython, or run ``make clean``
+to remove caches and build output generated for your host OS.
+
+.. _devcontainer-build:
+
+Building yourself
+-----------------
+
+If you prefer, you can build the container image yourself. In a clone of the
+`cpython-devcontainers repo <https://github.com/python/cpython-devcontainers>`_,
+build the container and name it ``cpython-dev``:
+
+.. code-block:: bash
+
+   docker build devcontainer/ --tag cpython-dev
+
+(Substitute ``podman`` for ``docker`` if you use Podman.)
+
+The same command will update any existing ``cpython-dev`` container.
+Run it again from time to time -- especially if the container stops
+working for you.
+
+To run the container and launch a Bash shell, run one of the following commands
+in a clone of the CPython repository.
+
+.. code-block:: bash
+
+   docker run -it --rm --volume $PWD:/workspace --workdir /workspace cpython-dev
+
+.. code-block:: bash
+
+   podman run -it --rm --volume $PWD:/workspace:Z --workdir /workspace cpython-dev
+
+The same caveats outlined above when running from a container image from GHCR
+also apply here.
+
+.. c_codespaces_end
+
+
+.. include:: ../links.rst

@@ -1,0 +1,35 @@
+target-version = "py310"
+fix = true
+output-format = "full"
+line-length = 88
+
+[lint]
+preview = true
+select = [
+    "C4",    # flake8-comprehensions
+    "B",     # flake8-bugbear
+    "E",     # pycodestyle
+    "F",     # pyflakes
+    "FA",    # flake8-future-annotations
+    "FLY",   # flynt
+    "FURB",  # refurb
+    "G",     # flake8-logging-format
+    "I",     # isort
+    "ISC",   # flake8-implicit-str-concat
+    "LOG",   # flake8-logging
+    "PERF",  # perflint
+    "PGH",   # pygrep-hooks
+    "PT",    # flake8-pytest-style
+    "TCH",   # flake8-type-checking
+    "UP",    # pyupgrade
+    "W",     # pycodestyle
+    "YTT",   # flake8-2020
+]
+ignore = [
+    "E501",  # Ignore line length errors (we use auto-formatting)
+]
+
+[format]
+preview = true
+quote-style = "preserve"
+docstring-code-format = true

@@ -74,7 +74,7 @@ Proofreading
 While an issue filed on the `issue tracker`_ means there is a known issue
 somewhere, that does not mean there are not other issues lurking about in the
 documentation. Proofreading a part of the documentation, such as a "How to" or
-OS specific document, can often uncover problems (e.g., documentation that
+OS specific document, can often uncover problems (for example, documentation that
 needs updating for Python 3).
 
 If you decide to proofread, read a section of the documentation from start

@@ -7,15 +7,20 @@ Dynamic analysis with Clang
 .. highlight:: bash
 
 This document describes how to use Clang to perform analysis on Python and its
-libraries. In addition to performing the analysis, the document will cover
-downloading, building and installing the latest Clang/LLVM combination (which
-is currently 3.4).
+libraries.
 
 This document does not cover interpreting the findings. For a discussion of
 interpreting results, see Marshall Clow's `Testing libc++ with
 -fsanitize=undefined <https://cplusplusmusings.wordpress.com/tag/clang/>`_.  The
 blog posting is a detailed examinations of issues uncovered by Clang in
 ``libc++``.
+
+The document focuses on Clang, although most techniques should generally apply
+to GCC's sanitizers as well.
+
+The instructions were tested on Linux, but they should work on macOS as well.
+Instructions for Windows are incomplete.
+
 
 What is Clang?
 ==============
@@ -49,177 +54,99 @@ A complete list of sanitizers can be found at `Controlling Code Generation
 
 Clang and its sanitizers have strengths (and weaknesses). Its just one tool in
 the war chest to uncovering bugs and improving code quality. Clang should be
-used to compliment other methods, including Code Reviews, Valgrind, Coverity,
+used to complement other methods, including Code Reviews, `Valgrind`_,
 etc.
 
 Clang/LLVM setup
 ================
 
-This portion of the document covers downloading, building and installing Clang
-and LLVM. There are three components to download and build. They are the LLVM
-compiler, the compiler front end and the compiler runtime library.
+Pre-built Clang builds are available for most platforms:
 
-In preparation you should create a scratch directory. Also ensure you are using
-Python 2 and not Python 3. Python 3 will cause the build to fail.
+- On macOS, Clang is the default compiler.
+- For mainstream Linux distros, you can install a ``clang`` package.
+  In some cases, you also need to install ``llvm`` separately, otherwise
+  some tools are not available.
+- On Windows, the installer for Visual Studio (not Code)
+  includes the "C++ clang tools for windows" feature.
 
-Download, build and install
----------------------------
-
-Perform the following to download, build and install the Clang/LLVM 3.4. ::
-
-    # Download
-    wget https://llvm.org/releases/3.4/llvm-3.4.src.tar.gz
-    wget https://llvm.org/releases/3.4/clang-3.4.src.tar.gz
-    wget https://llvm.org/releases/3.4/compiler-rt-3.4.src.tar.gz
-
-    # LLVM
-    tar xvf llvm-3.4.src.tar.gz
-    cd llvm-3.4/tools
-
-    # Clang Front End
-    tar xvf ../../clang-3.4.src.tar.gz
-    mv clang-3.4 clang
-
-    # Compiler RT
-    cd ../projects
-    tar xvf ../../compiler-rt-3.4.src.tar.gz
-    mv compiler-rt-3.4/ compiler-rt
-
-    # Build
-    cd ..
-    ./configure --enable-optimized --prefix=/usr/local
-    make -j4
-    sudo make install
-
-.. note::
-
-    If you receive an error ``'LibraryDependencies.inc' file not found``, then
-    ensure you are utilizing Python 2 and not Python 3. If you encounter the
-    error after switching to Python 2, then delete everything and start over.
-
-After ``make install`` executes, the compilers will be installed in
-``/usr/local/bin`` and the various libraries will be installed in
-``/usr/local/lib/clang/3.4/lib/linux/``:
-
-.. code-block:: console
-
-    $ ls /usr/local/lib/clang/3.4/lib/linux/
-    libclang_rt.asan-x86_64.a   libclang_rt.profile-x86_64.a
-    libclang_rt.dfsan-x86_64.a  libclang_rt.san-x86_64.a
-    libclang_rt.full-x86_64.a   libclang_rt.tsan-x86_64.a
-    libclang_rt.lsan-x86_64.a   libclang_rt.ubsan_cxx-x86_64.a
-    libclang_rt.msan-x86_64.a   libclang_rt.ubsan-x86_64.a
-
-On macOS, the libraries are installed in
-``/usr/local/lib/clang/3.3/lib/darwin/``:
-
-.. code-block:: console
-
-    $ ls /usr/local/lib/clang/3.3/lib/darwin/
-    libclang_rt.10.4.a                    libclang_rt.ios.a
-    libclang_rt.asan_osx.a                libclang_rt.osx.a
-    libclang_rt.asan_osx_dynamic.dylib    libclang_rt.profile_ios.a
-    libclang_rt.cc_kext.a                 libclang_rt.profile_osx.a
-    libclang_rt.cc_kext_ios5.a            libclang_rt.ubsan_osx.a
-    libclang_rt.eprintf.a
-
-.. note::
-
-    You should never have to add the libraries to a project. Clang will handle
-    it for you. If you find you cannot pass the ``-fsanitize=XXX`` flag through
-    ``make``'s implicit variables (``CFLAGS``, ``CXXFLAGS``, ``CC``,
-    ``CXXFLAGS``, ``LDFLAGS``) during ``configure``, then you should modify the
-    makefile after configuring to ensure the flag is passed through the
-    compiler.
+You can also build ``clang`` from source; refer to
+`the clang documentation <https://clang.llvm.org/>`_ for details.
 
 The installer does not install all the components needed on occasion. For
 example, you might want to run a ``scan-build`` or examine the results with
-``scan-view``. You can copy the components by hand with: ::
+``scan-view``. If this is your case, you can build Clang from source and
+copy tools from ``tools/clang/tools`` to a directory on your ``PATH``.
 
-    sudo mkdir /usr/local/bin/scan-build
-    sudo cp -r llvm-3.4/tools/clang/tools/scan-build /usr/local/bin
-    sudo mkdir /usr/local/bin/scan-view
-    sudo cp -r llvm-3.4/tools/clang/tools/scan-view /usr/local/bin
+Another reason to build from source is to get the latest version of Clang/LLVM,
+if your platform's channels don't provide it yet.
+Newer versions of Clang/LLVM introduce new sanitizer checks.
 
-.. note::
-
-    Because the installer does not install all the components needed on
-    occasion, you should not delete the scratch directory until you are sure
-    things work as expected. If a library is missing, then you should search for
-    it in the Clang/LLVM build directory.
 
 Python build setup
 ==================
 
 This portion of the document covers invoking Clang and LLVM with the options
-required so the sanitizers analyze Python with under its test suite. Two
-checkers are used - ASan and UBSan.
+required so the sanitizers analyze Python with under its test suite.
 
-Because the sanitizers are runtime checkers, its best to have as many positive
-and negative self tests as possible. You can never have enough self tests.
+Set the compiler to Clang, in case it's not the default::
 
-The general idea is to compile and link with the sanitizer flags. At link time,
-Clang will include the needed runtime libraries. However, you can't use
-``CFLAGS`` and ``CXXFLAGS`` to pass the options through the compiler to the
-linker because the makefile rules for ``BUILDPYTHON``, ``_testembed`` and
-``_freeze_importlib`` don't use the implicit variables.
+   export CC="clang"
 
-As a workaround to the absence of flags to the linker, you can pass the
-sanitizer options by way of the compilers - ``CC`` and ``CXX``.  Passing the
-flags though the compiler is used below, but passing them through ``LDFLAGS`` is
-also reported to work.
+If you want to use additional sanitizer options (found in Clang documentation),
+add them to the ``CFLAGS`` variable.
+For example, you may want the checked process to exit after the first failure::
 
-Building Python
----------------
+   export CFLAGS="-fno-sanitize-recover"
 
-To begin, export the variables of interest with the desired sanitizers. Its OK
-to specify both sanitizers: ::
+Then, run ``./configure`` with the relevant flags:
+
+* ASan: ``--with-address-sanitizer --without-pymalloc``
+* UBsan: ``--with-undefined-behavior-sanitizer``
+
+The ``--without-pymalloc`` option is not necessary (tests should pass without it),
+but disabling pymalloc helps ASan uncover more bugs (ASan does not track
+individual allocations done by pymalloc).
+
+It is OK to specify both sanitizers.
+
+After that, run ``make`` and ``make test`` as usual.
+Note that ``make`` itself may fail with a sanitizer failure,
+since the just-compiled Python runs during later stages of the build.
+
+
+Build setup for enabling sanitizers for all code
+------------------------------------------------
+
+Some parts of Python (for example, ``_testembed``, ``_freeze_importlib``,
+``test_cppext``) may not use the variables set by ``configure``,
+and with the above settings they'll be compiled without sanitization.
+
+As a workaround, you can pass the sanitizer options by way of the *compilers*,
+``CC`` (for C) and ``CXX`` (for C++). This is used below.
+Passing the options through ``LDFLAGS`` is also reported to work.
+
+For ASan, use::
 
     # ASan
-    export CC="/usr/local/bin/clang -fsanitize=address"
-    export CXX="/usr/local/bin/clang++ -fsanitize=address -fno-sanitize=vptr"
+    export CC="clang -fsanitize=address"
+    export CXX="clang++ -fsanitize=address -fno-sanitize=vptr"
 
-Or: ::
+And for UBSan::
 
     # UBSan
-    export CC="/usr/local/bin/clang -fsanitize=undefined"
-    export CXX="/usr/local/bin/clang++ -fsanitize=undefined -fno-sanitize=vptr"
+    export CC="clang -fsanitize=undefined"
+    export CXX="clang++ -fsanitize=undefined -fno-sanitize=vptr"
 
-The ``-fno-sanitize=vptr`` removes vtable checks that are part of UBSan from C++
-projects due to noise. Its not needed with Python, but you will likely need it
-for other C++ projects.
+It's OK to specify both sanitizers.
 
-After exporting ``CC`` and ``CXX``, ``configure`` as normal:
+After this, run ``./configure``, ``make`` and ``make test`` as usual.
 
-.. code-block:: console
 
-    $ ./configure
-    checking build system type... x86_64-unknown-linux-gnu
-    checking host system type... x86_64-unknown-linux-gnu
-    checking for --enable-universalsdk... no
-    checking for --with-universal-archs... 32-bit
-    checking MACHDEP... linux
-    checking for --without-gcc... no
-    checking for gcc... /usr/local/bin/clang -fsanitize=undefined
-    checking whether the C compiler works... yes
-    ...
+Analyzing the output
+====================
 
-Next is a standard ``make`` (formatting added for clarity):
-
-.. code-block:: console
-
-    $ make
-    /usr/local/bin/clang -fsanitize=undefined -c -Wno-unused-result
-        -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototypes -I.
-        -IInclude -I./Include -DPy_BUILD_CORE -o Modules/python.o
-        ./Modules/python.c
-    /usr/local/bin/clang -fsanitize=undefined -c -Wno-unused-result
-        -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototypes -I.
-        -IInclude -I./Include -DPy_BUILD_CORE -o Parser/acceler.o
-        Parser/acceler.c
-    ...
-
-Finally is ``make test`` (formatting added for clarity):
+Sanitizer failures will make the process fail and output a diagnostic,
+for example:
 
 .. code-block:: none
 
@@ -233,8 +160,12 @@ Finally is ``make test`` (formatting added for clarity):
                      ^
     ...
 
-If you are using the address sanitizer, its important to pipe the output through
-``asan_symbolize.py`` to get a good trace. For example, from Issue 20953 during
+If you are using the address sanitizer, an additional tool is needed to
+get good traces. Usually, this happens automatically through the
+``llvm-symbolizer`` tool. If this tool is not installed on your ``PATH``,
+you can set ``ASAN_SYMBOLIZER_PATH`` to the location of the tool,
+or pipe test output through ``asan_symbolize.py`` script from the
+Clang distribution. For example, from Issue 20953 during
 compile (formatting added for clarity):
 
 .. code-block:: none
@@ -302,25 +233,25 @@ compile (formatting added for clarity):
 
 .. note::
 
-    ``asan_symbolize.py`` is supposed to be installed during ``make install``.
-    If its not installed, then look in the Clang/LLVM build directory for it and
-    copy it to ``/usr/local/bin``.
+    If ``asan_symbolize.py`` is not installed, build Clang from source, then
+    look in the Clang/LLVM build directory for it and use it directly or copy
+    it to a directory on ``PATH``.
 
-Blacklisting (ignoring) findings
---------------------------------
+Ignoring findings
+-----------------
 
 .. highlight:: none
 
 Clang allows you to alter the behavior of sanitizer tools for certain
-source-level by providing a special blacklist file at compile-time. The
-blacklist is needed because it reports every instance of an issue, even if the
+source-level by providing a special ignorelist file at compile-time. The
+ignorelist is needed because it reports every instance of an issue, even if the
 issue is reported 10's of thousands of time in un-managed library code.
 
-You specify the blacklist with ``-fsanitize-blacklist=XXX``. For example::
+You specify the ignorelist with ``-fsanitize-ignorelist=XXX``. For example::
 
-    -fsanitize-blacklist=my_blacklist.txt
+    -fsanitize-ignorelist=my_ignorelist.txt
 
-``my_blacklist.txt`` would then contain entries such as the following. The entry
+``my_ignorelist.txt`` would then contain entries such as the following. The entry
 will ignore a bug in ``libc++``'s ``ios`` formatting functions::
 
     fun:_Ios_Fmtflags
@@ -342,7 +273,7 @@ findings::
     ...
 
 One of the function of interest is ``audioop_getsample_impl`` (flagged at line
-422), and the blacklist entry would include::
+422), and the ignorelist entry would include::
 
     fun:audioop_getsample_imp
 
@@ -350,7 +281,9 @@ Or, you could ignore the entire file with::
 
     src:Modules/audioop.c
 
-Unfortunately, you won't know what to blacklist until you run the sanitizer.
+Unfortunately, you won't know what to ignorelist until you run the sanitizer.
 
 The documentation is available at `Sanitizer special case list
 <https://clang.llvm.org/docs/SanitizerSpecialCaseList.html>`_.
+
+.. _Valgrind: https://github.com/python/cpython/blob/main/Misc/README.valgrind
