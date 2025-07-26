@@ -106,7 +106,7 @@ We recommend two or three coordinators, though you may begin with one.
 Here are some general suggestions.
 
 -  Coordinator requests are to be public on the `translation mailing list <translation_ml_>`_.
--  If the given language has a native core dev, the core dev has input
+-  If the given language has a native core team member, they have input
    on the coordinator request.
 -  Anyone who wants to become coordinator for their native language and shows
    motivation by translating and building a community will be named
