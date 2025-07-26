@@ -3,7 +3,7 @@ Translations
 ============
 
 .. toctree::
-   :maxdepth: 3
+   :maxdepth: 4
 
    translating
    coordinating
