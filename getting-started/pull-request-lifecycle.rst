@@ -183,59 +183,86 @@ message. It is usually okay to leave that as-is and close the editor.
 See `the merge command's documentation <https://git-scm.com/docs/git-merge>`_
 for a detailed technical explanation.
 
-
 .. _good-prs:
 
-Making good PRs
+Making Good PRs
 ===============
 
-When creating a pull request for submission, there are several things that you
-should do to help ensure that your pull request is accepted.
+When creating a pull request, following best practices ensures your contribution is **clear, maintainable, and easy to review**. A well-structured PR improves collaboration and speeds up the review process.
 
-#. **Make your change against the right version of Python.** In general all
-   changes are made against the ``main`` branch first. This includes bug fixes.
-   After the change is merged there, it will be :ref:`ported back <branch-merge>`
-   to older :ref:`maintenance releases <branchstatus>` as well. That way we
-   ensure all affected versions are handled. Therefore, basing a new change
-   directly on a maintenance branch is only used in specific circumstances,
-   for instance when that change does not apply to ``main`` or the change
-   requires a different approach in an older Python version compared to
-   ``main``.
+1. **Use a Clear and Structured PR Title**
 
-#. **Make sure to follow Python's style guidelines.** For Python code you
-   should follow :PEP:`8`, and for C code you should follow :PEP:`7`. If you have
-   one or two discrepancies those can be fixed by the core developer who merges
-   your pull request. But if you have systematic deviations from the style guides
-   your pull request will be put on hold until you fix the formatting issues.
+   PR titles often become commit messages, making them **critical for maintainability and searchability**. Follow these guidelines:
+
+    **Do:**
+
+   - Clearly summarize the change in a concise manner.
+   - Use the **imperative mood** (e.g., "Fix crash in parser" instead of "Fixed a crash in parser").
+   - Be specific about what is being changed (avoid vague words like "Update" or "Fix").
+
+   **Example of a good PR title:**
+
+   ``gh-128002: Simplify all_tasks to use PyList_Extend instead of manual iteration``
+
+#. **Write a detailed description**
+
+   Your PR description should provide **clear context** for reviewers. Answer the following questions:
+
+   - What does this PR do?
+   - **Why is this change necessary?**
+   - **Are there any breaking changes?**
+   - **Does this PR fix any open issues?** (Reference issue numbers if applicable)
+
+   Providing detailed descriptions makes the review process **faster and more efficient**.
+
+3. **Make Your Change Against the Right Branch**
+
+   Ensure your PR is based on the correct branch:
+
+   - **New changes should target the** ``main`` **branch unless they are specific to an older version.**
+   - If a change affects older versions, it will be **backported** after merging.
+   - Only use **maintenance branches** when the change does not apply to ``main`` or requires a different approach.
+
+   Refer to :ref:`branch-merge` for more details on how backporting works.
+
+4. **Follow Python's Style Guidelines**
+
+   - Python code should follow :PEP:`8`, and C code should follow :PEP:`7`.
+   - Maintainers may **fix minor style issues**, but major deviations can **delay or block merging**.
+   - PRs with **only style changes** are usually rejected unless they fix a formatting error.
 
    .. note::
-      Pull requests with only code formatting changes are usually rejected. On
-      the other hand, fixes for typos and grammar errors in documents and
-      docstrings are welcome.
+      Fixes for typos and grammar errors in documentation and docstrings are always welcome.
 
-#. **Be aware of backwards-compatibility considerations.** While the core
-   developer who eventually handles your pull request will make the final call on
-   whether something is acceptable, thinking about backwards-compatibility early
-   will help prevent having your pull request rejected on these grounds. Put
-   yourself in the shoes of someone whose code will be broken by the change(s)
-   introduced by the pull request. It is quite likely that any change made will
-   break someone's code, so you need to have a good reason to make a change as
-   you will be forcing someone to update their code. (This obviously does not
-   apply to new classes or functions; new arguments should be optional and have
-   default values which maintain the existing behavior.) If in doubt, have a look
-   at :PEP:`387` or :ref:`discuss <communication>` the issue with experienced
-   developers.
+5. **Consider Backward Compatibility**
 
-#. **Make sure you have proper tests** to verify your pull request works as
-   expected. Pull requests will not be accepted without the proper tests!
+   - Changes should **not break existing code** unless absolutely necessary.
+   - When introducing **new arguments**, provide **default values** to maintain existing behavior.
+   - If unsure, refer to :PEP:`387` or discuss the issue with experienced maintainers in :ref:`communication`.
 
-#. **Make sure all tests pass.** The entire test suite needs to
-   :ref:`run <runtests>` **without failure** because of your changes.
-   It is not sufficient to only run whichever test seems impacted by your
-   changes, because there might be interferences unknown to you between your
-   changes and some other part of the interpreter.
+   Think about how your change affects existing users before submitting your PR.
 
-#. Proper :ref:`documentation <documenting>` additions/changes should be included.
+6. **Ensure Proper Testing**
+
+   - Every PR should include **appropriate test cases** to validate the changes.
+   - PRs without tests **will not be accepted** unless they are purely documentation changes.
+   - Tests should **cover edge cases** and expected behaviors.
+   - For bug fixes, add a test that **fails without the fix** and **passes after applying it**.
+
+#. **Ensure all tests pass**
+
+   - The entire test suite must **run without failures** before submission.
+   - Run ``make test`` or refer to :ref:`runtests` to check for test failures.
+   - Do not submit PRs with failing tests unless the failure is **directly related** to your change.
+
+8. **Keep Documentation Up to Date**
+
+   - Any change affecting functionality should include relevant **documentation updates**.
+   - Follow :ref:`documenting` guidelines to ensure consistency in documentation.
+
+   Keeping documentation updated ensures clarity for future contributors and users.
+
+By following these best practices, you increase the likelihood of your PR being **reviewed and merged**!
 
 
 Copyrights
