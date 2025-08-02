@@ -56,8 +56,9 @@ are granted through these steps:
    - Enable the various new privileges.
    - Remove the new committer from the triage team, if applicable.
    - Add their details to `🔒 python/voters <https://github.com/python/voters>`_.
-   - Update the devguide to publicly list their team membership
-     at :ref:`developers`.
+   - Once the python/voters update is merged, regenerate the public team membership
+     list at :ref:`developers`.
+     See "Public list of members" in the ``voters`` README.
    - Post an announcement in the `Committers Discourse category
      <https://discuss.python.org/c/committers/5>`_.  The past few announcements
      were in the form of a separate post on the already open topic with
