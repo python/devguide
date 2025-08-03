@@ -17,7 +17,7 @@ The CPython Developer's Guide
 
 
 This guide covers how to contribute to CPython. It is known by the
-nickname of "the devguide" by the Python core developers.
+nickname of "the devguide" by the Python core team.
 
 The official home of this guide is https://devguide.python.org.
 

@@ -11,15 +11,15 @@ What it takes
 
 When you have consistently made contributions which meet quality standards
 without requiring extensive rewrites prior to being committed,
-you may qualify for commit privileges and become a core developer of Python.
-You must also work well with other core developers (and people in general)
+you may qualify for commit privileges and join the core team of Python.
+You must also work well with other core team members (and people in general)
 as you become an ambassador for the Python project.
 
-Typically a core developer will offer you the chance to gain commit privilege.
+Typically a core team member will offer you the chance to gain commit privilege.
 The person making the offer will become your mentor and watch your commits for
 a while to make sure you understand the development process. If other core
 developers agree that you should gain commit privileges you are then extended
-an official offer. How core developers come to that agreement are outlined in
+an official offer. How core team members come to that agreement are outlined in
 :pep:`13`.
 
 
@@ -29,7 +29,7 @@ Gaining commit privileges
 After a candidate has demonstrated consistent contributions, commit privileges
 are granted through these steps:
 
-#. A core developer (submitter, usually the mentor) starts a poll
+#. A core team member (submitter, usually the mentor) starts a poll
    (see the :ref:`template <coredev-template>` below) in
    the `Committers category`_ on the `Python Discourse`_.
 
