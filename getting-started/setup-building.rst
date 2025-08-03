@@ -540,6 +540,7 @@ is a convenience wrapper around the following commands:
    python Tools/wasm/emscripten configure-build-python --quiet -- --config-cache --with-pydebug
    python Tools/wasm/emscripten make-build-python --quiet
    python Tools/wasm/emscripten make-libffi --quiet
+   python Tools/wasm/emscripten make-mpdec --quiet
    python Tools/wasm/emscripten configure-host --quiet -- --config-cache
    python Tools/wasm/emscripten make-host --quiet
 
