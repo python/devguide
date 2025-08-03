@@ -502,7 +502,6 @@ compatibility, use the appropriate Emscripten version based on the version of
 CPython you're building:
 
 * For building CPython 3.14, use ``emsdk`` version ``4.0.11``.
-* For building CPython 3.13, use ``emsdk`` version ``4.0.5``.
 * For building the main branch of the CPython repository, you may wish to use
   ``latest`` instead of a specific version.
 
