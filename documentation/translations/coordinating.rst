@@ -56,7 +56,7 @@ Translation team
    :class: invert-in-dark-mode
    :align: center
    :alt: An exaggerated chart showing that individual translator workload
-         decreases with the amount of translators.
+         decreases with the number of translators.
 
 
 Gather people to translate with you. You can't do it alone.
@@ -105,14 +105,14 @@ You can also start your translation using
 This will allow you to translate via the web interface, and to use shared
 automatically updated source files.
 
-This is best done with a workflow that periodically checks for translations,
-a sample one with instructions can be found in the
+This is best done with a workflow that periodically checks for translations.
+An example with instructions can be found in the
 `python-docs-tx-automations documentation <https://python-docs-transifex-automation.readthedocs.io/workflows.html>`__.
-An in depth guide for manually doing this can also be found
+An in-depth guide for manually doing this can also be found
 in the same documentation's
 `commands page <https://python-docs-transifex-automation.readthedocs.io/commands.html>`__.
 
-To be added as the coordinator(s) on Transifex for your language, open an issue
+To be added as coordinators on Transifex for your language, open an issue
 in the `tracker <https://github.com/python-docs-translations/transifex-automations/issues>`__.
 
 
@@ -130,12 +130,12 @@ Moving the repo to the ``python`` org
 This will allow you to plug your translation into docsbuild-scripts_, and it
 will be found at ``docs.python.org/LANG/``, but not in the switcher.
 
-.. XXX Give a general milestone when this will be done.
+.. TODO Give a general milestone when this will be done.
 
 Adding to the language switcher
 -------------------------------
 
-.. XXX Specify branch: https://github.com/python/devguide/issues/1586
+.. TODO Specify branch: https://github.com/python/devguide/issues/1586
 
 Once the following resources have been fully translated:
 
@@ -143,7 +143,7 @@ Once the following resources have been fully translated:
 - all files in the ``tutorial/`` folder
 - ``library/functions.po``, the page documenting builtins
 
-The translation can be added to the language switcher. This can be done with a
+the translation can be added to the language switcher. This can be done with a
 pull request to docsbuild-scripts_, like `this commit <https://github.com/python/docsbuild-scripts/commit/e4a8aff9772738a63d0945042777d18c3d926930>`__
 if your translation was previously built but not in the switcher, or like
 `this commit <https://github.com/python/docsbuild-scripts/commit/a601ce67c6c2f3be7fde3376d3e5d3851f19950b>`__
