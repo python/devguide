@@ -130,8 +130,7 @@ Moving the repo to the ``python`` org
 This will allow you to plug your translation into docsbuild-scripts_, and it
 will be found at ``docs.python.org/LANG/``, but not in the switcher.
 
-.. XXX When ...? Discussion needed...
-.. My idea: Time based, e.g. 2 months of activity, showing that they aren't going anywhere
+.. XXX Give a general milestone when this will be done.
 
 Adding to the language switcher
 -------------------------------
