@@ -781,8 +781,12 @@ some of CPython's modules (for example, ``zlib``).
             libncurses5-dev libreadline6-dev libsqlite3-dev libssl-dev \
             lzma lzma-dev tk-dev uuid-dev zlib1g-dev libmpdec-dev libzstd-dev
 
-   Note that Debian 12 and Ubuntu 24.04 do not have the ``libmpdec-dev`` package.  You can safely
-   remove it from the install list above and the Python build will use a bundled version.
+   Note that Debian 12 and Ubuntu 24.04 do not have the ``libmpdec-dev``
+   package.  You can safely remove it from the install list above and the
+   Python build will use a bundled version.  But we recommend using the system
+   `libmpdec <https://www.bytereef.org/mpdecimal/doc/libmpdec/>`_ library.
+   Either built it from sources or install this package from
+   https://deb.sury.org.
 
 .. tab:: macOS
 
@@ -823,7 +827,6 @@ some of CPython's modules (for example, ``zlib``).
             $ GDBM_CFLAGS="-I$(brew --prefix gdbm)/include" \
                GDBM_LIBS="-L$(brew --prefix gdbm)/lib -lgdbm" \
                ./configure --with-pydebug \
-                           --with-system-libmpdec \
                            --with-openssl="$(brew --prefix openssl@3)"
 
       .. tab:: Python 3.11-3.12
