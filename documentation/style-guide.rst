@@ -103,11 +103,16 @@ Unix
 Use simple language
 ===================
 
-Avoid esoteric phrasing where possible.  Our audience is world-wide and may not
-be native English speakers.
+The documentation has a world-wide audience of varying English proficiency.
+To make the documentation more accessible and inclusive, the following should be
+avoided:
 
-Don't use Latin abbreviations like "e.g." or "i.e." where English words will do,
-such as "for example" or "that is."
+- Esoteric phrasing.
+- Abbreviations, such as Latin "e.g." or "i.e.," or symbols, such as the
+  ampersand ('&'), where English words will do, such as
+  "for example", "that is" and "and," respectively.
+- Idioms, as they are often confusing to non-native speakers and
+  are difficult to translate.
 
 
 .. index:: diataxis
