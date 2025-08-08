@@ -80,8 +80,8 @@ compileall            carljm
 compression.bz2
 compression.gzip
 compression.lzma
-compression.zlib      Yhg1s, gpshead*
-compression.zstd
+compression.zlib      Yhg1s, gpshead*, emmatyping
+compression.zstd      emmatyping*
 concurrent.futures    pitrou, brianquinlan, gpshead*
 configparser          ambv*
 contextlib            ncoghlan, 1st1
@@ -308,7 +308,7 @@ algorithms          rhettinger*, serhiy-storchaka
 argument clinic     larryhastings, AlexWaygood*, erlend-aasland,
                     serhiy-storchaka*
 AST/compiler        benjaminp, 1st1, pablogsal, markshannon, isidentical, brandtbucher, carljm, iritkatriel
-autoconf/makefiles  Yhg1s*
+autoconf/makefiles  Yhg1s*, emmatyping
 issue tracker       ezio-melotti
 buildbots           zware, pablogsal
 bytecode            benjaminp, 1st1, markshannon, brandtbucher, carljm, iritkatriel
@@ -338,7 +338,7 @@ memory management   tim-one, malemburg, Yhg1s, nascheme
 memoryview
 networking          giampaolo, gpshead
 object model        benjaminp, Yhg1s
-packaging           tarekziade, malemburg, alexis^, merwok, dstufft, pfmoore
+packaging           tarekziade, malemburg, alexis^, merwok, dstufft, pfmoore, emmatyping
 pattern matching    brandtbucher*
 PEG parser          gvanrossum, pablogsal, lysnikolaou
 performance         vstinner, serhiy-storchaka*, 1st1, rhettinger, markshannon,
