@@ -213,6 +213,30 @@ should do to help ensure that your pull request is accepted.
       the other hand, fixes for typos and grammar errors in documents and
       docstrings are welcome.
 
+#. **Follow best practices when creating the PR title and description.** The 
+   pull requests title and description play a pivotal role in code review and 
+   issue resolution. It is the initial point of contact in a code review, and 
+   allows the code reviewer to quickly assess the issue. The suggested formatting
+   of the title and description is 
+   **[type(optional) title: description (issue number)]** where type is the label
+   associated with the issue being resolved. Based on `Best practices for 
+   writing good pull request titles`_, a pull request title should be descriptive but   
+   to the point. It should establish a clear yet brief summary, so to allow the code 
+   reviewer to quickly assess the pull request. 
+   The description should explain what was changed in the pull request, why it exists, 
+   and explain the process of what was done in the pull request. 
+   Here is an example of a poor and revised pull request description: 
+      **Poor Pull Request:** "update code" **Revised Pull Request:** 
+      "feat: add search functionality to user dashboard(closes #111)"
+
+   For more examples on writing a good pull request title, please take a look at 
+   `Best practices for 
+   writing good pull request titles`_
+
+   To read more on creating a descriptive pull request description, please review
+   `Anatomy of a perfect pull request`_
+   
+
 #. **Be aware of backwards-compatibility considerations.** While the core
    developer who eventually handles your pull request will make the final call on
    whether something is acceptable, thinking about backwards-compatibility early
@@ -606,3 +630,5 @@ accepts your pull request.
 .. _issue tracker: https://github.com/python/cpython/issues
 .. _Core Development Discourse category: https://discuss.python.org/c/core-dev/23
 .. _Release Status: https://buildbot.python.org/all/#/release_status
+.. _Best practices for writing good pull request titles: https://graphite.dev/guides/best-pr-title-guidelines
+.. _Anatomy of a perfect pull request: https://opensource.com/article/18/6/anatomy-perfect-pull-request
