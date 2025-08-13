@@ -493,15 +493,15 @@ The simplest way to install the Emscripten compiler is:
 
     # Install Emscripten
     git clone https://github.com/emscripten-core/emsdk
-    ./emsdk/emsdk install 4.0.11
-    ./emsdk/emsdk activate 4.0.11
+    ./emsdk/emsdk install 4.0.12
+    ./emsdk/emsdk activate 4.0.12
     source ./emsdk/emsdk_env.sh
 
 Updating the Emscripten compiler version can cause breakages. For the best
 compatibility, use the appropriate Emscripten version based on the version of
 CPython you're building:
 
-* For building CPython 3.14, use ``emsdk`` version ``4.0.11``.
+* For building CPython 3.14, use ``emsdk`` version ``4.0.12``.
 * For building the main branch of the CPython repository, you may wish to use
   ``latest`` instead of a specific version.
 
