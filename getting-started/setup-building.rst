@@ -409,11 +409,17 @@ The easiest way to get a debug build of CPython for WASI is to use the
 ``Tools/wasm/wasi.py build`` command (which should be run w/ a recent version of
 Python you have installed on your machine):
 
-.. code-block:: shell
+.. tab:: CPython 3.14 and newer
 
-   $ python3 Tools/wasm/wasi build --quiet -- --config-cache --with-pydebug
+   .. code-block:: shell
 
-For Python 3.14 and earlier, use ``Tools/wasm/wasi.py`` instead.
+      python3 Tools/wasm/wasi build --quiet -- --config-cache --with-pydebug
+
+.. tab:: CPython 3.13
+
+   .. code-block:: shell
+
+      python3 Tools/wasm/wasi.py build --quiet -- --config-cache --with-pydebug
 
 That single command will configure and build both the build Python and the
 WASI build in ``cross-build/build`` and ``cross-build/wasm32-wasi``,
@@ -422,28 +428,40 @@ respectively.
 You can also do each configuration and build step separately; the command above
 is a convenience wrapper around the following commands:
 
-.. code-block:: shell
 
-   $ python Tools/wasm/wasi configure-build-python --quiet -- --config-cache --with-pydebug
-   $ python Tools/wasm/wasi make-build-python --quiet
-   $ python Tools/wasm/wasi configure-host --quiet -- --config-cache
-   $ python Tools/wasm/wasi make-host --quiet
+.. tab:: CPython 3.14 and newer
+
+   .. code-block:: shell
+
+      $ python Tools/wasm/wasi configure-build-python --quiet -- --config-cache --with-pydebug
+      $ python Tools/wasm/wasi make-build-python --quiet
+      $ python Tools/wasm/wasi configure-host --quiet -- --config-cache
+      $ python Tools/wasm/wasi make-host --quiet
+
+.. tab:: CPython 3.13
+
+   .. code-block:: shell
+
+      $ python Tools/wasm/wasi.py configure-build-python --quiet -- --config-cache --with-pydebug
+      $ python Tools/wasm/wasi.py make-build-python --quiet
+      $ python Tools/wasm/wasi.py configure-host --quiet -- --config-cache
+      $ python Tools/wasm/wasi.py make-host --quiet
 
 .. note::
 
    The ``configure-host`` command infers the use of ``--with-pydebug`` from the
    build Python.
 
-Running the separate commands after ``wasi.py build`` is useful if you, for example, only want to
-run the ``make-host`` step after making code changes.
+Running the separate commands after ``wasi build`` is useful if you, for example,
+only want to run the ``make-host`` step after making code changes.
 
 Once everything is complete, there will be a
-``cross-build/wasm32-wasi/python.sh`` helper file which you can use to run the
+``cross-build/wasm32-wasip1/python.sh`` helper file which you can use to run the
 ``python.wasm`` file (see the output from the ``configure-host`` subcommand):
 
 .. code-block:: shell
 
-   $ cross-build/wasm32-wasi/python.sh --version
+   cross-build/wasm32-wasip1/python.sh --version
 
 You can also use ``Makefile`` targets and they will work as expected thanks to
 the ``HOSTRUNNER`` environment variable having been set to a similar value as
@@ -451,7 +469,7 @@ used in ``python.sh``:
 
 .. code-block:: shell
 
-   $ make -C cross-build/wasm32-wasi test
+   make -C cross-build/wasm32-wasip1 test
 
 .. note::
 
@@ -1228,13 +1246,18 @@ are available from the
 To run the container and launch a Bash shell, run one of the following commands
 in a clone of the CPython repository.
 
-.. code-block:: bash
+.. tab:: Podman
 
-   docker run -it --rm --volume $PWD:/workspace --workdir /workspace ghcr.io/python/devcontainer:latest
+   .. code-block:: bash
 
-.. code-block:: bash
+      podman run -it --rm --volume $PWD:/workspace:Z --workdir /workspace ghcr.io/python/devcontainer:latest
 
-   podman run -it --rm --volume $PWD:/workspace:Z --workdir /workspace ghcr.io/python/devcontainer:latest
+.. tab:: Docker
+
+   .. code-block:: bash
+
+      docker run -it --rm --volume $PWD:/workspace --workdir /workspace ghcr.io/python/devcontainer:latest
+
 
 Note that the container has read/write access to the working directory.
 You may want to use a separate clone of CPython, or run ``make clean``
@@ -1249,11 +1272,17 @@ If you prefer, you can build the container image yourself. In a clone of the
 `cpython-devcontainers repo`_,
 build the container and name it ``cpython-dev``:
 
-.. code-block:: bash
+.. tab:: Podman
 
-   docker build devcontainer/ --tag cpython-dev
+   .. code-block:: shell
 
-(Substitute ``podman`` for ``docker`` if you use Podman.)
+      podman build devcontainer/ --tag cpython-dev
+
+.. tab:: Docker
+
+   .. code-block:: shell
+
+      docker build devcontainer/ --tag cpython-dev
 
 The same command will update any existing ``cpython-dev`` container.
 Run it again from time to time -- especially if the container stops
@@ -1262,13 +1291,18 @@ working for you.
 To run the container and launch a Bash shell, run one of the following commands
 in a clone of the CPython repository.
 
-.. code-block:: bash
+.. tab:: Podman
 
-   docker run -it --rm --volume $PWD:/workspace --workdir /workspace cpython-dev
+   .. code-block:: shell
 
-.. code-block:: bash
+      podman run -it --rm --volume $PWD:/workspace:Z --workdir /workspace cpython-dev bash
 
-   podman run -it --rm --volume $PWD:/workspace:Z --workdir /workspace cpython-dev
+.. tab:: Docker
+
+   .. code-block:: shell
+
+      docker run -it --rm --volume $PWD:/workspace --workdir /workspace cpython-dev bash
+
 
 The same caveats outlined above when running from a container image from GHCR
 also apply here.
