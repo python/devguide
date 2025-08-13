@@ -386,14 +386,14 @@ compiler just like building for :ref:`Unix <unix-compiling>` as well as:
 1. A C compiler that can target WebAssembly (for example, `WASI SDK`_)
 2. A WASI host/runtime (for example, Wasmtime_)
 
-All of this is provided in the :ref:`devcontainer <using-codespaces>`. You can
+All of this is provided in the :ref:`devcontainer <using-a-container>`. You can
 also use what's installed in the container as a reference of what versions of
 these tools are known to work.
 
 .. note::
 
-   CPython has only been verified with the above tools for WASI. Using
-   other compilers, hosts, or WASI versions *should* work, but the above tools
+   CPython has only been verified with the certain tools for WASI. Using
+   other compilers, hosts, or WASI versions *should* work, but the tools
    and their versions specified in the container are tested via a
    :ref:`buildbot <buildbots>`.
 
@@ -1124,17 +1124,26 @@ every rule.
 .. c_directory_structure_end
 
 
+.. _using-a-container:
+
+Using a container
+=================
+
+There are various ways to use a container to build CPython without installing
+additional tools on your machine. All approaches use the container defined in
+the `cpython-devcontainers repo`_ in some way.
+
 .. _using-codespaces:
 
 Contribute using GitHub Codespaces
-==================================
+----------------------------------
 
 .. c_codespaces_start
 
 .. _codespaces-whats-codespaces:
 
 What is GitHub Codespaces?
---------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 If you'd like to start contributing to CPython without needing to set up a local
 developer environment, you can use
@@ -1153,7 +1162,7 @@ you'd prefer to use that directly.
 .. _codespaces-create-a-codespace:
 
 Create a CPython codespace
---------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Here are the basic steps needed to contribute a pull request using Codespaces.
 You first need to navigate to the
@@ -1182,7 +1191,7 @@ up from where you left off!
 .. _codespaces-use-locally:
 
 Use Codespaces locally
-----------------------
+^^^^^^^^^^^^^^^^^^^^^^
 
 On the bottom left side of the codespace screen you will see a green or grey
 square that says :guilabel:`Codespaces`. You can click this for additional
@@ -1191,10 +1200,12 @@ select the option ``Open in VS Code``. You will still be working on the remote
 codespace instance, thus using the remote instance's compute power. The compute
 power may be a much higher spec than your local machine which can be helpful.
 
+.. c_codespaces_end
+
 .. _devcontainer-directly:
 
 Using the dev container directly
-================================
+--------------------------------
 
 If you want more control over the environment, or to work offline,
 you can use the same container used in
@@ -1208,7 +1219,7 @@ installed.
 .. _devcontainer-image:
 
 Using the pre-built container image
------------------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 `Dev container images <https://github.com/python/cpython-devcontainers/pkgs/container/devcontainer>`__
 are available from the
@@ -1232,10 +1243,10 @@ to remove caches and build output generated for your host OS.
 .. _devcontainer-build:
 
 Building yourself
------------------
+^^^^^^^^^^^^^^^^^
 
 If you prefer, you can build the container image yourself. In a clone of the
-`cpython-devcontainers repo <https://github.com/python/cpython-devcontainers>`_,
+`cpython-devcontainers repo`_,
 build the container and name it ``cpython-dev``:
 
 .. code-block:: bash
@@ -1262,7 +1273,6 @@ in a clone of the CPython repository.
 The same caveats outlined above when running from a container image from GHCR
 also apply here.
 
-.. c_codespaces_end
 
-
+.. _cpython-devcontainers repo: https://github.com/python/cpython-devcontainers
 .. include:: ../links.rst
