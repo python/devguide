@@ -409,13 +409,13 @@ The easiest way to get a debug build of CPython for WASI is to use the
 ``Tools/wasm/wasi.py build`` command (which should be run w/ a recent version of
 Python you have installed on your machine):
 
-.. tab:: CPython 3.14 and newer
+.. tab:: Python 3.14+
 
    .. code-block:: shell
 
       python3 Tools/wasm/wasi build --quiet -- --config-cache --with-pydebug
 
-.. tab:: CPython 3.13
+.. tab:: Python 3.13
 
    .. code-block:: shell
 
@@ -429,7 +429,7 @@ You can also do each configuration and build step separately; the command above
 is a convenience wrapper around the following commands:
 
 
-.. tab:: CPython 3.14 and newer
+.. tab:: Python 3.14+
 
    .. code-block:: shell
 
@@ -438,7 +438,7 @@ is a convenience wrapper around the following commands:
       $ python Tools/wasm/wasi configure-host --quiet -- --config-cache
       $ python Tools/wasm/wasi make-host --quiet
 
-.. tab:: CPython 3.13
+.. tab:: Python 3.13
 
    .. code-block:: shell
 
