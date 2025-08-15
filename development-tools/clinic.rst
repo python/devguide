@@ -1498,9 +1498,9 @@ a *type* argument to the object converter for :c:macro:`METH_O`.
 How to convert var-positional parameter functions
 -------------------------------------------------
 
-To convert a var-positional parameter function,
-prepending the parameter name with ``*`` ,
-and the parameter should use the ``object`` converter::
+To convert a var-positional parameter function, prepend the parameter name
+with ``*`` and use the the ``object`` converter.
+For example::
 
    /*[clinic input]
    var_positional_sample
