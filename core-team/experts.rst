@@ -79,7 +79,7 @@ compression.gzip
 compression.lzma
 compression.zlib      Yhg1s, gpshead*, emmatyping
 compression.zstd      emmatyping*
-concurrent.futures    pitrou, brianquinlan, gpshead*
+concurrent.futures    pitrou, gpshead*
 configparser          ambv*
 contextlib            ncoghlan, 1st1
 contextvars
@@ -87,10 +87,10 @@ copy                  serhiy-storchaka*
 copyreg               serhiy-storchaka*
 cProfile
 csv                   serhiy-storchaka*
-ctypes                abalkin, meadori
+ctypes                meadori
 curses                Yhg1s
 dataclasses           ericvsmith*, carljm
-datetime              abalkin, pganssle
+datetime              pganssle
 dbm
 decimal               facundobatista, rhettinger
 difflib
@@ -107,7 +107,7 @@ filecmp
 fileinput
 fnmatch               serhiy-storchaka*
 fractions
-ftplib                giampaolo*
+ftplib
 functools             rhettinger*
 gc                    pitrou, pablogsal, nascheme
 getopt                serhiy-storchaka*
@@ -141,7 +141,7 @@ mimetypes
 mmap                  Yhg1s
 modulefinder
 msvcrt
-multiprocessing       applio*, pitrou, gpshead*
+multiprocessing       pitrou, gpshead*
 netrc
 numbers
 operator
@@ -178,10 +178,10 @@ runpy                 ncoghlan
 sched
 secrets
 select
-selectors             giampaolo
+selectors
 shelve
 shlex
-shutil                giampaolo
+shutil
 signal                gpshead
 site
 smtplib
@@ -190,11 +190,11 @@ socketserver
 sqlite3               erlend-aasland*
 ssl                   jackjansen, tiran, dstufft, alex
 stat                  tiran
-statistics            stevendaprano, rhettinger
+statistics            rhettinger
 string
 stringprep
 struct                meadori
-subprocess            giampaolo, gpshead*
+subprocess            gpshead*
 symtable              benjaminp
 sys
 sysconfig             FFY00
@@ -206,13 +206,13 @@ termios               Yhg1s
 test                  ezio-melotti, serhiy-storchaka*
 textwrap
 threading             pitrou, gpshead
-time                  abalkin, pganssle
+time                  pganssle
 timeit
 tkinter               serhiy-storchaka*
 token
 tokenize              meadori
 tomllib               hauntsaninja*
-trace                 abalkin
+trace
 traceback             iritkatriel
 tracemalloc           vstinner
 tty                   Yhg1s*
@@ -313,7 +313,7 @@ documentation       ezio-melotti, merwok, JulienPalard, willingc, hugovk,
                     AA-Turner, AlexWaygood*
 emoji               Mariatta
 extension modules   encukou, ncoghlan
-filesystem          giampaolo
+filesystem
 frozen modules      ericsnowcurrently, gvanrossum, kumaraditya303
 f-strings           ericvsmith*
 GUI
@@ -326,7 +326,7 @@ locale              malemburg
 mathematics         malemburg, rhettinger, serhiy-storchaka
 memory management   tim-one, malemburg, Yhg1s, nascheme
 memoryview
-networking          giampaolo, gpshead
+networking          gpshead
 object model        benjaminp, Yhg1s
 packaging           malemburg, merwok, dstufft, pfmoore, emmatyping
 pattern matching    brandtbucher*
@@ -336,7 +336,7 @@ performance         vstinner, serhiy-storchaka*, 1st1, rhettinger, markshannon,
 pip                 ncoghlan, dstufft, pfmoore, pradyunsg
 release management  malemburg, benjaminp, warsaw,
                     gvanrossum, merwok, ned-deily,
-                    birkenfeld, JulienPalard, hugovk
+                    JulienPalard, hugovk
 runtime lifecycle   ericsnowcurrently, kumaraditya303, zooba, ZeroIntensity, nascheme
 str.format          ericvsmith*
 subinterpreters     ericsnowcurrently, kumaraditya303, ZeroIntensity*
@@ -344,7 +344,7 @@ symbol table        JelleZijlstra, carljm
 testing             ezio-melotti
 test coverage
 threads             gpshead
-time and dates      malemburg, abalkin, pganssle
+time and dates      malemburg, pganssle
 Unicode             malemburg, ezio-melotti, benjaminp
 version control     merwok, ezio-melotti
 ==================  ==========================================================
