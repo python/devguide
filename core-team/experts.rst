@@ -87,7 +87,7 @@ copy                  serhiy-storchaka*
 copyreg               serhiy-storchaka*
 cProfile
 csv                   serhiy-storchaka*
-ctypes                meadori
+ctypes
 curses                Yhg1s
 dataclasses           ericvsmith*, carljm
 datetime              pganssle
@@ -145,7 +145,7 @@ multiprocessing       pitrou, gpshead*
 netrc
 numbers
 operator
-optparse              mitsuhiko, serhiy-storchaka*
+optparse              serhiy-storchaka*
 os
 os.path               serhiy-storchaka*
 parser                pablogsal
@@ -158,7 +158,7 @@ platform              malemburg
 plistlib
 poplib
 posix                 larryhastings, gpshead
-pprint                freddrake
+pprint
 profile
 pstats
 pty                   Yhg1s*
@@ -188,12 +188,12 @@ smtplib
 socket                gpshead
 socketserver
 sqlite3               erlend-aasland*
-ssl                   jackjansen, tiran, dstufft, alex
+ssl                   tiran, dstufft, alex
 stat                  tiran
 statistics            rhettinger
 string
 stringprep
-struct                meadori
+struct
 subprocess            gpshead*
 symtable              benjaminp
 sys
@@ -210,7 +210,7 @@ time                  pganssle
 timeit
 tkinter               serhiy-storchaka*
 token
-tokenize              meadori
+tokenize
 tomllib               hauntsaninja*
 trace
 traceback             iritkatriel
@@ -228,7 +228,7 @@ uuid
 venv                  vsajip, FFY00
 warnings
 wave
-weakref               freddrake, nascheme
+weakref               nascheme
 webbrowser
 winreg
 winsound
