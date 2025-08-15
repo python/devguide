@@ -39,9 +39,9 @@ For more details about translations and their progress, see `the dashboard
        | Fanis Petkos (:github-user:`thepetk`),
        | Panagiotis Skias (:github-user:`skpanagiotis`)
      - :github:`GitHub <python/python-docs-el>`
-   * - Hindi (hi-IN)
-     - Sanyam Khurana (:github-user:`CuriousLearner`)
-     - :github:`GitHub <CuriousLearner/python-docs-hi-in>`
+   * - Hindi (hi)
+     - Sanyam Khurana (:github-user:`himanshugarg`)
+     - :github:`GitHub <himanshugarg/python-docs-hi>`
    * - Hungarian (hu)
      - Tamás Bajusz (:github-user:`gbtami`)
      - :github:`GitHub <python/python-docs-hu>`,
