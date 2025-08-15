@@ -86,16 +86,16 @@ contextvars
 copy                  serhiy-storchaka*
 copyreg               serhiy-storchaka*
 cProfile
-csv                   smontanaro (inactive), serhiy-storchaka*
-ctypes                theller (inactive), abalkin, meadori
+csv                   serhiy-storchaka*
+ctypes                abalkin, meadori
 curses                Yhg1s
 dataclasses           ericvsmith*, carljm
 datetime              abalkin, pganssle
 dbm
 decimal               facundobatista, rhettinger
-difflib               tim-one (inactive)
+difflib
 dis                   1st1
-doctest               tim-one (inactive)
+doctest
 email                 warsaw, bitdancer*
 encodings             malemburg
 ensurepip             ncoghlan, dstufft, pradyunsg, pfmoore
@@ -121,16 +121,14 @@ heapq                 rhettinger*
 hmac                  tiran, gpshead*, picnixz
 html                  ezio-melotti*
 http
-idlelib               kbkaiser (inactive), terryjreedy*, serwy (inactive),
-                      taleinat
+idlelib               terryjreedy*, taleinat
 imaplib
 importlib             brettcannon
 inspect               1st1
 io                    benjaminp
 ipaddress
 itertools             rhettinger*
-json                  etrepum (inactive), ezio-melotti, rhettinger,
-                      serhiy-storchaka*
+json                  ezio-melotti, rhettinger, serhiy-storchaka*
 keyword
 libmpdec
 linecache
@@ -141,7 +139,7 @@ marshal
 math                  rhettinger
 mimetypes
 mmap                  Yhg1s
-modulefinder          theller (inactive)
+modulefinder
 msvcrt
 multiprocessing       applio*, pitrou, gpshead*
 netrc
@@ -201,7 +199,7 @@ symtable              benjaminp
 sys
 sysconfig             FFY00
 syslog
-tabnanny              tim-one (inactive)
+tabnanny
 tarfile
 tempfile              serhiy-storchaka*
 termios               Yhg1s
