@@ -24,9 +24,6 @@ Unless a name is followed by a '*', you should never assign an issue to
 that person.  Names followed by a '*' may be assigned issues involving the
 module or topic.
 
-Names followed by a '^' indicate old bugs.python.org usernames, for people
-that did not transition to GitHub.
-
 The Platform and Interest Area tables list broader fields in which various
 people have expertise.  These people can also be contacted for help,
 opinions, and decisions when issues involve their areas.
@@ -74,7 +71,7 @@ code
 codecs                malemburg, doerwalter
 codeop
 collections           rhettinger*
-collections.abc       rhettinger*, stutzbach^
+collections.abc       rhettinger*
 colorsys
 compileall            carljm
 compression.bz2
@@ -120,7 +117,7 @@ gettext               tomasr8
 glob                  serhiy-storchaka*
 grp
 hashlib               tiran, gpshead*, picnixz
-heapq                 rhettinger*, stutzbach^
+heapq                 rhettinger*
 hmac                  tiran, gpshead*, picnixz
 html                  ezio-melotti*
 http
@@ -129,8 +126,8 @@ idlelib               kbkaiser (inactive), terryjreedy*, serwy (inactive),
 imaplib
 importlib             brettcannon
 inspect               1st1
-io                    benjaminp, stutzbach^
-ipaddress             pmoody^
+io                    benjaminp
+ipaddress
 itertools             rhettinger*
 json                  etrepum (inactive), ezio-melotti, rhettinger,
                       serhiy-storchaka*
@@ -141,12 +138,12 @@ locale                malemburg
 logging               vsajip
 mailbox
 marshal
-math                  rhettinger, stutzbach^
+math                  rhettinger
 mimetypes
 mmap                  Yhg1s
-modulefinder          theller (inactive), jvr^
+modulefinder          theller (inactive)
 msvcrt
-multiprocessing       applio*, pitrou, jnoller^ (inactive), sbt^ (inactive), gpshead*
+multiprocessing       applio*, pitrou, gpshead*
 netrc
 numbers
 operator
@@ -183,7 +180,7 @@ runpy                 ncoghlan
 sched
 secrets
 select
-selectors             neologix^, giampaolo
+selectors             giampaolo
 shelve
 shlex
 shutil                tarekziade, giampaolo
@@ -192,18 +189,18 @@ site
 smtplib
 socket                gpshead
 socketserver
-sqlite3               ghaering^, erlend-aasland*
+sqlite3               erlend-aasland*
 ssl                   jackjansen, tiran, dstufft, alex
 stat                  tiran
 statistics            stevendaprano, rhettinger
 string
 stringprep
 struct                meadori
-subprocess            astrand^ (inactive), giampaolo, gpshead*
+subprocess            giampaolo, gpshead*
 symtable              benjaminp
 sys
 sysconfig             FFY00
-syslog                jafo^*
+syslog
 tabnanny              tim-one (inactive)
 tarfile               gustaebel
 tempfile              serhiy-storchaka*
@@ -213,7 +210,7 @@ textwrap
 threading             pitrou, gpshead
 time                  abalkin, pganssle
 timeit
-tkinter               gpolo^, serhiy-storchaka*
+tkinter               serhiy-storchaka*
 token
 tokenize              meadori
 tomllib               hauntsaninja*
@@ -221,7 +218,7 @@ trace                 abalkin
 traceback             iritkatriel
 tracemalloc           vstinner
 tty                   Yhg1s*
-turtle                gregorlingl^, willingc
+turtle                willingc
 turtledemo            terryjreedy*
 types                 1st1
 typing                gvanrossum, JelleZijlstra*, AlexWaygood*, carljm, sobolevn*
@@ -235,7 +232,7 @@ warnings
 wave
 weakref               freddrake, nascheme
 webbrowser
-winreg                stutzbach^
+winreg
 winsound
 wsgiref               pjenvey
 xml.dom
@@ -249,7 +246,7 @@ xml.sax.saxutils
 xml.sax.xmlreader
 xmlrpc
 zipapp                pfmoore
-zipfile               alanmcintyre^, serhiy-storchaka, Yhg1s, gpshead
+zipfile               serhiy-storchaka, Yhg1s, gpshead
 zipimport             Yhg1s*
 ====================  =============================================
 
@@ -283,16 +280,11 @@ Platform              Maintainers
 ===================   ===========
 AIX                   edelsohn, ayappanec
 Android               mhsmith
-Cygwin                jlt63^, stutzbach^
 Emscripten            hoodmane, pmp-p, rdb, rth, ryanking13
-FreeBSD
-HP-UX
 iOS                   freakboy3742, ned-deily
-JVM/Java              frank.wierzbicki^
 Linux
 macOS                 ronaldoussoren, ned-deily, freakboy3742
 NetBSD1
-OS2/EMX               aimacintyre^
 Solaris/OpenIndiana   jcea, kulikjak
 Windows               tjguk, zooba, pfmoore
 ===================   ===========
@@ -330,22 +322,22 @@ GUI
 i18n                malemburg, merwok, tomasr8
 import machinery    brettcannon, ncoghlan, ericsnowcurrently, FFY00
 initialization      FFY00
-io                  benjaminp, stutzbach^, gpshead
+io                  benjaminp, gpshead
 JIT                 brandtbucher*, savannahostrowski*
 locale              malemburg
-mathematics         malemburg, stutzbach^, rhettinger, serhiy-storchaka
+mathematics         malemburg, rhettinger, serhiy-storchaka
 memory management   tim-one, malemburg, Yhg1s, nascheme
 memoryview
 networking          giampaolo, gpshead
 object model        benjaminp, Yhg1s
-packaging           tarekziade, malemburg, alexis^, merwok, dstufft, pfmoore, emmatyping
+packaging           tarekziade, malemburg, merwok, dstufft, pfmoore, emmatyping
 pattern matching    brandtbucher*
 PEG parser          gvanrossum, pablogsal, lysnikolaou
 performance         vstinner, serhiy-storchaka*, 1st1, rhettinger, markshannon,
                     brandtbucher, carljm, Fidget-Spinner, AlexWaygood*, nascheme
-pip                 ncoghlan, dstufft, pfmoore, Marcus.Smith^, pradyunsg
+pip                 ncoghlan, dstufft, pfmoore, pradyunsg
 release management  tarekziade, malemburg, benjaminp, warsaw,
-                    gvanrossum, anthonybaxter^, merwok, ned-deily,
+                    gvanrossum, merwok, ned-deily,
                     birkenfeld, JulienPalard, hugovk
 runtime lifecycle   ericsnowcurrently, kumaraditya303, zooba, ZeroIntensity, nascheme
 str.format          ericvsmith*
