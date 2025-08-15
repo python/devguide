@@ -1513,7 +1513,6 @@ The implementation function will receive var-positional arguments
 as *args* array.
 
 .. versionadded:: 3.11
-.. versionchanged:: 3.14
 
 
 How to convert ``tp_new`` and ``tp_init`` functions
