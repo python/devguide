@@ -1499,14 +1499,14 @@ How to convert var-positional parameter functions
 -------------------------------------------------
 
 To convert a var-positional parameter function, prepend the parameter name
-with ``*`` and use the the ``object`` converter.
+with ``*`` and use the the ``array`` converter.
 For example::
 
    /*[clinic input]
    var_positional_sample
 
        foo: int
-       *args: object
+       *args: array
    [clinic start generated code]*/
 
 The implementation function will receive var-positional arguments
