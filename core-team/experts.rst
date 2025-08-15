@@ -350,6 +350,209 @@ version control     merwok, ezio-melotti
 ==================  ==========================================================
 
 
+Experts Emeritus
+================
+
+Names followed by a '^' indicate old bugs.python.org usernames, for people
+that did not transition to GitHub.
+
+Stdlib
+------
+
+.. list-table::
+
+   * - Module
+     - Expert
+
+   * - codecs
+     - doerwalter
+
+   * - collections.abc
+     - stutzbach^
+
+   * - concurrent.futures
+     - brianquinlan
+
+   * - copy
+     - avassalotti
+
+   * - copyreg
+     - avassalotti
+
+   * - csv
+     - smontanaro
+
+   * - ctypes
+     - theller, abalkin, amauryfa, meadori
+
+   * - datetime
+     - abalkin
+
+   * - difflib
+     - tim-one
+
+   * - doctest
+     - tim-one
+
+   * - email
+     - maxking
+
+   * - enum
+     - eliben
+
+   * - ftplib
+     - giampaolo
+
+   * - heapq
+     - stutzbach
+
+   * - idlelib
+     - kbkaiser, serwy
+
+   * - io
+     - stutzbach^
+
+   * - ipaddress
+     - pmoody^
+
+   * - json
+     - etrepum
+
+   * - math
+     - stutzbach^
+
+   * - modulefinder
+     - theller, jvr^
+
+   * - multiprocessing
+     - applio, jnoller^, sbt^
+
+   * - optparse
+     - mitsuhiko
+
+   * - pickle
+     - avassalotti
+
+   * - pickletools
+     - avassalotti
+
+   * - pprint
+     - freddrake
+
+   * - selectors
+     - neologix^, giampaolo
+
+   * - shutil
+     - tarekziade, giampaolo
+
+   * - sqlite3
+     - ghaering^
+
+   * - ssl
+     - jackjansen
+
+   * - statistics
+     - stevendaprano
+
+   * - struct
+     - meadori
+
+   * - subprocess
+     - astrand^, giampaolo
+
+   * - syslog
+     - jafo^
+
+   * - tabnanny
+     - tim-one
+
+   * - tarfile
+     - gustaebel
+
+   * - time
+     - abalkin
+
+   * - tkinter
+     - gpolo^
+
+   * - tokenize
+     - meadori
+
+   * - trace
+     - abalkin
+
+   * - turtle
+     - gregorlingl^
+
+   * - unittest
+     - rbtcollins
+
+   * - weakref
+     - freddrake
+
+   * - winreg
+     - stutzbach^
+
+   * - wsgiref
+     - pjenvey
+
+   * - xml.etree
+     - eliben
+
+   * - zipfile
+     - alanmcintyre^
+
+Platforms
+---------
+
+.. list-table::
+
+   * - Platform
+     - Expert
+
+   * - Cygwin
+     - jlt63^, stutzbach^
+
+   * - JVM/Java
+     - frank.wierzbicki^
+
+   * - OS2/EMX
+     - aimacintyre^
+
+
+Miscellaneous
+-------------
+
+.. list-table::
+
+   * - Interest Area
+     - Expert
+
+   * - filesystem
+     - giampaolo
+
+   * - io
+     - stutzbach^
+
+   * - mathematics
+     - stutzbach^
+
+   * - networking
+     - giampaolo
+
+   * - packaging
+     - tarekziade, alexis^
+
+   * - pip
+     - Marcus.Smith^
+
+   * - release management
+     - tarekziade, anthonybaxter^, birkenfeld
+
+   * - time and dates
+     - abalkin
+
+
 Documentation translations
 ==========================
 
