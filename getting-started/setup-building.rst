@@ -281,6 +281,11 @@ and may be used to auto-enable Link Time Optimization (LTO) on some platforms.
 See :option:`python:--enable-optimizations` and :option:`python:--with-lto`
 to learn more about these options.
 
+.. important::
+   When using ``--enable-optimizations``, do not set ``CFLAGS=-O0`` or any other
+   flags that disable compiler optimizations. PGO requires optimizations to be
+   enabled to work properly.
+
 .. code:: console
 
    $ ./configure --enable-optimizations --with-lto
