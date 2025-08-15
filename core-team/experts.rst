@@ -68,7 +68,7 @@ calendar
 cmath
 cmd
 code
-codecs                malemburg, doerwalter
+codecs                malemburg
 codeop
 collections           rhettinger*
 collections.abc       rhettinger*
@@ -83,11 +83,11 @@ concurrent.futures    pitrou, brianquinlan, gpshead*
 configparser          ambv*
 contextlib            ncoghlan, 1st1
 contextvars
-copy                  avassalotti, serhiy-storchaka*
-copyreg               avassalotti, serhiy-storchaka*
+copy                  serhiy-storchaka*
+copyreg               serhiy-storchaka*
 cProfile
 csv                   smontanaro (inactive), serhiy-storchaka*
-ctypes                theller (inactive), abalkin, amauryfa, meadori
+ctypes                theller (inactive), abalkin, meadori
 curses                Yhg1s
 dataclasses           ericvsmith*, carljm
 datetime              abalkin, pganssle
@@ -96,10 +96,10 @@ decimal               facundobatista, rhettinger
 difflib               tim-one (inactive)
 dis                   1st1
 doctest               tim-one (inactive)
-email                 warsaw, bitdancer*, maxking
+email                 warsaw, bitdancer*
 encodings             malemburg
 ensurepip             ncoghlan, dstufft, pradyunsg, pfmoore
-enum                  eliben*, warsaw, ethanfurman*
+enum                  warsaw, ethanfurman*
 errno                 Yhg1s
 faulthandler          vstinner, gpshead, ZeroIntensity*
 fcntl                 Yhg1s
@@ -153,8 +153,8 @@ os.path               serhiy-storchaka*
 parser                pablogsal
 pathlib               barneygale*
 pdb                   gaogaotiantian
-pickle                avassalotti, serhiy-storchaka*
-pickletools           avassalotti, serhiy-storchaka*
+pickle                serhiy-storchaka*
+pickletools           serhiy-storchaka*
 pkgutil
 platform              malemburg
 plistlib
@@ -183,7 +183,7 @@ select
 selectors             giampaolo
 shelve
 shlex
-shutil                tarekziade, giampaolo
+shutil                giampaolo
 signal                gpshead
 site
 smtplib
@@ -202,7 +202,7 @@ sys
 sysconfig             FFY00
 syslog
 tabnanny              tim-one (inactive)
-tarfile               gustaebel
+tarfile
 tempfile              serhiy-storchaka*
 termios               Yhg1s
 test                  ezio-melotti, serhiy-storchaka*
@@ -223,7 +223,7 @@ turtledemo            terryjreedy*
 types                 1st1
 typing                gvanrossum, JelleZijlstra*, AlexWaygood*, carljm, sobolevn*
 unicodedata           malemburg, ezio-melotti
-unittest              ezio-melotti, rbtcollins, gpshead, serhiy-storchaka*
+unittest              ezio-melotti, gpshead, serhiy-storchaka*
 unittest.mock
 urllib                orsenthil
 uuid
@@ -234,11 +234,11 @@ weakref               freddrake, nascheme
 webbrowser
 winreg
 winsound
-wsgiref               pjenvey
+wsgiref
 xml.dom
 xml.dom.minidom
 xml.dom.pulldom
-xml.etree             eliben*, scoder
+xml.etree             scoder
 xml.parsers.expat
 xml.sax
 xml.sax.handler
@@ -330,13 +330,13 @@ memory management   tim-one, malemburg, Yhg1s, nascheme
 memoryview
 networking          giampaolo, gpshead
 object model        benjaminp, Yhg1s
-packaging           tarekziade, malemburg, merwok, dstufft, pfmoore, emmatyping
+packaging           malemburg, merwok, dstufft, pfmoore, emmatyping
 pattern matching    brandtbucher*
 PEG parser          gvanrossum, pablogsal, lysnikolaou
 performance         vstinner, serhiy-storchaka*, 1st1, rhettinger, markshannon,
                     brandtbucher, carljm, Fidget-Spinner, AlexWaygood*, nascheme
 pip                 ncoghlan, dstufft, pfmoore, pradyunsg
-release management  tarekziade, malemburg, benjaminp, warsaw,
+release management  malemburg, benjaminp, warsaw,
                     gvanrossum, merwok, ned-deily,
                     birkenfeld, JulienPalard, hugovk
 runtime lifecycle   ericsnowcurrently, kumaraditya303, zooba, ZeroIntensity, nascheme
