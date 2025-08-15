@@ -41,7 +41,7 @@ For more details about translations and their progress, see `the dashboard
      - :github:`GitHub <python/python-docs-el>`
    * - Hindi (hi-IN)
      - Himanshu Garg (:github-user:`himanshugarg`)
-     - :github:`GitHub <himanshugarg/python-docs-hi-IN>`
+     - :github:`GitHub <himanshugarg/python-docs-hi-in>`
    * - Hungarian (hu)
      - Tamás Bajusz (:github-user:`gbtami`)
      - :github:`GitHub <python/python-docs-hu>`,
