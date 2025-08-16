@@ -1495,6 +1495,27 @@ You can still use a self converter, a return converter, and specify
 a *type* argument to the object converter for :c:macro:`METH_O`.
 
 
+How to convert var-positional parameter functions
+-------------------------------------------------
+
+To convert a var-positional parameter function, prepend the parameter name
+with ``*`` and use the the ``array`` converter.
+For example::
+
+   /*[clinic input]
+   var_positional_sample
+
+       foo: int
+       *args: array
+   [clinic start generated code]*/
+
+The implementation function will receive var-positional arguments as C array
+*args* of :c:type:`PyObject * <PyObject>`.  Alternatively, you could use
+``tuple`` converter to pass a regular :c:type:`PyTupleObject` as argument.
+
+.. versionadded:: 3.11
+
+
 How to convert ``tp_new`` and ``tp_init`` functions
 ---------------------------------------------------
 
