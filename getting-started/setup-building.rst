@@ -1094,7 +1094,7 @@ every rule.
      See also :ref:`building-doc`.
 
 ``Grammar``
-     Contains the :abbr:`EBNF (Extended Backus-Naur Form)` grammar file for
+     Contains the :abbr:`PEG (Parser Expression Grammar)` grammar file for
      Python.
 
 ``Include``
