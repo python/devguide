@@ -48,7 +48,8 @@ For more details about translations and their progress, see `the dashboard
        `mailing list <https://mail.python.org/pipermail/python-hu>`__
    * - `Indonesian (id) <https://docs.python.org/id/>`__
      - | Irvan Putra (:github-user:`irvan-putra`),
-       | Jeff Jacobson (:github-user:`jwjacobson`)
+       | Jeff Jacobson (:github-user:`jwjacobson`),
+       | Lutfi Zuchri (:github-user:`lutfizuchri`)
      - :github:`GitHub <python/python-docs-id>`
    * - `Italian (it) <https://docs.python.org/it/>`__
      - Alessandro Cucci (`email <mailto:alessandro.cucci@gmail.com>`__)
