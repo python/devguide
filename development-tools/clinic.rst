@@ -1509,8 +1509,9 @@ For example::
        *args: array
    [clinic start generated code]*/
 
-The implementation function will receive var-positional arguments
-as *args* array.
+The implementation function will receive var-positional arguments as C array
+*args* of :c:type:`PyObject * <PyObject>`.  Alternatively, you could use
+``tuple`` converter to pass a regular :c:type:`PyTupleObject` as argument.
 
 .. versionadded:: 3.11
 
