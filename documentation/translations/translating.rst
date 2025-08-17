@@ -42,7 +42,7 @@ For more details about translations and their progress, see `the dashboard
      - :github:`GitHub <CuriousLearner/python-docs-hi-in>`
    * - Hungarian (hu)
      -
-     - :github:`GitHub <python/python-docs-hu>`,
+     - :github:`GitHub <python/python-docs-hu>`
    * - `Indonesian (id) <https://docs.python.org/id/>`__
      - | Irvan Putra (:github-user:`irvan-putra`),
        | Jeff Jacobson (:github-user:`jwjacobson`)
