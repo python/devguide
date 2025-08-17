@@ -113,7 +113,7 @@ For more details about translations and their progress, see `the dashboard
      - Dmytro Kazanzhy (:github-user:`kazanzhy`, `email <mailto:dkazanzhy@gmail.com>`__)
      - :github:`GitHub <python/python-docs-uk>`,
        `Transifex <tx_>`_
-   * - `Swedish (sv) <https://docs.python.org/sv/>`__
+   * - Swedish (sv)
      - Daniel Nylander (:github-user:`yeager`)
      - :github:`GitHub <python/python-docs-sv>`_
 
