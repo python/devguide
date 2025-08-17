@@ -41,9 +41,8 @@ For more details about translations and their progress, see `the dashboard
      - Sanyam Khurana (:github-user:`CuriousLearner`)
      - :github:`GitHub <CuriousLearner/python-docs-hi-in>`
    * - Hungarian (hu)
-     - Tamás Bajusz (:github-user:`gbtami`)
+     -
      - :github:`GitHub <python/python-docs-hu>`,
-       `mailing list <https://mail.python.org/pipermail/python-hu>`__
    * - `Indonesian (id) <https://docs.python.org/id/>`__
      - | Irvan Putra (:github-user:`irvan-putra`),
        | Jeff Jacobson (:github-user:`jwjacobson`)
