@@ -1495,23 +1495,33 @@ You can still use a self converter, a return converter, and specify
 a *type* argument to the object converter for :c:macro:`METH_O`.
 
 
-How to convert var-positional parameter functions
--------------------------------------------------
+How to convert ``*args`` parameters (starargs / var-positional)
+---------------------------------------------------------------
 
-To convert a var-positional parameter function, prepend the parameter name
-with ``*`` and use the the ``array`` converter.
+There are two converters suitable for ``*args``: *array* and *tuple*.
+
+Using the *array* converter will provide the implementation function with
+a C array *args* of type of :c:type:`PyObject * <PyObject>` and the number
+of items in the array as :c:type:`Py_ssize_t` *args_length*.
 For example::
 
    /*[clinic input]
    var_positional_sample
 
-       foo: int
+       spam: int
        *args: array
    [clinic start generated code]*/
 
-The implementation function will receive var-positional arguments as C array
-*args* of :c:type:`PyObject * <PyObject>`.  Alternatively, you could use
-``tuple`` converter to pass a regular :c:type:`PyTupleObject` as argument.
+Using the *tuple* converter will provide the implementation function with
+a standard :c:type:`PyTupleObject`.
+For example::
+
+   /*[clinic input]
+   var_positional_sample
+
+       spam: int
+       *args: tuple
+   [clinic start generated code]*/
 
 .. versionadded:: 3.11
 
