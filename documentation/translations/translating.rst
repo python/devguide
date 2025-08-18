@@ -49,7 +49,7 @@ For more details about translations and their progress, see `the dashboard
        | Jeff Jacobson (:github-user:`jwjacobson`)
      - :github:`GitHub <python/python-docs-id>`
    * - `Italian (it) <https://docs.python.org/it/>`__
-     - Alessandro Cucci (`email <mailto:alessandro.cucci@gmail.com>`__)
+     - Alessandro Cucci (:github-user:`acuccie3`, `email <mailto:alessandro.cucci@gmail.com>`__)
      - :github:`GitHub <python/python-docs-it>`,
        `original announcement <https://mail.python.org/pipermail/doc-sig/2019-April/004114.html>`__
    * - `Japanese (ja) <https://docs.python.org/ja/>`__
@@ -97,11 +97,11 @@ For more details about translations and their progress, see `the dashboard
      - :github:`GitHub <python/python-docs-zh-cn>`,
        `Transifex <tx_>`_
    * - `Spanish (es) <https://docs.python.org/es/>`__
-     - Raúl Cumplido
+     - Raúl Cumplido (:github-user:`raulcd`)
      - :github:`GitHub <python/python-docs-es>`
    * - `Traditional Chinese (zh-tw) <https://docs.python.org/zh-tw/>`__
      - | 王威翔 Matt Wang (:github-user:`mattwang44`),
-       | Josix Wang
+       | Josix Wang (:github-user:`josix`)
      - :github:`GitHub <python/python-docs-zh-tw>`
    * - `Turkish (tr) <https://docs.python.org/tr/>`__
      - Ege Akman (:github-user:`egeakman`)
