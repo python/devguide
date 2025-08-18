@@ -115,7 +115,7 @@ For more details about translations and their progress, see `the dashboard
        `Transifex <tx_>`_
    * - Swedish (sv)
      - Daniel Nylander (:github-user:`yeager`)
-     - :github:`GitHub <python/python-docs-sv>`_
+     - :github:`GitHub <python/python-docs-sv>`
 
 
 How to get help
