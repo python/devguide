@@ -11,7 +11,7 @@ if "%PYTHON%" == "" (
 )
 
 set BUILDDIR=_build
-set SPHINXOPTS=--fail-on-warning --keep-going
+set SPHINXOPTS=--fail-on-warning
 set _ALL_SPHINX_OPTS=%SPHINXOPTS%
 
 if "%1" == "check" goto check

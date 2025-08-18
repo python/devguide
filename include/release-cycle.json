@@ -1,9 +1,17 @@
 {
-  "3.14": {
+  "3.15": {
     "branch": "main",
-    "pep": 745,
+    "pep": 790,
     "status": "feature",
-    "first_release": "2025-10-01",
+    "first_release": "2026-10-01",
+    "end_of_life": "2031-10",
+    "release_manager": "Hugo van Kemenade"
+  },
+  "3.14": {
+    "branch": "3.14",
+    "pep": 745,
+    "status": "prerelease",
+    "first_release": "2025-10-07",
     "end_of_life": "2030-10",
     "release_manager": "Hugo van Kemenade"
   },
@@ -18,7 +26,7 @@
   "3.12": {
     "branch": "3.12",
     "pep": 693,
-    "status": "bugfix",
+    "status": "security",
     "first_release": "2023-10-02",
     "end_of_life": "2028-10",
     "release_manager": "Thomas Wouters"

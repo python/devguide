@@ -8,7 +8,7 @@ Set-StrictMode -Version 3.0
 $ErrorActionPreference = "Stop"
 
 $BUILDDIR = "_build"
-$SPHINXOPTS = "--fail-on-warning --keep-going"
+$SPHINXOPTS = "--fail-on-warning"
 $_ALL_SPHINX_OPTS = $SPHINXOPTS
 
 $_PYTHON = $Env:PYTHON ?? "py -3"
@@ -64,7 +64,8 @@ if ($target -Eq "clean") {
     $ToClean = @(
         $BUILDDIR,
         $_VENV_DIR,
-        "include/branches.csv", "include/end-of-life.csv", "include/release-cycle.svg"
+        "include/branches.csv", "include/end-of-life.csv",
+        "include/release-cycle.svg", "include/release-cycle-all.svg"
     )
     foreach ($item in $ToClean) {
         if (Test-Path -Path $item) {

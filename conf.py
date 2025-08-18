@@ -84,18 +84,10 @@ linkcheck_anchors_ignore = [
     r'\/.*',
 ]
 
-# Check the link itself, but ignore anchors that are added by JS
-# https://www.sphinx-doc.org/en/master/usage/configuration.html#confval-linkcheck_anchors_ignore_for_url
-linkcheck_anchors_ignore_for_url = [
-    # GitHub
-    r'https://github.com/.*',
-]
-
 linkcheck_ignore = [
-    # The voters repo is private and appears as a 404
-    'https://github.com/python/voters',
-    # The python-core team link is private, redirects to login
-    'https://github.com/orgs/python/teams/python-core',
+    # Checks fail due to rate limits
+    r'https://github.com/.*',
+    r'https://www.gnu.org/software/autoconf/',
     # The Discourse groups are private unless you are logged in
     'https://discuss.python.org/groups/staff',
     'https://discuss.python.org/groups/moderators',
@@ -135,6 +127,10 @@ rediraffe_redirects = {
     # Documentation
     "docquality.rst": "documentation/help-documenting.rst",
     "documenting.rst": "documentation/start-documenting.rst",
+    # Translating
+    "documentation/translating.rst": "documentation/translations/translating.rst",
+    "translating.rst": "documentation/translations/translating.rst",
+    "coordinating.rst": "documentation/translations/coordinating.rst",
     # Getting Started
     "fixingissues.rst": "getting-started/fixing-issues.rst",
     "help.rst": "getting-started/getting-help.rst",

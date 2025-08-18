@@ -43,5 +43,5 @@ To help, you can:
 
 .. _Write an issue: https://github.com/python/devguide/issues
 .. _Make a pull request: https://github.com/python/devguide/pulls
-.. _Python Docs Discord: https://discord.gg/NeGgyhUZ
+.. _Python Docs Discord: https://discord.gg/qcfPbnM2zH
 .. _Docs Editorial Board: https://python.github.io/editorial-board/
