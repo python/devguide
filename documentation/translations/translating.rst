@@ -101,6 +101,9 @@ For more details about translations and their progress, see `the dashboard
    * - `Spanish (es) <https://docs.python.org/es/>`__
      - Raúl Cumplido
      - :github:`GitHub <python/python-docs-es>`
+   * - Swedish (sv)
+     - Daniel Nylander (:github-user:`yeager`)
+     - :github:`GitHub <python/python-docs-sv>`
    * - `Traditional Chinese (zh-tw) <https://docs.python.org/zh-tw/>`__
      - | 王威翔 Matt Wang (:github-user:`mattwang44`),
        | Josix Wang
@@ -113,9 +116,6 @@ For more details about translations and their progress, see `the dashboard
      - Dmytro Kazanzhy (:github-user:`kazanzhy`, `email <mailto:dkazanzhy@gmail.com>`__)
      - :github:`GitHub <python/python-docs-uk>`,
        `Transifex <tx_>`_
-   * - Swedish (sv)
-     - Daniel Nylander (:github-user:`yeager`)
-     - :github:`GitHub <python/python-docs-sv>`
 
 
 How to get help
