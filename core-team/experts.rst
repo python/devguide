@@ -56,7 +56,8 @@ __future__
 __main__              gvanrossum, ncoghlan
 _thread
 abc
-argparse              serhiy-storchaka*, savannahostrowski*
+annotationlib         JelleZijlstra*
+argparse              savannahostrowski*, serhiy-storchaka*
 array
 ast                   benjaminp, pablogsal, isidentical, JelleZijlstra, eclips4
 asyncio               1st1, asvetlov, gvanrossum, graingert, kumaraditya303, willingc
@@ -79,8 +80,8 @@ compileall            carljm
 compression.bz2
 compression.gzip
 compression.lzma
-compression.zlib      Yhg1s, gpshead*
-compression.zstd
+compression.zlib      Yhg1s, gpshead*, emmatyping
+compression.zstd      emmatyping*
 concurrent.futures    pitrou, brianquinlan, gpshead*
 configparser          ambv*
 contextlib            ncoghlan, 1st1
@@ -103,7 +104,7 @@ encodings             malemburg
 ensurepip             ncoghlan, dstufft, pradyunsg, pfmoore
 enum                  eliben*, warsaw, ethanfurman*
 errno                 Yhg1s
-faulthandler          vstinner, gpshead
+faulthandler          vstinner, gpshead, ZeroIntensity*
 fcntl                 Yhg1s
 filecmp
 fileinput
@@ -111,7 +112,7 @@ fnmatch               serhiy-storchaka*
 fractions
 ftplib                giampaolo*
 functools             rhettinger*
-gc                    pitrou, pablogsal
+gc                    pitrou, pablogsal, nascheme
 getopt                serhiy-storchaka*
 getpath               FFY00
 getpass
@@ -126,7 +127,6 @@ http
 idlelib               kbkaiser (inactive), terryjreedy*, serwy (inactive),
                       taleinat
 imaplib
-imghdr
 importlib             brettcannon
 inspect               1st1
 io                    benjaminp, stutzbach^
@@ -145,24 +145,19 @@ math                  rhettinger, stutzbach^
 mimetypes
 mmap                  Yhg1s
 modulefinder          theller (inactive), jvr^
-msilib
 msvcrt
 multiprocessing       applio*, pitrou, jnoller^ (inactive), sbt^ (inactive), gpshead*
 netrc
-nis
-nntplib
 numbers
 operator
 optparse              mitsuhiko, serhiy-storchaka*
 os
 os.path               serhiy-storchaka*
-ossaudiodev
 parser                pablogsal
 pathlib               barneygale*
 pdb                   gaogaotiantian
 pickle                avassalotti, serhiy-storchaka*
 pickletools           avassalotti, serhiy-storchaka*
-pipes
 pkgutil
 platform              malemburg
 plistlib
@@ -195,10 +190,8 @@ shutil                tarekziade, giampaolo
 signal                gpshead
 site
 smtplib
-sndhdr
 socket                gpshead
 socketserver
-spwd
 sqlite3               ghaering^, erlend-aasland*
 ssl                   jackjansen, tiran, dstufft, alex
 stat                  tiran
@@ -236,17 +229,15 @@ unicodedata           malemburg, ezio-melotti
 unittest              ezio-melotti, rbtcollins, gpshead, serhiy-storchaka*
 unittest.mock
 urllib                orsenthil
-uu
 uuid
 venv                  vsajip, FFY00
 warnings
 wave
-weakref               freddrake
+weakref               freddrake, nascheme
 webbrowser
 winreg                stutzbach^
 winsound
 wsgiref               pjenvey
-xdrlib
 xml.dom
 xml.dom.minidom
 xml.dom.pulldom
@@ -317,7 +308,7 @@ algorithms          rhettinger*, serhiy-storchaka
 argument clinic     larryhastings, AlexWaygood*, erlend-aasland,
                     serhiy-storchaka*
 AST/compiler        benjaminp, 1st1, pablogsal, markshannon, isidentical, brandtbucher, carljm, iritkatriel
-autoconf/makefiles  Yhg1s*
+autoconf/makefiles  Yhg1s*, emmatyping
 issue tracker       ezio-melotti
 buildbots           zware, pablogsal
 bytecode            benjaminp, 1st1, markshannon, brandtbucher, carljm, iritkatriel
@@ -343,22 +334,22 @@ io                  benjaminp, stutzbach^, gpshead
 JIT                 brandtbucher*, savannahostrowski*
 locale              malemburg
 mathematics         malemburg, stutzbach^, rhettinger, serhiy-storchaka
-memory management   tim-one, malemburg, Yhg1s
+memory management   tim-one, malemburg, Yhg1s, nascheme
 memoryview
 networking          giampaolo, gpshead
 object model        benjaminp, Yhg1s
-packaging           tarekziade, malemburg, alexis^, merwok, dstufft, pfmoore
+packaging           tarekziade, malemburg, alexis^, merwok, dstufft, pfmoore, emmatyping
 pattern matching    brandtbucher*
 PEG parser          gvanrossum, pablogsal, lysnikolaou
 performance         vstinner, serhiy-storchaka*, 1st1, rhettinger, markshannon,
-                    brandtbucher, carljm, Fidget-Spinner, AlexWaygood*
+                    brandtbucher, carljm, Fidget-Spinner, AlexWaygood*, nascheme
 pip                 ncoghlan, dstufft, pfmoore, Marcus.Smith^, pradyunsg
 release management  tarekziade, malemburg, benjaminp, warsaw,
                     gvanrossum, anthonybaxter^, merwok, ned-deily,
                     birkenfeld, JulienPalard, hugovk
-runtime lifecycle   ericsnowcurrently, kumaraditya303, zooba
+runtime lifecycle   ericsnowcurrently, kumaraditya303, zooba, ZeroIntensity, nascheme
 str.format          ericvsmith*
-subinterpreters     ericsnowcurrently, kumaraditya303
+subinterpreters     ericsnowcurrently, kumaraditya303, ZeroIntensity*
 symbol table        JelleZijlstra, carljm
 testing             ezio-melotti
 test coverage

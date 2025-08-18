@@ -169,7 +169,7 @@ Core developers and contributors alike will find the following guides useful:
 Guide for contributing to Python:
 
 ======================== =================== ======================= =======================
-Contributors             Documentarians      Triagers                Core Developers
+Contributors             Documentarians      Triagers                Core team
 ======================== =================== ======================= =======================
 :ref:`setup`             :ref:`docquality`   :ref:`tracker`          :ref:`responsibilities`
 :ref:`help`              :ref:`documenting`  :ref:`triaging`         :ref:`developers`
@@ -219,14 +219,16 @@ CPython, they always have more things they would like to do than they have
 developers to work on them.  Some major examples that may be of interest are:
 
 * PyPy_: A Python interpreter focused on high speed (JIT-compiled) operation
-  on major platforms
+  on major platforms.
+* GraalPy_: A Python interpreter which has first-class support for
+  embedding in Java, built on GraalVM.
 * Jython_: A Python interpreter focused on good integration with the Java
-  Virtual Machine (JVM) environment
+  Virtual Machine (JVM) environment.
 * IronPython_: A Python interpreter focused on good integration with the
-  Common Language Runtime (CLR) provided by .NET and Mono
+  Common Language Runtime (CLR) provided by .NET and Mono.
 * Stackless_: A Python interpreter focused on providing lightweight
   microthreads while remaining largely compatible with CPython specific
-  extension modules
+  extension modules.
 * MicroPython_: A tiny Python interpreter with small subset of the Python
   standard library that is optimised to run on microcontrollers and in
   constrained environments.
@@ -314,7 +316,7 @@ Full table of contents
    documentation/index
    testing/index
    development-tools/index
-   core-developers/index
+   core-team/index
    internals/index
    versions
    contrib/index
@@ -326,6 +328,7 @@ Full table of contents
 .. _Python: https://www.python.org/
 .. _Core Python Mentorship: https://www.python.org/dev/core-mentorship/
 .. _PyPy: https://pypy.org
+.. _GraalPy: https://www.graalvm.org/python/
 .. _Jython: https://www.jython.org/
 .. _IronPython: https://ironpython.net/
 .. _Stackless: https://github.com/stackless-dev/stackless/wiki/

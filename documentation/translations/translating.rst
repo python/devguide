@@ -1,3 +1,5 @@
+.. _translating:
+
 ===========
 Translating
 ===========
@@ -9,7 +11,7 @@ in production and can be found in the language switcher; others are works in
 progress. To get started read your repository's contributing guide, which is
 generally the ``README`` file, and this page.
 If your language isn’t listed below, feel free to start the translation!
-See :doc:`coordinating` guide to get started.
+See :doc:`coordination <coordinating>` to get started.
 
 For more details about translations and their progress, see `the dashboard
 <https://python-docs-translations.github.io/dashboard/>`__.
@@ -41,12 +43,12 @@ For more details about translations and their progress, see `the dashboard
      - Sanyam Khurana (:github-user:`CuriousLearner`)
      - :github:`GitHub <CuriousLearner/python-docs-hi-in>`
    * - Hungarian (hu)
-     - Tamás Bajusz (:github-user:`gbtami`)
-     - :github:`GitHub <python/python-docs-hu>`,
-       `mailing list <https://mail.python.org/pipermail/python-hu>`__
+     -
+     - :github:`GitHub <python/python-docs-hu>`
    * - `Indonesian (id) <https://docs.python.org/id/>`__
      - | Irvan Putra (:github-user:`irvan-putra`),
-       | Jeff Jacobson (:github-user:`jwjacobson`)
+       | Jeff Jacobson (:github-user:`jwjacobson`),
+       | Lutfi Zuchri (:github-user:`lutfizuchri`)
      - :github:`GitHub <python/python-docs-id>`
    * - `Italian (it) <https://docs.python.org/it/>`__
      - Alessandro Cucci (:github-user:`acuccie3`, `email <mailto:alessandro.cucci@gmail.com>`__)
@@ -124,12 +126,13 @@ General discussions about translations occur on the Python Docs Discord
 mailing list <translation_ml_>`_, and the `translations category <_discourse>`_
 of the Python Discourse.
 
+.. _translation-style-guide:
 
 Style guide
 ===========
 
 Before translating, you should familiarize yourself with the general
-documentation :doc:`style guide<../style-guide>`. Some translation-specific
+documentation :doc:`style guide <../style-guide>`. Some translation-specific
 guidelines are explained below.
 
 
@@ -155,7 +158,7 @@ The Python docs contain many roles (``:role:`target```) that link to other parts
 of the documentation.
 Do not translate reStructuredText roles targets, such as ``:func:`print``` or
 ``:ref:`some-section``` because it will break the link.
-If alternate text (``:role:`text <target>``` is provided, it generally
+If alternate text (``:role:`text <target>```) is provided, it generally
 should be translated. You can also introduce alternate text for translation if
 the target is not a name or term.
 
@@ -277,8 +280,8 @@ The coordination team for my language is inactive, what do I do?
 ----------------------------------------------------------------
 
 If you would like to coordinate, open a pull request in the
-`devguide <https://github.com/python/devguide>`_ adding yourself, and ping
-``@python/editorial-board``.
+`devguide <https://github.com/python/devguide>`_ adding yourself to the table
+at the top of this page, and ping ``@python/editorial-board``.
 
 
 .. _translation_ml: https://mail.python.org/mailman3/lists/translation.python.org/

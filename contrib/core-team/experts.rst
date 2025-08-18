@@ -5,7 +5,6 @@
    |purpose|
 
 
-[This is the existing core developers :ref:`experts` page from the devguide.  We'll
-adjust "core developer" to "core team" where appropriate.]
+[This is the existing core team :ref:`experts` page from the devguide.]
 
-.. include:: ../../core-developers/experts.rst
+.. include:: ../../core-team/experts.rst

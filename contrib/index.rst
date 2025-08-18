@@ -75,7 +75,7 @@ major section at the top of each column.]*
        * :ref:`documenting`
        * :ref:`style-guide`
        * :ref:`rst-primer`
-       * :doc:`documentation/translations`
+       * :ref:`translating`
        * :ref:`devguide`
      -
        * :ref:`setup`
@@ -95,7 +95,7 @@ major section at the top of each column.]*
        * :ref:`gh-faq`
        * :ref:`triage-team`
 
-Core team members will find guidance in the :ref:`c_coreteam` section.
+Core team members will find guidance in the :ref:`c_core-team` section.
 
 Contents
 ========

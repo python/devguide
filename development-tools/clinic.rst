@@ -107,8 +107,8 @@ Terminology
 
    end line
       The line ``[clinic start generated code]*/``.
-      The *end line* marks the _end_ of Argument Clinic :term:`input`,
-      but at the same time marks the _start_ of Argument Clinic :term:`output`,
+      The *end line* marks the *end* of Argument Clinic :term:`input`,
+      but at the same time marks the *start* of Argument Clinic :term:`output`,
       thus the text *"clinic start start generated code"*
       Note that the *end line* closes the C block comment opened
       by the *start line*.
@@ -1493,6 +1493,37 @@ any arguments.
 
 You can still use a self converter, a return converter, and specify
 a *type* argument to the object converter for :c:macro:`METH_O`.
+
+
+How to convert ``*args`` parameters (starargs / var-positional)
+---------------------------------------------------------------
+
+There are two converters suitable for ``*args``: *array* and *tuple*.
+
+Using the *array* converter will provide the implementation function with
+a C array *args* of type of :c:type:`PyObject * <PyObject>` and the number
+of items in the array as :c:type:`Py_ssize_t` *args_length*.
+For example::
+
+   /*[clinic input]
+   var_positional_sample
+
+       spam: int
+       *args: array
+   [clinic start generated code]*/
+
+Using the *tuple* converter will provide the implementation function with
+a standard :c:type:`PyTupleObject`.
+For example::
+
+   /*[clinic input]
+   var_positional_sample
+
+       spam: int
+       *args: tuple
+   [clinic start generated code]*/
+
+.. versionadded:: 3.11
 
 
 How to convert ``tp_new`` and ``tp_init`` functions

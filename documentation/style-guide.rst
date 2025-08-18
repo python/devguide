@@ -66,6 +66,12 @@ Specific words
 Some terms and words deserve special mention. These conventions should
 be used to ensure consistency throughout the documentation:
 
+boolean
+  Lowercase in most instances.
+  Uppercase for *Boolean mathematics* and *Boolean logic*.
+  To refer to the Python or C data type, prefer using the exact,
+  abbreviated name with appropriate markup (for example, ``:type:`bool```).
+
 C API
   Python's `API <https://docs.python.org/3/c-api/>`_ used by C programmers
   to write extension modules. All caps and unhyphenated.

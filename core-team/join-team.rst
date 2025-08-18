@@ -1,24 +1,25 @@
 .. _become-core-developer:
 .. _coredev:
+.. _join-core-team:
 
-==============================
-How to become a core developer
-==============================
+=========================
+How to join the core team
+=========================
 
 What it takes
 =============
 
 When you have consistently made contributions which meet quality standards
 without requiring extensive rewrites prior to being committed,
-you may qualify for commit privileges and become a core developer of Python.
-You must also work well with other core developers (and people in general)
+you may qualify for commit privileges and join the core team of Python.
+You must also work well with other core team members (and people in general)
 as you become an ambassador for the Python project.
 
-Typically a core developer will offer you the chance to gain commit privilege.
+Typically a core team member will offer you the chance to gain commit privilege.
 The person making the offer will become your mentor and watch your commits for
 a while to make sure you understand the development process. If other core
 developers agree that you should gain commit privileges you are then extended
-an official offer. How core developers come to that agreement are outlined in
+an official offer. How core team members come to that agreement are outlined in
 :pep:`13`.
 
 
@@ -28,7 +29,7 @@ Gaining commit privileges
 After a candidate has demonstrated consistent contributions, commit privileges
 are granted through these steps:
 
-#. A core developer (submitter, usually the mentor) starts a poll
+#. A core team member (submitter, usually the mentor) starts a poll
    (see the :ref:`template <coredev-template>` below) in
    the `Committers category`_ on the `Python Discourse`_.
 
@@ -55,8 +56,9 @@ are granted through these steps:
    - Enable the various new privileges.
    - Remove the new committer from the triage team, if applicable.
    - Add their details to `🔒 python/voters <https://github.com/python/voters>`_.
-   - Update the devguide to publicly list their team membership
-     at :ref:`developers`.
+   - Once the python/voters update is merged, regenerate the public team membership
+     list at :ref:`developers`.
+     See "Public list of members" in the ``voters`` README.
    - Post an announcement in the `Committers Discourse category
      <https://discuss.python.org/c/committers/5>`_.  The past few announcements
      were in the form of a separate post on the already open topic with
@@ -88,10 +90,11 @@ Here's what it outputs, you can copy and paste it for your poll:
    [/poll]
 
 The important options in the poll builder set to get this result:
- - Show who voted: **disabled** (``public=false``)
- - Limit voting to these groups: **committers** (``groups=committers``)
- - Automatically close poll: **in 7 days** (``close=...``)
- - Show results: **When poll is closed** (``results=on_close``)
+
+- Show who voted: **disabled** (``public=false``)
+- Limit voting to these groups: **committers** (``groups=committers``)
+- Automatically close poll: **in 7 days** (``close=...``)
+- Show results: **When poll is closed** (``results=on_close``)
 
 .. raw:: html
 
