@@ -123,7 +123,7 @@ Telegrams/Discords in the ``README``), join and introduce
 yourself. Your fellow translators will be more than happy to help!
 General discussions about translations occur on the Python Docs Discord
 `#translations channel <https://discord.gg/h3qDwgyzga>`_, `translation
-mailing list <translation_ml_>`_, and the `translations category <_discourse>`_
+mailing list <translation_ml_>`_, and the `translations category <discourse_>`_
 of the Python Discourse.
 
 .. _translation-style-guide:
