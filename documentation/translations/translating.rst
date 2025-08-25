@@ -261,7 +261,7 @@ For further information about Transifex see our `documentation <https://python-d
 Resources
 =========
 
-Some resources that may be useful:
+Some useful resources:
 
 - :ref:`git-boot-camp`:
    Several translations accept contributions by pull requests. Most have their
