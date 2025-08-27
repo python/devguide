@@ -270,7 +270,7 @@ Some useful resources:
    This project contains issues and pull requests that aim to improve
    the Python documenation for translations.
 - `Python Pootle archive <https://github.com/python/pootle-python-org-backup>`_:
-   This repository contains a historic archive of translations from Python's Pootle.
+   Pootle is no longer used for translation. Contains translations for old Python versions.
 
 
 Translation FAQ
