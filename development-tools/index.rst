@@ -7,7 +7,7 @@ Development tools
 .. toctree::
    :maxdepth: 5
 
-   clinic
+   clinic/index
    gdb
    clang
    warnings

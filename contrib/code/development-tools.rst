@@ -13,7 +13,7 @@ Development tools
 .. toctree::
    :maxdepth: 5
 
-   ../../development-tools/clinic
+   ../../development-tools/clinic/index
    ../../development-tools/gdb
    ../../development-tools/clang
    ../../development-tools/warnings
