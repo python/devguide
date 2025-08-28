@@ -258,11 +258,19 @@ through the following resources from the Transifex documentation:
 For further information about Transifex see our `documentation <https://python-docs-transifex-automation.readthedocs.io/>`_.
 
 
-Pull requests
-=============
+Resources
+=========
 
-Several translations accept contributions by pull requests. Most have their
-own guide for how to do this, and for general tips see our :ref:`git-boot-camp`.
+Some useful resources:
+
+- :ref:`git-boot-camp`:
+   Several translations accept contributions by pull requests. Most have their
+   own guide for how to do this, but this can provide useful tips.
+- `Translation issues & improvements <https://github.com/orgs/python/projects/58>`_ GitHub project:
+   This project contains issues and pull requests that aim to improve
+   the Python documenation for translations.
+- `Python Pootle archive <https://github.com/python/pootle-python-org-backup>`_:
+   Pootle is no longer used for translation. Contains translations for old Python versions.
 
 
 Translation FAQ
