@@ -699,6 +699,25 @@ wrap the invocation of the Xcode :program:`xcrun` tool, removing user- and
 version-specific paths from the values encoded in the :py:mod:`sysconfig`
 module. Copies of these scripts are included in the final build products.
 
+
+.. note::
+
+   The ``--enable-framework`` option installs Python as a macOS Framework.
+   This changes the install location to
+   ``/Library/Frameworks/Python.framework/Versions/X.Y/`` and integrates
+   Python with macOS’s native framework system.
+
+   Framework builds are required for some GUI libraries (such as ``tkinter`` or
+   ``PyObjC``) and allow Python to be embedded in Cocoa applications via
+   ``NSBundle``.
+
+   Without ``--enable-framework``, you still get a working command-line
+   ``python3``, but certain macOS-specific integrations (GUI event loops,
+   app embedding, etc.) will not work.
+
+
+
+
 Once this build completes, the ``iOS/Frameworks`` folder will contain a
 ``Python.framework`` that can be used for testing.
 
