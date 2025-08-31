@@ -101,6 +101,9 @@ For more details about translations and their progress, see `the dashboard
    * - `Spanish (es) <https://docs.python.org/es/>`__
      - Raúl Cumplido (:github-user:`raulcd`)
      - :github:`GitHub <python/python-docs-es>`
+   * - Swedish (sv)
+     - Daniel Nylander (:github-user:`yeager`)
+     - :github:`GitHub <python/python-docs-sv>`
    * - `Traditional Chinese (zh-tw) <https://docs.python.org/zh-tw/>`__
      - | 王威翔 Matt Wang (:github-user:`mattwang44`),
        | Josix Wang (:github-user:`josix`)
