@@ -70,11 +70,8 @@ you will learn the workflow for documentation pull requests.
 Translating
 ===========
 
-The Python documentation is actively being translated into several languages.
-You can switch languages using the language switcher in the online documentation
-navbar.
-
-If you are interested in translation, see our pages on
+The Python documentation is being actively translated into several languages.
+If you are interested in helping with translation, see our pages on
 :ref:`translating <translating>` to get started.
 
 
