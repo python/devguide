@@ -22,8 +22,8 @@ Element                 Markup                                      See also
 arguments/parameters    ``*arg*``                                   :ref:`inline-markup`
 variables/literals/code ````foo````, ````42````, ````len(s) - 1```` :ref:`inline-markup`
 True/False/None         ````True````, ````False````, ````None````   :ref:`inline-markup`
-function definitions   ``.. function:: print(*args)``               :ref:`directives`
-function references    ``:func:`print```                            :ref:`roles`
+function definitions    ``.. function:: print(*args)``              :ref:`directives`
+function references     ``:func:`print```                           :ref:`roles`
 attribute definitions   ``.. attribute: `attr-name```               :ref:`information-units`
 attribute references    ``:attr:`attr-name```                       :ref:`roles`
 reference labels        ``.. _label-name:``                         :ref:`doc-ref-role`
@@ -1112,10 +1112,6 @@ units as well as normal text:
 
    .. _update_version_next.py: https://github.com/python/release-tools/blob/master/update_version_next.py
 
-   When backporting to versions before 3.14, check if ``Doc/tools/extensions/pyspecific.py``
-   contains the function ``expand_version_arg``. If it's not there,
-   use a specific version instead of ``next``.
-
    When adding documentation for a function that existed in a past version,
    but wasn't documented yet, use the version number where the function was
    added instead of ``next``.
@@ -1218,6 +1214,9 @@ units as well as normal text:
 
 Table-of-contents markup
 ------------------------
+
+.. TODO: This is a copy of the Sphinx description of the toctree directive.
+   Why duplicate it here?
 
 Since reST does not have facilities to interconnect several documents, or split
 documents into multiple output files, Sphinx uses a custom directive to add

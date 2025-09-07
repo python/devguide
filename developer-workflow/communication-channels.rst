@@ -27,12 +27,13 @@ in return.
 Mailing lists
 =============
 
-.. note:: Some mailing lists have been supplanted by categories in the
-   Python `Discourse`_. Specifically,
+.. note::
+
+   Mailing lists have generally been replaced by the `Discourse`_ forum.
+   Specifically,
 
    * The python-dev list is superseded by the `Core Development`_
      and `PEPs`_ categories on Discourse.
-
    * The python-ideas list is superseded by posts in the `Ideas`_
      category on Discourse.
 
@@ -42,17 +43,21 @@ Mailing lists
    - Ideas about new functionality should **not** start here, and instead
      should be discussed in `Ideas`_.
    - Technical support questions should also not be asked here, and instead
-     should go to the python-list_ or python-help_ mailing lists, or the
-     `Python Help`_ category on Discourse.
+     should go to the `Python Help`_ category on Discourse or the python-list_.
 
-Existing threads on the python-dev_, python-committers_, and python-ideas_ mailing lists
-can be accessed through the `online archive <web gateway_>`__.
+   Previous threads on the python-dev_, python-committers_, and python-ideas_
+   mailing lists can be accessed through the `online archive
+   <https://mail.python.org/archives/>`__.
+
+   .. _python-committers: https://mail.python.org/mailman3/lists/python-committers.python.org/
+   .. _python-dev: https://mail.python.org/mailman3/lists/python-dev.python.org/
+   .. _python-ideas: https://mail.python.org/mailman3/lists/python-ideas.python.org
 
 General Python questions should go to `python-list`_ or `tutor`_
-or similar resources, such as StackOverflow_ or the ``#python`` IRC channel
+or similar resources, such as `Stack Overflow`_ or the ``#python`` IRC channel
 on Libera.Chat_.
 
-`The core-workflow <https://github.com/python/core-workflow/issues>`_
+The `core-workflow <https://github.com/python/core-workflow/issues>`__
 issue tracker is the place to discuss and work on improvements to the CPython
 core development workflow.
 
@@ -62,16 +67,10 @@ https://mail.python.org/mailman3/ (newer lists, using Mailman3). Some lists may 
 be mirrored at `GMANE <https://gmane.io/>`_ and can be read and posted to in various
 ways, including via web browsers, NNTP newsreaders, and RSS feed readers.
 
-.. _issue tracker: https://github.com/python/cpython/issues
-.. _python-committers: https://mail.python.org/mailman3/lists/python-committers.python.org/
-.. _python-dev: https://mail.python.org/mailman3/lists/python-dev.python.org/
-.. _python-help: https://mail.python.org/mailman/listinfo/python-help
-.. _python-ideas: https://mail.python.org/mailman3/lists/python-ideas.python.org
 .. _python-list: https://mail.python.org/mailman/listinfo/python-list
 .. _tutor: https://mail.python.org/mailman/listinfo/tutor
-.. _StackOverflow: https://stackoverflow.com/
+.. _Stack Overflow: https://stackoverflow.com/
 .. _Libera.Chat: https://libera.chat/
-.. _web gateway: https://mail.python.org/archives/
 
 
 .. _communication-discourse:
@@ -79,19 +78,16 @@ ways, including via web browsers, NNTP newsreaders, and RSS feed readers.
 Discourse (discuss.python.org web forum)
 ========================================
 
-We have our own `Discourse`_ forum for both developers and users. This forum
-complements the `python-dev`_, `python-ideas`_, `python-help`_, and
-`python-list`_ mailing lists.
-
-This forum has different categories and most core development discussions
+We have our own `Discourse`_ forum for both developers and users.
+It has different categories and most core development discussions
 take place in the open forum categories for `PEPs`_ and `Core Development`_
 (these are the Discourse equivalents to the python-dev mailing list).
 All categories are open for users to read and post with the exception of
 the `Committers`_ category, where posting is restricted to the `CPython
-<https://github.com/python/cpython>`_ core developers.
+<https://github.com/python/cpython>`_ core team.
 
 The Committers category is often used for announcements and notifications.
-It is also the designated venue for the core developer promotion votes.
+It is also the designated venue for the core team promotion votes.
 
 Tutorials for new users
 -----------------------
@@ -193,22 +189,22 @@ Discord (private chat server)
 =============================
 
 For more real-time discussions, the core development team have a private Discord
-server available. Core developers, Steering Council members, triagers, and
+server available. Core team members, Steering Council members, triagers, and
 documentarians on the project are eligible to join the server. Joining the
 Discord server is entirely optional, as all essential communications occur on
 the mailing lists and Discourse forums.
 
-For core developers, a long lived multiple use invitation link for this server
-can be found in the private core developer only section of the Discourse forum.
+For core team members, a long-lived multiple-use invitation link for this server
+can be found in the private core team only section of the Discourse forum.
 
 For triagers and documentarians joining the Discord server, a single use invitation
 link should be generated and sent to them directly.
 
 When first joining the server, new users will only have access to the ``#welcome``
 and ``#rules-and-info`` channels. To link their Discord ID with their project
-role, core developers may update their Steering Council 🔒 `voter record`_ with
+role, core team members may update their Steering Council 🔒 `voter record`_ with
 their Discord ID before posting in the ``#welcome`` channel to request access
-to the rest of the server channels. Triagers, documentarians, and core developers
+to the rest of the server channels. Triagers, documentarians, and core team members
 that would prefer not to add their Discord ID to their Steering Council voter
 record may instead be vouched for by an existing member of the Discord server.
 
@@ -229,7 +225,7 @@ set a specific `Server Nickname`_
 IRC
 ===
 
-Some core developers still participate in the ``#python-dev`` IRC channel on
+Some core team members still participate in the ``#python-dev`` IRC channel on
 ``irc.libera.chat``. This is not a place to ask for help with Python, but to
 discuss issues related to Python's own development. See also the
 ``#python-dev-notifs`` channel for bots notifications.
@@ -238,7 +234,7 @@ discuss issues related to Python's own development. See also the
 Blogs
 =====
 
-Several core developers are active bloggers and discuss Python's development
+Several core team members are active bloggers and discuss Python's development
 that way. You can find their blogs (and various other developers who use Python)
 at `Planet Python <https://planetpython.org/>`__.
 
@@ -254,15 +250,16 @@ order to make open source pleasant for everyone involved.
 Additional repositories
 =======================
 
-`Python Core Workflow`_ hosts the codebase for tools such as :pypi:`blurb`.
+`Python Core Workflow`_ hosts an issue tracker for workflow discussions.
 
-Other core workflow tools are:
+Some core workflow tools are:
 
 * `cherry_picker`_ (:pypi:`PyPI <cherry_picker>`)
 * `bedevere`_
+* `blurb`_ (:pypi:`PyPI <blurb>`)
 * `blurb_it`_
 * `miss-islington`_
-* `cla-bot`_
+* `clabot`_
 * `webhook-mailer`_
 
 Python `Performance Benchmark`_ project is intended to be an authoritative
@@ -271,8 +268,9 @@ source of benchmarks for all Python implementations.
 .. _Python Core Workflow: https://github.com/python/core-workflow
 .. _cherry_picker: https://github.com/python/cherry-picker
 .. _bedevere: https://github.com/python/bedevere
+.. _blurb: https://github.com/python/blurb
 .. _blurb_it: https://github.com/python/blurb_it
 .. _miss-islington: https://github.com/python/miss-islington
-.. _cla-bot: https://github.com/ambv/cla-bot
+.. _clabot: https://github.com/psf/clabot
 .. _webhook-mailer: https://github.com/python/webhook-mailer
 .. _Performance Benchmark: https://github.com/python/pyperformance

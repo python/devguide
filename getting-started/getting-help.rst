@@ -5,7 +5,7 @@ Where to get help
 =================
 
 If you are working on Python it is very possible you will come across an issue
-where you need some assistance to solve it (this happens to core developers
+where you need some assistance to solve it (this happens to the core team
 all the time).
 
 Should you require help, there are a :ref:`variety of options available
@@ -37,31 +37,12 @@ Those particularly relevant for help contributing to Python itself include:
 .. _Ideas: https://discuss.python.org/c/ideas/6
 
 
-.. _help-mailing-lists:
-
-Mailing lists
--------------
-
-Further options for seeking assistance include the
-`python-ideas`_ and `python-dev`_ mailing lists,
-which correspond to the `Ideas`_ and `Core Development`_
-:ref:`help-discourse` categories, respectively.
-The Discourse categories are generally more active
-and are the preferred venue for new discussions,
-but the mailing lists are still monitored and responded to.
-These mailing lists are for questions involving the
-development *of* Python, **not** for development *with* Python.
-
-.. _python-ideas: https://mail.python.org/mailman3/lists/python-ideas.python.org
-.. _python-dev: https://mail.python.org/mailman3/lists/python-dev.python.org/
-
-
 Ask #python-dev
 ---------------
 
 If you are comfortable with IRC you can try asking on ``#python-dev`` (on
 the `Libera.Chat`_ network). Typically there are a number of experienced
-developers, ranging from triagers to core developers, who can answer
+contributors, ranging from triagers to the core team, who can answer
 questions about developing for Python.  As with the mailing lists,
 ``#python-dev`` is for questions involving the development *of* Python
 whereas ``#python`` is for questions concerning development *with* Python.
@@ -79,7 +60,7 @@ Core mentorship
 If you are interested in improving Python and contributing to its development,
 but don’t yet feel entirely comfortable with the public channels mentioned
 above, `Python Mentors`_ are here to help you.  Python is fortunate to have a
-community of volunteer core developers willing to mentor anyone wishing to
+community of volunteer core team members willing to mentor anyone wishing to
 contribute code, work on bug fixes or improve documentation.  Everyone is
 welcomed and encouraged to contribute.
 

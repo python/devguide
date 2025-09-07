@@ -131,7 +131,7 @@ You should have already :ref:`set up your system <setup>`,
    git commit -m '<message>'
    git push origin <branch-name>
 
-  * If a core developer reviewing your PR pushed one or more commits to your
+  * If a core team member reviewing your PR pushed one or more commits to your
     PR branch, then after checking out your branch and before editing, run::
 
      git pull origin <branch-name>  # pull = fetch + merge
@@ -204,7 +204,7 @@ should do to help ensure that your pull request is accepted.
 
 #. **Make sure to follow Python's style guidelines.** For Python code you
    should follow :PEP:`8`, and for C code you should follow :PEP:`7`. If you have
-   one or two discrepancies those can be fixed by the core developer who merges
+   one or two discrepancies those can be fixed by the core team member who merges
    your pull request. But if you have systematic deviations from the style guides
    your pull request will be put on hold until you fix the formatting issues.
 
@@ -423,7 +423,7 @@ Furthermore, the first line should not end in a period.
 
 If this is not enough detail for a commit, a new paragraph(s) can be added
 to explain in proper depth what has happened (detail should be good enough
-that a core developer reading the commit message understands the
+that a core team member reading the commit message understands the
 justification for the change).
 
 Check :ref:`the Git bootcamp <accepting-and-merging-a-pr>` for further
@@ -453,14 +453,14 @@ Here are the steps needed in order to sign the CLA:
 
 1. Create a change and submit it as a pull request.
 
-2. When ``cpython-cla-bot`` comments on your pull request that commit
+2. When ``python-cla-bot`` comments on your pull request that commit
    authors are required to sign a Contributor License Agreement, click
    on the button in the comment to sign it. It's enough to log in through
    GitHub. The process is automatic.
 
-3. After signing, the comment by ``cpython-cla-bot`` will update to
+3. After signing, the comment by ``python-cla-bot`` will update to
    indicate that "all commit authors signed the Contributor License
-   Agreement.
+   Agreement".
 
 .. _PSF license: https://docs.python.org/dev/license.html#terms-and-conditions-for-accessing-or-otherwise-using-python
 .. _contributor agreement: https://www.python.org/psf/contrib/
@@ -546,7 +546,7 @@ to ask for someone to review your pull request.
 
 When someone does manage to find the time to look at your pull request
 they will most likely make comments about how it can be improved
-(don't worry, even core developers of Python have their pull requests sent
+(don't worry, even core team members of Python have their pull requests sent
 back to them for changes).  It is then expected that you update your
 pull request to address these comments, and the review process will
 thus iterate until a satisfactory solution has emerged.
@@ -613,11 +613,13 @@ Instead of simply "approving" the pull request, leave comments.  For example:
 #. Look at any failures in CI on the current PR. See :ref:`"Keeping CI green"
    <keeping-ci-green>` below for simple things you can do to help move the PR forward.
 
-Dismissing review from another core developer
----------------------------------------------
+.. _dismissing-review-from-another-core-developer:
 
-A core developer can dismiss another core developer's review if they confirmed
-that the requested changes have been made.  When a core developer has assigned
+Dismissing review from another core team member
+-----------------------------------------------
+
+A core team member can dismiss another team member's review if they confirmed
+that the requested changes have been made.  When a core team member has assigned
 the PR to themselves, then it is a sign that they are actively looking after
 the PR, and their review should not be dismissed.
 
@@ -688,7 +690,7 @@ Python is tricky and we simply cannot accept everyone's contributions.
 But if your pull request is merged it will then go into Python's
 :abbr:`VCS (version control system)` to be released
 with the next feature release of Python. It may also be backported to older
-versions of Python as a bugfix if the core developer doing the merge believes
+versions of Python as a bugfix if the core team member doing the merge believes
 it is warranted.
 
 
@@ -697,7 +699,7 @@ Crediting
 
 Non-trivial contributions are credited in the ``Misc/ACKS`` file (and, most
 often, in a contribution's news entry as well).  You may be
-asked to make these edits on the behalf of the core developer who
+asked to make these edits on the behalf of the core team member who
 accepts your pull request.
 
 .. _issue tracker: https://github.com/python/cpython/issues

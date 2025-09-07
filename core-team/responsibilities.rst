@@ -5,25 +5,25 @@ Responsibilities
 ================
 
 As contributors to the CPython project, our shared responsibility is to
-collaborate constructively with other contributors, including core developers.
+collaborate constructively with other contributors, including core team members.
 This responsibility covers all forms of contribution, whether that's submitting
 pull requests to the implementation or documentation, reviewing other peoples'
 pull requests, triaging issues on the issue tracker, or discussing design and
 development ideas on the core
 :ref:`communication channels <communication-channels>`.
 
-Core developers accept key additional responsibilities around the ongoing
+Core team members accept key additional responsibilities around the ongoing
 management of the project:
 
-* core developers bear the additional responsibility of handling the
+* core team members bear the additional responsibility of handling the
   consequences of accepting a change into the code base or documentation.
   That includes reverting or fixing it if it causes problems in the
   Buildbot fleet or someone spots a problem in post-commit review, as well
   as helping out the release manager in resolving any problems found during
   the pre-release testing cycle. While all contributors are free to help out
   with this part of the process, and it is most welcome when they do, the
-  actual responsibility rests with the core developer that merged the change
-* core developers also bear the primary responsibility for deciding when
+  actual responsibility rests with the core team member that merged the change
+* core team members also bear the primary responsibility for deciding when
   changes proposed on the issue tracker should be escalated to
   the appropriate :ref:`Discourse <communication-discourse>` category
   for wider discussion, as well as suggesting the use of the
@@ -31,15 +31,15 @@ management of the project:
   of complex changes, or changes with a potentially significant impact on
   end users
 
-As a result of the additional responsibilities they accept, core developers
+As a result of the additional responsibilities they accept, core team members
 gain the privilege of being able to approve proposed changes, as well as being
-able to reject them as inappropriate. Core developers are also able to request
+able to reject them as inappropriate. Core team members are also able to request
 that even already merged changes be escalated to
 :ref:`Discourse <communication-discourse>` for further discussion,
 and potentially even reverted prior to release.
 
-Becoming a core developer isn't a binary "all-or-nothing" status - CPython
-is a large project, and different core developers accept responsibility for
+Joining the core team isn't a binary "all-or-nothing" status - CPython
+is a large project, and different core team members accept responsibility for
 making design and development decisions in different areas (as documented
 in the :ref:`experts` and :ref:`developers`).
 
@@ -82,7 +82,7 @@ Pull request merging
 
 Once you have your commit privileges on GitHub you will be able to accept
 pull requests on GitHub. You should plan to continue to submit your own
-changes through pull requests as if you weren't a core developer to benefit
+changes through pull requests as if you weren't a core team member to benefit
 from various things such as automatic integration testing, but you
 can accept your own pull requests if you feel comfortable doing so.
 
@@ -90,13 +90,13 @@ can accept your own pull requests if you feel comfortable doing so.
 Expectations
 ============
 
-As a core developer, there are certain things that are expected of you.
+As a core team member, there are certain things that are expected of you.
 
 First and foremost, be a good person. This might sound melodramatic, but you
 are now a member of the Python project and thus represent the project and your
-fellow core developers whenever you discuss Python with anyone. We have a
+fellow core team members whenever you discuss Python with anyone. We have a
 reputation for being a very nice group of people and we would like to keep it
-that way.  Core developers responsibilities include following the `PSF Code of
+that way.  Core team responsibilities include following the `PSF Code of
 Conduct`_.
 
 Second, please be prompt in responding to questions. Many contributors to Python
@@ -118,7 +118,7 @@ remove yourself from the list.
 Fourth, please consider whether or not you wish to add your name to the
 :ref:`motivations` list. Core contributor participation in the list helps the
 wider Python community to better appreciate the perspectives currently
-represented amongst the core development team, the Python Software Foundation
+represented amongst the core team, the Python Software Foundation
 to better assess the sustainability of current contributions to CPython core
 development, and also serves as a referral list for organisations seeking
 commercial Python support from the core development community.

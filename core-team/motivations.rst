@@ -4,22 +4,22 @@
 Motivations and affiliations
 ============================
 
-CPython core developers participate in the core development process for a
-variety of reasons. Being accepted as a core developer indicates that
+CPython core team members participate in the core development process for a
+variety of reasons. Being accepted as a core team member indicates that
 an individual is interested in acquiring those responsibilities, has the
-ability to collaborate effectively with existing core developers, and has had
+ability to collaborate effectively with existing core team members, and has had
 the time available to demonstrate both that interest and that ability.
 
-This page allows core developers that choose to do so to provide more
+This page allows core team members that choose to do so to provide more
 information to the rest of the Python community regarding their personal
 situation (such as their general location and professional affiliations), as
 well as any personal motivations that they consider particularly relevant.
 
-Core developers that wish to provide this additional information add a new
+Core team members that wish to provide this additional information add a new
 entry to the :ref:`published-motivations` section below. Guidelines relating
 to content and layout are included as comments in the source code for this page.
 
-Core developers that are available for training, consulting, contract, or
+Core team members who are available for training, consulting, contract, or
 full-time work, or are seeking crowdfunding support for their community
 contributions, may also choose to provide that information here (including
 linking out to commercial sites with the relevant details).
@@ -32,7 +32,7 @@ For more information on the origins and purpose of this page, see
 Published entries
 =================
 
-The following core developers have chosen to provide additional details
+The following core team members have chosen to provide additional details
 regarding their professional affiliations and (optionally) other reasons for
 participating in the CPython core development process:
 
@@ -43,7 +43,7 @@ participating in the CPython core development process:
 
    Topic headings should be in the form of "Name (Country)" or
    "Name (Continent)" to help give some indication as to the geographic
-   distribution of core developers.
+   distribution of core team members.
 
    NOTE: The rest of these guidelines are highly provisional - we can evolve
    them as people add entries, and we decide on the style we like. The
@@ -112,7 +112,7 @@ participating in the CPython core development process:
    for Boeing Defence Australia. She now primarily uses it as the lead project
    maintainer for the open source ``venvstacks`` Python deployment utility.
 
-   As a core developer, she is primarily interested in helping to ensure Python's
+   As a core team member, she is primarily interested in helping to ensure Python's
    continued suitability for educational, testing and data analysis use cases,
    as well as in encouraging good architectural practices when assembling Python
    applications and test harnesses from open source components.
@@ -132,7 +132,7 @@ participating in the CPython core development process:
    devices, and now works for Microsoft on anything that makes Python more
    accessible to developers on any platform.
 
-   As a core developer, his focus is on maintaining the already excellent
+   As a core team member, his focus is on maintaining the already excellent
    Windows support and improving Python's ability to be embedded in other
    applications.
 
@@ -188,23 +188,23 @@ participating in the CPython core development process:
 .. topic:: Antoine Pitrou (France)
 
    * LinkedIn: `<https://www.linkedin.com/in/pitrou/>`_ (Senior Software Engineer)
-   * Voltron Data
+   * QuantStack
    * Python Software Foundation (Fellow)
    * Email address: antoine@python.org
 
    Antoine started working with Python in 2005 in order to implement a
    decentralized virtual world protocol.  He started contributing to CPython
-   in 2007 and became a core developer in 2008.  His motivations have been
+   in 2007 and became a core team member in 2008.  His motivations have been
    driven both by the abstract desire to make Python better for the whole
    world, and by the concrete roadblocks he was hitting in professional
    settings.  Topics of choice have included interpreter optimizations,
    garbage collection, network programming, system programming and
-   concurrent programming (such as maintaining ``multiprocessing``).
+   concurrent programming.
 
    As a professional, Antoine has been first specializing in network
    programming, and more lately in open source data science infrastructure.
-   He is currently working full time on Apache Arrow as a technical leader
-   for Voltron Data.
+   He has made numerous contributions to Numba, Dask and is currently working
+   full time on Apache Arrow as a technical leader at QuantStack.
 
 .. topic:: Victor Stinner (France)
 
@@ -279,12 +279,12 @@ Goals of this page
 
 The `issue metrics`_ automatically collected by the CPython issue tracker
 strongly suggest that the current core development process is bottlenecked on
-core developer time. This is most clearly indicated in the first metrics graph,
+core team time. This is most clearly indicated in the first metrics graph,
 which shows both the number of open issues and the number of pull requests awaiting
 review growing steadily over time, despite CPython being one of the most
 active open source projects in the world. This bottleneck then impacts not only
 resolving open issues and accepting submitted pull requests, but also the process of
-identifying, nominating and mentoring new core developers.
+identifying, nominating and mentoring new core team members.
 
 The core commit statistics monitored by sites like `OpenHub`_ provide a good
 record as to *who* is currently handling the bulk of the review and maintenance
@@ -293,13 +293,13 @@ people's ability to spend time on reviewing proposed changes, or mentoring new
 contributors.
 
 This page aims to provide at least some of that missing data by encouraging
-core developers to highlight professional affiliations in the following two
+core team members to highlight professional affiliations in the following two
 cases (even if not currently paid for time spent participating in the core
 development process):
 
-* developers working for vendors that distribute a commercially supported
+* members working for vendors that distribute a commercially supported
   Python runtime
-* developers working for Sponsor Members of the Python Software Foundation
+* members working for Sponsor Members of the Python Software Foundation
 
 These are cases where documenting our affiliations helps to improve the
 overall transparency of the core development process, as well as making it
@@ -307,20 +307,20 @@ easier for staff at these organisations to locate colleagues that can help
 them to participate in and contribute effectively to supporting the core
 development process.
 
-Core developers working for organisations with a vested interest in the
+Core team members working for organisations with a vested interest in the
 sustainability of the CPython core development process are also encouraged to
 seek opportunities to spend work time on mentoring potential new core
 developers, whether through the general `core mentorship program`_, through
 mentoring colleagues, or through more targeted efforts like Outreachy's paid
 `internships`_ and Google's `Summer of Code`_.
 
-Core developers that are available for consulting or contract work on behalf of
+Core team members who are available for consulting or contract work on behalf of
 the Python Software Foundation or other organisations are also encouraged
 to provide that information here, as this will help the PSF to better
 facilitate funding of core development work by organisations that don't
-directly employ any core developers themselves.
+directly employ any core team members themselves.
 
-Finally, some core developers seeking to increase the time they have available
+Finally, some core team members seeking to increase the time they have available
 to contribute to CPython may wish to pursue crowdfunding efforts that allow
 their contributions to be funded directly by the community, rather than relying
 on institutional sponsors allowing them to spend some or all of their work
@@ -336,15 +336,15 @@ time contributing to CPython development.
 Limitations on scope
 ====================
 
-* Specific technical areas of interest for core developers should be captured in
+* Specific technical areas of interest for core team members should be captured in
   the :ref:`Experts Index <experts>`.
 
-* This specific listing is limited to CPython core developers (since it's
-  focused on the specific constraint that is core developer time), but it
+* This specific listing is limited to CPython core team members (since it's
+  focused on the specific constraint that is core team member time), but it
   would be possible to create a more expansive listing on the Python wiki that
-  also covers issue triagers, and folks seeking to become core developers.
+  also covers issue triagers, and folks seeking to join the core team.
 
-* Changes to the software and documentation maintained by core developers,
+* Changes to the software and documentation maintained by the core team,
   together with related design discussions, all take place in public venues, and
   hence are inherently subject to full public review. Accordingly, core
   developers are NOT required to publish their motivations and affiliations if

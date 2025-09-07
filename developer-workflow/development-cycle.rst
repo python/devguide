@@ -4,7 +4,7 @@
 Development cycle
 =================
 
-The responsibilities of a core developer shift based on what kind of branch of
+The responsibilities of a core team member shift based on what kind of branch of
 Python a developer is working on and what stage the branch is in.
 
 To clarify terminology, Python uses a ``major.minor.micro`` nomenclature
@@ -142,7 +142,7 @@ Stages
 ------
 
 Based on what stage the :ref:`in-development <indevbranch>` version of Python
-is in, the responsibilities of a core developer change in regards to commits
+is in, the responsibilities of a core team member change in regards to commits
 to the :abbr:`VCS (version control system)`.
 
 
@@ -159,7 +159,7 @@ avoiding breaking the buildbots).
 Alpha
 ^^^^^
 
-Alpha releases typically serve as a reminder to core developers that they
+Alpha releases typically serve as a reminder to the core team that they
 need to start getting in changes that change semantics or add something to
 Python as such things should not be added during a Beta_. Otherwise no new
 restrictions are in place while in alpha.
@@ -171,15 +171,12 @@ Beta
 
 After a first beta release is published, no new features are accepted.  Only
 bug fixes and improvements to documentation and tests can now be committed.
-This is when core developers should concentrate on the task of fixing
+This is when the core team should concentrate on the task of fixing
 regressions and other new issues filed by users who have downloaded the alpha
 and beta releases.
 
 Being in beta can be viewed much like being in RC_ but without the extra
 overhead of needing commit reviews.
-
-Please see the note in the `In-development (main) branch`_ section above for
-new information about the creation of the 3.5 maintenance branch during beta.
 
 
 .. _rc:
@@ -188,7 +185,7 @@ Release Candidate (RC)
 ^^^^^^^^^^^^^^^^^^^^^^
 
 A branch preparing for an RC release can only have bugfixes applied that have
-been reviewed by other core developers.  Generally, these issues must be
+been reviewed by other core team members.  Generally, these issues must be
 severe enough (for example, crashes) that they deserve fixing before the final release.
 All other issues should be deferred to the next development cycle, since
 stability is the strongest concern at this point.
@@ -199,7 +196,7 @@ changes should be discussed first with the release manager.
 
 You **cannot** skip the peer review during an RC, no matter how small! Even if
 it is a simple copy-and-paste change, **everything** requires peer review from
-a core developer.
+a core team member.
 
 .. _final:
 
@@ -319,12 +316,12 @@ including collaborators, access control, integrations, webhooks, and branch
 protection. For full details of the permission levels see `GitHub's
 documentation on repository permission levels
 <https://docs.github.com/en/organizations/managing-peoples-access-to-your-organization-with-roles/roles-in-an-organization#permissions-for-organization-roles>`_.
-Common reasons for this role are: maintenance of Core Developer
-Workflow tooling, Release Managers for all :ref:`in-development <indevbranch>`,
+Common reasons for this role are: maintenance of core
+workflow tooling, Release Managers for all :ref:`in-development <indevbranch>`,
 :ref:`maintenance <maintbranch>`, and :ref:`security mode <secbranch>`
-releases, and additional Python Core Developers as necessary for redundancy.
-Occasional temporary administrator access is acceptable as necessary for Core
-Developer workflow projects.
+releases, and additional Python core team members as necessary for redundancy.
+Occasional temporary administrator access is acceptable as necessary for core
+workflow projects.
 
 Inactive or unreachable members may be removed with or without notice. Members
 who no longer necessitate this level of access will be removed with notice.

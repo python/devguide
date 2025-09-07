@@ -1,8 +1,9 @@
 .. _core-dev:
+.. _core-team:
 
-===============
-Core developers
-===============
+=========
+Core team
+=========
 
 .. toctree::
    :maxdepth: 5
@@ -10,6 +11,7 @@ Core developers
    responsibilities
    committing
    experts
-   developer-log
+   team-log
    motivations
-   become-core-developer
+   join-team
+   memorialization

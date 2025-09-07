@@ -5,7 +5,6 @@
    |purpose|
 
 
-[This is the existing core developers :ref:`responsibilities` page from the devguide.  We'll
-adjust "core developer" to "core team" where appropriate.]
+[This is the existing core team :ref:`responsibilities` page from the devguide.]
 
-.. include:: ../../core-developers/responsibilities.rst
+.. include:: ../../core-team/responsibilities.rst

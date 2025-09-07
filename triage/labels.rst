@@ -30,6 +30,8 @@ These labels are used to specify the type of issue:
   it is implicit that features are added to the ``main`` branch only.
   The `Ideas Discourse category`_ can be used to discuss enhancements
   before filing an issue.
+* :gh-label:`type-refactor`: for general code refactoring that
+  does not change user-facing behaviour.
 * :gh-label:`type-security`: for security issues.
   See also `Reporting security issues in Python`_.
 
@@ -41,7 +43,7 @@ Component labels
 ================
 
 These labels are mostly used to specify which :ref:`part of the codebase
-<build-directory-structure>` is affected by the issue/PR:
+<build_directory_structure>` is affected by the issue/PR:
 
 * :gh-label:`stdlib`: for standard library modules in the :cpy-file:`Lib`
   directory (written in Python).
@@ -122,15 +124,15 @@ Other labels
 * :gh-label:`pending`: for issues/PRs that will be closed unless further
   feedback is provided.
 * :gh-label:`release-blocker`/:gh-label:`deferred-blocker`: for issues/PRs
-  and the :ref:`branch's release manager <branchstatus>`
-  removing or retaining the label as appropriate.
   that, unless fixed, will hold the current or next release respectively.
   Triagers may set these labels for issues that must be fixed before a release,
+  and the :ref:`branch's release manager <branchstatus>`
   will review them and determine if they indeed qualify,
+  removing or retaining the label as appropriate.
 * :gh-label:`sprint`: for easier filtering of issues/PRs being worked on
   during official sprints.
 * :gh-label:`stale`: for issues/PRs that have been inactive for a while.
-* :gh-label:`triaged`: for issue has been accepted as valid by a triager.
+* :gh-label:`triaged`: for issues that have been accepted as valid by a triager.
 
 
 .. _GitHub Labels for PRs:
@@ -158,9 +160,13 @@ to trigger specific bot behaviors.
 * :gh-label:`skip news <skip%20news>`: for PRs that don't need a NEWS entry.
   The :ref:`news-entry` section covers in details in which cases the NEWS entry
   can be skipped.
-* :gh-label:`test-with-buildbots`: used to test the latest commit with
-  the :ref:`buildbot fleet <buildbots>` whenever more testing is required
-  before merging.  This may take multiple hours to complete.
+* :gh-label:`🔨 test-with-buildbots <%3Ahammer%3A%20test-with-buildbots>`: used
+  to test the latest commit with the :ref:`buildbot fleet <buildbots>` whenever
+  more testing is required before merging.  This may take multiple hours to
+  complete.
+* :gh-label:`🔨 test-with-refleak-buildbots <%3Ahammer%3A%20test-with-refleak-buildbots>`:
+  Run the reference leak buildbots on the latest commit. Useful for when the
+  code might be leaky.
 * :samp:`awaiting {action}`: these labels are applied and used by `bedevere`_
   to indicate the stage of a PR and should not be applied manually.
 

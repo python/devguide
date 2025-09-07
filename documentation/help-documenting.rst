@@ -65,7 +65,14 @@ By following the steps in the :ref:`Quick Guide to Pull Requests <pullrequest-qu
 you will learn the workflow for documentation pull requests.
 
 .. _documentation issues: https://github.com/python/cpython/issues?q=is%3Aissue+is%3Aopen+label%3Adocs
-.. _octocat: https://github.com/logos
+
+
+Translating
+===========
+
+The Python documentation is being actively translated into several languages.
+If you are interested in helping with translation, see our pages on
+:ref:`translating <translating>` to get started.
 
 
 Proofreading

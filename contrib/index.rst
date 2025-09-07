@@ -52,7 +52,6 @@ these common sections:
 
 * :ref:`c_intro`
 * :ref:`c_project`
-* :ref:`c_gettingstarted`
 
 Then choose a path based on your type of activity:
 
@@ -68,18 +67,10 @@ major section at the top of each column.]*
    :widths: 10 10 10
    :header-rows: 1
 
-   * - :ref:`Triaging <c_triage>`
-     - :ref:`Documentation <c_docs>`
+   * - :ref:`Documentation <c_docs>`
      - :ref:`Code <c_code>`
+     - :ref:`Triaging <c_triage>`
    * -
-       * :ref:`tracker`
-       * :ref:`triaging`
-       * :ref:`helptriage`
-       * :ref:`experts`
-       * :ref:`labels`
-       * :ref:`gh-faq`
-       * :ref:`triage-team`
-     -
        * :ref:`docquality`
        * :ref:`documenting`
        * :ref:`style-guide`
@@ -95,7 +86,19 @@ major section at the top of each column.]*
        * :ref:`communication`
        * :ref:`gitbootcamp`
        * :ref:`devcycle`
+     -
+       * :ref:`tracker`
+       * :ref:`triaging`
+       * :ref:`helptriage`
+       * :ref:`experts`
+       * :ref:`labels`
+       * :ref:`gh-faq`
+       * :ref:`triage-team`
 
+Core team members will find guidance in the :ref:`c_core-team` section.
+
+Contents
+========
 
 .. toctree::
    :maxdepth: 3
@@ -103,13 +106,13 @@ major section at the top of each column.]*
    contrib-plan
    intro/index
    project/index
-   get-started/index
    triage/index
-   code/index
    doc/index
+   code/index
    core-team/index
    user-success
    security
+   workflows/index
 
 
 .. _Python: https://www.python.org/
