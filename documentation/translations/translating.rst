@@ -209,7 +209,7 @@ Some general guidelines for deciding on a translation:
 Dialects
 --------
 
-Some translation receive contributions from people of several different dialects,
+Some translations receive contributions from people of several different dialects,
 understandably the language will differ. It is recommended however that
 translators try to keep files and sections consistent.
 
@@ -234,6 +234,8 @@ is provided below:
            print(kw, ":", keywords[kw])
 
 
+.. _transifex-use:
+
 Transifex
 =========
 
@@ -241,7 +243,7 @@ Transifex
 
    There are many translations in the `python-doc organization on Transifex <tx_>`_,
    some of which, however, are not used or do not have a coordination team.
-   Confirm this is not the case before you begin translating.
+   Confirm that a coordination team exists before you begin translation.
 
 Several language projects use Transifex as their translation interface.
 Translations on Transifex are carried out via a web interface, similar to Weblate.
@@ -258,6 +260,9 @@ through the following resources from the Transifex documentation:
 - `Starting with the basics <https://help.transifex.com/en/collections/3441044-starting-with-the-basics>`__:
    A group of documents with basic information.
 
+Within the organization, a project for translating the
+`python-docs-theme <https://github.com/python/python-docs-theme>`_ can also be
+found.
 For further information about Transifex see our `documentation <https://python-docs-transifex-automation.readthedocs.io/>`_.
 
 
@@ -285,6 +290,46 @@ Which version of the Python documentation should I work on?
 You should work on the latest branch available to you for translation (this should
 be the latest non-alpha branch), the translations should then be propagated by
 your languages coordination team.
+
+
+.. _python-docs-theme-i18n:
+
+How do I translate ``python-docs-theme``?
+-----------------------------------------
+
+The Sphinx theme for the Python documentation supports internationalization.
+
+You can translate either on
+`Transifex <https://explore.transifex.com/python-doc/python-docs-theme/>`_
+(see :ref:`translating on Transifex <transifex-use>` for more information)
+or locally by following the steps outlined below.
+
+To translate locally, clone the ``python-docs-theme``
+`repository <https://github.com/python/python-docs-theme>`_ and run the following
+commands to generate the PO files. Replace ``LANG`` with the same language code
+that is used for the docs translation:
+
+.. code-block:: bash
+
+    python babel_runner.py extract
+    python babel_runner.py init -l LANG
+
+The file can then be found at:
+
+.. code-block:: text
+
+    python-docs-theme/locale/LANG/LC_MESSAGES/python-docs-theme.po
+
+After translating, submit your PO file via a pull request to the
+`repository <https://github.com/python/python-docs-theme>`_.
+See our :ref:`git-boot-camp` for more information about using Git.
+
+To update an existing translation after source changes, run:
+
+.. code-block:: bash
+
+    python babel_runner.py update  # To update source for all languages
+    python babel_runner.py update -l LANG  # To update source just for LANG
 
 
 The coordination team for my language is inactive, what do I do?
