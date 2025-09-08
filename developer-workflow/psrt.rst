@@ -93,6 +93,35 @@ severity, advisory text, and fixes.
   to ``security-announce@python.org`` using the below template. Backport labels must be added as appropriate.
   After the advisory is published a CVE record can be created.
 
+Handling code signing certificate reports
+-----------------------------------------
+
+Python signs binaries using Azure Trusted Signing and Apple Developer ID certificates.
+If a code signing certificate is reported as "compromised" or "malware signed with certificate",
+the Python Security Response Team must request the following information from the reporter:
+
+* Checksum(s) of binaries signed by certificate.
+* Signature(s) of binaries signed by ceritificate.
+
+To avoid unnecessary user confusion and churn around revoking code signing certificates,
+any reports **must be verifiable independently by the PSRT before taking destructive
+actions**, such as revoking certificates. With this information the PSRT can
+take investigative steps to verify the report, such as:
+
+* Downloading and checking artifacts from the associated Azure Pipelines executions
+  against the reported list of checksums.
+* Verifying the validity of the signatures. `Past reports <https://discuss.python.org/t/windows-code-signing-certificates-for-python-3-12-8-3-13-1-revoked/103356/2>`__
+  have contained signatures that proported to be from Python code signing ceritificates, but were not valid.
+* Checking the Azure Pipelines and Azure Trusted Signing audit logs for signs of compromise.
+
+If any signs of compromise or incorrectly signed binaries are discovered by the PSRT, only
+will certificates be revoked and an advisory published.
+If compromise is reported, the following non-destructive actions can be taken by the PSRT without
+verifying the reported information as a precaution, if relevant:
+
+* Rotating secrets associated with code signing (``TrustedSigningSecret`` for Azure Trusted Publishing)
+* Resetting passwords for accounts with access to signing certificates.
+
 Template responses
 ------------------
 
