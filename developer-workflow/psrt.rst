@@ -111,7 +111,7 @@ take investigative steps to verify the report, such as:
 * Downloading and checking artifacts from the associated Azure Pipelines executions
   against the reported list of checksums.
 * Verifying the validity of the signatures. `Past reports <https://discuss.python.org/t/windows-code-signing-certificates-for-python-3-12-8-3-13-1-revoked/103356/2>`__
-  have contained signatures that proported to be from Python code signing ceritificates, but were not valid.
+  have contained signatures that purported to be from Python code signing certificates, but were not valid.
 * Checking the Azure Pipelines and Azure Trusted Signing audit logs for signs of compromise.
 
 If any signs of compromise or incorrectly signed binaries are discovered by the PSRT, only
