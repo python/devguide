@@ -243,7 +243,7 @@ Transifex
 
    There are many translations in the `python-doc organization on Transifex <tx_>`_,
    some of which, however, are not used or do not have a coordination team.
-   Confirm that a coordination team exists before you begin translation.
+   Confirm that a coordination team exists before you begin translating.
 
 Several language projects use Transifex as their translation interface.
 Translations on Transifex are carried out via a web interface, similar to Weblate.
