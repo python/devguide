@@ -101,7 +101,7 @@ If a code signing certificate is reported as "compromised" or "malware signed wi
 the Python Security Response Team must request the following information from the reporter:
 
 * Checksum(s) of binaries signed by certificate.
-* Signature(s) of binaries signed by ceritificate.
+* Signature(s) of binaries signed by certificate.
 
 To avoid unnecessary user confusion and churn around revoking code signing certificates,
 any reports **must be verifiable independently by the PSRT before taking destructive
@@ -115,11 +115,11 @@ take investigative steps to verify the report, such as:
 * Checking the Azure Pipelines and Azure Trusted Signing audit logs for signs of compromise.
 
 If any signs of compromise or incorrectly signed binaries are discovered by the PSRT, only
-will certificates be revoked and an advisory published.
+then will certificates be revoked and an advisory published.
 If compromise is reported, the following non-destructive actions can be taken by the PSRT without
 verifying the reported information as a precaution, if relevant:
 
-* Rotating secrets associated with code signing (``TrustedSigningSecret`` for Azure Trusted Publishing)
+* Rotating secrets associated with code signing (``TrustedSigningSecret`` for Azure Trusted Publishing).
 * Resetting passwords for accounts with access to signing certificates.
 
 Template responses
