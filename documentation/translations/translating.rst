@@ -261,7 +261,7 @@ through the following resources from the Transifex documentation:
    A group of documents with basic information.
 
 Within the organization, a project for translating the
-`python-docs-theme <https://github.com/python/python-docs-theme>`_ can also be
+:github:`Python Docs Sphinx Theme <python/python-docs-theme>` can also be
 found.
 For further information about Transifex see our `documentation <https://python-docs-transifex-automation.readthedocs.io/>`_.
 
@@ -294,18 +294,17 @@ your languages coordination team.
 
 .. _python-docs-theme-i18n:
 
-How do I translate ``python-docs-theme``?
------------------------------------------
+How do I translate the Python Docs Sphinx Theme?
+------------------------------------------------
 
-The Sphinx theme for the Python documentation supports internationalization.
+The Sphinx theme for the Python documentation supports localization.
 
 You can translate either on
 `Transifex <https://explore.transifex.com/python-doc/python-docs-theme/>`_
 (see :ref:`translating on Transifex <transifex-use>` for more information)
 or locally by following the steps outlined below.
 
-To translate locally, clone the ``python-docs-theme``
-`repository <https://github.com/python/python-docs-theme>`_ and run the following
+To translate locally, clone the :github:`Python Docs Sphinx Theme repository <python/python-docs-theme>` and run the following
 commands to generate the PO files. Replace ``LANG`` with the same language code
 that is used for the docs translation:
 
@@ -321,7 +320,7 @@ The file can then be found at:
     python-docs-theme/locale/LANG/LC_MESSAGES/python-docs-theme.po
 
 After translating, submit your PO file via a pull request to the
-`repository <https://github.com/python/python-docs-theme>`_.
+:github:`repository <python/python-docs-theme>`.
 See our :ref:`git-boot-camp` for more information about using Git.
 
 To update an existing translation after source changes, run:
