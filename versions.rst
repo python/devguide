@@ -1,37 +1,36 @@
-.. _versions:
-.. _branchstatus:
+import matplotlib.pyplot as plt
+import matplotlib.dates as mdates
+from datetime import datetime
 
-=========================
-Status of Python versions
-=========================
+# Dates et événements clés
+dates = [
+    datetime(250, 1, 1),        # Fondation de Paris
+    datetime(52, 1, 1),         # Lutetia
+    datetime(1163, 1, 1),       # Notre-Dame
+    datetime(1605, 1, 1),       # Place des Vosges
+    datetime(1789, 7, 14),      # Révolution française
+    datetime(1853, 1, 1),       # Haussmann
+    datetime(1889, 1, 1),       # Tour Eiffel
+    datetime(1973, 1, 1),       # Périphérique
+    datetime(2010, 1, 1),       # Grand Paris
+    datetime(2025, 1, 1),       # Paris aujourd'hui
+]
 
-The ``main`` branch is currently the future Python |main_version|, and is the only
-branch that accepts new features.  The latest release for each Python
-version can be found on the `download page <https://www.python.org/downloads/>`_.
+events = [
+    "Fondation de Paris\n(tribu des Parisii)",
+    "Lutetia sous Rome",
+    "Construction de\nNotre-Dame",
+    "Place des Vosges &\nMarais aristocratique",
+    "Révolution française",
+    "Modernisation Haussmann",
+    "Tour Eiffel (1889)",
+    "Boulevard périphérique",
+    "Projet Grand Paris",
+    "Paris aujourd'hui"
+]
 
-
-.. raw:: html
-   :file: include/release-cycle.svg
-
-(See :ref:`below <full-chart>` for a chart with older versions.
-Another useful visualization is `endoflife.date/python <https://endoflife.date/python>`_.)
-
-
-Supported versions
-==================
-
-Dates shown in *italic* are scheduled and can be adjusted.
-
-.. csv-table::
-   :header-rows: 1
-   :width: 100%
-   :file: include/branches.csv
-
-.. Remember to update main branch in the paragraph above too
-
-
-Unsupported versions
-====================
+# Création de la frise chronologique
+fig, ax = plt.subplots(figsize=
 
 .. csv-table::
    :header-rows: 1
