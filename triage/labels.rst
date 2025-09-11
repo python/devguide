@@ -98,7 +98,8 @@ These labels are used to indicate which versions of Python are affected.
 The available version labels (with the form :samp:`3.{N}`) are updated
 whenever new feature releases are created or retired.
 
-Triagers may adhere to the following recommendations:
+Recommendations
+---------------
 
 - For security issues, add the :gh-label:`type-security` label and
   the affected version labels. This makes the issue stand out.
@@ -107,14 +108,10 @@ Triagers may adhere to the following recommendations:
   the :gh-label:`type-bug` label as knowing which versions are affected
   does not give more information.
 
-  Once the bug is resolved, one can optionally add the version labels for
-  the affected versions. This helps readers in knowing whether their issue
-  has been solved for their Python version.
+- Labels for end-of-life versions should be removed when possible but there is
+  no need to explicitly go through old issues to remove such labels.
 
-- EOL version labels should be removed when possible but there is no need
-  to explicitly go through old issues to remove such labels.
-
-- Otherwise, add the corresponding version label(s) and remember to
+- Otherwise, add the corresponding version labels and remember to
   update them when the latest major version is updated.
 
 See also :ref:`the branch status page <branchstatus>`
@@ -135,7 +132,7 @@ cases subject to the release manager approval:
   version under development would now be :samp:`3.{N+1}.0a1`.
 
   To indicate that the labelling is correct and the extension is
-  approved, the :gh-label:`triaged` label could also be applied.
+  approved, the :gh-label:`triaged` label can also be applied.
 
 
 .. _Keywords:
