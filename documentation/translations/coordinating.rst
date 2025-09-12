@@ -175,9 +175,7 @@ Translating Sphinx
 Some messages that appear in the docs must be translated in the
 `Sphinx project <https://www.sphinx-doc.org/en/master/internals/contributing.html#translations>`__
 (`sphinx-doc on Transifex <https://app.transifex.com/sphinx-doc/>`__) or in
-the `python-docs-theme <https://github.com/python/python-docs-theme>`_
-(currently this is not possible; see this
-`issue <https://github.com/python/python-docs-theme/issues/194>`__).
+the :ref:`Python Docs Sphinx Theme <python-docs-theme-i18n>`.
 Coordinators should direct some translators there, so that the documentation
 is fully translated.
 
