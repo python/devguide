@@ -278,8 +278,6 @@ Some useful resources:
    the Python documenation for translations.
 - `Python Pootle archive <https://github.com/python/pootle-python-org-backup>`_:
    Pootle is no longer used for translation. Contains translations for old Python versions.
-- `Translation mailing list archive <translation_ml_>`_:
-   Archive of discussions from the now-retired translation mailing list.
 
 
 Translation FAQ
