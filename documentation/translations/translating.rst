@@ -125,9 +125,8 @@ If there is already a repository for your language team (there may be links to
 Telegrams/Discords in the ``README``), join and introduce
 yourself. Your fellow translators will be more than happy to help!
 General discussions about translations occur on the Python Docs Discord
-`#translations channel <https://discord.gg/h3qDwgyzga>`_, `translation
-mailing list <translation_ml_>`_, and the `translations category <discourse_>`_
-of the Python Discourse.
+`#translations channel <https://discord.gg/h3qDwgyzga>`_ and the
+`translations category <discourse_>`_ of the Python Discourse.
 
 .. _translation-style-guide:
 
@@ -279,6 +278,8 @@ Some useful resources:
    the Python documenation for translations.
 - `Python Pootle archive <https://github.com/python/pootle-python-org-backup>`_:
    Pootle is no longer used for translation. Contains translations for old Python versions.
+- `Translation mailing list archive <translation_ml_>`_:
+   Archive of discussions from the now-retired translation mailing list.
 
 
 Translation FAQ
