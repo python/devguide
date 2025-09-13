@@ -12,8 +12,7 @@ Communication/help channels
 ===========================
 
 Discussions about translations occur on the Python Docs Discord
-`#translations channel <https://discord.gg/h3qDwgyzga>`_, `translation
-mailing list <translation_ml_>`_, and the
+`#translations channel <https://discord.gg/h3qDwgyzga>`_ and the
 `translations category <trans_disc_>`_ of the Python Discourse.
 
 For administrative issues, ping ``@python/editorial-board``.
@@ -224,7 +223,8 @@ How is a coordination team chosen?
 Each translation team will decide on the number of coordinators.
 We recommend two or three coordinators, though you may begin with one.
 
--  Coordinator requests are to be public on the `translation mailing list <translation_ml_>`_.
+-  Coordinator requests are to be public in the `translations category of the
+   Python Discourse <trans_disc_>`_.
 -  If the given language has a native core team member, they have input
    on the coordinator request.
 -  Anyone who wants to become coordinator for their native language and shows
@@ -233,8 +233,8 @@ We recommend two or three coordinators, though you may begin with one.
 -  We expect the local community to self-organize coordinators and contributors.
    If you have questions, please ask on the mailing list or Discourse.
 -  If a coordinator becomes inactive or unreachable for a long
-   period of time, someone else can ask to be added as a primary coordinator on
-   the `translation mailing list <translation_ml_>`_.
+   period of time, someone else can ask to be added as a primary coordinator in
+   the `translations category of the Python Discourse <trans_disc_>`_.
    As a community resource, we aim to keep translations up to date with active
    contributors, including coordinators.
 
@@ -294,6 +294,5 @@ for updates.
 
 
 .. _EB: https://python.github.io/editorial-board/
-.. _translation_ml: https://mail.python.org/mailman3/lists/translation.python.org/
 .. _trans_disc: https://discuss.python.org/c/documentation/translations/
 .. _docsbuild-scripts: https://github.com/python/docsbuild-scripts

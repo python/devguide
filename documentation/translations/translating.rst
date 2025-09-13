@@ -125,9 +125,8 @@ If there is already a repository for your language team (there may be links to
 Telegrams/Discords in the ``README``), join and introduce
 yourself. Your fellow translators will be more than happy to help!
 General discussions about translations occur on the Python Docs Discord
-`#translations channel <https://discord.gg/h3qDwgyzga>`_, `translation
-mailing list <translation_ml_>`_, and the `translations category <discourse_>`_
-of the Python Discourse.
+`#translations channel <https://discord.gg/h3qDwgyzga>`_ and the
+`translations category <discourse_>`_ of the Python Discourse.
 
 .. _translation-style-guide:
 
@@ -339,6 +338,5 @@ If you would like to coordinate, open a pull request in the
 at the top of this page, and ping ``@python/editorial-board``.
 
 
-.. _translation_ml: https://mail.python.org/mailman3/lists/translation.python.org/
 .. _discourse: https://discuss.python.org/c/documentation/translations/
 .. _tx: https://explore.transifex.com/python-doc/python-newest/
