@@ -338,6 +338,5 @@ If you would like to coordinate, open a pull request in the
 at the top of this page, and ping ``@python/editorial-board``.
 
 
-.. _translation_ml: https://mail.python.org/mailman3/lists/translation.python.org/
 .. _discourse: https://discuss.python.org/c/documentation/translations/
 .. _tx: https://explore.transifex.com/python-doc/python-newest/
