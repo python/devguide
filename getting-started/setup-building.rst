@@ -537,12 +537,12 @@ is a convenience wrapper around the following commands:
 
 .. code-block:: shell
 
-   python3 Tools/wasm/emscripten configure-build-python --quiet -- --config-cache --with-pydebug
-   python3 Tools/wasm/emscripten make-build-python --quiet
-   python3 Tools/wasm/emscripten make-libffi --quiet
-   python3 Tools/wasm/emscripten make-mpdec --quiet
-   python3 Tools/wasm/emscripten configure-host --quiet -- --config-cache
-   python3 Tools/wasm/emscripten make-host --quiet
+   python Tools/wasm/emscripten configure-build-python --quiet -- --config-cache --with-pydebug
+   python Tools/wasm/emscripten make-build-python --quiet
+   python Tools/wasm/emscripten make-libffi --quiet
+   python Tools/wasm/emscripten make-mpdec --quiet
+   python Tools/wasm/emscripten configure-host --quiet -- --config-cache
+   python Tools/wasm/emscripten make-host --quiet
 
 .. note::
 
