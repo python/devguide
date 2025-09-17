@@ -251,6 +251,7 @@ xmlrpc
 zipapp                pfmoore
 zipfile               alanmcintyre^, serhiy-storchaka, Yhg1s, gpshead
 zipimport             Yhg1s*
+zoneinfo              pganssle
 ====================  =============================================
 
 
