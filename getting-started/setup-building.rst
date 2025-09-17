@@ -512,7 +512,7 @@ sourced script removes the environment variable):
 
 .. code-block:: sh
 
-    export EM_COMPILER_WRAPPER=ccache
+   export EM_COMPILER_WRAPPER=ccache
 
 Building for Emscripten requires doing a cross-build where you have a *build*
 Python to help produce an Emscripten build of CPython. This means you build
