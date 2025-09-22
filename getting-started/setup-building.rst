@@ -511,13 +511,26 @@ The simplest way to install the Emscripten compiler is:
 
     # Install Emscripten
     git clone https://github.com/emscripten-core/emsdk
-    ./emsdk/emsdk install 4.0.5
-    ./emsdk/emsdk activate 4.0.5
+    ./emsdk/emsdk install 4.0.12
+    ./emsdk/emsdk activate 4.0.12
     source ./emsdk/emsdk_env.sh
 
-Updating the Emscripten compiler version often causes breakages. For the best
-compatibility, use the Emscripten version suggested in the cpython repository in
-``Tools/wasm/README.md``.
+Updating the Emscripten compiler version can cause breakages. For the best
+compatibility, use the appropriate Emscripten version based on the version of
+CPython you're building:
+
+* For building CPython 3.14, use ``emsdk`` version ``4.0.12``.
+* For building the main branch of the CPython repository, you may wish to use
+  ``latest`` instead of a specific version.
+
+It is possible (but not necessary) to enable ``ccache`` for Emscripten builds
+by setting the ``EM_COMPILER_WRAPPER`` environment, but this step will only
+take effect if it is done **after** ``emsdk_env.sh`` is sourced (otherwise, the
+sourced script removes the environment variable):
+
+.. code-block:: sh
+
+   export EM_COMPILER_WRAPPER=ccache
 
 Building for Emscripten requires doing a cross-build where you have a *build*
 Python to help produce an Emscripten build of CPython. This means you build
@@ -526,8 +539,8 @@ another that's the build you ultimately care about (that is, the build Python is
 not meant for use by you directly, only the build system).
 
 The easiest way to get a debug build of CPython for Emscripten is to use the
-``Tools/wasm/emscripten build`` command (which should be run with a recent
-version of Python you have installed on your machine):
+``Tools/wasm/emscripten build`` command, which should be run with a recent
+version of Python (3.13 or newer) already installed on your machine:
 
 .. code-block:: shell
 
@@ -545,6 +558,7 @@ is a convenience wrapper around the following commands:
    python Tools/wasm/emscripten configure-build-python --quiet -- --config-cache --with-pydebug
    python Tools/wasm/emscripten make-build-python --quiet
    python Tools/wasm/emscripten make-libffi --quiet
+   python Tools/wasm/emscripten make-mpdec --quiet
    python Tools/wasm/emscripten configure-host --quiet -- --config-cache
    python Tools/wasm/emscripten make-host --quiet
 
@@ -572,6 +586,9 @@ used in ``python.sh``:
 
    make -C cross-build/wasm32-emscripten/build/python/ test
 
+Additional instructions for running the resulting builds (through Node.js and/or
+through web browsers) are available in the CPython repository at
+:cpy-file:`Tools/wasm/README.md`.
 
 .. _Emscripten: https://emscripten.org/
 .. _WebAssembly: https://webassembly.org
@@ -797,7 +814,8 @@ some of CPython's modules (for example, ``zlib``).
       $ sudo apt-get install build-essential gdb lcov pkg-config \
             libbz2-dev libffi-dev libgdbm-dev libgdbm-compat-dev liblzma-dev \
             libncurses5-dev libreadline6-dev libsqlite3-dev libssl-dev \
-            lzma lzma-dev tk-dev uuid-dev zlib1g-dev libmpdec-dev libzstd-dev
+            lzma lzma-dev tk-dev uuid-dev zlib1g-dev libmpdec-dev libzstd-dev \
+            inetutils-inetd
 
    Note that Debian 12 and Ubuntu 24.04 do not have the ``libmpdec-dev``
    package.  You can safely remove it from the install list above and the

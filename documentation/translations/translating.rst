@@ -125,9 +125,8 @@ If there is already a repository for your language team (there may be links to
 Telegrams/Discords in the ``README``), join and introduce
 yourself. Your fellow translators will be more than happy to help!
 General discussions about translations occur on the Python Docs Discord
-`#translations channel <https://discord.gg/h3qDwgyzga>`_, `translation
-mailing list <translation_ml_>`_, and the `translations category <discourse_>`_
-of the Python Discourse.
+`#translations channel <https://discord.gg/h3qDwgyzga>`_ and the
+`translations category <discourse_>`_ of the Python Discourse.
 
 .. _translation-style-guide:
 
@@ -209,7 +208,7 @@ Some general guidelines for deciding on a translation:
 Dialects
 --------
 
-Some translation receive contributions from people of several different dialects,
+Some translations receive contributions from people of several different dialects,
 understandably the language will differ. It is recommended however that
 translators try to keep files and sections consistent.
 
@@ -234,6 +233,8 @@ is provided below:
            print(kw, ":", keywords[kw])
 
 
+.. _transifex-use:
+
 Transifex
 =========
 
@@ -241,7 +242,7 @@ Transifex
 
    There are many translations in the `python-doc organization on Transifex <tx_>`_,
    some of which, however, are not used or do not have a coordination team.
-   Confirm this is not the case before you begin translating.
+   Confirm that a coordination team exists before you begin translating.
 
 Several language projects use Transifex as their translation interface.
 Translations on Transifex are carried out via a web interface, similar to Weblate.
@@ -258,6 +259,9 @@ through the following resources from the Transifex documentation:
 - `Starting with the basics <https://help.transifex.com/en/collections/3441044-starting-with-the-basics>`__:
    A group of documents with basic information.
 
+Within the organization, a project for translating the
+:github:`Python Docs Sphinx Theme <python/python-docs-theme>` can also be
+found.
 For further information about Transifex see our `documentation <https://python-docs-transifex-automation.readthedocs.io/>`_.
 
 
@@ -287,6 +291,45 @@ be the latest non-alpha branch), the translations should then be propagated by
 your languages coordination team.
 
 
+.. _python-docs-theme-i18n:
+
+How do I translate the Python Docs Sphinx Theme?
+------------------------------------------------
+
+The Sphinx theme for the Python documentation supports localization.
+
+You can translate either on
+`Transifex <https://explore.transifex.com/python-doc/python-docs-theme/>`_
+(see :ref:`translating on Transifex <transifex-use>` for more information)
+or locally by following the steps outlined below.
+
+To translate locally, clone the :github:`Python Docs Sphinx Theme repository <python/python-docs-theme>` and run the following
+commands to generate the PO files. Replace ``LANG`` with the same language code
+that is used for the docs translation:
+
+.. code-block:: bash
+
+    python babel_runner.py extract
+    python babel_runner.py init -l LANG
+
+The file can then be found at:
+
+.. code-block:: text
+
+    python-docs-theme/locale/LANG/LC_MESSAGES/python-docs-theme.po
+
+After translating, submit your PO file via a pull request to the
+:github:`repository <python/python-docs-theme>`.
+See our :ref:`git-boot-camp` for more information about using Git.
+
+To update an existing translation after source changes, run:
+
+.. code-block:: bash
+
+    python babel_runner.py update  # To update source for all languages
+    python babel_runner.py update -l LANG  # To update source just for LANG
+
+
 The coordination team for my language is inactive, what do I do?
 ----------------------------------------------------------------
 
@@ -295,6 +338,5 @@ If you would like to coordinate, open a pull request in the
 at the top of this page, and ping ``@python/editorial-board``.
 
 
-.. _translation_ml: https://mail.python.org/mailman3/lists/translation.python.org/
 .. _discourse: https://discuss.python.org/c/documentation/translations/
 .. _tx: https://explore.transifex.com/python-doc/python-newest/
