@@ -288,7 +288,7 @@ Translation FAQ
 How do I build a docs translation?
 ----------------------------------
 
-To build a documentation translation, you need to have Python installed, and a
+To build a documentation translation, you need to have Python installed, a
 local copy of the :github:`CPython repository <python/cpython>` and your
 translation's repository (see table above). The PO files must be placed
 in a ``locales/LANG/LC_MESSAGES/`` (replacing ``LANG`` with your translation's
