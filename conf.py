@@ -1,3 +1,4 @@
+# Конфигурационный файл для Sphinx документации Python Developer's Guide
 import json
 
 extensions = [
@@ -20,6 +21,7 @@ copyright = '2011 Python Software Foundation'
 
 # List of patterns, relative to source directory, that match files and
 # directories to ignore when looking for source files.
+# Эта секция определяет какие файлы и папки игнорировать при сборке документации
 exclude_patterns = [
     '_build',
     'venv*',
