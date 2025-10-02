@@ -296,8 +296,8 @@ language code) folder inside the ``Doc/`` directory of the CPython repository.
 
 You can then build with :ref:`make <doc-build-make>` by adding
 a ``SPHINXOPTS="-D language=LANG"`` argument before the target
-or using :ref:`Sphinx directly <doc-build-sphinx>` and adding a
-``-D language LANG`` argument. For example:
+or by using :ref:`Sphinx directly <doc-build-sphinx>` and adding a
+``-D language=LANG`` argument. For example:
 
 .. code-block:: bash
 
