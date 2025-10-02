@@ -291,7 +291,7 @@ How do I build a docs translation?
 To build a documentation translation, you need to have Python installed, and a
 local copy of the :github:`CPython repository <python/cpython>` and your
 translation's repository (see table above). The PO files must be placed
-in a ``locale/LANG/LC_MESSAGES/`` (replacing ``LANG`` with your translation's
+in a ``locales/LANG/LC_MESSAGES/`` (replacing ``LANG`` with your translation's
 language code) folder inside the ``Doc/`` directory of the CPython repository.
 
 You can then build with :ref:`make <doc-build-make>` by adding
