@@ -8,6 +8,7 @@ Development workflow
    :maxdepth: 5
 
    communication-channels
+   cpython-deprecation-workflow
    development-cycle
    stdlib
    extension-modules
