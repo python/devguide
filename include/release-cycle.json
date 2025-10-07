@@ -10,7 +10,7 @@
   "3.14": {
     "branch": "3.14",
     "pep": 745,
-    "status": "prerelease",
+    "status": "bugfix",
     "first_release": "2025-10-07",
     "end_of_life": "2030-10",
     "release_manager": "Hugo van Kemenade"
