@@ -356,8 +356,8 @@ Here are the steps needed in order to sign the CLA:
 
 2. When ``python-cla-bot`` comments on your pull request that commit
    authors are required to sign a Contributor License Agreement, click
-   on the button in the comment to sign it. It's enough to log in through
-   GitHub. The process is automatic.
+   on the button in the comment to sign it. Simply log in to GitHub,
+   click "Authorize Python CLA Bot", and then click "Sign".
 
 3. After signing, the comment by ``python-cla-bot`` will update to
    indicate that "all commit authors signed the Contributor License
