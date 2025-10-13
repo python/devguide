@@ -1,37 +1,43 @@
-The CPython Developer's Guide
-=============================
+# The CPython Developer's Guide
 
-|ReadTheDocs| |Discourse| |Codestyle|
+[![ReadTheDocs](https://readthedocs.org/projects/cpython-devguide/badge/)](https://devguide.python.org)
+[![Discourse](https://img.shields.io/badge/discourse-join_chat-brightgreen.svg)](https://discuss.python.org/)
+[![Codestyle](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
 
-.. |ReadTheDocs| image:: https://readthedocs.org/projects/cpython-devguide/badge/
-   :target: https://devguide.python.org
-   :alt: Documentation Status
+Welcome to **The CPython Developer's Guide**, affectionately known as **the devguide** by the Python core team. This comprehensive guide provides essential information for contributing to CPython.
 
-.. |Discourse| image:: https://img.shields.io/badge/discourse-join_chat-brightgreen.svg
-   :alt: Python Discourse chat
-   :target: https://discuss.python.org/
+For the latest and official version of this guide, visit [devguide.python.org](https://devguide.python.org).
 
-.. |Codestyle| image:: https://img.shields.io/badge/code%20style-black-000000.svg
-   :target: https://github.com/psf/black
-   :alt: Code style is black
+## Quick Start
 
+### Rendering HTML
 
-This guide covers how to contribute to CPython. It is known by the
-nickname of "the devguide" by the Python core team.
+To build the developer guide into HTML format, execute the following command:
 
-The official home of this guide is https://devguide.python.org.
+```bash
+make html
+```
 
-Render HTML
------------
+### Previewing the Guide
 
-To render the devguide to HTML under ``_build/html``, run::
+To render the guide and view it in your browser, run:
 
-    make html
+```bash
+make htmlview
+```
 
-To render the devguide to HTML, and open the result in a browser, run::
+### Live Editing
 
-    make htmlview
+For those who want to see changes in real-time, use:
 
-To maintain a live view of edits as they are saved, run::
+```bash
+make htmllive
+```
 
-    make htmllive
+## Contribution Guidelines
+
+We welcome contributions! Please refer to our [Contributing Guidelines](CONTRIBUTING.md) for more details on how you can help improve the CPython project.
+
+---
+
+Thank you for your interest in contributing to CPython!
