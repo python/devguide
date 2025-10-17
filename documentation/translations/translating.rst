@@ -288,7 +288,8 @@ Translation FAQ
 How do I build a docs translation?
 ----------------------------------
 
-To build a documentation translation, you need to have Python installed and a
+To build a documentation translation for a specific language,
+you need to have Python installed and a
 local copy of the :github:`CPython repository <python/cpython>` and
 translation repository (see table above). The PO files must be placed
 in a :samp:`locales/{LANG}/LC_MESSAGES/` (replacing :samp:`{LANG}` with the translation's
@@ -303,6 +304,7 @@ or by using :ref:`Sphinx directly <doc-build-sphinx>` and adding a
 
     # build the html format of the Polish translation using make
     make SPHINXOPTS="-D language=pl" html
+
     # build the html format of the Romanian translation using Sphinx directly
     python -m sphinx -b html . build/html -D language=ro
 
