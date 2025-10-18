@@ -283,6 +283,32 @@ Some useful resources:
 Translation FAQ
 ===============
 
+.. _docs-build-translation:
+
+How do I build a docs translation?
+----------------------------------
+
+To build a documentation translation for a specific language,
+you need to have Python installed and a
+local copy of the :github:`CPython repository <python/cpython>` and
+translation repository (see table above). The PO files must be placed
+in a :samp:`locales/{LANG}/LC_MESSAGES/` (replacing :samp:`{LANG}` with the translation's
+language code) folder inside the :file:`Doc/` directory of the CPython repository.
+
+You can then build with :ref:`make <doc-build-make>` by adding
+a ``SPHINXOPTS="-D language=LANG"`` variable before the target
+or by using :ref:`Sphinx directly <doc-build-sphinx>` and adding a
+``-D language=LANG`` option. For example:
+
+.. code-block:: bash
+
+    # Build the HTML format of the Polish translation using make
+    make SPHINXOPTS="-D language=pl" html
+
+    # Build the HTML format of the Romanian translation using Sphinx directly
+    python -m sphinx -b html . build/html -D language=ro
+
+
 Which version of the Python documentation should I work on?
 -----------------------------------------------------------
 
