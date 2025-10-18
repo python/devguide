@@ -302,10 +302,10 @@ or by using :ref:`Sphinx directly <doc-build-sphinx>` and adding a
 
 .. code-block:: bash
 
-    # build the html format of the Polish translation using make
+    # Build the HTML format of the Polish translation using make
     make SPHINXOPTS="-D language=pl" html
 
-    # build the html format of the Romanian translation using Sphinx directly
+    # Build the HTML format of the Romanian translation using Sphinx directly
     python -m sphinx -b html . build/html -D language=ro
 
 
