@@ -76,9 +76,6 @@ For more details about translations and their progress, see `the dashboard
      - :github:`GitHub <python/python-docs-pl>`,
        `Transifex <tx_>`_,
        `original announcement <https://mail.python.org/pipermail/doc-sig/2019-April/004106.html>`__
-   * - Portuguese (pt)
-     - Gustavo Toffo
-     -
    * - `Brazilian Portuguese (pt-br) <https://docs.python.org/pt-br/>`__
      - | Rafael Fontenelle (:github-user:`rffontenelle`),
        | Marco Rougeth (:github-user:`rougeth`)
