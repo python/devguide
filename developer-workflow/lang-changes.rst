@@ -154,9 +154,11 @@ as PEP following the :ref:`lang-changes-pep-process`. Congratulations!
 PEP process
 -----------
 
-Once you are certain you have a language change proposal which will appeal to
+Once you have a proposal which will appeal to
 the general Python community, you can begin the PEP
-process to officially propose the change. See :pep:`1` for
+process to officially propose the change.
+This starts with finding a sponsor from the core team.
+See :pep:`1` for
 information on PEPs and the PEP process, and the :pep:`PEP Index <0>` for
 examples.
 
