@@ -20,8 +20,8 @@ Books will need updating, code will be changed, and a new way to do things will
 need to be learned. Changes to Python are never taken
 lightly.
 
-Backward compatibility is a significant concern.  Existing Python code has to
-continue to work.  There are exceptions to this rule, but they are very rare
+Backward compatibility is a significant concern. Existing Python code has to
+continue to work. There are exceptions to this rule, but they are very rare
 and are only allowed when the benefits of the change greatly outweigh the costs
 of breaking existing code.
 
@@ -29,14 +29,14 @@ Because of the seriousness of changing the language, any change must be
 beneficial to many Python users. If the change only helps a small percentage of
 Python developers then the change will not be made. A good way to see if your
 idea would work for a large portion of the Python community is to discuss it in
-the `Ideas category in Discourse <ideas_>`_.  You can also look in Python's standard
+the `Ideas category in Discourse <ideas_>`_. You can also look in Python's standard
 library to find examples of code which would benefit from your proposed change.
 
 .. important::
-   For all of these reasons, most proposed changes to Python are rejected.  This
-   doesn't mean you shouldn't suggest them.  It can be useful to explore
-   alternatives and to get feedback from the community.  Just be aware that
-   getting a change accepted is difficult.  Don't take it personally.
+   For all of these reasons, most proposed changes to Python are rejected. This
+   doesn't mean you shouldn't suggest them. It can be useful to explore
+   alternatives and to get feedback from the community. Just be aware that
+   getting a change accepted is difficult. Don't take it personally.
 
 .. index::
    single: PEP process
@@ -75,7 +75,7 @@ Some things you should **not** do:
   until the idea has been accepted for further consideration.
 
 - **Don't** create a list of proposed changes. Each idea needs its own
-  discussion.  Proposing a change is significant work. You will need to spend
+  discussion. Proposing a change is significant work. You will need to spend
   time on each proposal. A tossed-off list will not be taken seriously.
 
 When justifying your idea, these are not good reasons to make a change:
@@ -112,7 +112,8 @@ part of the process. Other people's perspectives will help explore the full
 impact of the idea and find strengths or weaknesses you may not have
 considered.
 
-You will almost always get at least some push-back.  Don't be disappointed, and don't take it personally.
+You will almost always get at least some push-back. Don't be disappointed,
+and don't take it personally.
 As the long list of :pep:`Withdrawn and Rejected PEPs
 <0#rejected-superseded-and-withdrawn-peps>` in the :pep:`PEP Index <0>`
 attests, and as befits a mature programming language, getting significant
@@ -125,7 +126,7 @@ help identify them so you can address them or move on. Keep the discussion
 productive and focused on the issues, not on personalities.
 
 It's especially useful to get core team members involved in the discussion.
-Sometimes they will differ in opinion, or merely be unconvinced.  When there
+Sometimes they will differ in opinion, or merely be unconvinced. When there
 isn't a clear positive sentiment, the `Status Quo Wins a Stalemate`_.
 
 Even if your idea is not accepted, the discussion can help you and others
@@ -149,12 +150,12 @@ PEP process
 
 Once you are certain you have a language change proposal which will appeal to
 the general Python community, you can begin the PEP
-process to officially propose the change.  See :pep:`1` for
+process to officially propose the change. See :pep:`1` for
 information on PEPs and the PEP process, and the :pep:`PEP Index <0>` for
 examples.
 
 If the PEP is accepted, then your language change will be introduced in a
-future release of Python.  Otherwise, your PEP will be recorded as rejected
+future release of Python. Otherwise, your PEP will be recorded as rejected
 along with an explanation, to inform others who may propose a similar language
 change in the future.
 
