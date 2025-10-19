@@ -26,19 +26,17 @@ and are only allowed when the benefits of the change greatly outweigh the costs
 of breaking existing code.
 
 Because of the seriousness of changing the language, any change must be
-beneficial to many Python users. If the change only helps a
-small percentage of Python developers then the change will not be made. A good
-way to see if your idea would work for a large portion of the Python community
-is to ask in the `Ideas Discourse category <ideas_>`_. You can also
-look in Python's standard library to find examples of code which would benefit from
-your proposed change.  This can also help communicate the usefulness of your change to
-others.
+beneficial to many Python users. If the change only helps a small percentage of
+Python developers then the change will not be made. A good way to see if your
+idea would work for a large portion of the Python community is to discuss it in
+the `Ideas Discourse category <ideas_>`_.  You can also look in Python's standard
+library to find examples of code which would benefit from your proposed change.
 
-For all of these reasons, most proposed changes to Python are rejected.  This
-doesn't mean you shouldn't suggest them.  It can be useful to explore
-alternatives and to get feedback from the community.  Just be aware that
-getting a change accepted is difficult.  Don't take it personally.
-
+.. important::
+   For all of these reasons, most proposed changes to Python are rejected.  This
+   doesn't mean you shouldn't suggest them.  It can be useful to explore
+   alternatives and to get feedback from the community.  Just be aware that
+   getting a change accepted is difficult.  Don't take it personally.
 
 .. index::
    single: PEP process
@@ -50,7 +48,7 @@ Suggesting new features and language changes
 
 Proposing a change involves the following steps:
 
-- Describe your idea.
+- Describe your idea in detail.
 
 - Engage in discussion about the idea.
 
@@ -148,17 +146,16 @@ as PEP following the :ref:`lang-changes-pep-process`. Congratulations!
 PEP process
 -----------
 
-Once you are certain you have a language change proposal
-which will appeal to the general Python community,
-you can begin the :abbr:`PEP (Python enhancement proposal)` process
-to officially propose the change.
-See :pep:`1` for information on PEPs and the PEP process,
-and the :pep:`PEP Index <0>` for examples.
+Once you are certain you have a language change proposal which will appeal to
+the general Python community, you can begin the :abbr:`PEP (Python enhancement
+proposal)` process to officially propose the change.  See :pep:`1` for
+information on PEPs and the PEP process, and the :pep:`PEP Index <0>` for
+examples.
 
-If the PEP is accepted, then your proposed language change will be introduced
-in the next release of Python.
-Otherwise, your PEP will be recorded as rejected along with an explanation,
-to inform others who may propose a similar language change in the future.
+If the PEP is accepted, then your language change will be introduced in a
+future release of Python.  Otherwise, your PEP will be recorded as rejected
+along with an explanation, to inform others who may propose a similar language
+change in the future.
 
 
 .. _issue tracker: https://github.com/python/cpython/issues
