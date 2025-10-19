@@ -29,7 +29,7 @@ Because of the seriousness of changing the language, any change must be
 beneficial to many Python users. If the change only helps a small percentage of
 Python developers then the change will not be made. A good way to see if your
 idea would work for a large portion of the Python community is to discuss it in
-the `Ideas Discourse category <ideas_>`_.  You can also look in Python's standard
+the `Ideas category in Discourse <ideas_>`_.  You can also look in Python's standard
 library to find examples of code which would benefit from your proposed change.
 
 .. important::
@@ -58,7 +58,7 @@ Proposing a change involves the following steps:
 Describe your idea
 ^^^^^^^^^^^^^^^^^^
 
-The `Ideas Discourse category <ideas_>`_ is specifically intended for discussion
+The `Ideas category in Discourse <ideas_>`_ is specifically intended for discussion
 of new features and language changes. Make your proposal as a `new topic
 <ideas_>`_ there.
 
@@ -148,8 +148,8 @@ PEP process
 -----------
 
 Once you are certain you have a language change proposal which will appeal to
-the general Python community, you can begin the :abbr:`PEP (Python enhancement
-proposal)` process to officially propose the change.  See :pep:`1` for
+the general Python community, you can begin the PEP
+process to officially propose the change.  See :pep:`1` for
 information on PEPs and the PEP process, and the :pep:`PEP Index <0>` for
 examples.
 
