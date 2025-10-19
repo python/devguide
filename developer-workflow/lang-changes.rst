@@ -130,7 +130,7 @@ Sometimes they will differ in opinion, or merely be unconvinced.  When there
 isn't a clear positive sentiment, the `Status Quo Wins a Stalemate`_.
 
 Even if your idea is not accepted, the discussion can help you and others
-understand the design of Python better, and help inform future propoosals.
+understand the design of Python better, and help inform future proposals.
 
 
 Formal proposal
