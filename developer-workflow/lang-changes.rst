@@ -70,9 +70,9 @@ code.
 Some things you should **not** do:
 
 - **Don't** format your idea as a Python Enhancement Proposal (*PEP*).
-  It's good to use the PEP template as a
-  guide for what information to include, but don't try to write a full PEP
-  until the idea has been accepted for further consideration.
+  It's good to use the PEP template as a guide for what information to include,
+  but don't try to write a full PEP until the idea has been accepted for
+  further consideration.
 
 - **Don't** create a list of proposed changes. Each idea needs its own
   discussion. Proposing a change is significant work. You will need to spend
@@ -101,6 +101,11 @@ Some things you **should** do:
 - Read other ideas to understand the kinds of concerns that are raised and
   objections that must be answered. Your proposal will be stronger if you can
   address these concerns up front.
+
+- Provide enough detail to fully explain your idea, and to show that you have
+  considered all the implications of the change.  Strike the right balance
+  between brevity and completeness.  A shorter proposal will be easier to
+  discuss, so long as it includes all the necessary information.
 
 
 Engage in discussion
