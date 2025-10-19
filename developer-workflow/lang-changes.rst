@@ -79,7 +79,7 @@ Some things you should **not** do:
   discussion. Proposing a change is significant work. You will need to spend
   time on each proposal. A tossed-off list will not be taken seriously.
 
-When justifying your idea, these are not good reasons to make a change:
+When justifying your idea, these are **not good reasons** to make a change:
 
 - "Other languages work this way." Languages are different. What works well
   in one language may not work well in Python, or Python may already have a
@@ -131,7 +131,10 @@ refine it and make it stronger. If your idea has flaws, the discussion will
 help identify them so you can address them or move on. Keep the discussion
 productive and focused on the issues, not on personalities.
 
-It's especially useful to get core team members involved in the discussion.
+It is especially useful to discuss with core team members since
+they know the language and design considerations well.
+If your proposal makes it to the PEP stage,
+you'll need a core team member as a sponsor.
 Sometimes they will differ in opinion, or merely be unconvinced. When there
 isn't a clear positive sentiment, the `Status Quo Wins a Stalemate`_.
 
