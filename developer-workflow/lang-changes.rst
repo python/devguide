@@ -4,7 +4,8 @@
 Changing Python
 ===============
 
-On occasion people come up with an idea for changing or improving Python.
+On occasion people come up with an idea for changing or improving the Python
+language or standard library.
 This page explains how to propose changes and what to expect during the
 process.
 
