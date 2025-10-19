@@ -5,8 +5,8 @@ Changing Python
 ===============
 
 On occasion people come up with an idea for changing or improving Python.
-This page explains how to explore change proposals and what changes
-have a reasonable chance of being considered.
+This page explains how to propose changes and what to expect during the
+process.
 
 
 Considerations
