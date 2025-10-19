@@ -69,13 +69,14 @@ code.
 
 Some things you should **not** do:
 
-- **Don't** format your idea as a PEP. It's good to use the PEP template as a
+- **Don't** format your idea as a Python Enhancement Proposal (*PEP*).
+  It's good to use the PEP template as a
   guide for what information to include, but don't try to write a full PEP
   until the idea has been accepted for further consideration.
 
 - **Don't** create a list of proposed changes. Each idea needs its own
   discussion.  Proposing a change is significant work. You will need to spend
-  time on each proposal.
+  time on each proposal. A tossed-off list will not be taken seriously.
 
 When justifying your idea, these are not good reasons to make a change:
 
