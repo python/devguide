@@ -26,7 +26,7 @@ and are only allowed when the benefits of the change greatly outweigh the costs
 of breaking existing code.
 
 Because of the seriousness of changing the language, any change must be
-beneficial to a many Python users. If the change only helps a
+beneficial to many Python users. If the change only helps a
 small percentage of Python developers then the change will not be made. A good
 way to see if your idea would work for a large portion of the Python community
 is to ask in the `Ideas Discourse category <ideas_>`_. You can also
@@ -104,7 +104,7 @@ Some things you **should** do:
   address these concerns up front.
 
 
-Engage in Discussion
+Engage in discussion
 ^^^^^^^^^^^^^^^^^^^^
 
 Once you post your proposal, people will respond. You need to continue
@@ -163,4 +163,4 @@ to inform others who may propose a similar language change in the future.
 
 .. _issue tracker: https://github.com/python/cpython/issues
 .. _ideas: https://discuss.python.org/c/ideas/6
-.. _Status Quo Wins a Stalemate: https://www.curiousefficiency.org/posts/2011/02/status-quo-wins-stalemate.html
+.. _Status Quo Wins a Stalemate: https://www.curiousefficiency.org/posts/2011/02/status-quo-wins-stalemate/
