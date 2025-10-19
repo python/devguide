@@ -112,7 +112,7 @@ part of the process. Other people's perspectives will help explore the full
 impact of the idea and find strengths or weaknesses you may not have
 considered.
 
-You will get push-back.  Don't be disappointed, and don't take it personally.
+You will almost always get at least some push-back.  Don't be disappointed, and don't take it personally.
 As the long list of :pep:`Withdrawn and Rejected PEPs
 <0#rejected-superseded-and-withdrawn-peps>` in the :pep:`PEP Index <0>`
 attests, and as befits a mature programming language, getting significant
