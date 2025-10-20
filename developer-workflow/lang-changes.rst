@@ -70,7 +70,7 @@ code.
 
 Some things you should **not** do:
 
-- **Don't** format your idea as a Python Enhancement Proposal (*PEP*).
+- **Don't** format your idea as a Python Enhancement Proposal (PEP).
   It's good to use the PEP template as a guide for what information to include,
   but don't try to write a full PEP until the idea has been accepted for
   further consideration.
