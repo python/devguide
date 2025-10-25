@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import argparse
+import calendar
 import csv
 import datetime as dt
 import json
@@ -18,10 +19,17 @@ def csv_date(date_str: str, now_str: str) -> str:
     return date_str
 
 
-def parse_date(date_str: str) -> dt.date:
+def parse_date(date_str: str, *, last: bool = False) -> dt.date:
     if len(date_str) == len("yyyy-mm"):
         # We need a full yyyy-mm-dd, so let's approximate
-        return dt.date.fromisoformat(date_str + "-01")
+        if last:
+            # Last day of month
+            year, month = map(int, date_str.split("-"))
+            last_day = calendar.monthrange(year, month)[1]
+            return dt.date(year, month, last_day)
+        else:
+            return dt.date.fromisoformat(date_str + "-01")
+
     return dt.date.fromisoformat(date_str)
 
 
@@ -46,7 +54,7 @@ class Versions:
                 full_years = 1.5
             version["first_release_date"] = r1 = parse_date(version["first_release"])
             version["start_security_date"] = r1 + dt.timedelta(days=full_years * 365)
-            version["end_of_life_date"] = parse_date(version["end_of_life"])
+            version["end_of_life_date"] = parse_date(version["end_of_life"], last=True)
 
         self.cutoff = min(ver["first_release_date"] for ver in self.versions.values())
 
