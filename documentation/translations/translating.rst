@@ -272,7 +272,7 @@ Some useful resources:
    own guide for how to do this, but this can provide useful tips.
 - `Translation issues & improvements <https://github.com/orgs/python/projects/58>`_ GitHub project:
    This project contains issues and pull requests that aim to improve
-   the Python documenation for translations.
+   the Python documentation for translations.
 - `Python Pootle archive <https://github.com/python/pootle-python-org-backup>`_:
    Pootle is no longer used for translation. Contains translations for old Python versions.
 
