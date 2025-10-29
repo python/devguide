@@ -386,24 +386,26 @@ compiler just like building for :ref:`Unix <unix-compiling>` as well as:
 1. A C compiler that can target WebAssembly (for example, `WASI SDK`_)
 2. A WASI host/runtime (for example, Wasmtime_)
 
-All of this is provided in the :ref:`devcontainer <using-a-container>`. You can
-also use what's installed in the container as a reference of what versions of
-these tools are known to work.
+All of this is provided in the WASI :ref:`dev container <using-a-container>`
+(which you can select as an alternative container when using a
+:ref:`codespace <codespaces-whats-codespaces>`). You can also use what's
+installed in the container as a reference of what versions of these tools are
+known to work.
 
 .. note::
 
    CPython has only been verified with the certain tools for WASI. Using
    other compilers, hosts, or WASI versions *should* work, but the tools
-   and their versions specified in the container are tested via a
-   :ref:`buildbot <buildbots>`.
+   and their versions specified in the container and build scripts are
+   tested via a :ref:`buildbot <buildbots>`.
 
 Building for WASI requires doing a cross-build where you have a *build* Python
 to help produce a WASI build of CPython (technically it's a "host x host"
 cross-build because the build Python is also the target Python while the host
 build is the WASI build). This means you effectively build CPython twice: once
 to have a version of Python for the build system to use and another that's the
-build you ultimately care about (that is, the build Python is not meant for use by
-you directly, only the build system).
+build you ultimately care about (that is, the build Python is not meant for use
+by you directly, only the build system).
 
 The easiest way to get a debug build of CPython for WASI is to use the
 ``Tools/wasm/wasi.py build`` command (which should be run w/ a recent version of
@@ -1206,10 +1208,24 @@ You first need to navigate to the
 
 Then you will need to:
 
-1. Press the ``,`` key to launch the codespace setup screen for the current
-   branch (alternatively, click the green :guilabel:`Code` button and choose
-   the ``codespaces`` tab and then press the
-   green :guilabel:`Create codespace on main` button).
+1. Launch the codespace
+
+   - Press the ``,`` key to launch the codespace setup screen for the current
+     branch
+
+     - For the default dev container (which is what you very likely want), click
+       the green :guilabel:`Create new codespace` button
+     - For alternative containers, click :guilabel:`Change options` and
+       choose the appropriate container
+
+   - Alternatively, click the green :guilabel:`Code` button and choose
+     the :guilabel:`codespaces` tab
+
+     - For the default dev container (which is what you very likely want), click
+       the green :guilabel:`Create codespace on main` button
+     - For alternative containers, go to the :guilabel:`…` menu and choose
+       :guilabel:`New with options…`
+
 2. A screen should appear that lets you know your codespace is being set up.
    (Note: Since the CPython devcontainer is provided, codespaces will use the
    configuration it specifies.)
@@ -1250,7 +1266,9 @@ This is meant for users who have (or want to get) some experience
 with containers.
 These instructions assume a Unix-like environment with
 `Docker <https://www.docker.com/>`__ or `Podman <https://podman.io/>`__
-installed.
+installed. The instructions also assume you want the default dev container;
+tweak the commands as appropriate if you want to use an alternative container
+(e.g. the WASI dev container).
 
 .. _devcontainer-image:
 
