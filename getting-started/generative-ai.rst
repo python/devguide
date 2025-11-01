@@ -30,5 +30,5 @@ Anti-patterns
 - While AI-assisted tools such as autocompletion can enhance productivity, they sometimes rewrite entire code blocks instead of making small, focused edits.
   This can make it more difficult to review changes and to fully understand both the original intent of the code and the rationale behind the new modifications.
   Maintaining consistency with the original code helps preserve clarity, traceability, and meaningful reviews and also helps us avoid unnecessary code churn.
-- Sometimes AI assisted tools make failing unit tests pass by altering or bypassing the tests rather than addressing the underlying problem in the code. 
+- Sometimes AI assisted tools make failing unit tests pass by altering or bypassing the tests rather than addressing the underlying problem in the code.
   Such changes do not represent a real fix and should be avoided.
