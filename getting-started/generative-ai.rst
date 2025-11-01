@@ -29,4 +29,4 @@ Anti-patterns
 =============
 - While AI-assisted tools such as autocompletion can enhance productivity, they sometimes rewrite entire code blocks instead of making small, focused edits.
   This can make it more difficult to review changes and to fully understand both the original intent of the code and the rationale behind the new modifications.
-  Please keep maintaining consistency with the original code helps preserve clarity, traceability, and meaningful review.
+  Maintaining consistency with the original code helps preserve clarity, traceability, and meaningful reviews and also helps us avoid unnecessary code churn.
