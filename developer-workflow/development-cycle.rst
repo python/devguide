@@ -190,7 +190,7 @@ severe enough (for example, crashes) that they deserve fixing before the final r
 All other issues should be deferred to the next development cycle, since
 stability is the strongest concern at this point.
 
-While the goal is to have no code changes between a RC and a final release,
+While the goal is to have no code changes between an RC and a final release,
 there may be a need for final documentation or test fixes. Any such proposed
 changes should be discussed first with the release manager.
 
