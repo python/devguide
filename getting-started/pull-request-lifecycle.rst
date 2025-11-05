@@ -368,6 +368,40 @@ Here are the steps needed in order to sign the CLA:
 .. _contributor form: https://www.python.org/psf/contrib/contrib-form/
 .. _Python Software Foundation: https://www.python.org/psf-landing/
 
+Why do I need to sign the CLA again?
+------------------------------------
+
+Sometimes the CLA bot asks you to sign the CLA for a backport PR,
+when you've already signed it for the original PR.
+This is because you need to sign the CLA for all the email addresses you commit
+with.
+
+This can happen when you've `configured your Git client
+<https://docs.github.com/en/account-and-profile/how-tos/email-preferences/setting-your-commit-email-address>`__
+with one email address, and signed the CLA with this, but have
+`configured your GitHub account <https://github.com/settings/emails>`__
+with another primary email
+(often this is the private ``id+username@users.noreply.github.com`` address).
+
+1. In the original PR, the CLA bot verifies all the emails in the commits have
+   signed the CLA.
+
+2. We then squash merge the PR, which creates a single new commit using the
+   author's primary email. This can be different from the one you originally
+   committed with.
+
+3. Backports often only have this new single commit.
+   The CLA bot then checks if the primary email has signed the CLA.
+
+4. The solution is to click the :guilabel:`CLA not signed -- click to sign`
+   button in the backport PR.
+
+.. tip:: Run ``git config user.email`` to see your Git client config,
+  and append ``.patch`` to a PR URL to see the emails used for its commits:
+
+  * https://github.com/python/cpython/pull/1
+  * https://github.com/python/cpython/pull/1.patch
+
 
 Submitting
 ==========
@@ -547,7 +581,7 @@ affects other PRs.
 
 If you still don't see where the failure originates from, check for
 a "This branch is out-of-date with the base branch" sign next to the
-list of executed checks. Clicking "Update branch" next to this message
+list of executed checks. Clicking :guilabel:`Update branch` next to this message
 will merge in the latest changes from the base branch into the PR.
 
 If this still doesn't help with the failure on the PR, you can try
