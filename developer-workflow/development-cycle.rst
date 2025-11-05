@@ -204,8 +204,7 @@ Final
 ^^^^^
 
 When a final release is being cut, only the release manager (RM) can make
-changes to the branch.  After the final release is published, the full
-:ref:`development cycle <stages>` starts again for the next minor version.
+changes to the branch.
 
 
 Repository administration
