@@ -68,8 +68,8 @@ Maintenance branches
 A branch for a previous feature release, currently being maintained for bug
 fixes, or for the next feature release in its
 :ref:`beta <beta>` or :ref:`release candidate <rc>` stages.
-There is usually either one or two maintenance branches at any given time for
-Python 3.x.  After the final release of a new minor version (3.x.0), releases
+There is usually either one or two maintenance branches at any given time.
+After the final release of a new minor version (3.x.0), releases
 produced from a maintenance branch are called **bugfix** or **maintenance**
 releases; the terms are used interchangeably. These releases have a
 **micro version** number greater than zero.
