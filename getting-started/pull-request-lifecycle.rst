@@ -277,10 +277,6 @@ On *Windows* (after any successful build):
 
 The automated checklist runs through:
 
-* Are there any whitespace problems in Python files?
-  (using :cpy-file:`Tools/patchcheck/reindent.py`)
-* Are there any whitespace problems in C files?
-* Are there any whitespace problems in the documentation?
 * Has the documentation been updated?
 * Has the test suite been updated?
 * Has an entry under ``Misc/NEWS.d/next`` been added?
@@ -290,10 +286,8 @@ The automated checklist runs through:
 * Has ``configure`` been regenerated, if necessary?
 * Has ``pyconfig.h.in`` been regenerated, if necessary?
 
-The automated checks don't actually *answer* all of these
-questions. Aside from the whitespace checks, the tool is
-a memory aid for the various elements that can go into
-making a complete pull request.
+This will help you remember things that you need
+to check before submitting a complete pull request.
 
 
 .. _good-commits:
