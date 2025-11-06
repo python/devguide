@@ -332,27 +332,28 @@ Administrator of the repository.
 Current administrators
 ^^^^^^^^^^^^^^^^^^^^^^
 
-+-------------------+----------------------------------------------------------+-----------------+
-| Name              | Role                                                     | GitHub Username |
-+===================+==========================================================+=================+
-| Hugo van Kemenade | Python 3.14 and 3.15 Release Manager                     | hugovk          |
-+-------------------+----------------------------------------------------------+-----------------+
-| Thomas Wouters    | Python 3.12 and 3.13 Release Manager                     | Yhg1s           |
-+-------------------+----------------------------------------------------------+-----------------+
-| Pablo Galindo     | Python 3.10 and 3.11 Release Manager,                    | pablogsal       |
-|                   | Maintainer of buildbot.python.org                        |                 |
-+-------------------+----------------------------------------------------------+-----------------+
-| Łukasz Langa      | Python 3.9 Release Manager,                              | ambv            |
-|                   | PSF CPython Developer in Residence 2021-present          |                 |
-+-------------------+----------------------------------------------------------+-----------------+
-| Brett Cannon      |                                                          | brettcannon     |
-+-------------------+----------------------------------------------------------+-----------------+
-| Ezio Melotti      | Maintainer of bugs.python.org GitHub webhook integration | ezio-melotti    |
-+-------------------+----------------------------------------------------------+-----------------+
-| Mariatta Wijaya   | Maintainer of bedevere, blurb_it and miss-islington      | Mariatta        |
-+-------------------+----------------------------------------------------------+-----------------+
-| Seth Larson       | PSF Security Developer-in-Residence                      | sethmlarson     |
-+-------------------+----------------------------------------------------------+-----------------+
++--------------------+----------------------------------------------------------+-------------------+
+| Name               | Role                                                     | GitHub Username   |
++====================+==========================================================+===================+
+| Savannah Ostrowski | Python 3.16 and 3.17 Release Manager                     | savannahostrowski |
++--------------------+----------------------------------------------------------+-------------------+
+| Hugo van Kemenade  | Python 3.14 and 3.15 Release Manager                     | hugovk            |
++--------------------+----------------------------------------------------------+-------------------+
+| Thomas Wouters     | Python 3.12 and 3.13 Release Manager                     | Yhg1s             |
++--------------------+----------------------------------------------------------+-------------------+
+| Pablo Galindo      | Python 3.10 and 3.11 Release Manager,                    | pablogsal         |
+|                    | Maintainer of buildbot.python.org                        |                   |
++--------------------+----------------------------------------------------------+-------------------+
+| Łukasz Langa       | PSF CPython Developer in Residence 2021-present          | ambv              |
++--------------------+----------------------------------------------------------+-------------------+
+| Brett Cannon       |                                                          | brettcannon       |
++--------------------+----------------------------------------------------------+-------------------+
+| Ezio Melotti       | Maintainer of bugs.python.org GitHub webhook integration | ezio-melotti      |
++--------------------+----------------------------------------------------------+-------------------+
+| Mariatta Wijaya    | Maintainer of bedevere, blurb_it and miss-islington      | Mariatta          |
++--------------------+----------------------------------------------------------+-------------------+
+| Seth Larson        | PSF Security Developer-in-Residence                      | sethmlarson       |
++--------------------+----------------------------------------------------------+-------------------+
 
 Repository release manager role policy
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
