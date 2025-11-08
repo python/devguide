@@ -32,8 +32,9 @@ Considerations for success
   Maintaining consistency with the original code helps preserve clarity, traceability, and meaningful reviews and also helps us avoid unnecessary code churn.
 - Sometimes AI assisted tools make failing unit tests pass by altering or bypassing the tests rather than addressing the underlying problem in the code.
   Such changes do not represent a real fix. Authors must review the work done by AI tooling in detail to ensure it actually makes sense before proposing it as a PR.
-- Please keep following principles for the quality of your contributions in mind whether you use generative AI or not:
-  - Consider whether the change is necessary.
-  - Make minimal, focused changes.
-  - Follow existing coding style and patterns.
-  - Write tests that exercise the change.
+- Keep the following principles for the quality of your contributions in mind whether you use generative AI or not:
+
+  - Consider whether the change is necessary
+  - Make minimal, focused changes
+  - Follow existing coding style and patterns
+  - Write tests that exercise the change
