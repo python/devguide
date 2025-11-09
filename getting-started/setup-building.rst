@@ -876,9 +876,9 @@ some of CPython's modules (for example, ``zlib``).
                ./configure --with-pydebug \
                            --with-openssl="$(brew --prefix openssl@3)"
 
-      .. tab:: Python 3.9-3.10
+      .. tab:: Python 3.10
 
-         For Python 3.9 and 3.10::
+         For Python 3.10::
 
             $ CPPFLAGS="-I$(brew --prefix gdbm)/include -I$(brew --prefix xz)/include" \
                LDFLAGS="-L$(brew --prefix gdbm)/lib -L$(brew --prefix xz)/lib" \
