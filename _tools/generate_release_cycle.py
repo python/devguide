@@ -7,6 +7,7 @@ import calendar
 import csv
 import datetime as dt
 import json
+from pathlib import Path
 from urllib.request import urlopen
 
 import jinja2
@@ -198,6 +199,8 @@ def main() -> None:
 
     versions = Versions()
     assert len(versions.versions) > 10
+    Path("include").mkdir(exist_ok=True)
+
     versions.write_csv()
     versions.write_svg(args.today, "include/release-cycle-all.svg")
 
