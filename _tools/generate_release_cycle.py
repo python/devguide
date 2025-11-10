@@ -7,6 +7,7 @@ import calendar
 import csv
 import datetime as dt
 import json
+from urllib.request import urlopen
 
 import jinja2
 
@@ -41,8 +42,8 @@ class Versions:
     """For converting JSON to CSV and SVG."""
 
     def __init__(self, *, limit_to_active=False, special_py27=False) -> None:
-        with open("include/release-cycle.json", encoding="UTF-8") as in_file:
-            self.versions = json.load(in_file)
+        with urlopen("https://peps.python.org/api/release-cycle.json") as in_file:
+            self.versions = json.loads(in_file.read().decode("utf-8"))
 
         # Generate a few additional fields
         for key, version in self.versions.items():
