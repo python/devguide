@@ -7,6 +7,7 @@ import calendar
 import csv
 import datetime as dt
 import json
+from functools import cache
 from pathlib import Path
 from urllib.request import urlopen
 
@@ -39,12 +40,17 @@ def parse_version(ver: str) -> list[int]:
     return [int(i) for i in ver["key"].split(".")]
 
 
+@cache
+def get_versions() -> str:
+    with urlopen("https://peps.python.org/api/release-cycle.json") as in_file:
+        return json.loads(in_file.read().decode("utf-8"))
+
+
 class Versions:
     """For converting JSON to CSV and SVG."""
 
     def __init__(self, *, limit_to_active=False, special_py27=False) -> None:
-        with urlopen("https://peps.python.org/api/release-cycle.json") as in_file:
-            self.versions = json.loads(in_file.read().decode("utf-8"))
+        self.versions = get_versions()
 
         # Generate a few additional fields
         for key, version in self.versions.items():
