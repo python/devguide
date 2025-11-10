@@ -544,8 +544,8 @@ The directives are:
 
          Set name of the decorated function to *name*.
 
-   There is no ``deco`` role to link to a decorator that is marked up with
-   this directive; rather, use the ``:func:`` role.
+   To link to a decorator that is marked up with this directive,
+   use the ``:deco:`` role.
 
 .. describe:: class
 
@@ -805,6 +805,10 @@ a matching identifier is found:
 .. describe:: exc
 
    The name of an exception. A dotted name may be used.
+
+.. describe:: deco
+
+   The name of a decorator. A dotted name may be used.
 
 The name enclosed in this markup can include a module name and/or a class name.
 For example, ``:func:`filter``` could refer to a function named ``filter`` in
