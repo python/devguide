@@ -13,8 +13,8 @@ generally the ``README`` file, and this page.
 If your language isn’t listed below, feel free to start the translation!
 See :doc:`coordination <coordinating>` to get started.
 
-For more details about translations and their progress, see `the dashboard
-<https://python-docs-translations.github.io/dashboard/>`__.
+For more details about translations and their progress, see
+`translations.python.org <https://translations.python.org>`__.
 
 .. _translation-coordinators:
 

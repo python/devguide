@@ -213,7 +213,7 @@ linting with :pypi:`sphinx-lint`.
 See `this documentation <https://python-docs-transifex-automation.readthedocs.io/workflows.html#test-build-workflow>`_
 for sample workflows with usage guides.
 
-The `dashboard <https://python-docs-translations.github.io/dashboard/metadata.html>`_
+The `dashboard <https://translations.python.org/build-details.html>`_
 also tests translations and uploads error logs.
 
 
