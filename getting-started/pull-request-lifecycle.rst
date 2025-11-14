@@ -54,10 +54,13 @@ Here is a quick overview of how you can contribute to CPython:
 .. [*] If an issue is trivial (for example, typo fixes), or if an issue already exists,
        you can skip this step.
 
-.. note::
-   In order to keep the commit history intact, please avoid squashing or amending
-   history and then force-pushing to the PR. Reviewers often want to look at
-   individual commits.
+Don't force-push
+----------------
+
+In order to keep the commit history intact, please avoid squashing or amending
+history and then force-pushing to the PR. Reviewers often want to look at
+individual commits.
+When the PR is merged, everything will be squashed into a single commit.
 
 .. _Clear communication: https://opensource.guide/how-to-contribute/#how-to-submit-a-contribution
 .. _Open Source: https://opensource.guide/
