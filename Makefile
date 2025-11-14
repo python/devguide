@@ -103,14 +103,19 @@ _ensure-pre-commit:
 lint: _ensure-pre-commit
 	$(VENVDIR)/bin/python3 -m pre_commit run --all-files
 
-# Defined so that "include/release-cycle.json"
-# doesn't fall through to the catch-all target.
-include/release-cycle.json:
-	@exit
-
-$(_RELEASE_CYCLE): include/release-cycle.json
+# Generate all release cycle files together with a single script invocation
+# Use branches.csv as the primary target, others depend on it
+include/branches.csv:
 	$(VENVDIR)/bin/python3 _tools/generate_release_cycle.py
 	@echo Release cycle data generated.
+
+# Other files are generated together with branches.csv
+include/end-of-life.csv: include/branches.csv
+	@:
+include/release-cycle-all.svg: include/branches.csv
+	@:
+include/release-cycle.svg: include/branches.csv
+	@:
 
 # Catch-all target: route all unknown targets to Sphinx using the new
 # "make mode" option.
