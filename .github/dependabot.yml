@@ -1,7 +1,19 @@
 version: 2
 updates:
+- package-ecosystem: "github-actions"
+  directory: "/"
+  schedule:
+    interval: monthly
+  groups:
+    actions:
+      patterns:
+        - "*"
+
 - package-ecosystem: pip
   directory: "/"
   schedule:
     interval: monthly
-  open-pull-requests-limit: 10
+  groups:
+    pip:
+      patterns:
+        - "*"
