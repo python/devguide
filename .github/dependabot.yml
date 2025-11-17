@@ -8,8 +8,12 @@ updates:
     actions:
       patterns:
         - "*"
+
 - package-ecosystem: pip
   directory: "/"
   schedule:
     interval: monthly
-  open-pull-requests-limit: 10
+  groups:
+    python:
+      patterns:
+        - "*"
