@@ -459,7 +459,7 @@ If you don't have GitHub CLI or hub installed, you can run the following command
 
    $ git fetch upstream pull/NNNNN/head:pr_NNNNN
    $ git switch pr_NNNNN
-   
+
 or set up a Git alias:
 
 .. tab:: Unix/macOS
