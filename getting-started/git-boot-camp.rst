@@ -453,7 +453,7 @@ Both of these tools will configure a remote URL for the branch, so you can
 ``git push`` if the pull request author checked "Allow edits from maintainers"
 when creating the pull request.
 
-If you don't have GitHub CLI or hub installed, you can run the following commands:
+Otherwise, you can run the following commands:
 
 .. code-block:: shell
 
