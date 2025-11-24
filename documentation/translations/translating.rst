@@ -371,7 +371,7 @@ Note that this is not necessary for Transifex-based translations, as Transifex's
 translation memory will automatically copy them over.
 
 The :pypi:`pomerge` tool merges translations between PO files by matching
-message, regardless of file paths. To use it, first install the package:
+messages, regardless of file paths. To use it, first install the package:
 
 .. code-block:: bash
 
