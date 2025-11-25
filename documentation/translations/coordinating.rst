@@ -35,7 +35,7 @@ Announcement
 ------------
 
 Post an announcement introducing yourself and the translation you're
-starting on `Discourse <trans_disc>`_. Also join the other communication
+starting on `Discourse <trans_disc_>`_. Also join the other communication
 channels, if possible.
 
 
