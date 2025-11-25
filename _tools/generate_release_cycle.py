@@ -41,7 +41,7 @@ def parse_version(ver: str) -> list[int]:
 
 
 @cache
-def get_versions() -> str:
+def get_versions() -> dict[str, dict[str, str | int]]:
     with urlopen("https://peps.python.org/api/release-cycle.json") as in_file:
         return json.loads(in_file.read().decode("utf-8"))
 
