@@ -629,8 +629,8 @@ it is warranted.
 Crediting
 =========
 
-Non-trivial contributions are credited in the ``Misc/ACKS`` file (and, most
-often, in a contribution's news entry as well).
+Non-trivial contributions are often credited in What's New in Python
+and a contributions's news entry as well.
 
 .. _issue tracker: https://github.com/python/cpython/issues
 .. _Core Development Discourse category: https://discuss.python.org/c/core-dev/23
