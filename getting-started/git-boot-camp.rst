@@ -611,7 +611,7 @@ When a pull request submitter has enabled the `Allow edits from maintainers`_
 option, Python Core Developers may decide to make any remaining edits needed
 prior to merging themselves, rather than asking the submitter to do them. This
 can be particularly appropriate when the remaining changes are bookkeeping
-items.
+items like updating a news entry.
 
 .. _Allow edits from maintainers: https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/working-with-forks/allowing-changes-to-a-pull-request-branch-created-from-a-fork
 
