@@ -85,7 +85,7 @@ For more details about translations and their progress, see
        `article <https://rgth.co/blog/python-ptbr-cenario-atual/>`__
    * - Portuguese (pt)
      - André Moreira (:github-user:`NyaPuma`)
-     - :github:`GitHub <NyaPuma/python-docs-pt>`
+     - :github:`GitHub <NyaPuma/python-docs-pt>`,
        `Transifex <tx_>`_
    * - `Romanian (ro)  <https://docs.python.org/ro/>`__
      - Octavian Mustafa (:github-user:`octaG-M`, `email <mailto:octawian@yahoo.com>`__)
