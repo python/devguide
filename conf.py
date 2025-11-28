@@ -37,6 +37,10 @@ html_theme_options = {
     "source_branch": "main",
 }
 html_static_path = ['_static']
+html_extra_path = [
+    'include/release-cycle.svg',
+    'include/release-cycle-all.svg',
+]
 html_css_files = [
     'devguide_overrides.css',
 ]
