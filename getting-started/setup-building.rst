@@ -823,7 +823,7 @@ some of CPython's modules (for example, ``zlib``).
    package.  You can safely remove it from the install list above and the
    Python build will use a bundled version.  But we recommend using the system
    `libmpdec <https://www.bytereef.org/mpdecimal/doc/libmpdec/>`_ library.
-   Either built it from sources or install this package from
+   Either build it from sources or install this package from
    https://deb.sury.org.
 
 .. tab:: macOS
