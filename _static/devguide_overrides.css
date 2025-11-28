@@ -6,16 +6,9 @@
     height: 110px;
 }
 
-/* Release cycle chart */
-
-.release-cycle-chart {
-    width: 100%;
-}
-
+/* Release cycle chart - theme-aware overrides */
 .release-cycle-chart .release-cycle-year-line {
     stroke: var(--color-foreground-primary);
-    stroke-width: 0.8px;
-    opacity: 75%;
 }
 
 .release-cycle-chart .release-cycle-year-text {
@@ -24,34 +17,14 @@
 
 .release-cycle-chart .release-cycle-today-line {
     stroke: var(--color-brand-primary);
-    stroke-width: 1.6px;
 }
 
 .release-cycle-chart .release-cycle-row-shade {
     fill: var(--color-background-item);
-    opacity: 50%;
 }
 
 .release-cycle-chart .release-cycle-version-label {
     fill: var(--color-foreground-primary);
-}
-
-.release-cycle-chart .release-cycle-blob {
-    stroke-width: 1.6px;
-    /* default colours, overridden below for individual statuses */
-    fill: var(--color-background-primary);
-    stroke: var(--color-foreground-primary);
-}
-
-.release-cycle-chart .release-cycle-blob-label {
-    /* white looks good on both light & dark */
-    fill: white;
-}
-
-.release-cycle-chart .release-cycle-blob-label.release-cycle-status-security,
-.release-cycle-chart .release-cycle-blob-label.release-cycle-status-bugfix {
-    /* but use black to improve contrast for lighter backgrounds */
-    fill: black;
 }
 
 .release-cycle-chart .release-cycle-blob-label.release-cycle-status-end-of-life,
@@ -59,47 +32,6 @@
 .release-cycle-chart .release-cycle-blob-label.release-cycle-status-feature {
     /* and FG when it's not in a blob */
     fill: var(--color-foreground-primary);
-}
-
-.release-cycle-chart .release-cycle-status-end-of-life {
-    --status-bg-color: #DD2200;
-    --status-border-color: #FF8888;
-}
-
-.release-cycle-chart .release-cycle-status-security {
-    --status-bg-color: #FFDD44;
-    --status-border-color: #FF8800;
-}
-
-.release-cycle-chart .release-cycle-status-bugfix {
-    --status-bg-color: #00DD22;
-    --status-border-color: #008844;
-}
-
-.release-cycle-chart .release-cycle-status-prerelease {
-    --status-bg-color: teal;
-    --status-border-color: darkgreen;
-}
-
-.release-cycle-chart .release-cycle-status-feature {
-    --status-bg-color: #2222EE;
-    --status-border-color: #008888;
-}
-
-.release-cycle-chart .release-cycle-blob {
-    fill: var(--status-bg-color);
-    stroke: transparent;
-}
-
-.release-cycle-chart .release-cycle-blob-full {
-    fill: var(--status-bg-color);
-    stroke: var(--status-border-color);
-}
-
-.release-cycle-chart .release-cycle-border {
-    fill: transparent;
-    stroke: var(--status-border-color);
-    stroke-width: 1.6px;
 }
 
 .good pre {

@@ -4,6 +4,95 @@
     class="release-cycle-chart"
     viewBox="0 0 {{ diagram_width }} {{ diagram_height }}"
 >
+    <style>
+        /* Embedded styles for standalone viewing */
+        .release-cycle-chart {
+            width: 100%;
+        }
+        .release-cycle-year-line {
+            stroke: #333;
+            stroke-width: 0.8px;
+            opacity: 75%;
+        }
+        .release-cycle-year-text {
+            fill: #333;
+        }
+        .release-cycle-today-line {
+            stroke: #4B8BBE; /* Python blue */
+            stroke-width: 1.6px;
+        }
+        .release-cycle-row-shade {
+            fill: #e0e0e0;
+            opacity: 50%;
+        }
+        .release-cycle-version-label {
+            fill: #333;
+        }
+        .release-cycle-blob {
+            stroke-width: 1.6px;
+        }
+        .release-cycle-blob-label {
+            fill: white;
+        }
+        .release-cycle-blob-label.release-cycle-status-security,
+        .release-cycle-blob-label.release-cycle-status-bugfix {
+            fill: black;
+        }
+        .release-cycle-blob-label.release-cycle-status-end-of-life,
+        .release-cycle-blob-label.release-cycle-status-prerelease,
+        .release-cycle-blob-label.release-cycle-status-feature {
+            fill: #333;
+        }
+        .release-cycle-status-end-of-life .release-cycle-blob,
+        .release-cycle-blob.release-cycle-status-end-of-life {
+            fill: #DD2200;
+            stroke: #FF8888;
+        }
+        .release-cycle-status-security .release-cycle-blob,
+        .release-cycle-blob.release-cycle-status-security {
+            fill: #FFDD44;
+            stroke: transparent;
+        }
+        .release-cycle-status-bugfix .release-cycle-blob,
+        .release-cycle-blob.release-cycle-status-bugfix {
+            fill: #00DD22;
+            stroke: transparent;
+        }
+        .release-cycle-status-prerelease .release-cycle-blob,
+        .release-cycle-blob.release-cycle-status-prerelease {
+            fill: teal;
+            stroke: transparent;
+        }
+        .release-cycle-status-feature .release-cycle-blob,
+        .release-cycle-blob.release-cycle-status-feature {
+            fill: #2222EE;
+            stroke: transparent;
+        }
+        .release-cycle-blob-full.release-cycle-status-end-of-life {
+            fill: #DD2200;
+            stroke: #FF8888;
+        }
+        .release-cycle-border.release-cycle-status-security {
+            fill: transparent;
+            stroke: #FF8800;
+            stroke-width: 1.6px;
+        }
+        .release-cycle-border.release-cycle-status-bugfix {
+            fill: transparent;
+            stroke: #008844;
+            stroke-width: 1.6px;
+        }
+        .release-cycle-border.release-cycle-status-prerelease {
+            fill: transparent;
+            stroke: darkgreen;
+            stroke-width: 1.6px;
+        }
+        .release-cycle-border.release-cycle-status-feature {
+            fill: transparent;
+            stroke: #008888;
+            stroke-width: 1.6px;
+        }
+    </style>
     <defs>
         <linearGradient id="release-cycle-mask-gradient-{{ id_key }}">
             <stop stop-color="black" offset="0%" />
