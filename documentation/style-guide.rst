@@ -73,7 +73,7 @@ boolean
   abbreviated name with appropriate markup (for example, ``:type:`bool```).
 
 C API
-  Python's `API <https://docs.python.org/3/c-api/>`_ used by C programmers
+  Python's `API <https://docs.python.org/3/c-api/>`__ used by C programmers
   to write extension modules. All caps and unhyphenated.
 
 CPU
@@ -122,7 +122,7 @@ such as "for example" or "that is."
 Diátaxis
 ========
 
-Python's documentation strives to follow the `Diátaxis <https://diataxis.fr/>`_
+Python's documentation strives to follow the `Diátaxis <https://diataxis.fr/>`__
 framework. This means adapting the writing style according to the nature of
 the documentation that is being written. The framework splits
 documentation into four distinct types: tutorials, how-to guides, reference, and
@@ -135,7 +135,7 @@ explanation.
   and abstract concepts should be avoided. Please consult the Diátaxis guide on
   :ref:`diataxis:tutorials` for more detail.
 
-* `Python how-to guides <https://docs.python.org/3/howto/index.html>`_ are
+* `Python how-to guides <https://docs.python.org/3/howto/index.html>`__ are
   designed to guide a user through a problem-field.
   Both tutorials and how-to guides are instructional rather than explanatory
   and should provide logical steps on how to complete a task. However,
@@ -158,7 +158,7 @@ explanation.
   found throughout Python's documentation, for example the
   :ref:`python:unicode-howto`.
 
-Please consult the `Diátaxis <https://diataxis.fr/>`_ guide for more
+Please consult the `Diátaxis <https://diataxis.fr/>`__ guide for more
 detail.
 
 

@@ -7,14 +7,14 @@ Status of Python versions
 
 The ``main`` branch is currently the future Python |main_version|, and is the only
 branch that accepts new features.  The latest release for each Python
-version can be found on the `download page <https://www.python.org/downloads/>`_.
+version can be found on the `download page <https://www.python.org/downloads/>`__.
 
 
 .. raw:: html
    :file: include/release-cycle.svg
 
 (See :ref:`below <full-chart>` for a chart with older versions.
-Another useful visualization is `endoflife.date/python <https://endoflife.date/python>`_.)
+Another useful visualization is `endoflife.date/python <https://endoflife.date/python>`__.)
 
 
 Supported versions
