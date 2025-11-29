@@ -51,7 +51,7 @@ language, this will not take too long.
 .. seealso::
 
     The authoritative `reStructuredText User
-    Documentation <https://docutils.sourceforge.io/rst.html>`_.
+    Documentation <https://docutils.sourceforge.io/rst.html>`__.
 
 
 Use of whitespace
@@ -346,7 +346,7 @@ they are used in the Python documentation.
 
    This is just an overview of Sphinx' extended markup capabilities; full
    coverage can be found in `its own documentation
-   <https://www.sphinx-doc.org/>`_.
+   <https://www.sphinx-doc.org/>`__.
 
 
 Meta-information markup
