@@ -19,7 +19,7 @@
             fill: #333;
         }
         .release-cycle-today-line {
-            stroke: #4B8BBE; /* Python blue */
+            stroke: #4B8BBE;
             stroke-width: 1.6px;
         }
         .release-cycle-row-shade {
@@ -33,10 +33,12 @@
             stroke-width: 1.6px;
         }
         .release-cycle-blob-label {
+            /* white looks good on both light & dark */
             fill: white;
         }
         .release-cycle-blob-label.release-cycle-status-security,
         .release-cycle-blob-label.release-cycle-status-bugfix {
+            /* but use black to improve contrast for lighter backgrounds */
             fill: black;
         }
         .release-cycle-blob-label.release-cycle-status-end-of-life,

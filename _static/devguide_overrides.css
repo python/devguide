@@ -6,7 +6,7 @@
     height: 110px;
 }
 
-/* Release cycle chart - theme-aware overrides */
+/* Release cycle chart */
 .release-cycle-chart .release-cycle-year-line {
     stroke: var(--color-foreground-primary);
 }
