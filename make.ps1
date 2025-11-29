@@ -65,7 +65,7 @@ if ($target -Eq "clean") {
         $BUILDDIR,
         $_VENV_DIR,
         "include/branches.csv", "include/end-of-life.csv",
-        "include/release-cycle.svg", "include/release-cycle-all.svg"
+        "_static/release-cycle.svg", "_static/release-cycle-all.svg"
     )
     foreach ($item in $ToClean) {
         if (Test-Path -Path $item) {
