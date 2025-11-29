@@ -11,7 +11,7 @@ branches <devcycle>`, Python has a set of dedicated machines (called *buildbots*
 or *build workers*) used for continuous integration.  They span a number of
 hardware/operating system combinations.  Furthermore, each machine hosts
 several *builders*, one per active branch: when a new change is pushed
-to this branch on the public `GitHub repository <https://github.com/python/cpython>`_, all corresponding builders
+to this branch on the public `GitHub repository <https://github.com/python/cpython>`__, all corresponding builders
 will schedule a new build to be run as soon as possible.
 
 The build steps run by the buildbots are the following:

@@ -365,6 +365,6 @@ Documentation translations
 ==========================
 
 Translations are within the charter of
-`Editorial Board <https://python.github.io/editorial-board/>`_.
+`Editorial Board <https://python.github.io/editorial-board/>`__.
 For a list of translations and their coordinators, see
 :ref:`this table of translations <translation-coordinators>`.
