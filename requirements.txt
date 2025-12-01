@@ -2,9 +2,9 @@ furo>=2022.6.4
 jinja2
 sphinx-autobuild>=2024.9.19
 sphinx-inline-tabs>=2023.4.21
-sphinx-lint==1.0.1
+sphinx-lint==1.0.2
 sphinx-notfound-page>=1.0.0
 sphinx_copybutton>=0.3.3
 sphinxext-opengraph>=0.13.0
 sphinxext-rediraffe
-Sphinx~=8.2.3
+Sphinx~=9.0.0
