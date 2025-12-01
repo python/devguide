@@ -5,95 +5,108 @@
     viewBox="0 0 {{ diagram_width }} {{ diagram_height }}"
 >
     <style>
+        :root {
+            color-scheme: light dark;
+
+            {# Copy vars from Furo theme if present #}
+            {% for varname, default in {
+                'color-foreground-primary': 'light-dark(#333, #fff)',
+                'color-background-primary': 'light-dark(#fff, #333)',
+                'color-brand-primary': '#4B8BBE',
+                'color-background-item': '#e0e0e0',
+            }.items() %}
+                --svg-{{varname}}: var(--{{varname}}, {{default}});
+            {% endfor %}
+        }
         /* Embedded styles for standalone viewing */
         .release-cycle-chart {
-            font-family: Arial, sans-serif;
+            font-family: var(
+                --font-stack,
+                -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica,
+                Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji);
             width: 100%;
+
+            --blob-border-width: 1.6px;
         }
         .release-cycle-year-line {
-            stroke: #333;
+            stroke: var(--svg-color-foreground-primary);
             stroke-width: 0.8px;
             opacity: 75%;
         }
         .release-cycle-year-text {
-            fill: #333;
+            fill: var(--svg-color-foreground-primary);
         }
         .release-cycle-today-line {
-            stroke: #4B8BBE;
-            stroke-width: 1.6px;
+            stroke: var(--svg-color-brand-primary);
+            stroke-width: var(--blob-border-width);
         }
         .release-cycle-row-shade {
-            fill: #e0e0e0;
+            fill: var(--svg-color-background-item);
             opacity: 50%;
         }
         .release-cycle-version-label {
-            fill: #333;
+            fill: var(--svg-color-foreground-primary);
         }
         .release-cycle-blob {
-            stroke-width: 1.6px;
+            stroke-width: var(--blob-border-width);
         }
-        .release-cycle-blob-label {
-            /* white looks good on both light and dark */
-            fill: white;
+        text {
+            fill: var(--svg-color-foreground-primary);
+
+            /* an outline of the background color, in case it's not set
+               correctly */
+            stroke: var(--svg-color-background-primary);
+            stroke-width: var(--blob-border-width);
+            /* draw stroke first (half of it will be visible as outline) */
+            paint-order: stroke;
+
+            /* use specific colours on known backgrounds */
+            &amp;.release-cycle-status-security ,
+            &amp;.release-cycle-status-bugfix {
+                fill: black;
+                stroke: var(--status-bg-color);
+            }
+            /* For year labels, keep outline below the row shading
+               (it's a separate element) */
+            &amp;.release-cycle-version-label-outline {
+                fill: transparent;
+            }
+            &amp;.release-cycle-version-label {
+                stroke: none;
+            }
         }
-        .release-cycle-blob-label.release-cycle-status-security,
-        .release-cycle-blob-label.release-cycle-status-bugfix {
-            /* but use black to improve contrast for lighter backgrounds */
-            fill: black;
+        .release-cycle-status-end-of-life {
+            --status-bg-color: #DD2200;
+            --status-border-color: #FF8888;
         }
-        .release-cycle-blob-label.release-cycle-status-end-of-life,
-        .release-cycle-blob-label.release-cycle-status-prerelease,
-        .release-cycle-blob-label.release-cycle-status-feature {
-            fill: #333;
+        .release-cycle-status-security {
+            --status-bg-color: #FFDD44;
+            --status-border-color: #FF8800;
         }
-        .release-cycle-status-end-of-life .release-cycle-blob,
-        .release-cycle-blob.release-cycle-status-end-of-life {
-            fill: #DD2200;
-            stroke: #FF8888;
+        .release-cycle-status-bugfix {
+            --status-bg-color: #00DD22;
+            --status-border-color: #008844;
         }
-        .release-cycle-status-security .release-cycle-blob,
-        .release-cycle-blob.release-cycle-status-security {
-            fill: #FFDD44;
+        .release-cycle-status-prerelease {
+            --status-bg-color: teal;
+            --status-border-color: darkgreen;
+        }
+        .release-cycle-status-feature {
+            --status-bg-color: #2222EE;
+            --status-border-color: #008888;
+        }
+        .release-cycle-blob {
+            fill: var(--status-bg-color);
             stroke: transparent;
         }
-        .release-cycle-status-bugfix .release-cycle-blob,
-        .release-cycle-blob.release-cycle-status-bugfix {
-            fill: #00DD22;
-            stroke: transparent;
+        .release-cycle-blob-full {
+            fill: var(--status-bg-color);
+            stroke: var(--status-border-color);
         }
-        .release-cycle-status-prerelease .release-cycle-blob,
-        .release-cycle-blob.release-cycle-status-prerelease {
-            fill: teal;
-            stroke: transparent;
-        }
-        .release-cycle-status-feature .release-cycle-blob,
-        .release-cycle-blob.release-cycle-status-feature {
-            fill: #2222EE;
-            stroke: transparent;
-        }
-        .release-cycle-blob-full.release-cycle-status-end-of-life {
-            fill: #DD2200;
-            stroke: #FF8888;
-        }
-        .release-cycle-border.release-cycle-status-security {
+        .release-cycle-border {
             fill: transparent;
-            stroke: #FF8800;
-            stroke-width: 1.6px;
-        }
-        .release-cycle-border.release-cycle-status-bugfix {
-            fill: transparent;
-            stroke: #008844;
-            stroke-width: 1.6px;
-        }
-        .release-cycle-border.release-cycle-status-prerelease {
-            fill: transparent;
-            stroke: darkgreen;
-            stroke-width: 1.6px;
-        }
-        .release-cycle-border.release-cycle-status-feature {
-            fill: transparent;
-            stroke: #008888;
-            stroke-width: 1.6px;
+            stroke: var(--status-border-color);
+            stroke-width: var(--blob-border-width);
         }
     </style>
     <defs>
@@ -105,6 +118,15 @@
 
     {% for version in versions %}
         {% set y = version.y * line_height %}
+        <!-- Outline for legend on the left -->
+        <text
+            class="release-cycle-version-label-outline"
+            x="{{ 0.5 * SCALE }}"
+            y="{{ version.y * line_height }}"
+            font-size="{{ SCALE }}"
+        >
+            Python {{ version.key }}
+        </text>
 
         {% if version.y % 2 %}
             <!-- Row shading -->
@@ -166,15 +188,13 @@
     </mask>
 
     {% for version in versions %}
-        <!-- Colourful blob with a label. -->
+        <!-- Colourful blob. -->
 
         {% set top_y = version.y * line_height - 1 * SCALE %}
         {% set height = 1.25 * SCALE %}
         {% set start_x = date_to_x(version.first_release_date) %}
         {% set end_x = date_to_x(version.end_of_life_date) %}
         {% set radius = 0.25 * SCALE %}
-
-        {% set small_text_y = version.y * line_height - 0.1 * SCALE %}
 
         <!-- bugfix/security blobs need to be split between the two phases.
             Draw the rectangle with two path elements instead.
@@ -243,6 +263,25 @@
                 mask="url(#release-cycle-mask-{{ id_key }})"
             />
         {% endif %}
+    {% endfor %}
+
+    <!-- A line for today -->
+    <line
+        class="release-cycle-today-line"
+        x1="{{ date_to_x(today) }}"
+        x2="{{ date_to_x(today) }}"
+        y1="0"
+        y2="{{ diagram_height - line_height }}"
+        font-size="{{ SCALE }}"
+    />
+
+    {% for version in versions %}
+        <!-- Label for colourful blob -->
+
+        {% set start_x = date_to_x(version.first_release_date) %}
+        {% set end_x = date_to_x(version.end_of_life_date) %}
+        {% set middle_x = ([end_x, date_to_x(version.start_security_date)]|min)  %}
+        {% set small_text_y = version.y * line_height - 0.1 * SCALE %}
 
         <!-- Add text before/after/inside the blob -->
         <text
@@ -276,14 +315,4 @@
             Python {{ version.key }}
         </text>
     {% endfor %}
-
-    <!-- A line for today -->
-    <line
-        class="release-cycle-today-line"
-        x1="{{ date_to_x(today) }}"
-        x2="{{ date_to_x(today) }}"
-        y1="0"
-        y2="{{ diagram_height - line_height }}"
-        font-size="{{ SCALE }}"
-    />
 </svg>

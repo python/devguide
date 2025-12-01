@@ -6,34 +6,6 @@
     height: 110px;
 }
 
-/* Release cycle chart */
-.release-cycle-chart .release-cycle-year-line {
-    stroke: var(--color-foreground-primary);
-}
-
-.release-cycle-chart .release-cycle-year-text {
-    fill: var(--color-foreground-primary);
-}
-
-.release-cycle-chart .release-cycle-today-line {
-    stroke: var(--color-brand-primary);
-}
-
-.release-cycle-chart .release-cycle-row-shade {
-    fill: var(--color-background-item);
-}
-
-.release-cycle-chart .release-cycle-version-label {
-    fill: var(--color-foreground-primary);
-}
-
-.release-cycle-chart .release-cycle-blob-label.release-cycle-status-end-of-life,
-.release-cycle-chart .release-cycle-blob-label.release-cycle-status-prerelease,
-.release-cycle-chart .release-cycle-blob-label.release-cycle-status-feature {
-    /* and FG when it's not in a blob */
-    fill: var(--color-foreground-primary);
-}
-
 .good pre {
   border-left: 3px solid rgba(74, 182, 93, 1);
 }
