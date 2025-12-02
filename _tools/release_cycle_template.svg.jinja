@@ -125,7 +125,7 @@
 
     {% for year in years %}
         <text
-            class="release-cycle-year-text {{cls}}"
+            class="release-cycle-year-text"
             x="{{ (year_to_x(year) + year_to_x(year + 1)) / 2 }}"
             y="{{ diagram_height - line_height }}"
             font-size="{{ SCALE * 0.75 }}"
