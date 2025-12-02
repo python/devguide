@@ -20,9 +20,9 @@ compiled version of the CPython interpreter (CPython is the version of Python
 available from https://www.python.org/). It also gives an overview of the
 directory structure of the CPython source code.
 
-Alternatively, if you have `Docker <https://www.docker.com/>`_ installed you
+Alternatively, if you have `Docker <https://www.docker.com/>`__ installed you
 might want to use `our official images
-<https://gitlab.com/python-devs/ci-images/blob/main/README.md>`_.  These
+<https://gitlab.com/python-devs/ci-images/blob/main/README.md>`__.  These
 contain the latest releases of several Python versions, along with Git head,
 and are provided for development and testing purposes only.
 
@@ -38,23 +38,23 @@ Install Git
 
 .. c_install_git_start
 
-CPython is developed using `Git <https://git-scm.com>`_ for version control. The Git
+CPython is developed using `Git <https://git-scm.com>`__ for version control. The Git
 command line program is named ``git``; this is also used to refer to Git
 itself. Git is easily available for all common operating systems.
 
 - **Install**
 
   As the CPython repo is hosted on GitHub, please refer to either the
-  `GitHub setup instructions <https://docs.github.com/en/get-started/getting-started-with-git/set-up-git>`_
-  or the `Git project instructions <https://git-scm.com>`_ for step-by-step
+  `GitHub setup instructions <https://docs.github.com/en/get-started/getting-started-with-git/set-up-git>`__
+  or the `Git project instructions <https://git-scm.com>`__ for step-by-step
   installation directions. You may also want to consider a graphical client
-  such as `TortoiseGit <https://tortoisegit.org/>`_ or
-  `GitHub Desktop <https://github.com/apps/desktop>`_.
+  such as `TortoiseGit <https://tortoisegit.org/>`__ or
+  `GitHub Desktop <https://github.com/apps/desktop>`__.
 
 - **Configure**
 
   Configure :ref:`your name and email <set-up-name-email>` and create
-  `an SSH key <https://docs.github.com/en/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account>`_
+  `an SSH key <https://docs.github.com/en/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account>`__
   as this will allow you to interact with GitHub without typing a username
   and password each time you execute a command, such as ``git pull``,
   ``git push``, or ``git fetch``.  On Windows, you should also
@@ -141,7 +141,7 @@ Install pre-commit as a Git hook
 --------------------------------
 
 To make sure your code is linted correctly, we recommend setting up
-`pre-commit <https://pre-commit.com#installation>`_ as a Git hook::
+`pre-commit <https://pre-commit.com#installation>`__ as a Git hook::
 
    $ pre-commit install --allow-missing-config
    pre-commit installed at .git/hooks/pre-commit
@@ -170,7 +170,7 @@ working only on pure Python code the pydebug build provides several useful
 checks that one should not skip.
 
 .. seealso:: The effects of various configure and build flags are documented in
-   the `Python configure docs <https://docs.python.org/dev/using/configure.html>`_.
+   the `Python configure docs <https://docs.python.org/dev/using/configure.html>`__.
 
 .. _unix-compiling:
 
@@ -822,8 +822,8 @@ some of CPython's modules (for example, ``zlib``).
    Note that Debian 12 and Ubuntu 24.04 do not have the ``libmpdec-dev``
    package.  You can safely remove it from the install list above and the
    Python build will use a bundled version.  But we recommend using the system
-   `libmpdec <https://www.bytereef.org/mpdecimal/doc/libmpdec/>`_ library.
-   Either built it from sources or install this package from
+   `libmpdec <https://www.bytereef.org/mpdecimal/doc/libmpdec/>`__ library.
+   Either build it from sources or install this package from
    https://deb.sury.org.
 
 .. tab:: macOS
@@ -889,7 +889,7 @@ some of CPython's modules (for example, ``zlib``).
                            --with-dbmliborder=gdbm:ndbm
 
          (``--with-dbmliborder`` is a workaround for a Homebrew-specific change
-         to ``gdbm``; see `#89452 <https://github.com/python/cpython/issues/89452>`_
+         to ``gdbm``; see `#89452 <https://github.com/python/cpython/issues/89452>`__
          for details.)
 
    .. tab:: MacPorts
@@ -928,7 +928,7 @@ some of CPython's modules (for example, ``zlib``).
 
    For more details on various options and considerations for building, refer
    to the `macOS README
-   <https://github.com/python/cpython/blob/main/Mac/README.rst>`_.
+   <https://github.com/python/cpython/blob/main/Mac/README.rst>`__.
 
    .. note:: While you need a C compiler to build CPython, you don't need any
       knowledge of the C language to contribute!  Vast areas of CPython are
@@ -981,7 +981,7 @@ If a change is made to Python which relies on some POSIX system-specific
 functionality (such as using a new system call), it is necessary to update the
 :cpy-file:`configure` script to test for availability of the functionality.
 Python's :file:`configure` script is generated from :cpy-file:`configure.ac`
-using `GNU Autoconf <https://www.gnu.org/software/autoconf/>`_.
+using `GNU Autoconf <https://www.gnu.org/software/autoconf/>`__.
 
 After editing :file:`configure.ac`, run ``make regen-configure`` to generate
 :file:`configure`, :cpy-file:`pyconfig.h.in`, and :cpy-file:`aclocal.m4`.
@@ -1185,13 +1185,13 @@ What is GitHub Codespaces?
 
 If you'd like to start contributing to CPython without needing to set up a local
 developer environment, you can use
-`GitHub Codespaces <https://github.com/features/codespaces>`_.
+`GitHub Codespaces <https://github.com/features/codespaces>`__.
 Codespaces is a cloud-based development environment offered by GitHub that
 allows developers to write, build, test, and debug code directly within their
 web browser or in Visual Studio Code (VS Code).
 
 To help you get started, CPython contains a
-`devcontainer folder <https://github.com/python/cpython/tree/main/.devcontainer>`_
+`devcontainer folder <https://github.com/python/cpython/tree/main/.devcontainer>`__
 with a JSON configuration file that provides consistent and versioned codespace
 configurations for all users of the project. It also contains a Dockerfile that
 allows you to set up the same environment but locally in a Docker container if
@@ -1204,7 +1204,7 @@ Create a CPython codespace
 
 Here are the basic steps needed to contribute a pull request using Codespaces.
 You first need to navigate to the
-`CPython repo <https://github.com/python/cpython>`_ hosted on GitHub.
+`CPython repo <https://github.com/python/cpython>`__ hosted on GitHub.
 
 Then you will need to:
 
@@ -1229,7 +1229,7 @@ Then you will need to:
 2. A screen should appear that lets you know your codespace is being set up.
    (Note: Since the CPython devcontainer is provided, codespaces will use the
    configuration it specifies.)
-3. A `web version of VS Code <https://vscode.dev/>`_ will open inside your web
+3. A `web version of VS Code <https://vscode.dev/>`__ will open inside your web
    browser, already linked up with your code and a terminal to the remote
    codespace where CPython and its documentation have already been built.
 4. Use the terminal with the usual Git commands to create a new branch, commit

@@ -20,12 +20,12 @@ to go about setting up a buildbot worker, getting it added, and some hints about
 buildbot maintenance.
 
 Anyone running a buildbot that is part of the fleet should subscribe to the
-`python-buildbots <https://mail.python.org/mailman3/lists/python-buildbots.python.org/>`_
+`python-buildbots <https://mail.python.org/mailman3/lists/python-buildbots.python.org/>`__
 mailing list.  This mailing list is also the place to contact if you want to
 contribute a buildbot but have questions.
 
 As for what kind of buildbot to run...take a look at our `current fleet
-<https://buildbot.python.org/all/>`_.  Pretty much anything that isn't
+<https://buildbot.python.org/all/>`__.  Pretty much anything that isn't
 on that list would be interesting: different Linux/Unix distributions,
 different versions of the various OSes, other OSes if you or someone are
 prepared to make the test suite actually pass on that new OS.  Even if you only
@@ -47,7 +47,7 @@ compiled python.
 
 In order to set up the buildbot software, you will need to obtain an identifier
 and password for your worker so it can join the fleet.  Open an issue in the
-`configuration repository <https://github.com/python/buildmaster-config/issues/new/choose>`_
+`configuration repository <https://github.com/python/buildmaster-config/issues/new/choose>`__
 to discuss adding your worker and to obtain the
 needed workername and password.  You can do some of the steps that follow
 before having the credentials, but it is easiest to have them before
@@ -60,7 +60,7 @@ Setting up the buildbot worker
 Conventional always-on machines
 -------------------------------
 
-You need a recent version of the `buildbot <https://buildbot.net/>`_ software,
+You need a recent version of the `buildbot <https://buildbot.net/>`__ software,
 and you will probably want a separate 'buildbot' user to run the buildbot
 software.  You may also want to set the buildbot up using a virtual
 environment, depending on how you manage your system.  We won't cover how to that
@@ -103,7 +103,7 @@ can put the ``buildarea`` wherever you want to)::
 :file:`Scripts` directory of your Python installation.)
 
 On Windows, `the maximum length for a path is limited
-<https://learn.microsoft.com/en-us/windows/win32/fileio/maximum-file-path-limitation>`_.
+<https://learn.microsoft.com/en-us/windows/win32/fileio/maximum-file-path-limitation>`__.
 This might cause some tests to fail, unless long paths support is enabled.
 
 Use this PowerShell command to check whether long paths are enabled::
@@ -254,7 +254,7 @@ For Windows:
 
 * Alternatively (note: don't do both!), set up the worker
   service as described in the `buildbot documentation
-  <https://docs.buildbot.net/current/manual/installation/misc.html#launching-worker-as-windows-service>`_.
+  <https://docs.buildbot.net/current/manual/installation/misc.html#launching-worker-as-windows-service>`__.
 
 To start the worker running for your initial testing, you can do::
 
@@ -262,7 +262,7 @@ To start the worker running for your initial testing, you can do::
 
 Then you can either wait for someone to make a commit, or you can pick a
 builder associated with your worker from the `list of builders
-<https://buildbot.python.org/all/>`_ and force a build.
+<https://buildbot.python.org/all/>`__ and force a build.
 
 In any case you should initially monitor builds on your builders to make sure
 the tests are passing and to resolve any platform issues that may be revealed
@@ -273,7 +273,7 @@ idea.
 .. note::
    If your buildbot worker is disconnecting regularly, it may be a symptom of the
    default ``keepalive`` value (``600`` for 10 minutes) being `set
-   <https://docs.buildbot.net/latest/manual/installation/worker.html#cmdoption-buildbot-worker-create-worker-keepalive>`_
+   <https://docs.buildbot.net/latest/manual/installation/worker.html#cmdoption-buildbot-worker-create-worker-keepalive>`__
    too high. You can change it to a lower value (for example, ``180`` for 3 minutes)
    in the ``buildbot.tac`` file found in your build area.
 
@@ -282,7 +282,7 @@ Latent workers
 --------------
 
 We also support running `latent workers
-<https://docs.buildbot.net/current/manual/configuration/workers.html#latent-workers>`_
+<https://docs.buildbot.net/current/manual/configuration/workers.html#latent-workers>`__
 on the AWS EC2 service.  To set up such a worker:
 
 * Start an instance of your chosen base AMI and set it up as a
@@ -305,7 +305,7 @@ instance(s), so it is recommended to periodically check and make sure
 there are no "zombie" instances running on your account, created by the
 buildbot master.  Also, if you notice that your worker seems to have been
 down for an unexpectedly long time, please ping the `python-buildbots
-<https://mail.python.org/mailman3/lists/python-buildbots.python.org/>`_ list to
+<https://mail.python.org/mailman3/lists/python-buildbots.python.org/>`__ list to
 request that the master be restarted.
 
 Latent workers should also be updated periodically to include operating system
@@ -390,7 +390,7 @@ Required resources
 ==================
 
 Based on the last time we did a `survey
-<https://mail.python.org/pipermail/python-dev/2012-March/117978.html>`_ on
+<https://mail.python.org/pipermail/python-dev/2012-March/117978.html>`__ on
 buildbot requirements, the recommended resource allocations for a python
 buildbot are at least:
 
@@ -408,7 +408,7 @@ Security considerations
 =======================
 
 We only allow builds to be triggered against commits to the
-`CPython repository on GitHub <https://github.com/python/cpython>`_.
+`CPython repository on GitHub <https://github.com/python/cpython>`__.
 This means that the code your buildbot will run will have been vetted by a committer.
 However, mistakes and bugs happen, as could a compromise, so keep this in mind when
 siting your buildbot on your network and establishing the security around it.
@@ -427,7 +427,7 @@ VM setup.  But if you are confident in your setup, we'd love to have a buildbot
 that runs python as root.
 
 Note that the above is a summary of a `discussion
-<https://mail.python.org/pipermail/python-dev/2011-October/113935.html>`_ on
+<https://mail.python.org/pipermail/python-dev/2011-October/113935.html>`__ on
 python-dev about buildbot security that includes examples of the tests for
 which privilege matters.  There was no final consensus, but the information is
 useful as a point of reference.

@@ -562,7 +562,7 @@ Now that the configuration is in place, it remains to compile the project:
 
   .. tip::
 
-     We recommend installing `Podman <https://podman.io/docs/installation>`_
+     We recommend installing `Podman <https://podman.io/docs/installation>`__
      instead of Docker since the former does not require a background service
      and avoids creating files owned by the ``root`` user in some cases.
 
@@ -609,8 +609,8 @@ by executing :cpy-file:`Tools/build/regen-configure.sh`:
 
 If Docker complains about missing permissions, this Stack Overflow post
 could be useful in solving the issue: `How to fix docker: permission denied
-<https://stackoverflow.com/q/48957195/9579194>`_. Alternatively, you may try
-using `Podman <https://podman.io/docs/installation>`_.
+<https://stackoverflow.com/q/48957195/9579194>`__. Alternatively, you may try
+using `Podman <https://podman.io/docs/installation>`__.
 
 Missing ``Py_BUILD_CORE`` define when using internal headers
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^

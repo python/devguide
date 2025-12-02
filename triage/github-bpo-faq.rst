@@ -16,7 +16,7 @@ How to format my comments nicely?
 =================================
 
 There is a wonderful `beginner guide to writing and formatting on GitHub
-<https://docs.github.com/en/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github>`_.
+<https://docs.github.com/en/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github>`__.
 Highly recommended.
 
 One pro-tip we can sell you right here is that if you want to paste
@@ -43,7 +43,7 @@ Use Markdown links. If you link to the default GitHub path, the file
 will link to the latest current version on the given branch.
 
 You can get a permanent link to a given revision of a given file by
-`pressing "y" <https://docs.github.com/en/repositories/working-with-files/using-files/getting-permanent-links-to-files>`_.
+`pressing "y" <https://docs.github.com/en/repositories/working-with-files/using-files/getting-permanent-links-to-files>`__.
 
 How to do advanced searches?
 ============================
@@ -80,7 +80,7 @@ Add a checkbox list like this in the issue description::
 then those will become sub-tasks on the given issue. Moreover, GitHub will
 automatically mark a task as complete if the other referenced issue is
 closed. More details in the `official GitHub documentation
-<https://docs.github.com/en/get-started/writing-on-github/working-with-advanced-formatting/about-task-lists>`_.
+<https://docs.github.com/en/get-started/writing-on-github/working-with-advanced-formatting/about-task-lists>`__.
 
 What on earth is a "mannequin"?
 ===============================
@@ -88,7 +88,7 @@ What on earth is a "mannequin"?
 For issues migrated to GitHub from `bpo`_ where the authors or commenters
 are not core developers, we opted not to link to their GitHub accounts
 directly. Users not in the `python organization on GitHub
-<https://github.com/orgs/python/people>`_ might not like comments to
+<https://github.com/orgs/python/people>`__ might not like comments to
 appear under their name from an automated import.  Others never linked GitHub on
 `bpo`_ in the first place so linking their account, if any, would be impossible.
 

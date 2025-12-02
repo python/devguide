@@ -38,7 +38,7 @@ While internal API can be changed at any time, it's still good to keep it
 stable: other API or other CPython developers may depend on it.
 For users, internal API is sometimes the best workaround for a thorny problem
 --- though those use cases should be discussed on the
-`C API Discourse category <https://discuss.python.org/c/30>`_
+`C API Discourse category <https://discuss.python.org/c/30>`__
 or an issue so we can try to find a supported way to serve them.
 
 
@@ -218,7 +218,7 @@ use this API reliably:
   (:samp:`3.{x}.0`, including Alphas and Betas for :samp:`3.{x}.0`).
 * Adding a new unstable API *for an existing feature* is allowed even after
   Beta feature freeze, up until the first Release Candidate.
-  Consensus on the `Core Development Discourse <https://discuss.python.org/c/core-dev/23>`_
+  Consensus on the `Core Development Discourse <https://discuss.python.org/c/core-dev/23>`__
   is needed in the Beta period.
 * Backwards-incompatible changes should make existing C callers fail to compile.
   For example, arguments should be added/removed, or a function should be

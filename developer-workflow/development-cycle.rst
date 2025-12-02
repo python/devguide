@@ -134,7 +134,7 @@ former branch, for example, ``3.8`` or ``2.7``.
 The :ref:`versions` page contains list of active and end-of-life branches.
 
 The latest release for each Python version can be found on the `download page
-<https://www.python.org/downloads/>`_.
+<https://www.python.org/downloads/>`__.
 
 .. _stages:
 
@@ -212,27 +212,27 @@ Repository administration
 -------------------------
 
 The source code is currently hosted on `GitHub
-<https://github.com/python/cpython>`_ in the `Python organization <https://github.com/python/>`_.
+<https://github.com/python/cpython>`__ in the `Python organization <https://github.com/python/>`__.
 
 Organization repository policy
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Within the `GitHub Python organization <https://github.com/python/>`_,
+Within the `GitHub Python organization <https://github.com/python/>`__,
 repositories are expected to relate to the Python language, the CPython
 reference implementation, their documentation and their development workflow.
 This includes, for example:
 
-* The reference implementation of Python and related repositories: `CPython <https://github.com/python/cpython>`_.
-* Tooling and support around CPython development: `pyperformance <https://github.com/python/pyperformance>`_, `Bedevere <https://github.com/python/bedevere>`_.
-* Helpers and backports for Python/CPython features: `typing_extensions <https://github.com/python/typing_extensions>`_, `typeshed <https://github.com/python/typeshed>`_, `tzdata <https://github.com/python/tzdata>`_, `pythoncapi-compat <https://github.com/python/pythoncapi-compat>`_.
-* Organization-related repositories: the `Code of Conduct <https://github.com/python/pycon-code-of-conduct>`_, `.github <https://github.com/python/.github>`_.
-* Documentation and websites for all the above: `python.org repository <https://github.com/python/pythondotorg>`_, `PEPs <https://github.com/python/peps>`_, `Devguide <https://github.com/python/devguide>`_, docs translations.
-* Infrastructure for all the above: `docsbuild-scripts <https://github.com/python/docsbuild-scripts>`_, `buildmaster-config <https://github.com/python/buildmaster-config>`_.
-* Discussions and notes around official development-related processes and events: `steering-council <https://github.com/python/steering-council>`_, `core-sprint <https://github.com/python/core-sprint>`_.
+* The reference implementation of Python and related repositories: `CPython <https://github.com/python/cpython>`__.
+* Tooling and support around CPython development: `pyperformance <https://github.com/python/pyperformance>`__, `Bedevere <https://github.com/python/bedevere>`__.
+* Helpers and backports for Python/CPython features: `typing_extensions <https://github.com/python/typing_extensions>`__, `typeshed <https://github.com/python/typeshed>`__, `tzdata <https://github.com/python/tzdata>`__, `pythoncapi-compat <https://github.com/python/pythoncapi-compat>`__.
+* Organization-related repositories: the `Code of Conduct <https://github.com/python/pycon-code-of-conduct>`__, `.github <https://github.com/python/.github>`__.
+* Documentation and websites for all the above: `python.org repository <https://github.com/python/pythondotorg>`__, `PEPs <https://github.com/python/peps>`__, `Devguide <https://github.com/python/devguide>`__, docs translations.
+* Infrastructure for all the above: `docsbuild-scripts <https://github.com/python/docsbuild-scripts>`__, `buildmaster-config <https://github.com/python/buildmaster-config>`__.
+* Discussions and notes around official development-related processes and events: `steering-council <https://github.com/python/steering-council>`__, `core-sprint <https://github.com/python/core-sprint>`__.
 
 Before adding a new repository to the organization, open a discussion to seek consensus
-in the `Committers Discourse category <https://discuss.python.org/c/committers/5>`_.
-Once people are satisfied with that, ask the `Python steering council <https://github.com/python/steering-council>`_
+in the `Committers Discourse category <https://discuss.python.org/c/committers/5>`__.
+Once people are satisfied with that, ask the `Python steering council <https://github.com/python/steering-council>`__
 to grant permission.
 
 Note that several repositories remain in the organization for historic reasons,
@@ -241,18 +241,18 @@ and would probably not be appropriate to add today.
 Generally, new repositories should start their life under personal GitHub
 accounts or other GitHub orgs. It is relatively easy to move a repository to
 the organization once it is mature. For example, this would now apply to
-experimental features like `asyncio <https://github.com/python/asyncio>`_,
-`exceptiongroups <https://github.com/python/exceptiongroups>`_,
+experimental features like `asyncio <https://github.com/python/asyncio>`__,
+`exceptiongroups <https://github.com/python/exceptiongroups>`__,
 and drafts of new guides and other documentation (for example, `redistributor-guide
-<https://github.com/python/redistributor-guide>`_).
+<https://github.com/python/redistributor-guide>`__).
 
-General-use tools and libraries (for example, `mypy <https://github.com/python/mypy>`_
-or `Black <https://github.com/psf/black>`_) should also be developed outside
+General-use tools and libraries (for example, `mypy <https://github.com/python/mypy>`__
+or `Black <https://github.com/psf/black>`__) should also be developed outside
 the ``python`` organization, unless core devs (as represented by the SC)
 specifically want to “bless” one implementation (as with
-`typeshed <https://github.com/python/typeshed>`_,
-`tzdata <https://github.com/python/tzdata>`_, or
-`pythoncapi-compat <https://github.com/python/pythoncapi-compat>`_).
+`typeshed <https://github.com/python/typeshed>`__,
+`tzdata <https://github.com/python/tzdata>`__, or
+`pythoncapi-compat <https://github.com/python/pythoncapi-compat>`__).
 
 
 Organization owner policy
@@ -264,7 +264,7 @@ at all levels including organization membership, team membership, access
 control, and merge privileges on all repositories. For full details of the
 permission levels see `GitHub's documentation on Organization permission
 levels
-<https://docs.github.com/en/organizations/managing-peoples-access-to-your-organization-with-roles/roles-in-an-organization#permissions-for-organization-roles>`_.
+<https://docs.github.com/en/organizations/managing-peoples-access-to-your-organization-with-roles/roles-in-an-organization#permissions-for-organization-roles>`__.
 This role is paramount to the security of the Python Language, Community, and
 Infrastructure.
 
@@ -315,7 +315,7 @@ The Administrator role on the repository allows for managing all aspects
 including collaborators, access control, integrations, webhooks, and branch
 protection. For full details of the permission levels see `GitHub's
 documentation on repository permission levels
-<https://docs.github.com/en/organizations/managing-peoples-access-to-your-organization-with-roles/roles-in-an-organization#permissions-for-organization-roles>`_.
+<https://docs.github.com/en/organizations/managing-peoples-access-to-your-organization-with-roles/roles-in-an-organization#permissions-for-organization-roles>`__.
 Common reasons for this role are: maintenance of core
 workflow tooling, Release Managers for all :ref:`in-development <indevbranch>`,
 :ref:`maintenance <maintbranch>`, and :ref:`security mode <secbranch>`

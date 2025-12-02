@@ -28,7 +28,7 @@ attribute definitions   ``.. attribute: `attr-name```               :ref:`inform
 attribute references    ``:attr:`attr-name```                       :ref:`roles`
 reference labels        ``.. _label-name:``                         :ref:`doc-ref-role`
 internal references     ``:ref:`label-name```                       :ref:`doc-ref-role`
-external links          ```Link text <https://example.com>`_``      :ref:`hyperlinks`
+external links          ```Link text <https://example.com>`__``     :ref:`hyperlinks`
 roles w/ custom text    ``:role:`custom text <target>```            :ref:`roles`
 roles w/ only last part ``:role:`~hidden.hidden.visible```          :ref:`roles`
 roles w/o link          ``:role:`!target```                         :ref:`roles`
@@ -51,7 +51,7 @@ language, this will not take too long.
 .. seealso::
 
     The authoritative `reStructuredText User
-    Documentation <https://docutils.sourceforge.io/rst.html>`_.
+    Documentation <https://docutils.sourceforge.io/rst.html>`__.
 
 
 Use of whitespace
@@ -185,9 +185,12 @@ Hyperlinks
 External links
 ^^^^^^^^^^^^^^
 
-Use ```Link text <http://target>`_`` for inline web links.  If the link text
+Use ```Link text <https://example.com>`__`` for inline web links. If the link text
 should be the web address, you don't need special markup at all, the parser
-finds links and mail addresses in ordinary text.
+finds links and mail addresses in ordinary text. Prefer anonymous hyperlinks
+(with a double underscore) over named hyperlinks (with a single underscore)
+to avoid target name clashes.
+
 
 Internal links
 ^^^^^^^^^^^^^^
@@ -343,7 +346,7 @@ they are used in the Python documentation.
 
    This is just an overview of Sphinx' extended markup capabilities; full
    coverage can be found in `its own documentation
-   <https://www.sphinx-doc.org/>`_.
+   <https://www.sphinx-doc.org/>`__.
 
 
 Meta-information markup
