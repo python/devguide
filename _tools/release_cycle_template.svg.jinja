@@ -5,7 +5,8 @@
     viewBox="0 0 {{ diagram_width }} {{ diagram_height }}"
 >
     <style>
-        :root {
+        /* Embedded styles for standalone viewing */
+        .release-cycle-chart {
             color-scheme: light dark;
 
             {# Copy vars from Furo theme if present #}
@@ -17,9 +18,7 @@
             }.items() %}
                 --svg-{{varname}}: var(--{{varname}}, {{default}});
             {% endfor %}
-        }
-        /* Embedded styles for standalone viewing */
-        .release-cycle-chart {
+
             font-family: var(
                 --font-stack,
                 -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica,
