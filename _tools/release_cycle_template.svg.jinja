@@ -33,9 +33,6 @@
             stroke-width: 0.8px;
             opacity: 75%;
         }
-        .release-cycle-year-text {
-            fill: var(--svg-color-foreground-primary);
-        }
         .release-cycle-today-line {
             stroke: var(--svg-color-brand-primary);
             stroke-width: var(--blob-border-width);
@@ -44,35 +41,29 @@
             fill: var(--svg-color-background-item);
             opacity: 50%;
         }
-        .release-cycle-version-label {
-            fill: var(--svg-color-foreground-primary);
-        }
         .release-cycle-blob {
             stroke-width: var(--blob-border-width);
         }
-        text {
+        .text-main {
             fill: var(--svg-color-foreground-primary);
 
-            /* an outline of the background color, in case it's not set
-               correctly */
-            stroke: var(--svg-color-background-primary);
-            stroke-width: var(--blob-border-width);
-            /* draw stroke first (half of it will be visible as outline) */
-            paint-order: stroke;
-
             /* use specific colours on known backgrounds */
-            &amp;.release-cycle-status-security ,
+            &amp;.release-cycle-status-security,
             &amp;.release-cycle-status-bugfix {
                 fill: black;
+            }
+        }
+        .text-outline {
+            /* an outline of the background color, in case it's not set
+            correctly */
+            fill: transparent;
+            stroke: var(--svg-color-background-primary);
+            stroke-width: var(--blob-border-width);
+
+            /* use specific colours on known backgrounds */
+            &amp;.release-cycle-status-security,
+            &amp;.release-cycle-status-bugfix {
                 stroke: var(--status-bg-color);
-            }
-            /* For year labels, keep outline below the row shading
-               (it's a separate element) */
-            &amp;.release-cycle-version-label-outline {
-                fill: transparent;
-            }
-            &amp;.release-cycle-version-label {
-                stroke: none;
             }
         }
         .release-cycle-status-end-of-life {
@@ -120,7 +111,7 @@
         {% set y = version.y * line_height %}
         <!-- Outline for legend on the left -->
         <text
-            class="release-cycle-version-label-outline"
+            class="release-cycle-version-label text-outline"
             x="{{ 0.5 * SCALE }}"
             y="{{ version.y * line_height }}"
             font-size="{{ SCALE }}"
@@ -141,15 +132,17 @@
     {% endfor %}
 
     {% for year in years %}
-        <text
-            class="release-cycle-year-text"
-            x="{{ (year_to_x(year) + year_to_x(year + 1)) / 2 }}"
-            y="{{ diagram_height - line_height }}"
-            font-size="{{ SCALE * 0.75 }}"
-            text-anchor="middle"
-        >
-            {{ format_year(year) }}
-        </text>
+        {% for cls in ('text-outline', 'text-main') %}
+            <text
+                class="release-cycle-year-text {{cls}}"
+                x="{{ (year_to_x(year) + year_to_x(year + 1)) / 2 }}"
+                y="{{ diagram_height - line_height }}"
+                font-size="{{ SCALE * 0.75 }}"
+                text-anchor="middle"
+            >
+                {{ format_year(year) }}
+            </text>
+        {% endfor %}
         {% if not loop.last %}
         <line
             class="release-cycle-year-line"
@@ -284,30 +277,32 @@
         {% set small_text_y = version.y * line_height - 0.1 * SCALE %}
 
         <!-- Add text before/after/inside the blob -->
-        <text
-            class="release-cycle-blob-label release-cycle-status-{{ version.status }}"
-            font-size="{{ SCALE * 0.75 }}"
-            y="{{ small_text_y }}"
-            {% if version.status == "bugfix" %}
-                x="{{ (start_x + middle_x) / 2 }}"
-                text-anchor="middle"
-            {% elif version.status == "security" %}
-                x="{{ (middle_x + end_x) / 2 }}"
-                text-anchor="middle"
-            {% elif version.status == "end-of-life" %}
-                x="{{ end_x + (0.25 * SCALE) }}"
-                text-anchor="start"
-            {% else %}
-                x="{{ start_x - (0.25 * SCALE) }}"
-                text-anchor="end"
-            {% endif %}
-        >
-            {{ version.status }}
-        </text>
+        {% for cls in ('text-outline', 'text-main') %}
+            <text
+                class="release-cycle-blob-label {{cls}} release-cycle-status-{{ version.status }}"
+                font-size="{{ SCALE * 0.75 }}"
+                y="{{ small_text_y }}"
+                {% if version.status == "bugfix" %}
+                    x="{{ (start_x + middle_x) / 2 }}"
+                    text-anchor="middle"
+                {% elif version.status == "security" %}
+                    x="{{ (middle_x + end_x) / 2 }}"
+                    text-anchor="middle"
+                {% elif version.status == "end-of-life" %}
+                    x="{{ end_x + (0.25 * SCALE) }}"
+                    text-anchor="start"
+                {% else %}
+                    x="{{ start_x - (0.25 * SCALE) }}"
+                    text-anchor="end"
+                {% endif %}
+            >
+                {{ version.status }}
+            </text>
+        {% endfor %}
 
         <!-- Legend on the left -->
         <text
-            class="release-cycle-version-label"
+            class="release-cycle-version-label text-main"
             x="{{ 0.5 * SCALE }}"
             y="{{ version.y * line_height }}"
             font-size="{{ SCALE }}"
