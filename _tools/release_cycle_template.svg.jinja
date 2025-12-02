@@ -27,6 +27,8 @@
             width: 100%;
 
             --blob-border-width: 1.6px;
+
+            background-color: var(--color-background-primary);
         }
         .release-cycle-year-line {
             stroke: var(--svg-color-foreground-primary);
@@ -109,16 +111,6 @@
 
     {% for version in versions %}
         {% set y = version.y * line_height %}
-        <!-- Outline for legend on the left -->
-        <text
-            class="release-cycle-version-label text-outline"
-            x="{{ 0.5 * SCALE }}"
-            y="{{ version.y * line_height }}"
-            font-size="{{ SCALE }}"
-        >
-            Python {{ version.key }}
-        </text>
-
         {% if version.y % 2 %}
             <!-- Row shading -->
             <rect
@@ -132,17 +124,15 @@
     {% endfor %}
 
     {% for year in years %}
-        {% for cls in ('text-outline', 'text-main') %}
-            <text
-                class="release-cycle-year-text {{cls}}"
-                x="{{ (year_to_x(year) + year_to_x(year + 1)) / 2 }}"
-                y="{{ diagram_height - line_height }}"
-                font-size="{{ SCALE * 0.75 }}"
-                text-anchor="middle"
-            >
-                {{ format_year(year) }}
-            </text>
-        {% endfor %}
+        <text
+            class="release-cycle-year-text {{cls}}"
+            x="{{ (year_to_x(year) + year_to_x(year + 1)) / 2 }}"
+            y="{{ diagram_height - line_height }}"
+            font-size="{{ SCALE * 0.75 }}"
+            text-anchor="middle"
+        >
+            {{ format_year(year) }}
+        </text>
         {% if not loop.last %}
         <line
             class="release-cycle-year-line"
