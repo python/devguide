@@ -1,6 +1,14 @@
-.. _exploring:
+.. _internals:
 
 ===================
+CPython's internals
+===================
+
+This guide describes the basics of CPython’s internals.
+It explains the layout of CPython’s source code.
+
+.. _exploring:
+
 CPython source code
 ===================
 
@@ -9,7 +17,7 @@ a summary of file locations for modules and built-ins.
 
 
 Source code layout
-==================
+------------------
 
 For a Python :term:`module`, the typical layout is:
 
@@ -46,7 +54,7 @@ Some exceptions to these layouts are:
 
 
 Additional references
-=====================
+---------------------
 
 The CPython code base is constantly changing and evolving.
 Here's a sample of references about CPython's architecture aimed at
@@ -92,3 +100,11 @@ building your understanding of CPython internals and its evolution:
 .. _A guide from parser to objects, observed using Eclipse: https://docs.google.com/document/d/1nzNN1jeNCC_bg1LADCvtTuGKvcyMskV1w8Ad2iLlwoI/
 
 .. _CPython internals\: A ten-hour codewalk through the Python interpreter source code: https://www.youtube.com/playlist?list=PLzV58Zm8FuBL6OAv1Yu6AwXZrnsFbbR0S
+
+
+CPython InternalDocs
+====================
+
+For more detailed and up-to-date documentation on CPython's internals,
+please refer to the `InternalDocs folder <https://github.com/python/cpython/tree/main/InternalDocs>`_
+in the CPython repository.
