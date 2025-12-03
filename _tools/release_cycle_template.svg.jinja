@@ -7,7 +7,7 @@
     <style>
         /* Embedded styles for standalone viewing */
         .release-cycle-chart {
-            color-scheme: light dark;
+            color-scheme: light;
 
             {# Copy vars from Furo theme if present #}
             {% for varname, default in {
@@ -26,8 +26,9 @@
             width: 100%;
 
             --blob-border-width: 1.6px;
-
-            background-color: var(--color-background-primary);
+        }
+        .background {
+            fill: var(--svg-color-background-primary);
         }
         .release-cycle-year-line {
             stroke: var(--svg-color-foreground-primary);
@@ -107,6 +108,14 @@
             <stop stop-color="white" offset="100%" />
         </linearGradient>
     </defs>
+
+    <rect
+        class="background"
+        x="0"
+        y="0"
+        width="{{ diagram_width }}"
+        height="{{ diagram_height }}"
+    />
 
     {% for version in versions %}
         {% set y = version.y * line_height %}
