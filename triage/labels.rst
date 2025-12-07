@@ -112,7 +112,7 @@ Recommendations
   no need to explicitly go through old issues to remove such labels.
 
 - Otherwise, add the corresponding version labels and remember to
-  update them when the latest major version is updated.
+  update them when the latest feature version is released.
 
 See also :ref:`the branch status page <branchstatus>`
 for a list of active branches.
