@@ -29,7 +29,7 @@ building your understanding of CPython internals and its evolution:
     "`A guide from parser to objects, observed using Eclipse`_", "Code walk from Parser, AST, Sym Table and Objects", Prashanth Raghu, 2.7.12
     "`CPython internals: A ten-hour codewalk through the Python interpreter source code`_", "Code walk from source code to generators", Philip Guo, 2.7.8
 
-.. _CPython's InternalDocs: https://github.com/python/cpython/tree/main/InternalDocs
+.. _CPython's InternalDocs: https://github.com/python/cpython/blob/main/InternalDocs/README.md
 
 .. _A guide from parser to objects, observed using GDB: https://hackmd.io/s/ByMHBMjFe
 
