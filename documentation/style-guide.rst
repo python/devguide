@@ -134,7 +134,6 @@ Avoid terminology that may be considered insensitive or exclusionary.
      - main, parent/child, server/client, primary/secondary
 
 
-
 .. index:: diataxis
 .. _diataxis:
 
