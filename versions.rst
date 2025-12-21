@@ -11,7 +11,7 @@ version can be found on the `download page <https://www.python.org/downloads/>`_
 
 
 .. raw:: html
-   :file: include/release-cycle.svg
+   :file: _static/release-cycle.svg
 
 (See :ref:`below <full-chart>` for a chart with older versions.
 Another useful visualization is `endoflife.date/python <https://endoflife.date/python>`__.)
@@ -36,7 +36,7 @@ Unsupported versions
 .. csv-table::
    :header-rows: 1
    :width: 100%
-   :file: include/end-of-life.csv
+   :file: _static/end-of-life.csv
 
 
 .. _full-chart:
@@ -45,7 +45,7 @@ Full chart
 ==========
 
 .. raw:: html
-   :file: include/release-cycle-all.svg
+   :file: _static/release-cycle-all.svg
 
 
 Status key
