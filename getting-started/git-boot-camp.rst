@@ -33,7 +33,7 @@ relevant to CPython's workflow.
 .. note::
    Setting up Git aliases for common tasks can be useful to you. You can
    get more information about that in
-   `Git documentation <https://git-scm.com/book/en/v2/Git-Basics-Git-Aliases>`_
+   `Git documentation <https://git-scm.com/book/en/v2/Git-Basics-Git-Aliases>`__
 
 .. _fork-cpython:
 
@@ -280,7 +280,7 @@ Compare to the ``main`` branch::
    $ git diff main
 
 Exclude generated files from diff using an ``attr``
-`pathspec <https://git-scm.com/docs/gitglossary#def_pathspec>`_ (note the
+`pathspec <https://git-scm.com/docs/gitglossary#def_pathspec>`__ (note the
 single quotes)::
 
    $ git diff main ':(attr:!generated)'
@@ -289,7 +289,7 @@ Exclude generated files from diff by default::
 
    $ git config diff.generated.binary true
 
-The ``generated`` `attribute <https://git-scm.com/docs/gitattributes>`_ is
+The ``generated`` `attribute <https://git-scm.com/docs/gitattributes>`__ is
 defined in :cpy-file:`.gitattributes`, found in the repository root.
 
 .. _push-changes:
@@ -389,8 +389,8 @@ you run ``git merge upstream/main``.
 
 When it happens, you need to resolve conflict.  See these articles about resolving conflicts:
 
-- `About merge conflicts <https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/addressing-merge-conflicts/about-merge-conflicts>`_
-- `Resolving a merge conflict using the command line <https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/addressing-merge-conflicts/resolving-a-merge-conflict-using-the-command-line>`_
+- `About merge conflicts <https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/addressing-merge-conflicts/about-merge-conflicts>`__
+- `Resolving a merge conflict using the command line <https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/addressing-merge-conflicts/resolving-a-merge-conflict-using-the-command-line>`__
 
 .. _git_from_patch:
 
@@ -443,8 +443,8 @@ Scenario:
 - A contributor made a pull request to CPython.
 - Before merging it, you want to be able to test their changes locally.
 
-If you've got `GitHub CLI <https://cli.github.com>`_ or
-`hub <https://hub.github.com>`_ installed, you can do::
+If you've got `GitHub CLI <https://cli.github.com>`__ or
+`hub <https://hub.github.com>`__ installed, you can do::
 
    $ gh co <pr_number>  # GitHub CLI
    $ hub pr checkout <pr_number>  # hub
@@ -523,7 +523,7 @@ The bad example contains bullet points that are a direct effect of the
 PR life cycle, while being irrelevant to the final change.
 
 .. note::
-   `How to Write a Git Commit Message <https://cbea.ms/git-commit/>`_
+   `How to Write a Git Commit Message <https://cbea.ms/git-commit/>`__
    is a nice article describing how to write a good commit message.
 
 Finally, press the :guilabel:`Confirm squash and merge` button.
@@ -557,7 +557,7 @@ after it has been accepted and merged into ``main``.  It is usually indicated
 by the label ``needs backport to X.Y`` on the pull request itself.
 
 Use the utility script
-`cherry_picker.py <https://github.com/python/cherry-picker>`_
+`cherry_picker.py <https://github.com/python/cherry-picker>`__
 to backport the commit.
 
 The commit hash for backporting is the squashed commit that was merged to
@@ -611,7 +611,7 @@ When a pull request submitter has enabled the `Allow edits from maintainers`_
 option, Python Core Developers may decide to make any remaining edits needed
 prior to merging themselves, rather than asking the submitter to do them. This
 can be particularly appropriate when the remaining changes are bookkeeping
-items like updating ``Misc/ACKS``.
+items like updating a news entry.
 
 .. _Allow edits from maintainers: https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/working-with-forks/allowing-changes-to-a-pull-request-branch-created-from-a-fork
 
@@ -649,12 +649,12 @@ To edit an open pull request that targets ``main``:
 GitHub CLI
 ----------
 
-`GitHub CLI <https://cli.github.com>`_ is a command-line
+`GitHub CLI <https://cli.github.com>`__ is a command-line
 interface that allows you to create, update, and check GitHub
 issues and pull requests.
 
 You can install GitHub CLI `by following these instructions
-<https://github.com/cli/cli#installation>`_. After installing,
+<https://github.com/cli/cli#installation>`__. After installing,
 you need to authenticate::
 
     $ gh auth login
@@ -740,6 +740,6 @@ Change into a directory to work from that branch. For example::
 
 .. seealso::
 
-   * `Git Reference Manual <https://git-scm.com/docs/git-worktree>`_
+   * `Git Reference Manual <https://git-scm.com/docs/git-worktree>`__
    * `"Experiment on your code freely with Git worktree"
-     <https://opensource.com/article/21/4/git-worktree>`_
+     <https://opensource.com/article/21/4/git-worktree>`__

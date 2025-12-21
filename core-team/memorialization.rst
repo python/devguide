@@ -31,11 +31,11 @@ certain content when the legacy contact or family members request it.
 GitHub
 ------
 
-* The user is removed from the `python/ <https://github.com/orgs/python/>`_
+* The user is removed from the `python/ <https://github.com/orgs/python/>`__
   organization on GitHub;
-* The user is removed from the `psf/ <https://github.com/orgs/psf/>`_
+* The user is removed from the `psf/ <https://github.com/orgs/psf/>`__
   organization on GitHub;
-* The user is removed from the `pypa/ <https://github.com/orgs/pypa/>`_
+* The user is removed from the `pypa/ <https://github.com/orgs/pypa/>`__
   organization on GitHub.
 
 The PSF staff does not follow up with GitHub with regards to GitHub account
@@ -43,7 +43,7 @@ cancellation as this action is reserved for next-of-kin or designated by
 the deceased GitHub user to act as an account successor.
 
 The general policy regarding deceased users on GitHub is described on their
-`Deceased User Policy <https://docs.github.com/en/site-policy/other-site-policies/github-deceased-user-policy>`_
+`Deceased User Policy <https://docs.github.com/en/site-policy/other-site-policies/github-deceased-user-policy>`__
 page.
 
 Repositories in the organization
@@ -51,9 +51,9 @@ Repositories in the organization
 
 * The user's GitHub handle is removed from ``/.github/CODEOWNERS``.
   To see all that need action, perform
-  `this query <https://github.com/search?q=org%3Apython+path%3A**%2F.github%2FCODEOWNERS+USERNAME&type=code>`_.
+  `this query <https://github.com/search?q=org%3Apython+path%3A**%2F.github%2FCODEOWNERS+USERNAME&type=code>`__.
 * The user is marked as deceased in the private
-  `voters/python-core.toml <https://github.com/python/voters/blob/main/python-core.toml>`_
+  `voters/python-core.toml <https://github.com/python/voters/blob/main/python-core.toml>`__
   file with the ``left=`` field set to the day of passing, if known.
 
 discuss.python.org
@@ -80,7 +80,7 @@ a community member close to the deceased.
 
 The general best practice for deceased community members on
 Discourse-powered forums is described on their
-`Best practices for deceased community members <https://meta.discourse.org/t/best-practices-for-deceased-community-members/146210>`_
+`Best practices for deceased community members <https://meta.discourse.org/t/best-practices-for-deceased-community-members/146210>`__
 page.
 
 python.org email account
@@ -116,8 +116,8 @@ python.org admin
 devguide.python.org
 -------------------
 
-* The user is marked as deceased in `core-team.csv <https://github.com/python/devguide/blob/main/core-team/core-team.csv>`_;
-* The user is removed from the `experts index <https://github.com/python/devguide/blob/main/core-team/experts.rst>`_.
+* The user is marked as deceased in `core-team.csv <https://github.com/python/devguide/blob/main/core-team/core-team.csv>`__;
+* The user is removed from the `experts index <https://github.com/python/devguide/blob/main/core-team/experts.rst>`__.
 
 bugs.python.org
 ---------------
@@ -139,16 +139,16 @@ Other PSF-related infrastructure
   Discord server to remove the user from the server. The PSF staff
   does not follow up with Discord with regards to Discord account
   cancellation. The general policy regarding deceased users on Discord
-  is available on their `Deceased or Incapacitated Users <https://support.discord.com/hc/en-us/articles/19872987802263--Deceased-or-Incapacitated-Users>`_
+  is available on their `Deceased or Incapacitated Users <https://support.discord.com/hc/en-us/articles/19872987802263--Deceased-or-Incapacitated-Users>`__
   page.
 
 * The user is removed from Salt configuration for the PSF infrastructure
-  in `/pillar/base/users <https://github.com/python/psf-salt/tree/main/pillar/base/users>`_
+  in `/pillar/base/users <https://github.com/python/psf-salt/tree/main/pillar/base/users>`__
   that allows SSH access to PSF-controlled servers.
 
 * The user might have ran a buildbot worker. The PSF staff member will
   look for that in the
-  `buildmaster-config <https://github.com/search?q=repo%3Apython%2Fbuildmaster-config%20USERNAME&type=code>`_
+  `buildmaster-config <https://github.com/search?q=repo%3Apython%2Fbuildmaster-config%20USERNAME&type=code>`__
   repository.
 
 PyPI

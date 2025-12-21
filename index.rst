@@ -31,7 +31,7 @@ instructions please see the :ref:`setup guide <setup>`.
 1. Install and set up :ref:`Git <vcsetup>` and other dependencies
    (see the :ref:`Git Setup <setup>` page for detailed information).
 
-2. Fork `the CPython repository <https://github.com/python/cpython>`_
+2. Fork `the CPython repository <https://github.com/python/cpython>`__
    to your GitHub account and :ref:`get the source code <checkout>` using::
 
       git clone https://github.com/<your_username>/cpython
@@ -91,7 +91,7 @@ instructions please see the :ref:`setup guide <setup>`.
       git checkout -b fix-issue-12345 main
 
    If an issue does not already exist, please `create it
-   <https://github.com/python/cpython/issues>`_.  Trivial issues (for example, typo fixes) do
+   <https://github.com/python/cpython/issues>`__.  Trivial issues (for example, typo fixes) do
    not require any issue to be created.
 
 6. Once you fixed the issue, run the tests, and the patchcheck:
@@ -125,10 +125,10 @@ instructions please see the :ref:`setup guide <setup>`.
       gh-12345: Fix some bug in spam module
 
 8. Add a News entry into the ``Misc/NEWS.d`` directory as individual file. The
-   news entry can be created by using `blurb-it <https://blurb-it.herokuapp.com/>`_,
+   news entry can be created by using `blurb-it <https://blurb-it.herokuapp.com/>`__,
    or the :pypi:`blurb` tool and its ``blurb add``
    command. Please read more about ``blurb`` in its
-   `repository <https://github.com/python/blurb>`_.
+   `repository <https://github.com/python/blurb>`__.
 
 .. note::
 
@@ -159,12 +159,12 @@ this guide, then the `Core Python Mentorship`_ group is available to help guide 
 contributors through the process.
 
 A number of individuals from the Python community have contributed to a series
-of excellent guides at `Open Source Guides <https://opensource.guide/>`_.
+of excellent guides at `Open Source Guides <https://opensource.guide/>`__.
 
 Core developers and contributors alike will find the following guides useful:
 
-* `How to Contribute to Open Source <https://opensource.guide/how-to-contribute/>`_
-* `Building Welcoming Communities <https://opensource.guide/building-community/>`_
+* `How to Contribute to Open Source <https://opensource.guide/how-to-contribute/>`__
+* `Building Welcoming Communities <https://opensource.guide/building-community/>`__
 
 Guide for contributing to Python:
 
@@ -251,8 +251,8 @@ Key resources
 * `Buildbot status`_
 * Source code
 
-  * `Browse online <https://github.com/python/cpython/>`_
-  * `Snapshot of the *main* branch <https://github.com/python/cpython/archive/main.zip>`_
+  * `Browse online <https://github.com/python/cpython/>`__
+  * `Snapshot of the *main* branch <https://github.com/python/cpython/archive/main.zip>`__
 
 * PEPs_ (Python Enhancement Proposals)
 * :ref:`help`
@@ -267,11 +267,8 @@ Additional resources
 * Anyone can clone the sources for this guide.  See :ref:`devguide`.
 * Help with ...
 
-  * :ref:`exploring`
+  * :ref:`internals`
   * :ref:`grammar`
-  * :ref:`parser`
-  * :ref:`compiler`
-  * :ref:`garbage_collector`
 
 * Tool support
 
@@ -279,7 +276,7 @@ Additional resources
   * :ref:`clang`
   * Various tools with configuration files as found in the `Misc directory`_
   * Information about editors and their configurations can be found in the
-    `wiki <https://wiki.python.org/moin/PythonEditors>`_
+    `wiki <https://wiki.python.org/moin/PythonEditors>`__
 
 * `python.org maintenance`_
 * :ref:`Search this guide <search>`
@@ -317,7 +314,7 @@ Full table of contents
    testing/index
    development-tools/index
    core-team/index
-   internals/index
+   internals
    versions
    contrib/index
 

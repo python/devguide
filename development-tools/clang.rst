@@ -11,7 +11,7 @@ libraries.
 
 This document does not cover interpreting the findings. For a discussion of
 interpreting results, see Marshall Clow's `Testing libc++ with
--fsanitize=undefined <https://cplusplusmusings.wordpress.com/tag/clang/>`_.  The
+-fsanitize=undefined <https://cplusplusmusings.wordpress.com/tag/clang/>`__.  The
 blog posting is a detailed examinations of issues uncovered by Clang in
 ``libc++``.
 
@@ -45,7 +45,7 @@ flags are passed through ``CFLAGS`` and ``CXXFLAGS``, and sometimes through
 ``CC`` and ``CXX`` (in addition to the compiler).
 
 A complete list of sanitizers can be found at `Controlling Code Generation
-<https://clang.llvm.org/docs/UsersManual.html#controlling-code-generation>`_.
+<https://clang.llvm.org/docs/UsersManual.html#controlling-code-generation>`__.
 
 .. note::
 
@@ -70,7 +70,7 @@ Pre-built Clang builds are available for most platforms:
   includes the "C++ clang tools for windows" feature.
 
 You can also build ``clang`` from source; refer to
-`the clang documentation <https://clang.llvm.org/>`_ for details.
+`the clang documentation <https://clang.llvm.org/>`__ for details.
 
 The installer does not install all the components needed on occasion. For
 example, you might want to run a ``scan-build`` or examine the results with
@@ -284,6 +284,6 @@ Or, you could ignore the entire file with::
 Unfortunately, you won't know what to ignorelist until you run the sanitizer.
 
 The documentation is available at `Sanitizer special case list
-<https://clang.llvm.org/docs/SanitizerSpecialCaseList.html>`_.
+<https://clang.llvm.org/docs/SanitizerSpecialCaseList.html>`__.
 
 .. _Valgrind: https://github.com/python/cpython/blob/main/Misc/README.valgrind
