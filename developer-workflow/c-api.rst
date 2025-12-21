@@ -387,7 +387,7 @@ Guidelines for adding to the Limited API
     details involve:
 
     - The GIL
-    - :ref:`Garbage collection <gc>`
+    - Garbage collection
     - Memory layout of PyObject, lists/tuples and other structures
 
 If following these guidelines would hurt performance, add a fast function
