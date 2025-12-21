@@ -1,4 +1,5 @@
 import json
+from urllib.request import urlopen
 
 extensions = [
     'notfound.extension',
@@ -182,8 +183,8 @@ notfound_urls_prefix = "/"
 
 # Dynamically expose the Python version associated with the "main" branch.
 # Exactly one entry in ``release-cycle.json`` should have ``"branch": "main"``.
-with open("include/release-cycle.json", encoding="UTF-8") as _f:
-    _cycle = json.load(_f)
+with urlopen("https://peps.python.org/api/release-cycle.json") as _f:
+    _cycle = json.loads(_f.read().decode("utf-8"))
 
 _main_version = next(
     version for version, data in _cycle.items() if data.get("branch") == "main"
