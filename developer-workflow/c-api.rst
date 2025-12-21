@@ -104,7 +104,7 @@ This helps us ensure *newly added* API is consistent and maintainable.
 
 Also check with the C API WG before requiring a C feature not present in C99.
 While the *public* docs only promise compatibility with C11, in practice
-we only intruduce C11 features individually as needed.
+we only introduce C11 features individually as needed.
 
 .. _decisions repo: https://github.com/capi-workgroup/decisions/issues
 

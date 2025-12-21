@@ -22,7 +22,7 @@ lives in a `separate repository`_ and bug reports should be submitted to the
 Changes to the Developer's Guide are published when pull requests are merged.
 
 Changes to the Python documentation are published regularly,
-ususally within 48 hours of the change being committed.
+usually within 48 hours of the change being committed.
 The documentation is also `published for each release <https://docs.python.org/release/>`__,
 which may also be used by redistributors.
 
