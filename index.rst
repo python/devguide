@@ -267,11 +267,8 @@ Additional resources
 * Anyone can clone the sources for this guide.  See :ref:`devguide`.
 * Help with ...
 
-  * :ref:`exploring`
+  * :ref:`internals`
   * :ref:`grammar`
-  * :ref:`parser`
-  * :ref:`compiler`
-  * :ref:`garbage_collector`
 
 * Tool support
 
@@ -317,7 +314,7 @@ Full table of contents
    testing/index
    development-tools/index
    core-team/index
-   internals/index
+   internals
    versions
    contrib/index
 
