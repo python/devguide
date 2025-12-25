@@ -95,13 +95,13 @@ _ensure-package: venv
 		$(VENVDIR)/bin/python3 -m pip install $(PACKAGE); \
 	fi
 
-.PHONY: _ensure-pre-commit
-_ensure-pre-commit:
-	make _ensure-package PACKAGE=pre-commit
+.PHONY: _ensure-prek
+_ensure-prek:
+	make _ensure-package PACKAGE=prek
 
 .PHONY: lint
-lint: _ensure-pre-commit
-	$(VENVDIR)/bin/python3 -m pre_commit run --all-files
+lint: _ensure-prek
+	$(VENVDIR)/bin/python3 -m prek run --all-files
 
 # Generate all release cycle files together with a single script invocation
 # Use branches.csv as the primary target, others depend on it
