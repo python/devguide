@@ -208,10 +208,10 @@ def main() -> None:
     Path("include").mkdir(exist_ok=True)
 
     versions.write_csv()
-    versions.write_svg(args.today, "include/release-cycle-all.svg")
+    versions.write_svg(args.today, "_static/release-cycle-all.svg")
 
     versions = Versions(limit_to_active=True, special_py27=True)
-    versions.write_svg(args.today, "include/release-cycle.svg")
+    versions.write_svg(args.today, "_static/release-cycle.svg")
 
 
 if __name__ == "__main__":
