@@ -112,9 +112,9 @@ include/branches.csv:
 # Other files are generated together with branches.csv
 include/end-of-life.csv: include/branches.csv
 	@:
-include/release-cycle-all.svg: include/branches.csv
+_static/release-cycle-all.svg: include/branches.csv
 	@:
-include/release-cycle.svg: include/branches.csv
+_static/release-cycle.svg: include/branches.csv
 	@:
 
 # Catch-all target: route all unknown targets to Sphinx using the new
