@@ -135,18 +135,18 @@ affected files as described below.)
 Changes for the documentation can be made from the same repository; see
 :ref:`documenting`.
 
-.. _install-pre-commit:
+.. _install-prek:
 
-Install pre-commit as a Git hook
---------------------------------
+Install prek as a Git hook
+--------------------------
 
 To make sure your code is linted correctly, we recommend setting up
-`pre-commit <https://pre-commit.com#installation>`__ as a Git hook::
+`prek <https://prek.j178.dev/installation/>`__ as a Git hook::
 
-   $ pre-commit install --allow-missing-config
-   pre-commit installed at .git/hooks/pre-commit
+   $ prek install --allow-missing-config
+   prek installed at .git/hooks/pre-commit
 
-Now pre-commit will run automatically on ``git commit``.
+Now prek will run automatically on ``git commit``.
 
 .. c_get_source_code_end
 
