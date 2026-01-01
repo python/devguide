@@ -574,7 +574,7 @@ Now that the configuration is in place, it remains to compile the project:
   :mod:`!_foo` discoverable and importable via ``import _foo``.
 
 * The final ``make`` step is generally not needed since the previous ``make``
-  invokations may completely rebuild the project, but it could be needed in
+  invocations may completely rebuild the project, but it could be needed in
   some specific cases.
 
 Troubleshooting
