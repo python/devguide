@@ -116,6 +116,24 @@ Don't use Latin abbreviations like "e.g." or "i.e." where English words will do,
 such as "for example" or "that is."
 
 
+Charged terminology to avoid
+============================
+
+Avoid terminology that may be considered insensitive or exclusionary.
+
+.. list-table::
+   :header-rows: 1
+
+   * - Avoid
+     - Instead
+   * - whitelist
+     - allowlist
+   * - blacklist
+     - blocklist, denylist
+   * - master/slave
+     - main, parent/child, server/client, primary/secondary
+
+
 .. index:: diataxis
 .. _diataxis:
 
