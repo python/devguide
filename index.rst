@@ -1,3 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Temple Run Mini Game</title>
+  <style>
+    body {
+      margin: 0;
+      overflow: hidden;
+      background: #222;
+    }
+    canvas {
+      display: block;
+      background: #444;
+    }
+  </style>
+</head>
+<body>
+
+<canvas id="game"></canvas>
+
+<script>
+const canvas = document.getElementById("game");
+const ctx = canvas.getContext("2d");
+
+canvas.width = window.innerWidth;
+canvas.height = window.innerHeight;
+
+// Player
+let player = {
+  x: 100,
+  y: canvas.height - 150,
+  width: 50,
+  height: 50,
+  yVel: 0,
+  jumping: false
+};
+
+// Obstacle
+let obstacles = [];
+let gravity = 1;
+let speed = 6;
+let score = 0;
+
+// Controls
+document.addEventListener("keydown", e => {
+  if (e.code === "Space" && !player.jumping) {
+    player.yVel = -20;
+    player.jumping = true;
+  }
+});
+
+// Game Loop
+function gameLoop() {
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+  // Ground
+  ctx.fillStyle = "#333";
+  ctx.fillRect(0, canvas.height - 100, canvas.width, 100);
+
+  // Player
+  player.yVel += gravity;
+  player.y += player.yVel;
+
+  if (player.y >= canvas.height - 150) {
+    player.y = canvas.height - 150;
+    player.jumping = false;
+  }
+
+  ctx.fillStyle = "yellow";
+  ctx.fillRect(player.x, player.y, player.width, player.height);
+
+  // Obstacles
+  if (Math.random() < 0.02) {
+    obstacles.push({
+      x: canvas.width,
+      y: canvas.height - 140,
+      width: 40,
+      height: 40
+    });
+  }
+
+  for (let i = 0; i < obstacles.length; i++) {
+    obstacles[i].x -= speed;
+
+    ctx.fillStyle = "red";
+    ctx.fillRect(
+      obstacles[i].x,
+      obstacles[i].y,
+      obstacles[i].width,
+      obstacles[i].height
+    );
+
+    // Collision
+    if (
+      player.x < obstacles[i].x + obstacles[i].width &&
+      player.x + player.width > obstacles[i].x &&
+      player.y < obstacles[i].y + obstacles[i].height &&
+      player.y + player.height > obstacles[i].y
+    ) {
+      alert("Game Over! Score: " + score);
+      document.location.reload();
+    }
+  }
+
+  // Score
+  score++;
+  ctx.fillStyle = "white";
+  ctx.font = "20px Arial";
+  ctx.fillText("Score: " + score, 20, 30);
+
+  requestAnimationFrame(gameLoop);
+}
+
+gameLoop();
+</script>
+
+</body>
+</html>
 .. _devguide-main:
 
 ========================
