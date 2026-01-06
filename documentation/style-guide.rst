@@ -83,9 +83,9 @@ POSIX
    The name assigned to a particular group of standards. This is always
    uppercase.
 free-threaded
-    The preferred term for the build mode that makes the Global Interpreter
-    Lock (GIL) optional (per PEP 703). Avoid using "No-GIL" to prevent
-    double-negatives (e.g., "non-no-GIL").
+    The preferred term for the build mode that makes the global interpreter
+    lock (GIL) optional (per :pep:`703`). Avoid using "no-GIL" to prevent
+    double negatives (for example, "non-no-GIL").
 Python
    The name of our favorite programming language is always capitalized.
 
