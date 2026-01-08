@@ -19,7 +19,7 @@ fps = pygame.time.Clock()
 # Snake ki initial position
 snake_position = [100, 50]
 snake_body = [[100, 50], [90, 50], [80, 50]]
-fruit_position = [random.randrange(1, (window_x//10)) * 10, 
+fruit_position = [random.randrange(1, (window_x//10)) * 10,
                   random.randrange(1, (window_y//10)) * 10]
 
 direction = 'RIGHT'
@@ -51,7 +51,7 @@ while True:
     snake_body.insert(0, list(snake_position))
     if snake_position[0] == fruit_position[0] and snake_position[1] == fruit_position[1]:
         score += 10
-        fruit_position = [random.randrange(1, (window_x//10)) * 10, 
+        fruit_position = [random.randrange(1, (window_x//10)) * 10,
                           random.randrange(1, (window_y//10)) * 10]
     else:
         snake_body.pop()
