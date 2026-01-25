@@ -858,18 +858,9 @@ some of CPython's modules (for example, ``zlib``).
 
          $ brew install pkg-config openssl@3 xz gdbm tcl-tk mpdecimal zstd
 
-      .. tab:: Python 3.13+
+      .. tab:: Python 3.11+
 
-         For Python 3.13 and newer::
-
-            $ GDBM_CFLAGS="-I$(brew --prefix gdbm)/include" \
-               GDBM_LIBS="-L$(brew --prefix gdbm)/lib -lgdbm" \
-               ./configure --with-pydebug \
-                           --with-openssl="$(brew --prefix openssl@3)"
-
-      .. tab:: Python 3.11-3.12
-
-         For Python 3.11 and 3.12::
+         For Python 3.11 and newer::
 
             $ GDBM_CFLAGS="-I$(brew --prefix gdbm)/include" \
                GDBM_LIBS="-L$(brew --prefix gdbm)/lib -lgdbm" \
