@@ -268,8 +268,8 @@ This role is paramount to the security of the Python Language, Community, and
 Infrastructure.
 
 The Executive Director of the Python Software Foundation delegates authority on
-GitHub Organization Owner Status to Ee Durbin - Python Software
-Foundation Director of Infrastructure. Common reasons for this role are:
+GitHub Organization Owner Status to Jacob Coffee - Python Software
+Foundation Infrastructure Engineer. Common reasons for this role are:
 Infrastructure Staff Membership, Python Software Foundation General Counsel,
 and Python Software Foundation Staff as fallback.
 
@@ -293,7 +293,7 @@ Current owners
 +----------------------+--------------------------------+-----------------+
 | Donald Stufft        | Infrastructure Staff           | dstufft         |
 +----------------------+--------------------------------+-----------------+
-| Ee Durbin            | PSF Director of Infrastructure | ewdurbin        |
+| Ee Durbin            | Infrastructure Staff           | ewdurbin        |
 +----------------------+--------------------------------+-----------------+
 | Jacob Coffee         | PSF Infrastructure Engineer    | JacobCoffee     |
 +----------------------+--------------------------------+-----------------+
