@@ -43,13 +43,13 @@ Responsibilities of PSRT members
 Below are the responsibilities of PSRT members:
 
 * Being knowledgeable about typical software vulnerability report handling
-  processes, such as CVE IDs, patches, coordinated disclosure, embargoes, etc.
+  processes, such as CVE IDs, patches, coordinated disclosure, embargoes.
 * Not sharing or acting on embargoed information about the reported
   vulnerability. Examples of disallowed behavior include sharing information
   with colleagues or publicly deploying unpublished mitigations or patches ahead
   of the advisory publication date.
 * Acting as a “Coordinator” of vulnerability reports that are submitted to
-  projects. A coordinator’s responsibility is to move a report through the PSRT
+  projects. A Coordinator’s responsibility is to move a report through the PSRT
   process to a “finished” state, either rejected or as a published advisory and
   mitigation, within the industry standard timeline of 90 days.
 * As a Coordinator, involving relevant core team members or triagers where
