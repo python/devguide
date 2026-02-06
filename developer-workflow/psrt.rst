@@ -4,6 +4,82 @@ Python Security Response Team (PSRT)
 The Python Security Response Team (PSRT) is responsible for handling
 vulnerability reports for CPython and pip.
 
+Members
+-------
+
+The PSRT publishes a full
+list of members and admins, included in the table below:
+
+.. csv-table::
+   :header: "Name", "GitHub username", "Notes"
+   :file: psrt.csv
+   :encoding: "utf-8"
+
+How can I join the PSRT?
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+Anyone can join the PSRT following a nomination process
+`similar to core team nominations`_. Nomination for a new member
+is brought to the PSRT by an existing PSRT member and then
+this nomination is voted on by existing PSRT members.
+The nomination succeeds if the nomination receives at least
+two-thirds positive votes from a vote of existing PSRT members
+that is open for one week and not vetoed by the Steering Council.
+
+Once per year the Steering Council will receive a report of inactive members
+of the PSRT with the recommendation to remove the inactive users from the PSRT.
+“Inactive” is defined as a member who hasn’t coordinated or commented on a
+vulnerability report in the past year since the last report was generated.
+The Steering Council may remove members of the PSRT with a simple vote.
+
+Members of the PSRT who are a Release Manager or Steering Council member may
+remain in the PSRT regardless of inactivity in vulnerability reports.
+
+.. _similar to core team nominations: https://devguide.python.org/core-team/join-team/
+
+Responsibilities of PSRT members
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Below are the responsibilities of PSRT members:
+
+* Being knowledgeable about typical software vulnerability report handling
+  processes, such as CVE IDs, patches, coordinated disclosure, embargoes.
+* Not sharing or acting on embargoed information about the reported
+  vulnerability. Examples of disallowed behavior include sharing information
+  with colleagues or publicly deploying unpublished mitigations or patches ahead
+  of the advisory publication date.
+* Acting as a “Coordinator” of vulnerability reports that are submitted to
+  projects. A Coordinator’s responsibility is to move a report through the PSRT
+  process to a “finished” state, either rejected or as a published advisory and
+  mitigation, within the industry standard timeline of 90 days.
+* As a Coordinator, involving relevant core team members or triagers where
+  necessary to make a determination whether a report is a vulnerability and
+  developing a patch. Coordinators are encouraged to involve members of the core
+  team to make the best decision for each report rather than working in isolation.
+* As a Coordinator, calculating the severity using CVSS and authoring advisories
+  to be shared on `security-announce@python.org`_. These advisories are used for
+  CVE records by the `PSF CVE Numbering Authority`_.
+* Coordinators that can no longer move a report forwards for any reason must
+  delegate their Coordinator role to someone else in the PSRT.
+
+.. _security-announce@python.org: https://mail.python.org/archives/list/security-announce@python.org/
+.. _PSF CVE Numbering Authority: https://www.python.org/cve-numbering-authority/
+
+Responsibilities of PSRT admins
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+PSRT members who are designated as admins by the Steering Council have the
+following additional responsibilities:
+
+* Triaging the ``security@python.org`` mailing list.
+* Managing PSRT membership access including the GitHub team, the mailing list,
+  and Discord channel, to ensure they are synchronized with the canonical list
+  of PSRT members.
+* On a yearly basis, providing the Steering Council with a report including a
+  list of inactive PSRT members.
+* Running nomination elections, including counting final votes and giving
+  the Steering Council an opportunity to veto nominations via email.
+
 Vulnerability report triage
 ---------------------------
 
