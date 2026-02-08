@@ -389,6 +389,7 @@ Port    Host                Description
 53      your DNS server     test_socket, and others implicitly
 80      python.org          (several tests)
         example.com
+119     news.gmane.org      test_nntplib (Python versions < 3.13)
 443     (various)           test_ssl
 465     smtp.gmail.com      test_smtpnet
 587     smtp.gmail.com      test_smtpnet
