@@ -25,7 +25,7 @@ mailing list.  This mailing list is also the place to contact if you want to
 contribute a buildbot but have questions.
 
 As for what kind of buildbot to run...take a look at our `current fleet
-<https://buildbot.python.org/all/>`__.  Pretty much anything that isn't
+<builders_>`__.  Pretty much anything that isn't
 on that list would be interesting: different Linux/Unix distributions,
 different versions of the various OSes, other OSes if you or someone are
 prepared to make the test suite actually pass on that new OS.  Even if you only
@@ -40,14 +40,14 @@ Preparing for buildbot worker setup
 
 Since the goal is to build Python from source, the system will need to have
 everything required to do normal python development:  a compiler, a linker, and
-(except on windows) the "development" headers for any of the optional modules
-(zlib, OpenSSL, etc) supported by the platform.  Follow the steps outlined in
+(except on Windows) the "development" headers for any of the optional modules
+(zlib, OpenSSL, and so on) supported by the platform.  Follow the steps outlined in
 :ref:`setup` for the target platform, all the way through to having a working
-compiled python.
+compiled Python.
 
 In order to set up the buildbot software, you will need to obtain an identifier
 and password for your worker so it can join the fleet.  Open an issue in the
-`configuration repository <https://github.com/python/buildmaster-config/issues/new/choose>`__
+`configuration repository <https://github.com/python/buildmaster-config/issues/new?template=new_worker.yml>`__
 to discuss adding your worker and to obtain the
 needed workername and password.  You can do some of the steps that follow
 before having the credentials, but it is easiest to have them before
@@ -68,51 +68,65 @@ here; it doesn't differ from setting up a virtual environment for any other
 software, but you'll need to modify the sequence of steps below as appropriate
 if you choose that path.
 
-For Linux:
+.. tab:: Linux
 
-* If your package manager provides the buildbot worker software, that is
-  probably the best way to install it; it may create the buildbot user for
-  you, in which case you can skip the next step.  Otherwise, do ``pip install
-  buildbot-worker`` or ``pip3 install buildbot-worker``.
-* Create a ``buildbot`` user (using, eg: ``useradd``) if necessary.
-* Log in as the buildbot user.
+   * If your package manager provides the buildbot worker software, that is
+     probably the best way to install it; it may create the buildbot user for
+     you, in which case you can skip the next step.  Otherwise, do ``pip install
+     buildbot-worker`` or ``pip3 install buildbot-worker``.
+   * Create a ``buildbot`` user (using, eg: ``useradd``) if necessary.
+   * Log in as the buildbot user.
 
-For Mac:
+   In a terminal window for the buildbot user, issue the following commands (you
+   can put the ``buildarea`` wherever you want to)::
 
-* Create a buildbot user using the OS/X control panel user admin.  It
-  should be a "standard" user.
-* Log in as the buildbot user.
-* Install the buildbot worker [#]_ by running ``pip install buildbot-worker``.
+      mkdir buildarea
+      buildbot-worker create-worker buildarea buildbot-api.python.org:9020 workername workerpasswd
 
-For Windows:
 
-* Create a buildbot user as a "standard" user.
-* Install the latest version of Python from python.org.
-* Open a Command Prompt.
-* Execute ``python -m pip install pypiwin32 buildbot-worker`` (note that
-  ``python.exe`` is not added to ``PATH`` by default, making the
-  ``python`` command accessible is left as an exercise for the user).
+.. tab:: Mac
 
-In a terminal window for the buildbot user, issue the following commands (you
-can put the ``buildarea`` wherever you want to)::
+   * Create a buildbot user using the OS/X control panel user admin.  It
+     should be a "standard" user.
+   * Log in as the buildbot user.
+   * Install the buildbot worker [#]_ by running ``pip install buildbot-worker``.
 
-    mkdir buildarea
-    buildbot-worker create-worker buildarea buildbot-api.python.org:9020 workername workerpasswd
+   In a terminal window for the buildbot user, issue the following commands (you
+   can put the ``buildarea`` wherever you want to)::
 
-(Note that on Windows, the ``buildbot-worker`` command will be in the
-:file:`Scripts` directory of your Python installation.)
+      mkdir buildarea
+      buildbot-worker create-worker buildarea buildbot-api.python.org:9020 workername workerpasswd
 
-On Windows, `the maximum length for a path is limited
-<https://learn.microsoft.com/en-us/windows/win32/fileio/maximum-file-path-limitation>`__.
-This might cause some tests to fail, unless long paths support is enabled.
 
-Use this PowerShell command to check whether long paths are enabled::
+.. tab:: Windows
+
+   * Create a buildbot user as a "standard" user.
+   * Install the latest version of Python from python.org.
+   * Open a Command Prompt.
+   * Execute ``python -m pip install pypiwin32 buildbot-worker`` (note that
+     ``python.exe`` is not added to ``PATH`` by default, making the
+     ``python`` command accessible is left as an exercise for the user).
+
+   On Windows, `the maximum length for a path is limited
+   <https://learn.microsoft.com/en-us/windows/win32/fileio/maximum-file-path-limitation>`__.
+   This might cause some tests to fail, unless long paths support is enabled.
+
+   Use this PowerShell command to check whether long paths are enabled::
 
       Get-ItemProperty -Path "HKLM:\SYSTEM\CurrentControlSet\Control\FileSystem" -Name "LongPathsEnabled"
 
-If the value is not "1", you can enable long paths using this PowerShell command::
+   If the value is not "1", you can enable long paths using this PowerShell command::
 
       New-ItemProperty -Path "HKLM:\SYSTEM\CurrentControlSet\Control\FileSystem" -Name "LongPathsEnabled" -Value 1 -PropertyType DWORD -Force
+
+
+   In a terminal window for the buildbot user, issue the following commands in
+   the :file:`Scripts` directory of your Python installation (you
+   can put the ``buildarea`` wherever you want to)::
+
+      mkdir buildarea
+      buildbot-worker create-worker buildarea buildbot-api.python.org:9020 workername workerpasswd
+
 
 Once this initial worker setup completes, you should edit the files
 ``buildarea/info/admin`` and ``buildarea/info/host`` to provide your contact
@@ -123,138 +137,138 @@ builders running on your worker.
 You will also want to make sure that the worker is started when the
 machine reboots:
 
-For Linux:
+.. tab:: Linux
 
-* For systemd based distributions, you can create a systemd unit file in order
-  to manage the service. Create the unit file named ``buildbot-worker.service``
-  under ``/home/buildbot/.config/systemd/user/`` and change the paths according to where the
-  buildbot-worker binary resides. You can verify its location by running
-  ``which buildbot-worker``.
-  If you installed the buildbot-worker through
-  your package manager it would be::
+   * For systemd based distributions, you can create a systemd unit file in order
+     to manage the service. Create the unit file named ``buildbot-worker.service``
+     under ``/home/buildbot/.config/systemd/user/`` and change the paths according to where the
+     buildbot-worker binary resides. You can verify its location by running
+     ``which buildbot-worker``.
+     If you installed the buildbot-worker through
+     your package manager it would be::
 
-    [Unit]
-    Description=Buildbot Worker
-    Wants=network-online.target
-    After=network-online.target local-fs.target
+       [Unit]
+       Description=Buildbot Worker
+       Wants=network-online.target
+       After=network-online.target local-fs.target
 
-    [Service]
-    Type=forking
-    PIDFile=/home/buildbot/buildarea/twistd.pid
-    WorkingDirectory=/home/buildbot/buildarea
-    ExecStart=/usr/bin/buildbot-worker start
-    ExecReload=/usr/bin/buildbot-worker restart
-    ExecStop=/usr/bin/buildbot-worker stop
-    Restart=always
-    User=buildbot
+       [Service]
+       Type=forking
+       PIDFile=/home/buildbot/buildarea/twistd.pid
+       WorkingDirectory=/home/buildbot/buildarea
+       ExecStart=/usr/bin/buildbot-worker start
+       ExecReload=/usr/bin/buildbot-worker restart
+       ExecStop=/usr/bin/buildbot-worker stop
+       Restart=always
+       User=buildbot
 
-    [Install]
-    WantedBy=multi-user.target
-
-
-  If you installed the buildbot-worker through pip, the systemd unit
-  file should look like this::
-
-    [Unit]
-    Description=Buildbot Worker
-    Wants=network-online.target
-    After=network-online.target local-fs.target
-
-    [Service]
-    Type=forking
-    PIDFile=/home/buildbot/buildarea/twistd.pid
-    WorkingDirectory=/home/buildbot/buildarea
-    ExecStart=/usr/local/bin/buildbot-worker start
-    ExecReload=/usr/local/bin/buildbot-worker restart
-    ExecStop=/usr/local/bin/buildbot-worker stop
-    Restart=always
-    User=buildbot
-
-    [Install]
-    WantedBy=multi-user.target
+       [Install]
+       WantedBy=multi-user.target
 
 
-  Then enable lingering for the buildbot user via the
-  ``loginctl enable-linger buildbot`` command and you can start
-  the service through a login shell of the buildbot user
-  via the ``systemctl --user enable --now buildbot-worker.service``
-  command.
+     If you installed the buildbot-worker through pip, the systemd unit
+     file should look like this::
 
-  Note that using a systemd unit file, might produce some selinux warnings on systems
-  where the enforcing mode is enabled, usually related to the twistd.pid file.
-  If the service fails to start, you should check the output of
-  ``systemctl status buildbot-worker.service`` as well as the
-  ``/var/log/audit/audit.log`` file (e.g. through
-  ``sealert -a /var/log/audit/audit.log``) for potential issues and remedies.
+       [Unit]
+       Description=Buildbot Worker
+       Wants=network-online.target
+       After=network-online.target local-fs.target
+
+       [Service]
+       Type=forking
+       PIDFile=/home/buildbot/buildarea/twistd.pid
+       WorkingDirectory=/home/buildbot/buildarea
+       ExecStart=/usr/local/bin/buildbot-worker start
+       ExecReload=/usr/local/bin/buildbot-worker restart
+       ExecStop=/usr/local/bin/buildbot-worker stop
+       Restart=always
+       User=buildbot
+
+       [Install]
+       WantedBy=multi-user.target
 
 
-* Alternatively you can create a cronjob. Add the following line to ``/etc/crontab``::
+     Then enable lingering for the buildbot user via the
+     ``loginctl enable-linger buildbot`` command and you can start
+     the service through a login shell of the buildbot user
+     via the ``systemctl --user enable --now buildbot-worker.service``
+     command.
 
-      @reboot buildbot-worker restart /path/to/buildarea
+     Note that using a systemd unit file, might produce some selinux warnings on systems
+     where the enforcing mode is enabled, usually related to the twistd.pid file.
+     If the service fails to start, you should check the output of
+     ``systemctl status buildbot-worker.service`` as well as the
+     ``/var/log/audit/audit.log`` file (for example, through
+     ``sealert -a /var/log/audit/audit.log``) for potential issues and remedies.
 
-  Note that we use ``restart`` rather than ``start`` in case a crash has
-  left a ``twistd.pid`` file behind.
+   * Alternatively you can create a cronjob. Add the following line to ``/etc/crontab``::
 
-For OSX:
+         @reboot buildbot-worker restart /path/to/buildarea
 
-* Create a bin directory for your buildbot user::
+     Note that we use ``restart`` rather than ``start`` in case a crash has
+     left a ``twistd.pid`` file behind.
 
-      mkdir bin
 
-* Place the following script, named ``run_worker.sh``, into that directory::
+.. tab:: Mac
 
-      #!/bin/bash
-      export PATH=/usr/local/bin:/Library/Frameworks/Python.framework/Versions/2.7/bin:$PATH
-      export LC_CTYPE=en_US.utf-8
-      cd /Users/buildbot/buildarea
-      twistd --nodaemon --python=buildbot.tac --logfile=buildbot.log --prefix=worker
+   * Create a bin directory for your buildbot user::
 
-  If you use pip with Apple's system python, add '/System' to the front of
-  the path to the Python bin directory.
+         mkdir bin
 
-*  Place a file with the following contents into ``/Library/LaunchDaemons``:
+   * Place the following script, named ``run_worker.sh``, into that directory::
 
-   .. code-block:: xml
+         #!/bin/bash
+         export PATH=/usr/local/bin:/Library/Frameworks/Python.framework/Versions/2.7/bin:$PATH
+         export LC_CTYPE=en_US.utf-8
+         cd /Users/buildbot/buildarea
+         twistd --nodaemon --python=buildbot.tac --logfile=buildbot.log --prefix=worker
 
-      <?xml version="1.0" encoding="UTF-8"?>
-      <!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN"
-            "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
-      <plist version="1.0">
-      <dict>
-            <key>Label</key>
-            <string>net.buildbot.worker</string>
-            <key>UserName</key>
-            <string>buildbot</string>
-            <key>WorkingDirectory</key>
-            <string>/Users/buildbot/buildarea</string>
-            <key>ProgramArguments</key>
-            <array>
-                    <string>/Users/buildbot/bin/run_worker.sh</string>
-            </array>
-            <key>StandardOutPath</key>
-            <string>twistd.log</string>
-            <key>StandardErrorPath</key>
-            <string>twistd.log</string>
-            <key>KeepAlive</key>
-            <true/>
-            <key>SessionCreate</key>
-            <true/>
-      </dict>
-      </plist>
+     If you use pip with Apple's system python, add '/System' to the front of
+     the path to the Python bin directory.
 
-   The recommended name for the file is ``net.buildbot.worker``.
+   *  Place a file with the following contents into ``/Library/LaunchDaemons``:
 
-For Windows:
+      .. code-block:: xml
 
-* Add a Scheduled Task to run ``buildbot-worker start buildarea`` as the
-  buildbot user "when the computer starts up".  It is best to provide
-  absolute paths to the ``buildbot-worker`` command and the :file:`buildarea`
-  directory.  It is also recommended to set the task to run in the
-  directory that contains the :file:`buildarea` directory.
+         <?xml version="1.0" encoding="UTF-8"?>
+         <!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN"
+               "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+         <plist version="1.0">
+         <dict>
+               <key>Label</key>
+               <string>net.buildbot.worker</string>
+               <key>UserName</key>
+               <string>buildbot</string>
+               <key>WorkingDirectory</key>
+               <string>/Users/buildbot/buildarea</string>
+               <key>ProgramArguments</key>
+               <array>
+                       <string>/Users/buildbot/bin/run_worker.sh</string>
+               </array>
+               <key>StandardOutPath</key>
+               <string>twistd.log</string>
+               <key>StandardErrorPath</key>
+               <string>twistd.log</string>
+               <key>KeepAlive</key>
+               <true/>
+               <key>SessionCreate</key>
+               <true/>
+         </dict>
+         </plist>
 
-* Alternatively (note: don't do both!), set up the worker
-  service as described in the `buildbot documentation
-  <https://docs.buildbot.net/current/manual/installation/misc.html#launching-worker-as-windows-service>`__.
+      The recommended name for the file is ``net.buildbot.worker``.
+
+.. tab:: Windows
+
+   * Add a Scheduled Task to run ``buildbot-worker start buildarea`` as the
+     buildbot user "when the computer starts up".  It is best to provide
+     absolute paths to the ``buildbot-worker`` command and the :file:`buildarea`
+     directory.  It is also recommended to set the task to run in the
+     directory that contains the :file:`buildarea` directory.
+
+   * Alternatively (note: don't do both!), set up the worker
+     service as described in the `buildbot documentation
+     <https://docs.buildbot.net/current/manual/installation/misc.html#launching-worker-as-windows-service>`__.
 
 To start the worker running for your initial testing, you can do::
 
@@ -262,7 +276,7 @@ To start the worker running for your initial testing, you can do::
 
 Then you can either wait for someone to make a commit, or you can pick a
 builder associated with your worker from the `list of builders
-<https://buildbot.python.org/all/>`__ and force a build.
+<builders_>`__ and force a build.
 
 In any case you should initially monitor builds on your builders to make sure
 the tests are passing and to resolve any platform issues that may be revealed
@@ -375,7 +389,6 @@ Port    Host                Description
 53      your DNS server     test_socket, and others implicitly
 80      python.org          (several tests)
         example.com
-119     news.gmane.org      test_nntplib
 443     (various)           test_ssl
 465     smtp.gmail.com      test_smtpnet
 587     smtp.gmail.com      test_smtpnet
@@ -398,9 +411,9 @@ buildbot are at least:
 * 512 MB RAM
 * 30 GB free disk space
 
-The bigmem tests won't run in this configuration, since they require
+Many tests won't run in this configuration, since they require
 substantially more memory, but these resources should be sufficient to ensure
-that Python compiles correctly on the platform and can run the rest of the test
+that Python compiles correctly on the platform and can run part of the test
 suite.
 
 
@@ -413,7 +426,7 @@ This means that the code your buildbot will run will have been vetted by a commi
 However, mistakes and bugs happen, as could a compromise, so keep this in mind when
 siting your buildbot on your network and establishing the security around it.
 Treat the buildbot like you would any resource that is public facing and might
-get hacked (use a VM and/or jail/chroot/solaris zone, put it in a DMZ, etc).
+get hacked (use a VM and/or jail/chroot/solaris zone, put it in a DMZ, and so on).
 While the buildbot does not have any ports open for inbound traffic (and is not
 public facing in that sense), committer mistakes do happen, and security flaws
 are discovered in both released and unreleased code, so treating the buildbot
@@ -422,7 +435,7 @@ as if it were fully public facing is a good policy.
 Code runs differently as privileged and unprivileged users.  We would love to
 have builders running as privileged accounts, but security considerations do
 make that difficult, as access to root can provide access to surprising
-resources (such as spoofed IP packets, changes in MAC addresses, etc) even on a
+resources (such as spoofed IP packets, changes in MAC addresses, and so on) even on a
 VM setup.  But if you are confident in your setup, we'd love to have a buildbot
 that runs python as root.
 
@@ -435,3 +448,5 @@ useful as a point of reference.
 .. [#] If the buildbot is going to do Framework builds, it is better to
        use the Apple-shipped Python so as to avoid any chance of the buildbot
        picking up components from the installed python.org python.
+
+.. _builders: https://buildbot.python.org/#/builders
