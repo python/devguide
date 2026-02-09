@@ -84,9 +84,9 @@ if you choose that path.
       buildbot-worker create-worker buildarea buildbot-api.python.org:9020 workername workerpasswd
 
 
-.. tab:: Mac
+.. tab:: macOS
 
-   * Create a buildbot user using the OS/X control panel user admin.  It
+   * Create a buildbot user using the macOS control panel user admin.  It
      should be a "standard" user.
    * Log in as the buildbot user.
    * Install the buildbot worker [#]_ by running ``pip install buildbot-worker``.
@@ -194,8 +194,8 @@ machine reboots:
      via the ``systemctl --user enable --now buildbot-worker.service``
      command.
 
-     Note that using a systemd unit file, might produce some selinux warnings on systems
-     where the enforcing mode is enabled, usually related to the twistd.pid file.
+     Note that using a systemd unit file, might produce some SELinux warnings on systems
+     where the enforcing mode is enabled, usually related to the ``twistd.pid`` file.
      If the service fails to start, you should check the output of
      ``systemctl status buildbot-worker.service`` as well as the
      ``/var/log/audit/audit.log`` file (for example, through
@@ -209,7 +209,7 @@ machine reboots:
      left a ``twistd.pid`` file behind.
 
 
-.. tab:: Mac
+.. tab:: macOS
 
    * Create a bin directory for your buildbot user::
 
