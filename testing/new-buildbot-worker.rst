@@ -103,7 +103,7 @@ if you choose that path.
    * Create a buildbot user as a "standard" user.
    * Install the latest version of Python from python.org.
    * Open a Command Prompt.
-   * Execute ``python -m pip install pypiwin32 buildbot-worker`` (note that
+   * Execute ``python -m pip install pywin32 buildbot-worker`` (note that
      ``python.exe`` is not added to ``PATH`` by default, making the
      ``python`` command accessible is left as an exercise for the user).
 
