@@ -120,9 +120,13 @@ if you choose that path.
       New-ItemProperty -Path "HKLM:\SYSTEM\CurrentControlSet\Control\FileSystem" -Name "LongPathsEnabled" -Value 1 -PropertyType DWORD -Force
 
 
-   In a terminal window for the buildbot user, issue the following commands in
-   the :file:`Scripts` directory of your Python installation (you
-   can put the ``buildarea`` wherever you want to)::
+   In a terminal window for the buildbot user, issue the following commands.
+   (You can put the ``buildarea`` wherever you want to.)
+   Note that the ``buildbot-worker`` command will be in the
+   :file:`Scripts` directory of your Python installation. Here and in the rest
+   of the guide, you may need to launch it using the full path.
+
+   .. code-block::
 
       mkdir buildarea
       buildbot-worker create-worker buildarea buildbot-api.python.org:9020 workername workerpasswd
