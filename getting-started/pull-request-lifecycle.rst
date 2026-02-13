@@ -285,7 +285,6 @@ The automated checklist runs through:
 * Has an entry under ``Misc/NEWS.d/next`` been added?
   (using `blurb-it <https://blurb-it.herokuapp.com/>`__,
   or the :pypi:`blurb` tool)
-* Has ``Misc/ACKS`` been updated?
 * Has ``configure`` been regenerated, if necessary?
 * Has ``pyconfig.h.in`` been regenerated, if necessary?
 
