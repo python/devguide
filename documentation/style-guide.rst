@@ -1,4 +1,4 @@
-.. _style-guide:
+﻿.. _style-guide:
 
 ===========
 Style guide
@@ -78,6 +78,11 @@ C API
 
 CPU
    Central processing unit. No need to spell out.
+
+free-threaded
+   The preferred term for the build mode that makes the global interpreter
+   lock (GIL) optional (per :pep:`703`). Avoid using "No-GIL" to avoid
+   double negatives (for example, "non-no-GIL").
 
 POSIX
    The name assigned to a particular group of standards. This is always
