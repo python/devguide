@@ -198,6 +198,16 @@ More flags are available to ``configure``, but this is the minimum you should
 do to get a pydebug build of CPython.
 
 .. note::
+   **Could not build the ssl module!**
+
+   If the build fails with an error stating ``Python requires a OpenSSL 1.1.1 or newer``
+   despite having it installed, try using the following configuration flag:
+
+   .. code-block:: bash
+
+      ./configure --with-openssl-rpath=auto
+
+.. note::
    You might need to run ``make clean`` before or after re-running ``configure``
    in a particular build directory.
 
