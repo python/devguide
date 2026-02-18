@@ -11,8 +11,8 @@ branches <devcycle>`, Python has a set of dedicated machines (called *buildbots*
 or *build workers*) used for continuous integration.  They span a number of
 hardware/operating system combinations.  Furthermore, each machine hosts
 several *builders*, one per active branch: when a new change is pushed
-to this branch on the public `GitHub repository <https://github.com/python/cpython>`__, all corresponding builders
-will schedule a new build to be run as soon as possible.
+to this branch on the public `GitHub repository <https://github.com/python/cpython>`__,
+all corresponding builders will schedule a new build to be run as soon as possible.
 
 The build steps run by the buildbots are the following:
 
@@ -21,10 +21,11 @@ The build steps run by the buildbots are the following:
 * Run the test suite using :ref:`strenuous settings <strenuous_testing>`
 * Clean up the build tree
 
-It is your responsibility, as a core developer, to check the automatic
-build results after you push a change to the repository.  It is therefore
-important that you get acquainted with the way these results are presented,
+It is the responsibility of core team members to check the automatic
+build results after they push a change to the repository.  It is therefore
+important that they are acquainted with the way these results are presented,
 and how various kinds of failures can be explained and diagnosed.
+
 
 In case of trouble
 ==================
@@ -35,6 +36,7 @@ need assistance with the buildbots, a good way to get help is to either:
 * contact the ``python-buildbots@python.org`` mailing list where all buildbot
   worker owners are subscribed; or
 * contact the release manager of the branch you have issues with.
+
 
 Buildbot failures on pull requests
 ==================================
@@ -47,6 +49,7 @@ Not all failures will generate a notification since not all builds are executed
 after each commit. In particular, reference leaks builds take several hours to
 complete so they are done periodically. This is why it's important for you to
 be able to check the results yourself, too.
+
 
 Triggering on pull requests
 ===========================
@@ -83,38 +86,30 @@ The ``!buildbot`` comment will also only run buildbots on the most recent
 commit. To trigger the buildbots again on a later commit, you will have to
 repeat the comment.
 
+
 Checking results of automatic builds
 ====================================
 
-There are three ways of visualizing recent build results:
+The Web interface at https://buildbot.python.org/#/ has several ways of
+visualizing recent build results:
 
-* The Web interface for each branch at https://www.python.org/dev/buildbot/,
-  where the so-called "waterfall" view presents a vertical rundown of recent
-  builds for each builder.  When interested in one build, you'll have to
-  click on it to know which commits it corresponds to.  Note that
-  the buildbot web pages are often slow to load, be patient.
+* A `Waterfall View <https://buildbot.python.org/#/waterfall>`_
+  that presents a vertical rundown of recent builds for each builder.
+  When interested in one build, you'll have to
+  click on it to know which commits it corresponds to.
 
-* The command-line ``bbreport.py`` client, which you can get from
-  https://code.google.com/archive/p/bbreport. Installing it is trivial: just add
-  the directory containing ``bbreport.py`` to your system path so that
-  you can run it from any filesystem location.  For example, if you want
-  to display the latest build results on the development ("main") branch,
-  type::
-
-      bbreport.py -q 3.x
-
-* The buildbot "console" interface at https://buildbot.python.org/all/
-  This works best on a wide, high resolution
+* A `Console View <https://buildbot.python.org/#/console>`_,
+  this works best on a wide, high resolution
   monitor.  Clicking on the colored circles will allow you to open a new page
   containing whatever information about that particular build is of interest to
   you.  You can also access builder information by clicking on the builder
   status bubbles in the top line.
 
-If you like IRC, having an IRC client open to the #python-dev-notifs channel on
-irc.libera.chat is useful.  Any time a builder changes state (last build
-passed and this one didn't, or vice versa), a message is posted to the channel.
-Keeping an eye on the channel after pushing a commits is a simple way to get
-notified that there is something you should look in to.
+* A `Release Status Dashboard <https://buildbot.python.org/#/release_status>`_
+  that shows the status of stable buildbots for each active branch,
+  summarizing whether the builds are ready for release.
+
+Note that the buildbot web pages are often slow to load, be patient.
 
 Some buildbots are much faster than others.  Over time, you will learn which
 ones produce the quickest results after a build, and which ones take the
@@ -124,19 +119,23 @@ Also, when several commits are pushed in a quick succession in the same
 branch, it often happens that a single build is scheduled for all these
 commits.
 
+
 Stability
 =========
 
-A subset of the buildbots are marked "stable".  They are taken into account
-when making a new release.  The rule is that all stable builders must be free of
+A subset of the buildbots are marked as
+`"stable" <https://buildbot.python.org/#/builders?tags=%2Bstable>`_.
+They are taken into account when making a new release.
+The rule is that all stable builders must be free of
 persistent failures when the release is cut.  It is absolutely **vital**
-that core developers fix any issue they introduce on the stable buildbots,
+that core team members fix any issue they introduce on the stable buildbots,
 as soon as possible.
 
 This does not mean that other builders' test results can be taken lightly,
 either.  Some of them are known for having platform-specific issues that
 prevent some tests from succeeding (or even terminating at all), but
 introducing additional failures should generally not be an option.
+
 
 Flags-dependent failures
 ========================
@@ -148,11 +147,12 @@ or to Python itself.  To reproduce, make sure you use the same flags as the
 buildbots: they can be found out simply by clicking the **stdio** link for
 the failing build's tests.  For example::
 
-   ./python.exe -Wd -E -bb  ./Lib/test/regrtest.py -uall -rwW
+   ./python.exe -W error -E -bb  ./Lib/test/regrtest.py -uall -rwW
 
 .. note::
    Running ``Lib/test/regrtest.py`` is exactly equivalent to running
    ``-m test``.
+
 
 Ordering-dependent failures
 ===========================
@@ -170,31 +170,37 @@ run, and check the beginning of the test output proper.
 Let's assume, for the sake of example, that the output starts with:
 
 .. code-block:: none
-   :emphasize-lines: 6
+   :emphasize-lines: 9
 
-   ./python -Wd -E -bb Lib/test/regrtest.py -uall -rwW
-   == CPython 3.3a0 (default:22ae2b002865, Mar 30 2011, 13:58:40) [GCC 4.4.5]
-   ==   Linux-2.6.36-gentoo-r5-x86_64-AMD_Athlon-tm-_64_X2_Dual_Core_Processor_4400+-with-gentoo-1.12.14 little-endian
-   ==   /home/buildbot/buildarea/3.x.ochtman-gentoo-amd64/build/build/test_python_29628
-   Testing with flags: sys.flags(debug=0, inspect=0, interactive=0, optimize=0, dont_write_bytecode=0, no_user_site=0, no_site=0, ignore_environment=1, verbose=0, bytes_warning=2, quiet=0)
-   Using random seed 2613169
-   [  1/353] test_augassign
-   [  2/353] test_functools
+   ./python -u -W error -bb -E -m test --slow-ci --timeout=2400 -j2 -u-cpu,-urlfetch,-network --junit-xml test-results.xml -j4 --dont-add-python-opts
+   == CPython 3.15.0a6+ (heads/main:d625f7da33b, Feb 13 2026, 17:27:29) [GCC 12.2.0]
+   == Linux-6.12.20+rpt-rpi-v8-aarch64-with-glibc2.36 little-endian
+   == Python build: release
+   == cwd: /home/stan/buildarea/3.x.stan-raspbian.nondebug/build/build/test_python_worker_181905Ã¦
+   == CPU count: 4
+   == encodings: locale=ISO-8859-1 FS=utf-8
+   == resources: all,-cpu,-network,-urlfetch
+   Using random seed: 1000348774
+   0:00:00 load avg: 3.34 Run 500 tests in parallel using 4 worker processes (timeout: 40 min, worker timeout: 45 min)
+   0:00:01 load avg: 3.34 [  1/500] test_colorsys passed
+   0:00:01 load avg: 3.34 [  2/500] test_float passed
 
 You can reproduce the exact same order using::
 
-   ./python -Wd -E -bb -m test -uall -rwW --randseed 2613169
+   ./python -W error -E -bb -m test -uall -rwW --randseed 1000348774
 
 It will run the following sequence (trimmed for brevity):
 
 .. code-block:: none
 
-   [  1/353] test_augassign
-   [  2/353] test_functools
-   [  3/353] test_bool
-   [  4/353] test_contains
-   [  5/353] test_compileall
-   [  6/353] test_unicode
+   [  1/500] test_colorsys
+   [  2/500] test_float
+   [  3/500] test.test_io.test_memoryio
+   [  4/500] test_profile
+   [  5/500] test_picklebuffer
+   [  6/500] test_zipimport
+   [  7/500] test_devpoll
+   ...
 
 If this is enough to reproduce the failure on your setup, you can then
 bisect the test sequence to look for the specific interference causing the
@@ -202,26 +208,26 @@ failure.  Copy and paste the test sequence in a text file, then use the
 ``--fromfile`` (or ``-f``) option of the test runner to run the exact
 sequence recorded in that text file::
 
-   ./python -Wd -E -bb -m test -uall -rwW --fromfile mytestsequence.txt
+   ./python -W error -E -bb -m test -uall -rwW --fromfile mytestsequence.txt
 
-In the example sequence above, if ``test_unicode`` had failed, you would
+In the example sequence above, if ``test_zipimport`` had failed, you would
 first test the following sequence:
 
 .. code-block:: none
 
-   [  1/353] test_augassign
-   [  2/353] test_functools
-   [  3/353] test_bool
-   [  6/353] test_unicode
+   [  1/500] test_colorsys
+   [  2/500] test_float
+   [  3/500] test.test_io.test_memoryio
+   [  6/500] test_zipimport
 
 And, if it succeeds, the following one instead (which, hopefully, shall
 fail):
 
 .. code-block:: none
 
-   [  4/353] test_contains
-   [  5/353] test_compileall
-   [  6/353] test_unicode
+   [  4/500] test_profile
+   [  5/500] test_picklebuffer
+   [  6/500] test_zipimport
 
 Then, recursively, narrow down the search until you get a single pair of
 tests which triggers the failure.  It is very rare that such an interference
@@ -243,7 +249,7 @@ not reach a perfect level of reproducibility.  Some of them will sometimes
 display spurious failures, depending on various conditions.  Here are common
 offenders:
 
-* Network-related tests, such as ``test_poplib``, ``test_urllibnet``, etc.
+* Network-related tests, such as ``test_poplib``, ``test_urllibnet``, and so on.
   Their failures can stem from adverse network conditions, or imperfect
   thread synchronization in the test code, which often has to run a
   server in a separate thread.
