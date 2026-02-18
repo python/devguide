@@ -282,7 +282,7 @@ for “their” platform as a third-party project.
 ===================   ===========
 Platform              Maintainers
 ===================   ===========
-AIX                   edelsohn, ayappanec
+AIX                   ayappanec
 Android               mhsmith
 Cygwin                jlt63^, stutzbach^
 Emscripten            hoodmane, pmp-p, rdb, rth, ryanking13
