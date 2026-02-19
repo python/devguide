@@ -15,16 +15,53 @@ Python Developer's Guide
 .. highlight:: bash
 
 This guide is a comprehensive resource for :ref:`contributing <contributing>`
-to Python_ -- for both new and experienced contributors. It is
+to various areas of Python_ -- for both new and experienced contributors. It is
 :ref:`maintained <devguide>` by the same
-community that maintains Python.  We welcome your contributions to Python!
+community that maintains Python.  We welcome your contributions!
+
+
+.. _contributing:
+
+Contributing
+------------
+
+We encourage everyone to contribute to Python and that's why we have put up this
+developer's guide.  If you still have questions after reviewing the material in
+this guide, then the `Core Python Mentorship`_ group is available to help guide new
+contributors through the process.
+
+Guide for contributing to Python:
+
+======================== ===================
+Code                     Documentation
+======================== ===================
+:ref:`setup`             :ref:`docquality`
+:ref:`help`              :ref:`documenting`
+:ref:`pullrequest`       :ref:`style-guide`
+:ref:`runtests`          :ref:`rst-primer`
+:ref:`fixingissues`      :ref:`translating`
+:ref:`communication`     :ref:`devguide`
+:ref:`gitbootcamp`
+:ref:`devcycle`
+======================== ===================
+
+We **recommend** that the documents in this guide be read as needed. You
+can stop where you feel comfortable and begin contributing immediately without
+reading and understanding these documents all at once.  If you do choose to skip
+around within the documentation, be aware that it is written assuming preceding
+documentation has been read so you may find it necessary to backtrack to fill in
+missing concepts and terminology.
+
+A number of individuals from the Python community have contributed to a series
+of excellent guides at `Open Source Guides <https://opensource.guide/>`__.
+
 
 .. _quick-reference:
 
-Quick reference
----------------
+CPython contribution quick reference
+------------------------------------
 
-Here are the basic steps needed to get set up and contribute a pull request.
+Here are the basic steps needed to get set up and open a pull request.
 This is meant as a checklist, once you know the basics. For complete
 instructions please see the :ref:`setup guide <setup>`.
 
@@ -76,9 +113,10 @@ instructions please see the :ref:`setup guide <setup>`.
 
          ./python.exe -m test -j8
 
-      Note: :ref:`Most <mac-python.exe>` macOS systems use
-      :file:`./python.exe` in order to avoid filename conflicts with
-      the ``Python`` directory.
+      .. note::
+         :ref:`Most <mac-python.exe>` macOS systems use
+         :file:`./python.exe` in order to avoid filename conflicts with
+         the ``Python`` directory.
 
    .. tab:: Windows
 
@@ -91,40 +129,27 @@ instructions please see the :ref:`setup guide <setup>`.
       git checkout -b fix-issue-12345 main
 
    If an issue does not already exist, please `create it
-   <https://github.com/python/cpython/issues>`__.  Trivial issues (for example, typo fixes) do
-   not require any issue to be created.
+   <https://github.com/python/cpython/issues>`__.  Trivial issues (for example, typos) do
+   not require an issue.
 
-6. Once you fixed the issue, run the tests, and the patchcheck:
+6. Once you fix the issue, run the tests and `pre-commit <https://pre-commit.com/>`__:
 
-   .. tab:: Unix
+   .. code-block:: shell
 
-      .. code-block:: shell
+      pre-commit install
+      pre-commit run
 
-         make patchcheck
-
-   .. tab:: macOS
-
-      .. code-block:: shell
-
-         make patchcheck
-
-   .. tab:: Windows
-
-      .. code-block:: dosbatch
-
-         .\python.bat Tools\patchcheck\patchcheck.py
-
-   If everything is ok, commit.
+   See :ref:`install-pre-commit` for more details. If everything is ok, commit.
 
 7. Push the branch on your fork on GitHub and :ref:`create a pull request
-   <pullrequest>`.  Include the issue number using ``gh-NNNN`` in the
-   pull request description.  For example:
+   <pullrequest>`.  Include the issue number using ``gh-NNNNNN`` in the
+   pull request title.  For example:
 
    .. code-block:: text
 
       gh-12345: Fix some bug in spam module
 
-8. Add a News entry into the ``Misc/NEWS.d`` directory as individual file. The
+8. Add a News entry into the ``Misc/NEWS.d/`` directory as individual file. The
    news entry can be created by using `blurb-it <https://blurb-it.herokuapp.com/>`__,
    or the :pypi:`blurb` tool and its ``blurb add``
    command. Please read more about ``blurb`` in its
@@ -135,58 +160,6 @@ instructions please see the :ref:`setup guide <setup>`.
    First time contributors will need to sign the Contributor Licensing
    Agreement (CLA) as described in the :ref:`Licensing <cla>` section of
    this guide.
-
-Quick links
------------
-
-Here are some links that you probably will reference frequently while
-contributing to Python:
-
-* `Issue tracker`_
-* `Buildbot status`_
-* :ref:`help`
-* PEPs_ (Python Enhancement Proposals)
-* :ref:`gitbootcamp`
-
-.. _contributing:
-
-Contributing
-------------
-
-We encourage everyone to contribute to Python and that's why we have put up this
-developer's guide.  If you still have questions after reviewing the material in
-this guide, then the `Core Python Mentorship`_ group is available to help guide new
-contributors through the process.
-
-A number of individuals from the Python community have contributed to a series
-of excellent guides at `Open Source Guides <https://opensource.guide/>`__.
-
-Core developers and contributors alike will find the following guides useful:
-
-* `How to Contribute to Open Source <https://opensource.guide/how-to-contribute/>`__
-* `Building Welcoming Communities <https://opensource.guide/building-community/>`__
-
-Guide for contributing to Python:
-
-======================== =================== ======================= =======================
-Contributors             Documentarians      Triagers                Core team
-======================== =================== ======================= =======================
-:ref:`setup`             :ref:`docquality`   :ref:`tracker`          :ref:`responsibilities`
-:ref:`help`              :ref:`documenting`  :ref:`triaging`         :ref:`developers`
-:ref:`pullrequest`       :ref:`style-guide`  :ref:`helptriage`       :ref:`committing`
-:ref:`runtests`          :ref:`rst-primer`   :ref:`experts`          :ref:`devcycle`
-:ref:`fixingissues`      :ref:`translating`  :ref:`labels`           :ref:`motivations`
-:ref:`communication`     :ref:`devguide`     :ref:`gh-faq`           :ref:`experts`
-:ref:`gitbootcamp`                           :ref:`triage-team`
-:ref:`devcycle`
-======================== =================== ======================= =======================
-
-We **recommend** that the documents in this guide be read as needed. You
-can stop where you feel comfortable and begin contributing immediately without
-reading and understanding these documents all at once.  If you do choose to skip
-around within the documentation, be aware that it is written assuming preceding
-documentation has been read so you may find it necessary to backtrack to fill in
-missing concepts and terminology.
 
 
 Proposing changes to Python itself
@@ -204,6 +177,80 @@ happen and that process is also described as part of this guide:
 
 * :ref:`stdlibchanges`
 * :ref:`langchanges`
+
+
+Key resources
+-------------
+
+* Coding style guides
+
+  * :PEP:`7` (Style Guide for C Code)
+  * :PEP:`8` (Style Guide for Python Code)
+
+* `Issue tracker`_
+
+  * :ref:`experts`
+
+* `Buildbot status`_
+* Source code
+
+  * `Browse online <https://github.com/python/cpython/>`__
+  * `Download a snapshot of the 'main' branch <https://github.com/python/cpython/archive/main.zip>`__
+
+* :pep:`PEPs <0>` (Python Enhancement Proposals)
+* :ref:`help`
+* :ref:`developers`
+* :ref:`gitbootcamp`
+
+
+.. _resources:
+
+Additional resources
+--------------------
+
+* Anyone can clone the sources for this guide.  See :ref:`devguide`.
+* Help with ...
+
+  * :ref:`internals`
+  * :ref:`grammar`
+
+* Tool support:
+
+  * :ref:`gdb`
+  * :ref:`clang`
+  * Various tools with configuration files as found in the
+    :cpy-file:`Misc/` directory
+
+* `python.org maintenance`_
+
+
+Code of conduct
+---------------
+Please note that all interactions on
+`Python Software Foundation <https://www.python.org/psf-landing/>`__-supported
+infrastructure is `covered
+<https://www.python.org/psf/records/board/minutes/2014-01-06/#management-of-the-psfs-web-properties>`__
+by the `PSF Code of Conduct <https://policies.python.org/python.org/code-of-conduct/>`__,
+which includes all infrastructure used in the development of Python itself
+(for example, Discourse, issue trackers, GitHub, and so on).
+In general this means everyone is expected to be open, considerate, and
+respectful of others no matter what their position is within the project.
+
+
+.. toctree::
+   :hidden:
+   :maxdepth: 3
+
+   getting-started/index
+   developer-workflow/index
+   triage/index
+   documentation/index
+   testing/index
+   development-tools/index
+   core-team/index
+   internals
+   versions
+   contrib/index
 
 
 Other interpreter implementations
@@ -226,9 +273,6 @@ developers to work on them.  Some major examples that may be of interest are:
   Virtual Machine (JVM) environment.
 * IronPython_: A Python interpreter focused on good integration with the
   Common Language Runtime (CLR) provided by .NET and Mono.
-* Stackless_: A Python interpreter focused on providing lightweight
-  microthreads while remaining largely compatible with CPython specific
-  extension modules.
 * MicroPython_: A tiny Python interpreter with small subset of the Python
   standard library that is optimised to run on microcontrollers and in
   constrained environments.
@@ -236,91 +280,7 @@ developers to work on them.  Some major examples that may be of interest are:
   and learning to code on low-cost microcontroller boards.
 
 
-Key resources
--------------
-
-* Coding style guides
-
-  * :PEP:`7` (Style Guide for C Code)
-  * :PEP:`8` (Style Guide for Python Code)
-
-* `Issue tracker`_
-
-  * :ref:`experts`
-
-* `Buildbot status`_
-* Source code
-
-  * `Browse online <https://github.com/python/cpython/>`__
-  * `Snapshot of the *main* branch <https://github.com/python/cpython/archive/main.zip>`__
-
-* PEPs_ (Python Enhancement Proposals)
-* :ref:`help`
-* :ref:`developers`
-
-
-.. _resources:
-
-Additional resources
---------------------
-
-* Anyone can clone the sources for this guide.  See :ref:`devguide`.
-* Help with ...
-
-  * :ref:`internals`
-  * :ref:`grammar`
-
-* Tool support
-
-  * :ref:`gdb`
-  * :ref:`clang`
-  * Various tools with configuration files as found in the `Misc directory`_
-  * Information about editors and their configurations can be found in the
-    `wiki <https://wiki.python.org/moin/PythonEditors>`__
-
-* `python.org maintenance`_
-* :ref:`Search this guide <search>`
-
-
-Code of conduct
----------------
-Please note that all interactions on
-`Python Software Foundation <https://www.python.org/psf-landing/>`__-supported
-infrastructure is `covered
-<https://www.python.org/psf/records/board/minutes/2014-01-06/#management-of-the-psfs-web-properties>`__
-by the `PSF Code of Conduct <https://policies.python.org/python.org/code-of-conduct/>`__,
-which includes all infrastructure used in the development of Python itself
-(for example, mailing lists, issue trackers, GitHub, etc.).
-In general this means everyone is expected to be open, considerate, and
-respectful of others no matter what their position is within the project.
-
-Status of Python branches
--------------------------
-
-Moved to :ref:`versions`
-
-.. _contents:
-
-Full table of contents
-----------------------
-
-.. toctree::
-   :maxdepth: 3
-
-   getting-started/index
-   developer-workflow/index
-   triage/index
-   documentation/index
-   testing/index
-   development-tools/index
-   core-team/index
-   internals
-   versions
-   contrib/index
-
-.. _Buildbot status: https://www.python.org/dev/buildbot/
-.. _Misc directory: https://github.com/python/cpython/tree/main/Misc
-.. _PEPs: https://peps.python.org/
+.. _Buildbot status: https://buildbot.python.org/#/
 .. _python.org maintenance: https://pythondotorg.readthedocs.io/
 .. _Python: https://www.python.org/
 .. _Core Python Mentorship: https://www.python.org/dev/core-mentorship/
@@ -328,7 +288,6 @@ Full table of contents
 .. _GraalPy: https://www.graalvm.org/python/
 .. _Jython: https://www.jython.org/
 .. _IronPython: https://ironpython.net/
-.. _Stackless: https://github.com/stackless-dev/stackless/wiki/
 .. _MicroPython: https://micropython.org/
 .. _CircuitPython: https://circuitpython.org/
 .. _Issue tracker: https://github.com/python/cpython/issues
