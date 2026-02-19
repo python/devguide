@@ -395,9 +395,8 @@ If following these guidelines would hurt performance, add a fast function
 API.
 
 If anything is unclear, or you have a good reason to break the guidelines,
-consider discussing the change at the `capi-sig`_ mailing list.
-
-.. _capi-sig: https://mail.python.org/mailman3/lists/capi-sig.python.org/
+consider discussing the change in the `C API category
+<https://discuss.python.org/c/core-dev/c-api/>`__ on Discourse.
 
 Adding a new definition to the Limited API
 ------------------------------------------
