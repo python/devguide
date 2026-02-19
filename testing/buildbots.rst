@@ -181,9 +181,9 @@ Let's assume, for the sake of example, that the output starts with:
    0:00:01 load avg: 3.34 [  1/500] test_colorsys passed
    0:00:01 load avg: 3.34 [  2/500] test_float passed
 
-You can reproduce the exact same order using::
+You can reproduce the exact same order by adding the ``--randseed 1000348774`` option::
 
-   ./python -W error -E -bb -m test -uall -rwW --randseed 1000348774
+   ./python -E  -m test --slow-ci --timeout=2400 -j2 -u-cpu,-urlfetch,-network --junit-xml test-results.xml -j4 --randseed 1000348774
 
 It will run the following sequence (trimmed for brevity):
 
@@ -204,7 +204,7 @@ failure.  Copy and paste the test sequence in a text file, then use the
 ``--fromfile`` (or ``-f``) option of the test runner to run the exact
 sequence recorded in that text file::
 
-   ./python -W error -E -bb -m test -uall -rwW --fromfile mytestsequence.txt
+   ./python -E  -m test --slow-ci --timeout=2400 -j2 -u-cpu,-urlfetch,-network --junit-xml test-results.xml -j4 --fromfile mytestsequence.txt
 
 In the example sequence above, if ``test_zipimport`` had failed, you would
 first test the following sequence:
