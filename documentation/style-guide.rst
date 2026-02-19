@@ -242,8 +242,8 @@ For new documentation, do not use a byline (naming the author of the document).
 Explicit attribution tends to discourage other users from updating community
 documentation.
 
-Existing documentation with bylines will not be changed unless the author
-decides to do so. This is subject to change in the future.
+Existing bylines are for historical interest only. They do not imply ownership
+or necessary approvals, and do not prevent edits or updates by others.
 
 
 Pronunciation of dunder names
