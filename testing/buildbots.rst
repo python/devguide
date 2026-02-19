@@ -14,7 +14,7 @@ several *builders*, one per active branch: when a new change is pushed
 to this branch on the public `GitHub repository <https://github.com/python/cpython>`__,
 all corresponding builders will schedule a new build to be run as soon as possible.
 
-The build steps run by the buildbots are the following:
+The build steps run by the buildbots are:
 
 * Check out the source tree for the change which triggered the build
 * Compile Python
@@ -41,7 +41,7 @@ need assistance with the buildbots, a good way to get help is to either:
 Buildbot failures on pull requests
 ==================================
 
-The ``bedevere-bot`` on GitHub will put a message on your merged Pull Request
+The Bedevere bot on GitHub will put a message on your merged pull request
 if building your commit on a stable buildbot worker fails. Take care to
 evaluate the failure, even if it looks unrelated at first glance.
 
@@ -66,7 +66,7 @@ buildbots again on a later commit, you'll have to remove the label and add it
 again.
 
 If you want to test a pull request against specific platforms, you can trigger
-one or more build bots by posting a comment that begins with:
+one or more buildbots by posting a comment that begins with:
 
 .. code-block:: none
 
@@ -78,7 +78,7 @@ For example to run both the iOS and Android build bot, you can use:
 
    !buildbot ios|android
 
-bedevere-bot will post a comment indicating which build bots, if
+Bedevere will post a comment indicating which buildbots, if
 any, were matched. If none were matched, or you do not have the
 necessary permissions to trigger a request, it will tell you that too.
 
@@ -94,15 +94,15 @@ The Web interface at https://buildbot.python.org/#/ has several ways of
 visualizing recent build results:
 
 * A `Release Status Dashboard <https://buildbot.python.org/#/release_status>`_
-  that shows the status of stable buildbots for each active branch,
+  that shows the status of buildbots for each active branch,
   summarizing whether the builds are ready for release.
 
-* A `Waterfall View <https://buildbot.python.org/#/waterfall>`_
+* A `waterfall view <https://buildbot.python.org/#/waterfall>`__
   that presents a vertical rundown of recent builds for each builder.
-  When interested in one build, you'll have to
-  click on it to know which commits it corresponds to.
+  When interested in one build, click on it for more detail such as logs and
+  which commits it corresponds to.
 
-* A `Console View <https://buildbot.python.org/#/console>`_,
+* A `console view <https://buildbot.python.org/#/console>`__,
   which works best on a wide, high resolution
   monitor.  Clicking on the colored circles will allow you to open a new page
   containing whatever information about that particular build is of interest to
@@ -124,7 +124,7 @@ Stability
 =========
 
 A subset of the buildbots are marked as
-`"stable" <https://buildbot.python.org/#/builders?tags=%2Bstable>`_.
+`"stable" <https://buildbot.python.org/#/builders?tags=%2Bstable>`__.
 They are taken into account when making a new release.
 The rule is that all stable builders must be free of
 persistent failures when the release is cut.  It is absolutely **vital**
