@@ -34,7 +34,7 @@ Please read this page in full. If your questions aren't answered here and you
 need assistance with the buildbots, a good way to get help is to either:
 
 * contact the `python-buildbots@python.org
-  <https://mail.python.org/archives/list/python-buildbots@python.org/>`_
+  <https://mail.python.org/archives/list/python-buildbots@python.org/>`__
   mailing list where all buildbot worker owners are subscribed; or
 * contact the release manager of the branch you have issues with.
 
