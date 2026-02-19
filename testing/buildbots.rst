@@ -99,7 +99,7 @@ visualizing recent build results:
   click on it to know which commits it corresponds to.
 
 * A `Console View <https://buildbot.python.org/#/console>`_,
-  this works best on a wide, high resolution
+  which works best on a wide, high resolution
   monitor.  Clicking on the colored circles will allow you to open a new page
   containing whatever information about that particular build is of interest to
   you.  You can also access builder information by clicking on the builder
@@ -128,8 +128,8 @@ A subset of the buildbots are marked as
 They are taken into account when making a new release.
 The rule is that all stable builders must be free of
 persistent failures when the release is cut.  It is absolutely **vital**
-that core team members fix any issue they introduce on the stable buildbots,
-as soon as possible.
+that core team members fix or revert any issue they introduce on the stable
+buildbots, as soon as possible.
 
 This does not mean that other builders' test results can be taken lightly,
 either.  Some of them are known for having platform-specific issues that
