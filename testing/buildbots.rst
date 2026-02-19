@@ -33,8 +33,9 @@ In case of trouble
 Please read this page in full. If your questions aren't answered here and you
 need assistance with the buildbots, a good way to get help is to either:
 
-* contact the ``python-buildbots@python.org`` mailing list where all buildbot
-  worker owners are subscribed; or
+* contact the `python-buildbots@python.org
+  <https://mail.python.org/archives/list/python-buildbots@python.org/>`_
+  mailing list where all buildbot worker owners are subscribed; or
 * contact the release manager of the branch you have issues with.
 
 
@@ -72,7 +73,7 @@ one or more buildbots by posting a comment that begins with:
 
    !buildbot regex-matching-target
 
-For example to run both the iOS and Android build bot, you can use:
+For example to run both the iOS and Android buildbots, you can use:
 
 .. code-block:: none
 
@@ -93,7 +94,7 @@ Checking results of automatic builds
 The Web interface at https://buildbot.python.org/#/ has several ways of
 visualizing recent build results:
 
-* A `Release Status Dashboard <https://buildbot.python.org/#/release_status>`_
+* A `release status dashboard <https://buildbot.python.org/#/release_status>`__
   that shows the status of buildbots for each active branch,
   summarizing whether the builds are ready for release.
 
@@ -126,10 +127,10 @@ Stability
 A subset of the buildbots are marked as
 `"stable" <https://buildbot.python.org/#/builders?tags=%2Bstable>`__.
 They are taken into account when making a new release.
-The rule is that all stable builders must be free of
-persistent failures when the release is cut.  It is absolutely **vital**
-that core team members fix or revert any issue they introduce on the stable
-buildbots, as soon as possible.
+The rule is that all tier 1 and 2 stable builders must be free of
+persistent failures when the release is cut (see :pep:`11` for more information).
+It is absolutely **vital** that core team members fix or revert any issue they
+introduce on the stable buildbots, as soon as possible.
 
 This does not mean that other builders' test results can be taken lightly,
 either.  Some of them are known for having platform-specific issues that
