@@ -66,8 +66,8 @@ https://mail.python.org/mailman3/. Some lists may also
 be mirrored at `GMANE <https://gmane.io/>`__ and can be read and posted to in various
 ways, including via web browsers, NNTP newsreaders, and RSS feed readers.
 
-.. _python-list: https://mail.python.org/mailman/listinfo/python-list
-.. _tutor: https://mail.python.org/mailman/listinfo/tutor
+.. _python-list: https://mail.python.org/mailman3/lists/python-list.python.org/
+.. _tutor: https://mail.python.org/mailman3/lists/tutor.python.org/
 .. _Stack Overflow: https://stackoverflow.com/
 .. _Libera.Chat: https://libera.chat/
 
