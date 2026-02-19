@@ -243,7 +243,7 @@ Explicit attribution tends to discourage other users from updating community
 documentation.
 
 Existing bylines are for historical interest only. They do not imply ownership
-or necessary approvals, and do not preclude edits or updates by others.
+or necessary approvals, and do not prevent edits or updates by others.
 
 
 Pronunciation of dunder names
