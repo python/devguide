@@ -51,7 +51,7 @@ Mailing lists
 
    .. _python-committers: https://mail.python.org/mailman3/lists/python-committers.python.org/
    .. _python-dev: https://mail.python.org/mailman3/lists/python-dev.python.org/
-   .. _python-ideas: https://mail.python.org/mailman3/lists/python-ideas.python.org
+   .. _python-ideas: https://mail.python.org/archives/list/python-ideas@python.org/
 
 General Python questions should go to `python-list`_ or `tutor`_
 or similar resources, such as `Stack Overflow`_ or the ``#python`` IRC channel
