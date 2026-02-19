@@ -62,8 +62,7 @@ issue tracker is the place to discuss and work on improvements to the CPython
 core development workflow.
 
 A complete list of Python mailing lists can be found at
-https://mail.python.org/mailman/listinfo (older lists, using Mailman2) or
-https://mail.python.org/mailman3/ (newer lists, using Mailman3). Some lists may also
+https://mail.python.org/mailman3/. Some lists may also
 be mirrored at `GMANE <https://gmane.io/>`__ and can be read and posted to in various
 ways, including via web browsers, NNTP newsreaders, and RSS feed readers.
 
