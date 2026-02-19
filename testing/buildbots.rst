@@ -93,6 +93,10 @@ Checking results of automatic builds
 The Web interface at https://buildbot.python.org/#/ has several ways of
 visualizing recent build results:
 
+* A `Release Status Dashboard <https://buildbot.python.org/#/release_status>`_
+  that shows the status of stable buildbots for each active branch,
+  summarizing whether the builds are ready for release.
+
 * A `Waterfall View <https://buildbot.python.org/#/waterfall>`_
   that presents a vertical rundown of recent builds for each builder.
   When interested in one build, you'll have to
@@ -104,10 +108,6 @@ visualizing recent build results:
   containing whatever information about that particular build is of interest to
   you.  You can also access builder information by clicking on the builder
   status bubbles in the top line.
-
-* A `Release Status Dashboard <https://buildbot.python.org/#/release_status>`_
-  that shows the status of stable buildbots for each active branch,
-  summarizing whether the builds are ready for release.
 
 Note that the buildbot web pages are often slow to load, be patient.
 
@@ -147,11 +147,7 @@ or to Python itself.  To reproduce, make sure you use the same flags as the
 buildbots: they can be found out simply by clicking the **stdio** link for
 the failing build's tests.  For example::
 
-   ./python.exe -W error -E -bb  ./Lib/test/regrtest.py -uall -rwW
-
-.. note::
-   Running ``Lib/test/regrtest.py`` is exactly equivalent to running
-   ``-m test``.
+   ./python -E  -m test --slow-ci --timeout=1200 -j2 --junit-xml test-results.xml -j10
 
 
 Ordering-dependent failures
@@ -172,7 +168,7 @@ Let's assume, for the sake of example, that the output starts with:
 .. code-block:: none
    :emphasize-lines: 9
 
-   ./python -u -W error -bb -E -m test --slow-ci --timeout=2400 -j2 -u-cpu,-urlfetch,-network --junit-xml test-results.xml -j4 --dont-add-python-opts
+   ./python -E  -m test --slow-ci --timeout=2400 -j2 -u-cpu,-urlfetch,-network --junit-xml test-results.xml -j4
    == CPython 3.15.0a6+ (heads/main:d625f7da33b, Feb 13 2026, 17:27:29) [GCC 12.2.0]
    == Linux-6.12.20+rpt-rpi-v8-aarch64-with-glibc2.36 little-endian
    == Python build: release
