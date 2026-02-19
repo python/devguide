@@ -237,22 +237,6 @@ In general this means everyone is expected to be open, considerate, and
 respectful of others no matter what their position is within the project.
 
 
-.. toctree::
-   :hidden:
-   :maxdepth: 3
-
-   getting-started/index
-   developer-workflow/index
-   triage/index
-   documentation/index
-   testing/index
-   development-tools/index
-   core-team/index
-   internals
-   versions
-   contrib/index
-
-
 Other interpreter implementations
 ---------------------------------
 
@@ -278,6 +262,22 @@ developers to work on them.  Some major examples that may be of interest are:
   constrained environments.
 * CircuitPython_: A fork of MicroPython designed to simplify experimenting
   and learning to code on low-cost microcontroller boards.
+
+
+.. toctree::
+   :hidden:
+   :maxdepth: 3
+
+   getting-started/index
+   developer-workflow/index
+   triage/index
+   documentation/index
+   testing/index
+   development-tools/index
+   core-team/index
+   internals
+   versions
+   contrib/index
 
 
 .. _Buildbot status: https://buildbot.python.org/#/
