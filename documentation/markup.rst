@@ -349,22 +349,6 @@ they are used in the Python documentation.
    <https://www.sphinx-doc.org/>`__.
 
 
-Meta-information markup
------------------------
-
-.. describe:: sectionauthor
-
-   Identifies the author of the current section.  The argument should include
-   the author's name such that it can be used for presentation (though it isn't)
-   and email address.  The domain name portion of the address should be lower
-   case.  Example::
-
-      .. sectionauthor:: Guido van Rossum <guido@python.org>
-
-   Currently, this markup isn't reflected in the output in any way, but it helps
-   keep track of contributions.
-
-
 Module-specific markup
 ----------------------
 
@@ -379,11 +363,6 @@ file might start like this::
    .. module:: parrot
       :platform: Unix, Windows
       :synopsis: Analyze and reanimate dead parrots.
-   .. moduleauthor:: Eric Cleese <eric@python.invalid>
-   .. moduleauthor:: John Idle <john@python.invalid>
-
-As you can see, the module-specific markup consists of two directives, the
-``module`` directive and the ``moduleauthor`` directive.
 
 .. describe:: module
 
@@ -402,12 +381,6 @@ As you can see, the module-specific markup consists of two directives, the
 
    The ``deprecated`` option can be given (with no value) to mark a module as
    deprecated; it will be designated as such in various locations then.
-
-.. describe:: moduleauthor
-
-   The ``moduleauthor`` directive, which can appear multiple times, names the
-   authors of the module code, just like ``sectionauthor`` names the author(s)
-   of a piece of documentation.  It too does not result in any output currently.
 
 .. note::
 
