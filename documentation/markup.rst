@@ -363,11 +363,6 @@ file might start like this::
    .. module:: parrot
       :platform: Unix, Windows
       :synopsis: Analyze and reanimate dead parrots.
-   .. moduleauthor:: Eric Cleese <eric@python.invalid>
-   .. moduleauthor:: John Idle <john@python.invalid>
-
-As you can see, the module-specific markup consists of two directives, the
-``module`` directive and the ``moduleauthor`` directive.
 
 .. describe:: module
 
