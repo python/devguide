@@ -1050,6 +1050,17 @@ Paragraph-level markup
 These directives create short paragraphs and can be used inside information
 units as well as normal text:
 
+.. describe:: availability
+
+   This directive documents the platforms on which a module or feature
+   is available. For example::
+
+      .. availability:: Unix, not WASI, not Android.
+
+   ::
+
+      .. availability:: Linux >= 3.0 with glibc >= 2.14.
+
 .. describe:: note
 
    An especially important bit of information about an API that a user should be
