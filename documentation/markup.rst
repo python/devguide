@@ -373,11 +373,10 @@ module being documented.  Each module should be documented in its own file.
 Normally this markup appears after the title heading of that file; a typical
 file might start like this::
 
-   :mod:`parrot` -- Dead parrot access
-   ===================================
+   :mod:`!parrot` -- Dead parrot access
+   ====================================
 
    .. module:: parrot
-      :platform: Unix, Windows
       :synopsis: Analyze and reanimate dead parrots.
    .. moduleauthor:: Eric Cleese <eric@python.invalid>
    .. moduleauthor:: John Idle <john@python.invalid>
@@ -390,12 +389,6 @@ As you can see, the module-specific markup consists of two directives, the
    This directive marks the beginning of the description of a module, package,
    or submodule. The name should be fully qualified (that is, including the
    package name for submodules).
-
-   The ``platform`` option, if present, is a comma-separated list of the
-   platforms on which the module is available (if it is available on all
-   platforms, the option should be omitted).  The keys are short identifiers;
-   examples that are in use include "IRIX", "Mac", "Windows", and "Unix".  It is
-   important to use a key which has already been used when applicable.
 
    The ``synopsis`` option should consist of one sentence describing the
    module's purpose -- it is currently only used in the Global Module Index.
