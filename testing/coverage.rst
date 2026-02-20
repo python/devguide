@@ -4,13 +4,7 @@
 Increase test coverage
 ======================
 
-.. raw:: html
-
-    <script>
-    document.addEventListener('DOMContentLoaded', function() {
-      activateTab(getOS());
-    });
-    </script>
+.. include:: /include/activate-tab.rst
 
 Python development follows a practice that all semantic changes and additions
 to the language and :abbr:`stdlib (standard library)` are accompanied by
