@@ -38,7 +38,7 @@ While internal API can be changed at any time, it's still good to keep it
 stable: other API or other CPython developers may depend on it.
 For users, internal API is sometimes the best workaround for a thorny problem
 --- though those use cases should be discussed on the
-`C API Discourse category <https://discuss.python.org/c/30>`_
+`C API Discourse category <https://discuss.python.org/c/30>`__
 or an issue so we can try to find a supported way to serve them.
 
 
@@ -104,7 +104,7 @@ This helps us ensure *newly added* API is consistent and maintainable.
 
 Also check with the C API WG before requiring a C feature not present in C99.
 While the *public* docs only promise compatibility with C11, in practice
-we only intruduce C11 features individually as needed.
+we only introduce C11 features individually as needed.
 
 .. _decisions repo: https://github.com/capi-workgroup/decisions/issues
 
@@ -218,7 +218,7 @@ use this API reliably:
   (:samp:`3.{x}.0`, including Alphas and Betas for :samp:`3.{x}.0`).
 * Adding a new unstable API *for an existing feature* is allowed even after
   Beta feature freeze, up until the first Release Candidate.
-  Consensus on the `Core Development Discourse <https://discuss.python.org/c/core-dev/23>`_
+  Consensus on the `Core Development Discourse <https://discuss.python.org/c/core-dev/23>`__
   is needed in the Beta period.
 * Backwards-incompatible changes should make existing C callers fail to compile.
   For example, arguments should be added/removed, or a function should be
@@ -387,7 +387,7 @@ Guidelines for adding to the Limited API
     details involve:
 
     - The GIL
-    - :ref:`Garbage collection <gc>`
+    - Garbage collection
     - Memory layout of PyObject, lists/tuples and other structures
 
 If following these guidelines would hurt performance, add a fast function

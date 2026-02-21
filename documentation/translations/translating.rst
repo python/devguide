@@ -13,8 +13,8 @@ generally the ``README`` file, and this page.
 If your language isn’t listed below, feel free to start the translation!
 See :doc:`coordination <coordinating>` to get started.
 
-For more details about translations and their progress, see `the dashboard
-<https://python-docs-translations.github.io/dashboard/>`__.
+For more details about translations and their progress, see
+`translations.python.org <https://translations.python.org>`__.
 
 .. _translation-coordinators:
 
@@ -32,7 +32,7 @@ For more details about translations and their progress, see `the dashboard
      - :github:`GitHub <python/python-docs-bn-in>`
    * - `French (fr) <https://docs.python.org/fr/>`__
      - Julien Palard (:github-user:`JulienPalard`)
-     - `AFPy/python-docs-fr <https://git.afpy.org/AFPy/python-docs-fr/>`_,
+     - `AFPy/python-docs-fr <https://git.afpy.org/AFPy/python-docs-fr/>`__,
        :github:`mirror <python/python-docs-fr>`
    * - `Greek (el) <https://docs.python.org/el/>`__
      - | Lysandros Nikolaou (:github-user:`lysnikolaou`),
@@ -76,9 +76,6 @@ For more details about translations and their progress, see `the dashboard
      - :github:`GitHub <python/python-docs-pl>`,
        `Transifex <tx_>`_,
        `original announcement <https://mail.python.org/pipermail/doc-sig/2019-April/004106.html>`__
-   * - Portuguese (pt)
-     - Gustavo Toffo
-     -
    * - `Brazilian Portuguese (pt-br) <https://docs.python.org/pt-br/>`__
      - | Rafael Fontenelle (:github-user:`rffontenelle`),
        | Marco Rougeth (:github-user:`rougeth`)
@@ -125,9 +122,8 @@ If there is already a repository for your language team (there may be links to
 Telegrams/Discords in the ``README``), join and introduce
 yourself. Your fellow translators will be more than happy to help!
 General discussions about translations occur on the Python Docs Discord
-`#translations channel <https://discord.gg/h3qDwgyzga>`_, `translation
-mailing list <translation_ml_>`_, and the `translations category <discourse_>`_
-of the Python Discourse.
+`#translations channel <https://discord.gg/h3qDwgyzga>`__ and the
+`translations category <discourse_>`_ of the Python Discourse.
 
 .. _translation-style-guide:
 
@@ -209,7 +205,7 @@ Some general guidelines for deciding on a translation:
 Dialects
 --------
 
-Some translation receive contributions from people of several different dialects,
+Some translations receive contributions from people of several different dialects,
 understandably the language will differ. It is recommended however that
 translators try to keep files and sections consistent.
 
@@ -219,7 +215,7 @@ Code examples
 
 Translate values in code examples, that is string literals, and comments.
 Don't translate keywords or names, including variable, function, class, argument,
-and attribute names. An example of a translated codeblock from the `tutorial <https://docs.python.org/3/tutorial/controlflow.html#keyword-arguments>`_
+and attribute names. An example of a translated codeblock from the `tutorial <https://docs.python.org/3/tutorial/controlflow.html#keyword-arguments>`__
 is provided below:
 
 .. code-block:: python
@@ -234,6 +230,8 @@ is provided below:
            print(kw, ":", keywords[kw])
 
 
+.. _transifex-use:
+
 Transifex
 =========
 
@@ -241,7 +239,7 @@ Transifex
 
    There are many translations in the `python-doc organization on Transifex <tx_>`_,
    some of which, however, are not used or do not have a coordination team.
-   Confirm this is not the case before you begin translating.
+   Confirm that a coordination team exists before you begin translating.
 
 Several language projects use Transifex as their translation interface.
 Translations on Transifex are carried out via a web interface, similar to Weblate.
@@ -258,7 +256,10 @@ through the following resources from the Transifex documentation:
 - `Starting with the basics <https://help.transifex.com/en/collections/3441044-starting-with-the-basics>`__:
    A group of documents with basic information.
 
-For further information about Transifex see our `documentation <https://python-docs-transifex-automation.readthedocs.io/>`_.
+Within the organization, a project for translating the
+:github:`Python Docs Sphinx Theme <python/python-docs-theme>` can also be
+found.
+For further information about Transifex see our `documentation <https://python-docs-transifex-automation.readthedocs.io/>`__.
 
 
 Resources
@@ -269,15 +270,41 @@ Some useful resources:
 - :ref:`git-boot-camp`:
    Several translations accept contributions by pull requests. Most have their
    own guide for how to do this, but this can provide useful tips.
-- `Translation issues & improvements <https://github.com/orgs/python/projects/58>`_ GitHub project:
+- `Translation issues & improvements <https://github.com/orgs/python/projects/58>`__ GitHub project:
    This project contains issues and pull requests that aim to improve
-   the Python documenation for translations.
-- `Python Pootle archive <https://github.com/python/pootle-python-org-backup>`_:
+   the Python documentation for translations.
+- `Python Pootle archive <https://github.com/python/pootle-python-org-backup>`__:
    Pootle is no longer used for translation. Contains translations for old Python versions.
 
 
 Translation FAQ
 ===============
+
+.. _docs-build-translation:
+
+How do I build a docs translation?
+----------------------------------
+
+To build a documentation translation for a specific language,
+you need to have Python installed and a
+local copy of the :github:`CPython repository <python/cpython>` and
+translation repository (see table above). The PO files must be placed
+in a :samp:`locales/{LANG}/LC_MESSAGES/` (replacing :samp:`{LANG}` with the translation's
+language code) folder inside the :file:`Doc/` directory of the CPython repository.
+
+You can then build with :ref:`make <doc-build-make>` by adding
+a ``SPHINXOPTS="-D language=LANG"`` variable before the target
+or by using :ref:`Sphinx directly <doc-build-sphinx>` and adding a
+``-D language=LANG`` option. For example:
+
+.. code-block:: bash
+
+    # Build the HTML format of the Polish translation using make
+    make SPHINXOPTS="-D language=pl" html
+
+    # Build the HTML format of the Romanian translation using Sphinx directly
+    python -m sphinx -b html . build/html -D language=ro
+
 
 Which version of the Python documentation should I work on?
 -----------------------------------------------------------
@@ -287,14 +314,52 @@ be the latest non-alpha branch), the translations should then be propagated by
 your languages coordination team.
 
 
+.. _python-docs-theme-i18n:
+
+How do I translate the Python Docs Sphinx Theme?
+------------------------------------------------
+
+The Sphinx theme for the Python documentation supports localization.
+
+You can translate either on
+`Transifex <https://explore.transifex.com/python-doc/python-docs-theme/>`__
+(see :ref:`translating on Transifex <transifex-use>` for more information)
+or locally by following the steps outlined below.
+
+To translate locally, clone the :github:`Python Docs Sphinx Theme repository <python/python-docs-theme>` and run the following
+commands to generate the PO files. Replace ``LANG`` with the same language code
+that is used for the docs translation:
+
+.. code-block:: bash
+
+    python babel_runner.py extract
+    python babel_runner.py init -l LANG
+
+The file can then be found at:
+
+.. code-block:: text
+
+    python-docs-theme/locale/LANG/LC_MESSAGES/python-docs-theme.po
+
+After translating, submit your PO file via a pull request to the
+:github:`repository <python/python-docs-theme>`.
+See our :ref:`git-boot-camp` for more information about using Git.
+
+To update an existing translation after source changes, run:
+
+.. code-block:: bash
+
+    python babel_runner.py update  # To update source for all languages
+    python babel_runner.py update -l LANG  # To update source just for LANG
+
+
 The coordination team for my language is inactive, what do I do?
 ----------------------------------------------------------------
 
 If you would like to coordinate, open a pull request in the
-`devguide <https://github.com/python/devguide>`_ adding yourself to the table
+`devguide <https://github.com/python/devguide>`__ adding yourself to the table
 at the top of this page, and ping ``@python/editorial-board``.
 
 
-.. _translation_ml: https://mail.python.org/mailman3/lists/translation.python.org/
 .. _discourse: https://discuss.python.org/c/documentation/translations/
 .. _tx: https://explore.transifex.com/python-doc/python-newest/

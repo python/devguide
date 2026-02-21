@@ -59,11 +59,11 @@ to enter the public source tree. Ask yourself the following questions:
 
 * **Does the pull request pass a check indicating that the submitter has signed the CLA?**
    Make sure that the contributor has signed a `Contributor
-   Licensing Agreement <https://www.python.org/psf/contrib/contrib-form/>`_
+   Licensing Agreement <https://www.python.org/psf/contrib/contrib-form/>`__
    (CLA), unless their change has no possible intellectual property
    associated with it (for example, fixing a spelling mistake in documentation).
    The `Python Software Foundation Contributor License Agreement Management Bot
-   <https://github.com/psf/clabot>`_
+   <https://github.com/psf/clabot>`__
    checks whether the author has signed the CLA, and replies in the PR
    if they haven't. For further questions about the CLA
    process, write to contributors@python.org.

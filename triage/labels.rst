@@ -9,7 +9,7 @@ Triagers, core developers and bots can add labels on GitHub
 to categorize issues and pull requests.
 Many labels are shared for both use cases, while some are dedicated
 only to one. Below is a possibly inexhaustive list, but it should get
-you going. For a full list, see `here <https://github.com/python/cpython/issues/labels>`_.
+you going. For a full list, see `here <https://github.com/python/cpython/issues/labels>`__.
 
 
 .. _general-purpose-labels:
@@ -73,7 +73,7 @@ we don't have a dedicated Unix label.
 
 Use the :gh-label:`OS-unsupported` label for issues on platforms outside the
 support tiers defined in :pep:`11`. Applying this label adds the issue to
-`a GitHub project <https://github.com/orgs/python/projects/27/views/1>`_ where
+`a GitHub project <https://github.com/orgs/python/projects/27/views/1>`__ where
 it can be categorized further.
 See also the :ref:`Platform experts list <platform-experts>`.
 
@@ -92,7 +92,7 @@ they are encouraged to subscribe to them.  Depending on the label,
 this might also automatically add the issue to a GitHub project.
 
 You can see the `full list of topic labels on GitHub
-<https://github.com/python/cpython/labels?q=topic>`_.
+<https://github.com/python/cpython/labels?q=topic>`__.
 
 
 .. _Version labels:

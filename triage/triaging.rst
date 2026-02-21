@@ -92,7 +92,6 @@ you can help by making sure the pull request:
 * includes proper tests
 * includes proper documentation changes
 * includes a :ref:`NEWS entry <news-entry>` (if needed)
-* includes the author in ``Misc/ACKS``, either already or the pull request adds them
 * doesn't have conflicts with the ``main`` branch
 * :ref:`doesn't have failing CI checks <keeping-ci-green>`
 

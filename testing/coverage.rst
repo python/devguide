@@ -4,13 +4,7 @@
 Increase test coverage
 ======================
 
-.. raw:: html
-
-    <script>
-    document.addEventListener('DOMContentLoaded', function() {
-      activateTab(getOS());
-    });
-    </script>
+.. include:: /include/activate-tab.rst
 
 Python development follows a practice that all semantic changes and additions
 to the language and :abbr:`stdlib (standard library)` are accompanied by
@@ -127,7 +121,7 @@ to install coverage.
 
 You can now use python without the ./ for the rest of these instructions, as
 long as your venv is activated. For more info on venv see `Virtual Environment
-<https://docs.python.org/3/tutorial/venv.html>`_ documentation.
+<https://docs.python.org/3/tutorial/venv.html>`__ documentation.
 
 If this does not work for you for some reason, you should try using the
 in-development version of coverage.py to see if it has been updated as needed.

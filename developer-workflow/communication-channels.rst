@@ -64,7 +64,7 @@ core development workflow.
 A complete list of Python mailing lists can be found at
 https://mail.python.org/mailman/listinfo (older lists, using Mailman2) or
 https://mail.python.org/mailman3/ (newer lists, using Mailman3). Some lists may also
-be mirrored at `GMANE <https://gmane.io/>`_ and can be read and posted to in various
+be mirrored at `GMANE <https://gmane.io/>`__ and can be read and posted to in various
 ways, including via web browsers, NNTP newsreaders, and RSS feed readers.
 
 .. _python-list: https://mail.python.org/mailman/listinfo/python-list
@@ -84,7 +84,7 @@ take place in the open forum categories for `PEPs`_ and `Core Development`_
 (these are the Discourse equivalents to the python-dev mailing list).
 All categories are open for users to read and post with the exception of
 the `Committers`_ category, where posting is restricted to the `CPython
-<https://github.com/python/cpython>`_ core team.
+<https://github.com/python/cpython>`__ core team.
 
 The Committers category is often used for announcements and notifications.
 It is also the designated venue for the core team promotion votes.
@@ -97,8 +97,8 @@ create an account using an email address or GitHub account. You can do so by
 clicking the :guilabel:`Sign Up` button on the top right hand corner of the
 `Discourse`_ main page.
 
-The Python Discourse `Quick Start <https://discuss.python.org/t/python-discourse-quick-start/116>`_
-compiled by `Carol Willing <https://discuss.python.org/u/willingc/>`_ gives you
+The Python Discourse `Quick Start <https://discuss.python.org/t/python-discourse-quick-start/116>`__
+compiled by `Carol Willing <https://discuss.python.org/u/willingc/>`__ gives you
 a quick overview on how to kick off Python Discourse.
 
 We recommend new users getting familiarised with the forum by going through Discobot tutorials.
@@ -114,13 +114,13 @@ Greetings!" received under Notifications and Messages in your user account.
 * Select either Notifications or Messages.
 * Open the "Greetings!" message sent by Discobot to start the tutorial.
 
-Ensure that you read through the `Python Code of Conduct <https://discuss.python.org/faq>`_.
+Ensure that you read through the `Python Code of Conduct <https://discuss.python.org/faq>`__.
 We are to be open, considerate and respectful to all users in the community.
 You can report messages that don't respect the CoC by clicking on the three
 dots under the message and then on the :guilabel:`⚐` icon.  You can also mention the
-`@staff <https://discuss.python.org/groups/staff>`_,
-`@moderators <https://discuss.python.org/groups/moderators>`_, or
-`@admins <https://discuss.python.org/groups/admins>`_ groups in a message.
+`@staff <https://discuss.python.org/groups/staff>`__,
+`@moderators <https://discuss.python.org/groups/moderators>`__, or
+`@admins <https://discuss.python.org/groups/admins>`__ groups in a message.
 
 
 
@@ -164,7 +164,7 @@ Customising notifications on user preference
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 To get a bird's eye view of all your customised notifications, you can
-go to `Preferences of your account <https://discuss.python.org/my/preferences/categories>`_.
+go to `Preferences of your account <https://discuss.python.org/my/preferences/categories>`__.
 This allows you to make adjustments according to categories, users, and tags.
 
 Enabling mailing list mode
@@ -174,7 +174,7 @@ In mailing list mode, you will receive one email per post, as happens with
 traditional mailing lists. This is desirable if you prefer to interact via email,
 without visiting the forum website.
 To activate the mailing list mode, go to the `email preferences
-<https://discuss.python.org/my/preferences/emails>`_, check "Enable
+<https://discuss.python.org/my/preferences/emails>`__, check "Enable
 mailing list mode" and save changes.
 
 .. _Discourse: https://discuss.python.org/
@@ -243,7 +243,7 @@ Setting expectations for open source participation
 ==================================================
 
 Burn-out is common in open source due to a misunderstanding of what users, contributors,
-and maintainers should expect from each other. Brett Cannon gave a `talk <https://www.youtube.com/watch?v=-Nk-8fSJM6I>`_
+and maintainers should expect from each other. Brett Cannon gave a `talk <https://www.youtube.com/watch?v=-Nk-8fSJM6I>`__
 about this topic that sets out to help everyone set reasonable expectations of each other in
 order to make open source pleasant for everyone involved.
 

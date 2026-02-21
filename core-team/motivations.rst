@@ -97,20 +97,20 @@ participating in the CPython core development process:
 
 .. topic:: Brett Cannon (Canada)
 
-   * Personal site: `snarky.ca <https://snarky.ca/>`_
+   * Personal site: `snarky.ca <https://snarky.ca/>`__
    * Microsoft (Software Developer)
    * Python Software Foundation (Fellow)
 
 .. topic:: Alyssa Coghlan (Australia)
 
-   * Personal site: `Curious Efficiency <https://www.curiousefficiency.org/>`_
+   * Personal site: `Curious Efficiency <https://www.curiousefficiency.org/>`__
    * `Extended bio <https://www.curiousefficiency.org/pages/about>`__
    * Python Software Foundation (Fellow, Packaging Working Group)
-   * Element Labs/LM Studio (Python deployment engineer)
+   * Westpac (Principal Python Engineer)
 
    Alyssa began using Python as a testing and prototyping language while working
-   for Boeing Defence Australia. She now primarily uses it as the lead project
-   maintainer for the open source ``venvstacks`` Python deployment utility.
+   for Boeing Defence Australia, and now works for Westpac, supporting their
+   use of Python for a range of purposes.
 
    As a core team member, she is primarily interested in helping to ensure Python's
    continued suitability for educational, testing and data analysis use cases,
@@ -123,9 +123,9 @@ participating in the CPython core development process:
 .. topic:: Steve Dower (United States/Australia)
 
    * Microsoft (Software Developer)
-   * Personal site: `stevedower.id.au <https://stevedower.id.au/>`_
-   * Speaking: `stevedower.id.au/speaking <https://stevedower.id.au/speaking>`_
-   * Work blog: `devblogs.microsoft.com/python/ <https://devblogs.microsoft.com/python/>`_
+   * Personal site: `stevedower.id.au <https://stevedower.id.au/>`__
+   * Speaking: `stevedower.id.au/speaking <https://stevedower.id.au/speaking>`__
+   * Work blog: `devblogs.microsoft.com/python/ <https://devblogs.microsoft.com/python/>`__
    * Email address: steve.dower@python.org
 
    Steve started with Python while automating a test harness for medical
@@ -143,25 +143,25 @@ participating in the CPython core development process:
 
 .. topic:: Mariatta (Canada)
 
-   * Personal site: `mariatta.ca <https://mariatta.ca>`_
-   * Works as a `Software Engineer <https://www.linkedin.com/in/mariatta/>`_
+   * Personal site: `mariatta.ca <https://mariatta.ca>`__
+   * Works as a `Software Engineer <https://www.linkedin.com/in/mariatta/>`__
      in Vancouver, helps organize `Vancouver PyLadies
-     <https://www.meetup.com/PyLadies-Vancouver/>`_ meetup on the side, and
-     sometimes `speaks <https://mariatta.ca/posts/talks/>`_
+     <https://www.meetup.com/PyLadies-Vancouver/>`__ meetup on the side, and
+     sometimes `speaks <https://mariatta.ca/posts/talks/>`__
      at conferences.
    * Email address: mariatta@python.org
-   * `Sponsor Mariatta on GitHub <https://github.com/sponsors/Mariatta>`_
-   * `Patreon <https://www.patreon.com/Mariatta>`_
+   * `Sponsor Mariatta on GitHub <https://github.com/sponsors/Mariatta>`__
+   * `Patreon <https://www.patreon.com/Mariatta>`__
 
-   Support Mariatta by `becoming a sponsor <https://github.com/sponsors/Mariatta>`_,
-   sending her a `happiness packet <https://www.happinesspackets.io/send/>`_,
-   or `paypal <https://www.paypal.com/paypalme/mariatta>`_.
+   Support Mariatta by `becoming a sponsor <https://github.com/sponsors/Mariatta>`__,
+   sending her a `happiness packet <https://www.happinesspackets.io/send/>`__,
+   or `paypal <https://www.paypal.com/paypalme/mariatta>`__.
 
 .. topic:: R. David Murray (United States)
 
-   * Personal site: `bitdance.com <https://www.bitdance.com>`_
+   * Personal site: `bitdance.com <https://www.bitdance.com>`__
    * Available for `Python and Internet Services Consulting
-     and Python contract programming <https://www.murrayandwalker.com/>`_
+     and Python contract programming <https://www.murrayandwalker.com/>`__
 
    David has been involved in the Internet since the days when the old IBM
    BITNET and the ARPANet got cross connected, and in Python programming since
@@ -177,7 +177,7 @@ participating in the CPython core development process:
 
    David currently does both proprietary and open source development work,
    primarily in Python, through the company in which he is a partner, `Murray &
-   Walker, Inc <https://www.murrayandwalker.com>`_.  He has done contract work
+   Walker, Inc <https://www.murrayandwalker.com>`__.  He has done contract work
    focused specifically on CPython development both through the PSF (the
    kickstart of the email Unicode API development) and directly funded by
    interested corporations (additional development work on email funded by
@@ -187,7 +187,7 @@ participating in the CPython core development process:
 
 .. topic:: Antoine Pitrou (France)
 
-   * LinkedIn: `<https://www.linkedin.com/in/pitrou/>`_ (Senior Software Engineer)
+   * LinkedIn: `<https://www.linkedin.com/in/pitrou/>`__ (Senior Software Engineer)
    * QuantStack
    * Python Software Foundation (Fellow)
    * Email address: antoine@python.org
@@ -213,7 +213,7 @@ participating in the CPython core development process:
 
    Victor is paid by Red Hat to maintain Python upstream and downstream (RHEL,
    CentOS, Fedora & Software collections). See `Victor's contributions to
-   Python <https://vstinner.readthedocs.io/python_contrib.html>`_.
+   Python <https://vstinner.readthedocs.io/python_contrib.html>`__.
 
 .. topic:: Kushal Das (India)
 
@@ -224,21 +224,21 @@ participating in the CPython core development process:
 .. topic:: Barry Warsaw (United States)
 
    * NVIDIA, Principal System Software Engineer, Open Source Python Ecosystem
-   * Personal site: `barry.warsaw.us <https://barry.warsaw.us/>`_
-   * Blog: `We Fear Change <https://www.wefearchange.org/>`_
-   * `LinkedIn <https://www.linkedin.com/in/barry-warsaw/>`_
-   * `Bluesky <https://bsky.app/profile/pumpichank.bsky.social>`_
+   * Personal site: `barry.warsaw.us <https://barry.warsaw.us/>`__
+   * Blog: `We Fear Change <https://www.wefearchange.org/>`__
+   * `LinkedIn <https://www.linkedin.com/in/barry-warsaw/>`__
+   * `Bluesky <https://bsky.app/profile/pumpichank.bsky.social>`__
    * Email address: barry@python.org
    * Python Software Foundation (Fellow)
 
    Barry has been working in, with, and on Python since 1994.  He attended the
-   first Python workshop at `NIST <https://www.nist.gov/>`_ in Gaithersburg,
+   first Python workshop at `NIST <https://www.nist.gov/>`__ in Gaithersburg,
    MD in 1994, where he met Guido and several other early Python adopters.
    Barry subsequently worked with Guido for 8 years while at `CNRI
-   <http://cnri.reston.va.us/>`_.  Barry has served as Python's postmaster,
+   <http://cnri.reston.va.us/>`__.  Barry has served as Python's postmaster,
    webmaster, release manager, Language Summit co-chair, `Jython
-   <https://www.jython.org/>`_ project leader, `GNU Mailman
-   <https://www.list.org/>`_ project leader, and Python Steering Council
+   <https://www.jython.org/>`__ project leader, `GNU Mailman
+   <https://www.list.org/>`__ project leader, and Python Steering Council
    member in 2019, 2020, 2021, 2024, and 2025.
 
 .. topic:: Eric Snow (United States)
@@ -256,13 +256,13 @@ participating in the CPython core development process:
    developers on the project for 6 years.  After that he started the Python
    Tools for Visual Studio project focusing on providing advanced code completion
    and debugging features for Python.  Today he works on
-   `Cinder <https://github.com/facebookincubator/cinder/>`_ improving Python
+   `Cinder <https://github.com/facebookincubator/cinder/>`__ improving Python
    performance for Instagram.
 
 .. topic:: Carol Willing (United States)
 
    * Noteable (VP Engineering)
-   * Personal site: `Willing Consulting <https://www.willingconsulting.com/>`_
+   * Personal site: `Willing Consulting <https://www.willingconsulting.com/>`__
    * `Extended bio <https://www.willingconsulting.com/about/>`__
    * Project Jupyter (Software Council, Core Team for JupyterHub/Binder)
    * Python Software Foundation (Fellow)

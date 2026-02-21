@@ -24,12 +24,12 @@ Python is an open source project, with culture and techniques from the broader
 open source world.  You might find it helpful to read about open source in
 general.  A number of individuals from the Python community have contributed to
 a series of excellent guides at `Open Source Guides
-<https://opensource.guide/>`_.
+<https://opensource.guide/>`__.
 
 Anyone will find the following guides useful:
 
-* `How to Contribute to Open Source <https://opensource.guide/how-to-contribute/>`_
-* `Building Welcoming Communities <https://opensource.guide/building-community/>`_
+* `How to Contribute to Open Source <https://opensource.guide/how-to-contribute/>`__
+* `Building Welcoming Communities <https://opensource.guide/building-community/>`__
 
 
 Healthy collaboration

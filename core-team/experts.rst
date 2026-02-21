@@ -251,6 +251,7 @@ xmlrpc
 zipapp                pfmoore
 zipfile               alanmcintyre^, serhiy-storchaka, Yhg1s, gpshead
 zipimport             Yhg1s*
+zoneinfo              pganssle
 ====================  =============================================
 
 
@@ -281,7 +282,7 @@ for “their” platform as a third-party project.
 ===================   ===========
 Platform              Maintainers
 ===================   ===========
-AIX                   edelsohn, ayappanec
+AIX                   ayappanec
 Android               mhsmith
 Cygwin                jlt63^, stutzbach^
 Emscripten            hoodmane, pmp-p, rdb, rth, ryanking13
@@ -364,6 +365,6 @@ Documentation translations
 ==========================
 
 Translations are within the charter of
-`Editorial Board <https://python.github.io/editorial-board/>`_.
+`Editorial Board <https://python.github.io/editorial-board/>`__.
 For a list of translations and their coordinators, see
 :ref:`this table of translations <translation-coordinators>`.

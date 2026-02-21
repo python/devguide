@@ -73,7 +73,7 @@ boolean
   abbreviated name with appropriate markup (for example, ``:type:`bool```).
 
 C API
-  Python's `API <https://docs.python.org/3/c-api/>`_ used by C programmers
+  Python's `API <https://docs.python.org/3/c-api/>`__ used by C programmers
   to write extension modules. All caps and unhyphenated.
 
 CPU
@@ -116,13 +116,31 @@ Don't use Latin abbreviations like "e.g." or "i.e." where English words will do,
 such as "for example" or "that is."
 
 
+Charged terminology to avoid
+============================
+
+Avoid terminology that may be considered insensitive or exclusionary.
+
+.. list-table::
+   :header-rows: 1
+
+   * - Avoid
+     - Instead
+   * - whitelist
+     - allowlist
+   * - blacklist
+     - blocklist, denylist
+   * - master/slave
+     - main, parent/child, server/client, primary/secondary
+
+
 .. index:: diataxis
 .. _diataxis:
 
 Diátaxis
 ========
 
-Python's documentation strives to follow the `Diátaxis <https://diataxis.fr/>`_
+Python's documentation strives to follow the `Diátaxis <https://diataxis.fr/>`__
 framework. This means adapting the writing style according to the nature of
 the documentation that is being written. The framework splits
 documentation into four distinct types: tutorials, how-to guides, reference, and
@@ -135,7 +153,7 @@ explanation.
   and abstract concepts should be avoided. Please consult the Diátaxis guide on
   :ref:`diataxis:tutorials` for more detail.
 
-* `Python how-to guides <https://docs.python.org/3/howto/index.html>`_ are
+* `Python how-to guides <https://docs.python.org/3/howto/index.html>`__ are
   designed to guide a user through a problem-field.
   Both tutorials and how-to guides are instructional rather than explanatory
   and should provide logical steps on how to complete a task. However,
@@ -158,7 +176,7 @@ explanation.
   found throughout Python's documentation, for example the
   :ref:`python:unicode-howto`.
 
-Please consult the `Diátaxis <https://diataxis.fr/>`_ guide for more
+Please consult the `Diátaxis <https://diataxis.fr/>`__ guide for more
 detail.
 
 
@@ -224,8 +242,8 @@ For new documentation, do not use a byline (naming the author of the document).
 Explicit attribution tends to discourage other users from updating community
 documentation.
 
-Existing documentation with bylines will not be changed unless the author
-decides to do so. This is subject to change in the future.
+Existing bylines are for historical interest only. They do not imply ownership
+or necessary approvals, and do not prevent edits or updates by others.
 
 
 Pronunciation of dunder names

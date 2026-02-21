@@ -54,10 +54,13 @@ Here is a quick overview of how you can contribute to CPython:
 .. [*] If an issue is trivial (for example, typo fixes), or if an issue already exists,
        you can skip this step.
 
-.. note::
-   In order to keep the commit history intact, please avoid squashing or amending
-   history and then force-pushing to the PR. Reviewers often want to look at
-   individual commits.
+Don't force-push
+----------------
+
+In order to keep the commit history intact, please avoid squashing or amending
+history and then force-pushing to the PR. Reviewers often want to look at
+individual commits.
+When the PR is merged, everything will be squashed into a single commit.
 
 .. _Clear communication: https://opensource.guide/how-to-contribute/#how-to-submit-a-contribution
 .. _Open Source: https://opensource.guide/
@@ -180,7 +183,7 @@ resolved as follows:
 When running the final command, Git may open an editor for writing a commit
 message. It is usually okay to leave that as-is and close the editor.
 
-See `the merge command's documentation <https://git-scm.com/docs/git-merge>`_
+See `the merge command's documentation <https://git-scm.com/docs/git-merge>`__
 for a detailed technical explanation.
 
 
@@ -376,23 +379,16 @@ On *Windows* (after any successful build):
 
 The automated checklist runs through:
 
-* Are there any whitespace problems in Python files?
-  (using :cpy-file:`Tools/patchcheck/reindent.py`)
-* Are there any whitespace problems in C files?
-* Are there any whitespace problems in the documentation?
 * Has the documentation been updated?
 * Has the test suite been updated?
 * Has an entry under ``Misc/NEWS.d/next`` been added?
-  (using `blurb-it <https://blurb-it.herokuapp.com/>`_,
+  (using `blurb-it <https://blurb-it.herokuapp.com/>`__,
   or the :pypi:`blurb` tool)
-* Has ``Misc/ACKS`` been updated?
 * Has ``configure`` been regenerated, if necessary?
 * Has ``pyconfig.h.in`` been regenerated, if necessary?
 
-The automated checks don't actually *answer* all of these
-questions. Aside from the whitespace checks, the tool is
-a memory aid for the various elements that can go into
-making a complete pull request.
+This will help you remember things that you need
+to check before submitting a complete pull request.
 
 
 .. _good-commits:
@@ -431,7 +427,7 @@ instructions on how the commit message should look like when merging a pull
 request.
 
 .. note::
-   `How to Write a Git Commit Message <https://cbea.ms/git-commit/>`_
+   `How to Write a Git Commit Message <https://cbea.ms/git-commit/>`__
    is a nice article that describes how to write a good commit message.
 
 
@@ -467,6 +463,40 @@ Here are the steps needed in order to sign the CLA:
 .. _contributor form: https://www.python.org/psf/contrib/contrib-form/
 .. _Python Software Foundation: https://www.python.org/psf-landing/
 
+Why do I need to sign the CLA again?
+------------------------------------
+
+Sometimes the CLA bot asks you to sign the CLA for a backport PR,
+when you've already signed it for the original PR.
+This is because you need to sign the CLA for all the email addresses you commit
+with.
+
+This can happen when you've `configured your Git client
+<https://docs.github.com/en/account-and-profile/how-tos/email-preferences/setting-your-commit-email-address>`__
+with one email address, and signed the CLA with this, but have
+`configured your GitHub account <https://github.com/settings/emails>`__
+with another primary email
+(often this is the private ``id+username@users.noreply.github.com`` address).
+
+1. In the original PR, the CLA bot verifies all the emails in the commits have
+   signed the CLA.
+
+2. We then squash merge the PR, which creates a single new commit using the
+   author's primary email. This can be different from the one you originally
+   committed with.
+
+3. Backports often only have this new single commit.
+   The CLA bot then checks if the primary email has signed the CLA.
+
+4. The solution is to click the :guilabel:`CLA not signed -- click to sign`
+   button in the backport PR.
+
+.. tip:: Run ``git config user.email`` to see your Git client config,
+  and append ``.patch`` to a PR URL to see the emails used for its commits:
+
+  * https://github.com/python/cpython/pull/1
+  * https://github.com/python/cpython/pull/1.patch
+
 
 Submitting
 ==========
@@ -485,7 +515,7 @@ This will get your changes up to GitHub.
 
 Now you want to
 `create a pull request from your fork
-<https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-a-pull-request-from-a-fork>`_.
+<https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-a-pull-request-from-a-fork>`__.
 If this is a pull request in response to a pre-existing issue on the
 `issue tracker`_, please make sure to reference the issue number using
 ``gh-NNNNN:`` prefix in the pull request title and ``#NNNNN`` in the description.
@@ -520,7 +550,7 @@ existing patch. In this case, both parties should sign the :ref:`CLA <cla>`.
 When creating a pull request based on another person's patch, provide
 attribution to the original patch author by adding "Co-authored-by:
 Author Name <email_address> ." to the pull request description and commit message.
-See `the GitHub article <https://docs.github.com/en/pull-requests/committing-changes-to-your-project/creating-and-editing-commits/creating-a-commit-with-multiple-authors>`_
+See `the GitHub article <https://docs.github.com/en/pull-requests/committing-changes-to-your-project/creating-and-editing-commits/creating-a-commit-with-multiple-authors>`__
 on how to properly add the co-author info.
 
 See also :ref:`Applying a Patch to Git <git_from_patch>`.
@@ -646,7 +676,7 @@ affects other PRs.
 
 If you still don't see where the failure originates from, check for
 a "This branch is out-of-date with the base branch" sign next to the
-list of executed checks. Clicking "Update branch" next to this message
+list of executed checks. Clicking :guilabel:`Update branch` next to this message
 will merge in the latest changes from the base branch into the PR.
 
 If this still doesn't help with the failure on the PR, you can try
@@ -697,10 +727,8 @@ it is warranted.
 Crediting
 =========
 
-Non-trivial contributions are credited in the ``Misc/ACKS`` file (and, most
-often, in a contribution's news entry as well).  You may be
-asked to make these edits on the behalf of the core team member who
-accepts your pull request.
+Non-trivial contributions are often credited in What's New in Python
+and a contributions's news entry as well.
 
 .. _issue tracker: https://github.com/python/cpython/issues
 .. _Core Development Discourse category: https://discuss.python.org/c/core-dev/23

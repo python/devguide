@@ -5,13 +5,7 @@
 Setup and building
 ==================
 
-.. raw:: html
-
-    <script>
-    document.addEventListener('DOMContentLoaded', function() {
-      activateTab(getOS());
-    });
-    </script>
+.. include:: /include/activate-tab.rst
 
 .. highlight:: console
 
@@ -20,9 +14,9 @@ compiled version of the CPython interpreter (CPython is the version of Python
 available from https://www.python.org/). It also gives an overview of the
 directory structure of the CPython source code.
 
-Alternatively, if you have `Docker <https://www.docker.com/>`_ installed you
+Alternatively, if you have `Docker <https://www.docker.com/>`__ installed you
 might want to use `our official images
-<https://gitlab.com/python-devs/ci-images/blob/main/README.md>`_.  These
+<https://gitlab.com/python-devs/ci-images/blob/main/README.md>`__.  These
 contain the latest releases of several Python versions, along with Git head,
 and are provided for development and testing purposes only.
 
@@ -38,23 +32,23 @@ Install Git
 
 .. c_install_git_start
 
-CPython is developed using `Git <https://git-scm.com>`_ for version control. The Git
+CPython is developed using `Git <https://git-scm.com>`__ for version control. The Git
 command line program is named ``git``; this is also used to refer to Git
 itself. Git is easily available for all common operating systems.
 
 - **Install**
 
   As the CPython repo is hosted on GitHub, please refer to either the
-  `GitHub setup instructions <https://docs.github.com/en/get-started/getting-started-with-git/set-up-git>`_
-  or the `Git project instructions <https://git-scm.com>`_ for step-by-step
+  `GitHub setup instructions <https://docs.github.com/en/get-started/getting-started-with-git/set-up-git>`__
+  or the `Git project instructions <https://git-scm.com>`__ for step-by-step
   installation directions. You may also want to consider a graphical client
-  such as `TortoiseGit <https://tortoisegit.org/>`_ or
-  `GitHub Desktop <https://github.com/apps/desktop>`_.
+  such as `TortoiseGit <https://tortoisegit.org/>`__ or
+  `GitHub Desktop <https://github.com/apps/desktop>`__.
 
 - **Configure**
 
   Configure :ref:`your name and email <set-up-name-email>` and create
-  `an SSH key <https://docs.github.com/en/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account>`_
+  `an SSH key <https://docs.github.com/en/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account>`__
   as this will allow you to interact with GitHub without typing a username
   and password each time you execute a command, such as ``git pull``,
   ``git push``, or ``git fetch``.  On Windows, you should also
@@ -141,7 +135,7 @@ Install pre-commit as a Git hook
 --------------------------------
 
 To make sure your code is linted correctly, we recommend setting up
-`pre-commit <https://pre-commit.com#installation>`_ as a Git hook::
+`pre-commit <https://pre-commit.com#installation>`__ as a Git hook::
 
    $ pre-commit install --allow-missing-config
    pre-commit installed at .git/hooks/pre-commit
@@ -170,7 +164,7 @@ working only on pure Python code the pydebug build provides several useful
 checks that one should not skip.
 
 .. seealso:: The effects of various configure and build flags are documented in
-   the `Python configure docs <https://docs.python.org/dev/using/configure.html>`_.
+   the `Python configure docs <https://docs.python.org/dev/using/configure.html>`__.
 
 .. _unix-compiling:
 
@@ -386,24 +380,26 @@ compiler just like building for :ref:`Unix <unix-compiling>` as well as:
 1. A C compiler that can target WebAssembly (for example, `WASI SDK`_)
 2. A WASI host/runtime (for example, Wasmtime_)
 
-All of this is provided in the :ref:`devcontainer <using-a-container>`. You can
-also use what's installed in the container as a reference of what versions of
-these tools are known to work.
+All of this is provided in the WASI :ref:`dev container <using-a-container>`
+(which you can select as an alternative container when using a
+:ref:`codespace <codespaces-whats-codespaces>`). You can also use what's
+installed in the container as a reference of what versions of these tools are
+known to work.
 
 .. note::
 
    CPython has only been verified with the certain tools for WASI. Using
    other compilers, hosts, or WASI versions *should* work, but the tools
-   and their versions specified in the container are tested via a
-   :ref:`buildbot <buildbots>`.
+   and their versions specified in the container and build scripts are
+   tested via a :ref:`buildbot <buildbots>`.
 
 Building for WASI requires doing a cross-build where you have a *build* Python
 to help produce a WASI build of CPython (technically it's a "host x host"
 cross-build because the build Python is also the target Python while the host
 build is the WASI build). This means you effectively build CPython twice: once
 to have a version of Python for the build system to use and another that's the
-build you ultimately care about (that is, the build Python is not meant for use by
-you directly, only the build system).
+build you ultimately care about (that is, the build Python is not meant for use
+by you directly, only the build system).
 
 The easiest way to get a debug build of CPython for WASI is to use the
 ``Tools/wasm/wasi.py build`` command (which should be run w/ a recent version of
@@ -422,7 +418,7 @@ Python you have installed on your machine):
       python3 Tools/wasm/wasi.py build --quiet -- --config-cache --with-pydebug
 
 That single command will configure and build both the build Python and the
-WASI build in ``cross-build/build`` and ``cross-build/wasm32-wasi``,
+WASI build in ``cross-build/build`` and ``cross-build/wasm32-wasip1``,
 respectively.
 
 You can also do each configuration and build step separately; the command above
@@ -511,13 +507,26 @@ The simplest way to install the Emscripten compiler is:
 
     # Install Emscripten
     git clone https://github.com/emscripten-core/emsdk
-    ./emsdk/emsdk install 4.0.5
-    ./emsdk/emsdk activate 4.0.5
+    ./emsdk/emsdk install 4.0.12
+    ./emsdk/emsdk activate 4.0.12
     source ./emsdk/emsdk_env.sh
 
-Updating the Emscripten compiler version often causes breakages. For the best
-compatibility, use the Emscripten version suggested in the cpython repository in
-``Tools/wasm/README.md``.
+Updating the Emscripten compiler version can cause breakages. For the best
+compatibility, use the appropriate Emscripten version based on the version of
+CPython you're building:
+
+* For building CPython 3.14, use ``emsdk`` version ``4.0.12``.
+* For building the main branch of the CPython repository, you may wish to use
+  ``latest`` instead of a specific version.
+
+It is possible (but not necessary) to enable ``ccache`` for Emscripten builds
+by setting the ``EM_COMPILER_WRAPPER`` environment, but this step will only
+take effect if it is done **after** ``emsdk_env.sh`` is sourced (otherwise, the
+sourced script removes the environment variable):
+
+.. code-block:: sh
+
+   export EM_COMPILER_WRAPPER=ccache
 
 Building for Emscripten requires doing a cross-build where you have a *build*
 Python to help produce an Emscripten build of CPython. This means you build
@@ -526,8 +535,8 @@ another that's the build you ultimately care about (that is, the build Python is
 not meant for use by you directly, only the build system).
 
 The easiest way to get a debug build of CPython for Emscripten is to use the
-``Tools/wasm/emscripten build`` command (which should be run with a recent
-version of Python you have installed on your machine):
+``Tools/wasm/emscripten build`` command, which should be run with a recent
+version of Python (3.13 or newer) already installed on your machine:
 
 .. code-block:: shell
 
@@ -545,6 +554,7 @@ is a convenience wrapper around the following commands:
    python Tools/wasm/emscripten configure-build-python --quiet -- --config-cache --with-pydebug
    python Tools/wasm/emscripten make-build-python --quiet
    python Tools/wasm/emscripten make-libffi --quiet
+   python Tools/wasm/emscripten make-mpdec --quiet
    python Tools/wasm/emscripten configure-host --quiet -- --config-cache
    python Tools/wasm/emscripten make-host --quiet
 
@@ -572,6 +582,9 @@ used in ``python.sh``:
 
    make -C cross-build/wasm32-emscripten/build/python/ test
 
+Additional instructions for running the resulting builds (through Node.js and/or
+through web browsers) are available in the CPython repository at
+:cpy-file:`Tools/wasm/README.md`.
 
 .. _Emscripten: https://emscripten.org/
 .. _WebAssembly: https://webassembly.org
@@ -797,13 +810,14 @@ some of CPython's modules (for example, ``zlib``).
       $ sudo apt-get install build-essential gdb lcov pkg-config \
             libbz2-dev libffi-dev libgdbm-dev libgdbm-compat-dev liblzma-dev \
             libncurses5-dev libreadline6-dev libsqlite3-dev libssl-dev \
-            lzma lzma-dev tk-dev uuid-dev zlib1g-dev libmpdec-dev libzstd-dev
+            lzma lzma-dev tk-dev uuid-dev zlib1g-dev libmpdec-dev libzstd-dev \
+            inetutils-inetd
 
    Note that Debian 12 and Ubuntu 24.04 do not have the ``libmpdec-dev``
    package.  You can safely remove it from the install list above and the
    Python build will use a bundled version.  But we recommend using the system
-   `libmpdec <https://www.bytereef.org/mpdecimal/doc/libmpdec/>`_ library.
-   Either built it from sources or install this package from
+   `libmpdec <https://www.bytereef.org/mpdecimal/doc/libmpdec/>`__ library.
+   Either build it from sources or install this package from
    https://deb.sury.org.
 
 .. tab:: macOS
@@ -838,27 +852,18 @@ some of CPython's modules (for example, ``zlib``).
 
          $ brew install pkg-config openssl@3 xz gdbm tcl-tk mpdecimal zstd
 
-      .. tab:: Python 3.13+
+      .. tab:: Python 3.11+
 
-         For Python 3.13 and newer::
-
-            $ GDBM_CFLAGS="-I$(brew --prefix gdbm)/include" \
-               GDBM_LIBS="-L$(brew --prefix gdbm)/lib -lgdbm" \
-               ./configure --with-pydebug \
-                           --with-openssl="$(brew --prefix openssl@3)"
-
-      .. tab:: Python 3.11-3.12
-
-         For Python 3.11 and 3.12::
+         For Python 3.11 and newer::
 
             $ GDBM_CFLAGS="-I$(brew --prefix gdbm)/include" \
                GDBM_LIBS="-L$(brew --prefix gdbm)/lib -lgdbm" \
                ./configure --with-pydebug \
                            --with-openssl="$(brew --prefix openssl@3)"
 
-      .. tab:: Python 3.9-3.10
+      .. tab:: Python 3.10
 
-         For Python 3.9 and 3.10::
+         For Python 3.10::
 
             $ CPPFLAGS="-I$(brew --prefix gdbm)/include -I$(brew --prefix xz)/include" \
                LDFLAGS="-L$(brew --prefix gdbm)/lib -L$(brew --prefix xz)/lib" \
@@ -869,7 +874,7 @@ some of CPython's modules (for example, ``zlib``).
                            --with-dbmliborder=gdbm:ndbm
 
          (``--with-dbmliborder`` is a workaround for a Homebrew-specific change
-         to ``gdbm``; see `#89452 <https://github.com/python/cpython/issues/89452>`_
+         to ``gdbm``; see `#89452 <https://github.com/python/cpython/issues/89452>`__
          for details.)
 
    .. tab:: MacPorts
@@ -908,7 +913,7 @@ some of CPython's modules (for example, ``zlib``).
 
    For more details on various options and considerations for building, refer
    to the `macOS README
-   <https://github.com/python/cpython/blob/main/Mac/README.rst>`_.
+   <https://github.com/python/cpython/blob/main/Mac/README.rst>`__.
 
    .. note:: While you need a C compiler to build CPython, you don't need any
       knowledge of the C language to contribute!  Vast areas of CPython are
@@ -961,7 +966,7 @@ If a change is made to Python which relies on some POSIX system-specific
 functionality (such as using a new system call), it is necessary to update the
 :cpy-file:`configure` script to test for availability of the functionality.
 Python's :file:`configure` script is generated from :cpy-file:`configure.ac`
-using `GNU Autoconf <https://www.gnu.org/software/autoconf/>`_.
+using `GNU Autoconf <https://www.gnu.org/software/autoconf/>`__.
 
 After editing :file:`configure.ac`, run ``make regen-configure`` to generate
 :file:`configure`, :cpy-file:`pyconfig.h.in`, and :cpy-file:`aclocal.m4`.
@@ -1165,13 +1170,13 @@ What is GitHub Codespaces?
 
 If you'd like to start contributing to CPython without needing to set up a local
 developer environment, you can use
-`GitHub Codespaces <https://github.com/features/codespaces>`_.
+`GitHub Codespaces <https://github.com/features/codespaces>`__.
 Codespaces is a cloud-based development environment offered by GitHub that
 allows developers to write, build, test, and debug code directly within their
 web browser or in Visual Studio Code (VS Code).
 
 To help you get started, CPython contains a
-`devcontainer folder <https://github.com/python/cpython/tree/main/.devcontainer>`_
+`devcontainer folder <https://github.com/python/cpython/tree/main/.devcontainer>`__
 with a JSON configuration file that provides consistent and versioned codespace
 configurations for all users of the project. It also contains a Dockerfile that
 allows you to set up the same environment but locally in a Docker container if
@@ -1184,18 +1189,32 @@ Create a CPython codespace
 
 Here are the basic steps needed to contribute a pull request using Codespaces.
 You first need to navigate to the
-`CPython repo <https://github.com/python/cpython>`_ hosted on GitHub.
+`CPython repo <https://github.com/python/cpython>`__ hosted on GitHub.
 
 Then you will need to:
 
-1. Press the ``,`` key to launch the codespace setup screen for the current
-   branch (alternatively, click the green :guilabel:`Code` button and choose
-   the ``codespaces`` tab and then press the
-   green :guilabel:`Create codespace on main` button).
+1. Launch the codespace
+
+   - Press the ``,`` key to launch the codespace setup screen for the current
+     branch
+
+     - For the default dev container (which is what you very likely want), click
+       the green :guilabel:`Create new codespace` button
+     - For alternative containers, click :guilabel:`Change options` and
+       choose the appropriate container
+
+   - Alternatively, click the green :guilabel:`Code` button and choose
+     the :guilabel:`codespaces` tab
+
+     - For the default dev container (which is what you very likely want), click
+       the green :guilabel:`Create codespace on main` button
+     - For alternative containers, go to the :guilabel:`…` menu and choose
+       :guilabel:`New with options…`
+
 2. A screen should appear that lets you know your codespace is being set up.
    (Note: Since the CPython devcontainer is provided, codespaces will use the
    configuration it specifies.)
-3. A `web version of VS Code <https://vscode.dev/>`_ will open inside your web
+3. A `web version of VS Code <https://vscode.dev/>`__ will open inside your web
    browser, already linked up with your code and a terminal to the remote
    codespace where CPython and its documentation have already been built.
 4. Use the terminal with the usual Git commands to create a new branch, commit
@@ -1232,7 +1251,9 @@ This is meant for users who have (or want to get) some experience
 with containers.
 These instructions assume a Unix-like environment with
 `Docker <https://www.docker.com/>`__ or `Podman <https://podman.io/>`__
-installed.
+installed. The instructions also assume you want the default dev container;
+tweak the commands as appropriate if you want to use an alternative container
+(e.g. the WASI dev container).
 
 .. _devcontainer-image:
 

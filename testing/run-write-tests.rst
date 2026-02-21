@@ -5,13 +5,7 @@
 Running and writing tests
 =========================
 
-.. raw:: html
-
-    <script>
-    document.addEventListener('DOMContentLoaded', function() {
-      activateTab(getOS());
-    });
-    </script>
+.. include:: /include/activate-tab.rst
 
 .. note::
 
@@ -286,7 +280,7 @@ Benchmarks
 
 Benchmarking is useful to test that a change does not degrade performance.
 
-`The Python Benchmark Suite <https://github.com/python/pyperformance>`_
+`The Python Benchmark Suite <https://github.com/python/pyperformance>`__
 has a collection of benchmarks for all Python implementations. Documentation
 about running the benchmarks is in the `README.txt
-<https://github.com/python/pyperformance/blob/main/README.rst>`_ of the repo.
+<https://github.com/python/pyperformance/blob/main/README.rst>`__ of the repo.
