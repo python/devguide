@@ -64,6 +64,8 @@ to make your translation easier to find. In the entry you can also include links
 to guides or other resources for translators.
 
 
+.. _translation-repo:
+
 Repository
 ----------
 
@@ -122,8 +124,6 @@ Each translation team should have a way to store translations of terms to ensure
 consistency. This is often done with a glossary. More information about the use
 of glossaries can be found in the :ref:`translation-style-guide`.
 
-
-.. _translation-repo:
 
 Moving the repo to the ``python`` org
 -------------------------------------
