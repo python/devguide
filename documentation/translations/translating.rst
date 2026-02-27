@@ -32,7 +32,7 @@ For more details about translations and their progress, see
      - :github:`GitHub <python/python-docs-bn-in>`
    * - `French (fr) <https://docs.python.org/fr/>`__
      - Julien Palard (:github-user:`JulienPalard`)
-     - `AFPy/python-docs-fr <https://git.afpy.org/AFPy/python-docs-fr/>`_,
+     - `AFPy/python-docs-fr <https://git.afpy.org/AFPy/python-docs-fr/>`__,
        :github:`mirror <python/python-docs-fr>`
    * - `Greek (el) <https://docs.python.org/el/>`__
      - | Lysandros Nikolaou (:github-user:`lysnikolaou`),
@@ -122,7 +122,7 @@ If there is already a repository for your language team (there may be links to
 Telegrams/Discords in the ``README``), join and introduce
 yourself. Your fellow translators will be more than happy to help!
 General discussions about translations occur on the Python Docs Discord
-`#translations channel <https://discord.gg/h3qDwgyzga>`_ and the
+`#translations channel <https://discord.gg/h3qDwgyzga>`__ and the
 `translations category <discourse_>`_ of the Python Discourse.
 
 .. _translation-style-guide:
@@ -215,7 +215,7 @@ Code examples
 
 Translate values in code examples, that is string literals, and comments.
 Don't translate keywords or names, including variable, function, class, argument,
-and attribute names. An example of a translated codeblock from the `tutorial <https://docs.python.org/3/tutorial/controlflow.html#keyword-arguments>`_
+and attribute names. An example of a translated codeblock from the `tutorial <https://docs.python.org/3/tutorial/controlflow.html#keyword-arguments>`__
 is provided below:
 
 .. code-block:: python
@@ -259,7 +259,7 @@ through the following resources from the Transifex documentation:
 Within the organization, a project for translating the
 :github:`Python Docs Sphinx Theme <python/python-docs-theme>` can also be
 found.
-For further information about Transifex see our `documentation <https://python-docs-transifex-automation.readthedocs.io/>`_.
+For further information about Transifex see our `documentation <https://python-docs-transifex-automation.readthedocs.io/>`__.
 
 
 Resources
@@ -270,10 +270,10 @@ Some useful resources:
 - :ref:`git-boot-camp`:
    Several translations accept contributions by pull requests. Most have their
    own guide for how to do this, but this can provide useful tips.
-- `Translation issues & improvements <https://github.com/orgs/python/projects/58>`_ GitHub project:
+- `Translation issues & improvements <https://github.com/orgs/python/projects/58>`__ GitHub project:
    This project contains issues and pull requests that aim to improve
    the Python documentation for translations.
-- `Python Pootle archive <https://github.com/python/pootle-python-org-backup>`_:
+- `Python Pootle archive <https://github.com/python/pootle-python-org-backup>`__:
    Pootle is no longer used for translation. Contains translations for old Python versions.
 
 
@@ -322,7 +322,7 @@ How do I translate the Python Docs Sphinx Theme?
 The Sphinx theme for the Python documentation supports localization.
 
 You can translate either on
-`Transifex <https://explore.transifex.com/python-doc/python-docs-theme/>`_
+`Transifex <https://explore.transifex.com/python-doc/python-docs-theme/>`__
 (see :ref:`translating on Transifex <transifex-use>` for more information)
 or locally by following the steps outlined below.
 
@@ -357,7 +357,7 @@ The coordination team for my language is inactive, what do I do?
 ----------------------------------------------------------------
 
 If you would like to coordinate, open a pull request in the
-`devguide <https://github.com/python/devguide>`_ adding yourself to the table
+`devguide <https://github.com/python/devguide>`__ adding yourself to the table
 at the top of this page, and ping ``@python/editorial-board``.
 
 

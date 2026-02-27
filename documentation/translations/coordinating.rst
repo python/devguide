@@ -12,7 +12,7 @@ Communication/help channels
 ===========================
 
 Discussions about translations occur on the Python Docs Discord
-`#translations channel <https://discord.gg/h3qDwgyzga>`_ and the
+`#translations channel <https://discord.gg/h3qDwgyzga>`__ and the
 `translations category <trans_disc_>`_ of the Python Discourse.
 
 For administrative issues, ping ``@python/editorial-board``.
@@ -35,7 +35,7 @@ Announcement
 ------------
 
 Post an announcement introducing yourself and the translation you're
-starting on `Discourse <trans_disc>`_. Also join the other communication
+starting on `Discourse <trans_disc_>`_. Also join the other communication
 channels, if possible.
 
 
@@ -72,16 +72,16 @@ account, with the correct Git hierarchy and folder structure. This can be done
 in several ways, and depends on what translation process you plan to use.
 
 Each translation is assigned an appropriate lowercase
-`IETF language tag <https://datatracker.ietf.org/doc/html/rfc5646.html>`_.
+`IETF language tag <https://datatracker.ietf.org/doc/html/rfc5646.html>`__.
 The tag may have an optional subtag, joined with a dash.
 For example, ``pt`` (Portuguese) or ``pt-br`` (Brazilian Portuguese).
 The repository name is then: ``python-docs-TAG``
 
 The name of each branch should be the Python version it holds translations
 for, for example, ``3.14``. The files should be structured like the source files
-in `CPython/Doc <https://github.com/python/cpython/tree/main/Doc>`_.
+in `CPython/Doc <https://github.com/python/cpython/tree/main/Doc>`__.
 A correctly set up repository looks like this:
-`python-docs-pl <https://github.com/python/python-docs-pl/>`_
+`python-docs-pl <https://github.com/python/python-docs-pl/>`__
 
 Below, the recommended ways for starting your repository are described. You can
 choose another way if you like; it’s up to you.
@@ -100,7 +100,7 @@ Translation platform
 ~~~~~~~~~~~~~~~~~~~~
 
 You can also start your translation using
-`Transifex <https://explore.transifex.com/python-doc/python-newest/>`_.
+`Transifex <https://explore.transifex.com/python-doc/python-newest/>`__.
 This will allow you to translate via the web interface, and to use shared
 automatically updated source files.
 
@@ -155,7 +155,7 @@ PEP 545 summary
 Here are the essential points of :PEP:`545`:
 
 - Each translation is assigned an appropriate lowercase
-  `IETF language tag <https://datatracker.ietf.org/doc/html/rfc5646.html>`_.
+  `IETF language tag <https://datatracker.ietf.org/doc/html/rfc5646.html>`__.
   The tag may have an optional region subtag, joined with a dash.
   For example, ``pt`` (Portuguese) or ``pt-br`` (Brazilian Portuguese).
 
@@ -210,10 +210,10 @@ Testing should ideally be set up in your repository, and will help catch errors
 early and ensure translation quality. Testing generally consists of building, and
 linting with :pypi:`sphinx-lint`.
 
-See `this documentation <https://python-docs-transifex-automation.readthedocs.io/workflows.html#test-build-workflow>`_
+See `this documentation <https://python-docs-transifex-automation.readthedocs.io/workflows.html#test-build-workflow>`__
 for sample workflows with usage guides.
 
-The `dashboard <https://translations.python.org/build-details.html>`_
+The `dashboard <https://translations.python.org/build-details.html>`__
 also tests translations and uploads error logs.
 
 
@@ -289,7 +289,7 @@ Is there a Weblate instance we can translate on?
 ------------------------------------------------
 
 There is currently no Weblate instance for Python translations.
-See this `Discourse thread <https://discuss.python.org/t/docs-translation-platform/29940>`_
+See this `Discourse thread <https://discuss.python.org/t/docs-translation-platform/29940>`__
 for updates.
 
 

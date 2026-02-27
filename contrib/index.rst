@@ -4,14 +4,7 @@
 Python Contributor's Guide (draft)
 ==================================
 
-.. raw:: html
-
-    <script>
-    document.addEventListener('DOMContentLoaded', function() {
-      activateTab(getOS());
-    });
-    </script>
-
+.. include:: /include/activate-tab.rst
 
 .. important::
 

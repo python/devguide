@@ -1,4 +1,5 @@
 import json
+from urllib.request import urlopen
 
 extensions = [
     'notfound.extension',
@@ -149,10 +150,14 @@ rediraffe_redirects = {
     "pullrequest.rst": "getting-started/pull-request-lifecycle.rst",
     "setup.rst": "getting-started/setup-building.rst",
     # CPython Internals
-    "compiler.rst": "internals/compiler.rst",
-    "exploring.rst": "internals/exploring.rst",
-    "garbage_collector.rst": "internals/garbage-collector.rst",
-    "parser.rst": "internals/parser.rst",
+    "compiler.rst": "internals.rst",
+    "exploring.rst": "internals.rst",
+    "garbage_collector.rst": "internals.rst",
+    "parser.rst": "internals.rst",
+    "internals/compiler.rst": "internals.rst",
+    "internals/exploring.rst": "internals.rst",
+    "internals/garbage_collector.rst": "internals.rst",
+    "internals/parser.rst": "internals.rst",
     # Testing and Buildbots
     "buildbots.rst": "testing/buildbots.rst",
     "coverage.rst": "testing/coverage.rst",
@@ -178,8 +183,8 @@ notfound_urls_prefix = "/"
 
 # Dynamically expose the Python version associated with the "main" branch.
 # Exactly one entry in ``release-cycle.json`` should have ``"branch": "main"``.
-with open("include/release-cycle.json", encoding="UTF-8") as _f:
-    _cycle = json.load(_f)
+with urlopen("https://peps.python.org/api/release-cycle.json") as _f:
+    _cycle = json.loads(_f.read().decode("utf-8"))
 
 _main_version = next(
     version for version, data in _cycle.items() if data.get("branch") == "main"

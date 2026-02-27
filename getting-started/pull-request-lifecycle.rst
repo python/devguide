@@ -54,10 +54,13 @@ Here is a quick overview of how you can contribute to CPython:
 .. [*] If an issue is trivial (for example, typo fixes), or if an issue already exists,
        you can skip this step.
 
-.. note::
-   In order to keep the commit history intact, please avoid squashing or amending
-   history and then force-pushing to the PR. Reviewers often want to look at
-   individual commits.
+Don't force-push
+----------------
+
+In order to keep the commit history intact, please avoid squashing or amending
+history and then force-pushing to the PR. Reviewers often want to look at
+individual commits.
+When the PR is merged, everything will be squashed into a single commit.
 
 .. _Clear communication: https://opensource.guide/how-to-contribute/#how-to-submit-a-contribution
 .. _Open Source: https://opensource.guide/
@@ -180,7 +183,7 @@ resolved as follows:
 When running the final command, Git may open an editor for writing a commit
 message. It is usually okay to leave that as-is and close the editor.
 
-See `the merge command's documentation <https://git-scm.com/docs/git-merge>`_
+See `the merge command's documentation <https://git-scm.com/docs/git-merge>`__
 for a detailed technical explanation.
 
 
@@ -280,9 +283,8 @@ The automated checklist runs through:
 * Has the documentation been updated?
 * Has the test suite been updated?
 * Has an entry under ``Misc/NEWS.d/next`` been added?
-  (using `blurb-it <https://blurb-it.herokuapp.com/>`_,
+  (using `blurb-it <https://blurb-it.herokuapp.com/>`__,
   or the :pypi:`blurb` tool)
-* Has ``Misc/ACKS`` been updated?
 * Has ``configure`` been regenerated, if necessary?
 * Has ``pyconfig.h.in`` been regenerated, if necessary?
 
@@ -326,7 +328,7 @@ instructions on how the commit message should look like when merging a pull
 request.
 
 .. note::
-   `How to Write a Git Commit Message <https://cbea.ms/git-commit/>`_
+   `How to Write a Git Commit Message <https://cbea.ms/git-commit/>`__
    is a nice article that describes how to write a good commit message.
 
 
@@ -414,7 +416,7 @@ This will get your changes up to GitHub.
 
 Now you want to
 `create a pull request from your fork
-<https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-a-pull-request-from-a-fork>`_.
+<https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-a-pull-request-from-a-fork>`__.
 If this is a pull request in response to a pre-existing issue on the
 `issue tracker`_, please make sure to reference the issue number using
 ``gh-NNNNN:`` prefix in the pull request title and ``#NNNNN`` in the description.
@@ -449,7 +451,7 @@ existing patch. In this case, both parties should sign the :ref:`CLA <cla>`.
 When creating a pull request based on another person's patch, provide
 attribution to the original patch author by adding "Co-authored-by:
 Author Name <email_address> ." to the pull request description and commit message.
-See `the GitHub article <https://docs.github.com/en/pull-requests/committing-changes-to-your-project/creating-and-editing-commits/creating-a-commit-with-multiple-authors>`_
+See `the GitHub article <https://docs.github.com/en/pull-requests/committing-changes-to-your-project/creating-and-editing-commits/creating-a-commit-with-multiple-authors>`__
 on how to properly add the co-author info.
 
 See also :ref:`Applying a Patch to Git <git_from_patch>`.
@@ -626,10 +628,8 @@ it is warranted.
 Crediting
 =========
 
-Non-trivial contributions are credited in the ``Misc/ACKS`` file (and, most
-often, in a contribution's news entry as well).  You may be
-asked to make these edits on the behalf of the core team member who
-accepts your pull request.
+Non-trivial contributions are often credited in What's New in Python
+and a contributions's news entry as well.
 
 .. _issue tracker: https://github.com/python/cpython/issues
 .. _Core Development Discourse category: https://discuss.python.org/c/core-dev/23
