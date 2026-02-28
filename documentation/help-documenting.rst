@@ -5,16 +5,16 @@
 Helping with documentation
 ==========================
 
-Python is known for having well-written documentation. Maintaining the
-documentation's accuracy and keeping a high level of quality takes a lot of
-effort. Community members, like you, help with writing, editing, and updating
-content, and these contributions are appreciated and welcomed.
+Python is known for its well-written documentation. Maintaining its accuracy 
+and high quality requires significant effort. Community members like you help 
+by writing, editing, and updating content, and these contributions are greatly 
+appreciated.
 
-This high-level **Helping with Documentation** section provides:
+This high-level "Helping with Documentation" section provides:
 
-* an overview of Python's documentation
-* how to help with documentation issues
-* information on proofreading
+* An overview of Python's documentation
+* Guidance on how to help with documentation issues
+* Information on proofreading
 
 You will find extensive and detailed information on how to write documentation
 and submit changes on the :ref:`Documenting Python <documenting>` page.
@@ -46,9 +46,8 @@ are discussed.
 Helping with documentation issues
 =================================
 
-If you look at `documentation issues`_ on the `issue tracker`_, you
-will find various documentation problems that may need work. Issues vary from
-typos to unclear documentation and items lacking documentation.
+If you browse documentation issues on the issue tracker, 
+you will find a range of problems that may need attention.
 
 If you see a documentation issue that you would like to tackle, you can:
 
