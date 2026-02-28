@@ -14,8 +14,8 @@ contributed by various authors. The markup used for the Python documentation is
 `reStructuredText`_, developed by the `docutils`_ project, amended by custom
 directives and using a toolset named `Sphinx`_ to post-process the HTML output.
 
-The documentation in HTML, PDF or EPUB format is generated from text files
-written using the :ref:`reStructuredText format <markup>` and contained in the
+The documentation in HTML, PDF, or EPUB format is generated from text files
+written in the :ref:`reStructuredText format <markup>` and stored in the
 :ref:`CPython Git repository <setup>`.
 
 .. _reStructuredText: https://docutils.sourceforge.io/rst.html
@@ -216,8 +216,8 @@ See :cpy-file:`Doc/README.rst` for more information.
 Build using Sphinx directly
 ---------------------------
 
-Advanced users may want to invoke Sphinx directly,
-to pass specialized options or to handle specific use cases.
+Advanced users may want to invoke Sphinx directly to pass specialized options
+or handle specific use cases.
 
 Make sure the environment you :ref:`created above <doc-create-venv-windows>`
 is `activated <venv-activate_>`__.
