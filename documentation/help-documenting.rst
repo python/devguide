@@ -5,9 +5,9 @@
 Helping with documentation
 ==========================
 
-Python is known for its well-written documentation. Maintaining its accuracy 
-and high quality requires significant effort. Community members like you help 
-by writing, editing, and updating content, and these contributions are greatly 
+Python is known for its well-written documentation. Maintaining its accuracy
+and high quality requires significant effort. Community members like you help
+by writing, editing, and updating content, and these contributions are greatly
 appreciated.
 
 This high-level "Helping with Documentation" section provides:
@@ -46,7 +46,7 @@ are discussed.
 Helping with documentation issues
 =================================
 
-If you browse documentation issues on the issue tracker, 
+If you browse documentation issues on the issue tracker,
 you will find a range of problems that may need attention.
 
 If you see a documentation issue that you would like to tackle, you can:
