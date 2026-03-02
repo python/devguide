@@ -214,7 +214,8 @@ Key resources
 * Source code
 
   * `Browse online <https://github.com/python/cpython/>`__
-  * `Download a snapshot of the 'main' branch <https://github.com/python/cpython/archive/main.zip>`__
+  * `Download a snapshot <https://github.com/python/cpython/archive/main.zip>`__
+    of the ``main`` branch
 
 * PEPs_ (Python Enhancement Proposals)
 * :ref:`help`
