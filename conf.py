@@ -1,4 +1,5 @@
 import json
+import os
 from urllib.request import urlopen
 
 extensions = [
@@ -50,6 +51,10 @@ html_favicon = "_static/favicon.png"
 
 # Set to '' to prevent appending "documentation" to the site title
 html_title = ""
+
+html_context = {
+    "READTHEDOCS": bool(os.getenv("READTHEDOCS")),
+}
 
 linkcheck_allowed_redirects = {
     # Edit page
