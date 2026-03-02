@@ -25,7 +25,7 @@ community that maintains Python.  We welcome your contributions!
 Contributing
 ------------
 
-We encourage everyone to contribute to Python and that's why we have put up this
+We encourage everyone to contribute to Python. To help you, we have put up this
 developer's guide.  If you still have questions after reviewing the material in
 this guide, then the `Core Python Mentorship`_ group is available to help guide new
 contributors through the process.
@@ -64,11 +64,11 @@ Guide for contributing to Python:
        * :ref:`gh-faq`
        * :ref:`triage-team`
 
-We **recommend** that the documents in this guide be read as needed. You
+We **recommend** that sections of this guide be read as needed. You
 can stop where you feel comfortable and begin contributing immediately without
-reading and understanding these documents all at once.  If you do choose to skip
-around within the documentation, be aware that it is written assuming preceding
-documentation has been read so you may find it necessary to backtrack to fill in
+reading and understanding everything.  If you do choose to skip
+around within the guide, be aware that sections build on each other,
+so you may find it necessary to backtrack to fill in
 missing concepts and terminology.
 
 A number of individuals from the Python community have contributed to a series
