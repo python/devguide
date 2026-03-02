@@ -156,7 +156,7 @@ instructions please see the :ref:`setup guide <setup>`.
    .. code-block:: shell
 
       pre-commit install
-      pre-commit run
+      pre-commit run --all-files
 
    See :ref:`install-pre-commit` for more details. If everything is ok, commit.
 
@@ -216,7 +216,7 @@ Key resources
   * `Browse online <https://github.com/python/cpython/>`__
   * `Download a snapshot of the 'main' branch <https://github.com/python/cpython/archive/main.zip>`__
 
-* :pep:`PEPs <0>` (Python Enhancement Proposals)
+* PEPs_ (Python Enhancement Proposals)
 * :ref:`help`
 * :ref:`developers`
 * :ref:`gitbootcamp`
@@ -283,8 +283,10 @@ developers to work on them.  Some major examples that may be of interest are:
   and learning to code on low-cost microcontroller boards.
 
 
+Full table of contents
+----------------------
+
 .. toctree::
-   :hidden:
    :maxdepth: 3
 
    getting-started/index
@@ -300,6 +302,7 @@ developers to work on them.  Some major examples that may be of interest are:
 
 
 .. _Buildbot status: https://buildbot.python.org/#/
+.. _PEPs: https://peps.python.org/
 .. _python.org maintenance: https://pythondotorg.readthedocs.io/
 .. _Python: https://www.python.org/
 .. _Core Python Mentorship: https://www.python.org/dev/core-mentorship/
