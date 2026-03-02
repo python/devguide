@@ -32,18 +32,37 @@ contributors through the process.
 
 Guide for contributing to Python:
 
-======================== ===================
-Code                     Documentation
-======================== ===================
-:ref:`setup`             :ref:`docquality`
-:ref:`help`              :ref:`documenting`
-:ref:`pullrequest`       :ref:`style-guide`
-:ref:`runtests`          :ref:`rst-primer`
-:ref:`fixingissues`      :ref:`translating`
-:ref:`communication`     :ref:`devguide`
-:ref:`gitbootcamp`
-:ref:`devcycle`
-======================== ===================
+.. list-table::
+   :widths: 10 10 10
+   :header-rows: 1
+
+   * - Documentation
+     - Code
+     - Triage
+   * -
+       * :ref:`docquality`
+       * :ref:`documenting`
+       * :ref:`style-guide`
+       * :ref:`rst-primer`
+       * :ref:`translating`
+       * :ref:`devguide`
+     -
+       * :ref:`setup`
+       * :ref:`help`
+       * :ref:`pullrequest`
+       * :ref:`runtests`
+       * :ref:`fixingissues`
+       * :ref:`communication`
+       * :ref:`gitbootcamp`
+       * :ref:`devcycle`
+     -
+       * :ref:`tracker`
+       * :ref:`triaging`
+       * :ref:`helptriage`
+       * :ref:`experts`
+       * :ref:`labels`
+       * :ref:`gh-faq`
+       * :ref:`triage-team`
 
 We **recommend** that the documents in this guide be read as needed. You
 can stop where you feel comfortable and begin contributing immediately without
