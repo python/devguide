@@ -15,7 +15,7 @@ Python Developer's Guide
 .. highlight:: bash
 
 This guide is a comprehensive resource for :ref:`contributing <contributing>`
-to various areas of Python_ -- for both new and experienced contributors. It is
+to Python_ -- for both new and experienced contributors. It is
 :ref:`maintained <devguide>` by the same
 community that maintains Python.  We welcome your contributions!
 
@@ -77,8 +77,8 @@ of excellent guides at `Open Source Guides <https://opensource.guide/>`__.
 
 .. _quick-reference:
 
-CPython contribution quick reference
-------------------------------------
+Quick reference
+---------------
 
 Here are the basic steps needed to get set up and open a pull request.
 This is meant as a checklist, once you know the basics. For complete
@@ -233,7 +233,7 @@ Additional resources
   * :ref:`internals`
   * :ref:`grammar`
 
-* Tool support:
+* Tool support
 
   * :ref:`gdb`
   * :ref:`clang`
