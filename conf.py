@@ -37,6 +37,7 @@ html_theme_options = {
     "source_repository": "https://github.com/python/devguide",
     "source_branch": "main",
 }
+templates_path = ['_templates']
 html_static_path = ['_static']
 html_css_files = [
     'devguide_overrides.css',
