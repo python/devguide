@@ -1,4 +1,5 @@
 import json
+import os
 from urllib.request import urlopen
 
 extensions = [
@@ -37,6 +38,7 @@ html_theme_options = {
     "source_repository": "https://github.com/python/devguide",
     "source_branch": "main",
 }
+templates_path = ['_templates']
 html_static_path = ['_static']
 html_css_files = [
     'devguide_overrides.css',
@@ -49,6 +51,10 @@ html_favicon = "_static/favicon.png"
 
 # Set to '' to prevent appending "documentation" to the site title
 html_title = ""
+
+html_context = {
+    "READTHEDOCS": bool(os.getenv("READTHEDOCS")),
+}
 
 linkcheck_allowed_redirects = {
     # Edit page

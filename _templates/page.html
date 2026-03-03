@@ -1,0 +1,8 @@
+{% extends "!page.html" %}
+
+{% block extrahead %}
+{{ super() }}
+{% if not READTHEDOCS %}
+<script defer data-domain="devguide.python.org" src="https://analytics.python.org/js/script.outbound-links.js"></script>
+{% endif %}
+{% endblock %}
