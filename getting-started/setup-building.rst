@@ -385,7 +385,7 @@ compiler just like building for :ref:`Unix <unix-compiling>` as well as:
 
 1. A C compiler that can target WebAssembly (for example, `WASI SDK`_)
 2. A WASI host/runtime (for example, Wasmtime_)
-3. Python 3.11 or newer to run the build script (``tomllib`` is required)
+3. A system install of Python 3.11 or newer to run the build scripts
 
 All of this is provided in the WASI :ref:`dev container <using-a-container>`
 (which you can select as an alternative container when using a
@@ -399,49 +399,6 @@ known to work.
    other compilers, hosts, or WASI versions *should* work, but the tools
    and their versions specified in the container and build scripts are
    tested via a :ref:`buildbot <buildbots>`.
-
-Installing prerequisites (Linux)
-'''''''''''''''''''''''''''''''''
-
-Install Wasmtime via the `official installer <https://wasmtime.dev>`__ or your
-system package manager. Download the `WASI SDK`_ release archive for your
-platform, extract it, and set the ``WASI_SDK_PATH`` environment variable:
-
-.. code-block:: shell
-
-   export WASI_SDK_PATH=/path/to/wasi-sdk
-
-Installing prerequisites (macOS)
-'''''''''''''''''''''''''''''''''
-
-Install Wasmtime via Homebrew:
-
-.. code-block:: shell
-
-   brew install wasmtime
-
-Download the `WASI SDK`_ release archive for macOS (``arm64-macos`` for Apple
-Silicon, ``x86_64-macos`` for Intel). Before extracting, remove the macOS
-quarantine attribute to prevent Gatekeeper from blocking the compiler binaries:
-
-.. code-block:: shell
-
-   xattr -d com.apple.quarantine wasi-sdk-*.tar.gz
-   sudo tar -xzf wasi-sdk-*.tar.gz -C /opt
-   sudo mv /opt/wasi-sdk-*-macos /opt/wasi-sdk
-
-Then add to your shell profile (e.g. ``~/.zshrc``):
-
-.. code-block:: shell
-
-   export WASI_SDK_PATH=/opt/wasi-sdk
-
-.. note::
-
-   macOS ships with Python 3.9, which is too old to run the build script.
-   Use a newer Python via Homebrew (``brew install python``) or
-   `uv <https://docs.astral.sh/uv/>`__
-   (``uv run --python 3.13 -- python3 Platforms/WASI build ...``).
 
 Building for WASI requires doing a cross-build where you have a *build* Python
 to help produce a WASI build of CPython (technically it's a "host x host"
