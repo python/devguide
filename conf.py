@@ -1,4 +1,5 @@
 import json
+import os
 from urllib.request import urlopen
 
 extensions = [
@@ -38,6 +39,7 @@ html_theme_options = {
     "source_repository": "https://github.com/python/devguide",
     "source_branch": "main",
 }
+templates_path = ['_templates']
 html_static_path = ['_static']
 html_css_files = [
     'devguide_overrides.css',
@@ -50,6 +52,14 @@ html_favicon = "_static/favicon.png"
 
 # Set to '' to prevent appending "documentation" to the site title
 html_title = ""
+
+# Deployment preview information
+# (See .readthedocs.yaml and https://docs.readthedocs.io/en/stable/reference/environment-variables.html)
+is_deployment_preview = os.getenv("READTHEDOCS_VERSION_TYPE") == "external"
+
+html_context = {
+    "is_deployment_preview": is_deployment_preview,
+}
 
 linkcheck_allowed_redirects = {
     # Edit page
