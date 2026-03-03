@@ -468,8 +468,8 @@ is a convenience wrapper around the following commands:
    The ``configure-host`` command infers the use of ``--with-pydebug`` from the
    build Python.
 
-Running the separate commands after ``build`` is useful if you, for example, only want to run
-the ``make-host`` step after making code changes.
+Running the separate commands after ``build`` is useful if you, for example,
+only want to run the ``make-host`` step after making code changes.
 
 Once everything is complete, there will be a
 ``cross-build/wasm32-wasip1/python.sh`` helper file which you can use to run the
