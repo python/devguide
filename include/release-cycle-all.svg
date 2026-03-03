@@ -1,0 +1,1405 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg
+    xmlns="http://www.w3.org/2000/svg"
+    class="release-cycle-chart"
+    viewBox="0 0 828 540.0"
+>
+    <defs>
+        <linearGradient id="release-cycle-mask-gradient-all">
+            <stop stop-color="black" offset="0%" />
+            <stop stop-color="white" offset="100%" />
+        </linearGradient>
+    </defs>
+
+
+            <!-- Row shading -->
+            <rect
+                class="release-cycle-row-shade"
+                x="0em"
+                y="6.75"
+                width="828"
+                height="27.0"
+            />
+
+
+            <!-- Row shading -->
+            <rect
+                class="release-cycle-row-shade"
+                x="0em"
+                y="60.75"
+                width="828"
+                height="27.0"
+            />
+
+
+            <!-- Row shading -->
+            <rect
+                class="release-cycle-row-shade"
+                x="0em"
+                y="114.75"
+                width="828"
+                height="27.0"
+            />
+
+
+            <!-- Row shading -->
+            <rect
+                class="release-cycle-row-shade"
+                x="0em"
+                y="168.75"
+                width="828"
+                height="27.0"
+            />
+
+
+            <!-- Row shading -->
+            <rect
+                class="release-cycle-row-shade"
+                x="0em"
+                y="222.75"
+                width="828"
+                height="27.0"
+            />
+
+
+            <!-- Row shading -->
+            <rect
+                class="release-cycle-row-shade"
+                x="0em"
+                y="276.75"
+                width="828"
+                height="27.0"
+            />
+
+
+            <!-- Row shading -->
+            <rect
+                class="release-cycle-row-shade"
+                x="0em"
+                y="330.75"
+                width="828"
+                height="27.0"
+            />
+
+
+            <!-- Row shading -->
+            <rect
+                class="release-cycle-row-shade"
+                x="0em"
+                y="384.75"
+                width="828"
+                height="27.0"
+            />
+
+
+            <!-- Row shading -->
+            <rect
+                class="release-cycle-row-shade"
+                x="0em"
+                y="438.75"
+                width="828"
+                height="27.0"
+            />
+
+
+        <text
+            class="release-cycle-year-text"
+            x="118.51921708185054"
+            y="513.0"
+            font-size="13.5"
+            text-anchor="middle"
+        >
+            &#39;08
+        </text>
+        <line
+            class="release-cycle-year-line"
+            x1="133.56298932384342"
+            x2="133.56298932384342"
+            y1="0"
+            y2="513.0"
+            font-size="18"
+        />
+        <text
+            class="release-cycle-year-text"
+            x="148.56565836298932"
+            y="513.0"
+            font-size="13.5"
+            text-anchor="middle"
+        >
+            &#39;09
+        </text>
+        <line
+            class="release-cycle-year-line"
+            x1="163.56832740213522"
+            x2="163.56832740213522"
+            y1="0"
+            y2="513.0"
+            font-size="18"
+        />
+        <text
+            class="release-cycle-year-text"
+            x="178.57099644128112"
+            y="513.0"
+            font-size="13.5"
+            text-anchor="middle"
+        >
+            &#39;10
+        </text>
+        <line
+            class="release-cycle-year-line"
+            x1="193.57366548042702"
+            x2="193.57366548042702"
+            y1="0"
+            y2="513.0"
+            font-size="18"
+        />
+        <text
+            class="release-cycle-year-text"
+            x="208.57633451957292"
+            y="513.0"
+            font-size="13.5"
+            text-anchor="middle"
+        >
+            &#39;11
+        </text>
+        <line
+            class="release-cycle-year-line"
+            x1="223.57900355871885"
+            x2="223.57900355871885"
+            y1="0"
+            y2="513.0"
+            font-size="18"
+        />
+        <text
+            class="release-cycle-year-text"
+            x="238.62277580071174"
+            y="513.0"
+            font-size="13.5"
+            text-anchor="middle"
+        >
+            &#39;12
+        </text>
+        <line
+            class="release-cycle-year-line"
+            x1="253.66654804270465"
+            x2="253.66654804270465"
+            y1="0"
+            y2="513.0"
+            font-size="18"
+        />
+        <text
+            class="release-cycle-year-text"
+            x="268.66921708185055"
+            y="513.0"
+            font-size="13.5"
+            text-anchor="middle"
+        >
+            &#39;13
+        </text>
+        <line
+            class="release-cycle-year-line"
+            x1="283.6718861209964"
+            x2="283.6718861209964"
+            y1="0"
+            y2="513.0"
+            font-size="18"
+        />
+        <text
+            class="release-cycle-year-text"
+            x="298.6745551601423"
+            y="513.0"
+            font-size="13.5"
+            text-anchor="middle"
+        >
+            &#39;14
+        </text>
+        <line
+            class="release-cycle-year-line"
+            x1="313.6772241992882"
+            x2="313.6772241992882"
+            y1="0"
+            y2="513.0"
+            font-size="18"
+        />
+        <text
+            class="release-cycle-year-text"
+            x="328.67989323843415"
+            y="513.0"
+            font-size="13.5"
+            text-anchor="middle"
+        >
+            &#39;15
+        </text>
+        <line
+            class="release-cycle-year-line"
+            x1="343.6825622775801"
+            x2="343.6825622775801"
+            y1="0"
+            y2="513.0"
+            font-size="18"
+        />
+        <text
+            class="release-cycle-year-text"
+            x="358.726334519573"
+            y="513.0"
+            font-size="13.5"
+            text-anchor="middle"
+        >
+            &#39;16
+        </text>
+        <line
+            class="release-cycle-year-line"
+            x1="373.7701067615659"
+            x2="373.7701067615659"
+            y1="0"
+            y2="513.0"
+            font-size="18"
+        />
+        <text
+            class="release-cycle-year-text"
+            x="388.77277580071177"
+            y="513.0"
+            font-size="13.5"
+            text-anchor="middle"
+        >
+            &#39;17
+        </text>
+        <line
+            class="release-cycle-year-line"
+            x1="403.77544483985764"
+            x2="403.77544483985764"
+            y1="0"
+            y2="513.0"
+            font-size="18"
+        />
+        <text
+            class="release-cycle-year-text"
+            x="418.77811387900357"
+            y="513.0"
+            font-size="13.5"
+            text-anchor="middle"
+        >
+            &#39;18
+        </text>
+        <line
+            class="release-cycle-year-line"
+            x1="433.7807829181495"
+            x2="433.7807829181495"
+            y1="0"
+            y2="513.0"
+            font-size="18"
+        />
+        <text
+            class="release-cycle-year-text"
+            x="448.78345195729537"
+            y="513.0"
+            font-size="13.5"
+            text-anchor="middle"
+        >
+            &#39;19
+        </text>
+        <line
+            class="release-cycle-year-line"
+            x1="463.78612099644124"
+            x2="463.78612099644124"
+            y1="0"
+            y2="513.0"
+            font-size="18"
+        />
+        <text
+            class="release-cycle-year-text"
+            x="478.8298932384341"
+            y="513.0"
+            font-size="13.5"
+            text-anchor="middle"
+        >
+            &#39;20
+        </text>
+        <line
+            class="release-cycle-year-line"
+            x1="493.87366548042706"
+            x2="493.87366548042706"
+            y1="0"
+            y2="513.0"
+            font-size="18"
+        />
+        <text
+            class="release-cycle-year-text"
+            x="508.876334519573"
+            y="513.0"
+            font-size="13.5"
+            text-anchor="middle"
+        >
+            &#39;21
+        </text>
+        <line
+            class="release-cycle-year-line"
+            x1="523.8790035587189"
+            x2="523.8790035587189"
+            y1="0"
+            y2="513.0"
+            font-size="18"
+        />
+        <text
+            class="release-cycle-year-text"
+            x="538.8816725978647"
+            y="513.0"
+            font-size="13.5"
+            text-anchor="middle"
+        >
+            &#39;22
+        </text>
+        <line
+            class="release-cycle-year-line"
+            x1="553.8843416370107"
+            x2="553.8843416370107"
+            y1="0"
+            y2="513.0"
+            font-size="18"
+        />
+        <text
+            class="release-cycle-year-text"
+            x="568.8870106761566"
+            y="513.0"
+            font-size="13.5"
+            text-anchor="middle"
+        >
+            &#39;23
+        </text>
+        <line
+            class="release-cycle-year-line"
+            x1="583.8896797153025"
+            x2="583.8896797153025"
+            y1="0"
+            y2="513.0"
+            font-size="18"
+        />
+        <text
+            class="release-cycle-year-text"
+            x="598.9334519572953"
+            y="513.0"
+            font-size="13.5"
+            text-anchor="middle"
+        >
+            &#39;24
+        </text>
+        <line
+            class="release-cycle-year-line"
+            x1="613.9772241992882"
+            x2="613.9772241992882"
+            y1="0"
+            y2="513.0"
+            font-size="18"
+        />
+        <text
+            class="release-cycle-year-text"
+            x="628.9798932384342"
+            y="513.0"
+            font-size="13.5"
+            text-anchor="middle"
+        >
+            &#39;25
+        </text>
+        <line
+            class="release-cycle-year-line"
+            x1="643.9825622775801"
+            x2="643.9825622775801"
+            y1="0"
+            y2="513.0"
+            font-size="18"
+        />
+        <text
+            class="release-cycle-year-text"
+            x="658.985231316726"
+            y="513.0"
+            font-size="13.5"
+            text-anchor="middle"
+        >
+            &#39;26
+        </text>
+        <line
+            class="release-cycle-year-line"
+            x1="673.987900355872"
+            x2="673.987900355872"
+            y1="0"
+            y2="513.0"
+            font-size="18"
+        />
+        <text
+            class="release-cycle-year-text"
+            x="688.9905693950178"
+            y="513.0"
+            font-size="13.5"
+            text-anchor="middle"
+        >
+            &#39;27
+        </text>
+        <line
+            class="release-cycle-year-line"
+            x1="703.9932384341637"
+            x2="703.9932384341637"
+            y1="0"
+            y2="513.0"
+            font-size="18"
+        />
+        <text
+            class="release-cycle-year-text"
+            x="719.0370106761566"
+            y="513.0"
+            font-size="13.5"
+            text-anchor="middle"
+        >
+            &#39;28
+        </text>
+        <line
+            class="release-cycle-year-line"
+            x1="734.0807829181495"
+            x2="734.0807829181495"
+            y1="0"
+            y2="513.0"
+            font-size="18"
+        />
+        <text
+            class="release-cycle-year-text"
+            x="749.0834519572954"
+            y="513.0"
+            font-size="13.5"
+            text-anchor="middle"
+        >
+            &#39;29
+        </text>
+        <line
+            class="release-cycle-year-line"
+            x1="764.0861209964413"
+            x2="764.0861209964413"
+            y1="0"
+            y2="513.0"
+            font-size="18"
+        />
+        <text
+            class="release-cycle-year-text"
+            x="779.0887900355872"
+            y="513.0"
+            font-size="13.5"
+            text-anchor="middle"
+        >
+            &#39;30
+        </text>
+        <line
+            class="release-cycle-year-line"
+            x1="794.0914590747332"
+            x2="794.0914590747332"
+            y1="0"
+            y2="513.0"
+            font-size="18"
+        />
+        <text
+            class="release-cycle-year-text"
+            x="809.094128113879"
+            y="513.0"
+            font-size="13.5"
+            text-anchor="middle"
+        >
+            &#39;31
+        </text>
+
+    <!-- Gradient mask to fade out end-of-life versions -->
+    <mask id="release-cycle-mask-all">
+        <rect
+            x="0"
+            y="0"
+            width="126"
+            height="540.0"
+            fill="black"
+        />
+        <rect
+            x="117.0"
+            y="0"
+            width="9.0"
+            height="540.0"
+            fill="url(#release-cycle-mask-gradient-all)"
+        />
+        <rect
+            x="126"
+            y="0"
+            width="828"
+            height="540.0"
+            fill="white"
+        />
+    </mask>
+
+        <!-- Colourful blob with a label. -->
+
+
+
+        <!-- bugfix/security blobs need to be split between the two phases.
+            Draw the rectangle with two path elements instead.
+            Thanks Claude.ai for the initial conversion.
+        -->
+
+            <!-- For EOL releases, use a single rounded rectangle -->
+            <rect
+                class="release-cycle-blob release-cycle-blob-full
+                       release-cycle-status-end-of-life"
+                x="126.0"
+                y="9.0"
+                width="152.41067615658363"
+                height="22.5"
+                rx="4.5"
+                ry="4.5"
+                mask="url(#release-cycle-mask-all)"
+            />
+
+        <!-- Add text before/after/inside the blob -->
+        <text
+            class="release-cycle-blob-label release-cycle-status-end-of-life"
+            font-size="13.5"
+            y="25.2"
+                x="282.91067615658363"
+                text-anchor="start"
+        >
+            end-of-life
+        </text>
+
+        <!-- Legend on the left -->
+        <text
+            class="release-cycle-version-label"
+            x="9.0"
+            y="27.0"
+            font-size="18"
+        >
+            Python 2.6
+        </text>
+        <!-- Colourful blob with a label. -->
+
+
+
+        <!-- bugfix/security blobs need to be split between the two phases.
+            Draw the rectangle with two path elements instead.
+            Thanks Claude.ai for the initial conversion.
+        -->
+
+            <!-- For EOL releases, use a single rounded rectangle -->
+            <rect
+                class="release-cycle-blob release-cycle-blob-full
+                       release-cycle-status-end-of-life"
+                x="178.61209964412814"
+                y="36.0"
+                width="285.1740213523131"
+                height="22.5"
+                rx="4.5"
+                ry="4.5"
+                mask="url(#release-cycle-mask-all)"
+            />
+
+        <!-- Add text before/after/inside the blob -->
+        <text
+            class="release-cycle-blob-label release-cycle-status-end-of-life"
+            font-size="13.5"
+            y="52.2"
+                x="468.28612099644124"
+                text-anchor="start"
+        >
+            end-of-life
+        </text>
+
+        <!-- Legend on the left -->
+        <text
+            class="release-cycle-version-label"
+            x="9.0"
+            y="54.0"
+            font-size="18"
+        >
+            Python 2.7
+        </text>
+        <!-- Colourful blob with a label. -->
+
+
+
+        <!-- bugfix/security blobs need to be split between the two phases.
+            Draw the rectangle with two path elements instead.
+            Thanks Claude.ai for the initial conversion.
+        -->
+
+            <!-- For EOL releases, use a single rounded rectangle -->
+            <rect
+                class="release-cycle-blob release-cycle-blob-full
+                       release-cycle-status-end-of-life"
+                x="131.17900355871885"
+                y="63.0"
+                width="16.934519572953747"
+                height="22.5"
+                rx="4.5"
+                ry="4.5"
+                mask="url(#release-cycle-mask-all)"
+            />
+
+        <!-- Add text before/after/inside the blob -->
+        <text
+            class="release-cycle-blob-label release-cycle-status-end-of-life"
+            font-size="13.5"
+            y="79.2"
+                x="152.6135231316726"
+                text-anchor="start"
+        >
+            end-of-life
+        </text>
+
+        <!-- Legend on the left -->
+        <text
+            class="release-cycle-version-label"
+            x="9.0"
+            y="81.0"
+            font-size="18"
+        >
+            Python 3.0
+        </text>
+        <!-- Colourful blob with a label. -->
+
+
+
+        <!-- bugfix/security blobs need to be split between the two phases.
+            Draw the rectangle with two path elements instead.
+            Thanks Claude.ai for the initial conversion.
+        -->
+
+            <!-- For EOL releases, use a single rounded rectangle -->
+            <rect
+                class="release-cycle-blob release-cycle-blob-full
+                       release-cycle-status-end-of-life"
+                x="148.1135231316726"
+                y="90.0"
+                width="83.60391459074734"
+                height="22.5"
+                rx="4.5"
+                ry="4.5"
+                mask="url(#release-cycle-mask-all)"
+            />
+
+        <!-- Add text before/after/inside the blob -->
+        <text
+            class="release-cycle-blob-label release-cycle-status-end-of-life"
+            font-size="13.5"
+            y="106.2"
+                x="236.21743772241993"
+                text-anchor="start"
+        >
+            end-of-life
+        </text>
+
+        <!-- Legend on the left -->
+        <text
+            class="release-cycle-version-label"
+            x="9.0"
+            y="108.0"
+            font-size="18"
+        >
+            Python 3.1
+        </text>
+        <!-- Colourful blob with a label. -->
+
+
+
+        <!-- bugfix/security blobs need to be split between the two phases.
+            Draw the rectangle with two path elements instead.
+            Thanks Claude.ai for the initial conversion.
+        -->
+
+            <!-- For EOL releases, use a single rounded rectangle -->
+            <rect
+                class="release-cycle-blob release-cycle-blob-full
+                       release-cycle-status-end-of-life"
+                x="197.68398576512456"
+                y="117.0"
+                width="150.108896797153"
+                height="22.5"
+                rx="4.5"
+                ry="4.5"
+                mask="url(#release-cycle-mask-all)"
+            />
+
+        <!-- Add text before/after/inside the blob -->
+        <text
+            class="release-cycle-blob-label release-cycle-status-end-of-life"
+            font-size="13.5"
+            y="133.2"
+                x="352.29288256227755"
+                text-anchor="start"
+        >
+            end-of-life
+        </text>
+
+        <!-- Legend on the left -->
+        <text
+            class="release-cycle-version-label"
+            x="9.0"
+            y="135.0"
+            font-size="18"
+        >
+            Python 3.2
+        </text>
+        <!-- Colourful blob with a label. -->
+
+
+
+        <!-- bugfix/security blobs need to be split between the two phases.
+            Draw the rectangle with two path elements instead.
+            Thanks Claude.ai for the initial conversion.
+        -->
+
+            <!-- For EOL releases, use a single rounded rectangle -->
+            <rect
+                class="release-cycle-blob release-cycle-blob-full
+                       release-cycle-status-end-of-life"
+                x="245.93914590747332"
+                y="144.0"
+                width="150.108896797153"
+                height="22.5"
+                rx="4.5"
+                ry="4.5"
+                mask="url(#release-cycle-mask-all)"
+            />
+
+        <!-- Add text before/after/inside the blob -->
+        <text
+            class="release-cycle-blob-label release-cycle-status-end-of-life"
+            font-size="13.5"
+            y="160.2"
+                x="400.5480427046263"
+                text-anchor="start"
+        >
+            end-of-life
+        </text>
+
+        <!-- Legend on the left -->
+        <text
+            class="release-cycle-version-label"
+            x="9.0"
+            y="162.0"
+            font-size="18"
+        >
+            Python 3.3
+        </text>
+        <!-- Colourful blob with a label. -->
+
+
+
+        <!-- bugfix/security blobs need to be split between the two phases.
+            Draw the rectangle with two path elements instead.
+            Thanks Claude.ai for the initial conversion.
+        -->
+
+            <!-- For EOL releases, use a single rounded rectangle -->
+            <rect
+                class="release-cycle-blob release-cycle-blob-full
+                       release-cycle-status-end-of-life"
+                x="289.7551601423487"
+                y="171.0"
+                width="150.27330960854096"
+                height="22.5"
+                rx="4.5"
+                ry="4.5"
+                mask="url(#release-cycle-mask-all)"
+            />
+
+        <!-- Add text before/after/inside the blob -->
+        <text
+            class="release-cycle-blob-label release-cycle-status-end-of-life"
+            font-size="13.5"
+            y="187.2"
+                x="444.52846975088966"
+                text-anchor="start"
+        >
+            end-of-life
+        </text>
+
+        <!-- Legend on the left -->
+        <text
+            class="release-cycle-version-label"
+            x="9.0"
+            y="189.0"
+            font-size="18"
+        >
+            Python 3.4
+        </text>
+        <!-- Colourful blob with a label. -->
+
+
+
+        <!-- bugfix/security blobs need to be split between the two phases.
+            Draw the rectangle with two path elements instead.
+            Thanks Claude.ai for the initial conversion.
+        -->
+
+            <!-- For EOL releases, use a single rounded rectangle -->
+            <rect
+                class="release-cycle-blob release-cycle-blob-full
+                       release-cycle-status-end-of-life"
+                x="334.6398576512455"
+                y="198.0"
+                width="151.58861209964414"
+                height="22.5"
+                rx="4.5"
+                ry="4.5"
+                mask="url(#release-cycle-mask-all)"
+            />
+
+        <!-- Add text before/after/inside the blob -->
+        <text
+            class="release-cycle-blob-label release-cycle-status-end-of-life"
+            font-size="13.5"
+            y="214.2"
+                x="490.72846975088964"
+                text-anchor="start"
+        >
+            end-of-life
+        </text>
+
+        <!-- Legend on the left -->
+        <text
+            class="release-cycle-version-label"
+            x="9.0"
+            y="216.0"
+            font-size="18"
+        >
+            Python 3.5
+        </text>
+        <!-- Colourful blob with a label. -->
+
+
+
+        <!-- bugfix/security blobs need to be split between the two phases.
+            Draw the rectangle with two path elements instead.
+            Thanks Claude.ai for the initial conversion.
+        -->
+
+            <!-- For EOL releases, use a single rounded rectangle -->
+            <rect
+                class="release-cycle-blob release-cycle-blob-full
+                       release-cycle-status-end-of-life"
+                x="373.0302491103203"
+                y="225.0"
+                width="150.10889679715302"
+                height="22.5"
+                rx="4.5"
+                ry="4.5"
+                mask="url(#release-cycle-mask-all)"
+            />
+
+        <!-- Add text before/after/inside the blob -->
+        <text
+            class="release-cycle-blob-label release-cycle-status-end-of-life"
+            font-size="13.5"
+            y="241.2"
+                x="527.6391459074733"
+                text-anchor="start"
+        >
+            end-of-life
+        </text>
+
+        <!-- Legend on the left -->
+        <text
+            class="release-cycle-version-label"
+            x="9.0"
+            y="243.0"
+            font-size="18"
+        >
+            Python 3.6
+        </text>
+        <!-- Colourful blob with a label. -->
+
+
+
+        <!-- bugfix/security blobs need to be split between the two phases.
+            Draw the rectangle with two path elements instead.
+            Thanks Claude.ai for the initial conversion.
+        -->
+
+            <!-- For EOL releases, use a single rounded rectangle -->
+            <rect
+                class="release-cycle-blob release-cycle-blob-full
+                       release-cycle-status-end-of-life"
+                x="418.32597864768684"
+                y="252.0"
+                width="150.10889679715308"
+                height="22.5"
+                rx="4.5"
+                ry="4.5"
+                mask="url(#release-cycle-mask-all)"
+            />
+
+        <!-- Add text before/after/inside the blob -->
+        <text
+            class="release-cycle-blob-label release-cycle-status-end-of-life"
+            font-size="13.5"
+            y="268.2"
+                x="572.9348754448399"
+                text-anchor="start"
+        >
+            end-of-life
+        </text>
+
+        <!-- Legend on the left -->
+        <text
+            class="release-cycle-version-label"
+            x="9.0"
+            y="270.0"
+            font-size="18"
+        >
+            Python 3.7
+        </text>
+        <!-- Colourful blob with a label. -->
+
+
+
+        <!-- bugfix/security blobs need to be split between the two phases.
+            Draw the rectangle with two path elements instead.
+            Thanks Claude.ai for the initial conversion.
+        -->
+
+            <!-- For EOL releases, use a single rounded rectangle -->
+            <rect
+                class="release-cycle-blob release-cycle-blob-full
+                       release-cycle-status-end-of-life"
+                x="457.29181494661924"
+                y="279.0"
+                width="149.61565836298934"
+                height="22.5"
+                rx="4.5"
+                ry="4.5"
+                mask="url(#release-cycle-mask-all)"
+            />
+
+        <!-- Add text before/after/inside the blob -->
+        <text
+            class="release-cycle-blob-label release-cycle-status-end-of-life"
+            font-size="13.5"
+            y="295.2"
+                x="611.4074733096086"
+                text-anchor="start"
+        >
+            end-of-life
+        </text>
+
+        <!-- Legend on the left -->
+        <text
+            class="release-cycle-version-label"
+            x="9.0"
+            y="297.0"
+            font-size="18"
+        >
+            Python 3.8
+        </text>
+        <!-- Colourful blob with a label. -->
+
+
+
+        <!-- bugfix/security blobs need to be split between the two phases.
+            Draw the rectangle with two path elements instead.
+            Thanks Claude.ai for the initial conversion.
+        -->
+
+            <!-- For EOL releases, use a single rounded rectangle -->
+            <rect
+                class="release-cycle-blob release-cycle-blob-full
+                       release-cycle-status-end-of-life"
+                x="486.6395017793594"
+                y="306.0"
+                width="152.24626334519576"
+                height="22.5"
+                rx="4.5"
+                ry="4.5"
+                mask="url(#release-cycle-mask-all)"
+            />
+
+        <!-- Add text before/after/inside the blob -->
+        <text
+            class="release-cycle-blob-label release-cycle-status-end-of-life"
+            font-size="13.5"
+            y="322.2"
+                x="643.3857651245552"
+                text-anchor="start"
+        >
+            end-of-life
+        </text>
+
+        <!-- Legend on the left -->
+        <text
+            class="release-cycle-version-label"
+            x="9.0"
+            y="324.0"
+            font-size="18"
+        >
+            Python 3.9
+        </text>
+        <!-- Colourful blob with a label. -->
+
+
+
+        <!-- bugfix/security blobs need to be split between the two phases.
+            Draw the rectangle with two path elements instead.
+            Thanks Claude.ai for the initial conversion.
+        -->
+
+            <!-- Split the blob using path operations
+                 (Move-to, Vertical/Horizontal, Arc, Z=close shape;
+                  lowercase means relative to the last point.)
+                 We start drawing from the top of the straight boundary
+                 between the half-blobs.
+             -->
+            <path
+                class="release-cycle-blob release-cycle-status-bugfix"
+                d="
+                    M561.529537366548,333.0v22.5H521.0626334519573a4.5,4.5 90 0 1-4.5 -4.5
+                    v-13.5a4.5,4.5 90 0 14.5 -4.5
+                    Z"
+            />
+            <path
+                class="release-cycle-blob release-cycle-status-security"
+                d="
+                    M561.529537366548,333.0v22.5H664.3911032028469a4.5,4.5 90 0 04.5 -4.5
+                    v-13.5a4.5,4.5 90 0 0-4.5 -4.5
+                    Z"
+            />
+            <!-- Add a common border -->
+            <rect
+                class="release-cycle-border release-cycle-status-security"
+                x="516.5626334519573"
+                y="333.0"
+                width="152.32846975088967"
+                height="22.5"
+                rx="4.5"
+                ry="4.5"
+            />
+
+        <!-- Add text before/after/inside the blob -->
+        <text
+            class="release-cycle-blob-label release-cycle-status-security"
+            font-size="13.5"
+            y="349.2"
+                x="615.2103202846974"
+                text-anchor="middle"
+        >
+            security
+        </text>
+
+        <!-- Legend on the left -->
+        <text
+            class="release-cycle-version-label"
+            x="9.0"
+            y="351.0"
+            font-size="18"
+        >
+            Python 3.10
+        </text>
+        <!-- Colourful blob with a label. -->
+
+
+
+        <!-- bugfix/security blobs need to be split between the two phases.
+            Draw the rectangle with two path elements instead.
+            Thanks Claude.ai for the initial conversion.
+        -->
+
+            <!-- Split the blob using path operations
+                 (Move-to, Vertical/Horizontal, Arc, Z=close shape;
+                  lowercase means relative to the last point.)
+                 We start drawing from the top of the straight boundary
+                 between the half-blobs.
+             -->
+            <path
+                class="release-cycle-blob release-cycle-status-bugfix"
+                d="
+                    M593.1790035587189,360.0v22.5H552.7120996441281a4.5,4.5 90 0 1-4.5 -4.5
+                    v-13.5a4.5,4.5 90 0 14.5 -4.5
+                    Z"
+            />
+            <path
+                class="release-cycle-blob release-cycle-status-security"
+                d="
+                    M593.1790035587189,360.0v22.5H694.3964412811389a4.5,4.5 90 0 04.5 -4.5
+                    v-13.5a4.5,4.5 90 0 0-4.5 -4.5
+                    Z"
+            />
+            <!-- Add a common border -->
+            <rect
+                class="release-cycle-border release-cycle-status-security"
+                x="548.2120996441281"
+                y="360.0"
+                width="150.6843416370108"
+                height="22.5"
+                rx="4.5"
+                ry="4.5"
+            />
+
+        <!-- Add text before/after/inside the blob -->
+        <text
+            class="release-cycle-blob-label release-cycle-status-security"
+            font-size="13.5"
+            y="376.2"
+                x="646.037722419929"
+                text-anchor="middle"
+        >
+            security
+        </text>
+
+        <!-- Legend on the left -->
+        <text
+            class="release-cycle-version-label"
+            x="9.0"
+            y="378.0"
+            font-size="18"
+        >
+            Python 3.11
+        </text>
+        <!-- Colourful blob with a label. -->
+
+
+
+        <!-- bugfix/security blobs need to be split between the two phases.
+            Draw the rectangle with two path elements instead.
+            Thanks Claude.ai for the initial conversion.
+        -->
+
+            <!-- Split the blob using path operations
+                 (Move-to, Vertical/Horizontal, Arc, Z=close shape;
+                  lowercase means relative to the last point.)
+                 We start drawing from the top of the straight boundary
+                 between the half-blobs.
+             -->
+            <path
+                class="release-cycle-blob release-cycle-status-bugfix"
+                d="
+                    M621.3758007117438,387.0v22.5H580.908896797153a4.5,4.5 90 0 1-4.5 -4.5
+                    v-13.5a4.5,4.5 90 0 14.5 -4.5
+                    Z"
+            />
+            <path
+                class="release-cycle-blob release-cycle-status-security"
+                d="
+                    M621.3758007117438,387.0v22.5H724.4839857651245a4.5,4.5 90 0 04.5 -4.5
+                    v-13.5a4.5,4.5 90 0 0-4.5 -4.5
+                    Z"
+            />
+            <!-- Add a common border -->
+            <rect
+                class="release-cycle-border release-cycle-status-security"
+                x="576.408896797153"
+                y="387.0"
+                width="152.5750889679715"
+                height="22.5"
+                rx="4.5"
+                ry="4.5"
+            />
+
+        <!-- Add text before/after/inside the blob -->
+        <text
+            class="release-cycle-blob-label release-cycle-status-security"
+            font-size="13.5"
+            y="403.2"
+                x="675.1798932384341"
+                text-anchor="middle"
+        >
+            security
+        </text>
+
+        <!-- Legend on the left -->
+        <text
+            class="release-cycle-version-label"
+            x="9.0"
+            y="405.0"
+            font-size="18"
+        >
+            Python 3.12
+        </text>
+        <!-- Colourful blob with a label. -->
+
+
+
+        <!-- bugfix/security blobs need to be split between the two phases.
+            Draw the rectangle with two path elements instead.
+            Thanks Claude.ai for the initial conversion.
+        -->
+
+            <!-- Split the blob using path operations
+                 (Move-to, Vertical/Horizontal, Arc, Z=close shape;
+                  lowercase means relative to the last point.)
+                 We start drawing from the top of the straight boundary
+                 between the half-blobs.
+             -->
+            <path
+                class="release-cycle-blob release-cycle-status-bugfix"
+                d="
+                    M666.9181494661923,414.0v22.5H611.4074733096086a4.5,4.5 90 0 1-4.5 -4.5
+                    v-13.5a4.5,4.5 90 0 14.5 -4.5
+                    Z"
+            />
+            <path
+                class="release-cycle-blob release-cycle-status-security"
+                d="
+                    M666.9181494661923,414.0v22.5H754.4893238434163a4.5,4.5 90 0 04.5 -4.5
+                    v-13.5a4.5,4.5 90 0 0-4.5 -4.5
+                    Z"
+            />
+            <!-- Add a common border -->
+            <rect
+                class="release-cycle-border release-cycle-status-bugfix"
+                x="606.9074733096086"
+                y="414.0"
+                width="152.0818505338077"
+                height="22.5"
+                rx="4.5"
+                ry="4.5"
+            />
+
+        <!-- Add text before/after/inside the blob -->
+        <text
+            class="release-cycle-blob-label release-cycle-status-bugfix"
+            font-size="13.5"
+            y="430.2"
+                x="636.9128113879004"
+                text-anchor="middle"
+        >
+            bugfix
+        </text>
+
+        <!-- Legend on the left -->
+        <text
+            class="release-cycle-version-label"
+            x="9.0"
+            y="432.0"
+            font-size="18"
+        >
+            Python 3.13
+        </text>
+        <!-- Colourful blob with a label. -->
+
+
+
+        <!-- bugfix/security blobs need to be split between the two phases.
+            Draw the rectangle with two path elements instead.
+            Thanks Claude.ai for the initial conversion.
+        -->
+
+            <!-- Split the blob using path operations
+                 (Move-to, Vertical/Horizontal, Arc, Z=close shape;
+                  lowercase means relative to the last point.)
+                 We start drawing from the top of the straight boundary
+                 between the half-blobs.
+             -->
+            <path
+                class="release-cycle-blob release-cycle-status-bugfix"
+                d="
+                    M696.9234875444839,441.0v22.5H641.4128113879003a4.5,4.5 90 0 1-4.5 -4.5
+                    v-13.5a4.5,4.5 90 0 14.5 -4.5
+                    Z"
+            />
+            <path
+                class="release-cycle-blob release-cycle-status-security"
+                d="
+                    M696.9234875444839,441.0v22.5H784.4946619217083a4.5,4.5 90 0 04.5 -4.5
+                    v-13.5a4.5,4.5 90 0 0-4.5 -4.5
+                    Z"
+            />
+            <!-- Add a common border -->
+            <rect
+                class="release-cycle-border release-cycle-status-bugfix"
+                x="636.9128113879003"
+                y="441.0"
+                width="152.08185053380794"
+                height="22.5"
+                rx="4.5"
+                ry="4.5"
+            />
+
+        <!-- Add text before/after/inside the blob -->
+        <text
+            class="release-cycle-blob-label release-cycle-status-bugfix"
+            font-size="13.5"
+            y="457.2"
+                x="666.9181494661921"
+                text-anchor="middle"
+        >
+            bugfix
+        </text>
+
+        <!-- Legend on the left -->
+        <text
+            class="release-cycle-version-label"
+            x="9.0"
+            y="459.0"
+            font-size="18"
+        >
+            Python 3.14
+        </text>
+        <!-- Colourful blob with a label. -->
+
+
+
+        <!-- bugfix/security blobs need to be split between the two phases.
+            Draw the rectangle with two path elements instead.
+            Thanks Claude.ai for the initial conversion.
+        -->
+
+            <!-- Split the blob using path operations
+                 (Move-to, Vertical/Horizontal, Arc, Z=close shape;
+                  lowercase means relative to the last point.)
+                 We start drawing from the top of the straight boundary
+                 between the half-blobs.
+             -->
+            <path
+                class="release-cycle-blob release-cycle-status-bugfix"
+                d="
+                    M726.4355871886121,468.0v22.5H670.9249110320284a4.5,4.5 90 0 1-4.5 -4.5
+                    v-13.5a4.5,4.5 90 0 14.5 -4.5
+                    Z"
+            />
+            <path
+                class="release-cycle-blob release-cycle-status-security"
+                d="
+                    M726.4355871886121,468.0v22.5H814.5a4.5,4.5 90 0 04.5 -4.5
+                    v-13.5a4.5,4.5 90 0 0-4.5 -4.5
+                    Z"
+            />
+            <!-- Add a common border -->
+            <rect
+                class="release-cycle-border release-cycle-status-feature"
+                x="666.4249110320284"
+                y="468.0"
+                width="152.57508896797162"
+                height="22.5"
+                rx="4.5"
+                ry="4.5"
+            />
+
+        <!-- Add text before/after/inside the blob -->
+        <text
+            class="release-cycle-blob-label release-cycle-status-feature"
+            font-size="13.5"
+            y="484.2"
+                x="661.9249110320284"
+                text-anchor="end"
+        >
+            feature
+        </text>
+
+        <!-- Legend on the left -->
+        <text
+            class="release-cycle-version-label"
+            x="9.0"
+            y="486.0"
+            font-size="18"
+        >
+            Python 3.15
+        </text>
+
+    <!-- A line for today -->
+    <line
+        class="release-cycle-today-line"
+        x1="648.997153024911"
+        x2="648.997153024911"
+        y1="0"
+        y2="513.0"
+        font-size="18"
+    />
+</svg>

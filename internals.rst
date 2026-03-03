@@ -1,52 +1,8 @@
-.. _exploring:
+.. _internals:
 
 ===================
-CPython source code
+CPython's internals
 ===================
-
-This section gives an overview of CPython's code structure and provides
-a summary of file locations for modules and built-ins.
-
-
-Source code layout
-==================
-
-For a Python :term:`module`, the typical layout is:
-
-* :file:`Lib/{<module>}.py`
-* :file:`Modules/_{<module>}.c` (if there's also a C accelerator module)
-* :file:`Lib/test/test_{<module>}.py`
-* :file:`Doc/library/{<module>}.rst`
-
-For an :term:`extension module`, the typical layout is:
-
-* :file:`Modules/{<module>}module.c`
-* :file:`Lib/test/test_{<module>}.py`
-* :file:`Doc/library/{<module>}.rst`
-
-For :ref:`bltin-types`, the typical layout is:
-
-* :file:`Objects/{<builtin>}object.c`
-* :file:`Lib/test/test_{<builtin>}.py`
-* :cpy-file:`Doc/library/stdtypes.rst`
-
-For :ref:`built-in-funcs`, the typical layout is:
-
-* :cpy-file:`Python/bltinmodule.c`
-* :cpy-file:`Lib/test/test_builtin.py`
-* :cpy-file:`Doc/library/functions.rst`
-
-Some exceptions to these layouts are:
-
-* built-in type ``int`` is at :cpy-file:`Objects/longobject.c`
-* built-in type ``str`` is at :cpy-file:`Objects/unicodeobject.c`
-* built-in module ``sys`` is at :cpy-file:`Python/sysmodule.c`
-* built-in module ``marshal`` is at :cpy-file:`Python/marshal.c`
-* Windows-only module ``winreg`` is at :cpy-file:`PC/winreg.c`
-
-
-Additional references
-=====================
 
 The CPython code base is constantly changing and evolving.
 Here's a sample of references about CPython's architecture aimed at
@@ -56,6 +12,7 @@ building your understanding of CPython internals and its evolution:
    :header: "Title", "Brief", "Author", "Version"
    :widths: 50, 50, 20, 5
 
+    "`CPython's InternalDocs`_", "Docs on CPython internals maintained in the source tree", "", ""
     "`A guide from parser to objects, observed using GDB`_", "Code walk from Parser, AST, Sym Table and Objects", Louie Lu, 3.7.a0
     "`Green Tree Snakes`_", "The missing Python AST docs", Thomas Kluyver, 3.6
     "`Yet another guided tour of CPython`_", "A guide for how CPython REPL works", Guido van Rossum, 3.5
@@ -72,6 +29,7 @@ building your understanding of CPython internals and its evolution:
     "`A guide from parser to objects, observed using Eclipse`_", "Code walk from Parser, AST, Sym Table and Objects", Prashanth Raghu, 2.7.12
     "`CPython internals: A ten-hour codewalk through the Python interpreter source code`_", "Code walk from source code to generators", Philip Guo, 2.7.8
 
+.. _CPython's InternalDocs: https://github.com/python/cpython/blob/main/InternalDocs/README.md
 
 .. _A guide from parser to objects, observed using GDB: https://hackmd.io/s/ByMHBMjFe
 
