@@ -377,7 +377,7 @@ host/runtime as a *guest*.
 
 .. note::
 
-   The instructions below assume a Unix-based OS (including macOS) due to
+   The instructions below assume a Unix-based OS due to
    cross-compilation for CPython being designed for ``./configure`` / ``make``.
 
 To build for WASI, you will need to cross-compile CPython. This requires a C
