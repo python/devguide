@@ -233,8 +233,9 @@ Before adding a new repository to the organization, open a discussion to seek co
 in the `Committers Discourse category <https://discuss.python.org/c/committers/5>`__.
 Once people are satisfied with that, ask the `Python steering council <https://github.com/python/steering-council>`__
 to grant permission. Note that this process is not necessary for
-:pep:`docs translations <545#repository-for-po-files>`, which can be added at
-a core team member’s discretion.
+:ref:`docs translations <translation-repo>` following
+:pep:`545 <545#repository-for-po-files>`, which can be added at a
+core team member’s discretion.
 
 Note that several repositories remain in the organization for historic reasons,
 and would probably not be appropriate to add today.
