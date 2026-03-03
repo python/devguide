@@ -27,6 +27,7 @@ exclude_patterns = [
     'env*',
     'README.rst',
     '.github',
+    'contrib',
 ]
 
 nitpicky = True
