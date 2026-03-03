@@ -114,7 +114,7 @@ ftplib                giampaolo*
 functools             rhettinger*
 gc                    pitrou, pablogsal, nascheme
 getopt                serhiy-storchaka*
-getpath               FFY00
+getpath               FFY00*
 getpass
 gettext               tomasr8
 glob                  serhiy-storchaka*
@@ -127,7 +127,7 @@ http
 idlelib               kbkaiser (inactive), terryjreedy*, serwy (inactive),
                       taleinat
 imaplib
-importlib             brettcannon
+importlib             brettcannon, FFY00*
 inspect               1st1
 io                    benjaminp, stutzbach^
 ipaddress             pmoody^
@@ -144,7 +144,7 @@ marshal
 math                  rhettinger, stutzbach^
 mimetypes
 mmap                  Yhg1s
-modulefinder          theller (inactive), jvr^
+modulefinder          theller (inactive), jvr^, FFY00
 msvcrt
 multiprocessing       applio*, pitrou, jnoller^ (inactive), sbt^ (inactive), gpshead*
 netrc
@@ -158,7 +158,7 @@ pathlib               barneygale*
 pdb                   gaogaotiantian
 pickle                avassalotti, serhiy-storchaka*
 pickletools           avassalotti, serhiy-storchaka*
-pkgutil
+pkgutil               FFY00*
 platform              malemburg
 plistlib
 poplib
@@ -179,7 +179,7 @@ readline              Yhg1s
 reprlib
 resource              Yhg1s
 rlcompleter
-runpy                 ncoghlan
+runpy                 ncoghlan, FFY00
 sched
 secrets
 select
@@ -188,7 +188,7 @@ shelve
 shlex
 shutil                tarekziade, giampaolo
 signal                gpshead
-site
+site                  FFY00*
 smtplib
 socket                gpshead
 socketserver
@@ -202,7 +202,7 @@ struct                meadori
 subprocess            astrand^ (inactive), giampaolo, gpshead*
 symtable              benjaminp
 sys
-sysconfig             FFY00
+sysconfig             FFY00*
 syslog                jafo^*
 tabnanny              tim-one (inactive)
 tarfile               gustaebel
@@ -230,7 +230,7 @@ unittest              ezio-melotti, rbtcollins, gpshead, serhiy-storchaka*
 unittest.mock
 urllib                orsenthil
 uuid
-venv                  vsajip, FFY00
+venv                  vsajip, FFY00*
 warnings
 wave
 weakref               freddrake, nascheme
@@ -323,14 +323,14 @@ devguide            merwok, ezio-melotti, willingc, Mariatta, hugovk,
 documentation       ezio-melotti, merwok, JulienPalard, willingc, hugovk,
                     AA-Turner, AlexWaygood*
 emoji               Mariatta
-extension modules   encukou, ncoghlan
+extension modules   encukou, ncoghlan, FFY00
 filesystem          giampaolo
-frozen modules      ericsnowcurrently, gvanrossum, kumaraditya303
+frozen modules      ericsnowcurrently, gvanrossum, kumaraditya303, FFY00
 f-strings           ericvsmith*
 GUI
 i18n                malemburg, merwok, tomasr8
-import machinery    brettcannon, ncoghlan, ericsnowcurrently, FFY00
-initialization      FFY00
+import machinery    brettcannon, ncoghlan, ericsnowcurrently, FFY00*
+initialization      FFY00*
 io                  benjaminp, stutzbach^, gpshead
 JIT                 brandtbucher*, savannahostrowski*
 locale              malemburg
@@ -339,7 +339,7 @@ memory management   tim-one, malemburg, Yhg1s, nascheme
 memoryview
 networking          giampaolo, gpshead
 object model        benjaminp, Yhg1s
-packaging           tarekziade, malemburg, alexis^, merwok, dstufft, pfmoore, emmatyping
+packaging           tarekziade, malemburg, alexis^, merwok, dstufft, pfmoore, emmatyping, FFY00
 pattern matching    brandtbucher*
 PEG parser          gvanrossum, pablogsal, lysnikolaou
 performance         vstinner, serhiy-storchaka*, 1st1, rhettinger, markshannon,
@@ -348,7 +348,7 @@ pip                 ncoghlan, dstufft, pfmoore, Marcus.Smith^, pradyunsg
 release management  tarekziade, malemburg, benjaminp, warsaw,
                     gvanrossum, anthonybaxter^, merwok, ned-deily,
                     birkenfeld, JulienPalard, hugovk
-runtime lifecycle   ericsnowcurrently, kumaraditya303, zooba, ZeroIntensity, nascheme
+runtime lifecycle   ericsnowcurrently, kumaraditya303, zooba, ZeroIntensity, nascheme, FFY00
 str.format          ericvsmith*
 subinterpreters     ericsnowcurrently, kumaraditya303, ZeroIntensity*
 symbol table        JelleZijlstra, carljm
