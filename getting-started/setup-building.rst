@@ -377,14 +377,15 @@ host/runtime as a *guest*.
 
 .. note::
 
-   The instructions below assume a Unix-based OS due to cross-compilation for
-   CPython being designed for ``./configure`` / ``make``.
+   The instructions below assume a Unix-based OS (including macOS) due to
+   cross-compilation for CPython being designed for ``./configure`` / ``make``.
 
 To build for WASI, you will need to cross-compile CPython. This requires a C
 compiler just like building for :ref:`Unix <unix-compiling>` as well as:
 
 1. A C compiler that can target WebAssembly (for example, `WASI SDK`_)
 2. A WASI host/runtime (for example, Wasmtime_)
+3. Python 3.11 or newer to run the build script (``tomllib`` is required)
 
 All of this is provided in the WASI :ref:`dev container <using-a-container>`
 (which you can select as an alternative container when using a
@@ -399,6 +400,49 @@ known to work.
    and their versions specified in the container and build scripts are
    tested via a :ref:`buildbot <buildbots>`.
 
+Installing prerequisites (Linux)
+'''''''''''''''''''''''''''''''''
+
+Install Wasmtime via the `official installer <https://wasmtime.dev>`__ or your
+system package manager. Download the `WASI SDK`_ release archive for your
+platform, extract it, and set the ``WASI_SDK_PATH`` environment variable:
+
+.. code-block:: shell
+
+   export WASI_SDK_PATH=/path/to/wasi-sdk
+
+Installing prerequisites (macOS)
+'''''''''''''''''''''''''''''''''
+
+Install Wasmtime via Homebrew:
+
+.. code-block:: shell
+
+   brew install wasmtime
+
+Download the `WASI SDK`_ release archive for macOS (``arm64-macos`` for Apple
+Silicon, ``x86_64-macos`` for Intel). Before extracting, remove the macOS
+quarantine attribute to prevent Gatekeeper from blocking the compiler binaries:
+
+.. code-block:: shell
+
+   xattr -d com.apple.quarantine wasi-sdk-*.tar.gz
+   sudo tar -xzf wasi-sdk-*.tar.gz -C /opt
+   sudo mv /opt/wasi-sdk-*-macos /opt/wasi-sdk
+
+Then add to your shell profile (e.g. ``~/.zshrc``):
+
+.. code-block:: shell
+
+   export WASI_SDK_PATH=/opt/wasi-sdk
+
+.. note::
+
+   macOS ships with Python 3.9, which is too old to run the build script.
+   Use a newer Python via Homebrew (``brew install python``) or
+   `uv <https://docs.astral.sh/uv/>`__
+   (``uv run --python 3.13 -- python3 Platforms/WASI build ...``).
+
 Building for WASI requires doing a cross-build where you have a *build* Python
 to help produce a WASI build of CPython (technically it's a "host x host"
 cross-build because the build Python is also the target Python while the host
@@ -407,11 +451,16 @@ to have a version of Python for the build system to use and another that's the
 build you ultimately care about (that is, the build Python is not meant for use
 by you directly, only the build system).
 
-The easiest way to get a debug build of CPython for WASI is to use the
-``Tools/wasm/wasi.py build`` command (which should be run w/ a recent version of
-Python you have installed on your machine):
+The easiest way to get a debug build of CPython for WASI is to run the
+following command with Python 3.11 or newer:
 
-.. tab:: Python 3.14+
+.. tab:: Python 3.15+
+
+   .. code-block:: shell
+
+      python3 Platforms/WASI build --quiet -- --config-cache --with-pydebug
+
+.. tab:: Python 3.14
 
    .. code-block:: shell
 
@@ -424,14 +473,22 @@ Python you have installed on your machine):
       python3 Tools/wasm/wasi.py build --quiet -- --config-cache --with-pydebug
 
 That single command will configure and build both the build Python and the
-WASI build in ``cross-build/build`` and ``cross-build/wasm32-wasi``,
+WASI build in ``cross-build/<host-triple>`` and ``cross-build/wasm32-wasip1``,
 respectively.
 
 You can also do each configuration and build step separately; the command above
 is a convenience wrapper around the following commands:
 
+.. tab:: Python 3.15+
 
-.. tab:: Python 3.14+
+   .. code-block:: shell
+
+      $ python3 Platforms/WASI configure-build-python --quiet -- --config-cache --with-pydebug
+      $ python3 Platforms/WASI make-build-python --quiet
+      $ python3 Platforms/WASI configure-host --quiet -- --config-cache
+      $ python3 Platforms/WASI make-host --quiet
+
+.. tab:: Python 3.14
 
    .. code-block:: shell
 
@@ -454,8 +511,8 @@ is a convenience wrapper around the following commands:
    The ``configure-host`` command infers the use of ``--with-pydebug`` from the
    build Python.
 
-Running the separate commands after ``wasi build`` is useful if you, for example,
-only want to run the ``make-host`` step after making code changes.
+Running the separate commands after the ``build`` subcommand is useful if you,
+for example, only want to run the ``make-host`` step after making code changes.
 
 Once everything is complete, there will be a
 ``cross-build/wasm32-wasip1/python.sh`` helper file which you can use to run the
