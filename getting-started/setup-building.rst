@@ -188,6 +188,10 @@ Configuration is typically::
 
    $ ./configure --with-pydebug
 
+For faster edit-configure-build-test loops, you can enable Autoconf's cache
+with ``./configure -C`` (equivalent to ``./configure --config-cache``), which
+reuses previous probe results when possible.
+
 More flags are available to ``configure``, but this is the minimum you should
 do to get a pydebug build of CPython.
 
