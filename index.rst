@@ -73,6 +73,8 @@ missing concepts and terminology.
 
 A number of individuals from the Python community have contributed to a series
 of excellent guides at `Open Source Guides <https://opensource.guide/>`__.
+For example,
+`How to Contribute to Open Source <https://opensource.guide/how-to-contribute/>`__.
 
 
 .. _quick-reference:
@@ -218,6 +220,7 @@ Key resources
     of the ``main`` branch
 
 * PEPs_ (Python Enhancement Proposals)
+* `The Python Discourse <https://discuss.python.org/>`__
 * :ref:`help`
 * :ref:`developers`
 * :ref:`gitbootcamp`
@@ -246,6 +249,7 @@ Additional resources
 
 Code of conduct
 ---------------
+
 Please note that all interactions on
 `Python Software Foundation <https://www.python.org/psf-landing/>`__-supported
 infrastructure is `covered
@@ -284,6 +288,8 @@ developers to work on them.  Some major examples that may be of interest are:
   and learning to code on low-cost microcontroller boards.
 
 
+.. _contents:
+
 Full table of contents
 ----------------------
 
@@ -302,7 +308,7 @@ Full table of contents
    contrib/index
 
 
-.. _Buildbot status: https://buildbot.python.org/#/
+.. _Buildbot status: https://buildbot.python.org/
 .. _PEPs: https://peps.python.org/
 .. _python.org maintenance: https://pythondotorg.readthedocs.io/
 .. _Python: https://www.python.org/
