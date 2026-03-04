@@ -409,19 +409,19 @@ following command with Python 3.11 or newer:
 
    .. code-block:: shell
 
-      python3 Platforms/WASI build --quiet -- --config-cache --with-pydebug
+      python Platforms/WASI build --quiet -- --config-cache --with-pydebug
 
 .. tab:: Python 3.14
 
    .. code-block:: shell
 
-      python3 Tools/wasm/wasi build --quiet -- --config-cache --with-pydebug
+      python Tools/wasm/wasi build --quiet -- --config-cache --with-pydebug
 
 .. tab:: Python 3.13
 
    .. code-block:: shell
 
-      python3 Tools/wasm/wasi.py build --quiet -- --config-cache --with-pydebug
+      python Tools/wasm/wasi.py build --quiet -- --config-cache --with-pydebug
 
 That single command will configure and build both the build Python and the
 WASI build in the ``cross-build/`` directory.
@@ -433,10 +433,10 @@ is a convenience wrapper around the following commands:
 
    .. code-block:: shell
 
-      $ python3 Platforms/WASI configure-build-python --quiet -- --config-cache --with-pydebug
-      $ python3 Platforms/WASI make-build-python --quiet
-      $ python3 Platforms/WASI configure-host --quiet -- --config-cache
-      $ python3 Platforms/WASI make-host --quiet
+      $ python Platforms/WASI configure-build-python --quiet -- --config-cache --with-pydebug
+      $ python Platforms/WASI make-build-python --quiet
+      $ python Platforms/WASI configure-host --quiet -- --config-cache
+      $ python Platforms/WASI make-host --quiet
 
 .. tab:: Python 3.14
 
