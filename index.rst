@@ -310,7 +310,6 @@ Full table of contents
    core-team/index
    internals
    versions
-   contrib/index
 
 .. _Buildbot status: https://www.python.org/dev/buildbot/
 .. _Misc directory: https://github.com/python/cpython/tree/main/Misc
