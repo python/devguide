@@ -109,4 +109,21 @@ in modules for which you have a working knowledge.  Search for the name of a
 module in the issue tracker, filter by label, or use the `advanced search`_
 to find these issues.
 
+Gmail filters for GitHub notifications
+--------------------------------------
+
+If you use Gmail for GitHub notifications, these queries can be useful as a
+starting point for filters. Include ``from:(notifications@github.com)`` in
+all of them:
+
+* **Issues**: ``subject:(Issue -PR)``
+* **PRs**: ``subject:(PR)`` (or ``subject:(PR -Issue)``)
+* **Merged PRs**:
+  ``subject:PR ((Merged AROUND 1 "into main") OR (Merged AROUND 1 "into master"))``
+* **Closed issues**: ``subject:Issue "closed"``
+* **Closed issues via linked PR**: ``subject:Issue "closed AROUND 1 via"``
+
+These filters are not perfect, but they can reduce notification noise and make
+triage workflows more manageable.
+
 .. _advanced search: https://github.com/search/advanced
