@@ -379,6 +379,7 @@ compiler just like building for :ref:`Unix <unix-compiling>` as well as:
 
 1. A C compiler that can target WebAssembly (for example, `WASI SDK`_)
 2. A WASI host/runtime (for example, Wasmtime_)
+3. A system install of Python 3.11 or newer to run the build scripts
 
 All of this is provided in the WASI :ref:`dev container <using-a-container>`
 (which you can select as an alternative container when using a
@@ -401,31 +402,43 @@ to have a version of Python for the build system to use and another that's the
 build you ultimately care about (that is, the build Python is not meant for use
 by you directly, only the build system).
 
-The easiest way to get a debug build of CPython for WASI is to use the
-``Tools/wasm/wasi.py build`` command (which should be run w/ a recent version of
-Python you have installed on your machine):
+The easiest way to get a debug build of CPython for WASI is to run the
+following command with Python 3.11 or newer:
 
-.. tab:: Python 3.14+
+.. tab:: Python 3.15+
 
    .. code-block:: shell
 
-      python3 Tools/wasm/wasi build --quiet -- --config-cache --with-pydebug
+      python Platforms/WASI build --quiet -- --config-cache --with-pydebug
+
+.. tab:: Python 3.14
+
+   .. code-block:: shell
+
+      python Tools/wasm/wasi build --quiet -- --config-cache --with-pydebug
 
 .. tab:: Python 3.13
 
    .. code-block:: shell
 
-      python3 Tools/wasm/wasi.py build --quiet -- --config-cache --with-pydebug
+      python Tools/wasm/wasi.py build --quiet -- --config-cache --with-pydebug
 
 That single command will configure and build both the build Python and the
-WASI build in ``cross-build/build`` and ``cross-build/wasm32-wasip1``,
-respectively.
+WASI build in the ``cross-build/`` directory.
 
 You can also do each configuration and build step separately; the command above
 is a convenience wrapper around the following commands:
 
+.. tab:: Python 3.15+
 
-.. tab:: Python 3.14+
+   .. code-block:: shell
+
+      $ python Platforms/WASI configure-build-python --quiet -- --config-cache --with-pydebug
+      $ python Platforms/WASI make-build-python --quiet
+      $ python Platforms/WASI configure-host --quiet -- --config-cache
+      $ python Platforms/WASI make-host --quiet
+
+.. tab:: Python 3.14
 
    .. code-block:: shell
 
@@ -448,7 +461,7 @@ is a convenience wrapper around the following commands:
    The ``configure-host`` command infers the use of ``--with-pydebug`` from the
    build Python.
 
-Running the separate commands after ``wasi build`` is useful if you, for example,
+Running the separate commands after ``build`` is useful if you, for example,
 only want to run the ``make-host`` step after making code changes.
 
 Once everything is complete, there will be a
