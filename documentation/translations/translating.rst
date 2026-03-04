@@ -361,5 +361,51 @@ If you would like to coordinate, open a pull request in the
 at the top of this page, and ping ``@python/editorial-board``.
 
 
+How do I merge translations back in after docs are moved?
+---------------------------------------------------------
+
+When docs are moved in the CPython repository, translated messages are not
+moved automatically and will be lost.
+They can be recovered by merging them into the new locations.
+Note that this is not necessary for Transifex-based translations, as Transifex's
+translation memory will automatically copy them over.
+
+The :pypi:`pomerge` tool merges translations between PO files by matching
+messages, regardless of file paths. To use it, first install the package:
+
+.. code-block:: bash
+
+    pip install pomerge
+
+Then, merge translations from a specific commit (replace :samp:`{COMMIT_HASH}`
+with the commit hash from before the files were moved):
+
+.. TODO: Provide Windows instructions.
+
+.. tab:: Unix
+
+    .. code-block:: bash
+
+        # These commands are to be run in the root of the translation repo
+
+        # Check out a commit before the move
+        git checkout COMMIT_HASH -- .
+
+        # Copy translations to a temporary dir
+        cp -r . /tmp/old-po-files
+
+        # Return to the current version
+        git checkout HEAD -- .
+
+        # Merge translations from temporary dir back in
+        pomerge --from /tmp/old-po-files/**/*.po --to **/*.po --clear
+
+        # Clean up temporary dir
+        rm -rf /tmp/old-po-files
+
+After running ``pomerge``, review the changes and commit the updated files.
+You may also need to rewrap the lines (see :pypi:`powrap`).
+
+
 .. _discourse: https://discuss.python.org/c/documentation/translations/
 .. _tx: https://explore.transifex.com/python-doc/python-newest/
