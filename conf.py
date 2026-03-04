@@ -179,7 +179,6 @@ rediraffe_redirects = {
     "tracker.rst": "triage/issue-tracker.rst",
     "gh-labels.rst": "triage/labels.rst",
     "triaging.rst": "triage/triaging.rst",
-
     # Contributing guide draft pages
     "contrib/code/git.rst": "getting-started/git-boot-camp.rst",
     "contrib/code/pull-request-lifecycle.rst": "getting-started/pull-request-lifecycle.rst",
