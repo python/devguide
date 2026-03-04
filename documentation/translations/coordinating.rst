@@ -64,6 +64,8 @@ to make your translation easier to find. In the entry you can also include links
 to guides or other resources for translators.
 
 
+.. _translation-repo:
+
 Repository
 ----------
 
