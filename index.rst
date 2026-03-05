@@ -153,7 +153,7 @@ instructions please see the :ref:`setup guide <setup>`.
    <https://github.com/python/cpython/issues>`__.  Trivial issues (for example, typos) do
    not require an issue.
 
-7. Push the branch on your fork on GitHub and :ref:`create a pull request
+6. Push the branch on your fork on GitHub and :ref:`create a pull request
    <pullrequest>`.  Include the issue number using ``gh-NNNNNN`` in the
    pull request title.  For example:
 
@@ -161,7 +161,7 @@ instructions please see the :ref:`setup guide <setup>`.
 
       gh-12345: Fix some bug in spam module
 
-8. Add a News entry into the ``Misc/NEWS.d/`` directory as individual file. The
+7. Add a News entry into the ``Misc/NEWS.d/`` directory as individual file. The
    news entry can be created by using `blurb-it <https://blurb-it.herokuapp.com/>`__,
    or the :pypi:`blurb` tool and its ``blurb add``
    command. Please read more about ``blurb`` in its
