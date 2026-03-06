@@ -1,0 +1,23 @@
+name: Check labels
+
+on:
+  pull_request:
+    types: [opened, reopened, labeled, unlabeled, synchronize]
+
+jobs:
+  label-dnm:
+    name: DO-NOT-MERGE
+    if: github.repository_owner == 'python'
+    runs-on: ubuntu-latest
+    permissions:
+      pull-requests: read
+    timeout-minutes: 10
+
+    steps:
+      - name: Check there's no DO-NOT-MERGE
+        uses: mheap/github-action-required-labels@v5
+        with:
+          mode: exactly
+          count: 0
+          labels: |
+            DO-NOT-MERGE
