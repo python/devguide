@@ -290,7 +290,6 @@ Full table of contents
    core-team/index
    internals
    versions
-   contrib/index
 
 
 .. _Buildbot status: https://buildbot.python.org/

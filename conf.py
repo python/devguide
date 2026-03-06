@@ -179,6 +179,56 @@ rediraffe_redirects = {
     "tracker.rst": "triage/issue-tracker.rst",
     "gh-labels.rst": "triage/labels.rst",
     "triaging.rst": "triage/triaging.rst",
+    # Contributing guide draft pages
+    "contrib/code/git.rst": "getting-started/git-boot-camp.rst",
+    "contrib/code/pull-request-lifecycle.rst": "getting-started/pull-request-lifecycle.rst",
+    "contrib/code/setup.rst": "getting-started/setup-building.rst",
+    "contrib/code/testing.rst": "testing/index.rst",
+    "contrib/code/developer-workflow.rst": "developer-workflow/index.rst",
+    "contrib/code/index.rst": "index.rst",
+    "contrib/code/development-tools.rst": "development-tools/index.rst",
+    "contrib/doc/devguide.rst": "documentation/devguide.rst",
+    "contrib/doc/help-documenting.rst": "documentation/help-documenting.rst",
+    "contrib/doc/markup.rst": "documentation/markup.rst",
+    "contrib/doc/pull-request-lifecycle.rst": "getting-started/pull-request-lifecycle.rst",
+    "contrib/doc/start-documenting.rst": "documentation/start-documenting.rst",
+    "contrib/doc/style-guide.rst": "documentation/style-guide.rst",
+    "contrib/doc/translating.rst": "documentation/translations/index.rst",
+    "contrib/doc/index.rst": "documentation/index.rst",
+    "contrib/intro/index.rst": "index.rst",
+    "contrib/project/channels.rst": "developer-workflow/communication-channels.rst",
+    "contrib/project/conduct.rst": "index.rst",
+    "contrib/project/github.rst": "index.rst",
+    "contrib/project/governance.rst": "index.rst",
+    "contrib/project/roles.rst": "index.rst",
+    "contrib/project/generative-ai.rst": "getting-started/generative-ai.rst",
+    "contrib/project/outreach.rst": "index.rst",
+    "contrib/project/directory-structure.rst": "getting-started/setup-building.rst",
+    "contrib/project/index.rst": "index.rst",
+    "contrib/security.rst": "index.rst",
+    "contrib/triage/issue-tracker.rst": "triage/issue-tracker.rst",
+    "contrib/triage/labels.rst": "triage/labels.rst",
+    "contrib/triage/reviewing.rst": "triage/triaging.rst",
+    "contrib/triage/triage-team.rst": "triage/triage-team.rst",
+    "contrib/triage/triaging.rst": "triage/triaging.rst",
+    "contrib/triage/index.rst": "triage/index.rst",
+    "contrib/user-success.rst": "index.rst",
+    "contrib/core-team/committing.rst": "core-team/committing.rst",
+    "contrib/core-team/experts.rst": "core-team/experts.rst",
+    "contrib/core-team/index.rst": "core-team/index.rst",
+    "contrib/core-team/join-team.rst": "core-team/join-team.rst",
+    "contrib/core-team/motivations.rst": "core-team/motivations.rst",
+    "contrib/core-team/responsibilities.rst": "core-team/responsibilities.rst",
+    "contrib/core-team/team-log.rst": "core-team/team-log.rst",
+    "contrib/workflows/codespaces.rst": "getting-started/setup-building.rst",
+    "contrib/workflows/compile.rst": "getting-started/setup-building.rst",
+    "contrib/workflows/get-source.rst": "getting-started/setup-building.rst",
+    "contrib/workflows/index.rst": "getting-started/setup-building.rst",
+    "contrib/workflows/install-dependencies.rst": "getting-started/setup-building.rst",
+    "contrib/workflows/install-git.rst": "getting-started/setup-building.rst",
+    "contrib/workflows/regenerate.rst": "getting-started/setup-building.rst",
+    "contrib/workflows/troubleshooting.rst": "getting-started/setup-building.rst",
+    "contrib/index.rst": "index.rst",
 }
 
 intersphinx_mapping = {
@@ -202,21 +252,6 @@ _main_version = next(
 
 # prolog and epilogs
 rst_prolog = f"""
-.. |draft| replace::
-    This is part of a **Draft** of the Python Contributor's Guide.
-    Text in square brackets are notes about content to fill in.
-    Currently, the devguide and this new Contributor's Guide co-exist in the
-    repo. We are using Sphinx include directives to demonstrate the re-organization.
-    The final Contributor's Guide will replace the devguide with content in only one
-    place.
-    We welcome help with this!
-
-.. |purpose| replace::
-    The :ref:`contrib-plan` page has more details about the current state of this draft
-    and **how you can help**.  See more info about the Contributor Guide in the
-    discussion forum: `Refactoring the DevGuide`_.
-
-.. _Refactoring the DevGuide: https://discuss.python.org/t/refactoring-the-devguide-into-a-contribution-guide/63409
 
 .. |main_version| replace:: {_main_version}
 
