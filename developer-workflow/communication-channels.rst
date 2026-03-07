@@ -51,7 +51,7 @@ Mailing lists
 
    .. _python-committers: https://mail.python.org/mailman3/lists/python-committers.python.org/
    .. _python-dev: https://mail.python.org/mailman3/lists/python-dev.python.org/
-   .. _python-ideas: https://mail.python.org/mailman3/lists/python-ideas.python.org
+   .. _python-ideas: https://mail.python.org/archives/list/python-ideas@python.org/
 
 General Python questions should go to `python-list`_ or `tutor`_
 or similar resources, such as `Stack Overflow`_ or the ``#python`` IRC channel
@@ -62,13 +62,12 @@ issue tracker is the place to discuss and work on improvements to the CPython
 core development workflow.
 
 A complete list of Python mailing lists can be found at
-https://mail.python.org/mailman/listinfo (older lists, using Mailman2) or
-https://mail.python.org/mailman3/ (newer lists, using Mailman3). Some lists may also
+https://mail.python.org/mailman3/. Some lists may also
 be mirrored at `GMANE <https://gmane.io/>`__ and can be read and posted to in various
 ways, including via web browsers, NNTP newsreaders, and RSS feed readers.
 
-.. _python-list: https://mail.python.org/mailman/listinfo/python-list
-.. _tutor: https://mail.python.org/mailman/listinfo/tutor
+.. _python-list: https://mail.python.org/mailman3/lists/python-list.python.org/
+.. _tutor: https://mail.python.org/mailman3/lists/tutor.python.org/
 .. _Stack Overflow: https://stackoverflow.com/
 .. _Libera.Chat: https://libera.chat/
 
