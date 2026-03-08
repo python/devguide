@@ -273,6 +273,23 @@ The recommended ``buildbot.tac`` settings are:
 * ``delete_leftover_dirs = 1`` -- automatically cleans up build directories
   that the master no longer needs.
 
+.. tip::
+
+   If your system has most of its disk space on ``/home`` rather than on the
+   root partition, create the worker data under ``/home`` and symlink it so
+   the packaged systemd unit still works::
+
+      mkdir -p /home/buildbot-worker/worker
+      ln -s /home/buildbot-worker/worker /var/lib/buildbot/worker
+
+   Adjust ownership and paths to match your distro's conventions.
+
+.. tip::
+
+   Build directories and ``twistd.log`` rotations can accumulate over time.
+   Monitor free disk space on the partition that holds the worker directory,
+   even with ``delete_leftover_dirs`` enabled.
+
 Service management
 ~~~~~~~~~~~~~~~~~~
 
