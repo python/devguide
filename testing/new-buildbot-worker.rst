@@ -60,13 +60,15 @@ Setting up the buildbot worker
 Conventional always-on machines
 -------------------------------
 
-You need a recent version of the `buildbot <https://buildbot.net/>`__ software,
-and you will probably want a separate 'buildbot' user to run the buildbot
-software.  You may also want to set the buildbot up using a virtual
-environment, depending on how you manage your system.  We won't cover how to that
-here; it doesn't differ from setting up a virtual environment for any other
-software, but you'll need to modify the sequence of steps below as appropriate
-if you choose that path.
+You need a recent version of the `buildbot <https://buildbot.net/>`__ worker
+software.  On most platforms the distribution's package manager provides the
+``buildbot-worker`` package, which also creates a dedicated service account,
+systemd unit (or equivalent), and the necessary directories.  For platforms
+where no package exists, ``pip install buildbot-worker`` is the fallback, but
+you will need to create the service account, directories, and service unit
+manually.  You may also want to set the buildbot up using a virtual
+environment, depending on how you manage your system; you'll need to adjust
+the steps below as appropriate if you choose that path.
 
 .. tab:: Linux
 
@@ -132,11 +134,18 @@ if you choose that path.
       buildbot-worker create-worker buildarea buildbot-api.python.org:9020 workername workerpasswd
 
 
-Once this initial worker setup completes, you should edit the files
-``buildarea/info/admin`` and ``buildarea/info/host`` to provide your contact
-info and information on the host configuration, respectively.  This information
-will be presented in the buildbot web pages that display information about the
-builders running on your worker.
+The ``info/admin`` file in the worker directory should contain your contact
+information, and ``info/host`` should describe the host configuration.  This
+information is displayed on the buildbot web interface.  Since these pages are
+publicly visible, consider obfuscating your email address (for example,
+``user AT example.com``) to avoid spam from web scrapers.
+
+The recommended ``buildbot.tac`` settings are:
+
+* ``keepalive = 60`` -- the buildmaster uses a 60-second keepalive interval;
+  the default of ``600`` is too high and can cause spurious disconnections.
+* ``delete_leftover_dirs = 1`` -- automatically cleans up build directories
+  that the master no longer needs.
 
 You will also want to make sure that the worker is started when the
 machine reboots:
@@ -288,14 +297,6 @@ the tests are passing and to resolve any platform issues that may be revealed
 by tests that fail.  Unfortunately we do not currently have a way to notify you
 only of failures on your builders, so doing periodic spot checks is also a good
 idea.
-
-.. note::
-   The buildmaster uses a ``keepalive`` interval of ``60`` seconds.  Ensure
-   the ``keepalive`` setting in your ``buildbot.tac`` matches (the default
-   of ``600`` is too high and can cause spurious disconnections).  It is
-   also recommended to set ``delete_leftover_dirs = 1`` so that build
-   directories the master no longer needs are cleaned up automatically.
-
 
 Latent workers
 --------------
