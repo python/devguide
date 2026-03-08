@@ -273,80 +273,78 @@ The recommended ``buildbot.tac`` settings are:
 * ``delete_leftover_dirs = 1`` -- automatically cleans up build directories
   that the master no longer needs.
 
+Service management
+~~~~~~~~~~~~~~~~~~
+
 You will also want to make sure that the worker is started when the
 machine reboots:
 
 .. tab:: Linux
 
-   * For systemd based distributions, you can create a systemd unit file in order
-     to manage the service. Create the unit file named ``buildbot-worker.service``
-     under ``/home/buildbot/.config/systemd/user/`` and change the paths according to where the
-     buildbot-worker binary resides. You can verify its location by running
-     ``which buildbot-worker``.
-     If you installed the buildbot-worker through
-     your package manager it would be::
+   If you installed via a distro package (Fedora, RHEL, CentOS, Debian,
+   Ubuntu, or FreeBSD), the service was already enabled in the installation
+   step above.
 
-       [Unit]
-       Description=Buildbot Worker
-       Wants=network-online.target
-       After=network-online.target local-fs.target
+   **Manual systemd setup (pip installs)**
 
-       [Service]
-       Type=forking
-       PIDFile=/home/buildbot/buildarea/twistd.pid
-       WorkingDirectory=/home/buildbot/buildarea
-       ExecStart=/usr/bin/buildbot-worker start
-       ExecReload=/usr/bin/buildbot-worker restart
-       ExecStop=/usr/bin/buildbot-worker stop
-       Restart=always
-       User=buildbot
+   If you installed via pip, you need to install a systemd unit yourself.
+   The upstream buildbot project provides a
+   `contributed template unit <https://github.com/buildbot/buildbot/blob/master/worker/contrib/systemd/buildbot-worker%40.service>`__
+   along with
+   `sysusers.d and tmpfiles.d configs <https://github.com/buildbot/buildbot/tree/master/common/contrib/systemd>`__.
 
-       [Install]
-       WantedBy=multi-user.target
+   Create ``/etc/systemd/system/buildbot-worker@.service`` with the
+   following contents::
 
+      [Unit]
+      Description=Buildbot Worker %I
+      Documentation=man:buildbot-worker(1) https://docs.buildbot.net/
+      After=network.target
+      ConditionDirectoryNotEmpty=/var/lib/buildbot/worker/%i
+      ConditionFileNotEmpty=/var/lib/buildbot/worker/%i/buildbot.tac
 
-     If you installed the buildbot-worker through pip, the systemd unit
-     file should look like this::
+      [Service]
+      Type=simple
+      User=buildbot-worker
+      Group=buildbot-worker
+      WorkingDirectory=/var/lib/buildbot/worker/
+      StateDirectory=buildbot/worker
+      ExecStart=/usr/local/bin/buildbot-worker start --nodaemon %I
+      Restart=always
+      ProtectSystem=full
+      ProtectHome=yes
+      PrivateDevices=yes
+      PrivateTmp=yes
 
-       [Unit]
-       Description=Buildbot Worker
-       Wants=network-online.target
-       After=network-online.target local-fs.target
+      [Install]
+      WantedBy=multi-user.target
 
-       [Service]
-       Type=forking
-       PIDFile=/home/buildbot/buildarea/twistd.pid
-       WorkingDirectory=/home/buildbot/buildarea
-       ExecStart=/usr/local/bin/buildbot-worker start
-       ExecReload=/usr/local/bin/buildbot-worker restart
-       ExecStop=/usr/local/bin/buildbot-worker stop
-       Restart=always
-       User=buildbot
+   Adjust ``User``, ``Group``, ``WorkingDirectory``, and the
+   ``ExecStart`` path to match your setup.  Then::
 
-       [Install]
-       WantedBy=multi-user.target
+      systemctl daemon-reload
+      systemctl enable --now buildbot-worker@WORKERNAME.service
 
+   **SysV init (non-systemd distros)**
 
-     Then enable lingering for the buildbot user via the
-     ``loginctl enable-linger buildbot`` command and you can start
-     the service through a login shell of the buildbot user
-     via the ``systemctl --user enable --now buildbot-worker.service``
-     command.
+   For distros without systemd (such as Alpine Linux with OpenRC), upstream
+   provides a
+   `SysV init script <https://github.com/buildbot/buildbot/blob/master/worker/contrib/init-scripts/buildbot-worker.init.sh>`__
+   with a
+   `default configuration file <https://github.com/buildbot/buildbot/blob/master/worker/contrib/init-scripts/buildbot-worker.default>`__.
+   Install these as ``/etc/init.d/buildbot-worker`` and
+   ``/etc/default/buildbot-worker`` respectively, then configure the worker
+   instances in the default file.
 
-     Note that using a systemd unit file, might produce some SELinux warnings on systems
-     where the enforcing mode is enabled, usually related to the ``twistd.pid`` file.
-     If the service fails to start, you should check the output of
-     ``systemctl status buildbot-worker.service`` as well as the
-     ``/var/log/audit/audit.log`` file (for example, through
-     ``sealert -a /var/log/audit/audit.log``) for potential issues and remedies.
+   **Cronjob alternative**
 
-   * Alternatively you can create a cronjob. Add the following line to ``/etc/crontab``::
+   If neither systemd nor a SysV init script is practical, you can use a
+   cronjob.  Add the following line to ``/etc/crontab``::
 
-         @reboot buildbot-worker restart /path/to/buildarea
+         @reboot buildbot-worker restart /path/to/workerdir
 
-     Note that we use ``restart`` rather than ``start`` in case a crash has
-     left a ``twistd.pid`` file behind.
-
+   Note that ``restart`` is used rather than ``start`` in case a crash has
+   left a ``twistd.pid`` file behind.
 
 .. tab:: macOS
 
