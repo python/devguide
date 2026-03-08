@@ -72,18 +72,144 @@ the steps below as appropriate if you choose that path.
 
 .. tab:: Linux
 
-   * If your package manager provides the buildbot worker software, that is
-     probably the best way to install it; it may create the buildbot user for
-     you, in which case you can skip the next step.  Otherwise, do ``pip install
-     buildbot-worker`` or ``pip3 install buildbot-worker``.
-   * Create a ``buildbot`` user (using, eg: ``useradd``) if necessary.
-   * Log in as the buildbot user.
+   .. tab:: Fedora / RHEL / CentOS
 
-   In a terminal window for the buildbot user, issue the following commands (you
-   can put the ``buildarea`` wherever you want to)::
+      **Fedora**::
 
-      mkdir buildarea
-      buildbot-worker create-worker buildarea buildbot-api.python.org:9020 workername workerpasswd
+         dnf install buildbot-worker
+
+      **RHEL 8** (requires EPEL)::
+
+         subscription-manager repos --enable codeready-builder-for-rhel-8-$(arch)-rpms
+         dnf install https://dl.fedoraproject.org/pub/epel/epel-release-latest-8.noarch.rpm
+         dnf install buildbot-worker
+
+      **RHEL 9** (requires EPEL)::
+
+         subscription-manager repos --enable codeready-builder-for-rhel-9-$(arch)-rpms
+         dnf install https://dl.fedoraproject.org/pub/epel/epel-release-latest-9.noarch.rpm
+         dnf install buildbot-worker
+
+      **CentOS Stream 9 / 10** (requires CRB + EPEL)::
+
+         dnf config-manager --set-enabled crb
+         dnf install epel-release epel-next-release
+         dnf install buildbot-worker
+
+      The RPM creates a ``buildbot-worker`` system user (nologin shell, home
+      at ``/var/lib/buildbot/worker``), installs a templated systemd unit
+      ``buildbot-worker@.service``, and creates ``/var/lib/buildbot/worker/``.
+
+      Create the worker (replace ``WORKERNAME`` and ``WORKERPASSWD`` with
+      the credentials provided to you from your buildmaster-config issue)::
+
+         sudo -u buildbot-worker buildbot-worker create-worker \
+             /var/lib/buildbot/worker/WORKERNAME \
+             buildbot-api.python.org:9020 WORKERNAME WORKERPASSWD
+
+      Edit ``info/admin``, ``info/host``, and ``buildbot.tac`` in the worker
+      directory (see below for recommended settings).
+
+      Enable and start the service::
+
+         systemctl enable --now buildbot-worker@WORKERNAME.service
+
+   .. tab:: Debian / Ubuntu
+
+      ::
+
+         apt install buildbot-worker
+
+      The package creates a ``buildbot`` system user, installs a templated
+      systemd unit ``buildbot-worker@.service``, and creates
+      ``/var/lib/buildbot/workers/``.
+
+      Create the worker (replace ``WORKERNAME`` and ``WORKERPASSWD`` with
+      the credentials provided to you from your buildmaster-config issue)::
+
+         sudo -u buildbot buildbot-worker create-worker \
+             /var/lib/buildbot/workers/WORKERNAME \
+             buildbot-api.python.org:9020 WORKERNAME WORKERPASSWD
+
+      Edit ``info/admin``, ``info/host``, and ``buildbot.tac`` in the worker
+      directory (see below for recommended settings).
+
+      Enable and start the service::
+
+         systemctl enable --now buildbot-worker@WORKERNAME.service
+
+   .. tab:: FreeBSD
+
+      ::
+
+         pkg install devel/py-buildbot-worker
+
+      The port creates a ``buildbot`` system user (nologin shell, home at
+      ``/var/db/buildbot``) and installs an ``rc.d`` script at
+      ``/usr/local/etc/rc.d/buildbot-worker`` with profile support.
+      The default base directory is ``/var/db/buildbot/workers``.
+
+      Create the worker (replace ``WORKERNAME`` and ``WORKERPASSWD`` with
+      the credentials provided to you from your buildmaster-config issue)::
+
+         su -m buildbot -c "buildbot-worker create-worker \
+             /var/db/buildbot/workers/WORKERNAME \
+             buildbot-api.python.org:9020 WORKERNAME WORKERPASSWD"
+
+      Edit ``info/admin``, ``info/host``, and ``buildbot.tac`` in the worker
+      directory (see below for recommended settings).
+
+      Enable and start the service.  The rc.d script uses profile names as
+      shell variable identifiers, so pick a short name without hyphens
+      (it does not need to match the worker name)::
+
+         sysrc buildbot_worker_enable=YES
+         sysrc buildbot_worker_profiles="myworker"
+         sysrc buildbot_worker_myworker_enable=YES
+         sysrc buildbot_worker_myworker_basedir=/var/db/buildbot/workers/WORKERNAME
+         service buildbot-worker start
+
+   .. tab:: Other / pip
+
+      For distros without a ``buildbot-worker`` package, install via pip::
+
+         pip install buildbot-worker
+
+      **NixOS** users should use the built-in ``services.buildbot-worker``
+      NixOS module; see the
+      `nixpkgs module source <https://github.com/NixOS/nixpkgs/blob/master/nixos/modules/services/continuous-integration/buildbot/worker.nix>`__
+      for available options.
+
+      **Arch Linux** has buildbot packages in the AUR, but they are
+      currently unmaintained.  Using pip is more reliable.
+
+      pip does **not** create a system user, directories, or service unit.
+      Set these up manually.  On distros with ``useradd``::
+
+         useradd --system --shell /sbin/nologin \
+             --home-dir /var/lib/buildbot/worker --create-home buildbot-worker
+
+      On Alpine Linux (BusyBox)::
+
+         adduser -S -D -H -h /var/lib/buildbot/worker -s /sbin/nologin buildbot-worker
+
+      Then create the directories::
+
+         mkdir -p /var/lib/buildbot/worker
+         chown buildbot-worker:buildbot-worker /var/lib/buildbot/worker
+
+      Create the worker (replace ``WORKERNAME`` and ``WORKERPASSWD`` with
+      the credentials provided to you from your buildmaster-config issue)::
+
+         sudo -u buildbot-worker buildbot-worker create-worker \
+             /var/lib/buildbot/worker/WORKERNAME \
+             buildbot-api.python.org:9020 WORKERNAME WORKERPASSWD
+
+      Edit ``info/admin``, ``info/host``, and ``buildbot.tac`` in the worker
+      directory (see below for recommended settings).
+
+      On systemd-based distros, a service unit must also be installed; see
+      the service management section below.
 
 
 .. tab:: macOS
