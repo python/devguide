@@ -274,9 +274,10 @@ machine reboots:
      service as described in the `buildbot documentation
      <https://docs.buildbot.net/current/manual/installation/misc.html#launching-worker-as-windows-service>`__.
 
-To start the worker running for your initial testing, you can do::
+If you have not already started the worker through a service manager, you
+can start it manually for initial testing::
 
-    buildbot-worker start buildarea
+    buildbot-worker start /path/to/workerdir
 
 Then you can either wait for someone to make a commit, or you can pick a
 builder associated with your worker from the `list of builders
@@ -289,11 +290,11 @@ only of failures on your builders, so doing periodic spot checks is also a good
 idea.
 
 .. note::
-   If your buildbot worker is disconnecting regularly, it may be a symptom of the
-   default ``keepalive`` value (``600`` for 10 minutes) being `set
-   <https://docs.buildbot.net/latest/manual/installation/worker.html#cmdoption-buildbot-worker-create-worker-keepalive>`__
-   too high. You can change it to a lower value (for example, ``180`` for 3 minutes)
-   in the ``buildbot.tac`` file found in your build area.
+   The buildmaster uses a ``keepalive`` interval of ``60`` seconds.  Ensure
+   the ``keepalive`` setting in your ``buildbot.tac`` matches (the default
+   of ``600`` is too high and can cause spurious disconnections).  It is
+   also recommended to set ``delete_leftover_dirs = 1`` so that build
+   directories the master no longer needs are cleaned up automatically.
 
 
 Latent workers
@@ -357,7 +358,7 @@ Necessary tasks include, obviously, keeping the buildbot running.  Currently
 the system for notifying buildbot owners when their workers go offline is not
 working; this is something we hope to resolve.  So currently it is helpful if
 you periodically check the status of your worker.  We will also contact you
-via your contact address in ``buildarea/info/admin`` when we notice there is a
+via your contact address in ``info/admin`` when we notice there is a
 problem that has not been resolved for some period of time and you have
 not responded to a posting on the python-buildbots list about it.
 
@@ -386,19 +387,19 @@ a table listing all of the outbound ports used by the buildbot and the python
 test suite (this list may not be complete as new tests may have been added
 since this table was last vetted):
 
-======= =================== ================================================
-Port    Host                Description
-======= =================== ================================================
-20, 21  ftp.debian.org      test_urllib2net
-53      your DNS server     test_socket, and others implicitly
-80      python.org          (several tests)
+======= ========================== ================================================
+Port    Host                       Description
+======= ========================== ================================================
+20, 21  ftp.debian.org             test_urllib2net
+53      your DNS server            test_socket, and others implicitly
+80      python.org                 (several tests)
         example.com
-119     news.gmane.org      test_nntplib (Python versions < 3.13)
-443     (various)           test_ssl
-465     smtp.gmail.com      test_smtpnet
-587     smtp.gmail.com      test_smtpnet
-9020    python.org          connection to buildmaster
-======= =================== ================================================
+119     news.gmane.org             test_nntplib (Python versions < 3.13)
+443     (various)                  test_ssl
+465     smtp.gmail.com             test_smtpnet
+587     smtp.gmail.com             test_smtpnet
+9020    buildbot-api.python.org    connection to buildmaster
+======= ========================== ================================================
 
 Many tests will also create local TCP sockets and connect to them, usually
 using either ``localhost`` or ``127.0.0.1``.
