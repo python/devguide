@@ -223,7 +223,7 @@ the steps below as appropriate if you choose that path.
    can put the ``buildarea`` wherever you want to)::
 
       mkdir buildarea
-      buildbot-worker create-worker buildarea buildbot-api.python.org:9020 workername workerpasswd
+      buildbot-worker create-worker buildarea buildbot-api.python.org:9020 WORKERNAME WORKERPASSWD
 
 
 .. tab:: Windows
@@ -257,7 +257,7 @@ the steps below as appropriate if you choose that path.
    .. code-block::
 
       mkdir buildarea
-      buildbot-worker create-worker buildarea buildbot-api.python.org:9020 workername workerpasswd
+      buildbot-worker create-worker buildarea buildbot-api.python.org:9020 WORKERNAME WORKERPASSWD
 
 
 The ``info/admin`` file in the worker directory should contain your contact
@@ -372,13 +372,10 @@ machine reboots:
    * Place the following script, named ``run_worker.sh``, into that directory::
 
          #!/bin/bash
-         export PATH=/usr/local/bin:/Library/Frameworks/Python.framework/Versions/2.7/bin:$PATH
+         export PATH=/usr/local/bin:/Library/Frameworks/Python.framework/Versions/Current/bin:$PATH
          export LC_CTYPE=en_US.utf-8
          cd /Users/buildbot/buildarea
          twistd --nodaemon --python=buildbot.tac --logfile=buildbot.log --prefix=worker
-
-     If you use pip with Apple's system python, add '/System' to the front of
-     the path to the Python bin directory.
 
    *  Place a file with the following contents into ``/Library/LaunchDaemons``:
 
