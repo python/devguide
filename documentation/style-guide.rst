@@ -204,7 +204,7 @@ Do not use links in section headers.  They distract from the title of the
 section.  The term will be mentioned in the paragraph text and can be linked
 from there.
 
-Sphinx automatically adds links to references, and a way to
+Sphinx automatically adds links to references, and provides a way to
 suppress the link.  Using roles like ``:func:`map``` will link to the
 documentation for ``map``.  You can suppress the link while keeping the
 semantic presentation of the function name by adding an exclamation point
