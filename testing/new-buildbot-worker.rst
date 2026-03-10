@@ -441,6 +441,8 @@ by tests that fail.  Unfortunately we do not currently have a way to notify you
 only of failures on your builders, so doing periodic spot checks is also a good
 idea.
 
+----
+
 Latent workers
 --------------
 
