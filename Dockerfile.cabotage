@@ -1,0 +1,28 @@
+# Stage 1: Build the docs (mirrors .readthedocs.yml)
+FROM python:3 AS builder
+
+COPY --from=ghcr.io/astral-sh/uv:latest /uv /usr/local/bin/uv
+
+WORKDIR /docs
+
+# Install deps first (cached layer + mount cache for uv)
+COPY requirements.txt Makefile ./
+RUN --mount=type=cache,target=/root/.cache/uv \
+    make ensure-venv
+
+COPY . .
+
+# Build dirhtml, same as RTD: make dirhtml BUILDDIR=_readthedocs
+RUN make dirhtml BUILDDIR=_readthedocs
+
+# Stage 2: Serve via nginx
+FROM nginx:alpine
+
+COPY .cabotage/nginx.conf /etc/nginx/nginx.conf
+RUN rm /etc/nginx/conf.d/default.conf && \
+    mkdir -p /var/run/cabotage && \
+    chown nobody:nobody /var/run/cabotage
+
+COPY --from=builder /docs/_readthedocs/dirhtml /usr/share/nginx/html
+
+USER nobody
