@@ -100,6 +100,17 @@ the steps below as appropriate if you choose that path.
       at ``/var/lib/buildbot/worker``), installs a templated systemd unit
       ``buildbot-worker@.service``, and creates ``/var/lib/buildbot/worker/``.
 
+      .. tip::
+
+         If your system has most of its disk space on ``/home`` rather than
+         on the root partition, create the worker data under ``/home`` and
+         symlink it so the packaged systemd unit still works::
+
+            mkdir -p /home/buildbot-worker/worker
+            ln -s /home/buildbot-worker/worker /var/lib/buildbot/worker
+
+         Adjust ownership and paths to match your distro's conventions.
+
       Create the worker (replace ``WORKERNAME`` and ``WORKERPASSWD`` with
       the credentials provided to you from your buildmaster-config issue)::
 
@@ -123,6 +134,17 @@ the steps below as appropriate if you choose that path.
       The package creates a ``buildbot`` system user, installs a templated
       systemd unit ``buildbot-worker@.service``, and creates
       ``/var/lib/buildbot/workers/``.
+
+      .. tip::
+
+         If your system has most of its disk space on ``/home`` rather than
+         on the root partition, create the worker data under ``/home`` and
+         symlink it so the packaged systemd unit still works::
+
+            mkdir -p /home/buildbot/workers
+            ln -s /home/buildbot/workers /var/lib/buildbot/workers
+
+         Adjust ownership and paths to match your distro's conventions.
 
       Create the worker (replace ``WORKERNAME`` and ``WORKERPASSWD`` with
       the credentials provided to you from your buildmaster-config issue)::
@@ -275,17 +297,6 @@ The recommended ``buildbot.tac`` settings are:
   the default of ``600`` is too high and can cause spurious disconnections.
 * ``delete_leftover_dirs = 1`` -- automatically cleans up build directories
   that the master no longer needs.
-
-.. tip::
-
-   If your system has most of its disk space on ``/home`` rather than on the
-   root partition, create the worker data under ``/home`` and symlink it so
-   the packaged systemd unit still works::
-
-      mkdir -p /home/buildbot-worker/worker
-      ln -s /home/buildbot-worker/worker /var/lib/buildbot/worker
-
-   Adjust ownership and paths to match your distro's conventions.
 
 .. tip::
 
