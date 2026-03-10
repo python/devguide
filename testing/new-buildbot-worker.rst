@@ -382,6 +382,16 @@ machine reboots:
       Note that ``restart`` is used rather than ``start`` in case a crash
       has left a ``twistd.pid`` file behind.
 
+.. tab:: Unix
+
+   .. tab:: rc.d
+
+      If you installed via a package on FreeBSD (or another BSD), the
+      service was already enabled in the installation step above.
+
+      If you installed via pip, you will need to write an ``rc.d`` script
+      or use the cronjob approach described in the Linux tab.
+
 .. tab:: macOS
 
    * Create a bin directory for your buildbot user::
