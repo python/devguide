@@ -238,6 +238,42 @@ the steps below as appropriate if you choose that path.
          sysrc buildbot_worker_myworker_basedir=/var/db/buildbot/workers/WORKERNAME
          service buildbot-worker start
 
+   .. tab:: OpenBSD
+
+      ::
+
+         pkg_add buildbot-worker
+
+      The package creates a ``_buildslave`` system user, installs an
+      ``rc.d`` service, and creates ``/var/buildslave/`` as the default
+      worker directory.
+
+      Create the worker (replace ``WORKERNAME`` and ``WORKERPASSWD`` with
+      the credentials provided to you from your buildmaster-config issue)::
+
+         su -m _buildslave -c "buildbot-worker create-worker \
+             /var/buildslave \
+             buildbot-api.python.org:9020 WORKERNAME WORKERPASSWD"
+
+      Edit ``info/admin``, ``info/host``, and ``buildbot.tac`` in the worker
+      directory (see below for recommended settings).
+
+      Enable and start the service::
+
+         rcctl enable buildbot_worker
+         rcctl start buildbot_worker
+
+      The ``rc.d`` script supports a single worker.  To run multiple
+      workers, create each in a subdirectory and point the service flags
+      at the desired one (or create additional ``rc.d`` scripts)::
+
+         su -m _buildslave -c "buildbot-worker create-worker \
+             /var/buildslave/WORKERNAME \
+             buildbot-api.python.org:9020 WORKERNAME WORKERPASSWD"
+         rcctl enable buildbot_worker
+         rcctl set buildbot_worker flags /var/buildslave/WORKERNAME
+         rcctl start buildbot_worker
+
 
 .. tab:: macOS
 
@@ -388,8 +424,19 @@ machine reboots:
 
    .. tab:: rc.d
 
-      If you installed via a package on FreeBSD (or another BSD), the
-      service was already enabled in the installation step above.
+      If you installed via a package on FreeBSD or OpenBSD, the service
+      was already enabled in the installation step above.  To manage it
+      manually:
+
+      On FreeBSD::
+
+         service buildbot-worker status
+         service buildbot-worker restart
+
+      On OpenBSD::
+
+         rcctl check buildbot_worker
+         rcctl restart buildbot_worker
 
       If you installed via pip, you will need to write an ``rc.d`` script
       or use the cronjob approach described in the Linux tab.
