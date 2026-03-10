@@ -337,7 +337,10 @@ machine reboots:
       WantedBy=multi-user.target
 
    Adjust ``User``, ``Group``, ``WorkingDirectory``, and the
-   ``ExecStart`` path to match your setup.  Then::
+   ``ExecStart`` path to match your setup.  If your worker data is
+   symlinked from ``/home`` (see the filesystem layout tip above),
+   change ``ProtectHome=yes`` to ``ProtectHome=no`` so systemd can
+   follow the symlink.  Then::
 
       systemctl daemon-reload
       systemctl enable --now buildbot-worker@WORKERNAME.service
