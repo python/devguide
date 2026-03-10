@@ -296,7 +296,7 @@ Current owners
 +----------------------+--------------------------------+-----------------+
 | Donald Stufft        | Infrastructure Staff           | dstufft         |
 +----------------------+--------------------------------+-----------------+
-| Ee Durbin            | Infrastructure Staff           | ewdurbin        |
+| Ee Durbin            | Infrastructure Volunteer       | ewdurbin        |
 +----------------------+--------------------------------+-----------------+
 | Jacob Coffee         | PSF Infrastructure Engineer    | JacobCoffee     |
 +----------------------+--------------------------------+-----------------+
