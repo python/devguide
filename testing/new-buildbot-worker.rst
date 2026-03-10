@@ -138,37 +138,6 @@ the steps below as appropriate if you choose that path.
 
          systemctl enable --now buildbot-worker@WORKERNAME.service
 
-   .. tab:: FreeBSD
-
-      ::
-
-         pkg install devel/py-buildbot-worker
-
-      The port creates a ``buildbot`` system user (nologin shell, home at
-      ``/var/db/buildbot``) and installs an ``rc.d`` script at
-      ``/usr/local/etc/rc.d/buildbot-worker`` with profile support.
-      The default base directory is ``/var/db/buildbot/workers``.
-
-      Create the worker (replace ``WORKERNAME`` and ``WORKERPASSWD`` with
-      the credentials provided to you from your buildmaster-config issue)::
-
-         su -m buildbot -c "buildbot-worker create-worker \
-             /var/db/buildbot/workers/WORKERNAME \
-             buildbot-api.python.org:9020 WORKERNAME WORKERPASSWD"
-
-      Edit ``info/admin``, ``info/host``, and ``buildbot.tac`` in the worker
-      directory (see below for recommended settings).
-
-      Enable and start the service.  The rc.d script uses profile names as
-      shell variable identifiers, so pick a short name without hyphens
-      (it does not need to match the worker name)::
-
-         sysrc buildbot_worker_enable=YES
-         sysrc buildbot_worker_profiles="myworker"
-         sysrc buildbot_worker_myworker_enable=YES
-         sysrc buildbot_worker_myworker_basedir=/var/db/buildbot/workers/WORKERNAME
-         service buildbot-worker start
-
    .. tab:: Other / pip
 
       For distros without a ``buildbot-worker`` package, install via pip::
@@ -210,6 +179,40 @@ the steps below as appropriate if you choose that path.
 
       On systemd-based distros, a service unit must also be installed; see
       the service management section below.
+
+
+.. tab:: Unix
+
+   .. tab:: FreeBSD
+
+      ::
+
+         pkg install devel/py-buildbot-worker
+
+      The port creates a ``buildbot`` system user (nologin shell, home at
+      ``/var/db/buildbot``) and installs an ``rc.d`` script at
+      ``/usr/local/etc/rc.d/buildbot-worker`` with profile support.
+      The default base directory is ``/var/db/buildbot/workers``.
+
+      Create the worker (replace ``WORKERNAME`` and ``WORKERPASSWD`` with
+      the credentials provided to you from your buildmaster-config issue)::
+
+         su -m buildbot -c "buildbot-worker create-worker \
+             /var/db/buildbot/workers/WORKERNAME \
+             buildbot-api.python.org:9020 WORKERNAME WORKERPASSWD"
+
+      Edit ``info/admin``, ``info/host``, and ``buildbot.tac`` in the worker
+      directory (see below for recommended settings).
+
+      Enable and start the service.  The rc.d script uses profile names as
+      shell variable identifiers, so pick a short name without hyphens
+      (it does not need to match the worker name)::
+
+         sysrc buildbot_worker_enable=YES
+         sysrc buildbot_worker_profiles="myworker"
+         sysrc buildbot_worker_myworker_enable=YES
+         sysrc buildbot_worker_myworker_basedir=/var/db/buildbot/workers/WORKERNAME
+         service buildbot-worker start
 
 
 .. tab:: macOS
