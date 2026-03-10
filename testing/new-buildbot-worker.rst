@@ -298,73 +298,75 @@ machine reboots:
 
 .. tab:: Linux
 
-   If you installed via a distro package (Fedora, RHEL, CentOS, Debian,
-   Ubuntu, or FreeBSD), the service was already enabled in the installation
-   step above.
+   .. tab:: Distro package
 
-   **Manual systemd setup (pip installs)**
+      If you installed via a distro package (Fedora, RHEL, CentOS, Debian,
+      or Ubuntu), the service was already enabled in the installation
+      step above.
 
-   If you installed via pip, you need to install a systemd unit yourself.
-   The upstream buildbot project provides a
-   `contributed template unit <https://github.com/buildbot/buildbot/blob/master/worker/contrib/systemd/buildbot-worker%40.service>`__
-   along with
-   `sysusers.d and tmpfiles.d configs <https://github.com/buildbot/buildbot/tree/master/common/contrib/systemd>`__.
+   .. tab:: Manual systemd
 
-   Create ``/etc/systemd/system/buildbot-worker@.service`` with the
-   following contents::
+      If you installed via pip, you need to install a systemd unit yourself.
+      The upstream buildbot project provides a
+      `contributed template unit <https://github.com/buildbot/buildbot/blob/master/worker/contrib/systemd/buildbot-worker%40.service>`__
+      along with
+      `sysusers.d and tmpfiles.d configs <https://github.com/buildbot/buildbot/tree/master/common/contrib/systemd>`__.
 
-      [Unit]
-      Description=Buildbot Worker %i
-      Documentation=man:buildbot-worker(1) https://docs.buildbot.net/
-      After=network.target
-      ConditionDirectoryNotEmpty=/var/lib/buildbot/worker/%i
-      ConditionFileNotEmpty=/var/lib/buildbot/worker/%i/buildbot.tac
+      Create ``/etc/systemd/system/buildbot-worker@.service`` with the
+      following contents::
 
-      [Service]
-      Type=simple
-      User=buildbot-worker
-      Group=buildbot-worker
-      WorkingDirectory=/var/lib/buildbot/worker/
-      StateDirectory=buildbot/worker
-      ExecStart=/usr/local/bin/buildbot-worker start --nodaemon %i
-      Restart=always
-      ProtectSystem=full
-      ProtectHome=yes
-      PrivateDevices=yes
-      PrivateTmp=yes
+         [Unit]
+         Description=Buildbot Worker %i
+         Documentation=man:buildbot-worker(1) https://docs.buildbot.net/
+         After=network.target
+         ConditionDirectoryNotEmpty=/var/lib/buildbot/worker/%i
+         ConditionFileNotEmpty=/var/lib/buildbot/worker/%i/buildbot.tac
 
-      [Install]
-      WantedBy=multi-user.target
+         [Service]
+         Type=simple
+         User=buildbot-worker
+         Group=buildbot-worker
+         WorkingDirectory=/var/lib/buildbot/worker/
+         StateDirectory=buildbot/worker
+         ExecStart=/usr/local/bin/buildbot-worker start --nodaemon %i
+         Restart=always
+         ProtectSystem=full
+         ProtectHome=yes
+         PrivateDevices=yes
+         PrivateTmp=yes
 
-   Adjust ``User``, ``Group``, ``WorkingDirectory``, and the
-   ``ExecStart`` path to match your setup.  If your worker data is
-   symlinked from ``/home`` (see the filesystem layout tip above),
-   change ``ProtectHome=yes`` to ``ProtectHome=no`` so systemd can
-   follow the symlink.  Then::
+         [Install]
+         WantedBy=multi-user.target
 
-      systemctl daemon-reload
-      systemctl enable --now buildbot-worker@WORKERNAME.service
+      Adjust ``User``, ``Group``, ``WorkingDirectory``, and the
+      ``ExecStart`` path to match your setup.  If your worker data is
+      symlinked from ``/home`` (see the filesystem layout tip above),
+      change ``ProtectHome=yes`` to ``ProtectHome=no`` so systemd can
+      follow the symlink.  Then::
 
-   **SysV init (non-systemd distros)**
+         systemctl daemon-reload
+         systemctl enable --now buildbot-worker@WORKERNAME.service
 
-   For distros without systemd (such as Alpine Linux with OpenRC), upstream
-   provides a
-   `SysV init script <https://github.com/buildbot/buildbot/blob/master/worker/contrib/init-scripts/buildbot-worker.init.sh>`__
-   with a
-   `default configuration file <https://github.com/buildbot/buildbot/blob/master/worker/contrib/init-scripts/buildbot-worker.default>`__.
-   Install these as ``/etc/init.d/buildbot-worker`` and
-   ``/etc/default/buildbot-worker`` respectively, then configure the worker
-   instances in the default file.
+   .. tab:: SysV init
 
-   **Cronjob alternative**
+      For distros without systemd (such as Alpine Linux with OpenRC),
+      upstream provides a
+      `SysV init script <https://github.com/buildbot/buildbot/blob/master/worker/contrib/init-scripts/buildbot-worker.init.sh>`__
+      with a
+      `default configuration file <https://github.com/buildbot/buildbot/blob/master/worker/contrib/init-scripts/buildbot-worker.default>`__.
+      Install these as ``/etc/init.d/buildbot-worker`` and
+      ``/etc/default/buildbot-worker`` respectively, then configure the
+      worker instances in the default file.
 
-   If neither systemd nor a SysV init script is practical, you can use a
-   cronjob.  Add the following line to ``/etc/crontab``::
+   .. tab:: Cronjob
 
-         @reboot buildbot-worker restart /path/to/workerdir
+      If neither systemd nor a SysV init script is practical, you can use
+      a cronjob.  Add the following line to ``/etc/crontab``::
 
-   Note that ``restart`` is used rather than ``start`` in case a crash has
-   left a ``twistd.pid`` file behind.
+            @reboot buildbot-worker restart /path/to/workerdir
+
+      Note that ``restart`` is used rather than ``start`` in case a crash
+      has left a ``twistd.pid`` file behind.
 
 .. tab:: macOS
 
