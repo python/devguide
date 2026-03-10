@@ -314,7 +314,7 @@ machine reboots:
    following contents::
 
       [Unit]
-      Description=Buildbot Worker %I
+      Description=Buildbot Worker %i
       Documentation=man:buildbot-worker(1) https://docs.buildbot.net/
       After=network.target
       ConditionDirectoryNotEmpty=/var/lib/buildbot/worker/%i
@@ -326,7 +326,7 @@ machine reboots:
       Group=buildbot-worker
       WorkingDirectory=/var/lib/buildbot/worker/
       StateDirectory=buildbot/worker
-      ExecStart=/usr/local/bin/buildbot-worker start --nodaemon %I
+      ExecStart=/usr/local/bin/buildbot-worker start --nodaemon %i
       Restart=always
       ProtectSystem=full
       ProtectHome=yes
