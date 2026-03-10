@@ -560,9 +560,9 @@ buildbot are at least:
 * 30 GB free disk space
 
 Many tests won't run in this configuration, since they require
-substantially more memory, but these resources should be sufficient to ensure
-that Python compiles correctly on the platform and can run part of the test
-suite.
+substantially more memory, but these resources should be sufficient.
+Builders with minimal settings might need more maintenance: they check
+that Python's resource-hungry tests are tagged and skipped correctly.
 
 
 Security considerations
