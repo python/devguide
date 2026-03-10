@@ -96,9 +96,10 @@ the steps below as appropriate if you choose that path.
          dnf install epel-release epel-next-release
          dnf install buildbot-worker
 
-      The RPM creates a ``buildbot-worker`` system user (nologin shell, home
-      at ``/var/lib/buildbot/worker``), installs a templated systemd unit
-      ``buildbot-worker@.service``, and creates ``/var/lib/buildbot/worker/``.
+      The RPM creates a ``buildbot-worker`` system user, installs a
+      templated systemd unit ``buildbot-worker@.service``, and creates
+      ``/var/lib/buildbot/worker/`` as the base directory for worker
+      instances.
 
       .. tip::
 
@@ -133,7 +134,8 @@ the steps below as appropriate if you choose that path.
 
       The package creates a ``buildbot`` system user, installs a templated
       systemd unit ``buildbot-worker@.service``, and creates
-      ``/var/lib/buildbot/workers/``.
+      ``/var/lib/buildbot/workers/`` as the base directory for worker
+      instances.
 
       .. tip::
 
@@ -211,10 +213,10 @@ the steps below as appropriate if you choose that path.
 
          pkg install devel/py-buildbot-worker
 
-      The port creates a ``buildbot`` system user (nologin shell, home at
-      ``/var/db/buildbot``) and installs an ``rc.d`` script at
-      ``/usr/local/etc/rc.d/buildbot-worker`` with profile support.
-      The default base directory is ``/var/db/buildbot/workers``.
+      The package creates a ``buildbot`` system user, installs an
+      ``rc.d`` service with profile support, and creates
+      ``/var/db/buildbot/workers/`` as the base directory for worker
+      instances.
 
       Create the worker (replace ``WORKERNAME`` and ``WORKERPASSWD`` with
       the credentials provided to you from your buildmaster-config issue)::
