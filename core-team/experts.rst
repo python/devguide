@@ -511,6 +511,9 @@ Platforms
    * - Platform
      - Expert
 
+   * - AIX
+     - edelsohn
+
    * - Cygwin
      - jlt63^, stutzbach^
 
