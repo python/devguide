@@ -107,7 +107,7 @@ filecmp
 fileinput
 fnmatch               serhiy-storchaka*
 fractions
-ftplib                giampaolo
+ftplib                giampaolo*
 functools             rhettinger*
 gc                    pitrou, pablogsal, nascheme
 getopt                serhiy-storchaka*
