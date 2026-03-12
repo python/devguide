@@ -37,8 +37,8 @@ The in-development and recent maintenance branches are rebuilt once per day.
 
 If you would like to be more involved with documentation, consider subscribing
 to the `Documentation category on the Python Discourse
-<https://discuss.python.org/c/documentation/26>`_ and the
-`docs@python.org <https://mail.python.org/mailman3/lists/docs.python.org/>`_ mailing list
+<https://discuss.python.org/c/documentation/26>`__ and the
+`docs@python.org <https://mail.python.org/mailman3/lists/docs.python.org/>`__ mailing list
 where user issues are raised and documentation toolchain, projects, and standards
 are discussed.
 
@@ -65,7 +65,14 @@ By following the steps in the :ref:`Quick Guide to Pull Requests <pullrequest-qu
 you will learn the workflow for documentation pull requests.
 
 .. _documentation issues: https://github.com/python/cpython/issues?q=is%3Aissue+is%3Aopen+label%3Adocs
-.. _octocat: https://github.com/logos
+
+
+Translating
+===========
+
+The Python documentation is being actively translated into several languages.
+If you are interested in helping with translation, see our pages on
+:ref:`translating <translating>` to get started.
 
 
 Proofreading

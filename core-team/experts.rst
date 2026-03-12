@@ -111,7 +111,7 @@ ftplib
 functools             rhettinger*
 gc                    pitrou, pablogsal, nascheme
 getopt                serhiy-storchaka*
-getpath               FFY00
+getpath               FFY00*
 getpass
 gettext               tomasr8
 glob                  serhiy-storchaka*
@@ -123,7 +123,7 @@ html                  ezio-melotti*
 http
 idlelib               terryjreedy*, taleinat
 imaplib
-importlib             brettcannon
+importlib             brettcannon, FFY00*
 inspect               1st1
 io                    benjaminp
 ipaddress
@@ -139,7 +139,7 @@ marshal
 math                  rhettinger
 mimetypes
 mmap                  Yhg1s
-modulefinder
+modulefinder          FFY00
 msvcrt
 multiprocessing       pitrou, gpshead*
 netrc
@@ -153,7 +153,7 @@ pathlib               barneygale*
 pdb                   gaogaotiantian
 pickle                serhiy-storchaka*
 pickletools           serhiy-storchaka*
-pkgutil
+pkgutil               FFY00*
 platform              malemburg
 plistlib
 poplib
@@ -174,7 +174,7 @@ readline              Yhg1s
 reprlib
 resource              Yhg1s
 rlcompleter
-runpy                 ncoghlan
+runpy                 ncoghlan, FFY00
 sched
 secrets
 select
@@ -183,7 +183,7 @@ shelve
 shlex
 shutil
 signal                gpshead
-site
+site                  FFY00*
 smtplib
 socket                gpshead
 socketserver
@@ -197,7 +197,7 @@ struct
 subprocess            gpshead*
 symtable              benjaminp
 sys
-sysconfig             FFY00
+sysconfig             FFY00*
 syslog
 tabnanny
 tarfile
@@ -225,7 +225,7 @@ unittest              ezio-melotti, gpshead, serhiy-storchaka*
 unittest.mock
 urllib                orsenthil
 uuid
-venv                  vsajip, FFY00
+venv                  vsajip, FFY00*
 warnings
 wave
 weakref               nascheme
@@ -246,6 +246,7 @@ xmlrpc
 zipapp                pfmoore
 zipfile               serhiy-storchaka, Yhg1s, gpshead
 zipimport             Yhg1s*
+zoneinfo              pganssle
 ====================  =============================================
 
 
@@ -276,7 +277,7 @@ for “their” platform as a third-party project.
 ===================   ===========
 Platform              Maintainers
 ===================   ===========
-AIX                   edelsohn, ayappanec
+AIX                   ayappanec
 Android               mhsmith
 Emscripten            hoodmane, pmp-p, rdb, rth, ryanking13
 iOS                   freakboy3742, ned-deily
@@ -312,14 +313,14 @@ devguide            merwok, ezio-melotti, willingc, Mariatta, hugovk,
 documentation       ezio-melotti, merwok, JulienPalard, willingc, hugovk,
                     AA-Turner, AlexWaygood*
 emoji               Mariatta
-extension modules   encukou, ncoghlan
+extension modules   encukou, ncoghlan, FFY00
 filesystem
-frozen modules      ericsnowcurrently, gvanrossum, kumaraditya303
+frozen modules      ericsnowcurrently, gvanrossum, kumaraditya303, FFY00
 f-strings           ericvsmith*
 GUI
 i18n                malemburg, merwok, tomasr8
-import machinery    brettcannon, ncoghlan, ericsnowcurrently, FFY00
-initialization      FFY00
+import machinery    brettcannon, ncoghlan, ericsnowcurrently, FFY00*
+initialization      FFY00*
 io                  benjaminp, gpshead
 JIT                 brandtbucher*, savannahostrowski*
 locale              malemburg
@@ -328,7 +329,7 @@ memory management   tim-one, malemburg, Yhg1s, nascheme
 memoryview
 networking          gpshead
 object model        benjaminp, Yhg1s
-packaging           malemburg, merwok, dstufft, pfmoore, emmatyping
+packaging           malemburg, merwok, dstufft, pfmoore, emmatyping, FFY00
 pattern matching    brandtbucher*
 PEG parser          gvanrossum, pablogsal, lysnikolaou
 performance         vstinner, serhiy-storchaka*, 1st1, rhettinger, markshannon,
@@ -337,7 +338,7 @@ pip                 ncoghlan, dstufft, pfmoore, pradyunsg
 release management  malemburg, benjaminp, warsaw,
                     gvanrossum, merwok, ned-deily,
                     JulienPalard, hugovk
-runtime lifecycle   ericsnowcurrently, kumaraditya303, zooba, ZeroIntensity, nascheme
+runtime lifecycle   ericsnowcurrently, kumaraditya303, zooba, ZeroIntensity, nascheme, FFY00
 str.format          ericvsmith*
 subinterpreters     ericsnowcurrently, kumaraditya303, ZeroIntensity*
 symbol table        JelleZijlstra, carljm
@@ -557,6 +558,6 @@ Documentation translations
 ==========================
 
 Translations are within the charter of
-`Editorial Board <https://python.github.io/editorial-board/>`_.
+`Editorial Board <https://python.github.io/editorial-board/>`__.
 For a list of translations and their coordinators, see
 :ref:`this table of translations <translation-coordinators>`.

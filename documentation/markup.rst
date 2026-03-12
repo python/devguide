@@ -28,7 +28,7 @@ attribute definitions   ``.. attribute: `attr-name```               :ref:`inform
 attribute references    ``:attr:`attr-name```                       :ref:`roles`
 reference labels        ``.. _label-name:``                         :ref:`doc-ref-role`
 internal references     ``:ref:`label-name```                       :ref:`doc-ref-role`
-external links          ```Link text <https://example.com>`_``      :ref:`hyperlinks`
+external links          ```Link text <https://example.com>`__``     :ref:`hyperlinks`
 roles w/ custom text    ``:role:`custom text <target>```            :ref:`roles`
 roles w/ only last part ``:role:`~hidden.hidden.visible```          :ref:`roles`
 roles w/o link          ``:role:`!target```                         :ref:`roles`
@@ -51,7 +51,7 @@ language, this will not take too long.
 .. seealso::
 
     The authoritative `reStructuredText User
-    Documentation <https://docutils.sourceforge.io/rst.html>`_.
+    Documentation <https://docutils.sourceforge.io/rst.html>`__.
 
 
 Use of whitespace
@@ -185,9 +185,12 @@ Hyperlinks
 External links
 ^^^^^^^^^^^^^^
 
-Use ```Link text <http://target>`_`` for inline web links.  If the link text
+Use ```Link text <https://example.com>`__`` for inline web links. If the link text
 should be the web address, you don't need special markup at all, the parser
-finds links and mail addresses in ordinary text.
+finds links and mail addresses in ordinary text. Prefer anonymous hyperlinks
+(with a double underscore) over named hyperlinks (with a single underscore)
+to avoid target name clashes.
+
 
 Internal links
 ^^^^^^^^^^^^^^
@@ -343,23 +346,7 @@ they are used in the Python documentation.
 
    This is just an overview of Sphinx' extended markup capabilities; full
    coverage can be found in `its own documentation
-   <https://www.sphinx-doc.org/>`_.
-
-
-Meta-information markup
------------------------
-
-.. describe:: sectionauthor
-
-   Identifies the author of the current section.  The argument should include
-   the author's name such that it can be used for presentation (though it isn't)
-   and email address.  The domain name portion of the address should be lower
-   case.  Example::
-
-      .. sectionauthor:: Guido van Rossum <guido@python.org>
-
-   Currently, this markup isn't reflected in the output in any way, but it helps
-   keep track of contributions.
+   <https://www.sphinx-doc.org/>`__.
 
 
 Module-specific markup
@@ -370,17 +357,11 @@ module being documented.  Each module should be documented in its own file.
 Normally this markup appears after the title heading of that file; a typical
 file might start like this::
 
-   :mod:`parrot` -- Dead parrot access
-   ===================================
+   :mod:`!parrot` -- Dead parrot access
+   ====================================
 
    .. module:: parrot
-      :platform: Unix, Windows
       :synopsis: Analyze and reanimate dead parrots.
-   .. moduleauthor:: Eric Cleese <eric@python.invalid>
-   .. moduleauthor:: John Idle <john@python.invalid>
-
-As you can see, the module-specific markup consists of two directives, the
-``module`` directive and the ``moduleauthor`` directive.
 
 .. describe:: module
 
@@ -388,23 +369,11 @@ As you can see, the module-specific markup consists of two directives, the
    or submodule. The name should be fully qualified (that is, including the
    package name for submodules).
 
-   The ``platform`` option, if present, is a comma-separated list of the
-   platforms on which the module is available (if it is available on all
-   platforms, the option should be omitted).  The keys are short identifiers;
-   examples that are in use include "IRIX", "Mac", "Windows", and "Unix".  It is
-   important to use a key which has already been used when applicable.
-
    The ``synopsis`` option should consist of one sentence describing the
    module's purpose -- it is currently only used in the Global Module Index.
 
    The ``deprecated`` option can be given (with no value) to mark a module as
    deprecated; it will be designated as such in various locations then.
-
-.. describe:: moduleauthor
-
-   The ``moduleauthor`` directive, which can appear multiple times, names the
-   authors of the module code, just like ``sectionauthor`` names the author(s)
-   of a piece of documentation.  It too does not result in any output currently.
 
 .. note::
 
@@ -544,8 +513,8 @@ The directives are:
 
          Set name of the decorated function to *name*.
 
-   There is no ``deco`` role to link to a decorator that is marked up with
-   this directive; rather, use the ``:func:`` role.
+   To link to a decorator that is marked up with this directive,
+   use the ``:deco:`` role.
 
 .. describe:: class
 
@@ -806,6 +775,10 @@ a matching identifier is found:
 
    The name of an exception. A dotted name may be used.
 
+.. describe:: deco
+
+   The name of a decorator. A dotted name may be used.
+
 The name enclosed in this markup can include a module name and/or a class name.
 For example, ``:func:`filter``` could refer to a function named ``filter`` in
 the current module, or the built-in function of that name.  In contrast,
@@ -1049,6 +1022,17 @@ Paragraph-level markup
 
 These directives create short paragraphs and can be used inside information
 units as well as normal text:
+
+.. describe:: availability
+
+   This directive documents the platforms on which a module or feature
+   is available. For example::
+
+      .. availability:: Unix, not WASI, not Android.
+
+   ::
+
+      .. availability:: Linux >= 3.0 with glibc >= 2.14.
 
 .. describe:: note
 
