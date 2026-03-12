@@ -410,10 +410,10 @@ machine reboots:
       ``/etc/default/buildbot-worker`` respectively, then configure the
       worker instances in the default file.
 
-   .. tab:: Cronjob
+   .. tab:: cron job
 
       If neither systemd nor a SysV init script is practical, you can use
-      a cronjob.  Add the following line to ``/etc/crontab``::
+      a cron job.  Add the following line to ``/etc/crontab``::
 
             @reboot buildbot-worker restart /path/to/workerdir
 
@@ -439,7 +439,7 @@ machine reboots:
          rcctl restart buildbot_worker
 
       If you installed via pip, you will need to write an ``rc.d`` script
-      or use the cronjob approach described in the Linux tab.
+      or use the cron job approach described in the Linux tab.
 
 .. tab:: macOS
 
