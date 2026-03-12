@@ -456,7 +456,7 @@ Stdlib
      - meadori
 
    * - subprocess
-     - astrand^, giampaolo
+     - astrand^
 
    * - syslog
      - jafo^
