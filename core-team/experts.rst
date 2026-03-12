@@ -107,7 +107,7 @@ filecmp
 fileinput
 fnmatch               serhiy-storchaka*
 fractions
-ftplib
+ftplib                giampaolo
 functools             rhettinger*
 gc                    pitrou, pablogsal, nascheme
 getopt                serhiy-storchaka*
@@ -178,10 +178,10 @@ runpy                 ncoghlan, FFY00
 sched
 secrets
 select
-selectors
+selectors             giampaolo
 shelve
 shlex
-shutil
+shutil                giampaolo
 signal                gpshead
 site                  FFY00*
 smtplib
@@ -401,9 +401,6 @@ Stdlib
    * - enum
      - eliben
 
-   * - ftplib
-     - giampaolo
-
    * - heapq
      - stutzbach
 
@@ -441,10 +438,10 @@ Stdlib
      - freddrake
 
    * - selectors
-     - neologix^, giampaolo
+     - neologix^
 
    * - shutil
-     - tarekziade, giampaolo
+     - tarekziade
 
    * - sqlite3
      - ghaering^
