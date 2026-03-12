@@ -194,7 +194,7 @@ statistics            rhettinger
 string
 stringprep
 struct
-subprocess            gpshead*
+subprocess            giampaolo, gpshead*
 symtable              benjaminp
 sys
 sysconfig             FFY00*
