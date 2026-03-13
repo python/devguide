@@ -205,7 +205,7 @@ Miscellaneous
 =============
 
 ==================  ==========================================================
-Interest Area       Maintainers
+Interest area       Maintainers
 ==================  ==========================================================
 algorithms          rhettinger*, serhiy-storchaka
 argument clinic     larryhastings, AlexWaygood*, erlend-aasland,
@@ -263,7 +263,7 @@ version control     merwok, ezio-melotti
 ==================  ==========================================================
 
 
-Experts Emeritus
+Experts emeritus
 ================
 
 Names followed by a '^' indicate old bugs.python.org usernames, for people
