@@ -20,9 +20,9 @@ following is added to an issue or pull request, they will be notified
 automatically.  The :cpy-file:`.github/CODEOWNERS` file is also used to indicate
 maintainers that will be automatically added as reviewers to pull requests.
 
+Names followed by a '*' may be assigned issues involving the module or topic.
 Unless a name is followed by a '*', you should never assign an issue to
-that person.  Names followed by a '*' may be assigned issues involving the
-module or topic.
+that person.
 
 The Platform and Interest Area tables list broader fields in which various
 people have expertise.  These people can also be contacted for help,
