@@ -20,9 +20,9 @@ following is added to an issue or pull request, they will be notified
 automatically.  The :cpy-file:`.github/CODEOWNERS` file is also used to indicate
 maintainers that will be automatically added as reviewers to pull requests.
 
+Names followed by a '*' may be assigned issues involving the module or topic.
 Unless a name is followed by a '*', you should never assign an issue to
-that person.  Names followed by a '*' may be assigned issues involving the
-module or topic.
+that person.
 
 The Platform and Interest Area tables list broader fields in which various
 people have expertise.  These people can also be contacted for help,
@@ -49,53 +49,29 @@ Stdlib
 ====================  =============================================
 Module                Maintainers
 ====================  =============================================
-__future__
 __main__              gvanrossum, ncoghlan
-_thread
-abc
 annotationlib         JelleZijlstra*
 argparse              savannahostrowski*, serhiy-storchaka*
-array
 ast                   benjaminp, pablogsal, isidentical, JelleZijlstra, eclips4
 asyncio               1st1, asvetlov, gvanrossum, graingert, kumaraditya303, willingc
-atexit
-base64
-bdb
-binascii
 bisect                rhettinger*
-builtins
-calendar
-cmath
-cmd
-code
 codecs                malemburg
-codeop
 collections           rhettinger*
 collections.abc       rhettinger*
-colorsys
 compileall            carljm
-compression.bz2
-compression.gzip
-compression.lzma
 compression.zlib      Yhg1s, gpshead*, emmatyping
 compression.zstd      emmatyping*
 concurrent.futures    pitrou, gpshead*
 configparser          ambv*
 contextlib            ncoghlan, 1st1
-contextvars
 copy                  serhiy-storchaka*
 copyreg               serhiy-storchaka*
-cProfile
 csv                   serhiy-storchaka*
-ctypes
 curses                Yhg1s
 dataclasses           ericvsmith*, carljm
 datetime              pganssle
-dbm
 decimal               facundobatista, rhettinger
-difflib
 dis                   1st1
-doctest
 email                 warsaw, bitdancer*
 encodings             malemburg
 ensurepip             ncoghlan, dstufft, pradyunsg, pfmoore
@@ -103,50 +79,31 @@ enum                  warsaw, ethanfurman*
 errno                 Yhg1s
 faulthandler          vstinner, gpshead, ZeroIntensity*
 fcntl                 Yhg1s
-filecmp
-fileinput
 fnmatch               serhiy-storchaka*
-fractions
 ftplib                giampaolo*
 functools             rhettinger*
 gc                    pitrou, pablogsal, nascheme
 getopt                serhiy-storchaka*
 getpath               FFY00*
-getpass
 gettext               tomasr8
 glob                  serhiy-storchaka*
-grp
 hashlib               tiran, gpshead*, picnixz
 heapq                 rhettinger*
 hmac                  tiran, gpshead*, picnixz
 html                  ezio-melotti*
-http
 idlelib               terryjreedy*, taleinat
-imaplib
 importlib             brettcannon, FFY00*
 inspect               1st1
 io                    benjaminp
-ipaddress
 itertools             rhettinger*
 json                  ezio-melotti, rhettinger, serhiy-storchaka*
-keyword
-libmpdec
-linecache
 locale                malemburg
 logging               vsajip
-mailbox
-marshal
 math                  rhettinger
-mimetypes
 mmap                  Yhg1s
 modulefinder          FFY00
-msvcrt
 multiprocessing       pitrou, gpshead*
-netrc
-numbers
-operator
 optparse              serhiy-storchaka*
-os
 os.path               serhiy-storchaka*
 parser                pablogsal
 pathlib               barneygale*
@@ -155,64 +112,36 @@ pickle                serhiy-storchaka*
 pickletools           serhiy-storchaka*
 pkgutil               FFY00*
 platform              malemburg
-plistlib
-poplib
 posix                 larryhastings, gpshead
-pprint
-profile
-pstats
 pty                   Yhg1s*
-pwd
 py_compile            carljm
 pyclbr                isidentical
 pydoc                 AA-Turner, serhiy-storchaka*
 queue                 rhettinger*
-quopri
 random                rhettinger
 re                    ezio-melotti, serhiy-storchaka*
 readline              Yhg1s
-reprlib
 resource              Yhg1s
-rlcompleter
 runpy                 ncoghlan, FFY00
-sched
-secrets
-select
 selectors             giampaolo
-shelve
-shlex
 shutil                giampaolo
 signal                gpshead
 site                  FFY00*
-smtplib
 socket                gpshead
-socketserver
 sqlite3               erlend-aasland*
 ssl                   tiran, dstufft, alex
 stat                  tiran
 statistics            rhettinger
-string
-stringprep
-struct
 subprocess            giampaolo, gpshead*
 symtable              benjaminp
-sys
 sysconfig             FFY00*
-syslog
-tabnanny
-tarfile
 tempfile              serhiy-storchaka*
 termios               Yhg1s
 test                  ezio-melotti, serhiy-storchaka*
-textwrap
 threading             pitrou, gpshead
 time                  pganssle
-timeit
 tkinter               serhiy-storchaka*
-token
-tokenize
 tomllib               hauntsaninja*
-trace
 traceback             iritkatriel
 tracemalloc           vstinner
 tty                   Yhg1s*
@@ -222,27 +151,10 @@ types                 1st1
 typing                gvanrossum, JelleZijlstra*, AlexWaygood*, carljm, sobolevn*
 unicodedata           malemburg, ezio-melotti
 unittest              ezio-melotti, gpshead, serhiy-storchaka*
-unittest.mock
 urllib                orsenthil
-uuid
 venv                  vsajip, FFY00*
-warnings
-wave
 weakref               nascheme
-webbrowser
-winreg
-winsound
-wsgiref
-xml.dom
-xml.dom.minidom
-xml.dom.pulldom
 xml.etree             scoder
-xml.parsers.expat
-xml.sax
-xml.sax.handler
-xml.sax.saxutils
-xml.sax.xmlreader
-xmlrpc
 zipapp                pfmoore
 zipfile               serhiy-storchaka, Yhg1s, gpshead
 zipimport             Yhg1s*
@@ -293,7 +205,7 @@ Miscellaneous
 =============
 
 ==================  ==========================================================
-Interest Area       Maintainers
+Interest area       Maintainers
 ==================  ==========================================================
 algorithms          rhettinger*, serhiy-storchaka
 argument clinic     larryhastings, AlexWaygood*, erlend-aasland,
@@ -351,7 +263,7 @@ version control     merwok, ezio-melotti
 ==================  ==========================================================
 
 
-Experts Emeritus
+Experts emeritus
 ================
 
 Names followed by a '^' indicate old bugs.python.org usernames, for people
