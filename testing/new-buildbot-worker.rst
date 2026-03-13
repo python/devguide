@@ -422,24 +422,22 @@ machine reboots:
 
 .. tab:: Unix
 
-   .. tab:: rc.d
+   If you installed via a package on FreeBSD or OpenBSD, the service
+   was already enabled in the installation step above.  To manage it
+   manually:
 
-      If you installed via a package on FreeBSD or OpenBSD, the service
-      was already enabled in the installation step above.  To manage it
-      manually:
+   On FreeBSD::
 
-      On FreeBSD::
+      service buildbot-worker status
+      service buildbot-worker restart
 
-         service buildbot-worker status
-         service buildbot-worker restart
+   On OpenBSD::
 
-      On OpenBSD::
+      rcctl check buildbot_worker
+      rcctl restart buildbot_worker
 
-         rcctl check buildbot_worker
-         rcctl restart buildbot_worker
-
-      If you installed via pip, you will need to write an ``rc.d`` script
-      or use the cron job approach described in the Linux tab.
+   If you installed via pip, you will need to write an ``rc.d`` script
+   or use the cron job approach described in the Linux tab.
 
 .. tab:: macOS
 
