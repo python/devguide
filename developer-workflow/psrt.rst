@@ -96,7 +96,7 @@ For projects that use GHSA, reports to ``security@python.org``
 should have reporters `re-open their report using GHSA`_.
 
 .. raw:: html
-   :file: ../_static/psrt-coordinator-report.svg
+   :file: ../_static/psrt-coordinator-report.html
 
 .. _re-open their report using GHSA: #submit-using-github-security-advisories
 
@@ -108,6 +108,13 @@ to be responsible for moving the report through the process.
 The "Coordinator" role is assigned using a "Credit" in a GHSA ticket
 (Select 'Edit' > 'Credit' > Add GitHub username and the role 'Coordinator').
 
+.. warning::
+   Assigning the "Coordinator" role to each GHSA ticket is important,
+   as this metadata records whether a PSRT member is
+   `"active" according to PEP 811`_ to avoid being removed due to inactivity.
+
+.. _"active" according to PEP 811: https://peps.python.org/pep-0811/#psrt-membership-policy
+
 If a GHSA ticket is idle for three days without a coordinator
 assigned a PSRT member who is not a Release Manager
 or Steering Council member will be automatically assigned
@@ -116,11 +123,11 @@ If a coordinator can't complete the process
 they must find a replacement coordinator in the PSRT
 and re-assign the GHSA ticket.
 
+.. raw:: html
+   :file: ../_static/psrt-coordinator-triage.html
+
 Determining whether a report is a vulnerability
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-.. raw:: html
-   :file: ../_static/psrt-coordinator-triage.svg
 
 The coordinator will make a determination about a report, either
 marking the ticket as a non-issue, as an issue that isn't a security
@@ -191,7 +198,12 @@ or GHSA collaborator can clone the fork and develop a fix and push a branch:
 
 From here a pull request can be opened within the GHSA ticket
 to be reviewed privately. The coordinator can add core team experts
-to help with review if reviewers aren't available within PSRT.
+as collaborators as necessary to the GHSA to develop the patch and to review
+the patch if the expertise for patch development or review
+aren't available within PSRT. Coordinators are not necessarily responsible
+with developing patches themselves: only with seeing that a patch is
+developed in a timely fashion by involving experts as necessary.
+
 Once the patch has been approved
 a public GitHub issue and pull request can be opened.
 Generate a blurb in the category ``Security`` for the public pull request.

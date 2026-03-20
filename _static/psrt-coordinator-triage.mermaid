@@ -1,0 +1,25 @@
+flowchart TD
+    ghsa_triage[GHSA in state “Triage”]
+    psrt_member_volunteers[PSRT member volunteers as Coordinator]
+    psrt_member_assigned[After 3 days idle, Coordinator is auto-assigned]
+    coordinator_assigned[GHSA ticket updated to set Credit for Coordinator]
+    coordinator_determines[Cooridnator determines whether report...]
+    report_is_a_non_issue[...is a non-issue or invalid]
+    report_is_a_bug_but_not_security[...is a bug but not security relevant]
+    report_is_a_security_issue[...is a security issue]
+    coordinator_opens_public_github_issue[Coordinator opens a public GitHub issue]
+    close_ghsa[Close the GHSA ticket]
+    ghsa_draft[Move GHSA ticket to “Draft”]
+
+    ghsa_triage-->psrt_member_volunteers
+    ghsa_triage-->psrt_member_assigned
+    psrt_member_volunteers-->coordinator_assigned
+    psrt_member_assigned-->coordinator_assigned
+    coordinator_assigned-->coordinator_determines
+    coordinator_determines-->report_is_a_non_issue
+    coordinator_determines-->report_is_a_bug_but_not_security
+    coordinator_determines-->report_is_a_security_issue
+    report_is_a_non_issue--->close_ghsa
+    report_is_a_bug_but_not_security-->coordinator_opens_public_github_issue
+    coordinator_opens_public_github_issue-->close_ghsa
+    report_is_a_security_issue--->ghsa_draft
