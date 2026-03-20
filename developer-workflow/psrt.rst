@@ -108,11 +108,12 @@ to be responsible for moving the report through the process.
 The "Coordinator" role is assigned using a "Credit" in a GHSA ticket
 (Select 'Edit' > 'Credit' > Add GitHub username and the role 'Coordinator').
 
-If a GHSA ticket is idle for 3 days without a coordinator
-assigned a non-"Release Manager" / "Steering Council"
-PSRT member will be automatically assigned as coordinator by the PSRT bot.
+If a GHSA ticket is idle for three days without a coordinator
+assigned a PSRT member who is not a Release Manager
+or Steering Council member will be automatically assigned
+as coordinator by the PSRT bot.
 If a coordinator can't complete the process
-they must find a replacement coordinator in the PSR
+they must find a replacement coordinator in the PSRT
 and re-assign the GHSA ticket.
 
 Determining whether a report is a vulnerability
@@ -124,7 +125,7 @@ Determining whether a report is a vulnerability
 The coordinator will make a determination about a report, either
 marking the ticket as a non-issue, as an issue that isn't a security
 vulnerability, or as a security vulnerability. If the Coordinator needs
-help from core team member experts in making the determination, the
+help from core team experts in making the determination, the
 experts may be added as 'Collaborators' to the GHSA ticket.
 Accepted security vulnerabilities will be moved to the 'Draft' state in GHSA.
 
@@ -172,7 +173,7 @@ Developing a patch privately
 
 Patch development can initially be done privately by selecting the
 'Start a temporary private fork' button within the GHSA ticket. Note that
-due to the size of git repositories, this fork repository may
+due to the size of Git repositories, this fork repository may
 take several minutes to create. Once the fork has been created any PSRT member
 or GHSA collaborator can clone the fork and develop a fix and push a branch:
 
@@ -195,7 +196,7 @@ Once the patch has been approved
 a public GitHub issue and pull request can be opened.
 Generate a blurb in the category ``Security`` for the public pull request.
 Public issues and pull requests for security fixes should use the
-``type-security`` label.
+:gh-label:`type-security` label.
 
 To quickly pull a patch file from a GHSA pull request, you
 can append ``.patch`` to the pull request URL, like so:
@@ -232,9 +233,10 @@ This patch can then be applied and pushed to the public GitHub repository:
 Publishing an advisory
 ~~~~~~~~~~~~~~~~~~~~~~
 
-Once the vulnerability fix has been merged in a public GitHub into the ``main``
-branch, an advisory must be published. The advisory requires the severity,
-a title, and a short description of the vulnerable module, function(s),
+Once the vulnerability fix has been merged into the main branch via a
+public GitHub pull request, an advisory must be published.
+The advisory requires the severity,
+a title, and a short description of the vulnerable module, functions,
 behavior and fix. This short description can optionally include mitigation steps
 if applying the patch isn't the only way to mitigate the vulnerability.
 
@@ -243,9 +245,9 @@ if applying the patch isn't the only way to mitigate the vulnerability.
 * The advisory email will be received by PSF CVE Numbering Authority
   operators and used to publish a CVE record.
 * Begin the backporting process for all Python branches still receiving
-  security updates. Add the ``type-security`` and ``release-blocker`` labels
+  security updates. Add the :gh-label:`type-security` and :gh-label:`release-blocker` labels
   to each backport pull request so that release managers can find them prior
-  to releases.
+  to releasing.
 
 After an advisory email is sent, the GHSA ticket can be closed.
 
