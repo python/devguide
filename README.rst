@@ -16,10 +16,9 @@ The CPython Developer's Guide
    :alt: Code style is black
 
 
-This guide covers how to contribute to CPython. It is known by the
-nickname of "the devguide" by the Python core team.
+This guide explains how to contribute to CPython. It is commonly referred to as "the devguide" by the Python core team.
 
-The official home of this guide is https://devguide.python.org.
+The official home of this guide is: https://devguide.python.org
 
 Render HTML
 -----------
