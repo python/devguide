@@ -3,6 +3,7 @@ import os
 from urllib.request import urlopen
 
 extensions = [
+    'linklint.ext',
     'notfound.extension',
     'sphinx.ext.extlinks',
     'sphinx.ext.intersphinx',

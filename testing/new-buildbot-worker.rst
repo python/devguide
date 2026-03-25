@@ -60,28 +60,219 @@ Setting up the buildbot worker
 Conventional always-on machines
 -------------------------------
 
-You need a recent version of the `buildbot <https://buildbot.net/>`__ software,
-and you will probably want a separate 'buildbot' user to run the buildbot
-software.  You may also want to set the buildbot up using a virtual
-environment, depending on how you manage your system.  We won't cover how to that
-here; it doesn't differ from setting up a virtual environment for any other
-software, but you'll need to modify the sequence of steps below as appropriate
-if you choose that path.
+You need a recent version of the `buildbot <https://buildbot.net/>`__ worker
+software.  On most platforms the distribution's package manager provides the
+``buildbot-worker`` package, which also creates a dedicated service account,
+systemd unit (or equivalent), and the necessary directories.  For platforms
+where no package exists, ``pip install buildbot-worker`` is the fallback, but
+you will need to create the service account, directories, and service unit
+manually.  You may also want to set the buildbot up using a virtual
+environment, depending on how you manage your system; you'll need to adjust
+the steps below as appropriate if you choose that path.
 
 .. tab:: Linux
 
-   * If your package manager provides the buildbot worker software, that is
-     probably the best way to install it; it may create the buildbot user for
-     you, in which case you can skip the next step.  Otherwise, do ``pip install
-     buildbot-worker`` or ``pip3 install buildbot-worker``.
-   * Create a ``buildbot`` user (using, eg: ``useradd``) if necessary.
-   * Log in as the buildbot user.
+   .. tab:: Fedora / RHEL / CentOS
 
-   In a terminal window for the buildbot user, issue the following commands (you
-   can put the ``buildarea`` wherever you want to)::
+      **Fedora**::
 
-      mkdir buildarea
-      buildbot-worker create-worker buildarea buildbot-api.python.org:9020 workername workerpasswd
+         dnf install buildbot-worker
+
+      **RHEL 8** (requires EPEL)::
+
+         subscription-manager repos --enable codeready-builder-for-rhel-8-$(arch)-rpms
+         dnf install https://dl.fedoraproject.org/pub/epel/epel-release-latest-8.noarch.rpm
+         dnf install buildbot-worker
+
+      **RHEL 9** (requires EPEL)::
+
+         subscription-manager repos --enable codeready-builder-for-rhel-9-$(arch)-rpms
+         dnf install https://dl.fedoraproject.org/pub/epel/epel-release-latest-9.noarch.rpm
+         dnf install buildbot-worker
+
+      **CentOS Stream 9 / 10** (requires CRB + EPEL)::
+
+         dnf config-manager --set-enabled crb
+         dnf install epel-release epel-next-release
+         dnf install buildbot-worker
+
+      The RPM creates a ``buildbot-worker`` system user, installs a
+      templated systemd unit ``buildbot-worker@.service``, and creates
+      ``/var/lib/buildbot/worker/`` as the base directory for worker
+      instances.
+
+      .. tip::
+
+         If your system has most of its disk space on ``/home`` rather than
+         on the root partition, create the worker data under ``/home`` and
+         symlink it so the packaged systemd unit still works::
+
+            mkdir -p /home/buildbot-worker/worker
+            ln -s /home/buildbot-worker/worker /var/lib/buildbot/worker
+
+         Adjust ownership and paths to match your distro's conventions.
+
+      Create the worker (replace ``WORKERNAME`` and ``WORKERPASSWD`` with
+      the credentials provided to you from your buildmaster-config issue)::
+
+         sudo -u buildbot-worker buildbot-worker create-worker \
+             /var/lib/buildbot/worker/WORKERNAME \
+             buildbot-api.python.org:9020 WORKERNAME WORKERPASSWD
+
+      Edit ``info/admin``, ``info/host``, and ``buildbot.tac`` in the worker
+      directory (see below for recommended settings).
+
+      Enable and start the service::
+
+         systemctl enable --now buildbot-worker@WORKERNAME.service
+
+   .. tab:: Debian / Ubuntu
+
+      ::
+
+         apt install buildbot-worker
+
+      The package creates a ``buildbot`` system user, installs a templated
+      systemd unit ``buildbot-worker@.service``, and creates
+      ``/var/lib/buildbot/workers/`` as the base directory for worker
+      instances.
+
+      .. tip::
+
+         If your system has most of its disk space on ``/home`` rather than
+         on the root partition, create the worker data under ``/home`` and
+         symlink it so the packaged systemd unit still works::
+
+            mkdir -p /home/buildbot/workers
+            ln -s /home/buildbot/workers /var/lib/buildbot/workers
+
+         Adjust ownership and paths to match your distro's conventions.
+
+      Create the worker (replace ``WORKERNAME`` and ``WORKERPASSWD`` with
+      the credentials provided to you from your buildmaster-config issue)::
+
+         sudo -u buildbot buildbot-worker create-worker \
+             /var/lib/buildbot/workers/WORKERNAME \
+             buildbot-api.python.org:9020 WORKERNAME WORKERPASSWD
+
+      Edit ``info/admin``, ``info/host``, and ``buildbot.tac`` in the worker
+      directory (see below for recommended settings).
+
+      Enable and start the service::
+
+         systemctl enable --now buildbot-worker@WORKERNAME.service
+
+   .. tab:: Other / pip
+
+      For distros without a ``buildbot-worker`` package, install via pip::
+
+         pip install buildbot-worker
+
+      **NixOS** users should use the built-in ``services.buildbot-worker``
+      NixOS module; see the
+      `nixpkgs module source <https://github.com/NixOS/nixpkgs/blob/master/nixos/modules/services/continuous-integration/buildbot/worker.nix>`__
+      for available options.
+
+      **Arch Linux** has buildbot packages in the AUR, but they are
+      currently unmaintained.  Using pip is more reliable.
+
+      pip does **not** create a system user, directories, or service unit.
+      Set these up manually.  On distros with ``useradd``::
+
+         useradd --system --shell /sbin/nologin \
+             --home-dir /var/lib/buildbot/worker --create-home buildbot-worker
+
+      On Alpine Linux (BusyBox)::
+
+         adduser -S -D -H -h /var/lib/buildbot/worker -s /sbin/nologin buildbot-worker
+
+      Then create the directories::
+
+         mkdir -p /var/lib/buildbot/worker
+         chown buildbot-worker:buildbot-worker /var/lib/buildbot/worker
+
+      Create the worker (replace ``WORKERNAME`` and ``WORKERPASSWD`` with
+      the credentials provided to you from your buildmaster-config issue)::
+
+         sudo -u buildbot-worker buildbot-worker create-worker \
+             /var/lib/buildbot/worker/WORKERNAME \
+             buildbot-api.python.org:9020 WORKERNAME WORKERPASSWD
+
+      Edit ``info/admin``, ``info/host``, and ``buildbot.tac`` in the worker
+      directory (see below for recommended settings).
+
+      On systemd-based distros, a service unit must also be installed; see
+      the service management section below.
+
+
+.. tab:: Unix
+
+   .. tab:: FreeBSD
+
+      ::
+
+         pkg install devel/py-buildbot-worker
+
+      The package creates a ``buildbot`` system user, installs an
+      ``rc.d`` service with profile support, and creates
+      ``/var/db/buildbot/workers/`` as the base directory for worker
+      instances.
+
+      Create the worker (replace ``WORKERNAME`` and ``WORKERPASSWD`` with
+      the credentials provided to you from your buildmaster-config issue)::
+
+         su -m buildbot -c "buildbot-worker create-worker \
+             /var/db/buildbot/workers/WORKERNAME \
+             buildbot-api.python.org:9020 WORKERNAME WORKERPASSWD"
+
+      Edit ``info/admin``, ``info/host``, and ``buildbot.tac`` in the worker
+      directory (see below for recommended settings).
+
+      Enable and start the service.  The rc.d script uses profile names as
+      shell variable identifiers, so pick a short name without hyphens
+      (it does not need to match the worker name)::
+
+         sysrc buildbot_worker_enable=YES
+         sysrc buildbot_worker_profiles="myworker"
+         sysrc buildbot_worker_myworker_enable=YES
+         sysrc buildbot_worker_myworker_basedir=/var/db/buildbot/workers/WORKERNAME
+         service buildbot-worker start
+
+   .. tab:: OpenBSD
+
+      ::
+
+         pkg_add buildbot-worker
+
+      The package creates a ``_buildslave`` system user, installs an
+      ``rc.d`` service, and creates ``/var/buildslave/`` as the default
+      worker directory.
+
+      Create the worker (replace ``WORKERNAME`` and ``WORKERPASSWD`` with
+      the credentials provided to you from your buildmaster-config issue)::
+
+         su -m _buildslave -c "buildbot-worker create-worker \
+             /var/buildslave \
+             buildbot-api.python.org:9020 WORKERNAME WORKERPASSWD"
+
+      Edit ``info/admin``, ``info/host``, and ``buildbot.tac`` in the worker
+      directory (see below for recommended settings).
+
+      Enable and start the service::
+
+         rcctl enable buildbot_worker
+         rcctl start buildbot_worker
+
+      The ``rc.d`` script supports a single worker.  To run multiple
+      workers, create each in a subdirectory and point the service flags
+      at the desired one (or create additional ``rc.d`` scripts)::
+
+         su -m _buildslave -c "buildbot-worker create-worker \
+             /var/buildslave/WORKERNAME \
+             buildbot-api.python.org:9020 WORKERNAME WORKERPASSWD"
+         rcctl enable buildbot_worker
+         rcctl set buildbot_worker flags /var/buildslave/WORKERNAME
+         rcctl start buildbot_worker
 
 
 .. tab:: macOS
@@ -95,7 +286,7 @@ if you choose that path.
    can put the ``buildarea`` wherever you want to)::
 
       mkdir buildarea
-      buildbot-worker create-worker buildarea buildbot-api.python.org:9020 workername workerpasswd
+      buildbot-worker create-worker buildarea buildbot-api.python.org:9020 WORKERNAME WORKERPASSWD
 
 
 .. tab:: Windows
@@ -129,89 +320,124 @@ if you choose that path.
    .. code-block::
 
       mkdir buildarea
-      buildbot-worker create-worker buildarea buildbot-api.python.org:9020 workername workerpasswd
+      buildbot-worker create-worker buildarea buildbot-api.python.org:9020 WORKERNAME WORKERPASSWD
 
 
-Once this initial worker setup completes, you should edit the files
-``buildarea/info/admin`` and ``buildarea/info/host`` to provide your contact
-info and information on the host configuration, respectively.  This information
-will be presented in the buildbot web pages that display information about the
-builders running on your worker.
+The ``info/admin`` file in the worker directory should contain your contact
+information, and ``info/host`` should describe the host configuration.  This
+information is displayed on the buildbot web interface.  Since these pages are
+publicly visible, consider obfuscating your email address (for example,
+``user AT example.com``) to avoid spam from web scrapers.
+
+The recommended ``buildbot.tac`` settings are:
+
+* ``keepalive = 60`` -- the buildmaster uses a 60-second keepalive interval;
+  the default of ``600`` is too high and can cause spurious disconnections.
+* ``delete_leftover_dirs = 1`` -- automatically cleans up build directories
+  that the master no longer needs.
+
+.. tip::
+
+   Build directories and ``twistd.log`` rotations can accumulate over time.
+   Monitor free disk space on the partition that holds the worker directory,
+   even with ``delete_leftover_dirs`` enabled.
+
+Service management
+~~~~~~~~~~~~~~~~~~
 
 You will also want to make sure that the worker is started when the
 machine reboots:
 
 .. tab:: Linux
 
-   * For systemd based distributions, you can create a systemd unit file in order
-     to manage the service. Create the unit file named ``buildbot-worker.service``
-     under ``/home/buildbot/.config/systemd/user/`` and change the paths according to where the
-     buildbot-worker binary resides. You can verify its location by running
-     ``which buildbot-worker``.
-     If you installed the buildbot-worker through
-     your package manager it would be::
+   .. tab:: Distro package
 
-       [Unit]
-       Description=Buildbot Worker
-       Wants=network-online.target
-       After=network-online.target local-fs.target
+      If you installed via a distro package (Fedora, RHEL, CentOS, Debian,
+      or Ubuntu), the service was already enabled in the installation
+      step above.
 
-       [Service]
-       Type=forking
-       PIDFile=/home/buildbot/buildarea/twistd.pid
-       WorkingDirectory=/home/buildbot/buildarea
-       ExecStart=/usr/bin/buildbot-worker start
-       ExecReload=/usr/bin/buildbot-worker restart
-       ExecStop=/usr/bin/buildbot-worker stop
-       Restart=always
-       User=buildbot
+   .. tab:: Manual systemd
 
-       [Install]
-       WantedBy=multi-user.target
+      If you installed via pip, you need to install a systemd unit yourself.
+      The upstream buildbot project provides a
+      `contributed template unit <https://github.com/buildbot/buildbot/blob/master/worker/contrib/systemd/buildbot-worker%40.service>`__
+      along with
+      `sysusers.d and tmpfiles.d configs <https://github.com/buildbot/buildbot/tree/master/common/contrib/systemd>`__.
 
+      Create ``/etc/systemd/system/buildbot-worker@.service`` with the
+      following contents::
 
-     If you installed the buildbot-worker through pip, the systemd unit
-     file should look like this::
+         [Unit]
+         Description=Buildbot Worker %i
+         Documentation=man:buildbot-worker(1) https://docs.buildbot.net/
+         After=network.target
+         ConditionDirectoryNotEmpty=/var/lib/buildbot/worker/%i
+         ConditionFileNotEmpty=/var/lib/buildbot/worker/%i/buildbot.tac
 
-       [Unit]
-       Description=Buildbot Worker
-       Wants=network-online.target
-       After=network-online.target local-fs.target
+         [Service]
+         Type=simple
+         User=buildbot-worker
+         Group=buildbot-worker
+         WorkingDirectory=/var/lib/buildbot/worker/
+         StateDirectory=buildbot/worker
+         ExecStart=/usr/local/bin/buildbot-worker start --nodaemon %i
+         Restart=always
+         ProtectSystem=full
+         ProtectHome=yes
+         PrivateDevices=yes
+         PrivateTmp=yes
 
-       [Service]
-       Type=forking
-       PIDFile=/home/buildbot/buildarea/twistd.pid
-       WorkingDirectory=/home/buildbot/buildarea
-       ExecStart=/usr/local/bin/buildbot-worker start
-       ExecReload=/usr/local/bin/buildbot-worker restart
-       ExecStop=/usr/local/bin/buildbot-worker stop
-       Restart=always
-       User=buildbot
+         [Install]
+         WantedBy=multi-user.target
 
-       [Install]
-       WantedBy=multi-user.target
+      Adjust ``User``, ``Group``, ``WorkingDirectory``, and the
+      ``ExecStart`` path to match your setup.  If your worker data is
+      symlinked from ``/home`` (see the filesystem layout tip above),
+      change ``ProtectHome=yes`` to ``ProtectHome=no`` so systemd can
+      follow the symlink.  Then::
 
+         systemctl daemon-reload
+         systemctl enable --now buildbot-worker@WORKERNAME.service
 
-     Then enable lingering for the buildbot user via the
-     ``loginctl enable-linger buildbot`` command and you can start
-     the service through a login shell of the buildbot user
-     via the ``systemctl --user enable --now buildbot-worker.service``
-     command.
+   .. tab:: SysV init
 
-     Note that using a systemd unit file, might produce some SELinux warnings on systems
-     where the enforcing mode is enabled, usually related to the ``twistd.pid`` file.
-     If the service fails to start, you should check the output of
-     ``systemctl status buildbot-worker.service`` as well as the
-     ``/var/log/audit/audit.log`` file (for example, through
-     ``sealert -a /var/log/audit/audit.log``) for potential issues and remedies.
+      For distros without systemd (such as Alpine Linux with OpenRC),
+      upstream provides a
+      `SysV init script <https://github.com/buildbot/buildbot/blob/master/worker/contrib/init-scripts/buildbot-worker.init.sh>`__
+      with a
+      `default configuration file <https://github.com/buildbot/buildbot/blob/master/worker/contrib/init-scripts/buildbot-worker.default>`__.
+      Install these as ``/etc/init.d/buildbot-worker`` and
+      ``/etc/default/buildbot-worker`` respectively, then configure the
+      worker instances in the default file.
 
-   * Alternatively you can create a cronjob. Add the following line to ``/etc/crontab``::
+   .. tab:: cron job
 
-         @reboot buildbot-worker restart /path/to/buildarea
+      If neither systemd nor a SysV init script is practical, you can use
+      a cron job.  Add the following line to ``/etc/crontab``::
 
-     Note that we use ``restart`` rather than ``start`` in case a crash has
-     left a ``twistd.pid`` file behind.
+            @reboot buildbot-worker restart /path/to/workerdir
 
+      Note that ``restart`` is used rather than ``start`` in case a crash
+      has left a ``twistd.pid`` file behind.
+
+.. tab:: Unix
+
+   If you installed via a package on FreeBSD or OpenBSD, the service
+   was already enabled in the installation step above.  To manage it
+   manually:
+
+   On FreeBSD::
+
+      service buildbot-worker status
+      service buildbot-worker restart
+
+   On OpenBSD::
+
+      rcctl check buildbot_worker
+      rcctl restart buildbot_worker
+
+   If you installed via pip, you will need to write an ``rc.d`` script
+   or use the cron job approach described in the Linux tab.
 
 .. tab:: macOS
 
@@ -222,13 +448,10 @@ machine reboots:
    * Place the following script, named ``run_worker.sh``, into that directory::
 
          #!/bin/bash
-         export PATH=/usr/local/bin:/Library/Frameworks/Python.framework/Versions/2.7/bin:$PATH
+         export PATH=/usr/local/bin:/Library/Frameworks/Python.framework/Versions/Current/bin:$PATH
          export LC_CTYPE=en_US.utf-8
          cd /Users/buildbot/buildarea
          twistd --nodaemon --python=buildbot.tac --logfile=buildbot.log --prefix=worker
-
-     If you use pip with Apple's system python, add '/System' to the front of
-     the path to the Python bin directory.
 
    *  Place a file with the following contents into ``/Library/LaunchDaemons``:
 
@@ -274,9 +497,10 @@ machine reboots:
      service as described in the `buildbot documentation
      <https://docs.buildbot.net/current/manual/installation/misc.html#launching-worker-as-windows-service>`__.
 
-To start the worker running for your initial testing, you can do::
+If you have not already started the worker through a service manager, you
+can start it manually for initial testing::
 
-    buildbot-worker start buildarea
+    buildbot-worker start /path/to/workerdir
 
 Then you can either wait for someone to make a commit, or you can pick a
 builder associated with your worker from the `list of builders
@@ -288,13 +512,7 @@ by tests that fail.  Unfortunately we do not currently have a way to notify you
 only of failures on your builders, so doing periodic spot checks is also a good
 idea.
 
-.. note::
-   If your buildbot worker is disconnecting regularly, it may be a symptom of the
-   default ``keepalive`` value (``600`` for 10 minutes) being `set
-   <https://docs.buildbot.net/latest/manual/installation/worker.html#cmdoption-buildbot-worker-create-worker-keepalive>`__
-   too high. You can change it to a lower value (for example, ``180`` for 3 minutes)
-   in the ``buildbot.tac`` file found in your build area.
-
+----
 
 Latent workers
 --------------
@@ -357,7 +575,7 @@ Necessary tasks include, obviously, keeping the buildbot running.  Currently
 the system for notifying buildbot owners when their workers go offline is not
 working; this is something we hope to resolve.  So currently it is helpful if
 you periodically check the status of your worker.  We will also contact you
-via your contact address in ``buildarea/info/admin`` when we notice there is a
+via your contact address in ``info/admin`` when we notice there is a
 problem that has not been resolved for some period of time and you have
 not responded to a posting on the python-buildbots list about it.
 
@@ -386,19 +604,19 @@ a table listing all of the outbound ports used by the buildbot and the python
 test suite (this list may not be complete as new tests may have been added
 since this table was last vetted):
 
-======= =================== ================================================
-Port    Host                Description
-======= =================== ================================================
-20, 21  ftp.debian.org      test_urllib2net
-53      your DNS server     test_socket, and others implicitly
-80      python.org          (several tests)
+======= ========================== ================================================
+Port    Host                       Description
+======= ========================== ================================================
+20, 21  ftp.debian.org             test_urllib2net
+53      your DNS server            test_socket, and others implicitly
+80      python.org                 (several tests)
         example.com
-119     news.gmane.org      test_nntplib (Python versions < 3.13)
-443     (various)           test_ssl
-465     smtp.gmail.com      test_smtpnet
-587     smtp.gmail.com      test_smtpnet
-9020    python.org          connection to buildmaster
-======= =================== ================================================
+119     news.gmane.org             test_nntplib (Python versions < 3.13)
+443     (various)                  test_ssl
+465     smtp.gmail.com             test_smtpnet
+587     smtp.gmail.com             test_smtpnet
+9020    buildbot-api.python.org    connection to buildmaster
+======= ========================== ================================================
 
 Many tests will also create local TCP sockets and connect to them, usually
 using either ``localhost`` or ``127.0.0.1``.
@@ -417,9 +635,9 @@ buildbot are at least:
 * 30 GB free disk space
 
 Many tests won't run in this configuration, since they require
-substantially more memory, but these resources should be sufficient to ensure
-that Python compiles correctly on the platform and can run part of the test
-suite.
+substantially more memory, but these resources should be sufficient.
+Builders with minimal settings might need more maintenance: they check
+that Python's resource-hungry tests are tagged and skipped correctly.
 
 
 Security considerations

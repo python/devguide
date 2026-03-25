@@ -15,6 +15,8 @@ list of members and admins, included in the table below:
    :file: psrt.csv
    :encoding: "utf-8"
 
+See also the :ref:`members emeritus list <psrt-members-emeritus>`.
+
 How can I join the PSRT?
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -344,3 +346,15 @@ Advisory email
 
    * https://www.cve.org/CVERecord?id={CVE-YYYY-XXXX}
    * {pull request URL}
+
+.. _psrt-members-emeritus:
+
+Members emeritus
+----------------
+
+Members who have previously served on the PSRT.
+
+.. csv-table::
+   :header: "Name", "GitHub username", "Notes"
+   :file: psrt-emeritus.csv
+   :encoding: "utf-8"

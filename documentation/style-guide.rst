@@ -193,18 +193,19 @@ the second mention is more appropriate for a link.  Some units are long enough
 to have a few repeated links.  Use judgement to decide when a link will help
 the reader.
 
-Do not use a link when the link would point to the current unit.  It's natural
-to use the name of a function in the documentation for the function, but a link
-on that function name that simply reloads the section the user is already
-reading is useless and distracting.
+We use the :pypi:`linklint Sphinx extension <linklint>` to suppress two kinds
+of excessive links: references in a section to itself and duplicate references
+in a paragraph.  Previously, editors had to carefully use an exclamation mark
+in a Sphinx reference (``:func:`!map```) to prevent such links.
 
 Do not use links in section headers.  They distract from the title of the
 section.  The term will be mentioned in the paragraph text and can be linked
 from there.
 
-Sphinx provides ways to automatically add links to references, and a way to
+Sphinx automatically adds links to references, and provides a way to
 suppress the link.  Using roles like ``:func:`map``` will link to the
-documentation for ``map``.  You can suppress the link while keeping the
+documentation for ``map``.  If automatic link suppression isn't enough,
+you can suppress the link while keeping the
 semantic presentation of the function name by adding an exclamation point
 prefix: ``:func:`!map```.  See :ref:`roles` for more details.
 
