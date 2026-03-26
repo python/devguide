@@ -95,12 +95,10 @@ state within 90 days of being received by the PSRT.
 Reports enter the system through ``security@python.org`` or
 on a project GitHub Security Advisory (GHSA) ticketing system.
 For projects that use GHSA, reports to ``security@python.org``
-should have reporters `re-open their report using GHSA`_.
+should have reporters :ref:`re-open their report using GHSA <submit-using-ghsa>`.
 
 .. raw:: html
    :file: ../_static/psrt-coordinator-report.html
-
-.. _re-open their report using GHSA: #submit-using-github-security-advisories
 
 New report in GitHub Security Advisories (GHSA)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -203,7 +201,7 @@ to be reviewed privately. The coordinator can add core team experts
 as collaborators as necessary to the GHSA to develop the patch and to review
 the patch if the expertise for patch development or review
 aren't available within PSRT. Coordinators are not necessarily responsible
-with developing patches themselves: only with seeing that a patch is
+for developing patches themselves: only with seeing that a patch is
 developed in a timely fashion by involving experts as necessary.
 
 Once the patch has been approved
@@ -307,6 +305,8 @@ Template responses
 These template responses should be used as guidance for messaging
 in various points in the process above. They are not required to be sent as-is,
 please feel free to adapt them as needed for the current context.
+
+.. _submit-using-ghsa:
 
 Submit using GitHub Security Advisories
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
