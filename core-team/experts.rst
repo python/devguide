@@ -193,9 +193,7 @@ AIX                   ayappanec
 Android               mhsmith
 Emscripten            hoodmane, pmp-p, rdb, rth, ryanking13
 iOS                   freakboy3742, ned-deily
-Linux
 macOS                 ronaldoussoren, ned-deily, freakboy3742
-NetBSD1
 Solaris/OpenIndiana   jcea, kulikjak
 Windows               tjguk, zooba, pfmoore
 ===================   ===========
@@ -218,7 +216,6 @@ bytecode            benjaminp, 1st1, markshannon, brandtbucher, carljm, iritkatr
 context managers    ncoghlan
 core workflow       Mariatta, ezio-melotti, hugovk, AA-Turner
 cryptography        gpshead, dstufft, picnixz
-data formats
 database            malemburg
 devguide            merwok, ezio-melotti, willingc, Mariatta, hugovk,
                     AA-Turner, StanFromIreland
@@ -226,10 +223,8 @@ documentation       ezio-melotti, merwok, JulienPalard, willingc, hugovk,
                     AA-Turner, AlexWaygood*, StanFromIreland
 emoji               Mariatta
 extension modules   encukou, ncoghlan, FFY00
-filesystem
 frozen modules      ericsnowcurrently, gvanrossum, kumaraditya303, FFY00
 f-strings           ericvsmith*
-GUI
 i18n                malemburg, merwok, tomasr8, StanFromIreland
 import machinery    brettcannon, ncoghlan, ericsnowcurrently, FFY00*
 initialization      FFY00*
@@ -238,7 +233,6 @@ JIT                 brandtbucher*, savannahostrowski*
 locale              malemburg
 mathematics         malemburg, rhettinger, serhiy-storchaka
 memory management   tim-one, malemburg, Yhg1s, nascheme
-memoryview
 networking          gpshead
 object model        benjaminp, Yhg1s
 packaging           malemburg, merwok, dstufft, pfmoore, emmatyping, FFY00
@@ -255,7 +249,6 @@ str.format          ericvsmith*
 subinterpreters     ericsnowcurrently, kumaraditya303, ZeroIntensity*
 symbol table        JelleZijlstra, carljm
 testing             ezio-melotti
-test coverage
 threads             gpshead
 time and dates      malemburg, pganssle, StanFromIreland
 Unicode             malemburg, ezio-melotti, benjaminp
