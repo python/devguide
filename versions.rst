@@ -27,8 +27,6 @@ Dates shown in *italic* are scheduled and can be adjusted.
    :width: 100%
    :file: include/branches.csv
 
-.. Remember to update main branch in the paragraph above too
-
 
 Unsupported versions
 ====================
