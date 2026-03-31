@@ -27,8 +27,6 @@ Dates shown in *italic* are scheduled and can be adjusted.
    :width: 100%
    :file: include/branches.csv
 
-.. Remember to update main branch in the paragraph above too
-
 
 Unsupported versions
 ====================
@@ -36,7 +34,7 @@ Unsupported versions
 .. csv-table::
    :header-rows: 1
    :width: 100%
-   :file: _static/end-of-life.csv
+   :file: include/end-of-life.csv
 
 
 .. _full-chart:
