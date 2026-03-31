@@ -69,7 +69,7 @@ copyreg               serhiy-storchaka*
 csv                   serhiy-storchaka*
 curses                Yhg1s
 dataclasses           ericvsmith*, carljm
-datetime              pganssle
+datetime              pganssle, StanFromIreland
 decimal               facundobatista, rhettinger
 dis                   1st1
 email                 warsaw, bitdancer*
@@ -139,7 +139,7 @@ tempfile              serhiy-storchaka*
 termios               Yhg1s
 test                  ezio-melotti, serhiy-storchaka*
 threading             pitrou, gpshead
-time                  pganssle
+time                  pganssle, StanFromIreland
 tkinter               serhiy-storchaka*
 tomllib               hauntsaninja*
 traceback             iritkatriel
@@ -158,7 +158,7 @@ xml.etree             scoder
 zipapp                pfmoore
 zipfile               serhiy-storchaka, Yhg1s, gpshead
 zipimport             Yhg1s*
-zoneinfo              pganssle
+zoneinfo              pganssle, StanFromIreland
 ====================  =============================================
 
 
@@ -221,16 +221,16 @@ cryptography        gpshead, dstufft, picnixz
 data formats
 database            malemburg
 devguide            merwok, ezio-melotti, willingc, Mariatta, hugovk,
-                    AA-Turner
+                    AA-Turner, StanFromIreland
 documentation       ezio-melotti, merwok, JulienPalard, willingc, hugovk,
-                    AA-Turner, AlexWaygood*
+                    AA-Turner, AlexWaygood*, StanFromIreland
 emoji               Mariatta
 extension modules   encukou, ncoghlan, FFY00
 filesystem
 frozen modules      ericsnowcurrently, gvanrossum, kumaraditya303, FFY00
 f-strings           ericvsmith*
 GUI
-i18n                malemburg, merwok, tomasr8
+i18n                malemburg, merwok, tomasr8, StanFromIreland
 import machinery    brettcannon, ncoghlan, ericsnowcurrently, FFY00*
 initialization      FFY00*
 io                  benjaminp, gpshead
@@ -257,7 +257,7 @@ symbol table        JelleZijlstra, carljm
 testing             ezio-melotti
 test coverage
 threads             gpshead
-time and dates      malemburg, pganssle
+time and dates      malemburg, pganssle, StanFromIreland
 Unicode             malemburg, ezio-melotti, benjaminp
 version control     merwok, ezio-melotti
 ==================  ==========================================================
