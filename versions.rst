@@ -36,7 +36,7 @@ Unsupported versions
 .. csv-table::
    :header-rows: 1
    :width: 100%
-   :file: _static/end-of-life.csv
+   :file: include/end-of-life.csv
 
 
 .. _full-chart:
