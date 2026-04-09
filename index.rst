@@ -51,7 +51,7 @@ Guide for contributing to Python:
        * :ref:`gitbootcamp`
        * :ref:`devcycle`
        * :ref:`generative-ai`
--
+     -
        * :ref:`tracker`
        * :ref:`triaging`
        * :ref:`helptriage`
