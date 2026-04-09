@@ -21,7 +21,7 @@ Some of the acceptable uses of generative AI include:
 Unacceptable uses
 =================
 
-Maintainers may close issues and PRs that are not useful or productive, regardless whether
+Maintainers may close issues and PRs that are not useful or productive, regardless of whether
 AI was used or not.
 
 If a contributor repeatedly opens unproductive issues or PRs, they may be blocked.
