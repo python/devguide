@@ -597,7 +597,7 @@ Android
 -------
 
 Build and test instructions for Android are maintained in the CPython repository
-at :cpy-file:`Android/README.md`.
+at :cpy-file:`Platforms/Android/README.md`.
 
 iOS
 ---
@@ -910,31 +910,26 @@ some of CPython's modules (for example, ``zlib``).
 .. tab:: Android
 
    The BeeWare project maintains `scripts for building Android dependencies`_,
-   and distributes `pre-compiled binaries`_ for each of them.
+   and distributes `pre-compiled Android binaries`_ for each of them.
    These binaries are automatically downloaded and used by the CPython
-   build script at :cpy-file:`Android/android.py`.
+   build script at :cpy-file:`Platforms/Android`.
 
    .. _scripts for building Android dependencies: https://github.com/beeware/cpython-android-source-deps
-   .. _pre-compiled binaries: https://github.com/beeware/cpython-android-source-deps/releases
+   .. _pre-compiled Android binaries: https://github.com/beeware/cpython-android-source-deps/releases
 
 .. tab:: iOS
 
-   As with CPython itself, the dependencies for CPython must be compiled for
-   each of the hardware architectures that iOS supports. Consult the
-   documentation for `XZ <https://tukaani.org/xz/>`__, `bzip2
-   <https://sourceware.org/bzip2/>`__, `OpenSSL <https://www.openssl.org>`__ and
-   `libffi <https://github.com/libffi/libffi>`__ for details on how to configure
-   the project for cross-platform iOS builds.
+   The BeeWare project maintains `scripts for building iOS dependencies`_,
+   and distributes `pre-compiled iOS binaries`_ for each of them.
+   These binaries are automatically downloaded and used by the CPython
+   build script at :cpy-file:`Platforms/Apple`.
 
-   Alternatively, the `BeeWare Project <https://beeware.org>`__ maintains a
-   `project for building iOS dependencies
-   <https://github.com/beeware/cpython-apple-source-deps>`__, and distributes
-   `pre-compiled binaries
-   <https://github.com/beeware/cpython-apple-source-deps/releases>`__ for each
-   of the dependencies. If you use this project to build the dependencies
-   yourself, the subfolders of the ``install`` folder can be used to configure
-   CPython. If you use the pre-compiled binaries, you should unpack each tarball
-   into a separate folder, and use that folder as the configuration target.
+   If you are building for Python 3.13, you will need to manually download
+   and install these binaries, and provide the path to the binaries as part
+   of the call to ``configure``.
+
+   .. _scripts for building iOS dependencies: https://github.com/beeware/cpython-apple-source-deps
+   .. _pre-compiled iOS binaries: https://github.com/beeware/cpython-apple-source-deps/releases
 
 .. c_install_dependencies_end
 
