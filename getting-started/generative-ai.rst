@@ -1,8 +1,8 @@
 .. _generative-ai:
 
-=============
-Generative AI
-=============
+=================================
+Guidelines in using Generative AI
+=================================
 
 Generative AI tools are evolving rapidly, and their work can be helpful. As with using any tool, the resulting
 contribution is the responsibility of the contributor. We value good code, concise accurate documentation,
@@ -36,7 +36,7 @@ Authors must review the work done by AI tooling in detail to ensure it actually 
 
 We expect PR authors to be able to explain their proposed changes in their own words.
 
-Disclose the use of AI tools in the PR description, and be prepared to explain how the tool was used and what
+Disclosure of the use of AI tools in the PR description, and be prepared to explain how the tool was used and what
 changes it made.
 
 Whether you are using Generative AI or not, keep the following principles in mind for the quality
