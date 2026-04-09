@@ -36,8 +36,8 @@ Authors must review the work done by AI tooling in detail to ensure it actually 
 
 We expect PR authors to be able to explain their proposed changes in their own words.
 
-Disclosure of the use of AI tools in the PR description, and be prepared to explain how the tool was used and what
-changes it made.
+Disclosure of the use of AI tools in the PR description is appreciated, while not required. Be prepared to explain how
+the tool was used and what changes it made.
 
 Whether you are using Generative AI or not, keep the following principles in mind for the quality
 of your contribution:
