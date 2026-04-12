@@ -103,7 +103,7 @@ For more details about translations and their progress, see
      - :github:`GitHub <python/python-docs-sv>`
    * - Tamil (ta)
      - | Murugan Santhosh (:github-user:`terminaljoint`),
-     - | Hari (:github-user:`nammahari`)
+       | Hari (:github-user:`nammahari`)
      - :github:`GitHub <Terminal-Joint/python-docs-ta>`,
      - `Discord <https://discord.gg/9rpdtag3ej>`__
    * - `Traditional Chinese (zh-tw) <https://docs.python.org/zh-tw/>`__
