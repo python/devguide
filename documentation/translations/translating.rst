@@ -105,7 +105,7 @@ For more details about translations and their progress, see
      - | Murugan Santhosh (:github-user:`terminaljoint`),
        | Hari (:github-user:`nammahari`)
      - :github:`GitHub <Terminal-Joint/python-docs-ta>`,
-     - `Discord <https://discord.gg/9rpdtag3ej>`__
+       `Discord <https://discord.gg/9rpdtag3ej>`__
    * - `Traditional Chinese (zh-tw) <https://docs.python.org/zh-tw/>`__
      - | 王威翔 Matt Wang (:github-user:`mattwang44`),
        | Josix Wang (:github-user:`josix`)
