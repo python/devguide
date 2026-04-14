@@ -260,6 +260,27 @@ See also `python/cpython#126133
 <https://github.com/python/cpython/issues/126133#issuecomment-2460824052>`__.
 
 
+.. _typo-fixes:
+
+Typo fixes
+==========
+
+Fixing typos and grammatical errors is a welcome contribution. The most
+appropriate places for such fixes are:
+
+* The ``Doc/`` directory (end-user documentation)
+* Internal documentation, such as files in ``Misc/``
+* News entries under ``Misc/NEWS.d/``
+
+Typo fixes in source code docstrings and comments are also acceptable.
+
+When submitting typo fixes, keep PRs **small and focused** — ideally one file
+or a small set of closely related files. Large PRs that touch many unrelated
+files across the repository create a significant review and notification burden
+on maintainers, making them harder to process. Such PRs may be closed, and
+contributors will be asked to resubmit as smaller, focused PRs.
+
+
 .. _patchcheck:
 
 ``patchcheck``
