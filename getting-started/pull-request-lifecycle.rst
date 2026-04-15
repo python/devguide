@@ -238,6 +238,11 @@ should do to help ensure that your pull request is accepted.
    changes, because there might be interferences unknown to you between your
    changes and some other part of the interpreter.
 
+#. **Keep your pull request focused and small.** A pull request should address
+   one issue or add one feature. Combining multiple unrelated changes makes a
+   pull request harder to review and increases the number of people notified
+   unnecessarily. When in doubt, split into separate pull requests.
+
 #. Proper :ref:`documentation <documenting>` additions/changes should be included.
 
 
