@@ -271,7 +271,8 @@ Typo fixes
 ==========
 
 Fixing typos and grammatical errors in documentation is a welcome
-contribution. The most appropriate places for such fixes are:
+contribution that does not require a linked issue. The most appropriate
+places for such fixes are:
 
 * The ``Doc/`` directory (end-user documentation)
 * Internal documentation, such as files in ``Misc/``
