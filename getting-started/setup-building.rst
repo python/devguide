@@ -509,28 +509,47 @@ including browsers and Node.js.
    CPython being designed for ``./configure`` / ``make``.
 
 To build for Emscripten, you will need to cross-compile CPython. This requires a
-C compiler just like building for :ref:`Unix <unix-compiling>` as well as:
+C compiler just like building for :ref:`Unix <unix-compiling>`. The Node Version
+Manager (``nvm``) must also be on your path.
 
-* The Emscripten compiler
-* Node.js
+Building for Emscripten requires doing a cross-build where you have a *build*
+Python to help produce an Emscripten build of CPython. This means you build
+CPython twice: once to have a version of Python for the build system to use and
+another that's the build you ultimately care about (that is, the build Python is
+not meant for use by you directly, only the build system).
 
-The simplest way to install the Emscripten compiler is:
+The simplest way to build Emscripten is to run:
 
 .. code-block:: sh
 
-    # Install Emscripten
-    git clone https://github.com/emscripten-core/emsdk
-    ./emsdk/emsdk install 4.0.12
-    ./emsdk/emsdk activate 4.0.12
-    source ./emsdk/emsdk_env.sh
+    python3 Platforms/emscripten build all --emsdk-cache=./cross-build/emsdk
 
-Updating the Emscripten compiler version can cause breakages. For the best
-compatibility, use the appropriate Emscripten version based on the version of
-CPython you're building:
+This will:
 
-* For building CPython 3.14, use ``emsdk`` version ``4.0.12``.
-* For building the main branch of the CPython repository, you may wish to use
-  ``latest`` instead of a specific version.
+1. Build a copy of Python that can run on the host machine (the "build" python);
+2. Download a copy of the Emscripten SDK matching the version required by the
+   version of Python being compiled;
+3. Ensure that a required version of Node is installed;
+4. Download the code for all the binary dependencies of Python (such as
+   ``libFFI`` and ``xz``), and compile them for Emscripten; and
+5. Build a copy of Python that can run on Emscripten (the "host" python).
+
+If you omit the ``--emsdk-cache`` environment variable, the build script will
+assume that the current environment has the Emscripten tools available. You are
+responsible for downloading and activating those tools in your environment. The
+version of Emscripten and Node that is required to build Python is defined in
+the :cpy-file:`Platforms/emscripten/config.toml` configuration file.
+
+There are three environment variables that can be used to control the operation of
+the ``Platforms/emscripten`` build script:
+
+* ``EMSDK_CACHE`` controls the location of the emscripten SDK. You can use this instead
+  environment variable instead of passing the ``--emsdk-cache`` flag.
+* ``CACHE_DIR`` defines the location where downloaded artefacts, such
+  as precompiled ``libFFI`` and ``xz`` binaries, will be stored.
+* ``CROSS_BUILD_DIR`` defines the name of the ``cross-build`` directory
+  that will be used for builds. This can be useful if you need to maintain
+  builds of multiple versions of Python.
 
 It is possible (but not necessary) to enable ``ccache`` for Emscripten builds
 by setting the ``EM_COMPILER_WRAPPER`` environment, but this step will only
@@ -541,73 +560,44 @@ sourced script removes the environment variable):
 
    export EM_COMPILER_WRAPPER=ccache
 
-Building for Emscripten requires doing a cross-build where you have a *build*
-Python to help produce an Emscripten build of CPython. This means you build
-CPython twice: once to have a version of Python for the build system to use and
-another that's the build you ultimately care about (that is, the build Python is
-not meant for use by you directly, only the build system).
-
-The easiest way to get a debug build of CPython for Emscripten is to use the
-``Tools/wasm/emscripten build`` command, which should be run with a recent
-version of Python (3.13 or newer) already installed on your machine:
+To get a debug build of CPython for Emscripten, use:
 
 .. code-block:: shell
 
-   python3 Tools/wasm/emscripten build --quiet -- --config-cache --with-pydebug
+   python3 Platforms/emscripten build all -- --with-pydebug
 
 That single command will configure and build both the build Python and the
 Emscripten build in ``cross-build/build`` and
 ``cross-build/wasm32-emscripten/build/python/``, respectively.
 
-You can also do each configuration and build step separately; the command above
-is a convenience wrapper around the following commands:
+The ``Platforms/emscripten`` script has a number of other entry points that allow for
+fine-grained execution of each part of an iOS build; run ``python3
+Platforms/emscripten --help`` for more details.
+
+Once the build is complete, you can run Python code using:
 
 .. code-block:: shell
 
-   python Tools/wasm/emscripten configure-build-python --quiet -- --config-cache --with-pydebug
-   python Tools/wasm/emscripten make-build-python --quiet
-   python Tools/wasm/emscripten make-libffi --quiet
-   python Tools/wasm/emscripten make-mpdec --quiet
-   python Tools/wasm/emscripten configure-host --quiet -- --config-cache
-   python Tools/wasm/emscripten make-host --quiet
+   python3 Platforms/emscripten run ./path/to/script.py
 
-.. note::
-
-   The ``configure-host`` command infers the use of ``--with-pydebug`` from the
-   build Python.
-
-Running the separate commands after ``emscripten build`` is useful if you, for
-example, only want to run the ``make-host`` step after making code changes.
-
-Once everything is complete, there will be a
-``cross-build/wasm32-emscripten/build/python/python.sh`` helper file which you
-can use to run the ``python.mjs`` file:
+You can run the CPython test suite using:
 
 .. code-block:: shell
 
-   cross-build/wasm32-emscripten/build/python/python.sh --version
-
-You can also use ``Makefile`` targets and they will work as expected thanks to
-the ``HOSTRUNNER`` environment variable having been set to a similar value as
-used in ``python.sh``:
-
-.. code-block:: shell
-
-   make -C cross-build/wasm32-emscripten/build/python/ test
+   python3 Platforms/emscripten run --test
 
 Additional instructions for running the resulting builds (through Node.js and/or
 through web browsers) are available in the CPython repository at
-:cpy-file:`Tools/wasm/README.md`.
+:cpy-file:`Platforms/emscripten/README.md`.
 
 .. _Emscripten: https://emscripten.org/
 .. _WebAssembly: https://webassembly.org
-
 
 Android
 -------
 
 Build and test instructions for Android are maintained in the CPython repository
-at :cpy-file:`Android/README.md`.
+at :cpy-file:`Platforms/Android/README.md`.
 
 iOS
 ---
@@ -626,128 +616,108 @@ macOS; then once for each of the three underlying platforms used by iOS:
 * An ARM64 simulator running on a recent macOS machine; and
 * An x86_64 simulator running on older macOS machine.
 
-The macOS build is required because building Python involves running some Python
-code. On a normal desktop build of Python, you can compile a Python interpreter
-and then use that interpreter to run Python code. However, the binaries produced
-for iOS won't run on macOS, so you need to provide an external Python
-interpreter. From the root of a CPython code checkout, run the following::
+You will need an existing Python 3 interpreter to build Python. From the root of
+a CPython code checkout, run the following:
 
-   $ ./configure --prefix=$(pwd)/cross-build/macOS
-   $ make -j4 all
-   $ make install
+.. tab:: Python 3.15+
 
-This will build and install Python for macOS into the ``cross-build/macOS``
-directory.
+   .. code-block:: shell
 
-The CPython build system can compile a single platform at a time. It is possible
-to *test* a single platform at a time; however, for distribution purposes, you
-must compile all three, and merge the results. See the `iOS README
-<https://github.com/python/cpython/blob/main/iOS/README.rst#merge-thin-frameworks-into-fat-frameworks>`__
-for details on this merging process.
+       $ python3 Platforms/Apple build iOS all
 
-The following instructions will build CPython for iOS with all extensions
-enabled, provided you have installed the build dependencies XZ, BZip2, OpenSSL
-and libFFI in subfolders of the ``cross-build`` folder. See :ref:`the iOS
-section on installing build dependencies <build-dependencies>` for details on
-how to obtain these dependencies. These dependencies are all strictly optional,
-however, including libFFI is *highly* recommended, as it is required by the
-:py:mod:`ctypes` module which is used on iOS to support accessing native system APIs.
+.. tab:: Python 3.14
 
-.. tab:: ARM64 device
+   .. code-block:: shell
 
-   .. code-block:: console
+       $ python3 Apple build iOS all
 
-      $ export PATH="$(pwd)/iOS/Resources/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Library/Apple/usr/bin"
-      $ ./configure \
-            LIBLZMA_CFLAGS="-I$(pwd)/cross-build/iphoneos.arm64/xz/include" \
-            LIBLZMA_LIBS="-L$(pwd)/cross-build/iphoneos.arm64/xz/lib -llzma" \
-            BZIP2_CFLAGS="-I$(pwd)/cross-build/iphoneos.arm64/bzip2/include" \
-            BZIP2_LIBS="-L$(pwd)/cross-build/iphoneos.arm64/bzip2/lib -lbz2" \
-            LIBFFI_CFLAGS="-I$(pwd)/cross-build/iphoneos.arm64/libffi/include" \
-            LIBFFI_LIBS="-L$(pwd)/cross-build/iphoneos.arm64/libffi/lib -lffi" \
-            --with-openssl="$(pwd)/cross-build/iphoneos.arm64/openssl" \
-            --host=arm64-apple-ios12.0 \
-            --build=arm64-apple-darwin \
-            --with-build-python=$(pwd)/cross-build/macOS/bin/python3.13 \
-            --enable-framework
-      $ make -j4 all
-      $ make install
+.. tab:: Python 3.13
 
-.. tab:: ARM64 simulator
+   Python 3.13 requires explicitly invoking ``configure`` and ``make`` for each
+   platform. For example, to build for the ARM64 simulator, run:
 
-   .. code-block:: console
+   .. code-block:: shell
 
-      $ export PATH="$(pwd)/iOS/Resources/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Library/Apple/usr/bin"
-      $ ./configure \
-            LIBLZMA_CFLAGS="-I$(pwd)/cross-build/iphonesimulator.arm64/xz/include" \
-            LIBLZMA_LIBS="-L$(pwd)/cross-build/iphonesimulator.arm64/xz/lib -llzma" \
-            BZIP2_CFLAGS="-I$(pwd)/cross-build/iphonesimulator.arm64/bzip2/include" \
-            BZIP2_LIBS="-L$(pwd)/cross-build/iphonesimulator.arm64/bzip2/lib -lbz2" \
-            LIBFFI_CFLAGS="-I$(pwd)/cross-build/iphonesimulator.arm64/libffi/include" \
-            LIBFFI_LIBS="-L$(pwd)/cross-build/iphonesimulator.arm64/libffi/lib -lffi" \
-            --with-openssl="$(pwd)/cross-build/iphonesimulator.arm64/openssl" \
-            --host=arm64-apple-ios12.0-simulator \
-            --build=arm64-apple-darwin \
-            --with-build-python=$(pwd)/cross-build/macOS/bin/python3.13 \
-            --enable-framework
-      $ make -j4 all
-      $ make install
+       $ export PATH="$(pwd)/iOS/Resources/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Library/Apple/usr/bin"
+       $ ./configure \
+             LIBLZMA_CFLAGS="-Ipath/to/xz/include" \
+             LIBLZMA_LIBS="-Lpath/to/xz/lib -llzma" \
+             BZIP2_CFLAGS="-Ipath/to/bzip2/include" \
+             BZIP2_LIBS="-Lpath/to/bzip2/lib -lbz2" \
+             LIBFFI_CFLAGS="-Ipath/to/libffi/include" \
+             LIBFFI_LIBS="-Lpath/to/libffi/lib -lffi" \
+             --with-openssl="path/to/openssl" \
+             --host=arm64-apple-ios-simulator \
+             --build=arm64-apple-darwin \
+             --with-build-python=path/to/python3.13 \
+             --enable-framework
+       $ make -j4 all
+       $ make install
 
-.. tab:: x86-64 simulator
+   The ``--host`` argument should be one of ``arm64-apple-ios-simulator``,
+   ``x64_64-apple-ios-simulator`` or ``arm64-apple-ios``. Your ``PATH`` should
+   be kept to a minimum to avoid inadvertently linking ARM64 macOS binaries into
+   your iOS project. You must specify a path to pre-compiled binary dependencies.
 
-   .. code-block:: console
+   Once you have built an Apple Framework for each architecture, you will need
+   to manually construct an XCframework.
 
-      $ export PATH="$(pwd)/iOS/Resources/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Library/Apple/usr/bin"
-      $ ./configure \
-            LIBLZMA_CFLAGS="-I$(pwd)/cross-build/iphonesimulator.x86_64/xz/include" \
-            LIBLZMA_LIBS="-L$(pwd)/cross-build/iphonesimulator.x86_64/xz/lib -llzma" \
-            BZIP2_CFLAGS="-I$(pwd)/cross-build/iphonesimulator.x86_64/bzip2/include" \
-            BZIP2_LIBS="-L$(pwd)/cross-build/iphonesimulator.x86_64/bzip2/lib -lbz2" \
-            LIBFFI_CFLAGS="-I$(pwd)/cross-build/iphonesimulator.x86_64/libffi/include" \
-            LIBFFI_LIBS="-L$(pwd)/cross-build/iphonesimulator.x86_64/libffi/lib -lffi" \
-            --with-openssl="$(pwd)/cross-build/iphonesimulator.x86_64/openssl" \
-            --host=x86_64-apple-ios12.0-simulator \
-            --build=arm64-apple-darwin \
-            --with-build-python=$(pwd)/cross-build/macOS/bin/python3.13 \
-            --enable-framework
-      $ make -j4 all
-      $ make install
+This will:
 
-These instructions modify your ``PATH`` before the build. As iOS and macOS share
-a hardware architecture (ARM64), it is easy for a macOS ARM64 binary to be
-accidentally linked into your iOS build. This is especially common when Homebrew
-is present on the build system. The most reliable way to avoid this problem is
-to remove any potential source of other libraries from your ``PATH``.
+1. Build a copy of Python that can run on macOS (the "build" python);
+2. Download pre-compiled binaries for dependencies of CPython (such as
+   ``libFFI`` and ``xz``)
+3. Build a copy of Python for each supported iOS architecture (x86_64 simulator,
+   ARM64 simulator, and ARM64 device); and
+4. Generate a release artefact for iOS
 
-However, the ``PATH`` is not completely bare --- it includes the
-``iOS/Resources/bin`` folder. This folder contains a collection of scripts that
-wrap the invocation of the Xcode :program:`xcrun` tool, removing user- and
-version-specific paths from the values encoded in the :py:mod:`sysconfig`
-module. Copies of these scripts are included in the final build products.
+Once this build completes, the ``cross-build/iOS`` folder will contain a
+``Python.xcframework``, and the ``cross-build/dist`` folder will contain a
+release tarball.
 
-Once this build completes, the ``iOS/Frameworks`` folder will contain a
-``Python.framework`` that can be used for testing.
+To run the test suite on iOS, run:
 
-To run the test suite on iOS, complete a build for a *simulator* platform,
-ensure the path modifications from the build are still in effect, and run::
+.. tab:: Python 3.15+
 
-   $ make testios
+   .. code-block:: shell
+
+       $ python3 Platforms/Apple test iOS
+
+.. tab:: Python 3.14
+
+   .. code-block:: shell
+
+       $ python3 Apple test iOS
+
+.. tab:: Python 3.13
+
+   .. code-block:: shell
+
+       $ make testios
 
 The full test suite takes approximately 12 minutes to run on a 2022 M1 MacBook
 Pro, plus a couple of extra minutes to build the testbed application and boot
-the simulator. There will be an initial burst of console output while the Xcode
-test project is compiled; however, while the test suite is running, there is no
-console output or progress. This is a side effect of how Xcode operates when
-executed at the command line. You should see an iOS simulator appear during the
-testing process; the simulator will booth to an iOS landing screen, the testbed
+the simulator. You should see an iOS simulator appear during the
+testing process; the simulator will boot to an iOS landing screen, the testbed
 app will be installed, and then started. The screen of the simulator will be
 black while the test suite is running. When the test suite completes, success or
-failure will be reported at the command line. In the case of failure, you will
-see the full log of CPython test suite output.
+failure will be reported at the command line.
+
+Two environment variables can be used to configure the operation of the Apple
+build script:
+
+* ``CACHE_DIR`` defines the location where downloaded artefacts, such
+  as precompiled ``libFFI`` and ``xz`` binaries, will be stored.
+* ``CROSS_BUILD_DIR`` defines the name of the ``cross-build`` directory
+  that will be used for builds. This can be useful if you need to maintain
+  builds of multiple versions of Python.
+
+The ``Platforms/Apple`` script has a number of other entry points that allow for
+fine-grained execution of each part of an iOS build; run ``python3
+Platforms/Apple --help`` for more details.
 
 You can also run the test suite in Xcode itself. This is required if you want to
-run on a physical device; it is also the easiest approach if you need to run a
-single test, or a subset of tests. See the `iOS README
+run on a physical device. See the `iOS README
 <https://github.com/python/cpython/blob/main/iOS/README.rst#debugging-test-failures>`__
 for details.
 
@@ -940,31 +910,26 @@ some of CPython's modules (for example, ``zlib``).
 .. tab:: Android
 
    The BeeWare project maintains `scripts for building Android dependencies`_,
-   and distributes `pre-compiled binaries`_ for each of them.
+   and distributes `pre-compiled Android binaries`_ for each of them.
    These binaries are automatically downloaded and used by the CPython
-   build script at :cpy-file:`Android/android.py`.
+   build script at :cpy-file:`Platforms/Android`.
 
    .. _scripts for building Android dependencies: https://github.com/beeware/cpython-android-source-deps
-   .. _pre-compiled binaries: https://github.com/beeware/cpython-android-source-deps/releases
+   .. _pre-compiled Android binaries: https://github.com/beeware/cpython-android-source-deps/releases
 
 .. tab:: iOS
 
-   As with CPython itself, the dependencies for CPython must be compiled for
-   each of the hardware architectures that iOS supports. Consult the
-   documentation for `XZ <https://tukaani.org/xz/>`__, `bzip2
-   <https://sourceware.org/bzip2/>`__, `OpenSSL <https://www.openssl.org>`__ and
-   `libffi <https://github.com/libffi/libffi>`__ for details on how to configure
-   the project for cross-platform iOS builds.
+   The BeeWare project maintains `scripts for building iOS dependencies`_,
+   and distributes `pre-compiled iOS binaries`_ for each of them.
+   These binaries are automatically downloaded and used by the CPython
+   build script at :cpy-file:`Platforms/Apple`.
 
-   Alternatively, the `BeeWare Project <https://beeware.org>`__ maintains a
-   `project for building iOS dependencies
-   <https://github.com/beeware/cpython-apple-source-deps>`__, and distributes
-   `pre-compiled binaries
-   <https://github.com/beeware/cpython-apple-source-deps/releases>`__ for each
-   of the dependencies. If you use this project to build the dependencies
-   yourself, the subfolders of the ``install`` folder can be used to configure
-   CPython. If you use the pre-compiled binaries, you should unpack each tarball
-   into a separate folder, and use that folder as the configuration target.
+   If you are building for Python 3.13, you will need to manually download
+   and install these binaries, and provide the path to the binaries as part
+   of the call to ``configure``.
+
+   .. _scripts for building iOS dependencies: https://github.com/beeware/cpython-apple-source-deps
+   .. _pre-compiled iOS binaries: https://github.com/beeware/cpython-apple-source-deps/releases
 
 .. c_install_dependencies_end
 
