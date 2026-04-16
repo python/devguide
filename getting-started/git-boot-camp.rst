@@ -466,7 +466,7 @@ Or set up a Git alias:
 
    .. code-block:: shell
 
-      $ git config --global alias.pr '!sh -c "git fetch upstream pull/${1}/head:pr_${1} && git switch pr_${1}" -'
+      git config --global alias.pr '!sh -c "git fetch upstream pull/${1}/head:pr_${1} && git switch pr_${1}" -'
 
 .. tab:: Windows
 
