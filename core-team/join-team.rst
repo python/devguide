@@ -40,14 +40,14 @@ are granted through these steps:
    (as per :pep:`13`), the submitter `emails the steering council
    <mailto:steering-council@python.org>`_ with the candidate's email address
    requesting that the council either accept or reject the proposed membership.  Technically, the
-   council may only `veto a positive vote <https://peps.python.org/pep-0013/#membership>`_.
+   council may only `veto a positive vote <https://peps.python.org/pep-0013/#membership>`__.
 
 #. Assuming the steering council does not veto the positive vote, a member of the council or its
    delegate (approver, usually in practice a :ref:`Developer-in-Residence <current owners>`) will
    email the candidate:
 
    - A request for account details as required by
-     `🔒 python/voters <https://github.com/python/voters>`_.
+     `🔒 python/voters <https://github.com/python/voters>`__.
    - A reminder about the `Code of Conduct`_ and guidance on reporting issues
      to the PSF Conduct WG.
 
@@ -55,12 +55,12 @@ are granted through these steps:
 
    - Enable the various new privileges.
    - Remove the new committer from the triage team, if applicable.
-   - Add their details to `🔒 python/voters <https://github.com/python/voters>`_.
+   - Add their details to `🔒 python/voters <https://github.com/python/voters>`__.
    - Once the python/voters update is merged, regenerate the public team membership
      list at :ref:`developers`.
      See "Public list of members" in the ``voters`` README.
    - Post an announcement in the `Committers Discourse category
-     <https://discuss.python.org/c/committers/5>`_.  The past few announcements
+     <https://discuss.python.org/c/committers/5>`__.  The past few announcements
      were in the form of a separate post on the already open topic with
      the poll.
 
@@ -69,7 +69,7 @@ Getting a python.org email address
 
 Members of the core team can get an email address on the python.org domain.
 For more details refer to the `python.org email policy
-<https://www.python.org/psf/records/board/policies/email/>`_.
+<https://www.python.org/psf/records/board/policies/email/>`__.
 
 
 Poll template

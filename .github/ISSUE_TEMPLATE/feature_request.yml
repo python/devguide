@@ -1,7 +1,7 @@
 name: "Feature request"
 description: Suggest an idea for the Python devguide
 title: "Feature: <title>"
-labels: ["enhancement"]
+labels: ["type-feature"]
 assignees: []
 
 body:

@@ -73,11 +73,16 @@ boolean
   abbreviated name with appropriate markup (for example, ``:type:`bool```).
 
 C API
-  Python's `API <https://docs.python.org/3/c-api/>`_ used by C programmers
+  Python's `API <https://docs.python.org/3/c-api/>`__ used by C programmers
   to write extension modules. All caps and unhyphenated.
 
 CPU
    Central processing unit. No need to spell out.
+
+free-threaded
+   The preferred term for the build mode that makes the global interpreter
+   lock (GIL) optional (per :pep:`703`). Avoid using "No-GIL" to avoid
+   double negatives (for example, "non-no-GIL").
 
 POSIX
    The name assigned to a particular group of standards. This is always
@@ -116,13 +121,31 @@ Don't use Latin abbreviations like "e.g." or "i.e." where English words will do,
 such as "for example" or "that is."
 
 
+Charged terminology to avoid
+============================
+
+Avoid terminology that may be considered insensitive or exclusionary.
+
+.. list-table::
+   :header-rows: 1
+
+   * - Avoid
+     - Instead
+   * - whitelist
+     - allowlist
+   * - blacklist
+     - blocklist, denylist
+   * - master/slave
+     - main, parent/child, server/client, primary/secondary
+
+
 .. index:: diataxis
 .. _diataxis:
 
 Diátaxis
 ========
 
-Python's documentation strives to follow the `Diátaxis <https://diataxis.fr/>`_
+Python's documentation strives to follow the `Diátaxis <https://diataxis.fr/>`__
 framework. This means adapting the writing style according to the nature of
 the documentation that is being written. The framework splits
 documentation into four distinct types: tutorials, how-to guides, reference, and
@@ -135,7 +158,7 @@ explanation.
   and abstract concepts should be avoided. Please consult the Diátaxis guide on
   :ref:`diataxis:tutorials` for more detail.
 
-* `Python how-to guides <https://docs.python.org/3/howto/index.html>`_ are
+* `Python how-to guides <https://docs.python.org/3/howto/index.html>`__ are
   designed to guide a user through a problem-field.
   Both tutorials and how-to guides are instructional rather than explanatory
   and should provide logical steps on how to complete a task. However,
@@ -158,7 +181,7 @@ explanation.
   found throughout Python's documentation, for example the
   :ref:`python:unicode-howto`.
 
-Please consult the `Diátaxis <https://diataxis.fr/>`_ guide for more
+Please consult the `Diátaxis <https://diataxis.fr/>`__ guide for more
 detail.
 
 
@@ -175,18 +198,19 @@ the second mention is more appropriate for a link.  Some units are long enough
 to have a few repeated links.  Use judgement to decide when a link will help
 the reader.
 
-Do not use a link when the link would point to the current unit.  It's natural
-to use the name of a function in the documentation for the function, but a link
-on that function name that simply reloads the section the user is already
-reading is useless and distracting.
+We use the :pypi:`linklint Sphinx extension <linklint>` to suppress two kinds
+of excessive links: references in a section to itself and duplicate references
+in a paragraph.  Previously, editors had to carefully use an exclamation mark
+in a Sphinx reference (``:func:`!map```) to prevent such links.
 
 Do not use links in section headers.  They distract from the title of the
 section.  The term will be mentioned in the paragraph text and can be linked
 from there.
 
-Sphinx provides ways to automatically add links to references, and a way to
+Sphinx automatically adds links to references, and provides a way to
 suppress the link.  Using roles like ``:func:`map``` will link to the
-documentation for ``map``.  You can suppress the link while keeping the
+documentation for ``map``.  If automatic link suppression isn't enough,
+you can suppress the link while keeping the
 semantic presentation of the function name by adding an exclamation point
 prefix: ``:func:`!map```.  See :ref:`roles` for more details.
 
@@ -224,8 +248,8 @@ For new documentation, do not use a byline (naming the author of the document).
 Explicit attribution tends to discourage other users from updating community
 documentation.
 
-Existing documentation with bylines will not be changed unless the author
-decides to do so. This is subject to change in the future.
+Existing bylines are for historical interest only. They do not imply ownership
+or necessary approvals, and do not prevent edits or updates by others.
 
 
 Pronunciation of dunder names

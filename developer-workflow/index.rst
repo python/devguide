@@ -8,11 +8,11 @@ Development workflow
    :maxdepth: 5
 
    communication-channels
+   lang-changes
    development-cycle
    stdlib
    extension-modules
    c-api
-   lang-changes
    grammar
    porting
    sbom

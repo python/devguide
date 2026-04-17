@@ -1,6 +1,9 @@
 import json
+import os
+from urllib.request import urlopen
 
 extensions = [
+    'linklint.ext',
     'notfound.extension',
     'sphinx.ext.extlinks',
     'sphinx.ext.intersphinx',
@@ -36,6 +39,7 @@ html_theme_options = {
     "source_repository": "https://github.com/python/devguide",
     "source_branch": "main",
 }
+templates_path = ['_templates']
 html_static_path = ['_static']
 html_css_files = [
     'devguide_overrides.css',
@@ -48,6 +52,14 @@ html_favicon = "_static/favicon.png"
 
 # Set to '' to prevent appending "documentation" to the site title
 html_title = ""
+
+# Deployment preview information
+# (See .readthedocs.yaml and https://docs.readthedocs.io/en/stable/reference/environment-variables.html)
+is_deployment_preview = os.getenv("READTHEDOCS_VERSION_TYPE") == "external"
+
+html_context = {
+    "is_deployment_preview": is_deployment_preview,
+}
 
 linkcheck_allowed_redirects = {
     # Edit page
@@ -149,10 +161,14 @@ rediraffe_redirects = {
     "pullrequest.rst": "getting-started/pull-request-lifecycle.rst",
     "setup.rst": "getting-started/setup-building.rst",
     # CPython Internals
-    "compiler.rst": "internals/compiler.rst",
-    "exploring.rst": "internals/exploring.rst",
-    "garbage_collector.rst": "internals/garbage-collector.rst",
-    "parser.rst": "internals/parser.rst",
+    "compiler.rst": "internals.rst",
+    "exploring.rst": "internals.rst",
+    "garbage_collector.rst": "internals.rst",
+    "parser.rst": "internals.rst",
+    "internals/compiler.rst": "internals.rst",
+    "internals/exploring.rst": "internals.rst",
+    "internals/garbage_collector.rst": "internals.rst",
+    "internals/parser.rst": "internals.rst",
     # Testing and Buildbots
     "buildbots.rst": "testing/buildbots.rst",
     "coverage.rst": "testing/coverage.rst",
@@ -164,6 +180,56 @@ rediraffe_redirects = {
     "tracker.rst": "triage/issue-tracker.rst",
     "gh-labels.rst": "triage/labels.rst",
     "triaging.rst": "triage/triaging.rst",
+    # Contributing guide draft pages
+    "contrib/code/git.rst": "getting-started/git-boot-camp.rst",
+    "contrib/code/pull-request-lifecycle.rst": "getting-started/pull-request-lifecycle.rst",
+    "contrib/code/setup.rst": "getting-started/setup-building.rst",
+    "contrib/code/testing.rst": "testing/index.rst",
+    "contrib/code/developer-workflow.rst": "developer-workflow/index.rst",
+    "contrib/code/index.rst": "index.rst",
+    "contrib/code/development-tools.rst": "development-tools/index.rst",
+    "contrib/doc/devguide.rst": "documentation/devguide.rst",
+    "contrib/doc/help-documenting.rst": "documentation/help-documenting.rst",
+    "contrib/doc/markup.rst": "documentation/markup.rst",
+    "contrib/doc/pull-request-lifecycle.rst": "getting-started/pull-request-lifecycle.rst",
+    "contrib/doc/start-documenting.rst": "documentation/start-documenting.rst",
+    "contrib/doc/style-guide.rst": "documentation/style-guide.rst",
+    "contrib/doc/translating.rst": "documentation/translations/index.rst",
+    "contrib/doc/index.rst": "documentation/index.rst",
+    "contrib/intro/index.rst": "index.rst",
+    "contrib/project/channels.rst": "developer-workflow/communication-channels.rst",
+    "contrib/project/conduct.rst": "index.rst",
+    "contrib/project/github.rst": "index.rst",
+    "contrib/project/governance.rst": "index.rst",
+    "contrib/project/roles.rst": "index.rst",
+    "contrib/project/generative-ai.rst": "getting-started/generative-ai.rst",
+    "contrib/project/outreach.rst": "index.rst",
+    "contrib/project/directory-structure.rst": "getting-started/setup-building.rst",
+    "contrib/project/index.rst": "index.rst",
+    "contrib/security.rst": "index.rst",
+    "contrib/triage/issue-tracker.rst": "triage/issue-tracker.rst",
+    "contrib/triage/labels.rst": "triage/labels.rst",
+    "contrib/triage/reviewing.rst": "triage/triaging.rst",
+    "contrib/triage/triage-team.rst": "triage/triage-team.rst",
+    "contrib/triage/triaging.rst": "triage/triaging.rst",
+    "contrib/triage/index.rst": "triage/index.rst",
+    "contrib/user-success.rst": "index.rst",
+    "contrib/core-team/committing.rst": "core-team/committing.rst",
+    "contrib/core-team/experts.rst": "core-team/experts.rst",
+    "contrib/core-team/index.rst": "core-team/index.rst",
+    "contrib/core-team/join-team.rst": "core-team/join-team.rst",
+    "contrib/core-team/motivations.rst": "core-team/motivations.rst",
+    "contrib/core-team/responsibilities.rst": "core-team/responsibilities.rst",
+    "contrib/core-team/team-log.rst": "core-team/team-log.rst",
+    "contrib/workflows/codespaces.rst": "getting-started/setup-building.rst",
+    "contrib/workflows/compile.rst": "getting-started/setup-building.rst",
+    "contrib/workflows/get-source.rst": "getting-started/setup-building.rst",
+    "contrib/workflows/index.rst": "getting-started/setup-building.rst",
+    "contrib/workflows/install-dependencies.rst": "getting-started/setup-building.rst",
+    "contrib/workflows/install-git.rst": "getting-started/setup-building.rst",
+    "contrib/workflows/regenerate.rst": "getting-started/setup-building.rst",
+    "contrib/workflows/troubleshooting.rst": "getting-started/setup-building.rst",
+    "contrib/index.rst": "index.rst",
 }
 
 intersphinx_mapping = {
@@ -178,8 +244,8 @@ notfound_urls_prefix = "/"
 
 # Dynamically expose the Python version associated with the "main" branch.
 # Exactly one entry in ``release-cycle.json`` should have ``"branch": "main"``.
-with open("include/release-cycle.json", encoding="UTF-8") as _f:
-    _cycle = json.load(_f)
+with urlopen("https://peps.python.org/api/release-cycle.json") as _f:
+    _cycle = json.loads(_f.read().decode("utf-8"))
 
 _main_version = next(
     version for version, data in _cycle.items() if data.get("branch") == "main"
@@ -187,21 +253,6 @@ _main_version = next(
 
 # prolog and epilogs
 rst_prolog = f"""
-.. |draft| replace::
-    This is part of a **Draft** of the Python Contributor's Guide.
-    Text in square brackets are notes about content to fill in.
-    Currently, the devguide and this new Contributor's Guide co-exist in the
-    repo. We are using Sphinx include directives to demonstrate the re-organization.
-    The final Contributor's Guide will replace the devguide with content in only one
-    place.
-    We welcome help with this!
-
-.. |purpose| replace::
-    The :ref:`contrib-plan` page has more details about the current state of this draft
-    and **how you can help**.  See more info about the Contributor Guide in the
-    discussion forum: `Refactoring the DevGuide`_.
-
-.. _Refactoring the DevGuide: https://discuss.python.org/t/refactoring-the-devguide-into-a-contribution-guide/63409
 
 .. |main_version| replace:: {_main_version}
 
@@ -225,11 +276,11 @@ extlinks = {
 ogp_site_url = "https://devguide.python.org/"
 ogp_site_name = "Python Developer's Guide"
 ogp_image = "_static/og-image-200x200.png"
-ogp_custom_meta_tags = [
+ogp_custom_meta_tags = (
     '<meta property="og:image:width" content="200">',
     '<meta property="og:image:height" content="200">',
     '<meta name="theme-color" content="#3776ab">',
-]
+)
 
 # Strip the dollar prompt when copying code
 # https://sphinx-copybutton.readthedocs.io/en/latest/use.html#strip-and-configure-input-prompts-for-code-cells

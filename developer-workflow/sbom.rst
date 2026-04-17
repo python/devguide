@@ -5,15 +5,15 @@ Software Bill-of-Materials (abbreviated as "SBOM") is a document for sharing
 information about software and how it's been composed. This format is used
 most often in the security space for checking software and its dependencies
 for vulnerabilities using vulnerability databases like
-`CVE <https://www.cve.org/>`_ and `OSV <https://osv.dev/>`_. The SBOM format
-that the CPython project uses is `SPDX <https://spdx.github.io/spdx-spec/v2.3/>`_
+`CVE <https://www.cve.org/>`__ and `OSV <https://osv.dev/>`__. The SBOM format
+that the CPython project uses is `SPDX <https://spdx.github.io/spdx-spec/v2.3/>`__
 which can be transformed into other formats if necessary by consumers.
 
 There are multiple sources of third-party dependencies for CPython.
 Some are vendored into the source code of CPython itself (like ``mpdecimal``
 vendored at :cpy-file:`Modules/_decimal/libmpdec`) or they could be optionally pulled
 in during builds like Windows using dependencies from the
-`python/cpython-source-deps <https://github.com/python/cpython-source-deps>`_
+`python/cpython-source-deps <https://github.com/python/cpython-source-deps>`__
 repository.
 
 Whenever adding or updating a third-party dependency, an update will likely
@@ -51,10 +51,10 @@ Adding a new dependency
 When adding a dependency it's important to have the following information:
 
 * Name, version, and download URL of the project
-* License of the project as an `SPDX License Expression <https://spdx.org/licenses/>`_
+* License of the project as an `SPDX License Expression <https://spdx.org/licenses/>`__
 * Software identifiers that match values in vulnerability databases
-  (`CPE <https://nvd.nist.gov/products/cpe>`_ and
-  `Package URLs <https://github.com/package-url/purl-spec/blob/master/PURL-SPECIFICATION.rst>`_
+  (`CPE <https://nvd.nist.gov/products/cpe>`__ and
+  `Package URLs <https://github.com/package-url/purl-spec/blob/master/PURL-SPECIFICATION.rst>`__
   or "PURLs")
 * Paths to include and exclude in the CPython source tree corresponding to this dependency
 

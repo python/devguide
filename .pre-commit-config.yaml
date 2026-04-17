@@ -7,14 +7,12 @@ repos:
         args: [--exit-non-zero-on-fix]
       - id: ruff-format
         name: Run Ruff (format)
-        args: [--check]
 
   - repo: https://github.com/pre-commit/pre-commit-hooks
     rev: v4.5.0
     hooks:
       - id: check-case-conflict
       - id: check-merge-conflict
-      - id: check-json
       - id: check-yaml
       - id: debug-statements
       - id: end-of-file-fixer

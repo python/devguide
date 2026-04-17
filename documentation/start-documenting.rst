@@ -5,13 +5,7 @@
 Getting started
 ===============
 
-.. raw:: html
-
-   <script>
-    document.addEventListener('DOMContentLoaded', function() {
-      activateTab(getOS());
-    });
-    </script>
+.. include:: /include/activate-tab.rst
 
 .. highlight::  rest
 
@@ -162,6 +156,8 @@ To build the docs as HTML, run:
          * Replace ``html`` with ``htmllive`` to rebuild the docs,
            start a local server, and automatically reload the page in your
            browser when you make changes to reST files (Unix only).
+         * To build a documentation translation, see this
+           :ref:`guide <docs-build-translation>`.
 
 It is also possible to build only certain pages of the documentation in order
 to save time during the build process. Following is an example for building two
