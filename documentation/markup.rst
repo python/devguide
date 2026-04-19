@@ -1144,6 +1144,19 @@ units as well as normal text:
 
       .. deprecated-removed:: next 4.0
 
+.. describe:: soft-deprecated
+
+   Indicates the version from which the described feature is :term:`soft deprecated`.
+
+   There is one required argument: the version from which the feature is soft
+   deprecated.
+   Use the word ``next`` to indicate the API will be first soft deprecated in
+   the upcoming release.
+
+   Example::
+
+      .. soft-deprecated:: next
+
 .. describe:: impl-detail
 
    This directive is used to mark CPython-specific information.  Use either with
