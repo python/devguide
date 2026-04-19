@@ -1150,8 +1150,8 @@ units as well as normal text:
 
    There is one required argument: the version from which the feature is soft
    deprecated.
-   Similarly to ``deprecated``, you should use the word ``next`` to indicate
-   the API will be first soft deprecated in the upcoming release.
+   Use the word ``next`` to indicate the API will be first soft deprecated in
+   the upcoming release.
 
    Example::
 
