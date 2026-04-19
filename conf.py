@@ -36,6 +36,7 @@ nitpicky = True
 
 html_theme = 'furo'
 html_theme_options = {
+    "navigation_with_keys": True,
     "source_repository": "https://github.com/python/devguide",
     "source_branch": "main",
 }
