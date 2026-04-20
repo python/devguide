@@ -27,7 +27,9 @@ Quick guide
 
 Here is a quick overview of how you can contribute to CPython:
 
-#. `Create an issue`_ that describes your change [*]_
+#. `Create an issue`_ that describes your change. If it is trivial
+   (like :ref:`typo fixes <typo-fixes>`), or an issue already exists,
+   you can skip this step.
 
 #. :ref:`Create a new branch in Git <pullrequest-steps>` from the
    ``main`` branch
@@ -50,9 +52,6 @@ Here is a quick overview of how you can contribute to CPython:
    <deleting_branches>`
 
 #. Celebrate contributing to CPython! :)
-
-.. [*] If an issue is trivial (for example, typo fixes), or if an issue already exists,
-       you can skip this step.
 
 Don't force-push
 ----------------
