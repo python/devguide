@@ -271,7 +271,8 @@ Typo fixes
 
 Fixing typos and grammatical errors in documentation is a
 contribution that does not require a linked issue. The most appropriate
-place for such fixes is the :cpy-file:`Doc/` directory (end-user documentation).
+place for such fixes are the :cpy-file:`Doc/` (end-user documentation)
+and :cpy-file:`InternalDocs/` directories.
 
 
 Keep typo-fix PRs **small and focused**. Large PRs that touch many unrelated files
