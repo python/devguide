@@ -118,7 +118,7 @@ For more details about translations and their progress, see
      - Dmytro Kazanzhy (:github-user:`kazanzhy`, `email <mailto:dkazanzhy@gmail.com>`__)
      - :github:`GitHub <python/python-docs-uk>`,
        `Transifex <tx_>`_
-   * - `Vietnamese (vi) <https://docs.python.org/vi/>`__
+   * - Vietnamese (vi)
      - Duc-Tam Nguyen (:github-user:`tamnd`)
      - :github:`GitHub <tamnd/python-docs-vi>`,
        `Transifex <tx_>`_
