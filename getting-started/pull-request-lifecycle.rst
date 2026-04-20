@@ -241,7 +241,7 @@ should do to help ensure that your pull request is accepted.
 #. **Keep your pull request focused and small.** A pull request should address
    one issue or add one feature. Combining multiple unrelated changes makes a
    pull request harder to review and increases the number of people notified
-   unnecessarily. When in doubt, split into separate pull requests.
+   unnecessarily.
 
 #. Proper :ref:`documentation <documenting>` additions/changes should be included.
 
@@ -270,16 +270,12 @@ See also `python/cpython#126133
 Typo fixes
 ==========
 
-Fixing typos and grammatical errors in documentation is a welcome
+Fixing typos and grammatical errors in documentation is a
 contribution that does not require a linked issue. The most appropriate
-places for such fixes are:
+place for such fixes is the :cpy-file:`Doc/` directory (end-user documentation).
 
-* The ``Doc/`` directory (end-user documentation)
-* Internal documentation, such as files in ``Misc/``
-* News entries under ``Misc/NEWS.d/``
 
-Keep typo-fix PRs **small and focused**, ideally limited to one file or a
-small set of closely related files. Large PRs that touch many unrelated files
+Keep typo-fix PRs **small and focused**. Large PRs that touch many unrelated files
 notify a large number of reviewers unnecessarily and are harder to review.
 Large typo-fix PRs, or PRs touching directories outside those listed above,
 may be closed with a reference to this section.
