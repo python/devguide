@@ -123,6 +123,7 @@ For more details about translations and their progress, see
      - :github:`GitHub <tamnd/python-docs-vi>`,
        `Transifex <tx_>`_
 
+
 How to get help
 ===============
 
