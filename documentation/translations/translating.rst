@@ -121,7 +121,7 @@ For more details about translations and their progress, see
    * - `Vietnamese (vi) <https://docs.python.org/vi/>`__
      - Duc-Tam Nguyen (:github-user:`tamnd`)
      - :github:`GitHub <tamnd/python-docs-vi>`,
-       `Transifex <https://www.transifex.com/>`__
+       `Transifex <tx_>`_
 
 How to get help
 ===============
