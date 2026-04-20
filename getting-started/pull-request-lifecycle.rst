@@ -27,7 +27,9 @@ Quick guide
 
 Here is a quick overview of how you can contribute to CPython:
 
-#. `Create an issue`_ that describes your change [*]_
+#. `Create an issue`_ that describes your change. If it is trivial
+   (like :ref:`typo fixes <typo-fixes>`), or an issue already exists,
+   you can skip this step.
 
 #. :ref:`Create a new branch in Git <pullrequest-steps>` from the
    ``main`` branch
@@ -50,9 +52,6 @@ Here is a quick overview of how you can contribute to CPython:
    <deleting_branches>`
 
 #. Celebrate contributing to CPython! :)
-
-.. [*] If an issue is trivial (for example, typo fixes), or if an issue already exists,
-       you can skip this step.
 
 Don't force-push
 ----------------
@@ -238,6 +237,11 @@ should do to help ensure that your pull request is accepted.
    changes, because there might be interferences unknown to you between your
    changes and some other part of the interpreter.
 
+#. **Keep your pull request focused and small.** A pull request should address
+   one issue or add one feature. Combining multiple unrelated changes makes a
+   pull request harder to review and increases the number of people notified
+   unnecessarily.
+
 #. Proper :ref:`documentation <documenting>` additions/changes should be included.
 
 .. _news-entry:
@@ -357,6 +361,23 @@ closed.
 
 See also `python/cpython#126133
 <https://github.com/python/cpython/issues/126133#issuecomment-2460824052>`__.
+
+
+.. _typo-fixes:
+
+Typo fixes
+==========
+
+Fixing typos and grammatical errors in documentation is a
+contribution that does not require a linked issue. The most appropriate
+place for such fixes are the :cpy-file:`Doc/` (end-user documentation)
+and :cpy-file:`InternalDocs/` directories.
+
+
+Keep typo-fix PRs **small and focused**. Large PRs that touch many unrelated files
+notify a large number of reviewers unnecessarily and are harder to review.
+Large typo-fix PRs, or PRs touching directories outside those listed above,
+may be closed with a reference to this section.
 
 
 .. _patchcheck:
