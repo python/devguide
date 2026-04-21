@@ -30,13 +30,14 @@ Communicating across cultures and languages
 Not every contributor writes English as a first language, and phrasing that
 feels neutral in one culture can read as blunt or rude in another.
 
-**Assume good faith.** If a message feels abrupt, it's probably a language
-barrier or a different communication style rather than rudeness. If you're
+**Practice active listening.** Try to focus on understanding the message before reacting.
+
+**Confirm Understanding.** Ask open-ended questions and paraphrase to avoid misunderstandings. If you're
 unsure what someone meant, ask: "I want to make sure I understand: are you
 saying X?"
 
 **Use translation tools freely.** If English isn't your first language,
-translation software or AI tools can help you check that your message has the
+translation software or AI tools may help you check that your message has the
 tone you intend. Getting the phrasing wrong can make a reasonable point sound
 more aggressive than it is.
 
