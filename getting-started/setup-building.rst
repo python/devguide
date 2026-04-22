@@ -562,9 +562,7 @@ the ``Platforms/emscripten`` build script:
   side by side.
 
 It is possible (but not necessary) to enable ``ccache`` for Emscripten builds
-by setting the ``EM_COMPILER_WRAPPER`` environment, but this step will only
-take effect if it is done **after** ``emsdk_env.sh`` is sourced (otherwise, the
-sourced script removes the environment variable):
+by setting the ``EM_COMPILER_WRAPPER`` environment variable:
 
 .. code-block:: sh
 
