@@ -541,7 +541,7 @@ Once built for a given Emscripten version, they will not be rebuilt on
 subsequent runs unless there is a change in the version or build script for the
 dependency.
 
-It is assumed that nvm is installed in `${HOME}/.nvm`.
+It is assumed that nvm_ is installed in `${HOME}/.nvm`.
 
 If you omit the ``EMSDK_CACHE`` environment variable, the build script will
 assume that the current environment has the Emscripten tools available. You are
