@@ -194,10 +194,10 @@ Configuration is typically::
 
    $ ./configure --config-cache --with-pydebug
 
-The ``--config-cache`` (``-C``) option speeds up repeated ``configure`` runs
-by caching results in a ``config.cache`` file. If you switch compilers or
-significantly change your build environment, delete ``config.cache`` before
-re-running ``configure``.
+The ``--config-cache`` (short: ``-C``, equivalent: ``--cache-file=config.cache``)
+option speeds up repeated ``configure`` runs by caching results in a
+``config.cache`` file. If you switch compilers or significantly change your
+build environment, delete ``config.cache`` before re-running ``configure``.
 
 More flags are available to ``configure``, but this is the minimum you should
 do to get a pydebug build of CPython.
