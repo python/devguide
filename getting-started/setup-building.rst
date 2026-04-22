@@ -531,7 +531,7 @@ required, placing it in the `EMSDK_CACHE` directory.
 `build all` will:
 
 1. Build a copy of Python that can run on the host machine (the "build" python);
-2. Ensure that a required version of Node is installed;
+2. Use nvm_ to ensure that the needed version of Node is installed;
 3. Download the code for all the binary dependencies of Python (such as
    ``libffi`` and ``mpdecimal``), and compile them for Emscripten; and
 4. Build a copy of Python that can run on Emscripten (the "host" python).
@@ -540,6 +540,8 @@ The built binary dependencies are cached inside the Emscripten cache directory.
 Once built for a given Emscripten version, they will not be rebuilt on
 subsequent runs unless there is a change in the version or build script for the
 dependency.
+
+It is assumed that nvm is installed in `${HOME}/.nvm`.
 
 If you omit the ``EMSDK_CACHE`` environment variable, the build script will
 assume that the current environment has the Emscripten tools available. You are
@@ -601,6 +603,7 @@ through web browsers) are available in the CPython repository at
 
 .. _Emscripten: https://emscripten.org/
 .. _WebAssembly: https://webassembly.org
+.. _nvm: https://github.com/nvm-sh/nvm#intro
 
 Android
 -------
