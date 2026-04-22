@@ -32,9 +32,9 @@ feels neutral in one culture can read as blunt or rude in another.
 
 **Practice active listening.** Try to focus on understanding the message before reacting.
 
-**Confirm Understanding.** Ask open-ended questions and paraphrase to avoid misunderstandings. If you're
-unsure what someone meant, ask: "I want to make sure I understand: are you
-saying X?"
+**Confirm understanding.** Ask open-ended questions and paraphrase to avoid
+misunderstandings. If you're unsure what someone meant, ask: "I want to make 
+sure I understand: are you saying X?"
 
 **Use translation tools freely.** If English isn't your first language,
 translation software or AI tools may help you check that your message has the
