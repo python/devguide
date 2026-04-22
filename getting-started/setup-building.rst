@@ -874,7 +874,8 @@ some of CPython's modules (for example, ``zlib``).
 
             $ GDBM_CFLAGS="-I$(brew --prefix gdbm)/include" \
                GDBM_LIBS="-L$(brew --prefix gdbm)/lib -lgdbm" \
-               ./configure --with-pydebug \
+               ./configure --config-cache \
+                           --with-pydebug \
                            --with-openssl="$(brew --prefix openssl@3)"
 
       .. tab:: Python 3.10
@@ -883,7 +884,8 @@ some of CPython's modules (for example, ``zlib``).
 
             $ CPPFLAGS="-I$(brew --prefix gdbm)/include -I$(brew --prefix xz)/include" \
                LDFLAGS="-L$(brew --prefix gdbm)/lib -L$(brew --prefix xz)/lib" \
-               ./configure --with-pydebug \
+               ./configure --config-cache \
+                           --with-pydebug \
                            --with-openssl="$(brew --prefix openssl@3)" \
                            --with-tcltk-libs="$(pkg-config --libs tcl tk)" \
                            --with-tcltk-includes="$(pkg-config --cflags tcl tk)" \
@@ -905,7 +907,8 @@ some of CPython's modules (for example, ``zlib``).
 
             $ GDBM_CFLAGS="-I$(dirname $(dirname $(which port)))/include" \
                GDBM_LIBS="-L$(dirname $(dirname $(which port)))/lib -lgdbm" \
-               ./configure --with-pydebug \
+               ./configure --config-cache \
+                           --with-pydebug \
                            --with-system-libmpdec
 
       .. tab:: Python 3.11-3.12
@@ -914,7 +917,8 @@ some of CPython's modules (for example, ``zlib``).
 
             $ GDBM_CFLAGS="-I$(dirname $(dirname $(which port)))/include" \
                GDBM_LIBS="-L$(dirname $(dirname $(which port)))/lib -lgdbm" \
-               ./configure --with-pydebug
+               ./configure --config-cache \
+                           --with-pydebug
 
    And finally, run ``make``::
 
