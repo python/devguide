@@ -526,9 +526,9 @@ The simplest way to build Emscripten is to run:
    python3 Platforms/emscripten install-emscripten
    python3 Platforms/emscripten build all
 
-`install-emscripten` downloads and installs the version of the Emscripten SDK
-required, placing it in the `EMSDK_CACHE` directory.
-`build all` will:
+``install-emscripten`` downloads and installs the version of the Emscripten SDK
+required, placing it in the ``EMSDK_CACHE`` directory.
+``build all`` will:
 
 1. Build a copy of Python that can run on the host machine (the "build" python);
 2. Use nvm_ to ensure that the needed version of Node is installed;
