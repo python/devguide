@@ -522,39 +522,52 @@ The simplest way to build Emscripten is to run:
 
 .. code-block:: sh
 
-    python3 Platforms/emscripten build all --emsdk-cache=./cross-build/emsdk
+   export EMSDK_CACHE=$PWD/cross-build/emsdk
+   python3 Platforms/emscripten install-emscripten
+   python3 Platforms/emscripten build all
 
-This will:
+``install-emscripten`` downloads and installs the version of the Emscripten SDK
+required, placing it in the ``EMSDK_CACHE`` directory.
+``build all`` will:
 
 1. Build a copy of Python that can run on the host machine (the "build" python);
-2. Download a copy of the Emscripten SDK matching the version required by the
-   version of Python being compiled;
-3. Ensure that a required version of Node is installed;
-4. Download the code for all the binary dependencies of Python (such as
-   ``libFFI`` and ``xz``), and compile them for Emscripten; and
-5. Build a copy of Python that can run on Emscripten (the "host" python).
+2. Use nvm_ to ensure that the needed version of Node is installed;
+3. Download the code for all the binary dependencies of Python (such as
+   ``libffi`` and ``mpdecimal``), and compile them for Emscripten; and
+4. Build a copy of Python that can run on Emscripten (the "host" python).
 
-If you omit the ``--emsdk-cache`` environment variable, the build script will
+The built binary dependencies are cached inside the Emscripten cache directory.
+Once built for a given Emscripten version, they will not be rebuilt on
+subsequent runs unless there is a change in the version or build script for the
+dependency.
+
+It is assumed that nvm_ is installed in ``${HOME}/.nvm``. If you don't have nvm
+installed or don't want to use it, you can pass ``--host-runner node`` to the
+``build`` command. The argument should either be the name of an executable that
+can be found on the ``PATH`` or a relative or absolute path to an executable.
+
+If you omit the ``EMSDK_CACHE`` environment variable, the build script will
 assume that the current environment has the Emscripten tools available. You are
 responsible for downloading and activating those tools in your environment. The
 version of Emscripten and Node that is required to build Python is defined in
 the :cpy-file:`Platforms/emscripten/config.toml` configuration file.
 
-There are three environment variables that can be used to control the operation of
+There are two environment variables that can be used to control the operation of
 the ``Platforms/emscripten`` build script:
 
-* ``EMSDK_CACHE`` controls the location of the emscripten SDK. You can use this instead
-  environment variable instead of passing the ``--emsdk-cache`` flag.
-* ``CACHE_DIR`` defines the location where downloaded artefacts, such
-  as precompiled ``libFFI`` and ``xz`` binaries, will be stored.
-* ``CROSS_BUILD_DIR`` defines the name of the ``cross-build`` directory
-  that will be used for builds. This can be useful if you need to maintain
-  builds of multiple versions of Python.
+* ``EMSDK_CACHE`` (or the ``--emsdk-cache`` flag) controls the location of the
+  Emscripten SDK cache directory. You can use this environment variable instead
+  of passing the ``--emsdk-cache`` flag. When set, the build script will
+  validate that the required Emscripten version is present in the cache and will
+  exit with an error if it is not; run ``install-emscripten`` to populate the
+  cache.
+* ``CROSS_BUILD_DIR`` (or the ``--cross-build-dir`` flag) defines the location
+  of the ``cross-build`` directory that will be used for builds. This can be
+  useful if you need to maintain builds of multiple versions of Python
+  side by side.
 
 It is possible (but not necessary) to enable ``ccache`` for Emscripten builds
-by setting the ``EM_COMPILER_WRAPPER`` environment, but this step will only
-take effect if it is done **after** ``emsdk_env.sh`` is sourced (otherwise, the
-sourced script removes the environment variable):
+by setting the ``EM_COMPILER_WRAPPER`` environment variable:
 
 .. code-block:: sh
 
@@ -571,8 +584,9 @@ Emscripten build in ``cross-build/build`` and
 ``cross-build/wasm32-emscripten/build/python/``, respectively.
 
 The ``Platforms/emscripten`` script has a number of other entry points that allow for
-fine-grained execution of each part of an iOS build; run ``python3
-Platforms/emscripten --help`` for more details.
+fine-grained execution of each part of an Emscripten build; run
+``python3 Platforms/emscripten --help`` for more details.
+
 
 Once the build is complete, you can run Python code using:
 
@@ -592,6 +606,7 @@ through web browsers) are available in the CPython repository at
 
 .. _Emscripten: https://emscripten.org/
 .. _WebAssembly: https://webassembly.org
+.. _nvm: https://github.com/nvm-sh/nvm#intro
 
 Android
 -------
