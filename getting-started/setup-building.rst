@@ -191,6 +191,15 @@ Configuration is typically::
 More flags are available to ``configure``, but this is the minimum you should
 do to get a pydebug build of CPython.
 
+.. tip::
+   To speed up repeated ``configure`` runs, use ``--config-cache`` (equivalent to ``--cache-file=config.cache``, short: ``-C``)::
+
+      $ ./configure --config-cache --with-pydebug
+
+   This caches results in a :file:`config.cache` file. If you switch compilers or
+   significantly change your build environment, delete :file:`config.cache` before
+   re-running ``configure``.
+
 .. note::
    You might need to run ``make clean`` before or after re-running ``configure``
    in a particular build directory.
@@ -856,7 +865,8 @@ some of CPython's modules (for example, ``zlib``).
 
             $ GDBM_CFLAGS="-I$(brew --prefix gdbm)/include" \
                GDBM_LIBS="-L$(brew --prefix gdbm)/lib -lgdbm" \
-               ./configure --with-pydebug \
+               ./configure --config-cache \
+                           --with-pydebug \
                            --with-openssl="$(brew --prefix openssl@3)"
 
       .. tab:: Python 3.10
@@ -865,7 +875,8 @@ some of CPython's modules (for example, ``zlib``).
 
             $ CPPFLAGS="-I$(brew --prefix gdbm)/include -I$(brew --prefix xz)/include" \
                LDFLAGS="-L$(brew --prefix gdbm)/lib -L$(brew --prefix xz)/lib" \
-               ./configure --with-pydebug \
+               ./configure --config-cache \
+                           --with-pydebug \
                            --with-openssl="$(brew --prefix openssl@3)" \
                            --with-tcltk-libs="$(pkg-config --libs tcl tk)" \
                            --with-tcltk-includes="$(pkg-config --cflags tcl tk)" \
@@ -887,7 +898,8 @@ some of CPython's modules (for example, ``zlib``).
 
             $ GDBM_CFLAGS="-I$(dirname $(dirname $(which port)))/include" \
                GDBM_LIBS="-L$(dirname $(dirname $(which port)))/lib -lgdbm" \
-               ./configure --with-pydebug \
+               ./configure --config-cache \
+                           --with-pydebug \
                            --with-system-libmpdec
 
       .. tab:: Python 3.11-3.12
@@ -896,7 +908,8 @@ some of CPython's modules (for example, ``zlib``).
 
             $ GDBM_CFLAGS="-I$(dirname $(dirname $(which port)))/include" \
                GDBM_LIBS="-L$(dirname $(dirname $(which port)))/lib -lgdbm" \
-               ./configure --with-pydebug
+               ./configure --config-cache \
+                           --with-pydebug
 
    And finally, run ``make``::
 

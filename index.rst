@@ -95,13 +95,13 @@ instructions please see the :ref:`setup guide <setup>`.
 
       .. code-block:: shell
 
-         ./configure --with-pydebug && make -j $(nproc)
+         ./configure --config-cache --with-pydebug && make -j $(nproc)
 
    .. tab:: macOS
 
       .. code-block:: shell
 
-         ./configure --with-pydebug && make -j8
+         ./configure --config-cache --with-pydebug && make -j8
 
    .. tab:: Windows
 
