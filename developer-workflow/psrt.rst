@@ -4,6 +4,8 @@ Python Security Response Team (PSRT)
 The Python Security Response Team (PSRT) is responsible for handling
 vulnerability reports for CPython and pip.
 
+To report security issues: https://www.python.org/dev/security/
+
 Members
 -------
 
