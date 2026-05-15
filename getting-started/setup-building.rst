@@ -857,7 +857,7 @@ some of CPython's modules (for example, ``zlib``).
 
       For **Homebrew**, install dependencies using ``brew``::
 
-         $ brew install pkg-config openssl@3 xz gdbm tcl-tk mpdecimal zstd
+         $ brew bundle --file=Misc/Brewfile
 
       .. tab:: Python 3.11+
 
