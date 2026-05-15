@@ -2,7 +2,7 @@ OSS-Fuzz for CPython
 ====================
 
 CPython uses `OSS-Fuzz <https://google.github.io/oss-fuzz/>`__, Google's
-continuous fuzzing service for open source projects, to find bugs and
+continuous fuzzing service for open-source projects, to find bugs and
 security vulnerabilities by feeding semi-random data to various APIs.
 
 CPython has two OSS-Fuzz projects:
@@ -10,13 +10,14 @@ CPython has two OSS-Fuzz projects:
 * `cpython3 <https://github.com/google/oss-fuzz/tree/master/projects/cpython3>`__:
   The fuzz targets, seed corpora, and dictionaries can be found in the
   :cpy-file:`Modules/_xxtestfuzz/` directory of CPython. This project
-  is maintained for existing fuzz targets; new targets should be added to
+  is maintained for existing fuzz targets; add new targets to
   ``python3-libraries``.
 
 * `python3-libraries <https://github.com/google/oss-fuzz/tree/master/projects/python3-libraries>`__:
   The fuzz targets, seed corpora, and dictionaries can be found in the
   :github:`python/library-fuzzers` repository. Access to the repository is
-  managed through the ``@python/fuzzers`` team on GitHub.
+  managed through the `@python/fuzzers
+  <https://github.com/orgs/python/teams/fuzzers>`__ team on GitHub.
 
 OSS-Fuzz bug reports are private when filed, so access to crash details and
 reproducer test cases is limited to those listed in the ``auto_ccs`` fields of
@@ -45,7 +46,7 @@ relevant files.
 Adding new targets
 ------------------
 
-New targets should be added to the ``python3-libraries`` project. For more
+Add new targets to the ``python3-libraries`` project. For more
 information, see the documentation in the :github:`python/library-fuzzers`
 repository.
 
