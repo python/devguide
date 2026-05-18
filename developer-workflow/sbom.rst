@@ -66,7 +66,7 @@ After gathering this information:
 
    * ``name`` for the project name.
    * ``SPDXID`` which will be ``"SPDXRef-PACKAGE-{name}"``.
-   * ``licenseConcluded`` for the SPDX license identifier of the project license.
+   * ``licenseConcluded`` must be ``NOASSERTION``.
    * ``versionInfo`` for the version of the project.
    * ``downloadLocation`` should be an HTTPS URL for the project download as an archive.
    * ``checksums[0].checksumValue`` and ``.algorithm`` will be the SHA-256
@@ -107,3 +107,35 @@ When removing a dependency:
    that correct package is removed from the SBOM.
 5. Commit the changes to :cpy-file:`Misc/sbom.spdx.json` and
    :cpy-file:`Tools/build/generate_sbom.py`.
+
+Updating external dependencies (``cpython-source-deps``)
+--------------------------------------------------------
+
+ .. note::
+   Only core developers can push to the ``cpython-source-deps`` repository.
+
+   For this repo to maintain integrity, pull requests from contributors are not accepted. Instead of a pull request,
+   contributors should
+   create an issue requesting the updated
+   version and then wait for a core developer to prepare the new version
+   before proceeding with the next steps below.
+
+Dependencies for Windows CPython builds are `stored in a separate repository
+<https://github.com/python/cpython-source-deps>`_ and then fetched during
+builds of CPython for Windows in the script :cpy-file:`PCbuild/get_externals.bat`.
+
+In this :cpy-file:`PCbuild/get_externals.bat`, the libraries to fetch are designated by ``{name}-{version}``
+Git refs being added to the ``libraries`` variable.
+SBOM tooling in the CPython repository matches these Git refs in order
+to build the :cpy-file:`Misc/externals.spdx.json` SBOM file.
+
+When updating external dependencies for a CPython branch:
+
+1. Push the update to the ``cpython-source-deps`` repository and
+   create a new Git tag.
+2. Update the entry for the project in ``get_externals.bat``.
+3. Run ``make regen-sbom`` or ``PCbuild/build.bat --regen``
+   in the CPython source repository.
+4. Use ``git diff`` to verify that the metadata (like version, download location)
+   in ``externals.spdx.json`` SBOM is updated as expected.
+5. Commit the changes and have them merged together.
