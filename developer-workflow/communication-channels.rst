@@ -22,6 +22,38 @@ in return.
 .. _Diversity Statement: https://www.python.org/psf/diversity/
 
 
+.. _multicultural-communication:
+
+Communicating across cultures and languages
+===========================================
+
+Not every contributor writes English as a first language, and phrasing that
+feels neutral in one culture can read as blunt or rude in another.
+
+**Practice active listening.** Try to focus on understanding the message before reacting.
+
+**Confirm understanding.** Ask open-ended questions and paraphrase to avoid
+misunderstandings. If you're unsure what someone meant, ask: "I want to make
+sure I understand: are you saying X?"
+
+**Use translation tools freely.** If English isn't your first language,
+translation software or AI tools may help you check that your message has the
+tone you intend. Getting the phrasing wrong can make a reasonable point sound
+more aggressive than it is.
+
+**Watch out for rhetorical questions.** They read as hostile in text even when
+that's not the intent at all:
+
+* Instead of "Why do you think it is wrong?!", try "That doesn't sound right
+  to me. Here's why: …"
+* Instead of "Did you even read the docs?", try "The relevant documentation
+  is at …"
+
+**Be patient with newcomers.** If someone doesn't know how things work here,
+point them to the right docs or give them the context they need. Criticism
+without guidance isn't helpful.
+
+
 .. _mailinglists:
 
 Mailing lists

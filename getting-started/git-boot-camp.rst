@@ -447,19 +447,33 @@ Both of these tools will configure a remote URL for the branch, so you can
 ``git push`` if the pull request author checked "Allow edits from maintainers"
 when creating the pull request.
 
-If you don't have GitHub CLI or hub installed, you can set up a git alias:
+Otherwise, you can run the following commands:
+
+.. code-block:: shell
+
+   $ git fetch upstream pull/NNNNN/head:pr_NNNNN
+   $ git switch pr_NNNNN
+
+Or set up a Git alias:
 
 .. tab:: Unix/macOS
 
    .. code-block:: shell
 
-      $ git config --global alias.pr '!sh -c "git fetch upstream pull/${1}/head:pr_${1} && git checkout pr_${1}" -'
+      git config --global alias.pr '!sh -c "git fetch upstream pull/${1}/head:pr_${1} && git switch pr_${1}" -'
 
-.. tab:: Windows
+.. tab:: Windows cmd
 
    .. code-block:: dosbatch
 
-      git config --global alias.pr "!sh -c 'git fetch upstream pull/${1}/head:pr_${1} && git checkout pr_${1}' -"
+      git config --global alias.pr "!sh -c 'git fetch upstream pull/${1}/head:pr_${1} && git switch pr_${1}' -"
+
+.. tab:: Windows Powershell
+
+   .. code-block:: shell
+
+      git config --global alias.pr '!f() { git fetch upstream pull/$1/head:pr_$1 && git checkout pr_$1; }; f'
+
 
 The alias only needs to be done once.  After the alias is set up, you can get a
 local copy of a pull request as follows::

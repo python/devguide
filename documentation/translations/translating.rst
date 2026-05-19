@@ -101,6 +101,11 @@ For more details about translations and their progress, see
    * - Swedish (sv)
      - Daniel Nylander (:github-user:`yeager`)
      - :github:`GitHub <python/python-docs-sv>`
+   * - Tamil (ta)
+     - | Murugan Santhosh (:github-user:`terminaljoint`),
+       | Hari (:github-user:`nammahari`)
+     - :github:`GitHub <Terminal-Joint/python-docs-ta>`,
+       `Discord <https://discord.gg/9rpdtag3ej>`__
    * - `Traditional Chinese (zh-tw) <https://docs.python.org/zh-tw/>`__
      - | 王威翔 Matt Wang (:github-user:`mattwang44`),
        | Josix Wang (:github-user:`josix`)
@@ -112,6 +117,10 @@ For more details about translations and their progress, see
    * - `Ukrainian (uk) <https://docs.python.org/uk/>`__
      - Dmytro Kazanzhy (:github-user:`kazanzhy`, `email <mailto:dkazanzhy@gmail.com>`__)
      - :github:`GitHub <python/python-docs-uk>`,
+       `Transifex <tx_>`_
+   * - Vietnamese (vi)
+     - Duc-Tam Nguyen (:github-user:`tamnd`)
+     - :github:`GitHub <tamnd/python-docs-vi>`,
        `Transifex <tx_>`_
 
 
@@ -359,6 +368,52 @@ The coordination team for my language is inactive, what do I do?
 If you would like to coordinate, open a pull request in the
 `devguide <https://github.com/python/devguide>`__ adding yourself to the table
 at the top of this page, and ping ``@python/editorial-board``.
+
+
+How do I merge translations back in after docs are moved?
+---------------------------------------------------------
+
+When docs are moved in the CPython repository, translated messages are not
+moved automatically and will be lost.
+They can be recovered by merging them into the new locations.
+Note that this is not necessary for Transifex-based translations, as Transifex's
+translation memory will automatically copy them over.
+
+The :pypi:`pomerge` tool merges translations between PO files by matching
+messages, regardless of file paths. To use it, first install the package:
+
+.. code-block:: bash
+
+    pip install pomerge
+
+Then, merge translations from a specific commit (replace :samp:`{COMMIT_HASH}`
+with the commit hash from before the files were moved):
+
+.. TODO: Provide Windows instructions.
+
+.. tab:: Unix
+
+    .. code-block:: bash
+
+        # These commands are to be run in the root of the translation repo
+
+        # Check out a commit before the move
+        git checkout COMMIT_HASH -- .
+
+        # Copy translations to a temporary dir
+        cp -r . /tmp/old-po-files
+
+        # Return to the current version
+        git checkout HEAD -- .
+
+        # Merge translations from temporary dir back in
+        pomerge --from /tmp/old-po-files/**/*.po --to **/*.po --clear
+
+        # Clean up temporary dir
+        rm -rf /tmp/old-po-files
+
+After running ``pomerge``, review the changes and commit the updated files.
+You may also need to rewrap the lines (see :pypi:`powrap`).
 
 
 .. _discourse: https://discuss.python.org/c/documentation/translations/

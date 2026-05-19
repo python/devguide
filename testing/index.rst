@@ -10,5 +10,6 @@ Testing and buildbots
    run-write-tests
    silence-warnings
    coverage
+   oss-fuzz
    buildbots
    new-buildbot-worker

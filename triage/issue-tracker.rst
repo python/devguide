@@ -124,7 +124,8 @@ Disagreement with a resolution on the issue tracker
 
 As humans, we will have differences of opinions from time to time. First and
 foremost, please be respectful that care, thought, and volunteer time went into
-the resolution.
+the resolution. Keep in mind that contributors come from many different cultural
+and linguistic backgrounds; see :ref:`multicultural-communication`.
 
 With this in mind, take some time to consider any comments made in association
 with the resolution of the issue. On reflection, the resolution steps may seem
