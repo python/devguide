@@ -1,25 +1,25 @@
-.. _generative-ai:
+.. _ai-tools:
 
 =================================
-Guidelines in using Generative AI
+Guidelines for using AI tools
 =================================
 
-Generative AI tools are evolving rapidly, and their work can be helpful. As with using any tool, the resulting
+Generative AI tools can produce output quickly. As with using any tool, the resulting
 contribution is the responsibility of the contributor. We value good code, concise accurate documentation,
-and avoiding unneeded code churn. Discretion, good judgment, and critical thinking are the foundation of all good
+and well scoped PRs without unneeded code churn. Discretion, good judgment, and critical thinking are the foundation of all good
 contributions, regardless of the tools used in their creation.
 
 Considerations for success
 ==========================
 
-Authors must review the work done by AI tooling in detail to ensure it actually makes sense before proposing it as a PR.
+Authors must review the work done by AI tooling in detail to ensure it actually makes sense before proposing it as a PR or filing it as an issue.
 
-We expect PR authors to be able to explain their proposed changes in their own words.
+We expect PR authors and those filing issues to be able to explain their proposed changes in their own words.
 
 Disclosure of the use of AI tools in the PR description is appreciated, while not required. Be prepared to explain how
 the tool was used and what changes it made.
 
-Whether you are using Generative AI or not, keep the following principles in mind for the quality
+Whether you are using AI tools or not, keep the following principles in mind for the quality
 of your contribution:
 
 - Consider whether the change is necessary
@@ -40,7 +40,7 @@ Unacceptable uses
 =================
 
 Maintainers may close issues and PRs that are not useful or productive, regardless of whether
-AI was used or not.
+AI tools were used or not.
 
 If a contributor repeatedly opens unproductive issues or PRs, they may be blocked.
 
