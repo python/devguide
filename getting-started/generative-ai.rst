@@ -4,10 +4,11 @@
 Guidelines for using AI tools
 =============================
 
-Generative AI tools can produce output quickly. As with using any tool, the resulting
-contribution is the responsibility of the contributor. We value good code, concise accurate documentation,
-and well scoped PRs without unneeded code churn. Discretion, good judgment, and critical thinking are the foundation of all good
-contributions, regardless of the tools used in their creation.
+The person submitting an issue or PR is responsible for its content, regardless of whether
+AI tools were used in its creation. Generative AI tools can produce output quickly, but
+discretion, good judgment, and critical thinking are the foundation of all good contributions.
+We value good code, concise accurate documentation, and well scoped PRs without unneeded
+code churn.
 
 Considerations for success
 ==========================
