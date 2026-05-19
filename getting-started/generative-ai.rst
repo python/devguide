@@ -26,6 +26,9 @@ of your contribution:
 - Make minimal, focused changes
 - Follow existing coding style and patterns
 - Write tests that exercise the change
+- Keep backwards compatibility with prior releases in mind. Existing tests may be ensuring specific API behaviors are maintained.
+
+Pay close attention to AI generated recommendations for testing changes. Provide input about Python's testing principles when guiding an AI model. Always review the output from an AI model before opening a pull request or issue, including proposed PR or issue titles and descriptions.
 
 Acceptable uses
 ===============
@@ -44,5 +47,5 @@ AI tools were used or not.
 
 If a contributor repeatedly opens unproductive issues or PRs, they may be blocked.
 
-Sometimes AI assisted tools make failing unit tests pass by altering or bypassing the tests rather than addressing the
-underlying problem in the code. Such changes do not represent a real fix and are not acceptable.
+It is not acceptable to alter or bypass existing tests, or remove desired functionality, in order
+to make a failing test pass. Such changes are not a real fix.
