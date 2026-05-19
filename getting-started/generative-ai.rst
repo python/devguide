@@ -1,8 +1,8 @@
 .. _ai-tools:
 
-=================================
+=============================
 Guidelines for using AI tools
-=================================
+=============================
 
 Generative AI tools can produce output quickly. As with using any tool, the resulting
 contribution is the responsibility of the contributor. We value good code, concise accurate documentation,
