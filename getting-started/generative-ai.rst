@@ -29,7 +29,7 @@ of your contribution:
 - Write tests that exercise the change
 - Keep backwards compatibility with prior releases in mind. Existing tests may be ensuring specific API behaviors are maintained.
 
-Pay close attention to AI generated recommendations for testing changes. Provide input about Python's testing principles when guiding an AI model. Always review the output from an AI model before opening a pull request or issue, including proposed PR or issue titles and descriptions.
+Pay close attention to AI generated recommendations for testing changes. Provide input about Python's testing principles when guiding an AI model. Always review the output before opening a pull request or issue, including proposed PR or issue titles and descriptions.
 
 Acceptable uses
 ===============
@@ -46,7 +46,9 @@ Unacceptable uses
 Maintainers may close issues and PRs that are not useful or productive, regardless of whether
 AI tools were used or not.
 
-If a contributor repeatedly opens unproductive issues or PRs, they may be blocked.
+If a contributor repeatedly opens unproductive issues or PRs, they may be
+blocked from contributing to the project because it is disruptive and disrespectful
+of the maintainers time.
 
 It is not acceptable to alter or bypass existing tests, or remove desired functionality, in order
 to make a failing test pass. Such changes are not a real fix.
