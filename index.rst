@@ -288,6 +288,7 @@ Full table of contents
    testing/index
    development-tools/index
    core-team/index
+   security/index
    internals
    versions
 

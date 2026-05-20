@@ -147,6 +147,8 @@ rediraffe_redirects = {
     "langchanges.rst": "developer-workflow/lang-changes.rst",
     "porting.rst": "developer-workflow/porting.rst",
     "stdlibchanges.rst": "developer-workflow/stdlib.rst",
+    # Security
+    "developer-workflow/psrt.rst": "security/psrt.rst",
     # Documentation
     "docquality.rst": "documentation/help-documenting.rst",
     "documenting.rst": "documentation/start-documenting.rst",
