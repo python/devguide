@@ -149,6 +149,7 @@ rediraffe_redirects = {
     "stdlibchanges.rst": "developer-workflow/stdlib.rst",
     # Security
     "developer-workflow/psrt.rst": "security/psrt.rst",
+    "developer-workflow/sbom.rst": "security/sbom.rst",
     # Documentation
     "docquality.rst": "documentation/help-documenting.rst",
     "documenting.rst": "documentation/start-documenting.rst",

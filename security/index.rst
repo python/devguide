@@ -8,3 +8,4 @@ Security
    :maxdepth: 5
 
    psrt
+   sbom
