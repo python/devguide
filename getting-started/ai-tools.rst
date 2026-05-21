@@ -1,4 +1,5 @@
 .. _ai-tools:
+.. _generative-ai:
 
 =============================
 Guidelines for using AI tools
