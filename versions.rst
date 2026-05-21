@@ -45,6 +45,7 @@ Full chart
 .. raw:: html
    :file: _static/release-cycle-all.svg
 
+.. _version-status-key:
 
 Status key
 ==========

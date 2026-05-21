@@ -84,6 +84,8 @@ following additional responsibilities:
 * Running nomination elections, including counting final votes and giving
   the Steering Council an opportunity to veto nominations via email.
 
+.. _psrt-vulnerability-process:
+
 Triaging a vulnerability report
 -------------------------------
 
