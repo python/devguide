@@ -147,4 +147,3 @@ CNA contact directly, send an email to
 `cna@python.org <mailto:cna@python.org>`__.
 
 .. _CNA: https://www.python.org/cve-numbering-authority/
-
