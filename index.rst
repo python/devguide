@@ -40,6 +40,7 @@ Guide for contributing to Python:
        * :ref:`rst-primer`
        * :ref:`translating`
        * :ref:`devguide`
+       * :ref:`ai-tools`
      -
        * :ref:`setup`
        * :ref:`help`
@@ -49,6 +50,7 @@ Guide for contributing to Python:
        * :ref:`communication`
        * :ref:`gitbootcamp`
        * :ref:`devcycle`
+       * :ref:`ai-tools`
      -
        * :ref:`tracker`
        * :ref:`triaging`
