@@ -163,6 +163,7 @@ rediraffe_redirects = {
     "gitbootcamp.rst": "getting-started/git-boot-camp.rst",
     "pullrequest.rst": "getting-started/pull-request-lifecycle.rst",
     "setup.rst": "getting-started/setup-building.rst",
+    "getting-started/generative-ai.rst": "getting-started/ai-tools.rst",
     # CPython Internals
     "compiler.rst": "internals.rst",
     "exploring.rst": "internals.rst",
@@ -206,7 +207,6 @@ rediraffe_redirects = {
     "contrib/project/governance.rst": "index.rst",
     "contrib/project/roles.rst": "index.rst",
     "contrib/project/generative-ai": "getting-started/ai-tools.rst",
-    "getting-started/generative-ai.rst": "getting-started/ai-tools.rst",
     "contrib/project/outreach.rst": "index.rst",
     "contrib/project/directory-structure.rst": "getting-started/setup-building.rst",
     "contrib/project/index.rst": "index.rst",
