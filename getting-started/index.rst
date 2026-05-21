@@ -12,4 +12,4 @@ Getting started
    git-boot-camp
    pull-request-lifecycle
    getting-help
-   generative-ai
+   ai-tools
