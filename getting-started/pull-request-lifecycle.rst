@@ -194,6 +194,12 @@ Making good PRs
 When creating a pull request for submission, there are several things that you
 should do to help ensure that your pull request is accepted.
 
+A pull request should have a clear and descriptive title that accurately reflects the change being made. Avoid vague titles such as "fix bug" or "update code". Instead, use specific titles like "Fix incorrect module suggestion for -S option" or "Improve error handling in importlib".
+- Use clear and descriptive titles
+- Mention the affected module or feature
+- Avoid generic phrases like "fix issue"
+- Keep titles concise but informative
+
 #. **Make your change against the right version of Python.** In general all
    changes are made against the ``main`` branch first. This includes bug fixes.
    After the change is merged there, it will be :ref:`ported back <branch-merge>`
