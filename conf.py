@@ -206,6 +206,8 @@ rediraffe_redirects = {
     "contrib/project/governance.rst": "index.rst",
     "contrib/project/roles.rst": "index.rst",
     "contrib/project/ai-tools.rst": "getting-started/ai-tools.rst",
+    "contrib/project/generative-ai.rst": "getting-started/ai-tools.rst",
+    "getting-started/generative-ai.rst": "getting-started/ai-tools.rst",
     "contrib/project/outreach.rst": "index.rst",
     "contrib/project/directory-structure.rst": "getting-started/setup-building.rst",
     "contrib/project/index.rst": "index.rst",
