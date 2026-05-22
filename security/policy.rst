@@ -5,8 +5,8 @@ Security policy
 :ref:`Python Security Response Team <psrt>` (PSRT) members balance this work against
 many other responsibilities. Please be thoughtful about the time and attention
 your report requires. Repeated failure to respect the security policy will
-result in future reports being rejected or banned from the ``python``
-GitHub organization, regardless of technical merit.
+result in future reports being rejected, or the reporter being banned from the
+``python`` GitHub organization, regardless of technical merit.
 
 What types of bugs are vulnerabilities?
 ---------------------------------------
@@ -39,7 +39,7 @@ malicious variation from this cannot be mitigated by Python itself.
 
 Vulnerabilities that affect availability (such as DoS, ReDoS, crashes,
 dead-locks, and resource exhaustion) must be
-triggerable with data inputs that are reasonably sized for the use-case.
+triggerable with data inputs that are reasonably sized for the use case.
 Availability vulnerabilities must also demonstrate an "upward" change in posture
 for the attacker, rather than a "lateral" one.
 This is to avoid handling performance improvements as security vulnerabilities.
@@ -66,7 +66,7 @@ resolved on the ``main`` branch and only requires backporting.
 Sometimes features may be marked as
 "experimental" in Python, even in a stable Python version.
 These features are not eligible for security vulnerabilities.
-Instead open a public GitHub issue.
+Instead, open a public GitHub issue.
 
 If a vulnerability is platform-dependent, check if the platform is
 supported per :pep:`11`.
@@ -84,7 +84,7 @@ be formatted correctly:
   overly long, verbose, or excessive structure (such as headers or tables).
   Ideally reports should be a few sentences describing the vulnerability and
   a proof-of-concept script that reproduces the issue and provides a clear
-  indication whether the vulnerability is still present (such as exiting with
+  indication of whether the vulnerability is still present (such as exiting with
   ``1`` if vulnerable and ``0`` if not vulnerable).
 * When reporting large numbers or "batches" of vulnerabilities or
   searching for potential vulnerabilities using an LLM, you as a reporter must
@@ -120,8 +120,8 @@ not sure where to send your report, send an email to
 Here's what to expect for how a vulnerability report will be handled:
 
 * Reporter reports the vulnerability privately to the PSRT.
-* If the PSRT determines the report isn't a vulnerability, the issue
-  can be opened in the public issue tracker.
+* If the PSRT determines the report isn't a vulnerability, the reporter
+   may open a public issue.
 * If the PSRT determines the report is a vulnerability, the PSRT will
   accept the report and a CVE ID will be assigned by the PSF CNA.
 * Once a public pull request containing a fix is merged to CPython,
