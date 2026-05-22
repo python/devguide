@@ -20,7 +20,7 @@ the latter has been considered while determining whether
 to report a bug as a vulnerability.
 
 Vulnerabilities must be exploitable from code, configurations,
-pre-conditions, or deployments that may in the real world.
+pre-conditions, or deployments that may exist in the real world.
 For example, a vulnerability only affecting code
 that does not make sense in a production program
 will not be accepted as a vulnerability.
