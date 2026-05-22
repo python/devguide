@@ -20,8 +20,8 @@ the latter has been considered while determining whether
 to report a bug as a vulnerability.
 
 Vulnerabilities must be exploitable from code, configurations,
-pre-conditions, or deployments that might feasibly exist in
-the real world. For example, a vulnerability only affecting code
+pre-conditions, or deployments that may in the real world.
+For example, a vulnerability only affecting code
 that does not make sense in a production program
 will not be accepted as a vulnerability.
 
@@ -99,11 +99,13 @@ be formatted correctly:
   No PDFs, binaries, notebooks, or other files that cannot be safely reviewed.
   If your proof-of-concept depends on a specially constructed binary file,
   please include a script to construct it rather than the file itself.
-* Proof-of-concept scripts longer than a few lines should be wrapped
-  with ``<detail></detail>`` for better readability.
+* Proof-of-concept scripts longer than a few lines should be wrapped with a
+  `collapsed section`_ using ``<details></details>`` for better readability.
 * Reports that do not contain a potential security vulnerability (such as spam
   or requesting compliance or due-diligence work)
   will be discarded without a reply.
+
+.. _collapsed section: https://docs.github.com/en/get-started/writing-on-github/working-with-advanced-formatting/organizing-information-with-collapsed-sections
 
 How to submit a vulnerability report?
 -------------------------------------
