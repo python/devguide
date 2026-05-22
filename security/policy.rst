@@ -37,7 +37,8 @@ modifications to files on the target system. We assume that, at the time Python
 is executed, the environment is as intended by the legitimate user, and any
 malicious variation from this cannot be mitigated by Python itself.
 
-Vulnerabilities that affect availability (such as DoS or ReDoS) must be
+Vulnerabilities that affect availability (such as DoS, ReDoS, crashes,
+dead-locks, and resource exhaustion) must be
 triggerable with data inputs that are reasonably sized for the use-case.
 Availability vulnerabilities must also demonstrate an "upward" change in posture
 for the attacker, rather than a "lateral" one.
@@ -87,9 +88,8 @@ be formatted correctly:
   ``1`` if vulnerable and ``0`` if not vulnerable).
 * When reporting large numbers or "batches" of vulnerabilities or
   searching for potential vulnerabilities using an LLM, you as a reporter must
-  verify the validity of all reports prior to submission to the PSRT.
-  PSRT members WILL NOT spend time confirming the validity of reports, only
-  whether a valid bug report is a vulnerability or not.
+  verify the factual validity (such as whether APIs have been hallucinated)
+  of the content in all reports prior to submission to the PSRT.
 * Do not include severity or CVSS information in your initial report,
   this information will be determined by the PSRT.
 * Ideally, include a minimal patch with the mitigation for the report.
@@ -99,6 +99,8 @@ be formatted correctly:
   No PDFs, binaries, notebooks, or other files that cannot be safely reviewed.
   If your proof-of-concept depends on a specially constructed binary file,
   please include a script to construct it rather than the file itself.
+* Proof-of-concept scripts longer than a few lines should be wrapped
+  with ``<detail></detail>`` for better readability.
 * Reports that do not contain a potential security vulnerability (such as spam
   or requesting compliance or due-diligence work)
   will be discarded without a reply.
@@ -119,7 +121,7 @@ Here's what to expect for how a vulnerability report will be handled:
 * If the PSRT determines the report isn't a vulnerability, the issue
   can be opened in the public issue tracker.
 * If the PSRT determines the report is a vulnerability, the PSRT will
-  accept your report and a CVE ID will be assigned by the PSF CNA.
+  accept the report and a CVE ID will be assigned by the PSF CNA.
 * Once a public pull request containing a fix is merged to CPython,
   the advisory and CVE record will be published with attribution.
 
