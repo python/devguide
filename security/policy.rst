@@ -2,7 +2,7 @@
 Security policy
 ===============
 
-Python Security Response Team (PSRT) members balance this work against
+:ref:`Python Security Response Team <psrt>` (PSRT) members balance this work against
 many other responsibilities. Please be thoughtful about the time and attention
 your report requires.  Repeated failure to respect the security policy will
 result in future reports being rejected or being banned from the ``python``
@@ -93,8 +93,12 @@ be formatted correctly:
 * Do not include severity or CVSS information in your initial report,
   this information will be determined by the PSRT.
 * Ideally, include a minimal patch with the mitigation for the report.
-* If the vulnerability only affects certain Python versions, optionally
-  include the versions of Python that are affected.
+* Always include the versions of Python that were tested,
+  and indicate which were found to be vulnerable.
+* Submit reports as plain-text only, including attachments.
+  No PDFs, binaries, notebooks, or other files that cannot be safely reviewed.
+  If your proof-of-concept depends on a specially constructed binary file,
+  please include a script to construct it rather than the file itself.
 * Reports that do not contain a potential security vulnerability (such as spam
   or requesting compliance or due-diligence work)
   will be discarded without a reply.
@@ -140,8 +144,8 @@ CVE Numbering Authority (CNA)
 The Python and pip projects are scoped under the
 `Python Software Foundation CVE Numbering Authority <CNA>`__
 (CNA). This means you must submit all security
-vulnerability reports to the PSRT to receive
-a CVE ID for Python or pip. To reach the PSF
+vulnerability reports to the PSRT for a CVE ID
+to be issued for Python or pip. To reach the PSF
 CNA contact directly, send an email to
 `cna@python.org <mailto:cna@python.org>`__.
 

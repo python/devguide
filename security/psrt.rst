@@ -1,3 +1,5 @@
+.. _psrt:
+
 Python Security Response Team (PSRT)
 ====================================
 
