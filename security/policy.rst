@@ -4,43 +4,43 @@ Security policy
 
 :ref:`Python Security Response Team <psrt>` (PSRT) members balance this work against
 many other responsibilities. Please be thoughtful about the time and attention
-your report requires.  Repeated failure to respect the security policy will
-result in future reports being rejected or being banned from the ``python``
+your report requires. Repeated failure to respect the security policy will
+result in future reports being rejected or banned from the ``python``
 GitHub organization, regardless of technical merit.
 
 What types of bugs are vulnerabilities?
 ---------------------------------------
 
 Not all bugs are vulnerabilities. To avoid causing
-duplicate work for PSRT members all potential reports
+duplicate work for PSRT members, all potential reports
 must be evaluated against the relevant threat models
 prior to being submitted to the PSRT.
 Where possible, cite the relevant threat model to show that
-the threat model has been considered while determining whether
+the latter has been considered while determining whether
 to report a bug as a vulnerability.
 
 Vulnerabilities must be exploitable from code, configurations,
-pre-conditions, and deployments that might feasibly exist in
+pre-conditions, or deployments that might feasibly exist in
 the real world. For example, a vulnerability only affecting code
 that does not make sense in a production program
 will not be accepted as a vulnerability.
 
-Documented functionality will not be considered a vulnerability.
+Documented functionality is not considered a vulnerability.
 For example, :mod:`pickle`, :mod:`marshal`, :mod:`shelve`, :func:`eval`,
 and :func:`exec` are documented to execute arbitrary Python code that is
 supplied as data. The :mod:`ctypes` module is documented to enable modifying
 arbitrary locations in memory.
 
 Vulnerabilities must not depend on malicious control of Python's launch
-conditions, including command line arguments, environment variables, or
+conditions, including (but not limited to) command line arguments, environment variables, or
 modifications to files on the target system. We assume that, at the time Python
 is executed, the environment is as intended by the legitimate user, and any
 malicious variation from this cannot be mitigated by Python itself.
 
-Vulnerabilities that affect availability (such as DoS, ReDoS) must be
+Vulnerabilities that affect availability (such as DoS or ReDoS) must be
 triggerable with data inputs that are reasonably sized for the use-case.
 Availability vulnerabilities must also demonstrate an "upward" change in posture
-for the attacker, rather than a "lateral" change in posture.
+for the attacker, rather than a "lateral" one.
 This is to avoid handling performance improvements as security vulnerabilities.
 
 Vulnerabilities in dependencies of Python (such as zlib, Tcl/Tk, or OpenSSL)
