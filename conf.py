@@ -10,9 +10,12 @@ extensions = [
     'sphinx.ext.todo',
     'sphinx_copybutton',
     'sphinx_inline_tabs',
+    'sphinx_last_updated_by_git',
     'sphinxext.opengraph',
     'sphinxext.rediraffe',
 ]
+
+html_last_updated_fmt = '%b %d, %Y'
 
 # The master toctree document.
 master_doc = 'index'
