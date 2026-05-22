@@ -1,5 +1,5 @@
 ===============
-Security Policy
+Security policy
 ===============
 
 Python Security Response Team (PSRT) members balance this work against
@@ -26,8 +26,8 @@ that does not make sense in a production program
 will not be accepted as a vulnerability.
 
 Documented functionality will not be considered a vulnerability.
-For example, :mod:`pickle`, :mod:`marshal`, :mod:`shelve`, :mod:`eval`,
-and :mod:`exec` are documented to execute arbitrary Python code that is supplied
+For example, :mod:`pickle`, :mod:`marshal`, :mod:`shelve`, :func:`eval`,
+and :func:`exec` are documented to execute arbitrary Python code that is supplied
 as data. The :mod:`ctypes` module is documented to enable modifying arbitrary
 locations in memory.
 
@@ -49,13 +49,13 @@ interferes with secure use of the dependency.
 For example, a vulnerability in the bundled copy of zlib in Python is a
 vulnerability in zlib, not Python.
 
-What versions of Python are accepting reports?
-----------------------------------------------
+What versions of Python accept reports?
+---------------------------------------
 
-Python accepts security vulnerabilities and will
-assign CVE IDs for `supported Python versions <branchstatus>`_ that have a status of
-`"bugfix" or "security" <version-status-key>`_. Versions that are not yet
-stable (status of `"feature" or "prerelease" <version-status-key>`_) are not
+Python accepts vulnerability reports and will
+assign CVE IDs for :ref:`supported Python versions <branchstatus>` that have a status of
+:ref:`"bugfix" or "security" <version-status-key>`. Versions that are not yet
+stable (status of :ref:`"feature" or "prerelease" <version-status-key>`) are not
 eligible for CVE IDs. If the vulnerability only exists in prerelease versions
 (alphas, betas, release candidates), then the issue should be reported as a
 regular bug.
@@ -121,10 +121,10 @@ Here's what to expect for how a vulnerability report will be handled:
   the advisory and CVE record will be published with attribution.
 
 For more information about how the PSRT handles vulnerabilities,
-`consult the Python Developer Guide <psrt-vulnerability-process>`__.
+see :ref:`psrt-vulnerability-process`.
 
-PSF Code of Conduct
--------------------
+Code of conduct
+---------------
 
 Well-being and safety of the Python Security Response Team members is
 prioritized over the technical merit of vulnerability reports.
