@@ -27,9 +27,9 @@ will not be accepted as a vulnerability.
 
 Documented functionality will not be considered a vulnerability.
 For example, :mod:`pickle`, :mod:`marshal`, :mod:`shelve`, :func:`eval`,
-and :func:`exec` are documented to execute arbitrary Python code that is supplied
-as data. The :mod:`ctypes` module is documented to enable modifying arbitrary
-locations in memory.
+and :func:`exec` are documented to execute arbitrary Python code that is
+supplied as data. The :mod:`ctypes` module is documented to enable modifying
+arbitrary locations in memory.
 
 Vulnerabilities must not depend on malicious control of Python's launch
 conditions, including command line arguments, environment variables, or
@@ -53,12 +53,12 @@ What versions of Python accept reports?
 ---------------------------------------
 
 Python accepts vulnerability reports and will
-assign CVE IDs for :ref:`supported Python versions <branchstatus>` that have a status of
-:ref:`"bugfix" or "security" <version-status-key>`. Versions that are not yet
-stable (status of :ref:`"feature" or "prerelease" <version-status-key>`) are not
-eligible for CVE IDs. If the vulnerability only exists in prerelease versions
-(alphas, betas, release candidates), then the issue should be reported as a
-regular bug.
+assign CVE IDs for :ref:`supported Python versions <branchstatus>` that have a
+status of :ref:`"bugfix" or "security" <version-status-key>`. Versions that are
+not yet stable (status of :ref:`"feature" or "prerelease" <version-status-key>`)
+are not eligible for CVE IDs. If the vulnerability only exists in prerelease
+versions (alphas, betas, release candidates), then the issue should be reported
+as a regular bug.
 Prior to submitting a report, check whether the issue has already been
 resolved on the ``main`` branch and only requires backporting.
 
@@ -103,7 +103,6 @@ How to submit a vulnerability report?
 -------------------------------------
 
 Submit all potential security vulnerability reports for CPython
-to GitHub Security Advisories
 by `opening a new ticket <GHSA>`__.
 Do not open a public GitHub issue to report a security vulnerability.
 For all other projects (such as pip, python.org and tools) or if you're
@@ -129,8 +128,8 @@ Code of conduct
 Well-being and safety of the Python Security Response Team members is
 prioritized over the technical merit of vulnerability reports.
 Despite communications being private, vulnerability reporting is subject
-to the `PSF Code of Conduct`_. Violations will be reported to the Code of Conduct
-team with undisclosed vulnerability information removed, if applicable.
+to the `PSF Code of Conduct`_. Violations will be reported to the Code of
+Conduct team with undisclosed vulnerability information removed, if applicable.
 
 .. _GHSA: https://github.com/python/cpython/security/advisories/new
 .. _PSF Code of Conduct: https://policies.python.org/python.org/code-of-conduct/
