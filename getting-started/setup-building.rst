@@ -508,7 +508,7 @@ used in ``python.sh``:
 Emscripten
 ----------
 
-Emscripten_ is a complete open source compiler toolchain. It compiles C/C++ code
+Emscripten_ is a complete open-source compiler toolchain. It compiles C/C++ code
 into WebAssembly_/JavaScript executables, for use in JavaScript runtimes,
 including browsers and Node.js.
 

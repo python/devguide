@@ -270,7 +270,7 @@ that way. You can find their blogs (and various other developers who use Python)
 at `Planet Python <https://planetpython.org/>`__.
 
 
-Setting expectations for open source participation
+Setting expectations for open-source participation
 ==================================================
 
 Burn-out is common in open source due to a misunderstanding of what users, contributors,
