@@ -2,7 +2,7 @@ OSS-Fuzz for CPython
 ====================
 
 CPython uses `OSS-Fuzz <https://google.github.io/oss-fuzz/>`__, Google's
-continuous fuzzing service for open-source projects, to find bugs and
+continuous fuzzing service for open source projects, to find bugs and
 security vulnerabilities by feeding semi-random data to various APIs.
 
 CPython has two OSS-Fuzz projects:

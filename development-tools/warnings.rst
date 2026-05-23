@@ -29,7 +29,7 @@ What to do if a warning check fails GitHub CI
 ---------------------------------------------
 
 The :cpy-file:`Tools/build/check_warnings.py` tool will fail if the compiler generates
-more or less warnings than expected for a given source file as defined in the
+more or fewer warnings than expected for a given source file as defined in the
 platform-specific warning ignore file. The warning ignore file is either
 :cpy-file:`Tools/build/.warningignore_ubuntu` or
 :cpy-file:`Tools/build/.warningignore_macos` depending on the platform.
@@ -44,7 +44,7 @@ If a warning check fails with:
     warning ignore file. If the file exists in the warning ignore file
     increment the count by the number of newly introduced warnings.
 
-* Unexpected improvements (less warnings)
+* Unexpected improvements (fewer warnings)
 
   * Document in the PR that the change reduces the number of compiler
     warnings. Decrement the count in the platform-specific warning

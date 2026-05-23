@@ -83,7 +83,7 @@ You will only need to execute these steps once per machine:
 
    (You can use both SSH-based or HTTPS-based URLs.)
 
-.. Step 6 and 7 are are duplicated in bootcamp as well.
+.. Step 6 and 7 are duplicated in bootcamp as well.
    Please update these steps in both places.
 
 6. Add an ``upstream`` remote, then configure ``git``
@@ -508,7 +508,7 @@ used in ``python.sh``:
 Emscripten
 ----------
 
-Emscripten_ is a complete open-source compiler toolchain. It compiles C/C++ code
+Emscripten_ is a complete open source compiler toolchain. It compiles C/C++ code
 into WebAssembly_/JavaScript executables, for use in JavaScript runtimes,
 including browsers and Node.js.
 

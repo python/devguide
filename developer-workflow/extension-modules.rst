@@ -547,7 +547,7 @@ Now that the configuration is in place, it remains to compile the project:
 
 .. tip::
 
-   Use ``make -jN`` to speed-up compilation by utilizing as many CPU cores
+   Use ``make -jN`` to speed up compilation by utilizing as many CPU cores
    as possible, where *N* is as many CPU cores you want to spare (and have
    memory for). Be careful using ``make -j`` with no argument, as this puts
    no limit on the number of jobs, and compilation can sometimes use up a
