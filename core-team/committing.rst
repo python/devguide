@@ -35,7 +35,7 @@ to enter the public source tree. Ask yourself the following questions:
    Check :ref:`pull-request-lifecycle` and :ref:`helptriage` to review what
    is expected of a pull request.
 
-* **Does the change break backwards-compatibility without a strong reason?**
+* **Does the change break backwards compatibility without a strong reason?**
    :ref:`Run the entire test suite <runtests>` to make sure that everything
    still passes. If there is a change to the semantics, then there needs to
    be a strong reason, because it will cause some peoples' code to break.
@@ -77,6 +77,31 @@ to enter the public source tree. Ask yourself the following questions:
 
    .. seealso::
       :ref:`what-s-new-and-news-entries`
+
+
+Merging the pull request
+------------------------
+
+Once the pull request is ready, you (the core team member) can merge it.
+If other people have been substantially involved in the review, it can be good
+to wait for their approval even if a core team member has already approved the
+pull request.
+
+The CPython repo is configured to only accept squashes.  You will squash the
+pull request.
+
+Commit message
+^^^^^^^^^^^^^^
+
+GitHub defaults the squashed commit message to a combined list of all of the
+individual commit messages in the pull request. Do not leave those. They often
+are too noisy and provide little context, especially since devs know their
+work will be eventually squashed, so intermediate commit messages while
+working on the pull request are not interesting.
+
+If you think it is important, you can summarize the collaborative work that
+went into the pull request, but it is not necessary.  The pull request and/or
+original issue are still available for detailed investigations of history.
 
 
 Working with Git_
