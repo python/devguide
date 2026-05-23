@@ -79,11 +79,11 @@ to enter the public source tree. Ask yourself the following questions:
       :ref:`what-s-new-and-news-entries`
 
 
-Completing the pull request
----------------------------
+Merging the pull request
+------------------------
 
-Once the pull request is ready, you (the core team member) bring it into main.
-If other people have been subtantially involved in the review, it can be good
+Once the pull request is ready, you (the core team member) can merge it.
+If other people have been substantially involved in the review, it can be good
 to wait for their approval even if a core team member has already approved the
 pull request.
 
@@ -93,15 +93,15 @@ pull request.
 Commit message
 ^^^^^^^^^^^^^^
 
-GitHub defaults the squased commit message to a combined list of all of the
+GitHub defaults the squashed commit message to a combined list of all of the
 individual commit messages in the pull request. Do not leave those. They often
 are too noisy and provide little context, especially since devs know their
-worked will be eventually squashed, so intermediate commit messages while
+work will be eventually squashed, so intermediate commit messages while
 working on the pull request are not interesting.
 
 If you think it is important, you can summarize the collaborative work that
 went into the pull request, but it is not necessary.  The pull request and/or
-original issue are still available for detailed forensics.
+original issue are still available for detailed investigations of history.
 
 
 Working with Git_
