@@ -333,6 +333,15 @@ Rejecting a vulnerability report
    If you are interested in working on this further, you can optionally open a
    public issue on GitHub.
 
+Rejecting a duplicate report
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+::
+
+   Thanks for your report. We've determined that this submission is a duplicate
+   of an issue that is already being tracked internally. Please refrain from
+   public disclosure until the issue has been resolved.
+
 Advisory email
 ~~~~~~~~~~~~~~
 
