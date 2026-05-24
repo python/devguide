@@ -115,7 +115,7 @@ participating in the CPython core development process:
    As a core team member, she is primarily interested in helping to ensure Python's
    continued suitability for educational, testing and data analysis use cases,
    as well as in encouraging good architectural practices when assembling Python
-   applications and test harnesses from open source components.
+   applications and test harnesses from open-source components.
 
    Note: prior to August 2023, Alyssa used her birth name (Nick Coghlan). Some records
    (for example, mailing list archives, version control history) will still reference that name.
@@ -175,14 +175,14 @@ participating in the CPython core development process:
    available, working on the infrastructure that supports CPython development,
    specifically the Roundup-based bug tracker and the buildbot system.
 
-   David currently does both proprietary and open source development work,
+   David currently does both proprietary and open-source development work,
    primarily in Python, through the company in which he is a partner, `Murray &
    Walker, Inc <https://www.murrayandwalker.com>`__.  He has done contract work
    focused specifically on CPython development both through the PSF (the
    kickstart of the email Unicode API development) and directly funded by
    interested corporations (additional development work on email funded by
    QNX, and work on CPython ICC support funded by Intel).  He would like to
-   spend more of his (and his company's) time on open source work, and so is
+   spend more of his (and his company's) time on open-source work, and so is
    actively seeking additional such contract opportunities.
 
 .. topic:: Antoine Pitrou (France)
@@ -202,7 +202,7 @@ participating in the CPython core development process:
    concurrent programming.
 
    As a professional, Antoine has been first specializing in network
-   programming, and more lately in open source data science infrastructure.
+   programming, and more lately in open-source data science infrastructure.
    He has made numerous contributions to Numba, Dask and is currently working
    full time on Apache Arrow as a technical leader at QuantStack.
 
@@ -269,7 +269,7 @@ participating in the CPython core development process:
 
    Carol is focused on Python's usage in education and scientific research.
    She is interested in distributed computing, organizational development,
-   operational workflows, and sustainability of open source projects.
+   operational workflows, and sustainability of open-source projects.
 
 
 .. _goals-of-the-motivations-page:
@@ -282,7 +282,7 @@ strongly suggest that the current core development process is bottlenecked on
 core team time. This is most clearly indicated in the first metrics graph,
 which shows both the number of open issues and the number of pull requests awaiting
 review growing steadily over time, despite CPython being one of the most
-active open source projects in the world. This bottleneck then impacts not only
+active open-source projects in the world. This bottleneck then impacts not only
 resolving open issues and accepting submitted pull requests, but also the process of
 identifying, nominating and mentoring new core team members.
 

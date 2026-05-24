@@ -84,6 +84,11 @@ free-threaded
    lock (GIL) optional (per :pep:`703`). Avoid using "No-GIL" to avoid
    double negatives (for example, "non-no-GIL").
 
+open source
+   Follow the usual English rules for compound words. When used as an
+   adjective, hyphenate: "open-source software". When used as a noun, don't use
+   a hypen: "open source is a collaboration model.."
+
 POSIX
    The name assigned to a particular group of standards. This is always
    uppercase.
@@ -92,7 +97,7 @@ Python
    The name of our favorite programming language is always capitalized.
 
 reST
-   For "reStructuredText," an easy to read, plaintext markup syntax
+   For "reStructuredText," an easy to read, plain-text markup syntax
    used to produce Python documentation.  When spelled out, it is
    always one word and both forms start with a lowercase 'r'.
 

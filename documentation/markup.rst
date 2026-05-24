@@ -225,7 +225,7 @@ Explicit markup
 ---------------
 
 "Explicit markup" is used in reST for most constructs that need special
-handling, such as footnotes, specially-highlighted paragraphs, comments, and
+handling, such as footnotes, specially highlighted paragraphs, comments, and
 generic directives.
 
 An explicit markup block begins with a line starting with ``..`` followed by
