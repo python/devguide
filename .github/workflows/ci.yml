@@ -5,8 +5,7 @@ on: [pull_request, push, workflow_dispatch]
 env:
   FORCE_COLOR: 1
 
-permissions:
-  contents: read
+permissions: {}
 
 jobs:
   test:
