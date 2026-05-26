@@ -2,17 +2,20 @@
 Security policy
 ===============
 
-:ref:`Python Security Response Team <psrt>` (PSRT) members balance this work against
-many other responsibilities. Please be thoughtful about the time and attention
-your report requires. Repeated failure to respect the security policy will
-result in future reports being rejected, or the reporter being banned from the
-``python`` GitHub organization, regardless of technical merit.
+.. important::
+
+   :ref:`Python Security Response Team <psrt>` (PSRT) members balance this work
+   against many other responsibilities. Please be thoughtful about the time and
+   attention your report requires. Repeated failure to respect the security policy
+   will result in future reports being rejected, or the reporter being banned
+   from the ``python`` GitHub organization, regardless of technical merit.
 
 What types of bugs are vulnerabilities?
 ---------------------------------------
 
-Not all bugs are vulnerabilities. To avoid causing
-duplicate work for PSRT members, all potential reports
+**Not all bugs are vulnerabilities.**
+
+To avoid causing duplicate work for PSRT members, **all potential** reports
 must be evaluated against the relevant threat models
 prior to being submitted to the PSRT.
 Where possible, cite the relevant threat model to show that
@@ -21,9 +24,9 @@ to report a bug as a vulnerability.
 
 Vulnerabilities must be exploitable from code, configurations,
 pre-conditions, or deployments that may exist in the real world.
-For example, a vulnerability only affecting code
-that does not make sense in a production program
-will not be accepted as a vulnerability.
+A vulnerability that only affecting code
+unlikely to be used in a production program
+will not be accepted.
 
 Documented functionality is not considered a vulnerability.
 For example, :mod:`pickle`, :mod:`marshal`, :mod:`shelve`, :func:`eval`,
@@ -71,7 +74,16 @@ Instead, open a public GitHub issue.
 If a vulnerability is platform-dependent, check if the platform is
 supported per :pep:`11`.
 Vulnerabilities that exclusively affect unsupported platforms
-may not be accepted.
+are not treated as vulnerabilities in Python.
+
+As per the :pep:`Unsupported Platforms section of PEP 11 <11#unsupported-platforms>`,
+porting Python to an unsupported platform is treated as a third-party project.
+If you choose to report such a vulnerability to Python, please follow the
+requirements of this guide. Note that these reports may be shared with
+parties who expressed interested in the relevant platforms and will
+generally be handled according to the relevant maintainers' security
+policies. These reports may closed if the maintainers are unknown or
+unresponsive.
 
 What to include and how to structure a vulnerability report?
 ------------------------------------------------------------
@@ -82,7 +94,7 @@ be formatted correctly:
 
 * For the initial report and follow-up communications, avoid
   overly long, verbose, or excessive structure (such as headers or tables).
-  Ideally reports should be a few sentences describing the vulnerability and
+  Reports should be a few sentences describing the vulnerability. Ideally include
   a proof-of-concept script that reproduces the issue and provides a clear
   indication of whether the vulnerability is still present (such as exiting with
   ``1`` if vulnerable and ``0`` if not vulnerable).
