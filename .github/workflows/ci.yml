@@ -5,6 +5,8 @@ on: [pull_request, push, workflow_dispatch]
 env:
   FORCE_COLOR: 1
 
+permissions: {}
+
 jobs:
   test:
     name: Check build, markup, and links
