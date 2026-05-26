@@ -4,6 +4,10 @@ on: [push, pull_request, workflow_dispatch]
 
 permissions: {}
 
+env:
+  FORCE_COLOR: 1
+  RUFF_OUTPUT_FORMAT: github
+
 jobs:
   lint:
     runs-on: ubuntu-latest
