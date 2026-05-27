@@ -1,3 +1,5 @@
+.. _psrt:
+
 Python Security Response Team (PSRT)
 ====================================
 
@@ -83,6 +85,8 @@ following additional responsibilities:
   list of inactive PSRT members.
 * Running nomination elections, including counting final votes and giving
   the Steering Council an opportunity to veto nominations via email.
+
+.. _psrt-vulnerability-process:
 
 Triaging a vulnerability report
 -------------------------------
