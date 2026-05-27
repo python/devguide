@@ -24,8 +24,7 @@ to report a bug as a vulnerability.
 
 Vulnerabilities must be exploitable from code, configurations,
 pre-conditions, or deployments that may exist in the real world.
-A vulnerability that only affecting code
-unlikely to be used in a production program
+A vulnerability that only affects code unlikely to be used in a production program
 will not be accepted.
 
 Documented functionality is not considered a vulnerability.
@@ -81,7 +80,7 @@ porting Python to an unsupported platform is treated as a third-party project.
 If you choose to report such a vulnerability to Python, please follow the
 requirements of this guide. Note that these reports may be shared with
 parties who expressed interested in the relevant platforms and will
-generally be handled according to the relevant maintainers' security
+generally be handled according to the relevant maintainer's security
 policies. These reports may closed if the maintainers are unknown or
 unresponsive.
 
