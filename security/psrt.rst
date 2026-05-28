@@ -236,13 +236,13 @@ This patch can then be applied and pushed to the public GitHub repository:
     git apply ./ghsa-abcd-efgh-ijkl.patch
     git push origin branch-name
 
-.. warning:: **IMPORTANT:** CPython's backport infrastructure
+.. important:: CPython's backport infrastructure
     is used for tracking backported patches. Use **one GitHub issue
     per CVE** to accurately track backports of vulnerability fixes.
     For new CVEs, even when related to a previous issue, **open a
     new GitHub issue** to accurately track fixed versions.
 
-.. warning:: **IMPORTANT:** Don't select the green 'Merge pull request'
+.. important:: Don't select the green 'Merge pull request'
     or 'Publish advisory' buttons within GHSA. Advisories are published
     to the mailing list, and the 'Merge pull request' button within
     GHSA bypasses all continuous integration and branch protection
@@ -323,7 +323,11 @@ Submit using GitHub Security Advisories
 
    Thanks for submitting this report.
    We use GitHub Security Advisories for triaging vulnerability reports,
-   please submit your report here:
+   please review our security policy before submitting:
+
+   https://devguide.python.org/security/policy/
+
+   Then submit your report here:
 
    https://github.com/python/cpython/security/advisories/new
 
