@@ -24,9 +24,8 @@ to report a bug as a vulnerability.
 
 Vulnerabilities must be exploitable from code, configurations,
 pre-conditions, or deployments that may exist in the real world.
-A vulnerability that only affecting code
-unlikely to be used in a production program
-will not be accepted.
+A vulnerability that only affects code unlikely to be used
+in a production program will not be accepted.
 
 Documented functionality is not considered a vulnerability.
 For example, :mod:`pickle`, :mod:`marshal`, :mod:`shelve`, :func:`eval`,
@@ -133,7 +132,7 @@ Here's what to expect for how a vulnerability report will be handled:
 
 * Reporter reports the vulnerability privately to the PSRT.
 * If the PSRT determines the report isn't a vulnerability, the reporter
-   may open a public issue.
+  may open a public issue.
 * If the PSRT determines the report is a vulnerability, the PSRT will
   accept the report and a CVE ID will be assigned by the PSF CNA.
 * Once a public pull request containing a fix is merged to CPython,
