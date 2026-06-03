@@ -558,12 +558,15 @@ Note that pushing new changes after the auto-merge flow was enabled
 does **NOT** stop it.
 
 
+.. _branch-merge:
+
 Backporting merged changes
 --------------------------
 
 After a pull request has been merged into ``main``, it may need to be backported
-to one or more maintenance branches. This is indicated by the
-:samp:`needs backport to {X.Y}` labels on the pull request.
+to one or more :ref:`maintenance <maintbranch>` or :ref:`security <secbranch>`
+branches. This is indicated by the :samp:`needs backport to {X.Y}` labels on
+the pull request.
 
 ``miss-islington`` will automatically attempt to create backport PRs for the
 versions indicated by these labels. If ``miss-islington`` cannot create a
@@ -608,18 +611,18 @@ the following format: Keep the original commit message unchanged, except for
 removing the backport pull request number (``(#XXXXX)``). At the end of the
 message, append a ``(cherry picked from commit <commit_sha1>)`` line.
 
-Example of good backport commit message:
+The format of a correct backport commit message is:
 
 .. code-block:: text
    :class: good
 
-    gh-XXXXX: <original commit title> (GH-XXXXX)
+    [<branch>] gh-XXXXX: <original commit title> (GH-XXXXX)
 
     <original commit body>
 
     (cherry picked from commit <commit_sha1>)
 
-Example of bad backport commit message:
+An example of a bad backport commit message:
 
 .. code-block:: text
    :class: bad
