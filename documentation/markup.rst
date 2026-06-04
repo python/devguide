@@ -707,10 +707,9 @@ where simpler markup should be used:
 
 In addition, the CPython documentation defines a few custom roles:
 
-* ``:cve:`YYYY-NNNNN```: link to a Common Vulnerabilities and Exposures entry.
-* ``:cwe:`NNN```: link to a Common Weakness Enumeration entry.
 * ``:gh:`ID```: link to a GitHub issue.
 * ``:issue:`ID```: link to a bugs.python.com issue.
+* ``:oss-fuzz:`ID```: link to an OSS-Fuzz issue.
 * ``:pypi:`NAME```: link to a project on PyPI.
 * ``:source:`PATH```: link to a source file on GitHub.
 
@@ -969,6 +968,16 @@ in a different style:
 
 
 The following roles generate external links:
+
+.. describe:: cve
+
+   Link to a `Common Vulnerabilities and Exposures <https://www.cve.org/>`__
+   entry. You can link to a specific section by using ``:cve:`number#anchor```.
+
+.. describe:: cwe
+
+   Link to a `Common Weakness Enumeration <https://cwe.mitre.org/>`__ entry.
+   You can link to a specific section by using ``:cwe:`number#anchor```.
 
 .. describe:: pep
 
