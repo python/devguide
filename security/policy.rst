@@ -83,9 +83,8 @@ port, but not as Python vulnerabilities.
 If you choose to report such an issue to Python, please follow the requirements
 of this guide and include the relevant platform and maintainer context.
 The PSRT forwards these reports to platform maintainers (or other interested
-parties) and they are usually handled under the relevant maintainers’ security
-policies. These reports will be closed without further action if the maintainers
-are unknown or unresponsive.
+parties) and they are usually handled under the relevant maintainers' security
+policies. These reports will be closed if the maintainers are unknown or unresponsive.
 
 What to include and how to structure a vulnerability report?
 ------------------------------------------------------------
