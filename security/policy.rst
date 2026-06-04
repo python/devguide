@@ -46,7 +46,8 @@ Availability vulnerabilities must also demonstrate an "upward" change in posture
 for the attacker, rather than a "lateral" one.
 Unexpected Python exceptions are not vulnerabilities by themselves unless they
 satisfy the availability criteria above.
-This is to avoid handling performance improvements as security vulnerabilities.
+This is to avoid handling performance and correctness improvements as security
+vulnerabilities.
 
 Vulnerabilities in dependencies of Python (such as zlib, Tcl/Tk, or OpenSSL)
 are not vulnerabilities in Python unless Python's use of the dependency
