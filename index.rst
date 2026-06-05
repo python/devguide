@@ -59,13 +59,13 @@ reading and understanding everything.  If you do choose to skip
 around within the guide, be aware that some sections build on each other,
 so you may need to backtrack for missing concepts or terminology.
 
-For broader open source contribution advice, a number of individuals from the
+For broader open-source contribution advice, a number of individuals from the
 Python community have contributed to a series
 of excellent guides at `Open Source Guides <https://opensource.guide/>`__.
 For example,
 `How to Contribute to Open Source <https://opensource.guide/how-to-contribute/>`__.
 
-.. admonition:: You don't have to be a compiler engineer to work on Python -- Savannah Bailey
+.. admonition:: You don't have to be a compiler engineer to work on Python -- Savannah Ostrowski
 
    .. container:: compact-video
 
