@@ -74,14 +74,15 @@ produced from a maintenance branch are called **bugfix** or **maintenance**
 releases; the terms are used interchangeably. These releases have a
 **micro version** number greater than zero.
 
-The only changes allowed to occur in a maintenance branch without debate are
-bug fixes, test improvements, and edits to the documentation. Performance
-improvements are not among them: an optimization can introduce a regression,
-and a regression in a maintenance release is painful to track down and undo.
+Changes backported to a maintenance branch fall into two groups.  *Low-risk*
+changes (bug fixes, test improvements, and documentation edits) may be
+backported without debate.  *Higher-risk* changes (new features, semantic
+changes, and performance improvements) can introduce regressions, so they are
+not backported as a matter of course.
 Also, a general rule for maintenance branches is that compatibility
 must not be broken at any point between sibling micro releases (3.12.1, 3.12.2,
-etc.).  For both rules, only rare exceptions are accepted and **must** be
-discussed first.
+etc.).  For both rules, only rare exceptions are accepted, and each requires a
+strong case agreed upon in discussion beforehand.
 
 Backporting changes reduces the risk of future conflicts.
 For documentation, it increases the visibility of improvements,
