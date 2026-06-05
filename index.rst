@@ -1,4 +1,5 @@
 .. _devguide-main:
+.. _contributing:
 
 ========================
 Python Developer's Guide
@@ -8,23 +9,15 @@ Python Developer's Guide
 
 .. highlight:: bash
 
-This guide is a comprehensive resource for :ref:`contributing <contributing>`
+This guide is a comprehensive resource for contributing
 to Python_ -- for both new and experienced contributors. It is
 :ref:`maintained <devguide>` by the same
 community that maintains Python.  We welcome your contributions!
 
-
-.. _contributing:
-
-Contributing
-------------
-
-We encourage everyone to contribute to Python. To help you, we have put up this
-developer's guide.  If you still have questions after reviewing the material in
+Start with the area that best matches what you want to do.
+If you still have questions after reviewing the material in
 this guide, then the `Core Python Mentorship`_ group is available to help guide new
 contributors through the process.
-
-Guide for contributing to Python:
 
 .. list-table::
    :widths: 10 10 10
@@ -63,14 +56,22 @@ Guide for contributing to Python:
 We **recommend** that sections of this guide be read as needed. You
 can stop where you feel comfortable and begin contributing immediately without
 reading and understanding everything.  If you do choose to skip
-around within the guide, be aware that sections build on each other,
-so you may find it necessary to backtrack to fill in
-missing concepts and terminology.
+around within the guide, be aware that some sections build on each other,
+so you may need to backtrack for missing concepts or terminology.
 
-A number of individuals from the Python community have contributed to a series
+For broader open source contribution advice, a number of individuals from the
+Python community have contributed to a series
 of excellent guides at `Open Source Guides <https://opensource.guide/>`__.
 For example,
 `How to Contribute to Open Source <https://opensource.guide/how-to-contribute/>`__.
+
+.. admonition:: You don't have to be a compiler engineer to work on Python -- Savannah Bailey
+
+   .. container:: compact-video
+
+      .. youtube:: WGXXxGLBVF4
+         :privacy_mode:
+         :width: 100%
 
 
 .. _quick-reference:
