@@ -75,18 +75,13 @@ releases; the terms are used interchangeably. These releases have a
 **micro version** number greater than zero.
 
 The only changes allowed to occur in a maintenance branch without debate are
-bug fixes, test improvements, and edits to the documentation.
+bug fixes, test improvements, and edits to the documentation. Performance
+improvements are not among them: an optimization can introduce a regression,
+and a regression in a maintenance release is painful to track down and undo.
 Also, a general rule for maintenance branches is that compatibility
 must not be broken at any point between sibling micro releases (3.12.1, 3.12.2,
 etc.).  For both rules, only rare exceptions are accepted and **must** be
 discussed first.
-
-Performance improvements are not backported. An optimization can introduce a
-regression, and a regression shipped in a maintenance release is painful to
-track down and undo, so optimizations remain on the ``main`` branch. A backport
-is a rare exception, reserved for a clear win that carries no regression risk
-(including for code that subclasses or monkey-patches internals) and matters
-enough to applications to justify it, and it **must** be discussed first.
 
 Backporting changes reduces the risk of future conflicts.
 For documentation, it increases the visibility of improvements,
