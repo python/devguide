@@ -27,3 +27,9 @@
 table.docutils td {
   vertical-align: top;
 }
+
+/* For the video in index.rst */
+[role="main"] .compact-video {
+  max-width: 500px;
+  margin-inline: auto;
+}
