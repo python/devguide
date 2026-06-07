@@ -116,6 +116,27 @@ Unix
    1970s.
 
 
+Type names
+==========
+
+When writing the names of types in prose, prefer to write the name of the type
+exactly as it appears in source, styled as a class reference or an unlinked
+class.  For example, refer to dict as ``:class:`dict`‌`` or ``:class:`!dict`‌``.
+
+Links should be used according to the :ref:`guidance on links <links>`.
+
+Some type names are commonly understood ideas or nouns outside of Python.
+For example, "tuples" are a general programming concept, as distinct from the
+``tuple`` type.  When referring to general ideas, do not style the relevant word
+as a type.
+
+Many types have descriptive names which do not exactly match their type
+name.  For example, "context variables" describes ``contextvars.ContextVar``,
+and "partial function" may be used to describe an application of
+``functools.partial``.  Use these names only when they serve to clarify the text
+better than the type name itself would, and put them in lowercase.
+
+
 Use simple language
 ===================
 
