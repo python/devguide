@@ -119,7 +119,7 @@ Unix
 Type names
 ==========
 
-When writing the names of types in prose, prefer to write the name of the type
+When writing the names of types in prose, write the name of the type
 exactly as it appears in source, styled as a class reference or an unlinked
 class.  For example, refer to dict as ``:class:`dict`‌`` or ``:class:`!dict`‌``.
 
