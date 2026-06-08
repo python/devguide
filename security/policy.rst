@@ -122,7 +122,7 @@ How to submit a vulnerability report?
 -------------------------------------
 
 Submit all potential security vulnerability reports for CPython
-by `opening a new ticket <GHSA>`__.
+by `opening a new ticket <GHSA_>`_.
 Do not open a public GitHub issue to report a security vulnerability.
 For all other projects (such as pip, python.org and tools) or if you're
 not sure where to send your report, send an email to
