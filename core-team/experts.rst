@@ -53,7 +53,7 @@ __main__              gvanrossum, ncoghlan
 annotationlib         JelleZijlstra*
 argparse              savannahostrowski*, serhiy-storchaka*
 ast                   benjaminp, pablogsal, isidentical, JelleZijlstra, eclips4
-asyncio               1st1, asvetlov, gvanrossum, graingert, kumaraditya303, willingc
+asyncio               1st1, asvetlov, gvanrossum, graingert, kumaraditya303
 bisect                rhettinger*
 codecs                malemburg
 collections           rhettinger*
@@ -145,7 +145,6 @@ tomllib               hauntsaninja*
 traceback             iritkatriel
 tracemalloc           vstinner
 tty                   Yhg1s*
-turtle                willingc
 turtledemo            terryjreedy*
 types                 1st1
 typing                gvanrossum, JelleZijlstra*, AlexWaygood*, carljm, sobolevn*
@@ -217,9 +216,9 @@ context managers    ncoghlan
 core workflow       Mariatta, ezio-melotti, hugovk, AA-Turner
 cryptography        gpshead, dstufft, picnixz
 database            malemburg
-devguide            merwok, ezio-melotti, willingc, Mariatta, hugovk,
+devguide            merwok, ezio-melotti, Mariatta, hugovk,
                     AA-Turner, StanFromIreland
-documentation       ezio-melotti, merwok, JulienPalard, willingc, hugovk,
+documentation       ezio-melotti, merwok, JulienPalard, hugovk,
                     AA-Turner, AlexWaygood*, StanFromIreland
 emoji               Mariatta
 extension modules   encukou, ncoghlan, FFY00
