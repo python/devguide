@@ -77,12 +77,13 @@ are not treated as vulnerabilities in Python.
 
 As per the :pep:`Unsupported Platforms section of PEP 11 <11#unsupported-platforms>`,
 porting Python to an unsupported platform is treated as a third-party project.
-If you choose to report such a vulnerability to Python, please follow the
-requirements of this guide. Note that these reports may be shared with
-parties who expressed interested in the relevant platforms and will
-generally be handled according to the relevant maintainers' security
-policies. These reports may closed if the maintainers are unknown or
-unresponsive.
+For these reports, the PSRT treats them as vulnerability reports for a third-party
+port, not as Python vulnerabilities.
+If you choose to report such an issue to Python, follow the requirements
+of this guide and include the relevant platform and maintainer context.
+The PSRT forwards these reports to platform maintainers (or other interested
+parties) and they are usually handled under the relevant maintainers' security
+policies. These reports will be closed if the maintainers are unknown or unresponsive.
 
 What to include and how to structure a vulnerability report?
 ------------------------------------------------------------
