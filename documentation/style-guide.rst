@@ -58,6 +58,35 @@ of these entities are not assigned any special markup, but the preferred
 spellings are given in :ref:`specific words` to aid authors in maintaining the
 consistency of presentation in the Python documentation.
 
+
+Use simple language
+===================
+
+Avoid esoteric phrasing where possible.  Our audience is world-wide and may not
+be native English speakers.
+
+Don't use Latin abbreviations like "e.g." or "i.e." where English words will do,
+such as "for example" or "that is."
+
+
+Charged terminology to avoid
+============================
+
+Avoid terminology that may be considered insensitive or exclusionary.
+
+.. list-table::
+   :header-rows: 1
+
+   * - Avoid
+     - Instead
+   * - whitelist
+     - allowlist
+   * - blacklist
+     - blocklist, denylist
+   * - master/slave
+     - main, parent/child, server/client, primary/secondary
+
+
 .. _specific words:
 
 Specific words
@@ -135,34 +164,6 @@ name.  For example, "context variables" describes ``contextvars.ContextVar``,
 and "partial function" may be used to describe an application of
 ``functools.partial``.  Use these names only when they serve to clarify the text
 better than the type name itself would, and put them in lowercase.
-
-
-Use simple language
-===================
-
-Avoid esoteric phrasing where possible.  Our audience is world-wide and may not
-be native English speakers.
-
-Don't use Latin abbreviations like "e.g." or "i.e." where English words will do,
-such as "for example" or "that is."
-
-
-Charged terminology to avoid
-============================
-
-Avoid terminology that may be considered insensitive or exclusionary.
-
-.. list-table::
-   :header-rows: 1
-
-   * - Avoid
-     - Instead
-   * - whitelist
-     - allowlist
-   * - blacklist
-     - blocklist, denylist
-   * - master/slave
-     - main, parent/child, server/client, primary/secondary
 
 
 .. index:: diataxis
