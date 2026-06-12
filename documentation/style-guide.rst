@@ -152,7 +152,7 @@ When writing the names of types in prose, write the name of the type
 exactly as it appears in source, styled as a class reference or an unlinked
 class.  For example, refer to dict as ``:class:`dict`‌`` or ``:class:`!dict`‌``.
 
-Links should be used according to the :ref:`guidance on links <links>`.
+Links should be used according to the :ref:`guidance on links <style-guide-links>`.
 
 Some type names are commonly understood ideas or nouns outside of Python.
 For example, "tuples" are a general programming concept, as distinct from the
@@ -212,7 +212,7 @@ Please consult the `Diátaxis <https://diataxis.fr/>`__ guide for more
 detail.
 
 
-.. _links:
+.. _style-guide-links:
 
 Links
 =====
