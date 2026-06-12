@@ -157,7 +157,8 @@ the Release Manager. Users are encouraged to apply patches themselves ahead
 of patches being merged and released if necessary.
 
 Security fixes that only affect binary installers (such as macOS and Windows)
-will not be published to Python release streams that are `source-only`_.
+will not be published to Python release streams that are
+:ref:`source-only <secbranch>`.
 
 Some security fixes may require introducing backwards-incompatible behavior
 changes. In these circumstances, the Python Steering Council
@@ -166,8 +167,6 @@ with introducing a backwards incompatible change to fix a security vulnerability
 in a stable version. This may affect whether a security fix is backported
 to all Python versions or enabled by default, see the CVE record for
 more information.
-
-.. _source-only: https://devguide.python.org/developer-workflow/development-cycle/#security-branches
 
 Code of conduct
 ---------------
