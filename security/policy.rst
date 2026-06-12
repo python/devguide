@@ -142,6 +142,33 @@ Here's what to expect for how a vulnerability report will be handled:
 For more information about how the PSRT handles vulnerabilities,
 see :ref:`psrt-vulnerability-process`.
 
+When are security fixes released or backported?
+-----------------------------------------------
+
+Advisories and CVE records are published after a security fix is first merged.
+The CVE record contains information about the patch and will be kept up-to-date
+as the patch is backported and released to Python versions.
+
+According to :pep:`602`, Python versions receive five years of security updates
+after the new Python version is released. However, these security updates
+are not published according to a fixed schedule or as a result of any security
+fix being available. The schedule for security updates is determined by
+the Release Manager. Users are encouraged to apply patches themselves ahead
+of patches being merged and released if necessary.
+
+Security fixes that only affect binary installers (such as macOS and Windows)
+will not be published to Python release streams that are `source-only`_.
+
+Some security fixes may require introducing backwards-incompatible behavior
+changes. In these circumstances, the Python Steering Council
+will decide with the relevant Release Manager(s) whether to proceed
+with introducing a backwards incompatible change to fix a security vulnerability
+in a stable version. This may affect whether a security fix is backported
+to all Python versions or enabled by default, see the CVE record for
+more information.
+
+.. _source-only: https://devguide.python.org/developer-workflow/development-cycle/#security-branches
+
 Code of conduct
 ---------------
 
