@@ -303,7 +303,7 @@ Current owners
 +----------------------+--------------------------------+-----------------+
 | Jacob Coffee         | PSF Infrastructure Engineer    | JacobCoffee     |
 +----------------------+--------------------------------+-----------------+
-| Łukasz Langa         | CPython Developer in Residence | ambv            |
+| Łukasz Langa         |                                | ambv            |
 +----------------------+--------------------------------+-----------------+
 
 Certain actions (blocking spam accounts, inviting new users, adjusting
@@ -349,7 +349,7 @@ Current administrators
 | Pablo Galindo      | Python 3.10 and 3.11 Release Manager,                    | pablogsal         |
 |                    | Maintainer of buildbot.python.org                        |                   |
 +--------------------+----------------------------------------------------------+-------------------+
-| Łukasz Langa       | PSF CPython Developer in Residence 2021-present          | ambv              |
+| Łukasz Langa       |                                                          | ambv              |
 +--------------------+----------------------------------------------------------+-------------------+
 | Brett Cannon       |                                                          | brettcannon       |
 +--------------------+----------------------------------------------------------+-------------------+
