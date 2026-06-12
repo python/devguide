@@ -212,6 +212,8 @@ Please consult the `Diátaxis <https://diataxis.fr/>`__ guide for more
 detail.
 
 
+.. _links:
+
 Links
 =====
 
