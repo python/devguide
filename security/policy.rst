@@ -162,10 +162,10 @@ will not be published to Python release streams that are
 
 Some security fixes may require introducing backwards-incompatible behavior
 changes. In these circumstances, the Python Steering Council
-will decide with the relevant Release Manager(s) whether to proceed
-with introducing a backwards incompatible change to fix a security vulnerability
+will decide with the relevant Release Managers whether to introduce
+a backwards incompatible change to fix a security vulnerability
 in a stable version. This may affect whether a security fix is backported
-to all Python versions or enabled by default, see the CVE record for
+to all Python versions or enabled by default. See the CVE record for
 more information.
 
 Code of conduct
