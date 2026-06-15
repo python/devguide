@@ -8,6 +8,7 @@ Getting started
    :maxdepth: 5
 
    setup-building
+   quick-reference
    fixing-issues
    git-boot-camp
    pull-request-lifecycle
