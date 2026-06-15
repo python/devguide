@@ -303,6 +303,8 @@ Current owners
 +----------------------+--------------------------------+-----------------+
 | Jacob Coffee         | PSF Infrastructure Engineer    | JacobCoffee     |
 +----------------------+--------------------------------+-----------------+
+| Petr Viktorin        | CPython Developer in Residence | encukou         |
++----------------------+--------------------------------+-----------------+
 | Łukasz Langa         |                                | ambv            |
 +----------------------+--------------------------------+-----------------+
 
@@ -358,6 +360,8 @@ Current administrators
 | Mariatta Wijaya    | Maintainer of bedevere, blurb_it and miss-islington      | Mariatta          |
 +--------------------+----------------------------------------------------------+-------------------+
 | Seth Larson        | PSF Security Developer-in-Residence                      | sethmlarson       |
++--------------------+----------------------------------------------------------+-------------------+
+| Petr Viktorin      | CPython Developer in Residence                           | encukou           |
 +--------------------+----------------------------------------------------------+-------------------+
 
 Repository release manager role policy
