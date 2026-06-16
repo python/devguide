@@ -303,7 +303,9 @@ Current owners
 +----------------------+--------------------------------+-----------------+
 | Jacob Coffee         | PSF Infrastructure Engineer    | JacobCoffee     |
 +----------------------+--------------------------------+-----------------+
-| Łukasz Langa         | CPython Developer in Residence | ambv            |
+| Petr Viktorin        | CPython Developer in Residence | encukou         |
++----------------------+--------------------------------+-----------------+
+| Łukasz Langa         |                                | ambv            |
 +----------------------+--------------------------------+-----------------+
 
 Certain actions (blocking spam accounts, inviting new users, adjusting
@@ -349,7 +351,7 @@ Current administrators
 | Pablo Galindo      | Python 3.10 and 3.11 Release Manager,                    | pablogsal         |
 |                    | Maintainer of buildbot.python.org                        |                   |
 +--------------------+----------------------------------------------------------+-------------------+
-| Łukasz Langa       | PSF CPython Developer in Residence 2021-present          | ambv              |
+| Łukasz Langa       |                                                          | ambv              |
 +--------------------+----------------------------------------------------------+-------------------+
 | Brett Cannon       |                                                          | brettcannon       |
 +--------------------+----------------------------------------------------------+-------------------+
@@ -358,6 +360,8 @@ Current administrators
 | Mariatta Wijaya    | Maintainer of bedevere, blurb_it and miss-islington      | Mariatta          |
 +--------------------+----------------------------------------------------------+-------------------+
 | Seth Larson        | PSF Security Developer-in-Residence                      | sethmlarson       |
++--------------------+----------------------------------------------------------+-------------------+
+| Petr Viktorin      | CPython Developer in Residence                           | encukou           |
 +--------------------+----------------------------------------------------------+-------------------+
 
 Repository release manager role policy
