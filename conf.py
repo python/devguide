@@ -276,6 +276,7 @@ extlinks = {
     "gh-label": (f"{_repo}/labels/%s", "%s"),
     "github": ("https://github.com/%s", "%s"),
     "github-user": ("https://github.com/%s", "@%s"),
+    "gh-python-team": ("https://github.com/orgs/python/teams/%s", "@%s"),
     "pypi": ("https://pypi.org/project/%s/", "%s"),
     "pypi-org": ("https://pypi.org/org/%s/", "%s"),
 }
