@@ -1,7 +1,7 @@
 .. _quick-reference:
 
 ===============
-Quick Reference
+Quick reference
 ===============
 
 Here are the basic steps needed to get set up and open a pull request.
