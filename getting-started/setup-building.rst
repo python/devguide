@@ -764,9 +764,8 @@ some of CPython's modules (for example, ``zlib``).
 
    For Unix-based systems, we try to use system libraries whenever available.
    This means optional components will only build if the relevant system headers
-   are available. The best way to obtain the appropriate headers will vary by
-   distribution, but the appropriate commands for some popular package managers
-   are below.
+   are available. The best way to obtain these headers varies by distribution,
+   but commands for some popular package managers are given below.
 
    .. tab:: dnf
 
