@@ -768,64 +768,67 @@ some of CPython's modules (for example, ``zlib``).
    distribution, but the appropriate commands for some popular distributions
    are below.
 
-   On **Fedora**, **RHEL**, **CentOS** and other ``dnf``-based systems::
+   .. tab:: dnf
 
-      $ sudo dnf install git pkg-config
-      $ sudo dnf install dnf-plugins-core  # install this to use 'dnf builddep'
-      $ sudo dnf builddep python3
+      On **Fedora**, **RHEL**, **CentOS** and other ``dnf``-based systems::
 
-   Some optional development dependencies are not included in the above.
-   To install some additional dependencies for optional build and test components::
+         $ sudo dnf install git pkg-config
+         $ sudo dnf install dnf-plugins-core  # install this to use 'dnf builddep'
+         $ sudo dnf builddep python3
 
-      $ sudo dnf install \
-            gcc gcc-c++ gdb lzma glibc-devel libstdc++-devel openssl-devel \
-            readline-devel zlib-devel libzstd-devel libffi-devel bzip2-devel \
-            xz-devel sqlite sqlite-devel sqlite-libs libuuid-devel gdbm-libs \
-            perf expat expat-devel mpdecimal python3-pip
+      Some optional development dependencies are not included in the above.
+      To install some additional dependencies for optional build and test components::
 
+         $ sudo dnf install \
+               gcc gcc-c++ gdb lzma glibc-devel libstdc++-devel openssl-devel \
+               readline-devel zlib-devel libzstd-devel libffi-devel bzip2-devel \
+               xz-devel sqlite sqlite-devel sqlite-libs libuuid-devel gdbm-libs \
+               perf expat expat-devel mpdecimal python3-pip
 
-   On **Debian**, **Ubuntu**, and other ``apt``-based systems, try to get the
-   dependencies for the Python you're working on by using the ``apt`` command.
+   .. tab:: apt
 
-   First, make sure you have enabled the source packages in the sources list.
-   You can do this by adding the location of the source packages, including
-   URL, distribution name and component name, to ``/etc/apt/sources.list``.
-   Take Ubuntu 22.04 LTS (Jammy Jellyfish) for example::
+      On **Debian**, **Ubuntu**, and other ``apt``-based systems, try to get the
+      dependencies for the Python you're working on by using the ``apt`` command.
 
-      $ deb-src http://archive.ubuntu.com/ubuntu/ jammy main
+      First, make sure you have enabled the source packages in the sources list.
+      You can do this by adding the location of the source packages, including
+      URL, distribution name and component name, to ``/etc/apt/sources.list``.
+      Take Ubuntu 22.04 LTS (Jammy Jellyfish) for example::
 
-   Alternatively, uncomment lines with ``deb-src`` using an editor, for
-   example::
+         $ deb-src http://archive.ubuntu.com/ubuntu/ jammy main
 
-      $ sudo nano /etc/apt/sources.list
+      Alternatively, uncomment lines with ``deb-src`` using an editor, for
+      example::
 
-   For other distributions, like Debian, change the URL and names to correspond
-   with the specific distribution.
+         $ sudo nano /etc/apt/sources.list
 
-   Then you should update the packages index::
+      For other distributions, like Debian, change the URL and names to correspond
+      with the specific distribution.
 
-      $ sudo apt-get update
+      Then you should update the packages index::
 
-   Now you can install the build dependencies via ``apt``::
+         $ sudo apt-get update
 
-      $ sudo apt-get build-dep python3
-      $ sudo apt-get install pkg-config
+      Now you can install the build dependencies via ``apt``::
 
-   If you want to build all optional modules, install the following packages and
-   their dependencies::
+         $ sudo apt-get build-dep python3
+         $ sudo apt-get install pkg-config
 
-      $ sudo apt-get install build-essential gdb lcov pkg-config \
-            libbz2-dev libffi-dev libgdbm-dev libgdbm-compat-dev liblzma-dev \
-            libncurses5-dev libreadline6-dev libsqlite3-dev libssl-dev \
-            lzma lzma-dev tk-dev uuid-dev zlib1g-dev libmpdec-dev libzstd-dev \
-            inetutils-inetd
+      If you want to build all optional modules, install the following packages and
+      their dependencies::
 
-   Note that Debian 12 and Ubuntu 24.04 do not have the ``libmpdec-dev``
-   package.  You can safely remove it from the install list above and the
-   Python build will use a bundled version.  But we recommend using the system
-   `libmpdec <https://www.bytereef.org/mpdecimal/doc/libmpdec/>`__ library.
-   Either build it from sources or install this package from
-   https://deb.sury.org.
+         $ sudo apt-get install build-essential gdb lcov pkg-config \
+               libbz2-dev libffi-dev libgdbm-dev libgdbm-compat-dev liblzma-dev \
+               libncurses5-dev libreadline6-dev libsqlite3-dev libssl-dev \
+               lzma lzma-dev tk-dev uuid-dev zlib1g-dev libmpdec-dev libzstd-dev \
+               inetutils-inetd
+
+      Note that Debian 12 and Ubuntu 24.04 do not have the ``libmpdec-dev``
+      package.  You can safely remove it from the install list above and the
+      Python build will use a bundled version.  But we recommend using the system
+      `libmpdec <https://www.bytereef.org/mpdecimal/doc/libmpdec/>`__ library.
+      Either build it from sources or install this package from
+      https://deb.sury.org.
 
 .. tab:: macOS
 
