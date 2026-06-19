@@ -765,9 +765,9 @@ some of CPython's modules (for example, ``zlib``).
    For Unix-based systems, we try to use system libraries whenever available.
    This means optional components will only build if the relevant system headers
    are available. The best way to obtain these headers varies by distribution,
-   but commands for some popular package managers are given below.
+   but commands for some popular distributions are given below.
 
-   .. tab:: dnf
+   .. tab:: Fedora / RHEL / CentOS
 
       On **Fedora**, **RHEL**, **CentOS** and other ``dnf``-based systems::
 
@@ -784,7 +784,7 @@ some of CPython's modules (for example, ``zlib``).
                xz-devel sqlite sqlite-devel sqlite-libs libuuid-devel gdbm-libs \
                perf expat expat-devel mpdecimal python3-pip
 
-   .. tab:: apt
+   .. tab:: Debian / Ubuntu
 
       On **Debian**, **Ubuntu**, and other ``apt``-based systems, try to get the
       dependencies for the Python you're working on by using the ``apt`` command.
