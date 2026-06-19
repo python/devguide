@@ -667,18 +667,18 @@ list of executed checks. Clicking :guilabel:`Update branch` next to this message
 will merge in the latest changes from the base branch into the PR.
 
 If this still doesn't help with the failure on the PR, you can try
-to re-run that particular failed check. 
+to re-run that particular failed check.
 
-Note that the :guilabel:`Re-run jobs` button on GitHub Actions is only visible 
-to Python core developers and triagers. If you have these permissions, go to 
-the red GitHub Action job, click on the :guilabel:`Re-run jobs` button on the 
-top right, and select :guilabel:`Re-run failed jobs`. The button will only be 
+Note that the :guilabel:`Re-run jobs` button on GitHub Actions is only visible
+to Python core developers and triagers. If you have these permissions, go to
+the red GitHub Action job, click on the :guilabel:`Re-run jobs` button on the
+top right, and select :guilabel:`Re-run failed jobs`. The button will only be
 present when all other jobs finished running.
 
-If you are a regular contributor and cannot see the button, you can ask a 
-reviewer to re-run the failed jobs for you in a PR comment. Alternatively, you 
-can re-trigger the CI by pushing an empty commit to your branch (e.g. 
-``git commit --allow-empty -m "Trigger CI"``), or by closing and re-opening 
+If you are a regular contributor and cannot see the button, you can ask a
+reviewer to re-run the failed jobs for you in a PR comment. Alternatively, you
+can re-trigger the CI by pushing an empty commit to your branch (e.g.
+``git commit --allow-empty -m "Trigger CI"``), or by closing and re-opening
 your pull request.
 
 Re-running failed jobs shouldn't be your first instinct but it is occasionally
