@@ -7,91 +7,167 @@ Quick reference
 Here are the basic steps needed to get set up and open a pull request.
 
 This is meant as a checklist and cheat-sheet, not a comprehensive guide.
-For complete instructions please see the :ref:`setup guide <setup>`.
+For complete instructions please see the :ref:`setup guide <setup>` and the
+:ref:`pull request guide <pullrequest>`.
 
-1. Install and set up :ref:`Git <vcsetup>` and other dependencies
-   (see the :ref:`Git Setup <setup>` page for detailed information).
 
-2. Fork `the CPython repository <https://github.com/python/cpython>`__
-   to your GitHub account and :ref:`get the source code <checkout>` using::
+Setup Git
+=========
 
-      git clone https://github.com/<your_username>/cpython
-      cd cpython
+Install and set up ``Git``.
 
-3. Build Python:
+For detailed setup information, see :ref:`"Install Git" <vcsetup>`.
+There is also a more detailed :ref:`Git guide and cheat sheet <gitbootcamp>`.
 
-   .. tab:: Unix
+Fork and clone the repo
+-----------------------
 
-      .. code-block:: shell
+Fork `the CPython repository <https://github.com/python/cpython>`__
+to your GitHub account and :ref:`get the source code <checkout>` using::
 
-         ./configure --config-cache --with-pydebug && make -j $(nproc)
+   git clone https://github.com/<your_username>/cpython
+   cd cpython
 
-   .. tab:: macOS
+We recommend also setting up ``pre-commit``::
 
-      .. code-block:: shell
+   pre-commit install
 
-         ./configure --config-cache --with-pydebug && make -j8
+For detailed information, see :ref:`"Get the source code" <checkout>` and
+:ref:`"Install pre-commit as a Git hook" <install-pre-commit>`.
 
-   .. tab:: Windows
 
-      .. code-block:: dosbatch
+Build Python
+============
 
-         PCbuild\build.bat -e -d
+.. tab:: Unix
 
-   See also :ref:`more detailed instructions <compiling>`,
-   :ref:`how to install and build dependencies <build-dependencies>`,
-   and the platform-specific pages for :ref:`Unix <unix-compiling>`,
-   :ref:`macOS <macOS>`, and :ref:`Windows <windows-compiling>`.
+   .. code-block:: shell
 
-4. :ref:`Run the tests <runtests>`:
+      ./configure --config-cache --with-pydebug && make -j $(nproc)
 
-   .. tab:: Unix
+.. tab:: macOS
 
-      .. code-block:: shell
+   .. code-block:: shell
 
-         ./python -m test -j3
+      ./configure --config-cache --with-pydebug && make -j8
 
-   .. tab:: macOS
+.. tab:: Windows
 
-      .. code-block:: shell
+   .. code-block:: dosbatch
 
-         ./python.exe -m test -j8
+      PCbuild\build.bat -e -d
 
-      .. note::
-         :ref:`Most <mac-python.exe>` macOS systems use
-         :file:`./python.exe` in order to avoid filename conflicts with
-         the ``Python`` directory.
+See also :ref:`more detailed instructions <compiling>`,
+:ref:`how to install and build dependencies <build-dependencies>`,
+and the platform-specific pages for :ref:`Unix <unix-compiling>`,
+:ref:`macOS <macOS>`, and :ref:`Windows <windows-compiling>`.
 
-   .. tab:: Windows
 
-      .. code-block:: dosbatch
+Run the tests
+=============
 
-         .\python.bat -m test -j3
+.. tab:: Unix
 
-5. Create a new branch where your work for the issue will go, for example::
+   .. code-block:: shell
 
-      git checkout -b fix-issue-12345 main
+      ./python -m test -j3
 
-   If an issue does not already exist, please `create it
-   <https://github.com/python/cpython/issues>`__.  Trivial issues (for example, typos) do
-   not require an issue.
+.. tab:: macOS
 
-6. Push the branch on your fork on GitHub and :ref:`create a pull request
-   <pullrequest>`.  Include the issue number using ``gh-NNNNNN`` in the
-   pull request title.  For example:
+   .. code-block:: shell
 
-   .. code-block:: text
+      ./python.exe -m test -j8
 
-      gh-12345: Fix some bug in spam module
+   .. note::
+      :ref:`Most <mac-python.exe>` macOS systems use
+      :file:`./python.exe` in order to avoid filename conflicts with
+      the ``Python`` directory.
 
-7. Add a News entry into the ``Misc/NEWS.d/`` directory as individual file. The
-   news entry can be created by using `blurb-it <https://blurb-it.herokuapp.com/>`__,
-   or the :pypi:`blurb` tool and its ``blurb add``
-   command. Please read more about ``blurb`` in its
+.. tab:: Windows
+
+   .. code-block:: dosbatch
+
+      .\python.bat -m test -j3
+
+
+See also :ref:`how to write and run tests <run-write-tests>`.
+
+
+Create issues and pull requests
+===============================
+
+Create issues for nontrivial changes
+------------------------------------
+
+For most changes, `create an issue <https://github.com/python/cpython/issues>`__
+before submitting a pull request.
+Trivial changes like typo fixes do not need issues.
+
+Create work branches
+--------------------
+
+Work on a feature or fix in a new branch in Git from the ``main`` branch::
+
+   git checkout -b fix-issue-12345 main
+
+Make changes, then :ref:`commit <commit-changes>` and
+:ref:`push to your fork <push-changes>`.
+
+Document your changes
+---------------------
+
+Many changes deserve a NEWS entry which documents what changed.
+
+Add a News entry into the ``Misc/NEWS.d/`` directory as individual file.
+The news entry can be created by using
+`blurb-it <https://blurb-it.herokuapp.com/>`__,
+or the :pypi:`blurb` tool and its ``blurb add`` command.
+
+.. tip::
+
+   You can read more about ``blurb`` in its
    `repository <https://github.com/python/blurb>`__.
+
+For more information on writing news entries,
+see :ref:`"Updating NEWS and What's New in Python" <news-entry>`.
+
+Create pull requests
+--------------------
+
+Create pull bequests on GitHub from your branches, on your fork, and make sure
+to put the relevant issue number in ``gh-NNNNNN``` format in the pull request title.
+For example:
+
+.. code-block:: text
+
+   gh-12345: Fix some bug in spam module
+
+See also, GitHub's documentation on `creating Pull Requests`_.
+
+For more detailed guidance, follow the :ref:`step-by-step pull request guide <pullrequest-steps>`.
 
 .. note::
 
    First time contributors will need to sign the Contributor Licensing
    Agreement (CLA) as described in the :ref:`Licensing <cla>` section of
    this guide.
+
+.. _creating Pull Requests: https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-a-pull-request
+
+Work on your pull request
+-------------------------
+
+Make sure the
+:ref:`continuous integration checks on your Pull Request are green <keeping-ci-green>` (successful).
+
+Read and respond to reviewer comments on your pull request.
+
+See also, GitHub's documentation on `commenting on Pull Requests`_.
+
+.. note::
+
+   Don't force-push. Reviewers often want to look at individual commits.
+
+   CPython uses squash merges, so PRs will end up as single commits when merged.
+
+.. _commenting on Pull Requests: https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/reviewing-changes-in-pull-requests/commenting-on-a-pull-request
