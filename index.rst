@@ -74,6 +74,16 @@ For example,
          :width: 100%
 
 
+Quick reference
+---------------
+
+.. note::
+
+   The quick reference documentation has been moved to serve as a cheat-sheet and overview
+   in :ref:`Getting started <getting-started>`.
+
+Go to :ref:`the new quick reference <quick-reference>`.
+
 Proposing changes to Python itself
 ----------------------------------
 
