@@ -93,6 +93,8 @@ Run the tests
 See also :ref:`how to write and run tests <run-write-tests>`.
 
 
+.. _pullrequest-quickguide:
+
 Create issues and pull requests
 ===============================
 
@@ -166,7 +168,9 @@ See also, GitHub's documentation on `commenting on Pull Requests`_.
 
 .. note::
 
-   Don't force-push. Reviewers often want to look at individual commits.
+   In order to keep the commit history intact, please avoid squashing or amending
+   history and then force-pushing to the PR.
+   Reviewers often want to look at individual commits.
 
    CPython uses squash merges, so PRs will end up as single commits when merged.
 
