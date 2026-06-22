@@ -7,12 +7,12 @@ Quick reference
 Here are the basic steps needed to get set up and open a pull request.
 
 This is meant as a checklist and cheat-sheet, not a comprehensive guide.
-For complete instructions please see the :ref:`setup guide <setup>` and the
+For complete instructions see the :ref:`setup guide <setup>` and the
 :ref:`pull request guide <pullrequest>`.
 
 
-Setup Git
-=========
+Set up Git
+==========
 
 Install and set up ``Git``.
 
@@ -136,7 +136,7 @@ see :ref:`"Updating NEWS and What's New in Python" <news-entry>`.
 Create pull requests
 --------------------
 
-Create pull bequests on GitHub from your branches, on your fork, and make sure
+Create pull requests on GitHub from your branches, on your fork, and make sure
 to put the relevant issue number in ``gh-NNNNNN``` format in the pull request title.
 For example:
 
@@ -168,7 +168,7 @@ See also, GitHub's documentation on `commenting on Pull Requests`_.
 
 .. note::
 
-   In order to keep the commit history intact, please avoid squashing or amending
+   In order to keep the commit history intact, avoid squashing or amending
    history and then force-pushing to the PR.
    Reviewers often want to look at individual commits.
 
