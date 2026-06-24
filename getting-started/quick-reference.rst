@@ -49,7 +49,7 @@ Build Python
 
    .. code-block:: shell
 
-      ./configure --config-cache --with-pydebug && make -j8
+      ./configure --config-cache --with-pydebug && make -j$(sysctl -n hw.logicalcpu)
 
 .. tab:: Windows
 
@@ -70,13 +70,13 @@ Run the tests
 
    .. code-block:: shell
 
-      ./python -m test -j3
+      ./python -m test -j0
 
 .. tab:: macOS
 
    .. code-block:: shell
 
-      ./python.exe -m test -j8
+      ./python.exe -m test -j0
 
    .. note::
       :ref:`Most <mac-python.exe>` macOS systems use
@@ -87,7 +87,7 @@ Run the tests
 
    .. code-block:: dosbatch
 
-      .\python.bat -m test -j3
+      .\python.bat -m test -j0
 
 
 See also :ref:`how to write and run tests <run-write-tests>`.
@@ -159,8 +159,8 @@ For more detailed guidance, follow the :ref:`step-by-step pull request guide <pu
 Work on your pull request
 -------------------------
 
-Make sure the
-:ref:`continuous integration checks on your Pull Request are green <keeping-ci-green>` (successful).
+Make sure the :ref:`continuous integration checks on your Pull
+Request are green <keeping-ci-green>` (successful).
 
 Read and respond to reviewer comments on your pull request.
 
