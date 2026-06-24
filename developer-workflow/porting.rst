@@ -42,51 +42,73 @@ Links should be for the port specifically (not the platform itself),
 and relevant for porting work and fixing platform-specific issues
 (no homepage/marketing links).
 
-* **AIX**: :github-user:`ayappanec`
-* **Linux** [t1]_
+.. list-table::
+   :header-rows: 1
 
-  * Fedora: :github-user:`hroncok`, :github-user:`befeleme`; see
-    `Config & patches <https://src.fedoraproject.org/rpms/python3.15/tree/rawhide>`_,
-    `Bugs <https://bugzilla.redhat.com/buglist.cgi?bug_status=__open__&classification=Fedora&columnlist=product%2Ccomponent%2Cassigned_to%2Cbug_status%2Cshort_desc%2Cchangeddate%2Cbug_severity&f1=component&o1=regexp&order=status%2C%20assigned_to%2C%20id%2C%20&product=Fedora&product=Fedora%20EPEL&query_format=advanced&v1=python3\.\d%2B%24>`__,
-    `Maintenance guide <https://hackmd.io/9f64YNIZTCy0ZzKb5wKtqQ?view>`__
-  * Debian: :github-user:`stefanor`, :github-user:`doko42`; see
-    `Config & patches <https://salsa.debian.org/cpython-team/python3/-/tree/master/debian/patches>`_,
-    `Bugs <https://bugs.debian.org/cgi-bin/pkgreport.cgi?src=python3.15>`__,
-    `Wiki <https://wiki.debian.org/Python>`__
-  * Alpine: see
-    `Config & patches <https://github.com/alpinelinux/aports/tree/master/main/python3>`_
-* **macOS** [t1]_: :gh-python-team:`macos-team`, :github-user:`freakboy3742`;
-  see
-  `Limitations <https://docs.python.org/3/library/intro.html#mobile-platforms>`__,
-  `Usage <https://docs.python.org/3/library/intro.html#mobile-platforms>`__,
-  :cpy-file:`Platforms/Apple`
-* Mobile platforms: see
-  `Limitations <https://docs.python.org/3/library/intro.html#mobile-platforms>`__
-
-  * **Android** [t3]_: :github-user:`mhsmith`; see
-    `Usage <https://docs.python.org/3/using/android.html>`__,
-    :cpy-file:`Platforms/Android`
-  * **iOS** [t3]_: :github-user:`freakboy3742`, :github-user:`ned-deily`; see
-    `Usage <https://docs.python.org/3/using/ios.html>`__,
-    :cpy-file:`Platforms/Apple`
-
-* **Solaris**/OpenIndiana: :github-user:`jcea`, :github-user:`kulikjak`
-* **WebAssembly**: see `Limitations <https://docs.python.org/3/library/intro.html#webassembly-platforms>`__
-
-  * WASI [t2]_: see :cpy-file:`WASI <Platforms/WASI>`
-  * Emscripten [t3]_: :github-user:`pmp-p`, :github-user:`rdb`, :github-user:`rth`; see
-    :cpy-file:`emscripten <Platforms/emscripten>`
-
-    * Pyodide: :github-user:`hoodmane`, :github-user:`ryanking13`, :github-user:`agriyakhetarpal`
-
-* **Windows** [t1]_: :gh-python-team:`windows-team`, :github-user:`pfmoore`; see
-  `Usage <https://docs.python.org/3/using/windows.html>`__,
-  :cpy-file:`PC`,
-  :cpy-file:`PCbuild`
-* **Cross-Platform**:
-
-  * conda-forge: see
-    `Recipe <https://github.com/conda-forge/python-feedstock/tree/main/recipe>`_
+   * - Platform
+     - Maintainers
+     - Information
+   * - **AIX**
+     - :github-user:`ayappanec`
+     -
+   * - **Linux** [t1]_
+     -
+     -
+   * - \- Fedora
+     - :github-user:`hroncok`, :github-user:`befeleme`
+     - `Config & patches <https://src.fedoraproject.org/rpms/python3.15/tree/rawhide>`_,
+       `Bugs <https://bugzilla.redhat.com/buglist.cgi?bug_status=__open__&classification=Fedora&columnlist=product%2Ccomponent%2Cassigned_to%2Cbug_status%2Cshort_desc%2Cchangeddate%2Cbug_severity&f1=component&o1=regexp&order=status%2C%20assigned_to%2C%20id%2C%20&product=Fedora&product=Fedora%20EPEL&query_format=advanced&v1=python3\.\d%2B%24>`__,
+       `Maintenance guide <https://hackmd.io/9f64YNIZTCy0ZzKb5wKtqQ?view>`__
+   * - \- Debian
+     - :github-user:`stefanor`, :github-user:`doko42`
+     - `Config & patches <https://salsa.debian.org/cpython-team/python3/-/tree/master/debian/patches>`_,
+       `Bugs <https://bugs.debian.org/cgi-bin/pkgreport.cgi?src=python3.15>`__,
+       `Wiki <https://wiki.debian.org/Python>`__
+   * - \- Alpine
+     -
+     - `Config & patches <https://github.com/alpinelinux/aports/tree/master/main/python3>`_
+   * - **macOS** [t1]_
+     - :gh-python-team:`macos-team`, :github-user:`freakboy3742`
+     - `Limitations <https://docs.python.org/3/library/intro.html#mobile-platforms>`__,
+       `Usage <https://docs.python.org/3/library/intro.html#mobile-platforms>`__,
+       :cpy-file:`Platforms/Apple`
+   * - Mobile platforms
+     -
+     - `Limitations <https://docs.python.org/3/library/intro.html#mobile-platforms>`__
+   * - \- **Android** [t3]_
+     - :github-user:`mhsmith`
+     - `Usage <https://docs.python.org/3/using/android.html>`__,
+       :cpy-file:`Platforms/Android`
+   * - \- **iOS** [t3]_
+     - :github-user:`freakboy3742`, :github-user:`ned-deily`
+     - `Usage <https://docs.python.org/3/using/ios.html>`__,
+       :cpy-file:`Platforms/Apple`
+   * - **Solaris**/OpenIndiana
+     - :github-user:`jcea`, :github-user:`kulikjak`
+     -
+   * - **WebAssembly**
+     -
+     - `Limitations <https://docs.python.org/3/library/intro.html#webassembly-platforms>`__
+   * - WASI [t2]_
+     -
+     - :cpy-file:`WASI <Platforms/WASI>`
+   * - \- Emscripten [t3]_
+     - :github-user:`pmp-p`, :github-user:`rdb`, :github-user:`rth`
+     - :cpy-file:`emscripten <Platforms/emscripten>`
+   * - \- Pyodide
+     - :github-user:`hoodmane`, :github-user:`ryanking13`, :github-user:`agriyakhetarpal`
+     -
+   * - **Windows** [t1]_
+     - :gh-python-team:`windows-team`, :github-user:`pfmoore`
+     - `Usage <https://docs.python.org/3/using/windows.html>`__,
+       :cpy-file:`PC`,
+       :cpy-file:`PCbuild`
+   * - **Cross-Platform**
+     -
+     -
+   * - conda-forge
+     -
+     - `Recipe <https://github.com/conda-forge/python-feedstock/tree/main/recipe>`_
 
 .. [t1] Specific variants have official :pep:`Tier 1 support <11#tier-1>`
 .. [t2] Specific variants have official :pep:`Tier 2 support <11#tier-2>`
