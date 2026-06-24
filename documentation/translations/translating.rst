@@ -86,7 +86,7 @@ For more details about translations and their progress, see
    * - Punjabi (pa)
      - Bhuvansh Kataria (:github-user:`BHUVANSH855`)
      - :github:`GitHub <BHUVANSH855/python-docs-pa>`,
-       `Transifex <https://explore.transifex.com/python-doc/python-newest-tx/>`__
+       `Transifex <tx_>`_
    * - `Romanian (ro)  <https://docs.python.org/ro/>`__
      - Octavian Mustafa (:github-user:`octaG-M`, `email <mailto:octawian@yahoo.com>`__)
      - :github:`GitHub <python/python-docs-ro>`
