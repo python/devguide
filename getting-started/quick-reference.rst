@@ -159,6 +159,8 @@ Read and respond to reviewer comments on your pull request.
 
 See also, GitHub's documentation on `commenting on pull requests`_.
 
+.. _commenting on Pull Requests: https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/reviewing-changes-in-pull-requests/commenting-on-a-pull-request
+
 Don't force-push
 ----------------
 
@@ -167,5 +169,3 @@ history and then force-pushing to the PR.
 Reviewers often want to look at individual commits.
 
 CPython uses squash merges, so PRs will end up as single commits when merged.
-
-.. _commenting on Pull Requests: https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/reviewing-changes-in-pull-requests/commenting-on-a-pull-request
