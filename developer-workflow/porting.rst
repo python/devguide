@@ -51,6 +51,16 @@ and relevant for porting work and fixing platform-specific issues
    * - **AIX**
      - :github-user:`ayappanec`
      -
+   * - **Android** [t3]_
+     - :github-user:`mhsmith`
+     - `Usage <https://docs.python.org/3/using/android.html>`__,
+       `Limitations <https://docs.python.org/3/library/intro.html#mobile-platforms>`__,
+       :cpy-file:`Platforms/Android`
+   * - **iOS** [t3]_
+     - :github-user:`freakboy3742`, :github-user:`ned-deily`
+     - `Usage <https://docs.python.org/3/using/ios.html>`__,
+       `Limitations <https://docs.python.org/3/library/intro.html#mobile-platforms>`__,
+       :cpy-file:`Platforms/Apple`
    * - **Linux** [t1]_
      -
      -
@@ -69,19 +79,7 @@ and relevant for porting work and fixing platform-specific issues
      - `Config & patches <https://github.com/alpinelinux/aports/tree/master/main/python3>`_
    * - **macOS** [t1]_
      - :gh-python-team:`macos-team`, :github-user:`freakboy3742`
-     - `Limitations <https://docs.python.org/3/library/intro.html#mobile-platforms>`__,
-       `Usage <https://docs.python.org/3/library/intro.html#mobile-platforms>`__,
-       :cpy-file:`Platforms/Apple`
-   * - Mobile platforms
-     -
-     - `Limitations <https://docs.python.org/3/library/intro.html#mobile-platforms>`__
-   * - \- **Android** [t3]_
-     - :github-user:`mhsmith`
-     - `Usage <https://docs.python.org/3/using/android.html>`__,
-       :cpy-file:`Platforms/Android`
-   * - \- **iOS** [t3]_
-     - :github-user:`freakboy3742`, :github-user:`ned-deily`
-     - `Usage <https://docs.python.org/3/using/ios.html>`__,
+       `Usage <https://docs.python.org/3/using/mac.html>`__,
        :cpy-file:`Platforms/Apple`
    * - **Solaris**/OpenIndiana
      - :github-user:`jcea`, :github-user:`kulikjak`
