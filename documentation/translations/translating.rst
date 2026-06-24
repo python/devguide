@@ -85,7 +85,8 @@ For more details about translations and their progress, see
        `article <https://rgth.co/blog/python-ptbr-cenario-atual/>`__
    * - Punjabi (pa)
      - Bhuvansh Kataria (:github-user:`BHUVANSH855`)
-     - :github:`GitHub <BHUVANSH855/python-docs-pa>`
+     - :github:`GitHub <BHUVANSH855/python-docs-pa>`,
+       `Transifex <https://app.transifex.com/python-doc/python-newest/language/pa/>`__
    * - `Romanian (ro)  <https://docs.python.org/ro/>`__
      - Octavian Mustafa (:github-user:`octaG-M`, `email <mailto:octawian@yahoo.com>`__)
      - :github:`GitHub <python/python-docs-ro>`
