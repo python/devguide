@@ -114,19 +114,15 @@ Document your changes
 ---------------------
 
 Many changes deserve a NEWS entry which documents what changed.
-
-Add a News entry into the ``Misc/NEWS.d/`` directory as individual file.
-The news entry can be created by using
-`blurb-it <https://blurb-it.herokuapp.com/>`__,
-or the :pypi:`blurb` tool and its ``blurb add`` command.
-
-.. tip::
-
-   You can read more about ``blurb`` in its
-   `repository <https://github.com/python/blurb>`__.
-
-For more information on writing news entries,
+For more information on how and when to write news entries,
 see :ref:`"Updating NEWS and What's New in Python" <news-entry>`.
+
+A news entry can be created locally with the :pypi:`blurb` tool
+and its ``blurb add`` command or online after a pull request has
+been opened with `blurb-it <https://blurb-it.herokuapp.com/>`__.
+
+For more information about how to create news entries, see
+:ref:`"How to add a NEWS entry" <news-entry-howto>`.
 
 Create pull requests
 --------------------
