@@ -64,9 +64,6 @@ For more details about translations and their progress, see
    * - Marathi (mr)
      - Sanket Garade (:github-user:`sanketgarade`, `email <mailto:garade@pm.me>`__)
      - :github:`GitHub <sanketgarade/python-doc-mr>`
-   * - Punjabi (pa)
-     - Bhuvansh Kataria (:github-user:`BHUVANSH855`)
-     - :github:`GitHub <BHUVANSH855/python-docs-pa>`
    * - Lithuanian (lt)
      - Albertas Gimbutas (:github-user:`albertas`, `email <mailto:albertasgim@gmail.com>`__)
      - `original announcement <https://mail.python.org/pipermail/doc-sig/2019-July/004138.html>`__
@@ -86,6 +83,9 @@ For more details about translations and their progress, see
        `guide <https://python.org.br/traducao/>`__,
        `Telegram <https://t.me/pybr_i18n>`__,
        `article <https://rgth.co/blog/python-ptbr-cenario-atual/>`__
+   * - Punjabi (pa)
+     - Bhuvansh Kataria (:github-user:`BHUVANSH855`)
+     - :github:`GitHub <BHUVANSH855/python-docs-pa>`
    * - `Romanian (ro)  <https://docs.python.org/ro/>`__
      - Octavian Mustafa (:github-user:`octaG-M`, `email <mailto:octawian@yahoo.com>`__)
      - :github:`GitHub <python/python-docs-ro>`
