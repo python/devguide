@@ -4,6 +4,8 @@
 Quick reference
 ===============
 
+.. include:: /include/activate-tab.rst
+
 Here are the basic steps needed to get set up and open a pull request.
 
 This is meant as a checklist and cheat-sheet, not a comprehensive guide.
@@ -135,7 +137,7 @@ For example:
 
    gh-12345: Fix some bug in spam module
 
-See also, GitHub's documentation on `creating Pull Requests`_.
+See also, GitHub's documentation on `creating pull requests`_.
 
 For more detailed guidance, follow the :ref:`step-by-step pull request guide <pullrequest-steps>`.
 
@@ -145,24 +147,25 @@ For more detailed guidance, follow the :ref:`step-by-step pull request guide <pu
    Agreement (CLA) as described in the :ref:`Licensing <cla>` section of
    this guide.
 
-.. _creating Pull Requests: https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-a-pull-request
+.. _creating pull requests: https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-a-pull-request
 
 Work on your pull request
 -------------------------
 
-Make sure the :ref:`continuous integration checks on your Pull
-Request are green <keeping-ci-green>` (successful).
+Make sure the :ref:`continuous integration checks on your pull
+request are green <keeping-ci-green>` (successful).
 
 Read and respond to reviewer comments on your pull request.
 
-See also, GitHub's documentation on `commenting on Pull Requests`_.
+See also, GitHub's documentation on `commenting on pull requests`_.
 
-.. note::
+Don't force-push
+----------------
 
-   In order to keep the commit history intact, avoid squashing or amending
-   history and then force-pushing to the PR.
-   Reviewers often want to look at individual commits.
+In order to keep the commit history intact, avoid squashing or amending
+history and then force-pushing to the PR.
+Reviewers often want to look at individual commits.
 
-   CPython uses squash merges, so PRs will end up as single commits when merged.
+CPython uses squash merges, so PRs will end up as single commits when merged.
 
 .. _commenting on Pull Requests: https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/reviewing-changes-in-pull-requests/commenting-on-a-pull-request
