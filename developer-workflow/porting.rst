@@ -71,15 +71,19 @@ and relevant for porting work and fixing platform-specific issues
        `Maintenance guide <https://hackmd.io/9f64YNIZTCy0ZzKb5wKtqQ?view>`__
    * - \- Debian
      - :github-user:`stefanor`, :github-user:`doko42`
-     - `Config & patches <https://salsa.debian.org/cpython-team/python3/-/tree/master/debian/patches>`_,
+     - `Config & patches <https://salsa.debian.org/cpython-team/python3/-/tree/master/debian>`_,
        `Bugs <https://bugs.debian.org/cgi-bin/pkgreport.cgi?src=python3.15>`__,
        `Wiki <https://wiki.debian.org/Python>`__
+   * - \- Ubuntu
+     - :github-user:`stefanor`, :github-user:`doko42`
+     - `Config & patches <https://git.launchpad.net/ubuntu/+source/python3.15/tree/debian>`_ (by version),
+       `Bugs <https://launchpad.net/ubuntu/+source/python3-defaults/+bugs>`__
    * - \- Alpine
      -
      - `Config & patches <https://github.com/alpinelinux/aports/tree/master/main/python3>`_
    * - **macOS** [t1]_
      - :gh-python-team:`macos-team`, :github-user:`freakboy3742`
-       `Usage <https://docs.python.org/3/using/mac.html>`__,
+     - `Usage <https://docs.python.org/3/using/mac.html>`__,
        :cpy-file:`Platforms/Apple`
    * - **Solaris**/OpenIndiana
      - :github-user:`jcea`, :github-user:`kulikjak`
@@ -87,14 +91,14 @@ and relevant for porting work and fixing platform-specific issues
    * - **WebAssembly**
      -
      - `Limitations <https://docs.python.org/3/library/intro.html#webassembly-platforms>`__
-   * - WASI [t2]_
+   * - \- WASI [t2]_
      -
      - :cpy-file:`WASI <Platforms/WASI>`
    * - \- Emscripten [t3]_
-     - :github-user:`pmp-p`, :github-user:`rdb`, :github-user:`rth`
+     - :github-user:`pmp-p`, :github-user:`rdb`, :github-user:`hoodmane`
      - :cpy-file:`emscripten <Platforms/emscripten>`
    * - \- Pyodide
-     - :github-user:`hoodmane`, :github-user:`ryanking13`, :github-user:`agriyakhetarpal`
+     - :github-user:`ryanking13`, :github-user:`agriyakhetarpal`
      -
    * - **Windows** [t1]_
      - :gh-python-team:`windows-team`, :github-user:`pfmoore`
@@ -104,7 +108,7 @@ and relevant for porting work and fixing platform-specific issues
    * - **Cross-Platform**
      -
      -
-   * - conda-forge
+   * - \- conda-forge
      -
      - `Recipe <https://github.com/conda-forge/python-feedstock/tree/main/recipe>`_
 
