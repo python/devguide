@@ -70,12 +70,12 @@ and relevant for porting work and fixing platform-specific issues
        `Bugs <https://bugzilla.redhat.com/buglist.cgi?bug_status=__open__&classification=Fedora&columnlist=product%2Ccomponent%2Cassigned_to%2Cbug_status%2Cshort_desc%2Cchangeddate%2Cbug_severity&f1=component&o1=regexp&order=status%2C%20assigned_to%2C%20id%2C%20&product=Fedora&product=Fedora%20EPEL&query_format=advanced&v1=python3\.\d%2B%24>`__,
        `Maintenance guide <https://hackmd.io/9f64YNIZTCy0ZzKb5wKtqQ?view>`__
    * - \- Debian
-     - :github-user:`stefanor`, :github-user:`doko42`
+     - :github-user:`stefanor`
      - `Config & patches <https://salsa.debian.org/cpython-team/python3/-/tree/master/debian>`_,
        `Bugs <https://bugs.debian.org/cgi-bin/pkgreport.cgi?src=python3.15>`__,
        `Wiki <https://wiki.debian.org/Python>`__
    * - \- Ubuntu
-     - :github-user:`stefanor`, :github-user:`doko42`
+     - :github-user:`stefanor`
      - `Config & patches <https://git.launchpad.net/ubuntu/+source/python3.15/tree/debian>`_ (by version),
        `Bugs <https://launchpad.net/ubuntu/+source/python3-defaults/+bugs>`__
    * - \- Alpine
