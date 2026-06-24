@@ -23,17 +23,12 @@ Fork and clone the repo
 -----------------------
 
 Fork `the CPython repository <https://github.com/python/cpython>`__
-to your GitHub account and :ref:`get the source code <checkout>` using::
+to your GitHub account and clone the repo using::
 
    git clone https://github.com/<your_username>/cpython
    cd cpython
 
-We recommend also setting up ``pre-commit``::
-
-   pre-commit install
-
-For detailed information, see :ref:`"Get the source code" <checkout>` and
-:ref:`"Install pre-commit as a Git hook" <install-pre-commit>`.
+For detailed information, see :ref:`"Get the source code" <checkout>`.
 
 
 Build Python
