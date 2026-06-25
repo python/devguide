@@ -159,7 +159,7 @@ Read and respond to reviewer comments on your pull request.
 
 See also, GitHub's documentation on `commenting on pull requests`_.
 
-.. _commenting on Pull Requests: https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/reviewing-changes-in-pull-requests/commenting-on-a-pull-request
+.. _commenting on pull requests: https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/reviewing-changes-in-pull-requests/commenting-on-a-pull-request
 
 Don't force-push
 ----------------
