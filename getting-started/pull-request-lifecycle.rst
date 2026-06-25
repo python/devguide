@@ -252,7 +252,7 @@ or the :pypi:`blurb` tool and its ``blurb add`` command.
 .. tip::
 
    You can read more about ``blurb`` in its
-   `repository <https://github.com/python/blurb>`__.
+   :github:`repository <python/blurb>`.
 
 If you are unable to use the tool, then you can create the ``NEWS`` entry file
 manually. The ``Misc/NEWS.d`` directory contains a sub-directory named

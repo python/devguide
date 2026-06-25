@@ -130,7 +130,7 @@ Create pull requests
 --------------------
 
 Create pull requests on GitHub from your branches, on your fork, and make sure
-to put the relevant issue number in ``gh-NNNNNN``` format in the pull request title.
+to put the relevant issue number in ``gh-NNNNNN`` format in the pull request title.
 For example:
 
 .. code-block:: text
