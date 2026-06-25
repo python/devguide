@@ -135,6 +135,15 @@ message. It is usually okay to leave that as-is and close the editor.
 See `the merge command's documentation <https://git-scm.com/docs/git-merge>`__
 for a detailed technical explanation.
 
+Don't force-push
+----------------
+
+In order to keep the commit history intact, avoid squashing or amending
+history and then force-pushing to the PR.
+Reviewers often want to look at individual commits.
+
+CPython uses squash merges, so PRs will end up as single commits when merged.
+
 
 .. _good-prs:
 
