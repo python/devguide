@@ -16,58 +16,8 @@ that you create a branch in Git, make your changes, push those changes
 to your fork on GitHub (``origin``), and then create a pull request against
 the official CPython repository (``upstream``).
 
-
-.. _pullrequest-quickguide:
-
-Quick guide
-===========
-
-`Clear communication`_ is key to contributing to any project, especially an
-`Open Source`_ project like CPython.
-
-Here is a quick overview of how you can contribute to CPython:
-
-#. `Create an issue`_ that describes your change. If it is trivial
-   (like :ref:`typo fixes <typo-fixes>`), or an issue already exists,
-   you can skip this step.
-
-#. :ref:`Create a new branch in Git <pullrequest-steps>` from the
-   ``main`` branch
-
-#. Work on changes: fix a bug or add a new feature
-
-#. :ref:`Run tests <runtests>` and ``make patchcheck``
-
-#. :ref:`Commit <commit-changes>` and :ref:`push <push-changes>`
-   changes to your GitHub fork
-
-#. `Create Pull Request`_ on GitHub to merge a branch from your fork
-
-#. Make sure the :ref:`continuous integration checks on your Pull Request
-   are green <keeping-ci-green>` (successful)
-
-#. Review and address `comments on your Pull Request`_
-
-#. When your changes are merged, you can :ref:`delete the PR branch
-   <deleting_branches>`
-
-#. Celebrate contributing to CPython! :)
-
-Don't force-push
-----------------
-
-In order to keep the commit history intact, please avoid squashing or amending
-history and then force-pushing to the PR. Reviewers often want to look at
-individual commits.
-When the PR is merged, everything will be squashed into a single commit.
-
-.. _Clear communication: https://opensource.guide/how-to-contribute/#how-to-submit-a-contribution
-.. _Open Source: https://opensource.guide/
-.. _create an issue: https://github.com/python/cpython/issues
-.. _CPython: https://github.com/python/cpython
-.. _use HTTPS: https://help.github.com/articles/which-remote-url-should-i-use/
-.. _Create Pull Request: https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-a-pull-request
-.. _comments on your Pull Request: https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/reviewing-changes-in-pull-requests/commenting-on-a-pull-request
+For a cheat-sheet reference, see the
+:ref:`quick reference on creating pull requests <pullrequest-quickguide>`.
 
 
 .. _pullrequest-steps:
@@ -185,6 +135,15 @@ message. It is usually okay to leave that as-is and close the editor.
 See `the merge command's documentation <https://git-scm.com/docs/git-merge>`__
 for a detailed technical explanation.
 
+Don't force-push
+----------------
+
+In order to keep the commit history intact, avoid squashing or amending
+history and then force-pushing to the PR.
+Reviewers often want to look at individual commits.
+
+CPython uses squash merges, so PRs will end up as single commits when merged.
+
 
 .. _good-prs:
 
@@ -290,12 +249,19 @@ in the "What's New in Python" entry.
     A change that needs an entry in "What's New in Python"
     is very likely not suitable for inclusion in a maintenance release.
 
+.. _news-entry-howto:
+
 How to add a NEWS entry
 -----------------------
 
 ``NEWS`` entries go into the ``Misc/NEWS.d`` directory as individual files. The
 ``NEWS`` entry can be created by using `blurb-it <https://blurb-it.herokuapp.com/>`_,
 or the :pypi:`blurb` tool and its ``blurb add`` command.
+
+.. tip::
+
+   You can read more about ``blurb`` in its
+   :github:`repository <python/blurb>`.
 
 If you are unable to use the tool, then you can create the ``NEWS`` entry file
 manually. The ``Misc/NEWS.d`` directory contains a sub-directory named
