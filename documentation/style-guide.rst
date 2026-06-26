@@ -116,17 +116,6 @@ Unix
    1970s.
 
 
-Spell out acronyms
-==================
-
-The first time an acronym is used on a page, spell it out.
-Prefer to write out the full term and follow it with the acronym in parentheses.
-For example, write "JavaScript Object Notation (JSON)".
-
-Avoid using the ``:abbr:`` role, as it generates HTML which is not accessible to
-some forms of assistive technology and mobile users.
-
-
 Use simple language
 ===================
 
@@ -135,6 +124,10 @@ be native English speakers.
 
 Don't use Latin abbreviations like "e.g." or "i.e." where English words will do,
 such as "for example" or "that is."
+
+The first time an acronym is used on a page, spell it out.
+Prefer to write out the full term and follow it with the acronym in parentheses.
+For example, write "JavaScript Object Notation (JSON)".
 
 
 Charged terminology to avoid

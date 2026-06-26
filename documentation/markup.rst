@@ -703,7 +703,13 @@ In the CPython documentation, there are a couple common cases
 where simpler markup should be used:
 
 * ``*arg*`` (rendered as *arg*) for function and method arguments.
+
 * ````True````/````False````/````None```` for ``True``/``False``/``None``.
+
+* ``Full Spelling (abbreviation)`` for abbreviations and acronyms.
+
+  The ``:abbr:`` role generates HTML which is not accessible to some forms of
+  assistive technology and mobile users.
 
 In addition, the CPython documentation defines a few custom roles:
 
