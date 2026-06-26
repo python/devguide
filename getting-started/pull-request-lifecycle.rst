@@ -203,6 +203,24 @@ should do to help ensure that your pull request is accepted.
 
 #. Proper :ref:`documentation <documenting>` additions/changes should be included.
 
+Write good titles and descriptions
+----------------------------------
+
+Reviewers want to be able to understand roughly what your pull request does
+before reading the changes.
+
+The title should be a sentence or phrase in the imperative which says what the
+pull request does in short form. It should start with ``gh-NNNNNN:``, for pull
+requests which close open issues.
+For example, ``gh-12345: Fix bug when spam module is served with eggs``.
+
+The pull request description field should be a detailed summary.
+This is a great place to note caveats, provide links to references, and explain
+decisions made in the pull request.
+Avoid over-explaining: simpler descriptions are easier to read, so make sure not
+to write large descriptions for simple changes.
+
+
 .. _news-entry:
 .. _what-s-new-and-news-entries:
 
