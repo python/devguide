@@ -210,8 +210,8 @@ Reviewers want to be able to understand roughly what your pull request does
 before reading the changes.
 
 The title should be a sentence or phrase in the imperative which says what the
-pull request does in short form. It should start with ``gh-NNNNNN:``, for pull
-requests which close open issues.
+pull request does in short form. Pull requests attached to issues should
+be linked by putting the issue number in the title (``gh-NNNNNN:``).
 For example, ``gh-12345: Fix bug when spam module is served with eggs``.
 
 The pull request description field should be a detailed summary.
