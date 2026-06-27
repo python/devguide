@@ -203,23 +203,6 @@ should do to help ensure that your pull request is accepted.
 
 #. Proper :ref:`documentation <documenting>` additions/changes should be included.
 
-Write good titles and descriptions
-----------------------------------
-
-Reviewers want to be able to understand roughly what your pull request does
-before reading the changes.
-
-The title should be a sentence or phrase in the imperative which says what the
-pull request does in short form. Pull requests attached to issues should
-be linked by putting the issue number in the title (``gh-NNNNNN:``).
-For example, ``gh-12345: Fix bug when spam module is served with eggs``.
-
-The pull request description field should be a detailed summary.
-This is a great place to note caveats, provide links to references, and explain
-decisions made in the pull request.
-Avoid over-explaining: simpler descriptions are easier to read, so make sure not
-to write large descriptions for simple changes.
-
 
 .. _news-entry:
 .. _what-s-new-and-news-entries:
@@ -521,9 +504,7 @@ This will get your changes up to GitHub.
 Now you want to
 `create a pull request from your fork
 <https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-a-pull-request-from-a-fork>`__.
-If this is a pull request in response to a pre-existing issue on the
-`issue tracker`_, please make sure to reference the issue number using
-``gh-NNNNN:`` prefix in the pull request title and ``#NNNNN`` in the description.
+See :ref:`the section below on writing good titles and descriptions <good-pull-request-metadata>`.
 
 If this is a pull request for an unreported issue (assuming you already
 performed a search on the issue tracker for a pre-existing issue), create a
@@ -542,6 +523,28 @@ not squashing, amending, or anything that would require a force push to GitHub.
 A detailed commit history allows reviewers to view the diff of one commit to
 another so they can easily verify whether their comments have been addressed.
 The commits will be squashed when the pull request is merged.
+
+.. _good-pull-request-metadata:
+
+Write good titles and descriptions
+----------------------------------
+
+Reviewers want to be able to understand roughly what your pull request does
+before reading the changes.
+
+The title should be a sentence or phrase in the imperative which says what the
+pull request does in short form.
+Pull requests attached to issues should be linked by putting the issue number in
+the title (``gh-NNNNNN:``).
+For example, ``gh-12345: Fix bug when spam module is served with eggs``.
+
+The pull request description field should be a detailed summary.
+This is a great place to note caveats, provide links to references, and explain
+decisions made in the pull request.
+Avoid over-explaining: simpler descriptions are easier to read, so make sure not
+to write large descriptions for simple changes.
+
+Use ``#NNNNN`` in the description to refer to and link relevant issues.
 
 
 Converting an existing patch from b.p.o to GitHub
