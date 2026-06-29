@@ -138,6 +138,9 @@ Here's what to expect for how a vulnerability report will be handled:
   may open a public issue.
 * If the PSRT determines the report is a vulnerability, the PSRT will
   accept the report and a CVE ID will be assigned by the PSF CNA.
+
+  Do not publicly reference the assigned CVE ID before its record is published,
+  as the report and ID remain provisional and may still be changed.
 * Once a public pull request containing a fix is merged to CPython,
   the advisory and CVE record will be published with attribution.
 
