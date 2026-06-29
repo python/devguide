@@ -48,8 +48,10 @@ compiled Python.
 In order to set up the buildbot software, you will need to obtain an identifier
 and password for your worker so it can join the fleet.  Open an issue in the
 `configuration repository <https://github.com/python/buildmaster-config/issues/new?template=new_worker.yml>`__
-to discuss adding your worker and to obtain the
-needed workername and password.  You can do some of the steps that follow
+to discuss adding your worker and to obtain the needed workername and password.
+(Instructions for Buildbot administrators are `in the configuration README <https://github.com/python/buildmaster-config#add-a-worker>`__.)
+
+You can do some of the steps that follow
 before having the credentials, but it is easiest to have them before
 the "buildbot worker" step below.
 
