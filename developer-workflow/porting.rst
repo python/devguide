@@ -15,7 +15,7 @@ See :pep:`11` for details.
 Other platforms are unsupported *by the core team*, but might be supported
 by others -- as a volunteer project, by a company that wants Python on "their"
 system, or just as a one-off experiment.
-See :pep:`11#unsupported-platforms` for the policy on merging code for
+See :pep:`PEP 11 <11#unsupported-platforms>` for the policy on merging code for
 unsupported platforms into the main CPython repository.
 
 
