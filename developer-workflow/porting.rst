@@ -27,6 +27,8 @@ Ports and contacts
 The table below lists relevant third-party projects,
 their maintainers, and links to information that's relevant when triaging
 platform-specific issues.
+Officially supported platforms are also included when there is relevant
+information for them (beyond :pep:`11`), or to group similar platforms.
 
 It is OK to @mention the listed GitHub usernames to draw maintainers' attention
 or request their opinion on platform-specific issues.
@@ -35,8 +37,6 @@ themselves at any time.
 
 Third-party projects should only be listed if they benefit substantially
 more people than the maintainers.
-Officially supported platforms are included when there are relevant links
-to show, or to group similar platforms.
 
 Links should be for the port specifically (not the platform itself),
 and relevant for porting work and fixing platform-specific issues
