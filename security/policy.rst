@@ -45,8 +45,10 @@ triggerable with data inputs that are reasonably sized for the use case.
 Availability vulnerabilities must also demonstrate an "upward" change in posture
 for the attacker, rather than a "lateral" one.
 This is to avoid handling performance improvements as security vulnerabilities.
-Exceptions are an expected part of control flow when processing inputs,
-therefore crashes resulting from unhandled exceptions are not security vulnerabilities.
+
+Exceptions are an expected part of control flow when processing inputs.
+Unhandled exceptions are not considered crashes and are not, by themselves,
+security vulnerabilities.
 
 Vulnerabilities in dependencies of Python (such as zlib, Tcl/Tk, or OpenSSL)
 are not vulnerabilities in Python unless Python's use of the dependency
