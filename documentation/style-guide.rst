@@ -148,9 +148,10 @@ Unix
 Type names
 ==========
 
-When writing the names of types in prose, write the name of the type
-exactly as it appears in source, styled as a class reference or an unlinked
-class.  For example, refer to dict as ``:class:`dict`‌`` or ``:class:`!dict`‌``.
+When writing the names of types in prose, indicate that the name is a type by
+writing the name of the type exactly as it appears in source, styled as a class
+reference or an unlinked class.  For example, refer to dict as ``:class:`dict`‌``
+or ``:class:`!dict`‌``.
 
 Links should be used according to the :ref:`guidance on links <style-guide-links>`.
 
@@ -159,12 +160,15 @@ For example, "tuples" are a general programming concept, as distinct from the
 ``tuple`` type.  When referring to general ideas, do not style the relevant word
 as a type.
 
-Many types have descriptive names which do not exactly match their type
+Many types have descriptive names which may or may not exactly match their type
 name.  For example, "context variables" describes ``contextvars.ContextVar``,
-and "partial function" may be used to describe an application of
-``functools.partial``.  Use these names only when they serve to clarify the text
-better than the type name itself would, and put them in lowercase.
+and both "dict" and "dictonary" are used to describe ``dict``.  Once it is clear
+that the text refers to a specific type, use the naming which suits the context:
+in the case of ``dict``, any of "dict", "dictionary", or "``:class:`dict```" may
+be best.
 
+Descriptive names should be written as common nouns, meaning they are lowercase
+when not at the start of a sentence or phrase.
 
 .. index:: diataxis
 .. _diataxis:
