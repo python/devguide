@@ -1338,4 +1338,4 @@ also apply here.
 
 
 .. _cpython-devcontainers repo: https://github.com/python/cpython-devcontainers
-.. include:: ../links.rst
+.. include:: /include/links.rst
