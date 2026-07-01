@@ -93,7 +93,7 @@ is easier to break the work up for multiple people and more efficient review.
 
 For help with the finer points of English technical writing, mention the
 :gh-python-team:`proofreaders`
-team in your issue or pull request in any `@python <https://github.com/python/>`__
+team in your issue or pull request in any :github:`python`
 repo. If you'd like to join the team,
 `open a core-workflow issue <https://github.com/python/core-workflow/issues/new/choose>`__
 similar to
