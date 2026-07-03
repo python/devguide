@@ -667,19 +667,16 @@ list of executed checks. Clicking :guilabel:`Update branch` next to this message
 will merge in the latest changes from the base branch into the PR.
 
 If this still doesn't help with the failure on the PR, you can try
-to re-run that particular failed check.
+to re-run that particular failed check. Note that the :guilabel:`Re-run jobs`
+button is only visible to members of the core and triage team. If you have those
+permissions, go to the failed GitHub Action job, click :guilabel:`Re-run jobs` on
+the top right, and select :guilabel:`Re-run failed jobs`. The button is only
+present once all other jobs have finished.
 
-The :guilabel:`Re-run jobs` button on GitHub Actions is only visible
-to Python core and triage teams. If you have these permissions, go to
-the red GitHub Action job, click on the :guilabel:`Re-run jobs` button on the
-top right, and select :guilabel:`Re-run failed jobs`. The button will only be
-present when all other jobs finished running.
-
-If you are a regular contributor and cannot see the button, you can ask a
-reviewer to re-run the failed jobs for you in a PR comment. Alternatively, you
-can re-trigger the CI by pushing an empty commit to your branch (for example,
-``git commit --allow-empty -m "Trigger CI"``), or by closing and re-opening
-your pull request.
+If don't have access to the button, ask a member of the teams to
+re-run the jobs for you. Alternatively, you can re-trigger CI yourself by
+pushing an empty commit, or by updating your branch with the
+:guilabel:`Update branch` button.
 
 Re-running failed jobs shouldn't be your first instinct but it is occasionally
 helpful because distributed systems can have intermittent failures, and
