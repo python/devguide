@@ -55,6 +55,8 @@ that generates search queries for you.
 Reporting an issue
 ------------------
 
+.. XXX: This section is slightly out of date after recent tracker changes.
+
 If the problem you're reporting is not already in the `issue tracker`_, you
 can report it using the green :guilabel:`New issue` button on the right of the search
 box above the list of bugs. If you're not already signed in to GitHub, it
@@ -136,13 +138,11 @@ Following issues
 ----------------
 
 If you want to subscribe yourself to an issue, click the :guilabel:`🔔 Subscribe`
-button in the sidebar.  Similarly, if you were tagged by somebody else but
-decided this issue is not for you, click the :guilabel:`🔕 Unsubscribe`
+button in the sidebar.  Subscribe another person to the issue by tagging them
+in a comment with ``@username``.  If you were tagged by somebody else
+but decided this issue is not for you, click the :guilabel:`🔕 Unsubscribe`
 button in the sidebar.  Note that you are automatically subscribed to
 issues you create or comment on.
-
-Subscribe another person to the issue by tagging them in the comment with
-``@username``.
 
 
 How to link to file paths in the repository when writing comments?
@@ -168,16 +168,16 @@ By writing :samp:`Duplicate of #{NNN}` in a comment, you can
 What on earth is a "mannequin"?
 -------------------------------
 
-For issues migrated to GitHub from `bpo`_ where the authors or commenters
-are not core team members, we opted not to link to their GitHub accounts
+For old issues migrated to GitHub from bugs.python.org (BPO) where the authors or commenters
+were not core team members, we opted not to link to their GitHub accounts
 directly. Users not in the `python organization on GitHub
 <https://github.com/orgs/python/people>`__ might not like comments to
 appear under their name from an automated import.  Others never linked GitHub on
-`bpo`_ in the first place so linking their account, if any, would be impossible.
+BPO in the first place so linking their account, if any, would be impossible.
 
 In those cases a "mannequin" account is present to help follow the conversation
 that happened in the issue. In case the user did share their GitHub account
-name in their `bpo`_ profile, we use that. Otherwise, their classic `bpo`_
+name in their BPO profile, we use that. Otherwise, their classic BPO
 username is used instead.
 
 
