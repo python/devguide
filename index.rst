@@ -50,7 +50,6 @@ contributors through the process.
        * :ref:`helptriage`
        * :ref:`experts`
        * :ref:`labels`
-       * :ref:`gh-faq`
        * :ref:`triage-team`
 
 We **recommend** that sections of this guide be read as needed. You
