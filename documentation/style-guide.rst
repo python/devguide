@@ -58,6 +58,35 @@ of these entities are not assigned any special markup, but the preferred
 spellings are given in :ref:`specific words` to aid authors in maintaining the
 consistency of presentation in the Python documentation.
 
+
+Use simple language
+===================
+
+Avoid esoteric phrasing where possible.  Our audience is world-wide and may not
+be native English speakers.
+
+Don't use Latin abbreviations like "e.g." or "i.e." where English words will do,
+such as "for example" or "that is."
+
+
+Charged terminology to avoid
+============================
+
+Avoid terminology that may be considered insensitive or exclusionary.
+
+.. list-table::
+   :header-rows: 1
+
+   * - Avoid
+     - Instead
+   * - whitelist
+     - allowlist
+   * - blacklist
+     - blocklist, denylist
+   * - master/slave
+     - main, parent/child, server/client, primary/secondary
+
+
 .. _specific words:
 
 Specific words
@@ -116,33 +145,30 @@ Unix
    1970s.
 
 
-Use simple language
-===================
+Type names
+==========
 
-Avoid esoteric phrasing where possible.  Our audience is world-wide and may not
-be native English speakers.
+When writing the names of types in prose, indicate that the name is a type by
+writing the name of the type exactly as it appears in source, styled as a class
+reference or an unlinked class.  For example, refer to dict as ``:class:`dict`‌``
+or ``:class:`!dict`‌``.
 
-Don't use Latin abbreviations like "e.g." or "i.e." where English words will do,
-such as "for example" or "that is."
+Links should be used according to the :ref:`guidance on links <style-guide-links>`.
 
+Some type names are commonly understood ideas or nouns outside of Python.
+For example, "tuples" are a general programming concept, as distinct from the
+``tuple`` type.  When referring to general ideas, do not style the relevant word
+as a type.
 
-Charged terminology to avoid
-============================
+Many types have descriptive names which may or may not exactly match their type
+name.  For example, "context variables" describes ``contextvars.ContextVar``,
+and both "dict" and "dictonary" are used to describe ``dict``.  Once it is clear
+that the text refers to a specific type, use the naming which suits the context:
+in the case of ``dict``, any of "dict", "dictionary", or "``:class:`dict```" may
+be best.
 
-Avoid terminology that may be considered insensitive or exclusionary.
-
-.. list-table::
-   :header-rows: 1
-
-   * - Avoid
-     - Instead
-   * - whitelist
-     - allowlist
-   * - blacklist
-     - blocklist, denylist
-   * - master/slave
-     - main, parent/child, server/client, primary/secondary
-
+Descriptive names should be written as common nouns, meaning they are lowercase
+when not at the start of a sentence or phrase.
 
 .. index:: diataxis
 .. _diataxis:
@@ -189,6 +215,8 @@ explanation.
 Please consult the `Diátaxis <https://diataxis.fr/>`__ guide for more
 detail.
 
+
+.. _style-guide-links:
 
 Links
 =====
