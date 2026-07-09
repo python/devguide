@@ -622,6 +622,9 @@ The format of a correct backport commit message is:
 
     (cherry picked from commit <commit_sha1>)
 
+Here ``gh-XXXXX`` is the GitHub *issue* number, and ``(GH-XXXXX)`` is the
+original *pull request* number.
+
 An example of a bad backport commit message:
 
 .. code-block:: text
@@ -630,6 +633,17 @@ An example of a bad backport commit message:
     gh-XXXXX: Custom title (GH-XXXXX) (#XXXXX)
 
     * Custom message
+
+.. _backport-pr:
+
+The title of the backport PR must follow the same format as the commit title,
+beginning with the ``[<branch>]`` prefix, and referencing the original PR with
+a ``(GH-XXXXX)`` suffix. For example:
+
+.. code-block:: text
+   :class: good
+
+    [3.15] gh-12345: Fix the spam module (GH-24680)
 
 After the backport PR is opened, ``miss-islington`` will link it to the original
 PR and remove the corresponding backport label.
