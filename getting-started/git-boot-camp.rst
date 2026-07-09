@@ -636,9 +636,9 @@ An example of a bad backport commit message:
 
 .. _backport-pr:
 
-The title of the backport PR must follow the same format as the commit title,
-beginning with the ``[<branch>]`` prefix, and referencing the original PR with
-a ``(GH-XXXXX)`` suffix. For example:
+When opening the backport PR, its title PR must follow the same format as the
+commit title, beginning with the ``[<branch>]`` prefix and referencing the
+original PR with a ``(GH-XXXXX)`` suffix. For example:
 
 .. code-block:: text
    :class: good
