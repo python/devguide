@@ -22,6 +22,38 @@ in return.
 .. _Diversity Statement: https://www.python.org/psf/diversity/
 
 
+.. _multicultural-communication:
+
+Communicating across cultures and languages
+===========================================
+
+Not every contributor writes English as a first language, and phrasing that
+feels neutral in one culture can read as blunt or rude in another.
+
+**Practice active listening.** Try to focus on understanding the message before reacting.
+
+**Confirm understanding.** Ask open-ended questions and paraphrase to avoid
+misunderstandings. If you're unsure what someone meant, ask: "I want to make
+sure I understand: are you saying X?"
+
+**Use translation tools freely.** If English isn't your first language,
+translation software or AI tools may help you check that your message has the
+tone you intend. Getting the phrasing wrong can make a reasonable point sound
+more aggressive than it is.
+
+**Watch out for rhetorical questions.** They read as hostile in text even when
+that's not the intent at all:
+
+* Instead of "Why do you think it is wrong?!", try "That doesn't sound right
+  to me. Here's why: …"
+* Instead of "Did you even read the docs?", try "The relevant documentation
+  is at …"
+
+**Be patient with newcomers.** If someone doesn't know how things work here,
+point them to the right docs or give them the context they need. Criticism
+without guidance isn't helpful.
+
+
 .. _mailinglists:
 
 Mailing lists
@@ -51,7 +83,7 @@ Mailing lists
 
    .. _python-committers: https://mail.python.org/mailman3/lists/python-committers.python.org/
    .. _python-dev: https://mail.python.org/mailman3/lists/python-dev.python.org/
-   .. _python-ideas: https://mail.python.org/mailman3/lists/python-ideas.python.org
+   .. _python-ideas: https://mail.python.org/archives/list/python-ideas@python.org/
 
 General Python questions should go to `python-list`_ or `tutor`_
 or similar resources, such as `Stack Overflow`_ or the ``#python`` IRC channel
@@ -62,13 +94,12 @@ issue tracker is the place to discuss and work on improvements to the CPython
 core development workflow.
 
 A complete list of Python mailing lists can be found at
-https://mail.python.org/mailman/listinfo (older lists, using Mailman2) or
-https://mail.python.org/mailman3/ (newer lists, using Mailman3). Some lists may also
+https://mail.python.org/mailman3/. Some lists may also
 be mirrored at `GMANE <https://gmane.io/>`__ and can be read and posted to in various
 ways, including via web browsers, NNTP newsreaders, and RSS feed readers.
 
-.. _python-list: https://mail.python.org/mailman/listinfo/python-list
-.. _tutor: https://mail.python.org/mailman/listinfo/tutor
+.. _python-list: https://mail.python.org/mailman3/lists/python-list.python.org/
+.. _tutor: https://mail.python.org/mailman3/lists/tutor.python.org/
 .. _Stack Overflow: https://stackoverflow.com/
 .. _Libera.Chat: https://libera.chat/
 
@@ -239,7 +270,7 @@ that way. You can find their blogs (and various other developers who use Python)
 at `Planet Python <https://planetpython.org/>`__.
 
 
-Setting expectations for open source participation
+Setting expectations for open-source participation
 ==================================================
 
 Burn-out is common in open source due to a misunderstanding of what users, contributors,

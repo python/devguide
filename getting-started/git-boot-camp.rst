@@ -4,13 +4,7 @@
 Git bootcamp and cheat sheet
 ============================
 
-.. raw:: html
-
-    <script>
-    document.addEventListener('DOMContentLoaded', function() {
-      activateTab(getOS());
-    });
-    </script>
+.. include:: /include/activate-tab.rst
 
 .. highlight:: console
 
@@ -453,19 +447,33 @@ Both of these tools will configure a remote URL for the branch, so you can
 ``git push`` if the pull request author checked "Allow edits from maintainers"
 when creating the pull request.
 
-If you don't have GitHub CLI or hub installed, you can set up a git alias:
+Otherwise, you can run the following commands:
+
+.. code-block:: shell
+
+   $ git fetch upstream pull/NNNNN/head:pr_NNNNN
+   $ git switch pr_NNNNN
+
+Or set up a Git alias:
 
 .. tab:: Unix/macOS
 
    .. code-block:: shell
 
-      $ git config --global alias.pr '!sh -c "git fetch upstream pull/${1}/head:pr_${1} && git checkout pr_${1}" -'
+      git config --global alias.pr '!sh -c "git fetch upstream pull/${1}/head:pr_${1} && git switch pr_${1}" -'
 
-.. tab:: Windows
+.. tab:: Windows cmd
 
    .. code-block:: dosbatch
 
-      git config --global alias.pr "!sh -c 'git fetch upstream pull/${1}/head:pr_${1} && git checkout pr_${1}' -"
+      git config --global alias.pr "!sh -c 'git fetch upstream pull/${1}/head:pr_${1} && git switch pr_${1}' -"
+
+.. tab:: Windows Powershell
+
+   .. code-block:: shell
+
+      git config --global alias.pr '!f() { git fetch upstream pull/$1/head:pr_$1 && git checkout pr_$1; }; f'
+
 
 The alias only needs to be done once.  After the alias is set up, you can get a
 local copy of a pull request as follows::
@@ -549,60 +557,97 @@ dismissing your previous review that requested changes.
 Note that pushing new changes after the auto-merge flow was enabled
 does **NOT** stop it.
 
+
+.. _branch-merge:
+
 Backporting merged changes
 --------------------------
 
-A pull request may need to be backported into one of the maintenance branches
-after it has been accepted and merged into ``main``.  It is usually indicated
-by the label ``needs backport to X.Y`` on the pull request itself.
+After a pull request has been merged into ``main``, it may need to be backported
+to one or more :ref:`maintenance <maintbranch>` or :ref:`security <secbranch>`
+branches. This is indicated by the :samp:`needs backport to {X.Y}` labels on
+the pull request.
 
-Use the utility script
-`cherry_picker.py <https://github.com/python/cherry-picker>`__
-to backport the commit.
+``miss-islington`` will automatically attempt to create backport PRs for the
+versions indicated by these labels. If ``miss-islington`` cannot create a
+backport PR due to conflicts, you can use the :pypi:`cherry-picker` tool to
+create the backport and resolve the conflicts manually.
 
-The commit hash for backporting is the squashed commit that was merged to
-the ``main`` branch.  On the merged pull request, scroll to the bottom of the
-page.  Find the event that says something like:
+You need the commit hash of the squashed commit that was merged into
+the ``main`` branch. ``miss-islington`` should post a comment when it is unable
+to create the backport automatically, including the full command and commit hash.
+If that comment is not posted, look for an event on the merged
+pull request similar to:
 
 .. code-block:: text
 
    <core_developer> merged commit <commit_sha1> into python:main <sometime> ago.
 
-By following the link to ``<commit_sha1>``, you will get the full commit hash.
+By following the link to ``<commit_sha1>``, you can get the full commit hash.
 
-Alternatively, the commit hash can also be obtained by the following Git
+Alternatively, the commit hash can also be obtained with the following Git
 commands::
 
    $ git fetch upstream
-   $ git rev-parse ":/gh-12345"
+   $ git rev-parse ":/gh-<PR number>"
 
-The above commands will print out the hash of the commit containing
-``"gh-12345"`` as part of the commit message.
+These commands print the hash of the commit whose message contains ``gh-<PR number>``.
 
-When formatting the commit message for a backport commit: leave the original
-one as is and delete the number of the backport pull request.
+You can then use the commit hash and the :pypi:`cherry-picker` tool to create
+the backport. In the following command, ``<branch>`` is the target maintenance
+branch (for example, ``3.12``):
 
-✅ Example of good backport commit message:
+.. code-block:: text
+
+   $ cherry_picker <commit_sha1> <branch>
+
+Then, follow the instructions provided. You will have to identify the files
+with conflicts, fix them, and build and run applicable tests if necessary.
+When you are finished, ``git add`` all modified files and run
+``cherry_picker --continue`` to push the backport.
+
+The tool usually generates the commit message automatically. If it does not, use
+the following format: Keep the original commit message unchanged, except for
+removing the backport pull request number (``(#XXXXX)``). At the end of the
+message, append a ``(cherry picked from commit <commit_sha1>)`` line.
+
+The format of a correct backport commit message is:
 
 .. code-block:: text
    :class: good
 
-    gh-12345: Improve the spam module (GH-777)
+    [<branch>] gh-XXXXX: <original commit title> (GH-XXXXX)
 
-    * Add method A to the spam module
-    * Update the documentation of the spam module
+    <original commit body>
 
-    (cherry picked from commit 62adc55)
+    (cherry picked from commit <commit_sha1>)
 
-❌ Example of bad backport commit message:
+Here ``gh-XXXXX`` is the GitHub *issue* number, and ``(GH-XXXXX)`` is the
+original *pull request* number.
+
+An example of a bad backport commit message:
 
 .. code-block:: text
    :class: bad
 
-    gh-12345: Improve the spam module (GH-777) (#888)
+    gh-XXXXX: Custom title (GH-XXXXX) (#XXXXX)
 
-    * Add method A to the spam module
-    * Update the documentation of the spam module
+    * Custom message
+
+.. _backport-pr:
+
+When opening the backport PR, its title PR must follow the same format as the
+commit title, beginning with the ``[<branch>]`` prefix and referencing the
+original PR with a ``(GH-XXXXX)`` suffix. For example:
+
+.. code-block:: text
+   :class: good
+
+    [3.15] gh-12345: Fix the spam module (GH-24680)
+
+After the backport PR is opened, ``miss-islington`` will link it to the original
+PR and remove the corresponding backport label.
+
 
 Editing a pull request prior to merging
 ---------------------------------------

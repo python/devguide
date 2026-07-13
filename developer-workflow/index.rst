@@ -15,5 +15,3 @@ Development workflow
    c-api
    grammar
    porting
-   sbom
-   psrt

@@ -58,6 +58,35 @@ of these entities are not assigned any special markup, but the preferred
 spellings are given in :ref:`specific words` to aid authors in maintaining the
 consistency of presentation in the Python documentation.
 
+
+Use simple language
+===================
+
+Avoid esoteric phrasing where possible.  Our audience is world-wide and may not
+be native English speakers.
+
+Don't use Latin abbreviations like "e.g." or "i.e." where English words will do,
+such as "for example" or "that is."
+
+
+Charged terminology to avoid
+============================
+
+Avoid terminology that may be considered insensitive or exclusionary.
+
+.. list-table::
+   :header-rows: 1
+
+   * - Avoid
+     - Instead
+   * - whitelist
+     - allowlist
+   * - blacklist
+     - blocklist, denylist
+   * - master/slave
+     - main, parent/child, server/client, primary/secondary
+
+
 .. _specific words:
 
 Specific words
@@ -79,6 +108,16 @@ C API
 CPU
    Central processing unit. No need to spell out.
 
+free-threaded
+   The preferred term for the build mode that makes the global interpreter
+   lock (GIL) optional (per :pep:`703`). Avoid using "No-GIL" to avoid
+   double negatives (for example, "non-no-GIL").
+
+open source
+   Follow the usual English rules for compound words. When used as an
+   adjective, hyphenate: "open-source software". When used as a noun, don't use
+   a hypen: "open source is a collaboration model.."
+
 POSIX
    The name assigned to a particular group of standards. This is always
    uppercase.
@@ -87,7 +126,7 @@ Python
    The name of our favorite programming language is always capitalized.
 
 reST
-   For "reStructuredText," an easy to read, plaintext markup syntax
+   For "reStructuredText," an easy to read, plain-text markup syntax
    used to produce Python documentation.  When spelled out, it is
    always one word and both forms start with a lowercase 'r'.
 
@@ -106,15 +145,30 @@ Unix
    1970s.
 
 
-Use simple language
-===================
+Type names
+==========
 
-Avoid esoteric phrasing where possible.  Our audience is world-wide and may not
-be native English speakers.
+When writing the names of types in prose, indicate that the name is a type by
+writing the name of the type exactly as it appears in source, styled as a class
+reference or an unlinked class.  For example, refer to dict as ``:class:`dict`‌``
+or ``:class:`!dict`‌``.
 
-Don't use Latin abbreviations like "e.g." or "i.e." where English words will do,
-such as "for example" or "that is."
+Links should be used according to the :ref:`guidance on links <style-guide-links>`.
 
+Some type names are commonly understood ideas or nouns outside of Python.
+For example, "tuples" are a general programming concept, as distinct from the
+``tuple`` type.  When referring to general ideas, do not style the relevant word
+as a type.
+
+Many types have descriptive names which may or may not exactly match their type
+name.  For example, "context variables" describes ``contextvars.ContextVar``,
+and both "dict" and "dictonary" are used to describe ``dict``.  Once it is clear
+that the text refers to a specific type, use the naming which suits the context:
+in the case of ``dict``, any of "dict", "dictionary", or "``:class:`dict```" may
+be best.
+
+Descriptive names should be written as common nouns, meaning they are lowercase
+when not at the start of a sentence or phrase.
 
 .. index:: diataxis
 .. _diataxis:
@@ -162,6 +216,8 @@ Please consult the `Diátaxis <https://diataxis.fr/>`__ guide for more
 detail.
 
 
+.. _style-guide-links:
+
 Links
 =====
 
@@ -175,18 +231,19 @@ the second mention is more appropriate for a link.  Some units are long enough
 to have a few repeated links.  Use judgement to decide when a link will help
 the reader.
 
-Do not use a link when the link would point to the current unit.  It's natural
-to use the name of a function in the documentation for the function, but a link
-on that function name that simply reloads the section the user is already
-reading is useless and distracting.
+We use the :pypi:`linklint Sphinx extension <linklint>` to suppress two kinds
+of excessive links: references in a section to itself and duplicate references
+in a paragraph.  Previously, editors had to carefully use an exclamation mark
+in a Sphinx reference (``:func:`!map```) to prevent such links.
 
 Do not use links in section headers.  They distract from the title of the
 section.  The term will be mentioned in the paragraph text and can be linked
 from there.
 
-Sphinx provides ways to automatically add links to references, and a way to
+Sphinx automatically adds links to references, and provides a way to
 suppress the link.  Using roles like ``:func:`map``` will link to the
-documentation for ``map``.  You can suppress the link while keeping the
+documentation for ``map``.  If automatic link suppression isn't enough,
+you can suppress the link while keeping the
 semantic presentation of the function name by adding an exclamation point
 prefix: ``:func:`!map```.  See :ref:`roles` for more details.
 
@@ -224,8 +281,8 @@ For new documentation, do not use a byline (naming the author of the document).
 Explicit attribution tends to discourage other users from updating community
 documentation.
 
-Existing documentation with bylines will not be changed unless the author
-decides to do so. This is subject to change in the future.
+Existing bylines are for historical interest only. They do not imply ownership
+or necessary approvals, and do not prevent edits or updates by others.
 
 
 Pronunciation of dunder names

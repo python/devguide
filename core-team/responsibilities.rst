@@ -123,7 +123,7 @@ to better assess the sustainability of current contributions to CPython core
 development, and also serves as a referral list for organisations seeking
 commercial Python support from the core development community.
 
-And finally, enjoy yourself! Contributing to open source software should be fun
+And finally, enjoy yourself! Contributing to open-source software should be fun
 (overall). If you find yourself no longer enjoying the work then either take a
 break or figure out what you need to do to make it enjoyable again.
 

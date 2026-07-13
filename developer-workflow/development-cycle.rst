@@ -68,18 +68,21 @@ Maintenance branches
 A branch for a previous feature release, currently being maintained for bug
 fixes, or for the next feature release in its
 :ref:`beta <beta>` or :ref:`release candidate <rc>` stages.
-There is usually either one or two maintenance branches at any given time for
-Python 3.x.  After the final release of a new minor version (3.x.0), releases
+There are usually either one or two maintenance branches at any given time.
+After the final release of a new minor version (3.x.0), releases
 produced from a maintenance branch are called **bugfix** or **maintenance**
 releases; the terms are used interchangeably. These releases have a
 **micro version** number greater than zero.
 
-The only changes allowed to occur in a maintenance branch without debate are
-bug fixes, test improvements, and edits to the documentation.
+Changes backported to a maintenance branch fall into two groups.  *Low-risk*
+changes (bug fixes, test improvements, and documentation edits) may be
+backported without debate.  *Higher-risk* changes (new features, semantic
+changes, and performance improvements) can introduce regressions, so they are
+not backported as a matter of course.
 Also, a general rule for maintenance branches is that compatibility
 must not be broken at any point between sibling micro releases (3.12.1, 3.12.2,
-etc.).  For both rules, only rare exceptions are accepted and **must** be
-discussed first.
+etc.).  For both rules, only rare exceptions are accepted, and each requires a
+strong case agreed upon in discussion beforehand.
 
 Backporting changes reduces the risk of future conflicts.
 For documentation, it increases the visibility of improvements,
@@ -190,7 +193,7 @@ severe enough (for example, crashes) that they deserve fixing before the final r
 All other issues should be deferred to the next development cycle, since
 stability is the strongest concern at this point.
 
-While the goal is to have no code changes between a RC and a final release,
+While the goal is to have no code changes between an RC and a final release,
 there may be a need for final documentation or test fixes. Any such proposed
 changes should be discussed first with the release manager.
 
@@ -204,8 +207,7 @@ Final
 ^^^^^
 
 When a final release is being cut, only the release manager (RM) can make
-changes to the branch.  After the final release is published, the full
-:ref:`development cycle <stages>` starts again for the next minor version.
+changes to the branch.
 
 
 Repository administration
@@ -233,7 +235,10 @@ This includes, for example:
 Before adding a new repository to the organization, open a discussion to seek consensus
 in the `Committers Discourse category <https://discuss.python.org/c/committers/5>`__.
 Once people are satisfied with that, ask the `Python steering council <https://github.com/python/steering-council>`__
-to grant permission.
+to grant permission. Note that this process is not necessary for
+:ref:`docs translations <translation-repo>` following
+:pep:`PEP 545 <545#repository-for-po-files>`, which can be added at a
+core team member’s discretion.
 
 Note that several repositories remain in the organization for historic reasons,
 and would probably not be appropriate to add today.
@@ -269,8 +274,8 @@ This role is paramount to the security of the Python Language, Community, and
 Infrastructure.
 
 The Executive Director of the Python Software Foundation delegates authority on
-GitHub Organization Owner Status to Ee Durbin - Python Software
-Foundation Director of Infrastructure. Common reasons for this role are:
+GitHub Organization Owner Status to Jacob Coffee - Python Software
+Foundation Infrastructure Engineer. Common reasons for this role are:
 Infrastructure Staff Membership, Python Software Foundation General Counsel,
 and Python Software Foundation Staff as fallback.
 
@@ -294,16 +299,18 @@ Current owners
 +----------------------+--------------------------------+-----------------+
 | Donald Stufft        | Infrastructure Staff           | dstufft         |
 +----------------------+--------------------------------+-----------------+
-| Ee Durbin            | PSF Director of Infrastructure | ewdurbin        |
+| Ee Durbin            | Infrastructure Staff           | ewdurbin        |
 +----------------------+--------------------------------+-----------------+
 | Jacob Coffee         | PSF Infrastructure Engineer    | JacobCoffee     |
 +----------------------+--------------------------------+-----------------+
-| Łukasz Langa         | CPython Developer in Residence | ambv            |
+| Petr Viktorin        | CPython Developer in Residence | encukou         |
++----------------------+--------------------------------+-----------------+
+| Łukasz Langa         |                                | ambv            |
 +----------------------+--------------------------------+-----------------+
 
 Certain actions (blocking spam accounts, inviting new users, adjusting
 organization-level settings) can only `be performed`_ by owners of the Python
-organization on GitHub. The ``@python/organization-owners`` team can be
+organization on GitHub. The :gh-python-team:`organization-owners` team can be
 mentioned to request assistance from an organization owner.
 
 .. _be performed: https://docs.github.com/en/organizations/managing-peoples-access-to-your-organization-with-roles/roles-in-an-organization#permissions-for-organization-roles
@@ -344,7 +351,7 @@ Current administrators
 | Pablo Galindo      | Python 3.10 and 3.11 Release Manager,                    | pablogsal         |
 |                    | Maintainer of buildbot.python.org                        |                   |
 +--------------------+----------------------------------------------------------+-------------------+
-| Łukasz Langa       | PSF CPython Developer in Residence 2021-present          | ambv              |
+| Łukasz Langa       |                                                          | ambv              |
 +--------------------+----------------------------------------------------------+-------------------+
 | Brett Cannon       |                                                          | brettcannon       |
 +--------------------+----------------------------------------------------------+-------------------+
@@ -353,6 +360,8 @@ Current administrators
 | Mariatta Wijaya    | Maintainer of bedevere, blurb_it and miss-islington      | Mariatta          |
 +--------------------+----------------------------------------------------------+-------------------+
 | Seth Larson        | PSF Security Developer-in-Residence                      | sethmlarson       |
++--------------------+----------------------------------------------------------+-------------------+
+| Petr Viktorin      | CPython Developer in Residence                           | encukou           |
 +--------------------+----------------------------------------------------------+-------------------+
 
 Repository release manager role policy

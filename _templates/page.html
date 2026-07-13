@@ -1,0 +1,8 @@
+{% extends "!page.html" %}
+
+{% block extrahead %}
+{{ super() }}
+{% if not is_deployment_preview %}
+<script defer data-domain="devguide.python.org" src="https://analytics.python.org/js/script.outbound-links.js"></script>
+{% endif %}
+{% endblock %}

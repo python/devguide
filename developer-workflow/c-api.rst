@@ -104,7 +104,7 @@ This helps us ensure *newly added* API is consistent and maintainable.
 
 Also check with the C API WG before requiring a C feature not present in C99.
 While the *public* docs only promise compatibility with C11, in practice
-we only intruduce C11 features individually as needed.
+we only introduce C11 features individually as needed.
 
 .. _decisions repo: https://github.com/capi-workgroup/decisions/issues
 
@@ -387,7 +387,7 @@ Guidelines for adding to the Limited API
     details involve:
 
     - The GIL
-    - :ref:`Garbage collection <gc>`
+    - Garbage collection
     - Memory layout of PyObject, lists/tuples and other structures
 
 If following these guidelines would hurt performance, add a fast function
@@ -395,9 +395,8 @@ If following these guidelines would hurt performance, add a fast function
 API.
 
 If anything is unclear, or you have a good reason to break the guidelines,
-consider discussing the change at the `capi-sig`_ mailing list.
-
-.. _capi-sig: https://mail.python.org/mailman3/lists/capi-sig.python.org/
+consider discussing the change in the `C API category
+<https://discuss.python.org/c/core-dev/c-api/>`__ on Discourse.
 
 Adding a new definition to the Limited API
 ------------------------------------------

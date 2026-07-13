@@ -8,5 +8,4 @@ Issues and triaging
    issue-tracker
    triaging
    labels
-   github-bpo-faq
    triage-team

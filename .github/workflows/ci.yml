@@ -5,6 +5,8 @@ on: [pull_request, push, workflow_dispatch]
 env:
   FORCE_COLOR: 1
 
+permissions: {}
+
 jobs:
   test:
     name: Check build, markup, and links
@@ -12,12 +14,15 @@ jobs:
     timeout-minutes: 10
 
     steps:
-      - uses: actions/checkout@v6
-      - uses: actions/setup-python@v6
+      - uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0 # v7.0.0
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@a309ff8b426b58ec0e2a45f0f869d46889d02405 # v6.2.0
         with:
           python-version: "3"
       - name: Install uv
-        uses: hynek/setup-cached-uv@v2
+        uses: hynek/setup-cached-uv@4300ec2180bc77d705e626a34e381b81a4772c51 # v2.5.0
+      - uses: sphinx-doc/github-problem-matcher@1f74d6599f4a5e89a20d3c99aab4e6a70f7bda0f # v1.1
       - name: Build docs
         run: make html
       - name: Link check

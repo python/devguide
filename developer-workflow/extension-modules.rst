@@ -547,7 +547,7 @@ Now that the configuration is in place, it remains to compile the project:
 
 .. tip::
 
-   Use ``make -jN`` to speed-up compilation by utilizing as many CPU cores
+   Use ``make -jN`` to speed up compilation by utilizing as many CPU cores
    as possible, where *N* is as many CPU cores you want to spare (and have
    memory for). Be careful using ``make -j`` with no argument, as this puts
    no limit on the number of jobs, and compilation can sometimes use up a
@@ -574,7 +574,7 @@ Now that the configuration is in place, it remains to compile the project:
   :mod:`!_foo` discoverable and importable via ``import _foo``.
 
 * The final ``make`` step is generally not needed since the previous ``make``
-  invokations may completely rebuild the project, but it could be needed in
+  invocations may completely rebuild the project, but it could be needed in
   some specific cases.
 
 Troubleshooting

@@ -225,7 +225,7 @@ Explicit markup
 ---------------
 
 "Explicit markup" is used in reST for most constructs that need special
-handling, such as footnotes, specially-highlighted paragraphs, comments, and
+handling, such as footnotes, specially highlighted paragraphs, comments, and
 generic directives.
 
 An explicit markup block begins with a line starting with ``..`` followed by
@@ -349,22 +349,6 @@ they are used in the Python documentation.
    <https://www.sphinx-doc.org/>`__.
 
 
-Meta-information markup
------------------------
-
-.. describe:: sectionauthor
-
-   Identifies the author of the current section.  The argument should include
-   the author's name such that it can be used for presentation (though it isn't)
-   and email address.  The domain name portion of the address should be lower
-   case.  Example::
-
-      .. sectionauthor:: Guido van Rossum <guido@python.org>
-
-   Currently, this markup isn't reflected in the output in any way, but it helps
-   keep track of contributions.
-
-
 Module-specific markup
 ----------------------
 
@@ -373,17 +357,11 @@ module being documented.  Each module should be documented in its own file.
 Normally this markup appears after the title heading of that file; a typical
 file might start like this::
 
-   :mod:`parrot` -- Dead parrot access
-   ===================================
+   :mod:`!parrot` -- Dead parrot access
+   ====================================
 
    .. module:: parrot
-      :platform: Unix, Windows
       :synopsis: Analyze and reanimate dead parrots.
-   .. moduleauthor:: Eric Cleese <eric@python.invalid>
-   .. moduleauthor:: John Idle <john@python.invalid>
-
-As you can see, the module-specific markup consists of two directives, the
-``module`` directive and the ``moduleauthor`` directive.
 
 .. describe:: module
 
@@ -391,23 +369,11 @@ As you can see, the module-specific markup consists of two directives, the
    or submodule. The name should be fully qualified (that is, including the
    package name for submodules).
 
-   The ``platform`` option, if present, is a comma-separated list of the
-   platforms on which the module is available (if it is available on all
-   platforms, the option should be omitted).  The keys are short identifiers;
-   examples that are in use include "IRIX", "Mac", "Windows", and "Unix".  It is
-   important to use a key which has already been used when applicable.
-
    The ``synopsis`` option should consist of one sentence describing the
    module's purpose -- it is currently only used in the Global Module Index.
 
    The ``deprecated`` option can be given (with no value) to mark a module as
    deprecated; it will be designated as such in various locations then.
-
-.. describe:: moduleauthor
-
-   The ``moduleauthor`` directive, which can appear multiple times, names the
-   authors of the module code, just like ``sectionauthor`` names the author(s)
-   of a piece of documentation.  It too does not result in any output currently.
 
 .. note::
 
@@ -741,10 +707,9 @@ where simpler markup should be used:
 
 In addition, the CPython documentation defines a few custom roles:
 
-* ``:cve:`YYYY-NNNNN```: link to a Common Vulnerabilities and Exposures entry.
-* ``:cwe:`NNN```: link to a Common Weakness Enumeration entry.
 * ``:gh:`ID```: link to a GitHub issue.
 * ``:issue:`ID```: link to a bugs.python.com issue.
+* ``:oss-fuzz:`ID```: link to an OSS-Fuzz issue.
 * ``:pypi:`NAME```: link to a project on PyPI.
 * ``:source:`PATH```: link to a source file on GitHub.
 
@@ -1004,6 +969,16 @@ in a different style:
 
 The following roles generate external links:
 
+.. describe:: cve
+
+   Link to a `Common Vulnerabilities and Exposures <https://www.cve.org/>`__
+   entry. You can link to a specific section by using ``:cve:`number#anchor```.
+
+.. describe:: cwe
+
+   Link to a `Common Weakness Enumeration <https://cwe.mitre.org/>`__ entry.
+   You can link to a specific section by using ``:cwe:`number#anchor```.
+
 .. describe:: pep
 
    A reference to a Python Enhancement Proposal.  This generates appropriate
@@ -1056,6 +1031,17 @@ Paragraph-level markup
 
 These directives create short paragraphs and can be used inside information
 units as well as normal text:
+
+.. describe:: availability
+
+   This directive documents the platforms on which a module or feature
+   is available. For example::
+
+      .. availability:: Unix, not WASI, not Android.
+
+   ::
+
+      .. availability:: Linux >= 3.0 with glibc >= 2.14.
 
 .. describe:: note
 
@@ -1166,6 +1152,19 @@ units as well as normal text:
    Example::
 
       .. deprecated-removed:: next 4.0
+
+.. describe:: soft-deprecated
+
+   Indicates the version from which the described feature is :term:`soft deprecated`.
+
+   There is one required argument: the version from which the feature is soft
+   deprecated.
+   Use the word ``next`` to indicate the API will be first soft deprecated in
+   the upcoming release.
+
+   Example::
+
+      .. soft-deprecated:: next
 
 .. describe:: impl-detail
 
