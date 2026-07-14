@@ -67,7 +67,7 @@ and relevant for porting work and fixing platform-specific issues
    * - \- Fedora
      - :github-user:`hroncok`, :github-user:`befeleme`
      - `Config & patches <https://src.fedoraproject.org/rpms/python3.15/tree/rawhide>`_,
-       `Bugs <https://bugzilla.redhat.com/buglist.cgi?bug_status=__open__&classification=Fedora&columnlist=product%2Ccomponent%2Cassigned_to%2Cbug_status%2Cshort_desc%2Cchangeddate%2Cbug_severity&f1=component&o1=regexp&order=status%2C%20assigned_to%2C%20id%2C%20&product=Fedora&product=Fedora%20EPEL&query_format=advanced&v1=python3\.\d%2B%24>`__,
+       `Bugs <https://bugzilla.redhat.com/buglist.cgi?bug_status=__open__&classification=Fedora&columnlist=product%2Ccomponent%2Cassigned_to%2Cbug_status%2Cshort_desc%2Cchangeddate%2Cbug_severity&f1=component&o1=regexp&order=status%2C%20assigned_to%2C%20id%2C%20&product=Fedora&product=Fedora%20EPEL&query_format=advanced&v1=python3%5C.%5Cd%2B%24>`__,
        `Maintenance guide <https://hackmd.io/9f64YNIZTCy0ZzKb5wKtqQ?view>`__
    * - \- Debian
      - :github-user:`stefanor`
