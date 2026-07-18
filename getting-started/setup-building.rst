@@ -742,7 +742,7 @@ Platforms/Apple --help`` for more details.
 
 You can also run the test suite in Xcode itself. This is required if you want to
 run on a physical device. See the `iOS README
-<https://github.com/python/cpython/blob/main/iOS/README.rst#debugging-test-failures>`__
+<https://github.com/python/cpython/blob/main/Platforms/Apple/iOS/README.md#debugging-test-failures>`__
 for details.
 
 .. c_compile_and_build_end
