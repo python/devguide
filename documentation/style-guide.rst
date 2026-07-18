@@ -116,7 +116,7 @@ free-threaded
 open source
    Follow the usual English rules for compound words. When used as an
    adjective, hyphenate: "open-source software". When used as a noun, don't use
-   a hypen: "open source is a collaboration model.."
+   a hyphen: "open source is a collaboration model.."
 
 POSIX
    The name assigned to a particular group of standards. This is always
