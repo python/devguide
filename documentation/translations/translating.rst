@@ -393,8 +393,6 @@ messages, regardless of file paths. To use it, first install the package:
 Then, merge translations from a specific commit (replace :samp:`{COMMIT_HASH}`
 with the commit hash from before the files were moved):
 
-.. TODO: Provide Windows instructions.
-
 .. tab:: Unix
 
     .. code-block:: bash
@@ -415,6 +413,27 @@ with the commit hash from before the files were moved):
 
         # Clean up temporary dir
         rm -rf /tmp/old-po-files
+
+.. tab:: Windows
+
+    .. code-block:: dosbatch
+
+        rem These commands are to be run in the root of the translation repo
+
+        rem Check out a commit before the move
+        git checkout COMMIT_HASH -- .
+
+        rem Copy translations to a temporary dir
+        xcopy . %TEMP%\old-po-files\ /E /I /Q /Y
+
+        rem Return to the current version
+        git checkout HEAD -- .
+
+        rem Merge translations from temporary dir back in
+        pomerge --from "%TEMP%\old-po-files\**\*.po" --to "**\*.po" --clear
+
+        rem Clean up temporary dir
+        rmdir /S /Q %TEMP%\old-po-files
 
 After running ``pomerge``, review the changes and commit the updated files.
 You may also need to rewrap the lines (see :pypi:`powrap`).
