@@ -4,6 +4,8 @@
 Translating
 ===========
 
+.. include:: /include/activate-tab.rst
+
 .. highlight::  rest
 
 Several documentation translations are already in production and can be found
