@@ -411,6 +411,7 @@ with the commit hash from before the files were moved):
         git checkout HEAD -- .
 
         # Merge translations from temporary dir back in
+        shopt -s globstar
         pomerge --from /tmp/old-po-files/**/*.po --to **/*.po --clear
 
         # Clean up temporary dir
@@ -431,11 +432,17 @@ with the commit hash from before the files were moved):
         rem Return to the current version
         git checkout HEAD -- .
 
-        rem Merge translations from temporary dir back in
-        pomerge --from "%TEMP%\old-po-files\**\*.po" --to "**\*.po" --clear
+        rem Learn translations from temporary dir
+        for /R "%TEMP%\old-po-files" %F in (*.po) do pomerge --from "%F"
+
+        rem Apply translations to current files
+        for /R . %F in (*.po) do pomerge --to "%F"
+
+        rem Clean up translation memory
+        pomerge --clear
 
         rem Clean up temporary dir
-        rmdir /S /Q %TEMP%\old-po-files
+        rmdir /S /Q "%TEMP%\old-po-files"
 
 After running ``pomerge``, review the changes and commit the updated files.
 You may also need to rewrap the lines (see :pypi:`powrap`).
