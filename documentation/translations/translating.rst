@@ -411,7 +411,7 @@ with the commit hash from before the files were moved):
         git checkout HEAD -- .
 
         # Merge translations from temporary dir back in
-        shopt -s globstar
+        shopt -s globstar  # To find po files recursively, use the globstar option of bash, or your shell equivalent
         pomerge --from /tmp/old-po-files/**/*.po --to **/*.po --clear
 
         # Clean up temporary dir
@@ -419,30 +419,27 @@ with the commit hash from before the files were moved):
 
 .. tab:: Windows
 
-    .. code-block:: dosbatch
+    .. code-block:: powershell
 
-        rem These commands are to be run in the root of the translation repo
+        # These commands are to be run in the root of the translation repo
 
-        rem Check out a commit before the move
+        # Check out a commit before the move
         git checkout COMMIT_HASH -- .
 
-        rem Copy translations to a temporary dir
-        xcopy . %TEMP%\old-po-files\ /E /I /Q /Y
+        # Copy translations to a temporary dir
+        Copy-Item -Path . -Destination $env:TEMP\old-po-files -Recurse -Force
 
-        rem Return to the current version
+        # Return to the current version
         git checkout HEAD -- .
 
-        rem Learn translations from temporary dir
-        for /R "%TEMP%\old-po-files" %F in (*.po) do pomerge --from "%F"
+        # Merge translations from temporary dir back in
+        # We use PowerShell's Get-ChildItem to expand wildcards correctly
+        $old_files = (Get-ChildItem -Path $env:TEMP\old-po-files -Filter *.po -Recurse).FullName
+        $new_files = (Get-ChildItem -Filter *.po -Recurse).FullName
+        pomerge --from $old_files --to $new_files --clear
 
-        rem Apply translations to current files
-        for /R . %F in (*.po) do pomerge --to "%F"
-
-        rem Clean up translation memory
-        pomerge --clear
-
-        rem Clean up temporary dir
-        rmdir /S /Q "%TEMP%\old-po-files"
+        # Clean up temporary dir
+        Remove-Item -Path $env:TEMP\old-po-files -Recurse -Force
 
 After running ``pomerge``, review the changes and commit the updated files.
 You may also need to rewrap the lines (see :pypi:`powrap`).
