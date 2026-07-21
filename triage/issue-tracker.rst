@@ -1,31 +1,31 @@
 .. _issue-tracker:
 .. _tracker:
 
-=============
-Issue tracker
-=============
-
+=======================
 Using the issue tracker
 =======================
 
-If you think you have found a bug in Python, you can report it to the
-`issue tracker`_. The `issue tracker`_ is now hosted on GitHub, alongside
-the codebase and pull requests.  Documentation bugs can also be reported there.
-
-If you would like to file an issue about this devguide, please do so in the
-:github:`devguide repository <python/devguide>`.
+The `issue tracker`_ is hosted on GitHub, alongside the codebase and pull requests.
 
 .. note::
-    Prior to moving the issue tracker to GitHub,
-    Python used to use a dedicated `Roundup`_ instance as its issue tracker.
-    That `old bug tracker`_ was hosted under the domain ``bugs.python.org``
-    (sometimes called ``bpo`` for short). A read-only version is
-    available on that domain for historical purposes. All ``bpo`` data has been
-    migrated to the current `issue tracker`_ on GitHub.
 
-    If you're familiar with ``bpo`` and would like to learn more about GitHub
-    issues, please read this page, and the :ref:`triaging` page as they
-    provide good introductory material.
+   Prior to moving the issue tracker to GitHub,
+   Python used to use a dedicated `Roundup`_ instance as its issue tracker.
+   That `old bug tracker`_ was hosted under the domain ``bugs.python.org``
+   (sometimes called :dfn:`bpo` or :dfn:`BPO` for short). A read-only version is
+   available on that domain for historical purposes. All ``bpo`` data has been
+   migrated to the current issue tracker on GitHub.
+
+
+Reporting an issue
+==================
+
+If you think you have found a bug in Python, you can report it to the
+`issue tracker`_.  Documentation bugs can also be reported there.
+
+If you would like to file an issue about this devguide, please do so in the
+:github:`devguide repository <python/devguide>` instead.
+
 
 Checking if a bug already exists
 --------------------------------
@@ -44,18 +44,9 @@ To see if an issue already exists, search the bug database using the search box
 above the list of bugs on the issues page. See :ref:`searching-gh-issues`
 for more information.
 
-.. _searching-gh-issues:
 
-How to search issues?
----------------------
-
-Use the `GitHub search syntax`_ or the interactive `advanced search`_ form
-that generates search queries for you.
-
-Reporting an issue
-------------------
-
-.. XXX: This section is slightly out of date after recent tracker changes.
+Creating a new issue
+--------------------
 
 If the problem you're reporting is not already in the `issue tracker`_, you
 can report it using the green :guilabel:`New issue` button on the right of the search
@@ -71,14 +62,15 @@ available choices include, for example:
 * **Report a security vulnerability**: privately report a security vulnerability.
 
 Depending on your choice, a dedicated form template will appear.
-In particular, you'll notice that the last button actually takes you to
+In particular, you'll notice that one of the buttons actually takes you to
 the `Python Discourse`_ (``discuss.python.org``),
 where many Python-related discussions take place.
 
 The submission form has only two fields that you need to fill:
 
 * in the **Title** field, enter a *very* short description of the problem;
-  less than ten words is good;
+  less than ten words is good; don't include "labels" like ``[feature]``
+  as we use GitHub labels;
 * in the **Write** field, describe the problem in detail using hints from
   the template that was put in that field for you. Be sure to include what
   you expected to happen, what did happen, and how to replicate the
@@ -93,9 +85,30 @@ Use the :ref:`experts` to know who wants to be
 tagged or assigned for specific areas.
 
 There are a number of additional fields like **Assignees**, **Labels**,
-and **Projects**. Those are filled by triagers and core
-developers and are covered in the :ref:`triaging` page. You don't need
+and **Projects**. Those are filled by triagers and core team members
+and are covered in the :ref:`triaging` page. You don't need
 to worry about those when reporting issues as a Python user.
+
+
+Working with issues
+===================
+
+This section covers common tasks on the issue tracker, such as
+searching, commenting on, and following issues.
+
+.. _searching-gh-issues:
+
+Searching issues
+----------------
+
+Use the `GitHub search syntax`_ or the interactive `advanced search`_ form
+that generates search queries for you.
+
+You can also narrow down the results by filtering by label, either with
+the :guilabel:`Labels` dropdown above the list of issues or with the
+:samp:`label:{name}` search qualifier.  See :ref:`gh-labels` for an
+overview of the labels used in the CPython repository.
+
 
 Formatting issues and comments
 ------------------------------
@@ -105,8 +118,9 @@ There is a wonderful `beginner guide to writing and formatting on GitHub
 Highly recommended.
 
 One pro-tip we can sell you right here is that if you want to paste
-some longer log as a comment, attach a file instead (see how below).
-If you still insist on pasting it in your comment, do it like this::
+some longer log as a comment, :ref:`attach a file instead <attaching-to-gh-issues>`.
+If you still insist on pasting it in your comment, wrap it with a
+`collapsed section`_ using ``<details></details>`` for better readability::
 
     <details>
     <summary>This is the summary text, click me to expand</summary>
@@ -116,15 +130,17 @@ If you still insist on pasting it in your comment, do it like this::
     </details>
 
 
-How to attach files to an issue?
---------------------------------
+.. _attaching-to-gh-issues:
+
+Attaching files
+---------------
 
 Drag them into the comment field, wait until the file uploads, and GitHub
 will automatically put a link to your file in your comment text.
 
 
-Adding special links
---------------------
+Adding links
+------------
 
 The following abbreviations can be used in a comment to generate a link:
 
@@ -133,6 +149,14 @@ The following abbreviations can be used in a comment to generate a link:
 * :samp:`BPO-{NNN}`: to link to a bugs.python.org issue;
 
 See also the `list of autolinks supported by GitHub <autolinks_>`_.
+
+To link to files in the repository, use Markdown links.  If you link to
+the default GitHub path, the file will link to the latest current
+version on the given branch.
+
+You can get a permanent link to a given revision of a given file by
+`pressing "y" <https://docs.github.com/en/repositories/working-with-files/using-files/getting-permanent-links-to-files>`__.
+
 
 Following issues
 ----------------
@@ -145,28 +169,19 @@ button in the sidebar.  Note that you are automatically subscribed to
 issues you create or comment on.
 
 
-How to link to file paths in the repository when writing comments?
-------------------------------------------------------------------
-
-Use Markdown links. If you link to the default GitHub path, the file
-will link to the latest current version on the given branch.
-
-You can get a permanent link to a given revision of a given file by
-`pressing "y" <https://docs.github.com/en/repositories/working-with-files/using-files/getting-permanent-links-to-files>`__.
-
 Tracking dependencies and duplicates
 ------------------------------------
 
-.. XXX These no longer work, the feature has been retired.
-
-It is possible to use `checklists`_ to track dependencies or,
-in case of meta-issues, to link to the other related issues.
+It is possible to `create relationships between issues <issue-rel_>`_ to track
+dependencies and in case of meta-issues, to `add sub-issues <sub-issues_>`_
+to link to the other related issues.
 
 By writing :samp:`Duplicate of #{NNN}` in a comment, you can
 `mark issues and PRs as duplicates <duplicates_>`_.
 
-What on earth is a "mannequin"?
--------------------------------
+
+Mannequin accounts
+------------------
 
 For old issues migrated to GitHub from bugs.python.org (BPO) where the authors or commenters
 were not core team members, we opted not to link to their GitHub accounts
@@ -181,8 +196,8 @@ name in their BPO profile, we use that. Otherwise, their classic BPO
 username is used instead.
 
 
-Disagreement with a resolution on the issue tracker
-===================================================
+Disagreement with a resolution
+==============================
 
 As humans, we will have differences of opinions from time to time. First and
 foremost, please be respectful that care, thought, and volunteer time went into
@@ -210,7 +225,9 @@ reason either as ``complete`` or ``not planned``.
 .. _Roundup: https://www.roundup-tracker.org/
 .. _Python Discourse: https://discuss.python.org/
 .. _autolinks: https://docs.github.com/en/get-started/writing-on-github/working-with-advanced-formatting/autolinked-references-and-urls
-.. _checklists: https://docs.github.com/en/get-started/writing-on-github/working-with-advanced-formatting/about-task-lists
+.. _collapsed section: https://docs.github.com/en/get-started/writing-on-github/working-with-advanced-formatting/organizing-information-with-collapsed-sections
 .. _duplicates: https://docs.github.com/en/issues/tracking-your-work-with-issues/administering-issues/marking-issues-or-pull-requests-as-a-duplicate
+.. _issue-rel: https://docs.github.com/en/issues/tracking-your-work-with-issues/using-issues/creating-issue-dependencies
+.. _sub-issues: https://docs.github.com/en/issues/tracking-your-work-with-issues/using-issues/adding-sub-issues
 .. _Core Development Discourse category: https://discuss.python.org/c/core-dev/23
 .. _old bug tracker: https://bugs.python.org/
