@@ -53,8 +53,23 @@ are granted through these steps:
 
 #. Once the candidate has provided the pertinent details, the approver will:
 
-   - Enable the various new privileges.
-   - Remove the new committer from the triage team, if applicable.
+   - Enable new permissions for the new committer, and remove redundant ones
+     if applicable:
+
+     .. list-table::
+        :header-rows: 1
+        :align: left
+
+        * - Service
+          - Add to
+          - Remove from
+        * - GitHub
+          - :gh-python-team:`python-core`
+          - :gh-python-team:`python-triage`
+        * - Discord
+          - "Core Developer"
+          - "Triager"
+
    - Add their details to `🔒 python/voters <https://github.com/python/voters>`__.
    - Once the python/voters update is merged, regenerate the public team membership
      list at :ref:`developers`.
