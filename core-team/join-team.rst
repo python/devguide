@@ -80,7 +80,8 @@ are granted through these steps:
         * - Docs Discord
           - "Core Team"
           - ---
-          - ``@encukou``
+          - | ``@encukou`` (Petr)
+            | ``@justbinary`` (Stan)
 
      (Some of these are unofficial spaces managed as a courtesy.
      Adjust the list to taste.)
