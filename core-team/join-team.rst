@@ -66,6 +66,9 @@ are granted through these steps:
         * - GitHub
           - :gh-python-team:`python-core`
           - :gh-python-team:`python-triage`
+        * - Discourse
+          - `committers <https://discuss.python.org/g/committers>`__
+          - ---
         * - Discord
           - "Core Developer"
           - "Triager"
