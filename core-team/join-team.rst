@@ -54,7 +54,8 @@ are granted through these steps:
 #. Once the candidate has provided the pertinent details, the approver will:
 
    - Enable new permissions for the new committer, and remove redundant ones
-     if applicable:
+     if applicable.
+     If you don't have admin rights, ping the given contact.
 
      .. list-table::
         :header-rows: 1
@@ -63,15 +64,26 @@ are granted through these steps:
         * - Service
           - Add to
           - Remove from
+          - Contact
         * - GitHub
           - :gh-python-team:`python-core`
           - :gh-python-team:`python-triage`
+          - :gh-python-team:`organization-owners`
         * - Discourse
           - `committers <https://discuss.python.org/g/committers>`__
           - ---
-        * - Discord
+          - `admins <https://discuss.python.org/g/admins>`__
+        * - Core Discord
           - "Core Developer"
           - "Triager"
+          - ``@Server Admin``
+        * - Docs Discord
+          - "Core Team"
+          - ---
+          - ``@encukou``
+
+     (Some of these are unofficial spaces managed as a courtesy.
+     Adjust the list to taste.)
 
    - Add their details to `🔒 python/voters <https://github.com/python/voters>`__.
    - Once the python/voters update is merged, regenerate the public team membership
