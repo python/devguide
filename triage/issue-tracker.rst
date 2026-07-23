@@ -5,7 +5,6 @@
 Issue tracker
 =============
 
-
 Using the issue tracker
 =======================
 
@@ -13,8 +12,8 @@ If you think you have found a bug in Python, you can report it to the
 `issue tracker`_. The `issue tracker`_ is now hosted on GitHub, alongside
 the codebase and pull requests.  Documentation bugs can also be reported there.
 
-If you would like to file an issue about this devguide, please do so at the
-`devguide repo`_.
+If you would like to file an issue about this devguide, please do so in the
+:github:`devguide repository <python/devguide>`.
 
 .. note::
     Prior to moving the issue tracker to GitHub,
@@ -26,8 +25,7 @@ If you would like to file an issue about this devguide, please do so at the
 
     If you're familiar with ``bpo`` and would like to learn more about GitHub
     issues, please read this page, and the :ref:`triaging` page as they
-    provide good introductory material. There is also a :ref:`gh-faq`
-    document to answer some of the more popular questions.
+    provide good introductory material.
 
 Checking if a bug already exists
 --------------------------------
@@ -43,11 +41,21 @@ already been reported.  Checking if the problem is an existing issue will:
   is needed
 
 To see if an issue already exists, search the bug database using the search box
-above the list of bugs on the issues page. A form-based `advanced search`_ query
-builder is also available on GitHub to help creating the text query you need.
+above the list of bugs on the issues page. See :ref:`searching-gh-issues`
+for more information.
+
+.. _searching-gh-issues:
+
+How to search issues?
+---------------------
+
+Use the `GitHub search syntax`_ or the interactive `advanced search`_ form
+that generates search queries for you.
 
 Reporting an issue
 ------------------
+
+.. XXX: This section is slightly out of date after recent tracker changes.
 
 If the problem you're reporting is not already in the `issue tracker`_, you
 can report it using the green :guilabel:`New issue` button on the right of the search
@@ -89,6 +97,32 @@ and **Projects**. Those are filled by triagers and core
 developers and are covered in the :ref:`triaging` page. You don't need
 to worry about those when reporting issues as a Python user.
 
+Formatting issues and comments
+------------------------------
+
+There is a wonderful `beginner guide to writing and formatting on GitHub
+<https://docs.github.com/en/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github>`__.
+Highly recommended.
+
+One pro-tip we can sell you right here is that if you want to paste
+some longer log as a comment, attach a file instead (see how below).
+If you still insist on pasting it in your comment, do it like this::
+
+    <details>
+    <summary>This is the summary text, click me to expand</summary>
+
+    Here goes the long, long text.
+    It will be collapsed by default!
+    </details>
+
+
+How to attach files to an issue?
+--------------------------------
+
+Drag them into the comment field, wait until the file uploads, and GitHub
+will automatically put a link to your file in your comment text.
+
+
 Adding special links
 --------------------
 
@@ -104,19 +138,47 @@ Following issues
 ----------------
 
 If you want to subscribe yourself to an issue, click the :guilabel:`🔔 Subscribe`
-button in the sidebar.  Similarly, if you were tagged by somebody else but
-decided this issue is not for you, click the :guilabel:`🔕 Unsubscribe`
+button in the sidebar.  Subscribe another person to the issue by tagging them
+in a comment with ``@username``.  If you were tagged by somebody else
+but decided this issue is not for you, click the :guilabel:`🔕 Unsubscribe`
 button in the sidebar.  Note that you are automatically subscribed to
-issues you created.
+issues you create or comment on.
+
+
+How to link to file paths in the repository when writing comments?
+------------------------------------------------------------------
+
+Use Markdown links. If you link to the default GitHub path, the file
+will link to the latest current version on the given branch.
+
+You can get a permanent link to a given revision of a given file by
+`pressing "y" <https://docs.github.com/en/repositories/working-with-files/using-files/getting-permanent-links-to-files>`__.
 
 Tracking dependencies and duplicates
 ------------------------------------
+
+.. XXX These no longer work, the feature has been retired.
 
 It is possible to use `checklists`_ to track dependencies or,
 in case of meta-issues, to link to the other related issues.
 
 By writing :samp:`Duplicate of #{NNN}` in a comment, you can
 `mark issues and PRs as duplicates <duplicates_>`_.
+
+What on earth is a "mannequin"?
+-------------------------------
+
+For old issues migrated to GitHub from bugs.python.org (BPO) where the authors or commenters
+were not core team members, we opted not to link to their GitHub accounts
+directly. Users not in the `python organization on GitHub
+<https://github.com/orgs/python/people>`__ might not like comments to
+appear under their name from an automated import.  Others never linked GitHub on
+BPO in the first place so linking their account, if any, would be impossible.
+
+In those cases a "mannequin" account is present to help follow the conversation
+that happened in the issue. In case the user did share their GitHub account
+name in their BPO profile, we use that. Otherwise, their classic BPO
+username is used instead.
 
 
 Disagreement with a resolution on the issue tracker
@@ -141,15 +203,10 @@ As a reminder, issues closed by a core developer have already been carefully
 considered. Please do not reopen a closed issue. An issue can be closed with
 reason either as ``complete`` or ``not planned``.
 
-.. seealso::
-
-   `The Python issue tracker <issue tracker_>`_
-      Where to report issues about Python.
-
 
 .. _issue tracker: https://github.com/python/cpython/issues
 .. _advanced search: https://github.com/search/advanced
-.. _devguide repo: https://github.com/python/devguide/issues
+.. _GitHub search syntax: https://docs.github.com/en/search-github/getting-started-with-searching-on-github/understanding-the-search-syntax
 .. _Roundup: https://www.roundup-tracker.org/
 .. _Python Discourse: https://discuss.python.org/
 .. _autolinks: https://docs.github.com/en/get-started/writing-on-github/working-with-advanced-formatting/autolinked-references-and-urls

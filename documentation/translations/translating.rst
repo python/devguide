@@ -371,7 +371,7 @@ The coordination team for my language is inactive, what do I do?
 
 If you would like to coordinate, open a pull request in the
 `devguide <https://github.com/python/devguide>`__ adding yourself to the table
-at the top of this page, and ping ``@python/editorial-board``.
+at the top of this page, and ping :gh-python-team:`editorial-board`.
 
 
 How do I merge translations back in after docs are moved?
