@@ -30,8 +30,8 @@ After a candidate has demonstrated consistent contributions, commit privileges
 are granted through these steps:
 
 #. A core team member (submitter, usually the mentor) starts a poll
-   (see the :ref:`template <coredev-template>` below) in
-   the `Committers category`_ on the `Python Discourse`_.
+   (see the :ref:`template <coredev-template>` below) with
+   the `Promotion tag in the Committers category`_ on the `Python Discourse`_.
 
    - open for 7 days
    - results shown only upon closing
@@ -53,16 +53,46 @@ are granted through these steps:
 
 #. Once the candidate has provided the pertinent details, the approver will:
 
-   - Enable the various new privileges.
-   - Remove the new committer from the triage team, if applicable.
+   - Enable new permissions for the new committer, and remove redundant ones
+     if applicable.
+     If you don't have admin rights, ping the given contact.
+
+     .. list-table::
+        :header-rows: 1
+        :align: left
+
+        * - Service
+          - Add to
+          - Remove from
+          - Contact
+        * - GitHub
+          - :gh-python-team:`python-core`
+          - :gh-python-team:`python-triage`
+          - :gh-python-team:`organization-owners`
+        * - Discourse
+          - `committers <https://discuss.python.org/g/committers>`__
+          - ---
+          - `admins <https://discuss.python.org/g/admins>`__
+        * - Core Discord
+          - "Core Developer"
+          - "Triager"
+          - ``@Server Admin``
+        * - Docs Discord
+          - "Core Team"
+          - ---
+          - | ``@encukou`` (Petr)
+            | ``@justbinary`` (Stan)
+
+     (Some of these are unofficial spaces managed as a courtesy.
+     Adjust the list to taste.)
+
    - Add their details to `🔒 python/voters <https://github.com/python/voters>`__.
    - Once the python/voters update is merged, regenerate the public team membership
      list at :ref:`developers`.
      See "Public list of members" in the ``voters`` README.
-   - Post an announcement in the `Committers Discourse category
-     <https://discuss.python.org/c/committers/5>`__.  The past few announcements
-     were in the form of a separate post on the already open topic with
-     the poll.
+   - Post an announcement to the Discourse topic with the promotional poll.
+     The topic should be in the `Promotion tag in the Committers category`_.
+
 
 Getting a python.org email address
 ----------------------------------
@@ -114,3 +144,4 @@ The important options in the poll builder set to get this result:
 .. _Code of Conduct: https://policies.python.org/python.org/code-of-conduct/
 .. _Committers category: https://discuss.python.org/c/committers/5
 .. _Python Discourse: https://discuss.python.org
+.. _Promotion tag in the Committers category: https://discuss.python.org/tags/c/committers/5/promotion/31
