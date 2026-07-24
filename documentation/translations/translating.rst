@@ -4,6 +4,8 @@
 Translating
 ===========
 
+.. include:: /include/activate-tab.rst
+
 .. highlight::  rest
 
 There are several documentation translations already
@@ -393,8 +395,6 @@ messages, regardless of file paths. To use it, first install the package:
 Then, merge translations from a specific commit (replace :samp:`{COMMIT_HASH}`
 with the commit hash from before the files were moved):
 
-.. TODO: Provide Windows instructions.
-
 .. tab:: Unix
 
     .. code-block:: bash
@@ -411,10 +411,35 @@ with the commit hash from before the files were moved):
         git checkout HEAD -- .
 
         # Merge translations from temporary dir back in
+        shopt -s globstar  # To find po files recursively, use the globstar option of bash, or your shell equivalent
         pomerge --from /tmp/old-po-files/**/*.po --to **/*.po --clear
 
         # Clean up temporary dir
         rm -rf /tmp/old-po-files
+
+.. tab:: Windows
+
+    .. code-block:: powershell
+
+        # These commands are to be run in the root of the translation repo
+
+        # Check out a commit before the move
+        git checkout COMMIT_HASH -- .
+
+        # Copy translations to a temporary dir
+        Copy-Item -Path . -Destination $env:TEMP\old-po-files -Recurse -Force
+
+        # Return to the current version
+        git checkout HEAD -- .
+
+        # Merge translations from temporary dir back in
+        # We use PowerShell's Get-ChildItem to expand wildcards correctly
+        $old_files = (Get-ChildItem -Path $env:TEMP\old-po-files -Filter *.po -Recurse).FullName
+        $new_files = (Get-ChildItem -Filter *.po -Recurse).FullName
+        pomerge --from $old_files --to $new_files --clear
+
+        # Clean up temporary dir
+        Remove-Item -Path $env:TEMP\old-po-files -Recurse -Force
 
 After running ``pomerge``, review the changes and commit the updated files.
 You may also need to rewrap the lines (see :pypi:`powrap`).
