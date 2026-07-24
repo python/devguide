@@ -45,8 +45,10 @@ triggerable with data inputs that are reasonably sized for the use case.
 Availability vulnerabilities must also demonstrate an "upward" change in posture
 for the attacker, rather than a "lateral" one.
 This is to avoid handling performance improvements as security vulnerabilities.
-Exceptions are an expected part of control flow when processing inputs,
-therefore crashes resulting from unhandled exceptions are not security vulnerabilities.
+
+Exceptions are an expected part of control flow when processing inputs.
+Unhandled exceptions are not considered crashes and are not, by themselves,
+security vulnerabilities.
 
 Vulnerabilities in dependencies of Python (such as zlib, Tcl/Tk, or OpenSSL)
 are not vulnerabilities in Python unless Python's use of the dependency
@@ -138,6 +140,8 @@ Here's what to expect for how a vulnerability report will be handled:
   may open a public issue.
 * If the PSRT determines the report is a vulnerability, the PSRT will
   accept the report and a CVE ID will be assigned by the PSF CNA.
+  Do not publicly reference the assigned CVE ID before its record is published,
+  as the report and ID remain provisional and may still be changed.
 * Once a public pull request containing a fix is merged to CPython,
   the advisory and CVE record will be published with attribution.
 

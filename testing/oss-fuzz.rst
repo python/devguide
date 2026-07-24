@@ -16,15 +16,14 @@ CPython has two OSS-Fuzz projects:
 * `python3-libraries <https://github.com/google/oss-fuzz/tree/master/projects/python3-libraries>`__:
   The fuzz targets, seed corpora, and dictionaries can be found in the
   :github:`python/library-fuzzers` repository. Access to the repository is
-  managed through the `@python/fuzzers
-  <https://github.com/orgs/python/teams/fuzzers>`__ team on GitHub.
+  managed through the :gh-python-team:`fuzzers` team on GitHub.
 
 OSS-Fuzz bug reports are private when filed, so access to crash details and
 reproducer test cases is limited to those listed in the ``auto_ccs`` fields of
 the OSS-Fuzz project configuration files. Those listed can log into
 https://oss-fuzz.com/ with their Google account to view crash details,
 reproducer test cases, and project statistics.
-If you need access, contact the ``@python/fuzzers`` team.
+If you need access, contact the :gh-python-team:`fuzzers` team.
 Completed issues, and issues that remain unresolved after 90 days, are publicly
 visible in the `OSS-Fuzz issue tracker
 <https://issues.oss-fuzz.com/issues?q=(python3-libraries%20%7C%20cpython3)>`__.
