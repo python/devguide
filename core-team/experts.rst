@@ -179,23 +179,9 @@ PEG Generator       gvanrossum, pablogsal, lysnikolaou
 Platforms
 =========
 
+The **Platforms experts list** has moved to :ref:`ports`.
+
 For official contacts for supported platforms, see :pep:`11`.
-
-Platforms listed here are not necessarily supported by CPython.
-Some of the experts listed here maintain and distribute Python
-for “their” platform as a third-party project.
-
-===================   ===========
-Platform              Maintainers
-===================   ===========
-AIX                   ayappanec
-Android               mhsmith
-Emscripten            hoodmane, pmp-p, rdb, rth, ryanking13
-iOS                   freakboy3742, ned-deily
-macOS                 ronaldoussoren, ned-deily, freakboy3742
-Solaris/OpenIndiana   jcea, kulikjak
-Windows               tjguk, zooba, pfmoore
-===================   ===========
 
 
 Miscellaneous

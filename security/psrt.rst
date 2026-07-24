@@ -112,9 +112,11 @@ New report in GitHub Security Advisories (GHSA)
 Once a report is in GHSA, a "Coordinator" must be assigned
 to be responsible for moving the report through the process.
 The "Coordinator" role is assigned using a "Credit" in a GHSA ticket
-(Select 'Edit' > 'Credit' > Add GitHub username and the role 'Coordinator').
+(Select :guilabel:`Edit` > :guilabel:`Credit` > Add a GitHub username and the
+'Coordinator' role).
 
-.. warning::
+.. important::
+
    Assigning the "Coordinator" role to each GHSA ticket is important,
    as this metadata records whether a PSRT member is
    `"active" according to PEP 811`_ to avoid being removed due to inactivity.
@@ -122,9 +124,9 @@ The "Coordinator" role is assigned using a "Credit" in a GHSA ticket
 .. _"active" according to PEP 811: https://peps.python.org/pep-0811/#psrt-membership-policy
 
 If a GHSA ticket is idle for three days without a coordinator
-assigned a PSRT member who is not a Release Manager
+assigned, a PSRT member who is not a Release Manager
 or Steering Council member will be automatically assigned
-as coordinator by the PSRT bot.
+as coordinator by the :ref:`PSRT bot <psrt-bot>`.
 If a coordinator can't complete the process
 they must find a replacement coordinator in the PSRT
 and re-assign the GHSA ticket.
@@ -141,20 +143,28 @@ vulnerability, or as a security vulnerability. If the Coordinator needs
 help from core team experts in making the determination, the
 experts may be added as 'Collaborators' to the GHSA ticket.
 Accepted security vulnerabilities will be moved to the 'Draft' state in GHSA.
+Only repository admins can accept advisories; however, PSRT members may accept
+reports through the PSRT bot by prepending ``[ACCEPTED]`` to the GHSA's
+title.
 
 If the report isn't a vulnerability, coordinators close the GHSA ticket
 after optionally opening a public GitHub issue. Note that reporters often
 will not open a GitHub issue on their own, as there is no longer an incentive
-for them to do so without a CVE being assigned.
+for them to do so without a CVE being assigned. Similarly to accepting,
+only repository admins can close advisories; however, PSRT members may close
+reports through the PSRT bot by prepending ``[CLOSED]`` (for regular bugs),
+``[INVALID]`` (for spam), ``[DUPLICATE]`` (for duplicates), or ``[COMPLETED]``
+(for completed tickets where an advisory has been issued) to the GHSA's title.
 
 Remediating a vulnerability report
 ----------------------------------
 
 Once a report has been accepted as a vulnerability, the remediation
 development process begins. Coordinators move the GHSA ticket to a 'Draft'
-state using the green 'Accept as Draft' button. Once in this state,
+state using the green :guilabel:`Accept as Draft` button (repository admins)
+or the PSRT bot's ``[ACCEPTED]`` title tag. Once in this state,
 the PSRT bot will automatically assign a CVE ID from the Python Software
-Foundation CVE Numbering Authority.
+Foundation CVE Numbering Authority and create a temporary private fork.
 
 Once a vulnerability has been accepted there are three things
 the Coordinator must prepare before sending an advisory and
@@ -184,9 +194,11 @@ for help in calculating a severity from other PSRT members.
 Developing a patch privately
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Patch development can initially be done privately by selecting the
-'Start a temporary private fork' button within the GHSA ticket. Note that
-due to the size of Git repositories, this fork repository may
+Patch development can begin once a report has been accepted, as the PSRT bot
+will automatically create a temporary private fork for the advisory.
+The fork can also be created earlier by repository admins or reporters by selecting
+the :guilabel:`Start a temporary private fork` button within the GHSA ticket.
+Note that due to the size of Git repositories, this fork repository may
 take several minutes to create. Once the fork has been created any PSRT member
 or GHSA collaborator can clone the fork and develop a fix and push a branch:
 
@@ -236,15 +248,18 @@ This patch can then be applied and pushed to the public GitHub repository:
     git apply ./ghsa-abcd-efgh-ijkl.patch
     git push origin branch-name
 
-.. important:: CPython's backport infrastructure
-    is used for tracking backported patches. Use **one GitHub issue
-    per CVE** to accurately track backports of vulnerability fixes.
-    For new CVEs, even when related to a previous issue, **open a
+.. important::
+
+    CPython's backport infrastructure is used for tracking backported patches.
+    Use **one GitHub issue per CVE** to accurately track backports of vulnerability
+    fixes. For new CVEs, even when related to a previous issue, **open a
     new GitHub issue** to accurately track fixed versions.
 
-.. important:: Don't select the green 'Merge pull request'
-    or 'Publish advisory' buttons within GHSA. Advisories are published
-    to the mailing list, and the 'Merge pull request' button within
+.. important::
+
+    Repository admins should not select the green :guilabel:`Publish advisory`
+    or :guilabel:`Merge pull request` buttons within GHSA. Advisories are published
+    to the mailing list, and the :guilabel:`Merge pull request` button within
     GHSA bypasses all continuous integration and branch protection
     steps. Use a public pull request instead.
 
@@ -263,13 +278,39 @@ if applying the patch isn't the only way to mitigate the vulnerability.
 * The advisory email will be received by PSF CVE Numbering Authority
   operators and used to publish a CVE record.
 * Begin the backporting process for all Python branches still receiving
-  security updates. Add the :gh-label:`type-security` and :gh-label:`release-blocker` labels
-  to each backport pull request so that release managers can find them prior
+  security updates. Add the :gh-label:`type-security` and :gh-label:`release-blocker`
+  labels to each backport pull request so that release managers can find them prior
   to releasing.
 
 After an advisory email is sent, the GHSA ticket can be closed.
+As only repository admins can close advisories directly, PSRT members
+can prepend ``[COMPLETED]`` to the GHSA's title and the PSRT bot
+will close the ticket.
 
 .. _advisory template: #advisory-email
+
+.. _psrt-bot:
+
+The PSRT bot
+------------
+
+The :github:`PSRT bot <python/psrt-ghsa-bot>` is a GitHub App
+that automates parts of the GHSA workflow described above. GitHub only
+allows repository admins to modify security advisories, so the bot enables
+any PSRT member to move a report through the process using title tags.
+
+The bot runs hourly (or by manual dispatch) and for each open GHSA ticket:
+
+* Adds the PSRT GitHub team as collaborators, giving members access to new reports.
+* Moves tickets from the 'Triage' to the 'Draft' state when the title contains
+  the ``[ACCEPTED]`` tag.
+* Closes tickets when the title contains one of the closing tags
+  (``[CLOSED]``, ``[INVALID]``, ``[DUPLICATE]``, or ``[COMPLETED]``).
+* For accepted ('Draft') tickets, creates the temporary private fork if one
+  doesn't already exist, and reserves a CVE ID.
+
+Tags are case-insensitive and can appear anywhere in the title, though for visibility
+they are prepended.
 
 Handling code signing certificate reports
 -----------------------------------------

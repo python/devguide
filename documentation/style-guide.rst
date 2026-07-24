@@ -58,63 +58,6 @@ of these entities are not assigned any special markup, but the preferred
 spellings are given in :ref:`specific words` to aid authors in maintaining the
 consistency of presentation in the Python documentation.
 
-.. _specific words:
-
-Specific words
-==============
-
-Some terms and words deserve special mention. These conventions should
-be used to ensure consistency throughout the documentation:
-
-boolean
-  Lowercase in most instances.
-  Uppercase for *Boolean mathematics* and *Boolean logic*.
-  To refer to the Python or C data type, prefer using the exact,
-  abbreviated name with appropriate markup (for example, ``:type:`bool```).
-
-C API
-  Python's `API <https://docs.python.org/3/c-api/>`__ used by C programmers
-  to write extension modules. All caps and unhyphenated.
-
-CPU
-   Central processing unit. No need to spell out.
-
-free-threaded
-   The preferred term for the build mode that makes the global interpreter
-   lock (GIL) optional (per :pep:`703`). Avoid using "No-GIL" to avoid
-   double negatives (for example, "non-no-GIL").
-
-open source
-   Follow the usual English rules for compound words. When used as an
-   adjective, hyphenate: "open-source software". When used as a noun, don't use
-   a hypen: "open source is a collaboration model.."
-
-POSIX
-   The name assigned to a particular group of standards. This is always
-   uppercase.
-
-Python
-   The name of our favorite programming language is always capitalized.
-
-reST
-   For "reStructuredText," an easy to read, plain-text markup syntax
-   used to produce Python documentation.  When spelled out, it is
-   always one word and both forms start with a lowercase 'r'.
-
-time zone
-   When referring to a Python term like a module, class, or argument spell it
-   as one word with appropriate markup (for example, ``:mod:`timezone```).
-   When talking about the real-world concept spell it as two words with no
-   markup.
-
-Unicode
-   The name of a character coding system. This is always written
-   capitalized.
-
-Unix
-   The name of the operating system developed at AT&T Bell Labs in the early
-   1970s.
-
 
 Use simple language
 ===================
@@ -147,6 +90,89 @@ Avoid terminology that may be considered insensitive or exclusionary.
    * - master/slave
      - main, parent/child, server/client, primary/secondary
 
+
+.. _specific words:
+
+Specific words
+==============
+
+Some terms and words deserve special mention. These conventions should
+be used to ensure consistency throughout the documentation:
+
+boolean
+  Lowercase in most instances.
+  Uppercase for *Boolean mathematics* and *Boolean logic*.
+  To refer to the Python or C data type, prefer using the exact,
+  abbreviated name with appropriate markup (for example, ``:type:`bool```).
+
+C API
+  Python's `API <https://docs.python.org/3/c-api/>`__ used by C programmers
+  to write extension modules. All caps and unhyphenated.
+
+CPU
+   Central processing unit. No need to spell out.
+
+free-threaded
+   The preferred term for the build mode that makes the global interpreter
+   lock (GIL) optional (per :pep:`703`). Avoid using "No-GIL" to avoid
+   double negatives (for example, "non-no-GIL").
+
+open source
+   Follow the usual English rules for compound words. When used as an
+   adjective, hyphenate: "open-source software". When used as a noun, don't use
+   a hyphen: "open source is a collaboration model.."
+
+POSIX
+   The name assigned to a particular group of standards. This is always
+   uppercase.
+
+Python
+   The name of our favorite programming language is always capitalized.
+
+reST
+   For "reStructuredText," an easy to read, plain-text markup syntax
+   used to produce Python documentation.  When spelled out, it is
+   always one word and both forms start with a lowercase 'r'.
+
+time zone
+   When referring to a Python term like a module, class, or argument spell it
+   as one word with appropriate markup (for example, ``:mod:`timezone```).
+   When talking about the real-world concept spell it as two words with no
+   markup.
+
+Unicode
+   The name of a character coding system. This is always written
+   capitalized.
+
+Unix
+   The name of the operating system developed at AT&T Bell Labs in the early
+   1970s.
+
+
+Type names
+==========
+
+When writing the names of types in prose, indicate that the name is a type by
+writing the name of the type exactly as it appears in source, styled as a class
+reference or an unlinked class.  For example, refer to dict as ``:class:`dict`‌``
+or ``:class:`!dict`‌``.
+
+Links should be used according to the :ref:`guidance on links <style-guide-links>`.
+
+Some type names are commonly understood ideas or nouns outside of Python.
+For example, "tuples" are a general programming concept, as distinct from the
+``tuple`` type.  When referring to general ideas, do not style the relevant word
+as a type.
+
+Many types have descriptive names which may or may not exactly match their type
+name.  For example, "context variables" describes ``contextvars.ContextVar``,
+and both "dict" and "dictonary" are used to describe ``dict``.  Once it is clear
+that the text refers to a specific type, use the naming which suits the context:
+in the case of ``dict``, any of "dict", "dictionary", or "``:class:`dict```" may
+be best.
+
+Descriptive names should be written as common nouns, meaning they are lowercase
+when not at the start of a sentence or phrase.
 
 .. index:: diataxis
 .. _diataxis:
@@ -193,6 +219,8 @@ explanation.
 Please consult the `Diátaxis <https://diataxis.fr/>`__ guide for more
 detail.
 
+
+.. _style-guide-links:
 
 Links
 =====

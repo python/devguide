@@ -68,7 +68,9 @@ to enter the public source tree. Ask yourself the following questions:
    if they haven't. For further questions about the CLA
    process, write to contributors@python.org.
 
-* **Were** ``What's New in Python`` **and** ``Misc/NEWS.d/next`` **updated?**
+* .. _updating-news-and-what-s-new-in-python:
+
+  **Were** ``What's New in Python`` **and** ``Misc/NEWS.d/next`` **updated?**
    If the change is particularly interesting for end users (for example, new features,
    significant improvements, or backwards-incompatible changes), then an
    entry in the ``What's New in Python`` document (in ``Doc/whatsnew/``) should
@@ -148,6 +150,8 @@ If you use ``git branch``, then you will see a :ref:`list of branches
 bug fixes or security fixes. In almost all cases the fixes should first
 originate on ``main`` and then be ported back to older branches.
 
+
+.. _backport-pr-title:
 
 Backporting changes to an older version
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^

@@ -15,7 +15,7 @@ Discussions about translations occur on the Python Docs Discord
 `#translations channel <https://discord.gg/h3qDwgyzga>`__ and the
 `translations category <trans_disc_>`_ of the Python Discourse.
 
-For administrative issues, ping ``@python/editorial-board``.
+For administrative issues, ping :gh-python-team:`editorial-board`.
 
 
 Starting a new translation
