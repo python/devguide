@@ -68,7 +68,7 @@ be native English speakers.
 Don't use Latin abbreviations like "e.g." or "i.e." where English words will do,
 such as "for example" or "that is."
 
-The first time an acronym is used on a page, spell it out.
+In general, the first time an acronym is used on a page, spell it out.
 Prefer to write out the full term and follow it with the acronym in parentheses.
 For example, write "JavaScript Object Notation (JSON)".
 
