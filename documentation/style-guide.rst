@@ -70,7 +70,7 @@ such as "for example" or "that is."
 
 In general, the first time an acronym is used on a page, spell it out.
 Prefer to write out the full term and follow it with the acronym in parentheses.
-For example, write "JavaScript Object Notation (JSON)".
+For example, write "Basic Multilingual Plane (BMP)".
 
 
 Charged terminology to avoid
