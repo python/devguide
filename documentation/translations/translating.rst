@@ -84,7 +84,9 @@ For more details about translations and their progress, see
        `Telegram <https://t.me/pybr_i18n>`__,
        `article <https://rgth.co/blog/python-ptbr-cenario-atual/>`__
    * - Punjabi (pa)
-     - Bhuvansh Kataria (:github-user:`BHUVANSH855`)
+     - | Bhuvansh Kataria (:github-user:`BHUVANSH855`),
+       | Mohit Yadav (:github-user:`mohityadav8`),
+       | Yashraj Jangra (:github-user:`Yashraj-Jangra`)
      - :github:`GitHub <BHUVANSH855/python-docs-pa>`,
        `Transifex <tx_>`_
    * - `Romanian (ro)  <https://docs.python.org/ro/>`__
