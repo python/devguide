@@ -710,11 +710,10 @@ do not take it personally! Your work is still appreciated regardless of whether
 your pull request is merged. Balancing what *does* and *does not* go into
 Python is tricky and we simply cannot accept everyone's contributions.
 
-But if your pull request is merged it will then go into Python's
-:abbr:`VCS (version control system)` to be released
-with the next feature release of Python. It may also be backported to older
-versions of Python as a bugfix if the core team member doing the merge believes
-it is warranted.
+But if your pull request is merged it will then go into Python's VCS (version
+control system) to be released with the next feature release of Python.
+It may also be backported to older versions of Python as a bugfix if the core
+team member doing the merge believes it is warranted.
 
 
 Crediting

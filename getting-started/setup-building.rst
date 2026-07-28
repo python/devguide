@@ -1107,8 +1107,7 @@ every rule.
      See also :ref:`building-doc`.
 
 ``Grammar``
-     Contains the :abbr:`PEG (Parser Expression Grammar)` grammar file for
-     Python.
+     Contains the PEG (Parser Expression Grammar) grammar file for Python.
 
 ``Include``
      Contains all interpreter-wide header files.

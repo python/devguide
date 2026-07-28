@@ -109,7 +109,7 @@ Python). This prevents a divergence between the code that is included in the
 stdlib and that which is released outside the stdlib (typically done to provide
 the module to older versions of Python). It also removes the burden of forcing
 the core team to have to redirect bug reports or changes to an external issue
-tracker and :abbr:`VCS (version control system)`.
+tracker and VCS (version control system).
 
 Someone involved with the development of the
 module must promise to help maintain the module in the stdlib for two years.
@@ -124,7 +124,7 @@ Proposal process
 
 If the module you want to propose adding to the stdlib meets the requirements,
 you may propose its inclusion
-by following the :abbr:`PEP (Python Enhancement Proposal)` process.
+by following the PEP (Python Enhancement Proposal) process.
 See :pep:`1` for details,
 and the :pep:`PEP index <0>` for previously accepted PEPs
 that have proposed a module for inclusion.
