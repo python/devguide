@@ -7,7 +7,7 @@ Increase test coverage
 .. include:: /include/activate-tab.rst
 
 Python development follows a practice that all semantic changes and additions
-to the language and :abbr:`stdlib (standard library)` are accompanied by
+to the language and stdlib (standard library) are accompanied by
 appropriate unit tests. Unfortunately Python was in existence for a long time
 before the practice came into effect. This has left chunks of the stdlib
 untested which is not a desirable situation to be in.

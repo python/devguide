@@ -148,7 +148,7 @@ Terminology
 Command-line interface
 ----------------------
 
-The Argument Clinic :abbr:`CLI (Command-Line Interface)` is typically used to
+The Argument Clinic CLI (Command-Line Interface) is typically used to
 process a single source file, like this:
 
 .. code-block:: shell-session

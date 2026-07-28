@@ -146,7 +146,7 @@ Stages
 
 Based on what stage the :ref:`in-development <indevbranch>` version of Python
 is in, the responsibilities of a core team member change in regards to commits
-to the :abbr:`VCS (version control system)`.
+to the VCS (version control system).
 
 
 Pre-alpha
