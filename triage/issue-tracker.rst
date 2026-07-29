@@ -150,9 +150,12 @@ The following abbreviations can be used in a comment to generate a link:
 
 See also the `list of autolinks supported by GitHub <autolinks_>`_.
 
-To link to files in the repository, use Markdown links.  If you link to
-the default GitHub path, the file will link to the latest current
-version on the given branch.
+To link to a file in the repository, use a Markdown link with the path
+of the file relative to the repository root, for example
+``[the os module docs](Doc/library/os.rst)``.  In issues, such links
+point to the latest version of the file on the default branch.  In PRs,
+they are resolved against the PR's branch instead, so prefer permanent
+links there.
 
 You can get a permanent link to a given revision of a given file by
 `pressing "y" <https://docs.github.com/en/repositories/working-with-files/using-files/getting-permanent-links-to-files>`__.
