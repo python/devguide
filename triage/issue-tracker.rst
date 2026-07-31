@@ -15,6 +15,8 @@ The `issue tracker`_ is hosted on GitHub, alongside the codebase and pull reques
    (sometimes called :dfn:`bpo` or :dfn:`BPO` for short). A read-only version is
    available on that domain for historical purposes. All ``bpo`` data has been
    migrated to the current issue tracker on GitHub.
+   Old issues are still referenced in the :samp:`bpo-{NNN}` format,
+   where ``bpo-12345`` refers to ``https://bugs.python.org/issue12345``.
 
 
 Reporting an issue
@@ -150,15 +152,9 @@ The following abbreviations can be used in a comment to generate a link:
 
 See also the `list of autolinks supported by GitHub <autolinks_>`_.
 
-To link to a file in the repository, use a Markdown link with the path
-of the file relative to the repository root, for example
-``[the os module docs](Doc/library/os.rst)``.  In issues, such links
-point to the latest version of the file on the default branch.  In PRs,
-they are resolved against the PR's branch instead, so prefer permanent
-links there.
-
-You can get a permanent link to a given revision of a given file by
-`pressing "y" <https://docs.github.com/en/repositories/working-with-files/using-files/getting-permanent-links-to-files>`__.
+To link to a file in the repository, you can get a permanent link to a
+given revision of the file by `pressing "y"
+<https://docs.github.com/en/repositories/working-with-files/using-files/getting-permanent-links-to-files>`__.
 
 
 Following issues
