@@ -34,6 +34,9 @@ For more details about translations and their progress, see
      - Julien Palard (:github-user:`JulienPalard`)
      - `AFPy/python-docs-fr <https://git.afpy.org/AFPy/python-docs-fr/>`__,
        :github:`mirror <python/python-docs-fr>`
+   * - German (de)
+     - Swen Bachmann (:github-user:`sba72`)
+     - `GitHub <https://github.com/sba72/python-docs-de>`__
    * - `Greek (el) <https://docs.python.org/el/>`__
      - | Lysandros Nikolaou (:github-user:`lysnikolaou`),
        | Fanis Petkos (:github-user:`thepetk`),
