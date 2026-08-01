@@ -99,6 +99,7 @@ This section covers common tasks on the issue tracker, such as
 searching, commenting on, and following issues.
 
 .. _searching-gh-issues:
+.. _how-to-search-issues:
 
 Searching issues
 ----------------
@@ -133,6 +134,7 @@ If you still insist on pasting it in your comment, wrap it with a
 
 
 .. _attaching-to-gh-issues:
+.. _how-to-attach-files-to-an-issue:
 
 Attaching files
 ---------------
@@ -140,6 +142,9 @@ Attaching files
 Drag them into the comment field, wait until the file uploads, and GitHub
 will automatically put a link to your file in your comment text.
 
+
+.. _adding-special-links:
+.. _how-to-link-to-file-paths-in-the-repository-when-writing-comments:
 
 Adding links
 ------------
@@ -179,6 +184,8 @@ By writing :samp:`Duplicate of #{NNN}` in a comment, you can
 `mark issues and PRs as duplicates <duplicates_>`_.
 
 
+.. _what-on-earth-is-a-mannequin:
+
 Mannequin accounts
 ------------------
 
@@ -194,6 +201,8 @@ that happened in the issue. In case the user did share their GitHub account
 name in their BPO profile, we use that. Otherwise, their classic BPO
 username is used instead.
 
+
+.. _disagreement-with-a-resolution-on-the-issue-tracker:
 
 Disagreement with a resolution
 ==============================
