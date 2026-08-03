@@ -21,8 +21,8 @@ Checklist for triaging
   :guilabel:`Project` fields, and possibly @mention relevant people.
 * You might also leave a brief comment about the proposed next action needed.
   If there is a long message list, a summary can be very helpful.
-* If the issue is clearly invalid (unrelated to CPython, duplicate, spam, etc),
-  you can use GitHub's "Close as not planned" option.
+* If the issue is clearly invalid (unrelated to CPython, duplicate, spam, and
+  so on), you can use GitHub's "Close as not planned" option.
 
 Assignees
 ---------
@@ -36,7 +36,7 @@ how to proceed. Also consult the :ref:`experts` as certain
 stdlib modules should always be assigned to a specific person.
 
 Note that in order to assign an issue to someone, that person **must** be
-a team member, likely a triager or a core developer.
+have at least triage permissions in the repository.
 
 .. The Assignees subsection was copied from the labels.rst page in #930.
    For consistency, the other fields mentioned above should be documented too.
@@ -105,8 +105,5 @@ Finding an issue you can help with
 ----------------------------------
 
 If you want to help with triaging, you might also want to search for issues
-in modules for which you have a working knowledge.  Search for the name of a
-module in the issue tracker, filter by label, or use the `advanced search`_
-to find these issues.
-
-.. _advanced search: https://github.com/search/advanced
+in modules for which you have a working knowledge.  See :ref:`searching-gh-issues`
+for more information.
