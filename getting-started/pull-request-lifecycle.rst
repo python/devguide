@@ -203,6 +203,7 @@ should do to help ensure that your pull request is accepted.
 
 #. Proper :ref:`documentation <documenting>` additions/changes should be included.
 
+
 .. _news-entry:
 .. _what-s-new-and-news-entries:
 
@@ -500,30 +501,45 @@ list anything), you will want to push your branch to your fork::
 
 This will get your changes up to GitHub.
 
-Now you want to
+Once your changes are pushed, you may
 `create a pull request from your fork
 <https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-a-pull-request-from-a-fork>`__.
-If this is a pull request in response to a pre-existing issue on the
-`issue tracker`_, please make sure to reference the issue number using
-``gh-NNNNN:`` prefix in the pull request title and ``#NNNNN`` in the description.
+But first, read the following guidance to ensure your pull request has proper metadata.
 
-If this is a pull request for an unreported issue (assuming you already
-performed a search on the issue tracker for a pre-existing issue), create a
-new issue and reference it in the pull request. Please fill in as much
-relevant detail as possible to prevent reviewers from having to delay
-reviewing your pull request because of lack of information.
+File an issue if necessary
+--------------------------
 
-If this issue is so simple that there's no need for an issue to track
-any discussion of what the pull request is trying to solve (for example, fixing a
-spelling mistake), then the pull request needs to have the "skip issue" label
-added to it by someone with commit access.
+If the change is so simple that there's no need for an issue to track any
+discussion of what the pull request is trying to solve (for example, fixing a
+spelling mistake), then the pull request will need to have the ``skip issue``
+label added to it by someone with commit access.
 
-Your pull request may involve several commits as a result of addressing code
-review comments.  Please keep the commit history in the pull request intact by
-not squashing, amending, or anything that would require a force push to GitHub.
-A detailed commit history allows reviewers to view the diff of one commit to
-another so they can easily verify whether their comments have been addressed.
-The commits will be squashed when the pull request is merged.
+However, most changes need to have an issue filed first.
+
+Search the issue tracker to check if the issue has already been reported.
+If there is no existing issue, create a new one.
+Please try to make your report a clear description of the issue, such that it
+can be fully understood without reference to your pull request.
+
+.. _good-pull-request-metadata:
+
+Write good titles and descriptions
+----------------------------------
+
+Reviewers want to be able to understand roughly what your pull request does
+before reading the changes.
+
+The title should be a sentence or phrase in the imperative which says what the
+pull request does in short form.
+Pull requests attached to issues should be linked by putting the issue number in
+the title (``gh-NNNNNN:``).
+For example, ``gh-12345: Fix bug when spam module is served with eggs``.
+
+The pull request description field should be a succinct summary.
+This is a great place to note caveats, provide links to references, and explain
+decisions made in the pull request.
+Avoid over-explaining: simpler descriptions are easier to read, so make sure not
+to write large descriptions for simple changes.
 
 
 Converting an existing patch from b.p.o to GitHub
