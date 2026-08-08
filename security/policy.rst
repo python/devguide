@@ -33,6 +33,10 @@ and :func:`exec` are documented to execute arbitrary Python code that is
 supplied as data. The :mod:`ctypes` module is documented to enable modifying
 arbitrary locations in memory.
 
+CPython does not support sandboxing untrusted Python code as a security
+boundary, so escapes from such a sandbox are not vulnerabilities in Python
+and should be reported to the sandbox's developers instead.
+
 Vulnerabilities must not depend on malicious control of Python's launch
 conditions, including (but not limited to) command line arguments, environment variables, or
 modifications to files on the target system. We assume that, at the time Python
