@@ -179,17 +179,17 @@ def card_grid(items, cols=2, bg=WHITE):
         else:
             content = [P(item, "CardDV")]
         cells.append(content)
-    
+
     while len(cells) % cols:
         cells.append([P("", "CardDV")])
-    
+
     rows = []
     for i in range(0, len(cells), cols):
         row = []
         for c in cells[i:i+cols]:
             row.append(c)
         rows.append(row)
-    
+
     table = Table(rows, colWidths=[8.65*cm]*cols, hAlign="LEFT")
     ts = [
         ("VALIGN", (0,0), (-1,-1), "TOP"),
@@ -207,20 +207,20 @@ def card_grid(items, cols=2, bg=WHITE):
 def mindmap(title, center, branches, color=TURQ):
     d = Drawing(510, 220)
     cx, cy = 255, 110
-    
+
     # Cercle central
     d.add(Circle(cx, cy, 54, fillColor=PALE_TURQ, strokeColor=color, strokeWidth=2.5))
     d.add(String(cx, cy+5, center, fontName=BOLD, fontSize=10.5, fillColor=NAVY, textAnchor="middle"))
     d.add(String(cx, cy-9, "IDÉE-CLÉ", fontName=REG, fontSize=7, fillColor=MUTED, textAnchor="middle"))
-    
+
     positions = [(90,175), (420,175), (65,75), (445,75), (255,35)]
     branch_colors = [PALE_TURQ, PALE_LAV, PALE_PINK, PALE_YELLOW, PALE_GREEN]
-    
+
     for i, b in enumerate(branches[:5]):
         x, y = positions[i]
         d.add(Line(cx, cy, x, y, strokeColor=color, strokeWidth=1.2))
         d.add(Rect(x-65, y-24, 130, 48, rx=10, ry=10, fillColor=branch_colors[i], strokeColor=color, strokeWidth=0.8))
-        
+
         words = b.split()
         lines = []
         cur = ""
@@ -232,14 +232,14 @@ def mindmap(title, center, branches, color=TURQ):
                 cur = (cur + " " + w).strip()
         if cur:
             lines.append(cur)
-        
+
         for j, line in enumerate(lines[:3]):
             d.add(String(x, y+10-j*10, line, fontName=REG, fontSize=7.2, fillColor=TEXT, textAnchor="middle"))
-    
+
     return d
 
 def exercise_page(title, exercises, color):
-    story = [P(title, "H1DV"), 
+    story = [P(title, "H1DV"),
              P("Consigne : réponds d'abord sans regarder la correction. Justifie quand la question le demande.", "SmallDV"),
              Spacer(1, 5)]
     items = []
@@ -249,7 +249,7 @@ def exercise_page(title, exercises, color):
     return story
 
 def correction_page(title, corrections, color):
-    story = [P(title, "H1DV"), 
+    story = [P(title, "H1DV"),
              P("Correction expliquée : la réponse attendue est suivie d'un rappel de méthode.", "SmallDV"),
              Spacer(1, 5)]
     for i, (ans, why) in enumerate(corrections, 1):
@@ -267,7 +267,7 @@ def text_questions(text, qs):
     ]
 
 def production_page(prompt, tips, model=None):
-    out = [P("PRODUCTION ÉCRITE", "H1DV"), 
+    out = [P("PRODUCTION ÉCRITE", "H1DV"),
            P(prompt, "H2DV")]
     out.append(P("Plan conseillé : " + tips, "BodyDV"))
     out.append(P("Boîte à expressions : Au début…, Ensuite…, Cependant…, Finalement…, À mon avis…, En conclusion…", "SmallDV"))
@@ -283,7 +283,7 @@ def devoir_page(module, num, text, lang_ex, prod):
              P("Barème : Compréhension 6 pts • Langue 6 pts • Production 7 pts • Total 20 pts", "SmallDV"),
              P("A. Compréhension — 6 points", "H2DV"),
              P(text, "QuoteDV")]
-    
+
     qs = [
         "Donne le thème du texte et justifie par deux indices.",
         "Relève une information précise et reformule-la.",
@@ -291,7 +291,7 @@ def devoir_page(module, num, text, lang_ex, prod):
         "Relève un élément de description ou d'argumentation.",
     ]
     story.append(card_grid([(f"{i+1} — 1,5 pt", q) for i, q in enumerate(qs)], cols=1, bg=PALE_BLUE))
-    
+
     story += [
         P("B. Langue — 6 points", "H2DV"),
         card_grid([(f"{i+1} — 1,5 pt", e) for i, e in enumerate(lang_ex)], cols=1, bg=PALE_YELLOW),
