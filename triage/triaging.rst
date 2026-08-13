@@ -4,11 +4,8 @@
 Triaging an issue
 =================
 
-This section of the devguide documents triaging issues on the :ref:`issue tracker
-<tracker>`.
-
-Around the clock, new issues are being opened and existing ones are being
-updated. Every issue needs to be triaged to make sure everything runs smoothly.
+Every issue on the :ref:`issue tracker <tracker>` needs to be triaged to make
+sure everything runs smoothly. This section covers what that involves.
 
 
 Checklist for triaging
