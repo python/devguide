@@ -1287,6 +1287,14 @@ in a clone of the CPython repository.
       docker run -it --rm --volume $PWD:/workspace --workdir /workspace ghcr.io/python/devcontainer:latest
 
 
+.. note::
+
+   On SELinux-enabled Linux distributions (such as Fedora or RHEL), Docker requires
+   the ``:z`` or ``:Z`` flag on the volume mount (e.g. ``$PWD:/workspace:Z``)
+   or passing ``--security-opt label=disable`` to avoid permission errors inside
+   the container.
+
+
 Note that the container has read/write access to the working directory.
 You may want to use a separate clone of CPython, or run ``make clean``
 to remove caches and build output generated for your host OS.
