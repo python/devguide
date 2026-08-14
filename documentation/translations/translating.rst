@@ -147,7 +147,8 @@ Overview
 Roughly, translation works as follows:
 
 - Translators work on gettext PO file catalogs generated from the Python docs
-  by Sphinx, rather than editing the documentation directly.
+  `by Sphinx <https://www.sphinx-doc.org/en/master/usage/advanced/intl.html>`__,
+  rather than editing the documentation directly.
 - Teams work in different ways. For example, some have translators work
   locally, while others use tools like :ref:`Transifex <transifex-use>`.
   Messages without a translation fall back to English, so a translation can be
