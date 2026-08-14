@@ -150,7 +150,7 @@ Overview
          translated, uploaded to the translation repository, built by
          docsbuild-scripts, and published.
 
-.. Drawn with Excalidraw: https://excalidraw.com/#json=KeP41X1syyh_UCqEQHpej,TQaAmEqKN4GdZtFR4fi1ww
+.. Drawn with Excalidraw: https://excalidraw.com/#json=eh8rCFZJwziIPgj9BjK-r,VEOHnb-9FdAHZNaG4zfH6g
 
 Roughly, translation works as follows:
 
