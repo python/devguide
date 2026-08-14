@@ -6,8 +6,8 @@ Translating
 
 .. highlight::  rest
 
-There are several documentation translations already
-in production and can be found in the language switcher; others are works in
+Several documentation translations are already in production and can be found
+in the language switcher; others are works in
 progress. To get started read your repository's contributing guide, which is
 generally the ``README`` file, and this page.
 If your language isn’t listed below, feel free to start the translation!
@@ -131,6 +131,40 @@ For more details about translations and their progress, see
      - Duc-Tam Nguyen (:github-user:`tamnd`)
      - :github:`GitHub <tamnd/python-docs-vi>`,
        `Transifex <tx_>`_
+
+
+Overview
+========
+
+.. figure:: overview-light.svg
+   :class: only-light
+   :align: center
+   :alt: Strings are extracted from the source documentation into PO files,
+         translated, uploaded to the translation repository, built by
+         docsbuild-scripts, and published.
+
+.. figure:: overview-dark.svg
+   :class: only-dark
+   :align: center
+   :alt: Strings are extracted from the source documentation into PO files,
+         translated, uploaded to the translation repository, built by
+         docsbuild-scripts, and published.
+
+.. Drawn with Excalidraw: https://excalidraw.com/#json=eh8rCFZJwziIPgj9BjK-r,VEOHnb-9FdAHZNaG4zfH6g
+
+Roughly, translation works as follows:
+
+- Translators work on gettext PO file catalogs generated from the Python docs
+  `by Sphinx <https://www.sphinx-doc.org/en/master/usage/advanced/intl.html>`__,
+  rather than editing the documentation directly.
+- Teams work in different ways. For example, some have translators work
+  locally, while others use tools like :ref:`Transifex <transifex-use>`.
+  Messages without a translation fall back to English, so a translation can be
+  published before it is complete.
+- Translations are committed to the :ref:`translation repository <translation-repo>`.
+- Completed translations are automatically pulled in from the repository by
+  :github:`docsbuild-scripts <python/docsbuild-scripts>` and published to
+  docs.python.org.
 
 
 How to get help
