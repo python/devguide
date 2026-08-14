@@ -121,6 +121,7 @@ Other labels
 * :gh-label:`easy`: for issues that are considered easy.
 * :gh-label:`infra`: for issues related to the infrastructure of the
   project (for example, GitHub Actions, dependabot, the buildbots).
+* :gh-label:`invalid`: for marking spam issues/PRs.
 * :gh-label:`pending`: for issues/PRs that will be closed unless further
   feedback is provided.
 * :gh-label:`release-blocker`/:gh-label:`deferred-blocker`: for issues/PRs
