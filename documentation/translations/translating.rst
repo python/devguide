@@ -136,13 +136,21 @@ For more details about translations and their progress, see
 Overview
 ========
 
-.. figure:: overview.svg
+.. figure:: overview-light.svg
+   :class: only-light
    :align: center
-   :alt: Strings are extracted from the documentation into PO files,
+   :alt: Strings are extracted from the source documentation into PO files,
          translated, uploaded to the translation repository, built by
          docsbuild-scripts, and published.
 
-.. Drawn with Excalidraw: https://excalidraw.com/#json=BW3zGCjAbXv3-r77UZYwH,7wHyBLCvHV81DexlAiVrHA
+.. figure:: overview-dark.svg
+   :class: only-dark
+   :align: center
+   :alt: Strings are extracted from the source documentation into PO files,
+         translated, uploaded to the translation repository, built by
+         docsbuild-scripts, and published.
+
+.. Drawn with Excalidraw: https://excalidraw.com/#json=KeP41X1syyh_UCqEQHpej,TQaAmEqKN4GdZtFR4fi1ww
 
 Roughly, translation works as follows:
 
