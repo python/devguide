@@ -70,10 +70,11 @@ For more details about translations and their progress, see
    * - Lithuanian (lt)
      - Albertas Gimbutas (:github-user:`albertas`, `email <mailto:albertasgim@gmail.com>`__)
      - `original announcement <https://mail.python.org/pipermail/doc-sig/2019-July/004138.html>`__
-   * - Persian (fa)
-     - | Alireza Shabani (:github-user:`revisto`)
-       | Sepehr Rasouli (:github-user:`sepehr-rs`)
-     - :github:`GitHub <revisto/python-docs-fa>`
+    * - Persian (fa)
+      - | Alireza Shabani (:github-user:`revisto`)
+        | Sepehr Rasouli (:github-user:`sepehr-rs`)
+      - | :github:`GitHub <revisto/python-docs-fa>`
+        | `Telegram <https://t.me/python_docs_farsi>`_
    * - `Polish (pl) <https://docs.python.org/pl/>`__
      - | Maciej Olko (:github-user:`m-aciek`),
        | Stan Ulbrych (:github-user:`StanFromIreland`)
