@@ -74,7 +74,7 @@ For more details about translations and their progress, see
      - | Alireza Shabani (:github-user:`revisto`),
        | Sepehr Rasouli (:github-user:`sepehr-rs`)
      - :github:`GitHub <revisto/python-docs-fa>`,
-       `Telegram <https://t.me/python_docs_farsi>`_
+       `Telegram <https://t.me/python_docs_farsi>`__
    * - `Polish (pl) <https://docs.python.org/pl/>`__
      - | Maciej Olko (:github-user:`m-aciek`),
        | Stan Ulbrych (:github-user:`StanFromIreland`)
