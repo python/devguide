@@ -186,7 +186,9 @@ participate in the wider Python community.
    :align: center
    :alt: The word "Python" written in dozens of languages.
 
-.. Image drawn manually in Inkscape.
+.. Image drawn manually in Inkscape. The text in python-logo-languages.svg was
+   converted to paths before exporting for consistent rendering, contact
+   StanFromIreland for the original.
 
 Translations make Python's documentation accessible to a much wider audience.
 They allow people to learn and use Python in a language they are confident in,
