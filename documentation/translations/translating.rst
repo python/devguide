@@ -167,6 +167,37 @@ Roughly, translation works as follows:
   docs.python.org.
 
 
+Motivation
+==========
+
+The Python documentation is written in English, however, Python is taught,
+learned, and used around the world, in many languages. But, English is only the
+native language of only about 5% of the world's population, and fewer than a
+fifth more speak it as an additional language [#f1]_. For many people,
+learning Python also means overcoming a language barrier. They must learn not only
+Python, but also enough English to be able to use the language's documentation.
+
+The United Nations Open Source Principles call on projects both to provide
+documentation and to foster inclusive participation [#f2]_. Providing
+documentation only in English limits who can benefit from it and who can
+participate in the wider Python community.
+
+.. figure:: python-logo-languages.svg
+   :align: center
+   :alt: The word "Python" written in dozens of languages.
+
+.. Image drawn manually in Inkscape.
+
+Translations make Python's documentation accessible to a much wider audience.
+They allow people to learn and use Python in a language they are confident in,
+reducing the additional burden of learning through English.
+
+Translation also improves the English documentation. Translators review
+the source text especially closely when translating and often find bugs.
+Translation, therefore, benefits not only readers of other languages, but
+everyone who uses and contributes to Python's documentation!
+
+
 How to get help
 ===============
 
@@ -458,6 +489,12 @@ with the commit hash from before the files were moved):
 After running ``pomerge``, review the changes and commit the updated files.
 You may also need to rewrap the lines (see :pypi:`powrap`).
 
+.. rubric:: Footnotes
+
+.. [#f1] Ethnologue, `What is the most spoken language?
+         <https://www.ethnologue.com/insights/most-spoken-language/>`__
+.. [#f2] `United Nations Open Source Principles
+         <https://opensource.un.org/en/news/united-nations-open-source-principles>`__
 
 .. _discourse: https://discuss.python.org/c/documentation/translations/
 .. _tx: https://explore.transifex.com/python-doc/python-newest/
