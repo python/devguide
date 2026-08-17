@@ -122,7 +122,7 @@ free-threaded
 open source
    Follow the usual English rules for compound words. When used as an
    adjective, hyphenate: "open-source software". When used as a noun, don't use
-   a hyphen: "open source is a collaboration model.."
+   a hyphen: "open source is a collaboration model."
 
 POSIX
    The name assigned to a particular group of standards. This is always
@@ -168,7 +168,7 @@ as a type.
 
 Many types have descriptive names which may or may not exactly match their type
 name.  For example, "context variables" describes ``contextvars.ContextVar``,
-and both "dict" and "dictonary" are used to describe ``dict``.  Once it is clear
+and both "dict" and "dictionary" are used to describe ``dict``.  Once it is clear
 that the text refers to a specific type, use the naming which suits the context:
 in the case of ``dict``, any of "dict", "dictionary", or "``:class:`dict```" may
 be best.
@@ -274,7 +274,7 @@ Bad example (creating worry in the mind of a reader):
 Good example (establishing confident knowledge in the effective use of the
 language):
 
-    A best practice for using files is use a try/finally pair to explicitly
+    A best practice for using files is to use a try/finally pair to explicitly
     close a file after it is used.  Alternatively, using a with-statement can
     achieve the same effect.  This assures that files are flushed and file
     descriptor resources are released in a timely manner.
@@ -378,7 +378,7 @@ model to alternative implementations and because the operation of the "grouper"
 is more easily shown in code than in English prose.
 
 An example of when not to use a code equivalent is for the :func:`oct` function.
-The exact steps in converting a number to octal doesn't add value for a user
+The exact steps in converting a number to octal don't add value for a user
 trying to learn what the function does.
 
 
@@ -393,7 +393,7 @@ your best to connect-the-dots, but don't talk down to them or waste their time.
 The tutorial is meant for newcomers, many of whom will be using the tutorial to
 evaluate the language as a whole.  The experience needs to be positive and not
 leave the reader with worries that something bad will happen if they make a
-misstep.  The tutorial serves as guide for intelligent and curious readers,
+misstep.  The tutorial serves as a guide for intelligent and curious readers,
 saving details for the how-to guides and other sources.
 
 Be careful accepting requests for documentation changes from the rare but vocal
