@@ -1419,24 +1419,32 @@ The generated glue code looks like this:
 .. code-block:: c
 
     static PyObject *
-    _io_TextIOWrapper__CHUNK_SIZE_get(textio *self, void *Py_UNUSED(context))
+    _io_TextIOWrapper__CHUNK_SIZE_get(PyObject *self, void *Py_UNUSED(context))
     {
         PyObject *return_value = NULL;
 
         Py_BEGIN_CRITICAL_SECTION(self);
-        return_value = _io_TextIOWrapper__CHUNK_SIZE_get_impl(self);
+        return_value = _io_TextIOWrapper__CHUNK_SIZE_get_impl((textio *)self);
         Py_END_CRITICAL_SECTION();
 
         return return_value;
     }
 
     static int
-    _io_TextIOWrapper__CHUNK_SIZE_set(textio *self, PyObject *value, void *Py_UNUSED(context))
+    _io_TextIOWrapper__CHUNK_SIZE_set(PyObject *self, PyObject *value, void *Py_UNUSED(context))
     {
         int return_value;
+
+        if (value == NULL) {
+            PyErr_Format(PyExc_AttributeError,
+                         "attribute '_CHUNK_SIZE' of '%.100s' objects cannot be deleted",
+                         Py_TYPE(self)->tp_name);
+            return -1;
+        }
         Py_BEGIN_CRITICAL_SECTION(self);
-        return_value = _io_TextIOWrapper__CHUNK_SIZE_set_impl(self, value);
+        return_value = _io_TextIOWrapper__CHUNK_SIZE_set_impl((textio *)self, value);
         Py_END_CRITICAL_SECTION();
+
         return return_value;
     }
 
@@ -1446,6 +1454,45 @@ The generated glue code looks like this:
    The *value* parameter for a "setter" is added implicitly by Argument Clinic.
    It is possible to create a docstring for the property by adding it to
    the ``@getter``.
+   The accessors of the same attribute must share the C basename;
+   declaring the same accessor twice is an error.
+
+The setter slot of :c:type:`PyGetSetDef` is used both for setting and for
+deleting the attribute: the setter is called with ``NULL`` as the value to
+delete it.
+As shown above, the generated setter rejects the deletion with an
+:exc:`AttributeError` before calling the "impl" function.
+
+If the attribute can be deleted, apply the ``@deleter`` directive to the
+``@setter``.
+The "impl" function is then called with ``NULL`` and is responsible for
+handling this case, as in this example taken from
+:cpy-file:`Objects/funcobject.c`::
+
+    /*[clinic input]
+    @critical_section
+    @setter
+    @deleter
+    function.__annotations__
+    [clinic start generated code]*/
+
+.. code-block:: c
+
+    static int
+    function___annotations___set_impl(PyFunctionObject *self, PyObject *value)
+    {
+        if (value == Py_None)
+            value = NULL;
+        /* Legal to del f.func_annotations.
+         * Can only set func_annotations to NULL (through C api)
+         * or a dict. */
+        if (value != NULL && !PyDict_Check(value)) {
+            PyErr_SetString(PyExc_TypeError,
+                "__annotations__ must be set to a dict object");
+            return -1;
+        }
+        ...
+    }
 
 And then the implementation will work the same as a Python method which is
 decorated by :py:class:`property`:
