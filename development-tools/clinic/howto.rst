@@ -1463,7 +1463,7 @@ delete it.
 As shown above, the generated setter rejects the deletion with an
 :exc:`AttributeError` before calling the "impl" function.
 
-If the attribute can be deleted, apply the ``@deleter`` directive to the
+If the attribute can be deleted, add the ``@deleter`` directive after
 ``@setter``.
 The "impl" function is then called with ``NULL`` and is responsible for
 handling this case, as in this example taken from
