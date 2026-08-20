@@ -1617,3 +1617,94 @@ and update your unit tests to reflect the new behaviour.
    If you forget to update your input block during the alpha and beta phases,
    the compiler warning will turn into a compiler error when the
    release candidate phase begins.
+
+
+.. _clinic-howto-remove-parameter:
+
+How to remove a parameter
+-------------------------
+
+A parameter cannot be removed right away:
+as mandated by Python's backwards-compatibility policy (see :pep:`387`),
+passing it must first emit a :exc:`DeprecationWarning` for two releases.
+The ``[until ...]`` prefix marks a parameter which is going away and names
+the release in which it will be removed::
+
+   /*[clinic input]
+   module foo
+   myfunc
+       a: object
+       [until 3.18] b: object = None
+       * [from 3.18]
+       c: object = None
+   [clinic start generated code]*/
+
+Passing an argument for *b* now emits:
+
+.. code-block:: none
+
+   DeprecationWarning: Passing the argument 'b' to myfunc() is deprecated. It will be removed in Python 3.18.
+
+A deprecated parameter must have a default value, because calls which do not
+pass it must already be valid.
+
+Removing a parameter shifts the position of every parameter which follows it,
+so they should become keyword-only in the same release,
+using the ``* [from ...]`` syntax described above.
+This is why *c* is deprecated as a positional parameter in the example above.
+Argument Clinic enforces this for positional-only parameters:
+only the last of them can be deprecated, because there is no way to pass
+a positional-only parameter which follows a removed one.
+
+As with the ``[from ...]`` syntax described above, C preprocessor directives
+are generated for emitting compiler warnings if the ``[until ...]`` prefix has
+not been removed from the Argument Clinic input when the deprecation period is
+over.
+Then remove the parameter and the corresponding argument of the "impl"
+function.
+
+.. versionadded:: 3.16
+
+
+.. _clinic-howto-rename-parameter:
+
+How to rename a parameter
+-------------------------
+
+Renaming a positional-only parameter is backward compatible:
+its name cannot be used in a call, so it is enough to change it.
+
+For a positional-or-keyword or a keyword-only parameter the name is a part of
+the API, so the old name can only be removed after a deprecation period.
+Change the name of the parameter, and add an optional keyword-only parameter
+with the old name, the C name of the renamed parameter and the ``[until ...]``
+prefix::
+
+   /*[clinic input]
+   module foo
+   myfunc
+       source: object = None
+       flag: bool = False
+       *
+       [until 3.18] input as source: object = None
+   [clinic start generated code]*/
+
+A parameter which shares the C variable of a preceding parameter is an
+alternative name (an *alias*) of it:
+both names fill the same argument of the "impl" function, and only one of them
+can be used in a call, so ``myfunc(1, input=2)`` and
+``myfunc(source=1, input=2)`` raise :exc:`TypeError`.
+An alias is declared after all other parameters, but it fills the slot of
+the parameter which it renames, so ``myfunc(input=1, flag=True)`` works.
+It is not shown in the signature, which for the function above is
+``($module, /, source=None, flag=False)``.
+
+Passing an argument for the old name now emits:
+
+.. code-block:: none
+
+   DeprecationWarning: Passing the argument 'input' to myfunc() is deprecated. Use 'source' instead. It will be removed in Python 3.18.
+
+When the deprecation period is over, remove the alias.
+
+.. versionadded:: 3.16
