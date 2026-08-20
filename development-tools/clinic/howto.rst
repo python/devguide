@@ -1521,8 +1521,9 @@ responsible for handling this case, as in this example taken from
     [clinic start generated code]*/
 
 The value is only converted if the attribute is not deleted, so it must have
-a default value, which the "impl" function receives for the deletion.
-The implicitly declared value gets the default ``NULL``.
+``NULL`` as a default value, which the "impl" function receives for
+the deletion.
+The implicitly declared value already has this default.
 
 .. versionadded:: 3.13
 
