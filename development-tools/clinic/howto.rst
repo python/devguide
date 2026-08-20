@@ -1397,7 +1397,7 @@ that facilitate :py:class:`property`-like access for a class.
 You can use the ``@getter`` and ``@setter`` directives to generate
 "impl" functions using Argument Clinic.
 
-This example --- taken from :cpy-file:`Modules/_io/textio.c` ---
+This example --- taken from :cpy-file:`Modules/_ssl.c` ---
 shows the use of ``@getter`` and ``@setter`` in combination with
 the :ref:`@critical_section <clinic-howto-critical-sections>` directive
 (which achieves thread safety without causing deadlocks between threads)::
@@ -1405,13 +1405,14 @@ the :ref:`@critical_section <clinic-howto-critical-sections>` directive
     /*[clinic input]
     @critical_section
     @getter
-    _io.TextIOWrapper._CHUNK_SIZE
+    _ssl._SSLContext.check_hostname -> bool
     [clinic start generated code]*/
 
     /*[clinic input]
     @critical_section
     @setter
-    _io.TextIOWrapper._CHUNK_SIZE
+    _ssl._SSLContext.check_hostname
+        value: bool
     [clinic start generated code]*/
 
 The generated glue code looks like this:
@@ -1419,43 +1420,85 @@ The generated glue code looks like this:
 .. code-block:: c
 
     static PyObject *
-    _io_TextIOWrapper__CHUNK_SIZE_get(PyObject *self, void *Py_UNUSED(context))
+    _ssl__SSLContext_check_hostname_get(PyObject *self, void *Py_UNUSED(context))
     {
         PyObject *return_value = NULL;
+        int _return_value;
 
         Py_BEGIN_CRITICAL_SECTION(self);
-        return_value = _io_TextIOWrapper__CHUNK_SIZE_get_impl((textio *)self);
+        _return_value = _ssl__SSLContext_check_hostname_get_impl((PySSLContext *)self);
         Py_END_CRITICAL_SECTION();
+        if ((_return_value == -1) && PyErr_Occurred()) {
+            goto exit;
+        }
+        return_value = PyBool_FromLong((long)_return_value);
 
+    exit:
         return return_value;
     }
 
     static int
-    _io_TextIOWrapper__CHUNK_SIZE_set(PyObject *self, PyObject *value, void *Py_UNUSED(context))
+    _ssl__SSLContext_check_hostname_set(PyObject *self, PyObject *arg, void *Py_UNUSED(context))
     {
-        int return_value;
+        int return_value = -1;
+        int value;
 
-        if (value == NULL) {
+        if (arg == NULL) {
             PyErr_Format(PyExc_AttributeError,
-                         "attribute '_CHUNK_SIZE' of '%.100s' objects cannot be deleted",
+                         "attribute 'check_hostname' of '%.100s' objects cannot be deleted",
                          Py_TYPE(self)->tp_name);
             return -1;
         }
+        value = PyObject_IsTrue(arg);
+        if (value < 0) {
+            goto exit;
+        }
         Py_BEGIN_CRITICAL_SECTION(self);
-        return_value = _io_TextIOWrapper__CHUNK_SIZE_set_impl((textio *)self, value);
+        return_value = _ssl__SSLContext_check_hostname_set_impl((PySSLContext *)self, value);
         Py_END_CRITICAL_SECTION();
 
+    exit:
         return return_value;
     }
 
 .. note::
 
    Getters and setters must be declared as separate functions.
-   The *value* parameter for a "setter" is added implicitly by Argument Clinic.
    It is possible to create a docstring for the property by adding it to
    the ``@getter``.
-   The accessors of the same attribute must share the C basename;
-   declaring the same accessor twice is an error.
+   The accessors of the same attribute are identified by the Python name of
+   that attribute, so they can use different C basenames.
+   Declaring the same accessor twice is only allowed if each of them is
+   compiled under its own preprocessor condition.
+
+And then the implementation will work the same as a Python method which is
+decorated by :py:class:`property`:
+
+.. code-block:: pycon
+
+   >>> import ssl
+   >>> ctx = ssl.SSLContext(ssl.PROTOCOL_TLS_CLIENT)
+   >>> ctx.check_hostname
+   True
+   >>> ctx.check_hostname = False
+   >>> ctx.check_hostname
+   False
+   >>> del ctx.check_hostname
+   Traceback (most recent call last):
+     ...
+   AttributeError: attribute 'check_hostname' of 'SSLContext' objects cannot be deleted
+
+A "getter" can define a :ref:`return converter
+<clinic-howto-return-converters>`, as shown above, so that the "impl"
+function returns a C value instead of an object.
+
+The new value of the attribute is passed to the "impl" function as the only
+argument.
+As shown above, it can be declared as a parameter named *value*, with
+a converter, and is then converted like an argument of a function.
+If it is not declared, ``value: object`` is added implicitly.
+Note that an error for a value of a wrong type names the attribute instead of
+an argument of a function.
 
 The setter slot of :c:type:`PyGetSetDef` is used both for setting and for
 deleting the attribute: the setter is called with ``NULL`` as the value to
@@ -1473,41 +1516,19 @@ handling this case, as in this example taken from
     @critical_section
     @setter
     @deleter
-    function.__annotations__
+    function.__type_params__
+        value: object(subclass_of='&PyTuple_Type') = NULL
     [clinic start generated code]*/
 
-.. code-block:: c
-
-    static int
-    function___annotations___set_impl(PyFunctionObject *self, PyObject *value)
-    {
-        if (value == Py_None)
-            value = NULL;
-        /* Legal to del f.func_annotations.
-         * Can only set func_annotations to NULL (through C api)
-         * or a dict. */
-        if (value != NULL && !PyDict_Check(value)) {
-            PyErr_SetString(PyExc_TypeError,
-                "__annotations__ must be set to a dict object");
-            return -1;
-        }
-        ...
-    }
-
-And then the implementation will work the same as a Python method which is
-decorated by :py:class:`property`:
-
-.. code-block:: pycon
-
-   >>> import sys, _io
-   >>> a = _io.TextIOWrapper(sys.stdout)
-   >>> a._CHUNK_SIZE
-   8192
-   >>> a._CHUNK_SIZE = 30
-   >>> a._CHUNK_SIZE
-   30
+The value is only converted if the attribute is not deleted, so it must have
+a default value, which the "impl" function receives for the deletion.
+The implicitly declared value gets the default ``NULL``.
 
 .. versionadded:: 3.13
+
+.. versionchanged:: 3.16
+   Added support for converters and for several implementations of the same
+   accessor in different preprocessor conditional blocks.
 
 
 .. _clinic-howto-deprecate-positional:
