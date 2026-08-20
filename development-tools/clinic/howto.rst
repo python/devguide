@@ -1508,8 +1508,8 @@ As shown above, the generated setter rejects the deletion with an
 
 If the attribute can be deleted, add the ``@deleter`` directive after
 ``@setter``.
-The "impl" function is then called with ``NULL`` and is responsible for
-handling this case, as in this example taken from
+The "impl" function is then also called to delete the attribute and is
+responsible for handling this case, as in this example taken from
 :cpy-file:`Objects/funcobject.c`::
 
     /*[clinic input]
