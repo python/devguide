@@ -794,7 +794,6 @@ some of CPython's modules (for example, ``zlib``).
 
       On **Ubuntu 24.04 and later**, and on other releases using the deb822
       format, the sources are in ``/etc/apt/sources.list.d/ubuntu.sources``.
-      ``/etc/apt/sources.list`` is left as a stub with nothing to uncomment.
       Add ``deb-src`` to the ``Types`` field of the entries you want sources
       for::
 
