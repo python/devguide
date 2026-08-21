@@ -98,6 +98,7 @@ For more details about translations and their progress, see
    * - `Russian (ru) <https://docs.python.org/ru/>`__
      - Daniil Kolesnikov (:github-user:`dkqzz`, `email <mailto:mlgrussianxp@gmail.com>`__)
      - :github:`GitHub <python/python-docs-ru>`,
+       `Telegram <https://t.me/py_docs_ru>`__,
        `original announcement <https://mail.python.org/pipermail/doc-sig/2019-May/004131.html>`__
    * - `Simplified Chinese (zh-cn) <https://docs.python.org/zh-cn/>`__
      - | Shengjing Zhu (:github-user:`zhsj`),
