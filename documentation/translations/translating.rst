@@ -65,8 +65,9 @@ For more details about translations and their progress, see
      - 오동권 (:github-user:`flowdas`)
      - :github:`GitHub <python/python-docs-ko>`
    * - Marathi (mr)
-     - Sanket Garade (:github-user:`sanketgarade`, `email <mailto:garade@pm.me>`__)
-     - :github:`GitHub <sanketgarade/python-doc-mr>`
+     - Satvik Mudgal (:github-user:`satvikmudgal`, `email <mailto:satvik.mudgal@gmail.com>`__)
+     - :github:`GitHub <satvikmudgal/python-docs-mr>`,
+       `Ownership transfer <https://discuss.python.org/t/pep-545-proposal-to-take-over-maintainership-of-marathi-translation-python-docs-mr/108673>`__
    * - Lithuanian (lt)
      - Albertas Gimbutas (:github-user:`albertas`, `email <mailto:albertasgim@gmail.com>`__)
      - `original announcement <https://mail.python.org/pipermail/doc-sig/2019-July/004138.html>`__
