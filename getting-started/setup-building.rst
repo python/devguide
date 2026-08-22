@@ -790,13 +790,31 @@ some of CPython's modules (for example, ``zlib``).
       dependencies for the Python you're working on by using the ``apt`` command.
 
       First, make sure you have enabled the source packages in the sources list.
-      You can do this by adding the location of the source packages, including
-      URL, distribution name and component name, to ``/etc/apt/sources.list``.
-      Take Ubuntu 22.04 LTS (Jammy Jellyfish) for example::
+      Where those live depends on your release.
+
+      On **Ubuntu 24.04 and later**, and on other releases using the deb822
+      format, the sources are in ``/etc/apt/sources.list.d/ubuntu.sources``.
+      Add ``deb-src`` to the ``Types`` field of the entries you want sources
+      for::
+
+         $ sudo nano /etc/apt/sources.list.d/ubuntu.sources
+
+      changing::
+
+         Types: deb
+
+      to::
+
+         Types: deb deb-src
+
+      On **Ubuntu 22.04 and other releases using the one-line format**, add the
+      location of the source packages, including URL, distribution name and
+      component name, to ``/etc/apt/sources.list``. Taking Ubuntu 22.04 LTS
+      (Jammy Jellyfish) as the example::
 
          $ deb-src http://archive.ubuntu.com/ubuntu/ jammy main
 
-      Alternatively, uncomment lines with ``deb-src`` using an editor, for
+      Alternatively, uncomment the lines with ``deb-src`` using an editor, for
       example::
 
          $ sudo nano /etc/apt/sources.list
