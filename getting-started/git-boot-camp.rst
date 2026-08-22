@@ -265,7 +265,7 @@ To re-apply the last stashed change::
 Comparing changes
 -----------------
 
-View all non-commited changes::
+View all non-committed changes::
 
    $ git diff
 
