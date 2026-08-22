@@ -67,14 +67,11 @@ For more details about translations and their progress, see
    * - Marathi (mr)
      - Satvik Mudgal (:github-user:`satvikmudgal`, `email <mailto:satvik.mudgal@gmail.com>`__)
      - :github:`GitHub <satvikmudgal/python-docs-mr>`,
-       `Ownership transfer <https://discuss.python.org/t/pep-545-proposal-to-take-over-maintainership-of-marathi-translation-python-docs-mr/108673>`__
-   * - Lithuanian (lt)
-     - Albertas Gimbutas (:github-user:`albertas`, `email <mailto:albertasgim@gmail.com>`__)
-     - `original announcement <https://mail.python.org/pipermail/doc-sig/2019-July/004138.html>`__
+       `coordinator transfer <https://discuss.python.org/t/pep-545-proposal-to-take-over-maintainership-of-marathi-translation-python-docs-mr/108673>`__
    * - Persian (fa)
      - | Alireza Shabani (:github-user:`revisto`),
        | Sepehr Rasouli (:github-user:`sepehr-rs`)
-     - :github:`GitHub <revisto/python-docs-fa>`,
+     - :github:`GitHub <python/python-docs-fa>`,
        `Telegram <https://t.me/python_docs_farsi>`__
    * - `Polish (pl) <https://docs.python.org/pl/>`__
      - | Maciej Olko (:github-user:`m-aciek`),
@@ -95,12 +92,13 @@ For more details about translations and their progress, see
        | Yashraj Jangra (:github-user:`Yashraj-Jangra`)
      - :github:`GitHub <BHUVANSH855/python-docs-pa>`,
        `Transifex <tx_>`_
-   * - `Romanian (ro)  <https://docs.python.org/ro/>`__
+   * - `Romanian (ro) <https://docs.python.org/ro/>`__
      - Octavian Mustafa (:github-user:`octaG-M`, `email <mailto:octawian@yahoo.com>`__)
      - :github:`GitHub <python/python-docs-ro>`
-   * - Russian (ru)
-     - Daniil Kolesnikov (:github-user:`MLGRussianXP`, `email <mailto:mlgrussianxp@gmail.com>`__)
-     - :github:`GitHub <MLGRussianXP/python-docs-ru>`,
+   * - `Russian (ru) <https://docs.python.org/ru/>`__
+     - Daniil Kolesnikov (:github-user:`dkqzz`, `email <mailto:mlgrussianxp@gmail.com>`__)
+     - :github:`GitHub <python/python-docs-ru>`,
+       `Telegram <https://t.me/py_docs_ru>`__,
        `original announcement <https://mail.python.org/pipermail/doc-sig/2019-May/004131.html>`__
    * - `Simplified Chinese (zh-cn) <https://docs.python.org/zh-cn/>`__
      - | Shengjing Zhu (:github-user:`zhsj`),
@@ -110,7 +108,7 @@ For more details about translations and their progress, see
    * - `Spanish (es) <https://docs.python.org/es/>`__
      - Raúl Cumplido (:github-user:`raulcd`)
      - :github:`GitHub <python/python-docs-es>`
-   * - Swedish (sv)
+   * - `Swedish (sv) <https://docs.python.org/sv/>`__
      - Daniel Nylander (:github-user:`yeager`)
      - :github:`GitHub <python/python-docs-sv>`
    * - Tamil (ta)
