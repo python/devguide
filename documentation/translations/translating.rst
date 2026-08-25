@@ -64,6 +64,9 @@ For more details about translations and their progress, see
    * - `Korean (ko) <https://docs.python.org/ko/>`__
      - 오동권 (:github-user:`flowdas`)
      - :github:`GitHub <python/python-docs-ko>`
+   * - Lithuanian (lt)
+     - Albertas Gimbutas (:github-user:`albertas`, `email <mailto:albertasgim@gmail.com>`__)
+     - `original announcement <https://mail.python.org/pipermail/doc-sig/2019-July/004138.html>`__
    * - Marathi (mr)
      - Satvik Mudgal (:github-user:`satvikmudgal`, `email <mailto:satvik.mudgal@gmail.com>`__)
      - :github:`GitHub <satvikmudgal/python-docs-mr>`,
