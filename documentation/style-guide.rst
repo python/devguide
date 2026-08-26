@@ -237,7 +237,7 @@ the second mention is more appropriate for a link.  Some units are long enough
 to have a few repeated links.  Use judgement to decide when a link will help
 the reader.
 
-We use the :pypi:`linklint Sphinx extension <linklint>` to suppress two kinds
+We use the :pypi:`linklint Sphinx extension <sphinx_linklint>` to suppress two kinds
 of excessive links: references in a section to itself and duplicate references
 in a paragraph.  Previously, editors had to carefully use an exclamation mark
 in a Sphinx reference (``:func:`!map```) to prevent such links.

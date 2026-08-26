@@ -3,7 +3,6 @@ import os
 from urllib.request import urlopen
 
 extensions = [
-    'linklint.ext',
     'notfound.extension',
     'sphinx.ext.extlinks',
     'sphinx.ext.intersphinx',
@@ -11,6 +10,7 @@ extensions = [
     'sphinx_copybutton',
     'sphinx_inline_tabs',
     'sphinx_last_updated_by_git',
+    'sphinx_linklint.ext',
     'sphinxcontrib.youtube',
     'sphinxext.opengraph',
     'sphinxext.rediraffe',
