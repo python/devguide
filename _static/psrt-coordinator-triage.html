@@ -17,15 +17,15 @@
                  │  field to Coordinator  │
                  └────────────┬───────────┘
                               │
-                 ┌────────────▼───────────┐
-                 │ Coordinator determines │
-             ┌───┤    whether report...   ┼───┐
-             │   └────────────┬───────────┘   │
+                 ┌────────────▼────────────┐
+                 │ Coordinator determines  │
+             ┌───┤    whether report...    ┼──┐
+             │   └────────────┬────────────┘  │
              │                │               │
-┌────────────▼─┐ ┌────────────▼───────────┐ ┌─▼─────────────┐
-│..is a invalid│ │  ..is a bug, but not   │ │..is a security│
-│  or non-issue│ │    security relevant   │ │     issue     │
-└────────────┬─┘ └────────────┬───────────┘ └─┬─────────────┘
+┌────────────▼──┐ ┌───────────▼───────────┐ ┌─▼─────────────┐
+│..is an invalid│ │  ..is a bug, but not  │ │..is a security│
+│  or non-issue │ │    security relevant  │ │     issue     │
+└────────────┬──┘ └───────────┬───────────┘ └─┬─────────────┘
              │                │               │
              │   ┌────────────▼───────────┐   │
              │   │   Coordinator opens a  │   │
