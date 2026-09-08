@@ -15,3 +15,5 @@ Development workflow
    c-api
    grammar
    porting
+   bytecode-specialization
+

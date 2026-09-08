@@ -43,6 +43,7 @@ contributors through the process.
        * :ref:`communication`
        * :ref:`gitbootcamp`
        * :ref:`devcycle`
+       * :ref:`bytecode-specialization`
        * :ref:`ai-tools`
      -
        * :ref:`tracker`
