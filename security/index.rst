@@ -8,5 +8,7 @@ Security
    :maxdepth: 5
 
    policy
+   threat-model
    psrt
    sbom
+

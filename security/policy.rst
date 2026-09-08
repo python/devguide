@@ -1,6 +1,9 @@
+.. _security-policy:
+
 ===============
 Security policy
 ===============
+
 
 .. important::
 
@@ -16,11 +19,11 @@ What types of bugs are vulnerabilities?
 **Not all bugs are vulnerabilities.**
 
 To avoid causing duplicate work for PSRT members, **all potential** reports
-must be evaluated against the relevant threat models
+must be evaluated against the :ref:`CPython Threat Model <threat-model>`
 prior to being submitted to the PSRT.
-Where possible, cite the relevant threat model to show that
-the latter has been considered while determining whether
-to report a bug as a vulnerability.
+Reporters must cite the relevant section of the threat model to show that
+it has been considered while determining whether to report a bug as a vulnerability.
+
 
 Vulnerabilities must be exploitable from code, configurations,
 pre-conditions, or deployments that may exist in the real world.
@@ -106,10 +109,11 @@ be formatted correctly:
   a proof-of-concept script that reproduces the issue and provides a clear
   indication of whether the vulnerability is still present (such as exiting with
   ``1`` if vulnerable and ``0`` if not vulnerable).
-* When reporting large numbers or "batches" of vulnerabilities or
-  searching for potential vulnerabilities using an LLM, you as a reporter must
-  verify the factual validity (such as whether APIs have been hallucinated)
-  of the content in all reports prior to submission to the PSRT.
+* When reporting vulnerabilities found or written using an LLM (Large Language Model),
+  you must explicitly disclose which LLM model was used. You must also cross-check
+  all potential findings against the :ref:`threat-model` and verify factual validity
+  (ensuring no hallucinated APIs or false behaviors) prior to submission.
+
 * Do not include severity or CVSS information in your initial report,
   this information will be determined by the PSRT.
 * Ideally, include a minimal patch with the mitigation for the report.
