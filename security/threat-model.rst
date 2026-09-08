@@ -54,7 +54,8 @@ Data Formats & Parsing (``xml``, ``json``, ``tarfile``, ``zipfile``)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 * **XML Parsing:** Standard :mod:`xml.etree.ElementTree` and :mod:`xml.dom.minidom` are vulnerable to XML entity expansion attacks (Billion Laughs) when parsing untrusted inputs. Users requiring secure XML parsing must use defusedxml.
-* **Archive Files:** Extracting untrusted archives using :mod:`tarfile` or :mod:`zipfile` without explicit path sanitization (e.g., using `filter='data'` in Python 3.12+) can overwrite arbitrary files.
+* **Archive Files:** Extracting untrusted archives using :mod:`tarfile` or :mod:`zipfile` without explicit path sanitization (e.g., using ``filter='data'`` in Python 3.12+) can overwrite arbitrary files.
+
 
 Process Execution (``subprocess``, ``os``)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
