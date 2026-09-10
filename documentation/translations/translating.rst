@@ -36,7 +36,7 @@ For more details about translations and their progress, see
        :github:`mirror <python/python-docs-fr>`
    * - German (de)
      - Swen Bachmann (:github-user:`sba72`)
-     - :github:`GitHub <https://github.com/python/python-docs-de>`
+     - :github:`GitHub <https://github.com/python/python-docs-de>`__
    * - `Greek (el) <https://docs.python.org/el/>`__
      - | Lysandros Nikolaou (:github-user:`lysnikolaou`),
        | Fanis Petkos (:github-user:`thepetk`),
