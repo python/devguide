@@ -6,6 +6,73 @@ Translating
 
 .. highlight::  rest
 
+The Python documentation is written in English, but Python is taught, learned,
+and used around the world, in many languages. English is the native language
+of only about 5% of the world's population, and fewer than a fifth more speak
+it as an additional language [#f1]_. For many people, learning Python also
+means overcoming a language barrier. They must learn not only Python, but also
+enough English to be able to use the language's documentation.
+
+The United Nations Open Source Principles call on projects both to provide
+documentation and to foster inclusive participation [#f2]_. Providing
+documentation only in English limits who can benefit from it and who can
+participate in the wider Python community.
+
+.. figure:: python-logo-languages.svg
+   :align: center
+   :alt: The word "Python" written in dozens of languages.
+
+.. Image drawn manually in Inkscape. The text in python-logo-languages.svg was
+   converted to paths before exporting for consistent rendering, contact
+   StanFromIreland for the original.
+
+Translations make Python's documentation accessible to a much wider audience.
+They allow people to learn and use Python in a language they are confident in,
+reducing the additional burden of learning through English.
+
+Translation also improves the English documentation. Translators review the
+source text closely and often find bugs. As a result, translation therefore
+benefits not only readers of other languages, but everyone who uses and
+contributes to Python's documentation.
+
+
+Overview
+========
+
+.. figure:: overview-light.svg
+   :class: only-light
+   :align: center
+   :alt: Strings are extracted from the source documentation into PO files,
+         translated, uploaded to the translation repository, built by
+         docsbuild-scripts, and published.
+
+.. figure:: overview-dark.svg
+   :class: only-dark
+   :align: center
+   :alt: Strings are extracted from the source documentation into PO files,
+         translated, uploaded to the translation repository, built by
+         docsbuild-scripts, and published.
+
+.. Drawn with Excalidraw: https://excalidraw.com/#json=eh8rCFZJwziIPgj9BjK-r,VEOHnb-9FdAHZNaG4zfH6g
+
+Roughly, translation works as follows:
+
+- Translators work on gettext PO file catalogs generated from the Python docs
+  `by Sphinx <https://www.sphinx-doc.org/en/master/usage/advanced/intl.html>`__,
+  rather than editing the documentation directly.
+- Teams work in different ways. For example, some have translators work
+  locally, while others use tools like :ref:`Transifex <transifex-use>`.
+  Messages without a translation fall back to English, so a translation can be
+  published before it is complete.
+- Translations are committed to the :ref:`translation repository <translation-repo>`.
+- Completed translations are automatically pulled in from the repository by
+  :github:`docsbuild-scripts <python/docsbuild-scripts>` and published to
+  docs.python.org.
+
+
+Project status
+==============
+
 Several documentation translations are already in production and can be found
 in the language switcher; others are works in
 progress. To get started read your repository's contributing guide, which is
@@ -135,73 +202,6 @@ For more details about translations and their progress, see
      - Duc-Tam Nguyen (:github-user:`tamnd`)
      - :github:`GitHub <tamnd/python-docs-vi>`,
        `Transifex <tx_>`_
-
-
-Overview
-========
-
-.. figure:: overview-light.svg
-   :class: only-light
-   :align: center
-   :alt: Strings are extracted from the source documentation into PO files,
-         translated, uploaded to the translation repository, built by
-         docsbuild-scripts, and published.
-
-.. figure:: overview-dark.svg
-   :class: only-dark
-   :align: center
-   :alt: Strings are extracted from the source documentation into PO files,
-         translated, uploaded to the translation repository, built by
-         docsbuild-scripts, and published.
-
-.. Drawn with Excalidraw: https://excalidraw.com/#json=eh8rCFZJwziIPgj9BjK-r,VEOHnb-9FdAHZNaG4zfH6g
-
-Roughly, translation works as follows:
-
-- Translators work on gettext PO file catalogs generated from the Python docs
-  `by Sphinx <https://www.sphinx-doc.org/en/master/usage/advanced/intl.html>`__,
-  rather than editing the documentation directly.
-- Teams work in different ways. For example, some have translators work
-  locally, while others use tools like :ref:`Transifex <transifex-use>`.
-  Messages without a translation fall back to English, so a translation can be
-  published before it is complete.
-- Translations are committed to the :ref:`translation repository <translation-repo>`.
-- Completed translations are automatically pulled in from the repository by
-  :github:`docsbuild-scripts <python/docsbuild-scripts>` and published to
-  docs.python.org.
-
-
-Motivation
-==========
-
-The Python documentation is written in English, but Python is taught, learned,
-and used around the world, in many languages. English is the native language
-of only about 5% of the world's population, and fewer than a fifth more speak
-it as an additional language [#f1]_. For many people, learning Python also
-means overcoming a language barrier. They must learn not only Python, but also
-enough English to be able to use the language's documentation.
-
-The United Nations Open Source Principles call on projects both to provide
-documentation and to foster inclusive participation [#f2]_. Providing
-documentation only in English limits who can benefit from it and who can
-participate in the wider Python community.
-
-.. figure:: python-logo-languages.svg
-   :align: center
-   :alt: The word "Python" written in dozens of languages.
-
-.. Image drawn manually in Inkscape. The text in python-logo-languages.svg was
-   converted to paths before exporting for consistent rendering, contact
-   StanFromIreland for the original.
-
-Translations make Python's documentation accessible to a much wider audience.
-They allow people to learn and use Python in a language they are confident in,
-reducing the additional burden of learning through English.
-
-Translation also improves the English documentation. Translators review the
-source text closely and often find bugs. As a result, translation therefore
-benefits not only readers of other languages, but everyone who uses and
-contributes to Python's documentation.
 
 
 How to get help
