@@ -12,6 +12,5 @@ Getting started
    fixing-issues
    git-boot-camp
    pull-request-lifecycle
-   news-entry-examples
    getting-help
    ai-tools
