@@ -915,23 +915,15 @@ some of CPython's modules (for example, ``zlib``).
 
          $ sudo port install pkgconfig openssl xz gdbm tk +quartz mpdecimal zstd
 
-      .. tab:: Python 3.13+
+      .. tab:: Python 3.11+
 
-         For Python 3.13 and newer::
-
-            $ GDBM_CFLAGS="-I$(dirname $(dirname $(which port)))/include" \
-               GDBM_LIBS="-L$(dirname $(dirname $(which port)))/lib -lgdbm" \
-               ./configure --config-cache \
-                           --with-pydebug
-
-      .. tab:: Python 3.11-3.12
-
-         For Python 3.11 and 3.12::
+         For Python 3.11 and newer::
 
             $ GDBM_CFLAGS="-I$(dirname $(dirname $(which port)))/include" \
                GDBM_LIBS="-L$(dirname $(dirname $(which port)))/lib -lgdbm" \
                ./configure --config-cache \
                            --with-pydebug
+
 
    And finally, run ``make``::
 
