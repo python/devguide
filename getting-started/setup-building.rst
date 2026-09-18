@@ -841,8 +841,11 @@ some of CPython's modules (for example, ``zlib``).
                inetutils-inetd
 
       Note that Debian 12 and Ubuntu 24.04 do not have the ``libmpdec-dev``
-      package.  You can safely remove it from the install list above and the
-      Python build will use a bundled version.  But we recommend using the system
+      package.  You can remove it from the install list above: for Python 3.15
+      and older, the build will use a bundled version; for Python 3.16 and
+      newer, the bundled copy has been removed and the :mod:`decimal` module
+      will fall back to its slower pure-Python implementation.  We recommend
+      using the system
       `libmpdec <https://www.bytereef.org/mpdecimal/doc/libmpdec/>`__ library.
       Either build it from sources or install this package from
       https://deb.sury.org.
@@ -912,24 +915,15 @@ some of CPython's modules (for example, ``zlib``).
 
          $ sudo port install pkgconfig openssl xz gdbm tk +quartz mpdecimal zstd
 
-      .. tab:: Python 3.13+
+      .. tab:: Python 3.11+
 
-         For Python 3.13 and newer::
-
-            $ GDBM_CFLAGS="-I$(dirname $(dirname $(which port)))/include" \
-               GDBM_LIBS="-L$(dirname $(dirname $(which port)))/lib -lgdbm" \
-               ./configure --config-cache \
-                           --with-pydebug \
-                           --with-system-libmpdec
-
-      .. tab:: Python 3.11-3.12
-
-         For Python 3.11 and 3.12::
+         For Python 3.11 and newer::
 
             $ GDBM_CFLAGS="-I$(dirname $(dirname $(which port)))/include" \
                GDBM_LIBS="-L$(dirname $(dirname $(which port)))/lib -lgdbm" \
                ./configure --config-cache \
                            --with-pydebug
+
 
    And finally, run ``make``::
 
