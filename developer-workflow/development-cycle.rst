@@ -230,7 +230,7 @@ This includes, for example:
 * Organization-related repositories: the `Code of Conduct <https://github.com/python/pycon-code-of-conduct>`__, `.github <https://github.com/python/.github>`__.
 * Documentation and websites for all the above: `python.org repository <https://github.com/python/pythondotorg>`__, `PEPs <https://github.com/python/peps>`__, `Devguide <https://github.com/python/devguide>`__, docs translations.
 * Infrastructure for all the above: `docsbuild-scripts <https://github.com/python/docsbuild-scripts>`__, `buildmaster-config <https://github.com/python/buildmaster-config>`__.
-* Discussions and notes around official development-related processes and events: `steering-council <https://github.com/python/steering-council>`__, `core-sprint <https://github.com/python/core-sprint>`__.
+* Discussions and notes around official development-related processes and events: `steering-council <https://github.com/python/steering-council>`__, `packaging-council <https://github.com/python/packaging-council>`__, `core-sprint <https://github.com/python/core-sprint>`__.
 
 Before adding a new repository to the organization, open a discussion to seek consensus
 in the `Committers Discourse category <https://discuss.python.org/c/committers/5>`__.
