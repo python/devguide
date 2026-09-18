@@ -142,7 +142,7 @@ Once the following resources have been fully translated:
 
 - ``bugs.po``, with proper links to the language repository issue tracker
 - all files in the ``tutorial/`` folder
-- ``library/functions.po``, the page documenting builtins
+- ``builtins/functions.po``
 
 the translation can be added to the language switcher. This can be done with a
 pull request to docsbuild-scripts_, like `this commit <https://github.com/python/docsbuild-scripts/commit/e4a8aff9772738a63d0945042777d18c3d926930>`__
@@ -167,7 +167,7 @@ Here are the essential points of :PEP:`545`:
   ``https://github.com/python/python-docs-{LANGUAGE_TAG}``
 
 - Translations having completed ``bugs``, ``tutorial/``
-  and ``library/functions`` are added to the language switcher.
+  and ``builtins/functions`` are added to the language switcher.
 
 
 Translating Sphinx
