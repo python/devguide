@@ -66,8 +66,8 @@ configparser          ambv*
 contextlib            ncoghlan, 1st1
 copy                  serhiy-storchaka*
 copyreg               serhiy-storchaka*
-ctypes                ZeroIntensity*
 csv                   serhiy-storchaka*
+ctypes                ZeroIntensity*
 curses                Yhg1s
 dataclasses           ericvsmith*, carljm
 datetime              pganssle, StanFromIreland
