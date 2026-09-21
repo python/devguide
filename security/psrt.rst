@@ -32,14 +32,17 @@ The nomination succeeds if the nomination receives at least
 two-thirds positive votes from a vote of existing PSRT members
 that is open for one week and not vetoed by the Steering Council.
 
-Once per year the Steering Council will receive a report of inactive members
-of the PSRT with the recommendation to remove the inactive users from the PSRT.
+Every six months the Steering Council will receive a report of inactive PSRT
+members with the recommendation to remove the inactive users from the PSRT.
 “Inactive” is defined as a member who hasn’t coordinated or commented on a
-vulnerability report in the past year since the last report was generated.
+vulnerability report in the past six months since the last report was generated.
 The Steering Council may remove members of the PSRT with a simple vote.
 
 Members of the PSRT who are a Release Manager or Steering Council member may
 remain in the PSRT regardless of inactivity in vulnerability reports.
+When a Release Manager's term ends, their PSRT membership becomes a regular
+membership subject to the inactivity policy above. PSRT admins are not exempt
+from the inactivity policy and are included in the report of inactive members.
 
 .. _similar to core team nominations: https://devguide.python.org/core-team/join-team/
 
