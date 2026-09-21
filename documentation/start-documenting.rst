@@ -207,7 +207,7 @@ To list other supported :program:`make` targets, run:
 
       .\make help
 
-      
+
 See :cpy-file:`Doc/README.rst` for more information.
 
 .. note::
