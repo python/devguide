@@ -38,11 +38,13 @@ members with the recommendation to remove the inactive users from the PSRT.
 vulnerability report in the past six months since the last report was generated.
 The Steering Council may remove members of the PSRT with a simple vote.
 
-Members of the PSRT who are a Release Manager or Steering Council member may
-remain in the PSRT regardless of inactivity in vulnerability reports.
-When a Release Manager's term ends, their PSRT membership becomes a regular
-membership subject to the inactivity policy above. PSRT admins are not exempt
-from the inactivity policy and are included in the report of inactive members.
+Release Managers must be members of the PSRT for the duration of their term.
+Steering Council members and the release team experts may join the PSRT if they
+wish. All of these members may remain in the PSRT regardless of inactivity in
+vulnerability reports. When a member leaves these roles, their PSRT membership
+becomes a regular membership subject to the inactivity policy above.
+PSRT admins are not exempt from the inactivity policy and are included in the
+report of inactive members.
 
 .. _similar to core team nominations: https://devguide.python.org/core-team/join-team/
 
