@@ -10,8 +10,8 @@ that the CPython project uses is `SPDX <https://spdx.github.io/spdx-spec/v2.3/>`
 which can be transformed into other formats if necessary by consumers.
 
 There are multiple sources of third-party dependencies for CPython.
-Some are vendored into the source code of CPython itself (like ``mpdecimal``
-vendored at :cpy-file:`Modules/_decimal/libmpdec`) or they could be optionally pulled
+Some are vendored into the source code of CPython itself (like ``expat``
+vendored at :cpy-file:`Modules/expat`) or they could be optionally pulled
 in during builds like Windows using dependencies from the
 `python/cpython-source-deps <https://github.com/python/cpython-source-deps>`__
 repository.
