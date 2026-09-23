@@ -27,7 +27,7 @@ For more details about translations and their progress, see
    * - Arabic (ar)
      - Abdur-Rahmaan Janhangeer (:github-user:`Abdur-rahmaanJ`)
      - :github:`GitHub <Abdur-rahmaanJ/python-docs-ar>`
-   * - `Bengali (bn-IN) <https://docs.python.org/bn-in/>`__
+   * - Bengali (bn-IN)
      - Kushal Das (:github-user:`kushaldas`)
      - :github:`GitHub <python/python-docs-bn-in>`
    * - `French (fr) <https://docs.python.org/fr/>`__
@@ -71,7 +71,7 @@ For more details about translations and their progress, see
      - Satvik Mudgal (:github-user:`satvikmudgal`, `email <mailto:satvik.mudgal@gmail.com>`__)
      - :github:`GitHub <satvikmudgal/python-docs-mr>`,
        `coordinator transfer <https://discuss.python.org/t/pep-545-proposal-to-take-over-maintainership-of-marathi-translation-python-docs-mr/108673>`__
-   * - Persian (fa)
+   * - `Persian (fa) <https://docs.python.org/fa/>`__
      - | Alireza Shabani (:github-user:`revisto`),
        | Sepehr Rasouli (:github-user:`sepehr-rs`)
      - :github:`GitHub <python/python-docs-fa>`,
