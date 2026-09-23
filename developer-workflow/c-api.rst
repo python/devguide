@@ -115,7 +115,7 @@ Guidelines for expanding/changing the public API
 ------------------------------------------------
 
 - Make sure the new API follows reference counting conventions.
-  (Following them makes the API easier to reason about, and easier use
+  (Following them makes the API easier to reason about, and easier to use
   in other Python implementations.)
 
   - Functions *must not* steal references
