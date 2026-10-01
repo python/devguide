@@ -388,7 +388,7 @@ compiler just like building for :ref:`Unix <unix-compiling>` as well as:
 
 1. A C compiler that can target WebAssembly (for example, `WASI SDK`_)
 2. A WASI host/runtime (for example, Wasmtime_)
-3. A system install of Python to run the build scripts
+3. A system install of Python 3.11 or newer to run the build scripts
 
 All of this is provided in the WASI :ref:`dev container <using-a-container>`
 (which you can select as an alternative container when using a
