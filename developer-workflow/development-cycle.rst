@@ -348,7 +348,7 @@ Current administrators
 +--------------------+----------------------------------------------------------+-------------------+
 | Thomas Wouters     | Python 3.12 and 3.13 Release Manager                     | Yhg1s             |
 +--------------------+----------------------------------------------------------+-------------------+
-| Pablo Galindo      | Python 3.10 and 3.11 Release Manager,                    | pablogsal         |
+| Pablo Galindo      | Python 3.11 Release Manager,                             | pablogsal         |
 |                    | Maintainer of buildbot.python.org                        |                   |
 +--------------------+----------------------------------------------------------+-------------------+
 | Łukasz Langa       |                                                          | ambv              |

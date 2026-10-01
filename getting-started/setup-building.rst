@@ -412,7 +412,7 @@ build you ultimately care about (that is, the build Python is not meant for use
 by you directly, only the build system).
 
 The easiest way to get a debug build of CPython for WASI is to run the
-following command with Python 3.11 or newer:
+following command:
 
 .. tab:: Python 3.15+
 
@@ -882,32 +882,13 @@ some of CPython's modules (for example, ``zlib``).
 
          $ brew bundle --file=Misc/Brewfile
 
-      .. tab:: Python 3.11+
+      Then configure::
 
-         For Python 3.11 and newer::
-
-            $ GDBM_CFLAGS="-I$(brew --prefix gdbm)/include" \
-               GDBM_LIBS="-L$(brew --prefix gdbm)/lib -lgdbm" \
-               ./configure --config-cache \
-                           --with-pydebug \
-                           --with-openssl="$(brew --prefix openssl@3)"
-
-      .. tab:: Python 3.10
-
-         For Python 3.10::
-
-            $ CPPFLAGS="-I$(brew --prefix gdbm)/include -I$(brew --prefix xz)/include" \
-               LDFLAGS="-L$(brew --prefix gdbm)/lib -L$(brew --prefix xz)/lib" \
-               ./configure --config-cache \
-                           --with-pydebug \
-                           --with-openssl="$(brew --prefix openssl@3)" \
-                           --with-tcltk-libs="$(pkg-config --libs tcl tk)" \
-                           --with-tcltk-includes="$(pkg-config --cflags tcl tk)" \
-                           --with-dbmliborder=gdbm:ndbm
-
-         (``--with-dbmliborder`` is a workaround for a Homebrew-specific change
-         to ``gdbm``; see `#89452 <https://github.com/python/cpython/issues/89452>`__
-         for details.)
+         $ GDBM_CFLAGS="-I$(brew --prefix gdbm)/include" \
+            GDBM_LIBS="-L$(brew --prefix gdbm)/lib -lgdbm" \
+            ./configure --config-cache \
+                        --with-pydebug \
+                        --with-openssl="$(brew --prefix openssl@3)"
 
    .. tab:: MacPorts
 
@@ -915,15 +896,12 @@ some of CPython's modules (for example, ``zlib``).
 
          $ sudo port install pkgconfig openssl xz gdbm tk +quartz mpdecimal zstd
 
-      .. tab:: Python 3.11+
+      Then configure::
 
-         For Python 3.11 and newer::
-
-            $ GDBM_CFLAGS="-I$(dirname $(dirname $(which port)))/include" \
-               GDBM_LIBS="-L$(dirname $(dirname $(which port)))/lib -lgdbm" \
-               ./configure --config-cache \
-                           --with-pydebug
-
+         $ GDBM_CFLAGS="-I$(dirname $(dirname $(which port)))/include" \
+            GDBM_LIBS="-L$(dirname $(dirname $(which port)))/lib -lgdbm" \
+            ./configure --config-cache \
+                        --with-pydebug
 
    And finally, run ``make``::
 
@@ -996,7 +974,7 @@ make sure you also commit the changes in the generated files.
 Python's :file:`configure.ac` script requires a specific version of
 GNU Autoconf.
 For Python 3.12 and newer, GNU Autoconf v2.71 is required.
-For Python 3.11 and earlier, GNU Autoconf v2.69 is required.
+For Python 3.11, GNU Autoconf v2.69 is required.
 
 The recommended and by far the easiest way to regenerate :file:`configure` is::
 
