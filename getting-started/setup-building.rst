@@ -882,15 +882,13 @@ some of CPython's modules (for example, ``zlib``).
 
          $ brew bundle --file=Misc/Brewfile
 
-      .. tab:: Python 3.11+
+      Then configure::
 
-         For Python 3.11 and newer::
-
-            $ GDBM_CFLAGS="-I$(brew --prefix gdbm)/include" \
-               GDBM_LIBS="-L$(brew --prefix gdbm)/lib -lgdbm" \
-               ./configure --config-cache \
-                           --with-pydebug \
-                           --with-openssl="$(brew --prefix openssl@3)"
+         $ GDBM_CFLAGS="-I$(brew --prefix gdbm)/include" \
+            GDBM_LIBS="-L$(brew --prefix gdbm)/lib -lgdbm" \
+            ./configure --config-cache \
+                        --with-pydebug \
+                        --with-openssl="$(brew --prefix openssl@3)"
 
    .. tab:: MacPorts
 
@@ -898,15 +896,12 @@ some of CPython's modules (for example, ``zlib``).
 
          $ sudo port install pkgconfig openssl xz gdbm tk +quartz mpdecimal zstd
 
-      .. tab:: Python 3.11+
+      Then configure::
 
-         For Python 3.11 and newer::
-
-            $ GDBM_CFLAGS="-I$(dirname $(dirname $(which port)))/include" \
-               GDBM_LIBS="-L$(dirname $(dirname $(which port)))/lib -lgdbm" \
-               ./configure --config-cache \
-                           --with-pydebug
-
+         $ GDBM_CFLAGS="-I$(dirname $(dirname $(which port)))/include" \
+            GDBM_LIBS="-L$(dirname $(dirname $(which port)))/lib -lgdbm" \
+            ./configure --config-cache \
+                        --with-pydebug
 
    And finally, run ``make``::
 
