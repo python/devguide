@@ -892,23 +892,6 @@ some of CPython's modules (for example, ``zlib``).
                            --with-pydebug \
                            --with-openssl="$(brew --prefix openssl@3)"
 
-      .. tab:: Python 3.10
-
-         For Python 3.10::
-
-            $ CPPFLAGS="-I$(brew --prefix gdbm)/include -I$(brew --prefix xz)/include" \
-               LDFLAGS="-L$(brew --prefix gdbm)/lib -L$(brew --prefix xz)/lib" \
-               ./configure --config-cache \
-                           --with-pydebug \
-                           --with-openssl="$(brew --prefix openssl@3)" \
-                           --with-tcltk-libs="$(pkg-config --libs tcl tk)" \
-                           --with-tcltk-includes="$(pkg-config --cflags tcl tk)" \
-                           --with-dbmliborder=gdbm:ndbm
-
-         (``--with-dbmliborder`` is a workaround for a Homebrew-specific change
-         to ``gdbm``; see `#89452 <https://github.com/python/cpython/issues/89452>`__
-         for details.)
-
    .. tab:: MacPorts
 
       For **MacPorts**, install dependencies using ``port``::
