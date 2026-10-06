@@ -6,8 +6,6 @@
 Argument Clinic
 ***************
 
-:author: Larry Hastings
-
 **Source code:** :cpy-file:`Tools/clinic/clinic.py`.
 
 Argument Clinic is a preprocessor for CPython C files.
