@@ -425,6 +425,9 @@ and the repository where you can open an issue to ask for a decision.
    * - Documentation Editorial Board
      - :pep:`732`
      - :github:`python/editorial-board`
+   * - Packaging Council
+     - :pep:`772`
+     - :github:`python/packaging-council`
    * - Typing Council
      - :pep:`729`
      - :github:`python/typing-council`
