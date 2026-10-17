@@ -17,21 +17,21 @@ Running and writing tests
 Running
 =======
 
-The shortest, simplest way of running the test suite is the following command
-from the root directory of your checkout (after you have
-:ref:`built Python <compiling>`):
+The shortest, simplest way of running the test suite is the following command,
+which runs tests in parallel, from the root directory of your checkout
+(after you have :ref:`built Python <compiling>`):
 
 .. tab:: Unix
 
     .. code-block:: shell
 
-        ./python -m test
+        ./python -m test -j0
 
 .. tab:: macOS
 
     .. code-block:: shell
 
-        ./python.exe -m test
+        ./python.exe -m test -j0
 
     This works on :ref:`most <mac-python.exe>` macOS systems.
 
@@ -39,7 +39,7 @@ from the root directory of your checkout (after you have
 
     .. code-block:: dosbatch
 
-        .\python.bat -m test
+        .\python.bat -m test -j0
 
 This will run the majority of tests, but exclude a small portion of them; these
 excluded tests use special kinds of resources: for example, accessing the
@@ -139,26 +139,7 @@ But, there are several important notes:
    In other words: if some module does not have ``unittest.main()``, then
    most likely it does not support direct invocation.
 
-If you have a multi-core or multi-CPU machine, you can enable parallel testing
-using several Python processes so as to speed up things:
 
-.. tab:: Unix
-
-    .. code-block:: shell
-
-        ./python -m test -j0
-
-.. tab:: macOS
-
-    .. code-block:: shell
-
-        ./python.exe -m test -j0
-
-.. tab:: Windows
-
-    .. code-block:: dosbatch
-
-        .\python.bat -m test -j0
 
 .. _strenuous_testing:
 
