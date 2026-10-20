@@ -34,29 +34,42 @@ necessary compiler and linker flags.
      - Detects
      - ``configure`` option
      - Compilers
-   * - AddressSanitizer (ASan)
+   * - `AddressSanitizer (ASan)
+       <https://clang.llvm.org/docs/AddressSanitizer.html>`__
      - Out-of-bounds accesses, use-after-free, leaks
      - :option:`python:--with-address-sanitizer`
      - GCC, Clang
-   * - HWAddressSanitizer (HWASan)
+   * - `HWAddressSanitizer (HWASan)
+       <https://clang.llvm.org/docs/HardwareAssistedAddressSanitizerDesign.html>`__
      - Like ASan, with hardware pointer tagging
      - :option:`python:--with-hwaddress-sanitizer`
      - GCC, Clang (AArch64; experimental on x86-64)
-   * - MemorySanitizer (MSan)
+   * - `MemorySanitizer (MSan)
+       <https://clang.llvm.org/docs/MemorySanitizer.html>`__
      - Reads of uninitialized memory
      - :option:`python:--with-memory-sanitizer`
      - Clang
-   * - UndefinedBehaviorSanitizer (UBSan)
+   * - `UndefinedBehaviorSanitizer (UBSan)
+       <https://clang.llvm.org/docs/UndefinedBehaviorSanitizer.html>`__
      - Signed overflow, misaligned access, invalid shifts, null dereference
      - :option:`python:--with-undefined-behavior-sanitizer`
      - GCC, Clang
-   * - ThreadSanitizer (TSan)
+   * - `ThreadSanitizer (TSan)
+       <https://clang.llvm.org/docs/ThreadSanitizer.html>`__
      - Data races
      - :option:`python:--with-thread-sanitizer`
      - GCC, Clang
 
 UBSan can be combined with any of the others. ASan, HWASan, MSan and TSan
 are mutually exclusive.
+
+Compilers provide additional sanitizers that CPython has no ``configure``
+option for. They may or may not work with CPython, and can be enabled
+manually through ``CFLAGS`` and ``LDFLAGS``. See `Controlling Code Generation
+<https://clang.llvm.org/docs/UsersManual.html#controlling-code-generation>`__
+for Clang's full list and `Instrumentation Options
+<https://gcc.gnu.org/onlinedocs/gcc/Instrumentation-Options.html>`__ for
+GCC's, which currently keeps its options compatible with Clang's.
 
 
 Building and testing
