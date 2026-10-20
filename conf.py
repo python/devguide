@@ -122,11 +122,13 @@ linkcheck_ignore = [
 
 rediraffe_redirects = {
     # Development Tools
-    "clang.rst": "development-tools/clang.rst",
+    "clang.rst": "development-tools/sanitizers.rst",
     "gdb.rst": "development-tools/gdb.rst",
     # Advanced Tools was renamed Development Tools in gh-1149
-    "advanced-tools/clang.rst": "development-tools/clang.rst",
+    "advanced-tools/clang.rst": "development-tools/sanitizers.rst",
     "advanced-tools/gdb.rst": "development-tools/gdb.rst",
+    # "Dynamic analysis with Clang" was reworked into "Sanitizers"
+    "development-tools/clang.rst": "development-tools/sanitizers.rst",
     # Core team
     "coredev.rst": "core-team/join-team.rst",
     "committing.rst": "core-team/committing.rst",
@@ -241,7 +243,7 @@ rediraffe_redirects = {
 }
 
 intersphinx_mapping = {
-    'python': ('https://docs.python.org/3', None),
+    'python': ('https://docs.python.org/dev', None),
     'diataxis': ('https://diataxis.fr/', None),
 }
 

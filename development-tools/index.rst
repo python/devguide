@@ -9,5 +9,5 @@ Development tools
 
    clinic/index
    gdb
-   clang
+   sanitizers
    warnings
