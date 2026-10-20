@@ -35,6 +35,9 @@ You can view the documentation built from :ref:`in-development <indevbranch>`
 and :ref:`maintenance <maintbranch>` branches at https://docs.python.org/dev/.
 The in-development and recent maintenance branches are rebuilt once per day.
 
+Public `usage statistics for docs.python.org
+<https://analytics.python.org/docs.python.org>`__ are available through Plausible.
+
 If you would like to be more involved with documentation, consider subscribing
 to the `Documentation category on the Python Discourse
 <https://discuss.python.org/c/documentation/26>`__ and the
