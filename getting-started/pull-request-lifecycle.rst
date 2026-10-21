@@ -291,39 +291,38 @@ All ``NEWS`` entries end up being part of the changelog.
 The changelog contains *a lot* of entries,
 and its intended audience is mainly users, not core devs and contributors.
 Readers scan it to find out whether an upgrade affects them,
-or to track down the change behind a new behaviour.
-They will not read the issue or the diff, so the entry must stand alone.
+or to track down the change behind a new behavior.
+Most of them will not read the issue or the diff, so the entry must stand alone.
 
 Keep it short
 ^^^^^^^^^^^^^
 
 A good ``NEWS`` entry is one sentence. Two is the limit.
 If you need more than that to describe the change,
-it is probably a candidate for "What's New in Python" instead,
+it probably also deserves a "What's New in Python" entry,
 where there is room to elaborate.
 
 * Start with a verb in the imperative mood that says what kind of change
   it is: *Fix*, *Add*, *Remove*, *Deprecate*, *Allow*, *Raise*.
 * Name what changed, using :ref:`inline markup <rest-inline-markup>`
-  such as :rst:role:`:func: <py:func>`, :rst:role:`:class: <py:class>`
-  or :rst:role:`:mod: <py:mod>`, so readers can jump to the documentation.
+  such as ``:func:``, ``:class:`` or ``:mod:``,
+  so readers can jump to the documentation.
 * Say what a user will notice, and under which conditions.
 * Stop.
 
 Leave out:
 
-* the issue or pull request number (it is already in the file name)
-* implementation details and the root cause of a bug
-* what happened before the change, if the fix already implies it
-* how the problem was found, or who reported it
-* tests that were added or changed
-* benchmark figures, unless the change is a performance improvement
-* filler such as "improves robustness" or "makes the code cleaner"
-* phrases that refer to the pull request itself, such as "this PR"
-  or "this change"
+* Implementation details and the root cause of a bug.
+* What happened before the change, if the fix already implies it.
+* How the problem was found, or who reported it.
+* Tests that were added or changed.
+* Benchmark figures, unless the change is a performance improvement.
+* Filler such as "improves robustness" or "makes the code cleaner".
+* Phrases that refer to the pull request itself, such as "this PR"
+  or "this change".
 
 Attribution is optional. If you want it, add it as a final sentence
-in the form ``Patch by Your Name.`` and name only yourself.
+in the form ``Patch by Jane Doe.`` naming the people who wrote the patch.
 
 Examples
 ^^^^^^^^
@@ -356,7 +355,8 @@ Format
 
 The contents of a ``NEWS`` file should be valid reStructuredText,
 wrapped at 80 characters. There is no indentation or leading marker in the
-file (for example, ``-``), and no need to start with the issue number.
+file (for example, ``-``), and no need to start with the issue number,
+since it is already part of the file name.
 You can build HTML and verify that the link targets are appropriate
 by using :ref:`make html <building-using-make>`.
 
