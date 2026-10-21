@@ -282,32 +282,83 @@ to the standard library). The file name itself should be in the format
 As a result, a file name can look something like
 ``Misc/NEWS.d/next/Library/2017-05-27-16-46-23.gh-issue-12345.Yl4gI2.rst``.
 
+.. _news-entry-writing:
+
 How to write a NEWS entry
 -------------------------
 
 All ``NEWS`` entries end up being part of the changelog.
 The changelog contains *a lot* of entries,
 and its intended audience is mainly users, not core devs and contributors.
-Take this into consideration when wording your ``NEWS`` entry.
-Describe the user-visible effects of your change succinctly and accurately;
-avoid long technical elaborations, digressions, and do not expect or require
-the reader to have read the actual diff for the change.
+Readers scan it to find out whether an upgrade affects them,
+or to track down the change behind a new behaviour.
+They will not read the issue or the diff, so the entry must stand alone.
 
-The contents of a ``NEWS`` file should be valid reStructuredText. An 80 character
-column width should be used. There is no indentation or leading marker in the
-file (for example, ``-``). There is also no need to start the entry with the issue
-number since it is part of the file name. You can use
-:ref:`inline markups <rest-inline-markup>` too. Here is an example of a ``NEWS``
-entry:
+Keep it short
+^^^^^^^^^^^^^
+
+A good ``NEWS`` entry is one sentence. Two is the limit.
+If you need more than that to describe the change,
+it is probably a candidate for "What's New in Python" instead,
+where there is room to elaborate.
+
+* Start with a verb in the imperative mood that says what kind of change
+  it is: *Fix*, *Add*, *Remove*, *Deprecate*, *Allow*, *Raise*.
+* Name what changed, using :ref:`inline markup <rest-inline-markup>`
+  such as :rst:role:`:func: <py:func>`, :rst:role:`:class: <py:class>`
+  or :rst:role:`:mod: <py:mod>`, so readers can jump to the documentation.
+* Say what a user will notice, and under which conditions.
+* Stop.
+
+Leave out:
+
+* the issue or pull request number (it is already in the file name)
+* implementation details and the root cause of a bug
+* what happened before the change, if the fix already implies it
+* how the problem was found, or who reported it
+* tests that were added or changed
+* benchmark figures, unless the change is a performance improvement
+* filler such as "improves robustness" or "makes the code cleaner"
+* phrases that refer to the pull request itself, such as "this PR"
+  or "this change"
+
+Attribution is optional. If you want it, add it as a final sentence
+in the form ``Patch by Your Name.`` and name only yourself.
+
+Examples
+^^^^^^^^
+
+A typical entry:
 
 .. code-block:: rst
 
-   Fix warning message when :func:`os.chdir` fails inside
-   :func:`test.support.temp_cwd`. Contributed by Chris Jerdonek.
+   Fix :class:`logging.handlers.TimedRotatingFileHandler` permanently stopping
+   rollover after a rollover failed or its backup file already existed, for
+   example at a DST change.
 
-The inline Sphinx roles like :rst:role:`:func: <py:func>` can be used help readers
-find more information. You can build HTML and verify that the
-link target is appropriate by using :ref:`make html <building-using-make>`.
+The same change, with too much detail:
+
+.. code-block:: rst
+
+   Fix :class:`logging.handlers.TimedRotatingFileHandler` so that it keeps
+   rolling over after a rollover fails or finds that the backup file already
+   exists, for example after a DST change. Previously the handler stopped
+   rolling over permanently, so the base log file grew without bound and old
+   backups were no longer removed.
+
+Nothing in the second version is wrong, but the second sentence only
+restates the bug that the first sentence already says is fixed.
+A reader who wants that level of detail can follow the issue link
+in the changelog.
+
+Format
+^^^^^^
+
+The contents of a ``NEWS`` file should be valid reStructuredText,
+wrapped at 80 characters. There is no indentation or leading marker in the
+file (for example, ``-``), and no need to start with the issue number.
+You can build HTML and verify that the link targets are appropriate
+by using :ref:`make html <building-using-make>`.
 
 
 Copyrights
