@@ -321,8 +321,8 @@ Leave out:
 * Phrases that refer to the pull request itself, such as "this PR"
   or "this change".
 
-Attribution is optional. If you want it, add it as a final sentence
-in the form ``Patch by Jane Doe.`` naming the people who wrote the patch.
+Attribution is optional. If you want it, name the people who wrote
+the patch in a final sentence of the form ``Patch by Jane Doe.``
 
 Examples
 ^^^^^^^^
