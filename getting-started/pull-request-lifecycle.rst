@@ -294,20 +294,17 @@ Readers scan it to find out whether an upgrade affects them,
 or to track down the change behind a new behavior.
 Most of them will not read the issue or the diff, so the entry must stand alone.
 
-Keep it short
-^^^^^^^^^^^^^
+What to say
+^^^^^^^^^^^
 
-A good ``NEWS`` entry is one sentence. Two is the limit.
-If you need more than that to describe the change,
-it probably also deserves a "What's New in Python" entry,
-where there is room to elaborate.
+A good ``NEWS`` entry is one or two sentences long.
 
 * Start with a verb in the imperative mood that says what kind of change
   it is: *Fix*, *Add*, *Remove*, *Deprecate*, *Allow*, *Raise*.
 * Name what changed, using :ref:`inline markup <rest-inline-markup>`
   such as ``:func:``, ``:class:`` or ``:mod:``,
   so readers can jump to the documentation.
-* Say what a user will notice, and under which conditions.
+* Say what a user will notice, and under what conditions.
 * Stop.
 
 Leave out:
@@ -321,23 +318,26 @@ Leave out:
 * Phrases that refer to the pull request itself, such as "this PR"
   or "this change".
 
-Attribution is optional. If you want it, name the people who wrote
-the patch in a final sentence of the form ``Patch by Jane Doe.``
+Attribution is optional and does not count toward the length.
+If you want it, name the people who wrote the patch in a final sentence
+of the form ``Patch by Jane Doe.``
 
 Examples
 ^^^^^^^^
 
-A typical entry:
+Preferred:
 
 .. code-block:: rst
+   :class: good
 
    Fix :class:`logging.handlers.TimedRotatingFileHandler` permanently stopping
    rollover after a rollover failed or its backup file already existed, for
    example at a DST change.
 
-The same change, with too much detail:
+Not preferred, the same change with too much detail:
 
 .. code-block:: rst
+   :class: bad
 
    Fix :class:`logging.handlers.TimedRotatingFileHandler` so that it keeps
    rolling over after a rollover fails or finds that the backup file already
