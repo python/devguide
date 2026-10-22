@@ -903,7 +903,54 @@ some of CPython's modules (for example, ``zlib``).
             ./configure --config-cache \
                         --with-pydebug
 
-   And finally, run ``make``::
+   .. tab:: Pixi
+
+      For **Pixi**, install Pixi by following the
+      `installation instructions <https://pixi.sh/latest/installation/>`__.
+      Create a :file:`pixi.toml` file in the CPython source directory
+      with the following contents:
+
+      .. code-block:: toml
+
+         [workspace]
+         name = "cpython-dev"
+         channels = ["conda-forge"]
+         platforms = ["osx-arm64", "osx-64"]
+
+         [dependencies]
+         gdbm = "*"
+         libmpdec-devel = "*"
+         openssl = "3.*"
+         pkg-config = "*"
+         tk = "*"
+         xz = "*"
+         zstd = "*"
+         zlib = "*"
+
+         [tasks.configure]
+         cmd = "./configure --config-cache --with-pydebug --with-openssl=$CONDA_PREFIX"
+
+         [tasks.configure.env]
+         PKG_CONFIG_PATH = "$CONDA_PREFIX/lib/pkgconfig"
+         GDBM_CFLAGS = "-I$CONDA_PREFIX/include"
+         GDBM_LIBS = "-L$CONDA_PREFIX/lib -lgdbm"
+         TCLTK_CFLAGS = "$(pkg-config --cflags tcl tk)"
+         TCLTK_LIBS = "$(pkg-config --libs tcl tk | sed 's/-l[^ ]*stub[^ ]*//g')"
+         LDFLAGS = "-Wl,-rpath,$CONDA_PREFIX/lib"
+
+         [tasks.build]
+         cmd = "make -s -j8"
+
+      Then install the dependencies and configure CPython::
+
+         $ pixi install
+         $ pixi run configure
+
+      Build CPython using the configured environment::
+
+         $ pixi run build
+
+   For **Homebrew** and **MacPorts**, build CPython by running::
 
       $ make -s -j8
 
