@@ -93,7 +93,7 @@ For more details about translations and their progress, see
      - | Bhuvansh Kataria (:github-user:`BHUVANSH855`),
        | Mohit Yadav (:github-user:`mohityadav8`),
        | Yashraj Jangra (:github-user:`Yashraj-Jangra`)
-     - :github:`GitHub <BHUVANSH855/python-docs-pa>`,
+     - :github:`GitHub <python/python-docs-pa>`,
        `Transifex <tx_>`_
    * - `Romanian (ro) <https://docs.python.org/ro/>`__
      - Octavian Mustafa (:github-user:`octaG-M`, `email <mailto:octawian@yahoo.com>`__)
