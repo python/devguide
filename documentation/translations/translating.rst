@@ -89,11 +89,11 @@ For more details about translations and their progress, see
        `guide <https://python.org.br/traducao/>`__,
        `Telegram <https://t.me/pybr_i18n>`__,
        `article <https://rgth.co/blog/python-ptbr-cenario-atual/>`__
-   * - Punjabi (pa)
+   * - `Punjabi (pa) <https://docs.python.org/pa/>`__
      - | Bhuvansh Kataria (:github-user:`BHUVANSH855`),
        | Mohit Yadav (:github-user:`mohityadav8`),
        | Yashraj Jangra (:github-user:`Yashraj-Jangra`)
-     - :github:`GitHub <BHUVANSH855/python-docs-pa>`,
+     - :github:`GitHub <python/python-docs-pa>`,
        `Transifex <tx_>`_
    * - `Romanian (ro) <https://docs.python.org/ro/>`__
      - Octavian Mustafa (:github-user:`octaG-M`, `email <mailto:octawian@yahoo.com>`__)
