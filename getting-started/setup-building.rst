@@ -860,15 +860,15 @@ some of CPython's modules (for example, ``zlib``).
 
       $ xcode-select --install
 
-   This will also ensure that the system header files are installed into
-   ``/usr/include``.
+   This also installs the macOS SDK, which contains the system header files
+   (``xcrun --show-sdk-path`` prints its location).
 
    .. _Homebrew: https://brew.sh
 
    .. _MacPorts: https://www.macports.org
 
    Also note that macOS does not include several libraries used by the Python
-   standard library, including ``libzma``, so expect to see some extension module
+   standard library, including ``liblzma``, so expect to see some extension module
    build failures unless you install local copies of them.  As of OS X 10.11,
    Apple no longer provides header files for the deprecated system version of
    OpenSSL which means that you will not be able to build the ``_ssl`` extension.
