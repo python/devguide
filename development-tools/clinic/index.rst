@@ -193,7 +193,7 @@ The CLI supports the following options:
 
 .. option:: --limited
 
-    Use the :ref:`Limited API <limited-c-api>` to parse arguments in the generated C code.
+    Use the :ref:`Limited API <python:limited-c-api>` to parse arguments in the generated C code.
     See :ref:`clinic-howto-limited-capi`.
 
 .. option:: FILE ...

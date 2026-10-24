@@ -219,7 +219,7 @@ of these arguments, along with their meanings:
 
 *converter*
    Only supported by the ``object`` converter.  Specifies the name of a
-   :ref:`C "converter function" <o_ampersand>`
+   :ref:`C "converter function" <python:o_ampersand>`
    to use to convert this object to a native type.
 
 *encoding*
@@ -677,7 +677,7 @@ How to use the "defining class" converter
 -----------------------------------------
 
 Argument Clinic facilitates gaining access to the defining class of a method.
-This is useful for :ref:`heap type <heap-types>` methods that need to fetch
+This is useful for :ref:`heap type <python:heap-types>` methods that need to fetch
 module level state.  Use :c:func:`PyType_FromModuleAndSpec` to associate a new
 heap type with a module.  You can now use :c:func:`PyType_GetModuleState` on
 the defining class to fetch the module state, for example from a module method.
@@ -1267,7 +1267,7 @@ How to use the Limited C API
 
 If Argument Clinic :term:`input` is located within a C source file
 that contains ``#define Py_LIMITED_API``, Argument Clinic will generate C code
-that uses the :ref:`Limited API <limited-c-api>` to parse arguments. The
+that uses the :ref:`Limited API <python:limited-c-api>` to parse arguments. The
 advantage of this is that the generated code will not use private functions.
 However, this *can* result in Argument Clinic generating less efficient code
 in some cases. The extent of the performance penalty will depend

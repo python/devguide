@@ -25,7 +25,7 @@ written using the :ref:`reStructuredText format <markup>` and contained in the
    If you're interested in contributing to Python's documentation, there's no
    need to write reStructuredText if you're not so inclined; plain text
    contributions are more than welcome as well.  Send an e-mail to
-   docs@python.org or open an issue on the :ref:`tracker <reporting-bugs>`.
+   docs@python.org or open an issue on the :ref:`tracker <python:reporting-bugs>`.
 
 
 Introduction

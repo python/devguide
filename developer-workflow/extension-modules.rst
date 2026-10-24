@@ -615,7 +615,7 @@ using `Podman <https://podman.io/docs/installation>`__.
 Missing ``Py_BUILD_CORE`` define when using internal headers
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-By default, the CPython :ref:`Stable ABI <stable-abi>` is exposed via
+By default, the CPython :ref:`Stable ABI <python:stable-abi>` is exposed via
 :code:`#include "Python.h"`. In some cases, this may be insufficient
 and internal headers from :cpy-file:`Include/internal` are needed;
 in particular, those headers require the :c:macro:`!Py_BUILD_CORE`
@@ -650,7 +650,7 @@ Restricting to the Limited API
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 In order for non-CPython implementations to benefit from new extension modules,
-it is recommended to use the :ref:`Limited API <limited-c-api>`. Instead of
+it is recommended to use the :ref:`Limited API <python:limited-c-api>`. Instead of
 exposing the entire Stable ABI, define the :c:macro:`Py_LIMITED_API` macro
 *before* the :code:`#include "Python.h"` directive:
 
