@@ -79,7 +79,7 @@ other is already there, remove the other label.
   text), remove :gh-label:`AI-needs-explanation` and add
   :gh-label:`AI-guidelines-not-met`. The bot posts the closing
   comment and closes the issue or PR. If you have any doubt, consult a core
-  developer first.
+  team member first.
 * If the author responds and the concern is resolved, remove the label.
   For a closed issue or PR, reopen it as well.
 
