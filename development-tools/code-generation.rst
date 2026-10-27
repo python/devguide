@@ -40,4 +40,3 @@ To run the set of regeneration targets listed by ``regen-all``::
 
 This may update generated files for tools beyond the ones described here.
 Inspect the changes and include only generated files relevant to your change.
-
