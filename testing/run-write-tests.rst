@@ -89,6 +89,25 @@ verbose mode (using ``-v``), so that individual failures are detailed:
 
         .\python.bat -m test -v test_abc
 
+If a test module has several tests and only some of them fail, you can use the
+``test.bisect_cmd`` helper to narrow down which tests reproduce the failure.
+The helper repeatedly runs random subsets of the tests, so the failure should
+be reproducible for the bisection to be useful.  From the root of the checkout,
+run it with the test module name and any test-runner arguments needed to
+reproduce the failure::
+
+    ./python -m test.bisect_cmd test_abc
+
+By default, bisection stops when one failing test remains or after 100
+iterations.  Use ``-n`` to stop with a larger number of tests, ``-N`` to change
+the iteration limit, or ``-o`` to write the current failing test list to a
+file::
+
+    ./python -m test.bisect_cmd -n 2 -N 200 -o failing-tests.txt test_abc
+
+The helper is part of the CPython test suite and is available in a built
+checkout; see ``./python -m test.bisect_cmd -h`` for all options.
+
 To run a single test case, use the ``unittest`` module, providing the import
 path to the test case:
 
