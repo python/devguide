@@ -875,6 +875,19 @@ Just name them ``__new__`` or ``__init__`` as appropriate.  Notes:
   (If your function doesn't support keywords, the parsing function
   generated will throw an exception if it receives any.)
 
+* :ref:`vectorcall protocol <python:vectorcall>` support can be added using the
+``@vectorcall`` directive. This will output an additional function that can be
+  used in the :c:member:`~PyTypeObject.tp_vectorcall` slot. Vectorcall adds
+  moderate code, be sure to microbenchmark and validate it saves significant
+  runtime.
+
+  Current restrictions:
+
+  * Optional groups are not supported.
+  * The type must be immutable (:c:macro:`Py_TPFLAGS_IMMUTABLETYPE`).
+
+  .. versionadded:: 3.16
+
 
 How to change and redirect Clinic's output
 ------------------------------------------
