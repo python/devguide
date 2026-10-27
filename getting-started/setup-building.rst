@@ -841,11 +841,13 @@ some of CPython's modules (for example, ``zlib``).
                inetutils-inetd
 
       Note that Debian 12 and Ubuntu 24.04 do not have the ``libmpdec-dev``
-      package.  You can remove it from the install list above: for Python 3.15
-      and older, the build will use a bundled version; for Python 3.16 and
-      newer, the bundled copy has been removed and the :mod:`decimal` module
-      will fall back to its slower pure-Python implementation.  We recommend
-      using the system
+      package.  You can remove it from the install list above: for Python 3.14
+      and older, the build will use a bundled version; for Python 3.15, the
+      build will use the bundled version only if you pass
+      ``--without-system-libmpdec`` to ``configure``.  Otherwise, and for
+      Python 3.16 and newer, where the bundled copy has been removed, the
+      :mod:`decimal` module will fall back to its slower pure-Python
+      implementation.  We recommend using the system
       `libmpdec <https://www.bytereef.org/mpdecimal/doc/libmpdec/>`__ library.
       Either build it from sources or install this package from
       https://deb.sury.org.
