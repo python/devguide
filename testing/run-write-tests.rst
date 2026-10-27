@@ -139,7 +139,31 @@ But, there are several important notes:
    In other words: if some module does not have ``unittest.main()``, then
    most likely it does not support direct invocation.
 
+By default, ``-j0`` runs tests in parallel using one worker process per CPU,
+which is much faster but can interleave output from different tests.
+To run tests sequentially, for example when debugging a failure,
+drop the ``-j`` flag:
 
+.. tab:: Unix
+
+    .. code-block:: shell
+
+        ./python -m test
+
+.. tab:: macOS
+
+    .. code-block:: shell
+
+        ./python.exe -m test
+
+.. tab:: Windows
+
+    .. code-block:: dosbatch
+
+        .\python.bat -m test
+
+To limit how many tests run at once, pass an explicit number of
+worker processes instead, such as ``-j2``.
 
 .. _strenuous_testing:
 
