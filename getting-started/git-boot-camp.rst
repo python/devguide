@@ -119,6 +119,10 @@ Setting up your name and email address
 The ``--global`` flag sets these parameters globally while
 the ``--local`` flag sets them only for the current project.
 
+Commit signing is optional for contributing to CPython.  If you want to
+configure it, see GitHub's `documentation about commit signature verification
+<https://docs.github.com/en/authentication/managing-commit-signature-verification/about-commit-signature-verification>`__.
+
 .. _autocrlf:
 
 Enabling ``autocrlf`` on Windows
