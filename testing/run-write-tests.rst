@@ -160,6 +160,18 @@ using several Python processes so as to speed up things:
 
         .\python.bat -m test -j0
 
+To check that the test suite is included in an installed build, install Python
+to a fresh prefix and run the test suite with that installation.  For example,
+on Unix::
+
+    ./configure --prefix=/tmp/cpython-install
+    make -j3
+    make install
+    /tmp/cpython-install/bin/python3 -m test -j3
+
+Using the installed interpreter is important: running ``./python -m test`` from
+the checkout tests the build tree, not the installed files.
+
 .. _strenuous_testing:
 
 Finally, if you want to run tests under a more strenuous set of settings, you
