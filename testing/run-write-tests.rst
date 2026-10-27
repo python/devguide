@@ -139,10 +139,10 @@ But, there are several important notes:
    In other words: if some module does not have ``unittest.main()``, then
    most likely it does not support direct invocation.
 
-By default, ``-j0`` runs tests in parallel using one worker process per CPU,
-which is much faster but can interleave output from different tests.
-To run tests sequentially, for example when debugging a failure,
-drop the ``-j`` flag:
+By default, ``-j0`` runs tests in parallel using a number of worker processes
+based on the CPU count, which is much faster but can interleave output
+from different tests. To run tests sequentially, for example when debugging
+a failure, drop the ``-j`` flag:
 
 .. tab:: Unix
 
