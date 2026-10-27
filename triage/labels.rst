@@ -123,7 +123,9 @@ Other labels
   on applying the AI policy labels <triage-ai-labels>`.
 * Use :gh-label:`AI-needs-explanation` when you have concerns
   about AI-assisted work and think the author is likely to engage with feedback.
-  The bot posts a reminder and leaves the issue or PR open.
+  The bot posts a reminder and leaves the issue or PR open. See the
+  :ref:`triage team's guidance on applying the AI policy labels
+  <triage-ai-labels>`.
 * :gh-label:`build`/:gh-label:`performance`: for issues related
   to the build process or performance, respectively.
 * :gh-label:`easy`: for issues that are considered easy.

@@ -71,6 +71,11 @@ AI tools were used, or because the author disclosed using them.
   low-effort submission where the author is unlikely to engage with feedback.
   The bot posts a comment and closes the issue or PR. If you have any doubt,
   use :gh-label:`AI-needs-explanation` instead, or consult a core developer.
+* If the author doesn't respond to :gh-label:`AI-needs-explanation`, or the
+  response doesn't address the concern (for example, it is more generated
+  text), add :gh-label:`AI-guidelines-not-met`. The bot posts the closing
+  comment and closes the issue or PR. If you have any doubt, consult a core
+  developer first.
 * If the author responds and the concern is resolved, remove the label.
   For a closed issue or PR, reopen it as well.
 
