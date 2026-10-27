@@ -8,6 +8,7 @@ Development tools
    :maxdepth: 5
 
    clinic/index
+   code-generation
    gdb
    sanitizers
    warnings
