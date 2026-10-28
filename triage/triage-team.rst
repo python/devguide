@@ -65,8 +65,10 @@ Use the AI policy labels for issues and PRs that don't follow the
 :ref:`guidelines for using AI tools <ai-tools>`. Don't apply them only because
 AI tools were used, or because the author disclosed using them.
 
-Apply only one of these labels to an issue or PR. If you add one when the
-other is already there, remove the other label.
+Apply only one of these labels to an issue or PR. When you add
+:gh-label:`AI-guidelines-not-met`, the bot automatically removes
+:gh-label:`AI-needs-explanation`. If you add both labels,
+:gh-label:`AI-guidelines-not-met` wins.
 
 * Start with :gh-label:`AI-needs-explanation`. The bot asks the author to
   explain the work in their own words and leaves the issue or PR open.
@@ -76,10 +78,9 @@ other is already there, remove the other label.
   use :gh-label:`AI-needs-explanation` instead, or consult a core developer.
 * If the author doesn't respond to :gh-label:`AI-needs-explanation`, or the
   response doesn't address the concern (for example, it is more generated
-  text), remove :gh-label:`AI-needs-explanation` and add
-  :gh-label:`AI-guidelines-not-met`. The bot posts the closing
-  comment and closes the issue or PR. If you have any doubt, consult a core
-  team member first.
+  text), add :gh-label:`AI-guidelines-not-met`. The bot removes
+  :gh-label:`AI-needs-explanation`, posts the closing comment and closes the
+  issue or PR. If you have any doubt, consult a core team member first.
 * If the author responds and the concern is resolved, remove the label.
   For a closed issue or PR, reopen it as well.
 
