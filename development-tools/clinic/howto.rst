@@ -877,9 +877,9 @@ Just name them ``__new__`` or ``__init__`` as appropriate.  Notes:
 
 * :ref:`vectorcall protocol <python:vectorcall>` support can be added using the
   ``@vectorcall`` directive. This will output an additional function that can be
-  used in the :c:member:`~PyTypeObject.tp_vectorcall` slot. Vectorcall adds
-  moderate code, be sure to microbenchmark and validate it saves significant
-  runtime.
+  used in the :c:member:`~PyTypeObject.tp_vectorcall` slot.
+  The generated function adds a fair amount of code, so benchmark first
+  and only use it where it gives a significant speedup.
 
   Current restrictions:
 
