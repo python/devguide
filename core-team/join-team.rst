@@ -86,6 +86,10 @@ are granted through these steps:
      (Some of these are unofficial spaces managed as a courtesy.
      Adjust the list to taste.)
 
+   - If the candidate has unclaimed mannequin comments from the BPO→GitHub
+     migration, send an invite to reclaim them from
+     `🔒 Import/Export settings <https://github.com/organizations/python/settings/import-export>`__.
+     (See :ref:`what-on-earth-is-a-mannequin` for more info.)
    - Add their details to `🔒 python/voters <https://github.com/python/voters>`__.
    - Once the python/voters update is merged, regenerate the public team membership
      list at :ref:`developers`.
