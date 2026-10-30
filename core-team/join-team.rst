@@ -86,7 +86,7 @@ are granted through these steps:
      (Some of these are unofficial spaces managed as a courtesy.
      Adjust the list to taste.)
 
-   - If the candidate has unclaimed mannequin comments from the BPO→GitHub
+   - If the candidate has unclaimed mannequin comments from the BPO to GitHub
      migration, send an invite to reclaim them from
      `🔒 Import/Export settings <https://github.com/organizations/python/settings/import-export>`__.
      (See :ref:`what-on-earth-is-a-mannequin` for more info.)
