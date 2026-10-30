@@ -11,6 +11,7 @@ Development workflow
    lang-changes
    development-cycle
    stdlib
+   type-annotations
    extension-modules
    c-api
    grammar
