@@ -781,8 +781,8 @@ some of CPython's modules (for example, ``zlib``).
          $ sudo dnf install \
                gcc gcc-c++ gdb lzma glibc-devel libstdc++-devel openssl-devel \
                readline-devel zlib-devel libzstd-devel libffi-devel bzip2-devel \
-               xz-devel sqlite sqlite-devel sqlite-libs libuuid-devel gdbm-libs \
-               perf expat expat-devel mpdecimal python3-pip
+               xz-devel sqlite sqlite-devel sqlite-libs libuuid-devel gdbm-devel \
+               perf expat expat-devel mpdecimal-devel tk-devel python3-pip
 
    .. tab:: Debian / Ubuntu
 
