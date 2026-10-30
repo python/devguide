@@ -233,7 +233,7 @@ This includes, for example:
 * Discussions and notes around official development-related processes and events: `steering-council <https://github.com/python/steering-council>`__, `core-sprint <https://github.com/python/core-sprint>`__.
 
 Before adding a new repository to the organization, open a discussion to seek consensus
-in the `Committers Discourse category <https://discuss.python.org/c/committers/5>`__.
+in the `Core Development Discourse category <https://discuss.python.org/c/core-dev/23>`__.
 Once people are satisfied with that, ask the `Python steering council <https://github.com/python/steering-council>`__
 to grant permission. Note that this process is not necessary for
 :ref:`docs translations <translation-repo>` following
