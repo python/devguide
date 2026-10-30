@@ -619,6 +619,13 @@ back to them for changes).  It is then expected that you update your
 pull request to address these comments, and the review process will
 thus iterate until a satisfactory solution has emerged.
 
+Sometimes a review identifies a concrete improvement that is outside the scope
+of the current pull request. Discuss who will follow up on it. Once someone
+agrees to take responsibility for tracking it, create an issue or pull request
+that links to the original review comment. The follow-up issue provides context
+and a reminder; creating it does not by itself commit its author to implement
+the change.
+
 .. _how-to-review-a-pull-request:
 
 How to review a pull request
