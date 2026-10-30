@@ -42,6 +42,9 @@ to the `Documentation category on the Python Discourse
 where user issues are raised and documentation toolchain, projects, and standards
 are discussed.
 
+Public `usage statistics for docs.python.org
+<https://analytics.python.org/docs.python.org>`__ are available through Plausible.
+
 
 Helping with documentation issues
 =================================
