@@ -20,6 +20,41 @@ For a cheat-sheet reference, see the
 :ref:`quick reference on creating pull requests <pullrequest-quickguide>`.
 
 
+.. _pullrequest-prerequisites:
+
+Before writing code
+===================
+
+Most changes start with an issue, and the pull request usually comes once
+the issue has been acknowledged (see :ref:`fixing-issues-readiness`),
+although an issue does not always need one (see
+:ref:`fixing-issues-no-pullrequest`). Small features can be proposed
+directly in an issue, but features that break existing APIs and larger
+changes, such as changes to protocols or built-ins, usually need a
+discussion in the `Ideas category on Discourse`_ first (see
+:ref:`langchanges` and :ref:`stdlibchanges`).
+
+Performance improvements should always be proposed in an issue first,
+ideally without a pull request, since they need to be discussed unless the
+gain is clear. Keep any proof of concept on a branch of your fork instead
+of opening a pull request for it. We strongly recommend including the
+benchmark results in the issue, together with the benchmark script and the
+configuration used. Run the benchmarks with :pypi:`pyperf` rather than
+with plain :mod:`timeit`. Optimizing a cold path, or a rare case at the
+cost of increased complexity, is usually not worth it, so base the case for
+the change on realistic usage.
+
+Trivial documentation changes, such as typo fixes, and pull requests that
+only increase test coverage usually need neither an issue nor a NEWS
+entry. When fixing typos, fix all of them in the page or in the
+documentation of the same topic, including the corresponding docstrings in
+Python and C code, in a single pull request. If the bot asks for an issue
+or a NEWS entry, a triager will add the :gh-label:`skip issue` and
+:gh-label:`skip news` labels instead.
+
+.. _Ideas category on Discourse: https://discuss.python.org/c/ideas/6
+
+
 .. _pullrequest-steps:
 
 Step-by-step guide

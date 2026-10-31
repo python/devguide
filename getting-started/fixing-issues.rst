@@ -65,4 +65,28 @@ pull request on an untriaged issue costs triagers more time than the issue
 alone (see :ref:`ai-tools`).
 
 
+.. _fixing-issues-no-pullrequest:
+
+Consider whether a pull request is needed
+=========================================
+
+When in doubt, it is still worth opening an issue, as knowing about a
+problem is always useful. Before writing a pull request, however, check
+whether the report falls into one of the following cases, where the
+behaviour is usually expected or the change would cost more than it
+brings:
+
+* calling a function in a way that violates its documented contract. This
+  is *garbage in, garbage out* (GIGO), and a wrong value or an unexpected
+  exception is generally not considered a bug;
+* changes that bring code churn without fixing an actual problem, for
+  instance changing whitespace and other stylistic details for the sake of
+  a foolish consistency. Maintainers sometimes make such changes
+  themselves;
+* bugs found through private APIs, unless realistic code using public APIs
+  could trigger them as well;
+* crashes caused by manipulating the interpreter's internals with tools
+  such as :meth:`codeobject.replace` or :mod:`ctypes`.
+
+
 .. _"easy" issues: https://github.com/python/cpython/issues?q=is%3Aissue+is%3Aopen+label%3Aeasy
