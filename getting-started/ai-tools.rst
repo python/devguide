@@ -62,3 +62,18 @@ disrespectful of the maintainers time.
 It is not acceptable to alter or bypass existing tests, or remove desired
 functionality, in order to make a failing test pass. Such changes are not
 a real fix.
+
+How these guidelines are applied
+================================
+
+Using AI tools is not a reason on its own for an issue or PR to be labeled
+or closed. When a maintainer thinks an issue or PR does not follow these
+guidelines, they may apply one of the following labels. A bot then posts a
+comment that links to this page.
+
+- :gh-label:`AI-needs-explanation`: the issue or PR stays open. Reply in your
+  own words: explain what the change does or what the issue is about, and
+  describe how you checked that it is correct.
+- :gh-label:`AI-guidelines-not-met`: the issue or PR is closed. If you think
+  we misunderstood your contribution, reply on the issue or PR. You are
+  welcome to explain your approach or ask questions about these guidelines.
