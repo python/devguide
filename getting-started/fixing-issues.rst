@@ -27,38 +27,35 @@ or not.
 Check that the issue is ready to be worked on
 =============================================
 
-If the report describes an obvious bug that nobody is working on yet, you
-can start working on it, but many issues first need a decision on whether
-and how they should be addressed. The report might be a duplicate or a
-feature request filed as a bug, and even a genuine bug is not always fixed,
-since the fix may break existing code and someone has to weigh who is
-affected. In that case, wait until a triager or a core team member has
-acknowledged the issue.
+An obvious bug that nobody is working on can be fixed directly, but most
+other issues have to be confirmed as worth fixing first, as they may be
+duplicates, feature requests filed as bugs, already rejected features, etc.
+A genuine bug is not always fixed either, since the fix may break existing
+code and its impact has to be weighed. In that case, wait until a triager
+or a core team member has acknowledged the issue.
 
 If you are unsure, ask in the issue, but avoid superfluous comments, since
 every comment notifies everyone following the issue. Issues are not
 assigned to contributors who ask for it, but once an issue has been
-acknowledged and is still relevant, you can start working on it and say so
-in the issue.
+acknowledged and is still relevant, you can start working on it and
+mention it in the issue.
 
-Before opening a pull request, check that the issue still applies to the
-latest state of the branch you are targeting, usually ``main``: an
-acknowledged issue may have been fixed since, or the code it describes may
-have changed. For old issues, checking whether the behaviour persists is
-helpful on its own, for instance when the latest reproducer was run on a
-Python version that has reached end of life (see :ref:`branchstatus`), and
-if it can no longer be reproduced, say so in a comment.
+Before opening a pull request, read the whole discussion and check that the
+issue still applies to the latest state of the branch you are targeting,
+usually ``main``: an acknowledged issue may have been fixed since, or the
+code it describes may have changed. For old issues, reporting that the
+behaviour can no longer be reproduced on a supported Python version (see
+:ref:`branchstatus`) is helpful on its own.
 
-Avoid opening a pull request if:
+In general, avoid opening a pull request if:
 
-* a pull request for the issue is already open. If it has been inactive
-  for a while, ask its author first whether they want to continue the
-  work, and if they do not, you can take it over;
+* the issue has the :gh-label:`pending` label;
+* the issue is old and its discussion never reached consensus;
 * someone, such as the issue's author, already said they would open one;
-* the issue is old and its discussion inconclusive. Read the whole history
-  first, since a new pull request rarely revives a stalled discussion and
-  leaving things as they are is often the outcome;
-* the issue has the :gh-label:`pending` label.
+* a pull request for the issue already exists.
+
+In the last two cases, if there has been no activity for a while, ask the
+contributor whether they still want to work on it.
 
 Do not use automated tools to open pull requests on new issues either: a
 pull request on an untriaged issue costs triagers more time than the issue
@@ -70,23 +67,8 @@ alone (see :ref:`ai-tools`).
 Consider whether a pull request is needed
 =========================================
 
-When in doubt, it is still worth opening an issue, as knowing about a
-problem is always useful. Before writing a pull request, however, check
-whether the report falls into one of the following cases, where the
-behaviour is usually expected or the change would cost more than it
-brings:
-
-* calling a function in a way that violates its documented contract. This
-  is *garbage in, garbage out* (GIGO), and a wrong value or an unexpected
-  exception is generally not considered a bug;
-* changes that bring code churn without fixing an actual problem, for
-  instance changing whitespace and other stylistic details for the sake of
-  a foolish consistency. Maintainers sometimes make such changes
-  themselves;
-* bugs found through private APIs, unless realistic code using public APIs
-  could trigger them as well;
-* crashes caused by manipulating the interpreter's internals with tools
-  such as :meth:`codeobject.replace` or :mod:`ctypes`.
+Before writing a pull request, check that the report describes an actual
+bug (see :ref:`issue-tracker-not-a-bug`).
 
 
 .. _"easy" issues: https://github.com/python/cpython/issues?q=is%3Aissue+is%3Aopen+label%3Aeasy
