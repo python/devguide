@@ -39,10 +39,10 @@ ideally without a pull request, since they need to be discussed unless the
 gain is clear. Keep any proof of concept on a branch of your fork instead
 of opening a pull request for it. We strongly recommend including the
 benchmark results in the issue, together with the benchmark script and the
-configuration used. Run the benchmarks with :pypi:`pyperf` rather than
-with plain :mod:`timeit`. Optimizing a cold path, or a rare case at the
-cost of increased complexity, is usually not worth it, so base the case for
-the change on realistic usage.
+configuration used. Use ``pyperf timeit`` from :pypi:`pyperf` instead of
+plain :mod:`timeit`, or ``-X importtime`` for import time. Optimizing a
+cold path, or a rare case at the cost of increased complexity, is usually
+not worth it, so base the case for the change on realistic usage.
 
 Trivial documentation changes, such as typo fixes, and pull requests that
 only increase test coverage usually need neither an issue nor a NEWS
