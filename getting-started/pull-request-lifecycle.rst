@@ -44,14 +44,6 @@ plain :mod:`timeit`, or ``-X importtime`` for import time. Optimizing a
 cold path, or a rare case at the cost of increased complexity, is usually
 not worth it, so base the case for the change on realistic usage.
 
-Trivial documentation changes, such as typo fixes, and pull requests that
-only increase test coverage usually need neither an issue nor a NEWS
-entry. When fixing typos, fix all of them in the page or in the
-documentation of the same topic, including the corresponding docstrings in
-Python and C code, in a single pull request. If the bot asks for an issue
-or a NEWS entry, a triager will add the :gh-label:`skip issue` and
-:gh-label:`skip news` labels instead.
-
 .. _Ideas category on Discourse: https://discuss.python.org/c/ideas/6
 
 
@@ -268,6 +260,12 @@ For the last two, note the following:
    change and the original** ``NEWS`` **entry remains valid**, then no additional
    entry is needed.
 
+The bot adds the :gh-label:`skip news` label by itself in some cases, for
+example when a pull request touches nothing but documentation. If your
+change is one of the exceptions above and the NEWS check still fails, don't
+add an entry and wait for a triager or a core team member to add the label
+for you.
+
 Changes that require "What's New in Python" entries
 ---------------------------------------------------
 
@@ -422,14 +420,18 @@ Typo fixes
 
 Fixing typos and grammatical errors in documentation is a
 contribution that does not require a linked issue. The most appropriate
-place for such fixes are the :cpy-file:`Doc/` (end-user documentation)
-and :cpy-file:`InternalDocs/` directories.
+place for such fixes are the :cpy-file:`Doc/` (end-user documentation),
+:cpy-file:`InternalDocs/` directories, or Python and C docstrings.
 
 
-Keep typo-fix PRs **small and focused**. Large PRs that touch many unrelated files
+Keep typo-fix PRs **small and focused**, and try to fix all the typos of a
+file or topic, including the matching docstrings, in a single PR rather
+than one by one. Where possible, avoid reflowing the surrounding lines, so
+that the diff only shows the fixes. Large PRs that touch many unrelated files
 notify a large number of reviewers unnecessarily and are harder to review.
-Large typo-fix PRs, or PRs touching directories outside those listed above,
-may be closed with a reference to this section.
+Large typo-fix PRs, PRs touching directories outside those listed above, or
+PRs fixing typos in text users never see like code comments may be closed
+with a reference to this section.
 
 
 .. _patchcheck:
