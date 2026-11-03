@@ -207,7 +207,15 @@ To list other supported :program:`make` targets, run:
 
       .\make help
 
+
 See :cpy-file:`Doc/README.rst` for more information.
+
+.. note::
+
+   Some targets, such as ``dist-pdf``, require additional system
+   dependencies beyond what's installed in the venv. Building the
+   PDF documentation requires the ``rsvg-convert`` utility to be
+   available on your system.
 
 
 .. _using-sphinx-build:
