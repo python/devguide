@@ -105,6 +105,16 @@ Once this is verified, update your local clone with the upstream branches::
 
    $ git fetch upstream
 
+Advanced contributors who prefer to push without specifying a remote can set
+the default push remote to their fork::
+
+   $ git config --local remote.pushDefault origin
+
+This selects ``origin`` for pushes that do not name a remote.  It does not
+change which branches are pushed; that is controlled by ``push.default``.
+Use an explicit remote in the ``git push`` command when you want to push to a
+different remote.
+
 
 .. _set-up-name-email:
 
