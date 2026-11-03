@@ -95,7 +95,7 @@ html                  ezio-melotti*
 idlelib               terryjreedy*, taleinat
 importlib             brettcannon, FFY00*
 inspect               1st1
-io                    benjaminp
+io                    benjaminp, cmaloney
 itertools             rhettinger*
 json                  ezio-melotti, rhettinger, serhiy-storchaka*
 locale                malemburg
@@ -214,7 +214,7 @@ f-strings           ericvsmith*
 i18n                malemburg, merwok, tomasr8, StanFromIreland
 import machinery    brettcannon, ncoghlan, ericsnowcurrently, FFY00*
 initialization      FFY00*
-io                  benjaminp, gpshead
+io                  benjaminp, gpshead, cmaloney
 JIT                 brandtbucher*, savannahostrowski*
 locale              malemburg
 mathematics         malemburg, rhettinger, serhiy-storchaka
