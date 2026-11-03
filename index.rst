@@ -14,7 +14,15 @@ to Python_ -- for both new and experienced contributors. It is
 :ref:`maintained <devguide>` by the same
 community that maintains Python.  We welcome your contributions!
 
-Start with the area that best matches what you want to do.
+Getting started
+---------------
+
+To jump directly into exploring potential code contributions, refer
+to the :ref:`quick reference guide <quick-reference>` in the section on
+:ref:`getting started <getting-started>` with code contributions.
+
+More generally, start with the links in the table below that
+best match what you want to do.
 If you still have questions after reviewing the material in
 this guide, then the `Core Python Mentorship`_ group is available to help guide new
 contributors through the process.
@@ -58,6 +66,8 @@ reading and understanding everything.  If you do choose to skip
 around within the guide, be aware that some sections build on each other,
 so you may need to backtrack for missing concepts or terminology.
 
+
+
 For broader open-source contribution advice, a number of individuals from the
 Python community have contributed to a series
 of excellent guides at `Open Source Guides <https://opensource.guide/>`__.
@@ -72,16 +82,6 @@ For example,
          :privacy_mode:
          :width: 100%
 
-
-Quick reference
----------------
-
-.. note::
-
-   The quick reference documentation has been moved to serve as a cheat-sheet and overview
-   in :ref:`Getting started <getting-started>`.
-
-Go to :ref:`the new quick reference <quick-reference>`.
 
 Proposing changes to Python itself
 ----------------------------------
