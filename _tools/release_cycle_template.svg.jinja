@@ -169,18 +169,18 @@
             fill="black"
         />
         <rect
+            x="{{ legend_width - 1 }}"
+            y="0"
+            width="{{ diagram_width + 1 }}"
+            height="{{ diagram_height }}"
+            fill="white"
+        />
+        <rect
             x="{{ legend_width - right_margin }}"
             y="0"
             width="{{ right_margin }}"
             height="{{ diagram_height }}"
             fill="url(#release-cycle-mask-gradient-{{ id_key }})"
-        />
-        <rect
-            x="{{ legend_width }}"
-            y="0"
-            width="{{ diagram_width }}"
-            height="{{ diagram_height }}"
-            fill="white"
         />
     </mask>
 
