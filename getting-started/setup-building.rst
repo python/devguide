@@ -204,9 +204,20 @@ do to get a pydebug build of CPython.
    You might need to run ``make clean`` before or after re-running ``configure``
    in a particular build directory.
 
-Once ``configure`` is done, you can then compile CPython with::
+Once ``configure`` is done, you can then compile CPython with:
 
-   $ make -s -j $(nproc)
+.. tab:: Unix
+
+   .. code-block:: console
+
+      $ make -s -j $(nproc)
+
+.. tab:: macOS
+
+   .. code-block:: console
+
+      $ make -s -j $(sysctl -n hw.logicalcpu)
+
 
 This will build CPython with only warnings and errors being printed to
 stderr. The ``-j`` argument means that :program:`make` will concurrently run
