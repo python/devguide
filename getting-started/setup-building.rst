@@ -1,4 +1,4 @@
-.. _setup-building:
+ .. _setup-building:
 .. _setup:
 
 ==================
