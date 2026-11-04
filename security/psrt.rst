@@ -293,8 +293,12 @@ that automates parts of the GHSA workflow described above.
 The bot runs hourly (or by manual dispatch) and for each open GHSA ticket:
 
 * Adds the PSRT GitHub team as collaborators, giving members access to new reports.
-* For accepted ('Draft') tickets, creates the temporary private fork if one
+* For newly accepted ('Draft') tickets, creates the temporary private fork if one
   doesn't already exist, and reserves a CVE ID.
+* Adds people who contribute to or review the private fork's pull requests to
+  the GHSA credits.
+* For other accepted ('Draft') tickets, if the associated CVE has been published
+  with a patch, closes the ticket as resolved.
 
 Handling code signing certificate reports
 -----------------------------------------
