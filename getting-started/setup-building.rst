@@ -204,7 +204,7 @@ do to get a pydebug build of CPython.
    You might need to run ``make clean`` before or after re-running ``configure``
    in a particular build directory.
 
-Once ``configure`` is done, you can then compile CPython with:
+Once `configure` is done, you can then compile CPython with:
 
 .. tab:: Unix
 
