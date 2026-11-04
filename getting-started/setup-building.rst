@@ -217,8 +217,6 @@ Once ``configure`` is done, you can then compile CPython with:
    .. code-block:: console
 
       $ make -s -j $(sysctl -n hw.logicalcpu)
-
-
 This will build CPython with only warnings and errors being printed to
 stderr. The ``-j`` argument means that :program:`make` will concurrently run
 tasks, limiting the number of parallel jobs to the number of CPU cores in your
