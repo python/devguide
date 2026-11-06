@@ -307,7 +307,8 @@ Current owners
 +----------------------+--------------------------------+-----------------+
 | Łukasz Langa         |                                | ambv            |
 +----------------------+--------------------------------+-----------------+
-
+| Joshua Mcshannon     | PSF Infrastructure Engineer    | jmcshannon      |
++----------------------+--------------------------------+-----------------+
 Certain actions (blocking spam accounts, inviting new users, adjusting
 organization-level settings) can only `be performed`_ by owners of the Python
 organization on GitHub. The :gh-python-team:`organization-owners` team can be
