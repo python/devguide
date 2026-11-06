@@ -81,6 +81,8 @@ Apply only one of these labels to an issue or PR. When you add
   text), add :gh-label:`AI-guidelines-not-met`. The bot removes
   :gh-label:`AI-needs-explanation`, posts the closing comment and closes the
   issue or PR. If you have any doubt, consult a core team member first.
+* For repeated abuse, mention ``@python/organization-owners`` on the issue or
+  PR to have the author blocked.
 * If the author responds and the concern is resolved, remove the label.
   For a closed issue or PR, reopen it as well.
 
