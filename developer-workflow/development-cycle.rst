@@ -301,7 +301,9 @@ Current owners
 +----------------------+--------------------------------+-----------------+
 | Ee Durbin            | Infrastructure Staff           | ewdurbin        |
 +----------------------+--------------------------------+-----------------+
-| Jacob Coffee         | PSF Infrastructure Engineer    | JacobCoffee     |
+| Jacob Coffee         | PSF Director of Engineering    | JacobCoffee     |
++----------------------+--------------------------------+-----------------+
+| Joshua Mcshannon     | PSF Infrastructure Engineer    | jmcshannon      |
 +----------------------+--------------------------------+-----------------+
 | Petr Viktorin        | CPython Developer in Residence | encukou         |
 +----------------------+--------------------------------+-----------------+
