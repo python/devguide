@@ -301,13 +301,13 @@ Current owners
 +----------------------+--------------------------------+-----------------+
 | Ee Durbin            | Infrastructure Staff           | ewdurbin        |
 +----------------------+--------------------------------+-----------------+
-| Jacob Coffee         | PSF Infrastructure Engineer    | JacobCoffee     |
+| Jacob Coffee         | Director of Engineering PSF    | JacobCoffee     |
++----------------------+--------------------------------+-----------------+
+| Joshua Mcshannon     | PSF Infrastructure Engineer    | jmcshannon      |
 +----------------------+--------------------------------+-----------------+
 | Petr Viktorin        | CPython Developer in Residence | encukou         |
 +----------------------+--------------------------------+-----------------+
 | Łukasz Langa         |                                | ambv            |
-+----------------------+--------------------------------+-----------------+
-| Joshua Mcshannon     | PSF Infrastructure Engineer    | jmcshannon      |
 +----------------------+--------------------------------+-----------------+
 Certain actions (blocking spam accounts, inviting new users, adjusting
 organization-level settings) can only `be performed`_ by owners of the Python
