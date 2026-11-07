@@ -47,6 +47,26 @@ above the list of bugs on the issues page. See :ref:`searching-gh-issues`
 for more information.
 
 
+.. _issue-tracker-not-a-bug:
+
+Checking if the behaviour is a bug
+----------------------------------
+
+The following reports are usually closed without a fix:
+
+* calling a function in a way that violates its documented contract. This
+  is *garbage in, garbage out* (GIGO), and a wrong value or an unexpected
+  exception is generally not considered a bug;
+* bugs found through private APIs, unless realistic code using public APIs
+  could trigger them as well;
+* crashes caused by manipulating the interpreter's internals with tools
+  such as :meth:`codeobject.replace` or :mod:`ctypes`;
+* changes that bring code churn without fixing an actual problem, for
+  instance changing whitespace and other stylistic details for the sake of
+  a foolish consistency. Maintainers sometimes make such changes
+  themselves.
+
+
 Creating a new issue
 --------------------
 
