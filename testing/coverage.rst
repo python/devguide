@@ -261,7 +261,7 @@ create an instrumented build of Python with gcov, run:
         .\make coverage
 
 Then run some code and gather coverage data with the ``gcov`` command. In
-order to create a HTML report you can install `lcov`_. The command:
+order to create an HTML report you can install `lcov`_. The command:
 
 .. tab:: Unix/macOS
 
