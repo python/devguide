@@ -280,6 +280,12 @@ Stdlib
    * - datetime
      - abalkin
 
+   * - difflib
+     - tim-one
+
+   * - doctest
+     - tim-one
+
    * - email
      - maxking
 
@@ -345,6 +351,9 @@ Stdlib
 
    * - syslog
      - jafo^
+
+   * - tabnanny
+     - tim-one
 
    * - tarfile
      - gustaebel
@@ -419,6 +428,9 @@ Miscellaneous
 
    * - mathematics
      - stutzbach^
+
+   * - memory management
+     - tim-one
 
    * - networking
      - giampaolo
