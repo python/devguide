@@ -218,7 +218,7 @@ io                  benjaminp, gpshead, cmaloney
 JIT                 brandtbucher*, savannahostrowski*
 locale              malemburg
 mathematics         malemburg, rhettinger, serhiy-storchaka
-memory management   tim-one, malemburg, Yhg1s, nascheme
+memory management   malemburg, Yhg1s, nascheme
 networking          gpshead
 object model        benjaminp, Yhg1s
 packaging           malemburg, merwok, dstufft, pfmoore, emmatyping, FFY00
@@ -428,6 +428,9 @@ Miscellaneous
 
    * - mathematics
      - stutzbach^
+
+   * - memory management
+     - tim-one
 
    * - networking
      - giampaolo
