@@ -32,7 +32,9 @@ GitHub
 ------
 
 * The user is removed from all teams in the
-  `python/ <https://github.com/orgs/python/>`__ organization on GitHub;
+  `python/ <https://github.com/orgs/python/>`__ organization on GitHub.
+  To see all that need action, perform
+  `this query <https://github.com/orgs/python/teams?query=%40USERNAME>`__.
 * The user is removed from the `psf/ <https://github.com/orgs/psf/>`__
   organization on GitHub;
 * The user is removed from the `pypa/ <https://github.com/orgs/pypa/>`__
