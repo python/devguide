@@ -117,7 +117,10 @@ devguide.python.org
 -------------------
 
 * The user is marked as deceased in `core-team.csv <https://github.com/python/devguide/blob/main/core-team/core-team.csv>`__;
-* The user is removed from the `experts index <https://github.com/python/devguide/blob/main/core-team/experts.rst>`__.
+* The user is removed from the `experts index <https://github.com/python/devguide/blob/main/core-team/experts.rst>`__;
+* The user is moved from
+  `psrt.csv <https://github.com/python/devguide/blob/main/security/psrt.csv>`__ to
+  `psrt-emeritus.csv <https://github.com/python/devguide/blob/main/security/psrt-emeritus.csv>`__.
 
 bugs.python.org
 ---------------
