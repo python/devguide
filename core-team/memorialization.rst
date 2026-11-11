@@ -31,7 +31,6 @@ certain content when the legacy contact or family members request it.
 GitHub
 ------
 
-* The user is removed from the `python/ <https://github.com/orgs/python/>`__
 * The user is removed from all teams in the
   `python/ <https://github.com/orgs/python/>`__ organization on GitHub;
 * The user is removed from the `psf/ <https://github.com/orgs/psf/>`__
