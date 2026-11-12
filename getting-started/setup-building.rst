@@ -20,6 +20,15 @@ might want to use `our official images
 contain the latest releases of several Python versions, along with Git head,
 and are provided for development and testing purposes only.
 
+.. note::
+
+   On Unix-like systems, some optional standard-library extension
+   modules require additional system libraries. If you want these
+   modules included in your CPython build, review
+   :ref:`build-dependencies` before compiling.
+
+   These additional libraries are not required for a basic build.
+
 .. seealso::
 
    The :ref:`quick-reference` gives brief summary of the process from
