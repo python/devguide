@@ -56,7 +56,7 @@ Repositories in the organization
   `voters/python-core.toml <https://github.com/python/voters/blob/main/python-core.toml>`__
   file with the ``left=`` field set to the day of passing, if known.
   Also, the ``discourse=`` field is commented (since the account will be
-  disabled in next steps).
+  deactivated in next steps).
 
 discuss.python.org
 ------------------
