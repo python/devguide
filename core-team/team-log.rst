@@ -10,8 +10,18 @@ master list is kept in a private repository due to containing sensitive contact
 information.)
 
 .. csv-table::
-   :header: "Name", "GitHub username", "Joined", "Left", "Notes"
+   :header: "Name", "GitHub username", "Joined", "Notes"
    :file: core-team.csv
+   :encoding: "utf-8"
+
+Members emeritus
+----------------
+
+List of the emeritus members who are no longer part of the Python core team.
+
+.. csv-table::
+   :header: "Name", "GitHub username", "Joined", "Left", "Notes"
+   :file: core-team-emeritus.csv
    :encoding: "utf-8"
 
 Procedure for granting or dropping access
