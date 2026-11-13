@@ -74,20 +74,22 @@ produced from a maintenance branch are called **bugfix** or **maintenance**
 releases; the terms are used interchangeably. These releases have a
 **micro version** number greater than zero.
 
-Changes backported to a maintenance branch fall into two groups.  *Low-risk*
-changes (bug fixes, test improvements, and documentation edits) may be
-backported without debate.  *Higher-risk* changes (new features, semantic
-changes, and performance improvements) can introduce regressions, so they are
-not backported as a matter of course.
-Also, a general rule for maintenance branches is that compatibility
-must not be broken at any point between sibling micro releases (3.12.1, 3.12.2,
-etc.).  For both rules, only rare exceptions are accepted, and each requires a
+For ordinary changes, merge to ``main`` first.  A change may then be
+backported to a maintenance branch if it is appropriate for that release.
+Security fixes follow the coordinated process described in the
+:ref:`security policy <security-policy>`.  *Low-risk* changes (bug fixes, test
+improvements, and documentation edits) may be backported without debate.
+*Higher-risk* changes (new features, semantic changes, and performance
+improvements) can introduce regressions, so they are not backported as a matter
+of course.  Compatibility must not be broken between sibling micro releases
+(3.12.1, 3.12.2, etc.).  Exceptions to these rules are rare and require a
 strong case agreed upon in discussion beforehand.
 
-Backporting changes reduces the risk of future conflicts.
-For documentation, it increases the visibility of improvements,
-since most readers access the `stable documentation <https://docs.python.org/3/>`__
+Backport pull requests use a ``[X.Y]`` prefix in their title to identify the
+target branch.  Backporting documentation changes also makes improvements more
+visible, since most readers access the `stable documentation <https://docs.python.org/3/>`__
 rather than the `development documentation <https://docs.python.org/dev/>`__.
+For the practical steps, see :ref:`backporting`.
 
 A new maintenance branch is normally created when the next feature release
 cycle reaches feature freeze, that is, at its first beta pre-release.
