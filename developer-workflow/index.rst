@@ -14,4 +14,5 @@ Development workflow
    extension-modules
    c-api
    grammar
+   specialization
    porting
