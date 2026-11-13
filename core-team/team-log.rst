@@ -21,7 +21,7 @@ List of the emeritus members who are no longer part of the Python core team.
 
 .. csv-table::
    :header: "Name", "GitHub username", "Joined", "Left", "Notes"
-   :file: emeritus-core-team.csv
+   :file: core-team-emeritus.csv
    :encoding: "utf-8"
 
 Procedure for granting or dropping access
