@@ -14,8 +14,10 @@ information.)
    :file: core-team.csv
    :encoding: "utf-8"
 
-Emeritus Core Developers
-------------------------
+Emeritus Members
+----------------
+
+List of the emeritus members who are no longer part of the Python core team.
 
 .. csv-table::
    :header: "Name", "GitHub username", "Joined", "Left", "Notes"
