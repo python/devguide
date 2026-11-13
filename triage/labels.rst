@@ -45,6 +45,11 @@ Component labels
 These labels are mostly used to specify which :ref:`part of the codebase
 <build_directory_structure>` is affected by the issue/PR:
 
+For issues that only require documentation changes, use the
+:gh-label:`docs` label. Code component labels such as
+:gh-label:`stdlib` and :gh-label:`extension-modules` generally
+do not apply unless the corresponding code is also affected.
+
 * :gh-label:`stdlib`: for standard library modules in the :cpy-file:`Lib`
   directory (written in Python).
 * :gh-label:`extension-modules`: for standard library modules in the
