@@ -14,7 +14,7 @@ information.)
    :file: core-team.csv
    :encoding: "utf-8"
 
-Emeritus Members
+Members emeritus
 ----------------
 
 List of the emeritus members who are no longer part of the Python core team.
