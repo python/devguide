@@ -203,6 +203,45 @@ should do to help ensure that your pull request is accepted.
 
 #. Proper :ref:`documentation <documenting>` additions/changes should be included.
 
+Coordinating work on an issue
+-----------------------------
+
+Before starting work on an issue, contributors should coordinate with
+others to avoid duplicating efforts and to make collaboration easier.
+
+#. **Check for existing contributions.** Before working on an issue,
+   review its discussion and any linked pull requests. If another
+   contributor is already working on a solution, consider offering
+   assistance or discussing possible collaboration instead of
+   submitting a competing pull request.
+
+#. **Communicate your intentions.** Contributors are encouraged to
+   express their interest in an issue and describe their planned
+   approach. Providing an approximate timeframe can help others
+   understand when to expect progress, although these estimates
+   should not be treated as strict deadlines.
+
+#. **Share progress and ask for help.** If difficulties arise or
+   progress is delayed, contributors should communicate any blockers
+   and seek assistance when appropriate. Opening a draft pull
+   request can help others review work in progress and provide
+   early feedback.
+
+#. **Respect ongoing work.** Contributors should avoid taking over
+   an issue while someone else is actively working on it. If progress
+   has stopped, discuss the situation with the original contributor
+   and maintainers before proceeding.
+
+#. **Allow others to continue unfinished work.** Contributors who
+   are unable to complete their work are encouraged to communicate
+   this in the issue. This gives other interested contributors an
+   opportunity to continue the effort.
+
+#. **Coordinate before taking over inactive issues.** If an issue
+   has remained inactive beyond an estimated timeframe, contributors
+   should discuss its status before starting a new solution. An
+   expired estimate does not automatically transfer responsibility.
+
 .. _news-entry:
 .. _what-s-new-and-news-entries:
 
