@@ -62,7 +62,7 @@ but don’t yet feel entirely comfortable with the public channels mentioned
 above, `Python Mentors`_ are here to help you.  Python is fortunate to have a
 community of volunteer core team members willing to mentor anyone wishing to
 contribute code, work on bug fixes or improve documentation.  Everyone is
-welcomed and encouraged to contribute.
+welcome and encouraged to contribute.
 
 .. _Python Mentors: https://www.python.org/dev/core-mentorship/
 
