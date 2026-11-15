@@ -364,6 +364,40 @@ When writing interactive examples, keep prompt style consistent and copy-friendl
 For the reST markup used to present interactive sessions, see
 :ref:`showing-code-examples`.
 
+Testing interactive examples
+----------------------------
+
+Interactive Python examples should produce the output shown in the
+documentation. When possible, use :mod:`doctest` to verify that the
+examples continue to work as Python evolves.
+
+Prefer examples with predictable results. For instance, the following
+example can be checked automatically:
+
+.. doctest::
+
+   >>> numbers = [2, 3, 5]
+   >>> sum(numbers)
+   10
+   >>> sorted(numbers, reverse=True)
+   [5, 3, 2]
+
+Some results contain values that vary between executions, such as
+memory addresses. The ``ELLIPSIS`` option allows variable portions
+of the expected output to be matched without requiring an exact value:
+
+.. doctest::
+
+   >>> object()  # doctest: +ELLIPSIS
+   <object object at 0x...>
+
+Use ``ELLIPSIS`` only when the output contains genuinely variable
+information. Prefer exact expected results whenever possible.
+
+The Sphinx doctest builder executes explicitly marked examples and
+compares their output with the expected results. This helps identify
+examples that have become incorrect or outdated.
+
 
 Code equivalents
 ================
