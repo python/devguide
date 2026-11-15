@@ -3,6 +3,7 @@ import os
 from urllib.request import urlopen
 
 extensions = [
+    'sphinx.ext.doctest',
     'notfound.extension',
     'sphinx.ext.extlinks',
     'sphinx.ext.intersphinx',
@@ -15,6 +16,7 @@ extensions = [
     'sphinxext.opengraph',
     'sphinxext.rediraffe',
 ]
+doctest_test_doctest_blocks = ''
 
 html_last_updated_fmt = '%b %d, %Y'
 
