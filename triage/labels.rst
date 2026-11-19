@@ -27,7 +27,8 @@ These labels are used to specify the type of issue:
   core dump.
 * :gh-label:`type-feature`: for feature requests or enhancements.
   Feature requests do not need :ref:`version labels <Version labels>`;
-  it is implicit that features are added to the ``main`` branch only.
+  it is implicit that features are added to the ``main`` branch only,
+  except for some :ref:`exceptional cases <exceptional-version-labels>`.
   The `Ideas Discourse category`_ can be used to discuss enhancements
   before filing an issue.
 * :gh-label:`type-refactor`: for general code refactoring that
@@ -104,8 +105,41 @@ These labels are used to indicate which versions of Python are affected.
 The available version labels (with the form :samp:`3.{N}`) are updated
 whenever new feature releases are created or retired.
 
+Recommendations
+---------------
+
+- For security issues, add the :gh-label:`type-security` label and
+  the affected version labels. This makes the issue stand out.
+
+- For non-security issues affecting *all* bugfix branches, only add
+  the :gh-label:`type-bug` label as knowing which versions are affected
+  does not give more information.
+
+- Labels for end-of-life versions should be removed when possible but there is
+  no need to explicitly go through old issues to remove such labels.
+
+- Otherwise, add the corresponding version labels and remember to
+  update them when the latest feature version is released.
+
 See also :ref:`the branch status page <branchstatus>`
 for a list of active branches.
+
+.. _exceptional-version-labels:
+
+Exceptional version labels for features
+---------------------------------------
+
+While features should not have a version label, there are a few exceptional
+cases subject to the release manager approval:
+
+- If we are currently in the *beta* period of :samp:`3.{N}.0` and
+  if a feature was implemented in its *alpha* period but requires a
+  non-trivial extension (hence a new *feature* issue), this new
+  feature issue is given the :samp:`3.{N}` label as the latest
+  version under development would now be :samp:`3.{N+1}.0a1`.
+
+  To indicate that the labelling is correct and the extension is
+  approved, the :gh-label:`triaged` label can also be applied.
 
 
 .. _Keywords:
