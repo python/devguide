@@ -28,7 +28,7 @@ To render the devguide to HTML under ``_build/html``, run::
 
     make html
 
-To render the devguide to HTML, and open the result in a browser, run::
+To render the devguide to HTML and open the result in a browser, run::
 
     make htmlview
 
