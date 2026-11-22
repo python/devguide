@@ -367,7 +367,21 @@ and how to build.
 .. _PCBuild readme: https://github.com/python/cpython/blob/main/PCbuild/readme.txt
 .. _Git for Windows download from the official Git website: https://git-scm.com/download/win
 
+Linux Cross-Compilation
+-----------------------
 
+CPython supports cross-compilation on Linux for building Python
+for a different target architecture. This requires a C compiler
+and toolchain for the target platform, as well as a build Python
+interpreter matching the version being built.
+
+Cross-compilation can be configured using the ``--build`` and
+``--host`` options. The ``--with-build-python`` option specifies
+the Python interpreter used during the build.
+
+For detailed instructions and configuration options, see the
+`CPython cross-compilation documentation
+<https://docs.python.org/3/using/configure.html#cross-compiling-options>`_.
 .. _wasi-compiling:
 
 WASI
