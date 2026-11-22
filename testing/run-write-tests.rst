@@ -17,9 +17,7 @@ Running and writing tests
 Running
 =======
 
-The shortest, simplest way of running the test suite is the following command,
-which runs tests in parallel, from the root directory of your checkout
-(after you have :ref:`built Python <compiling>`):
+The recommended way to run the test suite is to use parallel execution from the root directory of your checkout (after you have :ref:`built Python <compiling>`):
 
 .. tab:: Unix
 
@@ -40,6 +38,8 @@ which runs tests in parallel, from the root directory of your checkout
     .. code-block:: dosbatch
 
         .\python.bat -m test -j0
+
+The ``-j0`` option runs tests in parallel using the available CPU resources. This is significantly faster than running tests sequentially.
 
 This will run the majority of tests, but exclude a small portion of them; these
 excluded tests use special kinds of resources: for example, accessing the
