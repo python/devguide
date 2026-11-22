@@ -19,7 +19,9 @@ Authors must review the work done by AI tooling in detail to ensure it
 actually makes sense before proposing it as a PR or filing it as an issue.
 
 We expect PR authors and those filing issues to be able to explain their
-proposed changes in their own words.
+proposed changes in their own words. If you are new to contributing to
+Python or only started recently, also read the :ref:`additional rules for
+new contributors <ai-tools-new-contributors>`.
 
 Disclosure of the use of AI tools in the PR description is appreciated,
 while not required. Be prepared to explain how the tool was used and what
@@ -45,9 +47,25 @@ Acceptable uses
 
 Some of the acceptable uses of generative AI include:
 
-- Assistance with writing comments, especially in a non-native language
+- Assistance with writing issues, PR descriptions and comments, especially
+  in a non-native language
 - Gaining understanding of existing code
 - Supplementing contributor knowledge for code, tests, and documentation
+
+AI-generated text is often verbose and hides the point. When an AI tool helps
+you write, remove filler, repetition and generic phrasing, and keep only what
+you have checked and agree with. When it translates text you wrote in another
+language, consider saying so and including your original text, unedited, in a
+``<details>`` block, so that readers can refer to your own words:
+
+.. code-block:: html
+
+   <details>
+   <summary>Original text</summary>
+
+   Elen síla lúmenn' omentielvo.
+
+   </details>
 
 Unacceptable uses
 =================
@@ -59,9 +77,30 @@ If a contributor repeatedly opens unproductive issues or PRs, they may be
 blocked from contributing to the project because it is disruptive and
 disrespectful of the maintainers time.
 
-It is not acceptable to alter or bypass existing tests, or remove desired
-functionality, in order to make a failing test pass. Such changes are not
-a real fix.
+Other unacceptable uses include:
+
+- Communicating only through an AI tool, for example by passing reviewers'
+  questions to it and posting its answers as your own. Apart from
+  translating text you wrote, reviewers expect to discuss the change with
+  you. If you do not know the answer to a question, say so.
+- Altering or bypassing existing tests, or removing desired functionality,
+  in order to make a failing test pass. Such changes are not a real fix.
+
+.. _ai-tools-new-contributors:
+
+Additional rules for new contributors
+=====================================
+
+People who want to start contributing to Python, or who have only recently
+started and are still learning the code base, are welcome, and we want their
+first contributions to reflect their own understanding.
+
+As a new contributor, you may use AI tools to understand an issue or the
+code it involves, but the work itself must be yours: writing the change,
+its tests and its description is how you learn the code base. Reading a
+finished change is not the same as understanding it; as such, letting an AI
+tool do the work and only reviewing its output is not considered
+acceptable.
 
 How these guidelines are applied
 ================================
