@@ -32,10 +32,11 @@ You should have already :ref:`set up your system <setup>`,
 
      git fetch upstream
 
-* Create a new branch in your local clone from the ``main`` branch
-  in the upstream repository::
+* Create a new branch in your local clone from the `main` branch in the
+  upstream repository. Include the issue number and a short description
+  in the branch name, using the format `gh-<number>-<name>`:
 
-     git checkout -b <branch-name> upstream/main
+    git checkout -b gh-12345-fix-example upstream/main
 
   .. note::
      Almost all changes to Python, including bug fixes, should first be
@@ -442,12 +443,13 @@ and for each pull request there may be several commits.  In particular:
 * Do **not** do cosmetic changes to unrelated code in the same
   commit as some feature/bugfix.
 
-Commit messages should follow the following structure::
+Commit messages should include the issue number using the
+`gh-<number>` format. For example:
 
-   Make the spam module more spammy
+    gh-12345: Fix the spam module
 
-   The spam module sporadically came up short on spam. This change
-   raises the amount of spam in the module by making it more spammy.
+    The spam module sporadically came up short on spam. This change
+    raises the amount of spam in the module.
 
 The first line or sentence is meant to be a dense, to-the-point explanation
 of what the purpose of the commit is. The imperative form (used in the example
