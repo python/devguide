@@ -25,6 +25,12 @@ Disclosure of the use of AI tools in the PR description is appreciated,
 while not required. Be prepared to explain how the tool was used and what
 changes it made.
 
+Do not add a ``Co-authored-by`` trailer, or any other attribution trailer,
+that names an AI tool to commit messages. ``Co-authored-by`` credits the
+people who contributed to a change, and the person submitting the PR is
+responsible for its content. Many AI coding tools add this trailer by
+default, so check your tool's settings and your commits before opening a PR.
+
 Whether you are using AI tools or not, keep the following principles in
 mind for the quality of your contribution:
 
