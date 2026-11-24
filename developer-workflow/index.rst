@@ -12,6 +12,7 @@ Development workflow
    development-cycle
    stdlib
    extension-modules
+   frozen-modules
    c-api
    grammar
    porting
