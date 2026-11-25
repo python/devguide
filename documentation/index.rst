@@ -11,3 +11,4 @@ Documentation
    markup
    translations/index
    devguide
+   analytics
