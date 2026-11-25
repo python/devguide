@@ -95,7 +95,7 @@ html                  ezio-melotti*
 idlelib               terryjreedy*, taleinat
 importlib             brettcannon, FFY00*
 inspect               1st1
-io                    benjaminp
+io                    benjaminp, cmaloney
 itertools             rhettinger*
 json                  ezio-melotti, rhettinger, serhiy-storchaka*
 locale                malemburg
@@ -214,11 +214,11 @@ f-strings           ericvsmith*
 i18n                malemburg, merwok, tomasr8, StanFromIreland
 import machinery    brettcannon, ncoghlan, ericsnowcurrently, FFY00*
 initialization      FFY00*
-io                  benjaminp, gpshead
+io                  benjaminp, gpshead, cmaloney
 JIT                 brandtbucher*, savannahostrowski*
 locale              malemburg
 mathematics         malemburg, rhettinger, serhiy-storchaka
-memory management   tim-one, malemburg, Yhg1s, nascheme
+memory management   malemburg, Yhg1s, nascheme
 networking          gpshead
 object model        benjaminp, Yhg1s
 packaging           malemburg, merwok, dstufft, pfmoore, emmatyping, FFY00
@@ -428,6 +428,9 @@ Miscellaneous
 
    * - mathematics
      - stutzbach^
+
+   * - memory management
+     - tim-one
 
    * - networking
      - giampaolo

@@ -140,7 +140,7 @@ Additional resources
 * Tool support
 
   * :ref:`gdb`
-  * :ref:`clang`
+  * :ref:`sanitizers`
   * Various tools with configuration files as found in the
     :cpy-file:`Misc/` directory
 

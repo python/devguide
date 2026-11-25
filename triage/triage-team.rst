@@ -56,6 +56,39 @@ the Python Software Foundation, always follow the `PSF Code of Conduct`_.
 .. _PSF Code of Conduct: https://policies.python.org/python.org/code-of-conduct/
 
 
+.. _triage-ai-labels:
+
+Applying the AI policy labels
+=============================
+
+Use the AI policy labels for issues and PRs that don't follow the
+:ref:`guidelines for using AI tools <ai-tools>`. Don't apply them only because
+AI tools were used, or because the author disclosed using them.
+
+Apply only one of these labels to an issue or PR. When you add
+:gh-label:`AI-guidelines-not-met`, the bot automatically removes
+:gh-label:`AI-needs-explanation`. If you add both labels,
+:gh-label:`AI-guidelines-not-met` wins.
+
+* Start with :gh-label:`AI-needs-explanation`. The bot asks the author to
+  explain the work in their own words and leaves the issue or PR open.
+* Use :gh-label:`AI-guidelines-not-met` only for clear cases, such as a
+  low-effort submission where the author is unlikely to engage with feedback.
+  The bot posts a comment and closes the issue or PR. If you have any doubt,
+  use :gh-label:`AI-needs-explanation` instead, or consult a core developer.
+* If the author doesn't respond to :gh-label:`AI-needs-explanation`, or the
+  response doesn't address the concern (for example, it is more generated
+  text), add :gh-label:`AI-guidelines-not-met`. The bot removes
+  :gh-label:`AI-needs-explanation`, posts the closing comment and closes the
+  issue or PR. If you have any doubt, consult a core team member first.
+* If the author responds and the concern is resolved, remove the label.
+  For a closed issue or PR, reopen it as well.
+
+Prefer these labels over closing manually, so the author gets the same
+explanation each time and the issues and PRs can be found later by filtering
+on the label.
+
+
 Becoming a member of the Python triage team
 ===========================================
 

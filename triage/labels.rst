@@ -116,6 +116,16 @@ for a list of active branches.
 Other labels
 ============
 
+* Use :gh-label:`AI-guidelines-not-met` for a clearly low-effort
+  AI-assisted submission where you think the author is unlikely to engage with
+  feedback. The bot links to the :ref:`guidelines for using AI tools
+  <ai-tools>` and closes the issue or PR. See the :ref:`triage team's guidance
+  on applying the AI policy labels <triage-ai-labels>`.
+* Use :gh-label:`AI-needs-explanation` when you have concerns
+  about AI-assisted work and think the author is likely to engage with feedback.
+  The bot posts a reminder and leaves the issue or PR open. See the
+  :ref:`triage team's guidance on applying the AI policy labels
+  <triage-ai-labels>`.
 * :gh-label:`build`/:gh-label:`performance`: for issues related
   to the build process or performance, respectively.
 * :gh-label:`easy`: for issues that are considered easy.

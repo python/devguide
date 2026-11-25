@@ -34,9 +34,9 @@ For more details about translations and their progress, see
      - Julien Palard (:github-user:`JulienPalard`)
      - `AFPy/python-docs-fr <https://git.afpy.org/AFPy/python-docs-fr/>`__,
        :github:`mirror <python/python-docs-fr>`
-   * - German (de)
+   * - `German (de) <https://docs.python.org/de/>`__
      - Swen Bachmann (:github-user:`sba72`)
-     - :github:`GitHub <sba72/python-docs-de>`
+     - :github:`GitHub <python/python-docs-de>`
    * - `Greek (el) <https://docs.python.org/el/>`__
      - | Lysandros Nikolaou (:github-user:`lysnikolaou`),
        | Fanis Petkos (:github-user:`thepetk`),
@@ -89,11 +89,11 @@ For more details about translations and their progress, see
        `guide <https://python.org.br/traducao/>`__,
        `Telegram <https://t.me/pybr_i18n>`__,
        `article <https://rgth.co/blog/python-ptbr-cenario-atual/>`__
-   * - Punjabi (pa)
+   * - `Punjabi (pa) <https://docs.python.org/pa/>`__
      - | Bhuvansh Kataria (:github-user:`BHUVANSH855`),
        | Mohit Yadav (:github-user:`mohityadav8`),
        | Yashraj Jangra (:github-user:`Yashraj-Jangra`)
-     - :github:`GitHub <BHUVANSH855/python-docs-pa>`,
+     - :github:`GitHub <python/python-docs-pa>`,
        `Transifex <tx_>`_
    * - `Romanian (ro) <https://docs.python.org/ro/>`__
      - Octavian Mustafa (:github-user:`octaG-M`, `email <mailto:octawian@yahoo.com>`__)
@@ -119,6 +119,9 @@ For more details about translations and their progress, see
        | Hari (:github-user:`nammahari`)
      - :github:`GitHub <Terminal-Joint/python-docs-ta>`,
        `Discord <https://discord.gg/JNWjefK2yG>`__
+   * - Telugu (te)
+     - Divya Chukkapalli (:github-user:`divya0795`)
+     - :github:`GitHub <divya0795/python-docs-te>`
    * - `Traditional Chinese (zh-tw) <https://docs.python.org/zh-tw/>`__
      - | 王威翔 Matt Wang (:github-user:`mattwang44`),
        | Josix Wang (:github-user:`josix`)

@@ -617,6 +617,8 @@ There is also a generic version of these directives:
          Describes a Python bytecode instruction.
 
 
+.. _showing-code-examples:
+
 Showing code examples
 ---------------------
 
@@ -633,6 +635,9 @@ be no trailing prompt. An example of correct usage is:
 
    >>> 1 + 1
    2
+
+Style guidance for when to use secondary prompts, and related copy-and-paste
+notes, lives under :ref:`code-examples` in the style guide.
 
 Syntax highlighting is handled in a smart way:
 

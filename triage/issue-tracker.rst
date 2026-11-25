@@ -201,6 +201,11 @@ that happened in the issue. In case the user did share their GitHub account
 name in their BPO profile, we use that. Otherwise, their classic BPO
 username is used instead.
 
+For triagers and core team members, :ref:`organization owners <current owners>`
+can send invitations to attribute mannequin comments to GitHub user account.
+(For the administrator: use the `Import/Export settings page <mannequin-reclaim-settings_>`_;
+refer to `Github's documentation <mannequin-reclaim-docs_>`_.)
+
 
 .. _disagreement-with-a-resolution-on-the-issue-tracker:
 
@@ -239,3 +244,5 @@ reason either as ``complete`` or ``not planned``.
 .. _sub-issues: https://docs.github.com/en/issues/tracking-your-work-with-issues/using-issues/adding-sub-issues
 .. _Core Development Discourse category: https://discuss.python.org/c/core-dev/23
 .. _old bug tracker: https://bugs.python.org/
+.. _mannequin-reclaim-settings: https://github.com/organizations/python/settings/import-export
+.. _mannequin-reclaim-docs: https://docs.github.com/en/migrations/using-github-enterprise-importer/completing-your-migration-with-github-enterprise-importer/reclaiming-mannequins-for-github-enterprise-importer#reclaiming-mannequins-in-your-browser

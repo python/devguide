@@ -28,6 +28,8 @@ Checklist for triaging
 * If the issue is clearly invalid (unrelated to CPython, spam, and
   so on), you can use GitHub's :guilabel:`Close as not planned` option
   and apply the :gh-label:`invalid` label.
+* If the issue or PR doesn't follow the :ref:`guidelines for using AI tools
+  <ai-tools>`, apply one of the :ref:`AI policy labels <triage-ai-labels>`.
 
 
 .. _triage-fields:

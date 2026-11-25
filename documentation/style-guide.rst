@@ -350,11 +350,19 @@ a typical use case.  For instance, the :meth:`str.rpartition` method is better
 demonstrated with an example splitting the domain from a URL than it would be
 with an example of removing the last word from a line of Monty Python dialog.
 
-The ellipsis for the :py:data:`sys.ps2` secondary interpreter prompt should only
-be used sparingly, where it is necessary to clearly differentiate between input
-lines and output lines.  Besides contributing visual clutter, it makes it
-difficult for readers to cut-and-paste examples so they can experiment with
-variations.
+When writing interactive examples, keep prompt style consistent and copy-friendly:
+
+* Use the ellipsis for the :py:data:`sys.ps2` secondary interpreter prompt only
+  sparingly, where it is necessary to clearly differentiate between input lines
+  and output lines.  Besides contributing visual clutter, it makes it harder for
+  readers to copy-and-paste examples so they can experiment with variations.
+  (Published docs also offer a copy control on interactive examples that strips
+  prompts for pasting.)
+* After the last line of input or output, do not leave a trailing unused primary
+  prompt (``>>>``).
+
+For the reST markup used to present interactive sessions, see
+:ref:`showing-code-examples`.
 
 
 Code equivalents

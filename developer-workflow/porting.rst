@@ -88,6 +88,9 @@ and relevant for porting work and fixing platform-specific issues
    * - **Solaris**/OpenIndiana
      - :github-user:`jcea`, :github-user:`kulikjak`
      -
+   * - **SPARC**/Linux
+     - :github-user:`shalseth`
+     - `Issues <https://github.com/sparclinux/issues/issues>`__
    * - **WebAssembly**
      -
      - `Limitations <https://docs.python.org/3/library/intro.html#webassembly-platforms>`__
