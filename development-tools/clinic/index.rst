@@ -264,3 +264,56 @@ Classes for extending Argument Clinic
       A boolean value.  If true,
       Argument Clinic will add a ``&`` in front of the name of
       the variable when passing it into :c:func:`PyArg_ParseTuple`.
+
+.. class:: CReturnConverter
+
+   The base class for all return converters.
+   See :ref:`clinic-howto-custom-return-converter` for how to subclass this class.
+
+   .. attribute:: type
+
+      The C type to use for this variable.
+      :attr:`!type` should be a Python string specifying the type,
+      for example, ``'int'``.
+      If this is a pointer type, the type string should end with ``' *'``.
+      Defaults to ``'PyObject *'``.
+
+   .. attribute:: default
+
+      The Python default value, or ``None``.
+      This attribute is currently unused by Argument Clinic.
+
+   .. attribute:: py_default
+
+      The default value as it should appear in Python code, as a string,
+      or ``None`` if there is no default.
+
+   .. method:: return_converter_init()
+
+      Hook for initializing custom return converters.
+      The base implementation takes no arguments.
+      Subclasses can override this method to accept keyword-only arguments
+      passed to the return converter in Argument Clinic declarations.
+
+   .. method:: declare(data)
+
+      Declares the return variable in the generated C code with the type
+      specified by :attr:`!type`, appending the declaration to
+      ``data.declarations`` and setting ``data.return_value``.
+
+   .. method:: render(function, data)
+
+      Generates the C code for converting the return value of the
+      implementation function into a :c:type:`PyObject * <PyObject>`.
+      Subclasses must implement this method.
+
+   .. method:: err_occurred_if(expr, data)
+
+      Appends a conditional check to the return conversion code that
+      jumps to the error exit label if *expr* evaluates to true and
+      an error has occurred (:c:func:`PyErr_Occurred`).
+
+   .. method:: err_occurred_if_null_pointer(variable, data)
+
+      Appends a check to the return conversion code that jumps to the error
+      exit label if *variable* is ``NULL``.

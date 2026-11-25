@@ -784,6 +784,8 @@ You can see more examples of custom converters in the CPython
 source tree; grep the C files for the string ``CConverter``.
 
 
+.. _clinic-howto-custom-return-converter:
+
 How to write a custom return converter
 --------------------------------------
 
@@ -791,11 +793,14 @@ Writing a custom return converter is much like writing
 a custom converter.  Except it's somewhat simpler, because return
 converters are themselves much simpler.
 
-Return converters must subclass :py:class:`!CReturnConverter`.
+Return converters must subclass :py:class:`~clinic.CReturnConverter`.
+See :py:class:`~clinic.CReturnConverter` for a list of members you may wish to specify
+or implement in your subclass.
 There are no examples yet of custom return converters,
 because they are not widely used yet.  If you wish to
-write your own return converter, please read :cpy-file:`Tools/clinic/clinic.py`,
-specifically the implementation of :py:class:`!CReturnConverter` and
+write your own return converter, please read
+:cpy-file:`Tools/clinic/libclinic/return_converters.py`,
+specifically the implementation of :py:class:`~clinic.CReturnConverter` and
 all its subclasses.
 
 
