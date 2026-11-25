@@ -20,6 +20,33 @@ For a cheat-sheet reference, see the
 :ref:`quick reference on creating pull requests <pullrequest-quickguide>`.
 
 
+.. _pullrequest-prerequisites:
+
+Before writing code
+===================
+
+Most changes start with an issue, and the pull request usually comes once
+the issue has been acknowledged (see :ref:`fixing-issues-readiness`),
+although an issue does not always need one (see
+:ref:`fixing-issues-no-pullrequest`). Small features can be proposed
+directly in an issue, but features that break existing APIs and larger
+changes, such as changes to protocols or built-ins, usually need a
+discussion in the `Ideas category on Discourse`_ first (see
+:ref:`langchanges` and :ref:`stdlibchanges`).
+
+Performance improvements should always be proposed in an issue first,
+ideally without a pull request, since they need to be discussed unless the
+gain is clear. Keep any proof of concept on a branch of your fork instead
+of opening a pull request for it. We strongly recommend including the
+benchmark results in the issue, together with the benchmark script and the
+configuration used. Use ``pyperf timeit`` from :pypi:`pyperf` instead of
+plain :mod:`timeit`, or ``-X importtime`` for import time. Optimizing a
+cold path, or a rare case at the cost of increased complexity, is usually
+not worth it, so base the case for the change on realistic usage.
+
+.. _Ideas category on Discourse: https://discuss.python.org/c/ideas/6
+
+
 .. _pullrequest-steps:
 
 Step-by-step guide
@@ -233,6 +260,12 @@ For the last two, note the following:
    change and the original** ``NEWS`` **entry remains valid**, then no additional
    entry is needed.
 
+The bot adds the :gh-label:`skip news` label by itself in some cases, for
+example when a pull request touches nothing but documentation. If your
+change is one of the exceptions above and the NEWS check still fails, don't
+add an entry and wait for a triager or a core team member to add the label
+for you.
+
 Changes that require "What's New in Python" entries
 ---------------------------------------------------
 
@@ -387,14 +420,18 @@ Typo fixes
 
 Fixing typos and grammatical errors in documentation is a
 contribution that does not require a linked issue. The most appropriate
-place for such fixes are the :cpy-file:`Doc/` (end-user documentation)
-and :cpy-file:`InternalDocs/` directories.
+place for such fixes are the :cpy-file:`Doc/` (end-user documentation),
+:cpy-file:`InternalDocs/` directories, or Python and C docstrings.
 
 
-Keep typo-fix PRs **small and focused**. Large PRs that touch many unrelated files
+Keep typo-fix PRs **small and focused**, and try to fix all the typos of a
+file or topic, including the matching docstrings, in a single PR rather
+than one by one. Where possible, avoid reflowing the surrounding lines, so
+that the diff only shows the fixes. Large PRs that touch many unrelated files
 notify a large number of reviewers unnecessarily and are harder to review.
-Large typo-fix PRs, or PRs touching directories outside those listed above,
-may be closed with a reference to this section.
+Large typo-fix PRs, PRs touching directories outside those listed above, or
+PRs fixing typos in text users never see like code comments may be closed
+with a reference to this section.
 
 
 .. _patchcheck:

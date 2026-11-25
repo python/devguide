@@ -100,7 +100,8 @@ Create issues for nontrivial changes
 
 For most changes, `create an issue <https://github.com/python/cpython/issues>`__
 before submitting a pull request.
-Trivial changes like typo fixes do not need issues.
+Trivial changes like typo fixes or that only increase test coverage do not
+need issues.
 
 Create work branches
 --------------------
