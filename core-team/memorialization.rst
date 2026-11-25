@@ -31,8 +31,10 @@ certain content when the legacy contact or family members request it.
 GitHub
 ------
 
-* The user is removed from the `python/ <https://github.com/orgs/python/>`__
-  organization on GitHub;
+* The user is removed from all teams in the
+  `python/ <https://github.com/orgs/python/>`__ organization on GitHub.
+  To see all that need action, perform
+  `this query <https://github.com/orgs/python/teams?query=%40USERNAME>`__.
 * The user is removed from the `psf/ <https://github.com/orgs/psf/>`__
   organization on GitHub;
 * The user is removed from the `pypa/ <https://github.com/orgs/pypa/>`__
@@ -117,7 +119,10 @@ devguide.python.org
 -------------------
 
 * The user is marked as deceased in `core-team.csv <https://github.com/python/devguide/blob/main/core-team/core-team.csv>`__;
-* The user is removed from the `experts index <https://github.com/python/devguide/blob/main/core-team/experts.rst>`__.
+* The user is moved to experts emeritus in the `experts index <https://github.com/python/devguide/blob/main/core-team/experts.rst>`__;
+* The user is moved from
+  `psrt.csv <https://github.com/python/devguide/blob/main/security/psrt.csv>`__ to
+  `psrt-emeritus.csv <https://github.com/python/devguide/blob/main/security/psrt-emeritus.csv>`__.
 
 bugs.python.org
 ---------------
