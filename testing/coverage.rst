@@ -89,6 +89,9 @@ just built, and this built version of Python will not see packages installed
 into your default version of Python. One option is to use a virtual environment
 to install coverage.
 
+The activation command depends on your shell. See the `venv activation commands
+<https://docs.python.org/3/library/venv.html#how-venvs-work>`__ for alternatives.
+
 .. tab:: Unix
 
     Run:
