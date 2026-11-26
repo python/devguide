@@ -31,8 +31,6 @@ reserved for human contributors. Exceptions are for the bots and apps that
 the core team has installed on the ``python`` GitHub organization, such as
 ``blurb-it[bot]`` and ``dependabot[bot]``.
 If you disclose the use of AI tools, do it in the PR description instead.
-Many AI coding tools add this trailer by default, so check your tool's
-settings and your commits.
 
 Whether you are using AI tools or not, keep the following principles in
 mind for the quality of your contribution:
