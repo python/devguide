@@ -25,6 +25,13 @@ Disclosure of the use of AI tools in the PR description is appreciated,
 while not required. Be prepared to explain how the tool was used and what
 changes it made.
 
+In commit messages, do not add a ``Co-authored-by`` trailer, or any other
+attribution trailer, that names an AI tool. ``Co-authored-by`` should be
+reserved for human contributors. Exceptions are for the bots and apps that
+the core team has installed on the ``python`` GitHub organization, such as
+``blurb-it[bot]`` and ``dependabot[bot]``.
+If you disclose the use of AI tools, do it in the PR description instead.
+
 Whether you are using AI tools or not, keep the following principles in
 mind for the quality of your contribution:
 
