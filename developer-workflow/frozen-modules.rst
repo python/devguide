@@ -80,14 +80,6 @@ The data depends on the bytecode and marshal formats, so changes to the
 compiler, the bytecode or the marshal format need ``make regen-frozen``
 (the comment at the top of :cpy-file:`Python/frozen.c` says so).
 
-Not every module is frozen.
-Only the modules in the lists above are, and the sections show why they are
-there.
-For example, :mod:`encodings` is commented out of the list:
-the comment in ``freeze_modules.py`` says that freezing it only partially
-causes import errors for its submodules when the standard library is zipped
-(gh-148750).
-
 Using frozen modules while developing
 =====================================
 
